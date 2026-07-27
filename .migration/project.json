@@ -1,8 +1,10 @@
 {
+  "type": "doc",
   "sites": {
     "patients-stryker": {
       "previewOrg": "aemdemos",
-      "previewSite": "patients-stryker"
+      "previewSite": "patients-stryker",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
     }
   }
 }
