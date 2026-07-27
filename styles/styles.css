@@ -65,10 +65,12 @@
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
 
-  /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375), headings 1.06 */
+  /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
+     headings 1.06, h4 20.125px/17.5px (1.15) */
   --body-line-height: 1.4286;
   --paragraph-line-height: 1.375;
   --heading-line-height: 1.06;
+  --heading-line-height-h4: 1.15;
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block: 15px;
@@ -151,6 +153,15 @@ h2 {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xl);
   font-weight: 700;
+}
+
+/* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
+   h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
+h4,
+h5 {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  line-height: var(--heading-line-height-h4);
 }
 
 p,
