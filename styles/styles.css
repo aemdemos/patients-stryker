@@ -65,25 +65,31 @@
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
 
-  /* line heights */
-  --body-line-height: 1.375;
+  /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375), headings 1.06 */
+  --body-line-height: 1.4286;
+  --paragraph-line-height: 1.375;
   --heading-line-height: 1.06;
 
-  /* spacing scale */
-  --space-xs: 5px;
-  --space-sm: 10px;
-  --space-md: 15px;
-  --space-lg: 28px;
+  /* spacing — measured from source: block bottom margin 15px, list indent 17px */
+  --space-block: 15px;
+  --list-indent: 17px;
+
+  /* section vertical rhythm — measured: .page-section margin-bottom */
+  --space-section: 30px;
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
   --radius-sm: 2px;
   --radius-pill: 15px;
 
-  /* layout */
+  /* layout — measured from source: max-width 1410px, auto side margins.
+     Gutter is 15px by default; the wide page wrapper (.experiencefragment)
+     tightens to 12.5px once the 1410px max-width is reached. */
   --container-max: 1410px;
   --container-wide: 900px;
   --container-narrow: 575px;
+  --container-gutter: 15px;
+  --container-gutter-wide: 12.5px;
 
   /* nav height */
   --nav-height: 90px;
@@ -124,7 +130,7 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
   line-height: var(--heading-line-height);
@@ -145,7 +151,17 @@ ul,
 pre,
 blockquote {
   margin-top: 0;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-block);
+}
+
+p {
+  line-height: var(--paragraph-line-height);
+}
+
+/* lists — measured source indent (padding-left 17px) */
+ol,
+ul {
+  padding-left: var(--list-indent);
 }
 
 code,
@@ -159,10 +175,6 @@ pre {
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
-}
-
-main > div {
-  margin: 40px 16px;
 }
 
 input,
@@ -333,25 +345,27 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* sections — measured from source: content wrapper is max-width 1410px, centered,
+   with 15px left/right padding by default, tightening to 12.5px once the max-width
+   is reached (>= 1410px). Sections are separated by a 30px bottom margin. */
 main > .section {
-  margin: 40px 0;
+  margin: 0 0 var(--space-section);
 }
 
 main > .section > div {
   max-width: var(--container-max);
-  margin: auto;
-  padding: 0 24px;
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+@media (width >= 1410px) {
+  main > .section > div {
+    padding: 0 var(--container-gutter-wide);
+  }
 }
 
 main > .section:first-of-type {
   margin-top: 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
-  }
 }
 
 /* section width variants */
@@ -368,5 +382,5 @@ main .section.light,
 main .section.highlight {
   background-color: var(--color-surface);
   margin: 0;
-  padding: 40px 0;
+  padding: var(--space-section) 0;
 }
