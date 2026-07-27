@@ -138,11 +138,20 @@ h6 {
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
+
+/* section subheading — measured from source .component-subheading.border-bottom-gold:
+   Futura Bold with a 1px sage rule underneath (7px gap) */
+h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+}
 
 p,
 dl,
@@ -156,6 +165,13 @@ blockquote {
 
 p {
   line-height: var(--paragraph-line-height);
+}
+
+/* bold inline text — measured from source span.futura-bold: Futura Bold, not the body serif */
+strong,
+b {
+  font-family: var(--display-font-family);
+  font-weight: 700;
 }
 
 /* lists — measured source indent (padding-left 17px) */
