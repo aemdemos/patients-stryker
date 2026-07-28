@@ -84,14 +84,11 @@
   --radius-sm: 2px;
   --radius-pill: 15px;
 
-  /* layout — measured from source: max-width 1410px, auto side margins.
-     Gutter is 15px by default; the wide page wrapper (.experiencefragment)
-     tightens to 12.5px once the 1410px max-width is reached. */
+  /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
   --container-wide: 900px;
   --container-narrow: 575px;
   --container-gutter: 15px;
-  --container-gutter-wide: 12.5px;
 
   /* nav height */
   --nav-height: 90px;
@@ -373,8 +370,7 @@ main img {
 }
 
 /* sections — measured from source: content wrapper is max-width 1410px, centered,
-   with 15px left/right padding by default, tightening to 12.5px once the max-width
-   is reached (>= 1410px). Sections are separated by a 30px bottom margin. */
+   with 15px left/right padding. Sections are separated by a 30px bottom margin. */
 main > .section {
   margin: 0 0 var(--space-section);
 }
@@ -383,16 +379,6 @@ main > .section > div {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
-}
-
-@media (width >= 1410px) {
-  main > .section > div {
-    padding: 0 var(--container-gutter-wide);
-  }
-}
-
-main > .section:first-of-type {
-  margin-top: 0;
 }
 
 /* section width variants */
