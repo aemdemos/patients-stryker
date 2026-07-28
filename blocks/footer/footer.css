@@ -14,7 +14,7 @@ footer .footer li:first-child {
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 24px;
+  padding: 20px 24px 60px;
 }
 
 footer .footer ul {
@@ -47,6 +47,6 @@ footer .footer a:hover {
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 24px 32px;
+    padding: 20px 32px 60px;
   }
 }
