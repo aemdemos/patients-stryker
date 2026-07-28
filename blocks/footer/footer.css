@@ -1,6 +1,6 @@
 footer {
   background-color: var(--color-secondary);
-  color: #fff;
+  color: var(--color-white);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
   line-height: 20px;
@@ -13,8 +13,8 @@ footer .footer li:first-child {
 
 footer .footer > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 20px 24px 60px;
+  max-width: var(--container-max);
+  padding: 20px var(--container-gutter) 60px;
 }
 
 footer .footer ul {
@@ -38,18 +38,12 @@ footer .footer li:not(:last-child)::after {
 footer .footer a {
   display: inline-block;
   padding: 5px 15px;
-  color: #fff;
+  color: var(--color-white);
   text-transform: uppercase;
   text-decoration: none;
 }
 
 footer .footer a:hover {
-  color: #000;
+  color: var(--color-black);
   background: var(--color-accent);
-}
-
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 20px 32px 60px;
-  }
 }
