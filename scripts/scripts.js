@@ -216,3 +216,8 @@ async function loadPage() {
 }
 
 loadPage();
+
+if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
+  // eslint-disable-next-line import/no-cycle
+  await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
+}
