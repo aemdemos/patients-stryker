@@ -27,10 +27,12 @@ footer .footer ul {
   list-style: none;
 }
 
-/* 4.5px + ~8px pipe glyph + 4.5px = 17px between link texts, matching the source */
+/* fixed-width centered separator region (matches the source's 17px pipe column) */
 footer .footer li:not(:last-child)::after {
   content: "|";
-  margin: 0 4.5px;
+  display: inline-block;
+  width: 17px;
+  text-align: center;
 }
 
 footer .footer a {
