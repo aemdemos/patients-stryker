@@ -9,19 +9,6 @@ footer .footer > div {
   margin: auto;
   max-width: 1200px;
   padding: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0 8px;
-}
-
-footer .footer p {
-  margin: 0;
-}
-
-footer .footer p::after {
-  content: "|";
-  margin-left: 8px;
 }
 
 footer .footer ul {
