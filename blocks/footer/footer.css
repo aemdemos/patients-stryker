@@ -21,18 +21,21 @@ footer .footer ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0 8px;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* 4.5px + ~8px pipe glyph + 4.5px = 17px between link texts, matching the source */
 footer .footer li:not(:last-child)::after {
   content: "|";
-  margin-left: 8px;
+  margin: 0 4.5px;
 }
 
 footer .footer a {
+  display: inline-block;
+  padding: 5px 15px;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
