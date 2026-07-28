@@ -10,64 +10,88 @@
  * governing permissions and limitations under the License.
  */
 
+/*
+ * Design tokens extracted from patients.stryker.com — see .migration/design-system-audit.md
+ * Licensed Monotype W01 fonts are referenced first with their documented system fallbacks.
+ */
+
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* brand colors */
+  --color-primary: #4c7d7a;
+  --color-primary-dark: #426d6b;
+  --color-primary-hover: #395d5b;
+  --color-primary-active: #2b4745;
+  --color-accent: #ffb500;
+  --color-accent-dark: #e6a300;
+  --color-accent-hover: #cc9100;
+  --color-accent-active: #a87700;
+  --color-secondary: #545857;
+  --color-navy: #27455c;
+  --color-success: #32ae88;
+
+  /* neutrals & surfaces */
+  --color-surface: #edeeec;
+  --color-surface-alt: #f8f8f8;
+  --color-surface-muted: #b2b4ae;
+  --color-border: #ddd;
+  --color-text-muted: #555;
+  --color-disabled-bg: #b2b4ae;
+  --color-disabled-text: #545857;
+  --overlay-scrim: rgb(0 0 0 / 50%);
+
+  /* boilerplate color aliases (consumed by blocks) */
+  --background-color: #fff;
+  --light-color: var(--color-surface-alt);
+  --dark-color: var(--color-secondary);
+  --text-color: #000;
+  --link-color: var(--color-primary);
+  --link-hover-color: var(--color-primary-hover);
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: "HumanistSlab712W01", cambria, palatino, serif;
+  --heading-font-family: "URWEgyptienneW01-Light", rockwell, georgia, times, serif;
+  --display-font-family: "Futura LT W01", arial, helvetica, sans-serif;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* body sizes (fixed px — source typography is non-responsive) */
+  --body-font-size-m: 14px;
+  --body-font-size-s: 13px;
+  --body-font-size-xs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  --heading-font-size-xxl: 28px;    /* h1 */
+  --heading-font-size-xl: 24.5px;   /* h2 */
+  --heading-font-size-l: 21px;      /* h3 */
+  --heading-font-size-m: 17.5px;    /* h4 */
+  --heading-font-size-s: 15px;      /* h5 (estimated) */
+  --heading-font-size-xs: 14px;     /* h6 (estimated) */
+
+  /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
+     headings 1.06, h4 20.125px/17.5px (1.15) */
+  --body-line-height: 1.4286;
+  --paragraph-line-height: 1.375;
+  --heading-line-height: 1.06;
+  --heading-line-height-h4: 1.15;
+
+  /* spacing — measured from source: block bottom margin 15px, list indent 17px */
+  --space-block: 15px;
+  --list-indent: 17px;
+
+  /* section vertical rhythm — measured: .page-section margin-bottom */
+  --space-section: 30px;
+
+  /* radius scale (square-cornered design) */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-pill: 15px;
+
+  /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
+  --container-max: 1410px;
+  --container-wide: 900px;
+  --container-narrow: 575px;
+  --container-gutter: 15px;
 
   /* nav height */
-  --nav-height: 64px;
-}
-
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
+  --nav-height: 90px;
 }
 
 body {
@@ -77,7 +101,7 @@ body {
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  line-height: var(--body-line-height);
 }
 
 body.appear {
@@ -104,20 +128,38 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 500;
+  line-height: var(--heading-line-height);
   scroll-margin: 40px;
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
+
+/* section subheading — measured from source .component-subheading.border-bottom-gold:
+   Futura Bold with a 1px sage rule underneath (7px gap) */
+h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+}
+
+/* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
+   h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
+h4,
+h5 {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  line-height: var(--heading-line-height-h4);
+}
 
 p,
 dl,
@@ -125,8 +167,25 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: var(--space-block);
+}
+
+p {
+  line-height: var(--paragraph-line-height);
+}
+
+/* bold inline text — measured from source span.futura-bold: Futura Bold, not the body serif */
+strong,
+b {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+/* lists — measured source indent (padding-left 17px) */
+ol,
+ul {
+  padding-left: var(--list-indent);
 }
 
 code,
@@ -136,14 +195,10 @@ pre {
 
 pre {
   padding: 16px;
-  border-radius: 8px;
+  border-radius: var(--radius-none);
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
-}
-
-main > div {
-  margin: 40px 16px;
 }
 
 input,
@@ -160,9 +215,10 @@ a:any-link {
   overflow-wrap: break-word;
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: var(--link-hover-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* buttons */
@@ -178,12 +234,14 @@ button.button {
   justify-content: center;
   max-width: 100%;
   margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font: inherit;
-  font-weight: 500;
-  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -197,20 +255,27 @@ button.button:disabled {
   pointer-events: none;
 }
 
+/* primary — teal */
 a.button.primary,
 button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
-  color: var(--background-color);
+  border-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+  color: #fff;
 }
 
 a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: var(--color-primary-active);
+  background-color: var(--color-primary-hover);
+  color: #fff;
+}
+
+a.button.primary:active,
+button.button.primary:active {
+  border-color: #121e1d;
+  background-color: var(--color-primary-active);
 }
 
 a.button.primary[aria-disabled="true"],
@@ -219,25 +284,26 @@ a.button.primary[aria-disabled="true"]:focus-visible,
 button.button.primary:disabled,
 button.button.primary:disabled:hover,
 button.button.primary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: var(--color-disabled-bg);
+  border-color: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
 }
 
+/* secondary — gray */
 a.button.secondary,
 button.button.secondary {
-  border-color: var(--text-color);
-  background-color: transparent;
-  color: var(--text-color);
+  border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
+  color: #fff;
 }
 
 a.button.secondary:hover,
 a.button.secondary:focus-visible,
 button.button.secondary:hover,
 button.button.secondary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--light-color);
-  color: var(--dark-color);
+  border-color: #3f4241;
+  background-color: #3f4241;
+  color: #fff;
 }
 
 a.button.secondary[aria-disabled="true"],
@@ -246,25 +312,32 @@ a.button.secondary[aria-disabled="true"]:focus-visible,
 button.button.secondary:disabled,
 button.button.secondary:disabled:hover,
 button.button.secondary:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: var(--color-disabled-bg);
+  border-color: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
 }
 
-/* high-impact call-to-action */
+/* accent — gold high-impact call-to-action */
 a.button.accent,
 button.button.accent {
-  border-color: var(--link-color);
-  background-color: var(--link-color);
-  color: var(--background-color);
+  border-color: var(--color-accent-dark);
+  background-color: var(--color-accent);
+  color: #000;
 }
 
 a.button.accent:hover,
 a.button.accent:focus-visible,
 button.button.accent:hover,
 button.button.accent:focus-visible {
-  border-color: var(--link-hover-color);
-  background-color: var(--link-hover-color);
+  border-color: var(--color-accent-active);
+  background-color: var(--color-accent-hover);
+  color: #000;
+}
+
+a.button.accent:active,
+button.button.accent:active {
+  background-color: var(--color-accent-active);
+  border-color: var(--color-accent-active);
 }
 
 a.button.accent[aria-disabled="true"],
@@ -273,9 +346,9 @@ a.button.accent[aria-disabled="true"]:focus-visible,
 button.button.accent:disabled,
 button.button.accent:disabled:hover,
 button.button.accent:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
+  background-color: var(--color-disabled-bg);
+  border-color: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
 }
 
 main img {
@@ -295,31 +368,39 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* sections — measured from source: content wrapper is max-width 1410px, centered,
+   with 15px left/right padding. Sections are separated by a 30px bottom margin. */
 main > .section {
-  margin: 40px 0;
+  margin: 0 0 var(--space-section);
 }
 
 main > .section > div {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 24px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
 }
 
-main > .section:first-of-type {
-  margin-top: 0;
+/* section width variants */
+main > .section.narrow > div {
+  max-width: var(--container-narrow);
 }
 
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
-  }
+main > .section.wide > div {
+  max-width: var(--container-wide);
 }
 
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  background-color: var(--color-surface);
   margin: 0;
-  padding: 40px 0;
+  padding: var(--space-section) 0;
+}
+
+@media (width >= 900px) {
+  main > .section > div {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-gutter);
+  }
 }
