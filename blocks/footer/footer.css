@@ -3,6 +3,12 @@ footer {
   color: #fff;
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
+  line-height: 20px;
+}
+
+/* copyright uses the body serif font on the source site; links use the display font */
+footer .footer li:first-child {
+  font-family: var(--body-font-family);
 }
 
 footer .footer > div {
