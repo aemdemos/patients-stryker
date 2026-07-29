@@ -1,111 +1,71 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-// media query match that indicates mobile/tablet width
+// media query match that indicates desktop width (mobile below this)
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
-    const navSections = nav.querySelector('.nav-sections');
-    if (!navSections) return;
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-    if (navSectionExpanded && isDesktop.matches) {
+    if (nav.getAttribute('aria-expanded') === 'true') {
       // eslint-disable-next-line no-use-before-define
-      toggleAllNavSections(navSections);
-      navSectionExpanded.focus();
-    } else if (!isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleMenu(nav, navSections);
-      nav.querySelector('button').focus();
+      toggleMenu(nav, false);
+      nav.querySelector('.nav-hamburger button').focus();
     }
   }
 }
 
-function closeOnFocusLost(e) {
-  const nav = e.currentTarget;
-  if (!nav.contains(e.relatedTarget)) {
-    const navSections = nav.querySelector('.nav-sections');
-    if (!navSections) return;
-    const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
-    if (navSectionExpanded && isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleAllNavSections(navSections, false);
-    } else if (!isDesktop.matches) {
-      // eslint-disable-next-line no-use-before-define
-      toggleMenu(nav, navSections, false);
-    }
-  }
-}
-
-function openOnKeydown(e) {
-  const focused = document.activeElement;
-  const isNavDrop = focused.className === 'nav-drop';
-  if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
-    const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
-    // eslint-disable-next-line no-use-before-define
-    toggleAllNavSections(focused.closest('.nav-sections'));
-    focused.setAttribute('aria-expanded', dropExpanded ? 'false' : 'true');
-  }
-}
-
-function focusNavSection() {
-  document.activeElement.addEventListener('keydown', openOnKeydown);
-}
-
 /**
- * Toggles all nav sections
- * @param {Element} sections The container element
- * @param {Boolean} expanded Whether the element should be expanded or collapsed
+ * Toggles the whole mobile nav
+ * @param {Element} nav The nav element
+ * @param {Boolean} forceExpanded Optional — force a specific state
  */
-function toggleAllNavSections(sections, expanded = false) {
-  if (!sections) return;
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
-    section.setAttribute('aria-expanded', expanded);
-  });
-}
-
-/**
- * Toggles the entire nav
- * @param {Element} nav The container element
- * @param {Element} navSections The nav sections within the container element
- * @param {*} forceExpanded Optional param to force nav expand behavior when not null
- */
-function toggleMenu(nav, navSections, forceExpanded = null) {
-  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+function toggleMenu(nav, forceExpanded = null) {
+  const expanded = forceExpanded !== null
+    ? !forceExpanded
+    : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
-  // enable nav dropdown keyboard accessibility
-  if (navSections) {
-    const navDrops = navSections.querySelectorAll('.nav-drop');
-    if (isDesktop.matches) {
-      navDrops.forEach((drop) => {
-        if (!drop.hasAttribute('tabindex')) {
-          drop.setAttribute('tabindex', 0);
-          drop.addEventListener('focus', focusNavSection);
-        }
-      });
-    } else {
-      navDrops.forEach((drop) => {
-        drop.removeAttribute('tabindex');
-        drop.removeEventListener('focus', focusNavSection);
-      });
-    }
+  if (button) {
+    button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
   }
-
-  // enable menu collapse on escape keypress
-  if (!expanded || isDesktop.matches) {
-    // collapse menu on escape press
+  if (!expanded && !isDesktop.matches) {
     window.addEventListener('keydown', closeOnEscape);
-    // collapse menu on focus lost
-    nav.addEventListener('focusout', closeOnFocusLost);
   } else {
     window.removeEventListener('keydown', closeOnEscape);
-    nav.removeEventListener('focusout', closeOnFocusLost);
   }
+}
+
+/**
+ * Replaces a `:search:` token paragraph with a real search form.
+ * Form controls are built here (not authored in the fragment) per the nav contract.
+ * @param {Element} tools The nav-tools section
+ */
+function buildSearch(tools) {
+  const tokenP = [...tools.querySelectorAll('p')]
+    .find((p) => p.textContent.trim() === ':search:');
+  if (!tokenP) return;
+  const form = document.createElement('form');
+  form.className = 'nav-search';
+  form.setAttribute('role', 'search');
+  form.action = 'https://patients.stryker.com/us/en/ent/search.html';
+  form.method = 'get';
+
+  const input = document.createElement('input');
+  input.type = 'search';
+  input.name = 'q';
+  input.className = 'nav-search-input';
+  input.placeholder = 'Search this site';
+  input.setAttribute('aria-label', 'Search this site');
+
+  const submit = document.createElement('button');
+  submit.type = 'submit';
+  submit.className = 'nav-search-submit';
+  submit.setAttribute('aria-label', 'Search');
+
+  form.append(input, submit);
+  tokenP.replaceWith(form);
 }
 
 /**
@@ -115,7 +75,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
@@ -124,32 +84,47 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  // Sections: brand (logo), sections (primary links), tools (Stryker.com + search)
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
     const section = nav.children[i];
     if (section) section.classList.add(`nav-${c}`);
   });
 
+  // Brand: strip button styling EDS may add to the logo link
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandLink = navBrand.querySelector('a');
+    if (brandLink) {
+      brandLink.classList.remove('button');
+      const container = brandLink.closest('.button-container');
+      if (container) container.className = '';
+    }
   }
 
+  // Tools: build the search form from the :search: token
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) buildSearch(navTools);
+
+  // Group the gold nav (links + Stryker.com) into one drawer that can slide in
+  // from the left on mobile. On desktop `.nav-drawer` uses display:contents so
+  // the grid still places .nav-sections and .nav-tools directly.
   const navSections = nav.querySelector('.nav-sections');
-  if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        }
-      });
-    });
-  }
+  const navDrawer = document.createElement('div');
+  navDrawer.className = 'nav-drawer';
+  if (navSections) navDrawer.append(navSections);
+  if (navTools) navDrawer.append(navTools);
+  nav.append(navDrawer);
+
+  // mobile search toggle (magnifier) — mirrors the source's mobile search icon
+  const searchToggle = document.createElement('button');
+  searchToggle.type = 'button';
+  searchToggle.className = 'nav-search-toggle';
+  searchToggle.setAttribute('aria-label', 'Toggle search');
+  searchToggle.addEventListener('click', () => {
+    const open = nav.getAttribute('data-search') === 'open';
+    nav.setAttribute('data-search', open ? 'closed' : 'open');
+  });
 
   // hamburger for mobile
   const hamburger = document.createElement('div');
@@ -157,12 +132,16 @@ export default async function decorate(block) {
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
       <span class="nav-hamburger-icon"></span>
     </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
+  hamburger.addEventListener('click', () => toggleMenu(nav));
+  nav.append(searchToggle, hamburger);
+  // collapsed by default; on desktop the sections are always shown via CSS
   nav.setAttribute('aria-expanded', 'false');
-  // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSections, isDesktop.matches);
-  isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+  nav.setAttribute('data-search', 'closed');
+
+  // when returning to desktop, ensure any open mobile menu is reset
+  isDesktop.addEventListener('change', () => {
+    if (isDesktop.matches) toggleMenu(nav, false);
+  });
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';

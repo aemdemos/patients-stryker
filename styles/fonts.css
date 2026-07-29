@@ -35,3 +35,12 @@
   font-display: swap;
   src: url('../fonts/futura-lt-bold.woff2') format('woff2');
 }
+
+/* Icon font — Stryker icons (used for the header search magnifier, glyph U+E003) */
+@font-face {
+  font-family: strykericons;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/strykericons.woff') format('woff');
+}
