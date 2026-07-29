@@ -10,7 +10,7 @@
 
 .accordion .accordion-item-label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
   width: 100%;
@@ -21,7 +21,7 @@
   background: none;
   color: var(--text-color);
   font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-m);
+  font-size: var(--body-font-size-m);
   font-weight: 700;
   line-height: 1.15;
   text-align: left;
@@ -37,9 +37,15 @@
   content: "+";
   flex: 0 0 auto;
   font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-m);
+  font-size: inherit;
   font-weight: 700;
-  line-height: 1;
+  line-height: inherit;
+}
+
+@media (width >= 900px) {
+  .accordion .accordion-item-label {
+    font-size: var(--heading-font-size-m);
+  }
 }
 
 .accordion .accordion-item-open .accordion-item-label::after {
