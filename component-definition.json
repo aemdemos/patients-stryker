@@ -77,8 +77,9 @@
           "model": "accordion-item",
           "plugins": {
             "da": {
-              "rows": 1,
-              "columns": 2,
+              "name": "accordion-item",
+              "rows": 2,
+              "columns": 0,
               "fields": [
                 {
                   "name": "title",
