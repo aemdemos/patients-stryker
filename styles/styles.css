@@ -100,6 +100,9 @@
   --statistics-number-size: 92px;
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
+  /* page-title gap to body — measured from source: heading margin-bottom (15px)
+     + title section margin-bottom (30px) = 45px, kept in one section here */
+  --space-title: 45px;
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
@@ -168,20 +171,28 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
-/* section subheading — measured from source .component-subheading.border-bottom-gold:
-   Futura Bold with a 1px sage rule underneath (7px gap) */
+/* page title / section subheading — measured from source
+   .component-subheading.border-bottom-gold: Futura Bold, 24.5px, with a 1px sage
+   rule underneath (7px gap). The legal page title is authored as this treatment;
+   it is emitted as <h1> (primary heading), and <h2> shares the same look. */
+h1,
 h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xl);
   font-weight: 700;
+}
+
+/* page title (h1) keeps the source's larger 45px gap to the body while remaining
+   in the same section (source composed it from heading 15px + title section 30px). */
+h1 {
+  margin-bottom: var(--space-title);
 }
 
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
@@ -442,19 +453,6 @@ main > .section > div {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
-}
-
-/* Title section — a section whose only content is a heading is the standalone
-   page title. Source gap to the next section is 45px, composed of the heading's
-   own margin-bottom (15px) + the title section's margin-bottom (30px, from
-   .c-title.page-section). `display: flow-root` contains the heading margin so it
-   does not collapse into the section margin — both values then apply (= 45px),
-   matching the source. Other sections keep no forced margin. */
-main > .section:has(> .default-content-wrapper > h1:only-child),
-main > .section:has(> .default-content-wrapper > h2:only-child),
-main > .section:has(> .default-content-wrapper > h3:only-child) {
-  display: flow-root;
-  margin-bottom: var(--space-section);
 }
 
 /* section width variants */
