@@ -21,6 +21,7 @@
   --color-primary-dark: #426d6b;
   --color-primary-hover: #395d5b;
   --color-primary-active: #2b4745;
+  --color-link-hover: #2f4d4c;      /* measured: base <a> hover darkens to this */
   --color-accent: #ffb500;
   --color-accent-dark: #e6a300;
   --color-accent-hover: #cc9100;
@@ -45,7 +46,7 @@
   --dark-color: var(--color-secondary);
   --text-color: #000;
   --link-color: var(--color-primary);
-  --link-hover-color: var(--color-primary-hover);
+  --link-hover-color: var(--color-link-hover);
 
   /* fonts */
   --body-font-family: "HumanistSlab712W01", cambria, palatino, serif;
@@ -57,13 +58,14 @@
   --body-font-size-s: 13px;
   --body-font-size-xs: 12px;
 
-  /* heading sizes */
+  /* heading sizes (mobile-first — h2/h3/h4 scale up on desktop, see @media below.
+     Measured: h2 21->24.5px, h3 17.5->21px, h4 14->17.5px; h1 fixed 28px) */
   --heading-font-size-xxl: 28px;    /* h1 */
-  --heading-font-size-xl: 24.5px;   /* h2 */
-  --heading-font-size-l: 21px;      /* h3 */
-  --heading-font-size-m: 17.5px;    /* h4 */
-  --heading-font-size-s: 15px;      /* h5 (estimated) */
-  --heading-font-size-xs: 14px;     /* h6 (estimated) */
+  --heading-font-size-xl: 21px;     /* h2 mobile */
+  --heading-font-size-l: 17.5px;    /* h3 mobile */
+  --heading-font-size-m: 14px;      /* h4 mobile */
+  --heading-font-size-s: 13px;      /* h5 mobile (estimated) */
+  --heading-font-size-xs: 12px;     /* h6 mobile (estimated) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -92,6 +94,17 @@
 
   /* nav height */
   --nav-height: 90px;
+}
+
+/* desktop heading scale-up — measured: h2/h3/h4 grow at the tablet/desktop breakpoint */
+@media (width >= 900px) {
+  :root {
+    --heading-font-size-xl: 24.5px;   /* h2 */
+    --heading-font-size-l: 21px;      /* h3 */
+    --heading-font-size-m: 17.5px;    /* h4 */
+    --heading-font-size-s: 15px;      /* h5 (estimated) */
+    --heading-font-size-xs: 14px;     /* h6 (estimated) */
+  }
 }
 
 body {
@@ -136,11 +149,19 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
+
+/* h1 — measured from source (index + sinusitis): gold Futura Bold on every page */
+h1 {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1.06;
+  color: var(--color-accent);
+}
 
 /* section subheading — measured from source .component-subheading.border-bottom-gold:
    Futura Bold with a 1px sage rule underneath (7px gap) */
@@ -186,6 +207,13 @@ b {
 ol,
 ul {
   padding-left: var(--list-indent);
+}
+
+/* horizontal rule / section separators — measured: 1px sage rule, 50px gap below */
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-surface-muted);
+  margin: 0 0 50px;
 }
 
 code,
@@ -395,12 +423,4 @@ main .section.highlight {
   background-color: var(--color-surface);
   margin: 0;
   padding: var(--space-section) 0;
-}
-
-@media (width >= 900px) {
-  main > .section > div {
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 var(--container-gutter);
-  }
 }
