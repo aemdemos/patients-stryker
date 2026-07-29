@@ -218,20 +218,22 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
-/* bold inline text — measured from source span.futura-bold: Futura Bold, not the body serif */
+/* bold inline text — body font family */
 strong,
 b {
-  font-family: var(--display-font-family);
+  font-family: var(--body-font-family);
   font-weight: 700;
 }
 
 /* gold section label — authored as bold+italic (DA has no color control).
-   Source: span[style*="#ffb500"] inside a bold wrapper; upright, not slanted. */
+   Source: span[style*="#ffb500"] inside a bold wrapper; upright, not slanted.
+   Uses the display (Futura) font family. */
 main strong em,
 main em strong,
 main b i,
 main i b {
   color: var(--color-accent);
+  font-family: var(--display-font-family);
   font-style: normal;
 }
 
