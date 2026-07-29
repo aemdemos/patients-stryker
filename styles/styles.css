@@ -30,6 +30,8 @@
   --color-success: #32ae88;
 
   /* neutrals & surfaces */
+  --color-white: #fff;
+  --color-black: #000;
   --color-surface: #edeeec;
   --color-surface-alt: #f8f8f8;
   --color-surface-muted: #b2b4ae;
@@ -40,10 +42,10 @@
   --overlay-scrim: rgb(0 0 0 / 50%);
 
   /* boilerplate color aliases (consumed by blocks) */
-  --background-color: #fff;
+  --background-color: var(--color-white);
   --light-color: var(--color-surface-alt);
   --dark-color: var(--color-secondary);
-  --text-color: #000;
+  --text-color: var(--color-black);
   --link-color: var(--color-primary);
   --link-hover-color: var(--color-primary-hover);
 
