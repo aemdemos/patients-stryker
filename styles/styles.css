@@ -432,15 +432,29 @@ main img {
 }
 
 /* sections — measured from source: content wrapper is max-width 1410px, centered,
-   with 15px left/right padding. Sections are separated by a 30px bottom margin. */
+   with 15px left/right padding. Section spacing is NOT uniform on the source
+   (body section margin-bottom is 0), so no blanket vertical margin is applied. */
 main > .section {
-  margin: 0 0 var(--space-section);
+  margin: 0;
 }
 
 main > .section > div {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
+}
+
+/* Title section — a section whose only content is a heading is the standalone
+   page title. Source gap to the next section is 45px, composed of the heading's
+   own margin-bottom (15px) + the title section's margin-bottom (30px, from
+   .c-title.page-section). `display: flow-root` contains the heading margin so it
+   does not collapse into the section margin — both values then apply (= 45px),
+   matching the source. Other sections keep no forced margin. */
+main > .section:has(> .default-content-wrapper > h1:only-child),
+main > .section:has(> .default-content-wrapper > h2:only-child),
+main > .section:has(> .default-content-wrapper > h3:only-child) {
+  display: flow-root;
+  margin-bottom: var(--space-section);
 }
 
 /* section width variants */
