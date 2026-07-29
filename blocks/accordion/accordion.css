@@ -59,6 +59,11 @@
   line-height: var(--body-line-height);
 }
 
+.accordion .accordion-item-body ul {
+  padding-left: var(--list-indent);
+  list-style: disc outside;
+}
+
 .accordion .accordion-item-body p:last-child {
   margin-bottom: 0;
 }
