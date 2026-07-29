@@ -46,9 +46,9 @@
   content: "-";
 }
 
-.accordion .accordion-item-label:hover,
 .accordion .accordion-item-label:focus-visible {
-  color: var(--link-color);
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
 }
 
 .accordion .accordion-item-body {
