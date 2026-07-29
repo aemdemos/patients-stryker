@@ -218,10 +218,14 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
-/* bold inline text — body font family */
+/* bold inline text — Futura, matching the source's dominant span.futura-bold
+   treatment (e.g. "Send mail to:", "Send email to:"). Note: the import flattens
+   the source's .futura-bold wrapper and bare <b> into a single <strong>, so the
+   one bare-<b> body-serif label ("Updates to Privacy Statement") cannot be told
+   apart in CSS; Futura is used since it is the common case. */
 strong,
 b {
-  font-family: var(--body-font-family);
+  font-family: var(--display-font-family);
   font-weight: 700;
 }
 
