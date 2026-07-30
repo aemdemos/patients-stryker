@@ -120,6 +120,24 @@ export default async function decorate(block) {
   if (navTools) navDrawer.append(navTools);
   nav.append(navDrawer);
 
+  // mobile search panel — a full-width gray band below the header holding the
+  // search input, revealed by the magnifier toggle (overlays content, no push).
+  const searchPanel = document.createElement('div');
+  searchPanel.className = 'nav-search-panel';
+  const panelForm = document.createElement('form');
+  panelForm.className = 'nav-search-panel-form';
+  panelForm.setAttribute('role', 'search');
+  panelForm.action = 'https://patients.stryker.com/us/en/ent/search.html';
+  panelForm.method = 'get';
+  const panelInput = document.createElement('input');
+  panelInput.type = 'search';
+  panelInput.name = 'q';
+  panelInput.className = 'nav-search-panel-input';
+  panelInput.placeholder = 'Search this site';
+  panelInput.setAttribute('aria-label', 'Search this site');
+  panelForm.append(panelInput);
+  searchPanel.append(panelForm);
+
   // mobile search toggle (magnifier) — mirrors the source's mobile search icon
   const searchToggle = document.createElement('button');
   searchToggle.type = 'button';
@@ -128,6 +146,7 @@ export default async function decorate(block) {
   searchToggle.addEventListener('click', () => {
     const open = nav.getAttribute('data-search') === 'open';
     nav.setAttribute('data-search', open ? 'closed' : 'open');
+    if (!open) panelInput.focus();
   });
 
   // hamburger for mobile
@@ -137,7 +156,7 @@ export default async function decorate(block) {
       <span class="nav-hamburger-icon"></span>
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav));
-  nav.append(searchToggle, hamburger);
+  nav.append(searchToggle, hamburger, searchPanel);
   // collapsed by default; on desktop the sections are always shown via CSS
   nav.setAttribute('aria-expanded', 'false');
   nav.setAttribute('data-search', 'closed');
