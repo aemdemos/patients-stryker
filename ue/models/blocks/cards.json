@@ -27,6 +27,33 @@
           ]
         }
       }
+    },
+    {
+      "title": "Cards (CTA)",
+      "id": "cards-cta",
+      "model": "cards-cta",
+      "filter": "cards-cta",
+      "plugins": {
+        "da": {
+          "name": "cards (cta)",
+          "rows": 1,
+          "columns": 1
+        }
+      }
+    },
+    {
+      "title": "Card (CTA)",
+      "id": "card-cta",
+      "model": "card-cta",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "text", "selector": "div:nth-child(1)" }
+          ]
+        }
+      }
     }
   ],
   "models": [
@@ -55,6 +82,18 @@
           "valueType": "string"
         }
       ]
+    },
+    {
+      "id": "card-cta",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
     }
   ],
   "filters": [
@@ -62,6 +101,12 @@
       "id": "cards",
       "components": [
         "card"
+      ]
+    },
+    {
+      "id": "cards-cta",
+      "components": [
+        "card-cta"
       ]
     }
   ]
