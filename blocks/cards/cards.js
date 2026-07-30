@@ -11,6 +11,13 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
+    // CTA cards carry no image; if authored with a 2-column card the empty
+    // image cell would render as a blank body box, so drop empty cells here.
+    if (isCta) {
+      [...li.children].forEach((div) => {
+        if (!div.textContent.trim() && !div.querySelector('picture, img')) div.remove();
+      });
+    }
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
