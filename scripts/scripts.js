@@ -12,6 +12,8 @@ import {
   buildBlock,
 } from './aem.js';
 
+import assetsInit from './aem-assets-plugin-support.js';
+
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
     createHTML: (s) => s, // avoid stack overflow
@@ -148,6 +150,10 @@ function decorateButtons(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
+  // convert external Dynamic Media / Scene7 image links into optimized <picture>
+  if (window.hlx.aemassets?.decorateExternalImages) {
+    window.hlx.aemassets.decorateExternalImages(main);
+  }
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
@@ -210,6 +216,8 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  // initialize DM/external-image support before eager decoration runs
+  await assetsInit();
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
