@@ -271,6 +271,12 @@ header nav .nav-hamburger-icon::after { top: 6px; }
     z-index: 10;
   }
 
+  /* suppress the slide animation while crossing the breakpoint (prevents the
+     drawer briefly animating closed on resize) */
+  header nav.nav-no-transition .nav-drawer {
+    transition: none;
+  }
+
   header nav[aria-expanded='true'] .nav-drawer {
     transform: translateX(0);
   }

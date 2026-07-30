@@ -143,9 +143,15 @@ export default async function decorate(block) {
   nav.setAttribute('aria-expanded', 'false');
   nav.setAttribute('data-search', 'closed');
 
-  // when returning to desktop, ensure any open mobile menu is reset
+  // on breakpoint change, reset any open mobile menu — but suppress the drawer
+  // slide animation so it doesn't briefly animate closed while crossing 900px
   isDesktop.addEventListener('change', () => {
+    nav.classList.add('nav-no-transition');
     if (isDesktop.matches) toggleMenu(nav, false);
+    // re-enable the transition after the layout has settled
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => nav.classList.remove('nav-no-transition'));
+    });
   });
 
   const navWrapper = document.createElement('div');
