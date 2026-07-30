@@ -2,9 +2,9 @@
    White utility bar (logo + Stryker.com + search) over a solid gold (#ffb500)
    primary-nav bar with black uppercase Futura links. */
 
-header {
-  height: auto;
-}
+/* Header height is reserved eagerly in styles/styles.css (90px mobile /
+   150px desktop) so the space is held before this lazy block loads — do not
+   override it here or the gold bar's height will shift content on load. */
 
 header .nav-wrapper {
   background-color: var(--background-color);
