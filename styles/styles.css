@@ -59,6 +59,10 @@
   --body-font-size-s: 13px;
   --body-font-size-xs: 12px;
 
+  /* footnote */
+  --footnote-font-size: 11.2px;
+  --footnote-line-height: 1.2;
+
   /* heading sizes */
   --heading-font-size-xxl: 28px;    /* h1 */
   --heading-font-size-xl: 24.5px;   /* h2 */
@@ -193,7 +197,7 @@ ul {
 /* citation superscripts — measured from source: raised, small; the link inside
    inherits the global teal link color + hover, so only sizing is set here. */
 sup {
-  font-size: 0.75em;
+  font-size: 75%;
   line-height: 0;
 }
 
@@ -202,8 +206,8 @@ sup {
    scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
 main ol.footnotes {
   padding-left: 20px;
-  font-size: 11.2px;
-  line-height: 1.2;
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
 }
 
 main ol.footnotes li {
