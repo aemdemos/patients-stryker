@@ -38,13 +38,18 @@ function toggleMenu(nav, forceExpanded = null) {
 }
 
 /**
- * Replaces a `:search:` token paragraph with a real search form.
+ * Replaces the search placeholder with a real search form.
+ * The nav document authors a `:search:` icon token, which EDS decorates into
+ * `<span class="icon icon-search">`; we also accept the raw token as a fallback.
  * Form controls are built here (not authored in the fragment) per the nav contract.
  * @param {Element} tools The nav-tools section
  */
 function buildSearch(tools) {
-  const tokenP = [...tools.querySelectorAll('p')]
-    .find((p) => p.textContent.trim() === ':search:');
+  // prefer the EDS-decorated search icon; fall back to the raw :search: token
+  const iconSpan = tools.querySelector('.icon-search');
+  const tokenP = iconSpan
+    ? iconSpan.closest('p')
+    : [...tools.querySelectorAll('p')].find((p) => p.textContent.trim() === ':search:');
   if (!tokenP) return;
   const form = document.createElement('form');
   form.className = 'nav-search';
@@ -75,7 +80,7 @@ function buildSearch(tools) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/content/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
