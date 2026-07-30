@@ -77,14 +77,23 @@
     ]
   },
   {
-    "id": "card-cta",
+    "id": "cards",
     "fields": [
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "CTA",
+            "value": "cta"
+          }
+        ]
       }
     ]
   },
