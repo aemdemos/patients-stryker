@@ -8,11 +8,11 @@
 }
 
 /* stacked (mobile): source insets text ~14px each side (inner wrapper only,
-   Bootstrap gutter collapses when single column) */
+   Bootstrap gutter collapses when single column); ~13px top/bottom for breathing room */
 .columns > div > div {
   order: 1;
   box-sizing: border-box;
-  padding: 0 14px;
+  padding: 13px 14px;
 }
 
 .columns > div > .columns-img-col {
@@ -63,8 +63,9 @@
     flex: 0 0 50%;
     order: unset;
 
-    /* side-by-side: 15px Bootstrap gutter + ~13px inner wrapper = 28px inset */
-    padding: 0 28px;
+    /* side-by-side: 15px Bootstrap gutter + ~13px inner wrapper = 28px inset;
+       13px top/bottom from the inner wrapper */
+    padding: 13px 28px;
   }
 
   /* image breaks out of the 28px text inset to the 15px column-edge inset */
