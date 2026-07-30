@@ -94,36 +94,6 @@
           }
         },
         {
-          "title": "Cards (CTA)",
-          "id": "cards-cta",
-          "model": "cards-cta",
-          "filter": "cards-cta",
-          "plugins": {
-            "da": {
-              "name": "cards (cta)",
-              "rows": 1,
-              "columns": 1
-            }
-          }
-        },
-        {
-          "title": "Card (CTA)",
-          "id": "card-cta",
-          "model": "card-cta",
-          "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 1,
-              "fields": [
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(1)"
-                }
-              ]
-            }
-          }
-        },
-        {
           "title": "Cards",
           "id": "cards",
           "model": "cards",
