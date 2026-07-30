@@ -42,6 +42,16 @@
   list-style-type: disc;
 }
 
+/* image-on-top variant: the image spans wider than the text and has a larger
+   gap before the heading (source: image inset 15px vs text 28px, ~43px gap) */
+.columns p:has(picture) {
+  margin-bottom: 43px;
+}
+
+.columns p picture {
+  display: block;
+}
+
 @media (width >= 900px) {
   /* source col-sm-6: two columns side by side */
   .columns > div {
@@ -55,6 +65,11 @@
 
     /* side-by-side: 15px Bootstrap gutter + ~13px inner wrapper = 28px inset */
     padding: 0 28px;
+  }
+
+  /* image breaks out of the 28px text inset to the 15px column-edge inset */
+  .columns p:has(picture) {
+    margin-inline: -13px;
   }
 }
 
