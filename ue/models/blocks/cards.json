@@ -27,21 +27,6 @@
           ]
         }
       }
-    },
-    {
-      "title": "Card (text)",
-      "id": "card-text",
-      "model": "card-text",
-      "plugins": {
-        "da": {
-          "name": "card-text",
-          "rows": 1,
-          "columns": 1,
-          "fields": [
-            { "name": "text", "selector": "div:nth-child(1)" }
-          ]
-        }
-      }
     }
   ],
   "models": [
@@ -85,26 +70,13 @@
           "valueType": "string"
         }
       ]
-    },
-    {
-      "id": "card-text",
-      "fields": [
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
-      ]
     }
   ],
   "filters": [
     {
       "id": "cards",
       "components": [
-        "card",
-        "card-text"
+        "card"
       ]
     }
   ]
