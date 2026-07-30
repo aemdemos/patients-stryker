@@ -131,6 +131,23 @@
           }
         },
         {
+          "title": "Card (text)",
+          "id": "card-text",
+          "model": "card-text",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(1)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "model": "columns",
