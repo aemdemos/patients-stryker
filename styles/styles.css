@@ -190,6 +190,27 @@ ul {
   padding-left: var(--list-indent);
 }
 
+/* citation superscripts — measured from source: raised, small; the link inside
+   inherits the global teal link color + hover, so only sizing is set here. */
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+/* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
+   small body-serif text (11.2px), tight line-height, decimal numbering, 20px indent.
+   scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
+main ol.footnotes {
+  padding-left: 20px;
+  font-size: 11.2px;
+  line-height: 1.2;
+}
+
+main ol.footnotes li {
+  margin-bottom: 0;
+  scroll-margin-top: calc(var(--nav-height) + 10px);
+}
+
 code,
 pre {
   font-size: var(--body-font-size-s);
