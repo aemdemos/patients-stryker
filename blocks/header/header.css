@@ -224,8 +224,10 @@ header nav .nav-hamburger-icon::after { top: 6px; }
 
 /* ---- Mobile layout (below 900px) ---- */
 @media (width < 900px) {
-  /* two-row white bar: logo on row 1; hamburger (left) + magnifier (right) on row 2 */
+  /* two-row white bar: logo on row 1; hamburger (left) + magnifier (right) on
+     row 2. position:relative makes nav the positioning context for the drawer */
   header nav {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -256,15 +258,14 @@ header nav .nav-hamburger-icon::after { top: 6px; }
     margin-left: auto;
   }
 
-  /* the gold drawer slides in from the left, overlaying content (95% width) */
+  /* the gold drawer slides in from the left, overlaying content (95% width);
+     positioned absolutely so it scrolls with the page rather than staying fixed */
   header nav .nav-drawer {
     display: block;
-    position: fixed;
+    position: absolute;
     top: var(--nav-height);
     left: 0;
     width: 95vw;
-    max-height: calc(100dvh - var(--nav-height));
-    overflow-y: auto;
     background-color: var(--color-accent);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
