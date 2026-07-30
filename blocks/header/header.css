@@ -156,7 +156,7 @@ header nav .nav-search-toggle::before {
   content: '\e003';
   font-size: 20px;
   line-height: 1;
-  color: var(--color-primary);
+  color: #000;
 }
 
 /* ---- Link hover states ---- */
@@ -204,8 +204,9 @@ header nav .nav-hamburger-icon::after {
   box-sizing: border-box;
   display: block;
   position: relative;
-  width: 22px;
-  height: 2px;
+  width: 24px;
+  height: 3px;
+  border-radius: 5px;
   background: #000;
 }
 
@@ -216,8 +217,8 @@ header nav .nav-hamburger-icon::after {
   left: 0;
 }
 
-header nav .nav-hamburger-icon::before { top: -7px; }
-header nav .nav-hamburger-icon::after { top: 7px; }
+header nav .nav-hamburger-icon::before { top: -6px; }
+header nav .nav-hamburger-icon::after { top: 6px; }
 
 /* hamburger stays a static 3-bar icon in both states (source does not morph) */
 
