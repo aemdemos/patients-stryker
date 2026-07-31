@@ -8,12 +8,19 @@
   {
     "id": "section",
     "components": [
+      "accordion",
       "cards",
       "columns",
       "fragment",
       "hero",
       "image",
       "text"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
     ]
   },
   {
