@@ -12,7 +12,7 @@ import {
   buildBlock,
 } from './aem.js';
 
-import decorateDMImages from './dm-images.js';
+import decorateDMImages from './dm-support.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
