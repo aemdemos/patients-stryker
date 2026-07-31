@@ -58,6 +58,7 @@
           "component": "multiselect",
           "name": "classes",
           "label": "Variant",
+          "valueType": "string",
           "options": [
             {
               "name": "Image Top",
