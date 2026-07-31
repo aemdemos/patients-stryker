@@ -4,6 +4,10 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates desktop width (mobile below this)
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+// single source for the search form target — could later be sourced from nav
+// fragment metadata so locale/site changes don't require a code edit
+const SEARCH_ACTION = 'https://patients.stryker.com/us/en/ent/search.html';
+
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -67,7 +71,7 @@ function buildSearch(tools) {
   const form = document.createElement('form');
   form.className = 'nav-search';
   form.setAttribute('role', 'search');
-  form.action = 'https://patients.stryker.com/us/en/ent/search.html';
+  form.action = SEARCH_ACTION;
   form.method = 'get';
 
   const input = document.createElement('input');
@@ -141,7 +145,7 @@ export default async function decorate(block) {
   const panelForm = document.createElement('form');
   panelForm.className = 'nav-search-panel-form';
   panelForm.setAttribute('role', 'search');
-  panelForm.action = 'https://patients.stryker.com/us/en/ent/search.html';
+  panelForm.action = SEARCH_ACTION;
   panelForm.method = 'get';
   const panelInput = document.createElement('input');
   panelInput.type = 'search';
@@ -170,9 +174,14 @@ export default async function decorate(block) {
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
-  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
-    </button>`;
+  const hamburgerButton = document.createElement('button');
+  hamburgerButton.type = 'button';
+  hamburgerButton.setAttribute('aria-controls', 'nav');
+  hamburgerButton.setAttribute('aria-label', 'Open navigation');
+  const hamburgerIcon = document.createElement('span');
+  hamburgerIcon.className = 'nav-hamburger-icon';
+  hamburgerButton.append(hamburgerIcon);
+  hamburger.append(hamburgerButton);
   hamburger.addEventListener('click', () => {
     toggleMenu(nav);
     // opening the menu closes the search panel
