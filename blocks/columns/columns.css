@@ -38,11 +38,14 @@
   list-style-type: disc;
 }
 
-.columns p:has(picture) {
+/* image-top variant (authored as "Columns (image-top)"): image sits above the
+   text with extra spacing before the heading. Gated behind an explicit variant
+   class so an inline image in a text-only column never shifts the layout. */
+.columns.image-top p:has(picture) {
   margin-bottom: 43px;
 }
 
-.columns p picture {
+.columns.image-top p picture {
   display: block;
 }
 
@@ -55,11 +58,11 @@
   .columns > div > div {
     flex: 0 0 50%;
     order: unset;
-
     padding: 13px 28px;
   }
 
-  .columns p:has(picture) {
+  /* image breaks out of the 28px text inset to the 15px column-edge inset */
+  .columns.image-top p:has(picture) {
     margin-inline: -13px;
   }
 }
