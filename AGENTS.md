@@ -2,6 +2,166 @@
 
 This project is a website built with Edge Delivery Services in Adobe Experience Manager Sites as a Cloud Service. As an agent, follow the instructions in this file to deliver code based on Adobe's standards for fast, easy-to-author, and maintainable web experiences.
 
+---
+
+## ⛔ Hard Rules — Read These First
+
+These rules are **non-negotiable**. Violating any of them will result in PR rejection. Read these before writing any code.
+
+### 1. No `innerHTML` — Use DOM APIs Only
+
+```js
+// ❌ NEVER — security risk, breaks UE instrumentation
+el.innerHTML = '<ul><li>Item</li></ul>';
+container.innerHTML = `<div class="wrapper">${content}</div>`;
+
+// ✅ ALWAYS — use DOM APIs
+const ul = document.createElement('ul');
+const li = document.createElement('li');
+li.textContent = 'Item';
+ul.append(li);
+el.append(ul);
+```
+
+Why: `innerHTML` destroys UE `data-aue-*` attributes, creates XSS vectors, and prevents incremental DOM updates.
+
+### 2. No Hardcoded Values — Use CSS Tokens
+
+```css
+/* ❌ NEVER */
+color: #1a1a1a;
+font-size: 16px;
+padding: 24px;
+box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+
+/* ✅ ALWAYS — use existing :root custom properties from styles/styles.css */
+color: var(--color-text);
+font-size: var(--body-font-size-m);
+padding: var(--spacing-m);
+box-shadow: var(--shadow-default);
+```
+
+If a needed token doesn't exist within 2px of your value, create it in `:root` in `styles/styles.css`.
+
+### 3. Alpha Values Must Be Decimal, Not Percentage
+
+```css
+/* ❌ NEVER — stylelint error */
+background: rgb(255 255 255 / 70%);
+
+/* ✅ ALWAYS */
+background: rgb(255 255 255 / 0.7);
+```
+
+### 4. All CSS Selectors Must Be Scoped to Block Name
+
+```css
+/* ❌ NEVER — global selector leaks */
+.item-list { }
+.card-title { }
+
+/* ✅ ALWAYS — scoped to block */
+.cards .item-list { }
+.cards .card-title { }
+```
+
+### 5. Mobile-First — No `max-width` Media Queries
+
+```css
+/* ❌ NEVER */
+@media (max-width: 768px) { }
+
+/* ✅ ALWAYS — base styles are mobile, scale up */
+@media (min-width: 600px) { }
+@media (min-width: 900px) { }
+@media (min-width: 1200px) { }
+```
+
+### 6. Never Modify `scripts/aem.js`
+
+This is the core EDS library. It is never modified per-project.
+
+### 7. Never Edit Root `component-*.json` Files Directly
+
+```
+❌ NEVER edit: component-definition.json, component-models.json, component-filters.json
+✅ ALWAYS edit: ue/models/blocks/{blockname}.json → then run `npm run build:json`
+```
+
+### 8. UE `classes` Field Must Use `multiselect` Component
+
+```json
+// ❌ NEVER
+{ "component": "select", "name": "classes" }
+
+// ✅ ALWAYS — per DA docs for block style variants
+{ "component": "multiselect", "name": "classes" }
+```
+
+### 9. Container Blocks Need Separate Child Definitions Per Variant
+
+When a block variant has a different authored structure (e.g., cards with images vs cards without images), create separate child component definitions:
+
+```json
+// ❌ NEVER — reuse image+text child for a text-only variant
+// Forces authors to see empty image fields they must ignore
+
+// ✅ ALWAYS — create variant-specific child components
+// cards → accepts "card" children (image + text)
+// cards (cta) → accepts "card-cta" children (text only, no image field)
+```
+
+Each variant's filter should only allow its matching child type.
+
+### 10. UE Component Definitions — Always in `ue/models/blocks/`
+
+When creating or modifying a block with UE authoring support:
+
+```
+❌ NEVER — hand-edit root JSON or skip UE config for authorable blocks
+❌ NEVER — reuse a child component model that has fields irrelevant to the variant
+❌ NEVER — use "component": "select" for the classes field
+
+✅ ALWAYS — create ue/models/blocks/{blockname}.json with definitions, models, and filters
+✅ ALWAYS — use "component": "multiselect" for the classes (variant) field
+✅ ALWAYS — create separate child component models when variants have different fields
+✅ ALWAYS — add block to section filter in ue/models/section.json
+✅ ALWAYS — run `npm run build:json` after any change to ue/models/
+```
+
+Reference: https://docs.da.live/developers/reference/universal-editor
+
+### 11. UE Instrumentation — Preserve `data-aue-*` Attributes
+
+When a block's `decorate()` function restructures DOM (e.g., wraps children in `<ul><li>`), the original UE instrumentation attributes must be moved to the new elements:
+
+```js
+// ❌ NEVER — destroy authored elements without moving instrumentation
+div.remove(); // had data-aue-* attributes
+
+// ✅ ALWAYS — use moveInstrumentation before removing/replacing
+import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
+moveInstrumentation(originalDiv, newLi);
+```
+
+Add a mutation observer in `ue/scripts/ue.js` only if the block structurally transforms its children during decoration.
+
+### 12. CSS Shorthand When Available
+
+```css
+/* ❌ NEVER */
+overflow-x: clip;
+overflow-y: auto;
+margin-top: 0;
+margin-bottom: 0;
+
+/* ✅ ALWAYS */
+overflow: clip auto;
+margin-block: 0;
+```
+
+---
+
 ## Project Overview
 
 This project is the **Stryker Patients** website — a patient-facing content site built on EDS with **Document Authoring (DA)** and **Universal Editor (UE)** as the authoring interfaces. It is based on the https://github.com/adobe/aem-boilerplate/ project. You are expected to follow the coding style and practices established in the boilerplate, but add functionality according to the needs of the site.
@@ -423,31 +583,6 @@ Only create a file in `drafts/` when there is no authored CMS page to test again
 
 Before adding a new rule, search the file for the selector. If it exists, add properties to the existing rule — never create a second block for the same selector.
 
-**Always use CSS shorthand when available:**
-
-```css
-/* NEVER */
-overflow-x: clip;
-overflow-y: auto;
-
-/* ALWAYS */
-overflow: clip auto;
-```
-
-**Map values to CSS tokens — never hardcode:**
-
-Use existing CSS custom properties defined in `:root` in `styles/styles.css`. If a value is within 2px of an existing token, use the token. Only create a new token in `:root` if nothing within 2px exists.
-
-**Never use percentage alpha notation — always decimal:**
-
-```css
-/* NEVER — stylelint error */
-background: rgb(255 255 255 / 70%);
-
-/* ALWAYS */
-background: rgb(255 255 255 / 0.7);
-```
-
 **Full-bleed backgrounds — never constrained by parent padding:**
 
 When a block needs a full-width background inside a padded container:
@@ -464,14 +599,10 @@ When a block needs a full-width background inside a padded container:
 
 ### Checklist Before Marking a Task Done
 
+- [ ] All Hard Rules (top of this file) followed
 - [ ] `blocks/{blockname}/{blockname}.css` edited with all styles
 - [ ] `blocks/{blockname}/{blockname}.js` edited with all decoration logic
 - [ ] Change is visible in preview at `http://localhost:3000/`
-- [ ] No hardcoded hex/pixel values — CSS tokens only
-- [ ] All selectors scoped to block name
-- [ ] Mobile-first responsive approach (no `max-width` queries)
-- [ ] No `innerHTML` usage — DOM API only
-- [ ] `scripts/aem.js` is untouched
 - [ ] `npm run lint` passes with zero errors
 - [ ] If block is authorable: `ue/models/blocks/{blockname}.json` exists and `build:json` run
 - [ ] Images optimized (< 100KB for committed assets)
