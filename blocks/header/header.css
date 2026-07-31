@@ -129,7 +129,7 @@ header nav .nav-search-input {
   border: 0;
   background: transparent;
   padding: 6px 8px;
-  font-family: var(--display-font-family);
+  font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
   width: 180px;
 }
@@ -289,7 +289,7 @@ header nav .nav-hamburger-icon::after { top: 6px; }
     border: 0;
     padding: 8px 11px;
     background-color: var(--color-surface);
-    font-family: var(--display-font-family);
+    font-family: var(--body-font-family);
     font-size: var(--body-font-size-m);
   }
 

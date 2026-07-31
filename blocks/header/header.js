@@ -15,6 +15,18 @@ function closeOnEscape(e) {
   }
 }
 
+// close the open mobile menu when the user clicks outside the drawer/hamburger
+function closeOnClickOutside(e) {
+  const nav = document.getElementById('nav');
+  if (nav.getAttribute('aria-expanded') !== 'true') return;
+  const drawer = nav.querySelector('.nav-drawer');
+  const hamburger = nav.querySelector('.nav-hamburger');
+  if (drawer && drawer.contains(e.target)) return;
+  if (hamburger && hamburger.contains(e.target)) return;
+  // eslint-disable-next-line no-use-before-define
+  toggleMenu(nav, false);
+}
+
 /**
  * Toggles the whole mobile nav
  * @param {Element} nav The nav element
@@ -31,8 +43,10 @@ function toggleMenu(nav, forceExpanded = null) {
   }
   if (!expanded && !isDesktop.matches) {
     window.addEventListener('keydown', closeOnEscape);
+    document.addEventListener('click', closeOnClickOutside);
   } else {
     window.removeEventListener('keydown', closeOnEscape);
+    document.removeEventListener('click', closeOnClickOutside);
   }
 }
 
@@ -146,7 +160,11 @@ export default async function decorate(block) {
   searchToggle.addEventListener('click', () => {
     const open = nav.getAttribute('data-search') === 'open';
     nav.setAttribute('data-search', open ? 'closed' : 'open');
-    if (!open) panelInput.focus();
+    if (!open) {
+      // opening search — collapse the hamburger menu if it is open
+      if (nav.getAttribute('aria-expanded') === 'true') toggleMenu(nav, false);
+      panelInput.focus();
+    }
   });
 
   // hamburger for mobile
@@ -155,7 +173,11 @@ export default async function decorate(block) {
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
       <span class="nav-hamburger-icon"></span>
     </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav));
+  hamburger.addEventListener('click', () => {
+    toggleMenu(nav);
+    // opening the menu closes the search panel
+    if (nav.getAttribute('aria-expanded') === 'true') nav.setAttribute('data-search', 'closed');
+  });
   nav.append(searchToggle, hamburger, searchPanel);
   // collapsed by default; on desktop the sections are always shown via CSS
   nav.setAttribute('aria-expanded', 'false');
