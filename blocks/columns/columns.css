@@ -7,8 +7,6 @@
   width: 100%;
 }
 
-/* stacked (mobile): source insets text ~14px each side (inner wrapper only,
-   Bootstrap gutter collapses when single column); ~13px top/bottom for breathing room */
 .columns > div > div {
   order: 1;
   box-sizing: border-box;
@@ -23,7 +21,6 @@
   display: block;
 }
 
-/* source scales all column text 1.25x via an inner span */
 .columns h4 {
   font-size: var(--heading-font-size-ml);
   line-height: var(--heading-line-height-ml);
@@ -36,14 +33,11 @@
   line-height: var(--body-line-height-l);
 }
 
-/* source nested lists keep a solid disc marker (browser default is a circle) */
 .columns ul ul {
   margin-bottom: 0;
   list-style-type: disc;
 }
 
-/* image-on-top variant: the image spans wider than the text and has a larger
-   gap before the heading (source: image inset 15px vs text 28px, ~43px gap) */
 .columns p:has(picture) {
   margin-bottom: 43px;
 }
@@ -53,7 +47,6 @@
 }
 
 @media (width >= 900px) {
-  /* source col-sm-6: two columns side by side */
   .columns > div {
     flex-flow: row wrap;
     align-items: flex-start;
@@ -63,19 +56,15 @@
     flex: 0 0 50%;
     order: unset;
 
-    /* side-by-side: 15px Bootstrap gutter + ~13px inner wrapper = 28px inset;
-       13px top/bottom from the inner wrapper */
     padding: 13px 28px;
   }
 
-  /* image breaks out of the 28px text inset to the 15px column-edge inset */
   .columns p:has(picture) {
     margin-inline: -13px;
   }
 }
 
 @media (width >= 1200px) {
-  /* source col-md-4: three equal columns, top aligned */
   .columns > div {
     flex-wrap: nowrap;
   }
