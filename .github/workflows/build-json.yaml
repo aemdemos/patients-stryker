@@ -1,0 +1,32 @@
+name: Build component JSON
+on:
+  push:
+    paths:
+      - 'ue/models/**/*.json'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - run: npm ci
+
+      - run: npm run build:json
+
+      - name: Commit updated root JSON if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add component-definition.json component-models.json component-filters.json
+          git diff --cached --quiet || git commit -m "chore: auto-build component JSON from ue/models"
+          git push
