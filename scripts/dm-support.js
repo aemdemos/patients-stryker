@@ -194,8 +194,14 @@ function renderVideo(src, label) {
   video.controls = true;
   video.playsInline = true;
   video.preload = 'metadata';
-  // keep it responsive without depending on any block CSS (block-agnostic)
-  video.style.maxWidth = '100%';
+  // Size the box from a fixed aspect ratio, not from the media's intrinsic size.
+  // Otherwise the element sizes to the poster before play (e.g. 750x422) then
+  // jumps to the video's intrinsic size on play (e.g. 640x360). object-fit
+  // keeps the frame filling the box; block-agnostic (no external CSS needed).
+  video.style.width = '100%';
+  video.style.height = 'auto';
+  video.style.aspectRatio = '16 / 9';
+  video.style.objectFit = 'cover';
   if (poster) video.poster = poster;
   if (label) video.setAttribute('aria-label', label);
 
