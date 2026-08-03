@@ -7,6 +7,12 @@ export default function decorate(block) {
   const isCta = block.classList.contains('cta');
   const isUEAuthoring = window.location.hostname.includes('.ue.da.live');
 
+  // In UE, keep authored structure intact so child component identity persists.
+  if (isUEAuthoring) {
+    block.classList.add('cards-authoring');
+    return;
+  }
+
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
@@ -14,7 +20,7 @@ export default function decorate(block) {
     while (row.firstElementChild) li.append(row.firstElementChild);
     // CTA cards carry no image; if authored with a 2-column card the empty
     // image cell would render as a blank body box, so drop empty cells here.
-    if (isCta && !isUEAuthoring) {
+    if (isCta) {
       [...li.children].forEach((div) => {
         if (!div.textContent.trim() && !div.querySelector('picture, img')) div.remove();
       });

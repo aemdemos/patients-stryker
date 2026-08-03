@@ -81,6 +81,49 @@
   margin: var(--space-block) 0 0;
 }
 
+.cards.cards-authoring {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  gap: 24px;
+}
+
+.cards.cards-authoring > div {
+  border: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
+.cards.cards-authoring > div > div {
+  margin: 16px;
+}
+
+.cards.cards-authoring.cta {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.cards.cards-authoring.cta > div {
+  border: 0;
+  background-color: transparent;
+}
+
+.cards.cards-authoring.cta > div > div {
+  margin: 0;
+  padding: 22.5px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+}
+
+.cards.cards-authoring > div > div:first-child {
+  line-height: 0;
+  margin: 0;
+}
+
+.cards.cards-authoring > div > div:first-child img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 /* ---- cta variant ------------------------------------------------------
    Measured from patients.stryker.com IVS homepage cards: each card is a
    white box with a soft drop shadow (no border) holding a Futura-bold title
@@ -134,6 +177,10 @@
 
 @media (width >= 600px) {
   .cards.cta > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards.cards-authoring.cta {
     grid-template-columns: repeat(2, 1fr);
   }
 }
