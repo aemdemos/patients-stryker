@@ -27,12 +27,12 @@
       }
     },
     {
-      "title": "Card",
-      "id": "card",
-      "model": "card",
+      "title": "Card-img",
+      "id": "card-img",
+      "model": "card-img",
       "plugins": {
         "da": {
-          "name": "card",
+          "name": "card-img",
           "rows": 1,
           "columns": 2,
           "fields": [
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "id": "card",
+      "id": "card-img",
       "fields": [
         {
           "component": "reference",
@@ -102,7 +102,7 @@
     {
       "id": "cards",
       "components": [
-        "card",
+        "card-img",
         "card-cta"
       ]
     }
