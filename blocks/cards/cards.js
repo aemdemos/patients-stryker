@@ -33,6 +33,17 @@ export default function decorate(block) {
 
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
+  ul.querySelectorAll('picture > img').forEach((img) => {
+    // Only run the EDS image optimizer on same-origin/DAM images. External
+    // hosts (e.g. Scene7 media-assets.stryker.com, which carry their own query
+    // params like ?$max_width_1410$) break when the optimizer rewrites their
+    // src, so leave those untouched.
+    let external = false;
+    try {
+      external = new URL(img.src, window.location.href).origin !== window.location.origin;
+    } catch { /* treat unparseable as local */ }
+    if (external) return;
+    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
+  });
   block.replaceChildren(ul);
 }
