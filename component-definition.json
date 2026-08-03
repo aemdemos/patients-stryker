@@ -123,12 +123,12 @@
           }
         },
         {
-          "title": "Card",
-          "id": "card",
-          "model": "card",
+          "title": "Card-img",
+          "id": "card-img",
+          "model": "card-img",
           "plugins": {
             "da": {
-              "name": "card",
+              "name": "card-img",
               "rows": 1,
               "columns": 2,
               "fields": [
