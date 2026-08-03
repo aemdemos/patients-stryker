@@ -19,6 +19,8 @@
       "plugins": {
         "da": {
           "name": "card-cta",
+          "rows": 1,
+          "columns": 1,
           "fields": [
             { "name": "text", "selector": "div:only-child" }
           ]
@@ -32,6 +34,8 @@
       "plugins": {
         "da": {
           "name": "card-img",
+          "rows": 1,
+          "columns": 2,
           "fields": [
             { "name": "image", "selector": "div:nth-child(1)>picture>img" },
             { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
