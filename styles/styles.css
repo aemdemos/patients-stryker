@@ -21,10 +21,12 @@
   --color-primary-dark: #426d6b;
   --color-primary-hover: #395d5b;
   --color-primary-active: #2b4745;
+  --color-primary-pressed: #2f4d4c;
   --color-accent: #ffb500;
   --color-accent-dark: #e6a300;
   --color-accent-hover: #cc9100;
   --color-accent-active: #a87700;
+  --color-accent-link-hover: #af6d04;
   --color-secondary: #545857;
   --color-navy: #27455c;
   --color-success: #32ae88;
@@ -92,8 +94,9 @@
   --container-narrow: 575px;
   --container-gutter: 15px;
 
-  /* nav height */
+  /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height */
   --nav-height: 90px;
+  --nav-bar-height: 60px;
 }
 
 body {
@@ -112,6 +115,15 @@ body.appear {
 
 header {
   height: var(--nav-height);
+}
+
+/* reserve the desktop two-row header height (white bar + gold nav bar) here in
+   eager CSS so the space is held before the lazy header block loads, preventing
+   content from shifting down on load (CLS) */
+@media (width >= 900px) {
+  header {
+    height: calc(var(--nav-height) + var(--nav-bar-height));
+  }
 }
 
 header .header,

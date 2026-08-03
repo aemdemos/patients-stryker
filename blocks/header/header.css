@@ -1,82 +1,69 @@
-/* header and nav layout */
+/* Stryker ENT header — extracted from patients.stryker.com
+   White utility bar (logo + Stryker.com + search) over a solid gold (#ffb500)
+   primary-nav bar with black uppercase Futura links.
+
+   Mobile-first: the base rules describe the mobile two-row bar + slide-in
+   drawer; the desktop single-row grid layout lives in the
+   `@media (width >= 900px)` block at the bottom. */
+
+/* Header height is reserved eagerly in styles/styles.css (90px mobile /
+   150px desktop) so the space is held before this lazy block loads — do not
+   override it here or the gold bar's height will shift content on load. */
+
 header .nav-wrapper {
   background-color: var(--background-color);
-  width: 100%;
-  z-index: 2;
-  position: fixed;
 }
 
+/* ---- Mobile bar: two rows (logo on row 1; hamburger left + magnifier right
+   on row 2). position:relative makes nav the positioning context for the
+   slide-in drawer and the search panel. ---- */
 header nav {
   box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0 24px;
-  margin: auto;
-  max-width: 1248px;
   height: var(--nav-height);
-  padding: 0 24px;
-  font-family: var(--body-font-family);
+  margin: 0 auto;
+  max-width: var(--container-max);
+  padding: 0 var(--container-gutter);
+  border-bottom: 1px solid var(--color-secondary);
+  font-family: var(--display-font-family);
 }
 
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
+/* ---- Brand (logo) — full-width row 1 on mobile ---- */
+header nav .nav-brand {
+  grid-area: brand;
+  flex: 0 0 100%;
+  padding-top: 12px;
 }
 
-@media (width >= 900px) {
-  header .nav-wrapper {
-    position: relative;
-  }
+header nav .nav-brand p { margin: 0; }
 
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
-  }
+header nav .nav-brand img {
+  width: 100px;
+  height: auto;
+  display: block;
 }
 
-header nav p {
-  margin: 0;
-  line-height: 1;
-}
-
-header nav a:any-link {
-  color: currentcolor;
-}
-
-/* hamburger */
+/* ---- Hamburger (mobile) — pinned to the left of row 2 ---- */
 header nav .nav-hamburger {
   grid-area: hamburger;
-  height: 22px;
   display: flex;
   align-items: center;
+  order: 1;
 }
 
 header nav .nav-hamburger button {
-  height: 22px;
+  height: 30px;
+  width: 30px;
   margin: 0;
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: transparent;
   color: inherit;
-  overflow: initial;
-  text-overflow: initial;
-  white-space: initial;
+  cursor: pointer;
 }
 
 header nav .nav-hamburger-icon,
@@ -85,188 +72,338 @@ header nav .nav-hamburger-icon::after {
   box-sizing: border-box;
   display: block;
   position: relative;
-  width: 20px;
+  width: 24px;
+  height: 3px;
+  border-radius: 5px;
+  background: var(--color-black);
 }
 
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-  background: currentcolor;
+  left: 0;
 }
 
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
+header nav .nav-hamburger-icon::before { top: -6px; }
+header nav .nav-hamburger-icon::after { top: 6px; }
+
+/* hamburger stays a static 3-bar icon in both states (source does not morph) */
+
+/* ---- Mobile search toggle (magnifier) — pushed to the far right of row 2 ---- */
+header nav .nav-search-toggle {
+  display: flex;
+  order: 2;
+  align-items: center;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::before,
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
-  transform: rotate(45deg);
-  transform-origin: 2px 1px;
+/* the magnifier — exact source glyph as an SVG mask (no icon font needed);
+   the glyph is painted with `background-color`, so it stays fully colorable.
+   size preserves the source glyph aspect ratio (1033:1221) at ~20px font. */
+header nav .nav-search-submit::before,
+header nav .nav-search-toggle::before {
+  content: '';
+  display: block;
   width: 24px;
-  height: 2px;
-  border-radius: 2px;
+  height: 29px;
+  mask: url('/icons/search.svg') no-repeat center / contain;
 }
 
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
-  transform: rotate(-45deg);
+header nav .nav-search-toggle::before {
+  background-color: var(--color-primary-pressed);
 }
 
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
+/* ---- Slide-in drawer (mobile): the gold nav + Stryker.com, off-canvas left.
+   position:absolute so it scrolls with the page rather than staying fixed. ---- */
+header nav .nav-drawer {
+  display: block;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  width: 95vw;
+  background-color: var(--color-accent);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 10;
 }
 
-/* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
+/* suppress the slide animation while crossing the breakpoint (prevents the
+   drawer briefly animating closed on resize) */
+header nav.nav-no-transition .nav-drawer {
+  transition: none;
 }
 
-header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+header nav[aria-expanded='true'] .nav-drawer {
+  transform: translateX(0);
 }
 
-/* sections */
+/* ---- Primary nav — stacked full-width list inside the drawer on mobile ---- */
 header nav .nav-sections {
   grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
-  visibility: hidden;
+  width: 100%;
 }
 
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  align-self: start;
+header nav .nav-sections .default-content-wrapper {
+  width: 100%;
 }
 
 header nav .nav-sections ul {
+  box-sizing: border-box;
   list-style: none;
-  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+header nav .nav-sections li { margin: 0; }
+
+header nav .nav-sections li a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 20px 30px 20px 15px;
+  border-top: 1px solid var(--color-white);
+  color: var(--color-black);
+  font-size: var(--body-font-size-m);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* ---- Tools (Stryker.com link; desktop search box is hidden on mobile) ---- */
+header nav .nav-tools {
+  grid-area: tools;
+  display: block;
+}
+
+header nav .nav-tools p {
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+
+header nav .nav-tools p::after { content: none; }
+
+header nav .nav-tools p a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 20px 30px 20px 15px;
+  border-top: 1px solid var(--color-white);
+  color: var(--color-black);
+  font-size: var(--body-font-size-m);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header nav .nav-tools .nav-search { display: none; }
+
+/* mobile menu item hover — gray surface + white text, matches source */
+header nav .nav-sections li a:hover,
+header nav .nav-tools p a:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* no divider above the very first menu item */
+header nav .nav-sections li:first-child a {
+  border-top: 0;
+}
+
+/* ---- Search field styling (desktop box + mobile panel share the input) ---- */
+header nav .nav-search-input {
+  box-sizing: border-box;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  padding: 6px 8px;
+  font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
+  width: 180px;
 }
 
-header nav .nav-sections ul > li {
-  font-weight: 500;
+header nav .nav-search-input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
 }
 
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
+header nav .nav-search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0 10px;
+  color: var(--color-primary);
+  cursor: pointer;
 }
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
+/* ---- Mobile search panel — full-width gray band below the header, revealed
+   by the magnifier toggle; overlays content (no push). Hidden by default. ---- */
+header nav .nav-search-panel {
+  display: none;
 }
 
+header nav .nav-search-panel-form {
+  margin: 0;
+}
+
+header nav[data-search='open'] .nav-search-panel {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  padding: 7px;
+  background-color: var(--color-secondary);
+  z-index: 9;
+}
+
+header nav .nav-search-panel-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  padding: 8px 11px;
+  background-color: var(--color-surface);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+header nav .nav-search-panel-input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* ---- Desktop layout (900px and up) — single-row grid; gold bar full-bleed ---- */
 @media (width >= 900px) {
+  header nav {
+    display: grid;
+    grid-template:
+      'brand tools' var(--nav-height)
+      'sections sections' auto / auto 1fr;
+    align-items: center;
+    gap: 0 var(--container-gutter);
+    height: auto;
+    border-bottom: 0;
+  }
+
+  /* drawer wrapper is transparent to the grid on desktop */
+  header nav .nav-drawer {
+    display: contents;
+  }
+
+  header nav .nav-brand {
+    flex: none;
+    padding-top: 0;
+  }
+
+  header nav .nav-brand img {
+    width: 188px;
+  }
+
+  /* gold bar spans full page width; inner list stays aligned to the container */
   header nav .nav-sections {
-    display: block;
-    visibility: visible;
-    white-space: nowrap;
-  }
-
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
-
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
+    align-self: stretch;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    background-color: var(--color-accent);
   }
 
   header nav .nav-sections ul {
+    flex-flow: row wrap;
+    align-items: center;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-gutter);
+    min-height: var(--nav-bar-height);
+  }
+
+  header nav .nav-sections li { margin: 0 10px 0 0; }
+
+  header nav .nav-sections li a {
+    width: auto;
+    margin: 5px 0;
+    padding: 5px 15px;
+    border-top: 0;
+    white-space: nowrap;
+  }
+
+  header nav .nav-tools {
     display: flex;
-    gap: 24px;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  header nav .nav-tools .default-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  header nav .nav-tools p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: auto;
+  }
+
+  /* pipe separator after Stryker.com */
+  header nav .nav-tools p::after {
+    content: '|';
+    color: var(--color-black);
+  }
+
+  header nav .nav-tools p a {
+    display: inline;
+    width: auto;
+    padding: 0;
+    border-top: 0;
+    font-size: var(--body-font-size-xs);
+  }
+
+  /* Stryker.com hover is gold text on desktop (not the gray mobile treatment) */
+  header nav .nav-tools p a:hover {
+    background-color: transparent;
+    color: var(--color-accent-link-hover);
+  }
+
+  /* desktop search box becomes visible */
+  header nav .nav-tools .nav-search {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    align-self: center;
+    height: 41px;
     margin: 0;
+    border: 0;
+    background-color: var(--color-surface);
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
+  /* desktop magnifier: teal by default, darker teal on hover */
+  header nav .nav-search-submit::before {
+    background-color: var(--color-primary);
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+  header nav .nav-search-submit:hover::before {
+    background-color: var(--color-primary-pressed);
+  }
+
+  /* hide the mobile-only controls */
+  header nav .nav-hamburger,
+  header nav .nav-search-toggle {
     display: none;
-    position: relative;
   }
-
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
-}
-
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
 }
