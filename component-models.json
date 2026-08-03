@@ -87,6 +87,10 @@
           {
             "name": "CTA",
             "value": "cta"
+          },
+          {
+            "name": "Default",
+            "value": "default"
           }
         ]
       }
@@ -109,6 +113,18 @@
         "label": "Image Alt",
         "multi": false
       },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "card-cta",
+    "fields": [
       {
         "component": "richtext",
         "name": "text",
