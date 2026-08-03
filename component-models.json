@@ -99,15 +99,15 @@
         "name": "filter",
         "label": "Cards",
         "valueType": "string",
-        "value": "cards-resources",
+        "value": "cards",
         "options": [
+          {
+            "name": "Card Resources",
+            "value": "cards"
+          },
           {
             "name": "Card CTA",
             "value": "cards-cta"
-          },
-          {
-            "name": "Card Resources",
-            "value": "cards-resources"
           }
         ]
       }

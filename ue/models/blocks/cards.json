@@ -4,13 +4,7 @@
       "title": "Cards",
       "id": "cards",
       "model": "cards",
-      "filter": "cards",
-      "plugins": {
-        "da": {
-          "rows": 1,
-          "columns": 2
-        }
-      }
+      "filter": "cards"
     },
     {
       "title": "Card-resources",
@@ -63,15 +57,15 @@
           "name": "filter",
           "label": "Cards",
           "valueType": "string",
-          "value": "cards-resources",
+          "value": "cards",
           "options": [
+            {
+              "name": "Card Resources",
+              "value": "cards"
+            },
             {
               "name": "Card CTA",
               "value": "cards-cta"
-            },
-            {
-              "name": "Card Resources",
-              "value": "cards-resources"
             }
           ]
         }
@@ -117,12 +111,6 @@
   "filters": [
     {
       "id": "cards",
-      "components": [
-        "card-resources"
-      ]
-    },
-    {
-      "id": "cards-resources",
       "components": [
         "card-resources"
       ]
