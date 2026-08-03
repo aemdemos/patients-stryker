@@ -106,11 +106,12 @@
           }
         },
         {
-          "title": "Card",
-          "id": "card",
-          "model": "card",
+          "title": "Card-resources",
+          "id": "card-resources",
+          "model": "card-resources",
           "plugins": {
             "da": {
+              "name": "card-resources",
               "rows": 1,
               "columns": 2,
               "fields": [

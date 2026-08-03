@@ -13,11 +13,12 @@
       }
     },
     {
-      "title": "Card",
-      "id": "card",
-      "model": "card",
+      "title": "Card-resources",
+      "id": "card-resources",
+      "model": "card-resources",
       "plugins": {
         "da": {
+          "name": "card-resources",
           "rows": 1,
           "columns": 2,
           "fields": [
@@ -31,7 +32,20 @@
   ],
   "models": [
     {
-      "id": "card",
+      "id": "cards",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Style",
+          "options": [
+            { "name": "Resources", "value": "resources" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "card-resources",
       "fields": [
         {
           "component": "reference",
@@ -61,7 +75,7 @@
     {
       "id": "cards",
       "components": [
-        "card"
+        "card-resources"
       ]
     }
   ]
