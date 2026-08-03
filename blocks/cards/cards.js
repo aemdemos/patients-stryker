@@ -19,16 +19,33 @@ export default function decorate(block) {
     });
 
     if (isResources) {
-      const imageDiv = li.querySelector('.cards-card-image');
-      const body = li.querySelector('.cards-card-body');
-      const link = body && body.querySelector('a[href]');
-      const pic = imageDiv && imageDiv.querySelector('picture, img');
-      if (link && pic) {
-        const imgLink = document.createElement('a');
-        imgLink.href = link.getAttribute('href');
-        if (link.getAttribute('target')) imgLink.target = link.getAttribute('target');
-        pic.replaceWith(imgLink);
-        imgLink.append(pic);
+      // Authoring contract: the FIRST cell holds a LINK whose href is the
+      // (external) image URL and whose text is the alt; the SECOND cell holds
+      // the "LEARN MORE" PDF link. Authoring the image as a link (not an
+      // <img>) keeps the external Scene7 URL intact through DA/preview/publish/UE
+      // — DA rewrites an external <img src> to about:error, but leaves link hrefs
+      // alone. Here we build the <img> from that link and wrap it in an anchor to
+      // the PDF so clicking the image opens the same target as the button.
+      const [first, second] = li.children;
+      if (first) first.className = 'cards-card-image';
+      if (second) second.className = 'cards-card-body';
+      const srcLink = first && first.querySelector('a[href]');
+      const pdfLink = second && second.querySelector('a[href]');
+      if (srcLink) {
+        const img = document.createElement('img');
+        img.src = srcLink.getAttribute('href');
+        img.alt = srcLink.textContent.trim();
+        img.loading = 'lazy';
+        first.textContent = '';
+        if (pdfLink) {
+          const imgLink = document.createElement('a');
+          imgLink.href = pdfLink.getAttribute('href');
+          if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
+          imgLink.append(img);
+          first.append(imgLink);
+        } else {
+          first.append(img);
+        }
       }
     }
 
