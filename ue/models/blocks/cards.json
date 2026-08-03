@@ -38,7 +38,7 @@
           "rows": 1,
           "columns": 1,
           "fields": [
-            { "name": "text", "selector": "div:only-child" }
+            { "name": "text", "selector": "div:nth-child(1)" }
           ]
         }
       }
@@ -56,6 +56,12 @@
             { "name": "Resources", "value": "resources" },
             { "name": "CTA", "value": "cta" }
           ]
+        },
+        {
+          "component": "array",
+          "name": "children",
+          "label": "Card List",
+          "valueType": ["card-resources", "card-cta"]
         }
       ]
     },

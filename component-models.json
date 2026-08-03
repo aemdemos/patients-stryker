@@ -93,6 +93,15 @@
             "value": "cta"
           }
         ]
+      },
+      {
+        "component": "array",
+        "name": "children",
+        "label": "Card List",
+        "valueType": [
+          "card-resources",
+          "card-cta"
+        ]
       }
     ]
   },
