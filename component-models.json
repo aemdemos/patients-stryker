@@ -80,42 +80,41 @@
     "id": "cards",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "label": "Style",
         "valueType": "string",
-        "value": "cta",
         "options": [
           {
-            "name": "CTA Style",
+            "name": "CTA",
             "value": "cta"
           },
           {
-            "name": "Border Style",
+            "name": "Border",
             "value": "border"
           },
           {
-            "name": "Media Style",
-            "value": "media"
+            "name": "Resources",
+            "value": "resources"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "valueType": "string"
       },
       {
-        "component": "select",
-        "name": "filter",
-        "label": "Card Type",
-        "valueType": "string",
-        "value": "cards-cta",
-        "options": [
-          {
-            "name": "CTA Cards",
-            "value": "cards-cta"
-          },
-          {
-            "name": "Media Cards",
-            "value": "cards-media"
-          }
-        ]
+        "component": "richtext",
+        "name": "text",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
@@ -125,33 +124,6 @@
       {
         "component": "richtext",
         "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "card-media",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
         "label": "Text",
         "valueType": "string"
       }

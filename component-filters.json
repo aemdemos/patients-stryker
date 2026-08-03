@@ -27,19 +27,8 @@
   {
     "id": "cards",
     "components": [
+      "card",
       "card-cta"
-    ]
-  },
-  {
-    "id": "cards-cta",
-    "components": [
-      "card-cta"
-    ]
-  },
-  {
-    "id": "cards-media",
-    "components": [
-      "card-media"
     ]
   },
   {
