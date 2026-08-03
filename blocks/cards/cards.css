@@ -33,9 +33,6 @@
 
 .cards .cards-card-image {
   line-height: 0;
-
-  /* gold accent bar on the left edge of each card image, matching source */
-  border-left: 4px solid #ffb500;
 }
 
 .cards > ul > li img {
