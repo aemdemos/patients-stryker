@@ -56,23 +56,6 @@
             { "name": "Resources", "value": "resources" },
             { "name": "CTA", "value": "cta" }
           ]
-        },
-        {
-          "component": "select",
-          "name": "filter",
-          "label": "Cards",
-          "valueType": "string",
-          "value": "cards",
-          "options": [
-            {
-              "name": "Card Resources",
-              "value": "cards"
-            },
-            {
-              "name": "Card CTA",
-              "value": "cards-cta"
-            }
-          ]
         }
       ]
     },
@@ -117,12 +100,7 @@
     {
       "id": "cards",
       "components": [
-        "card-resources"
-      ]
-    },
-    {
-      "id": "cards-cta",
-      "components": [
+        "card-resources",
         "card-cta"
       ]
     }
