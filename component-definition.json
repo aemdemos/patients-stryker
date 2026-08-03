@@ -233,15 +233,19 @@
             "da": {
               "name": "statistic",
               "rows": 1,
-              "columns": 2,
+              "columns": 3,
               "fields": [
                 {
-                  "name": "value",
+                  "name": "color",
                   "selector": "div:nth-child(1)"
                 },
                 {
-                  "name": "description",
+                  "name": "value",
                   "selector": "div:nth-child(2)"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(3)"
                 }
               ]
             }

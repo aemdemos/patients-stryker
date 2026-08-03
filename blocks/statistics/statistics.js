@@ -1,14 +1,16 @@
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
-// stat-number color classes an author may set on an item (mirrors the UE model)
-const COLOR_CLASSES = [
-  'statistics-teal',
-  'statistics-gold',
-  'statistics-dark-gold',
-  'statistics-navy',
-  'statistics-sage',
-  'statistics-purple',
-];
+// Per-stat color is authored as a keyword in the row's first cell (real content,
+// so it persists through DA → preview → publish, unlike an editor-only class).
+// Map each keyword to its CSS class; the cell is consumed during decoration.
+const COLOR_CLASSES = {
+  teal: 'statistics-teal',
+  gold: 'statistics-gold',
+  'dark-gold': 'statistics-dark-gold',
+  navy: 'statistics-navy',
+  sage: 'statistics-sage',
+  purple: 'statistics-purple',
+};
 
 // read a `prefix-N` variant class (e.g. cols-3) and return N, or null if absent
 function readCountVariant(block, prefix) {
@@ -37,12 +39,17 @@ export default function decorate(block) {
     item.className = 'statistics-item';
     moveInstrumentation(row, item);
 
-    // carry any author-selected color class from the item row onto the <li>
-    COLOR_CLASSES.forEach((c) => {
-      if (row.classList.contains(c)) item.classList.add(c);
-    });
+    const cells = [...row.children];
+    // first cell holds the color keyword (authored content); consume it and
+    // apply the matching class. Rows without a recognized keyword keep the
+    // default color.
+    const keyword = cells[0] ? cells[0].textContent.trim().toLowerCase() : '';
+    if (COLOR_CLASSES[keyword]) {
+      item.classList.add(COLOR_CLASSES[keyword]);
+      cells.shift().remove();
+    }
 
-    const [value, desc] = row.children;
+    const [value, desc] = cells;
     if (value) {
       value.className = 'statistics-value';
       item.append(value);

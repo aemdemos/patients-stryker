@@ -21,10 +21,11 @@
         "da": {
           "name": "statistic",
           "rows": 1,
-          "columns": 2,
+          "columns": 3,
           "fields": [
-            { "name": "value", "selector": "div:nth-child(1)" },
-            { "name": "description", "selector": "div:nth-child(2)" }
+            { "name": "color", "selector": "div:nth-child(1)" },
+            { "name": "value", "selector": "div:nth-child(2)" },
+            { "name": "description", "selector": "div:nth-child(3)" }
           ]
         }
       }
@@ -63,25 +64,26 @@
       "id": "statistic",
       "fields": [
         {
+          "component": "select",
+          "name": "color",
+          "label": "Stat color",
+          "value": "teal",
+          "valueType": "string",
+          "options": [
+            { "name": "Teal", "value": "teal" },
+            { "name": "Gold", "value": "gold" },
+            { "name": "Dark gold", "value": "dark-gold" },
+            { "name": "Navy", "value": "navy" },
+            { "name": "Sage", "value": "sage" },
+            { "name": "Purple", "value": "purple" }
+          ]
+        },
+        {
           "component": "text",
           "name": "value",
           "value": "",
           "label": "Stat",
           "valueType": "string"
-        },
-        {
-          "component": "select",
-          "name": "classes",
-          "label": "Stat color",
-          "value": "statistics-teal",
-          "options": [
-            { "name": "Teal", "value": "statistics-teal" },
-            { "name": "Gold", "value": "statistics-gold" },
-            { "name": "Dark gold", "value": "statistics-dark-gold" },
-            { "name": "Navy", "value": "statistics-navy" },
-            { "name": "Sage", "value": "statistics-sage" },
-            { "name": "Purple", "value": "statistics-purple" }
-          ]
         },
         {
           "component": "richtext",
