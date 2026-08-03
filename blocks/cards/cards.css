@@ -1,27 +1,80 @@
+/*
+ * cards — visual design migrated from patients.stryker.com (.cols3 card groups).
+ * Source layout: bootstrap grid col-md-4 (3-up desktop) / col-sm-6 (2-up tablet) /
+ * col-xs-12 (1-up mobile), ~30px gutters. 5 cards read as 3 + 2 on desktop.
+ */
+
 .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;   /* mobile: 1-up */
+  gap: 30px;                    /* source column/row gutter (15px + 15px) */
+}
+
+/* tablet: 2-up (col-sm-6) */
+@media (width >= 600px) {
+  .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop: 3-up (col-md-4) — 5 cards render as a 3 + 2 grid, matching source */
+@media (width >= 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
   background-color: var(--background-color);
-}
-
-.cards .cards-card-body {
-  margin: 16px;
 }
 
 .cards .cards-card-image {
   line-height: 0;
+
+  /* gold accent bar on the left edge of each card image, matching source */
+  border-left: 4px solid #ffb500;
 }
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 7 / 5;   /* source image 440 x 314 */
   object-fit: cover;
+  border-radius: 0;
+}
+
+/* card body — source image-to-heading gap is 30px */
+.cards .cards-card-body {
+  margin: 30px 0 0;
+  color: var(--text-color);
+}
+
+.cards .cards-card-body h3 {
+  margin: 0 0 15px;
+
+  /* Source card heading is URW Egyptienne at weight 500 (inherited from the
+     global h3 rule). Our Egyptienne woff2 only carries a 300–500 master, so
+     forcing 700 here triggered faux-bold that distorted the letterforms and
+     read as a different typeface. Keep the authored weight. */
+  font-weight: 500;
+}
+
+.cards .cards-card-body p {
+  margin: 0 0 15px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/*
+ * "Learn more" CTA — the source styles it as a gray uppercase button
+ * (.btn.btn-gray). The parser wraps the CTA label in <em>, so EDS's
+ * decorateButtons promotes it to a `.button.secondary` — which the global
+ * styles.css renders as exactly that gray uppercase button (gray fill, white
+ * text, square corners). No block-level override is needed here; authors
+ * control the button by adding/removing the emphasis in the content.
+ */
+.cards .cards-card-body .button-wrapper {
+  margin: 15px 0 0;
 }

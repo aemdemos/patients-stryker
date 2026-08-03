@@ -35,3 +35,111 @@
     padding: 40px 32px;
   }
 }
+
+/* ============================================================
+   Fullbleed variant — Stryker patients landing hero.
+   Source: a full-bleed 3:1 image (white on the left, people cut-out
+   on the right, gold accent rule baked into the asset itself) with a
+   two-tone BLACK headline + supporting copy set over the white panel.
+   The authored table is [row1: image] [row2: h1 + p]; hero.js splits
+   the headline into a lead sentence (light serif) + accent remainder
+   (Futura bold).
+   Mobile-first: text stacked above a full-width image.
+   Desktop (>=900): text overlaid on the left of the full-bleed image.
+   ============================================================ */
+
+/* undo the base overlay treatment: image flows in normal order, the
+   block is not padded, and copy is dark (source text is black, not white) */
+.hero.fullbleed {
+  display: flex;
+  flex-direction: column-reverse; /* DOM is image-then-text; show text first */
+  position: static;
+  padding: 0;
+  min-height: 0;
+}
+
+.hero.fullbleed picture {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  width: 100%;
+}
+
+.hero.fullbleed img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* text block padding — source insets copy by ~5vw on every side */
+.hero.fullbleed > div:last-child {
+  box-sizing: border-box;
+  padding: 5vw;
+}
+
+.hero.fullbleed h1,
+.hero.fullbleed p {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.hero.fullbleed h1 {
+  margin-bottom: 15px;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 7vw;              /* source: 7vw below the desktop switch */
+  line-height: 1.35;
+}
+
+/* second sentence of the headline — Futura bold (see hero.js) */
+.hero.fullbleed h1 .hero-headline-accent {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+.hero.fullbleed p {
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-size: 3vw;             /* source: 3vw below the desktop switch */
+  line-height: 1.35;
+}
+
+/* keep the safety fallback: a fullbleed hero with no image renders dark copy */
+.hero.fullbleed.no-image * {
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  /* overlay layout: stack the image row and text row in one grid cell */
+  .hero.fullbleed {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .hero.fullbleed > div {
+    grid-area: 1 / 1;
+  }
+
+  /* text column sits over the white left panel, vertically centered.
+     source: 5vw left inset, content width ~40% (max box ~45% of viewport) */
+  .hero.fullbleed > div:last-child {
+    z-index: 1;
+    align-self: center;
+    max-width: 45%;
+    padding: 0 0 0 5vw;
+  }
+
+  .hero.fullbleed h1 {
+    font-size: min(3.5vw, 49px);  /* source: 3.5vw capped at 49px */
+  }
+
+  .hero.fullbleed p {
+    font-size: min(1.5vw, 21px);  /* source: 1.5vw capped at 21px */
+  }
+}
