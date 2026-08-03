@@ -112,8 +112,7 @@
           "plugins": {
             "da": {
               "name": "card-cta",
-              "rows": 1,
-              "columns": 1,
+              "unsafeHTML": "<div><p></p></div>",
               "fields": [
                 {
                   "name": "text",
@@ -130,8 +129,7 @@
           "plugins": {
             "da": {
               "name": "card-img",
-              "rows": 1,
-              "columns": 2,
+              "unsafeHTML": "<div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\" alt=\"\"></picture></div><div><p></p></div>",
               "fields": [
                 {
                   "name": "image",
