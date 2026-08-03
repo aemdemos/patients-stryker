@@ -17,6 +17,7 @@
       "model": "card-cta",
       "plugins": {
         "da": {
+          "name": "card-cta",
           "rows": 1,
           "columns": 1,
           "fields": [
@@ -31,6 +32,7 @@
       "model": "card",
       "plugins": {
         "da": {
+          "name": "card",
           "rows": 1,
           "columns": 2,
           "fields": [
