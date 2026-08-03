@@ -97,11 +97,22 @@
           "title": "Cards",
           "id": "cards",
           "model": "cards",
-          "filter": "cards",
+          "filter": "cards"
+        },
+        {
+          "title": "Card-cta",
+          "id": "card-cta",
+          "model": "card-cta",
           "plugins": {
             "da": {
               "rows": 1,
-              "columns": 2
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(1)"
+                }
+              ]
             }
           }
         },
