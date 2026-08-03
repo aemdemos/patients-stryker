@@ -27,49 +27,9 @@
           ]
         }
       }
-    },
-    {
-      "title": "Cards (CTA)",
-      "id": "cards-cta",
-      "model": "cards-cta",
-      "filter": "cards-cta",
-      "plugins": {
-        "da": {
-          "name": "cards (cta)",
-          "rows": 1,
-          "columns": 1
-        }
-      }
-    },
-    {
-      "title": "CTA Card",
-      "id": "card-cta",
-      "model": "card-cta",
-      "plugins": {
-        "da": {
-          "rows": 1,
-          "columns": 1,
-          "fields": [
-            { "name": "text", "selector": "div:nth-child(1)" }
-          ]
-        }
-      }
     }
   ],
   "models": [
-    {
-      "id": "cards",
-      "fields": [
-        {
-          "component": "multiselect",
-          "name": "classes",
-          "label": "Style",
-          "options": [
-            { "name": "CTA", "value": "cta" }
-          ]
-        }
-      ]
-    },
     {
       "id": "card",
       "fields": [
@@ -95,32 +55,6 @@
           "valueType": "string"
         }
       ]
-    },
-    {
-      "id": "cards-cta",
-      "fields": [
-        {
-          "component": "multiselect",
-          "name": "classes",
-          "label": "Style",
-          "value": "cta",
-          "options": [
-            { "name": "CTA", "value": "cta" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "card-cta",
-      "fields": [
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Content",
-          "valueType": "string"
-        }
-      ]
     }
   ],
   "filters": [
@@ -128,12 +62,6 @@
       "id": "cards",
       "components": [
         "card"
-      ]
-    },
-    {
-      "id": "cards-cta",
-      "components": [
-        "card-cta"
       ]
     }
   ]
