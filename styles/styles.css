@@ -205,7 +205,7 @@ sup {
    small body-serif text (11.2px), tight line-height, decimal numbering, 20px indent.
    scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
 main ol.footnotes {
-  padding-left: 20px;
+  padding-left: var(--list-indent);
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
 }
