@@ -80,15 +80,10 @@
     "id": "cards",
     "fields": [
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "label": "Style",
-        "value": "",
         "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
           {
             "name": "CTA",
             "value": "cta"
@@ -119,6 +114,35 @@
         "name": "text",
         "value": "",
         "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards-cta",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "value": "cta",
+        "options": [
+          {
+            "name": "CTA",
+            "value": "cta"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "card-cta",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Content",
         "valueType": "string"
       }
     ]

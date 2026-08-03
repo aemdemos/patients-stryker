@@ -24,6 +24,7 @@ const setupObservers = () => {
 
         switch (type) {
           case 'cards':
+          case 'cards-cta':
           case 'accordion':
           case 'statistics':
             if (addedElements.length === 1 && addedElements[0].tagName === 'UL') {

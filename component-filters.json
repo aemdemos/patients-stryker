@@ -10,6 +10,7 @@
     "components": [
       "accordion",
       "cards",
+      "cards-cta",
       "columns",
       "fragment",
       "hero",
@@ -28,6 +29,12 @@
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "cards-cta",
+    "components": [
+      "card-cta"
     ]
   },
   {
