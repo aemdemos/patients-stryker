@@ -80,3 +80,51 @@
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
 }
+
+/* ---- resources variant ------------------------------------------------
+   Measured from patients.stryker.com IVS resources cards: a 2-column card
+   (PDF cover image | text) where the image links to the PDF and a teal
+   "LEARN MORE" button (global a.button.primary, matching source btn-teal)
+   links to the same PDF. */
+.cards.resources > ul {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.cards.resources > ul > li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  border: 0;
+  background-color: transparent;
+}
+
+.cards.resources .cards-card-image {
+  margin: 0;
+}
+
+/* the image is wrapped in a link to the PDF; keep the cover's natural ratio */
+.cards.resources .cards-card-image a {
+  display: block;
+  line-height: 0;
+}
+
+.cards.resources .cards-card-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.cards.resources .cards-card-body {
+  margin: 0;
+}
+
+.cards.resources .cards-card-body :first-child {
+  margin-top: 0;
+}
+
+.cards.resources .cards-card-body :last-child {
+  margin-bottom: 0;
+}
