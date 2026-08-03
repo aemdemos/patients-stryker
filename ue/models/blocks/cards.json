@@ -4,13 +4,7 @@
       "title": "Cards",
       "id": "cards",
       "model": "cards",
-      "filter": "cards",
-      "plugins": {
-        "da": {
-          "rows": 1,
-          "columns": 2
-        }
-      }
+      "filter": "cards"
     },
     {
       "title": "Card",
@@ -27,6 +21,20 @@
           ]
         }
       }
+    },
+    {
+      "title": "Card-cta",
+      "id": "card-cta",
+      "model": "card-cta",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "text", "selector": "div:nth-child(1)" }
+          ]
+        }
+      }
     }
   ],
   "models": [
@@ -38,7 +46,8 @@
           "name": "classes",
           "label": "Style",
           "options": [
-            { "name": "CTA", "value": "cta" }
+            { "name": "CTA", "value": "cta" },
+            { "name": "Default", "value": "default" }
           ]
         }
       ]
@@ -68,13 +77,26 @@
           "valueType": "string"
         }
       ]
+    },
+        {
+      "id": "card-cta",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
     }
   ],
   "filters": [
     {
       "id": "cards",
       "components": [
-        "card"
+        "card",
+        "card-cta"
       ]
     }
   ]
