@@ -97,38 +97,10 @@
           "title": "Cards",
           "id": "cards",
           "model": "cards",
-          "filter": "cards",
-          "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
-            }
-          }
+          "filter": "cards"
         },
         {
-          "title": "Card",
-          "id": "card",
-          "model": "card",
-          "plugins": {
-            "da": {
-              "name": "card",
-              "rows": 1,
-              "columns": 2,
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "div:nth-child(1)>picture>img[src]"
-                },
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(2)"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "title": "Card (CTA)",
+          "title": "Card-cta",
           "id": "card-cta",
           "model": "card-cta",
           "plugins": {
@@ -140,6 +112,32 @@
                 {
                   "name": "text",
                   "selector": "div:only-child"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Card-img",
+          "id": "card-img",
+          "model": "card-img",
+          "plugins": {
+            "da": {
+              "name": "card-img",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
                 }
               ]
             }
