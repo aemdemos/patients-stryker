@@ -1,1 +1,13 @@
 /* add global styles that can be loaded post LCP here */
+
+/* Dynamic Media video (rendered by scripts/dm-support.js).
+   Size the box from a fixed aspect ratio, not from the media's intrinsic size —
+   otherwise the element sizes to the poster before play (e.g. 750x422) then
+   jumps to the video's intrinsic size on play (e.g. 640x360). object-fit keeps
+   the frame filling the box. */
+.dm-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}

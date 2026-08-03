@@ -191,17 +191,12 @@ function renderVideo(src, label) {
   const mediaSrc = url.toString();
 
   const video = document.createElement('video');
+  video.className = 'dm-video';
   video.controls = true;
   video.playsInline = true;
   video.preload = 'metadata';
-  // Size the box from a fixed aspect ratio, not from the media's intrinsic size.
-  // Otherwise the element sizes to the poster before play (e.g. 750x422) then
-  // jumps to the video's intrinsic size on play (e.g. 640x360). object-fit
-  // keeps the frame filling the box; block-agnostic (no external CSS needed).
-  video.style.width = '100%';
-  video.style.height = 'auto';
-  video.style.aspectRatio = '16 / 9';
-  video.style.objectFit = 'cover';
+  // sizing/appearance lives in CSS (.dm-video in styles/lazy-styles.css) so it
+  // can be adjusted without touching this script
   if (poster) video.poster = poster;
   if (label) video.setAttribute('aria-label', label);
 
