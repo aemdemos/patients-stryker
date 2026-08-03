@@ -14,6 +14,15 @@
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
 
+// narrow selector so non-DM pages skip the work and DM pages only visit DM
+// nodes (avoids iterating every anchor/image on the page)
+const DM_SELECTOR = [
+  'a[href*="/is/image/"]',
+  'a[href*="/adobe/assets/"]',
+  'img[src*="/is/image/"]',
+  'img[src*="/adobe/assets/"]',
+].join(',');
+
 // responsive widths shared by both renderers (desktop + mobile)
 const BREAKPOINTS = [
   { media: '(min-width: 600px)', width: 2000 },
@@ -96,7 +105,7 @@ function dmRendererFor(src) {
  * @param {Element} main the container to decorate
  */
 export default function decorateDMImages(main) {
-  main.querySelectorAll('a[href], img[src]').forEach((el) => {
+  main.querySelectorAll(DM_SELECTOR).forEach((el) => {
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
     const render = dmRendererFor(src);
