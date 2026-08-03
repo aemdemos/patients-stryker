@@ -139,7 +139,7 @@
   }
 }
 
-@media (width > 1024px) {
+@media (width > 1023px) {
   .cards.resources > ul {
     grid-template-columns: repeat(4, 1fr);
   }
