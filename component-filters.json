@@ -27,11 +27,17 @@
   {
     "id": "cards",
     "components": [
-      "card-img"
+      "card-resources"
     ]
   },
   {
-    "id": "cards",
+    "id": "cards-resources",
+    "components": [
+      "card-resources"
+    ]
+  },
+  {
+    "id": "cards-cta",
     "components": [
       "card-cta"
     ]
