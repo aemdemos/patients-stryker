@@ -49,7 +49,7 @@
       "id": "cards",
       "fields": [
         {
-          "component": "multiselect",
+          "component": "select",
           "name": "classes",
           "label": "Style",
           "options": [
@@ -81,7 +81,7 @@
           "label": "Image Alt (link text)"
         },
         {
-          "component": "text",
+          "component": "richtext",
           "name": "text",
           "value": "",
           "label": "Text",
@@ -93,7 +93,7 @@
       "id": "card-cta",
       "fields": [
         {
-          "component": "text",
+          "component": "richtext",
           "name": "text",
           "value": "",
           "label": "Text",
