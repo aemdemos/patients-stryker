@@ -27,12 +27,7 @@
   {
     "id": "cards",
     "components": [
-      "card-resources"
-    ]
-  },
-  {
-    "id": "cards-cta",
-    "components": [
+      "card-resources",
       "card-cta"
     ]
   },
