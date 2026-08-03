@@ -26,15 +26,15 @@
     ]
   },
   {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
     "id": "cards-cta",
     "components": [
       "card-cta"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
     ]
   },
   {
