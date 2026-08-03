@@ -53,6 +53,8 @@
           "component": "select",
           "name": "classes",
           "label": "Style",
+          "valueType": "string",
+          "value": "cta",
           "options": [
             { "name": "CTA Style", "value": "cta" },
             { "name": "Border Style", "value": "border" },
@@ -60,10 +62,15 @@
           ]
         },
         {
-          "component": "array",
-          "name": "children",
-          "label": "Card List",
-          "valueType": ["card-cta", "card-media"]
+          "component": "select",
+          "name": "filter",
+          "label": "Card Type",
+          "valueType": "string",
+          "value": "cards-cta",
+          "options": [
+            { "name": "CTA Cards", "value": "cards-cta" },
+            { "name": "Media Cards", "value": "cards-media" }
+          ]
         }
       ]
     },
@@ -110,7 +117,18 @@
     {
       "id": "cards",
       "components": [
-        "card-cta",
+        "card-cta"
+      ]
+    },
+    {
+      "id": "cards-cta",
+      "components": [
+        "card-cta"
+      ]
+    },
+    {
+      "id": "cards-media",
+      "components": [
         "card-media"
       ]
     }
