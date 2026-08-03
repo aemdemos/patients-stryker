@@ -1,9 +1,10 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // `resources` variant: 2-column card (image | text). The image links to the
-  // same PDF as the card's bold "LEARN MORE" link (which the global
-  // decorateButtons turns into a teal primary button).
+  // `resources` variant: PDF brochure card — a cover image stacked above a
+  // "LEARN MORE" button. The image links to the same PDF as the card's bold
+  // link (which the global decorateButtons turns into a teal primary button).
+  // There is no visible title; the brochure name lives in the image alt text.
   const isResources = block.classList.contains('resources');
 
   /* change to ul, li */
