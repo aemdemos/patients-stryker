@@ -100,8 +100,7 @@
           "filter": "cards",
           "plugins": {
             "da": {
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"cards\"></div>"
             }
           }
         },
