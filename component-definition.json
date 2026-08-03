@@ -101,12 +101,34 @@
           "plugins": {
             "da": {
               "rows": 1,
-              "columns": 1
+              "columns": 2
             }
           }
         },
         {
-          "title": "Card-cta",
+          "title": "Card",
+          "id": "card",
+          "model": "card",
+          "plugins": {
+            "da": {
+              "name": "card",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Card (CTA)",
           "id": "card-cta",
           "model": "card-cta",
           "plugins": {
@@ -118,32 +140,6 @@
                 {
                   "name": "text",
                   "selector": "div:only-child"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "title": "Card-media",
-          "id": "card-media",
-          "model": "card-media",
-          "plugins": {
-            "da": {
-              "name": "card-media",
-              "rows": 1,
-              "columns": 2,
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "div:nth-child(1)>picture>img"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
-                },
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(2)"
                 }
               ]
             }
