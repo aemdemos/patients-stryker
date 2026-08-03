@@ -21,6 +21,11 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
+// hls.js — lazy-loaded only when a DM video needs it (Chrome/Firefox lack native
+// HLS). Pinned version, loaded from jsDelivr on demand.
+const HLS_JS_URL = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js';
+let hlsJsPromise;
+
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
 // nodes (avoids iterating every anchor/image on the page)
 const DM_SELECTOR = [
@@ -118,6 +123,59 @@ function videoTypeFor(src) {
 }
 
 /**
+ * Prefer an HLS (.m3u8) source: DASH (.mpd) cannot play in a native <video> in
+ * any browser, and Scene7 serves the same asset as HLS at the same path. HLS
+ * plays natively on Safari/iOS and via hls.js elsewhere.
+ * @param {string} src media URL (poster already stripped)
+ * @returns {string} an .m3u8 URL when the source is a Scene7 .mpd, else src
+ */
+function preferHls(src) {
+  return src.replace(/\.mpd(\?|$)/i, '.m3u8$1');
+}
+
+/**
+ * Lazy-load hls.js once, on demand.
+ * @returns {Promise<any>} the Hls global (or null if it fails to load)
+ */
+function loadHlsJs() {
+  if (window.Hls) return Promise.resolve(window.Hls);
+  if (!hlsJsPromise) {
+    hlsJsPromise = new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = HLS_JS_URL;
+      script.async = true;
+      script.onload = () => resolve(window.Hls || null);
+      script.onerror = () => resolve(null);
+      document.head.append(script);
+    });
+  }
+  return hlsJsPromise;
+}
+
+/**
+ * Attach an HLS source to a <video>: native playback where supported (Safari/
+ * iOS), otherwise hls.js. Falls back to a plain <source> if hls.js is
+ * unavailable so at least native-HLS browsers still work.
+ * @param {HTMLVideoElement} video
+ * @param {string} src an .m3u8 URL
+ */
+function attachHls(video, src) {
+  if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = src;
+    return;
+  }
+  loadHlsJs().then((Hls) => {
+    if (Hls && Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(src);
+      hls.attachMedia(video);
+    } else {
+      video.src = src; // last resort — lets native-HLS UAs still try
+    }
+  });
+}
+
+/**
  * Build a native <video> for a DM / streaming video URL.
  * An optional poster frame is supported via a `poster` query param on the
  * authored URL (its value is a poster image URL); it is applied to the
@@ -141,11 +199,18 @@ function renderVideo(src, label) {
   if (poster) video.poster = poster;
   if (label) video.setAttribute('aria-label', label);
 
-  const source = document.createElement('source');
-  source.src = mediaSrc;
-  const type = videoTypeFor(mediaSrc);
-  if (type) source.type = type;
-  video.append(source);
+  const hlsSrc = preferHls(mediaSrc);
+  if (/\.m3u8(\?|$)/i.test(hlsSrc)) {
+    // HLS (incl. Scene7 .mpd rewritten to .m3u8): native or hls.js
+    attachHls(video, hlsSrc);
+  } else {
+    // progressive/other container the browser can play directly
+    const source = document.createElement('source');
+    source.src = mediaSrc;
+    const type = videoTypeFor(mediaSrc);
+    if (type) source.type = type;
+    video.append(source);
+  }
   return video;
 }
 
