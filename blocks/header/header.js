@@ -187,7 +187,10 @@ export default async function decorate(block) {
     // opening the menu closes the search panel
     if (nav.getAttribute('aria-expanded') === 'true') nav.setAttribute('data-search', 'closed');
   });
-  nav.append(searchToggle, hamburger, searchPanel);
+  // append hamburger before the search toggle so keyboard Tab order matches the
+  // visual left-to-right order (hamburger left, magnifier right); the mobile CSS
+  // `order` values keep the visual placement regardless of DOM order
+  nav.append(hamburger, searchToggle, searchPanel);
   // collapsed by default; on desktop the sections are always shown via CSS
   nav.setAttribute('aria-expanded', 'false');
   nav.setAttribute('data-search', 'closed');
@@ -196,7 +199,12 @@ export default async function decorate(block) {
   // slide animation so it doesn't briefly animate closed while crossing 900px
   isDesktop.addEventListener('change', () => {
     nav.classList.add('nav-no-transition');
-    if (isDesktop.matches) toggleMenu(nav, false);
+    if (isDesktop.matches) {
+      toggleMenu(nav, false);
+      // the mobile search panel is redundant on desktop (which has its own
+      // search box), so close it when crossing the breakpoint
+      nav.setAttribute('data-search', 'closed');
+    }
     // re-enable the transition after the layout has settled
     requestAnimationFrame(() => {
       requestAnimationFrame(() => nav.classList.remove('nav-no-transition'));

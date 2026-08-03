@@ -109,8 +109,8 @@ header nav .nav-search-submit::before,
 header nav .nav-search-toggle::before {
   content: '';
   display: block;
-  width: 20px;
-  height: 24px;
+  width: 24px;
+  height: 29px;
   mask: url('/icons/search.svg') no-repeat center / contain;
 }
 
@@ -327,7 +327,7 @@ header nav .nav-search-panel-input:focus {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
-    min-height: 60px;
+    min-height: var(--nav-bar-height);
   }
 
   header nav .nav-sections li { margin: 0 10px 0 0; }

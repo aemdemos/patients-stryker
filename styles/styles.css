@@ -94,8 +94,9 @@
   --container-narrow: 575px;
   --container-gutter: 15px;
 
-  /* nav height */
+  /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height */
   --nav-height: 90px;
+  --nav-bar-height: 60px;
 }
 
 body {
@@ -116,12 +117,12 @@ header {
   height: var(--nav-height);
 }
 
-/* reserve the desktop two-row header height (white bar + 60px gold nav bar)
-   here in eager CSS so the space is held before the lazy header block loads,
-   preventing content from shifting down on load (CLS) */
+/* reserve the desktop two-row header height (white bar + gold nav bar) here in
+   eager CSS so the space is held before the lazy header block loads, preventing
+   content from shifting down on load (CLS) */
 @media (width >= 900px) {
   header {
-    height: calc(var(--nav-height) + 60px);
+    height: calc(var(--nav-height) + var(--nav-bar-height));
   }
 }
 
