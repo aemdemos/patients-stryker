@@ -27,7 +27,12 @@
   {
     "id": "cards",
     "components": [
-      "card",
+      "card-img"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
       "card-cta"
     ]
   },
