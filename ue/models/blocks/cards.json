@@ -4,7 +4,30 @@
       "title": "Cards",
       "id": "cards",
       "model": "cards",
-      "filter": "cards"
+      "filter": "cards",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Card-resources",
+      "id": "card-resources",
+      "model": "card-resources",
+      "plugins": {
+        "da": {
+          "name": "card-resources",
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>a" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
     },
     {
       "title": "Card-cta",
@@ -20,23 +43,6 @@
           ]
         }
       }
-    },
-    {
-      "title": "Card-img",
-      "id": "card-img",
-      "model": "card-img",
-      "plugins": {
-        "da": {
-          "name": "card-img",
-          "rows": 1,
-          "columns": 2,
-          "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
-            { "name": "text", "selector": "div:nth-child(2)" }
-          ]
-        }
-      }
     }
   ],
   "models": [
@@ -44,13 +50,54 @@
       "id": "cards",
       "fields": [
         {
-          "component": "select",
+          "component": "multiselect",
           "name": "classes",
           "label": "Style",
           "options": [
-            { "name": "CTA", "value": "cta" },
-            { "name": "Media", "value": "media" }
+            { "name": "Resources", "value": "resources" },
+            { "name": "CTA", "value": "cta" }
           ]
+        },
+        {
+          "component": "select",
+          "name": "filter",
+          "label": "Cards",
+          "valueType": "string",
+          "value": "cards-resources",
+          "options": [
+            {
+              "name": "Card CTA",
+              "value": "cards-cta"
+            },
+            {
+              "name": "Card Resources",
+              "value": "cards-resources"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "card-resources",
+      "fields": [
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image URL"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt (link text)"
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
         }
       ]
     },
@@ -65,43 +112,23 @@
           "valueType": "string"
         }
       ]
-    },
-    {
-      "id": "card-img",
-      "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
-        },
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
-      ]
     }
   ],
   "filters": [
     {
       "id": "cards",
       "components": [
-        "card-img"
+        "card-resources"
       ]
     },
     {
-      "id": "cards",
+      "id": "cards-resources",
+      "components": [
+        "card-resources"
+      ]
+    },
+    {
+      "id": "cards-cta",
       "components": [
         "card-cta"
       ]
