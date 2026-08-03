@@ -142,7 +142,7 @@
               "fields": [
                 {
                   "name": "text",
-                  "selector": "div:only-child"
+                  "selector": "div:nth-child(1)"
                 }
               ]
             }
