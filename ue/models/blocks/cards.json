@@ -22,8 +22,8 @@
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "image", "selector": "div:nth-child(1)>a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -48,18 +48,16 @@
       "id": "card-resources",
       "fields": [
         {
-          "component": "reference",
+          "component": "aem-content",
           "valueType": "string",
           "name": "image",
-          "label": "Image",
-          "multi": false
+          "label": "Image URL"
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
+          "label": "Image Alt (link text)"
         },
         {
           "component": "richtext",
