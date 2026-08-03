@@ -116,7 +116,7 @@
               "fields": [
                 {
                   "name": "text",
-                  "selector": "div:nth-child(1)"
+                  "selector": "div:only-child"
                 }
               ]
             }
@@ -129,11 +129,10 @@
           "plugins": {
             "da": {
               "name": "card-img",
-              "unsafeHTML": "<div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\" alt=\"\"></picture></div><div><p></p></div>",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1)>picture>img[src]"
+                  "selector": "div:nth-child(1)>picture>img"
                 },
                 {
                   "name": "imageAlt",
