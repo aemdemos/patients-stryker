@@ -5,6 +5,7 @@ export default function decorate(block) {
   // `cta` variant: each card is a shadowed text box with a "LEARN MORE"
   // call-to-action button rendered below and OUTSIDE the box.
   const isCta = block.classList.contains('cta');
+  const isUEAuthoring = window.location.hostname.includes('.ue.da.live');
 
   /* change to ul, li */
   const ul = document.createElement('ul');
@@ -13,7 +14,7 @@ export default function decorate(block) {
     while (row.firstElementChild) li.append(row.firstElementChild);
     // CTA cards carry no image; if authored with a 2-column card the empty
     // image cell would render as a blank body box, so drop empty cells here.
-    if (isCta) {
+    if (isCta && !isUEAuthoring) {
       [...li.children].forEach((div) => {
         if (!div.textContent.trim() && !div.querySelector('picture, img')) div.remove();
       });
