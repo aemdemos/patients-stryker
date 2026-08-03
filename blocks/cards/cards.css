@@ -80,3 +80,60 @@
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
 }
+
+/* ---- cta variant ------------------------------------------------------
+   Measured from patients.stryker.com IVS homepage cards: each card is a
+   white box with a soft drop shadow (no border) holding a Futura-bold title
+   and body copy; a gold "LEARN MORE" button sits below and OUTSIDE the box. */
+.cards.cta > ul {
+  /* single-column stack on mobile; two-up from tablet (see media query) */
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.cards.cta > ul > li {
+  /* the <li> is a transparent wrapper: box + button live inside it */
+  border: 0;
+  background-color: transparent;
+}
+
+.cards.cta .cards-card-body {
+  margin: 0;
+  padding: 22.5px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+}
+
+.cards.cta .cards-card-body :first-child {
+  margin-top: 0;
+}
+
+.cards.cta .cards-card-body :last-child {
+  margin-bottom: 0;
+}
+
+/* title — Futura bold display type, 1.25em, matches source h3 */
+.cards.cta .cards-card-body h3 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: 1.25em;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.cards.cta .cards-card-body p {
+  margin: 0 0 var(--space-block);
+}
+
+/* gold CTA button below the box (10px gap measured from source).
+   The button itself reuses the global a.button.accent styling from
+   styles.css — applied in cards.js by adding the button classes. */
+.cards.cta .cards-card-cta {
+  margin-top: 10px;
+}
+
+@media (width >= 600px) {
+  .cards.cta > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
