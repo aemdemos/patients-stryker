@@ -28,12 +28,12 @@
       }
     },
     {
-      "title": "Card-img",
-      "id": "card-img",
-      "model": "card-img",
+      "title": "Card-media",
+      "id": "card-media",
+      "model": "card-media",
       "plugins": {
         "da": {
-          "name": "card-img",
+          "name": "card-media",
           "rows": 1,
           "columns": 2,
           "fields": [
@@ -50,13 +50,20 @@
       "id": "cards",
       "fields": [
         {
-          "component": "multiselect",
+          "component": "select",
           "name": "classes",
           "label": "Style",
           "options": [
-            { "name": "CTA", "value": "cta" },
-            { "name": "Default", "value": "default" }
+            { "name": "CTA Style", "value": "cta" },
+            { "name": "Border Style", "value": "border" },
+            { "name": "Media Style", "value": "media" }
           ]
+        },
+        {
+          "component": "array",
+          "name": "children",
+          "label": "Card List",
+          "valueType": ["card-cta", "card-media"]
         }
       ]
     },
@@ -73,7 +80,7 @@
       ]
     },
     {
-      "id": "card-img",
+      "id": "card-media",
       "fields": [
         {
           "component": "reference",
@@ -104,7 +111,7 @@
       "id": "cards",
       "components": [
         "card-cta",
-        "card-img"
+        "card-media"
       ]
     }
   ]
