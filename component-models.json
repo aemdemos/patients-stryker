@@ -80,18 +80,31 @@
     "id": "cards",
     "fields": [
       {
-        "component": "multiselect",
+        "component": "select",
         "name": "classes",
         "label": "Style",
         "options": [
           {
-            "name": "CTA",
+            "name": "CTA Style",
             "value": "cta"
           },
           {
-            "name": "Default",
-            "value": "default"
+            "name": "Border Style",
+            "value": "border"
+          },
+          {
+            "name": "Media Style",
+            "value": "media"
           }
+        ]
+      },
+      {
+        "component": "array",
+        "name": "children",
+        "label": "Card List",
+        "valueType": [
+          "card-cta",
+          "card-media"
         ]
       }
     ]
@@ -109,7 +122,7 @@
     ]
   },
   {
-    "id": "card-img",
+    "id": "card-media",
     "fields": [
       {
         "component": "reference",
