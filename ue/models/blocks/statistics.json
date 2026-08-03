@@ -1,0 +1,104 @@
+{
+  "definitions": [
+    {
+      "title": "Statistics",
+      "id": "statistics",
+      "model": "statistics",
+      "filter": "statistics",
+      "plugins": {
+        "da": {
+          "name": "statistics",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Statistic",
+      "id": "statistic",
+      "model": "statistic",
+      "plugins": {
+        "da": {
+          "name": "statistic",
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "value", "selector": "div:nth-child(1)" },
+            { "name": "description", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "statistics",
+      "fields": [
+        {
+          "component": "select",
+          "name": "columns",
+          "label": "Columns",
+          "value": "cols-3",
+          "options": [
+            { "name": "2", "value": "cols-2" },
+            { "name": "3", "value": "cols-3" },
+            { "name": "4", "value": "cols-4" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "rows",
+          "label": "Rows",
+          "value": "rows-2",
+          "options": [
+            { "name": "1", "value": "rows-1" },
+            { "name": "2", "value": "rows-2" },
+            { "name": "3", "value": "rows-3" },
+            { "name": "4", "value": "rows-4" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "statistic",
+      "fields": [
+        {
+          "component": "text",
+          "name": "value",
+          "value": "",
+          "label": "Stat",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Stat color",
+          "value": "statistics-teal",
+          "options": [
+            { "name": "Teal", "value": "statistics-teal" },
+            { "name": "Gold", "value": "statistics-gold" },
+            { "name": "Dark gold", "value": "statistics-dark-gold" },
+            { "name": "Navy", "value": "statistics-navy" },
+            { "name": "Sage", "value": "statistics-sage" },
+            { "name": "Purple", "value": "statistics-purple" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "statistics",
+      "components": [
+        "statistic"
+      ]
+    }
+  ]
+}

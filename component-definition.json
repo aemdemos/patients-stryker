@@ -211,6 +211,41 @@
               ]
             }
           }
+        },
+        {
+          "title": "Statistics",
+          "id": "statistics",
+          "model": "statistics",
+          "filter": "statistics",
+          "plugins": {
+            "da": {
+              "name": "statistics",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Statistic",
+          "id": "statistic",
+          "model": "statistic",
+          "plugins": {
+            "da": {
+              "name": "statistic",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "value",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
         }
       ]
     }

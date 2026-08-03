@@ -1,0 +1,86 @@
+/* Statistics block — a grid of large colored stat numbers with descriptions.
+   Extracted from patients.stryker.com/us/en/ivs: big Futura-Bold numerals over
+   centered body-font descriptions, laid out in an author-selectable grid.
+
+   Grid dimensions come from the block's --statistics-columns / --statistics-rows
+   custom properties (set in JS from the cols-N / rows-N authoring variants).
+   Mobile-first: one column, then 2 up, then the authored column count. */
+
+.statistics ul.statistics-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px 0;
+  margin: 0;
+  padding: 0;
+}
+
+.statistics .statistics-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--container-gutter);
+  text-align: center;
+}
+
+/* the big number */
+.statistics .statistics-value {
+  margin: 0 0 10px;
+  font-family: var(--display-font-family);
+  font-size: 92px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-secondary);
+}
+
+/* per-stat colors — author-selectable in Universal Editor */
+.statistics .statistics-item.statistics-teal .statistics-value { color: var(--color-primary); }
+.statistics .statistics-item.statistics-gold .statistics-value { color: var(--color-accent); }
+.statistics .statistics-item.statistics-dark-gold .statistics-value { color: var(--color-accent-link-hover); }
+.statistics .statistics-item.statistics-navy .statistics-value { color: var(--color-navy-bright); }
+.statistics .statistics-item.statistics-sage .statistics-value { color: var(--color-surface-muted); }
+.statistics .statistics-item.statistics-purple .statistics-value { color: var(--color-purple); }
+
+/* the description below the number — source wraps this text in a
+   `fontsize-1-25em` span (1.25em over the 14px body = 17.5px, line-height 1.15) */
+.statistics .statistics-desc {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-h4);
+  color: var(--color-black);
+}
+
+.statistics .statistics-desc p { margin: 0; }
+
+/* keep emphasized text in the body serif (the source bolds in HumanistSlab, not
+   Futura) — overrides the global strong/b display-font rule for this block */
+.statistics .statistics-desc strong,
+.statistics .statistics-desc b {
+  font-family: var(--body-font-family);
+  font-weight: 700;
+}
+
+/* footnote reference links sit as small superscripts, teal like other links
+   (source superscript renders at ~13px, matching the base body size) */
+.statistics .statistics-desc sup {
+  font-size: var(--body-font-size-s);
+}
+
+.statistics .statistics-desc sup a {
+  color: var(--color-primary);
+}
+
+/* tablet: two columns */
+@media (width >= 600px) {
+  .statistics ul.statistics-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop: the author-selected column count (falls back to 3) */
+@media (width >= 900px) {
+  .statistics ul.statistics-list {
+    grid-template-columns: repeat(var(--statistics-columns, 3), 1fr);
+  }
+}
