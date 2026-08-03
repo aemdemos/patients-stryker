@@ -172,24 +172,24 @@ function decorateFootnotes(main) {
     li.id = li.id || `fn-${i + 1}`;
   });
 
-sups.forEach((sup) => {
-  if (sup.querySelector('a')) return;
-  const text = sup.textContent;
-  const fragment = document.createDocumentFragment();
-  const parts = text.split(/(\d+)/);
-  parts.forEach((part) => {
-    const num = Number(part);
-    if (Number.isInteger(num) && num >= 1 && num <= footnoteList.children.length) {
-      const a = document.createElement('a');
-      a.href = `#fn-${num}`;
-      a.textContent = part;
-      fragment.append(a);
-    } else {
-      fragment.append(document.createTextNode(part));
-    }
+  sups.forEach((sup) => {
+    if (sup.querySelector('a')) return;
+    const text = sup.textContent;
+    const fragment = document.createDocumentFragment();
+    const parts = text.split(/(\d+)/);
+    parts.forEach((part) => {
+      const num = Number(part);
+      if (Number.isInteger(num) && num >= 1 && num <= footnoteList.children.length) {
+        const a = document.createElement('a');
+        a.href = `#fn-${num}`;
+        a.textContent = part;
+        fragment.append(a);
+      } else {
+        fragment.append(document.createTextNode(part));
+      }
+    });
+    sup.replaceChildren(fragment);
   });
-  sup.replaceChildren(fragment);
-});
 }
 
 /**

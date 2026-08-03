@@ -34,5 +34,8 @@
     "npm-run-all": "^4.1.5",
     "stylelint": "17.14.1",
     "stylelint-config-standard": "40.0.0"
+  },
+  "dependencies": {
+    "lint": "^1.2.2"
   }
 }
