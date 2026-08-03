@@ -7,6 +7,20 @@
       "filter": "cards"
     },
     {
+      "title": "Card-cta",
+      "id": "card-cta",
+      "model": "card-cta",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "text", "selector": "div:nth-child(1)" }
+          ]
+        }
+      }
+    },
+    {
       "title": "Card",
       "id": "card",
       "model": "card",
@@ -18,20 +32,6 @@
             { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
             { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)" }
-          ]
-        }
-      }
-    },
-    {
-      "title": "Card-cta",
-      "id": "card-cta",
-      "model": "card-cta",
-      "plugins": {
-        "da": {
-          "rows": 1,
-          "columns": 2,
-          "fields": [
-            { "name": "text", "selector": "div:nth-child(1)" }
           ]
         }
       }
