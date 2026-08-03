@@ -59,6 +59,18 @@
         }
       ]
     },
+        {
+      "id": "card-cta",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    },
     {
       "id": "card-img",
       "fields": [
@@ -84,26 +96,14 @@
           "valueType": "string"
         }
       ]
-    },
-        {
-      "id": "card-cta",
-      "fields": [
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
-      ]
     }
   ],
   "filters": [
     {
       "id": "cards",
       "components": [
-        "card-img",
-        "card-cta"
+        "card-cta",
+        "card-img"
       ]
     }
   ]
