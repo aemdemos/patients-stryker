@@ -19,9 +19,8 @@
       "plugins": {
         "da": {
           "name": "card-cta",
-          "unsafeHTML": "<div><p></p></div>",
           "fields": [
-            { "name": "text", "selector": "div:nth-child(1)" }
+            { "name": "text", "selector": "div:only-child" }
           ]
         }
       }
@@ -33,9 +32,8 @@
       "plugins": {
         "da": {
           "name": "card-img",
-          "unsafeHTML": "<div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\" alt=\"\"></picture></div><div><p></p></div>",
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "image", "selector": "div:nth-child(1)>picture>img" },
             { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
