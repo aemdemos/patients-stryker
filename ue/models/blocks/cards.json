@@ -5,44 +5,24 @@
       "id": "cards",
       "model": "cards",
       "filter": "cards",
-      "plugins": {
-        "da": {
-          "rows": 1,
-          "columns": 1
-        }
-      }
+      "plugins": { "da": { "rows": 1, "columns": 2 } }
     },
     {
-      "title": "Card-cta",
+      "title": "Card",
+      "id": "card",
+      "model": "card",
+      "plugins": { "da": { "name": "card", "rows": 1, "columns": 2, "fields": [
+        { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+        { "name": "text", "selector": "div:nth-child(2)" }
+      ]}}
+    },
+    {
+      "title": "Card (CTA)",
       "id": "card-cta",
       "model": "card-cta",
-      "plugins": {
-        "da": {
-          "name": "card-cta",
-          "rows": 1,
-          "columns": 1,
-          "fields": [
-            { "name": "text", "selector": "div:only-child" }
-          ]
-        }
-      }
-    },
-    {
-      "title": "Card-media",
-      "id": "card-media",
-      "model": "card-media",
-      "plugins": {
-        "da": {
-          "name": "card-media",
-          "rows": 1,
-          "columns": 2,
-          "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
-            { "name": "text", "selector": "div:nth-child(2)" }
-          ]
-        }
-      }
+      "plugins": { "da": { "name": "card-cta", "rows": 1, "columns": 1, "fields": [
+        { "name": "text", "selector": "div:only-child" }
+      ]}}
     }
   ],
   "models": [
@@ -50,87 +30,36 @@
       "id": "cards",
       "fields": [
         {
-          "component": "select",
+          "component": "multiselect",
           "name": "classes",
           "label": "Style",
           "valueType": "string",
-          "value": "cta",
           "options": [
-            { "name": "CTA Style", "value": "cta" },
-            { "name": "Border Style", "value": "border" },
-            { "name": "Media Style", "value": "media" }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "filter",
-          "label": "Card Type",
-          "valueType": "string",
-          "value": "cards-cta",
-          "options": [
-            { "name": "CTA Cards", "value": "cards-cta" },
-            { "name": "Media Cards", "value": "cards-media" }
+            { "name": "CTA", "value": "cta" },
+            { "name": "Border", "value": "border" },
+            { "name": "Resources", "value": "resources" }
           ]
         }
+      ]
+    },
+    {
+      "id": "card",
+      "fields": [
+        { "component": "reference", "name": "image", "label": "Image", "valueType": "string" },
+        { "component": "richtext", "name": "text", "label": "Text", "valueType": "string" }
       ]
     },
     {
       "id": "card-cta",
       "fields": [
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
-      ]
-    },
-    {
-      "id": "card-media",
-      "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
-        },
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
+        { "component": "richtext", "name": "text", "label": "Text", "valueType": "string" }
       ]
     }
   ],
   "filters": [
     {
       "id": "cards",
-      "components": [
-        "card-cta"
-      ]
-    },
-    {
-      "id": "cards-cta",
-      "components": [
-        "card-cta"
-      ]
-    },
-    {
-      "id": "cards-media",
-      "components": [
-        "card-media"
-      ]
+      "components": ["card", "card-cta"]
     }
   ]
 }
