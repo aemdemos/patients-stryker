@@ -12,8 +12,6 @@ function foldMobileSource(desktopPic, mobilePic) {
     || (mobileImg && mobileImg.getAttribute('src'));
   if (!mobileSrcset) return;
 
-  // First matching <source> wins: <=840px picks the portrait mobile asset,
-  // wider viewports fall through to the desktop sources / <img> default.
   const mobileMediaSource = document.createElement('source');
   mobileMediaSource.media = '(max-width: 840px)';
   mobileMediaSource.srcset = mobileSrcset;
@@ -22,20 +20,18 @@ function foldMobileSource(desktopPic, mobilePic) {
 }
 
 /**
- * Set up the fullbleed hero from its authored, labeled rows.
+ * Set up the hero from its authored rows.
  *
- * Authoring model (2-column labeled rows so authors clearly manage each image):
- *   | desktop | <wide image> |
- *   | mobile  | <portrait image> |
- *   | <heading + supporting copy> |   (single cell)
+ * Authoring model (single-column rows):
+ *   | <desktop image> |
+ *   | <mobile image>  |  (optional)
+ *   | <heading + supporting copy> |
  *
- * scripts/dm-support.js has already turned each authored DM link into its own
- * <picture>. Here we read the labels, merge the two into one responsive
- * <picture> (mobile served via a `(max-width: 840px)` source), and rebuild the
- * block into the [image][content] structure the CSS overlays.
+ * Merges desktop + mobile pictures into one responsive <picture> and rebuilds
+ * the block into [image][content] structure the CSS overlays.
  * @param {Element} block the hero block
  */
-function setupFullbleed(block) {
+function setupHero(block) {
   let desktopPic = null;
   let mobilePic = null;
   let contentCell = null;
@@ -43,19 +39,22 @@ function setupFullbleed(block) {
   [...block.children].forEach((row) => {
     const cells = [...row.children];
     if (cells.length >= 2) {
-      // labeled image row: [label | image]
       const label = cells[0].textContent.trim().toLowerCase();
       const pic = cells[1].querySelector('picture');
       if (label === 'mobile') mobilePic = pic || mobilePic;
-      else desktopPic = pic || desktopPic; // 'desktop' or any unlabeled image row
-    } else if (cells.length === 1 && cells[0].querySelector('h1, h2, h3, p')) {
-      // content row: heading + supporting copy
-      [contentCell] = cells;
+      else desktopPic = pic || desktopPic;
+    } else if (cells.length === 1) {
+      const cell = cells[0];
+      const pic = cell.querySelector('picture');
+      if (pic && !cell.querySelector('h1, h2, h3, p')) {
+        if (!desktopPic) desktopPic = pic;
+        else if (!mobilePic) mobilePic = pic;
+      } else if (cell.querySelector('h1, h2, h3, p')) {
+        contentCell = cell;
+      }
     }
   });
 
-  // Fallback: if labels weren't matched (e.g. authored as one cell), take the
-  // first two pictures in document order as desktop then mobile.
   if (!desktopPic && !mobilePic) {
     const pics = [...block.querySelectorAll('picture')];
     [desktopPic, mobilePic] = pics;
@@ -64,7 +63,6 @@ function setupFullbleed(block) {
   if (desktopPic && mobilePic) foldMobileSource(desktopPic, mobilePic);
   const heroPicture = desktopPic || mobilePic;
 
-  // Rebuild: a clean [image][content] pair the CSS stacks/overlays.
   const imageDiv = document.createElement('div');
   if (heroPicture) imageDiv.append(heroPicture);
 
@@ -75,12 +73,11 @@ function setupFullbleed(block) {
 }
 
 export default function decorate(block) {
-  // Fullbleed variant: rebuild from labeled image rows, merge the responsive
-  // pair, then split the two-tone headline (lead sentence in the light serif
-  // heading font, remainder in Futura bold via an accent span).
-  if (block.classList.contains('fullbleed')) {
-    setupFullbleed(block);
+  setupHero(block);
 
+  // Fullbleed variant: split the two-tone headline (lead sentence in light serif,
+  // remainder in Futura bold via an accent span).
+  if (block.classList.contains('fullbleed')) {
     const h1 = block.querySelector('h1');
     if (h1 && (h1.childElementCount === 0
       || (h1.childElementCount === 1 && h1.querySelector(':scope > strong')))) {
@@ -97,7 +94,6 @@ export default function decorate(block) {
     }
   }
 
-  // A hero with no image (e.g. a text-only banner) flips to dark-on-light text.
   if (!block.querySelector(':scope > div:first-child picture')) {
     block.classList.add('no-image');
   }

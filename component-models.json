@@ -150,31 +150,17 @@
     "id": "hero",
     "fields": [
       {
-        "component": "reference",
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variant",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "options": [
+          {
+            "name": "Fullbleed",
+            "value": "fullbleed"
+          }
+        ]
       },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "hero-fullbleed",
-    "fields": [
       {
         "component": "reference",
         "valueType": "string",
@@ -193,7 +179,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "mobileImage",
-        "label": "Mobile Image",
+        "label": "Mobile Image (optional)",
         "multi": false
       },
       {
