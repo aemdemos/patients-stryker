@@ -28,22 +28,5 @@
     "components": [
       "card"
     ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "columns-row"
-    ]
-  },
-  {
-    "id": "columns-row",
-    "components": []
-  },
-  {
-    "id": "columns-cell",
-    "components": [
-      "text",
-      "image"
-    ]
   }
 ]
