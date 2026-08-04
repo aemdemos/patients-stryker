@@ -110,7 +110,7 @@
   margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
-  font-size: var(--heading-font-size-xxl);
+  font-size: var(--heading-font-size-xl);
   line-height: 1.35;
 }
 
@@ -132,12 +132,6 @@
   color: var(--text-color);
 }
 
-/* mobile-first: small phones get smaller headline; base style (28px) applies
-   from 600px up via the token, so override below 600px */
-.hero.fullbleed h1 {
-  font-size: var(--heading-font-size-xl);
-}
-
 @media (min-width: 600px) {
   .hero.fullbleed h1 {
     font-size: var(--heading-font-size-xxl);
@@ -145,7 +139,7 @@
 }
 
 /* desktop — wide image, text overlaid on the white left panel, centered */
-@media (min-width: 900px) {
+@media (width >= 900px) {
   .hero.fullbleed > div:last-child {
     align-self: center;
     max-width: 45%;
