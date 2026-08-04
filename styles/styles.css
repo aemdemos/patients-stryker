@@ -74,7 +74,6 @@
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
   --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
-  --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
@@ -83,11 +82,9 @@
      headings 1.06, h4 20.125px/17.5px (1.15) */
   --body-line-height: 1.4286;
   --body-line-height-l: 1.15;       /* 20.125px / 17.5px */
-  --body-line-height-l: 1.15;       /* 20.125px / 17.5px */
   --paragraph-line-height: 1.375;
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
-  --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
