@@ -443,8 +443,8 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
-/* divider between the fullbleed hero section and the cards section below */
-main > .section.hero-container:has(.hero.fullbleed) + .section {
+/* divider between the fullbleed hero and the cards section — constrained to content width */
+main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);
   padding-top: var(--space-section);
 }
