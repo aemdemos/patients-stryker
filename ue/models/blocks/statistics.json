@@ -24,7 +24,7 @@
           "columns": 3,
           "fields": [
             { "name": "color", "selector": "div:nth-child(1)" },
-            { "name": "value", "selector": "div:nth-child(2)" },
+            { "name": "value", "selector": "div:nth-child(2) > p" },
             { "name": "description", "selector": "div:nth-child(3)" }
           ]
         }

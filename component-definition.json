@@ -241,7 +241,7 @@
                 },
                 {
                   "name": "value",
-                  "selector": "div:nth-child(2)"
+                  "selector": "div:nth-child(2) > p"
                 },
                 {
                   "name": "description",

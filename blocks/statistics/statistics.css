@@ -23,13 +23,20 @@
   text-align: center;
 }
 
-/* the big number */
-.statistics .statistics-value {
-  margin: 0 0 10px;
+/* the big number — the cell's text is wrapped in a <p> by EDS. Set the number
+   typography on both the cell and its <p>, but leave `color` off the <p> so it
+   inherits (letting the per-stat color rules below take effect). */
+.statistics .statistics-value,
+.statistics .statistics-value p {
+  margin: 0;
   font-family: var(--display-font-family);
   font-size: 92px;
   font-weight: 700;
   line-height: 1;
+}
+
+.statistics .statistics-value {
+  margin-bottom: 18px;
   color: var(--color-secondary);
 }
 
@@ -42,16 +49,17 @@
 .statistics .statistics-item.statistics-purple .statistics-value { color: var(--color-purple); }
 
 /* the description below the number — source wraps this text in a
-   `fontsize-1-25em` span (1.25em over the 14px body = 17.5px, line-height 1.15) */
-.statistics .statistics-desc {
+   `fontsize-1-25em` span (1.25em over the 14px body = 17.5px, line-height 1.15).
+   The cell's text is wrapped in a <p> by EDS, so the <p> is included here to beat
+   the global `p { line-height: 1.375 }` rule that would otherwise loosen it. */
+.statistics .statistics-desc,
+.statistics .statistics-desc p {
   margin: 0;
   font-family: var(--body-font-family);
   font-size: var(--heading-font-size-m);
   line-height: var(--heading-line-height-h4);
   color: var(--color-black);
 }
-
-.statistics .statistics-desc p { margin: 0; }
 
 /* keep emphasized text in the body serif (the source bolds in HumanistSlab, not
    Futura) — overrides the global strong/b display-font rule for this block */
