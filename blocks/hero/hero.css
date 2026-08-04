@@ -107,10 +107,10 @@
 }
 
 .hero.fullbleed h1 {
-  margin-bottom: 15px;
+  margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
-  font-size: 28px;             /* source mobile headline: 28px */
+  font-size: var(--heading-font-size-xxl);
   line-height: 1.35;
 }
 
@@ -123,7 +123,7 @@
 .hero.fullbleed p {
   margin-bottom: 0;
   font-family: var(--heading-font-family);
-  font-size: 16px;            /* source mobile subcopy */
+  font-size: var(--body-font-size-m);
   line-height: 1.35;
 }
 
@@ -132,30 +132,33 @@
   color: var(--text-color);
 }
 
-/* small phones — trim the headline so it doesn't crowd the portrait image */
-@media (width <= 480px) {
+/* mobile-first: small phones get smaller headline; base style (28px) applies
+   from 600px up via the token, so override below 600px */
+.hero.fullbleed h1 {
+  font-size: var(--heading-font-size-xl);
+}
+
+@media (min-width: 600px) {
   .hero.fullbleed h1 {
-    font-size: 24px;
+    font-size: var(--heading-font-size-xxl);
   }
 }
 
 /* desktop — wide image, text overlaid on the white left panel, centered */
-@media (width > 840px) {
+@media (min-width: 900px) {
   .hero.fullbleed > div:last-child {
-    align-self: center;              /* vertically centered on the panel */
+    align-self: center;
     max-width: 45%;
-    padding: 0 0 0 5vw;              /* source: ~5% left inset */
+    padding: 0 0 0 5vw;
   }
 
   .hero.fullbleed h1 {
-    font-size: min(3.5vw, 49px);    /* source: 3.5vw capped at 49px */
+    font-size: min(3.5vw, 49px);
   }
 
-  /* source supporting copy is the small 14px serif subcopy (line2), not a
-     large paragraph — measured 14px / line-height 18.9px (1.35) at 1440 */
   .hero.fullbleed p {
     margin-top: 8px;
-    font-size: 14px;
+    font-size: var(--body-font-size-m);
     line-height: 1.35;
   }
 }

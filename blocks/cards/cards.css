@@ -13,18 +13,18 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;   /* mobile: 1-up (matches source <768px) */
-  gap: 30px;                    /* source column/row gutter (15px + 15px) */
+  gap: var(--space-section);
 }
 
-/* tablet: 2-up — matches source's col-sm-6 breakpoint (768–991px) */
-@media (width >= 768px) {
+/* tablet: 2-up */
+@media (min-width: 600px) {
   .cards > ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* desktop: 3-up — matches source's col-md-4 breakpoint (>=992px) */
-@media (width >= 992px) {
+/* desktop: 3-up */
+@media (min-width: 900px) {
   .cards > ul {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -45,14 +45,14 @@
   border-radius: 0;
 }
 
-/* card body — source image-to-heading gap is 30px */
+/* card body */
 .cards .cards-card-body {
-  margin: 30px 0 0;
+  margin: var(--space-section) 0 0;
   color: var(--text-color);
 }
 
 .cards .cards-card-body h3 {
-  margin: 0 0 15px;
+  margin: 0 0 var(--space-block);
 
   /* Source card heading text is wrapped in span.futura-bold and renders in
      Futura LT W01, weight 700 (a bold sans-serif) — NOT the global serif h3.
@@ -63,7 +63,7 @@
 }
 
 .cards .cards-card-body p {
-  margin: 0 0 15px;
+  margin: 0 0 var(--space-block);
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
@@ -77,5 +77,5 @@
  * control the button by adding/removing the emphasis in the content.
  */
 .cards .cards-card-body .button-wrapper {
-  margin: 15px 0 0;
+  margin: var(--space-block) 0 0;
 }

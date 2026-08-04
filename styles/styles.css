@@ -446,12 +446,12 @@ main .section.highlight {
 /* divider below the fullbleed hero */
 main > .section.hero-container:has(.hero.fullbleed) > .hero-wrapper {
   border-bottom: 1px solid var(--color-surface-muted);
-  padding-bottom: 50px;
+  padding-bottom: var(--space-section);
 }
 
 /* audience note above the fullbleed hero */
 main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child {
-  margin-bottom: 15px;
+  margin-bottom: var(--space-block);
   font-size: var(--body-font-size-l);
   text-align: right;
 }
