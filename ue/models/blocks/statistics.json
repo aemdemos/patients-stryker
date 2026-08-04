@@ -36,9 +36,11 @@
       "id": "statistics",
       "fields": [
         {
-          "component": "multiselect",
+          "component": "select",
           "name": "classes",
+          "value": "",
           "label": "Columns",
+          "valueType": "string",
           "options": [
             { "name": "2 columns", "value": "cols-2" },
             { "name": "3 columns", "value": "cols-3" },
