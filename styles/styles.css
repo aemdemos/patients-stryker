@@ -417,6 +417,18 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+/* hero → cards divider — matches the source's thin sage rule between the hero
+   banner and the solution cards. The <hr> section break splits the hero into
+   its own `.section.hero-container`; the rule is drawn on that section's inner
+   content wrapper so it spans the 1410px content width (not full-bleed) and
+   sits 50px above the cards, exactly as measured on patients.stryker.com.
+   Scoped to the `fullbleed` variant so a plain hero in another section does
+   not pick up the divider. */
+main > .section.hero-container:has(.hero.fullbleed) > div {
+  border-bottom: 1px solid var(--color-surface-muted);
+  padding-bottom: 50px;
+}
+
 @media (width >= 900px) {
   main > .section > div {
     max-width: var(--container-max);
