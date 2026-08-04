@@ -14,29 +14,24 @@
           ]
         }
       }
-    },
-    {
-      "title": "Hero (Fullbleed)",
-      "id": "hero-fullbleed",
-      "model": "hero-fullbleed",
-      "plugins": {
-        "da": {
-          "name": "Hero (fullbleed)",
-          "rows": 3,
-          "columns": 1,
-          "fields": [
-            { "name": "desktopImage", "selector": "div:nth-child(1)>div>picture>img[src]" },
-            { "name": "mobileImage", "selector": "div:nth-child(2)>div>picture>img[src]" },
-            { "name": "content", "selector": "div:nth-child(3)>div" }
-          ]
-        }
-      }
     }
   ],
   "models": [
     {
       "id": "hero",
       "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variant",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Fullbleed",
+              "value": "fullbleed"
+            }
+          ]
+        },
         {
           "component": "reference",
           "valueType": "string",
@@ -56,45 +51,6 @@
           "name": "text",
           "value": "",
           "label": "Text",
-          "valueType": "string"
-        }
-      ]
-    },
-    {
-      "id": "hero-fullbleed",
-      "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "desktopImage",
-          "label": "Desktop Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "desktopImageAlt",
-          "label": "Desktop Image Alt",
-          "value": ""
-        },
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "mobileImage",
-          "label": "Mobile Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "mobileImageAlt",
-          "label": "Mobile Image Alt",
-          "value": ""
-        },
-        {
-          "component": "richtext",
-          "name": "content",
-          "label": "Content",
           "valueType": "string"
         }
       ]

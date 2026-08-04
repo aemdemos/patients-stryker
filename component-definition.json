@@ -211,32 +211,6 @@
               ]
             }
           }
-        },
-        {
-          "title": "Hero (Fullbleed)",
-          "id": "hero-fullbleed",
-          "model": "hero-fullbleed",
-          "plugins": {
-            "da": {
-              "name": "Hero (fullbleed)",
-              "rows": 3,
-              "columns": 1,
-              "fields": [
-                {
-                  "name": "desktopImage",
-                  "selector": "div:nth-child(1)>div>picture>img[src]"
-                },
-                {
-                  "name": "mobileImage",
-                  "selector": "div:nth-child(2)>div>picture>img[src]"
-                },
-                {
-                  "name": "content",
-                  "selector": "div:nth-child(3)>div"
-                }
-              ]
-            }
-          }
         }
       ]
     }
