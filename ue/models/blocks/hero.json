@@ -53,19 +53,21 @@
           "valueType": "string",
           "name": "mobileImage",
           "label": "Mobile Image (optional)",
-          "multi": false
+          "multi": false,
+          "condition": { "in": ["fullbleed", { "var": "classes" }] }
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "mobileImageAlt",
           "label": "Mobile Image Alt",
-          "value": ""
+          "value": "",
+          "condition": { "in": ["fullbleed", { "var": "classes" }] }
         },
         {
           "component": "richtext",
           "name": "content",
-          "label": "Content (DM links for images + heading + copy)",
+          "label": "Content",
           "valueType": "string"
         }
       ]
