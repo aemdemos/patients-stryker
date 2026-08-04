@@ -39,7 +39,6 @@
           "component": "multiselect",
           "name": "classes",
           "label": "Columns",
-          "value": "cols-3",
           "options": [
             { "name": "2 columns", "value": "cols-2" },
             { "name": "3 columns", "value": "cols-3" },
