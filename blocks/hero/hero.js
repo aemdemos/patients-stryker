@@ -82,7 +82,8 @@ export default function decorate(block) {
     setupFullbleed(block);
 
     const h1 = block.querySelector('h1');
-    if (h1 && h1.childElementCount === 0) {
+    if (h1 && (h1.childElementCount === 0
+      || (h1.childElementCount === 1 && h1.querySelector(':scope > strong')))) {
       const text = h1.textContent.trim();
       const match = text.match(/^(.*?[.!?])\s+(.+)$/s);
       if (match) {
