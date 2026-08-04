@@ -21,10 +21,12 @@
   --color-primary-dark: #426d6b;
   --color-primary-hover: #395d5b;
   --color-primary-active: #2b4745;
+  --color-primary-pressed: #2f4d4c;
   --color-accent: #ffb500;
   --color-accent-dark: #e6a300;
   --color-accent-hover: #cc9100;
   --color-accent-active: #a87700;
+  --color-accent-link-hover: #af6d04;
   --color-secondary: #545857;
   --color-navy: #27455c;
   --color-success: #32ae88;
@@ -62,11 +64,14 @@
   /* footnote */
   --footnote-font-size: 11.2px;
   --footnote-line-height: 1.2;
+  /* body sizes (1.25x scale — some blocks enlarge text via an inner span) */
+  --body-font-size-l: 17.5px;       /* 1.25 x 14 */
 
   /* heading sizes */
   --heading-font-size-xxl: 28px;    /* h1 */
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
+  --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
@@ -74,9 +79,11 @@
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
   --body-line-height: 1.4286;
+  --body-line-height-l: 1.15;       /* 20.125px / 17.5px */
   --paragraph-line-height: 1.375;
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
+  --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block: 15px;
@@ -96,8 +103,9 @@
   --container-narrow: 575px;
   --container-gutter: 15px;
 
-  /* nav height */
+  /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height */
   --nav-height: 90px;
+  --nav-bar-height: 60px;
 }
 
 body {
@@ -116,6 +124,15 @@ body.appear {
 
 header {
   height: var(--nav-height);
+}
+
+/* reserve the desktop two-row header height (white bar + gold nav bar) here in
+   eager CSS so the space is held before the lazy header block loads, preventing
+   content from shifting down on load (CLS) */
+@media (width >= 900px) {
+  header {
+    height: calc(var(--nav-height) + var(--nav-bar-height));
+  }
 }
 
 header .header,
