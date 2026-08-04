@@ -17,19 +17,17 @@
     },
     {
       "title": "Hero (Fullbleed)",
-      "id": "hero-fullbleed",
+      "id": "hero (fullbleed)",
       "model": "hero-fullbleed",
       "plugins": {
         "da": {
           "name": "Hero (fullbleed)",
           "rows": 3,
-          "columns": 2,
+          "columns": 1,
           "fields": [
-            { "name": "desktopLabel", "selector": "div:nth-child(1)>div:nth-child(1)" },
-            { "name": "desktopImage", "selector": "div:nth-child(1)>div:nth-child(2)>picture>img[src]" },
-            { "name": "mobileLabel", "selector": "div:nth-child(2)>div:nth-child(1)" },
-            { "name": "mobileImage", "selector": "div:nth-child(2)>div:nth-child(2)>picture>img[src]" },
-            { "name": "content", "selector": "div:nth-child(3)>div:nth-child(1)" }
+            { "name": "desktopImage", "selector": "div:nth-child(1)>div>picture>img[src]" },
+            { "name": "mobileImage", "selector": "div:nth-child(2)>div>picture>img[src]" },
+            { "name": "content", "selector": "div:nth-child(3)>div" }
           ]
         }
       }
