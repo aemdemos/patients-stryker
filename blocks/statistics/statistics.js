@@ -12,12 +12,13 @@ const COLOR_CLASSES = {
   purple: 'statistics-purple',
 };
 
-// read a `prefix-N` variant class (e.g. cols-3) and return N, or null if absent
-function readCountVariant(block, prefix) {
+// read the authored column count from the `cols-N` variant class (default 3);
+// rows are not set — the grid flows them automatically from the item count
+function readColumns(block) {
   const match = [...block.classList]
-    .map((c) => c.match(new RegExp(`^${prefix}-(\\d+)$`)))
+    .map((c) => c.match(/^cols-(\d+)$/))
     .find(Boolean);
-  return match ? Number(match[1]) : null;
+  return match ? Number(match[1]) : 3;
 }
 
 /**
@@ -25,11 +26,7 @@ function readCountVariant(block, prefix) {
  * @param {Element} block The block element
  */
 export default function decorate(block) {
-  // grid dimensions authored as variant classes (cols-N / rows-N); default 3 cols
-  const columns = readCountVariant(block, 'cols') || 3;
-  const rows = readCountVariant(block, 'rows');
-  block.style.setProperty('--statistics-columns', columns);
-  if (rows) block.style.setProperty('--statistics-rows', rows);
+  block.style.setProperty('--statistics-columns', readColumns(block));
 
   const list = document.createElement('ul');
   list.className = 'statistics-list';

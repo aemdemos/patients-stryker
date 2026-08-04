@@ -36,26 +36,14 @@
       "id": "statistics",
       "fields": [
         {
-          "component": "select",
-          "name": "columns",
+          "component": "multiselect",
+          "name": "classes",
           "label": "Columns",
           "value": "cols-3",
           "options": [
-            { "name": "2", "value": "cols-2" },
-            { "name": "3", "value": "cols-3" },
-            { "name": "4", "value": "cols-4" }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "rows",
-          "label": "Rows",
-          "value": "rows-2",
-          "options": [
-            { "name": "1", "value": "rows-1" },
-            { "name": "2", "value": "rows-2" },
-            { "name": "3", "value": "rows-3" },
-            { "name": "4", "value": "rows-4" }
+            { "name": "2 columns", "value": "cols-2" },
+            { "name": "3 columns", "value": "cols-3" },
+            { "name": "4 columns", "value": "cols-4" }
           ]
         }
       ]

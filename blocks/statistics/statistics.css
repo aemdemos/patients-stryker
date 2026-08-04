@@ -2,8 +2,8 @@
    Extracted from patients.stryker.com/us/en/ivs: big Futura-Bold numerals over
    centered body-font descriptions, laid out in an author-selectable grid.
 
-   Grid dimensions come from the block's --statistics-columns / --statistics-rows
-   custom properties (set in JS from the cols-N / rows-N authoring variants).
+   The column count comes from the block's --statistics-columns custom property
+   (set in JS from the cols-N authoring variant); rows flow automatically.
    Mobile-first: one column, then 2 up, then the authored column count. */
 
 .statistics ul.statistics-list {
