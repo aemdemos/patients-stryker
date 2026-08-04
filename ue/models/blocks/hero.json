@@ -10,8 +10,8 @@
           "rows": 3,
           "columns": 1,
           "fields": [
-            { "name": "desktopImage", "selector": "div:nth-child(1)>div" },
-            { "name": "mobileImage", "selector": "div:nth-child(2)>div" },
+            { "name": "desktopImage", "selector": "div:nth-child(1)>div>picture>img[src]" },
+            { "name": "mobileImage", "selector": "div:nth-child(2)>div>picture>img[src]" },
             { "name": "content", "selector": "div:nth-child(3)>div" }
           ]
         }
@@ -35,21 +35,37 @@
           ]
         },
         {
-          "component": "richtext",
+          "component": "reference",
+          "valueType": "string",
           "name": "desktopImage",
-          "label": "Desktop Image (drop image or paste DM link)",
-          "valueType": "string"
+          "label": "Desktop Image",
+          "multi": false
         },
         {
-          "component": "richtext",
+          "component": "text",
+          "valueType": "string",
+          "name": "desktopImageAlt",
+          "label": "Desktop Image Alt",
+          "value": ""
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
           "name": "mobileImage",
-          "label": "Mobile Image (optional — drop image or paste DM link)",
-          "valueType": "string"
+          "label": "Mobile Image (optional)",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "mobileImageAlt",
+          "label": "Mobile Image Alt",
+          "value": ""
         },
         {
           "component": "richtext",
           "name": "content",
-          "label": "Content",
+          "label": "Content (DM links for images + heading + copy)",
           "valueType": "string"
         }
       ]

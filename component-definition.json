@@ -200,11 +200,11 @@
               "fields": [
                 {
                   "name": "desktopImage",
-                  "selector": "div:nth-child(1)>div"
+                  "selector": "div:nth-child(1)>div>picture>img[src]"
                 },
                 {
                   "name": "mobileImage",
-                  "selector": "div:nth-child(2)>div"
+                  "selector": "div:nth-child(2)>div>picture>img[src]"
                 },
                 {
                   "name": "content",

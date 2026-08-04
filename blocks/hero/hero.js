@@ -55,6 +55,18 @@ function setupHero(block) {
     }
   });
 
+  // If no dedicated image rows found, look for pictures inside the content cell
+  // (DM links converted to <picture> by dm-support.js live alongside the heading)
+  if (!desktopPic && !mobilePic && contentCell) {
+    const pics = [...contentCell.querySelectorAll('picture')];
+    [desktopPic, mobilePic] = pics;
+    pics.forEach((pic) => {
+      const wrapper = pic.closest('p, div');
+      if (wrapper && wrapper.parentNode === contentCell) wrapper.remove();
+      else pic.remove();
+    });
+  }
+
   if (!desktopPic && !mobilePic) {
     const pics = [...block.querySelectorAll('picture')];
     [desktopPic, mobilePic] = pics;
