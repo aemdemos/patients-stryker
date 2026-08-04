@@ -443,10 +443,10 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
-/* divider below the fullbleed hero */
-main > .section.hero-container:has(.hero.fullbleed) > .hero-wrapper {
-  border-bottom: 1px solid var(--color-surface-muted);
-  padding-bottom: var(--space-section);
+/* divider between the fullbleed hero section and the cards section below */
+main > .section.hero-container:has(.hero.fullbleed) + .section {
+  border-top: 1px solid var(--color-surface-muted);
+  padding-top: var(--space-section);
 }
 
 /* audience note above the fullbleed hero */
