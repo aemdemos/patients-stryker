@@ -132,7 +132,7 @@
   color: var(--text-color);
 }
 
-@media (min-width: 600px) {
+@media (width >= 600px) {
   .hero.fullbleed h1 {
     font-size: var(--heading-font-size-xxl);
   }
