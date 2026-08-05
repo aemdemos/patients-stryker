@@ -79,11 +79,16 @@
 .hero.fullbleed img {
   display: block;
   width: 100%;
+
+  /* pin the mobile box to the portrait asset's ratio so height is
+     deterministic (the DM preset can serve a wider crop, which otherwise
+     collapses the rendered height) */
   height: auto;
+  aspect-ratio: 4 / 5;
 
   /* the assets are designed full-bleed crops (people cut-out + gold rule baked
-     in); contain preserves that composition without cropping the baked-in art */
-  object-fit: contain;
+     in); cover fills the pinned box without letterboxing */
+  object-fit: cover;
 }
 
 /* text overlay — sits above the image (z-index) */
@@ -154,6 +159,12 @@
     align-self: center;
     max-width: 45%;
     padding: 0 0 0 5vw;
+  }
+
+  /* desktop asset is a wide crop — let its own ratio drive the height */
+  .hero.fullbleed img {
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   .hero.fullbleed h1 {
