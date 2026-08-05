@@ -91,11 +91,24 @@
           {
             "name": "CTA",
             "value": "cta"
+<<<<<<< HEAD
           },
           {
             "name": "No Image",
             "value": "noimg"
           }
+=======
+          }
+        ]
+      },
+      {
+        "component": "array",
+        "name": "children",
+        "label": "Card List",
+        "valueType": [
+          "card-resources",
+          "card-cta"
+>>>>>>> 5b6ba7a (attempt4)
         ]
       }
     ]
