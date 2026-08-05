@@ -91,6 +91,10 @@
           {
             "name": "CTA",
             "value": "cta"
+          },
+          {
+            "name": "No Image",
+            "value": "noimg"
           }
         ]
       }
@@ -100,32 +104,16 @@
     "id": "card",
     "fields": [
       {
-        "component": "boolean",
-        "name": "classes_noimg",
-        "label": "No Image",
-        "valueType": "boolean"
-      },
-      {
         "component": "richtext",
         "valueType": "string",
         "name": "image",
-        "label": "Image URL",
-        "condition": {
-          "!": {
-            "var": "classes_noimg"
-          }
-        }
+        "label": "Image URL"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt (link text)",
-        "condition": {
-          "!": {
-            "var": "classes_noimg"
-          }
-        }
+        "label": "Image Alt (link text)"
       },
       {
         "component": "richtext",

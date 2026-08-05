@@ -87,8 +87,8 @@
   margin: var(--space-block) 0 0;
 }
 
-/* no-image card (noimg variant) collapses to a single column */
-.cards > ul > li.cards-card-single {
+/* no-image block variant: every card collapses to a single column */
+.cards.noimg > ul > li {
   grid-template-columns: 1fr;
 }
 
