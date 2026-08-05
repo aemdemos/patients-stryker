@@ -93,47 +93,58 @@
             "value": "cta"
           }
         ]
-      },
-      {
-        "component": "array",
-        "name": "children",
-        "label": "Card List",
-        "valueType": [
-          "card-resources",
-          "card-cta"
-        ]
       }
     ]
   },
   {
-    "id": "card-resources",
+    "id": "card",
     "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Image",
+            "value": "noimg"
+          }
+        ]
+      },
       {
         "component": "richtext",
         "valueType": "string",
         "name": "image",
-        "label": "Image"
+        "label": "Image URL",
+        "condition": {
+          "!": {
+            "in": [
+              "noimg",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt (link text)"
+        "label": "Image Alt (link text)",
+        "condition": {
+          "!": {
+            "in": [
+              "noimg",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
       },
       {
-        "component": "text",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "card-cta",
-    "fields": [
-      {
-        "component": "text",
+        "component": "richtext",
         "name": "text",
         "value": "",
         "label": "Text",

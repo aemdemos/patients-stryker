@@ -100,17 +100,18 @@
           "filter": "cards",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"cards\"></div>"
+              "rows": 1,
+              "columns": 2
             }
           }
         },
         {
-          "title": "Card-resources",
-          "id": "card-resources",
-          "model": "card-resources",
+          "title": "Card",
+          "id": "card",
+          "model": "card",
           "plugins": {
             "da": {
-              "name": "card-resources",
+              "name": "card",
               "rows": 1,
               "columns": 2,
               "fields": [
@@ -125,24 +126,6 @@
                 {
                   "name": "text",
                   "selector": "div:nth-child(2)"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "title": "Card-cta",
-          "id": "card-cta",
-          "model": "card-cta",
-          "plugins": {
-            "da": {
-              "name": "card-cta",
-              "rows": 1,
-              "columns": 1,
-              "fields": [
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(1)"
                 }
               ]
             }
