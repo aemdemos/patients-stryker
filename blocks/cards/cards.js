@@ -17,10 +17,14 @@ export default function decorate(block) {
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
+    // A card is "no image" (single column) when the author set the noimg
+    // variant (class surfaced on the authored row). Read it before moving
+    // children out of the row.
+    const noImg = row.className.split(/\s+/).includes('noimg');
     while (row.firstElementChild) li.append(row.firstElementChild);
-    // CTA cards carry no image; if authored with a 2-column card the empty
-    // image cell would render as a blank body box, so drop empty cells here.
-    if (isCta) {
+    // CTA and no-image cards carry no image; if authored with a 2-column card
+    // the empty image cell would render as a blank body box, so drop empty cells.
+    if (isCta || noImg) {
       [...li.children].forEach((div) => {
         if (!div.textContent.trim() && !div.querySelector('picture, img')) div.remove();
       });
@@ -29,6 +33,8 @@ export default function decorate(block) {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
     });
+    // single-column only when the author selected the noimg variant
+    if (noImg) li.classList.add('cards-card-single');
 
     if (isCta) {
       // Lift the CTA (a paragraph whose only content is a link) out of the
