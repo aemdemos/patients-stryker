@@ -32,8 +32,10 @@
 
 .cards > ul > li {
   background-color: var(--background-color);
+}
 
-  /* a card with an image lays out as 2 columns (image | text) */
+/* resources variant: card lays out as 2 columns (image | text) */
+.cards.resources > ul > li {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
