@@ -107,7 +107,9 @@
   margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
-  font-size: var(--heading-font-size-xxl);
+
+  /* scale the headline with the viewport on mobile so it isn't undersized */
+  font-size: 7vw;
   line-height: 1.35;
 }
 
@@ -120,7 +122,9 @@
 .hero.fullbleed p {
   margin-bottom: 0;
   font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-l);
+
+  /* scale supporting copy with the viewport on mobile */
+  font-size: 3vw;
   line-height: 1.35;
 }
 
@@ -158,7 +162,7 @@
 
   .hero.fullbleed p {
     margin-top: 8px;
-    font-size: 1.5vw;
+    font-size: 21px;
     line-height: 1.35;
   }
 }
