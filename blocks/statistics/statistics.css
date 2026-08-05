@@ -10,7 +10,7 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px 0;
+  gap: var(--statistics-item-gap) 0;
   margin: 0;
   padding: 0;
 }
@@ -30,13 +30,13 @@
 .statistics .statistics-value p {
   margin: 0;
   font-family: var(--display-font-family);
-  font-size: 92px;
+  font-size: var(--statistics-number-size);
   font-weight: 700;
   line-height: 1;
 }
 
 .statistics .statistics-value {
-  margin-bottom: 18px;
+  margin-bottom: var(--statistics-number-gap);
   color: var(--color-secondary);
 }
 

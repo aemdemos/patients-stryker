@@ -12,6 +12,10 @@ const COLOR_CLASSES = {
   purple: 'statistics-purple',
 };
 
+// default color when the authored keyword is missing or unrecognized (e.g. an
+// author typed it wrong in DA); mirrors the model's default option
+const DEFAULT_COLOR_CLASS = 'statistics-teal';
+
 // read the authored column count from the `cols-N` variant class (default 3);
 // rows are not set — the grid flows them automatically from the item count
 function readColumns(block) {
@@ -37,13 +41,16 @@ export default function decorate(block) {
     moveInstrumentation(row, item);
 
     const cells = [...row.children];
-    // first cell holds the color keyword (authored content); consume it and
-    // apply the matching class. Rows without a recognized keyword keep the
-    // default color.
-    const keyword = cells[0] ? cells[0].textContent.trim().toLowerCase() : '';
-    if (COLOR_CLASSES[keyword]) {
-      item.classList.add(COLOR_CLASSES[keyword]);
+    // A full stat row is [color, value, description] (3 cells). The first cell is
+    // the color keyword — consume it and apply the matching class, falling back
+    // to the default color for a missing/mistyped keyword. Rows with only 2 cells
+    // (no color authored) keep the default color and are treated as [value, desc].
+    if (cells.length >= 3) {
+      const keyword = cells[0].textContent.trim().toLowerCase();
+      item.classList.add(COLOR_CLASSES[keyword] || DEFAULT_COLOR_CLASS);
       cells.shift().remove();
+    } else {
+      item.classList.add(DEFAULT_COLOR_CLASS);
     }
 
     const [value, desc] = cells;

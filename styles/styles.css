@@ -85,6 +85,11 @@
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
 
+  /* statistics block — measured from source: big number size + surrounding gaps */
+  --statistics-number-size: 92px;
+  --statistics-item-gap: 40px;
+  --statistics-number-gap: 18px;
+
   /* radius scale (square-cornered design) */
   --radius-none: 0;
   --radius-sm: 2px;
