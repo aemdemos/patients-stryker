@@ -5,9 +5,6 @@ export default function decorate(block) {
   // `cta` variant: each card is a shadowed text box with a "LEARN MORE"
   // call-to-action button rendered below and OUTSIDE the box.
   const isCta = block.classList.contains('cta');
-  // `noimg` is a block-level option (persists reliably, unlike a per-card flag):
-  // every card in the block drops its image cell and renders as a single column.
-  const isNoImg = block.classList.contains('noimg');
   const isUEAuthoring = window.location.hostname.includes('.ue.da.live');
 
   // In UE, keep authored structure intact so child component identity persists.
@@ -20,10 +17,13 @@ export default function decorate(block) {
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
+    // Per-card "No Image" variant: the noimg class surfaces on the authored
+    // card row (from the card model's `classes` multiselect). Read before moving.
+    const noImg = row.className.split(/\s+/).includes('noimg');
     while (row.firstElementChild) li.append(row.firstElementChild);
-    // CTA and no-image blocks carry no image; if authored with a 2-column card
+    // CTA and no-image cards carry no image; if authored with a 2-column card
     // the empty image cell would render as a blank body box, so drop empty cells.
-    if (isCta || isNoImg) {
+    if (isCta || noImg) {
       [...li.children].forEach((div) => {
         if (!div.textContent.trim() && !div.querySelector('picture, img')) div.remove();
       });
@@ -32,6 +32,8 @@ export default function decorate(block) {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
     });
+    // single-column when the author selected the noimg variant
+    if (noImg) li.classList.add('cards-card-single');
 
     if (isCta) {
       // Lift the CTA (a paragraph whose only content is a link) out of the

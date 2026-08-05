@@ -132,27 +132,6 @@
           }
         },
         {
-<<<<<<< HEAD
-=======
-          "title": "Card-cta",
-          "id": "card-cta",
-          "model": "card-cta",
-          "plugins": {
-            "da": {
-              "name": "card-cta",
-              "rows": 1,
-              "columns": 1,
-              "fields": [
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(1)"
-                }
-              ]
-            }
-          }
-        },
-        {
->>>>>>> 5b6ba7a (attempt4)
           "title": "Columns",
           "id": "columns",
           "model": "columns",
