@@ -93,10 +93,10 @@
     ]
   },
   {
-    "id": "card-resources",
+    "id": "card",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "richtext",
         "valueType": "string",
         "name": "image",
         "label": "Image URL"
