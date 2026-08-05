@@ -100,11 +100,16 @@
     "id": "card",
     "fields": [
       {
-        "component": "multiselect",
+        "component": "select",
         "name": "classes",
         "label": "Variant",
         "valueType": "string",
+        "value": "",
         "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
           {
             "name": "No Image",
             "value": "noimg"
@@ -117,14 +122,12 @@
         "name": "image",
         "label": "Image URL",
         "condition": {
-          "!": {
-            "in": [
-              "noimg",
-              {
-                "var": "classes"
-              }
-            ]
-          }
+          "!=": [
+            {
+              "var": "classes"
+            },
+            "noimg"
+          ]
         }
       },
       {
@@ -133,14 +136,12 @@
         "name": "imageAlt",
         "label": "Image Alt (link text)",
         "condition": {
-          "!": {
-            "in": [
-              "noimg",
-              {
-                "var": "classes"
-              }
-            ]
-          }
+          "!=": [
+            {
+              "var": "classes"
+            },
+            "noimg"
+          ]
         }
       },
       {
