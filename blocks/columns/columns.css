@@ -4,6 +4,7 @@
 }
 
 .columns img {
+  display: block;
   width: 100%;
 }
 
@@ -15,10 +16,6 @@
 
 .columns > div > .columns-img-col {
   order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
 }
 
 .columns h4 {
@@ -38,15 +35,14 @@
   list-style-type: disc;
 }
 
-/* image-top variant (authored as "Columns (image-top)"): image sits above the
-   text with extra spacing before the heading. Gated behind an explicit variant
-   class so an inline image in a text-only column never shifts the layout. */
-.columns.image-top p:has(picture) {
+/* image-on-top is the default column layout: the image sits above the text with
+   extra spacing before the heading. A column with the "text-only" layout has no
+   image, so these rules simply have nothing to act on there. */
+.columns p:has(picture) {
   margin-bottom: 43px;
 }
 
-.columns.image-top p picture,
-.columns.image-top p picture img {
+.columns p picture {
   display: block;
 }
 
@@ -63,7 +59,7 @@
   }
 
   /* image breaks out of the 28px text inset to the 15px column-edge inset */
-  .columns.image-top p:has(picture) {
+  .columns p:has(picture) {
     margin-inline: -13px;
   }
 }

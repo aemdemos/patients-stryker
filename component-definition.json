@@ -139,32 +139,33 @@
             "da": {
               "name": "columns",
               "rows": 1,
-              "columns": 2,
-              "behaviour": "columns"
+              "columns": 2
             }
           }
         },
         {
-          "title": "Columns Row",
-          "id": "columns-row",
-          "model": "columns-row",
-          "filter": "columns-row",
+          "title": "Column",
+          "id": "column",
+          "model": "column",
           "plugins": {
             "da": {
-              "name": "columns-row",
-              "behaviour": "columns-row"
-            }
-          }
-        },
-        {
-          "title": "Columns Cell",
-          "id": "columns-cell",
-          "model": "columns-cell",
-          "filter": "columns-cell",
-          "plugins": {
-            "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
+              "name": "column",
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:last-child"
+                }
+              ]
             }
           }
         },

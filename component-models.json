@@ -103,30 +103,65 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "column",
     "fields": [
       {
-        "component": "number",
-        "valueType": "number",
-        "name": "columns",
-        "label": "Number of Columns",
-        "value": 2,
-        "validation": {
-          "numberMin": 1,
-          "numberMax": 3
+        "component": "select",
+        "name": "classes",
+        "label": "Layout",
+        "valueType": "string",
+        "value": "",
+        "options": [
+          {
+            "name": "Image top",
+            "value": ""
+          },
+          {
+            "name": "Text only",
+            "value": "text-only"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
+          }
         }
       },
       {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Variant",
+        "component": "text",
         "valueType": "string",
-        "options": [
-          {
-            "name": "Image Top",
-            "value": "image-top"
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "value": "",
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
           }
-        ]
+        }
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text",
+        "value": ""
       }
     ]
   },
