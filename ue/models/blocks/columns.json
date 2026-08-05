@@ -4,22 +4,37 @@
       "title": "Columns",
       "id": "columns",
       "model": "columns",
+      "filter": "columns",
       "plugins": {
         "da": {
           "name": "columns",
           "rows": 1,
-          "columns": 3,
-          "fields": [
-            { "name": "column1Image", "selector": "div>div:nth-child(1)>picture>img[src]" },
-            { "name": "column1ImageAlt", "selector": "div>div:nth-child(1)>picture>img[alt]" },
-            { "name": "column1Text", "selector": "div>div:nth-child(1)>div" },
-            { "name": "column2Image", "selector": "div>div:nth-child(2)>picture>img[src]" },
-            { "name": "column2ImageAlt", "selector": "div>div:nth-child(2)>picture>img[alt]" },
-            { "name": "column2Text", "selector": "div>div:nth-child(2)>div" },
-            { "name": "column3Image", "selector": "div>div:nth-child(3)>picture>img[src]" },
-            { "name": "column3ImageAlt", "selector": "div>div:nth-child(3)>picture>img[alt]" },
-            { "name": "column3Text", "selector": "div>div:nth-child(3)>div" }
-          ]
+          "columns": 2,
+          "behaviour": "columns"
+        }
+      }
+    },
+    {
+      "title": "Columns Row",
+      "id": "columns-row",
+      "model": "columns-row",
+      "filter": "columns-row",
+      "plugins": {
+        "da": {
+          "name": "columns-row",
+          "behaviour": "columns-row"
+        }
+      }
+    },
+    {
+      "title": "Columns Cell",
+      "id": "columns-cell",
+      "model": "columns-cell",
+      "filter": "columns-cell",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div></div>",
+          "behaviour": "columns-cell"
         }
       }
     }
@@ -29,88 +44,52 @@
       "id": "columns",
       "fields": [
         {
+          "component": "number",
+          "valueType": "number",
+          "name": "columns",
+          "label": "Number of Columns",
+          "value": 2,
+          "validation": {
+            "numberMin": 1,
+            "numberMax": 3
+          }
+        },
+        {
           "component": "multiselect",
           "name": "classes",
           "label": "Variant",
           "valueType": "string",
           "options": [
             {
-              "name": "Text only",
+              "name": "Image Top",
+              "value": "image-top"
+            },
+            {
+              "name": "Text Only",
               "value": "text-only"
             }
           ]
-        },
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "column1Image",
-          "label": "Column 1 Image",
-          "multi": false,
-          "condition": { "!": { "in": ["text-only", { "var": "classes" }] } }
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "column1ImageAlt",
-          "label": "Column 1 Image Alt",
-          "value": "",
-          "condition": { "!": { "in": ["text-only", { "var": "classes" }] } }
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "column1Text",
-          "label": "Column 1 Text",
-          "value": ""
-        },
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "column2Image",
-          "label": "Column 2 Image",
-          "multi": false,
-          "condition": { "!": { "in": ["text-only", { "var": "classes" }] } }
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "column2ImageAlt",
-          "label": "Column 2 Image Alt",
-          "value": "",
-          "condition": { "!": { "in": ["text-only", { "var": "classes" }] } }
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "column2Text",
-          "label": "Column 2 Text",
-          "value": ""
-        },
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "column3Image",
-          "label": "Column 3 Image",
-          "multi": false,
-          "condition": { "!": { "in": ["text-only", { "var": "classes" }] } }
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "column3ImageAlt",
-          "label": "Column 3 Image Alt",
-          "value": "",
-          "condition": { "!": { "in": ["text-only", { "var": "classes" }] } }
-        },
-        {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "column3Text",
-          "label": "Column 3 Text",
-          "value": ""
         }
       ]
     }
   ],
-  "filters": []
+  "filters": [
+    {
+      "id": "columns",
+      "components": [
+        "columns-row"
+      ]
+    },
+    {
+      "id": "columns-row",
+      "components": []
+    },
+    {
+      "id": "columns-cell",
+      "components": [
+        "text",
+        "image"
+      ]
+    }
+  ]
 }

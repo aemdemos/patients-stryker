@@ -134,49 +134,37 @@
           "title": "Columns",
           "id": "columns",
           "model": "columns",
+          "filter": "columns",
           "plugins": {
             "da": {
               "name": "columns",
               "rows": 1,
-              "columns": 3,
-              "fields": [
-                {
-                  "name": "column1Image",
-                  "selector": "div>div:nth-child(1)>picture>img[src]"
-                },
-                {
-                  "name": "column1ImageAlt",
-                  "selector": "div>div:nth-child(1)>picture>img[alt]"
-                },
-                {
-                  "name": "column1Text",
-                  "selector": "div>div:nth-child(1)>div"
-                },
-                {
-                  "name": "column2Image",
-                  "selector": "div>div:nth-child(2)>picture>img[src]"
-                },
-                {
-                  "name": "column2ImageAlt",
-                  "selector": "div>div:nth-child(2)>picture>img[alt]"
-                },
-                {
-                  "name": "column2Text",
-                  "selector": "div>div:nth-child(2)>div"
-                },
-                {
-                  "name": "column3Image",
-                  "selector": "div>div:nth-child(3)>picture>img[src]"
-                },
-                {
-                  "name": "column3ImageAlt",
-                  "selector": "div>div:nth-child(3)>picture>img[alt]"
-                },
-                {
-                  "name": "column3Text",
-                  "selector": "div>div:nth-child(3)>div"
-                }
-              ]
+              "columns": 2,
+              "behaviour": "columns"
+            }
+          }
+        },
+        {
+          "title": "Columns Row",
+          "id": "columns-row",
+          "model": "columns-row",
+          "filter": "columns-row",
+          "plugins": {
+            "da": {
+              "name": "columns-row",
+              "behaviour": "columns-row"
+            }
+          }
+        },
+        {
+          "title": "Columns Cell",
+          "id": "columns-cell",
+          "model": "columns-cell",
+          "filter": "columns-cell",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
             }
           }
         },
