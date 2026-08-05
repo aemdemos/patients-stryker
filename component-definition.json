@@ -150,7 +150,7 @@
                 },
                 {
                   "name": "column1Text",
-                  "selector": "div>div:nth-child(1)>div"
+                  "selector": "div>div:nth-child(1)"
                 },
                 {
                   "name": "column2Image",
@@ -162,7 +162,7 @@
                 },
                 {
                   "name": "column2Text",
-                  "selector": "div>div:nth-child(2)>div"
+                  "selector": "div>div:nth-child(2)"
                 },
                 {
                   "name": "column3Image",
@@ -174,7 +174,7 @@
                 },
                 {
                   "name": "column3Text",
-                  "selector": "div>div:nth-child(3)>div"
+                  "selector": "div>div:nth-child(3)"
                 }
               ]
             }
