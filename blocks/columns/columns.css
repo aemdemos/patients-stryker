@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------ *
- * Default columns (no variant) — boilerplate flexible layout.
+ * Default columns (no variant) — simple side-by-side layout.
  * ------------------------------------------------------------------ */
 .columns > div {
   display: flex;
@@ -7,6 +7,7 @@
 }
 
 .columns img {
+  display: block;
   width: 100%;
 }
 
@@ -16,10 +17,6 @@
 
 .columns > div > .columns-img-col {
   order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
 }
 
 @media (width >= 900px) {

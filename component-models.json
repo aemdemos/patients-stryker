@@ -122,15 +122,127 @@
         ]
       },
       {
-        "component": "number",
-        "valueType": "number",
-        "name": "columns",
-        "label": "Number of Columns",
-        "value": 2,
-        "validation": {
-          "numberMin": 1,
-          "numberMax": 6
+        "component": "reference",
+        "valueType": "string",
+        "name": "column1Image",
+        "label": "Column 1 Image",
+        "multi": false,
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
+          }
         }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "column1ImageAlt",
+        "label": "Column 1 Image Alt",
+        "value": "",
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column1Text",
+        "label": "Column 1 Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "column2Image",
+        "label": "Column 2 Image",
+        "multi": false,
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "column2ImageAlt",
+        "label": "Column 2 Image Alt",
+        "value": "",
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column2Text",
+        "label": "Column 2 Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "column3Image",
+        "label": "Column 3 Image",
+        "multi": false,
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "column3ImageAlt",
+        "label": "Column 3 Image Alt",
+        "value": "",
+        "condition": {
+          "!": {
+            "in": [
+              "text-only",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "column3Text",
+        "label": "Column 3 Text",
+        "value": ""
       }
     ]
   },
