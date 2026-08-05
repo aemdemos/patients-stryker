@@ -1,17 +1,17 @@
+/* ------------------------------------------------------------------ *
+ * Default columns (no variant) — boilerplate flexible layout.
+ * ------------------------------------------------------------------ */
 .columns > div {
   display: flex;
   flex-direction: column;
 }
 
 .columns img {
-  display: block;
   width: 100%;
 }
 
 .columns > div > div {
   order: 1;
-  box-sizing: border-box;
-  padding: 13px 14px;
 }
 
 .columns > div > .columns-img-col {
@@ -22,58 +22,93 @@
   display: block;
 }
 
-.columns h4 {
-  font-size: var(--heading-font-size-ml);
-  line-height: var(--heading-line-height-ml);
-}
-
-.columns p,
-.columns ul,
-.columns li {
-  font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
-}
-
-.columns ul ul {
-  margin-bottom: 0;
-  list-style-type: disc;
-}
-
-/* image-on-top is the default layout: the image sits above the text with extra
-   spacing before the heading. The "text-only" variant carries no images, so
-   these rules simply have nothing to act on there. */
-.columns p:has(picture) {
-  margin-bottom: 43px;
-}
-
-.columns p picture {
-  display: block;
-}
-
 @media (width >= 900px) {
   .columns > div {
-    flex-flow: row wrap;
-    align-items: flex-start;
-  }
-
-  .columns > div > div {
-    flex: 0 0 50%;
-    order: unset;
-    padding: 13px 28px;
-  }
-
-  /* image breaks out of the 28px text inset to the 15px column-edge inset */
-  .columns p:has(picture) {
-    margin-inline: -13px;
-  }
-}
-
-@media (width >= 1200px) {
-  .columns > div {
-    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
   }
 
   .columns > div > div {
     flex: 1;
+    order: unset;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Variants — reference-matched typography & spacing shared by the
+ * "image-top" and "text-only" layouts.
+ * ------------------------------------------------------------------ */
+.columns.image-top > div > div,
+.columns.text-only > div > div {
+  box-sizing: border-box;
+  padding: 13px 14px;
+}
+
+.columns.image-top h4,
+.columns.text-only h4 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+.columns.image-top p,
+.columns.image-top ul,
+.columns.image-top li,
+.columns.text-only p,
+.columns.text-only ul,
+.columns.text-only li {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+.columns.image-top ul ul,
+.columns.text-only ul ul {
+  margin-bottom: 0;
+  list-style-type: disc;
+}
+
+@media (width >= 900px) {
+  .columns.image-top > div,
+  .columns.text-only > div {
+    flex-flow: row wrap;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .columns.image-top > div > div,
+  .columns.text-only > div > div {
+    flex: 0 0 50%;
+    order: unset;
+    padding: 13px 28px;
+  }
+}
+
+@media (width >= 1200px) {
+  .columns.image-top > div,
+  .columns.text-only > div {
+    flex-wrap: nowrap;
+  }
+
+  .columns.image-top > div > div,
+  .columns.text-only > div > div {
+    flex: 1;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * "image-top" variant — image sits above the text with extra spacing.
+ * ------------------------------------------------------------------ */
+.columns.image-top p:has(picture) {
+  margin-bottom: 43px;
+}
+
+.columns.image-top p picture {
+  display: block;
+}
+
+@media (width >= 900px) {
+  /* image breaks out of the 28px text inset to the 15px column-edge inset */
+  .columns.image-top p:has(picture) {
+    margin-inline: -13px;
   }
 }
