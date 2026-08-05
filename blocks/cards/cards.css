@@ -87,11 +87,6 @@
   margin: var(--space-block) 0 0;
 }
 
-/* no-image card variant: collapses to a single column */
-.cards > ul > li.cards-card-single {
-  grid-template-columns: 1fr;
-}
-
 .cards.cards-authoring {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));

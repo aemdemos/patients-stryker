@@ -80,7 +80,7 @@
     "id": "cards",
     "fields": [
       {
-        "component": "multiselect",
+        "component": "select",
         "name": "classes",
         "label": "Style",
         "options": [
@@ -100,48 +100,16 @@
     "id": "card",
     "fields": [
       {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Variant",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "No Image",
-            "value": "noimg"
-          }
-        ]
-      },
-      {
         "component": "richtext",
         "valueType": "string",
         "name": "image",
-        "label": "Image URL",
-        "condition": {
-          "!": {
-            "in": [
-              "noimg",
-              {
-                "var": "classes"
-              }
-            ]
-          }
-        }
+        "label": "Image URL"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt (link text)",
-        "condition": {
-          "!": {
-            "in": [
-              "noimg",
-              {
-                "var": "classes"
-              }
-            ]
-          }
-        }
+        "label": "Image Alt (link text)"
       },
       {
         "component": "richtext",
