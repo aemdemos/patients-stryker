@@ -13,12 +13,12 @@
       }
     },
     {
-      "title": "Card-resources",
-      "id": "card-resources",
-      "model": "card-resources",
+      "title": "Card",
+      "id": "card",
+      "model": "card",
       "plugins": {
         "da": {
-          "name": "card-resources",
+          "name": "card",
           "rows": 1,
           "columns": 2,
           "fields": [
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "id": "card-resources",
+      "id": "card",
       "fields": [
         {
           "component": "richtext",
@@ -73,7 +73,7 @@
     {
       "id": "cards",
       "components": [
-        "card-resources"
+        "card"
       ]
     }
   ]
