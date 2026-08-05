@@ -14,4 +14,15 @@ export default function decorate(block) {
   });
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.replaceChildren(ul);
+
+  ul.querySelectorAll('li').forEach((li) => {
+    const link = li.querySelector('a');
+    if (link) {
+      li.addEventListener('click', (e) => {
+        if (!e.target.closest('a')) window.open(link.href, '_blank', 'noopener');
+      });
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
+  });
 }

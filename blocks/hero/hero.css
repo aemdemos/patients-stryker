@@ -86,15 +86,12 @@
   object-fit: contain;
 }
 
-/* text overlay — sits above the image (z-index) and is dark (source is black) */
+/* text overlay — sits above the image (z-index) */
 .hero.fullbleed > div:last-child {
   z-index: 1;
   box-sizing: border-box;
-
-  /* mobile/tablet: text near the top-left over the portrait image.
-     source overlay padding ~38px at 768px */
   align-self: start;
-  padding: 8% 10%;
+  padding: 25% 8% 0;
 }
 
 .hero.fullbleed h1,
@@ -110,7 +107,7 @@
   margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
-  font-size: var(--heading-font-size-xl);
+  font-size: var(--heading-font-size-xxl);
   line-height: 1.35;
 }
 
@@ -123,7 +120,7 @@
 .hero.fullbleed p {
   margin-bottom: 0;
   font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-l);
   line-height: 1.35;
 }
 
@@ -133,10 +130,19 @@
 }
 
 @media (width >= 600px) {
+  .hero.fullbleed > div:last-child {
+    padding: 18% 8% 0;
+  }
+
   .hero.fullbleed h1 {
-    font-size: var(--heading-font-size-xxl);
+    font-size: 42px;
+  }
+
+  .hero.fullbleed p {
+    font-size: 22px;
   }
 }
+
 
 /* desktop — wide image, text overlaid on the white left panel, centered */
 @media (width >= 900px) {
@@ -152,7 +158,7 @@
 
   .hero.fullbleed p {
     margin-top: 8px;
-    font-size: var(--body-font-size-m);
+    font-size: 1.5vw;
     line-height: 1.35;
   }
 }

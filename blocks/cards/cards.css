@@ -36,6 +36,7 @@
 
 .cards .cards-card-image {
   line-height: 0;
+  cursor: pointer;
 }
 
 .cards > ul > li img {
