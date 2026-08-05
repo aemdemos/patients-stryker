@@ -49,24 +49,30 @@
       "id": "card",
       "fields": [
         {
-          "component": "boolean",
-          "name": "classes_noimg",
-          "label": "No Image",
-          "valueType": "boolean"
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variant",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "No Image",
+              "value": "noimg"
+            }
+          ]
         },
         {
           "component": "richtext",
           "valueType": "string",
           "name": "image",
           "label": "Image URL",
-          "condition": { "!": { "var": "classes_noimg" } }
+          "condition": { "!": { "in": ["noimg", { "var": "classes" }] } }
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
           "label": "Image Alt (link text)",
-          "condition": { "!": { "var": "classes_noimg" } }
+          "condition": { "!": { "in": ["noimg", { "var": "classes" }] } }
         },
         {
           "component": "richtext",

@@ -91,24 +91,7 @@
           {
             "name": "CTA",
             "value": "cta"
-<<<<<<< HEAD
-          },
-          {
-            "name": "No Image",
-            "value": "noimg"
           }
-=======
-          }
-        ]
-      },
-      {
-        "component": "array",
-        "name": "children",
-        "label": "Card List",
-        "valueType": [
-          "card-resources",
-          "card-cta"
->>>>>>> 5b6ba7a (attempt4)
         ]
       }
     ]
@@ -117,16 +100,48 @@
     "id": "card",
     "fields": [
       {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "No Image",
+            "value": "noimg"
+          }
+        ]
+      },
+      {
         "component": "richtext",
         "valueType": "string",
         "name": "image",
-        "label": "Image URL"
+        "label": "Image URL",
+        "condition": {
+          "!": {
+            "in": [
+              "noimg",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt (link text)"
+        "label": "Image Alt (link text)",
+        "condition": {
+          "!": {
+            "in": [
+              "noimg",
+              {
+                "var": "classes"
+              }
+            ]
+          }
+        }
       },
       {
         "component": "richtext",
