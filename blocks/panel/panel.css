@@ -62,7 +62,7 @@
   /* box stays full-width; cap the title narrower and center it so it wraps
      like the source (margin-inline: auto centers the capped heading) */
   max-width: var(--panel-heading-max-width);
-  margin: 0 auto var(--space-block);
+  margin: 0 auto 30px;
   font-family: var(--display-font-family);
   font-size: var(--panel-heading-size);
   font-weight: 700;
