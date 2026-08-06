@@ -110,7 +110,7 @@
   margin: 0;
   padding: 22.5px;
   background-color: var(--color-white);
-  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  box-shadow: var(--shadow-soft);
 }
 
 .cards.cards-authoring > div > div:first-child {
@@ -147,15 +147,13 @@
   margin-top: 10px;
   padding: 3%;
   background-color: var(--color-white);
-  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  box-shadow: var(--shadow-soft);
 }
 
 .cards.cta .cards-card-body :first-child {
   margin-top: 0;
 }
 
-
-/* title — Futura bold display type, 1.25em, matches source h3 */
 .cards.cta .cards-card-body h3 {
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);

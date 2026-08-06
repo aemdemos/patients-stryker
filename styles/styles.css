@@ -44,6 +44,7 @@
   --color-disabled-bg: #b2b4ae;
   --color-disabled-text: #545857;
   --overlay-scrim: rgb(0 0 0 / 50%);
+  --shadow-soft: 0 0 10px rgb(0 0 0 / 0.3);
 
   /* boilerplate color aliases (consumed by blocks) */
   --background-color: var(--color-white);
@@ -104,7 +105,7 @@
 
   /* cards block  */
   --cards-cta-heading-size: 26px; /* h3 */
-  --cards-cta-body-size: 1.25em;    /* p */
+  --cards-cta-body-size: 17.5px;    /* p */
   --cards-cta-body-line-height: 1.15; /* p */
 
   /* radius scale (square-cornered design) */
