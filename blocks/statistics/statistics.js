@@ -25,6 +25,100 @@ function readColumns(block) {
   return match ? Number(match[1]) : 3;
 }
 
+// count-up animation duration in ms (from 0 to each stat's authored value)
+const COUNTUP_DURATION = 2000;
+
+// parse the first numeric token out of a stat value, keeping any surrounding
+// text (e.g. "$", "%", "x", "M"). Returns null when there is no number to animate.
+function parseStatNumber(text) {
+  const match = text.match(/-?\d[\d,]*(?:\.\d+)?/);
+  if (!match) return null;
+  const raw = match[0];
+  const decimals = raw.includes('.') ? raw.split('.')[1].length : 0;
+  return {
+    prefix: text.slice(0, match.index),
+    suffix: text.slice(match.index + raw.length),
+    target: parseFloat(raw.replace(/,/g, '')),
+    decimals,
+    grouped: raw.includes(','),
+  };
+}
+
+// format an in-progress value back into the original shape (prefix/suffix,
+// decimal places, and thousands grouping if the source used it)
+function formatStatNumber(value, {
+  prefix, suffix, decimals, grouped,
+}) {
+  const safe = value + 0 === 0 ? 0 : value; // normalize -0 → 0
+  const number = grouped
+    ? safe.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
+    : safe.toFixed(decimals);
+  return `${prefix}${number}${suffix}`;
+}
+
+/**
+ * Wires up the count-up animation for a statistics block: each stat's number
+ * counts from 0 to its value over COUNTUP_DURATION whenever the block scrolls
+ * into view, resetting to 0 when it leaves so it replays on return.
+ * @param {Element} block the decorated statistics block
+ */
+function setupCountUp(block) {
+  // honor reduced-motion: leave the authored values untouched, no animation
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // collect only the stats that actually contain a number
+  const stats = [...block.querySelectorAll('.statistics-value')]
+    .map((el) => {
+      const target = el.querySelector('p') || el;
+      const parsed = parseStatNumber(target.textContent.trim());
+      return parsed ? { target, parsed } : null;
+    })
+    .filter(Boolean);
+  if (!stats.length) return;
+
+  let raf = null;
+
+  const render = (progress) => {
+    stats.forEach(({ target, parsed }) => {
+      const value = progress >= 1 ? parsed.target : progress * parsed.target;
+      target.textContent = formatStatNumber(value, parsed);
+    });
+  };
+
+  const stop = () => {
+    if (raf) cancelAnimationFrame(raf);
+    raf = null;
+  };
+
+  const run = () => {
+    stop();
+    const start = performance.now();
+    const tick = (now) => {
+      // clamp to [0, 1] — the lower guard avoids a first-frame negative progress
+      // (which would render "-0") if `now` is marginally before `start`
+      const progress = Math.max(0, Math.min((now - start) / COUNTUP_DURATION, 1));
+      render(progress);
+      raf = progress < 1 ? requestAnimationFrame(tick) : null;
+    };
+    raf = requestAnimationFrame(tick);
+  };
+
+  // hold at 0 until the block first enters the viewport
+  render(0);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        run();
+      } else {
+        stop();
+        render(0);
+      }
+    });
+  });
+  observer.observe(block);
+}
+
 /**
  * loads and decorates the statistics block
  * @param {Element} block The block element
@@ -67,4 +161,7 @@ export default function decorate(block) {
   });
 
   block.replaceChildren(list);
+
+  // optional count-up animation, enabled via the `count-up` authoring variant
+  if (block.classList.contains('count-up')) setupCountUp(block);
 }

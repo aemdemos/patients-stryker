@@ -39,12 +39,13 @@
           "component": "select",
           "name": "classes",
           "value": "",
-          "label": "Columns",
+          "label": "Layout",
           "valueType": "string",
           "options": [
             { "name": "2 columns", "value": "cols-2" },
+            { "name": "2 columns + count up", "value": "cols-2 count-up" },
             { "name": "3 columns", "value": "cols-3" },
-            { "name": "4 columns", "value": "cols-4" }
+            { "name": "3 columns + count up", "value": "cols-3 count-up" }
           ]
         }
       ]
