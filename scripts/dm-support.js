@@ -14,6 +14,17 @@
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
 
+/**
+ * True when a URL points at a Dynamic Media asset (Scene7 or OpenAPI delivery).
+ * Blocks use this to leave DM <picture> elements untouched — dm-support.js has
+ * already rendered them at native quality, so re-optimizing would degrade them.
+ * @param {string} src the image/link URL
+ * @returns {boolean}
+ */
+export function isDMSrc(src) {
+  return !!src && (DM_SCENE7.test(src) || DM_OPENAPI.test(src));
+}
+
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
 // nodes (avoids iterating every anchor/image on the page)
 const DM_SELECTOR = [

@@ -443,6 +443,30 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+/* divider between the fullbleed hero and the cards section — constrained to content width */
+main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
+  border-top: 1px solid var(--color-surface-muted);
+  padding-top: calc(var(--space-section) * 2);
+}
+
+/* audience note above the fullbleed hero */
+main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child {
+  margin-top: var(--space-section);
+  margin-bottom: var(--space-block);
+  font-size: var(--body-font-size-l);
+  text-align: right;
+}
+
+/* bottom-of-page disclaimer content below cards — smaller text matching source */
+main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper {
+  margin-top: var(--space-section);
+}
+
+main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
+  font-size: var(--body-font-size-xs);
+  line-height: var(--paragraph-line-height);
+}
+
 @media (width >= 900px) {
   main > .section > div {
     max-width: var(--container-max);

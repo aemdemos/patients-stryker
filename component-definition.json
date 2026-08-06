@@ -194,19 +194,21 @@
           "model": "hero",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"hero\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture><h1></h1></div></div></div>",
+              "name": "Hero",
+              "rows": 3,
+              "columns": 1,
               "fields": [
                 {
-                  "name": "image",
-                  "selector": "div>div>picture>img[src]"
+                  "name": "desktopImage",
+                  "selector": "div:nth-child(1)>div>picture>img[src]"
                 },
                 {
-                  "name": "imageAlt",
-                  "selector": "div>div>picture>img[alt]"
+                  "name": "mobileImage",
+                  "selector": "div:nth-child(2)>div>picture>img[src]"
                 },
                 {
-                  "name": "text",
-                  "selector": "div>div>h1"
+                  "name": "content",
+                  "selector": "div:nth-child(3)>div"
                 }
               ]
             }
