@@ -38,7 +38,7 @@
 .panel.cta .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
-  line-height: var(--panel-body-line-height);
+  line-height: var(--panel-cta-body-line-height);
 }
 
 
