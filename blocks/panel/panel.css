@@ -19,11 +19,14 @@
 }
 
 .panel .panel-body {
+  /* cap the default panel width and center the box (max-width alone keeps it
+     left-aligned in the grid column — margin-inline: auto centers it) */
+  max-width: var(--panel-max-width);
+  margin: 10px auto;
   padding: 4%;
   background-color: var(--color-white);
   box-shadow: var(--shadow-soft);
   text-align: center;
-  margin:10px;
 }
 
 .panel .panel-body p {
@@ -57,6 +60,9 @@
 }
 
 .panel.cta .panel-body {
+  /* cta boxes fill their grid column (no width cap / centering) */
+  max-width: none;
+  margin: 0;
   padding: 3%;
   text-align: left;
 }
