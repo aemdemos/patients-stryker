@@ -57,7 +57,6 @@
   --body-font-family: "HumanistSlab712W01", "humanist-slab-712-fallback", cambria, palatino, serif;
   --heading-font-family: "URWEgyptienneW01-Light", urw-egyptienne-fallback, rockwell, georgia, times, serif;
   --display-font-family: "Futura LT W01", futura-lt-fallback, arial, helvetica, sans-serif;
-  --body-font-family: "HumanistSlab712W01", cambria, palatino, serif;
   --display-font-family-bold: "Futura LT W01", "Arial Black", arial, sans-serif;
 
   /* body sizes (fixed px — source typography is non-responsive) */
@@ -102,6 +101,11 @@
   --statistics-number-size: 92px;
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
+
+  /* cards block  */
+  --cards-cta-heading-size: 26px; /* h3 */
+  --cards-cta-body-size: 1.25em;    /* p */
+  --cards-cta-body-line-height: 1.15; /* p */
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
