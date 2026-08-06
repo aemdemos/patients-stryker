@@ -194,19 +194,60 @@
           "model": "hero",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div class=\"hero\"><div><div><picture><source type=\"image/webp\" srcset=\"\"><source type=\"image/jpeg\" srcset=\"\"><img loading=\"lazy\"></picture><h1></h1></div></div></div>",
+              "name": "Hero",
+              "rows": 3,
+              "columns": 1,
               "fields": [
                 {
-                  "name": "image",
-                  "selector": "div>div>picture>img[src]"
+                  "name": "desktopImage",
+                  "selector": "div:nth-child(1)>div>picture>img[src]"
                 },
                 {
-                  "name": "imageAlt",
-                  "selector": "div>div>picture>img[alt]"
+                  "name": "mobileImage",
+                  "selector": "div:nth-child(2)>div>picture>img[src]"
                 },
                 {
-                  "name": "text",
-                  "selector": "div>div>h1"
+                  "name": "content",
+                  "selector": "div:nth-child(3)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Statistics",
+          "id": "statistics",
+          "model": "statistics",
+          "filter": "statistics",
+          "plugins": {
+            "da": {
+              "name": "statistics",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Statistic",
+          "id": "statistic",
+          "model": "statistic",
+          "plugins": {
+            "da": {
+              "name": "statistic",
+              "rows": 1,
+              "columns": 3,
+              "fields": [
+                {
+                  "name": "color",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "value",
+                  "selector": "div:nth-child(2) > p"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(3)"
                 }
               ]
             }
