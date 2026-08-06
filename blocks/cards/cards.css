@@ -139,7 +139,7 @@
 .cards.cta > ul {
   /* single-column stack on mobile; two-up from tablet (see media query) */
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 10px;
 }
 
 .cards.cta > ul > li {
@@ -149,7 +149,10 @@
 }
 
 .cards.cta .cards-card-body {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   padding: 3%;
   background-color: var(--color-white);
   box-shadow: 0 0 10px rgb(0 0 0 / 30%);
@@ -183,6 +186,7 @@
 @media (width > 900px) {
   .cards.cta > ul {
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 
   .cards.cards-authoring.cta {
