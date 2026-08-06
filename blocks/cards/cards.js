@@ -1,11 +1,66 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
+import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
+
+/**
+ * `resources` variant: a PDF brochure card — cover image stacked above a
+ * "LEARN MORE" button, no visible title. Cell 1 is the cover, cell 2 the link.
+ * The cover comes from (in order) the DAM picker / a DM picture, a DM link
+ * pasted into the text cell (converted by dm-support.js), or a legacy link.
+ * The cover is wrapped in the PDF link so it shares the button's target.
+ * Existing nodes are re-parented (not rebuilt) so UE field instrumentation
+ * survives a reload.
+ * @param {HTMLLIElement} li the card
+ */
+function decorateResourceCard(li) {
+  const [first, second] = li.children;
+  if (!first) return;
+  first.className = 'cards-card-image';
+  if (second) second.className = 'cards-card-body';
+
+  const pdfLink = second && second.querySelector('a[href]');
+
+  let cover = first.querySelector('picture') || (second && second.querySelector('picture'));
+  const legacyLink = !cover && first.querySelector('a[href]');
+  if (legacyLink) {
+    cover = document.createElement('img');
+    cover.src = legacyLink.getAttribute('href');
+    cover.alt = legacyLink.textContent.trim();
+    cover.loading = 'lazy';
+    moveInstrumentation(legacyLink, cover);
+  }
+
+  if (cover) {
+    // wrap the (existing, instrumented) cover in the PDF link and place it in
+    // cell 1; re-parenting keeps the cover's data-aue-* intact
+    if (pdfLink) {
+      const imgLink = document.createElement('a');
+      imgLink.href = pdfLink.getAttribute('href');
+      if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
+      imgLink.append(cover);
+      first.prepend(imgLink);
+    } else {
+      first.prepend(cover);
+    }
+    // drop anything left in cell 1 other than the cover (e.g. a legacy link)
+    [...first.children].forEach((child) => {
+      if (!child.contains(cover)) child.remove();
+    });
+  }
+
+  // wrap the CTA link in a <p> (in place) so the global decorateButtons
+  // promotes it — leaves the text cell's richtext instrumentation on `second`
+  if (pdfLink) {
+    const cta = pdfLink.closest('strong') || pdfLink;
+    if (cta.parentElement && cta.parentElement.tagName !== 'P') {
+      const p = document.createElement('p');
+      cta.replaceWith(p);
+      p.append(cta);
+    }
+  }
+}
 
 export default function decorate(block) {
-  // `resources` variant: PDF brochure card — a cover image stacked above a
-  // "LEARN MORE" button. The image links to the same PDF as the card's bold
-  // link (which the global decorateButtons turns into a teal primary button).
-  // There is no visible title; the brochure name lives in the image alt text.
   const isResources = block.classList.contains('resources');
 
   /* change to ul, li */
@@ -13,44 +68,14 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
-    });
-
     if (isResources) {
-      // cell 1 = cover image, cell 2 = "LEARN MORE" PDF link
-      const [first, second] = li.children;
-      if (first) first.className = 'cards-card-image';
-      if (second) second.className = 'cards-card-body';
-      const pdfLink = second && second.querySelector('a[href]');
-
-      // cover: picker/DM <picture> in cell 1, else DM <picture> pasted in the
-      // text cell (dm-support.js already converted it), else a legacy link
-      let cover = (first && first.querySelector('picture'))
-        || (second && second.querySelector('picture'));
-      const legacyLink = !cover && first && first.querySelector('a[href]');
-      if (legacyLink) {
-        cover = document.createElement('img');
-        cover.src = legacyLink.getAttribute('href');
-        cover.alt = legacyLink.textContent.trim();
-        cover.loading = 'lazy';
-      }
-
-      if (cover) {
-        first.textContent = '';
-        if (pdfLink) {
-          const imgLink = document.createElement('a');
-          imgLink.href = pdfLink.getAttribute('href');
-          if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
-          imgLink.append(cover);
-          first.append(imgLink);
-        } else {
-          first.append(cover);
-        }
-      }
+      decorateResourceCard(li);
+    } else {
+      [...li.children].forEach((div) => {
+        if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
+        else div.className = 'cards-card-body';
+      });
     }
-
     ul.append(li);
   });
   ul.querySelectorAll('picture > img').forEach((img) => {
