@@ -256,14 +256,25 @@ export default function decorateDMAssets(main) {
     if (!src) return;
     const render = dmRendererFor(src);
     if (!render) return;
-    // for links, only convert autolinks whose visible text is the URL itself
-    if (el.tagName === 'A' && el.textContent.trim() !== src) return;
+
+    // For links we support two authoring styles: a bare autolink whose visible
+    // text is the URL, and a link with custom display text (e.g. "image1"). The
+    // display text becomes the alt/label so authors can describe the asset
+    // inline. Skip anchors that already wrap media (an authored <picture>/<img>/
+    // <video>) — those are not "type the URL" DM embeds and converting would
+    // destroy authored content.
+    let displayText = '';
+    if (el.tagName === 'A') {
+      if (el.querySelector('picture, img, video, source')) return;
+      const text = el.textContent.trim();
+      if (text && text !== src) displayText = text;
+    }
 
     if (render === renderVideo) {
-      el.replaceWith(renderVideo(src, el.getAttribute('title') || ''));
+      el.replaceWith(renderVideo(src, el.getAttribute('title') || displayText));
       return;
     }
-    const alt = el.getAttribute('alt') || el.getAttribute('title') || '';
+    const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
     el.replaceWith(render(src, alt, false));
   });
 }
