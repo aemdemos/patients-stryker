@@ -87,10 +87,6 @@
           {
             "name": "Resources",
             "value": "resources"
-          },
-          {
-            "name": "CTA",
-            "value": "cta"
           }
         ]
       }
@@ -100,7 +96,7 @@
     "id": "card",
     "fields": [
       {
-        "component": "richtext",
+        "component": "reference",
         "valueType": "string",
         "name": "image",
         "label": "Image URL"
@@ -223,6 +219,18 @@
       {
         "component": "richtext",
         "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "info-callout-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
         "label": "Content",
         "valueType": "string"
       }

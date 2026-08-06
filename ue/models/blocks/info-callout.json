@@ -1,0 +1,53 @@
+{
+  "definitions": [
+    {
+      "title": "Info Callout",
+      "id": "info-callout",
+      "model": "info-callout",
+      "filter": "info-callout",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1
+        }
+      }
+    },
+    {
+      "title": "Callout Item",
+      "id": "info-callout-item",
+      "model": "info-callout-item",
+      "plugins": {
+        "da": {
+          "name": "info-callout-item",
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "text", "selector": "div:nth-child(1)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "info-callout-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Content",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "info-callout",
+      "components": [
+        "info-callout-item"
+      ]
+    }
+  ]
+}
