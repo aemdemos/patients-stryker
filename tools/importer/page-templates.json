@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "projectType": "doc"
+  },
+  "templates": [
+    {
+      "name": "legal-page",
+      "urls": [
+        "https://patients.stryker.com/us/en/legal/consumer-health-privacy.html",
+        "https://patients.stryker.com/us/en/legal/privacy.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/legal/consumer-health-privacy.html",
+      "coverageGaps": [],
+      "description": "Legal long-form text page: single heading, paragraphs, and bulleted lists in a narrow reading column. All default content, no blocks.",
+      "blocks": []
+    }
+  ]
+}
