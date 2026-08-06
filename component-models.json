@@ -225,7 +225,28 @@
     ]
   },
   {
-    "id": "info-callout-item",
+    "id": "panel",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "label": "Style",
+        "value": "",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "CTA",
+            "value": "cta"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "panel-item",
     "fields": [
       {
         "component": "richtext",

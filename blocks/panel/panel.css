@@ -1,0 +1,95 @@
+/*
+ * panel — the source "dimensional-box" (patients.stryker.com).
+ * Default styling measured from the Zip Skin Closure homepage: a white box with
+ * a soft drop shadow, centered heading + body copy, ~30px padding. The `cta`
+ * variant (IVS homepage) is left-aligned with a Futura-bold heading and a gold
+ * "LEARN MORE" button below the box.
+ */
+.panel > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.panel > ul > li {
+  margin: 0;
+}
+
+.panel .panel-body {
+  padding: 30px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.panel .panel-body :first-child {
+  margin-top: 0;
+}
+
+.panel .panel-body :last-child {
+  margin-bottom: 0;
+}
+
+.panel .panel-body p {
+  margin: 0 0 var(--space-block);
+}
+
+@media (width > 900px) {
+  .panel > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+/* ---- cta variant (IVS homepage) --------------------------------------
+   Left-aligned box with a Futura-bold heading and a gold "LEARN MORE" button
+   rendered below and OUTSIDE the box. */
+.panel.cta > ul > li {
+  /* transparent wrapper: the shadowed box + the button live inside it */
+  margin: 0;
+}
+
+.panel.cta .panel-body {
+  padding: 3%;
+  text-align: left;
+}
+
+.panel.cta .panel-body h3 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* gold CTA button below the box (10px gap measured from source).
+   The button reuses the global a.button.accent styling from styles.css —
+   applied in panel.js by adding the button classes. */
+.panel.cta .panel-cta {
+  margin-top: 10px;
+}
+
+/* Universal Editor authoring view: the block keeps its authored div structure
+   (no ul/li transform) so child instrumentation persists. Mirror the box look. */
+.panel.panel-authoring {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.panel.panel-authoring > div {
+  padding: 30px;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+@media (width > 900px) {
+  .panel.panel-authoring {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}

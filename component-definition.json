@@ -216,10 +216,10 @@
           }
         },
         {
-          "title": "Info Callout",
-          "id": "info-callout",
-          "model": "info-callout",
-          "filter": "info-callout",
+          "title": "Panel",
+          "id": "panel",
+          "model": "panel",
+          "filter": "panel",
           "plugins": {
             "da": {
               "rows": 1,
@@ -228,12 +228,12 @@
           }
         },
         {
-          "title": "Callout Item",
-          "id": "info-callout-item",
-          "model": "info-callout-item",
+          "title": "Panel Item",
+          "id": "panel-item",
+          "model": "panel-item",
           "plugins": {
             "da": {
-              "name": "info-callout-item",
+              "name": "panel-item",
               "rows": 1,
               "columns": 1,
               "fields": [
