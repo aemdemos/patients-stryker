@@ -19,32 +19,34 @@ export default function decorate(block) {
     });
 
     if (isResources) {
-      // Authoring contract: the FIRST cell holds a LINK whose href is the
-      // (external) image URL and whose text is the alt; the SECOND cell holds
-      // the "LEARN MORE" PDF link. Authoring the image as a link (not an
-      // <img>) keeps the external Scene7 URL intact through DA/preview/publish/UE
-      // — DA rewrites an external <img src> to about:error, but leaves link hrefs
-      // alone. Here we build the <img> from that link and wrap it in an anchor to
-      // the PDF so clicking the image opens the same target as the button.
+      // cell 1 = cover image, cell 2 = "LEARN MORE" PDF link
       const [first, second] = li.children;
       if (first) first.className = 'cards-card-image';
       if (second) second.className = 'cards-card-body';
-      const srcLink = first && first.querySelector('a[href]');
       const pdfLink = second && second.querySelector('a[href]');
-      if (srcLink) {
-        const img = document.createElement('img');
-        img.src = srcLink.getAttribute('href');
-        img.alt = srcLink.textContent.trim();
-        img.loading = 'lazy';
+
+      // cover: picker/DM <picture> in cell 1, else DM <picture> pasted in the
+      // text cell (dm-support.js already converted it), else a legacy link
+      let cover = (first && first.querySelector('picture'))
+        || (second && second.querySelector('picture'));
+      const legacyLink = !cover && first && first.querySelector('a[href]');
+      if (legacyLink) {
+        cover = document.createElement('img');
+        cover.src = legacyLink.getAttribute('href');
+        cover.alt = legacyLink.textContent.trim();
+        cover.loading = 'lazy';
+      }
+
+      if (cover) {
         first.textContent = '';
         if (pdfLink) {
           const imgLink = document.createElement('a');
           imgLink.href = pdfLink.getAttribute('href');
           if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
-          imgLink.append(img);
+          imgLink.append(cover);
           first.append(imgLink);
         } else {
-          first.append(img);
+          first.append(cover);
         }
       }
     }

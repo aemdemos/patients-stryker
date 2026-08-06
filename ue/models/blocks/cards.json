@@ -22,8 +22,8 @@
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>a[href]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>a" },
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -48,22 +48,23 @@
       "id": "card",
       "fields": [
         {
-          "component": "richtext",
+          "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Image URL"
+          "label": "Image",
+          "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt (link text)"
+          "label": "Image Alt"
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Text",
+          "label": "Text (LEARN MORE link; a Dynamic Media image link may be pasted here as a fallback)",
           "valueType": "string"
         }
       ]
