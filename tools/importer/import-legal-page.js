@@ -58,7 +58,14 @@ export default {
     // 4. Apply WebImporter built-in rules
     const hr = document.createElement('hr');
     main.appendChild(hr);
-    WebImporter.rules.createMetadata(main, document);
+    // Build the Metadata block from the page's own metadata, then add a
+    // `theme = legal` row so aem.js decorateTemplateAndTheme adds a `legal` class
+    // to <body>. Legal-only styling is scoped to body.legal so it never leaks onto
+    // other pages. NOTE: the key must be lowercase `theme` — getMetadata('theme')
+    // matches the meta name case-sensitively.
+    const meta = WebImporter.Blocks.getMetadata(document);
+    meta.theme = 'legal';
+    main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 

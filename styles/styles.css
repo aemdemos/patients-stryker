@@ -100,6 +100,7 @@
   --statistics-number-size: 92px;
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
+
   /* page-title gap to body — measured from source: heading margin-bottom (15px)
      + title section margin-bottom (30px) = 45px, kept in one section here */
   --space-title: 45px;
@@ -187,11 +188,11 @@ h2 {
   font-weight: 700;
 }
 
-/* page-title h2 only: when an h2 leads the first section it is the page title
-   (as on the legal pages), so it takes the larger 45px gap to the body — the
-   source composed this from heading 15px + title section 30px, kept in one
-   section. Subheading h2s elsewhere keep the default --space-block (15px). */
-main .section:first-of-type h2:first-child {
+/* legal page title: the leading h2 in the first section is the page title and
+   takes the larger 45px gap to the body (source composed this from heading 15px
+   + title section 30px, kept in one section). Scoped to body.legal (set via the
+   `theme = legal` page metadata) so subheading h2s on other pages are unaffected. */
+body.legal main .section:first-of-type h2:first-child {
   margin-bottom: var(--space-title);
 }
 
