@@ -39,9 +39,8 @@
   list-style-type: disc;
 }
 
-/* image-on-top is the default layout: the image sits above the text with extra
-   spacing before the heading. The "text-only" variant carries no images, so
-   these rules simply have nothing to act on there. */
+/* an image at the top of a text column sits above the text with extra spacing
+   before the heading */
 .columns p:has(picture) {
   margin-bottom: 43px;
 }
