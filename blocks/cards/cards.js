@@ -31,12 +31,12 @@ function decorateResourceCard(li) {
   }
 
   if (cover) {
-    // wrap the (existing, instrumented) cover in the PDF link and place it in
-    // cell 1; re-parenting keeps the cover's data-aue-* intact
+    // image and button are both PDF links opening in a new tab (matches source)
     if (pdfLink) {
       const imgLink = document.createElement('a');
       imgLink.href = pdfLink.getAttribute('href');
-      if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
+      imgLink.target = '_blank';
+      imgLink.rel = 'noopener';
       imgLink.append(cover);
       first.prepend(imgLink);
     } else {
@@ -48,9 +48,11 @@ function decorateResourceCard(li) {
     });
   }
 
-  // wrap the CTA link in a <p> (in place) so the global decorateButtons
-  // promotes it — leaves the text cell's richtext instrumentation on `second`
   if (pdfLink) {
+    pdfLink.target = '_blank';
+    pdfLink.rel = 'noopener';
+    // wrap the CTA link in a <p> (in place) so the global decorateButtons
+    // promotes it — leaves the text cell's richtext instrumentation on `second`
     const cta = pdfLink.closest('strong') || pdfLink;
     if (cta.parentElement && cta.parentElement.tagName !== 'P') {
       const p = document.createElement('p');
@@ -86,14 +88,19 @@ export default function decorate(block) {
   });
   block.replaceChildren(ul);
 
-  ul.querySelectorAll('li').forEach((li) => {
-    const link = li.querySelector('a');
-    if (link) {
-      li.addEventListener('click', (e) => {
-        if (!e.target.closest('a')) window.open(link.href, '_blank', 'noopener');
-      });
-      link.target = '_blank';
-      link.rel = 'noopener';
-    }
-  });
+  // resources cards expose their own image + button links (handled above); the
+  // rest of the card is not clickable. Only default cards make the whole card
+  // a link to their single anchor.
+  if (!isResources) {
+    ul.querySelectorAll('li').forEach((li) => {
+      const link = li.querySelector('a');
+      if (link) {
+        li.addEventListener('click', (e) => {
+          if (!e.target.closest('a')) window.open(link.href, '_blank', 'noopener');
+        });
+        link.target = '_blank';
+        link.rel = 'noopener';
+      }
+    });
+  }
 }
