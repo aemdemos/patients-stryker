@@ -29,6 +29,8 @@
   --color-accent-link-hover: #af6d04;
   --color-secondary: #545857;
   --color-navy: #27455c;
+  --color-navy-bright: #1c5687;
+  --color-purple: #85458a;
   --color-success: #32ae88;
 
   /* neutrals & surfaces */
@@ -52,9 +54,9 @@
   --link-hover-color: var(--color-primary-hover);
 
   /* fonts */
-  --body-font-family: "HumanistSlab712W01", cambria, palatino, serif;
-  --heading-font-family: "URWEgyptienneW01-Light", rockwell, georgia, times, serif;
-  --display-font-family: "Futura LT W01", arial, helvetica, sans-serif;
+  --body-font-family: "HumanistSlab712W01", "humanist-slab-712-fallback", cambria, palatino, serif;
+  --heading-font-family: "URWEgyptienneW01-Light", urw-egyptienne-fallback, rockwell, georgia, times, serif;
+  --display-font-family: "Futura LT W01", futura-lt-fallback, arial, helvetica, sans-serif;
 
   /* body sizes (fixed px — source typography is non-responsive) */
   --body-font-size-m: 14px;
@@ -63,6 +65,11 @@
 
   /* body sizes (1.25x scale — some blocks enlarge text via an inner span) */
   --body-font-size-l: 17.5px;       /* 1.25 x 14 */
+  
+  /* footnote */
+  --footnote-font-size: 11.2px;
+  --footnote-line-height: 1.2;
+
 
   /* heading sizes */
   --heading-font-size-xxl: 28px;    /* h1 */
@@ -88,6 +95,11 @@
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+
+  /* statistics block — measured from source: big number size + surrounding gaps */
+  --statistics-number-size: 92px;
+  --statistics-item-gap: 40px;
+  --statistics-number-gap: 18px;
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
@@ -206,6 +218,27 @@ b {
 ol,
 ul {
   padding-left: var(--list-indent);
+}
+
+/* citation superscripts — measured from source: raised, small; the link inside
+   inherits the global teal link color + hover, so only sizing is set here. */
+sup {
+  font-size: 75%;
+  line-height: 0;
+}
+
+/* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
+   small body-serif text (11.2px), tight line-height, decimal numbering, 20px indent.
+   scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
+main ol.footnotes {
+  padding-left: var(--list-indent);
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
+main ol.footnotes li {
+  margin-bottom: 0;
+  scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
 code,
@@ -415,6 +448,30 @@ main .section.highlight {
   background-color: var(--color-surface);
   margin: 0;
   padding: var(--space-section) 0;
+}
+
+/* divider between the fullbleed hero and the cards section — constrained to content width */
+main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
+  border-top: 1px solid var(--color-surface-muted);
+  padding-top: calc(var(--space-section) * 2);
+}
+
+/* audience note above the fullbleed hero */
+main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child {
+  margin-top: var(--space-section);
+  margin-bottom: var(--space-block);
+  font-size: var(--body-font-size-l);
+  text-align: right;
+}
+
+/* bottom-of-page disclaimer content below cards — smaller text matching source */
+main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper {
+  margin-top: var(--space-section);
+}
+
+main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
+  font-size: var(--body-font-size-xs);
+  line-height: var(--paragraph-line-height);
 }
 
 @media (width >= 900px) {

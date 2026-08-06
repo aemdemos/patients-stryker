@@ -150,24 +150,143 @@
     "id": "hero",
     "fields": [
       {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Fullbleed",
+            "value": "fullbleed"
+          }
+        ]
+      },
+      {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
+        "name": "desktopImage",
+        "label": "Desktop Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
+        "name": "desktopImageAlt",
+        "label": "Desktop Image Alt",
         "value": ""
       },
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mobileImage",
+        "label": "Mobile Image (optional)",
+        "multi": false,
+        "condition": {
+          "in": [
+            "fullbleed",
+            {
+              "var": "classes"
+            }
+          ]
+        }
+      },
+      {
         "component": "text",
-        "name": "text",
+        "valueType": "string",
+        "name": "mobileImageAlt",
+        "label": "Mobile Image Alt",
         "value": "",
-        "label": "Text",
+        "condition": {
+          "in": [
+            "fullbleed",
+            {
+              "var": "classes"
+            }
+          ]
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "statistics",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "2 columns",
+            "value": "cols-2"
+          },
+          {
+            "name": "3 columns",
+            "value": "cols-3"
+          },
+          {
+            "name": "4 columns",
+            "value": "cols-4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "statistic",
+    "fields": [
+      {
+        "component": "select",
+        "name": "color",
+        "label": "Stat color",
+        "value": "teal",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Teal",
+            "value": "teal"
+          },
+          {
+            "name": "Gold",
+            "value": "gold"
+          },
+          {
+            "name": "Dark gold",
+            "value": "dark-gold"
+          },
+          {
+            "name": "Navy",
+            "value": "navy"
+          },
+          {
+            "name": "Sage",
+            "value": "sage"
+          },
+          {
+            "name": "Purple",
+            "value": "purple"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "value",
+        "value": "",
+        "label": "Stat",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
         "valueType": "string"
       }
     ]

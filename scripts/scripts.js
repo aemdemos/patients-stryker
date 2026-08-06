@@ -145,6 +145,56 @@ function decorateButtons(main) {
 }
 
 /**
+ * Turns citation superscripts into links that navigate to the matching footnote.
+ * Source pattern: body text carries `<sup>N</sup>` markers (e.g. "12,13") and the
+ * page ends with an ordered list of citations. Each list item N gets an id
+ * `fn-N`, and every numeric superscript is rewritten so its number(s) link to the
+ * corresponding footnote (multi-number sups like "12,13" become two links).
+ * @param {HTMLElement} main The main container element
+ */
+function decorateFootnotes(main) {
+  const sups = [...main.querySelectorAll('sup')].filter((s) => /\d/.test(s.textContent));
+  if (!sups.length) return;
+
+  // Highest footnote number referenced anywhere in the superscripts.
+  const maxRef = sups.reduce((max, sup) => {
+    const nums = (sup.textContent.match(/\d+/g) || []).map(Number);
+    return Math.max(max, ...nums);
+  }, 0);
+
+  // The footnotes list is the last ordered list on the page that has at least as
+  // many items as the highest referenced number (avoids matching content lists).
+  const footnoteList = [...main.querySelectorAll('ol')]
+    .reverse()
+    .find((ol) => ol.children.length >= maxRef);
+  if (!footnoteList) return;
+
+  footnoteList.classList.add('footnotes');
+  [...footnoteList.children].forEach((li, i) => {
+    li.id = li.id || `fn-${i + 1}`;
+  });
+
+  sups.forEach((sup) => {
+    if (sup.querySelector('a')) return;
+    const text = sup.textContent;
+    const fragment = document.createDocumentFragment();
+    const parts = text.split(/(\d+)/);
+    parts.forEach((part) => {
+      const num = Number(part);
+      if (Number.isInteger(num) && num >= 1 && num <= footnoteList.children.length) {
+        const a = document.createElement('a');
+        a.href = `#fn-${num}`;
+        a.textContent = part;
+        fragment.append(a);
+      } else {
+        fragment.append(document.createTextNode(part));
+      }
+    });
+    sup.replaceChildren(fragment);
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -157,6 +207,7 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);
+  decorateFootnotes(main);
 }
 
 /**
