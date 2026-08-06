@@ -36,15 +36,14 @@
       "id": "statistics",
       "fields": [
         {
-          "component": "select",
+          "component": "multiselect",
           "name": "classes",
-          "value": "",
-          "label": "Columns",
-          "valueType": "string",
+          "label": "Options",
           "options": [
             { "name": "2 columns", "value": "cols-2" },
             { "name": "3 columns", "value": "cols-3" },
-            { "name": "4 columns", "value": "cols-4" }
+            { "name": "4 columns", "value": "cols-4" },
+            { "name": "Count up animation", "value": "count-up" }
           ]
         }
       ]
