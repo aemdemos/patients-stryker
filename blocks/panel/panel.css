@@ -19,26 +19,30 @@
 }
 
 .panel .panel-body {
-  padding: 30px;
+  padding: 3%;
   background-color: var(--color-white);
   box-shadow: var(--shadow-soft);
   text-align: center;
-}
-
-.panel .panel-body :first-child {
-  margin-top: 0;
-}
-
-.panel .panel-body :last-child {
-  margin-bottom: 0;
+  margin:10px;
 }
 
 .panel .panel-body p {
+  margin: 0;
+  font-size: var(--panel-body-size);
+  line-height: var(--panel-body-line-height);
+}
+
+.panel .panel-body p:last-child {
+  margin: 0 0 var(--space-block);}
+
+.panel.cta .panel-body p {
   margin: 0 0 var(--space-block);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-body-line-height);
 }
 
 @media (width > 900px) {
-  .panel > ul {
+  .panel.cta > ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -57,12 +61,18 @@
   text-align: left;
 }
 
+.panel .panel-body h3 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--panel-heading-size);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
 .panel.cta .panel-body h3 {
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
   font-size: var(--panel-cta-heading-size);
-  font-weight: 700;
-  color: var(--color-black);
 }
 
 /* gold CTA button below the box (10px gap measured from source).
