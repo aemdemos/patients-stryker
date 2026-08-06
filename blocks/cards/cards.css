@@ -34,14 +34,6 @@
   background-color: var(--background-color);
 }
 
-/* resources variant: card lays out as 2 columns (image | text) */
-.cards.resources > ul > li {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  align-items: center;
-}
-
 .cards .cards-card-image {
   line-height: 0;
   cursor: pointer;
