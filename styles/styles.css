@@ -52,9 +52,9 @@
   --link-hover-color: var(--color-primary-hover);
 
   /* fonts */
-  --body-font-family: "HumanistSlab712W01", cambria, palatino, serif;
-  --heading-font-family: "URWEgyptienneW01-Light", rockwell, georgia, times, serif;
-  --display-font-family: "Futura LT W01", arial, helvetica, sans-serif;
+  --body-font-family: "HumanistSlab712W01", "humanist-slab-712-fallback", cambria, palatino, serif;
+  --heading-font-family: "URWEgyptienneW01-Light", urw-egyptienne-fallback, rockwell, georgia, times, serif;
+  --display-font-family: "Futura LT W01", futura-lt-fallback, arial, helvetica, sans-serif;
 
   /* body sizes (fixed px — source typography is non-responsive) */
   --body-font-size-m: 14px;
