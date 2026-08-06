@@ -44,7 +44,7 @@
   --color-disabled-bg: #b2b4ae;
   --color-disabled-text: #545857;
   --overlay-scrim: rgb(0 0 0 / 50%);
-  --shadow-soft: 0 0 10px rgb(0 0 0 / 0.3);
+  --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
 
   /* boilerplate color aliases (consumed by blocks) */
   --background-color: var(--color-white);
