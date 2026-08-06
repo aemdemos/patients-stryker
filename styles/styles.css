@@ -103,10 +103,12 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 
-  /* cards block  */
-  --cards-cta-heading-size: 26px; /* h3 */
-  --cards-cta-body-size: 17.5px;    /* p */
-  --cards-cta-body-line-height: 1.15; /* p */
+  /* info-callout block */
+  --info-callout-heading-size: 26px; /* h3 */
+
+  /* cards block */
+  --cards-body-size: 17.5px;    /* p */
+  --cards-body-line-height: 1.15; /* p */
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
