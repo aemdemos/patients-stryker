@@ -41,12 +41,6 @@
   line-height: var(--panel-body-line-height);
 }
 
-@media (width > 900px) {
-  .panel.cta > ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-}
 
 /* ---- cta variant (IVS homepage) --------------------------------------
    Left-aligned box with a Futura-bold heading and a gold "LEARN MORE" button
@@ -107,6 +101,11 @@
 
 @media (width > 900px) {
   .panel.panel-authoring {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+    .panel.cta > ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
