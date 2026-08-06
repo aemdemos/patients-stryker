@@ -39,8 +39,7 @@
           "name": "classes",
           "label": "Style",
           "options": [
-            { "name": "Resources", "value": "resources" },
-            { "name": "CTA", "value": "cta" }
+            { "name": "Resources", "value": "resources" }
           ]
         }
       ]
@@ -49,7 +48,7 @@
       "id": "card",
       "fields": [
         {
-          "component": "richtext",
+          "component": "reference",
           "valueType": "string",
           "name": "image",
           "label": "Image URL"
