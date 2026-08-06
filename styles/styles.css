@@ -103,8 +103,8 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 
-  /* info-callout block */
-  --info-callout-heading-size: 26px; /* h3 */
+  /* panel block */
+  --panel-cta-heading-size: 26px; /* cta variant h3 */
 
   /* cards block */
   --cards-body-size: 17.5px;    /* p */
