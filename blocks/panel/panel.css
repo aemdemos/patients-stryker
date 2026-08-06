@@ -19,10 +19,7 @@
 }
 
 .panel .panel-body {
-  /* cap the default panel width and center the box (max-width alone keeps it
-     left-aligned in the grid column — margin-inline: auto centers it) */
-  max-width: var(--panel-max-width);
-  margin: 10px auto;
+  margin: 10px;
   padding: 4%;
   background-color: var(--color-white);
   box-shadow: var(--shadow-soft);
@@ -68,7 +65,10 @@
 }
 
 .panel .panel-body h3 {
-  margin: 0 0 var(--space-block);
+  /* box stays full-width; cap the title narrower and center it so it wraps
+     like the source (margin-inline: auto centers the capped heading) */
+  max-width: var(--panel-heading-max-width);
+  margin: 0 auto var(--space-block);
   font-family: var(--display-font-family);
   font-size: var(--panel-heading-size);
   font-weight: 700;
@@ -76,6 +76,8 @@
 }
 
 .panel.cta .panel-body h3 {
+  /* cta heading is left-aligned and full width (no cap) */
+  max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
   font-size: var(--panel-cta-heading-size);
