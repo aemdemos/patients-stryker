@@ -22,9 +22,27 @@ const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
 // hls.js — lazy-loaded only when a DM video needs it (Chrome/Firefox lack native
-// HLS). Pinned version, loaded from jsDelivr on demand.
+// HLS). Pinned version, loaded from jsDelivr on demand. The Subresource
+// Integrity hash pins the exact bytes: the browser refuses to run the script if
+// the CDN response is tampered with (crossorigin is required for SRI on a
+// cross-origin script). Regenerate on version bump:
+//   curl -sL <HLS_JS_URL> | openssl dgst -sha384 -binary | openssl base64 -A
 const HLS_JS_URL = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js';
+const HLS_JS_SRI = 'sha384-9v3HcdYrO3D+OPDTjZ40RXocgE4GtXVCd3/mCS62JsM93JXgI1afJVuwjFvsu6ni';
 let hlsJsPromise;
+
+/**
+ * True when a URL points at a Dynamic Media asset (Scene7/OpenAPI image or DM
+ * video). Blocks use this to leave DM elements untouched — dm-support.js has
+ * already rendered them at native quality, so re-optimizing would degrade them.
+ * @param {string} src the image/link/media URL
+ * @returns {boolean}
+ */
+export function isDMSrc(src) {
+  return !!src && (
+    DM_SCENE7.test(src) || DM_OPENAPI.test(src) || DM_VIDEO.test(src) || VIDEO_EXT.test(src)
+  );
+}
 
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
 // nodes (avoids iterating every anchor/image on the page)
@@ -143,6 +161,8 @@ function loadHlsJs() {
     hlsJsPromise = new Promise((resolve) => {
       const script = document.createElement('script');
       script.src = HLS_JS_URL;
+      script.integrity = HLS_JS_SRI;
+      script.crossOrigin = 'anonymous';
       script.async = true;
       script.onload = () => resolve(window.Hls || null);
       script.onerror = () => resolve(null);
