@@ -9,6 +9,16 @@
   src: url('../fonts/humanist-slab-712.woff2') format('woff2');
 }
 
+/* Body bold — Humanist Slab 712 W01 Bold (real bold master; without it, bold
+   body text is faux-synthesized from the Roman face) */
+@font-face {
+  font-family: "HumanistSlab712W01";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/humanist-slab-712-bold.woff2') format('woff2');
+}
+
 /* Headings — URW Egyptienne W01 Light (single light master; weight range so 300–500 headings use it) */
 @font-face {
   font-family: "URWEgyptienneW01-Light";

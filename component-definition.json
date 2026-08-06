@@ -213,6 +213,45 @@
               ]
             }
           }
+        },
+        {
+          "title": "Statistics",
+          "id": "statistics",
+          "model": "statistics",
+          "filter": "statistics",
+          "plugins": {
+            "da": {
+              "name": "statistics",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Statistic",
+          "id": "statistic",
+          "model": "statistic",
+          "plugins": {
+            "da": {
+              "name": "statistic",
+              "rows": 1,
+              "columns": 3,
+              "fields": [
+                {
+                  "name": "color",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "value",
+                  "selector": "div:nth-child(2) > p"
+                },
+                {
+                  "name": "description",
+                  "selector": "div:nth-child(3)"
+                }
+              ]
+            }
+          }
         }
       ]
     }

@@ -29,6 +29,8 @@
   --color-accent-link-hover: #af6d04;
   --color-secondary: #545857;
   --color-navy: #27455c;
+  --color-navy-bright: #1c5687;
+  --color-purple: #85458a;
   --color-success: #32ae88;
 
   /* neutrals & surfaces */
@@ -93,6 +95,11 @@
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+
+  /* statistics block — measured from source: big number size + surrounding gaps */
+  --statistics-number-size: 92px;
+  --statistics-item-gap: 40px;
+  --statistics-number-gap: 18px;
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
