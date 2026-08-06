@@ -104,7 +104,7 @@
   --statistics-number-gap: 18px;
 
   /* panel block */
-  --panel-max-width: 600px; /* default panel box width cap (centered) */
+  --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
   --panel-cta-heading-size: 26px; /* cta variant h3 */
   --panel-cta-body-size: 17.5px;    /* cta variant p */
   --panel-heading-size: 35px; /* h3 */
