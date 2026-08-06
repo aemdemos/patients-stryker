@@ -163,18 +163,14 @@ export default function transform(hookName, element, payload) {
       if (!p.textContent.trim() && !p.querySelector('img, picture, a')) p.remove();
     });
 
-    // The page title heading is authored as an <h2> on the source, but it is the
-    // page's primary heading, so promote it to <h1>. Keep it in the same section as
-    // the body (no section break) — the title container's markup is flattened by the
-    // importer and the heading flows into the single content section.
-    const titleBlock = element.querySelector('.c-title, .title-container');
-    const titleHeading = titleBlock
-      ? titleBlock.querySelector('h1, h2, h3, h4, h5, h6')
-      : element.querySelector('h2');
-    if (titleHeading && titleHeading.tagName !== 'H1') {
-      const h1 = element.ownerDocument.createElement('h1');
-      while (titleHeading.firstChild) h1.appendChild(titleHeading.firstChild);
-      titleHeading.replaceWith(h1);
-    }
+    // Normalise the page title to <h2>. Most legal pages author the title as an
+    // <h2> already, but a few use a native <h1>. Demote any <h1> to <h2> so every
+    // legal page title is consistently an <h2>.
+    element.querySelectorAll('h1').forEach((h1) => {
+      const h2 = element.ownerDocument.createElement('h2');
+      [...h1.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
+      while (h1.firstChild) h2.appendChild(h1.firstChild);
+      h1.replaceWith(h2);
+    });
   }
 }

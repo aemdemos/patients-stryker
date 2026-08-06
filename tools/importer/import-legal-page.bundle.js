@@ -120,13 +120,12 @@ var CustomImportScript = (() => {
       element.querySelectorAll("p").forEach((p) => {
         if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
       });
-      const titleBlock = element.querySelector(".c-title, .title-container");
-      const titleHeading = titleBlock ? titleBlock.querySelector("h1, h2, h3, h4, h5, h6") : element.querySelector("h2");
-      if (titleHeading && titleHeading.tagName !== "H1") {
-        const h1 = element.ownerDocument.createElement("h1");
-        while (titleHeading.firstChild) h1.appendChild(titleHeading.firstChild);
-        titleHeading.replaceWith(h1);
-      }
+      element.querySelectorAll("h1").forEach((h1) => {
+        const h2 = element.ownerDocument.createElement("h2");
+        [...h1.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
+        while (h1.firstChild) h2.appendChild(h1.firstChild);
+        h1.replaceWith(h2);
+      });
     }
   }
 
