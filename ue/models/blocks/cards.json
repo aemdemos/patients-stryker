@@ -48,10 +48,10 @@
       "id": "card",
       "fields": [
         {
-          "component": "richtext",
+          "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Image URL"
+          "label": "Image"
         },
         {
           "component": "text",
