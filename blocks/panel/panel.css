@@ -109,6 +109,7 @@
 .panel.dark .panel-body p {
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-cta-body-line-height);
+  margin: 0 0 var(--space-block);
 }
 
 /* Universal Editor authoring view: the block keeps its authored div structure
