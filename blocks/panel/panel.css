@@ -97,14 +97,18 @@
 }
 
 .panel.dark .panel-body h3 {
-  /* left-aligned, full width (no cap); white serif heading, matches source
-     (URW Egyptienne serif, 21px, weight 500 — not the Futura-bold default) */
+  /* left-aligned, full width (no cap); gold serif heading */
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-l);
+  font-size: var(--panel-cta-heading-size);
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--color-accent);
+}
+
+.panel.dark .panel-body p {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
 }
 
 /* Universal Editor authoring view: the block keeps its authored div structure
