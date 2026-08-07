@@ -136,4 +136,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+
+    .panel.dark > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
 }
