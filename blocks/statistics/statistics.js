@@ -177,15 +177,20 @@ function setupCountUp(block) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         visible = true;
-        // Wait for the brand font before reserving the final width (so the
-        // reservation matches the swapped-in font), then start the count.
-        // Re-reserving on every entry is cheap and also corrects for a resize.
+        // Reserve IMMEDIATELY and hold the value at 0, so there is never a window
+        // where the box is unreserved (min-width unset) while text paints — that
+        // gap is what shifts on slow loads. reserveWidths() reserves max(brand,
+        // fallback) width, so this first pass is overflow-safe whichever font is
+        // currently rendering.
+        reserveWidths();
+        render(0);
+        // Only START the count-up once the brand font is loaded AND laid out (two
+        // frames after the load resolves, since fonts.check can resolve a frame
+        // before relayout). This keeps every animated digit inside a font-stable,
+        // reserved box: the number never grows digits while the font is still
+        // swapping, so the count-up cannot contribute layout shift. Re-reserving
+        // here can only keep or widen the box (we reserve the max), never shrink.
         displayFontReady().then(() => {
-          // fonts.ready/check can resolve one frame before the text that uses the
-          // font is re-laid-out, so a synchronous measure here can still catch the
-          // pre-swap (fallback) glyph widths. Defer two frames so layout settles
-          // on the brand font before we measure — otherwise the reservation is a
-          // few px too small and the suffix shifts when the real font paints.
           requestAnimationFrame(() => requestAnimationFrame(() => {
             if (!visible) return; // scrolled back out while the font was loading
             reserveWidths();
