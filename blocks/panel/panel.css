@@ -66,7 +66,7 @@
   font-family: var(--display-font-family);
   font-size: var(--panel-heading-size);
   font-weight: 700;
-  color: var(--color-black);
+  color: var(--color-accent);
 }
 
 .panel.cta .panel-body h3 {
