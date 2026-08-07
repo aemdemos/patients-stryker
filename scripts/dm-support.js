@@ -112,27 +112,10 @@ function dmRendererFor(src) {
 }
 
 /**
- * True when running inside the Universal Editor (authoring) environment.
- * @returns {boolean}
- */
-function isUniversalEditor() {
-  return /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
-}
-
-/**
  * Replace authored DM links/images anywhere in `main` with optimized <picture>.
  * @param {Element} main the container to decorate
  */
 export default function decorateDMImages(main) {
-  // Leave authored content untouched in the Universal Editor. This content
-  // authors DM images as links inside cells alongside text; rewriting a link
-  // into an <img>/<picture> at runtime desyncs the DOM from what UE
-  // instrumented — it fabricates a resourceless "image" component and shifts
-  // the resource indexing of sibling text in the same cell, which breaks
-  // selection, editing ("Failed to patch content / Component not found") and
-  // persistence. Conversion still runs on preview/live (no instrumentation
-  // there), so visitors get the optimized <picture>.
-  if (isUniversalEditor()) return;
   main.querySelectorAll(DM_SELECTOR).forEach((el) => {
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
