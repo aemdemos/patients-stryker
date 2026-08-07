@@ -84,6 +84,29 @@
   margin-top: 10px;
 }
 
+/* ---- dark variant (IVS condition sections, left column) --------------
+   A gray-to-dark-teal gradient box with white text and a left-aligned
+   heading — measured from source .has-background.bg-dark-teal-gradient
+   (linear-gradient(90deg, #545857, #3e5245), 22.5px padding, no shadow). */
+.panel.dark .panel-body {
+  padding: 22.5px;
+  background: var(--panel-dark-gradient);
+  box-shadow: none;
+  text-align: left;
+  color: var(--color-white);
+}
+
+.panel.dark .panel-body h3 {
+  /* left-aligned, full width (no cap); white serif heading, matches source
+     (URW Egyptienne serif, 21px, weight 500 — not the Futura-bold default) */
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 500;
+  color: var(--color-white);
+}
+
 /* Universal Editor authoring view: the block keeps its authored div structure
    (no ul/li transform) so child instrumentation persists. Mirror the box look. */
 .panel.panel-authoring {
