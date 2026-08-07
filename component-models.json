@@ -99,13 +99,13 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image URL"
+        "label": "Image"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt (link text)"
+        "label": "Image Alt"
       },
       {
         "component": "richtext",
