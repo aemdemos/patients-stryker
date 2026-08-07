@@ -112,11 +112,31 @@ function dmRendererFor(src) {
 }
 
 /**
+ * True when running inside the Universal Editor (authoring) environment.
+ * There, an asset-picker <img> carries UE instrumentation (data-aue-*) binding
+ * it to its image component; replacing it with a fresh <picture> would strip
+ * that, breaking selection and the properties panel.
+ * @returns {boolean}
+ */
+function isUniversalEditor() {
+  return /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
+}
+
+/**
  * Replace authored DM links/images anywhere in `main` with optimized <picture>.
  * @param {Element} main the container to decorate
  */
 export default function decorateDMImages(main) {
+  const inEditor = isUniversalEditor();
   main.querySelectorAll(DM_SELECTOR).forEach((el) => {
+    // In the Universal Editor, leave asset-picker images (an <img> from the
+    // media bus) untouched: they carry UE instrumentation binding them to their
+    // image component, and replacing them breaks selection and the properties
+    // panel ("Component not found"). DM links in text (<a>) are not themselves
+    // components, so they still convert to a preview <picture> here — and every
+    // element still converts normally on preview/live.
+    if (inEditor && el.tagName === 'IMG') return;
+
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
     const render = dmRendererFor(src);
