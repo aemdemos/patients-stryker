@@ -280,13 +280,23 @@ button {
 /* links */
 a:any-link {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
   overflow-wrap: break-word;
 }
 
 a:hover,
 a:focus {
   color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+/* bold and bold+italic links are not underlined (italic-only links still are).
+   Covers both nesting directions: <strong>/<b> wrapping the link, and the link
+   wrapping <strong>/<b>. */
+strong a:any-link,
+b a:any-link,
+a:any-link:has(strong),
+a:any-link:has(b) {
   text-decoration: none;
 }
 
