@@ -26,6 +26,12 @@
   text-align: center;
 }
 
+/* left variant: left-align the panel content (heading override lives after the
+   base .panel .panel-body h3 rule to satisfy no-descending-specificity) */
+.panel.left .panel-body {
+  text-align: left;
+}
+
 .panel .panel-body p {
   margin: 0;
   font-size: var(--panel-body-size);

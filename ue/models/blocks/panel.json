@@ -39,6 +39,7 @@
           "value": "",
           "options": [
             { "name": "Default", "value": "" },
+            { "name": "Left", "value": "left" },
             { "name": "CTA", "value": "cta" },
             { "name": "Dark", "value": "dark" }
           ]
