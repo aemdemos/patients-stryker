@@ -15,6 +15,35 @@
  * Licensed Monotype W01 fonts are referenced first with their documented system fallbacks.
  */
 
+/* Size-adjusted system fallbacks — declared HERE in the eager stylesheet (not in
+   the lazily-injected styles/fonts.css) so first paint already renders body text
+   in a metric-matched fallback. The webfaces themselves stay in fonts.css with
+   font-display: optional. Keeping these local()-only faces eager (zero network
+   cost) is what prevents the whole-page text reflow when fonts.css lands — the
+   footnote-page CLS in issue #52. size-adjust normalizes glyph width to each
+   webfont; line-gap-override: 0% removes the fallbacks' extra line-gap so the
+   line-box height also stays stable across the swap. */
+@font-face {
+  font-family: "humanist-slab-712-fallback";
+  size-adjust: 91.42%;
+  line-gap-override: 0%;
+  src: local('Cambria'), local('Palatino'), local('Georgia'), local('serif');
+}
+
+@font-face {
+  font-family: urw-egyptienne-fallback;
+  size-adjust: 89.83%;
+  line-gap-override: 0%;
+  src: local('Georgia'), local('Rockwell'), local('Times New Roman'), local('serif');
+}
+
+@font-face {
+  font-family: futura-lt-fallback;
+  size-adjust: 89.70%;
+  line-gap-override: 0%;
+  src: local('Arial'), local('Helvetica'), local('sans-serif');
+}
+
 :root {
   /* brand colors */
   --color-primary: #4c7d7a;

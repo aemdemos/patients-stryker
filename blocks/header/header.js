@@ -122,6 +122,18 @@ export default async function decorate(block) {
       const container = brandLink.closest('.button-container');
       if (container) container.className = '';
     }
+    // The logo is above the fold but the header loads in the lazy phase, so the
+    // browser would otherwise lazy-load an unsized <img> and shift content when
+    // it arrives (CLS). Load it eagerly and give it the logo's intrinsic size so
+    // the space is reserved before the bytes land. CSS keeps `height: auto` so
+    // the aspect ratio (and the responsive display width) is preserved.
+    const brandImg = navBrand.querySelector('img');
+    if (brandImg) {
+      brandImg.setAttribute('loading', 'eager');
+      brandImg.setAttribute('fetchpriority', 'high');
+      if (!brandImg.getAttribute('width')) brandImg.setAttribute('width', '192');
+      if (!brandImg.getAttribute('height')) brandImg.setAttribute('height', '48');
+    }
   }
 
   // Tools: build the search form from the :search: token

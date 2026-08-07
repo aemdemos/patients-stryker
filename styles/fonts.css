@@ -1,11 +1,16 @@
 /* stylelint-disable max-line-length */
 
+/* font-display: optional across all faces — the webfont is used only if it is
+   already cached (near-zero block period), otherwise the size-adjusted system
+   fallback below is kept for the whole page load with NO swap. This eliminates
+   the font-swap reflow that was the biggest CLS culprit (see issue #52). */
+
 /* Body — Humanist Slab 712 W01 Roman */
 @font-face {
   font-family: "HumanistSlab712W01";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url('../fonts/humanist-slab-712.woff2') format('woff2');
 }
 
@@ -15,7 +20,7 @@
   font-family: "HumanistSlab712W01";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url('../fonts/humanist-slab-712-bold.woff2') format('woff2');
 }
 
@@ -24,7 +29,7 @@
   font-family: "URWEgyptienneW01-Light";
   font-style: normal;
   font-weight: 300 500;
-  font-display: swap;
+  font-display: optional;
   src: url('../fonts/urw-egyptienne-light.woff2') format('woff2');
 }
 
@@ -33,7 +38,7 @@
   font-family: "Futura LT W01";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url('../fonts/futura-lt-book.woff2') format('woff2');
 }
 
@@ -42,26 +47,15 @@
   font-family: "Futura LT W01";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url('../fonts/futura-lt-bold.woff2') format('woff2');
 }
 
-/* Size-adjusted system fallbacks — keep layout stable while webfonts load
-   (prevents font-swap CLS). size-adjust measured against each webfont's metrics. */
-@font-face {
-  font-family: "humanist-slab-712-fallback";
-  size-adjust: 91.42%;
-  src: local('Cambria'), local('Palatino'), local('Georgia'), local('serif');
-}
-
-@font-face {
-  font-family: urw-egyptienne-fallback;
-  size-adjust: 89.83%;
-  src: local('Georgia'), local('Rockwell'), local('Times New Roman'), local('serif');
-}
-
-@font-face {
-  font-family: futura-lt-fallback;
-  size-adjust: 89.70%;
-  src: local('Arial'), local('Helvetica'), local('sans-serif');
-}
+/* The size-adjusted system-fallback @font-face blocks that used to live here have
+   moved to styles/styles.css (the eager stylesheet). They are local()-only (zero
+   network cost) and MUST be defined at first paint: this fonts.css is injected
+   lazily, so if the fallbacks lived here, first paint would fall through to raw
+   `serif` and every line of body text would reflow when fonts.css landed (the
+   footnote-page CLS in issue #52). Defined eagerly, first paint already uses the
+   correct-metric fallback, and the optional webfonts above swap in with matching
+   metrics — a near-zero shift. */
