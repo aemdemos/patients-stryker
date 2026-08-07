@@ -124,7 +124,15 @@ function isUniversalEditor() {
  * @param {Element} main the container to decorate
  */
 export default function decorateDMImages(main) {
-  const inEditor = isUniversalEditor();
+  // Leave authored content untouched in the Universal Editor. This content
+  // authors DM images as links inside cells alongside text; rewriting a link
+  // into an <img>/<picture> at runtime desyncs the DOM from what UE
+  // instrumented — it fabricates a resourceless "image" component and shifts
+  // the resource indexing of sibling text in the same cell, which breaks
+  // selection, editing ("Failed to patch content / Component not found") and
+  // persistence. Conversion still runs on preview/live (no instrumentation
+  // there), so visitors get the optimized <picture>.
+  if (isUniversalEditor()) return;
   main.querySelectorAll(DM_SELECTOR).forEach((el) => {
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
@@ -134,24 +142,6 @@ export default function decorateDMImages(main) {
     if (el.tagName === 'A' && el.textContent.trim() !== src) return;
 
     const alt = el.getAttribute('alt') || el.getAttribute('title') || '';
-    const picture = render(src, alt, false);
-
-    // In the Universal Editor, a DM autolink that is the sole content of its
-    // paragraph would, if replaced by a bare <picture>, look like a standalone
-    // Image default-content component to DA — but it has no backing asset, so
-    // its properties panel fails with "Component not found". Keeping the <a>
-    // and nesting the image inside it preserves the paragraph's link/text
-    // identity (a valid, fetchable component) while still showing the image.
-    // Bare DM <img> elements are left untouched here. On preview/live the link
-    // is replaced outright, exactly as before.
-    if (inEditor) {
-      if (el.tagName === 'A') {
-        el.textContent = '';
-        el.append(picture);
-      }
-      return;
-    }
-
-    el.replaceWith(picture);
+    el.replaceWith(render(src, alt, false));
   });
 }
