@@ -85,6 +85,12 @@
   color: var(--color-black);
 }
 
+/* left variant: heading is full-width and left-aligned (no centered cap) */
+.panel.left .panel-body h3 {
+  max-width: none;
+  margin: 0 0 30px;
+}
+
 /* italic heading text → gold accent (default + cta variants; authored as <em>/<i>).
    The dark variant keeps its own gold heading rule below, so exclude it here. */
 .panel:not(.dark) .panel-body h3 em,

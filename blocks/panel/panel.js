@@ -21,8 +21,11 @@ export default function decorate(block) {
     [...li.children].forEach((div) => { div.className = 'panel-body'; });
 
     if (isCta) {
-      // Lift a trailing link-only paragraph out of the box so it sits below as a
-      // standalone gold button (reuses the global a.button.accent styling).
+      // Lift a trailing link-only paragraph out of the box so it sits below it.
+      // Move the whole <p> (keeping the anchor inside it) and DON'T set any
+      // button classes here — the global decorateButtons() styles it based on
+      // authored formatting: bold+italic → gold .button.accent, anything else →
+      // default link. Styling lives entirely in styles.css.
       const body = li.querySelector('.panel-body');
       if (body) {
         const ctaP = [...body.querySelectorAll(':scope > p')].reverse().find((p) => {
@@ -30,12 +33,9 @@ export default function decorate(block) {
           return a && p.textContent.trim() === a.textContent.trim();
         });
         if (ctaP) {
-          const a = ctaP.querySelector('a');
-          a.className = 'button accent';
           const cta = document.createElement('div');
           cta.className = 'panel-cta';
-          cta.append(a);
-          ctaP.remove();
+          cta.append(ctaP);
           li.append(cta);
         }
       }
