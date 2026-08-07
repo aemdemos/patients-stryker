@@ -142,6 +142,17 @@
   margin: 0 0 var(--space-block);
 }
 
+/* cta paragraphs containing bold+italic (the gold-label marker) use the
+   smaller body size and default line-height */
+.panel.cta .panel-body p:has(strong em),
+.panel.cta .panel-body p:has(em strong),
+.panel.cta .panel-body p:has(b i),
+.panel.cta .panel-body p:has(i b) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-body-size-s);
+  line-height: var(--panel-body-line-height);
+}
+
 /* Universal Editor authoring view: the block keeps its authored div structure
    (no ul/li transform) so child instrumentation persists. Mirror the box look. */
 .panel.panel-authoring {
