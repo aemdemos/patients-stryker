@@ -1,5 +1,14 @@
 /* stylelint-disable max-line-length */
 
+/* Webfonts load lazily (this file is injected by loadFonts() in scripts.js) with
+   font-display: swap. First paint uses the size-adjusted system fallbacks declared
+   eagerly in styles/styles.css; when a webface arrives it swaps in. The body
+   fallback (humanist-slab-712-fallback) is calibrated to the Arial metric group
+   (Arial ≡ Liberation Sans ≡ Arimo — metric-identical across Windows/macOS/Linux/
+   Android), so the swap is width-neutral on every platform and does not reflow the
+   long footnote paragraphs (the mobile CLS in issue #52). The 3 primary faces are
+   also preloaded in head.html so the swap happens fast. */
+
 /* Body — Humanist Slab 712 W01 Roman */
 @font-face {
   font-family: "HumanistSlab712W01";
@@ -44,24 +53,4 @@
   font-weight: 700;
   font-display: swap;
   src: url('../fonts/futura-lt-bold.woff2') format('woff2');
-}
-
-/* Size-adjusted system fallbacks — keep layout stable while webfonts load
-   (prevents font-swap CLS). size-adjust measured against each webfont's metrics. */
-@font-face {
-  font-family: "humanist-slab-712-fallback";
-  size-adjust: 91.42%;
-  src: local('Cambria'), local('Palatino'), local('Georgia'), local('serif');
-}
-
-@font-face {
-  font-family: urw-egyptienne-fallback;
-  size-adjust: 89.83%;
-  src: local('Georgia'), local('Rockwell'), local('Times New Roman'), local('serif');
-}
-
-@font-face {
-  font-family: futura-lt-fallback;
-  size-adjust: 89.70%;
-  src: local('Arial'), local('Helvetica'), local('sans-serif');
 }
