@@ -41,6 +41,16 @@
   line-height: var(--panel-cta-body-line-height);
 }
 
+/* bold + italic body text → gold accent (the site's gold-label marker:
+   text authored as both bold and italic renders in the accent color). */
+.panel .panel-body strong em,
+.panel .panel-body em strong,
+.panel .panel-body b i,
+.panel .panel-body i b {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
 
 /* ---- cta variant (IVS homepage) --------------------------------------
    Left-aligned box with a Futura-bold heading and a gold "LEARN MORE" button
