@@ -106,6 +106,29 @@ function setupCountUp(block) {
     });
   };
 
+  // Resolve once the brand display font that renders the numbers is actually
+  // loaded, so reserveWidths() measures the FINAL brand-font glyph widths — not
+  // the narrower system fallback. With font-display: swap the value first paints
+  // in the fallback and swaps to the brand font whenever it arrives; if we reserve
+  // during that fallback window we lock in a too-small min-width (e.g. 166px), and
+  // the later swap grows the box to the brand width (216px), shifting the % / x / M
+  // suffix — the min-width "flapping between refreshes" bug. Awaiting the font
+  // makes the reservation deterministic. Resolves synchronously-ish when the font
+  // is already cached, and never rejects (a font load failure still resolves so we
+  // fall back to measuring whatever is rendered rather than hanging).
+  const displayFontReady = () => {
+    const { fonts } = document;
+    const cs = window.getComputedStyle(stats[0].target);
+    // primary family only — the full stack contains fallback names that
+    // document.fonts.load() cannot resolve
+    const primary = cs.fontFamily.split(',')[0].trim();
+    const spec = `${cs.fontWeight} ${cs.fontSize} ${primary}`;
+    if (!fonts || typeof fonts.load !== 'function' || fonts.check(spec)) {
+      return Promise.resolve();
+    }
+    return fonts.load(spec).catch(() => {});
+  };
+
   const stop = () => {
     if (raf) cancelAnimationFrame(raf);
     raf = null;
@@ -126,17 +149,29 @@ function setupCountUp(block) {
 
   // hold at 0 until the block first enters the viewport
   render(0);
+  let visible = false;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // Reserve the final width now that the block is laid out and (almost
-        // always) the brand font has resolved, then start the count. Re-reserving
-        // on every entry is cheap and keeps the reservation correct if a late
-        // font swap or resize changed glyph widths since the last pass.
-        reserveWidths();
-        run();
+        visible = true;
+        // Wait for the brand font before reserving the final width (so the
+        // reservation matches the swapped-in font), then start the count.
+        // Re-reserving on every entry is cheap and also corrects for a resize.
+        displayFontReady().then(() => {
+          // fonts.ready/check can resolve one frame before the text that uses the
+          // font is re-laid-out, so a synchronous measure here can still catch the
+          // pre-swap (fallback) glyph widths. Defer two frames so layout settles
+          // on the brand font before we measure — otherwise the reservation is a
+          // few px too small and the suffix shifts when the real font paints.
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (!visible) return; // scrolled back out while the font was loading
+            reserveWidths();
+            run();
+          }));
+        });
       } else {
+        visible = false;
         stop();
         render(0);
       }
