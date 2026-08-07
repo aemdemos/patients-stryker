@@ -20,7 +20,7 @@
 
 .panel .panel-body {
   margin: 10px;
-  padding: 4%;
+  padding: 3%;
   background-color: var(--color-white);
   box-shadow: var(--shadow-soft);
   text-align: center;
@@ -38,8 +38,17 @@
   line-height: var(--panel-body-line-height);
 }
 
-.panel .panel-body p:last-child {
-  margin: 0 0 var(--space-block);}
+/* cta paragraphs containing bold+italic (the gold-label marker) use the
+   smaller body size and default line-height */
+.panel .panel-body p:has(strong em),
+.panel .panel-body p:has(em strong),
+.panel .panel-body p:has(b i),
+.panel .panel-body p:has(i b) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-body-size-s);
+  line-height: var(--panel-body-line-height);
+  font-family: var(--heading-font-family);
+}
 
 .panel.cta .panel-body p {
   margin: 0 0 var(--space-block);
@@ -142,15 +151,15 @@
   margin: 0 0 var(--space-block);
 }
 
-/* cta paragraphs containing bold+italic (the gold-label marker) use the
-   smaller body size and default line-height */
-.panel.cta .panel-body p:has(strong em),
-.panel.cta .panel-body p:has(em strong),
-.panel.cta .panel-body p:has(b i),
-.panel.cta .panel-body p:has(i b) {
+.panel .panel-body p:last-child {
   margin: 0 0 var(--space-block);
-  font-size: var(--panel-body-size-s);
-  line-height: var(--panel-body-line-height);
+}
+
+.panel .panel-body p:last-child:has(strong em),
+.panel .panel-body p:last-child:has(em strong),
+.panel .panel-body p:last-child:has(b i),
+.panel .panel-body p:last-child:has(i b) {
+  margin: 0;
 }
 
 /* Universal Editor authoring view: the block keeps its authored div structure
