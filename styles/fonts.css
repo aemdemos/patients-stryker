@@ -1,16 +1,20 @@
 /* stylelint-disable max-line-length */
 
-/* font-display: optional across all faces — the webfont is used only if it is
-   already cached (near-zero block period), otherwise the size-adjusted system
-   fallback below is kept for the whole page load with NO swap. This eliminates
-   the font-swap reflow that was the biggest CLS culprit (see issue #52). */
+/* font-display: swap across all faces — text paints immediately in the
+   size-adjusted fallback (declared eagerly in styles/styles.css) and swaps to
+   the brand webfont whenever it arrives, so the brand font ALWAYS wins and text
+   is never stuck on the fallback for the session. The primary faces are
+   preloaded in head.html so they are usually ready at/near first paint, keeping
+   the swap shift near-zero; the size-adjusted fallbacks make any residual swap
+   metric-matched. (We deliberately avoid `optional`, which would strand ~half of
+   loads on the Arial-ish fallback for the whole page — see issue #52.) */
 
 /* Body — Humanist Slab 712 W01 Roman */
 @font-face {
   font-family: "HumanistSlab712W01";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url('../fonts/humanist-slab-712.woff2') format('woff2');
 }
 
@@ -20,7 +24,7 @@
   font-family: "HumanistSlab712W01";
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url('../fonts/humanist-slab-712-bold.woff2') format('woff2');
 }
 
@@ -29,7 +33,7 @@
   font-family: "URWEgyptienneW01-Light";
   font-style: normal;
   font-weight: 300 500;
-  font-display: optional;
+  font-display: swap;
   src: url('../fonts/urw-egyptienne-light.woff2') format('woff2');
 }
 
@@ -38,7 +42,7 @@
   font-family: "Futura LT W01";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url('../fonts/futura-lt-book.woff2') format('woff2');
 }
 
@@ -47,7 +51,7 @@
   font-family: "Futura LT W01";
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url('../fonts/futura-lt-bold.woff2') format('woff2');
 }
 

@@ -17,9 +17,10 @@
 
 /* Size-adjusted system fallbacks — declared HERE in the eager stylesheet (not in
    the lazily-injected styles/fonts.css) so first paint already renders body text
-   in a metric-matched fallback. The webfaces themselves stay in fonts.css with
-   font-display: optional. Keeping these local()-only faces eager (zero network
-   cost) is what prevents the whole-page text reflow when fonts.css lands — the
+   in a metric-matched fallback. The webfaces themselves load via fonts.css with
+   font-display: swap (and are preloaded in head.html). Keeping these local()-only
+   faces eager (zero network cost) is what makes the swap to the brand font a
+   metric-matched, near-zero shift instead of a whole-page reflow — the
    footnote-page CLS in issue #52. size-adjust normalizes glyph width to each
    webfont; line-gap-override: 0% removes the fallbacks' extra line-gap so the
    line-box height also stays stable across the swap. */
