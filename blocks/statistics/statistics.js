@@ -71,7 +71,7 @@ function setupCountUp(block) {
     .map((el) => {
       const target = el.querySelector('p') || el;
       const parsed = parseStatNumber(target.textContent.trim());
-      return parsed ? { target, parsed } : null;
+      return parsed ? { el, target, parsed } : null;
     })
     .filter(Boolean);
   if (!stats.length) return;
@@ -82,6 +82,27 @@ function setupCountUp(block) {
     stats.forEach(({ target, parsed }) => {
       const value = progress >= 1 ? parsed.target : progress * parsed.target;
       target.textContent = formatStatNumber(value, parsed);
+    });
+  };
+
+  // Reserve each value's final (widest) width and pin its text to the right, so
+  // the number counting up from 0 expands leftward instead of the whole centered
+  // value re-flowing and nudging the % / x / M suffix as digits are added (the
+  // residual count-up CLS). The final value has the most digits, and the CSS
+  // tabular-nums keeps digits equal-width, so no in-between frame is ever wider
+  // than this reserved width.
+  // MUST run only when the block is laid out (i.e. once it is in the viewport) —
+  // during decorate() the block has no layout box yet, so getBoundingClientRect()
+  // returns 0 and the reservation would be a no-op. The width>0 guard makes any
+  // premature/hidden call safely skip rather than lock in a zero width.
+  const reserveWidths = () => {
+    stats.forEach(({ el, target, parsed }) => {
+      const shown = target.textContent;
+      target.textContent = formatStatNumber(parsed.target, parsed);
+      el.style.minWidth = '0';
+      const finalWidth = el.getBoundingClientRect().width;
+      if (finalWidth > 0) el.style.minWidth = `${Math.ceil(finalWidth)}px`;
+      target.textContent = shown;
     });
   };
 
@@ -109,6 +130,11 @@ function setupCountUp(block) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        // Reserve the final width now that the block is laid out and (almost
+        // always) the brand font has resolved, then start the count. Re-reserving
+        // on every entry is cheap and keeps the reservation correct if a late
+        // font swap or resize changed glyph widths since the last pass.
+        reserveWidths();
         run();
       } else {
         stop();
