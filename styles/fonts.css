@@ -1,0 +1,56 @@
+/* stylelint-disable max-line-length */
+
+/* Webfonts load lazily (this file is injected by loadFonts() in scripts.js) with
+   font-display: swap. First paint uses the size-adjusted system fallbacks declared
+   eagerly in styles/styles.css; when a webface arrives it swaps in. The body
+   fallback (humanist-slab-712-fallback) is calibrated to the Arial metric group
+   (Arial ≡ Liberation Sans ≡ Arimo — metric-identical across Windows/macOS/Linux/
+   Android), so the swap is width-neutral on every platform and does not reflow the
+   long footnote paragraphs (the mobile CLS in issue #52). The 3 primary faces are
+   also preloaded in head.html so the swap happens fast. */
+
+/* Body — Humanist Slab 712 W01 Roman */
+@font-face {
+  font-family: "HumanistSlab712W01";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/humanist-slab-712.woff2') format('woff2');
+}
+
+/* Body bold — Humanist Slab 712 W01 Bold (real bold master; without it, bold
+   body text is faux-synthesized from the Roman face) */
+@font-face {
+  font-family: "HumanistSlab712W01";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/humanist-slab-712-bold.woff2') format('woff2');
+}
+
+/* Headings — URW Egyptienne W01 Light (single light master; weight range so 300–500 headings use it) */
+@font-face {
+  font-family: "URWEgyptienneW01-Light";
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('../fonts/urw-egyptienne-light.woff2') format('woff2');
+}
+
+/* Display / buttons — Futura LT W01 Book */
+@font-face {
+  font-family: "Futura LT W01";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/futura-lt-book.woff2') format('woff2');
+}
+
+/* Display bold — Futura LT W01 Bold */
+@font-face {
+  font-family: "Futura LT W01";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/futura-lt-bold.woff2') format('woff2');
+}

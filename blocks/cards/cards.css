@@ -58,7 +58,7 @@
   /* Source card heading text is wrapped in span.futura-bold and renders in
      Futura LT W01, weight 700 (a bold sans-serif) — NOT the global serif h3.
      Override the family/weight here to match. The real Futura bold woff2 is
-     declared in styles.css, so this is a genuine bold weight (no faux-bold). */
+     loaded via fonts.css, so this is a genuine bold weight (no faux-bold). */
   font-family: var(--display-font-family);
   font-weight: 700;
 }

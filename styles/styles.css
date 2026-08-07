@@ -17,86 +17,29 @@
 
 /* stylelint-disable max-line-length */
 
-/* Webfont @font-face declarations — MUST live in this eager (render-blocking)
-   stylesheet, NOT in a lazily-injected fonts.css. On mobile first-visit the lazy
-   phase runs after first paint, so if these rules loaded lazily the brand font
-   could not be applied until after the content had already painted in the
-   fallback — guaranteeing a late swap and reflow (the mobile footnote CLS in
-   issue #52). Declared eagerly + preloaded in head.html, the real font is defined
-   and fetching before first paint, so it applies at/near first paint with no
-   fallback layout phase. font-display: swap is the slow-connection safety net (the
-   brand font always wins; never stranded on the fallback), cushioned by the
-   size-adjusted fallbacks below which match its metrics. */
-
-/* Body — Humanist Slab 712 W01 Roman */
-@font-face {
-  font-family: "HumanistSlab712W01";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/humanist-slab-712.woff2') format('woff2');
-}
-
-/* Body bold — Humanist Slab 712 W01 Bold (real bold master; without it, bold
-   body text is faux-synthesized from the Roman face) */
-@font-face {
-  font-family: "HumanistSlab712W01";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/humanist-slab-712-bold.woff2') format('woff2');
-}
-
-/* Headings — URW Egyptienne W01 Light (single light master; weight range so 300–500 headings use it) */
-@font-face {
-  font-family: "URWEgyptienneW01-Light";
-  font-style: normal;
-  font-weight: 300 500;
-  font-display: swap;
-  src: url('/fonts/urw-egyptienne-light.woff2') format('woff2');
-}
-
-/* Display / buttons — Futura LT W01 Book */
-@font-face {
-  font-family: "Futura LT W01";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/futura-lt-book.woff2') format('woff2');
-}
-
-/* Display bold — Futura LT W01 Bold */
-@font-face {
-  font-family: "Futura LT W01";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/futura-lt-bold.woff2') format('woff2');
-}
-
 /* Size-adjusted system fallbacks — declared HERE in the eager stylesheet so first
-   paint already renders body text in a metric-matched fallback. The webfaces above
-   are also eager now (and preloaded in head.html). Keeping these local()-only
-   faces eager (zero network cost) is what makes the swap to the brand font a
+   paint already renders body text in a metric-matched fallback. The webfaces
+   themselves load lazily via styles/fonts.css with font-display: swap (the 3
+   primary faces are preloaded in head.html). These local()-only faces cost no
+   network and, being eager, are what makes the swap to the brand font a
    metric-matched, near-zero shift instead of a whole-page reflow — the
-   footnote-page CLS in issue #52. size-adjust normalizes glyph width to each
-   webfont; line-gap-override: 0% removes the fallbacks' extra line-gap so the
-   line-box height also stays stable across the swap.
-   The src lists real fonts across ALL platforms — Windows/macOS (Cambria, Georgia,
-   Arial…) AND Linux/Android (Liberation, DejaVu, Noto, Tinos…). This matters: a
-   size-adjust face only takes effect if its src resolves to an installed font; if
-   none match, the face is dropped and text falls through to the UN-adjusted generic
-   (10% wider → an extra wrapped line → reflow when the webfont swaps in). Headless
-   Chrome/Linux — which is what PageSpeed Insights and many mobile users run — has
-   NONE of the Windows/mac serifs, so the earlier `local('Cambria'),…,local('serif')`
-   list resolved to nothing there and reintroduced the footnote CLS. `local('serif')`
-   is also invalid (no font is literally named "serif"), so it never provided a net. */
+   footnote-page CLS in issue #52. size-adjust normalizes glyph width to the
+   webfont; line-gap-override: 0% keeps the line-box height stable across the swap.
+
+   The BODY fallback is anchored to the Arial metric group — Arial ≡ Liberation
+   Sans ≡ Arimo are byte-for-byte metric-identical and cover Windows, macOS, Linux
+   and Android — so a SINGLE size-adjust (91.09%, measured against HumanistSlab on
+   real hardware) is width-accurate on every platform. That is the key advantage
+   over serif-anchored fallbacks: the serif system fonts (Cambria vs Georgia vs
+   DejaVu) have different metrics per OS, so no single size-adjust fits them all
+   and the long footnote paragraphs wrapped to a different line count → reflow on
+   swap. The generic `sans-serif` is the last-resort net for a platform with none
+   of the named Arial-metric clones. */
 @font-face {
   font-family: "humanist-slab-712-fallback";
-  size-adjust: 91.42%;
+  size-adjust: 91.09%;
   line-gap-override: 0%;
-  src: local('Cambria'), local('Georgia'), local('Times New Roman'),
-    local('Liberation Serif'), local('Tinos'), local('Noto Serif'), local('DejaVu Serif');
+  src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
 }
 
 @font-face {

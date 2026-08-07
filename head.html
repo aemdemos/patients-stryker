@@ -11,8 +11,8 @@
      so they download in the eager phase and are usually ready before font-display:
      swap would otherwise paint the fallback — keeps the swap shift near-zero while
      guaranteeing the brand font renders. Capped at 3 to avoid LCP bandwidth
-     contention; the bold weights are declared in styles.css and fetch on demand.
-     crossorigin is required on font preloads even when same-origin. -->
+     contention; the bold weights load via fonts.css. crossorigin is required on
+     font preloads even when same-origin. -->
 <link rel="preload" href="/fonts/humanist-slab-712.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="/fonts/urw-egyptienne-light.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="/fonts/futura-lt-book.woff2" as="font" type="font/woff2" crossorigin/>
