@@ -133,13 +133,13 @@
   margin-bottom: 0;
 }
 
-@media (width > 840px) {
+@media (width >= 840px) {
   .cards.resources > ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (width > 1023px) {
+@media (width >= 1024px) {
   .cards.resources > ul {
     grid-template-columns: repeat(4, 1fr);
   }

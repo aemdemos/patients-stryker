@@ -5,7 +5,8 @@ export default function decorate(block) {
   // `resources` variant: PDF brochure card — a cover image stacked above a
   // "LEARN MORE" button. The image links to the same PDF as the card's bold
   // link (which the global decorateButtons turns into a teal primary button).
-  // There is no visible title; the brochure name lives in the image alt text.
+  // There is no visible title; the brochure name lives in the picker-authored
+  // image alt text.
   const isResources = block.classList.contains('resources');
 
   /* change to ul, li */
@@ -19,19 +20,28 @@ export default function decorate(block) {
     });
 
     if (isResources) {
-      // Authoring contract: the FIRST cell holds a LINK whose href is the
-      // (external) image URL and whose text is the alt; the SECOND cell holds
-      // the "LEARN MORE" PDF link. Authoring the image as a link (not an
-      // <img>) keeps the external Scene7 URL intact through DA/preview/publish/UE
-      // — DA rewrites an external <img src> to about:error, but leaves link hrefs
-      // alone. Here we build the <img> from that link and wrap it in an anchor to
-      // the PDF so clicking the image opens the same target as the button.
+      // Authoring contract: the FIRST cell holds the image chosen via the UE
+      // reference picker, which renders as a <picture>; the SECOND cell holds
+      // the "LEARN MORE" PDF link. Keep the legacy link-based fallback so older
+      // authored content still decorates correctly.
       const [first, second] = li.children;
       if (first) first.className = 'cards-card-image';
       if (second) second.className = 'cards-card-body';
-      const srcLink = first && first.querySelector('a[href]');
+      const picture = first && first.querySelector('picture');
+      const srcLink = !picture && first ? first.querySelector('a[href]') : null;
       const pdfLink = second && second.querySelector('a[href]');
-      if (srcLink) {
+      if (picture) {
+        first.replaceChildren();
+        if (pdfLink) {
+          const imgLink = document.createElement('a');
+          imgLink.href = pdfLink.getAttribute('href');
+          if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
+          imgLink.append(picture);
+          first.append(imgLink);
+        } else {
+          first.append(picture);
+        }
+      } else if (srcLink) {
         const img = document.createElement('img');
         img.src = srcLink.getAttribute('href');
         img.alt = srcLink.textContent.trim();
