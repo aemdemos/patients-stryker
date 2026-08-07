@@ -28,16 +28,16 @@
 
    The BODY fallback is anchored to the Arial metric group — Arial ≡ Liberation
    Sans ≡ Arimo are byte-for-byte metric-identical and cover Windows, macOS, Linux
-   and Android — so a SINGLE size-adjust (91.09%, measured against HumanistSlab on
-   real hardware) is width-accurate on every platform. That is the key advantage
-   over serif-anchored fallbacks: the serif system fonts (Cambria vs Georgia vs
-   DejaVu) have different metrics per OS, so no single size-adjust fits them all
-   and the long footnote paragraphs wrapped to a different line count → reflow on
-   swap. The generic `sans-serif` is the last-resort net for a platform with none
-   of the named Arial-metric clones. */
+   and Android — so a SINGLE size-adjust (105%, tuned against HumanistSlab on real
+   hardware) is width-accurate on every platform. That is the key advantage over
+   serif-anchored fallbacks: the serif system fonts (Cambria vs Georgia vs DejaVu)
+   have different metrics per OS, so no single size-adjust fits them all and the
+   long footnote paragraphs wrapped to a different line count → reflow on swap. The
+   generic `sans-serif` is the last-resort net for a platform with none of the
+   named Arial-metric clones. */
 @font-face {
   font-family: "humanist-slab-712-fallback";
-  size-adjust: 91.09%;
+  size-adjust: 105%;
   line-gap-override: 0%;
   src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
 }
