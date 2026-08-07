@@ -1,0 +1,70 @@
+{
+  "definitions": [
+    {
+      "title": "Panel",
+      "id": "panel",
+      "model": "panel",
+      "filter": "panel",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1
+        }
+      }
+    },
+    {
+      "title": "Panel Item",
+      "id": "panel-item",
+      "model": "panel-item",
+      "plugins": {
+        "da": {
+          "name": "panel-item",
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "text", "selector": "div:nth-child(1)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "panel",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Style",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Left", "value": "left" },
+            { "name": "CTA", "value": "cta" },
+            { "name": "Dark", "value": "dark" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "panel-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Content",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "panel",
+      "components": [
+        "panel-item"
+      ]
+    }
+  ]
+}

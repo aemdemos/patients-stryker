@@ -2,6 +2,14 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
+  const isUEAuthoring = window.location.hostname.includes('.ue.da.live');
+
+  // In UE, keep authored structure intact so child component identity persists.
+  if (isUEAuthoring) {
+    block.classList.add('cards-authoring');
+    return;
+  }
+
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {

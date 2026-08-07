@@ -111,16 +111,17 @@
           "model": "card",
           "plugins": {
             "da": {
+              "name": "card",
               "rows": 1,
               "columns": 2,
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1)>picture>img[src]"
+                  "selector": "div:nth-child(1)>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
+                  "selector": "div:nth-child(1)>a"
                 },
                 {
                   "name": "text",
@@ -209,6 +210,36 @@
                 {
                   "name": "content",
                   "selector": "div:nth-child(3)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Panel",
+          "id": "panel",
+          "model": "panel",
+          "filter": "panel",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 1
+            }
+          }
+        },
+        {
+          "title": "Panel Item",
+          "id": "panel-item",
+          "model": "panel-item",
+          "plugins": {
+            "da": {
+              "name": "panel-item",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(1)"
                 }
               ]
             }

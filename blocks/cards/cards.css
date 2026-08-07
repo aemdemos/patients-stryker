@@ -65,8 +65,8 @@
 
 .cards .cards-card-body p {
   margin: 0 0 var(--space-block);
-  font-size: var(--body-font-size-m);
-  line-height: var(--paragraph-line-height);
+  font-size: var(--cards-body-size);
+  line-height: var(--cards-body-line-height);
 }
 
 /*
@@ -79,4 +79,30 @@
  */
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
+}
+
+.cards.cards-authoring {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  gap: 24px;
+}
+
+.cards.cards-authoring > div {
+  border: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
+.cards.cards-authoring > div > div {
+  margin: 16px;
+}
+
+.cards.cards-authoring > div > div:first-child {
+  line-height: 0;
+  margin: 0;
+}
+
+.cards.cards-authoring > div > div:first-child img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
