@@ -85,12 +85,32 @@ function setupCountUp(block) {
     });
   };
 
-  // Reserve each value's final (widest) width and pin its text to the right, so
-  // the number counting up from 0 expands leftward instead of the whole centered
-  // value re-flowing and nudging the % / x / M suffix as digits are added (the
-  // residual count-up CLS). The final value has the most digits, and the CSS
-  // tabular-nums keeps digits equal-width, so no in-between frame is ever wider
-  // than this reserved width.
+  // Measure the final value's rendered width in the system fallback font (the
+  // display stack with the brand webfont family removed), off-screen. The stat's
+  // fallback (Futura → Arial-metric) can be a few px WIDER than the brand webfont
+  // at the same size, so reserving only the brand width would let the fallback
+  // overflow the box and shift the % / x / M suffix when the webfont swaps in.
+  const fallbackWidth = (target, finalText) => {
+    const cs = window.getComputedStyle(target);
+    // drop the first (brand) family so the probe renders in the fallback face
+    const fallbackStack = cs.fontFamily.split(',').slice(1).join(',');
+    if (!fallbackStack) return 0;
+    const probe = document.createElement('span');
+    probe.textContent = finalText;
+    probe.style.cssText = `position:absolute;left:-99999px;top:0;white-space:nowrap;font:${cs.font};font-family:${fallbackStack};font-variant-numeric:${cs.fontVariantNumeric};letter-spacing:${cs.letterSpacing};`;
+    document.body.appendChild(probe);
+    const w = probe.getBoundingClientRect().width;
+    probe.remove();
+    return w;
+  };
+
+  // Reserve each value's final width and pin its text to the right, so the number
+  // counting up from 0 expands leftward instead of the whole centered value
+  // re-flowing and nudging the % / x / M suffix as digits are added (the residual
+  // count-up CLS). Reserve the MAX of the brand-font and fallback-font widths so
+  // the value fits whichever font is currently rendering — otherwise a fallback
+  // that is wider than the brand overflows the box and shifts on swap. tabular-nums
+  // keeps digits equal-width so no in-between count frame exceeds the final width.
   // MUST run only when the block is laid out (i.e. once it is in the viewport) —
   // during decorate() the block has no layout box yet, so getBoundingClientRect()
   // returns 0 and the reservation would be a no-op. The width>0 guard makes any
@@ -98,10 +118,12 @@ function setupCountUp(block) {
   const reserveWidths = () => {
     stats.forEach(({ el, target, parsed }) => {
       const shown = target.textContent;
-      target.textContent = formatStatNumber(parsed.target, parsed);
+      const finalText = formatStatNumber(parsed.target, parsed);
+      target.textContent = finalText;
       el.style.minWidth = '0';
-      const finalWidth = el.getBoundingClientRect().width;
-      if (finalWidth > 0) el.style.minWidth = `${Math.ceil(finalWidth)}px`;
+      const brandWidth = el.getBoundingClientRect().width;
+      const widest = Math.max(brandWidth, fallbackWidth(target, finalText));
+      if (widest > 0) el.style.minWidth = `${Math.ceil(widest)}px`;
       target.textContent = shown;
     });
   };
