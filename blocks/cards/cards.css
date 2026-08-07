@@ -80,3 +80,67 @@
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
 }
+
+/* ---- resources variant ------------------------------------------------
+   Measured from patients.stryker.com IVS resources cards: a PDF brochure card
+   with the cover image stacked above a teal "LEARN MORE" button (global
+   a.button.primary, matching source btn-teal). Both the image and the button
+   link to the same PDF. No visible title (brochure name is image alt only).
+   Source grid: 1 card per row on mobile, 2 from 600px, 4 from 900px. */
+.cards.resources > ul {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.cards.resources > ul > li {
+  border: 0;
+  background-color: transparent;
+}
+
+.cards.resources .cards-card-image {
+  margin: 0;
+}
+
+/* the image is wrapped in a link to the PDF; keep the cover's natural ratio */
+.cards.resources .cards-card-image a {
+  display: block;
+  line-height: 0;
+}
+
+.cards.resources .cards-card-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* button sits directly below the image (20px gap measured from source) */
+.cards.resources .cards-card-body {
+  margin: 20px 0 0;
+}
+
+/* no visible title on resource cards — only the image + button */
+.cards.resources .cards-card-body h1,
+.cards.resources .cards-card-body h2,
+.cards.resources .cards-card-body h3,
+.cards.resources .cards-card-body h4,
+.cards.resources .cards-card-body h5,
+.cards.resources .cards-card-body h6 {
+  display: none;
+}
+
+.cards.resources .cards-card-body :last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 840px) {
+  .cards.resources > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 1024px) {
+  .cards.resources > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
