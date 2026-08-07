@@ -113,9 +113,6 @@ function dmRendererFor(src) {
 
 /**
  * True when running inside the Universal Editor (authoring) environment.
- * There, an asset-picker <img> carries UE instrumentation (data-aue-*) binding
- * it to its image component; replacing it with a fresh <picture> would strip
- * that, breaking selection and the properties panel.
  * @returns {boolean}
  */
 function isUniversalEditor() {
@@ -129,14 +126,6 @@ function isUniversalEditor() {
 export default function decorateDMImages(main) {
   const inEditor = isUniversalEditor();
   main.querySelectorAll(DM_SELECTOR).forEach((el) => {
-    // In the Universal Editor, leave asset-picker images (an <img> from the
-    // media bus) untouched: they carry UE instrumentation binding them to their
-    // image component, and replacing them breaks selection and the properties
-    // panel ("Component not found"). DM links in text (<a>) are not themselves
-    // components, so they still convert to a preview <picture> here — and every
-    // element still converts normally on preview/live.
-    if (inEditor && el.tagName === 'IMG') return;
-
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
     const render = dmRendererFor(src);
@@ -145,6 +134,24 @@ export default function decorateDMImages(main) {
     if (el.tagName === 'A' && el.textContent.trim() !== src) return;
 
     const alt = el.getAttribute('alt') || el.getAttribute('title') || '';
-    el.replaceWith(render(src, alt, false));
+    const picture = render(src, alt, false);
+
+    // In the Universal Editor, a DM autolink that is the sole content of its
+    // paragraph would, if replaced by a bare <picture>, look like a standalone
+    // Image default-content component to DA — but it has no backing asset, so
+    // its properties panel fails with "Component not found". Keeping the <a>
+    // and nesting the image inside it preserves the paragraph's link/text
+    // identity (a valid, fetchable component) while still showing the image.
+    // Bare DM <img> elements are left untouched here. On preview/live the link
+    // is replaced outright, exactly as before.
+    if (inEditor) {
+      if (el.tagName === 'A') {
+        el.textContent = '';
+        el.append(picture);
+      }
+      return;
+    }
+
+    el.replaceWith(picture);
   });
 }
