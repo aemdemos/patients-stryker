@@ -66,7 +66,15 @@
   font-family: var(--display-font-family);
   font-size: var(--panel-heading-size);
   font-weight: 700;
+  color: var(--color-black);
+}
+
+/* italic heading text → gold accent (default + cta variants; authored as <em>/<i>).
+   The dark variant keeps its own gold heading rule below, so exclude it here. */
+.panel:not(.dark) .panel-body h3 em,
+.panel:not(.dark) .panel-body h3 i {
   color: var(--color-accent);
+  font-style: normal;
 }
 
 .panel.cta .panel-body h3 {
