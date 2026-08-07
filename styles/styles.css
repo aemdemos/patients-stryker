@@ -23,26 +23,38 @@
    metric-matched, near-zero shift instead of a whole-page reflow — the
    footnote-page CLS in issue #52. size-adjust normalizes glyph width to each
    webfont; line-gap-override: 0% removes the fallbacks' extra line-gap so the
-   line-box height also stays stable across the swap. */
+   line-box height also stays stable across the swap.
+   The src lists real fonts across ALL platforms — Windows/macOS (Cambria, Georgia,
+   Arial…) AND Linux/Android (Liberation, DejaVu, Noto, Tinos…). This matters: a
+   size-adjust face only takes effect if its src resolves to an installed font; if
+   none match, the face is dropped and text falls through to the UN-adjusted generic
+   (10% wider → an extra wrapped line → reflow when the webfont swaps in). Headless
+   Chrome/Linux — which is what PageSpeed Insights and many mobile users run — has
+   NONE of the Windows/mac serifs, so the earlier `local('Cambria'),…,local('serif')`
+   list resolved to nothing there and reintroduced the footnote CLS. `local('serif')`
+   is also invalid (no font is literally named "serif"), so it never provided a net. */
 @font-face {
   font-family: "humanist-slab-712-fallback";
   size-adjust: 91.42%;
   line-gap-override: 0%;
-  src: local('Cambria'), local('Palatino'), local('Georgia'), local('serif');
+  src: local('Cambria'), local('Georgia'), local('Times New Roman'),
+    local('Liberation Serif'), local('Tinos'), local('Noto Serif'), local('DejaVu Serif');
 }
 
 @font-face {
   font-family: urw-egyptienne-fallback;
   size-adjust: 89.83%;
   line-gap-override: 0%;
-  src: local('Georgia'), local('Rockwell'), local('Times New Roman'), local('serif');
+  src: local('Georgia'), local('Cambria'), local('Times New Roman'),
+    local('Liberation Serif'), local('Tinos'), local('Noto Serif'), local('DejaVu Serif');
 }
 
 @font-face {
   font-family: futura-lt-fallback;
   size-adjust: 89.70%;
   line-gap-override: 0%;
-  src: local('Arial'), local('Helvetica'), local('sans-serif');
+  src: local('Arial'), local('Helvetica Neue'), local('Helvetica'),
+    local('Liberation Sans'), local('Arimo'), local('Roboto'), local('DejaVu Sans');
 }
 
 :root {
