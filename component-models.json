@@ -115,20 +115,16 @@
           "numberMin": 1,
           "numberMax": 3
         }
-      },
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "label": "Variant",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Image Top",
-            "value": "image-top"
-          }
-        ]
       }
     ]
+  },
+  {
+    "id": "columns-row",
+    "fields": []
+  },
+  {
+    "id": "columns-cell",
+    "fields": []
   },
   {
     "id": "fragment",
