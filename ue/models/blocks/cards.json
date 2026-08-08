@@ -7,7 +7,6 @@
       "filter": "cards",
       "plugins": {
         "da": {
-          "name": "cards",
           "rows": 1,
           "columns": 2
         }
@@ -19,7 +18,6 @@
       "model": "card",
       "plugins": {
         "da": {
-          "name": "card",
           "rows": 1,
           "columns": 2,
           "fields": [
@@ -52,13 +50,15 @@
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Image"
+          "label": "Image",
+          "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt"
+          "label": "Image Alt",
+          "multi": false
         },
         {
           "component": "richtext",

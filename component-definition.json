@@ -100,7 +100,6 @@
           "filter": "cards",
           "plugins": {
             "da": {
-              "name": "cards",
               "rows": 1,
               "columns": 2
             }
@@ -112,7 +111,6 @@
           "model": "card",
           "plugins": {
             "da": {
-              "name": "card",
               "rows": 1,
               "columns": 2,
               "fields": [
