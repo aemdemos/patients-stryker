@@ -125,10 +125,6 @@
                   "selector": "div:nth-child(1)>picture>img[alt]"
                 },
                 {
-                  "name": "imageLink",
-                  "selector": "div:nth-child(1)>a[href]"
-                },
-                {
                   "name": "text",
                   "selector": "div:nth-child(2)"
                 }

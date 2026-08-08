@@ -25,7 +25,6 @@
           "fields": [
             { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
             { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
-            { "name": "imageLink", "selector": "div:nth-child(1)>a[href]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -60,12 +59,6 @@
           "valueType": "string",
           "name": "imageAlt",
           "label": "Image Alt"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "imageLink",
-          "label": "Image Link (optional — wraps the image, e.g. a PDF URL)"
         },
         {
           "component": "richtext",

@@ -21,49 +21,17 @@ export default function decorate(block) {
     });
 
     if (isResources && !isUEAuthoring) {
-      // cell 1: image + optional Image Link; cell 2: "LEARN MORE" PDF link.
-      // wrap the image in a link (imageLink, else the cell-2 PDF link).
+      // wrap the image in the cell-2 "LEARN MORE" PDF link so it opens the PDF
       const [first, second] = li.children;
-      if (first) first.className = 'cards-card-image';
-      if (second) second.className = 'cards-card-body';
       const picture = first && first.querySelector('picture');
-      const imageLink = first && first.querySelector('a[href]');
       const buttonLink = second && second.querySelector('a[href]');
-      const wrapHref = (imageLink && imageLink.getAttribute('href'))
-        || (buttonLink && buttonLink.getAttribute('href'));
-
-      if (picture) {
-        const alreadyWrapped = imageLink && imageLink.contains(picture);
-        // wrap in place so the <picture>'s UE instrumentation survives reload
-        if (wrapHref && !alreadyWrapped) {
-          const imgLink = document.createElement('a');
-          imgLink.href = wrapHref;
-          imgLink.target = '_blank';
-          imgLink.rel = 'noopener';
-          picture.replaceWith(imgLink);
-          imgLink.append(picture);
-        }
-        // drop a standalone imageLink anchor (one that isn't wrapping the image)
-        if (imageLink && !alreadyWrapped) {
-          (imageLink.closest('p') || imageLink).remove();
-        }
-      } else if (imageLink) {
-        // legacy: image authored as a link whose href is the image URL
-        const img = document.createElement('img');
-        img.src = imageLink.getAttribute('href');
-        img.alt = imageLink.textContent.trim();
-        img.loading = 'lazy';
-        first.textContent = '';
-        if (buttonLink) {
-          const imgLink = document.createElement('a');
-          imgLink.href = buttonLink.getAttribute('href');
-          imgLink.target = '_blank';
-          imgLink.rel = 'noopener';
-          imgLink.append(img);
-          first.append(imgLink);
-        } else {
-          first.append(img);
-        }
+      if (picture && buttonLink && !picture.closest('a')) {
+        const imgLink = document.createElement('a');
+        imgLink.href = buttonLink.getAttribute('href');
+        imgLink.target = '_blank';
+        imgLink.rel = 'noopener';
+        picture.replaceWith(imgLink);
+        imgLink.append(picture);
       }
     }
 

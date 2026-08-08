@@ -108,12 +108,6 @@
         "label": "Image Alt"
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageLink",
-        "label": "Image Link (optional — wraps the image, e.g. a PDF URL)"
-      },
-      {
         "component": "richtext",
         "name": "text",
         "value": "",
