@@ -5,6 +5,10 @@ export default function decorate(block) {
   // `resources` variant: PDF brochure card — cover image over a "LEARN MORE"
   // button, no visible title; image and button link to the same PDF.
   const isResources = block.classList.contains('resources');
+  // In UE, skip the extra image-link restructuring: it moves the <picture> into
+  // a new <a>, which the ue.js observer can't reconcile, collapsing the card
+  // child. Styling is CSS-only, so the editor still shows the resources look.
+  const isUEAuthoring = window.location.hostname.endsWith('.ue.da.live');
 
   /* change to ul, li */
   const ul = document.createElement('ul');
@@ -16,7 +20,7 @@ export default function decorate(block) {
       else div.className = 'cards-card-body';
     });
 
-    if (isResources) {
+    if (isResources && !isUEAuthoring) {
       // cell 1: image + optional Image Link; cell 2: "LEARN MORE" PDF link.
       // wrap the image in a link (imageLink, else the cell-2 PDF link).
       const [first, second] = li.children;
