@@ -2,11 +2,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
-  // `resources` variant: PDF brochure card — a cover image stacked above a
-  // "LEARN MORE" button. The image links to the same PDF as the card's bold
-  // link (which the global decorateButtons turns into a teal primary button).
-  // There is no visible title; the brochure name lives in the picker-authored
-  // image alt text.
+  // `resources` variant: PDF brochure card — cover image over a "LEARN MORE"
+  // button, no visible title; image and button link to the same PDF.
   const isResources = block.classList.contains('resources');
 
   /* change to ul, li */
@@ -20,38 +17,44 @@ export default function decorate(block) {
     });
 
     if (isResources) {
-      // Authoring contract: the FIRST cell holds the image chosen via the UE
-      // reference picker, which renders as a <picture>; the SECOND cell holds
-      // the "LEARN MORE" PDF link. Keep the legacy link-based fallback so older
-      // authored content still decorates correctly.
+      // cell 1: image + optional Image Link; cell 2: "LEARN MORE" PDF link.
+      // wrap the image in a link (imageLink, else the cell-2 PDF link).
       const [first, second] = li.children;
       if (first) first.className = 'cards-card-image';
       if (second) second.className = 'cards-card-body';
       const picture = first && first.querySelector('picture');
-      const srcLink = !picture && first ? first.querySelector('a[href]') : null;
-      const pdfLink = second && second.querySelector('a[href]');
+      const imageLink = first && first.querySelector('a[href]');
+      const buttonLink = second && second.querySelector('a[href]');
+      const wrapHref = (imageLink && imageLink.getAttribute('href'))
+        || (buttonLink && buttonLink.getAttribute('href'));
+
       if (picture) {
-        // Wrap the picker-authored <picture> in the PDF link IN PLACE. Reusing
-        // the existing element (rather than rebuilding the cell) keeps its UE
-        // data-aue-* image-field instrumentation, so the image persists on
-        // reload. Re-optimizing this picture below is skipped for the same reason.
-        if (pdfLink) {
+        const alreadyWrapped = imageLink && imageLink.contains(picture);
+        // wrap in place so the <picture>'s UE instrumentation survives reload
+        if (wrapHref && !alreadyWrapped) {
           const imgLink = document.createElement('a');
-          imgLink.href = pdfLink.getAttribute('href');
-          if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
+          imgLink.href = wrapHref;
+          imgLink.target = '_blank';
+          imgLink.rel = 'noopener';
           picture.replaceWith(imgLink);
           imgLink.append(picture);
         }
-      } else if (srcLink) {
+        // drop a standalone imageLink anchor (one that isn't wrapping the image)
+        if (imageLink && !alreadyWrapped) {
+          (imageLink.closest('p') || imageLink).remove();
+        }
+      } else if (imageLink) {
+        // legacy: image authored as a link whose href is the image URL
         const img = document.createElement('img');
-        img.src = srcLink.getAttribute('href');
-        img.alt = srcLink.textContent.trim();
+        img.src = imageLink.getAttribute('href');
+        img.alt = imageLink.textContent.trim();
         img.loading = 'lazy';
         first.textContent = '';
-        if (pdfLink) {
+        if (buttonLink) {
           const imgLink = document.createElement('a');
-          imgLink.href = pdfLink.getAttribute('href');
-          if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
+          imgLink.href = buttonLink.getAttribute('href');
+          imgLink.target = '_blank';
+          imgLink.rel = 'noopener';
           imgLink.append(img);
           first.append(imgLink);
         } else {
@@ -64,8 +67,7 @@ export default function decorate(block) {
   });
   if (!isResources) {
     ul.querySelectorAll('picture > img').forEach((img) => {
-      // dm-support.js already rendered DM images at native quality; re-optimizing
-      // them forces width=750 + optimize=medium and would degrade quality.
+      // skip DM images — already native quality; re-optimizing would degrade them
       if (isDMSrc(img.src)) return;
       img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
     });
