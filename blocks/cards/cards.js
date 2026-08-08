@@ -31,15 +31,16 @@ export default function decorate(block) {
       const srcLink = !picture && first ? first.querySelector('a[href]') : null;
       const pdfLink = second && second.querySelector('a[href]');
       if (picture) {
-        first.replaceChildren();
+        // Wrap the picker-authored <picture> in the PDF link IN PLACE. Reusing
+        // the existing element (rather than rebuilding the cell) keeps its UE
+        // data-aue-* image-field instrumentation, so the image persists on
+        // reload. Re-optimizing this picture below is skipped for the same reason.
         if (pdfLink) {
           const imgLink = document.createElement('a');
           imgLink.href = pdfLink.getAttribute('href');
           if (pdfLink.getAttribute('target')) imgLink.target = pdfLink.getAttribute('target');
+          picture.replaceWith(imgLink);
           imgLink.append(picture);
-          first.append(imgLink);
-        } else {
-          first.append(picture);
         }
       } else if (srcLink) {
         const img = document.createElement('img');
@@ -61,12 +62,14 @@ export default function decorate(block) {
 
     ul.append(li);
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    // dm-support.js already rendered DM images at native quality; re-optimizing
-    // them forces width=750 + optimize=medium and would degrade quality.
-    if (isDMSrc(img.src)) return;
-    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
-  });
+  if (!isResources) {
+    ul.querySelectorAll('picture > img').forEach((img) => {
+      // dm-support.js already rendered DM images at native quality; re-optimizing
+      // them forces width=750 + optimize=medium and would degrade quality.
+      if (isDMSrc(img.src)) return;
+      img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
+    });
+  }
   block.replaceChildren(ul);
 
   ul.querySelectorAll('li').forEach((li) => {
