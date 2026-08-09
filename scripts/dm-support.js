@@ -44,10 +44,8 @@ export function isDMSrc(src) {
   );
 }
 
-// Only convert author-typed DM LINKS. Bare <img> is intentionally excluded: a
-// DAM/OpenAPI asset chosen with the UE reference picker renders as an <img>
-// with the same /adobe/assets/ path, and replacing it would destroy the UE
-// image-field instrumentation (the image then can't be edited/persisted).
+// narrow selector so non-DM pages skip the work and DM pages only visit DM
+// nodes (avoids iterating every anchor/image on the page)
 const DM_SELECTOR = [
   'a[href*="/is/image/"]',
   'a[href*="/adobe/assets/"]',
@@ -57,6 +55,8 @@ const DM_SELECTOR = [
   'a[href*=".mp4"]',
   'a[href*=".webm"]',
   'a[href*=".mov"]',
+  'img[src*="/is/image/"]',
+  'img[src*="/adobe/assets/"]',
 ].join(',');
 
 // responsive widths shared by both image renderers (desktop + mobile)

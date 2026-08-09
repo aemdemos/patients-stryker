@@ -7,7 +7,6 @@
       "filter": "cards",
       "plugins": {
         "da": {
-          "name": "cards",
           "rows": 1,
           "columns": 2
         }
@@ -19,12 +18,11 @@
       "model": "card",
       "plugins": {
         "da": {
-          "name": "card",
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1) img[src]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1) img[alt]" },
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -32,19 +30,6 @@
     }
   ],
   "models": [
-    {
-      "id": "cards",
-      "fields": [
-        {
-          "component": "multiselect",
-          "name": "classes",
-          "label": "Style",
-          "options": [
-            { "name": "Resources", "value": "resources" }
-          ]
-        }
-      ]
-    },
     {
       "id": "card",
       "fields": [
