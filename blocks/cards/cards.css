@@ -80,3 +80,63 @@
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
 }
+
+/* resources variant: PDF brochure card — cover image over a teal LEARN MORE
+   button, no title. 1-up mobile, 2-up from 600px, 4-up from 900px. */
+.cards.resources > ul {
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.cards.resources > ul > li {
+  border: 0;
+  background-color: transparent;
+}
+
+.cards.resources .cards-card-image {
+  margin: 0;
+}
+
+/* image is wrapped in a PDF link */
+.cards.resources .cards-card-image a {
+  display: block;
+  line-height: 0;
+}
+
+.cards.resources .cards-card-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* button below the image */
+.cards.resources .cards-card-body {
+  margin: 20px 0 0;
+}
+
+/* no visible title */
+.cards.resources .cards-card-body h1,
+.cards.resources .cards-card-body h2,
+.cards.resources .cards-card-body h3,
+.cards.resources .cards-card-body h4,
+.cards.resources .cards-card-body h5,
+.cards.resources .cards-card-body h6 {
+  display: none;
+}
+
+.cards.resources .cards-card-body :last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 840px) {
+  .cards.resources > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 1024px) {
+  .cards.resources > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
