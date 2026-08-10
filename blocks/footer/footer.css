@@ -28,10 +28,11 @@ footer .footer ul {
   list-style: none;
 }
 
-/* at wider viewports the source adds margin-left: 7px to each link item, spacing them apart */
+/* at wider viewports the source adds margin-left: 7px to each link item (except the first),
+   putting the extra space before the pipe separator so it sits symmetrically between links */
 @media (width >= 1024px) {
-  footer .footer ul {
-    gap: 7px;
+  footer .footer li:not(:first-child) {
+    margin-left: 7px;
   }
 }
 
