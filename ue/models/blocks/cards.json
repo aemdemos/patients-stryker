@@ -21,9 +21,8 @@
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1) img[src]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1) img[alt]" },
-            { "name": "imageLink", "selector": "div:nth-child(1) a[href]" },
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -47,12 +46,6 @@
           "name": "imageAlt",
           "label": "Image Alt",
           "multi": false
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "imageLink",
-          "label": "Image Link (optional — Dynamic Media image URL)"
         },
         {
           "component": "richtext",

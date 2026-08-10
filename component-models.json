@@ -94,12 +94,6 @@
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageLink",
-        "label": "Image Link (optional — Dynamic Media image URL)"
-      },
-      {
         "component": "richtext",
         "name": "text",
         "value": "",

@@ -7,21 +7,8 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
-    // Image Link fallback: if no picker image (<picture>) is in the image cell
-    // but an imageLink URL was authored, build the image from that link.
-    const imgCell = li.firstElementChild;
-    if (imgCell && !imgCell.querySelector('picture')) {
-      const link = imgCell.querySelector('a[href]');
-      if (link) {
-        const img = document.createElement('img');
-        img.src = link.getAttribute('href');
-        img.alt = link.textContent.trim();
-        img.loading = 'lazy';
-        link.replaceWith(img);
-      }
-    }
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture, img')) div.className = 'cards-card-image';
+      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
     });
     ul.append(li);
