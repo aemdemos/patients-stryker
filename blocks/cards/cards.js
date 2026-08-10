@@ -2,6 +2,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
+  const isBrochure = block.classList.contains('brochure');
+
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
@@ -20,6 +22,15 @@ export default function decorate(block) {
     img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
   });
   block.replaceChildren(ul);
+
+  // brochure: lift the (optional) heading above the image so the card reads
+  // title -> image -> download links, matching the reference.
+  if (isBrochure) {
+    ul.querySelectorAll('li').forEach((li) => {
+      const heading = li.querySelector('.cards-card-body :is(h1, h2, h3, h4, h5, h6)');
+      if (heading) li.prepend(heading);
+    });
+  }
 
   ul.querySelectorAll('li').forEach((li) => {
     const link = li.querySelector('a');

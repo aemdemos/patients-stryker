@@ -31,7 +31,8 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .cards.resources > ul {
+  .cards.resources > ul,
+  .cards.brochure > ul {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -103,4 +104,29 @@
 
 .cards.resources .cards-card-body {
   margin: var(--space-block) 0 0;
+}
+
+/* brochure variant: portrait cover image with a light border, an optional
+   centered title above it, and centered "Digital | Print" download links below.
+   Title is per-card content — include a heading for the titled style, omit it
+   for the untitled style. Shares the resources 4-up desktop grid. */
+.cards.brochure > ul > li {
+  background-color: transparent;
+  text-align: center;
+}
+
+.cards.brochure > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;   /* natural portrait ratio */
+  border: 1px solid var(--color-border);
+}
+
+.cards.brochure .cards-card-body {
+  margin: var(--space-block) 0 0;
+}
+
+/* optional title — lifted above the image by cards.js (direct child of the li) */
+.cards.brochure > ul > li > :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 var(--space-block);
 }
