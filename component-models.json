@@ -99,21 +99,22 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image URL"
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt (link text)"
+        "label": "Image Alt",
+        "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
         "label": "Text",
-        "valueType": "string",
-        "multi": false
+        "valueType": "string"
       }
     ]
   },
