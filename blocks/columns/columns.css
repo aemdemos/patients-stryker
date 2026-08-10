@@ -38,7 +38,8 @@
   list-style-type: disc;
 }
 
-@media (width >= 900px) {
+/* tablet — reference switches to a 2-up layout at 840px */
+@media (width >= 840px) {
   .columns > div {
     flex-flow: row wrap;
     align-items: flex-start;
@@ -51,7 +52,8 @@
   }
 }
 
-@media (width >= 1200px) {
+/* desktop — reference places all columns in a single row at 1024px */
+@media (width >= 1024px) {
   .columns > div {
     flex-wrap: nowrap;
   }
