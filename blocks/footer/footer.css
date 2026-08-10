@@ -28,12 +28,11 @@ footer .footer ul {
   list-style: none;
 }
 
-/* fixed-width centered separator region (matches the source's 17px pipe column) */
+/* natural-width pipe separator — the glyph sits in the gap with 5px of trailing padding,
+   matching the source (no artificial fixed-width box) */
 footer .footer li:not(:last-child)::after {
   content: "|";
-  display: inline-block;
-  width: 17px;
-  text-align: center;
+  padding-right: 5px;
 }
 
 /* at wider viewports the source moves the pipe from the trailing edge (::after) to the
@@ -54,9 +53,7 @@ footer .footer li:not(:last-child)::after {
 
   footer .footer li:not(:first-child)::before {
     content: "|";
-    display: inline-block;
-    width: 17px;
-    text-align: center;
+    padding-right: 5px;
   }
 }
 
