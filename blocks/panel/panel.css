@@ -139,6 +139,35 @@
   font-style: normal;
 }
 
+/* Universal Editor fallback — pure CSS, no dependency on any JS-added class.
+   UE renders the authored markup and reverts the button classes panel.js adds,
+   leaving the CTA link as a bold+italic <em><strong><a>…</a></strong></em>. We
+   anchor only on `.panel.cta` (authored block+variant, always present) and the
+   em/strong-wrapped link, styling it as the gold button directly (mirrors
+   a.button.accent). On the LIVE render decorateButtons() has already removed the
+   em/strong wrappers, so `em a`/`strong a` no longer match there — this rule is
+   naturally UE-only and can't double-style the live button. */
+.panel.cta em a:any-link,
+.panel.cta strong a:any-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+
 /* ---- dark variant (IVS condition sections, left column) --------------
    A gray-to-dark-teal gradient box with white text and a left-aligned
    heading — measured from source .has-background.bg-dark-teal-gradient
