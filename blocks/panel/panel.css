@@ -50,6 +50,13 @@
   font-family: var(--heading-font-family);
 }
 
+/* gold variant body copy: serif family, smaller body size (styling for the
+   .panel.gold box itself lives with the other variants further down) */
+.panel.gold .panel-body p {
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+}
+
 .panel.cta .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
