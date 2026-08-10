@@ -88,15 +88,35 @@ This is the core EDS library. It is never modified per-project.
 ✅ ALWAYS edit: ue/models/blocks/{blockname}.json → then run `npm run build:json`
 ```
 
-### 8. UE `classes` Field Must Use `multiselect` Component
+### 8. UE `classes` Field — Prefer `multiselect`, but `select` When Needed
+
+For most style variants, use `multiselect` (per DA docs — lets authors combine
+options):
 
 ```json
-// ❌ NEVER
-{ "component": "select", "name": "classes" }
-
-// ✅ ALWAYS — per DA docs for block style variants
 { "component": "multiselect", "name": "classes" }
 ```
+
+Exception: on a **container block** (one with repeatable children, e.g. `cards`,
+`statistics`), a `multiselect` `classes` field has been observed to break child
+persistence in UE (children flatten/vanish on reload), while `select` works.
+The `statistics` block uses `select` for this reason. So on container blocks,
+use `select` with an explicit empty `Default` option:
+
+```json
+{
+  "component": "select",
+  "name": "classes",
+  "value": "",
+  "valueType": "string",
+  "options": [
+    { "name": "Default", "value": "" },
+    { "name": "Resources", "value": "resources" }
+  ]
+}
+```
+
+Choose based on the block type and whether children persist correctly in UE.
 
 ### 9. Container Blocks Need Separate Child Definitions Per Variant
 
@@ -120,10 +140,8 @@ When creating or modifying a block with UE authoring support:
 ```
 ❌ NEVER — hand-edit root JSON or skip UE config for authorable blocks
 ❌ NEVER — reuse a child component model that has fields irrelevant to the variant
-❌ NEVER — use "component": "select" for the classes field
-
 ✅ ALWAYS — create ue/models/blocks/{blockname}.json with definitions, models, and filters
-✅ ALWAYS — use "component": "multiselect" for the classes (variant) field
+✅ PREFER — "component": "multiselect" for the classes (variant) field, but use "select" on container blocks where multiselect breaks child persistence (see Rule 8)
 ✅ ALWAYS — create separate child component models when variants have different fields
 ✅ ALWAYS — add block to section filter in ue/models/section.json
 ✅ ALWAYS — run `npm run build:json` after any change to ue/models/
