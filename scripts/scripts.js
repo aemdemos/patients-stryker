@@ -12,7 +12,7 @@ import {
   buildBlock,
 } from './aem.js';
 
-import decorateDMImages from './dm-support.js';
+import decorateDMAssets from './dm-support.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -200,8 +200,8 @@ function decorateFootnotes(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // convert external Dynamic Media image links into optimized <picture>
-  decorateDMImages(main);
+  // convert external Dynamic Media asset links into native <picture>/<video>
+  decorateDMAssets(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);

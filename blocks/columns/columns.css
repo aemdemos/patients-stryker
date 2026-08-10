@@ -39,16 +39,6 @@
   list-style-type: disc;
 }
 
-/* an image at the top of a text column sits above the text with extra spacing
-   before the heading */
-.columns p:has(picture) {
-  margin-bottom: 43px;
-}
-
-.columns p picture {
-  display: block;
-}
-
 @media (width >= 900px) {
   .columns > div {
     flex-flow: row wrap;
@@ -59,11 +49,6 @@
     flex: 0 0 50%;
     order: unset;
     padding: 13px 28px;
-  }
-
-  /* image breaks out of the 28px text inset to the 15px column-edge inset */
-  .columns p:has(picture) {
-    margin-inline: -13px;
   }
 }
 
