@@ -26,6 +26,7 @@
 
 .columns .columns-img-col img {
   display: block;
+  margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
 }
 
 .columns h4 {
