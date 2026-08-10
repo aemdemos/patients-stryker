@@ -78,32 +78,12 @@ function withParams(src, params) {
 }
 
 /**
- * Scene7 sizing macro / named preset (e.g. `$preset_666_392$`, `$max_width_1440$`).
- * A preset already defines the rendered dimensions, so we must NOT append
- * wid/fit/fmt — those get URL-encoded (`$` → `%24`) and break the macro, which
- * makes Scene7 fall back to a distorted square crop.
- */
-const DM_PRESET = /\$[^$/?#]+\$/;
-
-/**
  * Build a <picture> for a Scene7 / classic DM URL.
  * fit=constrain keeps the image proportional (Scene7 otherwise upscales width
  * and clips height to the asset's native box, distorting the aspect ratio).
- * When the URL carries a Scene7 preset macro, it is emitted verbatim — the
- * preset is authoritative and appending params would corrupt it.
  */
 function renderScene7(src, alt, eager) {
   const picture = document.createElement('picture');
-
-  if (DM_PRESET.test(src)) {
-    const img = document.createElement('img');
-    img.loading = eager ? 'eager' : 'lazy';
-    img.alt = alt;
-    img.src = src;
-    picture.append(img);
-    return picture;
-  }
-
   BREAKPOINTS.forEach((br, i) => {
     const srcset = withParams(src, { wid: br.width, fmt: 'jpeg', fit: 'constrain' });
     if (i < BREAKPOINTS.length - 1) {
