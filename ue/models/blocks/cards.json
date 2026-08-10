@@ -7,6 +7,7 @@
       "filter": "cards",
       "plugins": {
         "da": {
+          "name": "cards",
           "rows": 1,
           "columns": 2
         }
@@ -22,8 +23,8 @@
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>a[href]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>a" },
+            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -37,8 +38,11 @@
         {
           "component": "select",
           "name": "classes",
+          "value": "",
           "label": "Style",
+          "valueType": "string",
           "options": [
+            { "name": "Default", "value": "" },
             { "name": "Resources", "value": "resources" }
           ]
         }
@@ -51,21 +55,22 @@
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Image URL"
+          "label": "Image",
+          "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt (link text)"
+          "label": "Image Alt",
+          "multi": false
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
           "label": "Text",
-          "valueType": "string",
-          "multi": false
+          "valueType": "string"
         }
       ]
     }
