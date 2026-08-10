@@ -1,13 +1,19 @@
 /**
  * cta variant: lift the trailing link-only <p> out of the box (`body`) and into
  * a sibling `.panel-cta` under `container`, so it renders below the box. The <p>
- * (and its anchor) is moved intact — DON'T set button classes here; the global
- * decorateButtons() styles it from the authored formatting (bold+italic → gold
- * .button.accent). Styling lives entirely in styles.css.
+ * (and its anchor) is moved intact.
+ *
+ * On the live path (buttonize=false) the anchor is left as authored and the
+ * global decorateButtons() promotes it (bold+italic → gold .button.accent).
+ * In the Universal Editor (buttonize=true) we instead add the button classes IN
+ * PLACE — keeping the authored <em>/<strong> wrappers — because decorateButtons()
+ * replaces those wrapper nodes, which destroys UE instrumentation and gets
+ * reverted by the editor (leaving gold italic text instead of a button).
  * @param {Element} body the .panel-body holding the content
  * @param {Element} container the element the .panel-cta should be appended to
+ * @param {boolean} [buttonize] apply button classes in place (UE authoring)
  */
-function liftCta(body, container) {
+function liftCta(body, container, buttonize = false) {
   if (!body) return;
   const ctaP = [...body.querySelectorAll(':scope > p')].reverse().find((p) => {
     const a = p.querySelector('a');
@@ -18,6 +24,17 @@ function liftCta(body, container) {
   cta.className = 'panel-cta';
   cta.append(ctaP);
   container.append(cta);
+
+  if (buttonize) {
+    const a = ctaP.querySelector('a');
+    const strong = a.closest('strong');
+    const em = a.closest('em');
+    ctaP.className = 'button-wrapper';
+    a.classList.add('button');
+    if (strong && em) a.classList.add('accent');
+    else if (strong) a.classList.add('primary');
+    else if (em) a.classList.add('secondary');
+  }
 }
 
 export default function decorate(block) {
@@ -35,7 +52,7 @@ export default function decorate(block) {
     block.classList.add('panel-authoring');
     [...block.children].forEach((row) => {
       [...row.children].forEach((cell) => { cell.classList.add('panel-body'); });
-      if (isCta) liftCta(row.querySelector('.panel-body'), row);
+      if (isCta) liftCta(row.querySelector('.panel-body'), row, true);
     });
     return;
   }

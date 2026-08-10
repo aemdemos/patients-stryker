@@ -130,6 +130,15 @@
   margin-top: 10px;
 }
 
+/* In UE the button keeps its authored <em>/<strong> wrappers (decorateButtons
+   can't strip them there without breaking instrumentation), so the label would
+   render italic — force it upright to match the live button. */
+.panel.cta .panel-cta a.button em,
+.panel.cta .panel-cta a.button strong,
+.panel.cta .panel-cta a.button {
+  font-style: normal;
+}
+
 /* ---- dark variant (IVS condition sections, left column) --------------
    A gray-to-dark-teal gradient box with white text and a left-aligned
    heading — measured from source .has-background.bg-dark-teal-gradient
