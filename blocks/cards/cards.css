@@ -1,10 +1,11 @@
 /*
- * cards — visual design migrated from patients.stryker.com (.cols3 card groups).
- * Source responsive columns (measured on the live site — bootstrap xs/sm/md):
- *   - below 768px (mobile):        1-up, full-width stacked
- *   - 768px to 991px (tablet):     2-up
- *   - 992px and up (desktop):      3-up (5 cards read as 3 + 2)
- * ~30px gutter between cards (bootstrap 15px + 15px).
+ * cards — visual design migrated from patients.stryker.com card groups.
+ * Source responsive columns (verified from the live site's grid CSS —
+ * col-sm-* @841px, col-md-* @1024px):
+ *   - below 841px (mobile):        1-up, full-width stacked
+ *   - 841px to 1023px (tablet):    2-up
+ *   - 1024px and up (desktop):     3-up default (4-up for the resources variant)
+ * ~30px gutter between cards.
  */
 
 .cards > ul {
@@ -16,17 +17,22 @@
   gap: var(--space-section);
 }
 
-/* tablet: 2-up */
-@media (width >= 600px) {
+/* tablet: 2-up (source col-sm-* @841px) */
+@media (width >= 841px) {
   .cards > ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* desktop: 3-up */
-@media (width >= 900px) {
+/* desktop: 3-up default (source col-md-4), 4-up for resources (source col-md-3),
+   both @1024px */
+@media (width >= 1024px) {
   .cards > ul {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards.resources > ul {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

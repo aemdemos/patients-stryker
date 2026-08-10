@@ -30,31 +30,6 @@
   height: 100%;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
-}
-
-/* ============================================================
-   Fullbleed variant — Stryker patients landing hero.
-
-   Art-directed, matching the source at every viewport (switch at 840px):
-   - Mobile/tablet (<=840px): a PORTRAIT (~4:5) image fills the block; the
-     two-tone headline + supporting copy are overlaid near the top-left.
-   - Desktop (>840px): a WIDE (~3:1) image (white panel left, people right,
-     gold rule baked in); text overlaid on the white left panel, vertically
-     centered, ~5% inset, ~40% wide.
-
-   The authored table is [row1: image(s)] [row2: h1 + p]. hero.js merges the
-   desktop + mobile DM pictures into ONE responsive <picture> (mobile served
-   via a `(max-width: 840px)` source) and splits the headline into a lead
-   sentence (light serif) + accent remainder (Futura bold).
-
-   Both viewports overlay text on the image, so the block is a single-cell
-   grid stack at all sizes; only the geometry differs across the breakpoint.
-   ============================================================ */
-
 .hero.fullbleed {
   display: grid;
   grid-template-columns: 1fr;
@@ -79,15 +54,8 @@
 .hero.fullbleed img {
   display: block;
   width: 100%;
-
-  /* pin the mobile box to the portrait asset's ratio so height is
-     deterministic (the DM preset can serve a wider crop, which otherwise
-     collapses the rendered height) */
   height: auto;
   aspect-ratio: 4 / 5;
-
-  /* the assets are designed full-bleed crops (people cut-out + gold rule baked
-     in); cover fills the pinned box without letterboxing */
   object-fit: cover;
 }
 
@@ -138,23 +106,13 @@
   color: var(--text-color);
 }
 
-@media (width >= 600px) {
-  .hero.fullbleed > div:last-child {
-    padding: 18% 8% 0;
+/* desktop — wide image, text overlaid on the white left panel, centered.
+   Source crosses over at 840px (headline 3.5vw, copy 1.5vw). */
+@media (width >= 840px) {
+  .hero {
+    padding: 40px 32px;
   }
 
-  .hero.fullbleed h1 {
-    font-size: 42px;
-  }
-
-  .hero.fullbleed p {
-    font-size: 22px;
-  }
-}
-
-
-/* desktop — wide image, text overlaid on the white left panel, centered */
-@media (width >= 900px) {
   .hero.fullbleed > div:last-child {
     align-self: center;
     max-width: 45%;
@@ -168,12 +126,23 @@
   }
 
   .hero.fullbleed h1 {
-    font-size: min(3.5vw, 49px);
+    font-size: 3.5vw;
   }
 
   .hero.fullbleed p {
     margin-top: 8px;
-    font-size: 21px;
+    font-size: 1.5vw;
     line-height: 1.35;
+  }
+}
+
+/* large desktop — source caps the fluid sizes at 1439px (49px / 21px) */
+@media (width >= 1439px) {
+  .hero.fullbleed h1 {
+    font-size: 49px;
+  }
+
+  .hero.fullbleed p {
+    font-size: 21px;
   }
 }

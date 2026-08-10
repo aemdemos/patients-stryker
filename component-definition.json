@@ -100,6 +100,7 @@
           "filter": "cards",
           "plugins": {
             "da": {
+              "name": "cards",
               "rows": 1,
               "columns": 2
             }
