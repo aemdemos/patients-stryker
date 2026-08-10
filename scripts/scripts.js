@@ -123,6 +123,11 @@ function decorateButtons(main) {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
+    // skip sentence-style links: full sentences ending in terminal punctuation are
+    // inline text links (e.g. the "FOR ADDITIONAL INFORMATION…" / California callouts),
+    // not calls-to-action — keep their authored bold/italic emphasis but do not buttonize.
+    if (/[.!?]$/.test(text)) return;
+
     // require authored formatting for buttonization
     const strong = a.closest('strong');
     const em = a.closest('em');
