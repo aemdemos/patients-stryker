@@ -57,7 +57,8 @@
   font-size: var(--panel-body-size-s);
 }
 
-.panel.cta .panel-body p {
+.panel.cta .panel-body p,
+.panel.light .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-cta-body-line-height);
@@ -76,13 +77,16 @@
 
 /* ---- cta variant (IVS homepage) --------------------------------------
    Left-aligned box with a Futura-bold heading and a gold "LEARN MORE" button
-   rendered below and OUTSIDE the box. */
-.panel.cta > ul > li {
+   rendered below and OUTSIDE the box. The `light` variant shares this box +
+   heading styling but has no CTA button. */
+.panel.cta > ul > li,
+.panel.light > ul > li {
   /* transparent wrapper: the shadowed box + the button live inside it */
   margin: 0;
 }
 
-.panel.cta .panel-body {
+.panel.cta .panel-body,
+.panel.light .panel-body {
   /* cta boxes fill their grid column (no width cap / centering) */
   max-width: none;
   margin: 0;
@@ -115,7 +119,8 @@
   font-style: normal;
 }
 
-.panel.cta .panel-body h3 {
+.panel.cta .panel-body h3,
+.panel.light .panel-body h3 {
   /* cta heading is left-aligned and full width (no cap) */
   max-width: none;
   margin: 0 0 var(--space-block);
@@ -232,8 +237,10 @@
 @media (width > 900px) {
   .panel.cta > ul,
   .panel.dark > ul,
+  .panel.light > ul,
   .panel.cta.panel-authoring,
-  .panel.dark.panel-authoring {
+  .panel.dark.panel-authoring,
+  .panel.light.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
