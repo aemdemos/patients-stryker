@@ -231,6 +231,16 @@ b {
   font-weight: 700;
 }
 
+/* Gold headlines — the source renders its main headings in the gold accent
+   (h1 inline rgb(255,181,0); h2 via #ffb500 spans). In DA/EDS the gold marker
+   is bold+italic, so a bold+italic h1/h2 heading renders in --color-accent. */
+h1 strong em,
+h1 em strong,
+h2 strong em,
+h2 em strong {
+  color: var(--color-accent);
+}
+
 /* lists — measured source indent (padding-left 17px) */
 ol,
 ul {
