@@ -1,6 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  margin: 0 -15px;
 }
 
 .columns img {
@@ -39,8 +40,8 @@
   list-style-type: disc;
 }
 
-/* tablet — reference switches to a 2-up layout at 840px */
-@media (width >= 840px) {
+/* tablet — reference switches to a 2-up layout at 841px */
+@media (width >= 841px) {
   .columns > div {
     flex-flow: row wrap;
     align-items: flex-start;
