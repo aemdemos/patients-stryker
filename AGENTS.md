@@ -67,15 +67,22 @@ background: rgb(255 255 255 / 0.7);
 
 ### 5. Mobile-First — No `max-width` Media Queries
 
+Always author mobile-first (base styles are mobile, scale up with `min-width`);
+never use `max-width` media queries.
+
 ```css
 /* ❌ NEVER */
 @media (max-width: 768px) { }
 
 /* ✅ ALWAYS — base styles are mobile, scale up */
-@media (min-width: 600px) { }
-@media (min-width: 900px) { }
-@media (min-width: 1200px) { }
+@media (min-width: 841px) { }
+@media (min-width: 1024px) { }
 ```
+
+Use the original site's breakpoints as-is. The live site's grid CSS switches at
+**841px** (tablet, `col-sm-*`) and **1024px** (desktop, `col-md-*`); match those
+so migrated blocks line up with the source. Only introduce a different
+breakpoint when the source itself uses one for that specific component.
 
 ### 6. Never Modify `scripts/aem.js`
 
@@ -257,7 +264,7 @@ The repository provides the basic structure, blocks, and configuration needed to
 - Follow Stylelint standard configuration
 - Use modern CSS features (CSS Grid, Flexbox, CSS Custom Properties)
 - Maintain responsive design principles
-  - Declare styles mobile first, use `min-width` media queries at 600px/900px/1200px for tablet and desktop
+  - Declare styles mobile first, use `min-width` media queries at the original site's breakpoints (841px tablet, 1024px desktop) for tablet and desktop
 - Ensure all selectors are scoped to the block.
   - Bad: `.item-list`
   - Good: `.{blockname} .item-list`   
