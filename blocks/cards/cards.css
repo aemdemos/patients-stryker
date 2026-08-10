@@ -141,6 +141,11 @@
 .cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
   order: 0;   /* title above the image */
   margin: 0 0 var(--space-block);
+
+  /* source brochure title is the light serif (URW Egyptienne), weight 500 —
+     not the Futura-bold the default cards h3 uses */
+  font-family: var(--heading-font-family);
+  font-weight: 500;
 }
 
 .cards.brochure .cards-card-body p {
