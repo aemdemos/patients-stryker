@@ -180,32 +180,22 @@
 }
 
 /* Universal Editor authoring view: the block keeps its authored div structure
-   (no ul/li transform) so child instrumentation persists. Mirror the box look. */
+   (no ul/li transform) so child instrumentation persists, but panel.js still
+   tags each content cell with .panel-body — so all the .panel .panel-body
+   styling rules above apply in the editor exactly as they do live. Only the
+   grid layout (normally on .panel > ul) needs restating for the authoring
+   wrapper, since there is no <ul> in UE. */
 .panel.panel-authoring {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
 }
 
-.panel.panel-authoring > div {
-  padding: 30px;
-  background-color: var(--color-white);
-  box-shadow: var(--shadow-soft);
-  text-align: center;
-}
-
 @media (width > 900px) {
-  .panel.panel-authoring {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-    .panel.cta > ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-    .panel.dark > ul {
+  .panel.cta > ul,
+  .panel.dark > ul,
+  .panel.cta.panel-authoring,
+  .panel.dark.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }

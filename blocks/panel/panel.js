@@ -4,9 +4,15 @@ export default function decorate(block) {
   // trailing link-only paragraph into a gold "LEARN MORE" button below the box.
   const isCta = block.classList.contains('cta');
 
-  // In UE, keep the authored structure intact so child component identity persists.
+  // In UE, keep the authored structure intact (no ul/li transform) so child
+  // component identity persists — but still tag each content cell with
+  // .panel-body so the block's styling (which is all scoped to .panel-body)
+  // applies in the editor exactly as it does live.
   if (window.location.hostname.includes('.ue.da.live')) {
     block.classList.add('panel-authoring');
+    [...block.children].forEach((row) => {
+      [...row.children].forEach((cell) => { cell.classList.add('panel-body'); });
+    });
     return;
   }
 
