@@ -82,8 +82,14 @@
       {
         "component": "select",
         "name": "classes",
+        "value": "",
         "label": "Style",
+        "valueType": "string",
         "options": [
+          {
+            "name": "Default",
+            "value":""
+          },
           {
             "name": "Resources",
             "value": "resources"
