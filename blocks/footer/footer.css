@@ -30,7 +30,9 @@ footer .footer ul {
 
 footer .footer li:not(:last-child)::after {
   content: "|";
-  padding-right: 5px;
+  display: inline-block;
+  width: 17px;
+  text-align: center;
 }
 
 @media (width >= 1024px) {
