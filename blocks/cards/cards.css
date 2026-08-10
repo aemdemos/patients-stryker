@@ -71,8 +71,8 @@
 
 .cards .cards-card-body p {
   margin: 0 0 var(--space-block);
-  font-size: var(--cards-body-size);
-  line-height: var(--cards-body-line-height);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
 }
 
 /*
@@ -87,28 +87,20 @@
   margin: var(--space-block) 0 0;
 }
 
-.cards.cards-authoring {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+/* resources variant: PDF brochure card — portrait cover image over a teal
+   button. Image is full column width at its natural (portrait) ratio, no fixed
+   height. Shares the base grid (1-up, 2-up @768) but goes 4-up on desktop
+   (source col-md-3) instead of the default 3-up. */
+.cards.resources > ul > li {
+  background-color: transparent;
 }
 
-.cards.cards-authoring > div {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
-}
-
-.cards.cards-authoring > div > div {
-  margin: 16px;
-}
-
-.cards.cards-authoring > div > div:first-child {
-  line-height: 0;
-  margin: 0;
-}
-
-.cards.cards-authoring > div > div:first-child img {
+.cards.resources > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;   /* natural portrait ratio, like source img-responsive */
+}
+
+.cards.resources .cards-card-body {
+  margin: var(--space-block) 0 0;
 }
