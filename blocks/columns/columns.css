@@ -1,24 +1,32 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  margin: 0 -15px;
 }
 
 .columns img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .columns > div > div {
   order: 1;
   box-sizing: border-box;
-  padding: 13px 14px;
+  padding: 0 15px;
 }
 
-.columns > div > .columns-img-col {
+.columns .columns-img-col {
+  /* image-to-heading gap = 30px margin below the image + 3% padding for the
+     text wrapper the reference has (ours is flat siblings, so this padding lives
+     on the image column). padding doesn't collapse with the margin, so they add. */
+  margin-bottom: var(--space-section); /* 30px gap below the image */
+  padding-bottom: 3%; /* additional gap before the heading, matches the reference's percentage-based text-wrapper padding */
   order: 0;
 }
 
-.columns > div > .columns-img-col img {
+.columns .columns-img-col img {
   display: block;
+  margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
 }
 
 .columns h4 {
@@ -38,7 +46,17 @@
   list-style-type: disc;
 }
 
-@media (width >= 900px) {
+/* text inset — the reference wraps heading+paragraph in an element with 3% padding
+   on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
+   this adds the matching left/right inset to the text that follows the image. */
+.columns .columns-img-col ~ h4,
+.columns .columns-img-col ~ p {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+/* tablet — reference switches to a 2-up layout at 841px */
+@media (width >= 841px) {
   .columns > div {
     flex-flow: row wrap;
     align-items: flex-start;
@@ -47,11 +65,11 @@
   .columns > div > div {
     flex: 0 0 50%;
     order: unset;
-    padding: 13px 28px;
   }
 }
 
-@media (width >= 1200px) {
+/* desktop — reference places all columns in a single row at 1024px */
+@media (width >= 1024px) {
   .columns > div {
     flex-wrap: nowrap;
   }
