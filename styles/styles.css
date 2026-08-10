@@ -230,13 +230,20 @@ b {
 
 /* Gold headlines — the source renders its main headings in the gold accent
    (h1 inline rgb(255,181,0); h2 via #ffb500 spans). In DA/EDS the gold marker
-   is bold+italic, but it only signals the accent COLOR — the headline itself is
-   not slanted, so the italic is normalized back to upright here. */
+   is bold+italic, but it ONLY signals the accent COLOR: the bold and italic
+   must NOT leak into the rendered heading. Neutralize weight/style on both the
+   strong and em levels of the marker so the heading keeps its own base
+   typography, then paint the combined marker gold. */
+h1 :is(strong, em),
+h2 :is(strong, em) {
+  font-weight: inherit;
+  font-style: normal;
+}
+
 h1 strong em,
 h1 em strong,
 h2 strong em,
 h2 em strong {
-  font-style: normal;
   color: var(--color-accent);
 }
 
