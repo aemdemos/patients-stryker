@@ -80,3 +80,19 @@
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
 }
+
+/* resources variant: PDF brochure card — cover image over a teal button.
+   Same authored structure (cell 1 image, cell 2 text with a bold link that
+   decorateButtons promotes to a button); only the styling differs. */
+.cards.resources > ul > li {
+  background-color: transparent;
+}
+
+.cards.resources > ul > li img {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.cards.resources .cards-card-body {
+  margin: var(--space-block) 0 0;
+}

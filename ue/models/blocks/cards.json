@@ -31,6 +31,19 @@
   ],
   "models": [
     {
+      "id": "cards",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Style",
+          "options": [
+            { "name": "Resources", "value": "resources" }
+          ]
+        }
+      ]
+    },
+    {
       "id": "card",
       "fields": [
         {
