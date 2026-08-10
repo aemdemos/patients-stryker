@@ -15,7 +15,11 @@
 }
 
 .columns .columns-img-col {
-  margin-bottom: var(--space-section); /* 30px — matches reference image-to-heading gap */
+  /* image-to-heading gap = 30px margin below the image + 3% padding for the
+     text wrapper the reference has (ours is flat siblings, so this padding lives
+     on the image column). padding doesn't collapse with the margin, so they add. */
+  margin-bottom: var(--space-section); /* 30px gap below the image */
+  padding-bottom: 3%; /* additional gap before the heading, matches the reference's percentage-based text-wrapper padding */
   order: 0;
 }
 
