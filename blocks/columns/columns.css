@@ -10,7 +10,7 @@
 .columns > div > div {
   order: 1;
   box-sizing: border-box;
-  padding: 0 14px;
+  padding: 0 15px;
 }
 
 .columns .columns-img-col {
@@ -49,7 +49,6 @@
   .columns > div > div {
     flex: 0 0 50%;
     order: unset;
-    padding: 0 28px;
   }
 }
 
