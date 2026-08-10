@@ -28,20 +28,36 @@ footer .footer ul {
   list-style: none;
 }
 
-/* at wider viewports the source adds margin-left: 7px to each link item (except the first),
-   putting the extra space before the pipe separator so it sits symmetrically between links */
-@media (width >= 1024px) {
-  footer .footer li:not(:first-child) {
-    margin-left: 7px;
-  }
-}
-
 /* fixed-width centered separator region (matches the source's 17px pipe column) */
 footer .footer li:not(:last-child)::after {
   content: "|";
   display: inline-block;
   width: 17px;
   text-align: center;
+}
+
+/* at wider viewports the source moves the pipe from the trailing edge (::after) to the
+   leading edge (::before) of the following item, with margin-left before it — so the extra
+   space lands between the previous link and the pipe, matching the reference's order.
+   Placed after the base ::after rule so content: none wins at equal specificity. */
+@media (width >= 1024px) {
+  /* drop the trailing pipe at this breakpoint... */
+  footer .footer li:not(:last-child)::after {
+    content: none;
+  }
+
+  /* ...and re-add it as a leading pipe on every item except the first, with the margin
+     before it, so the 7px gap sits between the previous link and the pipe */
+  footer .footer li:not(:first-child) {
+    margin-left: 7px;
+  }
+
+  footer .footer li:not(:first-child)::before {
+    content: "|";
+    display: inline-block;
+    width: 17px;
+    text-align: center;
+  }
 }
 
 footer .footer a {
