@@ -45,6 +45,15 @@
   list-style-type: disc;
 }
 
+/* text inset — the reference wraps heading+paragraph in an element with 3% padding
+   on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
+   this adds the matching left/right inset to the text that follows the image. */
+.columns .columns-img-col ~ h4,
+.columns .columns-img-col ~ p {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
 /* tablet — reference switches to a 2-up layout at 841px */
 @media (width >= 841px) {
   .columns > div {
