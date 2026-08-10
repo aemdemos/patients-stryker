@@ -162,6 +162,16 @@
   margin: 0;
 }
 
+/* ---- gold variant (IVS "Tired of living in pain?" callout) -----------
+   Solid gold box, centered black text, no shadow — measured from source
+   .has-background.bg-gold (bg #ffb500 = --color-accent, 22.5px padding). */
+.panel.gold .panel-body {
+  padding: 22.5px;
+  background: var(--color-accent);
+  box-shadow: none;
+  text-align: center;
+}
+
 /* Universal Editor authoring view: the block keeps its authored div structure
    (no ul/li transform) so child instrumentation persists. Mirror the box look. */
 .panel.panel-authoring {
