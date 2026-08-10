@@ -118,11 +118,11 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1)>a[href]"
+                  "selector": "div:nth-child(1)>picture>img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1)>a"
+                  "selector": "div:nth-child(1)>picture>img[alt]"
                 },
                 {
                   "name": "text",
