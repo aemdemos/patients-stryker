@@ -230,13 +230,11 @@ b {
 
 /* Gold headlines — the source renders its main headings in the gold accent
    (h1 inline rgb(255,181,0); h2 via #ffb500 spans). In DA/EDS the gold marker
-   is bold+italic, but it ONLY signals the accent COLOR: the bold and italic
-   must NOT leak into the rendered heading. Neutralize weight/style on both the
-   strong and em levels of the marker so the heading keeps its own base
-   typography, then paint the combined marker gold. */
+   is bold+italic: the bold is kept (production headlines are bold), but the
+   italic is a color signal only and must not slant the heading, so it is
+   normalized upright. The combined marker is then painted gold. */
 h1 :is(strong, em),
 h2 :is(strong, em) {
-  font-weight: inherit;
   font-style: normal;
 }
 
@@ -497,6 +495,13 @@ main .section.highlight {
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);
   padding-top: calc(var(--space-section) * 2);
+}
+
+/* first (title + intro + image) section — sage rule beneath it, matching the
+   source's .c-page-hero-content.border-bottom-gold 1px divider */
+main > .section:first-child > .default-content-wrapper {
+  padding-bottom: var(--space-section);
+  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* audience note above the fullbleed hero */
