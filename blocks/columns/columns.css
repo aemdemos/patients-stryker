@@ -127,6 +127,13 @@
   line-height: var(--heading-line-height);
 }
 
+/* stroke title — the reference enlarges it 1.5x (21px → 31.5px), Futura bold.
+   Colour/family/weight come from the global bold+italic gold-heading rule. */
+.section.serif .columns h3 {
+  font-size: calc(var(--heading-font-size-l) * 1.5);
+  line-height: var(--heading-line-height);
+}
+
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
 .section.light-gray .columns ul,
