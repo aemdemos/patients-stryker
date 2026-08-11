@@ -78,3 +78,120 @@
     flex: 1;
   }
 }
+
+/* light-gray variant — column text uses the serif heading font */
+.section.light-gray .columns p,
+.section.light-gray .columns ul,
+.section.light-gray .columns li,
+.section.light-gray .columns a {
+  font-family: var(--heading-font-family);
+}
+
+/* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
+   widening the between-column gap and insetting the text */
+.section.light-gray .columns > div > div {
+  padding-inline: 24px;
+}
+
+/* extra title-to-body gap to match the reference's larger inline-title spacing */
+.section.light-gray .columns h2 {
+  margin-bottom: 25px;
+}
+
+/* underlined link (<u>) = flat CTA: Futura bold, uppercase, teal, with a chevron */
+.section.light-gray .columns a:has(u) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
+  text-transform: uppercase;
+}
+
+/* <u> is only the CTA trigger — not shown as an underline */
+.section.light-gray .columns a:has(u) u {
+  text-decoration: none;
+}
+
+/* CTA slot: extra space below each CTA before the next stacked column (mobile).
+   The 2-up and 3-up media queries below override this per layout. */
+.section.light-gray .columns p:has(a u) {
+  margin-bottom: 80px;
+}
+
+/* chevron drawn in CSS (reference uses a proprietary icon font); follows link colour */
+.section.light-gray .columns a:has(u)::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+/* no underline on any link; override the global underline default */
+.section.light-gray .columns a:any-link {
+  text-decoration: none;
+}
+
+.section.light-gray .columns a:hover,
+.section.light-gray .columns a:focus {
+  color: var(--color-primary-pressed);
+  text-decoration: none;
+}
+
+/* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
+@media (width >= 841px) {
+  .section.light-gray .columns p:has(+ p a u) {
+    min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+  }
+}
+
+/* tablet 2-up: float grid matching the reference */
+@media (width >= 841px) {
+  .section.light-gray .columns > div {
+    display: block;
+  }
+
+  .section.light-gray .columns > div::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .section.light-gray .columns > div > div {
+    float: left;
+    width: 50%;
+  }
+
+  /* 3rd column floats right so it lands in the right column below the 2nd */
+  .section.light-gray .columns > div > div:nth-child(3) {
+    float: right;
+  }
+
+  /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
+  .section.light-gray .columns p:has(a u) {
+    margin-bottom: 75px;
+  }
+}
+
+/* desktop 3-up: revert to the base flex row */
+@media (width >= 1024px) {
+  .section.light-gray .columns > div {
+    display: flex;
+  }
+
+  .section.light-gray .columns > div > div,
+  .section.light-gray .columns > div > div:nth-child(3) {
+    float: none;
+    width: auto;
+  }
+
+  /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
+  .section.light-gray .columns p:has(a u) {
+    margin-bottom: var(--space-block);
+  }
+}
