@@ -511,6 +511,13 @@ main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
+/* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
+   a gray-to-teal gradient band with white text. Pair with .full-bleed. */
+main > .section.dark {
+  background: var(--panel-dark-gradient);
+  color: var(--color-white);
+}
+
 /* divider between the fullbleed hero and the cards section — constrained to content width */
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);

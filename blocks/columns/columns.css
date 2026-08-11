@@ -176,6 +176,26 @@
   margin-bottom: 0;
 }
 
+/* dark variant — gold Futura-bold headings and white body text on the dark
+   gradient panel (reference: knee-pain "Where treatment begins" section). */
+.section.dark .columns h2,
+.section.dark .columns h3,
+.section.dark .columns h4 {
+  font-family: var(--display-font-family);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-accent);
+}
+
+.section.dark .columns p,
+.section.dark .columns ul,
+.section.dark .columns li {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
+}
+
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
 .section.light-gray .columns ul,
