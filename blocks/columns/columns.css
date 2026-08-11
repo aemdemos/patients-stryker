@@ -116,6 +116,12 @@
   text-decoration: none;
 }
 
+/* CTA slot: extra space below each CTA before the next stacked column (mobile).
+   The 2-up and 3-up media queries below override this per layout. */
+.section.light-gray .columns p:has(a u) {
+  margin-bottom: 80px;
+}
+
 /* chevron drawn in CSS (reference uses a proprietary icon font); follows link colour */
 .section.light-gray .columns a:has(u)::after {
   content: "";
