@@ -44,7 +44,6 @@
   --color-disabled-bg: #b2b4ae;
   --color-disabled-text: #545857;
   --overlay-scrim: rgb(0 0 0 / 50%);
-  --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
 
   /* boilerplate color aliases (consumed by blocks) */
   --background-color: var(--color-white);
@@ -58,7 +57,6 @@
   --body-font-family: "HumanistSlab712W01", "humanist-slab-712-fallback", cambria, palatino, serif;
   --heading-font-family: "URWEgyptienneW01-Light", urw-egyptienne-fallback, rockwell, georgia, times, serif;
   --display-font-family: "Futura LT W01", futura-lt-fallback, arial, helvetica, sans-serif;
-  --display-font-family-bold: "Futura LT W01", "Arial Black", arial, sans-serif;
 
   /* body sizes (fixed px — source typography is non-responsive) */
   --body-font-size-m: 14px;
@@ -102,21 +100,6 @@
   --statistics-number-size: 92px;
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
-
-  /* panel block */
-  --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
-  --panel-cta-heading-size: 26px; /* cta variant h3 */
-  --panel-cta-body-size: 17.5px;    /* cta variant p */
-  --panel-cta-body-line-height: 1.15; /* cta variant p */
-  --panel-heading-size: 35px; /* h3 */
-  --panel-body-size: 24.5px; /* p */
-  --panel-body-size-s: 21px;
-  --panel-body-line-height: 1.06; /* p */
-  --panel-dark-gradient: linear-gradient(90deg, #545857, #3e5245); /* dark variant bg (measured) */
-
-  /* cards block */
-  --cards-body-size: 17.5px;    /* p */
-  --cards-body-line-height: 1.15; /* p */
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
@@ -191,8 +174,11 @@ h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
-/* section subheading — Futura Bold */
+/* section subheading — measured from source .component-subheading.border-bottom-gold:
+   Futura Bold with a 1px sage rule underneath (7px gap) */
 h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xl);
   font-weight: 700;
@@ -226,23 +212,6 @@ strong,
 b {
   font-family: var(--display-font-family);
   font-weight: 700;
-}
-
-/* Gold headlines — the source renders its main headings in the gold accent
-   (h1 inline rgb(255,181,0); h2 via #ffb500 spans). In DA/EDS the gold marker
-   is bold+italic: the bold is kept (production headlines are bold), but the
-   italic is a color signal only and must not slant the heading, so it is
-   normalized upright. The combined marker is then painted gold. */
-h1 :is(strong, em),
-h2 :is(strong, em) {
-  font-style: normal;
-}
-
-h1 strong em,
-h1 em strong,
-h2 strong em,
-h2 em strong {
-  color: var(--color-accent);
 }
 
 /* lists — measured source indent (padding-left 17px) */
@@ -295,23 +264,13 @@ button {
 /* links */
 a:any-link {
   color: var(--link-color);
-  text-decoration: underline;
+  text-decoration: none;
   overflow-wrap: break-word;
 }
 
 a:hover,
 a:focus {
   color: var(--link-hover-color);
-  text-decoration: none;
-}
-
-/* bold and bold+italic links are not underlined (italic-only links still are).
-   Covers both nesting directions: <strong>/<b> wrapping the link, and the link
-   wrapping <strong>/<b>. */
-strong a:any-link,
-b a:any-link,
-a:any-link:has(strong),
-a:any-link:has(b) {
   text-decoration: none;
 }
 
@@ -495,13 +454,6 @@ main .section.highlight {
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);
   padding-top: calc(var(--space-section) * 2);
-}
-
-/* first (title + intro + image) section — sage rule beneath it, matching the
-   source's .c-page-hero-content.border-bottom-gold 1px divider */
-main > .section:first-child > .default-content-wrapper {
-  padding-bottom: var(--space-section);
-  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* audience note above the fullbleed hero */
