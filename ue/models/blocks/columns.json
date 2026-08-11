@@ -53,6 +53,23 @@
             "numberMin": 1,
             "numberMax": 3
           }
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Style",
+          "value": "",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Default",
+              "value": ""
+            },
+            {
+              "name": "50-50",
+              "value": "columns-50-50"
+            }
+          ]
         }
       ]
     },
