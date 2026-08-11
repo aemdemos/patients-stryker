@@ -98,6 +98,7 @@
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+  --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;

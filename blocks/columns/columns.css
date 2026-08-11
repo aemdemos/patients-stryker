@@ -160,6 +160,22 @@
   line-height: var(--heading-line-height);
 }
 
+/* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
+   image is above or below the text. Neutralise the base image-column margin/padding
+   and the columns' own trailing margin so row-gap alone governs the spacing. */
+.section.serif .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+}
+
+.section.serif .columns.columns-50-50 .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.serif .columns.columns-50-50 > div > div > :last-child {
+  margin-bottom: 0;
+}
+
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
 .section.light-gray .columns ul,
@@ -169,8 +185,9 @@
 }
 
 /* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
-   widening the between-column gap and insetting the text */
-.section.light-gray .columns > div > div {
+   widening the between-column gap and insetting the text. Excludes the 50-50
+   variant, which keeps the base 15px so its image is the same size on either side. */
+.section.light-gray .columns:not(.columns-50-50) > div > div {
   padding-inline: 24px;
 }
 
