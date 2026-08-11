@@ -223,6 +223,7 @@
           "filter": "panel",
           "plugins": {
             "da": {
+              "name": "panel",
               "rows": 1,
               "columns": 1
             }
