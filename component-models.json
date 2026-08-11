@@ -157,13 +157,13 @@
       {
         "component": "select",
         "name": "classes",
-        "value": "",
+        "value": "columns-default",
         "label": "Layout",
         "valueType": "string",
         "options": [
           {
             "name": "Default",
-            "value": ""
+            "value": "columns-default"
           },
           {
             "name": "50-50 Layout",

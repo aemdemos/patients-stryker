@@ -57,11 +57,11 @@
         {
           "component": "select",
           "name": "classes",
-          "value": "",
+          "value": "columns-default",
           "label": "Layout",
           "valueType": "string",
           "options": [
-            { "name": "Default", "value": "" },
+            { "name": "Default", "value": "columns-default" },
             { "name": "50-50 Layout", "value": "columns-50-50" }
           ]
         }
