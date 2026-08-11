@@ -151,4 +151,9 @@
 .cards.brochure .cards-card-body p {
   order: 2;   /* download links below the image */
   margin: var(--space-block) 0 0;
+
+  /* source download links: light serif (urw-egyptienne) at 1.25em (fontsize-1-25em) */
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
 }
