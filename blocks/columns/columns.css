@@ -129,3 +129,15 @@
 .section.light-gray .columns a:has(u):focus-visible {
   color: var(--link-hover-color);
 }
+
+/* CTA baseline alignment — once the columns sit side by side (>=841px), reserve
+   two lines for the body copy that directly precedes a CTA so short and long
+   bodies occupy the same height and both CTAs land on the same baseline. In the
+   reference both bodies happen to wrap to ~2 lines; our columns are wider, so a
+   one-line body would otherwise pull its CTA up. Any extra space falls above the
+   shorter column's CTA. Mobile stacks, so it keeps natural flow. */
+@media (width >= 841px) {
+  .section.light-gray .columns p:has(+ p a u) {
+    min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+  }
+}
