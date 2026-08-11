@@ -244,4 +244,12 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+
+  /* wide variant: force a single full-width column at desktop, overriding the
+     2-up grid other variants set (declared after them so it wins by source
+     order at equal specificity). Combinable, e.g. `panel cta wide`. */
+  .panel.wide > ul,
+  .panel.wide.panel-authoring {
+    grid-template-columns: 1fr;
+  }
 }
