@@ -88,3 +88,60 @@
 .section.light-gray .columns a {
   font-family: var(--heading-font-family);
 }
+
+/* light-gray variant CTA (columns 1 & 2) — the project maps authored text-format
+   combinations to semantics (e.g. heading + bold+italic = accent/yellow title).
+   The underline combo was the one still unused, so an underlined link (<u>) is
+   the semantic for a flat "standalone link" CTA. decorateButtons only promotes
+   strong/em, so an underlined link passes through untouched and we style it here:
+   Futura 700, uppercase, teal, with a small right chevron. The <u> is only the
+   authoring trigger — the reference CTA is not underlined, so we remove the rule.
+   Column 3's links have no underline, so they stay plain inline text links. */
+.section.light-gray .columns a:has(u) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
+  text-transform: uppercase;
+}
+
+.section.light-gray .columns a:has(u) u {
+  text-decoration: none;
+}
+
+/* pin the CTA to the bottom-left of the card regardless of content height. The
+   CTA sits in its own <p>; auto top-margin pushes it down in the flex column. */
+.section.light-gray .columns p:has(a u) {
+  margin-top: auto;
+}
+
+/* chevron — the reference uses a proprietary strykericons glyph (▸); we don't
+   ship that font, so draw the small right-pointing triangle in pure CSS. It
+   inherits the link colour via currentcolor, so it tracks the hover state. */
+.section.light-gray .columns a:has(u)::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+.section.light-gray .columns a:has(u):hover,
+.section.light-gray .columns a:has(u):focus-visible {
+  color: var(--link-hover-color);
+}
+
+/* equal-height columns so the pinned CTA lines up across cards */
+.section.light-gray .columns > div {
+  align-items: stretch;
+}
+
+.section.light-gray .columns > div > div {
+  display: flex;
+  flex-direction: column;
+}
