@@ -64,6 +64,10 @@
           {
             "name": "Serif",
             "value": "serif"
+          },
+          {
+            "name": "50-50 Layout",
+            "value": "columns-50-50"
           }
         ]
       }
@@ -153,23 +157,6 @@
           "numberMin": 1,
           "numberMax": 3
         }
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "columns-default",
-        "label": "Layout",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Default",
-            "value": "columns-default"
-          },
-          {
-            "name": "50-50 Layout",
-            "value": "columns-50-50"
-          }
-        ]
       }
     ]
   },

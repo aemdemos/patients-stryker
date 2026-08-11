@@ -81,15 +81,18 @@
 
 /* 50-50 variant — two equal columns (image + text, or text + text). The base
    .columns rules already produce the 50/50 side-by-side layout; these rules match
-   the reference's heading size and the small top offset on the text column. */
-.columns.columns-50-50 h4 {
+   the reference's heading size and the small top offset on the text column.
+   Applied via the section's "50-50 Layout" style (not a block field - see
+   ue/models/section.json - because the columns block's structural DA
+   "behaviour" plugin can't reliably clear a block-level class field back out). */
+.section.columns-50-50 .columns h4 {
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
 
 /* in an image+text row, the text column sits slightly below the image top, as
    in the reference. Only applies when the row has a picture (not text+text rows). */
 @media (width >= 841px) {
-  .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+  .section.columns-50-50 .columns > div:has(picture) > div:not(:has(picture)) {
     padding-top: var(--space-section);
   }
 
@@ -98,20 +101,20 @@
      2nd child, inset its left; image-right row → text is the 1st child, inset its
      right. (Avoids nested :has, which is invalid.) --col-5050-inset is overridden
      per section variant (e.g. the serif/stroke section uses a wider gap). */
-  .columns.columns-50-50 {
+  .section.columns-50-50 .columns {
     --col-5050-inset: 49px;
   }
 
-  .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+  .section.columns-50-50 .columns > div > div:first-child:has(picture) + div:not(:has(picture)) {
     padding-left: var(--col-5050-inset);
   }
 
-  .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+  .section.columns-50-50 .columns > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
     padding-right: var(--col-5050-inset);
   }
 
   /* stroke/serif section uses a wider image-to-text gap (~98px vs 64px) */
-  .section.serif .columns.columns-50-50 {
+  .section.serif.columns-50-50 .columns {
     --col-5050-inset: 83px;
   }
 }
