@@ -43,7 +43,8 @@
           "valueType": "string",
           "options": [
             { "name": "Default", "value": "" },
-            { "name": "Resources", "value": "resources" }
+            { "name": "Resources", "value": "resources" },
+            { "name": "Brochure", "value": "brochure" }
           ]
         }
       ]

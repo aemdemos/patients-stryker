@@ -31,7 +31,8 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .cards.resources > ul {
+  .cards.resources > ul,
+  .cards.brochure > ul {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -103,4 +104,58 @@
 
 .cards.resources .cards-card-body {
   margin: var(--space-block) 0 0;
+}
+
+/* brochure variant: portrait cover image with a light border, an optional
+   centered title above it, and centered "Digital | Print" download links below.
+   Title is per-card content — include a heading for the titled style, omit it
+   for the untitled style. Shares the resources 4-up desktop grid.
+
+   Ordering is CSS-only (no DOM manipulation): the card is a flex column and the
+   body uses display:contents so its children (heading, links) become flex items
+   of the li alongside the image. order then lays them out title -> image ->
+   links without moving any nodes (keeps UE instrumentation intact). */
+.cards.brochure > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  text-align: center;
+}
+
+.cards.brochure .cards-card-image {
+  order: 1;   /* image between title (0) and links (2) */
+}
+
+.cards.brochure > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;   /* natural portrait ratio */
+  border: 1px solid var(--color-surface-muted);   /* #b2b4ae, matches source */
+}
+
+/* let the body's children participate in the li's flex ordering directly */
+.cards.brochure .cards-card-body {
+  display: contents;
+}
+
+.cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
+  order: 0;   /* title above the image */
+  margin: 0 0 var(--space-block);
+
+  /* source brochure title: light serif (URW Egyptienne), weight 500, ~43px
+     (24.5px h2 x 1.75em) — not the Futura-bold the default cards h3 uses */
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-xxxl);
+  line-height: var(--heading-line-height);
+}
+
+.cards.brochure .cards-card-body p {
+  order: 2;   /* download links below the image */
+  margin: var(--space-block) 0 0;
+
+  /* source download links: light serif (urw-egyptienne) at 1.25em (fontsize-1-25em) */
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
 }
