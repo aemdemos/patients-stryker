@@ -137,15 +137,14 @@
   text-decoration: none;
 }
 
-/* reserve 2 lines for the pre-CTA body so both CTAs align (3-up desktop only) */
-@media (width >= 1024px) {
+/* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
+@media (width >= 841px) {
   .section.light-gray .columns p:has(+ p a u) {
     min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
   }
 }
 
-/* tablet 2-up: float grid matching the reference. Each odd column clears left so
-   a new row of two starts below the tallest column of the previous row */
+/* tablet 2-up: float grid matching the reference */
 @media (width >= 841px) {
   .section.light-gray .columns > div {
     display: block;
@@ -162,8 +161,12 @@
     width: 50%;
   }
 
-  /* reserve a CTA slot below each CTA (reference keeps a trailing gap here) so
-     the right-column 3rd item drops clear of the taller first-row column */
+  /* 3rd column floats right so it lands in the right column below the 2nd */
+  .section.light-gray .columns > div > div:nth-child(3) {
+    float: right;
+  }
+
+  /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
   .section.light-gray .columns p:has(a u) {
     margin-bottom: 75px;
   }
@@ -175,8 +178,14 @@
     display: flex;
   }
 
-  .section.light-gray .columns > div > div {
+  .section.light-gray .columns > div > div,
+  .section.light-gray .columns > div > div:nth-child(3) {
     float: none;
     width: auto;
+  }
+
+  /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
+  .section.light-gray .columns p:has(a u) {
+    margin-bottom: var(--space-block);
   }
 }
