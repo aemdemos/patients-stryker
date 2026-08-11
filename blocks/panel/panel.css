@@ -252,4 +252,14 @@
   .panel.wide.panel-authoring {
     grid-template-columns: 1fr;
   }
+
+  .panel.wide .panel-body p {
+    font-size: var(--panel-body-size-s);
+    font-family: var(--heading-font-family);
+  }
+
+    .panel.wide .panel-body h3 {
+      font-weight: 700;
+      font-family: var(--display-font-family);
+    }
 }
