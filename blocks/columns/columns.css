@@ -196,6 +196,12 @@
   color: var(--color-white);
 }
 
+/* bullets stay black while the item text is white, as on the reference (there the
+   marker inherits the black <li> and the text lives in a white span) */
+.section.dark .columns li::marker {
+  color: var(--color-black);
+}
+
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
 .section.light-gray .columns ul,
