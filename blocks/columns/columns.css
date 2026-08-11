@@ -79,9 +79,7 @@
   }
 }
 
-/* light-gray section variant — the reference sets the column text in the
-   URW Egyptienne serif (our --heading-font-family) rather than the default body
-   serif. Family only for now; weight/size/colour/semantics are a later pass. */
+/* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
 .section.light-gray .columns ul,
 .section.light-gray .columns li,
@@ -89,14 +87,12 @@
   font-family: var(--heading-font-family);
 }
 
-/* light-gray variant CTA (columns 1 & 2) — the project maps authored text-format
-   combinations to semantics (e.g. heading + bold+italic = accent/yellow title).
-   The underline combo was the one still unused, so an underlined link (<u>) is
-   the semantic for a flat "standalone link" CTA. decorateButtons only promotes
-   strong/em, so an underlined link passes through untouched and we style it here:
-   Futura 700, uppercase, teal, with a small right chevron. The <u> is only the
-   authoring trigger — the reference CTA is not underlined, so we remove the rule.
-   Column 3's links have no underline, so they stay plain inline text links. */
+/* extra title-to-body gap to match the reference's larger inline-title spacing */
+.section.light-gray .columns h2 {
+  margin-bottom: 25px;
+}
+
+/* underlined link (<u>) = flat CTA: Futura bold, uppercase, teal, with a chevron */
 .section.light-gray .columns a:has(u) {
   display: inline-flex;
   align-items: center;
@@ -109,13 +105,12 @@
   text-transform: uppercase;
 }
 
+/* <u> is only the CTA trigger — not shown as an underline */
 .section.light-gray .columns a:has(u) u {
   text-decoration: none;
 }
 
-/* chevron — the reference uses a proprietary strykericons glyph (▸); we don't
-   ship that font, so draw the small right-pointing triangle in pure CSS. It
-   inherits the link colour via currentcolor, so it tracks the hover state. */
+/* chevron drawn in CSS (reference uses a proprietary icon font); follows link colour */
 .section.light-gray .columns a:has(u)::after {
   content: "";
   width: 0;
@@ -125,10 +120,7 @@
   border-color: transparent transparent transparent currentcolor;
 }
 
-/* links in this variant are never underlined — neither the column-3 regional
-   links nor the CTA. The global a:any-link rule underlines links by default, so
-   we override it here. On hover they darken to the reference's pressed teal
-   (#2f4d4c = --color-primary-pressed) and stay underline-free. */
+/* no underline on any link; override the global underline default */
 .section.light-gray .columns a:any-link {
   text-decoration: none;
 }
@@ -139,12 +131,7 @@
   text-decoration: none;
 }
 
-/* CTA baseline alignment — once the columns sit side by side (>=841px), reserve
-   two lines for the body copy that directly precedes a CTA so short and long
-   bodies occupy the same height and both CTAs land on the same baseline. In the
-   reference both bodies happen to wrap to ~2 lines; our columns are wider, so a
-   one-line body would otherwise pull its CTA up. Any extra space falls above the
-   shorter column's CTA. Mobile stacks, so it keeps natural flow. */
+/* reserve 2 lines for the pre-CTA body so both CTAs align (side-by-side only) */
 @media (width >= 841px) {
   .section.light-gray .columns p:has(+ p a u) {
     min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
