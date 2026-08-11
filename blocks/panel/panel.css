@@ -135,25 +135,17 @@
   margin-top: 10px;
 }
 
-/* In UE the button keeps its authored <em>/<strong> wrappers (decorateButtons
-   can't strip them there without breaking instrumentation), so the label would
-   render italic — force it upright to match the live button. */
-.panel.cta .panel-cta a.button em,
-.panel.cta .panel-cta a.button strong,
-.panel.cta .panel-cta a.button {
-  font-style: normal;
-}
-
 /* Universal Editor fallback — pure CSS, no dependency on any JS-added class.
    UE renders the authored markup and reverts the button classes panel.js adds,
-   leaving the CTA link as a bold+italic <em><strong><a>…</a></strong></em>. We
-   anchor only on `.panel.cta` (authored block+variant, always present) and the
-   em/strong-wrapped link, styling it as the gold button directly (mirrors
-   a.button.accent). On the LIVE render decorateButtons() has already removed the
-   em/strong wrappers, so `em a`/`strong a` no longer match there — this rule is
-   naturally UE-only and can't double-style the live button. */
-.panel.cta em a:any-link,
-.panel.cta strong a:any-link {
+   leaving the CTA link as the authored bold+italic anchor
+   <a href><em><strong>…</strong></em></a>. We anchor only on `.panel.cta`
+   (authored block+variant, always present) and a link that CONTAINS em/strong,
+   styling it as the gold button directly (mirrors a.button.accent). On the LIVE
+   render decorateButtons() has already stripped the em/strong wrappers, so
+   `a:has(em)`/`a:has(strong)` no longer match there — this rule is naturally
+   UE-only and can't double-style the live button. */
+.panel.cta a:any-link:has(em),
+.panel.cta a:any-link:has(strong) {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -171,6 +163,14 @@
   text-transform: uppercase;
   text-decoration: none;
   color: #000;
+}
+
+/* the authored em/strong nested inside that button must not re-italicize or
+   recolor the label (declared after the button rule to keep specificity order) */
+.panel.cta a:any-link:has(em) em,
+.panel.cta a:any-link:has(strong) strong {
+  font-style: normal;
+  color: inherit;
 }
 
 /* ---- dark variant (IVS condition sections, left column) --------------
