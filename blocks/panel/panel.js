@@ -29,11 +29,15 @@ function liftCta(body, container, buttonize = false) {
     const a = ctaP.querySelector('a');
     const strong = a.closest('strong');
     const em = a.closest('em');
+    // Match decorateButtons() in scripts.js: only buttonize a link with authored
+    // bold/italic formatting. A plain, unformatted link stays a plain link so the
+    // UE preview matches the live render (where decorateButtons bails the same way).
+    if (!strong && !em) return;
     ctaP.className = 'button-wrapper';
     a.classList.add('button');
     if (strong && em) a.classList.add('accent');
     else if (strong) a.classList.add('primary');
-    else if (em) a.classList.add('secondary');
+    else a.classList.add('secondary');
   }
 }
 
