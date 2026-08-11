@@ -125,9 +125,18 @@
   border-color: transparent transparent transparent currentcolor;
 }
 
-.section.light-gray .columns a:has(u):hover,
-.section.light-gray .columns a:has(u):focus-visible {
-  color: var(--link-hover-color);
+/* links in this variant are never underlined — neither the column-3 regional
+   links nor the CTA. The global a:any-link rule underlines links by default, so
+   we override it here. On hover they darken to the reference's pressed teal
+   (#2f4d4c = --color-primary-pressed) and stay underline-free. */
+.section.light-gray .columns a:any-link {
+  text-decoration: none;
+}
+
+.section.light-gray .columns a:hover,
+.section.light-gray .columns a:focus {
+  color: var(--color-primary-pressed);
+  text-decoration: none;
 }
 
 /* CTA baseline alignment — once the columns sit side by side (>=841px), reserve
