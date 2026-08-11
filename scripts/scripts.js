@@ -10,6 +10,9 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  readBlockConfig,
+  toClassName,
+  toCamelCase,
 } from './aem.js';
 
 import decorateDMAssets from './dm-support.js';
@@ -195,6 +198,37 @@ function decorateFootnotes(main) {
 }
 
 /**
+ * Reads each section's `.section-metadata` block and applies the authored
+ * settings to the section: `Style` values become CSS classes (so authors can
+ * pick section variants like `full-bleed` / `highlight`), and any other keys are
+ * exposed as `data-*` attributes. This mirrors the section-metadata handling the
+ * AEM boilerplate normally performs in `decorateSections`; this project's
+ * `aem.js` ships a trimmed version, so we do it here without touching aem.js.
+ * @param {Element} main The main container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll('.section > div > div.section-metadata').forEach((metaBlock) => {
+    const section = metaBlock.closest('.section');
+    const meta = readBlockConfig(metaBlock);
+    Object.keys(meta).forEach((key) => {
+      if (key === 'style') {
+        const styles = meta.style
+          .split(',')
+          .map((style) => toClassName(style.trim()))
+          .filter((style) => style);
+        styles.forEach((style) => section.classList.add(style));
+      } else {
+        section.dataset[toCamelCase(key)] = meta[key];
+      }
+    });
+    // the metadata table is configuration, not content — remove it and its wrapper
+    const wrapper = metaBlock.parentElement;
+    metaBlock.remove();
+    if (wrapper && wrapper.children.length === 0) wrapper.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -205,6 +239,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
   decorateFootnotes(main);

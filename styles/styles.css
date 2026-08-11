@@ -450,6 +450,24 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+/* full-bleed section — the background spans the full viewport width while the
+   inner content stays capped at the container max-width and centred. In EDS the
+   .section is already full-viewport-width and only its inner > div is capped, so
+   a background here is inherently edge-to-edge. This mirrors the reference site's
+   .c-full-bleed-panel (layout) + .bg-light-gray (colour): pair .full-bleed with a
+   colour variant below to reproduce the gray 3-column band.
+   margin-block: 0 lets adjacent full-bleed panels butt together with no gap. */
+main > .section.full-bleed {
+  margin-block: 0;
+  padding-block: var(--space-section);
+}
+
+/* section background colour variant — pair with .full-bleed for an edge-to-edge
+   fill. Keeps the default dark body text readable. */
+main > .section.surface {
+  background-color: var(--color-surface);
+}
+
 /* divider between the fullbleed hero and the cards section — constrained to content width */
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);
