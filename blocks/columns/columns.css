@@ -113,12 +113,6 @@
   text-decoration: none;
 }
 
-/* pin the CTA to the bottom-left of the card regardless of content height. The
-   CTA sits in its own <p>; auto top-margin pushes it down in the flex column. */
-.section.light-gray .columns p:has(a u) {
-  margin-top: auto;
-}
-
 /* chevron — the reference uses a proprietary strykericons glyph (▸); we don't
    ship that font, so draw the small right-pointing triangle in pure CSS. It
    inherits the link colour via currentcolor, so it tracks the hover state. */
@@ -134,14 +128,4 @@
 .section.light-gray .columns a:has(u):hover,
 .section.light-gray .columns a:has(u):focus-visible {
   color: var(--link-hover-color);
-}
-
-/* equal-height columns so the pinned CTA lines up across cards */
-.section.light-gray .columns > div {
-  align-items: stretch;
-}
-
-.section.light-gray .columns > div > div {
-  display: flex;
-  flex-direction: column;
 }
