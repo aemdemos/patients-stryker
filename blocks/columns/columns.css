@@ -87,6 +87,12 @@
   font-family: var(--heading-font-family);
 }
 
+/* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
+   widening the between-column gap and insetting the text */
+.section.light-gray .columns > div > div {
+  padding-inline: 24px;
+}
+
 /* extra title-to-body gap to match the reference's larger inline-title spacing */
 .section.light-gray .columns h2 {
   margin-bottom: 25px;
