@@ -157,16 +157,7 @@
       {
         "component": "boolean",
         "name": "classes_columns-50-50",
-        "label": "50-50 layout",
-        "value": false,
-        "condition": {
-          "==": [
-            {
-              "var": "columns"
-            },
-            2
-          ]
-        }
+        "label": "50-50 layout"
       }
     ]
   },
