@@ -14,6 +14,7 @@
       "fragment",
       "hero",
       "image",
+      "panel",
       "statistics",
       "text"
     ]
@@ -45,6 +46,12 @@
     "components": [
       "text",
       "image"
+    ]
+  },
+  {
+    "id": "panel",
+    "components": [
+      "panel-item"
     ]
   },
   {

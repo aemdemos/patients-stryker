@@ -217,6 +217,37 @@
           }
         },
         {
+          "title": "Panel",
+          "id": "panel",
+          "model": "panel",
+          "filter": "panel",
+          "plugins": {
+            "da": {
+              "name": "panel",
+              "rows": 1,
+              "columns": 1
+            }
+          }
+        },
+        {
+          "title": "Panel Item",
+          "id": "panel-item",
+          "model": "panel-item",
+          "plugins": {
+            "da": {
+              "name": "panel-item",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(1)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Statistics",
           "id": "statistics",
           "model": "statistics",
