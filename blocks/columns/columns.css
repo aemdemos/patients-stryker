@@ -78,3 +78,13 @@
     flex: 1;
   }
 }
+
+/* light-gray section variant — the reference sets the column text in the
+   URW Egyptienne serif (our --heading-font-family) rather than the default body
+   serif. Family only for now; weight/size/colour/semantics are a later pass. */
+.section.light-gray .columns p,
+.section.light-gray .columns ul,
+.section.light-gray .columns li,
+.section.light-gray .columns a {
+  font-family: var(--heading-font-family);
+}
