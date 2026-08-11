@@ -463,8 +463,9 @@ main > .section.full-bleed {
 }
 
 /* section background colour variant — pair with .full-bleed for an edge-to-edge
-   fill. Keeps the default dark body text readable. */
-main > .section.surface {
+   fill. Keeps the default dark body text readable. Named to match the reference
+   site's .bg-light-gray. */
+main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
