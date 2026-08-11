@@ -231,14 +231,17 @@ b {
    italic is a color signal only and must not slant the heading, so it is
    normalized upright. The combined marker is then painted gold. */
 h1 :is(strong, em),
-h2 :is(strong, em) {
+h2 :is(strong, em),
+h3 :is(strong, em) {
   font-style: normal;
 }
 
 h1 strong em,
 h1 em strong,
 h2 strong em,
-h2 em strong {
+h2 em strong,
+h3 strong em,
+h3 em strong {
   color: var(--color-accent);
 }
 

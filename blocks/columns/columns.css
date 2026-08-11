@@ -106,6 +106,17 @@
   }
 }
 
+/* serif section variant — column body text in URW Egyptienne serif at 21px, as
+   on the stroke-awareness page. Typography only; layout stays columns-50-50. */
+.section.serif .columns p,
+.section.serif .columns ul,
+.section.serif .columns li,
+.section.serif .columns a {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
 .section.light-gray .columns ul,
