@@ -234,7 +234,7 @@
   gap: 10px;
 }
 
-@media (width > 900px) {
+@media (width >= 840px) {
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
