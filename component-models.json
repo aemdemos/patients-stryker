@@ -155,11 +155,10 @@
         }
       },
       {
-        "component": "select",
-        "name": "classes",
-        "label": "Style",
-        "value": "columns-default",
-        "valueType": "string",
+        "component": "boolean",
+        "name": "classes_columns-50-50",
+        "label": "50-50 layout",
+        "value": false,
         "condition": {
           "==": [
             {
@@ -167,17 +166,7 @@
             },
             2
           ]
-        },
-        "options": [
-          {
-            "name": "Default",
-            "value": "columns-default"
-          },
-          {
-            "name": "50-50",
-            "value": "columns-50-50"
-          }
-        ]
+        }
       }
     ]
   },
