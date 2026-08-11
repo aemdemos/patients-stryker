@@ -77,6 +77,19 @@
   .columns > div > div {
     flex: 1;
   }
+
+  /* 50-50 columns are a true 50% each (like the reference's col-sm-6). The base
+     flex:1 1 0% equalises content boxes, so columns with different padding end up
+     unequal and the image shrinks; a fixed 50% basis keeps both halves equal. */
+  .columns.columns-50-50 > div > div {
+    flex: 0 0 50%;
+  }
+
+  /* serif image+text rows centre the image against the text block only at desktop
+     (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
+  .section.serif .columns.columns-50-50 > div {
+    align-items: center;
+  }
 }
 
 /* 50-50 variant — two equal columns (image + text, or text + text). The base
@@ -113,6 +126,19 @@
   /* stroke/serif section uses a wider image-to-text gap (~98px vs 64px) */
   .section.serif .columns.columns-50-50 {
     --col-5050-inset: 83px;
+  }
+
+  /* serif image-right row: the reference also insets the text column's outer
+     (left) edge, not just the image-facing side, so the text sits further in */
+  .section.serif .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-left: var(--col-5050-inset);
+  }
+
+  /* drop the mobile image-stacking gap so the image doesn't carry a bottom-only
+     gap when the columns are side by side (tablet top-aligns like the reference) */
+  .section.serif .columns.columns-50-50 .columns-img-col {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
