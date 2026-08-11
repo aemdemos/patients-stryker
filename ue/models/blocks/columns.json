@@ -55,11 +55,15 @@
           }
         },
         {
-          "component": "boolean",
-          "name": "classes_columns-50-50",
-          "label": "50-50 layout",
-          "valueType": "boolean",
-          "value": false
+          "component": "select",
+          "name": "classes",
+          "value": "",
+          "label": "Layout",
+          "valueType": "string",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "50-50 Layout", "value": "columns-50-50" }
+          ]
         }
       ]
     },
