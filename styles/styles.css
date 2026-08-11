@@ -114,10 +114,6 @@
   --panel-body-line-height: 1.06; /* p */
   --panel-dark-gradient: linear-gradient(90deg, #545857, #3e5245); /* dark variant bg (measured) */
 
-  /* cards block */
-  --cards-body-size: 17.5px;    /* p */
-  --cards-body-line-height: 1.15; /* p */
-
   /* radius scale (square-cornered design) */
   --radius-none: 0;
   --radius-sm: 2px;
