@@ -131,9 +131,40 @@
   text-decoration: none;
 }
 
-/* reserve 2 lines for the pre-CTA body so both CTAs align (side-by-side only) */
-@media (width >= 841px) {
+/* reserve 2 lines for the pre-CTA body so both CTAs align (3-up desktop only) */
+@media (width >= 1024px) {
   .section.light-gray .columns p:has(+ p a u) {
     min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+  }
+}
+
+/* tablet 2-up: float layout so the 3rd column wraps into the right slot under
+   the shorter middle column, matching the reference's Bootstrap grid */
+@media (width >= 841px) {
+  .section.light-gray .columns > div {
+    display: block;
+  }
+
+  .section.light-gray .columns > div::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .section.light-gray .columns > div > div {
+    float: left;
+    width: 50%;
+  }
+}
+
+/* desktop 3-up: revert to the base flex row */
+@media (width >= 1024px) {
+  .section.light-gray .columns > div {
+    display: flex;
+  }
+
+  .section.light-gray .columns > div > div {
+    float: none;
+    width: auto;
   }
 }
