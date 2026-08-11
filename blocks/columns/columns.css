@@ -92,6 +92,18 @@
   .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
     padding-top: var(--space-section);
   }
+
+  /* wider gap between image and text than the base 30px gutter (reference ~64px):
+     add inset on the text column, toward the image. Image-left row → text is the
+     2nd child, inset its left; image-right row → text is the 1st child, inset its
+     right. (Avoids nested :has, which is invalid.) */
+  .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+    padding-left: 49px;
+  }
+
+  .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-right: 49px;
+  }
 }
 
 /* light-gray variant — column text uses the serif heading font */
