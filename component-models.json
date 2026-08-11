@@ -101,6 +101,10 @@
           {
             "name": "Resources",
             "value": "resources"
+          },
+          {
+            "name": "Brochure",
+            "value": "brochure"
           }
         ]
       }
@@ -234,6 +238,55 @@
       {
         "component": "richtext",
         "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "panel",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "value": "",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "CTA",
+            "value": "cta"
+          },
+          {
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Gold",
+            "value": "gold"
+          },
+          {
+            "name": "Wide",
+            "value": "wide"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "panel-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
         "label": "Content",
         "valueType": "string"
       }

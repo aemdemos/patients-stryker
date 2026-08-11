@@ -1,0 +1,265 @@
+/*
+ * panel — the source "dimensional-box" (patients.stryker.com).
+ * Default styling measured from the Zip Skin Closure homepage: a white box with
+ * a soft drop shadow, centered heading + body copy, ~30px padding. The `cta`
+ * variant (IVS homepage) is left-aligned with a Futura-bold heading and a gold
+ * "LEARN MORE" button below the box.
+ */
+.panel > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.panel > ul > li {
+  margin: 0;
+}
+
+.panel .panel-body {
+  margin: 10px;
+  padding: 3%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+/* left variant: left-align the panel content (heading override lives after the
+   base .panel .panel-body h3 rule to satisfy no-descending-specificity) */
+.panel.left .panel-body {
+  text-align: left;
+}
+
+.panel .panel-body p {
+  margin: 0;
+  font-size: var(--panel-body-size);
+  line-height: var(--panel-body-line-height);
+}
+
+/* cta paragraphs containing bold+italic (the gold-label marker) use the
+   smaller body size and default line-height */
+.panel .panel-body p:has(strong em),
+.panel .panel-body p:has(em strong),
+.panel .panel-body p:has(b i),
+.panel .panel-body p:has(i b) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-body-size-s);
+  line-height: var(--panel-body-line-height);
+  font-family: var(--heading-font-family);
+}
+
+/* gold variant body copy: serif family, smaller body size (styling for the
+   .panel.gold box itself lives with the other variants further down) */
+.panel.gold .panel-body p {
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+}
+
+.panel.cta .panel-body p,
+.panel.light .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
+/* bold + italic body text → gold accent (the site's gold-label marker:
+   text authored as both bold and italic renders in the accent color). */
+.panel .panel-body strong em,
+.panel .panel-body em strong,
+.panel .panel-body b i,
+.panel .panel-body i b {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+
+/* ---- cta variant (IVS homepage) --------------------------------------
+   Left-aligned box with a Futura-bold heading and a gold "LEARN MORE" button
+   rendered below and OUTSIDE the box. The `light` variant shares this box +
+   heading styling but has no CTA button. */
+.panel.cta > ul > li,
+.panel.light > ul > li {
+  /* transparent wrapper: the shadowed box + the button live inside it */
+  margin: 0;
+}
+
+.panel.cta .panel-body,
+.panel.light .panel-body {
+  /* cta boxes fill their grid column (no width cap / centering) */
+  max-width: none;
+  margin: 0;
+  padding: 3%;
+  text-align: left;
+}
+
+.panel .panel-body h3 {
+  /* box stays full-width; cap the title narrower and center it so it wraps
+     like the source (margin-inline: auto centers the capped heading) */
+  max-width: var(--panel-heading-max-width);
+  margin: 0 auto 30px;
+  font-family: var(--display-font-family);
+  font-size: var(--panel-heading-size);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* left variant: heading is full-width and left-aligned (no centered cap) */
+.panel.left .panel-body h3 {
+  max-width: none;
+  margin: 0 0 30px;
+}
+
+/* italic heading text → gold accent (default + cta variants; authored as <em>/<i>).
+   The dark variant keeps its own gold heading rule below, so exclude it here. */
+.panel:not(.dark) .panel-body h3 em,
+.panel:not(.dark) .panel-body h3 i {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.panel.cta .panel-body h3,
+.panel.light .panel-body h3 {
+  /* cta heading is left-aligned and full width (no cap) */
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-cta-heading-size);
+}
+
+/* gold CTA button below the box (10px gap measured from source).
+   The button reuses the global a.button.accent styling from styles.css —
+   applied in panel.js by adding the button classes. */
+.panel.cta .panel-cta {
+  margin-top: 10px;
+}
+
+/* Universal Editor fallback — pure CSS, no dependency on any JS-added class.
+   UE renders the authored markup and reverts the button classes panel.js adds,
+   leaving the CTA link as the authored bold+italic anchor
+   <a href><em><strong>…</strong></em></a>. We anchor only on `.panel.cta`
+   (authored block+variant, always present) and a link that CONTAINS em/strong,
+   styling it as the gold button directly (mirrors a.button.accent). On the LIVE
+   render decorateButtons() has already stripped the em/strong wrappers, so
+   `a:has(em)`/`a:has(strong)` no longer match there — this rule is naturally
+   UE-only and can't double-style the live button. */
+.panel.cta a:any-link:has(em),
+.panel.cta a:any-link:has(strong) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+
+/* the authored em/strong nested inside that button must not re-italicize or
+   recolor the label (declared after the button rule to keep specificity order) */
+.panel.cta a:any-link:has(em) em,
+.panel.cta a:any-link:has(strong) strong {
+  font-style: normal;
+  color: inherit;
+}
+
+/* ---- dark variant (IVS condition sections, left column) --------------
+   A gray-to-dark-teal gradient box with white text and a left-aligned
+   heading — measured from source .has-background.bg-dark-teal-gradient
+   (linear-gradient(90deg, #545857, #3e5245), 22.5px padding, no shadow). */
+.panel.dark .panel-body {
+  padding: 22.5px;
+  background: var(--panel-dark-gradient);
+  box-shadow: none;
+  text-align: left;
+  color: var(--color-white);
+}
+
+.panel.dark .panel-body h3 {
+  /* left-aligned, full width (no cap); gold serif heading */
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.panel.dark .panel-body p {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  margin: 0 0 var(--space-block);
+}
+
+.panel .panel-body p:last-child {
+  margin: 0 0 var(--space-block);
+}
+
+.panel .panel-body p:last-child:has(strong em),
+.panel .panel-body p:last-child:has(em strong),
+.panel .panel-body p:last-child:has(b i),
+.panel .panel-body p:last-child:has(i b) {
+  margin: 0;
+}
+
+/* ---- gold variant (IVS "Tired of living in pain?" callout) -----------
+   Solid gold box, centered black text, no shadow — measured from source
+   .has-background.bg-gold (bg #ffb500 = --color-accent, 22.5px padding). */
+.panel.gold .panel-body {
+  padding: 22.5px;
+  background: var(--color-accent);
+  box-shadow: none;
+  text-align: center;
+}
+
+/* Universal Editor authoring view: the block keeps its authored div structure
+   (no ul/li transform) so child instrumentation persists, but panel.js still
+   tags each content cell with .panel-body — so all the .panel .panel-body
+   styling rules above apply in the editor exactly as they do live. Only the
+   grid layout (normally on .panel > ul) needs restating for the authoring
+   wrapper, since there is no <ul> in UE. */
+.panel.panel-authoring {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (width >= 841px) {
+  .panel.cta > ul,
+  .panel.dark > ul,
+  .panel.light > ul,
+  .panel.cta.panel-authoring,
+  .panel.dark.panel-authoring,
+  .panel.light.panel-authoring {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* wide variant: force a single full-width column at desktop, overriding the
+     2-up grid other variants set (declared after them so it wins by source
+     order at equal specificity). Combinable, e.g. `panel cta wide`. */
+  .panel.wide > ul,
+  .panel.wide.panel-authoring {
+    grid-template-columns: 1fr;
+  }
+
+  .panel.wide .panel-body p {
+    font-size: var(--panel-body-size-s);
+    font-family: var(--heading-font-family);
+  }
+
+    .panel.wide .panel-body h3 {
+      font-weight: 700;
+      font-family: var(--display-font-family);
+    }
+}
