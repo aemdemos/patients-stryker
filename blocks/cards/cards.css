@@ -142,10 +142,12 @@
   order: 0;   /* title above the image */
   margin: 0 0 var(--space-block);
 
-  /* source brochure title is the light serif (URW Egyptienne), weight 500 —
-     not the Futura-bold the default cards h3 uses */
+  /* source brochure title: light serif (URW Egyptienne), weight 500, ~43px
+     (24.5px h2 x 1.75em) — not the Futura-bold the default cards h3 uses */
   font-family: var(--heading-font-family);
   font-weight: 500;
+  font-size: var(--heading-font-size-xxxl);
+  line-height: var(--heading-line-height);
 }
 
 .cards.brochure .cards-card-body p {
