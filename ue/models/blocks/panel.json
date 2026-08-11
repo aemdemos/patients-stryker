@@ -33,14 +33,14 @@
       "id": "panel",
       "fields": [
         {
-          "component": "select",
+          "component": "multiselect",
           "name": "classes",
           "label": "Style",
           "value": "",
           "options": [
-            { "name": "Default", "value": "" },
             { "name": "Left", "value": "left" },
             { "name": "CTA", "value": "cta" },
+            { "name": "Light", "value": "light" },
             { "name": "Dark", "value": "dark" },
             { "name": "Gold", "value": "gold" }
           ]
