@@ -144,8 +144,8 @@
   }
 }
 
-/* tablet 2-up: float layout so the 3rd column wraps into the right slot under
-   the shorter middle column, matching the reference's Bootstrap grid */
+/* tablet 2-up: float grid matching the reference. Each odd column clears left so
+   a new row of two starts below the tallest column of the previous row */
 @media (width >= 841px) {
   .section.light-gray .columns > div {
     display: block;
@@ -160,6 +160,12 @@
   .section.light-gray .columns > div > div {
     float: left;
     width: 50%;
+  }
+
+  /* reserve a CTA slot below each CTA (reference keeps a trailing gap here) so
+     the right-column 3rd item drops clear of the taller first-row column */
+  .section.light-gray .columns p:has(a u) {
+    margin-bottom: 75px;
   }
 }
 
