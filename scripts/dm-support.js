@@ -85,7 +85,11 @@ function withParams(src, params) {
  * as PNG so transparency is preserved — forcing jpeg would flatten it to white.
  */
 function renderScene7(src, alt, eager) {
-  const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(src);
+  // decode first so a percent-encoded preset ($..._png$ arrives as %24..._png%24
+  // from a href) is matched as well as the literal form and an explicit fmt=png
+  let decoded = src;
+  try { decoded = decodeURIComponent(src); } catch { /* leave as-is on bad escape */ }
+  const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decoded);
   const fmt = png ? 'png-alpha' : 'jpeg';
   const type = png ? 'image/png' : 'image/jpeg';
   const picture = document.createElement('picture');
