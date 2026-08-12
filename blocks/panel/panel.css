@@ -223,6 +223,11 @@
   margin: 0;
 }
 
+.fragment .panel.gray .panel-body p {
+  font-size: var(--panel-fragment-font-size);
+  line-height: var(--panel-fragment-line-height);
+}
+
 /* ---- gold variant (IVS "Tired of living in pain?" callout) -----------
    Solid gold box, centered black text, no shadow — measured from source
    .has-background.bg-gold (bg #ffb500 = --color-accent, 22.5px padding). */
@@ -254,6 +259,12 @@
   color: var(--color-black);
 }
 
+/* fragment-context override: panel.gray's h3/p get different styling when the
+   panel is included via a fragment block, vs. authored directly on a page. */
+.fragment .panel.gray .panel-body h3{
+  font-size:var(--panel-fragment-font-size);
+}
+
 /* Universal Editor authoring view: the block keeps its authored div structure
    (no ul/li transform) so child instrumentation persists, but panel.js still
    tags each content cell with .panel-body — so all the .panel .panel-body
@@ -270,6 +281,10 @@
   .panel.gray .panel-body h3 {
     font-size: var(--panel-heading-size-s);
   }
+
+  .fragment .panel.gray .panel-body h3{
+  font-size:var(--panel-heading-size-xs);
+}
 }
 
 @media (width >= 841px) {
