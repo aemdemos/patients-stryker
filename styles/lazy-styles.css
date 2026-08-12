@@ -77,6 +77,36 @@
   opacity: 0.85;
 }
 
+/* static "Watch on [YouTube logo]" link, bottom-right over the poster (mirrors
+   the native player's corner link). Sits above the full-box play button so it
+   stays independently clickable. Uses the sans display font, not the section's
+   serif link style, and the YouTube wordmark as an image. */
+.video-embed-watch,
+.section.serif .columns a.video-embed-watch {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  display: flex;
+  align-items: center; /* vertically centre the wordmark with "Watch on" */
+  gap: 5px;
+  color: var(--color-white);
+
+  /* native player's corner label is a plain sans (Roboto/Arial) — not the
+     section's serif link font, and not Futura's single-story letterforms */
+  font-family: arial, helvetica, sans-serif;
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  white-space: nowrap; /* keep "Watch on" + logo on one line */
+  text-decoration: none; /* override the global/section link underline */
+}
+
+.video-embed-watch-logo {
+  /* explicit size (viewBox 90x20 → 4.5:1) so the replaced element contributes a
+     definite width to the flex link's shrink-to-fit sizing (else it overflows) */
+  width: 68px;
+  height: 15px;
+}
+
 .video-embed-iframe {
   position: absolute;
   inset: 0;

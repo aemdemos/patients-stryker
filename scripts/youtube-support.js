@@ -77,7 +77,24 @@ function renderYouTube(id, label) {
     wrapper.replaceChildren(iframe);
   });
 
-  wrapper.append(poster, button);
+  // static "Watch on [YouTube logo]" link (bottom-right), mirroring the native
+  // player's corner link. A plain anchor — no data/network cost, opens on YouTube.
+  const watch = document.createElement('a');
+  watch.className = 'video-embed-watch';
+  watch.href = `https://www.youtube.com/watch?v=${id}`;
+  watch.target = '_blank';
+  watch.rel = 'noopener';
+  const watchText = document.createElement('span');
+  watchText.className = 'video-embed-watch-text';
+  watchText.textContent = 'Watch on';
+  const logo = document.createElement('img');
+  logo.className = 'video-embed-watch-logo';
+  logo.src = `${window.hlx.codeBasePath}/icons/youtube.svg`;
+  logo.alt = 'YouTube';
+  logo.loading = 'lazy';
+  watch.append(watchText, logo);
+
+  wrapper.append(poster, button, watch);
   return wrapper;
 }
 
