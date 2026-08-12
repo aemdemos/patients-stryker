@@ -29,6 +29,16 @@
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
 }
 
+/* 50-50 and icon-grid cells stack in natural source order on mobile. The base
+   order:0/1 above forces an image cell to the top, which is wrong for these
+   variants: when the DM link isn't wrapped in a <p> (as on the live site),
+   .columns-img-col lands on the cell itself and its order:0 flips a text-left /
+   image-right row so the image sits on top. A uniform order restores DOM order. */
+.columns.columns-50-50 > div > div,
+.columns.columns-icon-grid > div > div {
+  order: 0;
+}
+
 .columns h4 {
   font-size: var(--heading-font-size-ml);
   line-height: var(--heading-line-height-ml);
