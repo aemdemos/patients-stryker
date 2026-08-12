@@ -492,6 +492,12 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+main > .section.no-cta > .default-content-wrapper h1 {
+  font-size: 42px;
+  margin: 40px 0;
+  font-family: var(--display-font-family-bold);
+}
+
 /* category heading above a card group — sage underline separating each group,
    matching the source's .component-subheading.border-bottom-gold. Scoped to
    `.section.no-cta` (the card-group sections on the resources page) so it can't
