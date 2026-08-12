@@ -50,9 +50,8 @@ function renderYouTube(id, label) {
   const wrapper = document.createElement('div');
   wrapper.className = 'video-embed';
 
-  // real <img> poster (not a CSS background): a replaced element renders reliably
-  // in the Universal Editor, where inline-style background-image is sanitized away.
-  // Its intrinsic 4:3 hqdefault letterbox is cropped to 16:9 by CSS (object-fit).
+  // poster thumbnail; its intrinsic 4:3 hqdefault letterbox is cropped to 16:9
+  // by CSS (object-fit: cover)
   const poster = document.createElement('img');
   poster.className = 'video-embed-poster';
   poster.loading = 'lazy';
