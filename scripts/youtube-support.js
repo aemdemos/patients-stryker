@@ -101,6 +101,16 @@ export default function decorateYouTube(main) {
     // authors can describe the video inline.
     const text = a.textContent.trim();
     const label = a.getAttribute('title') || (text && text !== src ? text : '');
-    a.replaceWith(renderYouTube(id, label));
+    const facade = renderYouTube(id, label);
+
+    // Move this YouTube link's Universal Editor instrumentation onto its facade.
+    // Without it, replacing the link strips the data-aue-* attributes UE tracks and
+    // the editor reverts to the source link (video never renders in UE). Scoped to
+    // this matched anchor only; a no-op on the live site (no such attributes there).
+    [...a.attributes]
+      .filter(({ name }) => name.startsWith('data-aue-') || name.startsWith('data-richtext-'))
+      .forEach(({ name, value }) => facade.setAttribute(name, value));
+
+    a.replaceWith(facade);
   });
 }
