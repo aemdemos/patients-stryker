@@ -283,6 +283,7 @@
         "name": "classes",
         "label": "Style",
         "value": "",
+        "valueType": "string",
         "options": [
           {
             "name": "Left",

@@ -38,6 +38,7 @@
           "name": "classes",
           "label": "Style",
           "value": "",
+          "valueType": "string",
           "options": [
             { "name": "Left", "value": "left" },
             { "name": "CTA", "value": "cta" },
