@@ -106,6 +106,119 @@
   color: var(--text-color);
 }
 
+/* ===== Banner variant — "Get the facts" style: a wide photographic banner
+   with the copy stacked below the image on mobile and overlaid on the bright
+   left panel of the photo on desktop. Gold Futura headline, dark serif
+   subheading, gold CTA (global .button.accent). ===== */
+
+/* Banner is a CONTAINED, drop-shadowed card within the content column (matches
+   the source .pDiv.bg-shadow) — NOT full-bleed like the fullbleed variant. The
+   base .hero-container .hero-wrapper rule strips max-width/padding for fullbleed;
+   restore the standard content containment when the wrapper holds a banner. */
+.hero-container .hero-wrapper:has(.hero.banner) {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+}
+
+.hero.banner {
+  display: block;
+  position: static;
+  margin-block: var(--space-block);
+  padding: 0;
+  min-height: 0;
+  box-shadow: var(--shadow-soft);
+  overflow: clip;
+}
+
+.hero.banner picture {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  width: 100%;
+}
+
+.hero.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* copy block — sits below the image on mobile */
+.hero.banner > div:last-child {
+  box-sizing: border-box;
+  padding: var(--space-section) 8% 0;
+}
+
+.hero.banner h1,
+.hero.banner h2 {
+  max-width: none;
+  margin-inline: 0;
+  text-align: left;
+}
+
+/* headline — all gold, Futura bold, fluid on mobile so it fills the column */
+.hero.banner h1 {
+  margin-bottom: var(--space-block);
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  font-size: 7vw;
+  line-height: var(--heading-line-height);
+}
+
+/* subheading — dark serif */
+.hero.banner h2 {
+  margin-bottom: var(--space-block);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+.hero.banner .button-wrapper {
+  margin-block: 0 var(--space-block);
+}
+
+/* desktop — image is a full-width banner; copy overlays the bright left panel,
+   vertically centered. Source crosses over at 840px (headline 3.5vw). */
+@media (width >= 840px) {
+  .hero.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* stack the image row and the copy row in the same grid cell */
+  .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+  .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: center;
+    max-width: 45%;
+    padding: 0 0 0 5vw;
+  }
+
+  .hero.banner h1 {
+    font-size: 3.5vw;
+  }
+
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* large desktop — source caps the fluid headline at 1439px (49px) */
+@media (width >= 1439px) {
+  .hero.banner h1 {
+    font-size: 49px;
+  }
+}
+
 /* desktop — wide image, text overlaid on the white left panel, centered.
    Source crosses over at 840px (headline 3.5vw, copy 1.5vw). */
 @media (width >= 840px) {

@@ -188,6 +188,10 @@
           {
             "name": "Fullbleed",
             "value": "fullbleed"
+          },
+          {
+            "name": "Banner",
+            "value": "banner"
           }
         ]
       },
@@ -212,10 +216,22 @@
         "label": "Mobile Image (optional)",
         "multi": false,
         "condition": {
-          "in": [
-            "fullbleed",
+          "or": [
             {
-              "var": "classes"
+              "in": [
+                "fullbleed",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "banner",
+                {
+                  "var": "classes"
+                }
+              ]
             }
           ]
         }
@@ -227,10 +243,22 @@
         "label": "Mobile Image Alt",
         "value": "",
         "condition": {
-          "in": [
-            "fullbleed",
+          "or": [
             {
-              "var": "classes"
+              "in": [
+                "fullbleed",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "banner",
+                {
+                  "var": "classes"
+                }
+              ]
             }
           ]
         }
