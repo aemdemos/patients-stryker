@@ -13,8 +13,8 @@
   object-fit: contain;
 }
 
-/* YouTube click-to-load facade (rendered by scripts/dm-support.js). A 16:9 box
-   holds the poster thumbnail + play button; on click the real iframe replaces
+/* YouTube click-to-load facade (rendered by scripts/youtube-support.js). A 16:9
+   box holds the poster thumbnail + play button; on click the real iframe replaces
    them and fills the same box, so there's no layout shift. */
 .video-embed {
   position: relative;
@@ -24,15 +24,25 @@
   overflow: clip;
 }
 
-/* the button fills the box and shows the poster as a cover background. cover
-   crops the 4:3 hqdefault thumbnail's baked-in letterbox (top/bottom black bars
-   fall exactly outside a 16:9 crop), so the frame reads as a clean 16:9 still. */
+/* poster fills the box; object-fit:cover crops the 4:3 hqdefault thumbnail's
+   baked-in letterbox (top/bottom black bars fall outside a 16:9 crop) */
+.video-embed-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* size the img box from its width so it matches the 16:9
+                           container; cover then crops the 4:3 source's letterbox */
+  object-fit: cover;
+  object-position: center;
+}
+
+/* transparent click target over the poster; holds the play button (::before/::after) */
 .video-embed-play {
   position: absolute;
   inset: 0;
   padding: 0;
   border: 0;
-  background: var(--video-poster) center / cover no-repeat;
+  background: none;
   cursor: pointer;
 }
 
