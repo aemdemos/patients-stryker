@@ -103,6 +103,14 @@
   line-height: 16px;
   white-space: nowrap; /* keep "Watch on" + logo on one line */
   text-decoration: none; /* override the global/section link underline */
+  transition: background 0.15s ease;
+}
+
+/* subtle dark-pill hover — slightly lighten the background so the control reads as
+   interactive (YouTube's own hover is JS-driven, so this is a standard equivalent) */
+.video-embed-watch:hover,
+.section.serif .columns a.video-embed-watch:hover {
+  background: rgb(40 40 40 / 90%);
 }
 
 /* scope to .video-embed so this beats `.columns img { height: auto }` (equal-ish
