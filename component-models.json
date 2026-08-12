@@ -60,6 +60,14 @@
           {
             "name": "Light Gray",
             "value": "light-gray"
+          },
+          {
+            "name": "Serif",
+            "value": "serif"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
           }
         ]
       }
@@ -148,6 +156,30 @@
         "validation": {
           "numberMin": 1,
           "numberMax": 3
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Layout",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "50-50 Layout",
+            "value": "columns-50-50"
+          },
+          {
+            "name": "Icon Grid",
+            "value": "columns-icon-grid"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "columns"
+            },
+            2
+          ]
         }
       }
     ]
