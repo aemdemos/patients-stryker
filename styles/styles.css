@@ -488,6 +488,53 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+/* cards-group section: a category heading followed by one or more fragment
+   blocks whose cards must flow into ONE shared responsive grid (matching the
+   source resources.html, where each category h2 sits above a single 4-up row).
+   Because each fragment renders as its own .cards>ul, we flatten every wrapper
+   layer between the section and the <li>s with display:contents, then lay the
+   section out as the grid. The heading wrapper spans the full row.
+   Breakpoints mirror the source (col-xs-12 / col-sm-6 @841 / col-md-3 @1024). */
+main > .section.cards-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-section);
+  align-items: start;
+}
+
+main > .section.cards-group > .default-content-wrapper,
+main > .section.cards-group > .fragment-wrapper,
+main > .section.cards-group .fragment,
+main > .section.cards-group .cards-container,
+main > .section.cards-group .cards-wrapper,
+main > .section.cards-group .cards,
+main > .section.cards-group .cards > ul {
+  display: contents;
+}
+
+/* the category heading spans the full grid row (above the cards) */
+main > .section.cards-group > .default-content-wrapper h2 {
+  grid-column: 1 / -1;
+}
+
+/* each brochure card is a grid item */
+main > .section.cards-group .cards > ul > li {
+  margin: 0;
+}
+
+@media (width >= 841px) {
+  main > .section.cards-group {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (width >= 1024px) {
+  main > .section.cards-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 /* divider between the fullbleed hero and the cards section — constrained to content width */
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);

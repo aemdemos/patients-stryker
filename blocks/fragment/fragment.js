@@ -7,6 +7,7 @@
 // eslint-disable-next-line import/no-cycle
 import {
   decorateMain,
+  removeCtas,
 } from '../../scripts/scripts.js';
 
 import {
@@ -47,4 +48,10 @@ export default async function decorate(block) {
   const path = link ? link.getAttribute('href') : block.textContent.trim();
   const fragment = await loadFragment(path);
   if (fragment) block.replaceChildren(...fragment.childNodes);
+
+  // If this fragment sits in a section flagged `no-cta`, strip the fragment's
+  // CTA button/link from the DOM. Fragments load async (after the host page's
+  // decorateMain has run), so the removal must happen here — once the fragment
+  // content is inlined — rather than in the page-level pass.
+  if (block.closest('.section.no-cta')) removeCtas(block);
 }

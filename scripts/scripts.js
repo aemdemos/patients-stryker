@@ -10,6 +10,9 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  readBlockConfig,
+  toClassName,
+  toCamelCase,
 } from './aem.js';
 
 import decorateDMAssets from './dm-support.js';
@@ -195,6 +198,57 @@ function decorateFootnotes(main) {
 }
 
 /**
+ * Applies section-metadata "Style" values as classes on their section.
+ * The core aem.js decorateSections() in this project does not process section
+ * metadata into section classes, so we restore that stock EDS behaviour here
+ * (in project code, without modifying aem.js). Each `.section-metadata` block's
+ * `Style` row (comma-separated) becomes classes on the parent section, and the
+ * metadata block itself is removed. This is what makes flags like `highlight`
+ * and `no-cta` resolve to real `.section.<flag>` hooks for CSS/JS.
+ * @param {Element} main The main element (sections already decorated)
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll('.section .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    if (!section) return;
+    const config = readBlockConfig(meta);
+    Object.entries(config).forEach(([key, value]) => {
+      if (key === 'style') {
+        const styles = (Array.isArray(value) ? value : value.split(','))
+          .map((s) => toClassName(s.trim()))
+          .filter((s) => s);
+        styles.forEach((s) => section.classList.add(s));
+      } else {
+        section.dataset[toCamelCase(key)] = value;
+      }
+    });
+    // remove the metadata block (and its section wrapper) so it is neither
+    // rendered nor picked up by decorateBlocks as a loadable block.
+    (meta.closest('.section-metadata-wrapper') || meta).remove();
+  });
+}
+
+/**
+ * Removes fragment CTA buttons/links from any section flagged `no-cta`.
+ * The shared card fragments (e.g. /fragments/card-*) bake in a "LEARN MORE"
+ * CTA because other pages reuse them WITH the button. On pages/sections that
+ * must not show it (e.g. the resources.html import), authors add the `no-cta`
+ * section style. This removes the decorated CTA from the DOM entirely — not a
+ * CSS hide — so it is absent for screen readers and crawlers too. Runs after
+ * fragments load (fragment.js appends their decorated content, then the outer
+ * page's loadSection triggers this via decorateMain on the host page, and the
+ * fragment block re-applies it post-load — see fragment.js).
+ * @param {Element} scope The container to clean (a section or the fragment root)
+ */
+export function removeCtas(scope) {
+  scope.querySelectorAll('.button-wrapper').forEach((wrapper) => {
+    // only strip wrappers whose sole content is the CTA link (button-wrapper is
+    // created by decorateButtons around a standalone link paragraph)
+    if (wrapper.querySelector('a.button')) wrapper.remove();
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -205,6 +259,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
   decorateFootnotes(main);
