@@ -21,9 +21,6 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
-// YouTube signatures (watch, short youtu.be, and privacy-friendly nocookie embeds)
-const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
-
 // hls.js — lazy-loaded only when a DM video needs it (Chrome/Firefox lack native
 // HLS). Pinned version, loaded from jsDelivr on demand. The Subresource
 // Integrity hash pins the exact bytes: the browser refuses to run the script if
@@ -58,9 +55,6 @@ const DM_SELECTOR = [
   'a[href*=".mp4"]',
   'a[href*=".webm"]',
   'a[href*=".mov"]',
-  'a[href*="youtube.com"]',
-  'a[href*="youtube-nocookie.com"]',
-  'a[href*="youtu.be"]',
   'img[src*="/is/image/"]',
   'img[src*="/adobe/assets/"]',
 ].join(',');
@@ -251,72 +245,9 @@ function renderVideo(src, label) {
 }
 
 /**
- * Extract the 11-char video id from any common YouTube URL shape
- * (watch?v=, youtu.be/ID, /embed/ID, /shorts/ID). Returns '' if none.
- * @param {string} src the authored YouTube URL
- * @returns {string}
- */
-function youTubeId(src) {
-  try {
-    const url = new URL(src, window.location.href);
-    if (url.searchParams.get('v')) return url.searchParams.get('v');
-    const m = url.pathname.match(/\/(?:embed|shorts|v)\/([\w-]{11})|^\/([\w-]{11})$/);
-    return (m && (m[1] || m[2])) || '';
-  } catch {
-    return '';
-  }
-}
-
-/**
- * Build a click-to-load YouTube facade: a responsive 16:9 box showing the poster
- * thumbnail and a play button, with the real iframe injected only on activation.
- * This keeps YouTube's heavy player JS off the initial load (better performance
- * and privacy) while matching the reference's embedded-video layout.
- * @param {string} src the authored YouTube URL
- * @param {string} label optional accessible label (from link title/text)
- * @returns {HTMLElement}
- */
-function renderYouTube(src, label) {
-  const id = youTubeId(src);
-  const wrapper = document.createElement('div');
-  wrapper.className = 'video-embed';
-  if (!id) return wrapper;
-
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = 'video-embed-play';
-  button.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
-
-  const poster = document.createElement('img');
-  poster.className = 'video-embed-poster';
-  poster.loading = 'lazy';
-  poster.alt = label || '';
-  poster.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
-  button.append(poster);
-
-  button.addEventListener('click', () => {
-    const iframe = document.createElement('iframe');
-    iframe.className = 'video-embed-iframe';
-    // nocookie host + autoplay on click; rel=0 limits related videos
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-    // match YouTube's own recommended embed attributes so the player attributes
-    // the embed to our origin (avoids some "confirm you're human" gates) and gets
-    // the full capability set. `allow` grants fullscreen, so no allowfullscreen attr.
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
-    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-    iframe.title = label || 'YouTube video player';
-    wrapper.replaceChildren(iframe);
-  });
-
-  wrapper.append(button);
-  return wrapper;
-}
-
-/**
  * Pick the renderer for a DM URL, or null if it isn't a DM asset.
  */
 function dmRendererFor(src) {
-  if (YOUTUBE.test(src)) return renderYouTube;
   if (DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return renderVideo;
   if (DM_OPENAPI.test(src)) return renderOpenAPI;
   if (DM_SCENE7.test(src)) return renderScene7;
@@ -348,8 +279,8 @@ export default function decorateDMAssets(main) {
       if (text && text !== src) displayText = text;
     }
 
-    if (render === renderVideo || render === renderYouTube) {
-      el.replaceWith(render(src, el.getAttribute('title') || displayText));
+    if (render === renderVideo) {
+      el.replaceWith(renderVideo(src, el.getAttribute('title') || displayText));
       return;
     }
     const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
