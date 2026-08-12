@@ -77,25 +77,30 @@
   opacity: 0.85;
 }
 
-/* static "Watch on [YouTube logo]" link, bottom-right over the poster (mirrors
-   the native player's corner link). Sits above the full-box play button so it
-   stays independently clickable. Uses the sans display font, not the section's
-   serif link style, and the YouTube wordmark as an image. */
+/* "Watch on [YouTube logo]" corner link, mirroring the native player's chrome:
+   a solid dark pill flush against the bottom-right edge (dimensions taken from
+   YouTube's own ytp-impression-link CSS). Sits above the full-box play button so
+   it stays independently clickable. Plain sans font, not the section's serif. */
 .video-embed-watch,
 .section.serif .columns a.video-embed-watch {
   position: absolute;
-  right: 12px;
-  bottom: 10px;
+  right: 0;
+  bottom: 5px;
   display: flex;
   align-items: center; /* vertically centre the wordmark with "Watch on" */
-  gap: 5px;
-  color: var(--color-white);
+  gap: 9px;
+  height: 47px;
+  padding: 0 12px;
+  background: rgb(23 23 23 / 80%);
 
-  /* native player's corner label is a plain sans (Roboto/Arial) — not the
-     section's serif link font, and not Futura's single-story letterforms */
+  /* rounded on the left only — the pill is flush against the box's right edge */
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
+  color: var(--color-white);
   font-family: arial, helvetica, sans-serif;
-  font-size: var(--body-font-size-m);
+  font-size: 16px;
   font-weight: 500;
+  line-height: 16px;
   white-space: nowrap; /* keep "Watch on" + logo on one line */
   text-decoration: none; /* override the global/section link underline */
 }
@@ -103,10 +108,8 @@
 /* scope to .video-embed so this beats `.columns img { height: auto }` (equal-ish
    specificity otherwise lets that rule win and collapse the SVG to 0 height) */
 .video-embed .video-embed-watch-logo {
-  /* explicit size (viewBox 90x20 → 4.5:1) so the replaced element contributes a
-     definite width to the flex link's shrink-to-fit sizing (else it overflows) */
-  width: 68px;
-  height: 15px;
+  width: 72px;
+  height: 16px;
 }
 
 .video-embed-iframe {
