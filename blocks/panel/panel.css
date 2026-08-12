@@ -201,6 +201,16 @@
   margin: 0 0 var(--space-block);
 }
 
+/* gray variant body copy: serif family, 14px (styling for the .panel.gray box
+   itself and its heading lives with the other variants further down). Placed
+   here alongside the other variant p rules to precede the :last-child rules. */
+.panel.gray .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
 .panel .panel-body p:last-child {
   margin: 0 0 var(--space-block);
 }
@@ -220,6 +230,26 @@
   background: var(--color-accent);
   box-shadow: none;
   text-align: center;
+}
+
+/* ---- gray variant (IVS "How it works" callout) -----------------------
+   Light-gray box, left-aligned black text, no shadow — measured from source
+   .has-background.bg-light-gray (bg #edeeec = --color-surface, 15px padding,
+   Futura-bold heading, serif body copy). */
+.panel.gray .panel-body {
+  padding: var(--space-block);
+  background: var(--color-surface);
+  box-shadow: none;
+  text-align: left;
+}
+
+.panel.gray .panel-body h3 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  color: var(--color-black);
 }
 
 /* Universal Editor authoring view: the block keeps its authored div structure
