@@ -201,13 +201,14 @@
   margin: 0 0 var(--space-block);
 }
 
-/* gray variant body copy: serif family, 14px (styling for the .panel.gray box
-   itself and its heading lives with the other variants further down). Placed
-   here alongside the other variant p rules to precede the :last-child rules. */
+/* gray variant body copy: Futura-bold display family (styling for the
+   .panel.gray box itself and its heading lives with the other variants further
+   down). Placed here alongside the other variant p rules to precede the
+   :last-child rules. */
 .panel.gray .panel-body p {
   margin: 0 0 var(--space-block);
-  font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-m);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-cta-body-size);
   line-height: var(--paragraph-line-height);
 }
 
@@ -246,8 +247,8 @@
 .panel.gray .panel-body h3 {
   max-width: none;
   margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-m);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size-s);
   font-weight: 700;
   color: var(--color-black);
 }
