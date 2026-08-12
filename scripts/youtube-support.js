@@ -50,17 +50,15 @@ function renderYouTube(id, label) {
   const wrapper = document.createElement('div');
   wrapper.className = 'video-embed';
 
+  // the poster is a background-image on the play button (via a custom property).
+  // background-size:cover reliably crops the 4:3 hqdefault thumbnail's baked-in
+  // letterbox to the 16:9 box — unlike an <img>, whose % height doesn't resolve
+  // against the aspect-ratio box in every engine.
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'video-embed-play';
   button.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
-
-  const poster = document.createElement('img');
-  poster.className = 'video-embed-poster';
-  poster.loading = 'lazy';
-  poster.alt = label || '';
-  poster.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
-  button.append(poster);
+  button.style.setProperty('--video-poster', `url("https://i.ytimg.com/vi/${id}/hqdefault.jpg")`);
 
   button.addEventListener('click', () => {
     const iframe = document.createElement('iframe');

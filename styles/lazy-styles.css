@@ -24,24 +24,31 @@
   overflow: clip;
 }
 
+/* the button fills the box and shows the poster as a cover background. cover
+   crops the 4:3 hqdefault thumbnail's baked-in letterbox (top/bottom black bars
+   fall exactly outside a 16:9 crop), so the frame reads as a clean 16:9 still. */
 .video-embed-play {
-  display: block;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   padding: 0;
   border: 0;
-  background: none;
+  background: var(--video-poster) center / cover no-repeat;
   cursor: pointer;
 }
 
-.video-embed-poster {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* YouTube-style play button: a red rounded rectangle (::before) with a centered
+   white triangle (::after), matching the reference's native player button. */
+.video-embed-play::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 68px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--color-youtube);
 }
 
-/* play triangle drawn in CSS over a translucent scrim, centered in the box */
 .video-embed-play::after {
   content: "";
   position: absolute;
@@ -50,9 +57,14 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 18px 0 18px 30px;
+  border-width: 11px 0 11px 19px;
   border-color: transparent transparent transparent var(--color-white);
-  filter: drop-shadow(0 0 6px rgb(0 0 0 / 60%));
+}
+
+/* brighten the button slightly on hover/focus */
+.video-embed-play:hover::before,
+.video-embed-play:focus-visible::before {
+  opacity: 0.85;
 }
 
 .video-embed-iframe {
