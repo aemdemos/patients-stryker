@@ -98,6 +98,7 @@
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+  --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
@@ -231,14 +232,17 @@ b {
    italic is a color signal only and must not slant the heading, so it is
    normalized upright. The combined marker is then painted gold. */
 h1 :is(strong, em),
-h2 :is(strong, em) {
+h2 :is(strong, em),
+h3 :is(strong, em) {
   font-style: normal;
 }
 
 h1 strong em,
 h1 em strong,
 h2 strong em,
-h2 em strong {
+h2 em strong,
+h3 strong em,
+h3 em strong {
   color: var(--color-accent);
 }
 
@@ -495,6 +499,30 @@ main .section.highlight {
 main > .section.no-cta > .default-content-wrapper h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
+/* full-bleed section — the background spans the full viewport width while the
+   inner content stays capped at the container max-width and centred. In EDS the
+   .section is already full-viewport-width and only its inner > div is capped, so
+   a background here is inherently edge-to-edge. This mirrors the reference site's
+   .c-full-bleed-panel (layout) + .bg-light-gray (colour): pair .full-bleed with a
+   colour variant below to reproduce the gray 3-column band.
+   margin-block: 0 lets adjacent full-bleed panels butt together with no gap. */
+main > .section.full-bleed {
+  margin-block: 0;
+  padding-block: var(--space-section);
+}
+
+/* section background colour variant — pair with .full-bleed for an edge-to-edge
+   fill. Keeps the default dark body text readable. Named to match the reference
+   site's .bg-light-gray. */
+main > .section.light-gray {
+  background-color: var(--color-surface);
+}
+
+/* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
+   a gray-to-teal gradient band with white text. Pair with .full-bleed. */
+main > .section.dark {
+  background: var(--panel-dark-gradient);
+  color: var(--color-white);
 }
 
 /* divider between the fullbleed hero and the cards section — constrained to content width */
@@ -507,7 +535,6 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
    source's .c-page-hero-content.border-bottom-gold 1px divider */
 main > .section:first-child > .default-content-wrapper {
   padding-bottom: var(--space-section);
-  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* audience note above the fullbleed hero */

@@ -299,6 +299,33 @@ export function mergeSectionCards(section) {
     // remove the emptied cards block and its now-empty fragment/section wrappers
     const fragmentRoot = block.closest('.fragment-wrapper') || block.closest('.fragment') || block;
     fragmentRoot.remove();
+ * Reads each section's `.section-metadata` block and applies the authored
+ * settings to the section: `Style` values become CSS classes (so authors can
+ * pick section variants like `full-bleed` / `highlight`), and any other keys are
+ * exposed as `data-*` attributes. This mirrors the section-metadata handling the
+ * AEM boilerplate normally performs in `decorateSections`; this project's
+ * `aem.js` ships a trimmed version, so we do it here without touching aem.js.
+ * @param {Element} main The main container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll('.section > div > div.section-metadata').forEach((metaBlock) => {
+    const section = metaBlock.closest('.section');
+    const meta = readBlockConfig(metaBlock);
+    Object.keys(meta).forEach((key) => {
+      if (key === 'style') {
+        const styles = meta.style
+          .split(',')
+          .map((style) => toClassName(style.trim()))
+          .filter((style) => style);
+        styles.forEach((style) => section.classList.add(style));
+      } else {
+        section.dataset[toCamelCase(key)] = meta[key];
+      }
+    });
+    // the metadata table is configuration, not content — remove it and its wrapper
+    const wrapper = metaBlock.parentElement;
+    metaBlock.remove();
+    if (wrapper && wrapper.children.length === 0) wrapper.remove();
   });
 }
 
