@@ -81,22 +81,27 @@ function withParams(src, params) {
  * Build a <picture> for a Scene7 / classic DM URL.
  * fit=constrain keeps the image proportional (Scene7 otherwise upscales width
  * and clips height to the asset's native box, distorting the aspect ratio).
+ * Transparent assets (a `$..._png$` preset or an explicit `fmt=png`) are served
+ * as PNG so transparency is preserved — forcing jpeg would flatten it to white.
  */
 function renderScene7(src, alt, eager) {
+  const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(src);
+  const fmt = png ? 'png-alpha' : 'jpeg';
+  const type = png ? 'image/png' : 'image/jpeg';
   const picture = document.createElement('picture');
   BREAKPOINTS.forEach((br, i) => {
-    const srcset = withParams(src, { wid: br.width, fmt: 'jpeg', fit: 'constrain' });
+    const srcset = withParams(src, { wid: br.width, fmt, fit: 'constrain' });
     if (i < BREAKPOINTS.length - 1) {
       const source = document.createElement('source');
       if (br.media) source.media = br.media;
-      source.type = 'image/jpeg';
+      source.type = type;
       source.srcset = srcset;
       picture.append(source);
     } else {
       const img = document.createElement('img');
       img.loading = eager ? 'eager' : 'lazy';
       img.alt = alt;
-      img.src = withParams(src, { wid: br.width, fit: 'constrain' });
+      img.src = withParams(src, { wid: br.width, fmt, fit: 'constrain' });
       picture.append(img);
     }
   });

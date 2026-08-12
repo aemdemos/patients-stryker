@@ -10,7 +10,6 @@
 }
 
 .columns > div > div {
-  order: 1;
   box-sizing: border-box;
   padding: 0 15px;
 }
@@ -21,22 +20,11 @@
      on the image column). padding doesn't collapse with the margin, so they add. */
   margin-bottom: var(--space-section); /* 30px gap below the image */
   padding-bottom: 3%; /* additional gap before the heading, matches the reference's percentage-based text-wrapper padding */
-  order: 0;
 }
 
 .columns .columns-img-col img {
   display: block;
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
-}
-
-/* 50-50 and icon-grid cells stack in natural source order on mobile. The base
-   order:0/1 above forces an image cell to the top, which is wrong for these
-   variants: when the DM link isn't wrapped in a <p> (as on the live site),
-   .columns-img-col lands on the cell itself and its order:0 flips a text-left /
-   image-right row so the image sits on top. A uniform order restores DOM order. */
-.columns.columns-50-50 > div > div,
-.columns.columns-icon-grid > div > div {
-  order: 0;
 }
 
 .columns h4 {
@@ -87,7 +75,6 @@
 
   .columns > div > div {
     flex: 0 0 50%;
-    order: unset;
   }
 
   /* icon-grid: 6 cells wrap 2-up into 3 rows; add the reference's inter-row gap */
