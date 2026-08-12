@@ -12,3 +12,53 @@
   aspect-ratio: 16 / 9;
   object-fit: contain;
 }
+
+/* YouTube click-to-load facade (rendered by scripts/dm-support.js). A 16:9 box
+   holds the poster thumbnail + play button; on click the real iframe replaces
+   them and fills the same box, so there's no layout shift. */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-black);
+  overflow: clip;
+}
+
+.video-embed-play {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.video-embed-poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* play triangle drawn in CSS over a translucent scrim, centered in the box */
+.video-embed-play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 18px 0 18px 30px;
+  border-color: transparent transparent transparent var(--color-white);
+  filter: drop-shadow(0 0 6px rgb(0 0 0 / 60%));
+}
+
+.video-embed-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
