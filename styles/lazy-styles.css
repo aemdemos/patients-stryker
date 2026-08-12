@@ -100,7 +100,9 @@
   text-decoration: none; /* override the global/section link underline */
 }
 
-.video-embed-watch-logo {
+/* scope to .video-embed so this beats `.columns img { height: auto }` (equal-ish
+   specificity otherwise lets that rule win and collapse the SVG to 0 height) */
+.video-embed .video-embed-watch-logo {
   /* explicit size (viewBox 90x20 → 4.5:1) so the replaced element contributes a
      definite width to the flex link's shrink-to-fit sizing (else it overflows) */
   width: 68px;
