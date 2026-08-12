@@ -528,7 +528,6 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
    source's .c-page-hero-content.border-bottom-gold 1px divider */
 main > .section:first-child > .default-content-wrapper {
   padding-bottom: var(--space-section);
-  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* audience note above the fullbleed hero */
