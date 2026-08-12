@@ -98,6 +98,7 @@
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+  --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
@@ -231,14 +232,17 @@ b {
    italic is a color signal only and must not slant the heading, so it is
    normalized upright. The combined marker is then painted gold. */
 h1 :is(strong, em),
-h2 :is(strong, em) {
+h2 :is(strong, em),
+h3 :is(strong, em) {
   font-style: normal;
 }
 
 h1 strong em,
 h1 em strong,
 h2 strong em,
-h2 em strong {
+h2 em strong,
+h3 strong em,
+h3 em strong {
   color: var(--color-accent);
 }
 
@@ -505,6 +509,13 @@ main > .section.full-bleed {
    site's .bg-light-gray. */
 main > .section.light-gray {
   background-color: var(--color-surface);
+}
+
+/* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
+   a gray-to-teal gradient band with white text. Pair with .full-bleed. */
+main > .section.dark {
+  background: var(--panel-dark-gradient);
+  color: var(--color-white);
 }
 
 /* divider between the fullbleed hero and the cards section — constrained to content width */

@@ -10,7 +10,6 @@
 }
 
 .columns > div > div {
-  order: 1;
   box-sizing: border-box;
   padding: 0 15px;
 }
@@ -21,7 +20,6 @@
      on the image column). padding doesn't collapse with the margin, so they add. */
   margin-bottom: var(--space-section); /* 30px gap below the image */
   padding-bottom: 3%; /* additional gap before the heading, matches the reference's percentage-based text-wrapper padding */
-  order: 0;
 }
 
 .columns .columns-img-col img {
@@ -55,6 +53,19 @@
   padding-right: 3%;
 }
 
+/* icon-grid variant — each cell is a centred icon over a serif subtitle, a bold
+   Futura heading and body text (reference: zip-skin-closure "Benefits of Zip").
+   Cell text is left-aligned; only the icon centres. Layout (2-up + row gap) lives
+   in the tablet/desktop media queries below. */
+.columns.columns-icon-grid .columns-img-col {
+  margin-bottom: var(--space-section); /* 30px icon-to-subtitle gap */
+  padding-bottom: 0;
+}
+
+.columns.columns-icon-grid .columns-img-col img {
+  width: 150px; /* fixed icon size, as on the reference */
+}
+
 /* tablet — reference switches to a 2-up layout at 841px */
 @media (width >= 841px) {
   .columns > div {
@@ -64,7 +75,11 @@
 
   .columns > div > div {
     flex: 0 0 50%;
-    order: unset;
+  }
+
+  /* icon-grid: 6 cells wrap 2-up into 3 rows; add the reference's inter-row gap */
+  .columns.columns-icon-grid > div {
+    row-gap: var(--space-section);
   }
 }
 
@@ -77,6 +92,136 @@
   .columns > div > div {
     flex: 1;
   }
+
+  /* icon-grid stays a wrapping 2-up grid on desktop (the base 1024 rule would
+     otherwise force all 6 cells into one nowrap row) */
+  .columns.columns-icon-grid > div {
+    flex-wrap: wrap;
+  }
+
+  /* 50-50 columns are a true 50% each (like the reference's col-sm-6). The base
+     flex:1 1 0% equalises content boxes, so columns with different padding end up
+     unequal and the image shrinks; a fixed 50% basis keeps both halves equal. */
+  .columns.columns-50-50 > div > div,
+  .columns.columns-icon-grid > div > div {
+    flex: 0 0 50%;
+  }
+
+  /* serif image+text rows centre the image against the text block only at desktop
+     (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
+  .section.serif .columns.columns-50-50 > div {
+    align-items: center;
+  }
+}
+
+/* 50-50 variant — two equal columns (image + text, or text + text). The base
+   .columns rules already produce the 50/50 side-by-side layout; these rules match
+   the reference's heading size and the small top offset on the text column. */
+.columns.columns-50-50 h4 {
+  font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
+}
+
+/* in an image+text row, the text column sits slightly below the image top, as
+   in the reference. Only applies when the row has a picture (not text+text rows). */
+@media (width >= 841px) {
+  .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: var(--space-section);
+  }
+
+  /* wider gap between image and text than the base 30px gutter (reference ~64px):
+     add inset on the text column, toward the image. Image-left row → text is the
+     2nd child, inset its left; image-right row → text is the 1st child, inset its
+     right. (Avoids nested :has, which is invalid.) --col-5050-inset is overridden
+     per section variant (e.g. the serif/stroke section uses a wider gap). */
+  .columns.columns-50-50 {
+    --col-5050-inset: 49px;
+  }
+
+  .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+    padding-left: var(--col-5050-inset);
+  }
+
+  .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-right: var(--col-5050-inset);
+  }
+
+  /* stroke/serif section uses a wider image-to-text gap (~98px vs 64px) */
+  .section.serif .columns.columns-50-50 {
+    --col-5050-inset: 83px;
+  }
+
+  /* serif image-right row: the reference also insets the text column's outer
+     (left) edge, not just the image-facing side, so the text sits further in */
+  .section.serif .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-left: var(--col-5050-inset);
+  }
+
+  /* drop the mobile image-stacking gap so the image doesn't carry a bottom-only
+     gap when the columns are side by side (tablet top-aligns like the reference) */
+  .section.serif .columns.columns-50-50 .columns-img-col {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* serif section variant — column body text in URW Egyptienne serif at 21px, as
+   on the stroke-awareness page. Typography only; layout stays columns-50-50. */
+.section.serif .columns p,
+.section.serif .columns ul,
+.section.serif .columns li,
+.section.serif .columns a {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+/* stroke title — the reference enlarges it 1.5x (21px → 31.5px), Futura bold.
+   Colour/family/weight come from the global bold+italic gold-heading rule. */
+.section.serif .columns h3 {
+  font-size: calc(var(--heading-font-size-l) * 1.5);
+  line-height: var(--heading-line-height);
+}
+
+/* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
+   image is above or below the text. Neutralise the base image-column margin/padding
+   and the columns' own trailing margin so row-gap alone governs the spacing. */
+.section.serif .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+}
+
+.section.serif .columns.columns-50-50 .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.serif .columns.columns-50-50 > div > div > :last-child {
+  margin-bottom: 0;
+}
+
+/* dark variant — gold Futura-bold headings and white body text on the dark
+   gradient panel (reference: knee-pain "Where treatment begins" section). */
+.section.dark .columns h2,
+.section.dark .columns h3,
+.section.dark .columns h4 {
+  font-family: var(--display-font-family);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-accent);
+}
+
+.section.dark .columns p,
+.section.dark .columns ul,
+.section.dark .columns li {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
+}
+
+/* bullets stay black while the item text is white, as on the reference (there the
+   marker inherits the black <li> and the text lives in a white span) */
+.section.dark .columns li::marker {
+  color: var(--color-black);
 }
 
 /* light-gray variant — column text uses the serif heading font */
@@ -87,9 +232,39 @@
   font-family: var(--heading-font-family);
 }
 
+/* icon-grid cell text — subtitle (serif), bold Futura heading, then body */
+.columns.columns-icon-grid .columns-img-col ~ p {
+  /* inset the text so it sits inboard of the (centred) icon, as the reference does
+     at every width — its text wrapper has ~12.4% margin. Percentage scales with the
+     cell, keeping the same proportion when stacked (mobile) and 2-up (tablet/desktop). */
+  margin-block: 0 var(--space-block);
+  margin-inline: 12.4%;
+  padding: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+.columns.columns-icon-grid .columns-img-col ~ p:has(strong) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+.columns.columns-icon-grid .columns-img-col ~ p strong {
+  font-weight: 700;
+}
+
+.columns.columns-icon-grid .columns-img-col ~ p:has(strong) + p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
 /* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
-   widening the between-column gap and insetting the text */
-.section.light-gray .columns > div > div {
+   widening the between-column gap and insetting the text. Excludes the 50-50
+   variant, which keeps the base 15px so its image is the same size on either side. */
+.section.light-gray .columns:not(.columns-50-50) > div > div {
   padding-inline: 24px;
 }
 
@@ -195,3 +370,4 @@
     margin-bottom: var(--space-block);
   }
 }
+
