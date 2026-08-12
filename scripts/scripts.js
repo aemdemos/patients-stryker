@@ -242,9 +242,63 @@ function decorateSectionMetadata(main) {
  */
 export function removeCtas(scope) {
   scope.querySelectorAll('.button-wrapper').forEach((wrapper) => {
-    // only strip wrappers whose sole content is the CTA link (button-wrapper is
-    // created by decorateButtons around a standalone link paragraph)
-    if (wrapper.querySelector('a.button')) wrapper.remove();
+    const cta = wrapper.querySelector('a.button');
+    if (!cta) return;
+    const href = cta.getAttribute('href');
+
+    // The card fragments carry the brochure's PDF only in this CTA link. The
+    // source resources.html has NO button — instead the brochure image itself
+    // links to the PDF. So before removing the CTA, move its PDF target onto the
+    // card's image (wrap the <picture> in a link) so the brochure stays
+    // clickable-to-PDF and no content/link is lost. Fragment content is
+    // untouched; this is a render-time transform only.
+    const card = wrapper.closest('li') || wrapper.closest('.cards-card-image, .cards-card-body')?.parentElement;
+    const image = card && card.querySelector('.cards-card-image picture, .cards-card-image img');
+    if (href && image && !image.closest('a')) {
+      const picture = image.closest('picture') || image;
+      const holder = picture.closest('.cards-card-image') || picture.parentElement;
+      const a = document.createElement('a');
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      picture.replaceWith(a);
+      a.append(picture);
+      // keep the click target obvious for the whole image cell
+      if (holder) holder.style.cursor = 'pointer';
+    }
+
+    wrapper.remove();
+  });
+}
+
+/**
+ * Merges the cards of every `.cards` block within a section into a single grid.
+ *
+ * When a section includes more than one card fragment (each fragment renders its
+ * own `.cards > ul`), they would otherwise stack as separate grids. This moves
+ * all `<li>`s into the FIRST `.cards` block's `<ul>` — in document order — and
+ * removes the now-empty extra fragment wrappers. The result is one real `.cards`
+ * grid, so the block's own responsive grid CSS and the standard section
+ * container width/padding apply automatically (no special section styling, no
+ * display:contents). Variant classes on the first cards block are preserved.
+ *
+ * This is what lets "2 fragments in the same section" render as one row — the
+ * author simply drops both fragment blocks in a section; no flag needed.
+ * @param {Element} section the section element to consolidate
+ */
+export function mergeSectionCards(section) {
+  const cardsBlocks = [...section.querySelectorAll('.cards')];
+  if (cardsBlocks.length < 2) return;
+
+  const first = cardsBlocks[0];
+  const targetList = first.querySelector(':scope > ul');
+  if (!targetList) return;
+
+  cardsBlocks.slice(1).forEach((block) => {
+    block.querySelectorAll(':scope > ul > li').forEach((li) => targetList.append(li));
+    // remove the emptied cards block and its now-empty fragment/section wrappers
+    const fragmentRoot = block.closest('.fragment-wrapper') || block.closest('.fragment') || block;
+    fragmentRoot.remove();
   });
 }
 
