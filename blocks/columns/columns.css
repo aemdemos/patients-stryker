@@ -237,7 +237,11 @@
 
 /* icon-grid cell text — subtitle (serif), bold Futura heading, then body */
 .columns.columns-icon-grid .columns-img-col ~ p {
-  margin-bottom: var(--space-block);
+  /* inset the text so it sits inboard of the (centred) icon, as the reference does
+     at every width — its text wrapper has ~12.4% margin. Percentage scales with the
+     cell, keeping the same proportion when stacked (mobile) and 2-up (tablet/desktop). */
+  margin-block: 0 var(--space-block);
+  margin-inline: 12.4%;
   padding: 0;
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-xl);
