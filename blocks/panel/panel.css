@@ -207,9 +207,9 @@
    :last-child rules. */
 .panel.gray .panel-body p {
   margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
+  font-family: var(--body-font-family);
   font-size: var(--panel-cta-body-size);
-  line-height: var(--paragraph-line-height);
+  line-height: var(--panel-body-line-height-m);
 }
 
 .panel .panel-body p:last-child {
@@ -238,17 +238,18 @@
    .has-background.bg-light-gray (bg #edeeec = --color-surface, 15px padding,
    Futura-bold heading, serif body copy). */
 .panel.gray .panel-body {
-  padding: var(--space-block);
+  padding: 2%;
   background: var(--color-surface);
   box-shadow: none;
   text-align: left;
+  margin:0;
 }
 
 .panel.gray .panel-body h3 {
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
-  font-size: var(--panel-heading-size-s);
+  font-size: var(--panel-heading-size-xs);
   font-weight: 700;
   color: var(--color-black);
 }
@@ -263,6 +264,12 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+}
+
+@media (width >= 480px){
+  .panel.gray .panel-body h3 {
+    font-size: var(--panel-heading-size-s);
+  }
 }
 
 @media (width >= 841px) {

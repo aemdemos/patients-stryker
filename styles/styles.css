@@ -112,9 +112,12 @@
   --panel-cta-body-line-height: 1.15; /* cta variant p */
   --panel-heading-size: 35px; /* h3 */
   --panel-heading-size-s: 21.5px; /* gray variant h3 */
+  --panel-heading-size-xs: 17.5px; /* gray variant h3 on small screens */
   --panel-body-size: 24.5px; /* p */
   --panel-body-size-s: 21px;
+  --pannel-body-size-xs: 17.5px;
   --panel-body-line-height: 1.06; /* p */
+  --panel-body-line-height-m: 1.15; /* p */
   --panel-dark-gradient: linear-gradient(90deg, #545857, #3e5245); /* dark variant bg (measured) */
 
   /* radius scale (square-cornered design) */
