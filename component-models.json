@@ -310,7 +310,6 @@
         "component": "multiselect",
         "name": "classes",
         "label": "Style",
-        "value": "",
         "options": [
           {
             "name": "Left",
@@ -331,6 +330,10 @@
           {
             "name": "Gold",
             "value": "gold"
+          },
+          {
+            "name": "Gray",
+            "value": "gray"
           },
           {
             "name": "Wide",
