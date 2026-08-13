@@ -198,12 +198,33 @@ function decorateFootnotes(main) {
 }
 
 /**
+ * Applies an author-supplied `Background Image` to a section. The value is a
+ * URL authored in the section metadata (never shipped in code); it is exposed as
+ * the `--section-background-image` custom property, which styles.css consumes to
+ * paint the section background.
+ * @param {Element} section the `.section` element
+ * @param {string} url the authored background image URL
+ */
+function applySectionBackgroundImage(section, url) {
+  if (section && url) {
+    section.style.setProperty('--section-background-image', `url("${url}")`);
+  }
+}
+
+/**
  * Reads each section's `.section-metadata` block and applies the authored
  * settings to the section: `Style` values become CSS classes (so authors can
- * pick section variants like `full-bleed` / `highlight`), and any other keys are
- * exposed as `data-*` attributes. This mirrors the section-metadata handling the
- * AEM boilerplate normally performs in `decorateSections`; this project's
- * `aem.js` ships a trimmed version, so we do it here without touching aem.js.
+ * pick section variants like `full-bleed` / `highlight`), a `Background Image`
+ * value is applied as the section's background (the image is authored, not
+ * shipped in code), and any other keys are exposed as `data-*` attributes. This
+ * mirrors the section-metadata handling the AEM boilerplate normally performs in
+ * `decorateSections`; this project's `aem.js` ships a trimmed version, so we do
+ * it here without touching aem.js.
+ *
+ * Two input shapes are handled: the raw `.section-metadata` table (dev/import
+ * markup), and the platform-lifted form where EDS has already consumed the table
+ * and exposed each key as a `data-*` attribute on the section (published DA
+ * content) — e.g. `data-background-image`.
  * @param {Element} main The main container element
  */
 function decorateSectionMetadata(main) {
@@ -217,6 +238,8 @@ function decorateSectionMetadata(main) {
           .map((style) => toClassName(style.trim()))
           .filter((style) => style);
         styles.forEach((style) => section.classList.add(style));
+      } else if (key === 'background-image') {
+        applySectionBackgroundImage(section, Array.isArray(meta[key]) ? meta[key][0] : meta[key]);
       } else {
         section.dataset[toCamelCase(key)] = meta[key];
       }
@@ -225,6 +248,13 @@ function decorateSectionMetadata(main) {
     const wrapper = metaBlock.parentElement;
     metaBlock.remove();
     if (wrapper && wrapper.children.length === 0) wrapper.remove();
+  });
+
+  // Published DA content: EDS already consumed the metadata table and exposed the
+  // background image as data-background-image on the section. Honor it here so
+  // the background works on both the dev/import and published paths.
+  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
+    applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 }
 

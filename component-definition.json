@@ -217,6 +217,51 @@
           }
         },
         {
+          "title": "Icon List",
+          "id": "icon-list",
+          "model": "icon-list",
+          "filter": "icon-list",
+          "plugins": {
+            "da": {
+              "name": "icon-list",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "title",
+                  "selector": "div:nth-child(1)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Icon List Item",
+          "id": "icon-list-item",
+          "model": "icon-list-item",
+          "plugins": {
+            "da": {
+              "name": "icon-list-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "icon",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "iconAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Panel",
           "id": "panel",
           "model": "panel",

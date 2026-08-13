@@ -104,6 +104,11 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 
+  /* icon-list block — measured from source: icon rendered 165px wide, ~10px
+     gap between icon and its caption */
+  --icon-list-icon-width: 165px;
+  --icon-list-icon-gap: 10px;
+
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
   --panel-cta-heading-size: 26px; /* cta variant h3 */
@@ -505,6 +510,17 @@ main > .section.full-bleed {
    site's .bg-light-gray. */
 main > .section.light-gray {
   background-color: var(--color-surface);
+}
+
+/* A section-authored background image (set via the "Background Image" section
+   metadata key) is applied to the .section as an inline custom property by
+   decorateSectionMetadata in scripts.js. Spans the full section width; the inner
+   > div keeps the content capped and centred. */
+main > .section[style*="--section-background-image"] {
+  background-image: var(--section-background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* divider between the fullbleed hero and the cards section — constrained to content width */

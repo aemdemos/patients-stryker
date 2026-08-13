@@ -244,6 +244,73 @@
     ]
   },
   {
+    "id": "icon-list",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default (4 columns)",
+            "value": ""
+          },
+          {
+            "name": "2 columns",
+            "value": "cols-2"
+          },
+          {
+            "name": "3 columns",
+            "value": "cols-3"
+          },
+          {
+            "name": "4 columns",
+            "value": "cols-4"
+          },
+          {
+            "name": "5 columns",
+            "value": "cols-5"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "title",
+        "value": "",
+        "label": "Title (optional)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-list-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "icon",
+        "label": "Icon",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "iconAlt",
+        "label": "Icon Alt Text",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "panel",
     "fields": [
       {

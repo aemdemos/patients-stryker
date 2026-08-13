@@ -13,7 +13,7 @@
 import { moveInstrumentation } from './ue-utils.js';
 
 const setupObservers = () => {
-  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel');
+  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList' && mutation.target.tagName === 'DIV') {
@@ -37,6 +37,21 @@ const setupObservers = () => {
               });
             }
             break;
+          case 'icon-list': {
+            // icon-list may extract a leading title row (which is NOT part of the
+            // <ul>), so the remaining item rows align to the <li>s from the end.
+            const ulEl = [...addedElements].find((node) => node.tagName === 'UL');
+            if (ulEl) {
+              const removedDivEl = [...mutation.removedNodes].filter((node) => node.tagName === 'DIV');
+              const items = [...ulEl.children];
+              const offset = removedDivEl.length - items.length;
+              items.forEach((li, index) => {
+                const div = removedDivEl[offset + index];
+                if (div) moveInstrumentation(div, li);
+              });
+            }
+            break;
+          }
           case 'cards-image':
             if (mutation.target.classList.contains('cards-card-image')) {
               const addedPictureEl = [...mutation.addedNodes].filter((node) => node.tagName === 'PICTURE');
