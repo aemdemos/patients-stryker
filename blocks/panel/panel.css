@@ -328,9 +328,11 @@
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
+  .panel.colored-border
   .panel.cta.panel-authoring,
   .panel.dark.panel-authoring,
-  .panel.light.panel-authoring {
+  .panel.light.panel-authoring,
+  .panel.colored-border.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
