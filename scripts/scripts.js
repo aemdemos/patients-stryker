@@ -148,11 +148,8 @@ function decorateButtons(main) {
 }
 
 /**
- * Turns citation superscripts into links that navigate to the matching footnote.
- * Source pattern: body text carries `<sup>N</sup>` markers (e.g. "12,13") and the
- * page ends with an ordered list of citations. Each list item N gets an id
- * `fn-N`, and every numeric superscript is rewritten so its number(s) link to the
- * corresponding footnote (multi-number sups like "12,13" become two links).
+ * Turns citation superscripts into links to their matching footnotes.
+ * Supports multi-number citations like `12,13`.
  * @param {HTMLElement} main The main container element
  */
 function decorateFootnotes(main) {
@@ -198,14 +195,9 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Applies section-metadata "Style" values as classes on their section.
- * The core aem.js decorateSections() in this project does not process section
- * metadata into section classes, so we restore that stock EDS behaviour here
- * (in project code, without modifying aem.js). Each `.section-metadata` block's
- * `Style` row (comma-separated) becomes classes on the parent section, and the
- * metadata block itself is removed. This is what makes flags like `highlight`
- * and `no-cta` resolve to real `.section.<flag>` hooks for CSS/JS.
- * @param {Element} main The main element (sections already decorated)
+ * Applies section-metadata styles as classes on their section.
+ * Removes the metadata block after mapping styles and data attributes.
+ * @param {Element} main The main element
  */
 function decorateSectionMetadata(main) {
   main.querySelectorAll('.section .section-metadata').forEach((meta) => {
@@ -229,16 +221,9 @@ function decorateSectionMetadata(main) {
 }
 
 /**
- * Removes fragment CTA buttons/links from any section flagged `no-cta`.
- * The shared card fragments (e.g. /fragments/card-*) bake in a "LEARN MORE"
- * CTA because other pages reuse them WITH the button. On pages/sections that
- * must not show it (e.g. the resources.html import), authors add the `no-cta`
- * section style. This removes the decorated CTA from the DOM entirely — not a
- * CSS hide — so it is absent for screen readers and crawlers too. Runs after
- * fragments load (fragment.js appends their decorated content, then the outer
- * page's loadSection triggers this via decorateMain on the host page, and the
- * fragment block re-applies it post-load — see fragment.js).
- * @param {Element} scope The container to clean (a section or the fragment root)
+ * Removes CTA links/buttons from sections styled with `no-cta`.
+ * Runs after fragment content loads so hidden CTAs are removed from the DOM.
+ * @param {Element} scope The container to clean
  */
 export function removeCtas(scope) {
   scope.querySelectorAll('.button-wrapper').forEach((wrapper) => {
@@ -246,12 +231,8 @@ export function removeCtas(scope) {
     if (!cta) return;
     const href = cta.getAttribute('href');
 
-    // The card fragments carry the brochure's PDF only in this CTA link. The
-    // source resources.html has NO button — instead the brochure image itself
-    // links to the PDF. So before removing the CTA, move its PDF target onto the
-    // card's image (wrap the <picture> in a link) so the brochure stays
-    // clickable-to-PDF and no content/link is lost. Fragment content is
-    // untouched; this is a render-time transform only.
+    // Move the CTA PDF link onto the card image before removing the button.
+    // This keeps brochure cards clickable on `no-cta` sections.
     const card = wrapper.closest('li') || wrapper.closest('.cards-card-image, .cards-card-body')?.parentElement;
     const image = card && card.querySelector('.cards-card-image picture, .cards-card-image img');
     if (href && image && !image.closest('a')) {
@@ -272,19 +253,9 @@ export function removeCtas(scope) {
 }
 
 /**
- * Merges the cards of every `.cards` block within a section into a single grid.
- *
- * When a section includes more than one card fragment (each fragment renders its
- * own `.cards > ul`), they would otherwise stack as separate grids. This moves
- * all `<li>`s into the FIRST `.cards` block's `<ul>` — in document order — and
- * removes the now-empty extra fragment wrappers. The result is one real `.cards`
- * grid, so the block's own responsive grid CSS and the standard section
- * container width/padding apply automatically (no special section styling, no
- * display:contents). Variant classes on the first cards block are preserved.
- *
- * This is what lets "2 fragments in the same section" render as one row — the
- * author simply drops both fragment blocks in a section; no flag needed.
- * @param {Element} section the section element to consolidate
+ * Merges multiple `.cards` blocks in a section into one grid.
+ * Preserves the first block's variant classes and removes empty extras.
+ * @param {Element} section The section to consolidate
  */
 export function mergeSectionCards(section) {
   const cardsBlocks = [...section.querySelectorAll('.cards')];
