@@ -215,16 +215,12 @@ function applySectionBackgroundImage(section, url) {
  * aem.js. Handles both the raw `.section-metadata` table and the platform-lifted
  * `data-*` form (published DA content, e.g. `data-background-image`).
  * @param {Element} main The main container element
- * Applies section-metadata styles as classes on their section.
- * Removes the metadata block after mapping styles and data attributes.
- * @param {Element} main The main element
  */
 function decorateSectionMetadata(main) {
-  main.querySelectorAll('.section .section-metadata').forEach((meta) => {
-    const section = meta.closest('.section');
-    if (!section) return;
-    const config = readBlockConfig(meta);
-    Object.entries(config).forEach(([key, value]) => {
+  main.querySelectorAll('.section > div > div.section-metadata').forEach((metaBlock) => {
+    const section = metaBlock.closest('.section');
+    const meta = readBlockConfig(metaBlock);
+    Object.keys(meta).forEach((key) => {
       if (key === 'style') {
         const styles = meta.style
           .split(',')
@@ -233,21 +229,20 @@ function decorateSectionMetadata(main) {
         styles.forEach((style) => section.classList.add(style));
       } else if (key === 'background-image') {
         applySectionBackgroundImage(section, Array.isArray(meta[key]) ? meta[key][0] : meta[key]);
-        const styles = (Array.isArray(value) ? value : value.split(','))
-          .map((s) => toClassName(s.trim()))
-          .filter((s) => s);
-        styles.forEach((s) => section.classList.add(s));
       } else {
-        section.dataset[toCamelCase(key)] = value;
+        section.dataset[toCamelCase(key)] = meta[key];
       }
     });
     // the table is config, not content — drop it and any empty wrapper
     const wrapper = metaBlock.parentElement;
     metaBlock.remove();
     if (wrapper && wrapper.children.length === 0) wrapper.remove();
-    // remove the metadata block (and its section wrapper) so it is neither
-    // rendered nor picked up by decorateBlocks as a loadable block.
-    (meta.closest('.section-metadata-wrapper') || meta).remove();
+  });
+
+  // published DA content exposes the value as data-background-image instead of a
+  // table; honour it so the background works on both paths.
+  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
+    applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 }
 
@@ -301,12 +296,6 @@ export function mergeSectionCards(section) {
     // remove the emptied cards block and its now-empty fragment/section wrappers
     const fragmentRoot = block.closest('.fragment-wrapper') || block.closest('.fragment') || block;
     fragmentRoot.remove();
-  });
-
-  // published DA content exposes the value as data-background-image instead of a
-  // table; honour it so the background works on both paths.
-  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
-    applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 }
 
