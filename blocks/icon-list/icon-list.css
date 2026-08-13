@@ -45,24 +45,22 @@
   background-size: 100% auto;
 }
 
-/* centered gold heading — source: Futura-bold, gold, 1.5em (21px), centered.
-   Measured gap from the title to the icon row on the source is ~67px. */
-.icon-list .icon-list-title {
+/* centered gold section heading — the title (e.g. "Stroke facts") is authored as
+   a default-content heading above the icon-list block, so it is styled here
+   scoped to the icon-list section wrapper. Source: Futura-bold, gold, 1.5em
+   (21px), centered, with a ~67px gap down to the icon row. */
+.icon-list-container .default-content-wrapper h1,
+.icon-list-container .default-content-wrapper h2,
+.icon-list-container .default-content-wrapper h3,
+.icon-list-container .default-content-wrapper h4,
+.icon-list-container .default-content-wrapper h5,
+.icon-list-container .default-content-wrapper h6 {
   margin: 0 0 var(--icon-list-title-gap);
-  text-align: center;
-}
-
-.icon-list .icon-list-title h1,
-.icon-list .icon-list-title h2,
-.icon-list .icon-list-title h3,
-.icon-list .icon-list-title h4,
-.icon-list .icon-list-title h5,
-.icon-list .icon-list-title h6 {
-  margin: 0;
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-l);
   font-weight: 700;
   color: var(--color-accent);
+  text-align: center;
 }
 
 .icon-list ul.icon-list-items {

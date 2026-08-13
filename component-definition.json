@@ -225,13 +225,7 @@
             "da": {
               "name": "icon-list",
               "rows": 1,
-              "columns": 1,
-              "fields": [
-                {
-                  "name": "title",
-                  "selector": "div:nth-child(1)>div"
-                }
-              ]
+              "columns": 2
             }
           }
         },

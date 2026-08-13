@@ -27,6 +27,7 @@ const setupObservers = () => {
           case 'accordion':
           case 'statistics':
           case 'panel':
+          case 'icon-list':
             if (addedElements.length === 1 && addedElements[0].tagName === 'UL') {
               const ulEl = addedElements[0];
               const removedDivEl = [...mutation.removedNodes].filter((node) => node.tagName === 'DIV');
@@ -37,21 +38,6 @@ const setupObservers = () => {
               });
             }
             break;
-          case 'icon-list': {
-            // icon-list may extract a leading title row (which is NOT part of the
-            // <ul>), so the remaining item rows align to the <li>s from the end.
-            const ulEl = [...addedElements].find((node) => node.tagName === 'UL');
-            if (ulEl) {
-              const removedDivEl = [...mutation.removedNodes].filter((node) => node.tagName === 'DIV');
-              const items = [...ulEl.children];
-              const offset = removedDivEl.length - items.length;
-              items.forEach((li, index) => {
-                const div = removedDivEl[offset + index];
-                if (div) moveInstrumentation(div, li);
-              });
-            }
-            break;
-          }
           case 'cards-image':
             if (mutation.target.classList.contains('cards-card-image')) {
               const addedPictureEl = [...mutation.addedNodes].filter((node) => node.tagName === 'PICTURE');

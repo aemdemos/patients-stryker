@@ -16,47 +16,24 @@ function readColumns(block) {
  * loads and decorates the icon-list block
  *
  * Source: patients.stryker.com "Stroke facts" widget — a faint world-map
- * background behind a centered gold heading and a responsive grid of items,
- * each an icon (line-art PNG) above a short centered Futura-bold caption.
+ * background behind a responsive grid of items, each an icon (line-art PNG)
+ * above a short centered Futura-bold caption.
  *
- * Authored structure (each row is one item, two cells):
+ * The block is purely the icon grid; each row is one item, two cells:
  *   [ picture ] [ caption text ]
- * An optional leading single-cell row (no image) is treated as the block title.
+ * The section title (e.g. "Stroke facts") is authored as a default-content
+ * heading above the block — not part of the block — and styled by the section
+ * (see icon-list.css `.icon-list-container` heading rule).
  *
  * @param {Element} block The block element
  */
 export default function decorate(block) {
   block.style.setProperty('--icon-list-columns', readColumns(block));
 
-  const rows = [...block.children];
-
-  // Optional title: a leading row with a single cell that has no image.
-  const first = rows[0];
-  let titleRow = null;
-  if (first) {
-    const cells = [...first.children];
-    if (cells.length === 1 && !cells[0].querySelector('picture, img')) {
-      titleRow = first;
-    }
-  }
-
-  let title = null;
-  if (titleRow) {
-    title = document.createElement('div');
-    title.className = 'icon-list-title';
-    moveInstrumentation(titleRow, title);
-    while (titleRow.firstElementChild) {
-      const cell = titleRow.firstElementChild;
-      while (cell.firstChild) title.append(cell.firstChild);
-      cell.remove();
-    }
-    rows.shift();
-  }
-
   const list = document.createElement('ul');
   list.className = 'icon-list-items';
 
-  rows.forEach((row) => {
+  [...block.children].forEach((row) => {
     const item = document.createElement('li');
     item.className = 'icon-list-item';
     moveInstrumentation(row, item);
@@ -88,5 +65,5 @@ export default function decorate(block) {
     );
   });
 
-  block.replaceChildren(...(title ? [title] : []), list);
+  block.replaceChildren(list);
 }

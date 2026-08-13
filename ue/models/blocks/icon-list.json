@@ -9,10 +9,7 @@
         "da": {
           "name": "icon-list",
           "rows": 1,
-          "columns": 1,
-          "fields": [
-            { "name": "title", "selector": "div:nth-child(1)>div" }
-          ]
+          "columns": 2
         }
       }
     },
@@ -51,13 +48,6 @@
             { "name": "4 columns", "value": "cols-4" },
             { "name": "5 columns", "value": "cols-5" }
           ]
-        },
-        {
-          "component": "richtext",
-          "name": "title",
-          "value": "",
-          "label": "Title (optional)",
-          "valueType": "string"
         }
       ]
     },
