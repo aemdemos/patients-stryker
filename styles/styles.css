@@ -91,6 +91,7 @@
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
+  --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block: 15px;
