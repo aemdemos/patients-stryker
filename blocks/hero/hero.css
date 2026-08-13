@@ -153,10 +153,12 @@
 
 /* copy block — sits below the image on mobile/stacked. Source uses the standard
    15px side gutter here (an 8% inset over-narrows the column and forces the
-   headline onto an extra line); the desktop overlay padding is set at >=840px. */
+   headline onto an extra line). The bottom padding reproduces the source's ~36px
+   gap below the CTA button (button margin 15px + this 20px). Desktop overlay
+   padding is set at >=840px, overriding this. */
 .hero.banner > div:last-child {
   box-sizing: border-box;
-  padding: var(--space-section) var(--container-gutter) 0;
+  padding: var(--space-section) var(--container-gutter) var(--space-block-l);
 }
 
 .hero.banner h1,
