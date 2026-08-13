@@ -7,6 +7,8 @@
 // eslint-disable-next-line import/no-cycle
 import {
   decorateMain,
+  removeCtas,
+  mergeSectionCards,
 } from '../../scripts/scripts.js';
 
 import {
@@ -47,4 +49,24 @@ export default async function decorate(block) {
   const path = link ? link.getAttribute('href') : block.textContent.trim();
   const fragment = await loadFragment(path);
   if (fragment) block.replaceChildren(...fragment.childNodes);
+
+  // mark this fragment block as loaded so we can detect when all fragments in a
+  // section are ready before consolidating their cards
+  block.dataset.fragmentLoaded = 'true';
+
+  // If this fragment sits in a section flagged `no-cta`, strip the fragment's
+  // CTA button/link from the DOM. Fragments load async (after the host page's
+  // decorateMain has run), so the removal must happen here — once the fragment
+  // content is inlined — rather than in the page-level pass.
+  const section = block.closest('.section');
+  if (section && section.classList.contains('no-cta')) removeCtas(block);
+
+  // When a section holds multiple fragment blocks (e.g. two card fragments under
+  // one heading), merge their cards into a single grid once ALL of them have
+  // finished loading — so they render as one row instead of stacked grids.
+  if (section) {
+    const fragmentBlocks = [...section.querySelectorAll('.fragment')];
+    const allLoaded = fragmentBlocks.every((f) => f.dataset.fragmentLoaded === 'true');
+    if (allLoaded) mergeSectionCards(section);
+  }
 }
