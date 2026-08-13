@@ -283,20 +283,23 @@
 }
 
 /* ---- colored-border variant ------------------------------------------
-   Behaves like `light` (left-aligned, no shadow, 2-up on desktop) but sits on
-   a light-gray surface and gives each column a distinct left border: accent on
-   the first column, purple on the second. First paragraph uses the serif
-   heading family (rule lives with the other variant p rules above). */
+   Same authored structure as `cta` (one row per box), but each box sits on a
+   light-gray surface with a colored top strip flush to its top edge: accent
+   (gold) on the first row, purple on the second — matching the source
+   find-a-doctor callouts. First paragraph uses the serif heading family (rule
+   lives with the other variant p rules above). */
 .panel.colored-border .panel-body {
   background: var(--color-surface);
   box-shadow: none;
-  border-left: var(--panel-colored-border-width) solid var(--color-accent);
+  border-top: var(--panel-colored-border-width) solid var(--color-accent);
 }
 
-/* second column border (nth-of-type works in both the live <li> and the UE
-   authoring row, since each column is a sibling .panel-body) */
-.panel.colored-border .panel-body:nth-of-type(2) {
-  border-left-color: var(--color-purple);
+/* second row's top strip is purple. Each row is its own <li> with a single
+   .panel-body, so target the second row's li (in the live ul) and — in the UE
+   authoring view — the second authored row div. */
+.panel.colored-border > ul > li:nth-of-type(2) .panel-body,
+.panel.colored-border.panel-authoring > div:nth-of-type(2) .panel-body {
+  border-top-color: var(--color-purple);
 }
 
 /* Universal Editor authoring view: the block keeps its authored div structure
@@ -325,11 +328,9 @@
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
-  .panel.colored-border > ul,
   .panel.cta.panel-authoring,
   .panel.dark.panel-authoring,
-  .panel.light.panel-authoring,
-  .panel.colored-border.panel-authoring {
+  .panel.light.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
