@@ -379,9 +379,26 @@ async function loadPage() {
   loadDelayed();
 }
 
-loadPage();
-
 if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
-  // eslint-disable-next-line import/no-cycle
-  await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
+  // Universal Editor only: attach the DOM mutation observers BEFORE any block
+  // decoration runs. Blocks like cards transform their authored <div> rows into
+  // <ul>/<li> and discard the row divs — which carry the child (data-aue-*)
+  // instrumentation. The observer moves that instrumentation onto the new <li>
+  // as the mutation happens, but only if it is already listening. loadPage()
+  // decorates the first section eagerly and un-awaited, so it would otherwise
+  // race this dynamic import; the first (eagerly decorated) block routinely lost
+  // the race, its row divs were discarded before the observer attached, and its
+  // children flattened to plain text in the editor. Awaiting the import here —
+  // before loadPage() — guarantees the observer is live before the first
+  // transform. This branch never runs on the live site, so LCP is unaffected.
+  try {
+    // eslint-disable-next-line import/no-cycle
+    await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
+  } catch (e) {
+    // never let a UE-tooling failure block the page from rendering in the editor
+    // eslint-disable-next-line no-console
+    console.error('failed to initialize universal editor observers', e);
+  }
 }
+
+loadPage();
