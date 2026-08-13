@@ -201,6 +201,17 @@
   margin: 0 0 var(--space-block);
 }
 
+/* gray variant body copy: Futura-bold display family (styling for the
+   .panel.gray box itself and its heading lives with the other variants further
+   down). Placed here alongside the other variant p rules to precede the
+   :last-child rules. */
+.panel.gray .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-body-line-height-m);
+}
+
 .panel .panel-body p:last-child {
   margin: 0 0 var(--space-block);
 }
@@ -210,6 +221,11 @@
 .panel .panel-body p:last-child:has(b i),
 .panel .panel-body p:last-child:has(i b) {
   margin: 0;
+}
+
+.fragment .panel.gray .panel-body p {
+  font-size: var(--panel-fragment-font-size);
+  line-height: var(--panel-fragment-line-height);
 }
 
 /* ---- gold variant (IVS "Tired of living in pain?" callout) -----------
@@ -222,6 +238,33 @@
   text-align: center;
 }
 
+/* ---- gray variant (IVS "How it works" callout) -----------------------
+   Light-gray box, left-aligned black text, no shadow — measured from source
+   .has-background.bg-light-gray (bg #edeeec = --color-surface, 15px padding,
+   Futura-bold heading, serif body copy). */
+.panel.gray .panel-body {
+  padding: 2%;
+  background: var(--color-surface);
+  box-shadow: none;
+  text-align: left;
+  margin:0;
+}
+
+.panel.gray .panel-body h3 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size-xs);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* fragment-context override: panel.gray's h3/p get different styling when the
+   panel is included via a fragment block, vs. authored directly on a page. */
+.fragment .panel.gray .panel-body h3{
+  font-size:var(--panel-fragment-font-size);
+}
+
 /* Universal Editor authoring view: the block keeps its authored div structure
    (no ul/li transform) so child instrumentation persists, but panel.js still
    tags each content cell with .panel-body — so all the .panel .panel-body
@@ -232,6 +275,16 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+}
+
+@media (width >= 480px){
+  .panel.gray .panel-body h3 {
+    font-size: var(--panel-heading-size-s);
+  }
+
+  .fragment .panel.gray .panel-body h3{
+  font-size:var(--panel-heading-size-xs);
+}
 }
 
 @media (width >= 841px) {
