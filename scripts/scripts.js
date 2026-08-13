@@ -148,11 +148,8 @@ function decorateButtons(main) {
 }
 
 /**
- * Turns citation superscripts into links that navigate to the matching footnote.
- * Source pattern: body text carries `<sup>N</sup>` markers (e.g. "12,13") and the
- * page ends with an ordered list of citations. Each list item N gets an id
- * `fn-N`, and every numeric superscript is rewritten so its number(s) link to the
- * corresponding footnote (multi-number sups like "12,13" become two links).
+ * Turns citation superscripts into links to their matching footnotes.
+ * Supports multi-number citations like `12,13`.
  * @param {HTMLElement} main The main container element
  */
 function decorateFootnotes(main) {
@@ -218,12 +215,16 @@ function applySectionBackgroundImage(section, url) {
  * aem.js. Handles both the raw `.section-metadata` table and the platform-lifted
  * `data-*` form (published DA content, e.g. `data-background-image`).
  * @param {Element} main The main container element
+ * Applies section-metadata styles as classes on their section.
+ * Removes the metadata block after mapping styles and data attributes.
+ * @param {Element} main The main element
  */
 function decorateSectionMetadata(main) {
-  main.querySelectorAll('.section > div > div.section-metadata').forEach((metaBlock) => {
-    const section = metaBlock.closest('.section');
-    const meta = readBlockConfig(metaBlock);
-    Object.keys(meta).forEach((key) => {
+  main.querySelectorAll('.section .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    if (!section) return;
+    const config = readBlockConfig(meta);
+    Object.entries(config).forEach(([key, value]) => {
       if (key === 'style') {
         const styles = meta.style
           .split(',')
@@ -232,14 +233,74 @@ function decorateSectionMetadata(main) {
         styles.forEach((style) => section.classList.add(style));
       } else if (key === 'background-image') {
         applySectionBackgroundImage(section, Array.isArray(meta[key]) ? meta[key][0] : meta[key]);
+        const styles = (Array.isArray(value) ? value : value.split(','))
+          .map((s) => toClassName(s.trim()))
+          .filter((s) => s);
+        styles.forEach((s) => section.classList.add(s));
       } else {
-        section.dataset[toCamelCase(key)] = meta[key];
+        section.dataset[toCamelCase(key)] = value;
       }
     });
     // the table is config, not content — drop it and any empty wrapper
     const wrapper = metaBlock.parentElement;
     metaBlock.remove();
     if (wrapper && wrapper.children.length === 0) wrapper.remove();
+    // remove the metadata block (and its section wrapper) so it is neither
+    // rendered nor picked up by decorateBlocks as a loadable block.
+    (meta.closest('.section-metadata-wrapper') || meta).remove();
+  });
+}
+
+/**
+ * Removes CTA links/buttons from sections styled with `no-cta`.
+ * Runs after fragment content loads so hidden CTAs are removed from the DOM.
+ * @param {Element} scope The container to clean
+ */
+export function removeCtas(scope) {
+  scope.querySelectorAll('.button-wrapper').forEach((wrapper) => {
+    const cta = wrapper.querySelector('a.button');
+    if (!cta) return;
+    const href = cta.getAttribute('href');
+
+    // Move the CTA PDF link onto the card image before removing the button.
+    // This keeps brochure cards clickable on `no-cta` sections.
+    const card = wrapper.closest('li') || wrapper.closest('.cards-card-image, .cards-card-body')?.parentElement;
+    const image = card && card.querySelector('.cards-card-image picture, .cards-card-image img');
+    if (href && image && !image.closest('a')) {
+      const picture = image.closest('picture') || image;
+      const holder = picture.closest('.cards-card-image') || picture.parentElement;
+      const a = document.createElement('a');
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      picture.replaceWith(a);
+      a.append(picture);
+      // keep the click target obvious for the whole image cell
+      if (holder) holder.style.cursor = 'pointer';
+    }
+
+    wrapper.remove();
+  });
+}
+
+/**
+ * Merges multiple `.cards` blocks in a section into one grid.
+ * Preserves the first block's variant classes and removes empty extras.
+ * @param {Element} section The section to consolidate
+ */
+export function mergeSectionCards(section) {
+  const cardsBlocks = [...section.querySelectorAll('.cards')];
+  if (cardsBlocks.length < 2) return;
+
+  const first = cardsBlocks[0];
+  const targetList = first.querySelector(':scope > ul');
+  if (!targetList) return;
+
+  cardsBlocks.slice(1).forEach((block) => {
+    block.querySelectorAll(':scope > ul > li').forEach((li) => targetList.append(li));
+    // remove the emptied cards block and its now-empty fragment/section wrappers
+    const fragmentRoot = block.closest('.fragment-wrapper') || block.closest('.fragment') || block;
+    fragmentRoot.remove();
   });
 
   // published DA content exposes the value as data-background-image instead of a

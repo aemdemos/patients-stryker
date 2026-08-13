@@ -37,13 +37,13 @@
           "component": "multiselect",
           "name": "classes",
           "label": "Style",
-          "value": "",
           "options": [
             { "name": "Left", "value": "left" },
             { "name": "CTA", "value": "cta" },
             { "name": "Light", "value": "light" },
             { "name": "Dark", "value": "dark" },
             { "name": "Gold", "value": "gold" },
+            { "name": "Gray", "value": "gray" },
             { "name": "Wide", "value": "wide" }
           ]
         }
