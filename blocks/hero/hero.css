@@ -124,7 +124,12 @@
 .hero.banner {
   display: block;
   position: static;
-  margin-block: var(--space-block);
+
+  /* clear the gold nav bar with breathing room above the card. The source sits
+     the banner ~60px below the nav: a "Get the facts" eyebrow heading (dropped
+     in migration) plus the card's own ~20px margin. Reproduce that full offset
+     here so the banner lands in the same place; keep the standard gap below. */
+  margin-block: calc(var(--space-section) * 2) var(--space-block);
   padding: 0;
   min-height: 0;
   box-shadow: var(--shadow-soft);
