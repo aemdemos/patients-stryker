@@ -58,7 +58,8 @@
 }
 
 .panel.cta .panel-body p,
-.panel.light .panel-body p {
+.panel.light .panel-body p,
+.panel.colored-border .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-cta-body-line-height);
@@ -80,13 +81,15 @@
    rendered below and OUTSIDE the box. The `light` variant shares this box +
    heading styling but has no CTA button. */
 .panel.cta > ul > li,
-.panel.light > ul > li {
+.panel.light > ul > li,
+.panel.colored-border > ul > li {
   /* transparent wrapper: the shadowed box + the button live inside it */
   margin: 0;
 }
 
 .panel.cta .panel-body,
-.panel.light .panel-body {
+.panel.light .panel-body,
+.panel.colored-border .panel-body {
   /* cta boxes fill their grid column (no width cap / centering) */
   max-width: none;
   margin: 0;
@@ -120,7 +123,8 @@
 }
 
 .panel.cta .panel-body h3,
-.panel.light .panel-body h3 {
+.panel.light .panel-body h3,
+.panel.colored-border .panel-body h3 {
   /* cta heading is left-aligned and full width (no cap) */
   max-width: none;
   margin: 0 0 var(--space-block);
@@ -212,6 +216,13 @@
   line-height: var(--panel-body-line-height-m);
 }
 
+/* colored-border body copy: body family by default (the serif heading-family
+   override for the first paragraph lives after the :last-child rules below, to
+   keep specificity non-descending). */
+.panel.colored-border .panel-body p {
+  font-family: var(--body-font-family);
+}
+
 .panel .panel-body p:last-child {
   margin: 0 0 var(--space-block);
 }
@@ -221,6 +232,12 @@
 .panel .panel-body p:last-child:has(b i),
 .panel .panel-body p:last-child:has(i b) {
   margin: 0;
+}
+
+/* colored-border: first paragraph uses the serif heading family (declared here,
+   after the :last-child rules, to satisfy no-descending-specificity) */
+.panel.colored-border .panel-body p:first-of-type {
+  font-family: var(--heading-font-family);
 }
 
 .fragment .panel.gray .panel-body p {
@@ -265,6 +282,23 @@
   font-size:var(--panel-fragment-font-size);
 }
 
+/* ---- colored-border variant ------------------------------------------
+   Behaves like `light` (left-aligned, no shadow, 2-up on desktop) but sits on
+   a light-gray surface and gives each column a distinct left border: accent on
+   the first column, purple on the second. First paragraph uses the serif
+   heading family (rule lives with the other variant p rules above). */
+.panel.colored-border .panel-body {
+  background: var(--color-surface);
+  box-shadow: none;
+  border-left: var(--panel-colored-border-width) solid var(--color-accent);
+}
+
+/* second column border (nth-of-type works in both the live <li> and the UE
+   authoring row, since each column is a sibling .panel-body) */
+.panel.colored-border .panel-body:nth-of-type(2) {
+  border-left-color: var(--color-purple);
+}
+
 /* Universal Editor authoring view: the block keeps its authored div structure
    (no ul/li transform) so child instrumentation persists, but panel.js still
    tags each content cell with .panel-body — so all the .panel .panel-body
@@ -291,9 +325,11 @@
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
+  .panel.colored-border > ul,
   .panel.cta.panel-authoring,
   .panel.dark.panel-authoring,
-  .panel.light.panel-authoring {
+  .panel.light.panel-authoring,
+  .panel.colored-border.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
