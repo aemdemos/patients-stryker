@@ -1,19 +1,27 @@
 /* Icon list — a responsive grid of icons above short captions. Extracted from
    patients.stryker.com/ww/en/stroke-awareness ("Stroke facts"): a centered gold
-   Futura-bold heading over icon+caption items, laid out N-up on desktop and
-   stacking down on smaller screens.
+   Futura-bold heading over icon+caption items.
+
+   Responsive behaviour is matched to the source, whose grid uses this
+   component's own breakpoints (651px / 1200px) rather than the site defaults:
+     - mobile  (<=650px): single column, icons shown, items stacked
+     - tablet  (651-1200px): items laid out 4-up, icons HIDDEN (text only) —
+       the source marks the icon columns aem-GridColumn--tablet--hide, which is
+       display:none across exactly (min-width: 651px) and (max-width: 1200px)
+     - desktop (>=1201px): the author-selected column count (default 4), icons
+       shown again.
 
    The column count comes from --icon-list-columns (set in JS from the cols-N
-   authoring variant, default 4); rows flow automatically. Mobile-first: one
-   column, then two, then the authored column count.
+   authoring variant, default 4); rows flow automatically.
 
    The decorative world-map background is NOT part of this block — it is applied
-   at the section level via the "World Map" section-metadata style (see
+   at the section level via the "Background Image" section metadata (see
    styles/styles.css), so authors opt in per section. */
 
-/* centered gold heading — source: Futura-bold, gold, 1.5em (21px), centered */
+/* centered gold heading — source: Futura-bold, gold, 1.5em (21px), centered.
+   Measured gap from the title to the icon row on the source is ~67px. */
 .icon-list .icon-list-title {
-  margin: 0 0 var(--space-section);
+  margin: 0 0 var(--icon-list-title-gap);
   text-align: center;
 }
 
@@ -61,27 +69,35 @@
   height: auto;
 }
 
-/* caption below the icon — source: Futura-bold, black, 14px, centered. Include
-   the <p> EDS wraps the cell text in so the caption keeps the tight spacing. */
+/* caption below the icon — source: Futura-bold, black, 14px, centered, 1.375
+   line-height (19.25px, measured). Include the <p> EDS wraps the cell text in so
+   the caption keeps the tight spacing. */
 .icon-list .icon-list-text,
 .icon-list .icon-list-text p {
   margin: 0;
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-m);
   font-weight: 700;
-  line-height: var(--body-line-height);
+  line-height: var(--paragraph-line-height);
   color: var(--color-black);
 }
 
-/* tablet: two columns */
-@media (width >= 841px) {
+/* tablet (651-1200px): 4-up text-only — the icons are hidden, matching the
+   source's aem-GridColumn--tablet--hide (display:none in this exact range). The
+   caption fills the item. */
+@media (width >= 651px) and (width <= 1200px) {
   .icon-list ul.icon-list-items {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .icon-list .icon-list-icon {
+    display: none;
   }
 }
 
-/* desktop: the author-selected column count (falls back to 4) */
-@media (width >= 1024px) {
+/* desktop (>=1201px): the author-selected column count (falls back to 4), icons
+   shown again — matches where the source restores the icon columns. */
+@media (width >= 1201px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
   }

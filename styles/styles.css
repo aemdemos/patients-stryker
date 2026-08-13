@@ -104,10 +104,11 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 
-  /* icon-list block — measured from source: icon rendered 165px wide, ~10px
-     gap between icon and its caption */
+  /* icon-list block — measured from source: icon rendered 165px wide, ~9px
+     gap between icon and its caption, ~67px from the title to the icon row */
   --icon-list-icon-width: 165px;
-  --icon-list-icon-gap: 10px;
+  --icon-list-icon-gap: 9px;
+  --icon-list-title-gap: 67px;
 
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
@@ -514,9 +515,12 @@ main > .section.light-gray {
 
 /* A section-authored background image (set via the "Background Image" section
    metadata key) is applied to the .section as an inline custom property by
-   decorateSectionMetadata in scripts.js. Spans the full section width; the inner
-   > div keeps the content capped and centred. */
+   decorateSectionMetadata in scripts.js. Spans the full section width at all
+   viewports; the inner > div keeps the content capped and centred. The vertical
+   padding gives the content breathing room over the image (measured ~40px on
+   the source band). */
 main > .section[style*="--section-background-image"] {
+  padding-block: var(--space-section-bg, 40px);
   background-image: var(--section-background-image);
   background-repeat: no-repeat;
   background-position: center;
