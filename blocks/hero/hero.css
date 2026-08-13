@@ -181,14 +181,15 @@
 
 /* subheading — dark serif. Source uses 21px only on small phones and bumps to
    24.5px from ~480px up (well below the 840px layout crossover), so raise it
-   here rather than waiting for the desktop media query. */
+   here rather than waiting for the desktop media query. Source subhead uses the
+   tight 1.06 heading line-height (only the headline uses the looser 1.35). */
 .hero.banner h2 {
   margin-bottom: var(--space-block);
   color: var(--text-color);
   font-family: var(--heading-font-family);
   font-weight: 500;
   font-size: var(--heading-font-size-l);
-  line-height: var(--heading-line-height-hero);
+  line-height: var(--heading-line-height);
 }
 
 @media (width >= 480px) {
