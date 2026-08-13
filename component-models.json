@@ -62,6 +62,13 @@
             "value": "light-gray"
           }
         ]
+      },
+      {
+        "component": "reference",
+        "name": "background-image",
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false
       }
     ]
   },
