@@ -14,9 +14,25 @@
    The column count comes from --icon-list-columns (set in JS from the cols-N
    authoring variant, default 4); rows flow automatically.
 
-   The decorative world-map background is NOT part of this block — it is applied
-   at the section level via the "Background Image" section metadata (see
-   styles/styles.css), so authors opt in per section. */
+   The decorative world-map background is authored (not shipped in code) via the
+   "Background Image" section metadata. decorateSectionMetadata() in scripts.js
+   exposes that URL as the --section-background-image custom property on the
+   section; the paint rule below is scoped to THIS block's section wrapper
+   (.icon-list-container) so it never affects other sections that may carry a
+   background image for unrelated reasons. */
+
+/* author-supplied background image — painted only on the icon-list section
+   wrapper. Full section width at the image's natural aspect ratio, anchored to
+   the top (matching the source's width:100% / height:auto <img>): on tall
+   mobile layouts the map sits at the top and content flows below over white.
+   ~40px vertical padding gives the content breathing room (measured). */
+.icon-list-container.section[style*="--section-background-image"] {
+  padding-block: var(--space-section-bg, 40px);
+  background-image: var(--section-background-image);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+}
 
 /* centered gold heading — source: Futura-bold, gold, 1.5em (21px), centered.
    Measured gap from the title to the icon row on the source is ~67px. */

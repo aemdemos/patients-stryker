@@ -513,20 +513,6 @@ main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
-/* A section-authored background image (set via the "Background Image" section
-   metadata key) is applied to the .section as an inline custom property by
-   decorateSectionMetadata in scripts.js. Spans the full section width at all
-   viewports; the inner > div keeps the content capped and centred. The vertical
-   padding gives the content breathing room over the image (measured ~40px on
-   the source band). */
-main > .section[style*="--section-background-image"] {
-  padding-block: var(--space-section-bg, 40px);
-  background-image: var(--section-background-image);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
 /* divider between the fullbleed hero and the cards section — constrained to content width */
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);

@@ -200,8 +200,10 @@ function decorateFootnotes(main) {
 /**
  * Applies an author-supplied `Background Image` to a section. The value is a
  * URL authored in the section metadata (never shipped in code); it is exposed as
- * the `--section-background-image` custom property, which styles.css consumes to
- * paint the section background.
+ * the `--section-background-image` custom property on the section. A block whose
+ * design uses a section background (e.g. icon-list) paints it from that property
+ * in its own CSS, scoped to its section wrapper — so setting the property here is
+ * inert for sections whose block does not opt in.
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
  */
