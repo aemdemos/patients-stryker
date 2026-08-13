@@ -151,10 +151,12 @@
   object-fit: cover;
 }
 
-/* copy block — sits below the image on mobile */
+/* copy block — sits below the image on mobile/stacked. Source uses the standard
+   15px side gutter here (an 8% inset over-narrows the column and forces the
+   headline onto an extra line); the desktop overlay padding is set at >=840px. */
 .hero.banner > div:last-child {
   box-sizing: border-box;
-  padding: var(--space-section) 8% 0;
+  padding: var(--space-section) var(--container-gutter) 0;
 }
 
 .hero.banner h1,
