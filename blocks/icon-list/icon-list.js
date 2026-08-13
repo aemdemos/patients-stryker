@@ -2,9 +2,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
-// read the authored column count from the `cols-N` variant class (default 4);
-// rows flow automatically from the item count. Mirrors the statistics block so
-// authors get a familiar layout control across the two grid blocks.
+// column count from the `cols-N` variant class (default 4); rows flow from the
+// item count. Mirrors the statistics block.
 function readColumns(block) {
   const match = [...block.classList]
     .map((c) => c.match(/^cols-(\d+)$/))
@@ -13,18 +12,9 @@ function readColumns(block) {
 }
 
 /**
- * loads and decorates the icon-list block
- *
- * Source: patients.stryker.com "Stroke facts" widget — a faint world-map
- * background behind a responsive grid of items, each an icon (line-art PNG)
- * above a short centered Futura-bold caption.
- *
- * The block is purely the icon grid; each row is one item, two cells:
- *   [ picture ] [ caption text ]
- * The section title (e.g. "Stroke facts") is authored as a default-content
- * heading above the block — not part of the block — and styled by the section
- * (see icon-list.css `.icon-list-container` heading rule).
- *
+ * Decorates the icon-list block: a grid of items, each row one item with two
+ * cells — [ picture ] [ caption ]. The section title and world-map background
+ * are authored on the section, not the block (see icon-list.css).
  * @param {Element} block The block element
  */
 export default function decorate(block) {
@@ -54,10 +44,8 @@ export default function decorate(block) {
     list.append(item);
   });
 
-  // re-render authored images at an appropriate width (source icons are 165px
-  // wide; request 2x for crispness on hi-dpi displays). DM images are already
-  // rendered at native quality by dm-support.js — re-optimizing would degrade
-  // them, so leave those untouched.
+  // re-render at 2x the 165px icon width for hi-dpi. Skip DM images —
+  // dm-support.js already renders them at native quality.
   list.querySelectorAll('picture > img').forEach((img) => {
     if (isDMSrc(img.src)) return;
     img.closest('picture').replaceWith(

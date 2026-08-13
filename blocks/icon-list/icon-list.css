@@ -1,42 +1,28 @@
-/* Icon list — a responsive grid of icons above short captions. Extracted from
-   patients.stryker.com/ww/en/stroke-awareness ("Stroke facts"): a centered gold
-   Futura-bold heading over icon+caption items.
+/* Icon list — a grid of icons above short captions, from
+   patients.stryker.com/ww/en/stroke-awareness ("Stroke facts"). Breakpoints
+   match the source (651px / 1200px, not the site defaults):
+     - <=650px:      1 column, icons shown
+     - 651-1200px:   4-up, icons HIDDEN (source's aem-GridColumn--tablet--hide)
+     - >=1201px:     cols-N (default 4), icons shown
+   Column count comes from --icon-list-columns (set in JS from the cols-N
+   variant). The title and world-map background live on the section, not the
+   block (see the section-scoped rules below). */
 
-   Responsive behaviour is matched to the source, whose grid uses this
-   component's own breakpoints (651px / 1200px) rather than the site defaults:
-     - mobile  (<=650px): single column, icons shown, items stacked
-     - tablet  (651-1200px): items laid out 4-up, icons HIDDEN (text only) —
-       the source marks the icon columns aem-GridColumn--tablet--hide, which is
-       display:none across exactly (min-width: 651px) and (max-width: 1200px)
-     - desktop (>=1201px): the author-selected column count (default 4), icons
-       shown again.
-
-   The column count comes from --icon-list-columns (set in JS from the cols-N
-   authoring variant, default 4); rows flow automatically.
-
-   The decorative world-map background is authored (not shipped in code) via the
-   "Background Image" section metadata. decorateSectionMetadata() in scripts.js
-   exposes that URL as the --section-background-image custom property on the
-   section; the paint rule below is scoped to THIS block's section wrapper
-   (.icon-list-container) so it never affects other sections that may carry a
-   background image for unrelated reasons. */
-
-/* Block-local design tokens (measured from the source). Defined on the section
-   wrapper so both the wrapper background rule and the inner block rules inherit
-   them — keeping all icon-list styling self-contained in this file. */
+/* Design tokens (measured). On the section wrapper so both the wrapper and
+   inner rules inherit them, keeping all icon-list styling in this file. */
 .icon-list-container {
   --icon-list-icon-width: 165px;   /* icon rendered width */
   --icon-list-icon-gap: 9px;       /* icon → caption gap */
   --icon-list-title-gap: 67px;     /* title → icon-row gap */
-  --icon-list-item-gap: 40px;      /* vertical gap between grid rows */
-  --icon-list-bg-padding: 40px;    /* band vertical padding over the background */
+  --icon-list-item-gap: 40px;      /* gap between grid rows */
+  --icon-list-bg-padding: 40px;    /* band padding over the background */
 }
 
-/* author-supplied background image — painted only on the icon-list section
-   wrapper. Full section width at the image's natural aspect ratio, anchored to
-   the top (matching the source's width:100% / height:auto <img>): on tall
-   mobile layouts the map sits at the top and content flows below over white.
-   ~40px vertical padding gives the content breathing room (measured). */
+/* Author-set section background (--section-background-image, from the
+   "Background Image" section metadata via decorateSectionMetadata). Scoped to
+   THIS section wrapper so it can't affect other sections. Full width at natural
+   aspect, top-anchored (like the source's width:100%/height:auto <img>) so on
+   tall mobile the map sits at the top and content flows below. */
 .icon-list-container.section[style*="--section-background-image"] {
   padding-block: var(--icon-list-bg-padding);
   background-image: var(--section-background-image);
@@ -45,10 +31,8 @@
   background-size: 100% auto;
 }
 
-/* centered gold section heading — the title (e.g. "Stroke facts") is authored as
-   a default-content heading above the icon-list block, so it is styled here
-   scoped to the icon-list section wrapper. Source: Futura-bold, gold, 1.5em
-   (21px), centered, with a ~67px gap down to the icon row. */
+/* Section heading (e.g. "Stroke facts") — authored as default content above the
+   block, styled here scoped to the section. Source: Futura-bold gold 21px. */
 .icon-list-container .default-content-wrapper h1,
 .icon-list-container .default-content-wrapper h2,
 .icon-list-container .default-content-wrapper h3,
@@ -94,9 +78,8 @@
   height: auto;
 }
 
-/* caption below the icon — source: Futura-bold, black, 14px, centered, 1.375
-   line-height (19.25px, measured). Include the <p> EDS wraps the cell text in so
-   the caption keeps the tight spacing. */
+/* caption below the icon — source: Futura-bold black 14px, 1.375 line-height.
+   The <p> is included so EDS's cell <p> keeps the same tight spacing. */
 .icon-list .icon-list-text,
 .icon-list .icon-list-text p {
   margin: 0;
@@ -107,9 +90,7 @@
   color: var(--color-black);
 }
 
-/* tablet (651-1200px): 4-up text-only — the icons are hidden, matching the
-   source's aem-GridColumn--tablet--hide (display:none in this exact range). The
-   caption fills the item. */
+/* tablet: 4-up, icons hidden (source's aem-GridColumn--tablet--hide) */
 @media (width >= 651px) and (width <= 1200px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
@@ -120,8 +101,7 @@
   }
 }
 
-/* desktop (>=1201px): the author-selected column count (falls back to 4), icons
-   shown again — matches where the source restores the icon columns. */
+/* desktop: author-selected column count (default 4), icons shown */
 @media (width >= 1201px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
