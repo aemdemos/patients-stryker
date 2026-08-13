@@ -21,13 +21,24 @@
    (.icon-list-container) so it never affects other sections that may carry a
    background image for unrelated reasons. */
 
+/* Block-local design tokens (measured from the source). Defined on the section
+   wrapper so both the wrapper background rule and the inner block rules inherit
+   them — keeping all icon-list styling self-contained in this file. */
+.icon-list-container {
+  --icon-list-icon-width: 165px;   /* icon rendered width */
+  --icon-list-icon-gap: 9px;       /* icon → caption gap */
+  --icon-list-title-gap: 67px;     /* title → icon-row gap */
+  --icon-list-item-gap: 40px;      /* vertical gap between grid rows */
+  --icon-list-bg-padding: 40px;    /* band vertical padding over the background */
+}
+
 /* author-supplied background image — painted only on the icon-list section
    wrapper. Full section width at the image's natural aspect ratio, anchored to
    the top (matching the source's width:100% / height:auto <img>): on tall
    mobile layouts the map sits at the top and content flows below over white.
    ~40px vertical padding gives the content breathing room (measured). */
 .icon-list-container.section[style*="--section-background-image"] {
-  padding-block: var(--space-section-bg, 40px);
+  padding-block: var(--icon-list-bg-padding);
   background-image: var(--section-background-image);
   background-repeat: no-repeat;
   background-position: top center;
@@ -58,7 +69,7 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--statistics-item-gap) 0;
+  gap: var(--icon-list-item-gap) 0;
   margin: 0;
   padding: 0;
 }
