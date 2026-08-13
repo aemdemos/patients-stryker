@@ -93,7 +93,7 @@
   /* cta boxes fill their grid column (no width cap / centering) */
   max-width: none;
   margin: 0;
-  padding: 3%;
+  padding: 5%;
   text-align: left;
 }
 
@@ -137,6 +137,10 @@
    applied in panel.js by adding the button classes. */
 .panel.cta .panel-cta {
   margin-top: 10px;
+}
+
+.panel.colored-border a:any-link {
+  text-decoration: none;
 }
 
 /* Universal Editor fallback — pure CSS, no dependency on any JS-added class.
@@ -238,6 +242,8 @@
    after the :last-child rules, to satisfy no-descending-specificity) */
 .panel.colored-border .panel-body p:first-of-type {
   font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+
 }
 
 .fragment .panel.gray .panel-body p {
@@ -322,6 +328,10 @@
   .fragment .panel.gray .panel-body h3{
   font-size:var(--panel-heading-size-xs);
 }
+
+.panel.colored-border .panel-body {
+  border-top: var(--panel-colored-border-width-tablet) solid var(--color-accent);
+}
 }
 
 @media (width >= 841px) {
@@ -354,4 +364,10 @@
       font-weight: 700;
       font-family: var(--display-font-family);
     }
+}
+
+@media (width >= 1024px) {
+.panel.colored-border .panel-body {
+  border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
+}
 }
