@@ -94,6 +94,7 @@
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block: 15px;
+  --space-block-l: 20px; /* measured: hero banner card margin (.pDiv.bg-shadow) */
   --list-indent: 17px;
 
   /* section vertical rhythm — measured: .page-section margin-bottom */

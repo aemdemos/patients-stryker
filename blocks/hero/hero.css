@@ -125,11 +125,11 @@
   display: block;
   position: static;
 
-  /* clear the gold nav bar with breathing room above the card. The source sits
-     the banner ~60px below the nav: a "Get the facts" eyebrow heading (dropped
-     in migration) plus the card's own ~20px margin. Reproduce that full offset
-     here so the banner lands in the same place; keep the standard gap below. */
-  margin-block: calc(var(--space-section) * 2) var(--space-block);
+  /* match the source card's own margin (.pDiv.bg-shadow = 20px top & bottom).
+     The source's larger nav gap comes from a visually-hidden "Get the facts"
+     eyebrow heading (transparent text) that the migration drops — reproducing
+     that as real margin left dead space, so we use the card's true 20px. */
+  margin-block: var(--space-block-l);
   padding: 0;
   min-height: 0;
   box-shadow: var(--shadow-soft);
@@ -174,7 +174,9 @@
   line-height: var(--heading-line-height);
 }
 
-/* subheading — dark serif */
+/* subheading — dark serif. Source uses 21px only on small phones and bumps to
+   24.5px from ~480px up (well below the 840px layout crossover), so raise it
+   here rather than waiting for the desktop media query. */
 .hero.banner h2 {
   margin-bottom: var(--space-block);
   color: var(--text-color);
@@ -182,6 +184,12 @@
   font-weight: 500;
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
+}
+
+@media (width >= 480px) {
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
+  }
 }
 
 .hero.banner .button-wrapper {
@@ -201,10 +209,12 @@
     grid-area: 1 / 1;
   }
 
+  /* source overlays the copy on the left half of the image (50%), which keeps
+     the Futura headline to two lines; 45% forced a third line */
   .hero.banner > div:last-child {
     z-index: 1;
     align-self: center;
-    max-width: 45%;
+    max-width: 50%;
     padding: 0 0 0 5vw;
   }
 
