@@ -80,8 +80,6 @@
   margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
-
-  /* scale the headline with the viewport on mobile so it isn't undersized */
   font-size: 7vw;
   line-height: 1.35;
 }
@@ -95,19 +93,156 @@
 .hero.fullbleed p {
   margin-bottom: 0;
   font-family: var(--heading-font-family);
-
-  /* scale supporting copy with the viewport on mobile */
   font-size: 3vw;
   line-height: 1.35;
 }
 
-/* keep the safety fallback: a fullbleed hero with no image renders dark copy */
+/* no-image fallback: dark copy */
 .hero.fullbleed.no-image * {
   color: var(--text-color);
 }
 
-/* desktop — wide image, text overlaid on the white left panel, centered.
-   Source crosses over at 840px (headline 3.5vw, copy 1.5vw). */
+/* ===== Banner variant: copy stacked below the image on mobile, overlaid on desktop ===== */
+
+/* contained drop-shadowed card — restore content containment */
+.hero-container .hero-wrapper:has(.hero.banner) {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+}
+
+.hero.banner {
+  display: block;
+  position: static;
+
+  /* match the source card's own 20px top/bottom margin */
+  margin-block: var(--space-block-l);
+  padding: 0;
+  min-height: 0;
+  box-shadow: var(--shadow-soft);
+  overflow: clip;
+}
+
+.hero.banner picture {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  width: 100%;
+}
+
+.hero.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* copy block — stacked below the image on mobile (15px side gutter) */
+.hero.banner > div:last-child {
+  box-sizing: border-box;
+  padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+}
+
+/* opt-in via section metadata "Style: Text First" — shows the copy above the
+   image on mobile; the >=840px overlay grid ignores order so desktop is unchanged */
+.section.text-first .hero.banner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.hero.banner h1,
+.hero.banner h2 {
+  max-width: none;
+  margin-inline: 0;
+  text-align: left;
+}
+
+/* headline — light serif base; bold → Futura, bold+italic → gold (see styles.css) */
+.hero.banner h1 {
+  margin-bottom: var(--space-block);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 7vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* subheading — dark serif, 21px on phones then 24.5px from 480px up */
+.hero.banner h2 {
+  margin-bottom: var(--space-block);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 480px) {
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
+.hero.banner .button-wrapper {
+  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
+}
+
+/* multiple CTAs (e.g. stroke's two language buttons) sit inline with a 10px gap */
+.hero.banner .button-wrapper:has(+ .button-wrapper),
+.hero.banner .button-wrapper + .button-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hero.banner .button-wrapper + .button-wrapper {
+  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
+  margin-inline-start: 10px;
+}
+
+/* desktop — copy overlays the image, vertically centered (crossover at 840px) */
+@media (width >= 840px) {
+  .hero.banner,
+  .section.text-first .hero.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* stack the image row and the copy row in the same grid cell */
+  .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+  /* copy overlays the left half of the image */
+  .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: center;
+    max-width: 50%;
+    padding: 0 0 0 5vw;
+  }
+
+  /* keep the centred block balanced top and bottom */
+  .hero.banner .button-wrapper:last-child {
+    margin-bottom: 0;
+  }
+
+  .hero.banner h1 {
+    font-size: 3.5vw;
+  }
+
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* cap the fluid headline at 1439px */
+@media (width >= 1439px) {
+  .hero.banner h1 {
+    font-size: 49px;
+  }
+}
+
 @media (width >= 840px) {
   .hero {
     padding: 40px 32px;
@@ -119,7 +254,7 @@
     padding: 0 0 0 5vw;
   }
 
-  /* desktop asset is a wide crop — let its own ratio drive the height */
+  /* wide crop — let the asset's own ratio drive the height */
   .hero.fullbleed img {
     aspect-ratio: auto;
     object-fit: contain;
@@ -136,7 +271,7 @@
   }
 }
 
-/* large desktop — source caps the fluid sizes at 1439px (49px / 21px) */
+/* cap the fluid sizes at 1439px */
 @media (width >= 1439px) {
   .hero.fullbleed h1 {
     font-size: 49px;
