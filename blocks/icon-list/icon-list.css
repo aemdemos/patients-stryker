@@ -16,6 +16,8 @@
   --icon-list-title-gap: 67px;     /* title → icon-row gap */
   --icon-list-item-gap: 40px;      /* gap between grid rows */
   --icon-list-bg-padding: 40px;    /* band padding over the background */
+  --icon-list-title-size: 31.5px;  /* heading: source 1.5em x 21px h3 */
+  --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */
 }
 
 /* Author-set section background (--section-background-image, from the
@@ -32,7 +34,8 @@
 }
 
 /* Section heading (e.g. "Stroke facts") — authored as default content above the
-   block, styled here scoped to the section. Source: Futura-bold gold 21px. */
+   block, styled here scoped to the section. Source: Futura-bold gold, 31.5px
+   (1.5em x 21px h3), dropping to 26.25px below the source's 480px breakpoint. */
 .icon-list-container .default-content-wrapper h1,
 .icon-list-container .default-content-wrapper h2,
 .icon-list-container .default-content-wrapper h3,
@@ -41,10 +44,21 @@
 .icon-list-container .default-content-wrapper h6 {
   margin: 0 0 var(--icon-list-title-gap);
   font-family: var(--display-font-family-bold);
-  font-size: var(--heading-font-size-l);
+  font-size: var(--icon-list-title-size-s);
   font-weight: 700;
   color: var(--color-accent);
   text-align: center;
+}
+
+@media (width >= 480px) {
+  .icon-list-container .default-content-wrapper h1,
+  .icon-list-container .default-content-wrapper h2,
+  .icon-list-container .default-content-wrapper h3,
+  .icon-list-container .default-content-wrapper h4,
+  .icon-list-container .default-content-wrapper h5,
+  .icon-list-container .default-content-wrapper h6 {
+    font-size: var(--icon-list-title-size);
+  }
 }
 
 .icon-list ul.icon-list-items {
@@ -91,7 +105,7 @@
 }
 
 /* tablet: 4-up, icons hidden (source's aem-GridColumn--tablet--hide) */
-@media (width >= 651px) and (width <= 1200px) {
+@media (width > 650px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -101,9 +115,13 @@
   }
 }
 
-/* desktop: author-selected column count (default 4), icons shown */
-@media (width >= 1201px) {
+/* desktop: author-selected column count (default 4), icons shown again */
+@media (width > 1200px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
+  }
+
+  .icon-list .icon-list-icon {
+    display: block;
   }
 }
