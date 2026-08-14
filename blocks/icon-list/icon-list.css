@@ -5,20 +5,9 @@
      - 651-1200px:   4-up, icons HIDDEN (source's aem-GridColumn--tablet--hide)
      - >=1201px:     cols-N (default 4), icons shown
    Column count comes from --icon-list-columns (set in JS from the cols-N
-   variant). The title and world-map background live on the section, not the
-   block (see the section-scoped rules below). */
-
-/* Design tokens (measured). On the section wrapper so both the wrapper and
-   inner rules inherit them, keeping all icon-list styling in this file. */
-.icon-list-container {
-  --icon-list-icon-width: 165px;   /* icon rendered width */
-  --icon-list-icon-gap: 9px;       /* icon → caption gap */
-  --icon-list-title-gap: 67px;     /* title → icon-row gap */
-  --icon-list-item-gap: 40px;      /* gap between grid rows */
-  --icon-list-bg-padding: 40px;    /* band padding over the background */
-  --icon-list-title-size: 31.5px;  /* heading: source 1.5em x 21px h3 */
-  --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */
-}
+   variant). Block tokens (--icon-list-*) are defined in styles.css :root, per
+   the project convention. The title and world-map background live on the
+   section, not the block (see the section-scoped rules below). */
 
 /* Author-set section background (--section-background-image, from the
    "Background Image" section metadata via decorateSectionMetadata). Scoped to

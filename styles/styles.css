@@ -105,6 +105,15 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 
+  /* icon-list block — measured from source ("Stroke facts") */
+  --icon-list-icon-width: 165px;     /* icon rendered width */
+  --icon-list-icon-gap: 9px;         /* icon → caption gap */
+  --icon-list-title-gap: 67px;       /* title → icon-row gap */
+  --icon-list-item-gap: 40px;        /* gap between grid rows */
+  --icon-list-bg-padding: 35px;      /* heading offset into the map band */
+  --icon-list-title-size: 31.5px;    /* heading: source 1.5em x 21px h3 */
+  --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */
+
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
   --panel-cta-heading-size: 26px; /* cta variant h3 */
