@@ -144,6 +144,13 @@
   padding: var(--space-section) var(--container-gutter) var(--space-block-l);
 }
 
+/* opt-in via section metadata "Style: Text First" — shows the copy above the
+   image on mobile; the >=840px overlay grid ignores order so desktop is unchanged */
+.section.text-first .hero.banner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .hero.banner h1,
 .hero.banner h2 {
   max-width: none;
@@ -196,7 +203,8 @@
 
 /* desktop — copy overlays the image, vertically centered (crossover at 840px) */
 @media (width >= 840px) {
-  .hero.banner {
+  .hero.banner,
+  .section.text-first .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
   }
