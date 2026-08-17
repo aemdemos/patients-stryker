@@ -116,6 +116,13 @@
   --icon-list-title-size: 31.5px;    /* heading: source 1.5em x 21px h3 */
   --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */
 
+  /* icon-list (tile) variant — measured from source ("risk factors of a stroke"):
+     near-square icons that stay visible at every breakpoint, 2-up mobile / 5-up
+     tablet+desktop. Icons are 200x170 (ratio 20/17). */
+  --icon-list-tile-icon-width: 200px; /* icon rendered width at desktop */
+  --icon-list-tile-icon-gap: 0px;     /* source pads gap via caption whitespace, not margin */
+  --icon-list-tile-row-gap: 30px;     /* vertical gap between tile rows */
+
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
   --panel-cta-heading-size: 26px; /* cta variant h3 */

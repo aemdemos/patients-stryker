@@ -124,3 +124,62 @@
     margin-bottom: 9px;
   }
 }
+
+/* ── Tile variant ──────────────────────────────────────────────────────────
+   "What are the risk factors of a stroke?" on
+   patients.stryker.com/ww/en/stroke-awareness. Unlike the base list, tiles keep
+   their near-square (200x170) icons visible at every breakpoint. Source layout:
+     <=650px    2 columns
+     >650px     5 columns (tablet + desktop)
+   Columns are class-driven (default 5, or cols-4) rather than via the shared
+   --icon-list-columns variable, so the tile default needs no authoring. */
+.icon-list.tile ul.icon-list-items {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--icon-list-tile-row-gap) 0;
+}
+
+.icon-list.tile .icon-list-icon {
+  margin-bottom: var(--icon-list-tile-icon-gap);
+}
+
+.icon-list.tile .icon-list-icon img {
+  width: var(--icon-list-tile-icon-width);
+  max-width: 100%;
+  aspect-ratio: 20 / 17;
+}
+
+/* tablet + desktop: default 5-up, icons stay visible. Fixed via classes (not the
+   --icon-list-columns var) so the 5-up default applies with no authoring; the
+   more-specific .cols-4 rule below lets an author opt into 4-up. Overrides the
+   base block's tablet icon-hide and desktop column rules. */
+@media (width > 650px) {
+  .icon-list.tile ul.icon-list-items {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .icon-list.tile.cols-4 ul.icon-list-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .icon-list.tile .icon-list-icon {
+    display: block;
+    margin-bottom: var(--icon-list-tile-icon-gap);
+  }
+}
+
+/* Section chrome for the tile variant — the source ("risk factors") sits on a
+   full-bleed light-gray band with centered intro copy. Scoped with :has() so it
+   only affects sections that hold a tile list, never the base map-background
+   variant. In EDS the .section is already full-viewport width, so a background
+   here is inherently edge-to-edge. */
+.icon-list-container.section:has(> .icon-list-wrapper > .icon-list.tile) {
+  margin-block: 0;
+  padding-block: var(--space-section);
+  background-color: var(--color-surface);
+}
+
+/* center the lead paragraphs above the grid (source centers this intro) */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper :is(p, h1, h2, h3, h4, h5, h6) {
+  text-align: center;
+}
