@@ -319,6 +319,8 @@
   padding-inline: 5%;
 }
 
+/* colour + bold come from authoring (bold+italic → gold) and global styles;
+   only layout and the responsive size are set here. */
 .hero.band h1 {
   max-width: none;
   margin: 0;

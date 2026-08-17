@@ -1,0 +1,86 @@
+{
+  "definitions": [
+    {
+      "title": "Icon List",
+      "id": "icon-list",
+      "model": "icon-list",
+      "filter": "icon-list",
+      "plugins": {
+        "da": {
+          "name": "icon-list",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Icon List Item",
+      "id": "icon-list-item",
+      "model": "icon-list-item",
+      "plugins": {
+        "da": {
+          "name": "icon-list-item",
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "icon", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "iconAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "icon-list",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "cols-4",
+          "label": "Columns",
+          "valueType": "string",
+          "options": [
+            { "name": "4 columns", "value": "cols-4" },
+            { "name": "5 columns", "value": "cols-5" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "icon-list-item",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "icon",
+          "label": "Icon",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "iconAlt",
+          "label": "Icon Alt Text",
+          "value": "",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "icon-list",
+      "components": [
+        "icon-list-item"
+      ]
+    }
+  ]
+}
