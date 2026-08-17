@@ -195,48 +195,59 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Exposes an author-supplied background image URL as the
- * `--section-background-image` custom property on the section. Blocks that use a
- * section background (e.g. icon-list) paint it from that property, scoped to
- * their own wrapper — so this is inert for sections that don't opt in.
+ * Prepends an author-supplied background image to the section as a real
+ * decorative `<img class="section-background-image">` (matching the source,
+ * which uses an inline image — not a CSS background). Blocks that opt in (e.g.
+ * icon-list) make the section `position: relative`, position this layer behind,
+ * and lift the content above it — all scoped to their own wrapper, so this is
+ * inert for sections whose block does not style it.
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
  */
 function applySectionBackgroundImage(section, url) {
-  if (section && url) {
-    section.style.setProperty('--section-background-image', `url("${url}")`);
-  }
+  if (!section || !url || section.querySelector(':scope > .section-background-image')) return;
+  const img = document.createElement('img');
+  img.className = 'section-background-image';
+  img.src = url;
+  img.alt = '';
+  img.setAttribute('aria-hidden', 'true');
+  // eager, NOT lazy: this layer is `position: absolute; height: auto`, so before
+  // it loads its box collapses to zero area. Chromium's native lazy-load
+  // intersection heuristic treats a zero-area box as "not near the viewport" and
+  // never fires the fetch — a permanent deadlock. It's decorative and out of flow
+  // (no CLS), so eager-loading is safe and matches the source's inline <img>.
+  img.loading = 'eager';
+  section.prepend(img);
 }
 
 /**
- * Applies each section's metadata: `Style` → CSS classes, `Background Image` →
- * the background custom property, other keys → `data-*`. Replicates the
- * boilerplate behaviour this project's trimmed `aem.js` omits, without editing
- * aem.js. Handles both the raw `.section-metadata` table and the platform-lifted
- * `data-*` form (published DA content, e.g. `data-background-image`).
+ * Applies each section's metadata: `Style` values become CSS classes, and any
+ * other keys are exposed as `data-*` attributes. `Background Image` additionally
+ * gets a decorative `<img>` layer (see applySectionBackgroundImage). Handles both
+ * the raw `.section-metadata` table and the platform-lifted `data-*` form
+ * (published DA content, e.g. `data-background-image`).
  * @param {Element} main The main container element
  */
 function decorateSectionMetadata(main) {
-  main.querySelectorAll('.section > div > div.section-metadata').forEach((metaBlock) => {
-    const section = metaBlock.closest('.section');
-    const meta = readBlockConfig(metaBlock);
-    Object.keys(meta).forEach((key) => {
+  main.querySelectorAll('.section .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    if (!section) return;
+    const config = readBlockConfig(meta);
+    Object.entries(config).forEach(([key, value]) => {
       if (key === 'style') {
-        const styles = meta.style
-          .split(',')
-          .map((style) => toClassName(style.trim()))
-          .filter((style) => style);
-        styles.forEach((style) => section.classList.add(style));
+        const styles = (Array.isArray(value) ? value : value.split(','))
+          .map((s) => toClassName(s.trim()))
+          .filter((s) => s);
+        styles.forEach((s) => section.classList.add(s));
       } else if (key === 'background-image') {
-        applySectionBackgroundImage(section, Array.isArray(meta[key]) ? meta[key][0] : meta[key]);
+        applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
       } else {
-        section.dataset[toCamelCase(key)] = meta[key];
+        section.dataset[toCamelCase(key)] = value;
       }
     });
-    // the table is config, not content — drop it and any empty wrapper
-    const wrapper = metaBlock.parentElement;
-    metaBlock.remove();
-    if (wrapper && wrapper.children.length === 0) wrapper.remove();
+    // remove the metadata block (and its section wrapper) so it is neither
+    // rendered nor picked up by decorateBlocks as a loadable block.
+    (meta.closest('.section-metadata-wrapper') || meta).remove();
   });
 
   // published DA content exposes the value as data-background-image instead of a

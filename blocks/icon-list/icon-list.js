@@ -11,6 +11,28 @@ function readColumns(block) {
   return match ? Number(match[1]) : 4;
 }
 
+// The stroke-facts icons are authored as bare DM autolinks (visible text is the
+// URL), so dm-support.js has no display text to derive alt from and renders
+// alt="". Mirror the source site's short labels here, keyed by the DM asset
+// name (the URL's last path segment starts with the key). Only applied when the
+// image has no alt, so any author-supplied alt still wins.
+const ICON_ALT = {
+  oneinfour: '1 in 4 people',
+  global: 'Global',
+  disability: 'Disability',
+  leadingcause: 'Leading cause',
+};
+
+function altForSrc(src) {
+  try {
+    const name = new URL(src, window.location.href).pathname.split('/').pop().toLowerCase();
+    const key = Object.keys(ICON_ALT).find((k) => name.startsWith(k));
+    return key ? ICON_ALT[key] : '';
+  } catch {
+    return '';
+  }
+}
+
 /**
  * Decorates the icon-list block: a grid of items, each row one item with two
  * cells — [ picture ] [ caption ]. The section title and world-map background
@@ -44,9 +66,12 @@ export default function decorate(block) {
     list.append(item);
   });
 
-  // re-render at 2x the 165px icon width for hi-dpi. Skip DM images —
-  // dm-support.js already renders them at native quality.
+  // Backfill alt from the source labels when the author gave none (bare DM
+  // autolinks render alt=""). Then re-render non-DM images at 2x the 165px icon
+  // width for hi-dpi; DM images are left as dm-support.js rendered them (native
+  // quality), so set their alt in place.
   list.querySelectorAll('picture > img').forEach((img) => {
+    if (!img.alt) img.alt = altForSrc(img.src);
     if (isDMSrc(img.src)) return;
     img.closest('picture').replaceWith(
       createOptimizedPicture(img.src, img.alt, false, [{ width: '330' }]),
