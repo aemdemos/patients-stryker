@@ -6,8 +6,9 @@
    fallback (humanist-slab-712-fallback) is calibrated to the Arial metric group
    (Arial ≡ Liberation Sans ≡ Arimo — metric-identical across Windows/macOS/Linux/
    Android), so the swap is width-neutral on every platform and does not reflow the
-   long footnote paragraphs (the mobile CLS in issue #52). The 3 primary faces are
-   also preloaded in head.html so the swap happens fast. */
+   long footnote paragraphs (the mobile CLS in issue #52). Because the fallback is
+   metric-matched, the webfonts are NOT preloaded — the swap is shift-free whenever
+   it lands, so paying for an eager preload buys nothing. */
 
 /* Body — Humanist Slab 712 W01 Roman */
 @font-face {

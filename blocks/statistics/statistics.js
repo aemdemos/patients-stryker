@@ -208,6 +208,50 @@ function setupCountUp(block) {
 }
 
 /**
+ * Reserve each description's rendered height as a min-height so a font swap that
+ * re-wraps the text to a different line count cannot push the content below it.
+ *
+ * The system fallback (Arial-metric) is a different typeface than the brand body
+ * font (HumanistSlab), and no CSS metric override can make two different typefaces
+ * wrap identically — size-adjust matches AVERAGE advance width, but line breaks
+ * depend on the width at each specific break point, so a sentence sitting on a
+ * wrap boundary can flip between (e.g.) 4 and 5 lines when the webfont swaps in.
+ * That re-wrap is the statistics-page mobile CLS: the taller fallback shrinks a
+ * line when HumanistSlab loads and every stat below jumps up.
+ *
+ * Since we can't stop the re-wrap, we stop it from MOVING anything: reserve the
+ * currently-rendered height (the fallback is present at first paint — its face is
+ * eager+local — and wraps >= the brand font for this pair), then keep the MAX
+ * across a re-measure once fonts settle. min-height only ever holds or grows, so
+ * the shorter brand text just settles inside the reserved box — no shift. Worst
+ * case is a few px of bottom whitespace under a long description, which is
+ * imperceptible next to a layout shift.
+ * @param {Element} block The decorated statistics block
+ */
+function reserveDescriptionHeights(block) {
+  const descs = [...block.querySelectorAll('.statistics-desc')];
+  if (!descs.length) return;
+
+  const reserve = () => {
+    descs.forEach((el) => {
+      const prev = parseFloat(el.style.minHeight) || 0;
+      el.style.minHeight = ''; // measure natural height in the current font
+      const natural = el.getBoundingClientRect().height;
+      const reserved = Math.max(prev, natural);
+      // synchronous clear→set: no paint occurs between, so no transient shift
+      if (reserved > 0) el.style.minHeight = `${Math.ceil(reserved)}px`;
+    });
+  };
+
+  // Reserve on the next frame (layout settled) and again once fonts resolve, in
+  // case the body font swaps and changes wrapping. Max keeps it monotonic.
+  requestAnimationFrame(reserve);
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => requestAnimationFrame(reserve));
+  }
+}
+
+/**
  * loads and decorates the statistics block
  * @param {Element} block The block element
  */
@@ -249,6 +293,11 @@ export default function decorate(block) {
   });
 
   block.replaceChildren(list);
+
+  // Reserve description heights so a font-swap re-wrap can't push content (the
+  // statistics-page CLS). Runs for every variant — the reflow is independent of
+  // the count-up animation.
+  reserveDescriptionHeights(block);
 
   // optional count-up animation, enabled via the `count-up` authoring variant
   if (block.classList.contains('count-up')) setupCountUp(block);
