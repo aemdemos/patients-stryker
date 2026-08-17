@@ -177,7 +177,7 @@
   color: var(--text-color);
   font-family: var(--body-font-family);   /* bold slab serif, source default */
   font-weight: 700;
-  font-size: var(--heading-font-size-xl);   /* ~24.5px, source fontsize-1-5em */
+  font-size: var(--heading-font-size-l);   /* 21px = source fontsize-1-5em (1.5 x 14) */
   line-height: var(--heading-line-height);
   text-transform: none;   /* undo the global button uppercase */
   text-decoration: none;
