@@ -124,3 +124,46 @@
     margin-bottom: 9px;
   }
 }
+
+/* ─── (label) variant ────────────────────────────────────────────────────
+   "Symptoms of a stroke" (B.E. F.A.S.T.) on the source. Each item is a
+   portrait icon over a bold label (gold first letter) and a smaller,
+   lighter caption below. Unlike the base variant, icons stay visible at
+   every breakpoint and the author-set column count applies from tablet up. */
+.icon-list.label .icon-list-icon img {
+  width: var(--icon-list-label-icon-width);
+  aspect-ratio: 151 / 166;
+}
+
+/* label — first paragraph: enlarged, with a gold initial. Font-family, weight
+   and colour come from the base .icon-list-text p rule above. */
+.icon-list.label .icon-list-text p:first-child {
+  font-size: var(--icon-list-label-size);
+  line-height: 1.06;
+}
+
+.icon-list.label .icon-list-text p:first-child::first-letter {
+  color: var(--color-accent);
+}
+
+/* caption — following paragraphs: lighter, smaller serif */
+.icon-list.label .icon-list-text p:not(:first-child) {
+  margin-top: var(--icon-list-label-caption-gap);
+  font-family: var(--heading-font-family);
+  font-size: var(--icon-list-label-caption-size);
+  font-weight: 400;
+  line-height: 1.15; /* source: 17.5px text / 20.125px line */
+}
+
+/* tablet+ : keep icons visible and honour the author's column count
+   (source shows all six across from 651px up) */
+@media (width > 650px) {
+  .icon-list.label ul.icon-list-items {
+    grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
+  }
+
+  .icon-list.label .icon-list-icon {
+    display: block;
+    margin-bottom: var(--icon-list-icon-gap);
+  }
+}
