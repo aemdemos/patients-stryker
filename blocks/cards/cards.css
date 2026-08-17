@@ -130,9 +130,11 @@
   display: contents;
 }
 
-.cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6),
-.cards.linked .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
+/* linked title = bold link in a <p>; decorateButtons promotes it to
+   .button-wrapper > a.button, so order/skin that (not a heading) */
+.cards.linked .cards-card-body .button-wrapper {
   order: 0;   /* title above the image */
+  margin: 0 0 var(--space-block);
 }
 
 /* brochure skin: portrait cover image with a light border, light-serif title,
@@ -145,6 +147,7 @@
 }
 
 .cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
+  order: 0;   /* title above the image */
   margin: 0 0 var(--space-block);
 
   /* source brochure title: light serif (URW Egyptienne), weight 500, ~43px
@@ -155,10 +158,8 @@
   line-height: var(--heading-line-height);
 }
 
-/* linked variant: bold title above a landscape image; title + image link to a
-   page (IVS "Back and neck pain / Knee pain / …" condition grid). Shares the
-   title-above-image scaffolding above; differs from brochure in the skin —
-   landscape image, no border, Futura-bold ~1.5em title, no body/links row. */
+/* linked skin: bold title above a landscape borderless image, both linking to a
+   page (IVS condition grid). */
 .cards.linked > ul > li img {
   width: 100%;
   height: auto;
@@ -166,18 +167,18 @@
   object-fit: cover;
 }
 
-.cards.linked .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
-  margin: 0 0 var(--space-block);
+/* strip button chrome -> plain bold link (Futura bold ~24.5px, matches source) */
+.cards.linked .cards-card-body .button-wrapper a.button {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--text-color);
   font-family: var(--display-font-family);   /* Futura bold */
   font-weight: 700;
   font-size: var(--heading-font-size-xl);   /* ~24.5px, source fontsize-1-5em */
   line-height: var(--heading-line-height);
-}
-
-/* the title is authored as a link to the condition page; keep it plain (no
-   button promotion, no underline) */
-.cards.linked .cards-card-body a {
-  color: inherit;
   text-decoration: none;
 }
 
