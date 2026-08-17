@@ -13,6 +13,7 @@
       "columns",
       "fragment",
       "hero",
+      "icon-list",
       "image",
       "panel",
       "statistics",
@@ -46,6 +47,12 @@
     "components": [
       "text",
       "image"
+    ]
+  },
+  {
+    "id": "icon-list",
+    "components": [
+      "icon-list-item"
     ]
   },
   {

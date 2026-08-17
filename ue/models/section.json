@@ -46,6 +46,13 @@
               "value": "blue"
             }
           ]
+        },
+        {
+          "component": "reference",
+          "name": "background-image",
+          "label": "Background Image",
+          "valueType": "string",
+          "multi": false
         }
       ]
     }
@@ -59,6 +66,7 @@
         "columns",
         "fragment",
         "hero",
+        "icon-list",
         "image",
         "panel",
         "statistics",
