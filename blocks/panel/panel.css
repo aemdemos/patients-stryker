@@ -263,7 +263,7 @@
   color: var(--color-accent);
 }
 
-/* ---- gray variant (IVS "How it works" callout) -----------------------*/
+/* ---- gray variant (IVS "How it works" callout) ----------------------- */
 .panel.gray .panel-body {
   padding: 2%;
   background: var(--color-surface);
