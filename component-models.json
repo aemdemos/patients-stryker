@@ -70,6 +70,13 @@
             "value": "dark"
           }
         ]
+      },
+      {
+        "component": "reference",
+        "name": "background-image",
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false
       }
     ]
   },
@@ -319,6 +326,54 @@
         "component": "richtext",
         "name": "content",
         "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-list",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "cols-4",
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "4 columns",
+            "value": "cols-4"
+          },
+          {
+            "name": "5 columns",
+            "value": "cols-5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "icon-list-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "icon",
+        "label": "Icon",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "iconAlt",
+        "label": "Icon Alt Text",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
         "valueType": "string"
       }
     ]
