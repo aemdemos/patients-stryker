@@ -179,6 +179,7 @@
   font-weight: 700;
   font-size: var(--heading-font-size-xl);   /* ~24.5px, source fontsize-1-5em */
   line-height: var(--heading-line-height);
+  text-transform: none;   /* undo the global button uppercase */
   text-decoration: none;
 }
 
