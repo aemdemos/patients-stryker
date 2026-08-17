@@ -32,7 +32,8 @@
   }
 
   .cards.resources > ul,
-  .cards.brochure > ul {
+  .cards.brochure > ul,
+  .cards.linked > ul {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -106,26 +107,36 @@
   margin: var(--space-block) 0 0;
 }
 
-/* brochure variant: portrait cover image with a light border, an optional
-   centered title above it, and centered "Digital | Print" download links below.
-   Title is per-card content — include a heading for the titled style, omit it
-   for the untitled style. Shares the resources 4-up desktop grid.
-
-   Ordering is CSS-only (no DOM manipulation): the card is a flex column and the
-   body uses display:contents so its children (heading, links) become flex items
-   of the li alongside the image. order then lays them out title -> image ->
-   links without moving any nodes (keeps UE instrumentation intact). */
-.cards.brochure > ul > li {
+/* shared title-above-image scaffolding (brochure + linked): the li is a flex
+   column and the body uses display:contents so its heading/links become flex
+   items, ordered title -> image -> (body) without moving nodes (keeps UE
+   instrumentation intact). Skins (image ratio/border, title font, body row)
+   are set per-variant below. */
+.cards.brochure > ul > li,
+.cards.linked > ul > li {
   display: flex;
   flex-direction: column;
   background-color: transparent;
   text-align: center;
 }
 
-.cards.brochure .cards-card-image {
-  order: 1;   /* image between title (0) and links (2) */
+.cards.brochure .cards-card-image,
+.cards.linked .cards-card-image {
+  order: 1;   /* image between title (0) and body (2) */
 }
 
+.cards.brochure .cards-card-body,
+.cards.linked .cards-card-body {
+  display: contents;
+}
+
+.cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6),
+.cards.linked .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
+  order: 0;   /* title above the image */
+}
+
+/* brochure skin: portrait cover image with a light border, light-serif title,
+   and a centered "Digital | Print" download-links row below. */
 .cards.brochure > ul > li img {
   width: 100%;
   height: auto;
@@ -133,13 +144,7 @@
   border: 1px solid var(--color-surface-muted);   /* #b2b4ae, matches source */
 }
 
-/* let the body's children participate in the li's flex ordering directly */
-.cards.brochure .cards-card-body {
-  display: contents;
-}
-
 .cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
-  order: 0;   /* title above the image */
   margin: 0 0 var(--space-block);
 
   /* source brochure title: light serif (URW Egyptienne), weight 500, ~43px
@@ -148,6 +153,32 @@
   font-weight: 500;
   font-size: var(--heading-font-size-xxxl);
   line-height: var(--heading-line-height);
+}
+
+/* linked variant: bold title above a landscape image; title + image link to a
+   page (IVS "Back and neck pain / Knee pain / …" condition grid). Shares the
+   title-above-image scaffolding above; differs from brochure in the skin —
+   landscape image, no border, Futura-bold ~1.5em title, no body/links row. */
+.cards.linked > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;   /* landscape crop, matches source */
+  object-fit: cover;
+}
+
+.cards.linked .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);   /* Futura bold */
+  font-weight: 700;
+  font-size: var(--heading-font-size-xl);   /* ~24.5px, source fontsize-1-5em */
+  line-height: var(--heading-line-height);
+}
+
+/* the title is authored as a link to the condition page; keep it plain (no
+   button promotion, no underline) */
+.cards.linked .cards-card-body a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .cards.brochure .cards-card-body p {
