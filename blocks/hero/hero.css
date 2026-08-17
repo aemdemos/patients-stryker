@@ -319,15 +319,12 @@
   padding-inline: 5%;
 }
 
+/* colour + bold come from authoring (bold+italic → gold) and global styles;
+   only layout and the responsive size are set here. */
 .hero.band h1 {
   max-width: none;
   margin: 0;
-  color: var(--color-accent);
-  font-family: var(--display-font-family-bold);
-  font-weight: 700;
   text-align: left;
-
-  /* scale the headline with the viewport — source uses 8vw on mobile */
   font-size: 8vw;
   line-height: 1.2;
 }
