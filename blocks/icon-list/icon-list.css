@@ -45,7 +45,7 @@
 .icon-list-container .default-content-wrapper h4,
 .icon-list-container .default-content-wrapper h5,
 .icon-list-container .default-content-wrapper h6 {
-  margin: 0 0 var(--icon-list-title-gap);
+  margin: 15px 0 var(--icon-list-title-gap);
   font-family: var(--display-font-family-bold);
   font-size: var(--icon-list-title-size-s);
   font-weight: 700;
