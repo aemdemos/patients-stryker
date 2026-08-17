@@ -80,7 +80,8 @@
    rendered below and OUTSIDE the box. The `light` variant shares this box +
    heading styling but has no CTA button. */
 .panel.cta > ul > li,
-.panel.light > ul > li {
+.panel.light > ul > li,
+.panel.blue > ul > li {
   /* transparent wrapper: the shadowed box + the button live inside it */
   margin: 0;
 }
@@ -212,6 +213,15 @@
   line-height: var(--panel-body-line-height-m);
 }
 
+/* blue variant body copy: white, cta body size (box/heading rules live with the
+   other variants below). Placed here to precede the :last-child rules. */
+.panel.blue .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
+}
+
 .panel .panel-body p:last-child {
   margin: 0 0 var(--space-block);
 }
@@ -236,6 +246,41 @@
   background: var(--color-accent);
   box-shadow: none;
   text-align: center;
+}
+
+/* ---- blue variant (Zip skin-closure callouts) ------------------------
+   Solid navy-blue box with a soft shadow, centered gold heading and white body
+   copy — measured from source .has-background.dimensional-box.bg-blue
+   (bg #1c5687 = --color-navy-bright, 30px 30px 10px padding, --shadow-soft).
+   Behaves like cta/light (2-up at 841+); the gold heading is authored as
+   bold+italic in DA. */
+.panel.blue .panel-body {
+  max-width: none;
+  margin: 0;
+  padding: var(--panel-blue-padding);
+  background: var(--color-navy-bright);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+
+  /* flex:1 lets the box fill its stretched grid cell (see equal-height rule) */
+  flex: 1;
+}
+
+/* equal-height columns: the 2-up grid stretches each <li> to the tallest row, so
+   make the row a flex container and let the blue box fill it instead of
+   collapsing to its own content height and leaving a gap at the bottom. */
+.panel.blue > ul > li,
+.panel.blue.panel-authoring > div {
+  display: flex;
+}
+
+.panel.blue .panel-body h3 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 700;
+  color: var(--color-accent);
 }
 
 /* ---- gray variant (IVS "How it works" callout) -----------------------
@@ -291,9 +336,11 @@
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
+  .panel.blue > ul,
   .panel.cta.panel-authoring,
   .panel.dark.panel-authoring,
-  .panel.light.panel-authoring {
+  .panel.light.panel-authoring,
+  .panel.blue.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
