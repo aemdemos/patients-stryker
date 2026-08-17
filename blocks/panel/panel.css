@@ -278,7 +278,7 @@
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--heading-font-size-xl);
   font-weight: 700;
   color: var(--color-accent);
 }
