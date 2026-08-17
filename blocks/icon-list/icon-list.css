@@ -39,12 +39,7 @@
 
 /* Section heading ("Stroke facts") — default content above the block. Source:
    Futura-bold gold 31.5px, dropping to 26.25px below 480px. */
-.icon-list-container .default-content-wrapper h1,
-.icon-list-container .default-content-wrapper h2,
-.icon-list-container .default-content-wrapper h3,
-.icon-list-container .default-content-wrapper h4,
-.icon-list-container .default-content-wrapper h5,
-.icon-list-container .default-content-wrapper h6 {
+.icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
   margin: 15px 0 var(--icon-list-title-gap);
   font-family: var(--display-font-family-bold);
   font-size: var(--icon-list-title-size-s);
@@ -54,12 +49,7 @@
 }
 
 @media (width >= 480px) {
-  .icon-list-container .default-content-wrapper h1,
-  .icon-list-container .default-content-wrapper h2,
-  .icon-list-container .default-content-wrapper h3,
-  .icon-list-container .default-content-wrapper h4,
-  .icon-list-container .default-content-wrapper h5,
-  .icon-list-container .default-content-wrapper h6 {
+  .icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
     font-size: var(--icon-list-title-size);
   }
 }
