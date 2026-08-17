@@ -195,12 +195,9 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Prepends an author-supplied background image to the section as a real
- * decorative `<img class="section-background-image">` (matching the source,
- * which uses an inline image — not a CSS background). Blocks that opt in (e.g.
- * icon-list) make the section `position: relative`, position this layer behind,
- * and lift the content above it — all scoped to their own wrapper, so this is
- * inert for sections whose block does not style it.
+ * Prepends a decorative `<img class="section-background-image">` to the section
+ * (matches the source's inline background image, not a CSS background). Opt-in
+ * blocks like icon-list position and layer it; inert for other sections.
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
  */
@@ -211,21 +208,17 @@ function applySectionBackgroundImage(section, url) {
   img.src = url;
   img.alt = '';
   img.setAttribute('aria-hidden', 'true');
-  // eager, NOT lazy: this layer is `position: absolute; height: auto`, so before
-  // it loads its box collapses to zero area. Chromium's native lazy-load
-  // intersection heuristic treats a zero-area box as "not near the viewport" and
-  // never fires the fetch — a permanent deadlock. It's decorative and out of flow
-  // (no CLS), so eager-loading is safe and matches the source's inline <img>.
+  // eager, not lazy: when absolutely positioned this box is zero-area until it
+  // loads, so Chromium's lazy heuristic reads it as off-screen and never fetches.
+  // It's decorative and out of flow, so eager loading is safe (no CLS).
   img.loading = 'eager';
   section.prepend(img);
 }
 
 /**
- * Applies each section's metadata: `Style` values become CSS classes, and any
- * other keys are exposed as `data-*` attributes. `Background Image` additionally
- * gets a decorative `<img>` layer (see applySectionBackgroundImage). Handles both
- * the raw `.section-metadata` table and the platform-lifted `data-*` form
- * (published DA content, e.g. `data-background-image`).
+ * Applies section metadata: `Style` → CSS classes, `Background Image` → a
+ * decorative <img> layer, other keys → `data-*`. Handles the `.section-metadata`
+ * table and the published-DA `data-background-image` form.
  * @param {Element} main The main container element
  */
 function decorateSectionMetadata(main) {
@@ -250,8 +243,7 @@ function decorateSectionMetadata(main) {
     (meta.closest('.section-metadata-wrapper') || meta).remove();
   });
 
-  // published DA content exposes the value as data-background-image instead of a
-  // table; honour it so the background works on both paths.
+  // published DA content exposes the value as data-background-image, not a table
   main.querySelectorAll('.section[data-background-image]').forEach((section) => {
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });

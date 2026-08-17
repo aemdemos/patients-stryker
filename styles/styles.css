@@ -109,9 +109,9 @@
 
   /* icon-list block — measured from source ("Stroke facts") */
   --icon-list-icon-width: 165px;     /* icon rendered width */
-  --icon-list-icon-gap: 9px;         /* icon → caption gap */
+  --icon-list-icon-gap: 13px;        /* icon → caption gap (mobile); source uses 9px at desktop */
   --icon-list-title-gap: clamp(25px, 15px + 3.55vw, 75px); /* title → icon-row gap; fluid to track source (≈28px mobile → 67px @1440 → 71px @1600) */
-  --icon-list-item-gap: 40px;        /* gap between grid rows */
+  --icon-list-item-gap: 54px;        /* vertical gap between stacked items (mobile); matches source rhythm */
   --icon-list-bg-padding: 35px;      /* heading offset into the map band */
   --icon-list-title-size: 31.5px;    /* heading: source 1.5em x 21px h3 */
   --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */

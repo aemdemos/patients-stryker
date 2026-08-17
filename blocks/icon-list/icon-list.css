@@ -1,31 +1,22 @@
-/* Icon list — a grid of icons above short captions, from
-   patients.stryker.com/ww/en/stroke-awareness ("Stroke facts"). Breakpoints
-   match the source (651px / 1200px, not the site defaults):
-     - <=650px:      1 column, icons shown
-     - 651-1200px:   4-up, icons HIDDEN (source's aem-GridColumn--tablet--hide)
-     - >=1201px:     cols-N (default 4), icons shown
-   Column count comes from --icon-list-columns (set in JS from the cols-N
-   variant). Block tokens (--icon-list-*) are defined in styles.css :root, per
-   the project convention. The title and world-map image live on the section,
-   not the block (see the section-scoped rules below). */
+/* Icon list — icons above captions ("Stroke facts" on
+   patients.stryker.com/ww/en/stroke-awareness). Source breakpoints:
+     <=650px    1 column, icons shown
+     651-1200px 4-up, icons hidden (source's aem-GridColumn--tablet--hide)
+     >=1201px   cols-N (default 4), icons shown
+   Column count from --icon-list-columns (set in JS). Tokens live in styles.css
+   :root; the title and world-map image are on the section, not the block. */
 
-/* Author-set world-map background — a real decorative <img> (.section-background-image)
-   prepended to the section by decorateSectionMetadata, matching the source
-   (inline image, not a CSS background). It's the section's first child.
-
-   Mobile-first: at <=840px the source renders the map as a normal in-flow image
-   at the TOP of the section (full width, natural aspect), with the heading and
-   facts flowing BELOW it over white — not behind the text. So the base rule just
-   lets the image sit in flow at the top. */
+/* World-map background: a decorative <img> prepended to the section by
+   decorateSectionMetadata (matches the source's inline image, not a CSS bg).
+   <=840px it sits in normal flow at the top; heading/facts follow below it. */
 .icon-list-container > .section-background-image {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* >=841px (source cutoff): the map becomes a background band behind the content.
-   The section is the positioning context, the map is anchored to the top out of
-   flow, and the heading/facts stack above it (behind-the-text background). */
+/* >=841px (source cutoff): the map becomes a band behind the content — pulled
+   out of flow at the top, with the heading/facts lifted above it. */
 @media (width >= 841px) {
   .icon-list-container.section:has(> .section-background-image) {
     position: relative;
@@ -46,9 +37,8 @@
   }
 }
 
-/* Section heading (e.g. "Stroke facts") — authored as default content above the
-   block, styled here scoped to the section. Source: Futura-bold gold, 31.5px
-   (1.5em x 21px h3), dropping to 26.25px below the source's 480px breakpoint. */
+/* Section heading ("Stroke facts") — default content above the block. Source:
+   Futura-bold gold 31.5px, dropping to 26.25px below 480px. */
 .icon-list-container .default-content-wrapper h1,
 .icon-list-container .default-content-wrapper h2,
 .icon-list-container .default-content-wrapper h3,
@@ -100,20 +90,16 @@
   display: block;
 }
 
-/* aspect-ratio reserves a non-zero box BEFORE the image loads. dm-support.js
-   renders these DM icons with loading="lazy", and without an intrinsic height
-   the box collapses to zero area — Chromium's lazy intersection check then reads
-   it as "not near the viewport" and never fetches (the same zero-box deadlock
-   fixed for .section-background-image). The 165x107 ratio also prevents layout
-   shift. Scoped here so dm-support.js's shared lazy behaviour is untouched. */
+/* aspect-ratio reserves a non-zero box before the lazy-loaded DM icon arrives.
+   Without an intrinsic height the box is zero-area, so Chromium's lazy heuristic
+   reads it as off-screen and never fetches. Also prevents layout shift. */
 .icon-list .icon-list-icon img {
   width: var(--icon-list-icon-width);
   height: auto;
   aspect-ratio: 165 / 107;
 }
 
-/* caption below the icon — source: Futura-bold black 14px, 1.375 line-height.
-   The <p> is included so EDS's cell <p> keeps the same tight spacing. */
+/* caption — source: Futura-bold black 14px, 1.375 line-height. */
 .icon-list .icon-list-text,
 .icon-list .icon-list-text p {
   margin: 0;
@@ -124,9 +110,7 @@
   color: var(--color-black);
 }
 
-/* tablet: 4-up, only the ICONS hidden (source's --tablet--hide applies to the
-   icon columns only). The world-map background stays visible through this range
-   — verified on the source at ~850px, where its <img> is display:inline-block. */
+/* tablet: 4-up, icons hidden (source's --tablet--hide); map band stays visible */
 @media (width > 650px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
@@ -145,5 +129,8 @@
 
   .icon-list .icon-list-icon {
     display: block;
+
+    /* source tightens icon → caption to 9px once icons reappear */
+    margin-bottom: 9px;
   }
 }
