@@ -93,79 +93,32 @@
     flex: 1;
   }
 
+  /* Custom width ratio (POC) — the author sets per-column proportions as
+     hyphen-separated numbers in the block name / UE "Column widths" field
+     (e.g. 60-40 for two columns, 20-50-30 for three). columns.js parses that class
+     into the --columns-ratio custom property (fr units) and adds .columns-custom-ratio.
+     Grid + fr makes the numbers RELATIVE (they need not total 100) and works for any
+     column count. Desktop only; tablet/mobile keep the base stacked/even flow. */
+  .columns.columns-custom-ratio > div {
+    display: grid;
+    grid-template-columns: var(--columns-ratio);
+    align-items: start;
+  }
+
   /* icon-grid stays a wrapping 2-up grid on desktop (the base 1024 rule would
      otherwise force all 6 cells into one nowrap row) */
   .columns.columns-icon-grid > div {
     flex-wrap: wrap;
   }
 
-  /* 50-50 columns are a true 50% each (like the reference's col-sm-6). The base
-     flex:1 1 0% equalises content boxes, so columns with different padding end up
-     unequal and the image shrinks; a fixed 50% basis keeps both halves equal. */
-  .columns.columns-50-50 > div > div,
+  /* icon-grid keeps a fixed 50% basis so its 2-up cells stay even */
   .columns.columns-icon-grid > div > div {
     flex: 0 0 50%;
-  }
-
-  /* serif image+text rows centre the image against the text block only at desktop
-     (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
-  .section.serif .columns.columns-50-50 > div {
-    align-items: center;
-  }
-}
-
-/* 50-50 variant — two equal columns (image + text, or text + text). The base
-   .columns rules already produce the 50/50 side-by-side layout; these rules match
-   the reference's heading size and the small top offset on the text column. */
-.columns.columns-50-50 h4 {
-  font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
-}
-
-/* in an image+text row, the text column sits slightly below the image top, as
-   in the reference. Only applies when the row has a picture (not text+text rows). */
-@media (width >= 841px) {
-  .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-    padding-top: var(--space-section);
-  }
-
-  /* wider gap between image and text than the base 30px gutter (reference ~64px):
-     add inset on the text column, toward the image. Image-left row → text is the
-     2nd child, inset its left; image-right row → text is the 1st child, inset its
-     right. (Avoids nested :has, which is invalid.) --col-5050-inset is overridden
-     per section variant (e.g. the serif/stroke section uses a wider gap). */
-  .columns.columns-50-50 {
-    --col-5050-inset: 49px;
-  }
-
-  .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
-    padding-left: var(--col-5050-inset);
-  }
-
-  .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
-    padding-right: var(--col-5050-inset);
-  }
-
-  /* stroke/serif section uses a wider image-to-text gap (~98px vs 64px) */
-  .section.serif .columns.columns-50-50 {
-    --col-5050-inset: 83px;
-  }
-
-  /* serif image-right row: the reference also insets the text column's outer
-     (left) edge, not just the image-facing side, so the text sits further in */
-  .section.serif .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
-    padding-left: var(--col-5050-inset);
-  }
-
-  /* drop the mobile image-stacking gap so the image doesn't carry a bottom-only
-     gap when the columns are side by side (tablet top-aligns like the reference) */
-  .section.serif .columns.columns-50-50 .columns-img-col {
-    margin-bottom: 0;
-    padding-bottom: 0;
   }
 }
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
-   on the stroke-awareness page. Typography only; layout stays columns-50-50. */
+   on the stroke-awareness page. Typography only. */
 .section.serif .columns p,
 .section.serif .columns ul,
 .section.serif .columns li,
@@ -185,16 +138,16 @@
 /* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
    image is above or below the text. Neutralise the base image-column margin/padding
    and the columns' own trailing margin so row-gap alone governs the spacing. */
-.section.serif .columns.columns-50-50 > div {
+.section.serif .columns > div {
   row-gap: var(--space-section-l);
 }
 
-.section.serif .columns.columns-50-50 .columns-img-col {
+.section.serif .columns .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.section.serif .columns.columns-50-50 > div > div > :last-child {
+.section.serif .columns > div > div > :last-child {
   margin-bottom: 0;
 }
 
@@ -262,9 +215,8 @@
 }
 
 /* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
-   widening the between-column gap and insetting the text. Excludes the 50-50
-   variant, which keeps the base 15px so its image is the same size on either side. */
-.section.light-gray .columns:not(.columns-50-50) > div > div {
+   widening the between-column gap and insetting the text. */
+.section.light-gray .columns > div > div {
   padding-inline: 24px;
 }
 

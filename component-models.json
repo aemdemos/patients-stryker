@@ -159,28 +159,11 @@
         }
       },
       {
-        "component": "multiselect",
+        "component": "text",
         "name": "classes",
-        "label": "Layout",
+        "label": "Layout / column widths (optional)",
         "valueType": "string",
-        "options": [
-          {
-            "name": "50-50 Layout",
-            "value": "columns-50-50"
-          },
-          {
-            "name": "Icon Grid",
-            "value": "columns-icon-grid"
-          }
-        ],
-        "condition": {
-          "==": [
-            {
-              "var": "columns"
-            },
-            2
-          ]
-        }
+        "description": "Custom column widths: type hyphen-separated proportions, one per column, e.g. 60-40 for two columns or 20-50-30 for three. Numbers are relative and need not add up to 100. Applies on desktop; columns stack on mobile. Leave blank for equal columns. For the icon-grid layout, type: columns-icon-grid"
       }
     ]
   },
