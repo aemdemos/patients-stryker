@@ -163,11 +163,11 @@
 .cards.linked > ul > li img {
   width: 100%;
   height: auto;
-  aspect-ratio: 2 / 1;   /* landscape crop, matches source */
+  aspect-ratio: 1200 / 680;   /* source asset ratio (~16:9) */
   object-fit: cover;
 }
 
-/* strip button chrome -> plain bold link (Futura bold ~24.5px, matches source) */
+/* strip button chrome -> plain bold slab-serif link (matches source) */
 .cards.linked .cards-card-body .button-wrapper a.button {
   display: inline;
   padding: 0;
@@ -175,7 +175,7 @@
   border-radius: 0;
   background: none;
   color: var(--text-color);
-  font-family: var(--display-font-family);   /* Futura bold */
+  font-family: var(--body-font-family);   /* bold slab serif, source default */
   font-weight: 700;
   font-size: var(--heading-font-size-xl);   /* ~24.5px, source fontsize-1-5em */
   line-height: var(--heading-line-height);
