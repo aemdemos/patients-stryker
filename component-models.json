@@ -229,6 +229,10 @@
             "value": "fullbleed"
           },
           {
+            "name": "Band",
+            "value": "band"
+          },
+          {
             "name": "Banner",
             "value": "banner"
           }
@@ -271,6 +275,14 @@
                   "var": "classes"
                 }
               ]
+            },
+            {
+              "in": [
+                "band",
+                {
+                  "var": "classes"
+                }
+              ]
             }
           ]
         }
@@ -294,6 +306,14 @@
             {
               "in": [
                 "banner",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "band",
                 {
                   "var": "classes"
                 }
