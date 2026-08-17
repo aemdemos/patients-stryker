@@ -91,13 +91,16 @@
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
+  --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block: 15px;
+  --space-block-l: 20px; /* measured: hero banner card margin (.pDiv.bg-shadow) */
   --list-indent: 17px;
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+  --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
@@ -110,10 +113,16 @@
   --panel-cta-body-size: 17.5px;    /* cta variant p */
   --panel-cta-body-line-height: 1.15; /* cta variant p */
   --panel-heading-size: 35px; /* h3 */
+  --panel-heading-size-s: 21.5px; /* gray variant h3 */
+  --panel-heading-size-xs: 17.5px; /* gray variant h3 on small screens */
   --panel-body-size: 24.5px; /* p */
   --panel-body-size-s: 21px;
+  --pannel-body-size-xs: 17.5px;
   --panel-body-line-height: 1.06; /* p */
+  --panel-body-line-height-m: 1.15; /* p */
   --panel-dark-gradient: linear-gradient(90deg, #545857, #3e5245); /* dark variant bg (measured) */
+  --panel-fragment-font-size: 14px; /* fragment gray variant p */
+  --panel-fragment-line-height: 1.375; /* fragment gray variant p */
 
   /* radius scale (square-cornered design) */
   --radius-none: 0;
@@ -231,14 +240,17 @@ b {
    italic is a color signal only and must not slant the heading, so it is
    normalized upright. The combined marker is then painted gold. */
 h1 :is(strong, em),
-h2 :is(strong, em) {
+h2 :is(strong, em),
+h3 :is(strong, em) {
   font-style: normal;
 }
 
 h1 strong em,
 h1 em strong,
 h2 strong em,
-h2 em strong {
+h2 em strong,
+h3 strong em,
+h3 em strong {
   color: var(--color-accent);
 }
 
@@ -488,6 +500,21 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+main > .section.no-cta > .default-content-wrapper h1 {
+  font-size: 42px;
+  margin: 40px 0;
+  font-family: var(--display-font-family-bold);
+}
+
+/* category heading above a card group — sage underline separating each group,
+   matching the source's .component-subheading.border-bottom-gold. Scoped to
+   `.section.no-cta` (the card-group sections on the resources page) so it can't
+   affect h2s anywhere else. */
+main > .section.no-cta > .default-content-wrapper h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
 /* full-bleed section — the background spans the full viewport width while the
    inner content stays capped at the container max-width and centred. In EDS the
    .section is already full-viewport-width and only its inner > div is capped, so
@@ -505,6 +532,13 @@ main > .section.full-bleed {
    site's .bg-light-gray. */
 main > .section.light-gray {
   background-color: var(--color-surface);
+}
+
+/* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
+   a gray-to-teal gradient band with white text. Pair with .full-bleed. */
+main > .section.dark {
+  background: var(--panel-dark-gradient);
+  color: var(--color-white);
 }
 
 /* divider between the fullbleed hero and the cards section — constrained to content width */
