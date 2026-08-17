@@ -39,7 +39,8 @@
 }
 
 /* stack the image row and the text row in the same grid cell */
-.hero.fullbleed > div {
+.hero.fullbleed > div,
+.hero.band > div {
   grid-area: 1 / 1;
 }
 
@@ -144,5 +145,72 @@
 
   .hero.fullbleed p {
     font-size: 21px;
+  }
+}
+
+/* band variant — compact gradient bar with the World Stroke Day logo baked
+   into the authored image; a gold headline is overlaid on the left, vertically
+   centered. Reuses the fullbleed image-stacking (see .hero.fullbleed above). */
+.hero.band {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: static;
+  padding: 0;
+  min-height: 0;
+}
+
+.hero.band picture {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  width: 100%;
+}
+
+/* the image (gradient + logo) drives the bar height */
+.hero.band img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* text overlay — gold headline on the left, vertically centered over the bar.
+   Source insets the copy 5% on mobile, 12% on desktop. */
+.hero.band > div:last-child {
+  z-index: 1;
+  box-sizing: border-box;
+  align-self: center;
+  padding-inline: 5%;
+}
+
+.hero.band h1 {
+  max-width: none;
+  margin: 0;
+  color: var(--color-accent);
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  text-align: left;
+
+  /* scale the headline with the viewport — source uses 8vw on mobile */
+  font-size: 8vw;
+  line-height: 1.2;
+}
+
+/* desktop — source drops the headline to 4vw and insets the copy 12% at 840px */
+@media (width >= 840px) {
+  .hero.band > div:last-child {
+    padding-inline: 12%;
+  }
+
+  .hero.band h1 {
+    font-size: 4vw;
+  }
+}
+
+/* source caps the headline at 56px (reached ~1400px) */
+@media (width >= 1400px) {
+  .hero.band h1 {
+    font-size: 56px;
   }
 }
