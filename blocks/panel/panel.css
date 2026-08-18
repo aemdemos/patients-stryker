@@ -26,8 +26,7 @@
   text-align: center;
 }
 
-/* left variant: left-align the panel content (heading override lives after the
-   base .panel .panel-body h3 rule to satisfy no-descending-specificity) */
+/* left variant: left-align the panel content  */
 .panel.left .panel-body {
   text-align: left;
 }
@@ -38,8 +37,7 @@
   line-height: var(--panel-body-line-height);
 }
 
-/* cta paragraphs containing bold+italic (the gold-label marker) use the
-   smaller body size and default line-height */
+/* cta paragraphs containing bold+italic (the gold-label marker) */
 .panel .panel-body p:has(strong em),
 .panel .panel-body p:has(em strong),
 .panel .panel-body p:has(b i),
@@ -50,22 +48,20 @@
   font-family: var(--heading-font-family);
 }
 
-/* gold variant body copy: serif family, smaller body size (styling for the
-   .panel.gold box itself lives with the other variants further down) */
 .panel.gold .panel-body p {
   font-family: var(--heading-font-family);
   font-size: var(--panel-body-size-s);
 }
 
 .panel.cta .panel-body p,
-.panel.light .panel-body p {
+.panel.light .panel-body p,
+.panel.colored-border .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-cta-body-line-height);
 }
 
-/* bold + italic body text → gold accent (the site's gold-label marker:
-   text authored as both bold and italic renders in the accent color). */
+/* bold + italic body text → gold accent  */
 .panel .panel-body strong em,
 .panel .panel-body em strong,
 .panel .panel-body b i,
@@ -78,21 +74,21 @@
 /* ---- cta variant */
 .panel.cta > ul > li,
 .panel.light > ul > li,
-.panel.blue > ul > li {
+.panel.blue > ul > li,
+.panel.colored-border > ul > li {
   margin: 0;
 }
 
 .panel.cta .panel-body,
-.panel.light .panel-body {
+.panel.light .panel-body,
+.panel.colored-border .panel-body {
   max-width: none;
   margin: 0;
-  padding: 3%;
+  padding: 5%;
   text-align: left;
 }
 
 .panel .panel-body h3 {
-  /* box stays full-width; cap the title narrower and center it so it wraps
-     like the source (margin-inline: auto centers the capped heading) */
   max-width: var(--panel-heading-max-width);
   margin: 0 auto 30px;
   font-family: var(--display-font-family);
@@ -107,8 +103,7 @@
   margin: 0 0 30px;
 }
 
-/* italic heading text → gold accent (default + cta variants; authored as <em>/<i>).
-   The dark variant keeps its own gold heading rule below, so exclude it here. */
+
 .panel:not(.dark) .panel-body h3 em,
 .panel:not(.dark) .panel-body h3 i {
   color: var(--color-accent);
@@ -116,7 +111,8 @@
 }
 
 .panel.cta .panel-body h3,
-.panel.light .panel-body h3 {
+.panel.light .panel-body h3,
+.panel.colored-border .panel-body h3 {
   /* cta heading is left-aligned and full width (no cap) */
   max-width: none;
   margin: 0 0 var(--space-block);
@@ -124,22 +120,15 @@
   font-size: var(--panel-cta-heading-size);
 }
 
-/* gold CTA button below the box (10px gap measured from source).
-   The button reuses the global a.button.accent styling from styles.css —
-   applied in panel.js by adding the button classes. */
 .panel.cta .panel-cta {
   margin-top: 10px;
 }
 
-/* Universal Editor fallback — pure CSS, no dependency on any JS-added class.
-   UE renders the authored markup and reverts the button classes panel.js adds,
-   leaving the CTA link as the authored bold+italic anchor
-   <a href><em><strong>…</strong></em></a>. We anchor only on `.panel.cta`
-   (authored block+variant, always present) and a link that CONTAINS em/strong,
-   styling it as the gold button directly (mirrors a.button.accent). On the LIVE
-   render decorateButtons() has already stripped the em/strong wrappers, so
-   `a:has(em)`/`a:has(strong)` no longer match there — this rule is naturally
-   UE-only and can't double-style the live button. */
+.panel.colored-border a:any-link {
+  text-decoration: none;
+}
+
+/* Universal Editor fallback */
 .panel.cta a:any-link:has(em),
 .panel.cta a:any-link:has(strong) {
   box-sizing: border-box;
@@ -202,6 +191,9 @@
   line-height: var(--panel-body-line-height-m);
 }
 
+.panel.colored-border .panel-body p {
+  font-family: var(--body-font-family);
+}
 
 .panel.blue .panel-body p {
   margin: 0 0 var(--space-block);
@@ -221,17 +213,32 @@
   margin: 0;
 }
 
+.panel.colored-border .panel-body p:first-of-type {
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+
+}
+
 .fragment .panel.gray .panel-body p {
   font-size: var(--panel-fragment-font-size);
   line-height: var(--panel-fragment-line-height);
 }
 
-/* ---- gold variant (IVS "Tired of living in pain?" callout) ----------- */
+/* ---- gold variant */
 .panel.gold .panel-body {
   padding: 22.5px;
   background: var(--color-accent);
   box-shadow: none;
   text-align: center;
+}
+
+/* ---- gray variant  */
+.panel.gray .panel-body {
+  padding: 2%;
+  background: var(--color-surface);
+  box-shadow: none;
+  text-align: left;
+  margin:0;
 }
 
 /* ---- blue variant (Zip skin-closure callouts) ------------------------ */
@@ -263,15 +270,6 @@
   color: var(--color-accent);
 }
 
-/* ---- gray variant (IVS "How it works" callout) ----------------------- */
-.panel.gray .panel-body {
-  padding: 2%;
-  background: var(--color-surface);
-  box-shadow: none;
-  text-align: left;
-  margin:0;
-}
-
 .panel.gray .panel-body h3 {
   max-width: none;
   margin: 0 0 var(--space-block);
@@ -281,10 +279,21 @@
   color: var(--color-black);
 }
 
-/* fragment-context override: panel.gray's h3/p get different styling when the
-   panel is included via a fragment block, vs. authored directly on a page. */
+/* fragment-context override */
 .fragment .panel.gray .panel-body h3{
   font-size:var(--panel-fragment-font-size);
+}
+
+/* ---- colored-border variant */
+.panel.colored-border .panel-body {
+  background: var(--color-surface);
+  box-shadow: none;
+  border-top: var(--panel-colored-border-width) solid var(--color-accent);
+}
+
+.panel.colored-border > ul > li:last-child .panel-body,
+.panel.colored-border.panel-authoring > div:last-child .panel-body {
+  border-top-color: var(--color-purple);
 }
 
 /* Universal Editor authoring view */
@@ -302,6 +311,10 @@
   .fragment .panel.gray .panel-body h3{
   font-size:var(--panel-heading-size-xs);
 }
+
+.panel.colored-border .panel-body {
+  border-top: var(--panel-colored-border-width-tablet) solid var(--color-accent);
+}
 }
 
 @media (width >= 841px) {
@@ -309,10 +322,12 @@
   .panel.dark > ul,
   .panel.light > ul,
   .panel.blue > ul,
+  .panel.colored-border > ul,
   .panel.cta.panel-authoring,
   .panel.dark.panel-authoring,
   .panel.light.panel-authoring,
-  .panel.blue.panel-authoring {
+  .panel.blue.panel-authoring,
+  .panel.colored-border.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -332,4 +347,15 @@
       font-weight: 700;
       font-family: var(--display-font-family);
     }
+
+    .panel.colored-border .panel-body {
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (width >= 1024px) {
+.panel.colored-border .panel-body {
+  border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
+}
 }

@@ -61,6 +61,7 @@
           "valueType": "string",
           "options": [
             { "name": "50-50 Layout", "value": "columns-50-50" },
+            { "name": "70-30 Layout", "value": "columns-70-30" },
             { "name": "Icon Grid", "value": "columns-icon-grid" }
           ],
           "condition": { "==": [{ "var": "columns" }, 2] }
