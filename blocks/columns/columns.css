@@ -52,7 +52,7 @@
 }
 
 /* border on the image in the first .section.compact only */
-.section.compact:not(.section.compact ~ .section.compact) .columns > div:first-child {
+.section.compact:not(.section.compact ~ .section.compact) .columns  {
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
@@ -263,6 +263,7 @@
    (0,2,0), so the smaller body size wins. More element values TBD. */
 .section.compact .columns h2 {
   font-size: var(--heading-font-size-compact);
+  margin-top: var(--space-block);
 }
 
 .section.compact .columns p,
@@ -367,7 +368,9 @@
   text-decoration: none;
 }
 
-@media (width >=480px) {
+
+/* tablet 2-up: float grid matching the reference */
+@media (width >= 841px) {
   .section.compact h2 {
   font-size: var(--heading-font-size-compact-m);
 }
@@ -375,26 +378,10 @@
   .section.compact .columns h2 {
   font-size: var(--heading-font-size-compact-m);
 }
-}
 
-/* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
-@media (width >= 841px) {
-  .section.light-gray .columns p:has(+ p a u) {
-    min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
-  }
-}
-
-/* tablet 2-up: float grid matching the reference */
-@media (width >= 841px) {
   .section.light-gray .columns > div {
     display: block;
-  }
-
-  .section.light-gray .columns > div::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+}
 
   .section.light-gray .columns > div > div {
     float: left;
@@ -406,11 +393,28 @@
     float: right;
   }
 
+.section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)){
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top:0;
+}
+
   /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
   .section.light-gray .columns p:has(a u) {
     margin-bottom: 75px;
   }
 }
+
+  .section.light-gray .columns p:has(+ p a u) {
+  min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+}
+
+  .section.light-gray .columns > div::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 
 /* desktop 3-up: revert to the base flex row */
 @media (width >= 1024px) {
