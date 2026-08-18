@@ -33,6 +33,10 @@
               "value": "fullbleed"
             },
             {
+              "name": "Band",
+              "value": "band"
+            },
+            {
               "name": "Banner",
               "value": "banner"
             }
@@ -60,7 +64,8 @@
           "multi": false,
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
-            { "in": ["banner", { "var": "classes" }] }
+            { "in": ["banner", { "var": "classes" }] },
+            { "in": ["band", { "var": "classes" }] }
           ] }
         },
         {
@@ -71,7 +76,8 @@
           "value": "",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
-            { "in": ["banner", { "var": "classes" }] }
+            { "in": ["banner", { "var": "classes" }] },
+            { "in": ["band", { "var": "classes" }] }
           ] }
         },
         {

@@ -1,30 +1,30 @@
 {
   "definitions": [
     {
-      "title": "Cards",
-      "id": "cards",
-      "model": "cards",
-      "filter": "cards",
+      "title": "Icon List",
+      "id": "icon-list",
+      "model": "icon-list",
+      "filter": "icon-list",
       "plugins": {
         "da": {
-          "name": "cards",
+          "name": "icon-list",
           "rows": 1,
           "columns": 2
         }
       }
     },
     {
-      "title": "Card",
-      "id": "card",
-      "model": "card",
+      "title": "Icon List Item",
+      "id": "icon-list-item",
+      "model": "icon-list-item",
       "plugins": {
         "da": {
-          "name": "card",
+          "name": "icon-list-item",
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "icon", "selector": "div:nth-child(1)>picture>img[src]" },
+            { "name": "iconAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -33,39 +33,37 @@
   ],
   "models": [
     {
-      "id": "cards",
+      "id": "icon-list",
       "fields": [
         {
           "component": "select",
           "name": "classes",
-          "value": "",
-          "label": "Style",
+          "value": "cols-4",
+          "label": "Columns",
           "valueType": "string",
           "options": [
-            { "name": "Default", "value": "" },
-            { "name": "Resources", "value": "resources" },
-            { "name": "Brochure", "value": "brochure" },
-            { "name": "Linked", "value": "linked" }
+            { "name": "4 columns", "value": "cols-4" },
+            { "name": "5 columns", "value": "cols-5" }
           ]
         }
       ]
     },
     {
-      "id": "card",
+      "id": "icon-list-item",
       "fields": [
         {
           "component": "reference",
+          "name": "icon",
+          "label": "Icon",
           "valueType": "string",
-          "name": "image",
-          "label": "Image",
           "multi": false
         },
         {
           "component": "text",
-          "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
+          "name": "iconAlt",
+          "label": "Icon Alt Text",
+          "value": "",
+          "valueType": "string"
         },
         {
           "component": "richtext",
@@ -79,9 +77,9 @@
   ],
   "filters": [
     {
-      "id": "cards",
+      "id": "icon-list",
       "components": [
-        "card"
+        "icon-list-item"
       ]
     }
   ]
