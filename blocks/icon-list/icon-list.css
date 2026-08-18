@@ -15,6 +15,12 @@
   height: auto;
 }
 
+/* top spacing on the section's content wrappers (label variant only) — all screen sizes */
+.icon-list-container:has(.icon-list.label) > .default-content-wrapper,
+.icon-list-container:has(.icon-list.label) > .icon-list-wrapper {
+  margin-top: 45px;
+}
+
 /* >=841px (source cutoff): the map becomes a band behind the content — pulled
    out of flow at the top, with the heading/facts lifted above it. */
 @media (width >= 841px) {
