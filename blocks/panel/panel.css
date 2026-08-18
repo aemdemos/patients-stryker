@@ -75,19 +75,15 @@
 }
 
 
-/* ---- cta variant (IVS homepage) --------------------------------------
-   Left-aligned box with a Futura-bold heading and a gold "LEARN MORE" button
-   rendered below and OUTSIDE the box. The `light` variant shares this box +
-   heading styling but has no CTA button. */
+/* ---- cta variant */
 .panel.cta > ul > li,
-.panel.light > ul > li {
-  /* transparent wrapper: the shadowed box + the button live inside it */
+.panel.light > ul > li,
+.panel.blue > ul > li {
   margin: 0;
 }
 
 .panel.cta .panel-body,
 .panel.light .panel-body {
-  /* cta boxes fill their grid column (no width cap / centering) */
   max-width: none;
   margin: 0;
   padding: 3%;
@@ -173,10 +169,7 @@
   color: inherit;
 }
 
-/* ---- dark variant (IVS condition sections, left column) --------------
-   A gray-to-dark-teal gradient box with white text and a left-aligned
-   heading — measured from source .has-background.bg-dark-teal-gradient
-   (linear-gradient(90deg, #545857, #3e5245), 22.5px padding, no shadow). */
+/* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
   padding: 22.5px;
   background: var(--panel-dark-gradient);
@@ -201,15 +194,20 @@
   margin: 0 0 var(--space-block);
 }
 
-/* gray variant body copy: Futura-bold display family (styling for the
-   .panel.gray box itself and its heading lives with the other variants further
-   down). Placed here alongside the other variant p rules to precede the
-   :last-child rules. */
+
 .panel.gray .panel-body p {
   margin: 0 0 var(--space-block);
   font-family: var(--body-font-family);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-body-line-height-m);
+}
+
+
+.panel.blue .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
 }
 
 .panel .panel-body p:last-child {
@@ -228,9 +226,7 @@
   line-height: var(--panel-fragment-line-height);
 }
 
-/* ---- gold variant (IVS "Tired of living in pain?" callout) -----------
-   Solid gold box, centered black text, no shadow — measured from source
-   .has-background.bg-gold (bg #ffb500 = --color-accent, 22.5px padding). */
+/* ---- gold variant (IVS "Tired of living in pain?" callout) ----------- */
 .panel.gold .panel-body {
   padding: 22.5px;
   background: var(--color-accent);
@@ -238,10 +234,36 @@
   text-align: center;
 }
 
-/* ---- gray variant (IVS "How it works" callout) -----------------------
-   Light-gray box, left-aligned black text, no shadow — measured from source
-   .has-background.bg-light-gray (bg #edeeec = --color-surface, 15px padding,
-   Futura-bold heading, serif body copy). */
+/* ---- blue variant (Zip skin-closure callouts) ------------------------ */
+.panel.blue .panel-body {
+  max-width: none;
+  margin: 0;
+  padding: 4%;
+  background: var(--color-navy-bright);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  flex: 1;
+}
+
+.panel.blue > ul {
+  gap:0;
+} 
+
+.panel.blue > ul > li,
+.panel.blue.panel-authoring > div {
+  display: flex;
+}
+
+.panel.blue .panel-body p:first-child {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* ---- gray variant (IVS "How it works" callout) ----------------------- */
 .panel.gray .panel-body {
   padding: 2%;
   background: var(--color-surface);
@@ -265,12 +287,7 @@
   font-size:var(--panel-fragment-font-size);
 }
 
-/* Universal Editor authoring view: the block keeps its authored div structure
-   (no ul/li transform) so child instrumentation persists, but panel.js still
-   tags each content cell with .panel-body — so all the .panel .panel-body
-   styling rules above apply in the editor exactly as they do live. Only the
-   grid layout (normally on .panel > ul) needs restating for the authoring
-   wrapper, since there is no <ul> in UE. */
+/* Universal Editor authoring view */
 .panel.panel-authoring {
   display: grid;
   grid-template-columns: 1fr;
@@ -291,16 +308,16 @@
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
+  .panel.blue > ul,
   .panel.cta.panel-authoring,
   .panel.dark.panel-authoring,
-  .panel.light.panel-authoring {
+  .panel.light.panel-authoring,
+  .panel.blue.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
 
-  /* wide variant: force a single full-width column at desktop, overriding the
-     2-up grid other variants set (declared after them so it wins by source
-     order at equal specificity). Combinable, e.g. `panel cta wide`. */
+  /* wide variant */
   .panel.wide > ul,
   .panel.wide.panel-authoring {
     grid-template-columns: 1fr;
