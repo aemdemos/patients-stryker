@@ -881,6 +881,14 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+}
+
+.section.compact p {
+  font-size: var(--footnote-font-size);  
+}
+
 @media (width >= 900px) {
   main > .section > div {
     box-sizing: border-box;
