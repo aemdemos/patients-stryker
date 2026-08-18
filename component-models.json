@@ -72,6 +72,10 @@
           {
             "name": "Blue",
             "value": "blue"
+          },
+          {
+            "name": "Divider",
+            "value": "divider"
           }
         ]
       },
@@ -182,6 +186,10 @@
           {
             "name": "50-50 Layout",
             "value": "columns-50-50"
+          },
+          {
+            "name": "70-30 Layout",
+            "value": "columns-70-30"
           },
           {
             "name": "Icon Grid",
@@ -521,6 +529,17 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Video link",
+        "description": "Paste a video URL. YouTube (youtube.com / youtu.be / youtube-nocookie.com) is supported; it renders behind a click-to-load poster facade."
       }
     ]
   }

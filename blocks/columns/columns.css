@@ -44,6 +44,20 @@
   list-style-type: disc;
 }
 
+/* 50-50 and 70-30 variants keep body copy at the base 14px (not the columns block's
+   enlarged 17.5px) — used for ENT condition sections (e.g. the sinusitis intro and
+   SYMPTOMS) whose copy should match the surrounding default-content paragraphs rather
+   than the marketing columns size. */
+.columns.columns-50-50 p,
+.columns.columns-50-50 ul,
+.columns.columns-50-50 li,
+.columns.columns-70-30 p,
+.columns.columns-70-30 ul,
+.columns.columns-70-30 li {
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
    on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
    this adds the matching left/right inset to the text that follows the image. */
@@ -105,6 +119,18 @@
   .columns.columns-50-50 > div > div,
   .columns.columns-icon-grid > div > div {
     flex: 0 0 50%;
+  }
+
+  /* 70-30 — an uneven two-column split (wide column left). Fixed flex bases (not
+     flex:1) so the ratio is exact regardless of each column's content/padding.
+     Desktop only; tablet keeps the even base split and mobile stays stacked,
+     matching the 50-50 variant's responsive behaviour. */
+  .columns.columns-70-30 > div > div:first-child {
+    flex: 0 0 67%;
+  }
+
+  .columns.columns-70-30 > div > div:last-child {
+    flex: 0 0 33%;
   }
 
   /* serif image+text rows centre the image against the text block only at desktop

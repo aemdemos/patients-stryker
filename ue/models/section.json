@@ -44,6 +44,10 @@
             {
               "name": "Blue",
               "value": "blue"
+            },
+            {
+              "name": "Divider",
+              "value": "divider"
             }
           ]
         },
@@ -70,7 +74,8 @@
         "image",
         "panel",
         "statistics",
-        "text"
+        "text",
+        "video"
       ]
     }
   ]
