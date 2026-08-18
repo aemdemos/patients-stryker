@@ -136,6 +136,21 @@
   aspect-ratio: 151 / 166;
 }
 
+/* icon → label gap: source has none (the label sits directly under the icon
+   box; the visual breathing room is baked into the PNG). Override the base
+   variant's 13px. */
+.icon-list.label .icon-list-icon {
+  margin-bottom: var(--icon-list-label-icon-gap);
+}
+
+/* Text cell fills the column width so captions wrap within the item's padded
+   box. Without this the flex column (align-items:center) shrinks the cell to its
+   longest word ("experiencing"), spilling text into the neighbouring gutter. The
+   source's float/block columns always fill their width, so match that. */
+.icon-list.label .icon-list-text {
+  align-self: stretch;
+}
+
 /* label — first paragraph: enlarged, with a gold initial. Font-family, weight
    and colour come from the base .icon-list-text p rule above. */
 .icon-list.label .icon-list-text p:first-child {
@@ -172,6 +187,13 @@
   font-weight: 700;
 }
 
+/* heading → intro-copy gap: the label section has intro text directly below the
+   heading, so use the source's fixed 49px rather than the base variant's larger
+   fluid title→icon-row gap. */
+.icon-list-container:has(.icon-list.label) .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: var(--icon-list-label-title-gap);
+}
+
 /* tablet+ : keep icons visible and honour the author's column count
    (source shows all six across from 651px up) */
 @media (width > 650px) {
@@ -181,6 +203,6 @@
 
   .icon-list.label .icon-list-icon {
     display: block;
-    margin-bottom: var(--icon-list-icon-gap);
+    margin-bottom: var(--icon-list-label-icon-gap);
   }
 }
