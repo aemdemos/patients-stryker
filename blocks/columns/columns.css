@@ -93,40 +93,44 @@
     flex: 1;
   }
 
-  /* Column width ratios — the author picks a layout from the UE dropdown, stored as
-     a named class (columns-50-50, columns-70-30, columns-30-70, columns-1-1-1).
-     columns.js reads the digits from that class, sets --columns-ratio (fr units) and
-     adds .columns-custom-ratio. Grid + fr makes the proportions relative and works
-     for any column count. Desktop only; tablet/mobile keep the base stacked/even flow.
-     Per-ratio tweaks: target the named class directly, e.g. `.columns.columns-70-30`. */
-  .columns.columns-custom-ratio > div {
-    display: grid;
-    grid-template-columns: var(--columns-ratio);
-    align-items: start;
-  }
-
   /* icon-grid stays a wrapping 2-up grid on desktop (the base 1024 rule would
      otherwise force all 6 cells into one nowrap row) */
   .columns.columns-icon-grid > div {
     flex-wrap: wrap;
   }
 
-  /* icon-grid keeps a fixed 50% basis so its 2-up cells stay even */
+  /* 50-50 columns are a true 50% each (like the reference's col-sm-6). The base
+     flex:1 1 0% equalises content boxes, so columns with different padding end up
+     unequal and the image shrinks; a fixed 50% basis keeps both halves equal. */
+  .columns.columns-50-50 > div > div,
   .columns.columns-icon-grid > div > div {
     flex: 0 0 50%;
   }
 
-  /* 50-50 polish (retained from the original dedicated variant) — serif image+text
-     rows centre the image against the text block at desktop (equal top/bottom
-     spacing, as the reference does); tablet stays top-aligned. */
+  /* 70-30 / 30-70 — an uneven two-column split, author-switchable between the two
+     orientations. Fixed flex bases (not flex:1) so the ratio is exact regardless of
+     each column's content/padding. Desktop only; tablet keeps the even base split
+     and mobile stays stacked, matching the 50-50 variant's responsive behaviour. */
+  .columns.columns-70-30 > div > div:first-child,
+  .columns.columns-30-70 > div > div:last-child {
+    flex: 0 0 70%;
+  }
+
+  .columns.columns-70-30 > div > div:last-child,
+  .columns.columns-30-70 > div > div:first-child {
+    flex: 0 0 30%;
+  }
+
+  /* serif image+text rows centre the image against the text block only at desktop
+     (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
   .section.serif .columns.columns-50-50 > div {
     align-items: center;
   }
 }
 
-/* 50-50 polish (retained from the original dedicated variant) — heading size and
-   the image↔text insets. The width split itself now comes from the ratio engine
-   (.columns-custom-ratio); these rules add the reference's spacing on top. */
+/* 50-50 variant — two equal columns (image + text, or text + text). The base
+   .columns rules already produce the 50/50 side-by-side layout; these rules match
+   the reference's heading size and the small top offset on the text column. */
 .columns.columns-50-50 h4 {
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
@@ -175,7 +179,7 @@
 }
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
-   on the stroke-awareness page. Typography only. */
+   on the stroke-awareness page. Typography only; layout stays columns-50-50. */
 .section.serif .columns p,
 .section.serif .columns ul,
 .section.serif .columns li,
@@ -195,16 +199,16 @@
 /* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
    image is above or below the text. Neutralise the base image-column margin/padding
    and the columns' own trailing margin so row-gap alone governs the spacing. */
-.section.serif .columns > div {
+.section.serif .columns.columns-50-50 > div {
   row-gap: var(--space-section-l);
 }
 
-.section.serif .columns .columns-img-col {
+.section.serif .columns.columns-50-50 .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.section.serif .columns > div > div > :last-child {
+.section.serif .columns.columns-50-50 > div > div > :last-child {
   margin-bottom: 0;
 }
 
@@ -272,8 +276,9 @@
 }
 
 /* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
-   widening the between-column gap and insetting the text. */
-.section.light-gray .columns > div > div {
+   widening the between-column gap and insetting the text. Excludes the 50-50
+   variant, which keeps the base 15px so its image is the same size on either side. */
+.section.light-gray .columns:not(.columns-50-50) > div > div {
   padding-inline: 24px;
 }
 

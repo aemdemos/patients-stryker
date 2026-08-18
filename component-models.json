@@ -159,38 +159,36 @@
         }
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "label": "Layout",
-        "value": "",
         "valueType": "string",
-        "description": "Column layout. Ratio options set desktop column widths (columns stack on mobile); leave as Equal columns for the default even split.",
         "options": [
           {
-            "name": "Equal columns",
-            "value": ""
-          },
-          {
-            "name": "50 / 50",
+            "name": "50-50 Layout",
             "value": "columns-50-50"
           },
           {
-            "name": "70 / 30",
+            "name": "70-30 Layout",
             "value": "columns-70-30"
           },
           {
-            "name": "30 / 70",
+            "name": "30-70 Layout",
             "value": "columns-30-70"
-          },
-          {
-            "name": "Thirds (1 / 1 / 1)",
-            "value": "columns-1-1-1"
           },
           {
             "name": "Icon Grid",
             "value": "columns-icon-grid"
           }
-        ]
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "columns"
+            },
+            2
+          ]
+        }
       }
     ]
   },
