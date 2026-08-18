@@ -48,24 +48,13 @@
           ]
         },
         {
-          "component": "select",
-          "name": "classes_variant_tile",
-          "value": "tile",
+          "component": "multiselect",
+          "name": "classes",
           "label": "Variant",
           "valueType": "string",
-          "condition": { "===": [{ "var": "classes_layout" }, "cols-5"] },
+          "condition": { "in": [{ "var": "classes_layout" }, ["cols-5", "cols-6"]] },
           "options": [
-            { "name": "Tile", "value": "tile" }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "classes_variant_label",
-          "value": "label",
-          "label": "Variant",
-          "valueType": "string",
-          "condition": { "===": [{ "var": "classes_layout" }, "cols-6"] },
-          "options": [
+            { "name": "Tile", "value": "tile" },
             { "name": "Label", "value": "label" }
           ]
         }
