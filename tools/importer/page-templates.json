@@ -1,0 +1,53 @@
+{
+  "templates": [
+    {
+      "name": "nasal-airway-obstruction",
+      "description": "ENT condition page: text hero, columns (cols2/cols3), a panel stats box, an accordion FAQ, and a references/disclaimer list.",
+      "urls": [
+        "https://patients.stryker.com/us/en/ent/nasal-airway-obstruction.html"
+      ],
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            "div.cols2",
+            "div.cols3"
+          ]
+        },
+        {
+          "name": "panel",
+          "instances": [
+            "div.dimensional-box"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [
+            "div.c-accordion .panel-group"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ent-index",
+      "description": "ENT homepage: page-hero intro (columns 50-50), a repeating condition pattern (columns 50-50 + blue panel stat box + learn-more link per condition, compact sections), a testimonials section (excluded), and a references/disclaimer list.",
+      "urls": [
+        "https://patients.stryker.com/us/en/ent/index.html"
+      ],
+      "blocks": [
+        {
+          "name": "ent-hero",
+          "instances": [
+            ".c-page-hero"
+          ]
+        },
+        {
+          "name": "ent-condition",
+          "instances": [
+            "div.cols2:has(.bg-blue)"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -383,3 +383,73 @@
   }
 }
 
+/* ---- compact section variant (ENT homepage condition rows) -----------
+   Denser 50/50 rows: smaller heading + body copy than the base columns.
+   These selectors layer intentionally (variant overrides + the stat-box code
+   convention) and never co-occur with the icon-grid rules above; the
+   descending-specificity ordering check is a false positive here. */
+/* stylelint-disable no-descending-specificity */
+.section.compact .columns h2,
+.section.compact .columns h3 {
+  font-size: var(--heading-font-size-compact);
+}
+
+.section.compact .columns p,
+.section.compact .columns ul,
+.section.compact .columns li {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
+}
+
+/* navy stat box (authoring convention): a condition's stat callout is authored
+   as two inline-code lines — <p><strong><code>31 million</code></strong></p>
+   (gold number) followed by <p><code>…label…<sup>N</sup></code></p> (white
+   label). Render the pair as one seamless navy box: the number <p> carries the
+   box top + gold text, the label <p> carries the box bottom + white text, and
+   the gap between them is removed so they read as a single block. Matches the
+   source .bg-blue callout (#1c5687, 20px padding, left-aligned). */
+.section.compact .columns p:has(> strong > code),
+.section.compact .columns p:has(> code) {
+  margin: 0;
+  padding-inline: var(--space-block-l);
+  background: var(--color-navy-bright);
+}
+
+/* number line: gold Futura, box top padding */
+.section.compact .columns p:has(> strong > code) {
+  padding-top: var(--space-block-l);
+}
+
+.section.compact .columns p > strong > code {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  font-size: var(--panel-cta-body-size);
+  color: var(--color-accent);
+}
+
+/* label line: white body copy, box bottom padding, extra space below the box */
+.section.compact .columns p:has(> code) {
+  margin-bottom: var(--space-section);
+  padding-bottom: var(--space-block-l);
+}
+
+.section.compact .columns p > code {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+  color: var(--color-white);
+}
+
+/* the <code> convention is a styling hook only — never show the monospace/box
+   default the base `code` rule would otherwise apply inside the navy box */
+.section.compact .columns p > strong > code,
+.section.compact .columns p > code {
+  display: inline;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+
+/* stylelint-enable no-descending-specificity */
