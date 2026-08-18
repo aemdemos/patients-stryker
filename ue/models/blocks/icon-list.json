@@ -49,25 +49,34 @@
         },
         {
           "component": "select",
-          "name": "classes_variant_tile",
+          "name": "classes_variant_default",
           "value": "",
+          "label": "Variant",
+          "valueType": "string",
+          "condition": { "===": [{ "var": "classes_layout" }, "cols-4"] },
+          "options": [
+            { "name": "Default", "value": "" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_variant_tile",
+          "value": "tile",
           "label": "Variant",
           "valueType": "string",
           "condition": { "===": [{ "var": "classes_layout" }, "cols-5"] },
           "options": [
-            { "name": "Default", "value": "" },
             { "name": "Tile", "value": "tile" }
           ]
         },
         {
           "component": "select",
           "name": "classes_variant_label",
-          "value": "",
+          "value": "label",
           "label": "Variant",
           "valueType": "string",
           "condition": { "===": [{ "var": "classes_layout" }, "cols-6"] },
           "options": [
-            { "name": "Default", "value": "" },
             { "name": "Label", "value": "label" }
           ]
         }
