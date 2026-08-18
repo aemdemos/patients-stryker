@@ -107,6 +107,15 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 
+  /* icon-list block — measured from source ("Stroke facts") */
+  --icon-list-icon-width: 165px;     /* icon rendered width */
+  --icon-list-icon-gap: 13px;        /* icon → caption gap (mobile); source uses 9px at desktop */
+  --icon-list-title-gap: clamp(25px, 15px + 3.55vw, 75px); /* title → icon-row gap; fluid to track source (≈28px mobile → 67px @1440 → 71px @1600) */
+  --icon-list-item-gap: 54px;        /* vertical gap between stacked items (mobile); matches source rhythm */
+  --icon-list-bg-padding: clamp(23px, 2px + 2.5vw, 48px); /* heading offset into the map band; fluid to track source (≈27px @1000 → 42px @1600) */
+  --icon-list-title-size: 31.5px;    /* heading: source 1.5em x 21px h3 */
+  --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */
+
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
   --panel-cta-heading-size: 26px; /* cta variant h3 */
@@ -541,6 +550,15 @@ main > .section.light-gray {
    a gray-to-teal gradient band with white text. Pair with .full-bleed. */
 main > .section.dark {
   background: var(--panel-dark-gradient);
+  color: var(--color-white);
+}
+
+/* blue colour variant — the reference's .c-full-bleed-panel.bg-blue band (Zip
+   skin-closure). Same navy-bright as the .panel.blue box, so the boxes blend
+   seamlessly into the section. White default text; the panel's own CSS handles
+   gold headings. Pair with .full-bleed. */
+main > .section.blue {
+  background-color: var(--color-navy-bright);
   color: var(--color-white);
 }
 

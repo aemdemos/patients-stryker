@@ -195,9 +195,31 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Applies section-metadata styles as classes on their section.
- * Removes the metadata block after mapping styles and data attributes.
- * @param {Element} main The main element
+ * Prepends a decorative `<img class="section-background-image">` to the section
+ * (matches the source's inline background image, not a CSS background). Opt-in
+ * blocks like icon-list position and layer it; inert for other sections.
+ * @param {Element} section the `.section` element
+ * @param {string} url the authored background image URL
+ */
+function applySectionBackgroundImage(section, url) {
+  if (!section || !url || section.querySelector(':scope > .section-background-image')) return;
+  const img = document.createElement('img');
+  img.className = 'section-background-image';
+  img.src = url;
+  img.alt = '';
+  img.setAttribute('aria-hidden', 'true');
+  // eager, not lazy: when absolutely positioned this box is zero-area until it
+  // loads, so Chromium's lazy heuristic reads it as off-screen and never fetches.
+  // It's decorative and out of flow, so eager loading is safe (no CLS).
+  img.loading = 'eager';
+  section.prepend(img);
+}
+
+/**
+ * Applies section metadata: `Style` → CSS classes, `Background Image` → a
+ * decorative <img> layer, other keys → `data-*`. Handles the `.section-metadata`
+ * table and the published-DA `data-background-image` form.
+ * @param {Element} main The main container element
  */
 function decorateSectionMetadata(main) {
   main.querySelectorAll('.section .section-metadata').forEach((meta) => {
@@ -210,6 +232,8 @@ function decorateSectionMetadata(main) {
           .map((s) => toClassName(s.trim()))
           .filter((s) => s);
         styles.forEach((s) => section.classList.add(s));
+      } else if (key === 'background-image') {
+        applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
       } else {
         section.dataset[toCamelCase(key)] = value;
       }
@@ -217,6 +241,11 @@ function decorateSectionMetadata(main) {
     // remove the metadata block (and its section wrapper) so it is neither
     // rendered nor picked up by decorateBlocks as a loadable block.
     (meta.closest('.section-metadata-wrapper') || meta).remove();
+  });
+
+  // published DA content exposes the value as data-background-image, not a table
+  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
+    applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 }
 

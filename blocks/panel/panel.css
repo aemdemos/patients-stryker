@@ -75,6 +75,7 @@
 .panel.cta > ul > li,
 .panel.light > ul > li,
 .panel.colored-border > ul > li {
+.panel.blue > ul > li {
   margin: 0;
 }
 
@@ -182,6 +183,7 @@
   margin: 0 0 var(--space-block);
 }
 
+
 .panel.gray .panel-body p {
   margin: 0 0 var(--space-block);
   font-family: var(--body-font-family);
@@ -191,6 +193,12 @@
 
 .panel.colored-border .panel-body p {
   font-family: var(--body-font-family);
+
+.panel.blue .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
 }
 
 .panel .panel-body p:last-child {
@@ -288,6 +296,11 @@
   .panel.dark.panel-authoring,
   .panel.light.panel-authoring,
   .panel.colored-border.panel-authoring {
+  .panel.blue > ul,
+  .panel.cta.panel-authoring,
+  .panel.dark.panel-authoring,
+  .panel.light.panel-authoring,
+  .panel.blue.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
