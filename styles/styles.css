@@ -516,6 +516,10 @@ main > .section.no-cta > .default-content-wrapper h1 {
   font-family: var(--display-font-family-bold);
 }
 
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+}
+
 /* category heading above a card group — sage underline separating each group,
    matching the source's .component-subheading.border-bottom-gold. Scoped to
    `.section.no-cta` (the card-group sections on the resources page) so it can't
@@ -566,6 +570,10 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
   padding-top: calc(var(--space-section) * 2);
 }
 
+.section.compact p {
+  font-size: var(--footnote-font-size);  
+}
+
 /* first (title + intro + image) section — sage rule beneath it, matching the
    source's .c-page-hero-content.border-bottom-gold 1px divider */
 main > .section:first-child > .default-content-wrapper {
@@ -588,14 +596,6 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
   font-size: var(--body-font-size-xs);
   line-height: var(--paragraph-line-height);
-}
-
-.section.compact h2 {
-  font-size: var(--heading-font-size-compact);
-}
-
-.section.compact p {
-  font-size: var(--footnote-font-size);  
 }
 
 @media (width >= 900px) {
