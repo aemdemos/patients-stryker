@@ -48,14 +48,15 @@
           ]
         },
         {
-          "component": "multiselect",
+          "component": "select",
           "name": "classes",
+          "value": "",
           "label": "Variant",
           "valueType": "string",
-          "condition": { "in": [{ "var": "classes_layout" }, ["cols-5", "cols-6"]] },
           "options": [
-            { "name": "Tile", "value": "tile" },
-            { "name": "Label", "value": "label" }
+            { "name": "Default", "value": "" },
+            { "name": "Label", "value": "label" },
+            { "name": "Tile", "value": "tile" }
           ]
         }
       ]
