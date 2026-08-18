@@ -1,14 +1,17 @@
 /**
- * Parse an author-supplied width-ratio class (e.g. "60-40" or "20-50-30") into a
- * CSS grid-template-columns value in fr units. Ratios are relative — they need not
- * sum to 100 — and any column count is supported. Returns null if the class isn't a
- * valid ratio (all hyphen-separated positive numbers), so bad input falls back to
- * the default even columns rather than breaking the layout.
- * @param {string} token The class token to test (e.g. "60-40")
- * @returns {string|null} e.g. "60fr 40fr", or null
+ * Parse a width-ratio class into a CSS grid-template-columns value in fr units.
+ * The class is a named variant chosen from the UE dropdown — hyphen-separated
+ * proportions with an optional "columns-" prefix, e.g. "columns-70-30" or
+ * "columns-1-1-1". The prefix keeps the class a valid CSS selector (a class cannot
+ * start with a digit), so each ratio is targetable for per-ratio overrides while
+ * the widths themselves are derived here. Ratios are relative (need not sum to 100)
+ * and any column count works. Returns null for anything that isn't all
+ * hyphen-separated positive numbers, so non-ratio classes are ignored.
+ * @param {string} token The class token to test (e.g. "columns-70-30")
+ * @returns {string|null} e.g. "70fr 30fr", or null
  */
 function parseRatio(token) {
-  const parts = token.split('-');
+  const parts = token.replace(/^columns-/, '').split('-');
   if (parts.length < 2) return null;
   const nums = parts.map((p) => Number(p));
   if (nums.some((n) => !Number.isFinite(n) || n <= 0)) return null;
