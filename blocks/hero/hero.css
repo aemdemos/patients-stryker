@@ -348,11 +348,11 @@
   object-fit: cover;
 }
 
-/* overlay the copy on the image (left-aligned, top area on mobile) */
+/* overlay the copy on the image — top-aligned and inset 5% on mobile (source) */
 .hero.fullbleed.stroke > div:last-child {
   align-self: start;
   max-width: none;
-  padding: 8% 8% 0;
+  padding: 5% 5% 0;
 }
 
 .hero.fullbleed.stroke h1,
@@ -376,18 +376,21 @@
   line-height: var(--heading-line-height-hero);
 }
 
-/* desktop — wide 3:1 crop with the copy overlaid and vertically centred over the
-   image (source measures a 1440x480 band). */
+/* desktop — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
+   the block ~4% down (≈12% of the 480px band) and insets it 10vw from the left. */
 @media (width >= 840px) {
   .hero.fullbleed.stroke img {
     aspect-ratio: 3 / 1;
     object-fit: cover;
   }
 
+  /* left inset via margin (outside the width box) so the 42%-wide text area
+     matches the source and the copy stays on one line at wide viewports */
   .hero.fullbleed.stroke > div:last-child {
-    align-self: center;
-    max-width: 45%;
-    padding: 0 0 0 10vw;
+    align-self: start;
+    max-width: 42%;
+    margin-inline-start: 10vw;
+    padding: 4% 0 0;
   }
 
   /* source drops the headline to 5vw and copy to 1.5vw at the 840px crossover */
