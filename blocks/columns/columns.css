@@ -226,7 +226,6 @@
 .section.dark .columns li::marker {
   color: var(--color-black);
 }
-
 .section.compact .columns p,
 .section.compact .columns ul,
 .section.compact .columns li{
@@ -234,7 +233,6 @@
   font-family: var(--body-font-family);
   line-height: var(--paragraph-line-height);
 }
-
 
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,

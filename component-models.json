@@ -29,7 +29,6 @@
     "id": "image",
     "fields": [
       {
-        "component": "reference",
         "name": "image",
         "label": "Image",
         "multi": false
@@ -43,8 +42,6 @@
   },
   {
     "id": "section",
-    "fields": [
-      {
         "component": "multiselect",
         "name": "style",
         "label": "Style",
@@ -70,6 +67,7 @@
             "value": "dark"
           },
           {
+<<<<<<< HEAD
             "name": "Blue",
             "value": "blue"
           },
@@ -82,6 +80,8 @@
             "value": "spacer"
           },
           {
+=======
+>>>>>>> 9d7b65b (Add columns block)
             "name": "Compact",
             "value": "compact"
           }
@@ -212,20 +212,6 @@
             2
           ]
         }
-      },
-      {
-        "component": "boolean",
-        "name": "classes_border",
-        "label": "Bottom border",
-        "valueType": "string",
-        "condition": {
-          "in": [
-            "columns-50-50",
-            {
-              "var": "classes"
-            }
-          ]
-        }
       }
     ]
   },
@@ -273,10 +259,13 @@
           {
             "name": "Banner",
             "value": "banner"
+<<<<<<< HEAD
           },
           {
             "name": "Poster",
             "value": "poster"
+=======
+>>>>>>> 9d7b65b (Add columns block)
           }
         ]
       },
@@ -379,6 +368,7 @@
         "component": "select",
         "name": "classes",
         "value": "cols-4",
+<<<<<<< HEAD
         "label": "Layout/Variant",
         "valueType": "string",
         "options": [
@@ -393,6 +383,18 @@
           {
             "name": "6-columnar / Label",
             "value": "cols-6 label"
+=======
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "4 columns",
+            "value": "cols-4"
+          },
+          {
+            "name": "5 columns",
+            "value": "cols-5"
+>>>>>>> 9d7b65b (Add columns block)
           }
         ]
       }
@@ -457,6 +459,7 @@
             "value": "gray"
           },
           {
+<<<<<<< HEAD
             "name": "Colored Border",
             "value": "colored-border"
           },
@@ -465,6 +468,8 @@
             "value": "blue"
           },
           {
+=======
+>>>>>>> 9d7b65b (Add columns block)
             "name": "Wide",
             "value": "wide"
           }
@@ -565,6 +570,7 @@
         "valueType": "string"
       }
     ]
+<<<<<<< HEAD
   },
   {
     "id": "video",
@@ -576,5 +582,7 @@
         "description": "Paste a video URL. YouTube (youtube.com / youtu.be / youtube-nocookie.com) is supported; it renders behind a click-to-load poster facade."
       }
     ]
+=======
+>>>>>>> 9d7b65b (Add columns block)
   }
 ]
