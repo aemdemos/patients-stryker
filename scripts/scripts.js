@@ -302,14 +302,13 @@ export function mergeSectionCards(section) {
   });
 }
 
-/* Normalizes a pathname for comparison against query-index paths*/
+/* Normalizes a pathname for comparison against query-index paths */
 function normalizePath(path) {
   const clean = path.replace(/\.html$/, '').replace(/\/+$/, '');
   return clean || '/';
 }
 
-
- /* Appends a "Last Modified" line to the end of the page.*/
+/* Appends a "Last Modified" line to the end of the page. */
 async function decorateLastModified(main) {
   try {
     const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
