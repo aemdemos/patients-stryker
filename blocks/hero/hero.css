@@ -183,7 +183,7 @@
   margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
 }
 
-/* multiple CTAs (e.g. stroke's two language buttons) sit inline with a 10px gap */
+/* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
 .hero.banner .button-wrapper:has(+ .button-wrapper),
 .hero.banner .button-wrapper + .button-wrapper {
   display: inline-block;
@@ -339,24 +339,24 @@
   }
 }
 
-/* ===== Stroke modifier — full-bleed banner photo with dark serif copy overlaid
-   directly on the image (matches the stroke-awareness hero). The image fills the
+/* ===== Poster modifier — full-bleed banner photo with dark serif copy overlaid
+   directly on the image (as on the stroke-awareness landing page). The image fills the
    band via object-fit: cover rather than sitting in a white side panel. Placed
    after the band/banner rules so its higher specificity descends cleanly. ===== */
-.hero.fullbleed.stroke img {
+.hero.fullbleed.poster img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
 /* overlay the copy on the image — top-aligned and inset 5% on mobile (source) */
-.hero.fullbleed.stroke > div:last-child {
+.hero.fullbleed.poster > div:last-child {
   align-self: start;
   max-width: none;
   padding: 5% 5% 0;
 }
 
-.hero.fullbleed.stroke h1,
-.hero.fullbleed.stroke p {
+.hero.fullbleed.poster h1,
+.hero.fullbleed.poster p {
   color: var(--text-color);
   font-family: var(--heading-font-family);
   font-weight: 500;
@@ -364,13 +364,13 @@
 
 /* headline scales fluidly with the viewport (source: 10vw, capped 70px);
    reuse the measured hero line-height token */
-.hero.fullbleed.stroke h1 {
+.hero.fullbleed.poster h1 {
   font-size: 10vw;
   line-height: var(--heading-line-height-hero);
 }
 
 /* supporting copy scales fluidly (source: 3vw, capped 21px) */
-.hero.fullbleed.stroke p {
+.hero.fullbleed.poster p {
   margin-top: var(--space-block);
   font-size: 3vw;
   line-height: var(--heading-line-height-hero);
@@ -379,14 +379,14 @@
 /* desktop — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
    the block ~4% down (≈12% of the 480px band) and insets it 10vw from the left. */
 @media (width >= 840px) {
-  .hero.fullbleed.stroke img {
+  .hero.fullbleed.poster img {
     aspect-ratio: 3 / 1;
     object-fit: cover;
   }
 
   /* left inset via margin (outside the width box) so the 42%-wide text area
      matches the source and the copy stays on one line at wide viewports */
-  .hero.fullbleed.stroke > div:last-child {
+  .hero.fullbleed.poster > div:last-child {
     align-self: start;
     max-width: 42%;
     margin-inline-start: 10vw;
@@ -394,22 +394,22 @@
   }
 
   /* source drops the headline to 5vw and copy to 1.5vw at the 840px crossover */
-  .hero.fullbleed.stroke h1 {
+  .hero.fullbleed.poster h1 {
     font-size: 5vw;
   }
 
-  .hero.fullbleed.stroke p {
+  .hero.fullbleed.poster p {
     font-size: 1.5vw;
   }
 }
 
 /* source caps the fluid sizes at large widths (headline 70px, copy 21px) */
 @media (width >= 1440px) {
-  .hero.fullbleed.stroke h1 {
+  .hero.fullbleed.poster h1 {
     font-size: 70px;
   }
 
-  .hero.fullbleed.stroke p {
+  .hero.fullbleed.poster p {
     font-size: 21px;
   }
 }
