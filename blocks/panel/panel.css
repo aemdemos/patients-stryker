@@ -291,8 +291,8 @@
   border-top: var(--panel-colored-border-width) solid var(--color-accent);
 }
 
-.panel.colored-border > ul > li:nth-of-type(2) .panel-body,
-.panel.colored-border.panel-authoring > div:nth-of-type(2) .panel-body {
+.panel.colored-border > ul > li:last-child .panel-body,
+.panel.colored-border.panel-authoring > div:last-child .panel-body {
   border-top-color: var(--color-purple);
 }
 
