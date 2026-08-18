@@ -492,6 +492,18 @@ main > .section > div {
   padding: 0 var(--container-gutter);
 }
 
+main .last-modified {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  letter-spacing: 0.02em;
+}
+
+@media (width >= 841px) {
+  main .last-modified {
+    font-size: var(--body-font-size-s);
+  }
+}
+
 /* section width variants */
 main > .section.narrow > div {
   max-width: var(--container-narrow);
