@@ -172,21 +172,6 @@ header {
   height: var(--nav-height);
 }
 
-@media (width >= 480px) {
-  .section.compact h2 {
-  font-size: var(--heading-font-size-compact-m);
-  margin-top:30px;
-}
-}
-
-/* reserve the desktop two-row header height (white bar + gold nav bar) here in
-   eager CSS so the space is held before the lazy header block loads, preventing
-   content from shifting down on load (CLS) */
-@media (width >= 900px) {
-  header {
-    height: calc(var(--nav-height) + var(--nav-bar-height));
-  }
-}
 
 header .header,
 footer .footer {
@@ -638,6 +623,21 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
+@media (width >= 480px) {
+  .section.compact h2 {
+  font-size: var(--heading-font-size-compact-m);
+  margin-top:30px;
+}
+}
+
+/* reserve the desktop two-row header height (white bar + gold nav bar) here in
+   eager CSS so the space is held before the lazy header block loads, preventing
+   content from shifting down on load (CLS) */
+@media (width >= 900px) {
+
+}
+
+
 @media (width >= 841px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
@@ -662,6 +662,10 @@ main .section.highlight {
 }
 
 @media (width >= 900px) {
+    header {
+    height: calc(var(--nav-height) + var(--nav-bar-height));
+  }
+  
   main > .section > div {
     max-width: var(--container-max);
     margin: 0 auto;
