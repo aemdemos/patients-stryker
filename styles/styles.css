@@ -334,6 +334,21 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
+/* bold + underline authored link → flat inline CTA: bold text in the primary
+   colour, no underline. Authoring convention set in decorateButtons() (mirrors
+   the bold+italic → gold-button convention). */
+a.link-strong:any-link {
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a.link-strong:hover,
+a.link-strong:focus {
+  color: var(--color-primary-hover);
+  text-decoration: none;
+}
+
 /* buttons */
 p.button-wrapper {
   margin: 12px 0;
@@ -510,12 +525,6 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
-main > .section.no-cta > .default-content-wrapper h1 {
-  font-size: 42px;
-  margin: 40px 0;
-  font-family: var(--display-font-family-bold);
-}
-
 .section.compact h1 {
   margin: 58px 0 10px;
   line-height: 22.26px;
@@ -523,6 +532,12 @@ main > .section.no-cta > .default-content-wrapper h1 {
 
 .section.compact h2 {
   font-size: var(--heading-font-size-compact);
+}
+
+main > .section.no-cta > .default-content-wrapper h1 {
+  font-size: 42px;
+  margin: 40px 0;
+  font-family: var(--display-font-family-bold);
 }
 
 /* category heading above a card group — sage underline separating each group,
