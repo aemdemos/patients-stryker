@@ -43,7 +43,6 @@
           "valueType": "string",
           "options": [
             { "name": "4 columns", "value": "cols-4" },
-            { "name": "5 columns", "value": "cols-5" },
             { "name": "Label (icon + bold label + caption)", "value": "label cols-6" }
           ]
         }
