@@ -1,28 +1,20 @@
-/* Icon list — icons above captions ("Stroke facts" on
-   patients.stryker.com/ww/en/stroke-awareness). Source breakpoints:
-     <=650px    1 column, icons shown
-     651-1200px 4-up, icons hidden (source's aem-GridColumn--tablet--hide)
-     >=1201px   cols-N (default 4), icons shown
-   Column count from --icon-list-columns (set in JS). Tokens live in styles.css
-   :root; the title and world-map image are on the section, not the block. */
+/* Icon list — icons above captions. Breakpoints: <=650px 1-col; 651-1200px 4-up,
+   icons hidden; >=1201px cols-N. Column count from --icon-list-columns (set in JS). */
 
-/* World-map background: a decorative <img> prepended to the section by
-   decorateSectionMetadata (matches the source's inline image, not a CSS bg).
-   <=840px it sits in normal flow at the top; heading/facts follow below it. */
+/* World-map background: decorative <img> on the section; in normal flow <=840px. */
 .icon-list-container > .section-background-image {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* top spacing on the section's content wrappers (label variant only) — all screen sizes */
+/* content-wrapper top spacing (label variant, all sizes) */
 .icon-list-container:has(.icon-list.label) > .default-content-wrapper,
 .icon-list-container:has(.icon-list.label) > .icon-list-wrapper {
   margin-top: 45px;
 }
 
-/* >=841px (source cutoff): the map becomes a band behind the content — pulled
-   out of flow at the top, with the heading/facts lifted above it. */
+/* >=841px: map becomes a band behind the content */
 @media (width >= 841px) {
   .icon-list-container.section:has(> .section-background-image) {
     position: relative;
@@ -35,7 +27,7 @@
     z-index: 0;
   }
 
-  /* lift the real content above the map layer */
+  /* lift content above the map layer */
   .icon-list-container > .default-content-wrapper,
   .icon-list-container > .icon-list-wrapper {
     position: relative;
@@ -43,8 +35,7 @@
   }
 }
 
-/* Section heading ("Stroke facts") — default content above the block. Source:
-   Futura-bold gold 31.5px, dropping to 26.25px below 480px. */
+/* Section heading — Futura-bold gold, 31.5px (26.25px below 480px). */
 .icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
   margin: 15px 0 var(--icon-list-title-gap);
   font-family: var(--display-font-family-bold);
@@ -86,16 +77,15 @@
   display: block;
 }
 
-/* aspect-ratio reserves a non-zero box before the lazy-loaded DM icon arrives.
-   Without an intrinsic height the box is zero-area, so Chromium's lazy heuristic
-   reads it as off-screen and never fetches. Also prevents layout shift. */
+/* aspect-ratio reserves box height for the lazy-loaded DM icon (avoids CLS + a
+   zero-area box Chromium would skip fetching). */
 .icon-list .icon-list-icon img {
   width: var(--icon-list-icon-width);
   height: auto;
   aspect-ratio: 165 / 107;
 }
 
-/* caption — source: Futura-bold black 14px, 1.375 line-height. */
+/* caption — Futura-bold black 14px */
 .icon-list .icon-list-text,
 .icon-list .icon-list-text p {
   margin: 0;
@@ -106,7 +96,7 @@
   color: var(--color-black);
 }
 
-/* tablet: 4-up, icons hidden (source's --tablet--hide); map band stays visible */
+/* tablet: 4-up, icons hidden */
 @media (width > 650px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
@@ -117,7 +107,7 @@
   }
 }
 
-/* desktop: author-selected column count (default 4); icons shown again */
+/* desktop: author column count, icons shown again */
 @media (width > 1200px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
@@ -125,40 +115,31 @@
 
   .icon-list .icon-list-icon {
     display: block;
-
-    /* source tightens icon → caption to 9px once icons reappear */
     margin-bottom: 9px;
   }
 }
 
-/* ─── (label) variant ────────────────────────────────────────────────────
-   "Symptoms of a stroke" (B.E. F.A.S.T.) on the source. Each item is a
-   portrait icon over a bold label (gold first letter) and a smaller,
-   lighter caption below. Unlike the base variant, icons stay visible at
-   every breakpoint and the author-set column count applies from tablet up. */
+/* ─── (label) variant — "Symptoms of a stroke" (B.E. F.A.S.T.) ─────────────
+   Portrait icon over a bold label (gold initial) + lighter caption. Icons stay
+   visible at every breakpoint; author column count applies from tablet up. */
 .icon-list.label .icon-list-icon img {
   width: var(--icon-list-label-icon-width);
-  max-width: 100%;   /* shrink to fit the column (source: img-responsive) — prevents overflow */
+  max-width: 100%;   /* shrink to fit the column — prevents overflow */
   aspect-ratio: 151 / 166;
 }
 
-/* icon → label gap: source has none (the label sits directly under the icon
-   box; the visual breathing room is baked into the PNG). Override the base
-   variant's 13px. */
+/* icon → label gap: none (visual space is baked into the PNG) */
 .icon-list.label .icon-list-icon {
   margin-bottom: var(--icon-list-label-icon-gap);
 }
 
-/* Text cell fills the column width so captions wrap within the item's padded
-   box. Without this the flex column (align-items:center) shrinks the cell to its
-   longest word ("experiencing"), spilling text into the neighbouring gutter. The
-   source's float/block columns always fill their width, so match that. */
+/* stretch text cell to column width so captions wrap instead of overflowing
+   the gutter (flex align-items:center would shrink it to its longest word) */
 .icon-list.label .icon-list-text {
   align-self: stretch;
 }
 
-/* label — first paragraph: enlarged, with a gold initial. Font-family, weight
-   and colour come from the base .icon-list-text p rule above. */
+/* label — enlarged, gold initial */
 .icon-list.label .icon-list-text p:first-child {
   font-size: var(--icon-list-label-size);
   line-height: 1.06;
@@ -168,24 +149,20 @@
   color: var(--color-accent);
 }
 
-/* caption — following paragraphs: lighter, smaller serif */
+/* caption — lighter, smaller serif */
 .icon-list.label .icon-list-text p:not(:first-child) {
   margin-top: var(--icon-list-label-caption-gap);
   font-family: var(--heading-font-family);
   font-size: var(--icon-list-label-caption-size);
   font-weight: 400;
-  line-height: 1.15; /* source: 17.5px text / 20.125px line */
+  line-height: 1.15;
 }
 
-/* intro copy above the label grid ("Symptoms of a stroke" lead-in) — default
-   content in the same section. Source renders it larger (17.5px = 1.25 x 14)
-   in the serif heading font, left-aligned, with the B.E. F.A.S.T. mnemonic in
-   Futura-bold. Scoped with :has() so the base "Stroke facts" section is
-   unaffected. */
+/* intro copy — larger serif heading font (B.E. F.A.S.T. mnemonic in Futura-bold) */
 .icon-list-container:has(.icon-list.label) .default-content-wrapper p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
-  line-height: 1.15; /* source: 17.5px text / 20.125px line */
+  line-height: 1.15;
 }
 
 .icon-list-container:has(.icon-list.label) .default-content-wrapper p strong {
@@ -193,15 +170,12 @@
   font-weight: 700;
 }
 
-/* heading → intro-copy gap: the label section has intro text directly below the
-   heading, so use the source's fixed 49px rather than the base variant's larger
-   fluid title→icon-row gap. */
+/* heading → intro-copy gap: fixed 49px (label has intro text below the heading) */
 .icon-list-container:has(.icon-list.label) .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
   margin-bottom: var(--icon-list-label-title-gap);
 }
 
-/* tablet+ : keep icons visible and honour the author's column count
-   (source shows all six across from 651px up) */
+/* tablet+ : icons stay visible, honour author column count */
 @media (width > 650px) {
   .icon-list.label ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), minmax(0, 1fr));
