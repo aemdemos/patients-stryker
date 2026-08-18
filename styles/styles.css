@@ -585,14 +585,25 @@ main > .section.wide > div {
 
 /* divider section — a full-viewport-width sage rule at the section break, matching
    the source's .sectionseparator hr (1px --color-surface-muted, spanning the whole
-   viewport). The border sits on the .section itself (which is already full width, its
-   inner > div being the capped part), so the line spans edge to edge and never touches
-   the blocks. The 50px source gap below the rule becomes top padding above the content.
-   Authored per boundary via the section Style `divider` (opt-in, like the source's
-   selective placement). */
+   viewport). The line is drawn as a ::before pinned to the FULL viewport width (100vw
+   centred on the section) rather than a border on the section box — otherwise a section
+   that caps its own width (e.g. Style `flex`, max-width 1410px) would clip the line to
+   the content width. This keeps the rule edge-to-edge regardless of the section's layout.
+   The 50px source gap below the rule becomes top padding above the content. Authored per
+   boundary via the section Style `divider` (opt-in, like the source's selective placement). */
 main > .section.divider {
-  border-top: 1px solid var(--color-surface-muted);
+  position: relative;
   padding-top: var(--space-section-l);
+}
+
+main > .section.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw; /* pull the 100vw bar back to the true viewport edge, ignoring the section's cap */
+  border-top: 1px solid var(--color-surface-muted);
 }
 
 /* section metadata */
