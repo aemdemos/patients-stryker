@@ -32,7 +32,8 @@
   }
 
   .cards.resources > ul,
-  .cards.brochure > ul {
+  .cards.brochure > ul,
+  .cards.brochure-cta > ul {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -155,6 +156,35 @@
   margin: var(--space-block) 0 0;
 
   /* source download links: light serif (urw-egyptienne) at 1.25em (fontsize-1-25em) */
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* brochure-cta: cover, Futura-bold title, light-serif label, gold CTA button
+   (author the CTA as a bold+italic link -> .button.accent = source .btn-gold). */
+.cards.brochure-cta > ul > li {
+  background-color: transparent;
+}
+
+.cards.brochure-cta > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;   /* natural portrait ratio */
+}
+
+.cards.brochure-cta .cards-card-body {
+  margin: var(--space-block) 0 0;
+}
+
+/* title: Futura bold at body size (source .futura-bold, 14px); family/weight
+   inherited from base .cards .cards-card-body h3 */
+.cards.brochure-cta .cards-card-body h3 {
+  font-size: var(--body-font-size-m);
+}
+
+/* label: light serif, 1.25em (source .urw-egyptienne .fontsize-1-25em) */
+.cards.brochure-cta .cards-card-body p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
