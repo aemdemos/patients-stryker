@@ -236,6 +236,7 @@
 .section.compact .columns li{
   font-size: var(--body-font-size-m);
   font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
 }
 
 .section.compact .columns p {
