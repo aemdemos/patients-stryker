@@ -545,28 +545,7 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
-@media (width >= 841px) {
-  main .last-modified {
-    font-size: var(--body-font-size-s);
-  }
-}
 
-/* section width variants */
-main > .section.narrow > div {
-  max-width: var(--container-narrow);
-}
-
-main > .section.wide > div {
-  max-width: var(--container-wide);
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--color-surface);
-  margin: 0;
-  padding: var(--space-section) 0;
-}
 
 .section.compact {
   margin-bottom:40px;
@@ -657,6 +636,29 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
   font-size: var(--body-font-size-xs);
   line-height: var(--paragraph-line-height);
+}
+
+@media (width >= 841px) {
+  main .last-modified {
+    font-size: var(--body-font-size-s);
+  }
+}
+
+/* section width variants */
+main > .section.narrow > div {
+  max-width: var(--container-narrow);
+}
+
+main > .section.wide > div {
+  max-width: var(--container-wide);
+}
+
+/* section metadata */
+main .section.light,
+main .section.highlight {
+  background-color: var(--color-surface);
+  margin: 0;
+  padding: var(--space-section) 0;
 }
 
 @media (width >= 900px) {
