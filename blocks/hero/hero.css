@@ -145,13 +145,6 @@
   padding: var(--space-section) var(--container-gutter) var(--space-block-l);
 }
 
-/* opt-in via section metadata "Style: Text First" — shows the copy above the
-   image on mobile; the >=840px overlay grid ignores order so desktop is unchanged */
-.section.text-first .hero.banner {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
 .hero.banner h1,
 .hero.banner h2 {
   max-width: none;
@@ -204,8 +197,7 @@
 
 /* desktop — copy overlays the image, vertically centered (crossover at 840px) */
 @media (width >= 840px) {
-  .hero.banner,
-  .section.text-first .hero.banner {
+  .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -344,5 +336,77 @@
 @media (width >= 1400px) {
   .hero.band h1 {
     font-size: 56px;
+  }
+}
+
+/* ===== Stroke modifier — full-bleed banner photo with dark serif copy overlaid
+   directly on the image (matches the stroke-awareness hero). The image fills the
+   band via object-fit: cover rather than sitting in a white side panel. Placed
+   after the band/banner rules so its higher specificity descends cleanly. ===== */
+.hero.fullbleed.stroke img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* overlay the copy on the image (left-aligned, top area on mobile) */
+.hero.fullbleed.stroke > div:last-child {
+  align-self: start;
+  max-width: none;
+  padding: 8% 8% 0;
+}
+
+.hero.fullbleed.stroke h1,
+.hero.fullbleed.stroke p {
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+/* headline scales fluidly with the viewport (source: 10vw, capped 70px);
+   reuse the measured hero line-height token */
+.hero.fullbleed.stroke h1 {
+  font-size: 10vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* supporting copy scales fluidly (source: 3vw, capped 21px) */
+.hero.fullbleed.stroke p {
+  margin-top: var(--space-block);
+  font-size: 3vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* desktop — wide 3:1 crop with the copy overlaid and vertically centred over the
+   image (source measures a 1440x480 band). */
+@media (width >= 840px) {
+  .hero.fullbleed.stroke img {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+  }
+
+  .hero.fullbleed.stroke > div:last-child {
+    align-self: center;
+    max-width: 45%;
+    padding: 0 0 0 10vw;
+  }
+
+  /* source drops the headline to 5vw and copy to 1.5vw at the 840px crossover */
+  .hero.fullbleed.stroke h1 {
+    font-size: 5vw;
+  }
+
+  .hero.fullbleed.stroke p {
+    font-size: 1.5vw;
+  }
+}
+
+/* source caps the fluid sizes at large widths (headline 70px, copy 21px) */
+@media (width >= 1440px) {
+  .hero.fullbleed.stroke h1 {
+    font-size: 70px;
+  }
+
+  .hero.fullbleed.stroke p {
+    font-size: 21px;
   }
 }

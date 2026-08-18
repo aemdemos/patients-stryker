@@ -89,8 +89,10 @@ export default function decorate(block) {
   setupHero(block);
 
   // Fullbleed variant: split the two-tone headline (lead sentence in light serif,
-  // remainder in Futura bold via an accent span).
-  if (block.classList.contains('fullbleed')) {
+  // remainder in Futura bold via an accent span). The stroke modifier keeps the
+  // headline as a single serif style (matches the stroke-awareness banner), so
+  // skip the split there.
+  if (block.classList.contains('fullbleed') && !block.classList.contains('stroke')) {
     const h1 = block.querySelector('h1');
     if (h1 && (h1.childElementCount === 0
       || (h1.childElementCount === 1 && h1.querySelector(':scope > strong')))) {
