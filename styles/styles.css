@@ -334,13 +334,29 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
-/* bold + underline authored link → flat inline CTA: bold text in the primary
-   colour, no underline. Authoring convention set in decorateButtons() (mirrors
-   the bold+italic → gold-button convention). */
+/* bold + underline authored link → flat inline CTA: uppercase Futura-bold text in
+   the primary colour, no underline, with a trailing chevron. Authoring convention
+   set in decorateButtons() (mirrors the bold+italic → gold-button convention). */
 a.link-strong:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
   font-weight: 700;
+  text-transform: uppercase;
   color: var(--color-primary);
   text-decoration: none;
+}
+
+/* chevron drawn in CSS (the source uses a proprietary icon font); follows the
+   link colour via currentcolor */
+a.link-strong:any-link::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentcolor;
 }
 
 a.link-strong:hover,
