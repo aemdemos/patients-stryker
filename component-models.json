@@ -315,9 +315,9 @@
     "fields": [
       {
         "component": "select",
-        "name": "classes",
+        "name": "classes_layout",
         "value": "cols-4",
-        "label": "Style / Columns",
+        "label": "Columnar Layout",
         "valueType": "string",
         "options": [
           {
@@ -329,8 +329,58 @@
             "value": "cols-5"
           },
           {
-            "name": "6 columns (Label)",
-            "value": "label cols-6"
+            "name": "6 columns",
+            "value": "cols-6"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes_variant_tile",
+        "value": "",
+        "label": "Variant",
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "classes_layout"
+            },
+            "cols-5"
+          ]
+        },
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Tile",
+            "value": "tile"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes_variant_label",
+        "value": "",
+        "label": "Variant",
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "classes_layout"
+            },
+            "cols-6"
+          ]
+        },
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Label",
+            "value": "label"
           }
         ]
       }
