@@ -231,9 +231,16 @@
   font-size: var(--heading-font-size-compact);
 }
 
-.section.compact .columns p {
+.section.compact .columns p,
+.section.compact .columns ul,
+.section.compact .columns li{
   font-size: var(--body-font-size-m);
   font-family: var(--body-font-family);
+}
+
+.section.compact .columns p {
+  padding-left:0;
+  padding-right:0;
 }
 
 /* light-gray variant — column text uses the serif heading font */
