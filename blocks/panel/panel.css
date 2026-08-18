@@ -74,8 +74,8 @@
 /* ---- cta variant */
 .panel.cta > ul > li,
 .panel.light > ul > li,
+.panel.blue > ul > li,
 .panel.colored-border > ul > li {
-.panel.blue > ul > li {
   margin: 0;
 }
 
@@ -193,6 +193,7 @@
 
 .panel.colored-border .panel-body p {
   font-family: var(--body-font-family);
+}
 
 .panel.blue .panel-body p {
   margin: 0 0 var(--space-block);
@@ -238,6 +239,35 @@
   box-shadow: none;
   text-align: left;
   margin:0;
+}
+
+/* ---- blue variant (Zip skin-closure callouts) ------------------------ */
+.panel.blue .panel-body {
+  max-width: none;
+  margin: 0;
+  padding: 4%;
+  background: var(--color-navy-bright);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  flex: 1;
+}
+
+.panel.blue > ul {
+  gap:0;
+} 
+
+.panel.blue > ul > li,
+.panel.blue.panel-authoring > div {
+  display: flex;
+}
+
+.panel.blue .panel-body p:first-child {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
 }
 
 .panel.gray .panel-body h3 {
@@ -291,16 +321,13 @@
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
+  .panel.blue > ul,
   .panel.colored-border > ul,
   .panel.cta.panel-authoring,
   .panel.dark.panel-authoring,
   .panel.light.panel-authoring,
+  .panel.blue.panel-authoring,
   .panel.colored-border.panel-authoring {
-  .panel.blue > ul,
-  .panel.cta.panel-authoring,
-  .panel.dark.panel-authoring,
-  .panel.light.panel-authoring,
-  .panel.blue.panel-authoring {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
