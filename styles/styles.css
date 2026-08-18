@@ -172,6 +172,13 @@ header {
   height: var(--nav-height);
 }
 
+@media (width >= 480px) {
+  .section.compact h2 {
+  font-size: var(--heading-font-size-compact-m);
+  margin-top:30px;
+}
+}
+
 /* reserve the desktop two-row header height (white bar + gold nav bar) here in
    eager CSS so the space is held before the lazy header block loads, preventing
    content from shifting down on load (CLS) */
@@ -558,8 +565,7 @@ main .section.highlight {
 }
 
 .section.compact {
-  margin-top:30px;
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 
 .section.compact h1 {
