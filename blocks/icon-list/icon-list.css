@@ -132,6 +132,7 @@
    every breakpoint and the author-set column count applies from tablet up. */
 .icon-list.label .icon-list-icon img {
   width: var(--icon-list-label-icon-width);
+  max-width: 100%;   /* shrink to fit the column (source: img-responsive) — prevents overflow */
   aspect-ratio: 151 / 166;
 }
 
@@ -175,7 +176,7 @@
    (source shows all six across from 651px up) */
 @media (width > 650px) {
   .icon-list.label ul.icon-list-items {
-    grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
+    grid-template-columns: repeat(var(--icon-list-columns, 4), minmax(0, 1fr));
   }
 
   .icon-list.label .icon-list-icon {
