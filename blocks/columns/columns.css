@@ -31,12 +31,27 @@
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
 }
 
+.columns.columns-icon-grid .columns-img-col img {
+  width: 150px; /* fixed icon size, as on the reference */
+}
+
 .section.compact .columns .columns-img-col img {
   padding-bottom: 10px; 
 }
 
+/* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
+   image is above or below the text. Neutralise the base image-column margin/padding
+   and the columns' own trailing margin so row-gap alone governs the spacing. */
+.section.serif .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+}
+
+.section.light-gray .columns:not(.columns-50-50) > div > div {
+  padding-inline: 24px;
+}
+
 /* border on the image in the first .section.compact only */
-.section.compact:not(.section.compact ~ .section.compact) .columns > div:first-child .columns-img-col img {
+.section.compact:not(.section.compact ~ .section.compact) .columns > div:first-child {
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
@@ -75,9 +90,7 @@
   padding-bottom: 0;
 }
 
-.columns.columns-icon-grid .columns-img-col img {
-  width: 150px; /* fixed icon size, as on the reference */
-}
+
 
 /* tablet — reference switches to a 2-up layout at 841px */
 @media (width >= 841px) {
@@ -207,12 +220,7 @@
   line-height: var(--heading-line-height);
 }
 
-/* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
-   image is above or below the text. Neutralise the base image-column margin/padding
-   and the columns' own trailing margin so row-gap alone governs the spacing. */
-.section.serif .columns.columns-50-50 > div {
-  row-gap: var(--space-section-l);
-}
+
 
 .section.serif .columns.columns-50-50 .columns-img-col {
   margin-bottom: 0;
@@ -306,12 +314,7 @@
   line-height: var(--body-line-height-l);
 }
 
-/* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
-   widening the between-column gap and insetting the text. Excludes the 50-50
-   variant, which keeps the base 15px so its image is the same size on either side. */
-.section.light-gray .columns:not(.columns-50-50) > div > div {
-  padding-inline: 24px;
-}
+
 
 /* extra title-to-body gap to match the reference's larger inline-title spacing */
 .section.light-gray .columns h2 {
@@ -364,11 +367,11 @@
 }
 
 @media (width >=480px) {
-  .section.compact .columns h2 {
+  .section.compact h2 {
   font-size: var(--heading-font-size-compact-m);
 }
 
-  .section.compact h2 {
+  .section.compact .columns h2 {
   font-size: var(--heading-font-size-compact-m);
 }
 }
