@@ -60,15 +60,15 @@ export default function transform(hookName, element, payload) {
 
   // --- 2. section breaks ----------------------------------------------------
   // Insert an <hr> before an anchor node, hoisted above any block wrapper the
-  // parsers produced (a break inside a block table is invalid and gets stripped).
+  // parsers produced. NOTE: at afterTransform time the parsers' blocks are
+  // <table> elements (WebImporter.Blocks.createBlock output) — NOT `.columns`
+  // divs (those class names only exist after EDS decorates the page). So we
+  // anchor on tables, not on `.columns`.
   const insertBreakBefore = (node) => {
     let anchor = node;
     let n = node;
     while (n && n !== root) {
-      if (n.tagName === 'TABLE'
-        || (n.classList && (n.classList.contains('columns') || n.classList.contains('panel')))) {
-        anchor = n;
-      }
+      if (n.tagName === 'TABLE') anchor = n;
       n = n.parentElement;
     }
     if (!anchor.parentElement) return;
@@ -76,17 +76,27 @@ export default function transform(hookName, element, payload) {
     anchor.parentElement.insertBefore(doc.createElement('hr'), anchor);
   };
 
+  // The block name lives in a table's first row header cell, e.g.
+  // "Columns (columns-50-50)" / "Section Metadata". Match tables by that text.
+  const blockTables = [...root.querySelectorAll('table')];
+  const tableName = (t) => (t.querySelector('tr') ? t.querySelector('tr').textContent.trim().toLowerCase() : '');
+
   // break before the "ENT patient conditions" heading (starts the conditions area)
   const entHeading = [...root.querySelectorAll('h1, h2, h3')]
     .find((h) => h.textContent.trim().toLowerCase() === 'ent patient conditions');
   if (entHeading) insertBreakBefore(entHeading);
 
-  // break before each condition's columns block (each condition = its own section).
-  // The condition parser emits columns(50-50) → panel(blue) → link → metadata; the
-  // break goes before the columns block that starts each condition.
-  root.querySelectorAll('.columns.columns-50-50').forEach((cols) => {
-    // skip the hero columns (it has no following panel sibling in its section)
-    insertBreakBefore(cols);
+  // break before each condition. A condition starts at a "Columns (columns-50-50)"
+  // table that is immediately followed (as a sibling block) by a Section Metadata
+  // table — that pairing is unique to the conditions; the hero columns-50-50 has
+  // no trailing metadata, so it is left with the "ENT patient conditions" break
+  // above instead of getting its own.
+  blockTables.forEach((t) => {
+    if (!/^columns \(columns-50-50\)/.test(tableName(t))) return;
+    // find the next block table sibling; is it the Section Metadata for this row?
+    let sib = t.nextElementSibling;
+    while (sib && sib.tagName !== 'TABLE') sib = sib.nextElementSibling;
+    if (sib && /^section metadata/.test(tableName(sib))) insertBreakBefore(t);
   });
 
   // break before the risk/safety link
