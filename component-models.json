@@ -72,6 +72,8 @@
           {
             "name": "Compact",
             "value": "compact"
+            "name": "Blue",
+            "value": "blue"
           }
         ]
       },
@@ -124,6 +126,10 @@
           {
             "name": "Brochure",
             "value": "brochure"
+          },
+          {
+            "name": "Linked",
+            "value": "linked"
           }
         ]
       }
@@ -413,6 +419,10 @@
           {
             "name": "Gray",
             "value": "gray"
+          },
+          {
+            "name": "Blue",
+            "value": "blue"
           },
           {
             "name": "Wide",

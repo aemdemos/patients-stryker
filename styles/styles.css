@@ -551,6 +551,15 @@ main > .section.dark {
   color: var(--color-white);
 }
 
+/* blue colour variant — the reference's .c-full-bleed-panel.bg-blue band (Zip
+   skin-closure). Same navy-bright as the .panel.blue box, so the boxes blend
+   seamlessly into the section. White default text; the panel's own CSS handles
+   gold headings. Pair with .full-bleed. */
+main > .section.blue {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+}
+
 /* divider between the fullbleed hero and the cards section — constrained to content width */
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);
