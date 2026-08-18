@@ -83,6 +83,7 @@
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
   --heading-font-size-compact: 16.8px; /* compact section h2 (measured) */
+  --heading-font-size-compact-m: 19.9px;
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -554,6 +555,10 @@ main .section.highlight {
   background-color: var(--color-surface);
   margin: 0;
   padding: var(--space-section) 0;
+}
+
+.section.compact {
+  margin-top:0;
 }
 
 .section.compact h1 {

@@ -22,9 +22,22 @@
   padding-bottom: 3%; /* additional gap before the heading, matches the reference's percentage-based text-wrapper padding */
 }
 
+.section.compact .columns-img-col {
+  margin-bottom: 0;
+}
+
 .columns .columns-img-col img {
   display: block;
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
+}
+
+.section.compact .columns .columns-img-col img {
+  padding-bottom: 10px; 
+}
+
+/* border on the image in the first .section.compact only */
+.section.compact:not(.section.compact ~ .section.compact) .columns > div:first-child .columns-img-col img {
+  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 .columns h4 {
@@ -348,6 +361,16 @@
 .section.light-gray .columns a:focus {
   color: var(--color-primary-pressed);
   text-decoration: none;
+}
+
+@media (width >=480px) {
+  .section.compact .columns h2 {
+  font-size: var(--heading-font-size-compact-m);
+}
+
+  .section.compact h2 {
+  font-size: var(--heading-font-size-compact-m);
+}
 }
 
 /* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
