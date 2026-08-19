@@ -116,10 +116,8 @@
   --icon-list-title-size: 31.5px;    /* heading: source 1.5em x 21px h3 */
   --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */
 
-  /* icon-list (tile) variant — measured from source ("risk factors of a stroke"):
-     near-square icons that stay visible at every breakpoint, 2-up mobile / 5-up
-     tablet+desktop. Icons are 200x170 (ratio 20/17). */
-  --icon-list-tile-icon-width: 200px; /* icon rendered width at desktop */
+  /* icon-list (tile) variant — measured from source ("risk factors of a stroke") */
+  --icon-list-tile-icon-width: 200px; /* icon rendered width (200x170, ratio 20/17) */
   --icon-list-tile-caption-size: 17.5px; /* caption — source Futura-bold 1.25em (1.25 x 14) */
   --icon-list-tile-icon-gap: 34px;    /* icon → caption gap (source: spacer paragraph ≈ 34px) */
   --icon-list-tile-caption-gap: 24px; /* caption → next row gap (source: trailing spacer paragraph) */
