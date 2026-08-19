@@ -260,7 +260,9 @@ p {
 strong,
 b {
   font-weight: 700;
+  font-family: var(--display-font-family);
 }
+
 
 /* bold inside a heading keeps the display face — this is what paints the gold H1
    (<h1><em><strong>) and any bold marker in h2/h3 in Futura, matching the source's
