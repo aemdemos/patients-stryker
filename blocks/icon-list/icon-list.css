@@ -178,7 +178,7 @@
   margin-bottom: var(--icon-list-label-title-gap);
 }
 
-/* tablet+ : icons stay visible, honour author column count */
+/* tablet+ : icons stay visible, honour author column count (label defaults 6-up) */
 @media (width > 650px) {
   .icon-list.label ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), minmax(0, 1fr));

@@ -53,6 +53,7 @@
           "value": "",
           "label": "Variant",
           "valueType": "string",
+          "condition": { "in": [{ "var": "classes_layout" }, ["cols-5", "cols-6"]] },
           "options": [
             { "name": "Default", "value": "" },
             { "name": "Label", "value": "label" },
