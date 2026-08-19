@@ -328,6 +328,12 @@ button {
   font: inherit;
 }
 
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
 /* links */
 a:any-link {
   color: var(--link-color);
@@ -335,23 +341,17 @@ a:any-link {
   overflow-wrap: break-word;
 }
 
-.section.compact a:any-link {
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  text-decoration: none;
-}
-
-/* bold and bold+italic links are not underlined (italic-only links still are).
-   Covers both nesting directions: <strong>/<b> wrapping the link, and the link
-   wrapping <strong>/<b>. */
+/* bold and bold+italic links are not underlined */
 strong a:any-link,
 b a:any-link,
 a:any-link:has(strong),
 a:any-link:has(b) {
+  text-decoration: none;
+}
+
+
+
+.section.compact a:any-link {
   text-decoration: none;
 }
 
