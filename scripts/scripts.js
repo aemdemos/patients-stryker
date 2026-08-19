@@ -143,6 +143,12 @@ function buildTabsAutoBlocks(main) {
     // One row per tab, each cell holding the h3 label + its panel content.
     const tabsBlock = buildBlock('tabs', groups.map((els) => [{ elems: els }]));
 
+    // EXPERIMENT: tag the synthesized block with data-aue-component="tabbed" so
+    // the UE mutation observer (ue.js `tabbed` case) can fire and move
+    // instrumentation onto the panels. This is a test to see whether UE will
+    // treat/track an auto-created block via a fabricated aue attribute.
+    tabsBlock.setAttribute('data-aue-component', 'tabbed');
+
     // Insert the block after the h2 (keeps the section title above the tabs).
     if (anchor) anchor.after(tabsBlock);
     else section.prepend(tabsBlock);

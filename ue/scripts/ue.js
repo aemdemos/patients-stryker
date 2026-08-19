@@ -38,12 +38,13 @@ const setupObservers = () => {
               });
             }
             break;
-          case 'tabs': {
+          case 'tabbed': {
             // The tabs block replaces its authored row <div>s (one per tab) with
             // a tablist button bar + one .tabs-panel per tab, all in a single
             // replaceChildren() mutation. Re-apply each removed row's
             // instrumentation to its matching panel (in order) so authors can
             // still select and edit each tab's content in the editor.
+            // (matched via data-aue-component="tabbed" set by the auto-block.)
             const addedPanels = [...addedElements].filter(
               (node) => node.tagName === 'DIV' && node.classList.contains('tabs-panel'),
             );
