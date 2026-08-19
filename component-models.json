@@ -68,6 +68,10 @@
           {
             "name": "Dark",
             "value": "dark"
+          },
+          {
+            "name": "Blue",
+            "value": "blue"
           }
         ]
       },
@@ -120,6 +124,10 @@
           {
             "name": "Brochure",
             "value": "brochure"
+          },
+          {
+            "name": "Linked",
+            "value": "linked"
           }
         ]
       }
@@ -174,6 +182,10 @@
           {
             "name": "50-50 Layout",
             "value": "columns-50-50"
+          },
+          {
+            "name": "70-30 Layout",
+            "value": "columns-70-30"
           },
           {
             "name": "Icon Grid",
@@ -235,6 +247,10 @@
           {
             "name": "Banner",
             "value": "banner"
+          },
+          {
+            "name": "Poster",
+            "value": "poster"
           }
         ]
       },
@@ -409,6 +425,12 @@
           {
             "name": "Gray",
             "value": "gray"
+          },
+          {
+            "name": "Colored Border",
+            "value": "colored-border",
+            "name": "Blue",
+            "value": "blue"
           },
           {
             "name": "Wide",

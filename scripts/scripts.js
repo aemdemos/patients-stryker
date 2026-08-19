@@ -356,6 +356,43 @@ export function mergeSectionCards(section) {
   });
 }
 
+/* Normalizes a pathname for comparison against query-index paths */
+function normalizePath(path) {
+  const clean = path.replace(/\.html$/, '').replace(/\/+$/, '');
+  return clean || '/';
+}
+
+/* Appends a "Last Modified" line to the end of the page. */
+async function decorateLastModified(main) {
+  try {
+    const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
+    if (!resp.ok) return;
+    const { data = [] } = await resp.json();
+    const current = normalizePath(window.location.pathname);
+    const row = data.find((r) => normalizePath(r.path) === current);
+    const ts = row && Number(row.lastModified);
+    if (!ts) return;
+
+    const date = new Date(ts * 1000);
+    const formatted = date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+    }).replace(' ', '/');
+
+    const section = document.createElement('div');
+    section.className = 'section last-modified-section';
+    const wrapper = document.createElement('div');
+    const p = document.createElement('p');
+    p.className = 'last-modified';
+    p.textContent = `Last Updated ${formatted}`;
+    wrapper.append(p);
+    section.append(wrapper);
+    main.append(section);
+  } catch (e) {
+    // do nothing — the last-modified line is non-critical
+  }
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -406,6 +443,8 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+
+  decorateLastModified(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

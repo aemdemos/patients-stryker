@@ -2,6 +2,9 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
+  // linked variant navigates within the site, so open in the same tab
+  const isLinked = block.classList.contains('linked');
+
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
@@ -24,10 +27,11 @@ export default function decorate(block) {
   ul.querySelectorAll('li').forEach((li) => {
     const link = li.querySelector('a');
     if (link) {
+      const target = isLinked ? '_self' : '_blank';
       li.addEventListener('click', (e) => {
-        if (!e.target.closest('a')) window.open(link.href, '_blank', 'noopener');
+        if (!e.target.closest('a')) window.open(link.href, target, 'noopener');
       });
-      link.target = '_blank';
+      link.target = target;
       link.rel = 'noopener';
     }
   });
