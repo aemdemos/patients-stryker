@@ -168,13 +168,10 @@
   }
 }
 
-/* full-bleed light-gray band behind the tile section (scoped via :has() so the
-   base map-background variant is untouched). */
-.icon-list-container.section:has(> .icon-list-wrapper > .icon-list.tile) {
-  margin-block: 0;
-  padding-block: var(--space-section);
-  background-color: var(--color-surface);
-}
+/* The tile section's full-bleed light-gray band is authored via the Section
+   "Style" field (Full Bleed + Light Gray) rather than hardcoded here — see
+   ue/models/section.json and the .section.full-bleed / .section.light-gray rules
+   in styles/styles.css. */
 
 /* center the lead paragraphs above the grid (source centers this intro) */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
