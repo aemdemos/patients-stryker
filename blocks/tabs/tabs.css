@@ -4,18 +4,38 @@
  *   - labels: Futura LT W01, 14px, uppercase, black, ~12px 30px padding
  *   - items separated by a 1px #dfe1de right border, wrapping to new rows
  *   - active label: 1px gold (#ffb500) bottom border; inactive: transparent
- * Panels below hold brochure cards (portrait cover image over a teal button),
- * matching the cards.resources grid: 1-up mobile, 2-up @841px, 4-up @1024px.
+ * Panels below hold brochure cards (a "cards resources" grid, styled by that
+ * block). Each tab's button + panel stay inside their authored row so the
+ * Universal Editor keeps the label nested under its tab; the visual tab bar is
+ * built with `display: contents` on the row plus flex `order` (buttons first,
+ * active panel full-width below) rather than by relocating DOM nodes.
  */
 
-.tabs .tabs-list {
+.tabs {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 var(--space-section);
+}
+
+/* row is the tab component's element — collapse its box so the button and panel
+   become flex items of .tabs (keeps label nested under its tab in UE) */
+.tabs .tabs-tab-row {
+  display: contents;
+}
+
+/* logical tablist for assistive tech: owns the tab buttons via aria-owns, so it
+   need not contain them. Kept in the a11y tree (not display:none) but visually
+   removed from the flex flow. */
+.tabs .tabs-list {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 
 .tabs .tabs-tab {
+  order: 1;   /* all buttons flow into the top bar, before the panels */
   margin: 0;
   border: 0;
   border-right: 1px solid var(--color-border);
@@ -37,12 +57,8 @@
   margin: 0;
 }
 
-.tabs .tabs-tab:first-child {
+.tabs .tabs-tab-first {
   padding-left: 0;
-}
-
-.tabs .tabs-tab:last-child {
-  border-right: 0;
 }
 
 .tabs .tabs-tab[aria-selected="true"] {
@@ -59,13 +75,19 @@
   outline-offset: -2px;
 }
 
+.tabs .tabs-panel {
+  order: 2;   /* the active panel sits below the whole tab bar */
+  width: 100%;
+  margin-top: var(--space-section);
+}
+
 .tabs .tabs-panel[aria-hidden="true"] {
   display: none;
 }
 
 /* the panel content is one or more "cards resources" fragments; that block owns
-   the brochure grid (portrait cover image over a teal button). Nothing to style
-   here beyond neutralising the fragment wrapper's default section spacing. */
-.tabs .tabs-panel-body > .cards {
+   the brochure grid (portrait cover image over a teal button). Only neutralise
+   the fragment wrapper's default section spacing. */
+.tabs .tabs-panel > .cards {
   margin: 0;
 }

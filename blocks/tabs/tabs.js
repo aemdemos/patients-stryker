@@ -2,10 +2,15 @@
  * Tabs Block
  * A tabbed container where each authored row is one tab: the first cell is the
  * tab label, the second is the panel content. Panels typically reference one or
- * more card fragments (each a "cards resources" brochure grid). Decoration
- * lifts the labels into an ARIA tablist, loads any nested fragments (nested
- * blocks are not auto-decorated by the page), and merges a tab's cards into a
- * single grid so the brochures render as one row.
+ * more card fragments (each a "cards resources" brochure grid).
+ *
+ * Layout note: the tab button and its panel are kept INSIDE their authored row
+ * (the row is the tab component's UE resource element). Moving the label out to
+ * a separate list would detach the label field from its tab in the Universal
+ * Editor content tree. Instead the row uses `display: contents` and the button
+ * / panel are positioned with flex `order`, so the visual tab bar is achieved
+ * without relocating instrumented nodes across components. A `role="tablist"`
+ * element uses `aria-owns` to logically own the tabs for assistive tech.
  */
 
 import { toClassName } from '../../scripts/aem.js';
@@ -34,34 +39,30 @@ async function decoratePanel(panel) {
 }
 
 export default async function decorate(block) {
+  // logical tablist for assistive tech — owns the tabs via aria-owns rather than
+  // containing them, so the buttons can stay inside their tab component subtrees
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
+  const rows = [...block.children];
   const buttons = [];
   const panels = [];
 
-  [...block.children].forEach((row, i) => {
+  rows.forEach((row, i) => {
     const [labelCell, contentCell] = row.children;
     const name = toClassName(labelCell?.textContent || `tab-${i}`);
     const tabId = `tab-${name}`;
     const panelId = `tabpanel-${name}`;
 
-    // panel: reuse the authored row so its UE component instrumentation stays put
-    row.className = 'tabs-panel';
-    row.id = panelId;
-    row.setAttribute('role', 'tabpanel');
-    row.setAttribute('aria-labelledby', tabId);
-    row.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
+    // the row is the tab component's resource element — keep its children in
+    // place, just collapse its box so the button/panel become flex items
+    row.classList.add('tabs-tab-row');
 
-    if (contentCell) contentCell.className = 'tabs-panel-body';
-
-    // remove the now-redundant label cell from the panel
-    if (labelCell) labelCell.remove();
-
-    // tab button, carrying the label field's UE instrumentation
+    // tab button, carrying the label field's UE instrumentation, kept in the row
     const button = document.createElement('button');
     button.className = 'tabs-tab';
+    if (i === 0) button.classList.add('tabs-tab-first');
     button.type = 'button';
     button.id = tabId;
     button.setAttribute('role', 'tab');
@@ -71,12 +72,25 @@ export default async function decorate(block) {
     if (labelCell) {
       moveInstrumentation(labelCell, button);
       button.append(...labelCell.childNodes);
+      labelCell.replaceWith(button);
+    } else {
+      row.prepend(button);
     }
 
-    tablist.append(button);
+    // panel is the content cell — labelled by its tab, hidden unless active
+    const panel = contentCell || document.createElement('div');
+    panel.classList.add('tabs-panel');
+    panel.id = panelId;
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', tabId);
+    panel.setAttribute('aria-hidden', i === 0 ? 'false' : 'true');
+    if (!contentCell) row.append(panel);
+
     buttons.push(button);
-    panels.push(row);
+    panels.push(panel);
   });
+
+  tablist.setAttribute('aria-owns', buttons.map((b) => b.id).join(' '));
 
   const activate = (index) => {
     buttons.forEach((btn, i) => {
@@ -106,12 +120,12 @@ export default async function decorate(block) {
   block.prepend(tablist);
 
   // Universal Editor: when an author selects a component (or its child) that
-  // lives inside a hidden panel, reveal that tab so the selection is visible.
+  // lives in a hidden tab, reveal that tab so the selection is visible.
   // `aue:ui-select` only fires in the editor, so this is inert on the live site.
   document.addEventListener('aue:ui-select', (e) => {
     const selected = e.detail?.element || e.target;
-    const panel = selected?.closest?.('.tabs-panel');
-    const index = panels.indexOf(panel);
+    const rowEl = selected?.closest?.('.tabs-tab-row');
+    const index = rows.indexOf(rowEl);
     if (index >= 0) activate(index);
   });
 
