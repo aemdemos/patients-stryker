@@ -139,6 +139,9 @@
   --panel-body-line-height: 1.06; /* p */
   --panel-body-line-height-m: 1.15; /* p */
   --panel-dark-gradient: linear-gradient(90deg, #545857, #3e5245); /* dark variant bg (measured) */
+  --panel-colored-border-width: 20px; /* colored-border variant top accent */
+  --panel-colored-border-width-tablet: 25px; /* colored-border variant top accent on tablet */
+  --panel-colored-border-width-desktop: 10px; /* colored-border variant top accent on desktop */
   --panel-fragment-font-size: 14px; /* fragment gray variant p */
   --panel-fragment-line-height: 1.375; /* fragment gray variant p */
 
@@ -501,6 +504,18 @@ main > .section > div {
   padding: 0 var(--container-gutter);
 }
 
+main .last-modified {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  letter-spacing: 0.02em;
+}
+
+@media (width >= 841px) {
+  main .last-modified {
+    font-size: var(--body-font-size-s);
+  }
+}
+
 /* section width variants */
 main > .section.narrow > div {
   max-width: var(--container-narrow);
@@ -556,6 +571,15 @@ main > .section.light-gray {
    a gray-to-teal gradient band with white text. Pair with .full-bleed. */
 main > .section.dark {
   background: var(--panel-dark-gradient);
+  color: var(--color-white);
+}
+
+/* blue colour variant — the reference's .c-full-bleed-panel.bg-blue band (Zip
+   skin-closure). Same navy-bright as the .panel.blue box, so the boxes blend
+   seamlessly into the section. White default text; the panel's own CSS handles
+   gold headings. Pair with .full-bleed. */
+main > .section.blue {
+  background-color: var(--color-navy-bright);
   color: var(--color-white);
 }
 

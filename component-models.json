@@ -68,6 +68,10 @@
           {
             "name": "Dark",
             "value": "dark"
+          },
+          {
+            "name": "Blue",
+            "value": "blue"
           }
         ]
       },
@@ -120,6 +124,10 @@
           {
             "name": "Brochure",
             "value": "brochure"
+          },
+          {
+            "name": "Linked",
+            "value": "linked"
           }
         ]
       }
@@ -176,6 +184,10 @@
             "value": "columns-50-50"
           },
           {
+            "name": "70-30 Layout",
+            "value": "columns-70-30"
+          },
+          {
             "name": "Icon Grid",
             "value": "columns-icon-grid"
           }
@@ -229,8 +241,16 @@
             "value": "fullbleed"
           },
           {
+            "name": "Band",
+            "value": "band"
+          },
+          {
             "name": "Banner",
             "value": "banner"
+          },
+          {
+            "name": "Poster",
+            "value": "poster"
           }
         ]
       },
@@ -271,6 +291,14 @@
                   "var": "classes"
                 }
               ]
+            },
+            {
+              "in": [
+                "band",
+                {
+                  "var": "classes"
+                }
+              ]
             }
           ]
         }
@@ -294,6 +322,14 @@
             {
               "in": [
                 "banner",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "band",
                 {
                   "var": "classes"
                 }
@@ -393,6 +429,12 @@
           {
             "name": "Gray",
             "value": "gray"
+          },
+          {
+            "name": "Colored Border",
+            "value": "colored-border",
+            "name": "Blue",
+            "value": "blue"
           },
           {
             "name": "Wide",
