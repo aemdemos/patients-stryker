@@ -240,6 +240,7 @@ b {
   font-weight: 700;
 }
 
+
 /* Gold headlines — the source renders its main headings in the gold accent
    (h1 inline rgb(255,181,0); h2 via #ffb500 spans). In DA/EDS the gold marker
    is bold+italic: the bold is kept (production headlines are bold), but the
@@ -259,6 +260,12 @@ h3 strong em,
 h3 em strong {
   color: var(--color-accent);
 }
+
+h2 em strong,
+h2 strong em {
+    font-size: var(--heading-font-size-compact);
+}
+
 
 /* lists — measured source indent (padding-left 17px) */
 ol,
@@ -280,6 +287,7 @@ main ol.footnotes {
   padding-left: var(--list-indent);
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
+  margin: 0 0 30px;
 }
 
 main ol.footnotes li {
@@ -316,6 +324,10 @@ a:any-link {
   color: var(--link-color);
   text-decoration: underline;
   overflow-wrap: break-word;
+}
+
+.section.compact a:any-link {
+  text-decoration: none;
 }
 
 a:hover,
@@ -518,6 +530,11 @@ main > .section {
   margin: 0 0 var(--space-section);
 }
 
+main > .section > .columns-wrapper,
+main > .section > .accordion-wrapper {
+  margin-bottom: 30px;
+}
+
 main > .section > div {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -537,12 +554,13 @@ main .last-modified {
 }
 
 .section.compact h1 {
-  margin: 58px 0 10px;
+  margin: 30px 0 10px;
   line-height: 22.26px;
 }
 
 .section.compact h2 {
   font-size: var(--heading-font-size-compact);
+  margin-top:30px;
 }
 
 .section.compact p {
@@ -627,6 +645,11 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   .section.compact h2 {
   font-size: var(--heading-font-size-compact-m);
   margin-top:30px;
+}
+
+h2 em strong,
+h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
 }
 }
 
