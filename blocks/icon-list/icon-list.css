@@ -158,35 +158,32 @@
   aspect-ratio: 20 / 17;
 }
 
-/* tablet: 5-up (or cols-4), icons stay visible — overrides the base block's
-   tablet icon-hide rule. 30px column gap matches the source at this width. */
+/* tablet + desktop: 5-up (or cols-4), icons stay visible — overrides the base
+   block's tablet icon-hide rule. The source lays the tiles out on a 12-column
+   grid where the 5 tiles span the middle 10 columns (83.333%), centred, so the
+   icons scale fluidly (≈86px → 200px) as the viewport grows from 650px to
+   ~1400px, keeping a fixed 30px gap. max-width caps the group at its natural
+   size (5 × 200px icons + 4 × 30px gaps) so icons never exceed 200px; above
+   that width the group stays capped and centred rather than stretching. */
 @media (width > 650px) {
   .icon-list.tile ul.icon-list-items {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: var(--icon-list-tile-col-gap);
+    width: var(--icon-list-tile-grid-width);
+    max-width: calc(5 * var(--icon-list-tile-icon-width) + 4 * var(--icon-list-tile-col-gap));
+    margin-inline: auto;
   }
 
+  /* cols-4 spans 8 of 12 columns (66.667%) */
   .icon-list.tile.cols-4 ul.icon-list-items {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: var(--icon-list-tile-grid-width-cols-4);
+    max-width: calc(4 * var(--icon-list-tile-icon-width) + 3 * var(--icon-list-tile-col-gap));
   }
 
   .icon-list.tile .icon-list-icon {
     display: block;
     margin-bottom: var(--icon-list-tile-icon-gap);
-  }
-}
-
-/* desktop: keep the 30px column gap (inherited) and cap the grid at the natural
-   tile group width (5 icons + 4 gaps), centered in the container — so tiles do
-   NOT stretch to fill the full container width. */
-@media (width > 1024px) {
-  .icon-list.tile ul.icon-list-items {
-    max-width: calc(5 * var(--icon-list-tile-icon-width) + 4 * var(--icon-list-tile-col-gap));
-    margin-inline: auto;
-  }
-
-  .icon-list.tile.cols-4 ul.icon-list-items {
-    max-width: calc(4 * var(--icon-list-tile-icon-width) + 3 * var(--icon-list-tile-col-gap));
   }
 }
 
