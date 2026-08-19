@@ -102,43 +102,44 @@ function readSectionStyles(section) {
 }
 
 /**
- * Turns any section flagged `Style = tabs` into a `tabs` container block. Each
- * `h3` heading + the content following it (up to the next `h3`) becomes one tab
- * child, authored as a two-cell row: [label, content]. This matches the shape
- * the `tabs` block and its UE model expect, so the result is editable in the
- * Universal Editor (a real container component) as well as rendered live.
- * The section's `h2` title and its `.section-metadata` are left in place.
- * See issue #95.
+ * Turns any section flagged `Style = tabs` into a `tabs` block. Authors write
+ * each procedure as an `h3` heading (the tab label) followed by its content
+ * (cards/fragments), all inside the flagged section — the heading-driven
+ * pattern from issue #95. This pass groups each `h3` + the content following it
+ * (up to the next `h3`) into one tab row and builds the `tabs` block; the
+ * block's decorate() then renders the tab bar and switches panels.
+ *
+ * Skipped in the Universal Editor: auto-blocking is a runtime transform the
+ * editor doesn't model, so in UE we leave the authored headings + fragments in
+ * place (fully visible and editable). The interactive tab bar assembles only on
+ * the delivered/live site.
  * @param {Element} main The container element
  */
 function buildTabsAutoBlocks(main) {
+  if (window.location.hostname.includes('.ue.da.live')) return;
   main.querySelectorAll(':scope > div').forEach((section) => {
     if (!readSectionStyles(section).includes('tabs')) return;
 
-    // Group each h3 + its following siblings (until the next h3) into a tab:
-    // the h3 text is the label, the rest is the panel content.
+    // Group each h3 + its following siblings (until the next h3) into one tab.
     const groups = [];
     let current = null;
     [...section.children].forEach((el) => {
       if (el.classList.contains('section-metadata')) return; // leave in place
       if (el.tagName === 'H3') {
-        current = { label: el, content: [] };
+        current = [el];
         groups.push(current);
       } else if (current) {
-        current.content.push(el);
+        current.push(el);
       }
     });
     if (!groups.length) return;
 
     // Remember where to drop the block BEFORE building, because buildBlock()
     // moves the heading/content nodes into the new block.
-    const anchor = groups[0].label.previousSibling;
+    const anchor = groups[0][0].previousSibling;
 
-    // One row per tab: cell 1 = label, cell 2 = content.
-    const tabsBlock = buildBlock('tabs', groups.map((g) => [
-      { elems: [g.label] },
-      { elems: g.content },
-    ]));
+    // One row per tab, each cell holding the h3 label + its panel content.
+    const tabsBlock = buildBlock('tabs', groups.map((els) => [{ elems: els }]));
 
     // Insert the block after the h2 (keeps the section title above the tabs).
     if (anchor) anchor.after(tabsBlock);

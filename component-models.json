@@ -543,24 +543,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "tabs-tab",
-    "fields": [
-      {
-        "component": "text",
-        "name": "label",
-        "value": "",
-        "label": "Tab label",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "content",
-        "value": "",
-        "label": "Tab content",
-        "valueType": "string"
-      }
-    ]
   }
 ]

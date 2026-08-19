@@ -29,14 +29,13 @@ async function loadPanelFragments(panel, noCta) {
 }
 
 /**
- * Tabs block — a container of tab children, each authored as a row with two
- * cells: the tab label and the panel content (usually a fragment reference).
- * Renders a tab bar from the labels and shows one panel at a time.
+ * Tabs block. Auto-blocked (see buildTabsAutoBlocks in scripts.js) from a
+ * section flagged `Style = tabs`: each row holds an `h3` (the tab label)
+ * followed by that tab's content (cards/fragments). Builds the tab bar from the
+ * headings and shows one panel at a time (first tab open by default).
  *
- * Works in the Universal Editor because it is a real container component (see
- * ue/models/blocks/tabs.json): the parent takes `tabs-tab` children, and the
- * mutation observer in ue/scripts/ue.js re-applies instrumentation to the
- * decorated panels so authors can select, edit, add and reorder tabs.
+ * In the Universal Editor the auto-block is skipped, so this decorate() does not
+ * run there — authors edit the plain headings + fragments directly.
  * @param {Element} block the tabs block element
  */
 export default function decorate(block) {
@@ -50,23 +49,22 @@ export default function decorate(block) {
   const panels = [];
 
   rows.forEach((row, i) => {
-    const cells = [...row.children];
-    // two-cell child: [label, content]. Fall back to single-cell (label = its
-    // heading) so heading-driven authored content still works.
-    const labelCell = cells[0];
-    const contentCell = cells[1] || cells[0];
-    const labelText = (labelCell.querySelector('h1,h2,h3,h4,h5,h6') || labelCell)
-      .textContent.trim() || `Tab ${i + 1}`;
+    // heading-grouped tab: the cell holds an <h3> (the tab label) followed by
+    // that tab's content (cards/fragments).
+    const cell = row.querySelector(':scope > div') || row;
+    const heading = cell.querySelector('h1,h2,h3,h4,h5,h6');
+    const labelText = (heading ? heading.textContent : cell.textContent).trim() || `Tab ${i + 1}`;
     const id = toClassName(labelText) || `tab-${i + 1}`;
 
-    // panel = the content cell
+    // panel = the cell content, minus the heading (it becomes the tab label)
     const panel = document.createElement('div');
     panel.className = 'tabs-panel';
     panel.id = `tabpanel-${id}`;
     panel.setAttribute('role', 'tabpanel');
     panel.setAttribute('aria-labelledby', `tab-${id}`);
     moveInstrumentation(row, panel);
-    while (contentCell.firstChild) panel.append(contentCell.firstChild);
+    if (heading) heading.remove();
+    while (cell.firstChild) panel.append(cell.firstChild);
     panel.hidden = i !== 0;
 
     // tab button

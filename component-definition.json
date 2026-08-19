@@ -324,40 +324,6 @@
               ]
             }
           }
-        },
-        {
-          "title": "Tabs",
-          "id": "tabs",
-          "model": "tabs",
-          "filter": "tabs",
-          "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
-            }
-          }
-        },
-        {
-          "title": "Tab",
-          "id": "tabs-tab",
-          "model": "tabs-tab",
-          "plugins": {
-            "da": {
-              "name": "tabs-tab",
-              "rows": 1,
-              "columns": 2,
-              "fields": [
-                {
-                  "name": "label",
-                  "selector": "div:nth-child(1)"
-                },
-                {
-                  "name": "content",
-                  "selector": "div:nth-child(2)"
-                }
-              ]
-            }
-          }
         }
       ]
     }
