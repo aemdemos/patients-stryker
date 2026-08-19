@@ -92,6 +92,12 @@
   margin-top: var(--space-block);
 }
 
+/* when a compact columns block also contains an h1, the h2 acts as a subheading
+   and should use the standard xl size rather than the compact size */
+.section.compact .columns:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
 .section.compact .columns p,
 .section.compact .columns ul,
 .section.compact .columns li {
