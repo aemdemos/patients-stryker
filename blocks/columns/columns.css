@@ -161,11 +161,11 @@
      Desktop only; tablet keeps the even base split and mobile stays stacked,
      matching the 50-50 variant's responsive behaviour. */
   .columns.columns-70-30 > div > div:first-child {
-    flex: 0 0 67%;
+    flex: 0 0 70%;
   }
 
   .columns.columns-70-30 > div > div:last-child {
-    flex: 0 0 33%;
+    flex: 0 0 30%;
   }
 
   /* serif image+text rows centre the image against the text block only at desktop
