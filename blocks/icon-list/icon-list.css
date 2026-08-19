@@ -168,12 +168,9 @@
   }
 }
 
-/* The tile section's full-bleed light-gray band is authored via the Section
-   "Style" field (Full Bleed + Light Gray) rather than hardcoded here — see
-   ue/models/section.json and the .section.full-bleed / .section.light-gray rules
-   in styles/styles.css. */
+/* tile section background: author via Section Style (Full Bleed + Light Gray) */
 
-/* center the lead paragraphs above the grid (source centers this intro) */
+/* center the intro copy above the grid */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
   > .default-content-wrapper :is(p, h1, h2, h3, h4, h5, h6) {
   text-align: center;
