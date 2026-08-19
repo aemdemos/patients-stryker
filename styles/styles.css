@@ -32,6 +32,7 @@
   --color-navy-bright: #1c5687;
   --color-purple: #85458a;
   --color-success: #32ae88;
+  --color-youtube: #f00; /* YouTube play-button red (video block facade) */
 
   /* neutrals & surfaces */
   --color-white: #fff;
@@ -82,8 +83,8 @@
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
-  --heading-font-size-compact: 16.8px; /* compact section h2 (measured) */
-  --heading-font-size-compact-m: 19.9px;
+  --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
+  --heading-font-size-compact-m: 19.9px; /* compact section h2 ≥480px (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -219,6 +220,16 @@ h2 {
   font-weight: 700;
 }
 
+/* stat-lede subheading (ENT condition pages, e.g. "Affects 31 million adults…"):
+   a plain h2 (no gold em/strong marker) sitting beside the gold h1 in the title
+   columns. The source renders it in the light serif heading face, not Futura-bold,
+   so the emphasis reads title-bold + subhead-light. Scoped to the columns title
+   context and to h2s WITHOUT the gold marker, so section-heading h2s are untouched. */
+.columns > div > div h2:not(:has(em, strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
    h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
 h4,
@@ -242,12 +253,23 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
-/* bold inline text — measured from source span.futura-bold: Futura Bold, not the body serif */
+/* bold inline text — the source renders ordinary <b>/<strong> in the body slab
+   face, just heavier (HumanistSlab712W01 bold, 11.2–14px). Only set weight here so
+   bold body copy inherits the body font; Futura is reserved for headings (see the
+   heading rules above and the heading-scoped override below). */
 strong,
 b {
   font-weight: 700;
 }
 
+/* bold inside a heading keeps the display face — this is what paints the gold H1
+   (<h1><em><strong>) and any bold marker in h2/h3 in Futura, matching the source's
+   Futura-bold headings without leaking Futura into bold body text. */
+h1 :is(strong, b),
+h2 :is(strong, b),
+h3 :is(strong, b) {
+  font-family: var(--display-font-family);
+}
 
 /* Gold headlines — the source renders its main headings in the gold accent
    (h1 inline rgb(255,181,0); h2 via #ffb500 spans). In DA/EDS the gold marker
@@ -281,11 +303,18 @@ ul {
   padding-left: var(--list-indent);
 }
 
-/* citation superscripts — measured from source: raised, small; the link inside
-   inherits the global teal link color + hover, so only sizing is set here. */
+/* citation superscripts — measured from source: small (75%) and only slightly
+   raised. The browser default `vertical-align: super` shifts the marker up by a full
+   super-step, which reads as an oversized, prominent digit and inflates the line box;
+   the source keeps it tight to the baseline. Use a small relative raise instead so the
+   marker stays subtle and doesn't affect line-height. The link inside inherits the
+   global teal link color + hover, so only sizing/position is set here. */
 sup {
+  position: relative;
+  top: -0.4em;
   font-size: 75%;
   line-height: 0;
+  vertical-align: baseline;
 }
 
 /* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
@@ -538,6 +567,9 @@ main > .section {
 
 
 main > .section > div {
+  box-sizing: border-box; /* the source's .container caps its OUTER box at 1410px with the
+                             15px gutter inside it (content = 1380px); border-box matches
+                             that so our content isn't 30px wider than the source */
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -567,6 +599,83 @@ main .last-modified {
 
 .section.compact p {
   font-size: var(--footnote-font-size);
+/* flex section — lays the section's content WRAPPERS side by side at 50/50 on
+   desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
+   Block-agnostic (issue #98's section-flex direction): each authored unit becomes
+   its own wrapper (`.default-content-wrapper`, `.<block>-wrapper`), so e.g. a text
+   block sits beside a video without coupling the layout to a specific block.
+   Reading order = source order, so the first authored wrapper sits on the left.
+   The section itself is the flex container (its wrappers are the direct children);
+   empty wrappers (e.g. the consumed section-metadata) collapse to zero via :empty. */
+@media (width >= 1024px) {
+  main > .section.flex {
+    display: flex;
+    align-items: center;
+    gap: var(--container-gutter);
+
+    /* the section itself is the flex row, so cap/centre/gutter it the same way a
+       normal section's inner > div is capped — otherwise the row spans the full
+       viewport instead of aligning with the other sections' content width.
+       border-box keeps the gutter inside the 1410px cap, matching the source. */
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  main > .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0; /* allow shrink below content width instead of overflowing */
+  }
+
+  main > .section.flex > div:empty {
+    display: none; /* drop the emptied section-metadata wrapper from the flex row */
+  }
+}
+
+/* divider section — a full-viewport-width sage rule at the section break, matching
+   the source's .sectionseparator hr (1px --color-surface-muted, spanning the whole
+   viewport). The line is drawn as a ::before pinned to the FULL viewport width (100vw
+   centred on the section) rather than a border on the section box — otherwise a section
+   that caps its own width (e.g. Style `flex`, max-width 1410px) would clip the line to
+   the content width. This keeps the rule edge-to-edge regardless of the section's layout.
+   The 50px source gap below the rule becomes top padding above the content. Authored per
+   boundary via the section Style `divider` (opt-in, like the source's selective placement). */
+main > .section.divider {
+  position: relative;
+  padding-top: var(--space-section-l);
+}
+
+main > .section.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw; /* pull the 100vw bar back to the true viewport edge, ignoring the section's cap */
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* spacer section — a fixed-height vertical gap, authored as an (otherwise empty)
+   section tagged Style `spacer`. Used above the page title to match the source's
+   ~30px hero top offset. Opt-in per section, so it never affects untagged sections;
+   the collapse of any authored placeholder content keeps the height exact. */
+main > .section.spacer {
+  margin: 0;
+  padding: 0;
+  height: var(--space-section);
+}
+
+main > .section.spacer > div {
+  display: none;
+}
+
+/* section metadata */
+main .section.light,
+main .section.highlight {
+  background-color: var(--color-surface);
+  margin: 0;
+  padding: var(--space-section) 0;
 }
 
 main > .section.no-cta > .default-content-wrapper h1 {
@@ -684,6 +793,7 @@ main .section.highlight {
   }
   
   main > .section > div {
+    box-sizing: border-box;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
