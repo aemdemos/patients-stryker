@@ -294,6 +294,11 @@ main ol.footnotes li {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
+main ol.footnotes li > p {
+  margin-bottom:0;
+}
+
+
 code,
 pre {
   font-size: var(--body-font-size-s);
