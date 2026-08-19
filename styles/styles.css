@@ -539,6 +539,23 @@ main .last-modified {
   }
 }
 
+.section.compact {
+  margin-bottom:40px;
+}
+
+.section.compact h1 {
+  margin: 58px 0 10px;
+  line-height: 22.26px;
+}
+
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+}
+
+.section.compact p {
+  font-size: var(--footnote-font-size);
+}
+
 /* section width variants */
 main > .section.narrow > div {
   max-width: var(--container-narrow);
