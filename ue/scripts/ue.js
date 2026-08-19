@@ -13,7 +13,7 @@
 import { moveInstrumentation } from './ue-utils.js';
 
 const setupObservers = () => {
-  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
+  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list, div.tabs');
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList' && mutation.target.tagName === 'DIV') {
@@ -38,6 +38,23 @@ const setupObservers = () => {
               });
             }
             break;
+          case 'tabs': {
+            // The tabs block replaces its authored row <div>s (one per tab) with
+            // a tablist button bar + one .tabs-panel per tab, all in a single
+            // replaceChildren() mutation. Re-apply each removed row's
+            // instrumentation to its matching panel (in order) so authors can
+            // still select and edit each tab's content in the editor.
+            const addedPanels = [...addedElements].filter(
+              (node) => node.tagName === 'DIV' && node.classList.contains('tabs-panel'),
+            );
+            const removedRows = [...mutation.removedNodes].filter((node) => node.tagName === 'DIV');
+            removedRows.forEach((div, index) => {
+              if (index < addedPanels.length) {
+                moveInstrumentation(div, addedPanels[index]);
+              }
+            });
+            break;
+          }
           case 'cards-image':
             if (mutation.target.classList.contains('cards-card-image')) {
               const addedPictureEl = [...mutation.addedNodes].filter((node) => node.tagName === 'PICTURE');
