@@ -162,9 +162,8 @@
 }
 
 /* brochure-cta: cover, Futura-bold title, light-serif label, gold CTA button
-   (author the CTA as a bold+italic link -> .button.accent = source .btn-gold).
-   Card is a flex column so the body can push the label + button to the card
-   bottom, aligning them across the row regardless of title length (source). */
+   (CTA authored as bold+italic link -> .button.accent = source .btn-gold).
+   Flex column so label + button bottom-align across the row. */
 .cards.brochure-cta > ul > li {
   display: flex;
   flex-direction: column;
@@ -184,18 +183,23 @@
   margin: var(--space-block) 0 0;
 }
 
-/* title: Futura bold at body size (source .futura-bold, 14px); family/weight
-   inherited from base .cards .cards-card-body h3. margin-bottom:auto absorbs the
-   card's slack right below the title, pushing label + button to the bottom as a
-   group so they align across the row regardless of title length (matches source). */
+/* title: Futura bold at body size (source .futura-bold, 14px). Fixed bottom gap
+   below the title on every card; label margin-top:auto (below) adds any slack. */
 .cards.brochure-cta .cards-card-body h3 {
-  margin-bottom: auto;
+  margin-bottom: var(--space-section);
   font-size: var(--body-font-size-m);
 }
 
-/* label: light serif, 1.25em (source .urw-egyptienne .fontsize-1-25em) */
+/* label: light serif, 1.25em. Zero bottom margin keeps it tight above the button
+   (flex items don't collapse margins). */
 .cards.brochure-cta .cards-card-body p {
+  margin-bottom: 0;
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
+}
+
+/* label absorbs extra card height so label + button bottom-align across the row */
+.cards.brochure-cta .cards-card-body p:not(.button-wrapper) {
+  margin-top: auto;
 }
