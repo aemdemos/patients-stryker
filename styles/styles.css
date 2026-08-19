@@ -245,7 +245,6 @@ p {
 /* bold inline text — measured from source span.futura-bold: Futura Bold, not the body serif */
 strong,
 b {
-  font-family: var(--display-font-family);
   font-weight: 700;
 }
 
@@ -537,11 +536,6 @@ main > .section {
   margin: 0 0 var(--space-section);
 }
 
-main > .section > .columns-wrapper,
-main > .section > .accordion-wrapper {
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
 
 main > .section > div {
   max-width: var(--container-max);
