@@ -32,7 +32,8 @@
   }
 
   .cards.resources > ul,
-  .cards.brochure > ul {
+  .cards.brochure > ul,
+  .cards.linked > ul {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -112,36 +113,43 @@
   margin: var(--space-block) 0 0;
 }
 
-/* brochure variant: portrait cover image with a light border, an optional
-   centered title above it, and centered "Digital | Print" download links below.
-   Title is per-card content — include a heading for the titled style, omit it
-   for the untitled style. Shares the resources 4-up desktop grid.
-
-   Ordering is CSS-only (no DOM manipulation): the card is a flex column and the
-   body uses display:contents so its children (heading, links) become flex items
-   of the li alongside the image. order then lays them out title -> image ->
-   links without moving any nodes (keeps UE instrumentation intact). */
-.cards.brochure > ul > li {
+/* shared title-above-image scaffolding (brochure + linked): the li is a flex
+   column and the body uses display:contents so its heading/links become flex
+   items, ordered title -> image -> (body) without moving nodes (keeps UE
+   instrumentation intact). Skins (image ratio/border, title font, body row)
+   are set per-variant below. */
+.cards.brochure > ul > li,
+.cards.linked > ul > li {
   display: flex;
   flex-direction: column;
   background-color: transparent;
   text-align: center;
 }
 
-.cards.brochure .cards-card-image {
-  order: 1;   /* image between title (0) and links (2) */
+.cards.brochure .cards-card-image,
+.cards.linked .cards-card-image {
+  order: 1;   /* image between title (0) and body (2) */
 }
 
+.cards.brochure .cards-card-body,
+.cards.linked .cards-card-body {
+  display: contents;
+}
+
+/* linked title = bold link in a <p>; decorateButtons promotes it to
+   .button-wrapper > a.button, so order/skin that (not a heading) */
+.cards.linked .cards-card-body .button-wrapper {
+  order: 0;   /* title above the image */
+  margin: 0 0 var(--space-block);
+}
+
+/* brochure skin: portrait cover image with a light border, light-serif title,
+   and a centered "Digital | Print" download-links row below. */
 .cards.brochure > ul > li img {
   width: 100%;
   height: auto;
   aspect-ratio: auto;   /* natural portrait ratio */
   border: 1px solid var(--color-surface-muted);   /* #b2b4ae, matches source */
-}
-
-/* let the body's children participate in the li's flex ordering directly */
-.cards.brochure .cards-card-body {
-  display: contents;
 }
 
 .cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
@@ -154,6 +162,31 @@
   font-weight: 500;
   font-size: var(--heading-font-size-xxxl);
   line-height: var(--heading-line-height);
+}
+
+/* linked skin: bold title above a landscape borderless image, both linking to a
+   page (IVS condition grid). */
+.cards.linked > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 680;   /* source asset ratio (~16:9) */
+  object-fit: cover;
+}
+
+/* strip button chrome -> plain bold slab-serif link (matches source) */
+.cards.linked .cards-card-body .button-wrapper a.button {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--text-color);
+  font-family: var(--body-font-family);   /* bold slab serif, source default */
+  font-weight: 700;
+  font-size: var(--heading-font-size-l);   /* 21px = source fontsize-1-5em (1.5 x 14) */
+  line-height: var(--heading-line-height);
+  text-transform: none;   /* undo the global button uppercase */
+  text-decoration: none;
 }
 
 .cards.brochure .cards-card-body p {
