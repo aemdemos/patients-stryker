@@ -136,7 +136,17 @@
   margin-bottom: var(--icon-list-tile-icon-gap);
 }
 
-/* caption — source Futura-bold at 1.25em (17.5px); base block sets 14px */
+/* caption — source Futura-bold at 1.25em (17.5px); base block sets 14px.
+   Cap the text cell at the icon width so long labels ("Lack of physical
+   activity", "Atrial Fibrillation (AFib)") wrap to two lines under the tile
+   rather than overflowing past the icon, as in the source. The bottom gap is
+   larger than the top (source has a trailing spacer paragraph below each
+   caption): ~34px above, ~24px below. */
+.icon-list.tile .icon-list-text {
+  max-width: var(--icon-list-tile-icon-width);
+  margin-bottom: var(--icon-list-tile-caption-gap);
+}
+
 .icon-list.tile .icon-list-text,
 .icon-list.tile .icon-list-text p {
   font-size: var(--icon-list-tile-caption-size);

@@ -122,6 +122,7 @@
   --icon-list-tile-icon-width: 200px; /* icon rendered width at desktop */
   --icon-list-tile-caption-size: 17.5px; /* caption — source Futura-bold 1.25em (1.25 x 14) */
   --icon-list-tile-icon-gap: 34px;    /* icon → caption gap (source: spacer paragraph ≈ 34px) */
+  --icon-list-tile-caption-gap: 24px; /* caption → next row gap (source: trailing spacer paragraph) */
   --icon-list-tile-row-gap: 30px;     /* vertical gap between tile rows */
   --icon-list-tile-title-gap: 15px;   /* heading → intro gap (source margin) */
   --icon-list-tile-intro-gap: 49px;   /* intro → lead-in and lead-in → grid (source: 15px margin + spacer paragraph) */
