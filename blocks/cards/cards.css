@@ -209,9 +209,11 @@
   margin-top: auto;
 }
 
-/* let the CTA text wrap instead of truncating when the column is narrow */
+/* let the CTA text wrap instead of truncating when the column is narrow;
+   text-align keeps each wrapped line centered */
 .cards.brochure-cta .cards-card-body .button {
   white-space: normal;
   overflow: visible;
   text-overflow: clip;
+  text-align: center;
 }
