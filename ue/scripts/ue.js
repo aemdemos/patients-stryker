@@ -13,7 +13,7 @@
 import { moveInstrumentation } from './ue-utils.js';
 
 const setupObservers = () => {
-  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
+  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list, div.tabs');
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList' && mutation.target.tagName === 'DIV') {
@@ -38,6 +38,21 @@ const setupObservers = () => {
               });
             }
             break;
+          case 'tabs': {
+            // tabs replaces its row children with a tablist + one .tabs-panel
+            // per tab; re-apply each removed row's instrumentation to its panel
+            // so authors can still select/edit each tab in the editor.
+            const addedPanels = [...addedElements].filter(
+              (node) => node.tagName === 'DIV' && node.classList.contains('tabs-panel'),
+            );
+            const removedRows = [...mutation.removedNodes].filter((node) => node.tagName === 'DIV');
+            removedRows.forEach((div, index) => {
+              if (index < addedPanels.length) {
+                moveInstrumentation(div, addedPanels[index]);
+              }
+            });
+            break;
+          }
           case 'cards-image':
             if (mutation.target.classList.contains('cards-card-image')) {
               const addedPictureEl = [...mutation.addedNodes].filter((node) => node.tagName === 'PICTURE');

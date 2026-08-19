@@ -28,13 +28,8 @@
   border-right: 1px solid var(--color-border);
 }
 
-/* no focus box on click or keyboard — the gold underline on the active tab is
-   the indicator, and arrow-key navigation also activates (moves) that underline,
-   so keyboard focus stays visible without an outline. Matches the original site. */
-.tabs .tabs-tab:focus,
-.tabs .tabs-tab:focus-visible {
-  outline: none;
-}
+/* keep the browser's default focus outline on click, matching the original
+   site (the tab shows a focus box when selected/clicked). */
 
 .tabs .tabs-tab[aria-selected="true"] {
   border-bottom-color: var(--color-accent);

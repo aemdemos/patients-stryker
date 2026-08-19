@@ -17,6 +17,7 @@
       "image",
       "panel",
       "statistics",
+      "tabs",
       "text"
     ]
   },
@@ -65,6 +66,12 @@
     "id": "statistics",
     "components": [
       "statistic"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tabs-tab"
     ]
   }
 ]

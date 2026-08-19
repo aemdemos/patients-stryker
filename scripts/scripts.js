@@ -102,36 +102,43 @@ function readSectionStyles(section) {
 }
 
 /**
- * Turns any section flagged `Style = tabs` into a `tabs` block. Each `h3`
- * heading becomes a tab label and the content following it (up to the next
- * `h3`) becomes that tab's panel. The section's `h2` title and its
- * `.section-metadata` are left in place. See issue #95.
+ * Turns any section flagged `Style = tabs` into a `tabs` container block. Each
+ * `h3` heading + the content following it (up to the next `h3`) becomes one tab
+ * child, authored as a two-cell row: [label, content]. This matches the shape
+ * the `tabs` block and its UE model expect, so the result is editable in the
+ * Universal Editor (a real container component) as well as rendered live.
+ * The section's `h2` title and its `.section-metadata` are left in place.
+ * See issue #95.
  * @param {Element} main The container element
  */
 function buildTabsAutoBlocks(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
     if (!readSectionStyles(section).includes('tabs')) return;
 
-    // Group each h3 + its following siblings (until the next h3) into a panel.
-    const panels = [];
+    // Group each h3 + its following siblings (until the next h3) into a tab:
+    // the h3 text is the label, the rest is the panel content.
+    const groups = [];
     let current = null;
     [...section.children].forEach((el) => {
       if (el.classList.contains('section-metadata')) return; // leave in place
       if (el.tagName === 'H3') {
-        current = [el];
-        panels.push(current);
+        current = { label: el, content: [] };
+        groups.push(current);
       } else if (current) {
-        current.push(el);
+        current.content.push(el);
       }
     });
-    if (!panels.length) return;
+    if (!groups.length) return;
 
-    // Remember where to drop the block (before the first heading) BEFORE building,
-    // because buildBlock() moves the heading/content nodes into the new block.
-    const anchor = panels[0][0].previousSibling;
+    // Remember where to drop the block BEFORE building, because buildBlock()
+    // moves the heading/content nodes into the new block.
+    const anchor = groups[0].label.previousSibling;
 
-    // Build a tabs block: one row per panel, each holding its h3 + content.
-    const tabsBlock = buildBlock('tabs', panels.map((els) => [{ elems: els }]));
+    // One row per tab: cell 1 = label, cell 2 = content.
+    const tabsBlock = buildBlock('tabs', groups.map((g) => [
+      { elems: [g.label] },
+      { elems: g.content },
+    ]));
 
     // Insert the block after the h2 (keeps the section title above the tabs).
     if (anchor) anchor.after(tabsBlock);
