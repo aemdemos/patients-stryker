@@ -105,6 +105,16 @@ export default async function decorate(block) {
 
   block.prepend(tablist);
 
+  // Universal Editor: when an author selects a component (or its child) that
+  // lives inside a hidden panel, reveal that tab so the selection is visible.
+  // `aue:ui-select` only fires in the editor, so this is inert on the live site.
+  document.addEventListener('aue:ui-select', (e) => {
+    const selected = e.detail?.element || e.target;
+    const panel = selected?.closest?.('.tabs-panel');
+    const index = panels.indexOf(panel);
+    if (index >= 0) activate(index);
+  });
+
   // load fragment content for every panel
   await Promise.all(panels.map(decoratePanel));
 }
