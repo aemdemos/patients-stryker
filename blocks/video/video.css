@@ -1,0 +1,111 @@
+/* Video block — YouTube click-to-load facade (issue #98). A 16:9 box holds the
+   poster thumbnail + play button; on click the real iframe replaces them and
+   fills the same box, so there is no layout shift. */
+.video .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-black);
+  overflow: clip;
+}
+
+/* poster fills the box; object-fit:cover crops the 4:3 hqdefault thumbnail's
+   baked-in letterbox (top/bottom black bars fall outside a 16:9 crop) */
+.video .video-embed-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* size the img box from its width to match the 16:9
+                           container; cover then crops the 4:3 source's letterbox */
+  object-fit: cover;
+  object-position: center;
+}
+
+/* transparent click target over the poster; holds the play button (::before/::after) */
+.video .video-embed-play {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* YouTube-style play button: a red rounded rectangle (::before) with a centered
+   white triangle (::after), matching the reference's native player button. */
+.video .video-embed-play::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 68px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--color-youtube);
+}
+
+.video .video-embed-play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent var(--color-white);
+}
+
+/* brighten the button slightly on hover/focus */
+.video .video-embed-play:hover::before,
+.video .video-embed-play:focus-visible::before {
+  opacity: 0.85;
+}
+
+/* "Watch on [YouTube logo]" corner link, mirroring the native player's chrome:
+   a solid dark pill flush against the bottom-right edge (dimensions from
+   YouTube's own ytp-impression-link CSS). Sits above the full-box play button so
+   it stays independently clickable. */
+.video .video-embed-watch {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  display: flex;
+  align-items: center; /* vertically centre the wordmark with "Watch on" */
+  gap: 9px;
+  height: 47px;
+  padding: 0 12px;
+  background: rgb(23 23 23 / 80%);
+
+  /* rounded on the left only — the pill is flush against the box's right edge */
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
+  color: var(--color-white);
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap; /* keep "Watch on" + logo on one line */
+  text-decoration: none; /* override the global link underline */
+  transition: background 0.15s ease;
+}
+
+/* subtle dark-pill hover — slightly lighten so the control reads as interactive */
+.video .video-embed-watch:hover {
+  background: rgb(40 40 40 / 90%);
+}
+
+/* scope to .video-embed so this beats any generic `img { height: auto }` rule
+   (equal-ish specificity otherwise collapses the SVG to 0 height) */
+.video .video-embed-watch-logo {
+  width: 72px;
+  height: 16px;
+}
+
+.video .video-embed-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

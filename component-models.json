@@ -72,6 +72,18 @@
           {
             "name": "Blue",
             "value": "blue"
+          },
+          {
+            "name": "Divider",
+            "value": "divider"
+          },
+          {
+            "name": "Spacer",
+            "value": "spacer"
+          },
+          {
+            "name": "Compact",
+            "value": "compact"
           }
         ]
       },
@@ -535,6 +547,17 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Video link",
+        "description": "Paste a video URL. YouTube (youtube.com / youtu.be / youtube-nocookie.com) is supported; it renders behind a click-to-load poster facade."
       }
     ]
   }
