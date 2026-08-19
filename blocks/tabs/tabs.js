@@ -30,19 +30,20 @@ async function loadPanelFragments(panel, noCta) {
 
 /**
  * Tabs block. Auto-blocked (see buildTabsAutoBlocks in scripts.js) from a
- * section flagged `Style = tabs`: each row holds an `h3` (the tab label)
+ * section flagged `Style = tabbed`: each row holds an `h3` (the tab label)
  * followed by that tab's content (cards/fragments). Builds the tab bar from the
  * headings and shows one panel at a time (first tab open by default).
  *
- * In the Universal Editor the auto-block is skipped, so this decorate() does not
- * run there — authors edit the plain headings + fragments directly.
+ * Runs in the Universal Editor too, so the tabs are dynamic while authoring:
+ * clicking a tab switches panels, so every tab (and its fragment) is reachable
+ * and editable. decorate() is idempotent — the `data-tabs-decorated` guard
+ * stops UE's content-patch re-render from decorating the block twice (which
+ * corrupted the DOM and made the editor fall back to a flat stack).
  * @param {Element} block the tabs block element
  */
 export default function decorate(block) {
-  // In the Universal Editor, keep every panel visible (never hidden) so authors
-  // can select and edit all tabs; the tab bar still renders for the tabbed look.
-  // On the live site, only the active panel shows (real switching).
-  const isUE = window.location.hostname.includes('.ue.da.live');
+  if (block.dataset.tabsDecorated === 'true') return;
+  block.dataset.tabsDecorated = 'true';
 
   const rows = [...block.children];
 
@@ -70,8 +71,7 @@ export default function decorate(block) {
     moveInstrumentation(row, panel);
     if (heading) heading.remove();
     while (cell.firstChild) panel.append(cell.firstChild);
-    // live: show only the first panel; UE: show all so every tab stays editable
-    panel.hidden = !isUE && i !== 0;
+    panel.hidden = i !== 0;
 
     // tab button
     const tab = document.createElement('button');
@@ -89,11 +89,10 @@ export default function decorate(block) {
         t.setAttribute('aria-selected', 'false');
         t.tabIndex = -1;
       });
-      // In UE all panels stay visible (editable); only update the selected tab.
-      if (!isUE) panels.forEach((p) => { p.hidden = true; });
+      panels.forEach((p) => { p.hidden = true; });
       tab.setAttribute('aria-selected', 'true');
       tab.tabIndex = 0;
-      if (!isUE) panel.hidden = false;
+      panel.hidden = false;
     };
 
     tab.addEventListener('click', activate);
