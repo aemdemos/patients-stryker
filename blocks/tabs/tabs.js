@@ -2,6 +2,8 @@ import { toClassName } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 // eslint-disable-next-line import/no-cycle
 import { loadFragment } from '../fragment/fragment.js';
+// eslint-disable-next-line import/no-cycle
+import { removeCtas } from '../../scripts/scripts.js';
 
 /**
  * Loads any `/fragments/*` references inside a panel and inlines their content.
@@ -10,8 +12,9 @@ import { loadFragment } from '../fragment/fragment.js';
  * block's decorate) on purpose: the block decorate runs a section-wide card
  * merge that would pull cards out of other, hidden tabs.
  * @param {Element} panel a `.tabs-panel` element
+ * @param {boolean} noCta strip CTA links (section flagged `no-cta`)
  */
-async function loadPanelFragments(panel) {
+async function loadPanelFragments(panel, noCta) {
   const links = [...panel.querySelectorAll('a[href*="/fragments/"]')];
   await Promise.all(links.map(async (link) => {
     const path = new URL(link.href, window.location).pathname;
@@ -20,6 +23,9 @@ async function loadPanelFragments(panel) {
     const host = link.closest('.fragment') || link.closest('p') || link;
     host.replaceWith(...frag.childNodes);
   }));
+  // fragment.js applies no-cta once its content is inlined; do the same here
+  // since we bypass the fragment block's own decorate().
+  if (noCta) removeCtas(panel);
 }
 
 /**
@@ -95,5 +101,6 @@ export default function decorate(block) {
   block.replaceChildren(tablist, ...panels);
 
   // resolve any fragment references authored inside the panels
-  panels.forEach((panel) => { loadPanelFragments(panel); });
+  const noCta = block.closest('.section')?.classList.contains('no-cta');
+  panels.forEach((panel) => { loadPanelFragments(panel, noCta); });
 }

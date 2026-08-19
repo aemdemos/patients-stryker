@@ -85,12 +85,20 @@ function buildWidgetAutoBlocks(main) {
  * @returns {string[]} lower-cased style tokens (empty if none)
  */
 function readSectionStyles(section) {
+  // Published DA content bakes `Style` values in as classes on the section div
+  // (e.g. <div class="tabs no-cta">) — this runs before decorateSectionMetadata.
+  const styles = [...section.classList];
+  // Local drafts (and unpublished content) carry `Style` as a .section-metadata
+  // table that hasn't been converted to classes yet.
   const meta = section.querySelector(':scope > .section-metadata');
-  if (!meta) return [];
-  const row = [...meta.querySelectorAll(':scope > div')]
-    .find((r) => r.children[0] && toClassName(r.children[0].textContent.trim()) === 'style');
-  if (!row || !row.children[1]) return [];
-  return row.children[1].textContent.split(',').map((s) => toClassName(s.trim())).filter(Boolean);
+  if (meta) {
+    const row = [...meta.querySelectorAll(':scope > div')]
+      .find((r) => r.children[0] && toClassName(r.children[0].textContent.trim()) === 'style');
+    if (row && row.children[1]) {
+      styles.push(...row.children[1].textContent.split(',').map((s) => toClassName(s.trim())));
+    }
+  }
+  return styles.filter(Boolean);
 }
 
 /**
