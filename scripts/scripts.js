@@ -86,7 +86,7 @@ function buildWidgetAutoBlocks(main) {
  */
 function readSectionStyles(section) {
   // Published DA content bakes `Style` values in as classes on the section div
-  // (e.g. <div class="tabbed no-cta">) — this runs before decorateSectionMetadata.
+  // (e.g. <div class="tabs no-cta">) — this runs before decorateSectionMetadata.
   const styles = [...section.classList];
   // Local drafts (and unpublished content) carry `Style` as a .section-metadata
   // table that hasn't been converted to classes yet.
@@ -102,18 +102,15 @@ function readSectionStyles(section) {
 }
 
 /**
- * Turns any section flagged `Style = tabbed` into a `tabs` block. Each `h3`
+ * Turns any section flagged `Style = tabs` into a `tabs` block. Each `h3`
  * heading becomes a tab label and the content following it (up to the next
  * `h3`) becomes that tab's panel. The section's `h2` title and its
  * `.section-metadata` are left in place. See issue #95.
- *
- * Note: the section flag is `tabbed` (not `tabs`) to avoid a class-name clash
- * with the `tabs` block this auto-block creates inside the section.
  * @param {Element} main The container element
  */
 function buildTabsAutoBlocks(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
-    if (!readSectionStyles(section).includes('tabbed')) return;
+    if (!readSectionStyles(section).includes('tabs')) return;
 
     // Group each h3 + its following siblings (until the next h3) into a panel.
     const panels = [];
