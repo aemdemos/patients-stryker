@@ -102,22 +102,25 @@ function readSectionStyles(section) {
 }
 
 /**
- * Turns any section flagged `Style = tabs` into a `tabs` block. Authors write
+ * Turns any section flagged `Style = tabbed` into a `tabs` block. Authors write
  * each procedure as an `h3` heading (the tab label) followed by its content
  * (cards/fragments), all inside the flagged section — the heading-driven
  * pattern from issue #95. This pass groups each `h3` + the content following it
  * (up to the next `h3`) into one tab row and builds the `tabs` block; the
  * block's decorate() then renders the tab bar and switches panels.
  *
+ * The flag is `tabbed`, NOT `tabs`: published DA content converts a `Style`
+ * value into a class on the section div, so `Style = tabs` would make the
+ * section `class="tabs"` and decorateBlocks would wrongly treat the whole
+ * section as a `tabs` block (the bug where every panel showed at once). Using
+ * `tabbed` avoids that clash with the generated inner `tabs` block.
+ *
  * Runs in the Universal Editor too, so the tab bar is visible while authoring.
- * Each tab's fragment keeps its UE instrumentation (moveInstrumentation in the
- * block + the `tabs` case in ue/scripts/ue.js), so an author clicks a tab and
- * edits its fragment in place.
  * @param {Element} main The container element
  */
 function buildTabsAutoBlocks(main) {
   main.querySelectorAll(':scope > div').forEach((section) => {
-    if (!readSectionStyles(section).includes('tabs')) return;
+    if (!readSectionStyles(section).includes('tabbed')) return;
 
     // Group each h3 + its following siblings (until the next h3) into one tab.
     const groups = [];
