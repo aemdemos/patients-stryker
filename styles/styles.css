@@ -82,6 +82,7 @@
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
+  --heading-font-size-compact: 16.8px; /* compact section heading (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -293,6 +294,11 @@ main ol.footnotes li {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
+main ol.footnotes li > p {
+  margin-bottom:0;
+}
+
+
 code,
 pre {
   font-size: var(--body-font-size-s);
@@ -333,6 +339,37 @@ strong a:any-link,
 b a:any-link,
 a:any-link:has(strong),
 a:any-link:has(b) {
+  text-decoration: none;
+}
+
+/* bold + underline authored link → flat inline CTA: uppercase Futura-bold text in
+   the primary colour, no underline, with a trailing chevron. Authoring convention
+   set in decorateButtons() (mirrors the bold+italic → gold-button convention). */
+a.link-strong:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* chevron drawn in CSS (the source uses a proprietary icon font); follows the
+   link colour via currentcolor */
+a.link-strong:any-link::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+a.link-strong:hover,
+a.link-strong:focus {
+  color: var(--color-primary-hover);
   text-decoration: none;
 }
 
@@ -505,6 +542,23 @@ main .last-modified {
   main .last-modified {
     font-size: var(--body-font-size-s);
   }
+}
+
+.section.compact {
+  margin-bottom:40px;
+}
+
+.section.compact h1 {
+  margin: 58px 0 10px;
+  line-height: 22.26px;
+}
+
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+}
+
+.section.compact p {
+  font-size: var(--footnote-font-size);
 }
 
 /* section width variants */
