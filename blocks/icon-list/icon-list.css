@@ -149,16 +149,13 @@
   color: var(--color-accent);
 }
 
-/* caption — lighter, smaller serif. break-word lets a long word ("experiencing")
-   wrap within the narrow column instead of spilling into the next one at the
-   tightest 6-up widths (~651px). */
+/* caption — lighter, smaller serif */
 .icon-list.label .icon-list-text p:not(:first-child) {
   margin-top: var(--icon-list-label-caption-gap);
   font-family: var(--heading-font-family);
   font-size: var(--icon-list-label-caption-size);
   font-weight: 400;
   line-height: 1.15;
-  overflow-wrap: break-word;
 }
 
 /* intro copy — larger serif heading font (B.E. F.A.S.T. mnemonic in Futura-bold) */
@@ -182,6 +179,7 @@
 @media (width > 650px) {
   .icon-list.label ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), minmax(0, 1fr));
+    column-gap: var(--icon-list-label-col-gap);
   }
 
   .icon-list.label .icon-list-icon {

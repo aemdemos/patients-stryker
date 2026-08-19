@@ -123,6 +123,7 @@
   --icon-list-label-caption-gap: 15px;  /* label → caption gap */
   --icon-list-label-icon-gap: 0px;      /* icon → label gap (source: 0; visual space is baked into the PNG) */
   --icon-list-label-title-gap: 49px;    /* heading → intro-copy gap (source: 15px margin + spacer paragraph ≈ 49px) */
+  --icon-list-label-col-gap: 12px;      /* small gap between columns so captions don't collide */
 
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
