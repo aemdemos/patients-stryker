@@ -185,8 +185,11 @@
 }
 
 /* title: Futura bold at body size (source .futura-bold, 14px); family/weight
-   inherited from base .cards .cards-card-body h3 */
+   inherited from base .cards .cards-card-body h3. margin-bottom:auto absorbs the
+   card's slack right below the title, pushing label + button to the bottom as a
+   group so they align across the row regardless of title length (matches source). */
 .cards.brochure-cta .cards-card-body h3 {
+  margin-bottom: auto;
   font-size: var(--body-font-size-m);
 }
 
@@ -195,10 +198,4 @@
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
-}
-
-/* label + button pinned to the bottom: auto top margin on the label absorbs the
-   slack so a 1- vs 2-line title doesn't shift them */
-.cards.brochure-cta .cards-card-body p:not(.button-wrapper) {
-  margin-top: auto;
 }
