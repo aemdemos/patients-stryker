@@ -37,47 +37,14 @@
       "fields": [
         {
           "component": "select",
-          "name": "classes_layout",
+          "name": "classes",
           "value": "cols-4",
           "label": "Columnar Layout",
           "valueType": "string",
           "options": [
-            { "name": "4 columns", "value": "cols-4" },
-            { "name": "5 columns", "value": "cols-5" },
-            { "name": "6 columns", "value": "cols-6" }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "classes",
-          "value": "",
-          "label": "Variant",
-          "valueType": "string",
-          "condition": { "===": [{ "var": "classes_layout" }, "cols-4"] },
-          "options": [
-            { "name": "Default", "value": "" }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "classes",
-          "value": "tile",
-          "label": "Variant",
-          "valueType": "string",
-          "condition": { "===": [{ "var": "classes_layout" }, "cols-5"] },
-          "options": [
-            { "name": "Tile", "value": "tile" }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "classes",
-          "value": "label",
-          "label": "Variant",
-          "valueType": "string",
-          "condition": { "===": [{ "var": "classes_layout" }, "cols-6"] },
-          "options": [
-            { "name": "Label", "value": "label" }
+            { "name": "4 columns (Default)", "value": "cols-4" },
+            { "name": "5 columns (Tile)", "value": "cols-5 tile" },
+            { "name": "6 columns (Label)", "value": "cols-6 label" }
           ]
         }
       ]
