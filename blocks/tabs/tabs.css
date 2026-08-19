@@ -1,0 +1,71 @@
+/*
+ * tabs — visual design migrated from patients.stryker.com "Resources" section.
+ * Source tab nav (measured from the live site):
+ *   - labels: Futura LT W01, 14px, uppercase, black, ~12px 30px padding
+ *   - items separated by a 1px #dfe1de right border, wrapping to new rows
+ *   - active label: 1px gold (#ffb500) bottom border; inactive: transparent
+ * Panels below hold brochure cards (portrait cover image over a teal button),
+ * matching the cards.resources grid: 1-up mobile, 2-up @841px, 4-up @1024px.
+ */
+
+.tabs .tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-section);
+  padding: 0;
+}
+
+.tabs .tabs-tab {
+  margin: 0;
+  border: 0;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid transparent;
+  border-radius: var(--radius-none);
+  padding: 12px 30px 7px;
+  background: none;
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.43;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tabs .tabs-tab p {
+  margin: 0;
+}
+
+.tabs .tabs-tab:first-child {
+  padding-left: 0;
+}
+
+.tabs .tabs-tab:last-child {
+  border-right: 0;
+}
+
+.tabs .tabs-tab[aria-selected="true"] {
+  border-bottom-color: var(--color-accent);
+  cursor: default;
+}
+
+.tabs .tabs-tab:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.tabs .tabs-tab:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.tabs .tabs-panel[aria-hidden="true"] {
+  display: none;
+}
+
+/* the panel content is one or more "cards resources" fragments; that block owns
+   the brochure grid (portrait cover image over a teal button). Nothing to style
+   here beyond neutralising the fragment wrapper's default section spacing. */
+.tabs .tabs-panel-body > .cards {
+  margin: 0;
+}
