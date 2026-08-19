@@ -51,11 +51,6 @@
   padding-inline: 24px;
 }
 
-/* border on the image in the first .section.compact only */
-.section.compact:not(.section.compact ~ .section.compact) .columns  {
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
 .columns h4 {
   font-size: var(--heading-font-size-ml);
   line-height: var(--heading-line-height-ml);
@@ -197,10 +192,61 @@
   line-height: var(--heading-line-height);
 }
 
+/* navy stat box (authoring convention): a condition's stat callout is authored
+   as two inline-code lines — <p><strong><code>31 million</code></strong></p>
+   (gold number) followed by <p><code>…label…<sup>N</sup></code></p> (white
+   label). Render the pair as one seamless navy box: the number <p> carries the
+   box top + gold text, the label <p> carries the box bottom + white text, and
+   the gap between them is removed so they read as a single block. Matches the
+   source .bg-blue callout (#1c5687, 20px padding, left-aligned). */
+
+ /* label line: white body copy, box bottom padding, extra space below the box */
+.section.compact .columns p:has(> code) {
+  margin-bottom: var(--space-section);
+  padding-bottom: var(--space-block-l);
+    padding-inline: var(--space-block-l);
+  background: var(--color-navy-bright);
+}
+
+
 .columns.columns-icon-grid .columns-img-col ~ p:has(strong) {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
+}
+
+.section.compact .columns p:has(> strong > code)
+{
+  margin: 0;
+  padding-inline: var(--space-block-l);
+  background: var(--color-navy-bright);
+  padding-top: var(--space-block-l);
+}
+
+
+.section.compact .columns p > code {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+  color: var(--color-white);
+}
+
+/* the <code> convention is a styling hook only — never show the monospace/box
+   default the base `code` rule would otherwise apply inside the navy box */
+.section.compact .columns p > code,
+.section.compact .columns p > strong > code
+ {
+  display: inline;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.section.compact .columns p > strong > code {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  font-size: var(--panel-cta-body-size);
+  color: var(--color-accent);
 }
 
 .columns.columns-icon-grid .columns-img-col ~ p strong {
