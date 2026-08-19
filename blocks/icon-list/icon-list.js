@@ -2,12 +2,14 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
-// column count from the `cols-N` variant class (default 4)
+// column count from the `cols-N` variant class; default 6 for the label variant,
+// 4 otherwise
 function readColumns(block) {
   const match = [...block.classList]
     .map((c) => c.match(/^cols-(\d+)$/))
     .find(Boolean);
-  return match ? Number(match[1]) : 4;
+  if (match) return Number(match[1]);
+  return block.classList.contains('label') ? 6 : 4;
 }
 
 // Icons are authored as bare DM autolinks, so dm-support.js renders alt="".

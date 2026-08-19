@@ -68,6 +68,10 @@
           {
             "name": "Dark",
             "value": "dark"
+          },
+          {
+            "name": "Blue",
+            "value": "blue"
           }
         ]
       },
@@ -120,6 +124,10 @@
           {
             "name": "Brochure",
             "value": "brochure"
+          },
+          {
+            "name": "Linked",
+            "value": "linked"
           }
         ]
       }
@@ -174,6 +182,10 @@
           {
             "name": "50-50 Layout",
             "value": "columns-50-50"
+          },
+          {
+            "name": "70-30 Layout",
+            "value": "columns-70-30"
           },
           {
             "name": "Icon Grid",
@@ -235,6 +247,10 @@
           {
             "name": "Banner",
             "value": "banner"
+          },
+          {
+            "name": "Poster",
+            "value": "poster"
           }
         ]
       },
@@ -337,16 +353,20 @@
         "component": "select",
         "name": "classes",
         "value": "cols-4",
-        "label": "Columns",
+        "label": "Layout/Variant",
         "valueType": "string",
         "options": [
           {
-            "name": "4 columns",
+            "name": "4-columnar / Default",
             "value": "cols-4"
           },
           {
-            "name": "5 columns",
-            "value": "cols-5"
+            "name": "5-columnar / Tiles",
+            "value": "cols-5 tile"
+          },
+          {
+            "name": "6-columnar / Label",
+            "value": "cols-6 label"
           }
         ]
       }
@@ -427,6 +447,12 @@
           {
             "name": "Gray",
             "value": "gray"
+          },
+          {
+            "name": "Colored Border",
+            "value": "colored-border",
+            "name": "Blue",
+            "value": "blue"
           },
           {
             "name": "Wide",

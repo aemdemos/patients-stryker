@@ -107,6 +107,18 @@
     flex: 0 0 50%;
   }
 
+  /* 70-30 — an uneven two-column split (wide column left). Fixed flex bases (not
+     flex:1) so the ratio is exact regardless of each column's content/padding.
+     Desktop only; tablet keeps the even base split and mobile stays stacked,
+     matching the 50-50 variant's responsive behaviour. */
+  .columns.columns-70-30 > div > div:first-child {
+    flex: 0 0 70%;
+  }
+
+  .columns.columns-70-30 > div > div:last-child {
+    flex: 0 0 30%;
+  }
+
   /* serif image+text rows centre the image against the text block only at desktop
      (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
   .section.serif .columns.columns-50-50 > div {
