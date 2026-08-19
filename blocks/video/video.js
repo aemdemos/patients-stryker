@@ -2,20 +2,22 @@
  * Video block — unified video handling (issue #98).
  *
  * Authoring: a single cell holding a LINK to the video. The block detects the
- * source from the URL and renders the matching player, all behind a lightweight
- * click-to-load facade (poster + play button) so no heavy player JS or cookies
- * load until the user presses play.
+ * source from the URL and renders the matching player.
  *
  * Source dispatch (see renderFor):
- *   - YouTube (youtube.com / youtu.be / youtube-nocookie.com) → nocookie iframe
- *     facade. IMPLEMENTED (this PR — the sinusitis page's only video).
- *   - Scene7 Dynamic Media (/is/content/) → native <video>/HLS. NOT YET here:
- *     that path still lives in scripts/dm-support.js (renderVideo, with hls.js).
- *     The seam below is where it plugs in when #98's DM consolidation lands, so
- *     the block can own both without a redesign. Until then dm-support keeps it.
+ *   - YouTube (youtube.com / youtu.be / youtube-nocookie.com) → a lightweight
+ *     click-to-load nocookie iframe facade (poster + play button) so no heavy
+ *     player JS or cookies load until the user presses play.
+ *   - Scene7 Dynamic Media (/is/content/) or a video container/manifest
+ *     (.mp4/.m3u8/.mpd/.webm/.mov) → a native <video> with controls, delegated
+ *     to scripts/dm-support.js (renderVideo, incl. HLS via hls.js). dm-support
+ *     still converts bare DM autolinks elsewhere on the page; the block reuses
+ *     the same renderer so both authoring styles stay consistent.
  *
  * DOM APIs only (Hard Rule #1). Styling lives in blocks/video/video.css.
  */
+
+import { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
 
 // YouTube link signatures (watch, short youtu.be, and nocookie embeds).
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
@@ -132,9 +134,9 @@ function renderFor(src, label) {
     const id = youTubeId(src);
     return id ? renderYouTube(id, label) : null;
   }
-  // SEAM: Scene7 DM (/is/content/) → native <video>/HLS goes here when #98's
-  // DM-video consolidation moves it out of scripts/dm-support.js. Dispatching on
-  // src keeps that a pure addition (no restructure of the YouTube path above).
+  // Scene7 DM (/is/content/) or a video container/manifest → native <video>,
+  // reusing dm-support's renderVideo (handles HLS/hls.js + optional poster).
+  if (isDMVideoSrc(src)) return renderVideo(src, label);
   return null;
 }
 

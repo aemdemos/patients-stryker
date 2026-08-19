@@ -83,6 +83,8 @@
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
+  --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
+  --heading-font-size-compact-m: 19.9px; /* compact section h2 ≥480px (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -291,11 +293,18 @@ ul {
   padding-left: var(--list-indent);
 }
 
-/* citation superscripts — measured from source: raised, small; the link inside
-   inherits the global teal link color + hover, so only sizing is set here. */
+/* citation superscripts — measured from source: small (75%) and only slightly
+   raised. The browser default `vertical-align: super` shifts the marker up by a full
+   super-step, which reads as an oversized, prominent digit and inflates the line box;
+   the source keeps it tight to the baseline. Use a small relative raise instead so the
+   marker stays subtle and doesn't affect line-height. The link inside inherits the
+   global teal link color + hover, so only sizing/position is set here. */
 sup {
+  position: relative;
+  top: -0.4em;
   font-size: 75%;
   line-height: 0;
+  vertical-align: baseline;
 }
 
 /* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
@@ -319,6 +328,42 @@ main ol.footnotes li {
 main > .section.compact > div :is(p, ol, ul, li) {
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
+}
+
+/* compact section typography — smaller gold headings and dense heading/body rhythm */
+h2 em strong,
+h2 strong em {
+  font-size: var(--heading-font-size-compact);
+}
+
+.section.compact {
+  margin-bottom: 40px;
+}
+
+.section.compact h1 {
+  margin: 30px 0 10px;
+  line-height: 22.26px;
+}
+
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top: 30px;
+}
+
+.section.compact p {
+  font-size: var(--footnote-font-size);
+}
+
+@media (width >= 480px) {
+  .section.compact h2 {
+    font-size: var(--heading-font-size-compact-m);
+    margin-top: 30px;
+  }
+
+  h2 em strong,
+  h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
+  }
 }
 
 /* the source stacks the disclaimer/trademark block flush (0 gap) — only the
@@ -375,6 +420,22 @@ strong a:any-link,
 b a:any-link,
 a:any-link:has(strong),
 a:any-link:has(b) {
+  text-decoration: none;
+}
+
+/* decorateFootnotes() (scripts.js) wraps each citation digit in an <a href="#fn-N">
+   so it jumps to the reference list. The source shows these as plain black markers,
+   not links, so suppress the inherited teal link colour + underline while keeping the
+   anchor (and its jump behaviour) intact. Placed after the base link rules so the
+   higher-specificity override reads in natural cascade order (no-descending-specificity). */
+sup a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* compact section links (e.g. reference URLs) are plain, not underlined — matches
+   the source's dense footer. Placed after the base link rules to keep cascade order. */
+.section.compact a:any-link {
   text-decoration: none;
 }
 
@@ -604,6 +665,20 @@ main > .section.divider::before {
   width: 100vw;
   margin-left: -50vw; /* pull the 100vw bar back to the true viewport edge, ignoring the section's cap */
   border-top: 1px solid var(--color-surface-muted);
+}
+
+/* spacer section — a fixed-height vertical gap, authored as an (otherwise empty)
+   section tagged Style `spacer`. Used above the page title to match the source's
+   ~30px hero top offset. Opt-in per section, so it never affects untagged sections;
+   the collapse of any authored placeholder content keeps the height exact. */
+main > .section.spacer {
+  margin: 0;
+  padding: 0;
+  height: var(--space-section);
+}
+
+main > .section.spacer > div {
+  display: none;
 }
 
 /* section metadata */
