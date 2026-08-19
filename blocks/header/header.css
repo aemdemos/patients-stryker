@@ -1,6 +1,6 @@
-/* Stryker ENT header — extracted from patients.stryker.com
-   White utility bar (logo + Stryker.com + search) over a solid gold (#ffb500)
-   primary-nav bar with black uppercase Futura links.
+/* Stryker IVS header — extracted from patients.stryker.com/us/en/ivs
+   White utility bar (logo + "About Stryker | Find a doctor" teal links + search)
+   over a solid gold (#ffb500) primary-nav bar with WHITE uppercase Futura links.
 
    Mobile-first: the base rules describe the mobile two-row bar + slide-in
    drawer; the desktop single-row grid layout lives in the
@@ -118,18 +118,19 @@ header nav .nav-search-toggle::before {
   background-color: var(--color-primary-pressed);
 }
 
-/* ---- Slide-in drawer (mobile): the gold nav + Stryker.com, off-canvas left.
+/* ---- Slide-in drawer (mobile): the gold nav + utility links, off-canvas left.
    position:absolute so it scrolls with the page rather than staying fixed. ---- */
 header nav .nav-drawer {
   display: block;
   position: absolute;
   top: var(--nav-height);
   left: 0;
-  width: 95vw;
+  width: 100%;
   background-color: var(--color-accent);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 10;
+  overflow: hidden;
 }
 
 /* suppress the slide animation while crossing the breakpoint (prevents the
@@ -172,34 +173,40 @@ header nav .nav-sections li a {
   margin: 0;
   padding: 20px 30px 20px 15px;
   border-top: 1px solid var(--color-white);
-  color: var(--color-black);
+  color: var(--color-white);
   font-size: var(--body-font-size-m);
   text-transform: uppercase;
   text-decoration: none;
 }
 
-/* ---- Tools (Stryker.com link; desktop search box is hidden on mobile) ---- */
+/* ---- Tools (utility links: About Stryker | Find a doctor). Desktop search box
+   is hidden on mobile — the magnifier panel is used instead. ---- */
 header nav .nav-tools {
   grid-area: tools;
   display: block;
 }
 
-header nav .nav-tools p {
-  margin: 0;
-  display: block;
+header nav .nav-tools ul {
+  box-sizing: border-box;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-header nav .nav-tools p::after { content: none; }
+header nav .nav-tools li { margin: 0; }
 
-header nav .nav-tools p a {
+header nav .nav-tools li a {
   display: block;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 20px 30px 20px 15px;
   border-top: 1px solid var(--color-white);
-  color: var(--color-black);
+  color: var(--color-white);
   font-size: var(--body-font-size-m);
   text-transform: uppercase;
   text-decoration: none;
@@ -207,9 +214,84 @@ header nav .nav-tools p a {
 
 header nav .nav-tools .nav-search { display: none; }
 
+/* ---- Mobile sub-panels (Conditions/Treatments children). Each nested list is
+   an off-canvas panel that slides in from the right over the main list when its
+   parent item is tapped; a BACK bar returns to the main list. ---- */
+
+/* '+' affordance on items that open a sub-panel */
+header nav .nav-sections li.nav-has-children > a::after {
+  content: '+';
+  position: absolute;
+  right: 15px;
+  font-size: var(--body-font-size-l);
+  line-height: 1;
+}
+
+header nav .nav-sections li.nav-has-children > a {
+  position: relative;
+}
+
+/* sub-panel: gold overlay covering the drawer area, off-canvas to the right by
+   default; slides in over the main list when its parent item is tapped */
+header nav .nav-sections .nav-subpanel {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height));
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-accent);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+header nav.nav-no-transition .nav-sections .nav-subpanel {
+  transition: none;
+}
+
+/* the active sub-panel slides into view */
+header nav .nav-sections .nav-subpanel.nav-subpanel-open {
+  transform: translateX(0);
+}
+
+/* BACK bar at the top of every sub-panel — white uppercase on gray, with a
+   leading arrow, matching the source */
+header nav .nav-subpanel-back {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 20px 30px 20px 15px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+header nav .nav-subpanel-back::before {
+  content: '◀';
+  margin-right: 10px;
+  font-size: var(--body-font-size-s);
+}
+
+/* sub-panel child links: mixed-case (not uppercase) matching the source */
+header nav .nav-sections .nav-subpanel li a {
+  text-transform: none;
+}
+
 /* mobile menu item hover — gray surface + white text, matches source */
 header nav .nav-sections li a:hover,
-header nav .nav-tools p a:hover {
+header nav .nav-tools li a:hover {
   background-color: var(--color-secondary);
   color: var(--color-white);
 }
@@ -304,6 +386,17 @@ header nav .nav-search-panel-input:focus {
     display: contents;
   }
 
+  /* sub-panels, their BACK bars, and the '+' affordance are mobile-only —
+     hidden on desktop where the top-level links navigate directly */
+  header nav .nav-sections .nav-subpanel,
+  header nav .nav-subpanel-back {
+    display: none;
+  }
+
+  header nav .nav-sections li.nav-has-children > a::after {
+    content: none;
+  }
+
   header nav .nav-brand {
     flex: none;
     padding-top: 0;
@@ -337,47 +430,58 @@ header nav .nav-search-panel-input:focus {
     margin: 5px 0;
     padding: 5px 15px;
     border-top: 0;
+    color: var(--color-white);
     white-space: nowrap;
   }
 
   header nav .nav-tools {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     justify-content: flex-end;
   }
 
   header nav .nav-tools .default-content-wrapper {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 15px;
   }
 
-  header nav .nav-tools p {
+  /* utility links become inline teal 12px links with pipe separators */
+  header nav .nav-tools ul {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    gap: 0;
+  }
+
+  header nav .nav-tools li {
     display: flex;
     align-items: center;
-    gap: 6px;
-    width: auto;
+    margin: 0;
   }
 
-  /* pipe separator after Stryker.com */
-  header nav .nav-tools p::after {
+  header nav .nav-tools li:not(:last-child)::after {
     content: '|';
+    margin: 0 10px;
     color: var(--color-black);
   }
 
-  header nav .nav-tools p a {
+  header nav .nav-tools li a {
     display: inline;
     width: auto;
     padding: 0;
     border-top: 0;
+    color: var(--color-primary);
     font-size: var(--body-font-size-xs);
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  /* Stryker.com hover is gold text on desktop (not the gray mobile treatment) */
-  header nav .nav-tools p a:hover {
+  /* utility link hover — darker teal text, no gray surface */
+  header nav .nav-tools li a:hover {
     background-color: transparent;
-    color: var(--color-accent-link-hover);
+    color: var(--color-primary-hover);
   }
 
   /* desktop search box becomes visible */
@@ -387,9 +491,15 @@ header nav .nav-search-panel-input:focus {
     align-items: center;
     align-self: center;
     height: 41px;
+    width: 220px;
     margin: 0;
     border: 0;
     background-color: var(--color-surface);
+  }
+
+  header nav .nav-tools .nav-search-input {
+    flex: 1;
+    width: auto;
   }
 
   /* desktop magnifier: teal by default, darker teal on hover */

@@ -6,7 +6,7 @@ const isDesktop = window.matchMedia('(min-width: 900px)');
 
 // single source for the search form target — could later be sourced from nav
 // fragment metadata so locale/site changes don't require a code edit
-const SEARCH_ACTION = 'https://patients.stryker.com/us/en/ent/search.html';
+const SEARCH_ACTION = 'https://patients.stryker.com/us/en/ivs/search.html';
 
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
@@ -44,6 +44,11 @@ function toggleMenu(nav, forceExpanded = null) {
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   if (button) {
     button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  }
+  // collapsing the menu also returns any open sub-panel to the main list
+  if (expanded) {
+    nav.removeAttribute('data-panel');
+    nav.querySelectorAll('.nav-subpanel-open').forEach((p) => p.classList.remove('nav-subpanel-open'));
   }
   if (!expanded && !isDesktop.matches) {
     window.addEventListener('keydown', closeOnEscape);
@@ -91,14 +96,60 @@ function buildSearch(tools) {
 }
 
 /**
+ * Wires up the mobile slide-in sub-panels. Any top-level nav item that authored
+ * a nested `<ul>` (e.g. Conditions, Treatments) becomes a sub-panel trigger: on
+ * mobile the item's text expands the child list in a panel that slides in from
+ * the right, with a BACK bar to return. On desktop the nested `<ul>` stays
+ * hidden (CSS) and the top-level link simply navigates. All content comes from
+ * the nav fragment — nothing is hardcoded here.
+ * @param {Element} navSections The `.nav-sections` element
+ * @param {Element} nav The nav element (holds the open/panel state)
+ */
+function buildSubPanels(navSections, nav) {
+  const topItems = navSections.querySelectorAll(':scope ul > li');
+  topItems.forEach((li) => {
+    const childUl = li.querySelector(':scope > ul');
+    if (!childUl) return;
+    const link = li.querySelector(':scope > a');
+    if (!link) return;
+    li.classList.add('nav-has-children');
+    childUl.classList.add('nav-subpanel');
+
+    // BACK bar at the top of the sub-panel — closes it, returning to main list
+    const back = document.createElement('button');
+    back.type = 'button';
+    back.className = 'nav-subpanel-back';
+    back.textContent = 'Back';
+    back.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      childUl.classList.remove('nav-subpanel-open');
+      nav.removeAttribute('data-panel');
+    });
+    childUl.prepend(back);
+
+    // On mobile the text opens the sub-panel instead of navigating; on desktop
+    // (where sub-panels are hidden) the default link navigation is preserved.
+    link.addEventListener('click', (e) => {
+      if (isDesktop.matches) return;
+      e.preventDefault();
+      childUl.classList.add('nav-subpanel-open');
+      nav.setAttribute('data-panel', 'open');
+    });
+  });
+}
+
+/**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
+  // load nav as fragment — dual path: local `content/` preview (aem up serves
+  // authored files under /content) first, then the metadata/`/nav` path used in
+  // DA/EDS production. loadFragment returns null when the path does not resolve.
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  const fragment = await loadFragment('/content/nav') || await loadFragment(navPath);
 
   // decorate nav DOM
   block.textContent = '';
@@ -132,6 +183,7 @@ export default async function decorate(block) {
   // from the left on mobile. On desktop `.nav-drawer` uses display:contents so
   // the grid still places .nav-sections and .nav-tools directly.
   const navSections = nav.querySelector('.nav-sections');
+  if (navSections) buildSubPanels(navSections, nav);
   const navDrawer = document.createElement('div');
   navDrawer.className = 'nav-drawer';
   if (navSections) navDrawer.append(navSections);
@@ -204,6 +256,9 @@ export default async function decorate(block) {
       // the mobile search panel is redundant on desktop (which has its own
       // search box), so close it when crossing the breakpoint
       nav.setAttribute('data-search', 'closed');
+      // return any open mobile sub-panel to the main list on desktop
+      nav.removeAttribute('data-panel');
+      nav.querySelectorAll('.nav-subpanel-open').forEach((p) => p.classList.remove('nav-subpanel-open'));
     }
     // re-enable the transition after the layout has settled
     requestAnimationFrame(() => {
