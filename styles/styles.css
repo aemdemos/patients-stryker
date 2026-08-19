@@ -599,6 +599,8 @@ main .last-modified {
 
 .section.compact p {
   font-size: var(--footnote-font-size);
+}
+
 /* flex section — lays the section's content WRAPPERS side by side at 50/50 on
    desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
    Block-agnostic (issue #98's section-flex direction): each authored unit becomes
@@ -777,14 +779,6 @@ main > .section.narrow > div {
 
 main > .section.wide > div {
   max-width: var(--container-wide);
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--color-surface);
-  margin: 0;
-  padding: var(--space-section) 0;
 }
 
 @media (width >= 900px) {

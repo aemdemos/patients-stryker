@@ -26,11 +26,6 @@
   padding-bottom: 3%; /* additional gap before the heading, matches the reference's percentage-based text-wrapper padding */
 }
 
-.section.compact .columns-img-col {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 .columns .columns-img-col img {
   display: block;
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
@@ -38,10 +33,6 @@
 
 .columns.columns-icon-grid .columns-img-col img {
   width: 150px; /* fixed icon size, as on the reference */
-}
-
-.section.compact .columns .columns-img-col img {
-  padding-bottom: 10px; 
 }
 
 /* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
@@ -197,27 +188,6 @@
    marker inherits the black <li> and the text lives in a white span) */
 .section.dark .columns li::marker {
   color: var(--color-black);
-}
-
-/* compact variant — smaller heading + body typography for dense 50/50 rows.
-   Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
-   (0,2,0), so the smaller body size wins. More element values TBD. */
-.section.compact .columns h2 {
-  font-size: var(--heading-font-size-compact);
-  margin-top: var(--space-block);
-}
-
-.section.compact .columns p,
-.section.compact .columns ul,
-.section.compact .columns li{
-  font-size: var(--body-font-size-m);
-  font-family: var(--body-font-family);
-  line-height: var(--paragraph-line-height);
-}
-
-.section.compact .columns p {
-  padding-left:0;
-  padding-right:0;
 }
 
 /* light-gray variant — column text uses the serif heading font */
