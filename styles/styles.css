@@ -120,8 +120,11 @@
      near-square icons that stay visible at every breakpoint, 2-up mobile / 5-up
      tablet+desktop. Icons are 200x170 (ratio 20/17). */
   --icon-list-tile-icon-width: 200px; /* icon rendered width at desktop */
-  --icon-list-tile-icon-gap: 0px;     /* source pads gap via caption whitespace, not margin */
+  --icon-list-tile-icon-gap: 34px;    /* icon → caption gap (source: spacer paragraph ≈ 34px) */
   --icon-list-tile-row-gap: 30px;     /* vertical gap between tile rows */
+  --icon-list-tile-title-gap: 15px;   /* heading → intro gap (source margin) */
+  --icon-list-tile-intro-gap: 49px;   /* intro → lead-in and lead-in → grid (source: 15px margin + spacer paragraph) */
+
   /* icon-list (label) variant — measured from source ("Symptoms of a stroke") */
   --icon-list-label-icon-width: 151px;  /* portrait icon rendered width (151x166) */
   --icon-list-label-size: 24.5px;       /* bold label: source .fontsize-1-75em (1.75 x 14) */

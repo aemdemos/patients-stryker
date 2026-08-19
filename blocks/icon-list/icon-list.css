@@ -177,6 +177,7 @@
   > .default-content-wrapper :is(p, h1, h2, h3, h4, h5, h6) {
   text-align: center;
 }
+
 /* ─── (label) variant — "Symptoms of a stroke" (B.E. F.A.S.T.) ─────────────
    Portrait icon over a bold label (gold initial) + lighter caption. Icons stay
    visible at every breakpoint; author column count applies from tablet up. */
@@ -244,4 +245,32 @@
     display: block;
     margin-bottom: var(--icon-list-label-icon-gap);
   }
+}
+
+/* Tile variant — intro-copy vertical rhythm (matches source): heading→intro
+   15px, then a wider 49px gap before the lead-in and again before the grid. The
+   base heading rule applies a fluid title gap meant for the map variant, so
+   reset it here. Placed after the .label rules to satisfy no-descending-specificity. */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: var(--icon-list-tile-title-gap);
+}
+
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper p:first-of-type {
+  margin-bottom: var(--icon-list-tile-intro-gap);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+}
+
+/* Last intro line ("These risk factors include the following:") — Futura-bold
+   black at 1.25em (17.5px) in the source, a lead-in above the tile grid, with a
+   49px gap below it. */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper p:last-child {
+  margin-bottom: var(--icon-list-tile-intro-gap);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  color: var(--color-black);
 }
