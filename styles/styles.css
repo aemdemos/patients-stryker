@@ -84,7 +84,7 @@
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
   --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
-  --heading-font-size-compact-m: 19.9px; /* compact section h2 ≥480px (measured) */
+  --heading-font-size-compact-m: 19.6px; /* compact section h2 ≥480px (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -262,7 +262,6 @@ b {
   font-weight: 700;
   font-family: var(--display-font-family);
 }
-
 
 /* bold inside a heading keeps the display face — this is what paints the gold H1
    (<h1><em><strong>) and any bold marker in h2/h3 in Futura, matching the source's
@@ -637,17 +636,10 @@ main .last-modified {
   }
 }
 
-/* divider section — a full-viewport-width sage rule at the section break, matching
-   the source's .sectionseparator hr (1px --color-surface-muted, spanning the whole
-   viewport). The line is drawn as a ::before pinned to the FULL viewport width (100vw
-   centred on the section) rather than a border on the section box — otherwise a section
-   that caps its own width (e.g. Style `flex`, max-width 1410px) would clip the line to
-   the content width. This keeps the rule edge-to-edge regardless of the section's layout.
-   The 50px source gap below the rule becomes top padding above the content. Authored per
-   boundary via the section Style `divider` (opt-in, like the source's selective placement). */
+/* divider section —  */
 main > .section.divider {
   position: relative;
-  padding-top: var(--space-section-l);
+  padding-top: var(--space-section);
 }
 
 main > .section.divider::before {
@@ -660,10 +652,7 @@ main > .section.divider::before {
   border-top: 1px solid var(--color-surface-muted);
 }
 
-/* spacer section — a fixed-height vertical gap, authored as an (otherwise empty)
-   section tagged Style `spacer`. Used above the page title to match the source's
-   ~30px hero top offset. Opt-in per section, so it never affects untagged sections;
-   the collapse of any authored placeholder content keeps the height exact. */
+/* spacer section  */
 main > .section.spacer {
   margin: 0;
   padding: 0;
