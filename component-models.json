@@ -357,16 +357,20 @@
         "component": "select",
         "name": "classes",
         "value": "cols-4",
-        "label": "Columns",
+        "label": "Layout/Variant",
         "valueType": "string",
         "options": [
           {
-            "name": "4 columns",
+            "name": "4-columnar / Default",
             "value": "cols-4"
           },
           {
-            "name": "5 columns",
-            "value": "cols-5"
+            "name": "5-columnar / Tiles",
+            "value": "cols-5 tile"
+          },
+          {
+            "name": "6-columnar / Label",
+            "value": "cols-6 label"
           }
         ]
       }
