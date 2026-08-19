@@ -39,6 +39,11 @@ async function loadPanelFragments(panel, noCta) {
  * @param {Element} block the tabs block element
  */
 export default function decorate(block) {
+  // In the Universal Editor, keep every panel visible (never hidden) so authors
+  // can select and edit all tabs; the tab bar still renders for the tabbed look.
+  // On the live site, only the active panel shows (real switching).
+  const isUE = window.location.hostname.includes('.ue.da.live');
+
   const rows = [...block.children];
 
   const tablist = document.createElement('div');
@@ -65,7 +70,8 @@ export default function decorate(block) {
     moveInstrumentation(row, panel);
     if (heading) heading.remove();
     while (cell.firstChild) panel.append(cell.firstChild);
-    panel.hidden = i !== 0;
+    // live: show only the first panel; UE: show all so every tab stays editable
+    panel.hidden = !isUE && i !== 0;
 
     // tab button
     const tab = document.createElement('button');
@@ -83,10 +89,11 @@ export default function decorate(block) {
         t.setAttribute('aria-selected', 'false');
         t.tabIndex = -1;
       });
-      panels.forEach((p) => { p.hidden = true; });
+      // In UE all panels stay visible (editable); only update the selected tab.
+      if (!isUE) panels.forEach((p) => { p.hidden = true; });
       tab.setAttribute('aria-selected', 'true');
       tab.tabIndex = 0;
-      panel.hidden = false;
+      if (!isUE) panel.hidden = false;
     };
 
     tab.addEventListener('click', activate);

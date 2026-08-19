@@ -86,7 +86,7 @@ function buildWidgetAutoBlocks(main) {
  */
 function readSectionStyles(section) {
   // Published DA content bakes `Style` values in as classes on the section div
-  // (e.g. <div class="tabs no-cta">) — this runs before decorateSectionMetadata.
+  // (e.g. <div class="tabbed no-cta">) — this runs before decorateSectionMetadata.
   const styles = [...section.classList];
   // Local drafts (and unpublished content) carry `Style` as a .section-metadata
   // table that hasn't been converted to classes yet.
