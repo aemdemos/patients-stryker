@@ -109,14 +109,13 @@ function readSectionStyles(section) {
  * (up to the next `h3`) into one tab row and builds the `tabs` block; the
  * block's decorate() then renders the tab bar and switches panels.
  *
- * Skipped in the Universal Editor: auto-blocking is a runtime transform the
- * editor doesn't model, so in UE we leave the authored headings + fragments in
- * place (fully visible and editable). The interactive tab bar assembles only on
- * the delivered/live site.
+ * Runs in the Universal Editor too, so the tab bar is visible while authoring.
+ * Each tab's fragment keeps its UE instrumentation (moveInstrumentation in the
+ * block + the `tabs` case in ue/scripts/ue.js), so an author clicks a tab and
+ * edits its fragment in place.
  * @param {Element} main The container element
  */
 function buildTabsAutoBlocks(main) {
-  if (window.location.hostname.includes('.ue.da.live')) return;
   main.querySelectorAll(':scope > div').forEach((section) => {
     if (!readSectionStyles(section).includes('tabs')) return;
 
