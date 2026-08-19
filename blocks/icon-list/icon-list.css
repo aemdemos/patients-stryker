@@ -125,7 +125,7 @@
    else a long caption widens its column + icon and drops its caption below the row. */
 .icon-list.tile ul.icon-list-items {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--icon-list-tile-row-gap) var(--icon-list-tile-col-gap-sm);
+  gap: var(--icon-list-tile-row-gap) var(--icon-list-tile-col-gap);
   justify-content: center;
 }
 
@@ -163,7 +163,7 @@
 @media (width > 650px) {
   .icon-list.tile ul.icon-list-items {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    column-gap: var(--icon-list-tile-col-gap-sm);
+    column-gap: var(--icon-list-tile-col-gap);
   }
 
   .icon-list.tile.cols-4 ul.icon-list-items {
@@ -176,12 +176,11 @@
   }
 }
 
-/* desktop: 35px column gap, and cap the grid at the natural tile group width
-   (5 icons + 4 gaps), centered in the container — matches the source, which
-   does NOT stretch tiles to fill the full container width. */
+/* desktop: keep the 30px column gap (inherited) and cap the grid at the natural
+   tile group width (5 icons + 4 gaps), centered in the container — so tiles do
+   NOT stretch to fill the full container width. */
 @media (width > 1024px) {
   .icon-list.tile ul.icon-list-items {
-    column-gap: var(--icon-list-tile-col-gap);
     max-width: calc(5 * var(--icon-list-tile-icon-width) + 4 * var(--icon-list-tile-col-gap));
     margin-inline: auto;
   }

@@ -122,8 +122,7 @@
   --icon-list-tile-icon-gap: 34px;    /* icon → caption gap (source: spacer paragraph ≈ 34px) */
   --icon-list-tile-caption-gap: 24px; /* caption → next row gap (source: trailing spacer paragraph) */
   --icon-list-tile-row-gap: 30px;     /* vertical gap between tile rows */
-  --icon-list-tile-col-gap: 35px;     /* horizontal gap between tiles, desktop (source: 35px, group centered) */
-  --icon-list-tile-col-gap-sm: 30px;  /* horizontal gap between tiles, mobile/tablet (source: 30px) */
+  --icon-list-tile-col-gap: 30px;     /* horizontal gap between tiles at every breakpoint */
   --icon-list-tile-title-gap: 15px;   /* heading → intro gap (source margin) */
   --icon-list-tile-intro-gap: 49px;   /* intro → lead-in and lead-in → grid (source: 15px margin + spacer paragraph) */
 
