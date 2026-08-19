@@ -56,7 +56,7 @@
           "valueType": "string",
           "options": [
             { "name": "4-columnar / Default", "value": "cols-4" },
-            { "name": "5-columnar / Tiles", "value": "cols-5 tile" },
+            { "name": "5-columnar / Tiles", "value": "tile" },
             { "name": "6-columnar / Label", "value": "cols-6 label" }
           ]
         }
