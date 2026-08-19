@@ -162,8 +162,12 @@
 }
 
 /* brochure-cta: cover, Futura-bold title, light-serif label, gold CTA button
-   (author the CTA as a bold+italic link -> .button.accent = source .btn-gold). */
+   (author the CTA as a bold+italic link -> .button.accent = source .btn-gold).
+   Card is a flex column so the body can push the label + button to the card
+   bottom, aligning them across the row regardless of title length (source). */
 .cards.brochure-cta > ul > li {
+  display: flex;
+  flex-direction: column;
   background-color: transparent;
 }
 
@@ -174,6 +178,9 @@
 }
 
 .cards.brochure-cta .cards-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   margin: var(--space-block) 0 0;
 }
 
@@ -188,4 +195,10 @@
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
+}
+
+/* label + button pinned to the bottom: auto top margin on the label absorbs the
+   slack so a 1- vs 2-line title doesn't shift them */
+.cards.brochure-cta .cards-card-body p:not(.button-wrapper) {
+  margin-top: auto;
 }
