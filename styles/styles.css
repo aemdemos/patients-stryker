@@ -533,6 +533,7 @@ main > .section {
 main > .section > .columns-wrapper,
 main > .section > .accordion-wrapper {
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 main > .section > div {
