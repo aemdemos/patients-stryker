@@ -10,7 +10,7 @@
   appearance: none;
   background: transparent;
   border: 0;
-  border-bottom: 3px solid transparent;
+  border-bottom: 1px solid transparent;
   margin: 0;
   padding: var(--space-block) var(--space-block-l);
   font-family: var(--display-font-family);
@@ -30,6 +30,17 @@
 
 .tabs .tabs-tab:hover {
   color: var(--color-accent-active);
+}
+
+/* clicking a tab should not draw the browser's default focus box; keyboard
+   focus still gets a visible indicator via :focus-visible below */
+.tabs .tabs-tab:focus {
+  outline: none;
+}
+
+.tabs .tabs-tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
 }
 
 .tabs .tabs-tab[aria-selected="true"] {
