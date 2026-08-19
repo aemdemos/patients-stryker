@@ -16,9 +16,12 @@
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
 
-// DM / streaming video signatures: Scene7 video delivery (/is/content/) and
-// common video containers / streaming manifests
-const DM_VIDEO = /\/is\/content\//i;
+// Scene7 raw-content delivery (/is/content/) serves the original file as-is. It
+// carries both videos (streaming manifests / containers) and images whose
+// original bytes must be preserved — notably animated GIFs, which the /is/image/
+// renderer flattens to a single frame. A /is/content/ URL is a video only when
+// it has a manifest/container extension; otherwise it is a passthrough image.
+const DM_CONTENT = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
 // hls.js — lazy-loaded only when a DM video needs it (Chrome/Firefox lack native
@@ -40,8 +43,18 @@ let hlsJsPromise;
  */
 export function isDMSrc(src) {
   return !!src && (
-    DM_SCENE7.test(src) || DM_OPENAPI.test(src) || DM_VIDEO.test(src) || VIDEO_EXT.test(src)
+    DM_SCENE7.test(src) || DM_OPENAPI.test(src) || DM_CONTENT.test(src) || VIDEO_EXT.test(src)
   );
+}
+
+/**
+ * True when a /is/content/ URL is a raw video (has a streaming manifest or
+ * container extension) rather than a passthrough image.
+ * @param {string} src
+ * @returns {boolean}
+ */
+function isDMContentVideo(src) {
+  return DM_CONTENT.test(src) && VIDEO_EXT.test(src);
 }
 
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
@@ -57,6 +70,7 @@ const DM_SELECTOR = [
   'a[href*=".mov"]',
   'img[src*="/is/image/"]',
   'img[src*="/adobe/assets/"]',
+  'img[src*="/is/content/"]',
 ].join(',');
 
 // responsive widths shared by both image renderers (desktop + mobile)
@@ -133,6 +147,21 @@ function renderOpenAPI(src, alt, eager) {
       picture.append(img);
     }
   });
+  return picture;
+}
+
+/**
+ * Build a <picture> for a Scene7 raw-content image (/is/content/). Served as-is
+ * with no renderer params — this is the only Scene7 path that preserves animated
+ * GIFs (the /is/image/ renderer flattens them to one frame).
+ */
+function renderContentImage(src, alt, eager) {
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  img.loading = eager ? 'eager' : 'lazy';
+  img.alt = alt;
+  img.src = src;
+  picture.append(img);
   return picture;
 }
 
@@ -248,7 +277,8 @@ function renderVideo(src, label) {
  * Pick the renderer for a DM URL, or null if it isn't a DM asset.
  */
 function dmRendererFor(src) {
-  if (DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return renderVideo;
+  if (isDMContentVideo(src) || VIDEO_EXT.test(src)) return renderVideo;
+  if (DM_CONTENT.test(src)) return renderContentImage;
   if (DM_OPENAPI.test(src)) return renderOpenAPI;
   if (DM_SCENE7.test(src)) return renderScene7;
   return null;
