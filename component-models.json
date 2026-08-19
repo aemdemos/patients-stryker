@@ -341,28 +341,59 @@
         "label": "Variant",
         "valueType": "string",
         "condition": {
-          "in": [
+          "===": [
             {
               "var": "classes_layout"
             },
-            [
-              "cols-5",
-              "cols-6"
-            ]
+            "cols-4"
           ]
         },
         "options": [
           {
             "name": "Default",
             "value": ""
-          },
-          {
-            "name": "Label",
-            "value": "label"
-          },
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "tile",
+        "label": "Variant",
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "classes_layout"
+            },
+            "cols-5"
+          ]
+        },
+        "options": [
           {
             "name": "Tile",
             "value": "tile"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "label",
+        "label": "Variant",
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "classes_layout"
+            },
+            "cols-6"
+          ]
+        },
+        "options": [
+          {
+            "name": "Label",
+            "value": "label"
           }
         ]
       }
