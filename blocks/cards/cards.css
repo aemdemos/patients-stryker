@@ -32,9 +32,14 @@
   }
 
   .cards.resources > ul,
-  .cards.brochure > ul,
-  .cards.brochure-cta > ul {
+  .cards.brochure > ul {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* minmax(0, 1fr): columns default to min-width auto, so the nowrap CTA button
+     forces overflow ~1040px — let columns shrink and ellipsis takes over */
+  .cards.brochure-cta > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -202,4 +207,11 @@
 /* label absorbs extra card height so label + button bottom-align across the row */
 .cards.brochure-cta .cards-card-body p:not(.button-wrapper) {
   margin-top: auto;
+}
+
+/* let the CTA text wrap instead of truncating when the column is narrow */
+.cards.brochure-cta .cards-card-body .button {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }
