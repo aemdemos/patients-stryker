@@ -126,9 +126,12 @@
      <=650px    2 columns
      >650px     5 columns (tablet + desktop)
    Columns are class-driven (default 5, or cols-4) rather than via the shared
-   --icon-list-columns variable, so the tile default needs no authoring. */
+   --icon-list-columns variable, so the tile default needs no authoring.
+   minmax(0, 1fr) (not the default 1fr = minmax(auto, 1fr)) keeps every column
+   exactly equal — otherwise a long caption raises its column's min-content
+   width, widening that icon and pushing its caption lower than the rest. */
 .icon-list.tile ul.icon-list-items {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--icon-list-tile-row-gap) 0;
 }
 
@@ -164,11 +167,11 @@
    base block's tablet icon-hide and desktop column rules. */
 @media (width > 650px) {
   .icon-list.tile ul.icon-list-items {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .icon-list.tile.cols-4 ul.icon-list-items {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .icon-list.tile .icon-list-icon {
