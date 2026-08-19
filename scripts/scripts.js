@@ -79,11 +79,65 @@ function buildWidgetAutoBlocks(main) {
 }
 
 /**
+ * Reads the `Style` values from a raw (pre-decoration) `.section-metadata`
+ * table so we can detect opt-in flags before sections are decorated.
+ * @param {Element} section a raw `main > div` section element
+ * @returns {string[]} lower-cased style tokens (empty if none)
+ */
+function readSectionStyles(section) {
+  const meta = section.querySelector(':scope > .section-metadata');
+  if (!meta) return [];
+  const row = [...meta.querySelectorAll(':scope > div')]
+    .find((r) => r.children[0] && toClassName(r.children[0].textContent.trim()) === 'style');
+  if (!row || !row.children[1]) return [];
+  return row.children[1].textContent.split(',').map((s) => toClassName(s.trim())).filter(Boolean);
+}
+
+/**
+ * Turns any section flagged `Style = tabs` into a `tabs` block. Each `h3`
+ * heading becomes a tab label and the content following it (up to the next
+ * `h3`) becomes that tab's panel. The section's `h2` title and its
+ * `.section-metadata` are left in place. See issue #95.
+ * @param {Element} main The container element
+ */
+function buildTabsAutoBlocks(main) {
+  main.querySelectorAll(':scope > div').forEach((section) => {
+    if (!readSectionStyles(section).includes('tabs')) return;
+
+    // Group each h3 + its following siblings (until the next h3) into a panel.
+    const panels = [];
+    let current = null;
+    [...section.children].forEach((el) => {
+      if (el.classList.contains('section-metadata')) return; // leave in place
+      if (el.tagName === 'H3') {
+        current = [el];
+        panels.push(current);
+      } else if (current) {
+        current.push(el);
+      }
+    });
+    if (!panels.length) return;
+
+    // Remember where to drop the block (before the first heading) BEFORE building,
+    // because buildBlock() moves the heading/content nodes into the new block.
+    const anchor = panels[0][0].previousSibling;
+
+    // Build a tabs block: one row per panel, each holding its h3 + content.
+    const tabsBlock = buildBlock('tabs', panels.map((els) => [{ elems: els }]));
+
+    // Insert the block after the h2 (keeps the section title above the tabs).
+    if (anchor) anchor.after(tabsBlock);
+    else section.prepend(tabsBlock);
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
+    buildTabsAutoBlocks(main);
     // auto load `*/fragments/*` references
     const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment'));
     if (fragments.length > 0) {

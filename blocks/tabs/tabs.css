@@ -1,0 +1,41 @@
+.tabs .tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-section);
+}
+
+.tabs .tabs-tab {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin: 0;
+  padding: var(--space-block) var(--space-block-l);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-color);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* thin vertical separator between tabs, matching the original site */
+.tabs .tabs-tab:not(:last-child) {
+  border-right: 1px solid var(--color-border);
+}
+
+.tabs .tabs-tab:hover {
+  color: var(--color-accent-active);
+}
+
+.tabs .tabs-tab[aria-selected="true"] {
+  border-bottom-color: var(--color-accent);
+}
+
+.tabs .tabs-panel[hidden] {
+  display: none;
+}
