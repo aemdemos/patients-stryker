@@ -79,11 +79,83 @@ function buildWidgetAutoBlocks(main) {
 }
 
 /**
+ * Reads the `Style` values from a raw (pre-decoration) `.section-metadata`
+ * table so we can detect opt-in flags before sections are decorated.
+ * @param {Element} section a raw `main > div` section element
+ * @returns {string[]} lower-cased style tokens (empty if none)
+ */
+function readSectionStyles(section) {
+  // Published DA content bakes `Style` values in as classes on the section div
+  // (e.g. <div class="tabbed no-cta">) — this runs before decorateSectionMetadata.
+  const styles = [...section.classList];
+  // Local drafts (and unpublished content) carry `Style` as a .section-metadata
+  // table that hasn't been converted to classes yet.
+  const meta = section.querySelector(':scope > .section-metadata');
+  if (meta) {
+    const row = [...meta.querySelectorAll(':scope > div')]
+      .find((r) => r.children[0] && toClassName(r.children[0].textContent.trim()) === 'style');
+    if (row && row.children[1]) {
+      styles.push(...row.children[1].textContent.split(',').map((s) => toClassName(s.trim())));
+    }
+  }
+  return styles.filter(Boolean);
+}
+
+/**
+ * Turns any section flagged `Style = tabbed` into a `tabs` block. Authors write
+ * each procedure as an `h3` heading (the tab label) followed by its content
+ * (cards/fragments), all inside the flagged section — the heading-driven
+ * pattern from issue #95. This pass groups each `h3` + the content following it
+ * (up to the next `h3`) into one tab row and builds the `tabs` block; the
+ * block's decorate() then renders the tab bar and switches panels.
+ *
+ * The flag is `tabbed`, NOT `tabs`: published DA content converts a `Style`
+ * value into a class on the section div, so `Style = tabs` would make the
+ * section `class="tabs"` and decorateBlocks would wrongly treat the whole
+ * section as a `tabs` block (the bug where every panel showed at once). Using
+ * `tabbed` avoids that clash with the generated inner `tabs` block.
+ *
+ * Runs in the Universal Editor too, so the tab bar is visible while authoring.
+ * @param {Element} main The container element
+ */
+function buildTabsAutoBlocks(main) {
+  main.querySelectorAll(':scope > div').forEach((section) => {
+    if (!readSectionStyles(section).includes('tabbed')) return;
+
+    // Group each h3 + its following siblings (until the next h3) into one tab.
+    const groups = [];
+    let current = null;
+    [...section.children].forEach((el) => {
+      if (el.classList.contains('section-metadata')) return; // leave in place
+      if (el.tagName === 'H3') {
+        current = [el];
+        groups.push(current);
+      } else if (current) {
+        current.push(el);
+      }
+    });
+    if (!groups.length) return;
+
+    // Remember where to drop the block BEFORE building, because buildBlock()
+    // moves the heading/content nodes into the new block.
+    const anchor = groups[0][0].previousSibling;
+
+    // One row per tab, each cell holding the h3 label + its panel content.
+    const tabsBlock = buildBlock('tabs', groups.map((els) => [{ elems: els }]));
+
+    // Insert the block after the h2 (keeps the section title above the tabs).
+    if (anchor) anchor.after(tabsBlock);
+    else section.prepend(tabsBlock);
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
+    buildTabsAutoBlocks(main);
     // auto load `*/fragments/*` references
     const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment'));
     if (fragments.length > 0) {
