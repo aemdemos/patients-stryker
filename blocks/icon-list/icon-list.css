@@ -136,6 +136,12 @@
   margin-bottom: var(--icon-list-tile-icon-gap);
 }
 
+/* caption — source Futura-bold at 1.25em (17.5px); base block sets 14px */
+.icon-list.tile .icon-list-text,
+.icon-list.tile .icon-list-text p {
+  font-size: var(--icon-list-tile-caption-size);
+}
+
 .icon-list.tile .icon-list-icon img {
   width: var(--icon-list-tile-icon-width);
   max-width: 100%;
