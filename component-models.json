@@ -93,6 +93,12 @@
         "label": "Background Image",
         "valueType": "string",
         "multi": false
+      },
+      {
+        "component": "text",
+        "name": "anchor",
+        "label": "Anchor (in-page link target id)",
+        "valueType": "string"
       }
     ]
   },
@@ -484,6 +490,29 @@
         "name": "text",
         "value": "",
         "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "section-nav",
+    "fields": []
+  },
+  {
+    "id": "section-nav-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "label",
+        "value": "",
+        "label": "Label",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "value": "",
+        "label": "Anchor (e.g. #resources)",
         "valueType": "string"
       }
     ]

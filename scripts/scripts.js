@@ -234,6 +234,12 @@ function decorateSectionMetadata(main) {
         styles.forEach((s) => section.classList.add(s));
       } else if (key === 'background-image') {
         applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
+      } else if (key === 'anchor') {
+        // `anchor` gives the section a stable id so in-page nav links
+        // (e.g. the section-nav jump bar) can target it even when the
+        // section has no heading to auto-generate an id from.
+        const id = toClassName(Array.isArray(value) ? value[0] : value);
+        if (id) section.id = id;
       } else {
         section.dataset[toCamelCase(key)] = value;
       }
