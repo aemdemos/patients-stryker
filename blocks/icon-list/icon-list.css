@@ -96,26 +96,18 @@
   color: var(--color-black);
 }
 
-/* tablet: 4-up, icons hidden */
+/* tablet: 4-up. Icons stay visible — they are core to the "Stroke facts" row
+   (icon + caption) and match the source at every width. */
 @media (width > 650px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
   }
-
-  .icon-list .icon-list-icon {
-    display: none;
-  }
 }
 
-/* desktop: author column count, icons shown again */
+/* desktop: author column count */
 @media (width > 1200px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
-  }
-
-  .icon-list .icon-list-icon {
-    display: block;
-    margin-bottom: 9px;
   }
 }
 
