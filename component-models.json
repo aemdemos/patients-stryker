@@ -212,6 +212,20 @@
             2
           ]
         }
+      },
+      {
+        "component": "boolean",
+        "name": "classes_border",
+        "label": "Bottom border",
+        "valueType": "string",
+        "condition": {
+          "in": [
+            "columns-50-50",
+            {
+              "var": "classes"
+            }
+          ]
+        }
       }
     ]
   },

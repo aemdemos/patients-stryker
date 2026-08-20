@@ -84,7 +84,7 @@
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
   --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
-  --heading-font-size-compact-m: 19.9px; /* compact section h2 ≥480px (measured) */
+  --heading-font-size-compact-m: 19.6px; /* compact section h2 ≥480px (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -194,14 +194,6 @@ header {
   height: var(--nav-height);
 }
 
-/* reserve the desktop two-row header height (white bar + gold nav bar) here in
-   eager CSS so the space is held before the lazy header block loads, preventing
-   content from shifting down on load (CLS) */
-@media (width >= 900px) {
-  header {
-    height: calc(var(--nav-height) + var(--nav-bar-height));
-  }
-}
 
 header .header,
 footer .footer {
@@ -280,6 +272,7 @@ p {
 strong,
 b {
   font-weight: 700;
+  font-family: var(--display-font-family);
 }
 
 /* bold inside a heading keeps the display face — this is what paints the gold H1
@@ -311,6 +304,12 @@ h3 em strong {
   color: var(--color-accent);
 }
 
+h2 em strong,
+h2 strong em {
+    font-size: var(--heading-font-size-compact);
+}
+
+
 /* lists — measured source indent (padding-left 17px) */
 ol,
 ul {
@@ -338,6 +337,7 @@ main ol.footnotes {
   padding-left: var(--list-indent);
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
+  margin: 0 0 30px;
 }
 
 main ol.footnotes li {
@@ -345,63 +345,8 @@ main ol.footnotes li {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
-/* compact section (references + disclaimer at the foot of ENT condition pages) —
-   the source renders this whole block as small print: 11.2px, tight ~1.2 line-height,
-   including the "References"/"Disclaimer" bold labels, the numbered list, and the
-   disclaimer/trademark paragraphs. Authored via Section Metadata `Style: compact`. */
-main > .section.compact > div :is(p, ol, ul, li) {
-  font-size: var(--footnote-font-size);
-  line-height: var(--footnote-line-height);
-}
-
-/* compact section typography — smaller gold headings and dense heading/body rhythm */
-h2 em strong,
-h2 strong em {
-  font-size: var(--heading-font-size-compact);
-}
-
-.section.compact {
-  margin-bottom: 40px;
-}
-
-.section.compact h1 {
-  margin: 30px 0 10px;
-  line-height: 22.26px;
-}
-
-.section.compact h2 {
-  font-size: var(--heading-font-size-compact);
-  margin-top: 30px;
-}
-
-.section.compact p {
-  font-size: var(--footnote-font-size);
-}
-
-@media (width >= 480px) {
-  .section.compact h2 {
-    font-size: var(--heading-font-size-compact-m);
-    margin-top: 30px;
-  }
-
-  h2 em strong,
-  h2 strong em {
-    font-size: var(--heading-font-size-compact-m);
-  }
-}
-
-/* the source stacks the disclaimer/trademark block flush (0 gap) — only the
-   References label and the citation list carry the 15px gap. Our authored copy is
-   all <p> (each with the global 15px margin-bottom), so zero the margin on every
-   paragraph AFTER the citation list to reproduce that dense footer rhythm. */
-main > .section.compact > div ol ~ p {
-  margin-bottom: 0;
-}
-
-/* citations wrap their text in a <p> per list item; the global 15px margin-bottom
-   would space the references apart, but the source list is flush (li margin 0). */
-main > .section.compact > div ol li p {
-  margin-bottom: 0;
+main ol.footnotes li > p {
+  margin-bottom:0;
 }
 
 code,
@@ -424,6 +369,12 @@ button {
   font: inherit;
 }
 
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
 /* links */
 a:any-link {
   color: var(--link-color);
@@ -431,15 +382,7 @@ a:any-link {
   overflow-wrap: break-word;
 }
 
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  text-decoration: none;
-}
-
-/* bold and bold+italic links are not underlined (italic-only links still are).
-   Covers both nesting directions: <strong>/<b> wrapping the link, and the link
-   wrapping <strong>/<b>. */
+/* bold and bold+italic links are not underlined */
 strong a:any-link,
 b a:any-link,
 a:any-link:has(strong),
@@ -447,19 +390,39 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
-/* decorateFootnotes() (scripts.js) wraps each citation digit in an <a href="#fn-N">
-   so it jumps to the reference list. The source shows these as plain black markers,
-   not links, so suppress the inherited teal link colour + underline while keeping the
-   anchor (and its jump behaviour) intact. Placed after the base link rules so the
-   higher-specificity override reads in natural cascade order (no-descending-specificity). */
-sup a:any-link {
-  color: inherit;
+.section.compact a:any-link {
+  text-decoration: none;
+  font-family: var(--display-font-family);
+}
+
+/* bold + underline authored link → flat inline CTA: uppercase Futura-bold text in
+   the primary colour, no underline, with a trailing chevron. Authoring convention
+   set in decorateButtons() (mirrors the bold+italic → gold-button convention). */
+a.link-strong:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
-/* compact section links (e.g. reference URLs) are plain, not underlined — matches
-   the source's dense footer. Placed after the base link rules to keep cascade order. */
-.section.compact a:any-link {
+/* chevron drawn in CSS (the source uses a proprietary icon font); follows the
+   link colour via currentcolor */
+a.link-strong:any-link::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+a.link-strong:hover,
+a.link-strong:focus {
+  color: var(--color-primary-hover);
   text-decoration: none;
 }
 
@@ -616,6 +579,7 @@ main > .section {
   margin: 0 0 var(--space-section);
 }
 
+
 main > .section > div {
   box-sizing: border-box; /* the source's .container caps its OUTER box at 1410px with the
                              15px gutter inside it (content = 1380px); border-box matches
@@ -631,20 +595,17 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
-@media (width >= 841px) {
-  main .last-modified {
-    font-size: var(--body-font-size-s);
-  }
+
+.section.compact h1 {
+  margin: 30px 0 10px;
+  line-height: 22.26px;
 }
 
-/* section width variants */
-main > .section.narrow > div {
-  max-width: var(--container-narrow);
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top:30px;
 }
 
-main > .section.wide > div {
-  max-width: var(--container-wide);
-}
 
 /* flex section — lays the section's content WRAPPERS side by side at 50/50 on
    desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
@@ -680,17 +641,10 @@ main > .section.wide > div {
   }
 }
 
-/* divider section — a full-viewport-width sage rule at the section break, matching
-   the source's .sectionseparator hr (1px --color-surface-muted, spanning the whole
-   viewport). The line is drawn as a ::before pinned to the FULL viewport width (100vw
-   centred on the section) rather than a border on the section box — otherwise a section
-   that caps its own width (e.g. Style `flex`, max-width 1410px) would clip the line to
-   the content width. This keeps the rule edge-to-edge regardless of the section's layout.
-   The 50px source gap below the rule becomes top padding above the content. Authored per
-   boundary via the section Style `divider` (opt-in, like the source's selective placement). */
+/* divider section —  */
 main > .section.divider {
   position: relative;
-  padding-top: var(--space-section-l);
+  padding-top: var(--space-section);
 }
 
 main > .section.divider::before {
@@ -703,10 +657,7 @@ main > .section.divider::before {
   border-top: 1px solid var(--color-surface-muted);
 }
 
-/* spacer section — a fixed-height vertical gap, authored as an (otherwise empty)
-   section tagged Style `spacer`. Used above the page title to match the source's
-   ~30px hero top offset. Opt-in per section, so it never affects untagged sections;
-   the collapse of any authored placeholder content keeps the height exact. */
+/* spacer section  */
 main > .section.spacer {
   margin: 0;
   padding: 0;
@@ -781,12 +732,6 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
   padding-top: calc(var(--space-section) * 2);
 }
 
-/* first (title + intro + image) section — sage rule beneath it, matching the
-   source's .c-page-hero-content.border-bottom-gold 1px divider */
-main > .section:first-child > .default-content-wrapper {
-  padding-bottom: var(--space-section);
-}
-
 /* audience note above the fullbleed hero */
 main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child {
   margin-top: var(--space-section);
@@ -805,7 +750,38 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
+@media (width >= 480px) {
+  .section.compact h2 {
+  font-size: var(--heading-font-size-compact-m);
+  margin-top:30px;
+}
+
+h2 em strong,
+h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
+}
+}
+
+@media (width >= 841px) {
+  main .last-modified {
+    font-size: var(--body-font-size-s);
+  }
+}
+
+/* section width variants */
+main > .section.narrow > div {
+  max-width: var(--container-narrow);
+}
+
+main > .section.wide > div {
+  max-width: var(--container-wide);
+}
+
 @media (width >= 900px) {
+    header {
+    height: calc(var(--nav-height) + var(--nav-bar-height));
+  }
+  
   main > .section > div {
     box-sizing: border-box;
     max-width: var(--container-max);

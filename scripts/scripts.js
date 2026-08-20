@@ -131,6 +131,23 @@ function decorateButtons(main) {
     const em = a.closest('em');
     if (!strong && !em) return;
 
+    // bold + underline (authored) → flat inline CTA: bold text in --color-primary,
+    // no underline. Must precede the button branches below, which would otherwise
+    // see the bold and turn it into a .button.primary. The <u> may wrap the anchor
+    // OR sit inside it (authors nest either way), so check both directions.
+    const ancestorU = a.closest('u');
+    const u = ancestorU || a.querySelector('u');
+    if (strong && u) {
+      a.classList.add('link-strong');
+      // unwrap the outermost bold/underline ancestor so the anchor sits directly in
+      // the <p>, then strip any <u> inside the anchor so no underline is drawn.
+      let outer = strong;
+      if (ancestorU && ancestorU.contains(strong)) outer = ancestorU;
+      outer.replaceWith(a);
+      a.querySelectorAll('u').forEach((inner) => inner.replaceWith(...inner.childNodes));
+      return;
+    }
+
     p.className = 'button-wrapper';
     a.className = 'button';
     if (strong && em) { // high-impact call-to-action
