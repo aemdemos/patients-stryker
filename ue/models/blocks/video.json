@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Video",
+      "id": "video",
+      "model": "video",
+      "plugins": {
+        "da": {
+          "name": "Video",
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "link", "selector": "a[href]" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "video",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "Video link",
+          "description": "Paste a video URL. YouTube (youtube.com / youtu.be / youtube-nocookie.com) is supported; it renders behind a click-to-load poster facade."
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "video",
+      "components": []
+    }
+  ]
+}

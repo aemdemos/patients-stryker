@@ -1,3 +1,7 @@
+/* stylelint-disable no-descending-specificity -- section-variant selectors
+   (compact/serif/icon-grid/light-gray) are mutually exclusive, so the cross-variant
+   ordering this rule flags can never collide at runtime. */
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -51,6 +55,51 @@
 .columns .columns-img-col ~ p {
   padding-left: 3%;
   padding-right: 3%;
+}
+
+/* compact variant — smaller heading + body typography for dense 50/50 rows.
+   Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
+   (0,2,0), so the smaller body size wins.
+   The compact selectors only apply inside a `.compact` section, mutually exclusive
+   with the serif/icon-grid/light-gray variants, so no real conflict exists (see the
+   file-level no-descending-specificity disable at the top). */
+.section.compact .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.compact .columns .columns-img-col img {
+  padding-bottom: 10px;
+}
+
+.section.compact .columns h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top: var(--space-block);
+}
+
+.section.compact .columns p,
+.section.compact .columns ul,
+.section.compact .columns li {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
+}
+
+.section.compact .columns p {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 0;
+}
+
+@media (width >= 480px) {
+  .section.compact .columns h2 {
+    font-size: var(--heading-font-size-compact-m);
+  }
 }
 
 /* icon-grid variant — each cell is a centred icon over a serif subtitle, a bold
@@ -382,4 +431,5 @@
     margin-bottom: var(--space-block);
   }
 }
+
 

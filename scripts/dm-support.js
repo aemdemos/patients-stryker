@@ -55,6 +55,15 @@ export function isDMSrc(src) {
  */
 function isDMContentVideo(src) {
   return DM_CONTENT.test(src) && VIDEO_EXT.test(src);
+ * True when a URL is a DM / streaming VIDEO (Scene7 /is/content/ or a video
+ * container/manifest). The video block uses this to route DM video URLs to the
+ * native <video> renderer (issue #98's unified handling), while dm-support.js
+ * still converts bare DM autolinks elsewhere on the page.
+ * @param {string} src the link/media URL
+ * @returns {boolean}
+ */
+export function isDMVideoSrc(src) {
+  return !!src && (DM_VIDEO.test(src) || VIDEO_EXT.test(src));
 }
 
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
@@ -242,7 +251,7 @@ function attachHls(video, src) {
  * @param {string} label optional accessible label (from link title)
  * @returns {HTMLVideoElement}
  */
-function renderVideo(src, label) {
+export function renderVideo(src, label) {
   const url = new URL(src, window.location.href);
   const poster = url.searchParams.get('poster');
   if (poster) url.searchParams.delete('poster');

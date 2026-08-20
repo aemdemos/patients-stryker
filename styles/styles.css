@@ -32,6 +32,7 @@
   --color-navy-bright: #1c5687;
   --color-purple: #85458a;
   --color-success: #32ae88;
+  --color-youtube: #f00; /* YouTube play-button red (video block facade) */
 
   /* neutrals & surfaces */
   --color-white: #fff;
@@ -82,6 +83,8 @@
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
+  --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
+  --heading-font-size-compact-m: 19.9px; /* compact section h2 ≥480px (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -237,6 +240,16 @@ h2 {
   font-weight: 700;
 }
 
+/* stat-lede subheading (ENT condition pages, e.g. "Affects 31 million adults…"):
+   a plain h2 (no gold em/strong marker) sitting beside the gold h1 in the title
+   columns. The source renders it in the light serif heading face, not Futura-bold,
+   so the emphasis reads title-bold + subhead-light. Scoped to the columns title
+   context and to h2s WITHOUT the gold marker, so section-heading h2s are untouched. */
+.columns > div > div h2:not(:has(em, strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
    h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
 h4,
@@ -260,11 +273,22 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
-/* bold inline text — measured from source span.futura-bold: Futura Bold, not the body serif */
+/* bold inline text — the source renders ordinary <b>/<strong> in the body slab
+   face, just heavier (HumanistSlab712W01 bold, 11.2–14px). Only set weight here so
+   bold body copy inherits the body font; Futura is reserved for headings (see the
+   heading rules above and the heading-scoped override below). */
 strong,
 b {
-  font-family: var(--display-font-family);
   font-weight: 700;
+}
+
+/* bold inside a heading keeps the display face — this is what paints the gold H1
+   (<h1><em><strong>) and any bold marker in h2/h3 in Futura, matching the source's
+   Futura-bold headings without leaking Futura into bold body text. */
+h1 :is(strong, b),
+h2 :is(strong, b),
+h3 :is(strong, b) {
+  font-family: var(--display-font-family);
 }
 
 /* Gold headlines — the source renders its main headings in the gold accent
@@ -293,11 +317,18 @@ ul {
   padding-left: var(--list-indent);
 }
 
-/* citation superscripts — measured from source: raised, small; the link inside
-   inherits the global teal link color + hover, so only sizing is set here. */
+/* citation superscripts — measured from source: small (75%) and only slightly
+   raised. The browser default `vertical-align: super` shifts the marker up by a full
+   super-step, which reads as an oversized, prominent digit and inflates the line box;
+   the source keeps it tight to the baseline. Use a small relative raise instead so the
+   marker stays subtle and doesn't affect line-height. The link inside inherits the
+   global teal link color + hover, so only sizing/position is set here. */
 sup {
+  position: relative;
+  top: -0.4em;
   font-size: 75%;
   line-height: 0;
+  vertical-align: baseline;
 }
 
 /* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
@@ -312,6 +343,65 @@ main ol.footnotes {
 main ol.footnotes li {
   margin-bottom: 0;
   scroll-margin-top: calc(var(--nav-height) + 10px);
+}
+
+/* compact section (references + disclaimer at the foot of ENT condition pages) —
+   the source renders this whole block as small print: 11.2px, tight ~1.2 line-height,
+   including the "References"/"Disclaimer" bold labels, the numbered list, and the
+   disclaimer/trademark paragraphs. Authored via Section Metadata `Style: compact`. */
+main > .section.compact > div :is(p, ol, ul, li) {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
+/* compact section typography — smaller gold headings and dense heading/body rhythm */
+h2 em strong,
+h2 strong em {
+  font-size: var(--heading-font-size-compact);
+}
+
+.section.compact {
+  margin-bottom: 40px;
+}
+
+.section.compact h1 {
+  margin: 30px 0 10px;
+  line-height: 22.26px;
+}
+
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top: 30px;
+}
+
+.section.compact p {
+  font-size: var(--footnote-font-size);
+}
+
+@media (width >= 480px) {
+  .section.compact h2 {
+    font-size: var(--heading-font-size-compact-m);
+    margin-top: 30px;
+  }
+
+  h2 em strong,
+  h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
+  }
+}
+
+/* the source stacks the disclaimer/trademark block flush (0 gap) — only the
+   References label and the citation list carry the 15px gap. Our authored copy is
+   all <p> (each with the global 15px margin-bottom), so zero the margin on every
+   paragraph AFTER the citation list to reproduce that dense footer rhythm. */
+main > .section.compact > div ol ~ p {
+  margin-bottom: 0;
+}
+
+/* citations wrap their text in a <p> per list item; the global 15px margin-bottom
+   would space the references apart, but the source list is flush (li margin 0). */
+main > .section.compact > div ol li p {
+  margin-bottom: 0;
 }
 
 code,
@@ -354,6 +444,22 @@ strong a:any-link,
 b a:any-link,
 a:any-link:has(strong),
 a:any-link:has(b) {
+  text-decoration: none;
+}
+
+/* decorateFootnotes() (scripts.js) wraps each citation digit in an <a href="#fn-N">
+   so it jumps to the reference list. The source shows these as plain black markers,
+   not links, so suppress the inherited teal link colour + underline while keeping the
+   anchor (and its jump behaviour) intact. Placed after the base link rules so the
+   higher-specificity override reads in natural cascade order (no-descending-specificity). */
+sup a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* compact section links (e.g. reference URLs) are plain, not underlined — matches
+   the source's dense footer. Placed after the base link rules to keep cascade order. */
+.section.compact a:any-link {
   text-decoration: none;
 }
 
@@ -511,6 +617,9 @@ main > .section {
 }
 
 main > .section > div {
+  box-sizing: border-box; /* the source's .container caps its OUTER box at 1410px with the
+                             15px gutter inside it (content = 1380px); border-box matches
+                             that so our content isn't 30px wider than the source */
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -535,6 +644,77 @@ main > .section.narrow > div {
 
 main > .section.wide > div {
   max-width: var(--container-wide);
+}
+
+/* flex section — lays the section's content WRAPPERS side by side at 50/50 on
+   desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
+   Block-agnostic (issue #98's section-flex direction): each authored unit becomes
+   its own wrapper (`.default-content-wrapper`, `.<block>-wrapper`), so e.g. a text
+   block sits beside a video without coupling the layout to a specific block.
+   Reading order = source order, so the first authored wrapper sits on the left.
+   The section itself is the flex container (its wrappers are the direct children);
+   empty wrappers (e.g. the consumed section-metadata) collapse to zero via :empty. */
+@media (width >= 1024px) {
+  main > .section.flex {
+    display: flex;
+    align-items: center;
+    gap: var(--container-gutter);
+
+    /* the section itself is the flex row, so cap/centre/gutter it the same way a
+       normal section's inner > div is capped — otherwise the row spans the full
+       viewport instead of aligning with the other sections' content width.
+       border-box keeps the gutter inside the 1410px cap, matching the source. */
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  main > .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0; /* allow shrink below content width instead of overflowing */
+  }
+
+  main > .section.flex > div:empty {
+    display: none; /* drop the emptied section-metadata wrapper from the flex row */
+  }
+}
+
+/* divider section — a full-viewport-width sage rule at the section break, matching
+   the source's .sectionseparator hr (1px --color-surface-muted, spanning the whole
+   viewport). The line is drawn as a ::before pinned to the FULL viewport width (100vw
+   centred on the section) rather than a border on the section box — otherwise a section
+   that caps its own width (e.g. Style `flex`, max-width 1410px) would clip the line to
+   the content width. This keeps the rule edge-to-edge regardless of the section's layout.
+   The 50px source gap below the rule becomes top padding above the content. Authored per
+   boundary via the section Style `divider` (opt-in, like the source's selective placement). */
+main > .section.divider {
+  position: relative;
+  padding-top: var(--space-section-l);
+}
+
+main > .section.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw; /* pull the 100vw bar back to the true viewport edge, ignoring the section's cap */
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* spacer section — a fixed-height vertical gap, authored as an (otherwise empty)
+   section tagged Style `spacer`. Used above the page title to match the source's
+   ~30px hero top offset. Opt-in per section, so it never affects untagged sections;
+   the collapse of any authored placeholder content keeps the height exact. */
+main > .section.spacer {
+  margin: 0;
+  padding: 0;
+  height: var(--space-section);
+}
+
+main > .section.spacer > div {
+  display: none;
 }
 
 /* section metadata */
@@ -627,6 +807,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 
 @media (width >= 900px) {
   main > .section > div {
+    box-sizing: border-box;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
