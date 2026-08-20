@@ -44,6 +44,18 @@
             {
               "name": "Blue",
               "value": "blue"
+            },
+            {
+              "name": "Divider",
+              "value": "divider"
+            },
+            {
+              "name": "Spacer",
+              "value": "spacer"
+            },
+            {
+              "name": "Compact",
+              "value": "compact"
             }
           ]
         },
@@ -70,7 +82,8 @@
         "image",
         "panel",
         "statistics",
-        "text"
+        "text",
+        "video"
       ]
     }
   ]
