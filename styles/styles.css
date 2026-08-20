@@ -46,6 +46,7 @@
   --color-disabled-text: #545857;
   --overlay-scrim: rgb(0 0 0 / 50%);
   --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
+  --color-youtube: #f00; /* YouTube play-button red (video facade) */
 
   /* boilerplate color aliases (consumed by blocks) */
   --background-color: var(--color-white);

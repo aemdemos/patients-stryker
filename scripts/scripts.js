@@ -16,6 +16,7 @@ import {
 } from './aem.js';
 
 import decorateDMAssets from './dm-support.js';
+import decorateYouTube from './youtube-support.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -347,6 +348,8 @@ async function decorateLastModified(main) {
 export function decorateMain(main) {
   // convert external Dynamic Media asset links into native <picture>/<video>
   decorateDMAssets(main);
+  // convert authored YouTube links into a click-to-load video facade
+  decorateYouTube(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
