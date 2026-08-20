@@ -15,6 +15,68 @@
  * Licensed Monotype W01 fonts are referenced first with their documented system fallbacks.
  */
 
+/* stylelint-disable max-line-length */
+
+/* Size-adjusted system fallbacks — declared HERE in the eager stylesheet so first
+   paint already renders body text in a metric-matched fallback. The webfaces
+   themselves load lazily via styles/fonts.css with font-display: swap (they are
+   NOT preloaded — because the fallback below is metric-matched, the swap is
+   shift-free whenever it lands, so a preload would buy nothing). These local()-only
+   faces cost no network and, being eager, are what makes the swap to the brand font
+   a metric-matched, near-zero shift instead of a whole-page reflow — the
+   footnote-page CLS in issue #52. size-adjust normalizes glyph width to the
+   webfont; line-gap-override: 0% keeps the line-box height stable across the swap.
+
+   The BODY fallback is anchored to the Arial metric group — Arial ≡ Liberation
+   Sans ≡ Arimo are byte-for-byte metric-identical and cover Windows, macOS, Linux
+   and Android — so a SINGLE size-adjust (104.65%, the measured brand/Arimo advance-
+   width ratio, verified wrap-neutral across 320–900px) is width-accurate on every
+   platform. That is the key advantage over
+   serif-anchored fallbacks: the serif system fonts (Cambria vs Georgia vs DejaVu)
+   have different metrics per OS, so no single size-adjust fits them all and the
+   long footnote paragraphs wrapped to a different line count → reflow on swap. The
+   generic `sans-serif` is the last-resort net for a platform with none of the
+   named Arial-metric clones. */
+@font-face {
+  font-family: "humanist-slab-712-fallback";
+  size-adjust: 104.65%;
+  line-gap-override: 0%;
+  src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
+}
+
+/* Heading fallback — anchored to the Times metric group (Times New Roman ≡
+   Liberation Serif ≡ Tinos, metric-identical across all platforms). size-adjust
+   110.82% is the measured URWEgyptienne/Tinos advance-width ratio (verified match
+   to within <1px). local('serif') is the last-resort net. */
+@font-face {
+  font-family: urw-egyptienne-fallback;
+  size-adjust: 110.82%;
+  line-gap-override: 0%;
+  src: local('Times New Roman'), local('Liberation Serif'), local('Tinos'), local('serif');
+}
+
+/* Display fallback — anchored to the Arial metric group (Arial ≡ Liberation Sans
+   ≡ Arimo). Futura Book (400) and Bold (700) need DIFFERENT size-adjusts because
+   Futura Bold is ~21% wider than Book while the Arial-group bold is only ~9%
+   wider, so a single value can't serve both weights — hence two faces. Values are
+   the measured Futura/Arimo advance-width ratios per weight (Book 99.57%, Bold
+   112.32%). local('sans-serif') is the last-resort net. */
+@font-face {
+  font-family: futura-lt-fallback;
+  font-weight: 400;
+  size-adjust: 99.57%;
+  line-gap-override: 0%;
+  src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
+}
+
+@font-face {
+  font-family: futura-lt-fallback;
+  font-weight: 700;
+  size-adjust: 112.32%;
+  line-gap-override: 0%;
+  src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
+}
+
 :root {
   /* brand colors */
   --color-primary: #4c7d7a;
