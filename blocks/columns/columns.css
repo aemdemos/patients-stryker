@@ -93,7 +93,8 @@
 }
 
 .section.compact .columns h4 {
-  font-size: var(--heading-font-size-m);
+  font-size: var(--heading-font-size-xs);
+  padding-top: 20px;
 }
 
 /* when a compact columns block also contains an h1, the h2 acts as a subheading
@@ -419,6 +420,10 @@
 
   .section.compact .columns h2 {
   font-size: var(--heading-font-size-compact-m);
+}
+
+.section.compact .columns h4 {
+  font-size: var(--heading-font-size-m);
 }
 
 
