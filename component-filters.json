@@ -17,6 +17,7 @@
       "icon-list-tile",
       "image",
       "panel",
+      "section-nav",
       "statistics",
       "text",
       "video"
@@ -61,6 +62,12 @@
     "id": "panel",
     "components": [
       "panel-item"
+    ]
+  },
+  {
+    "id": "section-nav",
+    "components": [
+      "section-nav-item"
     ]
   },
   {

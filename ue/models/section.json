@@ -65,6 +65,12 @@
           "label": "Background Image",
           "valueType": "string",
           "multi": false
+        },
+        {
+          "component": "text",
+          "name": "anchor",
+          "label": "Anchor (in-page link target id)",
+          "valueType": "string"
         }
       ]
     }
@@ -82,6 +88,7 @@
         "icon-list-tile",
         "image",
         "panel",
+        "section-nav",
         "statistics",
         "text",
         "video"
