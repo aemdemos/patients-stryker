@@ -92,9 +92,10 @@
   margin-top: var(--space-block);
 }
 
-.section.compact .columns h4 {
+.section.compact .columns h3 {
   font-size: var(--heading-font-size-xs);
-  padding-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 30px;
 }
 
 /* when a compact columns block also contains an h1, the h2 acts as a subheading
@@ -122,11 +123,6 @@
   padding-top: 0;
 }
 
-@media (width >= 480px) {
-  .section.compact .columns h2 {
-    font-size: var(--heading-font-size-compact-m);
-  }
-}
 
 /* icon-grid variant — each cell is a centred icon over a serif subtitle, a bold
    Futura heading and body text (reference: zip-skin-closure "Benefits of Zip").
@@ -252,6 +248,7 @@
   line-height: var(--heading-line-height);
 }
 
+
 .section.compact .columns p:has(> strong > code)
 {
   margin: 0;
@@ -346,6 +343,17 @@
 .section.light-gray .columns a:focus {
   color: var(--color-primary-pressed);
   text-decoration: none;
+}
+
+@media (width >= 480px) {
+  .section.compact .columns h2 {
+    font-size: var(--heading-font-size-compact-m);
+  }
+
+  .section.compact .columns h3 {
+    font-size: var(--heading-font-size-m);
+    margin-bottom: var(--space-block);
+  }
 }
 
 /* tablet — reference switches to a 2-up layout at 841px */

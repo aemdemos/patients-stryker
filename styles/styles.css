@@ -392,6 +392,7 @@ a:any-link:has(b) {
 
 .section.compact a:any-link {
   text-decoration: none;
+  font-family: var(--display-font-family);
 }
 
 /* bold + underline authored link → flat inline CTA: uppercase Futura-bold text in
@@ -605,9 +606,6 @@ main .last-modified {
   margin-top:30px;
 }
 
-.section.compact p {
-  font-size: var(--footnote-font-size);
-}
 
 /* flex section — lays the section's content WRAPPERS side by side at 50/50 on
    desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
