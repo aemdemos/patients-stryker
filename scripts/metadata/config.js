@@ -22,43 +22,5 @@ export const SHARED_LABELS = {
  * Add new templates as needed
  */
 export const TEMPLATES = {
-  // Example: news-article template
-  newsArticle: {
-    fields: {
-      title: { base: 'og:title' },
-      author: { base: 'author' },
-      date: { base: 'date' },
-      category: { base: 'category' },
-      links: { base: 'links' },
-      image: { base: 'og:image' },
-    },
-    labels: {
-      writtenBy: {
-        en: 'Written by',
-      },
-      publishedOn: {
-        en: 'Published on',
-      },
-      category: {
-        en: 'Category',
-      },
-    },
-  },
-
-  // Example: article-with-sidebar template
-  articleTemplate: {
-    fields: {
-      title: { base: 'og:title' },
-      heroImage: { base: 'og:image' },
-      description: { base: 'description' },
-      sidebar: { base: 'sidebar-content' },
-    },
-    labels: {
-      relatedContent: {
-        en: 'Related Content',
-      },
-    },
-  },
-
-  // Add more templates as needed
+  // Add template configurations here as needed
 };
