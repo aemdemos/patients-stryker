@@ -374,29 +374,11 @@
           },
           {
             "name": "5-columnar / Tiles",
-            "value": "tile"
+            "value": "cols-5 tile"
           },
           {
             "name": "6-columnar / Label",
             "value": "cols-6 label"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "icon-list-tile",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "tile",
-        "label": "Columns",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "5 columns (default)",
-            "value": "tile"
           }
         ]
       }
@@ -462,9 +444,7 @@
           },
           {
             "name": "Colored Border",
-            "value": "colored-border"
-          },
-          {
+            "value": "colored-border",
             "name": "Blue",
             "value": "blue"
           },
