@@ -14,6 +14,19 @@
       }
     },
     {
+      "title": "Icon List (tile)",
+      "id": "icon-list-tile",
+      "model": "icon-list-tile",
+      "filter": "icon-list",
+      "plugins": {
+        "da": {
+          "name": "Icon List (tile)",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
       "title": "Icon List Item",
       "id": "icon-list-item",
       "model": "icon-list-item",
@@ -43,8 +56,23 @@
           "valueType": "string",
           "options": [
             { "name": "4-columnar / Default", "value": "cols-4" },
-            { "name": "5-columnar / Tiles", "value": "cols-5 tile" },
+            { "name": "5-columnar / Tiles", "value": "tile" },
             { "name": "6-columnar / Label", "value": "cols-6 label" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "icon-list-tile",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "value": "tile",
+          "label": "Columns",
+          "valueType": "string",
+          "options": [
+            { "name": "5 columns (default)", "value": "tile" }
           ]
         }
       ]

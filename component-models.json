@@ -388,11 +388,29 @@
           },
           {
             "name": "5-columnar / Tiles",
-            "value": "cols-5 tile"
+            "value": "tile"
           },
           {
             "name": "6-columnar / Label",
             "value": "cols-6 label"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "icon-list-tile",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "tile",
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "5 columns (default)",
+            "value": "tile"
           }
         ]
       }
