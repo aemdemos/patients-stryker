@@ -337,6 +337,24 @@
               ]
             }
           }
+        },
+        {
+          "title": "Video",
+          "id": "video",
+          "model": "video",
+          "plugins": {
+            "da": {
+              "name": "Video",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "link",
+                  "selector": "a[href]"
+                }
+              ]
+            }
+          }
         }
       ]
     }
