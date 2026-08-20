@@ -21,6 +21,31 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
+// Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
+// addressed with an image sizing preset ($..width..$) or a .gif extension,
+// rather than a video manifest/extension. These must render as <img> (which
+// preserves GIF animation) instead of <video>. Kept separate so genuine DM
+// video handling below is unchanged.
+const DM_IMAGE_PRESET = /\$[^$]*width[^$]*\$/i;
+
+/** Decode a percent-encoded href/src ($..$ presets arrive encoded from anchors). */
+function decodeSrc(src) {
+  try { return decodeURIComponent(src); } catch { return src; }
+}
+
+/**
+ * True when a /is/content/ URL is actually an image (e.g. a GIF) — identified by
+ * an image sizing preset or a .gif extension, and the absence of a video
+ * extension. Used to route these to the image renderer instead of <video>.
+ * @param {string} src the link/media URL
+ * @returns {boolean}
+ */
+function isDMContentImage(src) {
+  if (!DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return false;
+  const decoded = decodeSrc(src);
+  return DM_IMAGE_PRESET.test(decoded) || /\.gif(\?|$)/i.test(decoded);
+}
+
 // hls.js — lazy-loaded only when a DM video needs it (Chrome/Firefox lack native
 // HLS). Pinned version, loaded from jsDelivr on demand. The Subresource
 // Integrity hash pins the exact bytes: the browser refuses to run the script if
@@ -149,6 +174,26 @@ function renderOpenAPI(src, alt, eager) {
 }
 
 /**
+ * Build a <picture> for a Scene7 /is/content/ IMAGE (e.g. an animated GIF).
+ * The original URL is used unchanged so GIF animation is preserved — unlike the
+ * Scene7 renderer, this never forces jpeg/png (which would freeze the animation)
+ * and never rewrites the sizing preset.
+ * @param {string} src the authored image URL
+ * @param {string} alt accessible text
+ * @param {boolean} eager whether to eager-load
+ * @returns {HTMLPictureElement}
+ */
+function renderContentImage(src, alt, eager) {
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  img.loading = eager ? 'eager' : 'lazy';
+  img.alt = alt;
+  img.src = src;
+  picture.append(img);
+  return picture;
+}
+
+/**
  * Best-effort MIME type for a <source>, so the browser can skip unplayable
  * sources. Empty string (Scene7 /is/content/ progressive) lets it sniff.
  */
@@ -260,6 +305,9 @@ export function renderVideo(src, label) {
  * Pick the renderer for a DM URL, or null if it isn't a DM asset.
  */
 function dmRendererFor(src) {
+  // a /is/content/ image (GIF etc.) must be checked before the video branch,
+  // since it shares the /is/content/ path but is not a video
+  if (isDMContentImage(src)) return renderContentImage;
   if (DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return renderVideo;
   if (DM_OPENAPI.test(src)) return renderOpenAPI;
   if (DM_SCENE7.test(src)) return renderScene7;
