@@ -13,6 +13,7 @@ import {
   readBlockConfig,
   toClassName,
   toCamelCase,
+  getMetadata,
 } from './aem.js';
 
 import decorateDMAssets from './dm-support.js';
@@ -357,15 +358,72 @@ export function decorateMain(main) {
 }
 
 /**
+ * Decorates the template.
+ * Loads template-specific CSS and JavaScript modules.
+ * @param {Document} doc The document
+ * @param {string} templateName The template name
+ */
+export async function loadTemplate(doc, templateName) {
+  try {
+    const cssLoaded = new Promise((resolve) => {
+      loadCSS(
+        `${window.hlx.codeBasePath}/templates/${templateName}/${templateName}.css`,
+      )
+        .then(resolve)
+        .catch((err) => {
+          // eslint-disable-next-line no-console
+          console.error(
+            `failed to load css module for ${templateName}`,
+            err.target.href,
+          );
+          resolve();
+        });
+    });
+    const decorationComplete = new Promise((resolve) => {
+      (async () => {
+        try {
+          const mod = await import(
+            `../templates/${templateName}/${templateName}.js`
+          );
+          if (mod.default) {
+            await mod.default(doc);
+          }
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.log(`failed to load module for ${templateName}`, error);
+        }
+        resolve();
+      })();
+    });
+
+    document.body.classList.add(`${templateName}-template`);
+
+    await Promise.all([cssLoaded, decorationComplete]);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(`failed to load template ${templateName}`, error);
+  }
+}
+
+/**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+
+  const templateName = getMetadata('template');
+
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+
+    // Load template if specified in metadata
+    if (templateName) {
+      await loadTemplate(doc, templateName);
+    }
+
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
