@@ -1,20 +1,8 @@
 /*
- * Video block — unified video handling (issue #98).
- *
- * Authoring: a single cell holding a LINK to the video. The block detects the
- * source from the URL and renders the matching player.
- *
- * Source dispatch (see renderFor):
- *   - YouTube (youtube.com / youtu.be / youtube-nocookie.com) → a lightweight
- *     click-to-load nocookie iframe facade (poster + play button) so no heavy
- *     player JS or cookies load until the user presses play.
- *   - Scene7 Dynamic Media (/is/content/) or a video container/manifest
- *     (.mp4/.m3u8/.mpd/.webm/.mov) → a native <video> with controls, delegated
- *     to scripts/dm-support.js (renderVideo, incl. HLS via hls.js). dm-support
- *     still converts bare DM autolinks elsewhere on the page; the block reuses
- *     the same renderer so both authoring styles stay consistent.
- *
- * DOM APIs only (Hard Rule #1). Styling lives in blocks/video/video.css.
+ * Video block. Authored as a single cell holding a link to the video; the block
+ * detects the source from the URL and renders the matching player:
+ *   - YouTube → click-to-load nocookie iframe facade.
+ *   - Dynamic Media / video file → native <video>, via dm-support's renderVideo.
  */
 
 import { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
@@ -40,9 +28,8 @@ function youTubeId(src) {
 }
 
 /**
- * Build a click-to-load YouTube facade for a video id: a 16:9 box with the poster
- * thumbnail + play button; the real player iframe is injected only on click and
- * fills the same box, so there is no layout shift.
+ * Build a click-to-load YouTube facade: a 16:9 box with the poster thumbnail +
+ * play button; the real iframe is injected on click and fills the same box.
  * @param {string} id the 11-char YouTube video id
  * @param {string} label optional accessible label (from link title/text)
  * @returns {HTMLElement}
@@ -51,26 +38,15 @@ function renderYouTube(id, label) {
   const wrapper = document.createElement('div');
   wrapper.className = 'video-embed';
 
-  // poster thumbnail — prefer the native 16:9 maxresdefault (1280×720) so it fills
-  // the 16:9 box crisply; not every video has maxres, so fall back to sddefault
-  // (640×480) then hqdefault (480×360) on load error. The 4:3 fallbacks are cropped
-  // to 16:9 by CSS (object-fit: cover).
+  // poster thumbnail
   const poster = document.createElement('img');
   poster.className = 'video-embed-poster';
   poster.loading = 'lazy';
-  // decorative: always empty alt. The play button ("Play video…") and the "Watch on
-  // YouTube" link already convey purpose, so the poster adds no information — an
-  // empty alt is the correct a11y treatment and avoids echoing the label/URL.
-  poster.alt = '';
-  // intrinsic 16:9 size of maxresdefault; the poster is absolutely positioned (out
-  // of flow) so it can't cause CLS, but explicit dimensions keep the aspect ratio
-  // intrinsic and satisfy the unsized-image lint/audit
+  poster.alt = ''; // decorative — the play button and watch link convey purpose
   poster.width = 1280;
   poster.height = 720;
-  // graceful fallback chain: maxres → sd → hq. Missing sizes fail two ways:
-  // a network error, OR (for maxresdefault) a 200 response carrying a 120×90 grey
-  // placeholder. So advance on either an error event or a suspiciously tiny natural
-  // width once the image has loaded.
+  // fallback chain maxres → sd → hq: advance on a load error, or on the 120×90
+  // grey placeholder YouTube serves (with a 200) for a missing size
   const posterFallbacks = ['sddefault', 'hqdefault'];
   const advance = () => {
     const next = posterFallbacks.shift();
@@ -78,7 +54,6 @@ function renderYouTube(id, label) {
   };
   poster.addEventListener('error', advance);
   poster.addEventListener('load', () => {
-    // 120px wide is YouTube's "not available" placeholder — keep falling back
     if (poster.naturalWidth && poster.naturalWidth <= 120) advance();
   });
   poster.src = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
@@ -88,21 +63,18 @@ function renderYouTube(id, label) {
   button.className = 'video-embed-play';
   button.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
 
+  // load the real player on click
   button.addEventListener('click', () => {
     const iframe = document.createElement('iframe');
     iframe.className = 'video-embed-iframe';
-    // nocookie host + autoplay on click; rel=0 limits related videos
     iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-    // match YouTube's recommended embed attributes; `allow` grants fullscreen so
-    // no separate allowfullscreen attribute is needed
     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
     iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
     iframe.title = label || 'YouTube video player';
     wrapper.replaceChildren(iframe);
   });
 
-  // static "Watch on [YouTube logo]" corner link, mirroring the native player's
-  // chrome — a plain anchor, no data/network cost, opens on YouTube
+  // "Watch on YouTube" corner link
   const watch = document.createElement('a');
   watch.className = 'video-embed-watch';
   watch.href = `https://www.youtube.com/watch?v=${id}`;
@@ -123,8 +95,7 @@ function renderYouTube(id, label) {
 }
 
 /**
- * Pick a renderer for an authored video URL. Returns the rendered element, or
- * null if the URL isn't a video source this block handles yet.
+ * Pick a renderer for an authored video URL, or null if unsupported.
  * @param {string} src the authored video URL
  * @param {string} label optional accessible label
  * @returns {HTMLElement|null}
@@ -134,8 +105,6 @@ function renderFor(src, label) {
     const id = youTubeId(src);
     return id ? renderYouTube(id, label) : null;
   }
-  // Scene7 DM (/is/content/) or a video container/manifest → native <video>,
-  // reusing dm-support's renderVideo (handles HLS/hls.js + optional poster).
   if (isDMVideoSrc(src)) return renderVideo(src, label);
   return null;
 }
@@ -149,11 +118,9 @@ export default function decorate(block) {
   if (!link) return;
 
   const src = link.getAttribute('href');
-  // Derive an accessible label: prefer an explicit title, else custom display
-  // text. A bare autolink's text is the URL itself — never use a URL as the label
-  // (it would leak the href into alt/aria). Compare normalized hrefs, and reject
-  // any text that parses as an http(s) URL, so entity/encoding differences between
-  // textContent and the href attribute can't slip a raw URL through.
+  // accessible label: prefer the link title, else its display text — but never a
+  // bare URL (a plain autolink's text is the URL itself, which shouldn't leak into
+  // alt/aria)
   const text = link.textContent.trim();
   const isUrlText = (() => {
     try { return /^https?:$/.test(new URL(text, window.location.href).protocol) && /^https?:\/\//i.test(text); } catch { return false; }
