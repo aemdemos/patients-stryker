@@ -259,12 +259,51 @@ main > .section.no-cta > .default-content-wrapper h2 {
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
-/* legal page title: the leading h2 in the first section is the page title and
+/* legal page title: the leading h1 in the first section is the page title and
    takes the larger 45px gap to the body (source composed this from heading 15px
-   + title section 30px, kept in one section). Scoped to body.legal (set via the
-   `theme = legal` page metadata) so subheading h2s on other pages are unaffected. */
-body.legal main .section:first-of-type h2:first-child {
+   + title section 30px, kept in one section). The source rendered the title as an
+   h2.component-subheading.border-bottom-gold at 24.5px Futura-bold black with a
+   7px-padded 1px sage underline; import promotes it to <h1>, so re-create that exact
+   look here. Scoped to body.legal (set via the `theme = legal` page metadata) so it
+   never affects h1/h2s on other pages. Placed here (near the other legal rules)
+   for readability; it is more specific than the generic .section h1 rules further
+   down, so silence no-descending-specificity. */
+/* stylelint-disable-next-line no-descending-specificity */
+body.legal main .section:first-of-type h1:first-child {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  padding-bottom: 7px;
   margin-bottom: var(--space-title);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* sage underline matching the source's .component-subheading.border-bottom-gold
+   (1px solid #b2b4ae, 7px gap above the rule). The import strips the class off the
+   title (markdown keeps no classes), so the title's underline is applied directly
+   above; this rule covers any authored content that keeps the border-bottom-gold
+   class in DA/UE. */
+body.legal .border-bottom-gold {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* legal gold sub-section labels: source authored these as standalone
+   span.futura-bold[color:#ffb500] label paragraphs; import promotes each to <h2>.
+   Match the source exactly — Futura-bold gold, 14px / 19.25px line-height, and the
+   15px paragraph rhythm above/below (source label paragraphs had margin 0 0 15px).
+   Scoped to body.legal so h2 headings on other pages keep their own styling.
+   More specific than the .no-cta h2 rule above; silence no-descending-specificity. */
+/* stylelint-disable-next-line no-descending-specificity */
+body.legal main .section h2 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: var(--paragraph-line-height);
+  color: var(--color-accent);
+  margin-top: 0;
+  margin-bottom: var(--space-block);
 }
 
 
@@ -393,6 +432,7 @@ h2 strong em {
   margin-bottom: 40px;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .section.compact h1 {
   margin: 30px 0 10px;
   line-height: 22.26px;
@@ -751,6 +791,7 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 main > .section.no-cta > .default-content-wrapper h1 {
   font-size: 42px;
   margin: 40px 0;
