@@ -23,6 +23,17 @@
           "name": "robots",
           "label": "Robots",
           "description": "Index control via robots"
+        },
+        {
+          "component": "select",
+          "name": "template",
+          "label": "Template",
+          "description": "Page template that controls layout and styling",
+          "value": "",
+          "options": [
+            { "name": "None", "value": "" },
+            { "name": "Treatment Detail", "value": "treatment-detail" }
+          ]
         }
       ]
     }
