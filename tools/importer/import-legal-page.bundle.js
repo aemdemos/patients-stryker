@@ -55,6 +55,14 @@ var CustomImportScript = (() => {
           gold.replaceWith(...[...gold.childNodes]);
         }
       });
+      element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((h) => {
+        if (!h.querySelector('[style*="ffb500" i]')) return;
+        if (h.tagName === "H2") return;
+        const h2 = element.ownerDocument.createElement("h2");
+        [...h.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
+        while (h.firstChild) h2.appendChild(h.firstChild);
+        h.replaceWith(h2);
+      });
       const hasContent = (node) => node.nodeType === 3 ? node.textContent.trim() !== "" : (node.textContent || "").trim() !== "" || !!(node.querySelector && node.querySelector("img, picture"));
       [...element.querySelectorAll("p")].forEach((p) => {
         const goldSpan = p.querySelector('[style*="ffb500" i]');
