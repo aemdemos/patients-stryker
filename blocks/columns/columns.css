@@ -130,6 +130,12 @@
   .columns.columns-icon-grid > div {
     row-gap: var(--space-section);
   }
+
+  /* 4-up: wrap into an even 2x2 grid on tablet, with an inter-row gap so the two
+     rows don't collide (base flex:0 0 50% already gives the 2-up split) */
+  .columns.columns-4-cols > div {
+    row-gap: var(--space-section);
+  }
 }
 
 /* desktop — reference places all columns in a single row at 1024px */
@@ -154,6 +160,17 @@
   .columns.columns-50-50 > div > div,
   .columns.columns-icon-grid > div > div {
     flex: 0 0 50%;
+  }
+
+  /* 4-up: all four cells in a single row at an exact 25% each. Fixed basis (not the
+     base flex:1 1 0%) so columns with differing content/padding stay equal width. */
+  .columns.columns-4-cols > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  .columns.columns-4-cols > div > div {
+    flex: 0 0 25%;
   }
 
   /* 70-30 — an uneven two-column split (wide column left). Fixed flex bases (not
