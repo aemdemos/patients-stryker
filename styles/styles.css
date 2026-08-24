@@ -345,9 +345,19 @@ main ol.footnotes li {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
-main ol.footnotes li > p {
-  margin-bottom:0;
+/* paragraphs that follow the footnotes list (e.g. disclaimer text below citations)
+   share the same small serif typography as the footnotes themselves */
+main ol.footnotes ~ p {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+  font-family: var(--body-font-family);
 }
+
+main ol.footnotes li > p {
+  margin-bottom: 0;
+}
+
+
 
 code,
 pre {
