@@ -1,1 +1,81 @@
 /* add global styles that can be loaded post LCP here */
+
+/* Dynamic Media video (rendered by scripts/dm-support.js).
+   Size the box from a fixed aspect ratio, not from the media's intrinsic size —
+   otherwise the element sizes to the poster before play (e.g. 750x422) then
+   jumps to the video's intrinsic size on play (e.g. 640x360). object-fit:
+   contain fits the whole frame inside the box without cropping (videos aren't
+   guaranteed 16:9). */
+.dm-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  display: block;
+}
+
+/* wrapper positions the play-icon overlay over the video frame */
+.dm-video-wrapper {
+  position: relative;
+}
+
+/* overlay layer is click-through so the native <video> controls stay usable;
+   only the centered play button (below) captures clicks. It fades out while the
+   video is playing and back in when paused/ended (.is-playing on the wrapper). */
+.dm-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.dm-video-wrapper.is-playing .dm-video-overlay {
+  opacity: 0;
+}
+
+/* centered play button — a semi-transparent dark circle (::before) with a white
+   triangle (::after), matching the source's Scene7 viewer overlay. Re-enable
+   pointer events on the button itself so it's clickable within the overlay. */
+.dm-video-play {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: 0;
+  background: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.dm-video-play::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 60%);
+  transition: background 0.15s ease;
+}
+
+.dm-video-play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 0 13px 22px;
+  border-color: transparent transparent transparent var(--color-white);
+
+  /* nudge the triangle right so it looks optically centered in the circle */
+  transform: translateX(3px);
+}
+
+.dm-video-play:hover::before,
+.dm-video-play:focus-visible::before {
+  background: rgb(0 0 0 / 80%);
+}

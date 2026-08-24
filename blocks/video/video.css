@@ -1,0 +1,97 @@
+/* YouTube click-to-load facade: a 16:9 box holding the poster + play button. */
+.video .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-black);
+  overflow: clip;
+}
+
+/* poster fills the box; cover crops the 4:3 fallback thumbnails to 16:9 */
+.video .video-embed-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* transparent click target over the poster; holds the play button (::before/::after) */
+.video .video-embed-play {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* play button: red rounded rectangle (::before) with a white triangle (::after) */
+.video .video-embed-play::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 68px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--color-youtube);
+}
+
+.video .video-embed-play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent var(--color-white);
+}
+
+.video .video-embed-play:hover::before,
+.video .video-embed-play:focus-visible::before {
+  opacity: 0.85;
+}
+
+/* "Watch on YouTube" corner link: a dark pill flush against the bottom-right edge */
+.video .video-embed-watch {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 47px;
+  padding: 0 12px;
+  background: rgb(23 23 23 / 80%);
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
+  color: var(--color-white);
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.video .video-embed-watch:hover {
+  background: rgb(40 40 40 / 90%);
+}
+
+.video .video-embed-watch-logo {
+  width: 72px;
+  height: 16px;
+}
+
+.video .video-embed-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

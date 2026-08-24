@@ -52,8 +52,47 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Full Bleed",
+            "value": "full-bleed"
+          },
+          {
+            "name": "Light Gray",
+            "value": "light-gray"
+          },
+          {
+            "name": "Serif",
+            "value": "serif"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Blue",
+            "value": "blue"
+          },
+          {
+            "name": "Divider",
+            "value": "divider"
+          },
+          {
+            "name": "Spacer",
+            "value": "spacer"
+          },
+          {
+            "name": "Compact",
+            "value": "compact"
           }
         ]
+      },
+      {
+        "component": "reference",
+        "name": "background-image",
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false
       }
     ]
   },
@@ -73,6 +112,36 @@
         "value": "",
         "label": "Content",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Resources",
+            "value": "resources"
+          },
+          {
+            "name": "Brochure",
+            "value": "brochure"
+          },
+          {
+            "name": "Linked",
+            "value": "linked"
+          }
+        ]
       }
     ]
   },
@@ -119,16 +188,40 @@
       {
         "component": "multiselect",
         "name": "classes",
-        "label": "Variant",
+        "label": "Layout",
         "valueType": "string",
         "options": [
           {
-            "name": "Image Top",
-            "value": "image-top"
+            "name": "50-50 Layout",
+            "value": "columns-50-50"
+          },
+          {
+            "name": "70-30 Layout",
+            "value": "columns-70-30"
+          },
+          {
+            "name": "Icon Grid",
+            "value": "columns-icon-grid"
           }
-        ]
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "columns"
+            },
+            2
+          ]
+        }
       }
     ]
+  },
+  {
+    "id": "columns-row",
+    "fields": []
+  },
+  {
+    "id": "columns-cell",
+    "fields": []
   },
   {
     "id": "fragment",
@@ -158,6 +251,18 @@
           {
             "name": "Fullbleed",
             "value": "fullbleed"
+          },
+          {
+            "name": "Band",
+            "value": "band"
+          },
+          {
+            "name": "Banner",
+            "value": "banner"
+          },
+          {
+            "name": "Poster",
+            "value": "poster"
           }
         ]
       },
@@ -182,10 +287,30 @@
         "label": "Mobile Image (optional)",
         "multi": false,
         "condition": {
-          "in": [
-            "fullbleed",
+          "or": [
             {
-              "var": "classes"
+              "in": [
+                "fullbleed",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "banner",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "band",
+                {
+                  "var": "classes"
+                }
+              ]
             }
           ]
         }
@@ -197,10 +322,30 @@
         "label": "Mobile Image Alt",
         "value": "",
         "condition": {
-          "in": [
-            "fullbleed",
+          "or": [
             {
-              "var": "classes"
+              "in": [
+                "fullbleed",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "banner",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "band",
+                {
+                  "var": "classes"
+                }
+              ]
             }
           ]
         }
@@ -214,13 +359,143 @@
     ]
   },
   {
+    "id": "icon-list",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "cols-4",
+        "label": "Layout/Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "4-columnar / Default",
+            "value": "cols-4"
+          },
+          {
+            "name": "5-columnar / Tiles",
+            "value": "tile"
+          },
+          {
+            "name": "6-columnar / Label",
+            "value": "cols-6 label"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "icon-list-tile",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "tile",
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "5 columns (default)",
+            "value": "tile"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "icon-list-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "icon",
+        "label": "Icon",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "iconAlt",
+        "label": "Icon Alt Text",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "panel",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "CTA",
+            "value": "cta"
+          },
+          {
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Gold",
+            "value": "gold"
+          },
+          {
+            "name": "Gray",
+            "value": "gray"
+          },
+          {
+            "name": "Colored Border",
+            "value": "colored-border"
+          },
+          {
+            "name": "Blue",
+            "value": "blue"
+          },
+          {
+            "name": "Wide",
+            "value": "wide"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "panel-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "statistics",
     "fields": [
       {
         "component": "select",
         "name": "classes",
         "value": "",
-        "label": "Columns",
+        "label": "Layout",
         "valueType": "string",
         "options": [
           {
@@ -228,12 +503,16 @@
             "value": "cols-2"
           },
           {
+            "name": "2 columns + count up",
+            "value": "cols-2 count-up"
+          },
+          {
             "name": "3 columns",
             "value": "cols-3"
           },
           {
-            "name": "4 columns",
-            "value": "cols-4"
+            "name": "3 columns + count up",
+            "value": "cols-3 count-up"
           }
         ]
       }
@@ -288,6 +567,17 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Video link",
+        "description": "Paste a video URL. YouTube (youtube.com / youtu.be / youtube-nocookie.com) is supported; it renders behind a click-to-load poster facade."
       }
     ]
   }

@@ -24,8 +24,47 @@
             {
               "name": "Highlight",
               "value": "highlight"
+            },
+            {
+              "name": "Full Bleed",
+              "value": "full-bleed"
+            },
+            {
+              "name": "Light Gray",
+              "value": "light-gray"
+            },
+            {
+              "name": "Serif",
+              "value": "serif"
+            },
+            {
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "name": "Blue",
+              "value": "blue"
+            },
+            {
+              "name": "Divider",
+              "value": "divider"
+            },
+            {
+              "name": "Spacer",
+              "value": "spacer"
+            },
+            {
+              "name": "Compact",
+              "value": "compact"
             }
           ]
+        },
+        {
+          "component": "reference",
+          "name": "background-image",
+          "label": "Background Image",
+          "valueType": "string",
+          "multi": false
         }
       ]
     }
@@ -39,9 +78,13 @@
         "columns",
         "fragment",
         "hero",
+        "icon-list",
+        "icon-list-tile",
         "image",
+        "panel",
         "statistics",
-        "text"
+        "text",
+        "video"
       ]
     }
   ]

@@ -28,12 +28,27 @@ footer .footer ul {
   list-style: none;
 }
 
-/* fixed-width centered separator region (matches the source's 17px pipe column) */
 footer .footer li:not(:last-child)::after {
   content: "|";
   display: inline-block;
   width: 17px;
   text-align: center;
+}
+
+@media (width >= 1024px) {
+  /* drop the trailing pipe at this breakpoint... */
+  footer .footer li:not(:last-child)::after {
+    content: none;
+  }
+
+  footer .footer li:not(:first-child) {
+    margin-left: 7px;
+  }
+
+  footer .footer li:not(:first-child)::before {
+    content: "|";
+    padding-right: 5px;
+  }
 }
 
 footer .footer a {

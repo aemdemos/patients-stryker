@@ -100,6 +100,7 @@
           "filter": "cards",
           "plugins": {
             "da": {
+              "name": "cards",
               "rows": 1,
               "columns": 2
             }
@@ -111,6 +112,7 @@
           "model": "card",
           "plugins": {
             "da": {
+              "name": "card",
               "rows": 1,
               "columns": 2,
               "fields": [
@@ -215,6 +217,89 @@
           }
         },
         {
+          "title": "Icon List",
+          "id": "icon-list",
+          "model": "icon-list",
+          "filter": "icon-list",
+          "plugins": {
+            "da": {
+              "name": "icon-list",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Icon List (tile)",
+          "id": "icon-list-tile",
+          "model": "icon-list-tile",
+          "filter": "icon-list",
+          "plugins": {
+            "da": {
+              "name": "Icon List (tile)",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Icon List Item",
+          "id": "icon-list-item",
+          "model": "icon-list-item",
+          "plugins": {
+            "da": {
+              "name": "icon-list-item",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "icon",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "iconAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Panel",
+          "id": "panel",
+          "model": "panel",
+          "filter": "panel",
+          "plugins": {
+            "da": {
+              "name": "panel",
+              "rows": 1,
+              "columns": 1
+            }
+          }
+        },
+        {
+          "title": "Panel Item",
+          "id": "panel-item",
+          "model": "panel-item",
+          "plugins": {
+            "da": {
+              "name": "panel-item",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(1)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Statistics",
           "id": "statistics",
           "model": "statistics",
@@ -248,6 +333,24 @@
                 {
                   "name": "description",
                   "selector": "div:nth-child(3)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Video",
+          "id": "video",
+          "model": "video",
+          "plugins": {
+            "da": {
+              "name": "Video",
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "link",
+                  "selector": "a[href]"
                 }
               ]
             }

@@ -10,9 +10,12 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  readBlockConfig,
+  toClassName,
+  toCamelCase,
 } from './aem.js';
 
-import decorateDMImages from './dm-support.js';
+import decorateDMAssets from './dm-support.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -150,11 +153,8 @@ function decorateButtons(main) {
 }
 
 /**
- * Turns citation superscripts into links that navigate to the matching footnote.
- * Source pattern: body text carries `<sup>N</sup>` markers (e.g. "12,13") and the
- * page ends with an ordered list of citations. Each list item N gets an id
- * `fn-N`, and every numeric superscript is rewritten so its number(s) link to the
- * corresponding footnote (multi-number sups like "12,13" become two links).
+ * Turns citation superscripts into links to their matching footnotes.
+ * Supports multi-number citations like `12,13`.
  * @param {HTMLElement} main The main container element
  */
 function decorateFootnotes(main) {
@@ -200,16 +200,162 @@ function decorateFootnotes(main) {
 }
 
 /**
+ * Prepends a decorative `<img class="section-background-image">` to the section
+ * (matches the source's inline background image, not a CSS background). Opt-in
+ * blocks like icon-list position and layer it; inert for other sections.
+ * @param {Element} section the `.section` element
+ * @param {string} url the authored background image URL
+ */
+function applySectionBackgroundImage(section, url) {
+  if (!section || !url || section.querySelector(':scope > .section-background-image')) return;
+  const img = document.createElement('img');
+  img.className = 'section-background-image';
+  img.src = url;
+  img.alt = '';
+  img.setAttribute('aria-hidden', 'true');
+  // eager, not lazy: when absolutely positioned this box is zero-area until it
+  // loads, so Chromium's lazy heuristic reads it as off-screen and never fetches.
+  // It's decorative and out of flow, so eager loading is safe (no CLS).
+  img.loading = 'eager';
+  section.prepend(img);
+}
+
+/**
+ * Applies section metadata: `Style` → CSS classes, `Background Image` → a
+ * decorative <img> layer, other keys → `data-*`. Handles the `.section-metadata`
+ * table and the published-DA `data-background-image` form.
+ * @param {Element} main The main container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll('.section .section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    if (!section) return;
+    const config = readBlockConfig(meta);
+    Object.entries(config).forEach(([key, value]) => {
+      if (key === 'style') {
+        const styles = (Array.isArray(value) ? value : value.split(','))
+          .map((s) => toClassName(s.trim()))
+          .filter((s) => s);
+        styles.forEach((s) => section.classList.add(s));
+      } else if (key === 'background-image') {
+        applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
+      } else {
+        section.dataset[toCamelCase(key)] = value;
+      }
+    });
+    // remove the metadata block (and its section wrapper) so it is neither
+    // rendered nor picked up by decorateBlocks as a loadable block.
+    (meta.closest('.section-metadata-wrapper') || meta).remove();
+  });
+
+  // published DA content exposes the value as data-background-image, not a table
+  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
+    applySectionBackgroundImage(section, section.dataset.backgroundImage);
+  });
+}
+
+/**
+ * Removes CTA links/buttons from sections styled with `no-cta`.
+ * Runs after fragment content loads so hidden CTAs are removed from the DOM.
+ * @param {Element} scope The container to clean
+ */
+export function removeCtas(scope) {
+  scope.querySelectorAll('.button-wrapper').forEach((wrapper) => {
+    const cta = wrapper.querySelector('a.button');
+    if (!cta) return;
+    const href = cta.getAttribute('href');
+
+    // Move the CTA PDF link onto the card image before removing the button.
+    // This keeps brochure cards clickable on `no-cta` sections.
+    const card = wrapper.closest('li') || wrapper.closest('.cards-card-image, .cards-card-body')?.parentElement;
+    const image = card && card.querySelector('.cards-card-image picture, .cards-card-image img');
+    if (href && image && !image.closest('a')) {
+      const picture = image.closest('picture') || image;
+      const holder = picture.closest('.cards-card-image') || picture.parentElement;
+      const a = document.createElement('a');
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      picture.replaceWith(a);
+      a.append(picture);
+      // keep the click target obvious for the whole image cell
+      if (holder) holder.style.cursor = 'pointer';
+    }
+
+    wrapper.remove();
+  });
+}
+
+/**
+ * Merges multiple `.cards` blocks in a section into one grid.
+ * Preserves the first block's variant classes and removes empty extras.
+ * @param {Element} section The section to consolidate
+ */
+export function mergeSectionCards(section) {
+  const cardsBlocks = [...section.querySelectorAll('.cards')];
+  if (cardsBlocks.length < 2) return;
+
+  const first = cardsBlocks[0];
+  const targetList = first.querySelector(':scope > ul');
+  if (!targetList) return;
+
+  cardsBlocks.slice(1).forEach((block) => {
+    block.querySelectorAll(':scope > ul > li').forEach((li) => targetList.append(li));
+    // remove the emptied cards block and its now-empty fragment/section wrappers
+    const fragmentRoot = block.closest('.fragment-wrapper') || block.closest('.fragment') || block;
+    fragmentRoot.remove();
+  });
+}
+
+/* Normalizes a pathname for comparison against query-index paths */
+function normalizePath(path) {
+  const clean = path.replace(/\.html$/, '').replace(/\/+$/, '');
+  return clean || '/';
+}
+
+/* Appends a "Last Modified" line to the end of the page. */
+async function decorateLastModified(main) {
+  try {
+    const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
+    if (!resp.ok) return;
+    const { data = [] } = await resp.json();
+    const current = normalizePath(window.location.pathname);
+    const row = data.find((r) => normalizePath(r.path) === current);
+    const ts = row && Number(row.lastModified);
+    if (!ts) return;
+
+    const date = new Date(ts * 1000);
+    const formatted = date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+    }).replace(' ', '/');
+
+    const section = document.createElement('div');
+    section.className = 'section last-modified-section';
+    const wrapper = document.createElement('div');
+    const p = document.createElement('p');
+    p.className = 'last-modified';
+    p.textContent = `Last Updated ${formatted}`;
+    wrapper.append(p);
+    section.append(wrapper);
+    main.append(section);
+  } catch (e) {
+    // do nothing — the last-modified line is non-critical
+  }
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // convert external Dynamic Media image links into optimized <picture>
-  decorateDMImages(main);
+  // convert external Dynamic Media asset links into native <picture>/<video>
+  decorateDMAssets(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
   decorateFootnotes(main);
@@ -248,6 +394,8 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+
+  decorateLastModified(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;

@@ -13,7 +13,8 @@ function foldMobileSource(desktopPic, mobilePic) {
   if (!mobileSrcset) return;
 
   const mobileMediaSource = document.createElement('source');
-  mobileMediaSource.media = '(max-width: 899px)';
+  // serve the mobile asset below the 840px desktop crossover (matches source)
+  mobileMediaSource.media = '(max-width: 839px)';
   mobileMediaSource.srcset = mobileSrcset;
   if (mobileSource && mobileSource.type) mobileMediaSource.type = mobileSource.type;
   desktopPic.prepend(mobileMediaSource);
@@ -88,8 +89,10 @@ export default function decorate(block) {
   setupHero(block);
 
   // Fullbleed variant: split the two-tone headline (lead sentence in light serif,
-  // remainder in Futura bold via an accent span).
-  if (block.classList.contains('fullbleed')) {
+  // remainder in Futura bold via an accent span). The poster modifier keeps the
+  // headline as a single serif style (matches the stroke-awareness banner), so
+  // skip the split there.
+  if (block.classList.contains('fullbleed') && !block.classList.contains('poster')) {
     const h1 = block.querySelector('h1');
     if (h1 && (h1.childElementCount === 0
       || (h1.childElementCount === 1 && h1.querySelector(':scope > strong')))) {

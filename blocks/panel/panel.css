@@ -1,0 +1,361 @@
+/*
+ * panel — the source "dimensional-box" (patients.stryker.com).
+ * Default styling measured from the Zip Skin Closure homepage: a white box with
+ * a soft drop shadow, centered heading + body copy, ~30px padding. The `cta`
+ * variant (IVS homepage) is left-aligned with a Futura-bold heading and a gold
+ * "LEARN MORE" button below the box.
+ */
+.panel > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.panel > ul > li {
+  margin: 0;
+}
+
+.panel .panel-body {
+  margin: 10px;
+  padding: 3%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+/* left variant: left-align the panel content  */
+.panel.left .panel-body {
+  text-align: left;
+}
+
+.panel .panel-body p {
+  margin: 0;
+  font-size: var(--panel-body-size);
+  line-height: var(--panel-body-line-height);
+}
+
+/* cta paragraphs containing bold+italic (the gold-label marker) */
+.panel .panel-body p:has(strong em),
+.panel .panel-body p:has(em strong),
+.panel .panel-body p:has(b i),
+.panel .panel-body p:has(i b) {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-body-size-s);
+  line-height: var(--panel-body-line-height);
+  font-family: var(--heading-font-family);
+}
+
+.panel.gold .panel-body p {
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+}
+
+.panel.cta .panel-body p,
+.panel.light .panel-body p,
+.panel.colored-border .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
+/* bold + italic body text → gold accent  */
+.panel .panel-body strong em,
+.panel .panel-body em strong,
+.panel .panel-body b i,
+.panel .panel-body i b {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+
+/* ---- cta variant */
+.panel.cta > ul > li,
+.panel.light > ul > li,
+.panel.blue > ul > li,
+.panel.colored-border > ul > li {
+  margin: 0;
+}
+
+.panel.cta .panel-body,
+.panel.light .panel-body,
+.panel.colored-border .panel-body {
+  max-width: none;
+  margin: 0;
+  padding: 5%;
+  text-align: left;
+}
+
+.panel .panel-body h3 {
+  max-width: var(--panel-heading-max-width);
+  margin: 0 auto 30px;
+  font-family: var(--display-font-family);
+  font-size: var(--panel-heading-size);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* left variant: heading is full-width and left-aligned (no centered cap) */
+.panel.left .panel-body h3 {
+  max-width: none;
+  margin: 0 0 30px;
+}
+
+
+.panel:not(.dark) .panel-body h3 em,
+.panel:not(.dark) .panel-body h3 i {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.panel.cta .panel-body h3,
+.panel.light .panel-body h3,
+.panel.colored-border .panel-body h3 {
+  /* cta heading is left-aligned and full width (no cap) */
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-cta-heading-size);
+}
+
+.panel.cta .panel-cta {
+  margin-top: 10px;
+}
+
+.panel.colored-border a:any-link {
+  text-decoration: none;
+}
+
+/* Universal Editor fallback */
+.panel.cta a:any-link:has(em),
+.panel.cta a:any-link:has(strong) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+
+/* the authored em/strong nested inside that button must not re-italicize or
+   recolor the label (declared after the button rule to keep specificity order) */
+.panel.cta a:any-link:has(em) em,
+.panel.cta a:any-link:has(strong) strong {
+  font-style: normal;
+  color: inherit;
+}
+
+/* ---- dark variant (IVS condition sections, left column) -------------- */
+.panel.dark .panel-body {
+  padding: 22.5px;
+  background: var(--panel-dark-gradient);
+  box-shadow: none;
+  text-align: left;
+  color: var(--color-white);
+}
+
+.panel.dark .panel-body h3 {
+  /* left-aligned, full width (no cap); gold serif heading */
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.panel.dark .panel-body p {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  margin: 0 0 var(--space-block);
+}
+
+
+.panel.gray .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-body-line-height-m);
+}
+
+.panel.colored-border .panel-body p {
+  font-family: var(--body-font-family);
+}
+
+.panel.blue .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
+}
+
+.panel .panel-body p:last-child {
+  margin: 0 0 var(--space-block);
+}
+
+.panel .panel-body p:last-child:has(strong em),
+.panel .panel-body p:last-child:has(em strong),
+.panel .panel-body p:last-child:has(b i),
+.panel .panel-body p:last-child:has(i b) {
+  margin: 0;
+}
+
+.panel.colored-border .panel-body p:first-of-type {
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+
+}
+
+.fragment .panel.gray .panel-body p {
+  font-size: var(--panel-fragment-font-size);
+  line-height: var(--panel-fragment-line-height);
+}
+
+/* ---- gold variant */
+.panel.gold .panel-body {
+  padding: 22.5px;
+  background: var(--color-accent);
+  box-shadow: none;
+  text-align: center;
+}
+
+/* ---- gray variant  */
+.panel.gray .panel-body {
+  padding: 2%;
+  background: var(--color-surface);
+  box-shadow: none;
+  text-align: left;
+  margin:0;
+}
+
+/* ---- blue variant (Zip skin-closure callouts) ------------------------ */
+.panel.blue .panel-body {
+  max-width: none;
+  margin: 0;
+  padding: 4%;
+  background: var(--color-navy-bright);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  flex: 1;
+}
+
+.panel.blue > ul {
+  gap:0;
+} 
+
+.panel.blue > ul > li,
+.panel.blue.panel-authoring > div {
+  display: flex;
+}
+
+.panel.blue .panel-body p:first-child {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.panel.gray .panel-body h3 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size-xs);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* fragment-context override */
+.fragment .panel.gray .panel-body h3{
+  font-size:var(--panel-fragment-font-size);
+}
+
+/* ---- colored-border variant */
+.panel.colored-border .panel-body {
+  background: var(--color-surface);
+  box-shadow: none;
+  border-top: var(--panel-colored-border-width) solid var(--color-accent);
+}
+
+.panel.colored-border > ul > li:last-child .panel-body,
+.panel.colored-border.panel-authoring > div:last-child .panel-body {
+  border-top-color: var(--color-purple);
+}
+
+/* Universal Editor authoring view */
+.panel.panel-authoring {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (width >= 480px){
+  .panel.gray .panel-body h3 {
+    font-size: var(--panel-heading-size-s);
+  }
+
+  .fragment .panel.gray .panel-body h3{
+  font-size:var(--panel-heading-size-xs);
+}
+
+.panel.colored-border .panel-body {
+  border-top: var(--panel-colored-border-width-tablet) solid var(--color-accent);
+}
+}
+
+@media (width >= 841px) {
+  .panel.cta > ul,
+  .panel.dark > ul,
+  .panel.light > ul,
+  .panel.blue > ul,
+  .panel.colored-border > ul,
+  .panel.cta.panel-authoring,
+  .panel.dark.panel-authoring,
+  .panel.light.panel-authoring,
+  .panel.blue.panel-authoring,
+  .panel.colored-border.panel-authoring {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* wide variant */
+  .panel.wide > ul,
+  .panel.wide.panel-authoring {
+    grid-template-columns: 1fr;
+  }
+
+  .panel.wide .panel-body p {
+    font-size: var(--panel-body-size-s);
+    font-family: var(--heading-font-family);
+  }
+
+    .panel.wide .panel-body h3 {
+      font-weight: 700;
+      font-family: var(--display-font-family);
+    }
+
+    .panel.colored-border .panel-body {
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (width >= 1024px) {
+.panel.colored-border .panel-body {
+  border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
+}
+}

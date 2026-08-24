@@ -13,9 +13,13 @@
       "columns",
       "fragment",
       "hero",
+      "icon-list",
+      "icon-list-tile",
       "image",
+      "panel",
       "statistics",
-      "text"
+      "text",
+      "video"
     ]
   },
   {
@@ -48,9 +52,25 @@
     ]
   },
   {
+    "id": "icon-list",
+    "components": [
+      "icon-list-item"
+    ]
+  },
+  {
+    "id": "panel",
+    "components": [
+      "panel-item"
+    ]
+  },
+  {
     "id": "statistics",
     "components": [
       "statistic"
     ]
+  },
+  {
+    "id": "video",
+    "components": []
   }
 ]
