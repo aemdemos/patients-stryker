@@ -115,10 +115,27 @@ function withParams(src, params) {
 }
 
 /**
+ * Append a single `key=value` pair to a URL's query string verbatim, without
+ * parsing/re-serializing the rest of it. Scene7 preset flags (e.g.
+ * `$max_width_png$`, a bare key with no `=`) get corrupted by a `URL`/
+ * `URLSearchParams` round trip — `$` is percent-encoded to `%24` and the
+ * valueless key is normalized to `key=`. A plain string append leaves the
+ * authored query string untouched.
+ * @param {string} src base image URL
+ * @param {string} key param name
+ * @param {string} value param value
+ * @returns {string} the URL string with the param appended
+ */
+function appendParam(src, key, value) {
+  const sep = src.includes('?') ? '&' : '?';
+  return `${src}${sep}${key}=${value}`;
+}
+
+/**
  * Build a <picture> for a Scene7 / classic DM URL, using the authored URL
  * unchanged so the asset renders exactly as linked (no forced resizing/format).
  * The one exception: a transparent asset (a `$..._png$` preset or an explicit
- * `fmt=png`) gets `fmt=png-alpha` added — Scene7's default delivery format
+ * `fmt=png`) gets `fmt=png-alpha` appended — Scene7's default delivery format
  * otherwise flattens transparency to a white background.
  */
 function renderScene7(src, alt, eager) {
@@ -127,7 +144,7 @@ function renderScene7(src, alt, eager) {
   let decoded = src;
   try { decoded = decodeURIComponent(src); } catch { /* leave as-is on bad escape */ }
   const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decoded);
-  const finalSrc = png ? withParams(src, { fmt: 'png-alpha' }) : src;
+  const finalSrc = png ? appendParam(src, 'fmt', 'png-alpha') : src;
   const picture = document.createElement('picture');
   const img = document.createElement('img');
   img.loading = eager ? 'eager' : 'lazy';
