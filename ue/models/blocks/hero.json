@@ -51,8 +51,7 @@
         {
           "component": "aem-content",
           "name": "desktopImage",
-          "label": "Desktop Image (Dynamic Media link)",
-          "description": "Paste the direct Dynamic Media (Scene7) image URL. Do not upload from DAM."
+          "label": "Desktop Image (Dynamic Media link)"
         },
         {
           "component": "text",
@@ -65,7 +64,6 @@
           "component": "aem-content",
           "name": "mobileImage",
           "label": "Mobile Image (Dynamic Media link, optional)",
-          "description": "Paste the direct Dynamic Media (Scene7) image URL for small screens. Do not upload from DAM.",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
             { "in": ["banner", { "var": "classes" }] },
