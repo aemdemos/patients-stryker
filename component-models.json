@@ -588,6 +588,30 @@
     ]
   },
   {
+    "id": "tabs",
+    "fields": []
+  },
+  {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "text",
+        "name": "label",
+        "value": "",
+        "label": "Tab Label",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Content",
+        "valueType": "string",
+        "description": "Reference one or more card fragments (e.g. /fragments/card-mild) or author content directly."
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {
