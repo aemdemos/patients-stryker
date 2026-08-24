@@ -23,8 +23,8 @@
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "image", "selector": "div:nth-child(1) a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1) a[title]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -54,11 +54,9 @@
       "id": "card",
       "fields": [
         {
-          "component": "reference",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "image",
-          "label": "Image",
-          "multi": false
+          "label": "Image (Dynamic Media link)"
         },
         {
           "component": "text",
