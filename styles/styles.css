@@ -112,8 +112,7 @@
 
   /* page-title gap to body — measured from source: heading margin-bottom (15px)
      + title section margin-bottom (30px) = 45px, kept in one section here */
-  --space-title: 45px;
-  /* icon-list block — measured from source ("Stroke facts") */
+  --space-title: 45px; /* icon-list block — measured from source ("Stroke facts") */
   --icon-list-icon-width: 165px;     /* icon rendered width */
   --icon-list-icon-gap: 13px;        /* icon → caption gap (mobile); source uses 9px at desktop */
   --icon-list-title-gap: clamp(25px, 15px + 3.55vw, 75px); /* title → icon-row gap; fluid to track source (≈28px mobile → 67px @1440 → 71px @1600) */
@@ -235,14 +234,29 @@ h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
-/* section subheading — measured from source .component-subheading.border-bottom-gold:
-   Futura Bold, 24.5px, with a 1px sage rule underneath (7px gap). Applies to every
-   h2 site-wide; keeps the default --space-block (15px) bottom margin. */
-/* section subheading — Futura Bold */
 h2 {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xl);
   font-weight: 700;
+}
+
+.columns > div > div h2:not(:has(em, strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top: 30px;
+}
+
+/* category heading above a card group — sage underline separating each group,
+   matching the source's .component-subheading.border-bottom-gold. Scoped to
+   `.section.no-cta` (the card-group sections on the resources page) so it can't
+   affect h2s anywhere else. */
+main > .section.no-cta > .default-content-wrapper h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* legal page title: the leading h2 in the first section is the page title and
@@ -251,15 +265,8 @@ h2 {
    `theme = legal` page metadata) so subheading h2s on other pages are unaffected. */
 body.legal main .section:first-of-type h2:first-child {
   margin-bottom: var(--space-title);
-/* stat-lede subheading (ENT condition pages, e.g. "Affects 31 million adults…"):
-   a plain h2 (no gold em/strong marker) sitting beside the gold h1 in the title
-   columns. The source renders it in the light serif heading face, not Futura-bold,
-   so the emphasis reads title-bold + subhead-light. Scoped to the columns title
-   context and to h2s WITHOUT the gold marker, so section-heading h2s are untouched. */
-.columns > div > div h2:not(:has(em, strong)) {
-  font-family: var(--heading-font-family);
-  font-weight: 500;
 }
+
 
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
    h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
@@ -284,15 +291,7 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
-/* bold inline text — Futura, matching the source's dominant span.futura-bold
-   treatment (e.g. "Send mail to:", "Send email to:"). Note: the import flattens
-   the source's .futura-bold wrapper and bare <b> into a single <strong>, so the
-   one bare-<b> body-serif label ("Updates to Privacy Statement") cannot be told
-   apart in CSS; Futura is used since it is the common case. */
-/* bold inline text — the source renders ordinary <b>/<strong> in the body slab
-   face, just heavier (HumanistSlab712W01 bold, 11.2–14px). Only set weight here so
-   bold body copy inherits the body font; Futura is reserved for headings (see the
-   heading rules above and the heading-scoped override below). */
+/* bold inline text — Futura, matching the source's dominant span.futura-bold treatment  */
 strong,
 b {
   font-weight: 700;
@@ -359,6 +358,8 @@ sup {
   vertical-align: baseline;
 }
 
+
+
 /* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
    small body-serif text (11.2px), tight line-height, decimal numbering, 20px indent.
    scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
@@ -397,10 +398,6 @@ h2 strong em {
   line-height: 22.26px;
 }
 
-.section.compact h2 {
-  font-size: var(--heading-font-size-compact);
-  margin-top: 30px;
-}
 
 .section.compact p {
   font-size: var(--footnote-font-size);
@@ -760,14 +757,6 @@ main > .section.no-cta > .default-content-wrapper h1 {
   font-family: var(--display-font-family-bold);
 }
 
-/* category heading above a card group — sage underline separating each group,
-   matching the source's .component-subheading.border-bottom-gold. Scoped to
-   `.section.no-cta` (the card-group sections on the resources page) so it can't
-   affect h2s anywhere else. */
-main > .section.no-cta > .default-content-wrapper h2 {
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--color-surface-muted);
-}
 
 /* full-bleed section — the background spans the full viewport width while the
    inner content stays capped at the container max-width and centred. In EDS the
