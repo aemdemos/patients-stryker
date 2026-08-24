@@ -1,0 +1,66 @@
+{
+  "definitions": [
+    {
+      "title": "Tabs",
+      "id": "tabs",
+      "model": "tabs",
+      "filter": "tabs",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Tab",
+      "id": "tab",
+      "model": "tab",
+      "plugins": {
+        "da": {
+          "name": "tab",
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "label", "selector": "div:nth-child(1)" },
+            { "name": "content", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "tabs",
+      "fields": []
+    },
+    {
+      "id": "tab",
+      "fields": [
+        {
+          "component": "text",
+          "name": "label",
+          "value": "",
+          "label": "Tab Label",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "content",
+          "value": "",
+          "label": "Content",
+          "valueType": "string",
+          "description": "Reference one or more card fragments (e.g. /fragments/card-mild) or author content directly."
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "tabs",
+      "components": [
+        "tab"
+      ]
+    }
+  ]
+}

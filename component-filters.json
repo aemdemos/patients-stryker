@@ -18,6 +18,7 @@
       "image",
       "panel",
       "statistics",
+      "tabs",
       "text",
       "video"
     ]
@@ -67,6 +68,12 @@
     "id": "statistics",
     "components": [
       "statistic"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tab"
     ]
   },
   {
