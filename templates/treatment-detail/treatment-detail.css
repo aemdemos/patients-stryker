@@ -1,0 +1,35 @@
+/*
+ * Treatment Detail template — page-level scaffolding only.
+ *
+ * Every zone (intro, benefit panel, how-it-works, resources) is one of the
+ * project's EXISTING blocks (columns, panel, cards), which carry their own
+ * styling. This file only adds light template-level rhythm/accents scoped to
+ * `body.treatment-detail-template` (set by loadTemplate in scripts.js) using
+ * this project's :root design tokens — no new blocks, no hardcoded values.
+ */
+
+/* intro hook heading — the leading columns block */
+body.treatment-detail main > .section:has(.columns) h3 {
+  color: var(--color-primary);
+  font-family: var(--display-font-family);
+}
+
+/* "How it works" / "Resources" section headings — centre the step heading and
+   keep the resources heading's sage underline consistent with the source. */
+body.treatment-detail main > .section > .default-content-wrapper h3 {
+  color: var(--color-primary);
+  font-family: var(--display-font-family);
+  text-align: center;
+}
+
+body.treatment-detail main > .section > .default-content-wrapper h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* benefit panel band — tighten the gap above/below a full-bleed panel so the
+   callout reads as a distinct interruption of the article flow */
+body.treatment-detail main > .section.treatment-panel-section {
+  margin-block: var(--space-section);
+}
+
