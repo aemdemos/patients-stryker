@@ -22,6 +22,18 @@
         "name": "robots",
         "label": "Robots",
         "description": "Index control via robots"
+      },
+      {
+        "component": "aem-content",
+        "name": "nav",
+        "label": "Header",
+        "description": "Header document for this page. Leave empty to use the path rules in metadata.xlsx, or the site default (/nav)."
+      },
+      {
+        "component": "aem-content",
+        "name": "footer",
+        "label": "Footer",
+        "description": "Footer document for this page. Leave empty to use the path rules in metadata.xlsx, or the site default (/footer)."
       }
     ]
   },

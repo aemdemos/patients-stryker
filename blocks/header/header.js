@@ -60,6 +60,7 @@ function toggleMenu(nav, forceExpanded = null) {
  * `<span class="icon icon-search">`; we also accept the raw token as a fallback.
  * Form controls are built here (not authored in the fragment) per the nav contract.
  * @param {Element} tools The nav-tools section
+ * @returns {boolean} true if a search form was built (a `:search:` token was present)
  */
 function buildSearch(tools) {
   // prefer the EDS-decorated search icon; fall back to the raw :search: token
@@ -67,7 +68,7 @@ function buildSearch(tools) {
   const tokenP = iconSpan
     ? iconSpan.closest('p')
     : [...tools.querySelectorAll('p')].find((p) => p.textContent.trim() === ':search:');
-  if (!tokenP) return;
+  if (!tokenP) return false;
   const form = document.createElement('form');
   form.className = 'nav-search';
   form.setAttribute('role', 'search');
@@ -88,6 +89,7 @@ function buildSearch(tools) {
 
   form.append(input, submit);
   tokenP.replaceWith(form);
+  return true;
 }
 
 /**
@@ -126,7 +128,10 @@ export default async function decorate(block) {
 
   // Tools: build the search form from the :search: token
   const navTools = nav.querySelector('.nav-tools');
-  if (navTools) buildSearch(navTools);
+  // search is opt-in per fragment (via the :search: token); when absent, the
+  // mobile magnifier/panel below are skipped too, so a search-less nav (e.g. the
+  // root header) has no search at any breakpoint
+  const hasSearch = navTools ? buildSearch(navTools) : false;
 
   // Group the gold nav (links + Stryker.com) into one drawer that can slide in
   // from the left on mobile. On desktop `.nav-drawer` uses display:contents so
@@ -138,38 +143,42 @@ export default async function decorate(block) {
   if (navTools) navDrawer.append(navTools);
   nav.append(navDrawer);
 
-  // mobile search panel — a full-width gray band below the header holding the
-  // search input, revealed by the magnifier toggle (overlays content, no push).
-  const searchPanel = document.createElement('div');
-  searchPanel.className = 'nav-search-panel';
-  const panelForm = document.createElement('form');
-  panelForm.className = 'nav-search-panel-form';
-  panelForm.setAttribute('role', 'search');
-  panelForm.action = SEARCH_ACTION;
-  panelForm.method = 'get';
-  const panelInput = document.createElement('input');
-  panelInput.type = 'search';
-  panelInput.name = 'q';
-  panelInput.className = 'nav-search-panel-input';
-  panelInput.placeholder = 'Search this site';
-  panelInput.setAttribute('aria-label', 'Search this site');
-  panelForm.append(panelInput);
-  searchPanel.append(panelForm);
+  // mobile search panel + toggle (magnifier) — only when the nav has search.
+  // A full-width gray band below the header holding the search input, revealed by
+  // the magnifier toggle (overlays content, no push).
+  let searchPanel = null;
+  let searchToggle = null;
+  if (hasSearch) {
+    searchPanel = document.createElement('div');
+    searchPanel.className = 'nav-search-panel';
+    const panelForm = document.createElement('form');
+    panelForm.className = 'nav-search-panel-form';
+    panelForm.setAttribute('role', 'search');
+    panelForm.action = SEARCH_ACTION;
+    panelForm.method = 'get';
+    const panelInput = document.createElement('input');
+    panelInput.type = 'search';
+    panelInput.name = 'q';
+    panelInput.className = 'nav-search-panel-input';
+    panelInput.placeholder = 'Search this site';
+    panelInput.setAttribute('aria-label', 'Search this site');
+    panelForm.append(panelInput);
+    searchPanel.append(panelForm);
 
-  // mobile search toggle (magnifier) — mirrors the source's mobile search icon
-  const searchToggle = document.createElement('button');
-  searchToggle.type = 'button';
-  searchToggle.className = 'nav-search-toggle';
-  searchToggle.setAttribute('aria-label', 'Toggle search');
-  searchToggle.addEventListener('click', () => {
-    const open = nav.getAttribute('data-search') === 'open';
-    nav.setAttribute('data-search', open ? 'closed' : 'open');
-    if (!open) {
-      // opening search — collapse the hamburger menu if it is open
-      if (nav.getAttribute('aria-expanded') === 'true') toggleMenu(nav, false);
-      panelInput.focus();
-    }
-  });
+    searchToggle = document.createElement('button');
+    searchToggle.type = 'button';
+    searchToggle.className = 'nav-search-toggle';
+    searchToggle.setAttribute('aria-label', 'Toggle search');
+    searchToggle.addEventListener('click', () => {
+      const open = nav.getAttribute('data-search') === 'open';
+      nav.setAttribute('data-search', open ? 'closed' : 'open');
+      if (!open) {
+        // opening search — collapse the hamburger menu if it is open
+        if (nav.getAttribute('aria-expanded') === 'true') toggleMenu(nav, false);
+        panelInput.focus();
+      }
+    });
+  }
 
   // hamburger for mobile
   const hamburger = document.createElement('div');
@@ -190,10 +199,11 @@ export default async function decorate(block) {
   // append hamburger before the search toggle so keyboard Tab order matches the
   // visual left-to-right order (hamburger left, magnifier right); the mobile CSS
   // `order` values keep the visual placement regardless of DOM order
-  nav.append(hamburger, searchToggle, searchPanel);
+  nav.append(hamburger);
+  if (searchToggle) nav.append(searchToggle, searchPanel);
   // collapsed by default; on desktop the sections are always shown via CSS
   nav.setAttribute('aria-expanded', 'false');
-  nav.setAttribute('data-search', 'closed');
+  if (hasSearch) nav.setAttribute('data-search', 'closed');
 
   // on breakpoint change, reset any open mobile menu — but suppress the drawer
   // slide animation so it doesn't briefly animate closed while crossing 900px
