@@ -239,36 +239,39 @@ function loadHlsJs() {
 }
 
 /**
- * Attach an HLS source to a <video>: native playback where supported (Safari/
- * iOS), otherwise hls.js. Falls back to a plain <source> if hls.js is
- * unavailable so at least native-HLS browsers still work.
+ * Attach an HLS source to a <video>.
+ *
+ * Prefer hls.js (software demux + JS-controlled ABR) wherever it's supported —
+ * including Safari/iOS, which also has native HLS. Native HLS on macOS Safari
+ * hands decoding to VideoToolbox, which can hard-fail on certain Scene7
+ * renditions (PIPELINE_ERROR_DECODE / VTDecompressionOutputCallback -12909),
+ * stalling playback a few seconds in; hls.js decodes in software and avoids that
+ * path. Native HLS is kept only as the fallback for browsers where hls.js can't
+ * run (e.g. older iOS Safari, which lacks Media Source Extensions).
  * @param {HTMLVideoElement} video
  * @param {string} src an .m3u8 URL
  */
 function attachHls(video, src) {
-  if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = src;
-    return;
-  }
   loadHlsJs().then((Hls) => {
     if (Hls && Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(src);
       hls.attachMedia(video);
-    } else {
-      video.src = src; // last resort — lets native-HLS UAs still try
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // no MSE / hls.js unavailable — fall back to the browser's native HLS
+      video.src = src;
     }
   });
 }
 
 /**
- * Build a native <video> for a DM / streaming video URL.
- * An optional poster frame is supported via a `poster` query param on the
- * authored URL (its value is a poster image URL); it is applied to the
+ * Build a native <video> (wrapped with a centered play-icon overlay) for a DM /
+ * streaming video URL. An optional poster frame is supported via a `poster` query
+ * param on the authored URL (its value is a poster image URL); it is applied to the
  * <video poster> and stripped from the media source.
  * @param {string} src the authored video URL
  * @param {string} label optional accessible label (from link title)
- * @returns {HTMLVideoElement}
+ * @returns {HTMLElement} a wrapper div containing the <video> and the play overlay
  */
 export function renderVideo(src, label) {
   const url = new URL(src, window.location.href);
@@ -298,7 +301,32 @@ export function renderVideo(src, label) {
     if (type) source.type = type;
     video.append(source);
   }
-  return video;
+
+  // wrap the video with a centered play-icon overlay (with or without a poster):
+  // it sits over the frame before playback and fades out/in as the video is
+  // played/paused, mirroring the source's Scene7 viewer. The overlay layer itself
+  // is click-through (pointer-events:none) so the native controls stay usable; only
+  // the centered button captures clicks. Styling lives in styles/lazy-styles.css.
+  const wrapper = document.createElement('div');
+  wrapper.className = 'dm-video-wrapper';
+
+  const overlay = document.createElement('div');
+  overlay.className = 'dm-video-overlay';
+  const play = document.createElement('button');
+  play.type = 'button';
+  play.className = 'dm-video-play';
+  play.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
+  play.addEventListener('click', () => { video.play(); });
+  overlay.append(play);
+
+  // toggle the overlay from the video's own state, so it also responds when the
+  // user plays/pauses via the native controls or keyboard
+  video.addEventListener('play', () => wrapper.classList.add('is-playing'));
+  video.addEventListener('pause', () => wrapper.classList.remove('is-playing'));
+  video.addEventListener('ended', () => wrapper.classList.remove('is-playing'));
+
+  wrapper.append(video, overlay);
+  return wrapper;
 }
 
 /**

@@ -1,6 +1,4 @@
-/* Video block — YouTube click-to-load facade (issue #98). A 16:9 box holds the
-   poster thumbnail + play button; on click the real iframe replaces them and
-   fills the same box, so there is no layout shift. */
+/* YouTube click-to-load facade: a 16:9 box holding the poster + play button. */
 .video .video-embed {
   position: relative;
   width: 100%;
@@ -9,14 +7,12 @@
   overflow: clip;
 }
 
-/* poster fills the box; object-fit:cover crops the 4:3 hqdefault thumbnail's
-   baked-in letterbox (top/bottom black bars fall outside a 16:9 crop) */
+/* poster fills the box; cover crops the 4:3 fallback thumbnails to 16:9 */
 .video .video-embed-poster {
   position: absolute;
   inset: 0;
   width: 100%;
-  aspect-ratio: 16 / 9; /* size the img box from its width to match the 16:9
-                           container; cover then crops the 4:3 source's letterbox */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
 }
@@ -31,8 +27,7 @@
   cursor: pointer;
 }
 
-/* YouTube-style play button: a red rounded rectangle (::before) with a centered
-   white triangle (::after), matching the reference's native player button. */
+/* play button: red rounded rectangle (::before) with a white triangle (::after) */
 .video .video-embed-play::before {
   content: "";
   position: absolute;
@@ -56,28 +51,22 @@
   border-color: transparent transparent transparent var(--color-white);
 }
 
-/* brighten the button slightly on hover/focus */
 .video .video-embed-play:hover::before,
 .video .video-embed-play:focus-visible::before {
   opacity: 0.85;
 }
 
-/* "Watch on [YouTube logo]" corner link, mirroring the native player's chrome:
-   a solid dark pill flush against the bottom-right edge (dimensions from
-   YouTube's own ytp-impression-link CSS). Sits above the full-box play button so
-   it stays independently clickable. */
+/* "Watch on YouTube" corner link: a dark pill flush against the bottom-right edge */
 .video .video-embed-watch {
   position: absolute;
   right: 0;
   bottom: 5px;
   display: flex;
-  align-items: center; /* vertically centre the wordmark with "Watch on" */
+  align-items: center;
   gap: 9px;
   height: 47px;
   padding: 0 12px;
   background: rgb(23 23 23 / 80%);
-
-  /* rounded on the left only — the pill is flush against the box's right edge */
   border-top-left-radius: var(--radius-sm);
   border-bottom-left-radius: var(--radius-sm);
   color: var(--color-white);
@@ -85,18 +74,15 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 16px;
-  white-space: nowrap; /* keep "Watch on" + logo on one line */
-  text-decoration: none; /* override the global link underline */
+  white-space: nowrap;
+  text-decoration: none;
   transition: background 0.15s ease;
 }
 
-/* subtle dark-pill hover — slightly lighten so the control reads as interactive */
 .video .video-embed-watch:hover {
   background: rgb(40 40 40 / 90%);
 }
 
-/* scope to .video-embed so this beats any generic `img { height: auto }` rule
-   (equal-ish specificity otherwise collapses the SVG to 0 height) */
 .video .video-embed-watch-logo {
   width: 72px;
   height: 16px;
