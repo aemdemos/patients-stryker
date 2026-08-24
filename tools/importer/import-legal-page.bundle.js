@@ -46,6 +46,46 @@ var CustomImportScript = (() => {
   function transform(hookName, element, payload) {
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
+      const BLACK_RE = /color:\s*(#000000|#000\b|black|rgb\(0,\s*0,\s*0\))/i;
+      element.querySelectorAll('[style*="ffb500" i]').forEach((gold) => {
+        const goldText = gold.textContent.replace(/ /g, " ").trim();
+        if (!goldText) return;
+        const blackInner = [...gold.querySelectorAll('[style*="000" i]')].find((b) => BLACK_RE.test(b.getAttribute("style") || ""));
+        if (blackInner && blackInner.textContent.replace(/ /g, " ").trim() === goldText) {
+          gold.replaceWith(...[...gold.childNodes]);
+        }
+      });
+      const hasContent = (node) => node.nodeType === 3 ? node.textContent.trim() !== "" : (node.textContent || "").trim() !== "" || !!(node.querySelector && node.querySelector("img, picture"));
+      [...element.querySelectorAll("p")].forEach((p) => {
+        const goldSpan = p.querySelector('[style*="ffb500" i]');
+        if (!goldSpan) return;
+        let labelNode = goldSpan;
+        while (labelNode.parentElement && labelNode.parentElement !== p) {
+          labelNode = labelNode.parentElement;
+        }
+        let first = p.firstChild;
+        while (first && first.nodeType === 3 && !first.textContent.trim()) first = first.nextSibling;
+        if (first !== labelNode) return;
+        const labelText = goldSpan.textContent.replace(/ /g, " ").trim();
+        if (!labelText) return;
+        const h2 = element.ownerDocument.createElement("h2");
+        h2.textContent = labelText;
+        let cursor = labelNode.nextSibling;
+        while (cursor && cursor.nodeType === 3 && !cursor.textContent.trim()) cursor = cursor.nextSibling;
+        if (cursor && cursor.nodeType === 1 && cursor.tagName === "BR") cursor = cursor.nextSibling;
+        const bodyNodes = [];
+        while (cursor) {
+          bodyNodes.push(cursor);
+          cursor = cursor.nextSibling;
+        }
+        if (bodyNodes.some(hasContent)) {
+          const bodyP = element.ownerDocument.createElement("p");
+          bodyNodes.forEach((n) => bodyP.appendChild(n));
+          p.replaceWith(h2, bodyP);
+        } else {
+          p.replaceWith(h2);
+        }
+      });
       element.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
         const text = span.textContent.replace(/ /g, " ").trim();
         if (!text) return;
@@ -120,12 +160,13 @@ var CustomImportScript = (() => {
       element.querySelectorAll("p").forEach((p) => {
         if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
       });
-      element.querySelectorAll("h1").forEach((h1) => {
-        const h2 = element.ownerDocument.createElement("h2");
-        [...h1.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
-        while (h1.firstChild) h2.appendChild(h1.firstChild);
-        h1.replaceWith(h2);
-      });
+      const firstHeading = element.querySelector("h1, h2, h3, h4, h5, h6");
+      if (firstHeading && firstHeading.tagName !== "H1") {
+        const h1 = element.ownerDocument.createElement("h1");
+        [...firstHeading.attributes].forEach((attr) => h1.setAttribute(attr.name, attr.value));
+        while (firstHeading.firstChild) h1.appendChild(firstHeading.firstChild);
+        firstHeading.replaceWith(h1);
+      }
     }
   }
 
@@ -135,9 +176,46 @@ var CustomImportScript = (() => {
   ];
   var PAGE_TEMPLATE = {
     name: "legal-page",
-    description: "Legal long-form text page: single heading, paragraphs, and bulleted lists in a narrow reading column. All default content, no blocks.",
+    description: "Legal long-form text page: an <h1> title, gold sub-section labels promoted to <h2>, plus paragraphs and bulleted lists in a narrow reading column. All default content, no blocks. Shared by every /legal/ page across all site roots (us, ww, ent, stroke-awareness, zip-skin-closure).",
     urls: [
-      "https://patients.stryker.com/us/en/legal/consumer-health-privacy.html"
+      "https://patients.stryker.com/us/en/ent/legal/website-accessibility.html",
+      "https://patients.stryker.com/us/en/ent/legal/privacy/privacy-notice-for-california-residents.html",
+      "https://patients.stryker.com/us/en/ent/legal/privacy.html",
+      "https://patients.stryker.com/us/en/ent/legal/consumer-health-privacy.html",
+      "https://patients.stryker.com/us/en/ent/legal/cookie-disclaimer.html",
+      "https://patients.stryker.com/us/en/ent/legal/surgeon-disclaimer.html",
+      "https://patients.stryker.com/us/en/ent/legal/ent-risk-and-safety-information-for-patients.html",
+      "https://patients.stryker.com/us/en/ent/legal/terms-of-use.html",
+      "https://patients.stryker.com/us/en/legal/consumer-health-privacy.html",
+      "https://patients.stryker.com/us/en/legal/privacy/privacy-notice-for-california-residents.html",
+      "https://patients.stryker.com/us/en/legal/privacy.html",
+      "https://patients.stryker.com/us/en/legal/cookie-disclaimer.html",
+      "https://patients.stryker.com/us/en/legal/website-accessibility.html",
+      "https://patients.stryker.com/us/en/legal/terms-of-use.html",
+      "https://patients.stryker.com/ww/en/legal/website-accessibility.html",
+      "https://patients.stryker.com/ww/en/legal/privacy/privacy-notice-for-california-residents.html",
+      "https://patients.stryker.com/ww/en/legal/privacy.html",
+      "https://patients.stryker.com/ww/en/legal/consumer-health-privacy.html",
+      "https://patients.stryker.com/ww/en/legal/cookie-disclaimer.html",
+      "https://patients.stryker.com/ww/en/legal/terms-of-use.html",
+      "https://patients.stryker.com/ww/en/stroke-awareness/legal/website-accessibility.html",
+      "https://patients.stryker.com/ww/en/stroke-awareness/legal/privacy/privacy-notice-for-california-residents.html",
+      "https://patients.stryker.com/ww/en/stroke-awareness/legal/privacy.html",
+      "https://patients.stryker.com/ww/en/stroke-awareness/legal/consumer-health-privacy.html",
+      "https://patients.stryker.com/ww/en/stroke-awareness/legal/cookie-disclaimer.html",
+      "https://patients.stryker.com/ww/en/stroke-awareness/legal/terms-of-use.html",
+      "https://patients.stryker.com/us/en/zip-skin-closure/legal/website-accessibility.html",
+      "https://patients.stryker.com/us/en/zip-skin-closure/legal/privacy.html",
+      "https://patients.stryker.com/us/en/zip-skin-closure/legal/terms-of-use.html",
+      "https://patients.stryker.com/us/en/zip-skin-closure/legal/consumer-health-privacy.html",
+      "https://patients.stryker.com/us/en/zip-skin-closure/legal/cookie-disclaimer.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/legal/website-accessibility.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/legal/privacy.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/legal/consumer-health-privacy.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/legal/cookie-disclaimer.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/legal/terms-of-use.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/legal/privacy/privacy-notice-for-california-residents.html",
+      "https://patients.stryker.com/us/en/zip-skin-closure/legal/privacy/privacy-notice-for-california-residents.html"
     ],
     blocks: []
   };

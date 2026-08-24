@@ -528,6 +528,16 @@ sup a:any-link {
   text-decoration: none;
 }
 
+/* legal pages render in-content links as plain teal text with NO underline
+   (source: .c-rich-text-editor a → text-decoration: none, #4c7d7a). The global
+   a:any-link rule underlines links, so remove it on legal pages. Scoped to
+   body.legal so links elsewhere keep their underline. Placed after the base link
+   rules to keep cascade order (no-descending-specificity). */
+/* stylelint-disable-next-line no-descending-specificity */
+body.legal main a:any-link {
+  text-decoration: none;
+}
+
 /* buttons */
 p.button-wrapper {
   margin: 12px 0;
