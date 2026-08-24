@@ -271,11 +271,12 @@ main > .section.no-cta > .default-content-wrapper h2 {
 /* stylelint-disable-next-line no-descending-specificity */
 body.legal main .section:first-of-type h1:first-child {
   font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-xl);
+  font-size: var(--heading-font-size-l);
   font-weight: 700;
   color: var(--color-text);
   padding-bottom: 7px;
   margin-bottom: var(--space-title);
+  margin-top: 10px;
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
@@ -298,7 +299,7 @@ body.legal .border-bottom-gold {
 /* stylelint-disable-next-line no-descending-specificity */
 body.legal main .section h2 {
   font-family: var(--display-font-family-bold);
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-l);
   font-weight: 700;
   line-height: var(--paragraph-line-height);
   color: var(--color-accent);
@@ -443,7 +444,7 @@ h2 strong em {
   font-size: var(--footnote-font-size);
 }
 
-@media (width >= 480px) {
+@media (width >= 600px) {
   .section.compact h2 {
     font-size: var(--heading-font-size-compact-m);
     margin-top: 30px;
@@ -452,6 +453,10 @@ h2 strong em {
   h2 em strong,
   h2 strong em {
     font-size: var(--heading-font-size-compact-m);
+  }
+
+  body.legal main .section:first-of-type h1:first-child {
+    font-size: var(--heading-font-size-xl);
   }
 }
 
@@ -522,6 +527,16 @@ sup a:any-link {
   text-decoration: none;
 }
 
+b a:any-link,
+a:any-link:has(strong),
+a:any-link:has(b) {
+  font-family: var(--display-font-family);
+}
+
+body.legal strong a:any-link {
+  font-family: var(--display-font-family);
+}
+
 /* compact section links (e.g. reference URLs) are plain, not underlined — matches
    the source's dense footer. Placed after the base link rules to keep cascade order. */
 .section.compact a:any-link {
@@ -537,6 +552,7 @@ sup a:any-link {
 body.legal main a:any-link {
   text-decoration: none;
 }
+
 
 /* buttons */
 p.button-wrapper {
