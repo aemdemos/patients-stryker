@@ -378,18 +378,6 @@ h2 strong em {
   font-size: var(--footnote-font-size);
 }
 
-@media (width >= 480px) {
-  .section.compact h2 {
-    font-size: var(--heading-font-size-compact-m);
-    margin-top: 30px;
-  }
-
-  h2 em strong,
-  h2 strong em {
-    font-size: var(--heading-font-size-compact-m);
-  }
-}
-
 /* the source stacks the disclaimer/trademark block flush (0 gap) — only the
    References label and the citation list carry the 15px gap. Our authored copy is
    all <p> (each with the global 15px margin-bottom), so zero the margin on every
@@ -631,7 +619,7 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
-@media (width >= 841px) {
+@media (width >= 600px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
   }
@@ -654,7 +642,7 @@ main > .section.wide > div {
    Reading order = source order, so the first authored wrapper sits on the left.
    The section itself is the flex container (its wrappers are the direct children);
    empty wrappers (e.g. the consumed section-metadata) collapse to zero via :empty. */
-@media (width >= 1024px) {
+@media (width >= 900px) {
   main > .section.flex {
     display: flex;
     align-items: center;

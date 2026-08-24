@@ -172,12 +172,6 @@
   line-height: var(--heading-line-height);
 }
 
-@media (width >= 480px) {
-  .hero.banner h2 {
-    font-size: var(--heading-font-size-xl);
-  }
-}
-
 /* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
 .hero.banner .button-wrapper {
   margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
@@ -195,8 +189,8 @@
   margin-inline-start: 10px;
 }
 
-/* desktop — copy overlays the image, vertically centered (crossover at 840px) */
-@media (width >= 840px) {
+/* desktop — copy overlays the image, vertically centered (crossover at 600px) */
+@media (width >= 600px) {
   .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
@@ -229,18 +223,23 @@
   }
 }
 
-/* cap the fluid headline at 1439px */
-@media (width >= 1439px) {
+/* cap the fluid headline at 1200px (3.5vw of 1200) */
+@media (width >= 1200px) {
   .hero.banner h1 {
-    font-size: 49px;
+    font-size: 42px;
   }
 }
 
-@media (width >= 840px) {
+@media (width >= 600px) {
   .hero {
     padding: 40px 32px;
   }
+}
 
+/* desktop — fullbleed switches to a side-column overlay on a wide-crop image.
+   Below this the fullbleed copy keeps its mobile treatment (full-width overlay,
+   7vw/3vw text on the portrait image), so 600–900px matches the <600px view. */
+@media (width >= 900px) {
   .hero.fullbleed > div:last-child {
     align-self: center;
     max-width: 45%;
@@ -264,14 +263,14 @@
   }
 }
 
-/* cap the fluid sizes at 1439px */
-@media (width >= 1439px) {
+/* cap the fluid sizes at 1200px (3.5vw / 1.5vw of 1200) */
+@media (width >= 1200px) {
   .hero.fullbleed h1 {
-    font-size: 49px;
+    font-size: 42px;
   }
 
   .hero.fullbleed p {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 
@@ -321,8 +320,8 @@
   line-height: 1.2;
 }
 
-/* desktop — source drops the headline to 4vw and insets the copy 12% at 840px */
-@media (width >= 840px) {
+/* desktop — source drops the headline to 4vw and insets the copy 12% at 600px */
+@media (width >= 600px) {
   .hero.band > div:last-child {
     padding-inline: 12%;
   }
@@ -332,10 +331,10 @@
   }
 }
 
-/* source caps the headline at 56px (reached ~1400px) */
-@media (width >= 1400px) {
+/* cap the headline at 1200px (4vw of 1200) */
+@media (width >= 1200px) {
   .hero.band h1 {
-    font-size: 56px;
+    font-size: 48px;
   }
 }
 
@@ -378,7 +377,7 @@
 
 /* desktop — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
    the block ~4% down (≈12% of the 480px band) and insets it 10vw from the left. */
-@media (width >= 840px) {
+@media (width >= 600px) {
   .hero.fullbleed.poster img {
     aspect-ratio: 3 / 1;
     object-fit: cover;
@@ -403,13 +402,13 @@
   }
 }
 
-/* source caps the fluid sizes at large widths (headline 70px, copy 21px) */
-@media (width >= 1440px) {
+/* cap the fluid sizes at 1200px (5vw / 1.5vw of 1200) */
+@media (width >= 1200px) {
   .hero.fullbleed.poster h1 {
-    font-size: 70px;
+    font-size: 60px;
   }
 
   .hero.fullbleed.poster p {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
