@@ -32,6 +32,7 @@
   --color-navy-bright: #1c5687;
   --color-purple: #85458a;
   --color-success: #32ae88;
+  --color-youtube: #f00; /* YouTube play-button red (video block facade) */
 
   /* neutrals & surfaces */
   --color-white: #fff;
@@ -82,7 +83,8 @@
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
-  --heading-font-size-compact: 16.8px; /* compact section heading (measured) */
+  --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
+  --heading-font-size-compact-m: 19.6px; /* compact section h2 ≥600px (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -116,6 +118,27 @@
   --icon-list-bg-padding: clamp(23px, 2px + 2.5vw, 48px); /* heading offset into the map band; fluid to track source (≈27px @1000 → 42px @1600) */
   --icon-list-title-size: 31.5px;    /* heading: source 1.5em x 21px h3 */
   --icon-list-title-size-s: 26.25px; /* heading below 480px: 1.5em x 17.5px */
+
+  /* icon-list (tile) variant — measured from source ("risk factors of a stroke") */
+  --icon-list-tile-icon-width: 200px; /* icon rendered width (200x170, ratio 20/17) */
+  --icon-list-tile-caption-size: 17.5px; /* caption — source Futura-bold 1.25em (1.25 x 14) */
+  --icon-list-tile-icon-gap: 34px;    /* icon → caption gap (source: spacer paragraph ≈ 34px) */
+  --icon-list-tile-caption-gap: 24px; /* caption → next row gap (source: trailing spacer paragraph) */
+  --icon-list-tile-row-gap: 30px;     /* vertical gap between tile rows */
+  --icon-list-tile-col-gap: 30px;     /* horizontal gap between tiles at every breakpoint */
+  --icon-list-tile-grid-width: 83.333%;        /* 5 tiles span the middle 10 of 12 source columns */
+  --icon-list-tile-grid-width-cols-4: 66.667%; /* 4 tiles span the middle 8 of 12 source columns */
+  --icon-list-tile-title-gap: 15px;   /* heading → intro gap (source margin) */
+  --icon-list-tile-intro-gap: 49px;   /* intro → lead-in and lead-in → grid (source: 15px margin + spacer paragraph) */
+
+  /* icon-list (label) variant — measured from source ("Symptoms of a stroke") */
+  --icon-list-label-icon-width: 151px;  /* portrait icon rendered width (151x166) */
+  --icon-list-label-size: 24.5px;       /* bold label: source .fontsize-1-75em (1.75 x 14) */
+  --icon-list-label-caption-size: 17.5px; /* caption below label — source URWEgyptienne 17.5px */
+  --icon-list-label-caption-gap: 15px;  /* label → caption gap */
+  --icon-list-label-col-gap: 12px;      /* gap between label columns */
+  --icon-list-label-icon-gap: 0px;      /* icon → label gap (source: 0; visual space is baked into the PNG) */
+  --icon-list-label-title-gap: 49px;    /* heading → intro-copy gap (source: 15px margin + spacer paragraph ≈ 49px) */
 
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
@@ -171,14 +194,6 @@ header {
   height: var(--nav-height);
 }
 
-/* reserve the desktop two-row header height (white bar + gold nav bar) here in
-   eager CSS so the space is held before the lazy header block loads, preventing
-   content from shifting down on load (CLS) */
-@media (width >= 900px) {
-  header {
-    height: calc(var(--nav-height) + var(--nav-bar-height));
-  }
-}
 
 header .header,
 footer .footer {
@@ -217,6 +232,16 @@ h2 {
   font-weight: 700;
 }
 
+/* stat-lede subheading (ENT condition pages, e.g. "Affects 31 million adults…"):
+   a plain h2 (no gold em/strong marker) sitting beside the gold h1 in the title
+   columns. The source renders it in the light serif heading face, not Futura-bold,
+   so the emphasis reads title-bold + subhead-light. Scoped to the columns title
+   context and to h2s WITHOUT the gold marker, so section-heading h2s are untouched. */
+.columns > div > div h2:not(:has(em, strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
    h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
 h4,
@@ -240,11 +265,23 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
-/* bold inline text — measured from source span.futura-bold: Futura Bold, not the body serif */
+/* bold inline text — the source renders ordinary <b>/<strong> in the body slab
+   face, just heavier (HumanistSlab712W01 bold, 11.2–14px). Only set weight here so
+   bold body copy inherits the body font; Futura is reserved for headings (see the
+   heading rules above and the heading-scoped override below). */
 strong,
 b {
-  font-family: var(--display-font-family);
   font-weight: 700;
+  font-family: var(--display-font-family);
+}
+
+/* bold inside a heading keeps the display face — this is what paints the gold H1
+   (<h1><em><strong>) and any bold marker in h2/h3 in Futura, matching the source's
+   Futura-bold headings without leaking Futura into bold body text. */
+h1 :is(strong, b),
+h2 :is(strong, b),
+h3 :is(strong, b) {
+  font-family: var(--display-font-family);
 }
 
 /* Gold headlines — the source renders its main headings in the gold accent
@@ -267,17 +304,30 @@ h3 em strong {
   color: var(--color-accent);
 }
 
+h2 em strong,
+h2 strong em {
+    font-size: var(--heading-font-size-compact);
+}
+
+
 /* lists — measured source indent (padding-left 17px) */
 ol,
 ul {
   padding-left: var(--list-indent);
 }
 
-/* citation superscripts — measured from source: raised, small; the link inside
-   inherits the global teal link color + hover, so only sizing is set here. */
+/* citation superscripts — measured from source: small (75%) and only slightly
+   raised. The browser default `vertical-align: super` shifts the marker up by a full
+   super-step, which reads as an oversized, prominent digit and inflates the line box;
+   the source keeps it tight to the baseline. Use a small relative raise instead so the
+   marker stays subtle and doesn't affect line-height. The link inside inherits the
+   global teal link color + hover, so only sizing/position is set here. */
 sup {
+  position: relative;
+  top: -0.4em;
   font-size: 75%;
   line-height: 0;
+  vertical-align: baseline;
 }
 
 /* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
@@ -287,6 +337,7 @@ main ol.footnotes {
   padding-left: var(--list-indent);
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
+  margin: 0 0 30px;
 }
 
 main ol.footnotes li {
@@ -294,9 +345,18 @@ main ol.footnotes li {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
-main ol.footnotes li > p {
-  margin-bottom:0;
+/* paragraphs that follow the footnotes list (e.g. disclaimer text below citations)
+   share the same small serif typography as the footnotes themselves */
+main ol.footnotes ~ p {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+  font-family: var(--body-font-family);
 }
+
+main ol.footnotes li > p {
+  margin-bottom: 0;
+}
+
 
 
 code,
@@ -319,6 +379,12 @@ button {
   font: inherit;
 }
 
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
 /* links */
 a:any-link {
   color: var(--link-color);
@@ -326,20 +392,17 @@ a:any-link {
   overflow-wrap: break-word;
 }
 
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  text-decoration: none;
-}
-
-/* bold and bold+italic links are not underlined (italic-only links still are).
-   Covers both nesting directions: <strong>/<b> wrapping the link, and the link
-   wrapping <strong>/<b>. */
+/* bold and bold+italic links are not underlined */
 strong a:any-link,
 b a:any-link,
 a:any-link:has(strong),
 a:any-link:has(b) {
   text-decoration: none;
+}
+
+.section.compact a:any-link {
+  text-decoration: none;
+  font-family: var(--display-font-family);
 }
 
 /* bold + underline authored link → flat inline CTA: uppercase Futura-bold text in
@@ -526,7 +589,11 @@ main > .section {
   margin: 0 0 var(--space-section);
 }
 
+
 main > .section > div {
+  box-sizing: border-box; /* the source's .container caps its OUTER box at 1410px with the
+                             15px gutter inside it (content = 1380px); border-box matches
+                             that so our content isn't 30px wider than the source */
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -538,36 +605,77 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
-@media (width >= 841px) {
-  main .last-modified {
-    font-size: var(--body-font-size-s);
-  }
-}
-
-.section.compact {
-  margin-bottom:40px;
-}
 
 .section.compact h1 {
-  margin: 58px 0 10px;
+  margin: 30px 0 10px;
   line-height: 22.26px;
 }
 
 .section.compact h2 {
   font-size: var(--heading-font-size-compact);
+  margin-top:30px;
 }
 
-.section.compact p {
-  font-size: var(--footnote-font-size);
+
+/* flex section — lays the section's content WRAPPERS side by side at 50/50 on
+   desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
+   Block-agnostic (issue #98's section-flex direction): each authored unit becomes
+   its own wrapper (`.default-content-wrapper`, `.<block>-wrapper`), so e.g. a text
+   block sits beside a video without coupling the layout to a specific block.
+   Reading order = source order, so the first authored wrapper sits on the left.
+   The section itself is the flex container (its wrappers are the direct children);
+   empty wrappers (e.g. the consumed section-metadata) collapse to zero via :empty. */
+@media (width >= 1024px) {
+  main > .section.flex {
+    display: flex;
+    align-items: center;
+    gap: var(--container-gutter);
+
+    /* the section itself is the flex row, so cap/centre/gutter it the same way a
+       normal section's inner > div is capped — otherwise the row spans the full
+       viewport instead of aligning with the other sections' content width.
+       border-box keeps the gutter inside the 1410px cap, matching the source. */
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  main > .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0; /* allow shrink below content width instead of overflowing */
+  }
+
+  main > .section.flex > div:empty {
+    display: none; /* drop the emptied section-metadata wrapper from the flex row */
+  }
 }
 
-/* section width variants */
-main > .section.narrow > div {
-  max-width: var(--container-narrow);
+/* divider section —  */
+main > .section.divider {
+  position: relative;
+  padding-top: var(--space-section);
 }
 
-main > .section.wide > div {
-  max-width: var(--container-wide);
+main > .section.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw; /* pull the 100vw bar back to the true viewport edge, ignoring the section's cap */
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* spacer section  */
+main > .section.spacer {
+  margin: 0;
+  padding: 0;
+  height: var(--space-section);
+}
+
+main > .section.spacer > div {
+  display: none;
 }
 
 /* section metadata */
@@ -634,12 +742,6 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
   padding-top: calc(var(--space-section) * 2);
 }
 
-/* first (title + intro + image) section — sage rule beneath it, matching the
-   source's .c-page-hero-content.border-bottom-gold 1px divider */
-main > .section:first-child > .default-content-wrapper {
-  padding-bottom: var(--space-section);
-}
-
 /* audience note above the fullbleed hero */
 main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child {
   margin-top: var(--space-section);
@@ -658,8 +760,39 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
+/* section width variants */
+main > .section.narrow > div {
+  max-width: var(--container-narrow);
+}
+
+main > .section.wide > div {
+  max-width: var(--container-wide);
+}
+
+@media (width >= 600px) {
+    .section.compact h2 {
+  font-size: var(--heading-font-size-compact-m);
+  margin-top:30px;
+}
+
+h2 em strong,
+h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
+}
+
+  main .last-modified {
+    font-size: var(--body-font-size-s);
+  }
+}
+
+
 @media (width >= 900px) {
+    header {
+    height: calc(var(--nav-height) + var(--nav-bar-height));
+  }
+  
   main > .section > div {
+    box-sizing: border-box;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
