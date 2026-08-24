@@ -21,6 +21,31 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
+// Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
+// addressed with an image sizing preset ($..width..$) or a .gif extension,
+// rather than a video manifest/extension. These must render as <img> (which
+// preserves GIF animation) instead of <video>. Kept separate so genuine DM
+// video handling below is unchanged.
+const DM_IMAGE_PRESET = /\$[^$]*width[^$]*\$/i;
+
+/** Decode a percent-encoded href/src ($..$ presets arrive encoded from anchors). */
+function decodeSrc(src) {
+  try { return decodeURIComponent(src); } catch { return src; }
+}
+
+/**
+ * True when a /is/content/ URL is actually an image (e.g. a GIF) — identified by
+ * an image sizing preset or a .gif extension, and the absence of a video
+ * extension. Used to route these to the image renderer instead of <video>.
+ * @param {string} src the link/media URL
+ * @returns {boolean}
+ */
+function isDMContentImage(src) {
+  if (!DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return false;
+  const decoded = decodeSrc(src);
+  return DM_IMAGE_PRESET.test(decoded) || /\.gif(\?|$)/i.test(decoded);
+}
+
 // hls.js — lazy-loaded only when a DM video needs it (Chrome/Firefox lack native
 // HLS). Pinned version, loaded from jsDelivr on demand. The Subresource
 // Integrity hash pins the exact bytes: the browser refuses to run the script if
@@ -149,6 +174,26 @@ function renderOpenAPI(src, alt, eager) {
 }
 
 /**
+ * Build a <picture> for a Scene7 /is/content/ IMAGE (e.g. an animated GIF).
+ * The original URL is used unchanged so GIF animation is preserved — unlike the
+ * Scene7 renderer, this never forces jpeg/png (which would freeze the animation)
+ * and never rewrites the sizing preset.
+ * @param {string} src the authored image URL
+ * @param {string} alt accessible text
+ * @param {boolean} eager whether to eager-load
+ * @returns {HTMLPictureElement}
+ */
+function renderContentImage(src, alt, eager) {
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  img.loading = eager ? 'eager' : 'lazy';
+  img.alt = alt;
+  img.src = src;
+  picture.append(img);
+  return picture;
+}
+
+/**
  * Best-effort MIME type for a <source>, so the browser can skip unplayable
  * sources. Empty string (Scene7 /is/content/ progressive) lets it sniff.
  */
@@ -194,36 +239,39 @@ function loadHlsJs() {
 }
 
 /**
- * Attach an HLS source to a <video>: native playback where supported (Safari/
- * iOS), otherwise hls.js. Falls back to a plain <source> if hls.js is
- * unavailable so at least native-HLS browsers still work.
+ * Attach an HLS source to a <video>.
+ *
+ * Prefer hls.js (software demux + JS-controlled ABR) wherever it's supported —
+ * including Safari/iOS, which also has native HLS. Native HLS on macOS Safari
+ * hands decoding to VideoToolbox, which can hard-fail on certain Scene7
+ * renditions (PIPELINE_ERROR_DECODE / VTDecompressionOutputCallback -12909),
+ * stalling playback a few seconds in; hls.js decodes in software and avoids that
+ * path. Native HLS is kept only as the fallback for browsers where hls.js can't
+ * run (e.g. older iOS Safari, which lacks Media Source Extensions).
  * @param {HTMLVideoElement} video
  * @param {string} src an .m3u8 URL
  */
 function attachHls(video, src) {
-  if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = src;
-    return;
-  }
   loadHlsJs().then((Hls) => {
     if (Hls && Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(src);
       hls.attachMedia(video);
-    } else {
-      video.src = src; // last resort — lets native-HLS UAs still try
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // no MSE / hls.js unavailable — fall back to the browser's native HLS
+      video.src = src;
     }
   });
 }
 
 /**
- * Build a native <video> for a DM / streaming video URL.
- * An optional poster frame is supported via a `poster` query param on the
- * authored URL (its value is a poster image URL); it is applied to the
+ * Build a native <video> (wrapped with a centered play-icon overlay) for a DM /
+ * streaming video URL. An optional poster frame is supported via a `poster` query
+ * param on the authored URL (its value is a poster image URL); it is applied to the
  * <video poster> and stripped from the media source.
  * @param {string} src the authored video URL
  * @param {string} label optional accessible label (from link title)
- * @returns {HTMLVideoElement}
+ * @returns {HTMLElement} a wrapper div containing the <video> and the play overlay
  */
 export function renderVideo(src, label) {
   const url = new URL(src, window.location.href);
@@ -253,13 +301,41 @@ export function renderVideo(src, label) {
     if (type) source.type = type;
     video.append(source);
   }
-  return video;
+
+  // wrap the video with a centered play-icon overlay (with or without a poster):
+  // it sits over the frame before playback and fades out/in as the video is
+  // played/paused, mirroring the source's Scene7 viewer. The overlay layer itself
+  // is click-through (pointer-events:none) so the native controls stay usable; only
+  // the centered button captures clicks. Styling lives in styles/lazy-styles.css.
+  const wrapper = document.createElement('div');
+  wrapper.className = 'dm-video-wrapper';
+
+  const overlay = document.createElement('div');
+  overlay.className = 'dm-video-overlay';
+  const play = document.createElement('button');
+  play.type = 'button';
+  play.className = 'dm-video-play';
+  play.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
+  play.addEventListener('click', () => { video.play(); });
+  overlay.append(play);
+
+  // toggle the overlay from the video's own state, so it also responds when the
+  // user plays/pauses via the native controls or keyboard
+  video.addEventListener('play', () => wrapper.classList.add('is-playing'));
+  video.addEventListener('pause', () => wrapper.classList.remove('is-playing'));
+  video.addEventListener('ended', () => wrapper.classList.remove('is-playing'));
+
+  wrapper.append(video, overlay);
+  return wrapper;
 }
 
 /**
  * Pick the renderer for a DM URL, or null if it isn't a DM asset.
  */
 function dmRendererFor(src) {
+  // a /is/content/ image (GIF etc.) must be checked before the video branch,
+  // since it shares the /is/content/ path but is not a video
+  if (isDMContentImage(src)) return renderContentImage;
   if (DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return renderVideo;
   if (DM_OPENAPI.test(src)) return renderOpenAPI;
   if (DM_SCENE7.test(src)) return renderScene7;
