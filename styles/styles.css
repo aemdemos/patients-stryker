@@ -84,7 +84,7 @@
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
   --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
-  --heading-font-size-compact-m: 19.6px; /* compact section h2 ≥480px (measured) */
+  --heading-font-size-compact-m: 19.6px; /* compact section h2 ≥600px (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -760,24 +760,6 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
-@media (width >= 480px) {
-  .section.compact h2 {
-  font-size: var(--heading-font-size-compact-m);
-  margin-top:30px;
-}
-
-h2 em strong,
-h2 strong em {
-    font-size: var(--heading-font-size-compact-m);
-}
-}
-
-@media (width >= 841px) {
-  main .last-modified {
-    font-size: var(--body-font-size-s);
-  }
-}
-
 /* section width variants */
 main > .section.narrow > div {
   max-width: var(--container-narrow);
@@ -786,6 +768,23 @@ main > .section.narrow > div {
 main > .section.wide > div {
   max-width: var(--container-wide);
 }
+
+@media (width >= 600px) {
+    .section.compact h2 {
+  font-size: var(--heading-font-size-compact-m);
+  margin-top:30px;
+}
+
+h2 em strong,
+h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
+}
+
+  main .last-modified {
+    font-size: var(--body-font-size-s);
+  }
+}
+
 
 @media (width >= 900px) {
     header {
