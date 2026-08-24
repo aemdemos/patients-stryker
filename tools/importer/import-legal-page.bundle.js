@@ -223,7 +223,14 @@ var CustomImportScript = (() => {
       "https://patients.stryker.com/us/en/stroke-awareness/legal/cookie-disclaimer.html",
       "https://patients.stryker.com/us/en/stroke-awareness/legal/terms-of-use.html",
       "https://patients.stryker.com/us/en/stroke-awareness/legal/privacy/privacy-notice-for-california-residents.html",
-      "https://patients.stryker.com/us/en/zip-skin-closure/legal/privacy/privacy-notice-for-california-residents.html"
+      "https://patients.stryker.com/us/en/zip-skin-closure/legal/privacy/privacy-notice-for-california-residents.html",
+      // Legal index pages: these 301-redirect to their sibling privacy.html, so the
+      // import follows the redirect and saves the Privacy Statement content at the
+      // /legal path. Same template rules apply (h1 title, gold labels as h2).
+      "https://patients.stryker.com/us/en/legal.html",
+      "https://patients.stryker.com/ww/en/legal.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/legal.html",
+      "https://patients.stryker.com/ww/en/stroke-awareness/legal.html"
     ],
     blocks: []
   };
