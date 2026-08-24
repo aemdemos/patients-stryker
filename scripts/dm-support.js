@@ -115,11 +115,11 @@ function withParams(src, params) {
 }
 
 /**
- * Build a <picture> for a Scene7 / classic DM URL.
- * fit=constrain keeps the image proportional (Scene7 otherwise upscales width
- * and clips height to the asset's native box, distorting the aspect ratio).
- * Transparent assets (a `$..._png$` preset or an explicit `fmt=png`) are served
- * as PNG so transparency is preserved — forcing jpeg would flatten it to white.
+ * Build a <picture> for a Scene7 / classic DM URL, using the authored URL
+ * unchanged so the asset renders exactly as linked (no forced resizing/format).
+ * The one exception: a transparent asset (a `$..._png$` preset or an explicit
+ * `fmt=png`) gets `fmt=png-alpha` added — Scene7's default delivery format
+ * otherwise flattens transparency to a white background.
  */
 function renderScene7(src, alt, eager) {
   // decode first so a percent-encoded preset ($..._png$ arrives as %24..._png%24
@@ -127,25 +127,13 @@ function renderScene7(src, alt, eager) {
   let decoded = src;
   try { decoded = decodeURIComponent(src); } catch { /* leave as-is on bad escape */ }
   const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decoded);
-  const fmt = png ? 'png-alpha' : 'jpeg';
-  const type = png ? 'image/png' : 'image/jpeg';
+  const finalSrc = png ? withParams(src, { fmt: 'png-alpha' }) : src;
   const picture = document.createElement('picture');
-  BREAKPOINTS.forEach((br, i) => {
-    const srcset = withParams(src, { wid: br.width, fmt, fit: 'constrain' });
-    if (i < BREAKPOINTS.length - 1) {
-      const source = document.createElement('source');
-      if (br.media) source.media = br.media;
-      source.type = type;
-      source.srcset = srcset;
-      picture.append(source);
-    } else {
-      const img = document.createElement('img');
-      img.loading = eager ? 'eager' : 'lazy';
-      img.alt = alt;
-      img.src = withParams(src, { wid: br.width, fmt, fit: 'constrain' });
-      picture.append(img);
-    }
-  });
+  const img = document.createElement('img');
+  img.loading = eager ? 'eager' : 'lazy';
+  img.alt = alt;
+  img.src = finalSrc;
+  picture.append(img);
   return picture;
 }
 
