@@ -202,11 +202,19 @@
               "fields": [
                 {
                   "name": "desktopImage",
-                  "selector": "div:nth-child(1)>div>picture>img[src]"
+                  "selector": "div:nth-child(1) a[href]"
+                },
+                {
+                  "name": "desktopImageAlt",
+                  "selector": "div:nth-child(1) a[title]"
                 },
                 {
                   "name": "mobileImage",
-                  "selector": "div:nth-child(2)>div>picture>img[src]"
+                  "selector": "div:nth-child(2) a[href]"
+                },
+                {
+                  "name": "mobileImageAlt",
+                  "selector": "div:nth-child(2) a[title]"
                 },
                 {
                   "name": "content",

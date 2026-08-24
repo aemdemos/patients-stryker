@@ -267,11 +267,10 @@
         ]
       },
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "desktopImage",
-        "label": "Desktop Image",
-        "multi": false
+        "label": "Desktop Image (Dynamic Media link)",
+        "description": "Paste the direct Dynamic Media (Scene7) image URL. Do not upload from DAM."
       },
       {
         "component": "text",
@@ -281,11 +280,10 @@
         "value": ""
       },
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "mobileImage",
-        "label": "Mobile Image (optional)",
-        "multi": false,
+        "label": "Mobile Image (Dynamic Media link, optional)",
+        "description": "Paste the direct Dynamic Media (Scene7) image URL for small screens. Do not upload from DAM.",
         "condition": {
           "or": [
             {

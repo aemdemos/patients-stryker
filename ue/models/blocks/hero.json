@@ -10,8 +10,10 @@
           "rows": 3,
           "columns": 1,
           "fields": [
-            { "name": "desktopImage", "selector": "div:nth-child(1)>div>picture>img[src]" },
-            { "name": "mobileImage", "selector": "div:nth-child(2)>div>picture>img[src]" },
+            { "name": "desktopImage", "selector": "div:nth-child(1) a[href]" },
+            { "name": "desktopImageAlt", "selector": "div:nth-child(1) a[title]" },
+            { "name": "mobileImage", "selector": "div:nth-child(2) a[href]" },
+            { "name": "mobileImageAlt", "selector": "div:nth-child(2) a[title]" },
             { "name": "content", "selector": "div:nth-child(3)>div" }
           ]
         }
@@ -47,11 +49,10 @@
           ]
         },
         {
-          "component": "reference",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "desktopImage",
-          "label": "Desktop Image",
-          "multi": false
+          "label": "Desktop Image (Dynamic Media link)",
+          "description": "Paste the direct Dynamic Media (Scene7) image URL. Do not upload from DAM."
         },
         {
           "component": "text",
@@ -61,11 +62,10 @@
           "value": ""
         },
         {
-          "component": "reference",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "mobileImage",
-          "label": "Mobile Image (optional)",
-          "multi": false,
+          "label": "Mobile Image (Dynamic Media link, optional)",
+          "description": "Paste the direct Dynamic Media (Scene7) image URL for small screens. Do not upload from DAM.",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
             { "in": ["banner", { "var": "classes" }] },
