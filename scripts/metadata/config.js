@@ -3,15 +3,11 @@
  *
  * How to add a new template:
  * 1. Add entry to TEMPLATES object with unique fields and labels
- * 2. Define base metadata keys and language overrides
- * 3. Add UI labels for each field in all supported languages
+ * 2. Define base metadata keys
+ * 3. Add UI labels for each field
  */
 
-export const SUPPORTED_LANGUAGES = ['en'];
-
-export const SHARED_FIELDS = {
-  language: { base: 'language' },
-};
+export const SHARED_FIELDS = {};
 
 export const SHARED_LABELS = {
   // Add shared labels here

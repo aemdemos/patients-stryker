@@ -3,7 +3,6 @@
  */
 
 import {
-  SUPPORTED_LANGUAGES,
   SHARED_FIELDS,
   SHARED_LABELS,
   TEMPLATES,
@@ -30,28 +29,24 @@ const metadataMapCache = new Map();
  * Get metadata key for a field
  * @param {string} fieldName Field name
  * @param {string} templateType Template type
- * @param {string} language Language code
  * @returns {string|null} Metadata key or null
  */
-export function getMetadataKey(fieldName, templateType, language) {
+export function getMetadataKey(fieldName, templateType) {
   const config = getTemplateConfig(templateType);
   const field = config?.fields?.[fieldName];
   if (!field) return null;
 
-  return field.overrides?.[language] || field.base;
+  return field.base;
 }
 
 /**
  * Get all metadata keys for a template
  * @param {string} templateType Template type
- * @param {string} language Language code
  * @returns {object} All field mappings
  */
-export function getTemplateMetadataMap(templateType, language) {
-  const cacheKey = `${templateType}:${language}`;
-
-  if (metadataMapCache.has(cacheKey)) {
-    return metadataMapCache.get(cacheKey);
+export function getTemplateMetadataMap(templateType) {
+  if (metadataMapCache.has(templateType)) {
+    return metadataMapCache.get(templateType);
   }
 
   const config = getTemplateConfig(templateType);
@@ -59,34 +54,24 @@ export function getTemplateMetadataMap(templateType, language) {
   const result = {};
 
   Object.keys(fields).forEach((fieldName) => {
-    result[fieldName] = getMetadataKey(fieldName, templateType, language);
+    result[fieldName] = getMetadataKey(fieldName, templateType);
   });
 
-  metadataMapCache.set(cacheKey, result);
+  metadataMapCache.set(templateType, result);
   return result;
 }
 
 /**
- * Get UI label with fallback to English
+ * Get UI label
  * @param {string} labelKey Label key
  * @param {string} templateType Template type
- * @param {string} language Language code
  * @returns {string} UI label or key if not found
  */
-export function getUILabel(labelKey, templateType, language) {
+export function getUILabel(labelKey, templateType) {
   const config = getTemplateConfig(templateType);
-  const label = config?.labels?.[labelKey]?.[language];
+  const label = config?.labels?.[labelKey];
 
-  if (!label) {
-    const fallback = config?.labels?.[labelKey]?.en;
-    if (fallback && language !== 'en' && typeof window !== 'undefined') {
-      // eslint-disable-next-line no-console
-      window.console.warn(`Missing ${language} translation for ${templateType}.${labelKey}, using English`);
-    }
-    return fallback || labelKey;
-  }
-
-  return label;
+  return label || labelKey;
 }
 
 /**
@@ -96,12 +81,4 @@ export function getUILabel(labelKey, templateType, language) {
  */
 export function hasTemplateType(templateType) {
   return !!TEMPLATES[templateType];
-}
-
-/**
- * Get supported languages
- * @returns {string[]} Language codes
- */
-export function getSupportedLanguages() {
-  return [...SUPPORTED_LANGUAGES];
 }
