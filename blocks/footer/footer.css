@@ -1,4 +1,8 @@
-footer {
+/* Paint the dark chrome only once the block has loaded its content. The <footer>
+   element ships in the page HTML but is filled (or removed) during the lazy phase;
+   gating the background on [data-block-status="loaded"] avoids a coloured empty bar
+   flashing before footer.js runs. */
+footer .footer[data-block-status="loaded"] {
   background-color: var(--color-secondary);
   color: var(--color-white);
   font-family: var(--display-font-family);
@@ -36,6 +40,12 @@ footer .footer li:not(:last-child)::after {
 }
 
 @media (width >= 1024px) {
+  /* the source constrains footer content to the left 6 of 9 columns (two-thirds),
+     leaving the right third empty (reserved for future social links) */
+  footer .footer ul {
+    width: 66.667%;
+  }
+
   /* drop the trailing pipe at this breakpoint... */
   footer .footer li:not(:last-child)::after {
     content: none;

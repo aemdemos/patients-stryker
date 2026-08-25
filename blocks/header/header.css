@@ -411,12 +411,15 @@ header nav .nav-search-panel-input:focus {
 /* ---- Default header (/nav — the site-root category nav): logo + category links,
    no search. Applies to the variant-less default nav; named variants (ent/ivs/legal)
    carry a .nav-variant-* class and keep the full-bleed gold-bar base styling instead.
+   The `.nav-variant-root` selector is retained so any page still pointing at the old
+   /nav-root fragment renders identically during the rename transition.
    The primary links live in .nav-sections; on desktop this renders them as a plain
    right-aligned row rather than the gold bar. Mobile keeps the hamburger drawer. ---- */
 @media (width >= 900px) {
   /* place the links row in the right-hand `tools` grid cell (top row) instead of
      the full-width `sections` cell below the logo, vertically centred */
-  header nav:not([class*="nav-variant"]) .nav-sections {
+  header nav:not([class*="nav-variant"]) .nav-sections,
+  header nav.nav-variant-root .nav-sections {
     grid-area: tools;
     align-self: center;
     width: auto;
@@ -424,38 +427,44 @@ header nav .nav-search-panel-input:focus {
     background-color: transparent;
   }
 
-  header nav:not([class*="nav-variant"]) .nav-sections ul {
+  header nav:not([class*="nav-variant"]) .nav-sections ul,
+  header nav.nav-variant-root .nav-sections ul {
     align-items: center;
     justify-content: flex-end;
     min-height: 0;
     padding: 0;
   }
 
-  header nav:not([class*="nav-variant"]) .nav-sections li {
+  header nav:not([class*="nav-variant"]) .nav-sections li,
+  header nav.nav-variant-root .nav-sections li {
     display: inline-flex;
     align-items: center;
     margin: 0;
   }
 
   /* pipe separator between links — dropped after the last item */
-  header nav:not([class*="nav-variant"]) .nav-sections li::after {
+  header nav:not([class*="nav-variant"]) .nav-sections li::after,
+  header nav.nav-variant-root .nav-sections li::after {
     content: '|';
     margin-left: 10px;
     color: var(--color-black);
   }
 
-  header nav:not([class*="nav-variant"]) .nav-sections li:last-child::after {
+  header nav:not([class*="nav-variant"]) .nav-sections li:last-child::after,
+  header nav.nav-variant-root .nav-sections li:last-child::after {
     content: none;
   }
 
   /* source: 12px Futura, uppercase */
-  header nav:not([class*="nav-variant"]) .nav-sections li a {
+  header nav:not([class*="nav-variant"]) .nav-sections li a,
+  header nav.nav-variant-root .nav-sections li a {
     padding: 5px 0 5px 10px;
     color: var(--color-black);
     font-size: var(--body-font-size-xs);
   }
 
-  header nav:not([class*="nav-variant"]) .nav-sections li a:hover {
+  header nav:not([class*="nav-variant"]) .nav-sections li a:hover,
+  header nav.nav-variant-root .nav-sections li a:hover {
     background-color: transparent;
     color: var(--color-accent-link-hover);
   }
