@@ -2,7 +2,8 @@
  * sticky-nav — in-page anchor bar migrated from patients.stryker.com IVS home.
  * Source (measured from the live site):
  *   - full-bleed bar, background #545857 (--color-secondary)
- *   - items: Futura, 21px, white, equal width, centered in the 1410px container
+ *   - items: Futura, 21px, white, ~193px fixed width, centered as a cluster
+ *     (gray bar space on both sides), 80px bar height
  *   - sticks to the top of the viewport once scrolled past (position: sticky)
  *   - active item: gold (#ffb500) filled box with black text (scroll-spy)
  * Mobile: the bar scrolls horizontally rather than collapsing to a menu.
@@ -40,9 +41,11 @@
 
 .sticky-nav .sticky-nav-item {
   display: flex;
+  box-sizing: border-box;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
+  min-height: 80px;                  /* source bar height */
   padding: var(--space-block) 20px;
   border: 0;
   border-radius: var(--radius-none);
@@ -79,14 +82,18 @@
   outline-offset: -2px;
 }
 
-/* tablet and up — items share the bar width equally (source: 5 equal columns) */
+/* tablet and up — the source centers a tight cluster of equal fixed-width
+   items within the bar (gray space on both sides), rather than stretching them
+   edge-to-edge. Match that: center the list and give each item a fixed width. */
 @media (width >= 841px) {
   .sticky-nav .sticky-nav-list {
+    justify-content: center;
     overflow-x: visible;
   }
 
   .sticky-nav .sticky-nav-item {
-    flex: 1 1 0;
+    flex: 0 0 auto;
+    width: 193px;
     padding-block: 20px;
   }
 }
