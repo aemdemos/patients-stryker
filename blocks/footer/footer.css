@@ -1,4 +1,8 @@
-footer {
+/* Paint the dark chrome only once the block has loaded its content. The <footer>
+   element ships in the page HTML but is filled (or removed) during the lazy phase;
+   gating the background on [data-block-status="loaded"] avoids a coloured empty bar
+   flashing before footer.js runs. */
+footer .footer[data-block-status="loaded"] {
   background-color: var(--color-secondary);
   color: var(--color-white);
   font-family: var(--display-font-family);
@@ -7,7 +11,7 @@ footer {
 }
 
 /* copyright uses the body serif font on the source site; links use the display font */
-footer .footer li:first-child {
+footer .footer .footer-links li:first-child {
   font-family: var(--body-font-family);
 }
 
@@ -18,34 +22,54 @@ footer .footer > div {
   padding: 20px var(--container-gutter) 60px;
 }
 
+/* shared list reset — applies to the primary row and any secondary group */
 footer .footer ul {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-footer .footer li:not(:last-child)::after {
+/* primary row: copyright + legal links, laid out horizontally with pipe dividers */
+footer .footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+footer .footer .footer-links li:not(:last-child)::after {
   content: "|";
   display: inline-block;
   width: 17px;
   text-align: center;
 }
 
+/* secondary group: an extra list (e.g. Product Experience / Ethics Hotline) that
+   stacks as a column below the primary row. Generalises to any number of links. */
+footer .footer .footer-links-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
 @media (width >= 1024px) {
+  /* the source constrains footer content to the left 6 of 9 columns (two-thirds),
+     leaving the right third empty (reserved for future social links) */
+  footer .footer .footer-links {
+    width: 66.667%;
+  }
+
   /* drop the trailing pipe at this breakpoint... */
-  footer .footer li:not(:last-child)::after {
+  footer .footer .footer-links li:not(:last-child)::after {
     content: none;
   }
 
-  footer .footer li:not(:first-child) {
+  footer .footer .footer-links li:not(:first-child) {
     margin-left: 7px;
   }
 
-  footer .footer li:not(:first-child)::before {
+  footer .footer .footer-links li:not(:first-child)::before {
     content: "|";
     padding-right: 5px;
   }
