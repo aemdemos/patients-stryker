@@ -408,17 +408,23 @@ header nav .nav-search-panel-input:focus {
   }
 }
 
-/* ---- Root header variant (nav-root): logo + category links on the right, no
-   gold section bar and no search. The links live in .nav-tools (like Stryker.com /
-   Find a doctor), so most tools styling already applies; these rules drop the empty
-   gold bar and the trailing pipe after the last link. ---- */
-header nav.nav-variant-root .nav-sections {
-  display: none;
-}
-
+/* ---- Root header variant (nav-root): logo + category links, no search.
+   Like every nav, the primary links live in .nav-sections; this variant only
+   changes how that row looks on desktop — a plain right-aligned row instead of the
+   full-bleed gold bar. Mobile keeps the standard hamburger drawer. ---- */
 @media (width >= 900px) {
-  /* no pipe after the final category link */
-  header nav.nav-variant-root .nav-tools p:last-child::after {
-    content: none;
+  /* place the links row in the right-hand `tools` grid cell (top row) instead of
+     the full-width `sections` cell below the logo */
+  header nav.nav-variant-root .nav-sections {
+    grid-area: tools;
+    width: auto;
+    margin-inline: 0;
+    background-color: transparent;
+  }
+
+  header nav.nav-variant-root .nav-sections ul {
+    justify-content: flex-end;
+    min-height: 0;
+    padding: 0;
   }
 }
