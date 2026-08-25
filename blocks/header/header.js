@@ -108,6 +108,11 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
+  // variant marker from the fragment name (e.g. /nav-root -> nav-variant-root) so
+  // header.css can style a specific header variant without affecting the others
+  const variant = navPath.split('/').pop().replace(/^nav-?/, '');
+  if (variant) nav.classList.add(`nav-variant-${variant}`);
+
   // Sections: brand (logo), sections (primary links), tools (Stryker.com + search)
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
