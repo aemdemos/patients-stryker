@@ -101,13 +101,11 @@ export default function decorate(block) {
     // scrolled above a line just below the sticky bar. This is robust to very
     // short sections (e.g. the single-line "Find a Doctor" CTA) that a
     // viewport-band IntersectionObserver would skip over.
-    const styles = getComputedStyle(document.documentElement);
-    const navHeight = parseInt(styles.getPropertyValue('--nav-height'), 10) || 90;
-
     let ticking = false;
     const update = () => {
       ticking = false;
-      const line = navHeight + 80; // detection line just below the pinned bar
+      const barHeight = block.getBoundingClientRect().height || 80;
+      const line = barHeight + 20; // detection line just below the pinned bar
       let activeIndex = 0;
       targets.forEach((t, i) => {
         if (t.region.getBoundingClientRect().top <= line) activeIndex = i;

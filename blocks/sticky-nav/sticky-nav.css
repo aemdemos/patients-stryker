@@ -22,8 +22,8 @@
    (whose parent is the short section, leaving no room to stick). */
 .section.sticky-nav-container {
   position: sticky;
-  top: var(--nav-height);
-  z-index: 90;
+  top: 0;                 /* pins flush to the top of the viewport, matching the source */
+  z-index: 100;
   padding-block: 0;
 }
 
