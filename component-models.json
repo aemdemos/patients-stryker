@@ -588,6 +588,30 @@
     ]
   },
   {
+    "id": "sticky-nav",
+    "fields": []
+  },
+  {
+    "id": "sticky-nav-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "label",
+        "value": "",
+        "label": "Label",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "target",
+        "value": "",
+        "label": "Target Section",
+        "valueType": "string",
+        "description": "The section id to jump to, e.g. #overview"
+      }
+    ]
+  },
+  {
     "id": "tabs",
     "fields": []
   },

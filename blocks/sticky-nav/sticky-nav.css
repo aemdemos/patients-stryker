@@ -1,0 +1,92 @@
+/*
+ * sticky-nav — in-page anchor bar migrated from patients.stryker.com IVS home.
+ * Source (measured from the live site):
+ *   - full-bleed bar, background #545857 (--color-secondary)
+ *   - items: Futura, 21px, white, equal width, centered in the 1410px container
+ *   - sticks to the top of the viewport once scrolled past (position: sticky)
+ *   - active item: gold (#ffb500) filled box with black text (scroll-spy)
+ * Mobile: the bar scrolls horizontally rather than collapsing to a menu.
+ */
+
+.sticky-nav {
+  /* full-bleed gray bar breaking out of the section's padded container */
+  width: auto;
+  margin-inline: calc(-1 * var(--container-gutter));
+  background: var(--color-secondary);
+}
+
+/* the block's section carries the sticky behaviour so the bar pins below the
+   fixed site header. Sticky is applied to the section (whose parent is <main>,
+   giving it the full page height to travel) rather than the block wrapper
+   (whose parent is the short section, leaving no room to stick). */
+.section.sticky-nav-container {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 90;
+  padding-block: 0;
+}
+
+.sticky-nav .sticky-nav-list {
+  display: flex;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.sticky-nav .sticky-nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+.sticky-nav .sticky-nav-item {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-block) 20px;
+  border: 0;
+  border-radius: var(--radius-none);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.sticky-nav .sticky-nav-item p {
+  margin: 0;
+}
+
+.sticky-nav .sticky-nav-item:hover {
+  color: var(--color-accent);
+}
+
+.sticky-nav .sticky-nav-item-current {
+  background: var(--color-accent);
+  color: var(--color-black);
+}
+
+.sticky-nav .sticky-nav-item-current:hover {
+  color: var(--color-black);
+}
+
+.sticky-nav .sticky-nav-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+/* tablet and up — items share the bar width equally (source: 5 equal columns) */
+@media (width >= 841px) {
+  .sticky-nav .sticky-nav-list {
+    overflow-x: visible;
+  }
+
+  .sticky-nav .sticky-nav-item {
+    flex: 1 1 0;
+    padding-block: 20px;
+  }
+}
