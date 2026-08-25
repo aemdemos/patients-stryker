@@ -42,7 +42,7 @@
   line-height: inherit;
 }
 
-@media (width >= 480px) {
+@media (width >= 600px) {
   .accordion .accordion-item-label {
     font-size: var(--heading-font-size-m);
   }
