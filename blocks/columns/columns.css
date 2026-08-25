@@ -277,7 +277,7 @@
    original interleaved rules; 600px (tablet) precedes 900px (desktop).
  * ------------------------------------------------------------------------- */
 
-/* tablet — reference switches to a 2-up layout at 600px */
+/* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
   .section.compact .columns h2 {
     font-size: var(--heading-font-size-compact-m);
@@ -376,7 +376,7 @@
   }
 }
 
-/* desktop — reference places all columns in a single row at 900px */
+/* desktop (>= 900px) — all columns line up in a single row */
 @media (width >= 900px) {
   .columns > div {
     flex-wrap: nowrap;
@@ -386,8 +386,8 @@
     flex: 1;
   }
 
-  /* icon-grid stays a wrapping 2-up grid on desktop (the base 1024 rule would
-     otherwise force all 6 cells into one nowrap row) */
+  /* icon-grid stays a wrapping 2-up grid on desktop (the base desktop rule above
+     would otherwise force all 6 cells into one nowrap row) */
   .columns.columns-icon-grid > div {
     flex-wrap: wrap;
   }
