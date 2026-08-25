@@ -40,5 +40,14 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  // Footer content contract: the fragment may hold more than one list. The first
+  // list is the primary horizontal row (copyright + legal links); any further list
+  // is a secondary group that stacks as a column below the primary row (e.g. the
+  // WW footer's "Product Experience" / "Ethics Hotline"). This generalises to any
+  // number of extra links or groups.
+  footer.querySelectorAll('ul').forEach((ul, i) => {
+    ul.classList.add(i === 0 ? 'footer-links' : 'footer-links-secondary');
+  });
+
   block.append(footer);
 }
