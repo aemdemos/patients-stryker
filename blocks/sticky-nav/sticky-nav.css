@@ -39,29 +39,41 @@
   display: none;
 }
 
+/* each item is a transparent flex cell; the inner box (its <p>) is what fills
+   gold when active — an INSET box, matching the source (62px box centered in
+   the 80px bar, so gray shows above/below the gold). */
 .sticky-nav .sticky-nav-item {
   display: flex;
   box-sizing: border-box;
   flex: 0 0 auto;
-  align-items: center;
+  align-items: stretch;              /* let the inner gold box fill the inset */
   justify-content: center;
   min-height: 80px;                  /* source bar height */
-  padding: var(--space-block) 20px;
+  padding: 9px 4px;                  /* leaves the ~62px gold box inset */
   border: 0;
   border-radius: var(--radius-none);
   color: var(--color-white);
-  font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 400;
-  line-height: 1.2;
-  text-align: center;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
 }
 
+/* the label text / gold-box carrier */
 .sticky-nav .sticky-nav-item p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 62px;                  /* source gold-box height (inset in 80px bar) */
   margin: 0;
+  padding: 0 5px;
+  color: inherit;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);   /* 14px, matching source */
+  font-weight: 400;
+  line-height: 1.43;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .sticky-nav .sticky-nav-item:hover {
@@ -69,8 +81,11 @@
 }
 
 .sticky-nav .sticky-nav-item-current {
-  background: var(--color-accent);
   color: var(--color-black);
+}
+
+.sticky-nav .sticky-nav-item-current p {
+  background: var(--color-accent);
 }
 
 .sticky-nav .sticky-nav-item-current:hover {
