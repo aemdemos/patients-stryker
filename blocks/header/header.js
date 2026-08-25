@@ -108,8 +108,10 @@ export default async function decorate(block) {
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
 
-  // variant marker from the fragment name (e.g. /nav-root -> nav-variant-root) so
-  // header.css can style a specific header variant without affecting the others
+  // variant marker from the fragment name (e.g. /nav-ivs -> nav-variant-ivs) so
+  // header.css can style a specific header variant without affecting the others.
+  // The default /nav has no suffix, so no variant class — header.css styles it via
+  // the `nav:not([class*="nav-variant"])` selector.
   const variant = navPath.split('/').pop().replace(/^nav-?/, '');
   if (variant) nav.classList.add(`nav-variant-${variant}`);
 

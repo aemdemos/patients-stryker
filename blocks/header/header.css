@@ -408,23 +408,55 @@ header nav .nav-search-panel-input:focus {
   }
 }
 
-/* ---- Root header variant (nav-root): logo + category links, no search.
-   Like every nav, the primary links live in .nav-sections; this variant only
-   changes how that row looks on desktop — a plain right-aligned row instead of the
-   full-bleed gold bar. Mobile keeps the standard hamburger drawer. ---- */
+/* ---- Default header (/nav — the site-root category nav): logo + category links,
+   no search. Applies to the variant-less default nav; named variants (ent/ivs/legal)
+   carry a .nav-variant-* class and keep the full-bleed gold-bar base styling instead.
+   The primary links live in .nav-sections; on desktop this renders them as a plain
+   right-aligned row rather than the gold bar. Mobile keeps the hamburger drawer. ---- */
 @media (width >= 900px) {
   /* place the links row in the right-hand `tools` grid cell (top row) instead of
-     the full-width `sections` cell below the logo */
-  header nav.nav-variant-root .nav-sections {
+     the full-width `sections` cell below the logo, vertically centred */
+  header nav:not([class*="nav-variant"]) .nav-sections {
     grid-area: tools;
+    align-self: center;
     width: auto;
     margin-inline: 0;
     background-color: transparent;
   }
 
-  header nav.nav-variant-root .nav-sections ul {
+  header nav:not([class*="nav-variant"]) .nav-sections ul {
+    align-items: center;
     justify-content: flex-end;
     min-height: 0;
     padding: 0;
+  }
+
+  header nav:not([class*="nav-variant"]) .nav-sections li {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  /* pipe separator between links — dropped after the last item */
+  header nav:not([class*="nav-variant"]) .nav-sections li::after {
+    content: '|';
+    margin-left: 10px;
+    color: var(--color-black);
+  }
+
+  header nav:not([class*="nav-variant"]) .nav-sections li:last-child::after {
+    content: none;
+  }
+
+  /* source: 12px Futura, uppercase */
+  header nav:not([class*="nav-variant"]) .nav-sections li a {
+    padding: 5px 0 5px 10px;
+    color: var(--color-black);
+    font-size: var(--body-font-size-xs);
+  }
+
+  header nav:not([class*="nav-variant"]) .nav-sections li a:hover {
+    background-color: transparent;
+    color: var(--color-accent-link-hover);
   }
 }
