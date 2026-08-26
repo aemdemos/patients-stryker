@@ -21,6 +21,30 @@ function resolveTarget(href) {
   return byAnchor;
 }
 
+const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
+
+/**
+ * Animate scroll with easing, re-sampling the target each frame so any
+ * mid-scroll layout shift (lazy content) is absorbed smoothly instead of
+ * causing a second, jarring jump.
+ * @param {() => number} getTargetY
+ * @param {number} duration
+ */
+function animateScrollTo(getTargetY, duration = 600) {
+  const startY = window.scrollY;
+  const startTime = performance.now();
+
+  function step(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    const eased = easeInOutQuad(t);
+    const targetY = getTargetY();
+    window.scrollTo(0, startY + (targetY - startY) * eased);
+    if (t < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
 export default function decorate(block) {
   const nav = document.createElement('nav');
   nav.className = 'sticky-nav-list';
@@ -80,26 +104,11 @@ export default function decorate(block) {
       if (!target) return;
       e.preventDefault();
       const region = target.closest('.section') || target;
-      region.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // lazy content shifting mid-scroll can land the jump short; re-align only
-      // AFTER the scroll settles (position stable) so the motion stays smooth
-      const off = block.getBoundingClientRect().height || 70;
-      let lastY = null;
-      let tries = 0;
-      const settle = () => {
-        if (window.scrollY !== lastY) { // still moving — wait for it to rest
-          lastY = window.scrollY;
-          if (tries < 40) { tries += 1; setTimeout(settle, 100); }
-          return;
-        }
-        if (Math.abs(region.getBoundingClientRect().top - off) > 2 && tries < 40) {
-          tries += 1;
-          lastY = null;
-          region.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          setTimeout(settle, 100);
-        }
+      const getTargetY = () => {
+        const off = block.getBoundingClientRect().height || 70;
+        return window.scrollY + region.getBoundingClientRect().top - off;
       };
-      setTimeout(settle, 100);
+      animateScrollTo(getTargetY, 600);
     });
   });
 
