@@ -77,13 +77,19 @@ export default function decorate(block) {
 
   // offset each target so a jump lands below the sticky bar instead of behind
   // it (otherwise the section's top is hidden under the 70px bar). The source
-  // leaves ~115px of breathing room below the bar before the section content,
-  // so the section reads as a fresh block rather than flush to the bar. Set on
-  // the section itself so the whole region, not just the heading, clears.
+  // leaves ~115px of breathing room below the bar so the section reads as a
+  // fresh block. Set on the section itself so the whole region clears.
+  //
+  // The first target sits directly under the bar, so there isn't 115px of
+  // content above it to scroll behind — adding the gap there would stop the
+  // scroll early and leave the bar unpinned (floating with content above it).
+  // So the first target lands flush under the bar (which pins it); the rest,
+  // which have room above, keep the full gap.
   const GAP = 115;
   const applyScrollOffset = () => {
-    const offset = (block.getBoundingClientRect().height || 70) + GAP;
-    targets.forEach(({ region, anchor }) => {
+    const bar = block.getBoundingClientRect().height || 70;
+    targets.forEach(({ region, anchor }, i) => {
+      const offset = i === 0 ? bar : bar + GAP;
       region.style.scrollMarginTop = `${offset}px`;
       if (anchor && anchor !== region) anchor.style.scrollMarginTop = `${offset}px`;
     });
