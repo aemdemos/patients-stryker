@@ -1,30 +1,15 @@
 /*
- * Sticky Nav Block
- * An in-page anchor navigation bar migrated from the patients.stryker.com IVS
- * homepage. Each authored row is one nav item: the first cell is the visible
- * label, the second cell holds a link whose href is the id (e.g. `#overview`)
- * of the section it jumps to.
- *
- * Behaviour (matching the source):
- *  - the bar sticks to the top of the viewport once scrolled past (CSS
- *    `position: sticky`)
- *  - clicking an item smooth-scrolls to its target section
- *  - a scroll-spy (IntersectionObserver) marks the item whose target is
- *    currently in view as `.sticky-nav-item-current` (gold filled state)
- *
- * Authored labels stay inside their row's instrumented cell, so the label
- * field remains editable in the Universal Editor; the anchor link cell carries
- * the target id.
+ * Sticky Nav Block — in-page anchor bar (patients.stryker.com IVS homepage).
+ * Each authored row = one nav item: cell 1 is the label, cell 2 holds a link
+ * whose href is the target section id (e.g. `#overview`). Clicking smooth-
+ * scrolls; a scroll-spy marks the in-view item `.sticky-nav-item-current`.
  */
 
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 /**
- * Resolve the target element for a nav item link.
- * Accepts `#id`, a bare `id`, or a full/relative URL ending in `#id`.
- * Falls back to a section carrying `data-anchor="<id>"` (the form produced by
- * this project's `anchor` section metadata) and promotes it to a real `id` so
- * hash links and native scrolling work.
+ * Resolve a nav link's target: `#id`, bare `id`, or URL ending in `#id`.
+ * Falls back to a `.section[data-anchor="<id>"]` and promotes it to a real id.
  * @param {string} href
  * @returns {Element|null}
  */
@@ -59,7 +44,7 @@ export default function decorate(block) {
     item.className = 'sticky-nav-item';
     item.href = href && href.startsWith('#') ? href : `#${(href || '').replace(/^#/, '')}`;
 
-    // carry the label field's UE instrumentation onto the rendered item
+    // keep the label field editable in UE
     moveInstrumentation(labelCell, item);
     item.append(...labelCell.childNodes);
 
@@ -81,9 +66,7 @@ export default function decorate(block) {
     });
   });
 
-  // scroll-spy: mark the item whose target section is in view. Observe the
-  // section that contains the target id (not the small heading itself) so the
-  // whole region registers as it passes the detection band near the top.
+  // scroll-spy: track each item's containing section (not the heading itself)
   const targets = items
     .map(({ item, href }) => {
       const anchor = resolveTarget(href);
@@ -97,21 +80,16 @@ export default function decorate(block) {
       items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
     };
 
-    // scroll-position spy: the active section is the last one whose top has
-    // scrolled past the top of the viewport — matching the source, which
-    // switches the highlight exactly when a section's top reaches y=0 (rather
-    // than offsetting by the bar height). Robust to very short sections (e.g.
-    // the single-line "Find a Doctor" CTA).
+    // active = last section whose top has scrolled past the viewport top
+    // (y=0), matching the source's switch point.
     let ticking = false;
     const update = () => {
       ticking = false;
-      const line = 0; // detection line at the top of the viewport
       let activeIndex = 0;
       targets.forEach((t, i) => {
-        if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
+        if (t.region.getBoundingClientRect().top <= 0) activeIndex = i;
       });
-      // at the bottom of the page the last section may be too short to reach the
-      // detection line — force the final item active so it can still light up.
+      // force the last item active at page bottom (its section may be too short)
       const atBottom = window.innerHeight + window.scrollY
         >= document.documentElement.scrollHeight - 2;
       if (atBottom) activeIndex = targets.length - 1;
