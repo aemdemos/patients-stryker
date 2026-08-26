@@ -34,24 +34,6 @@ function decodeSrc(src) {
 }
 
 /**
- * Derive an alt string from a DM asset URL — the last path segment (the asset
- * name), with the query string dropped. Mirrors the live site, which renders the
- * asset filename as both alt and title (e.g. .../stryker/patients-fullBleed-mobile
- * ?$max_width_1440$ -> "patients-fullBleed-mobile"). Used as the fallback when the
- * author hasn't supplied their own alt.
- * @param {string} src the DM asset URL
- * @returns {string} the asset name, or '' if it can't be parsed
- */
-function altFromDMUrl(src) {
-  try {
-    const { pathname } = new URL(src, window.location.href);
-    return decodeURIComponent(pathname.split('/').filter(Boolean).pop() || '');
-  } catch {
-    return '';
-  }
-}
-
-/**
  * True when a /is/content/ URL is actually an image (e.g. a GIF) — identified by
  * an image sizing preset or a .gif extension, and the absence of a video
  * extension. Used to route these to the image renderer instead of <video>.
@@ -393,7 +375,7 @@ export default function decorateDMAssets(main) {
     // Authors describe the image with an alt paragraph on its own line, directly
     // below the link (the DM link is wrapped in its own <p>; the alt is the next
     // <p> sibling). Consume that paragraph so it feeds the alt instead of
-    // rendering as visible copy. Falls back to the asset filename from the URL.
+    // rendering as visible copy.
     let altParagraph = '';
     let altNode = null;
     if (el.tagName === 'A') {
@@ -411,10 +393,10 @@ export default function decorateDMAssets(main) {
       if (altNode) altNode.remove();
       return;
     }
-    // alt precedence: an authored alt/title, the link's display text, the alt
-    // paragraph below the link, then the asset filename from the URL.
+    // alt precedence: an authored alt/title, the link's display text, then the
+    // alt paragraph below the link.
     const alt = el.getAttribute('alt') || el.getAttribute('title')
-      || displayText || altParagraph || altFromDMUrl(src);
+      || displayText || altParagraph;
     el.replaceWith(render(src, alt, false));
     if (altNode) altNode.remove();
   });
