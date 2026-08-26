@@ -136,7 +136,6 @@ export default async function decorate(block) {
     const brandImg = navBrand.querySelector('img');
     if (brandImg) {
       brandImg.setAttribute('loading', 'eager');
-      brandImg.setAttribute('fetchpriority', 'high');
       if (!brandImg.getAttribute('width')) brandImg.setAttribute('width', '192');
       if (!brandImg.getAttribute('height')) brandImg.setAttribute('height', '48');
     }
