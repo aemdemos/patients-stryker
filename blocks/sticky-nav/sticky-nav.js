@@ -81,19 +81,22 @@ export default function decorate(block) {
     };
 
     // active = last section whose top has scrolled past the viewport top
-    // (y=0), matching the source's switch point.
+    // (y=0), matching the source's switch point. Nothing is active until the
+    // first section reaches the top (activeIndex stays -1).
     let ticking = false;
     const update = () => {
       ticking = false;
-      let activeIndex = 0;
+      let activeIndex = -1;
       targets.forEach((t, i) => {
         if (t.region.getBoundingClientRect().top <= 0) activeIndex = i;
       });
-      // force the last item active at page bottom (its section may be too short)
-      const atBottom = window.innerHeight + window.scrollY
+      // force the last item active at page bottom (its section may be too
+      // short) — but never while still at the very top (page may be short
+      // before lazy content loads)
+      const atBottom = window.scrollY > 0 && window.innerHeight + window.scrollY
         >= document.documentElement.scrollHeight - 2;
       if (atBottom) activeIndex = targets.length - 1;
-      setCurrent(targets[activeIndex].item);
+      setCurrent(activeIndex >= 0 ? targets[activeIndex].item : null);
     };
 
     const onScroll = () => {
