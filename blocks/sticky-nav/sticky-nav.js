@@ -81,21 +81,25 @@ export default function decorate(block) {
       e.preventDefault();
       const region = target.closest('.section') || target;
       region.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // lazy content (e.g. images) loading mid-scroll shifts the layout and can
-      // land the jump short; re-align until it settles or scroll stops moving
+      // lazy content shifting mid-scroll can land the jump short; re-align only
+      // AFTER the scroll settles (position stable) so the motion stays smooth
+      const off = block.getBoundingClientRect().height || 70;
+      let lastY = null;
       let tries = 0;
-      let lastY = -1;
       const settle = () => {
-        const off = block.getBoundingClientRect().height || 70;
-        const aligned = Math.abs(region.getBoundingClientRect().top - off) <= 2;
-        if (!aligned && window.scrollY !== lastY && tries < 20) {
-          tries += 1;
+        if (window.scrollY !== lastY) { // still moving — wait for it to rest
           lastY = window.scrollY;
+          if (tries < 40) { tries += 1; setTimeout(settle, 100); }
+          return;
+        }
+        if (Math.abs(region.getBoundingClientRect().top - off) > 2 && tries < 40) {
+          tries += 1;
+          lastY = null;
           region.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          setTimeout(settle, 150);
+          setTimeout(settle, 100);
         }
       };
-      setTimeout(settle, 150);
+      setTimeout(settle, 100);
     });
   });
 
