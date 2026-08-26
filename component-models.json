@@ -105,11 +105,11 @@
         ]
       },
       {
-        "component": "reference",
+        "component": "text",
         "name": "background-image",
-        "label": "Background Image",
+        "label": "Background Image (Dynamic Media link)",
         "valueType": "string",
-        "multi": false
+        "value": ""
       }
     ]
   },
