@@ -60,12 +60,14 @@
   object-fit: cover;
 }
 
-/* text overlay — sits above the image (z-index) */
+/* text overlay — sits above the image (z-index). Modest top inset so the copy
+   sits near the top on mobile (matches the source; a larger inset pushed it
+   toward the middle). */
 .hero.fullbleed > div:last-child {
   z-index: 1;
   box-sizing: border-box;
   align-self: start;
-  padding: 25% 8% 0;
+  padding: 12% 8% 0;
 }
 
 .hero.fullbleed h1,
@@ -349,10 +351,12 @@
    (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
    matches the <600px view. ===== */
 @media (width >= 900px) {
+  /* top-align the copy near the top of the image (matches the source, which
+     insets it ~5% of the band height), rather than vertically centering it */
   .hero.fullbleed > div:last-child {
-    align-self: center;
+    align-self: start;
     max-width: 45%;
-    padding: 0 0 0 5vw;
+    padding: 5% 0 0 5vw;
   }
 
   /* wide crop — let the asset's own ratio drive the height */
@@ -379,14 +383,6 @@
     font-size: 42px;
   }
 
-  .hero.fullbleed h1 {
-    font-size: 42px;
-  }
-
-  .hero.fullbleed p {
-    font-size: 18px;
-  }
-
   .hero.band h1 {
     font-size: 48px;
   }
@@ -397,5 +393,19 @@
 
   .hero.fullbleed.poster p {
     font-size: 18px;
+  }
+}
+
+/* fullbleed caps at 1400px — where 3.5vw/1.5vw naturally reach 49px/21px, so the
+   headline scales smoothly to the source's max size with no jump (matches the
+   original, whose cap also lands ~1400px). Poster caps earlier (5vw hits 60px at
+   1200px), so it stays in the 1200px block above. */
+@media (width >= 1400px) {
+  .hero.fullbleed h1 {
+    font-size: 49px;
+  }
+
+  .hero.fullbleed p {
+    font-size: 21px;
   }
 }

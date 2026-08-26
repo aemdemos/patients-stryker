@@ -775,12 +775,22 @@ main > .section:first-child > .default-content-wrapper {
   padding-bottom: var(--space-section);
 }
 
-/* audience note above the fullbleed hero */
+/* audience note above the fullbleed hero — "Information for" in the light serif
+   (URW Egyptienne), "United States patients only" in Futura bold, both at 1.25x
+   body size. Matches the source's .fontsize-1-25em + .urw-egyptienne/.futura-bold. */
 main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child {
   margin-top: var(--space-section);
   margin-bottom: var(--space-block);
+  font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   text-align: right;
+}
+
+/* the bold segment ("United States patients only") is Futura bold, not the body
+   slab; the authored <strong> otherwise inherits the body font just heavier */
+main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: 700;
 }
 
 /* bottom-of-page disclaimer content below cards — smaller text matching source */
