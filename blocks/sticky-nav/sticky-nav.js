@@ -75,14 +75,17 @@ export default function decorate(block) {
     })
     .filter((t) => t.region);
 
-  // offset each target so a jump lands just below the sticky bar instead of
-  // behind it (otherwise the section's top is hidden under the 70px bar). Set
-  // on the section itself so the whole region, not just the heading, clears.
+  // offset each target so a jump lands below the sticky bar instead of behind
+  // it (otherwise the section's top is hidden under the 70px bar). The source
+  // leaves ~115px of breathing room below the bar before the section content,
+  // so the section reads as a fresh block rather than flush to the bar. Set on
+  // the section itself so the whole region, not just the heading, clears.
+  const GAP = 115;
   const applyScrollOffset = () => {
-    const bar = block.getBoundingClientRect().height || 70;
+    const offset = (block.getBoundingClientRect().height || 70) + GAP;
     targets.forEach(({ region, anchor }) => {
-      region.style.scrollMarginTop = `${bar}px`;
-      if (anchor && anchor !== region) anchor.style.scrollMarginTop = `${bar}px`;
+      region.style.scrollMarginTop = `${offset}px`;
+      if (anchor && anchor !== region) anchor.style.scrollMarginTop = `${offset}px`;
     });
   };
   applyScrollOffset();
