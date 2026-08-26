@@ -166,11 +166,9 @@
     "id": "card",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "image",
-        "label": "Image",
-        "multi": false
+        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "text",
@@ -284,11 +282,9 @@
         ]
       },
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "desktopImage",
-        "label": "Desktop Image",
-        "multi": false
+        "label": "Desktop Image (Dynamic Media link)"
       },
       {
         "component": "text",
@@ -298,11 +294,9 @@
         "value": ""
       },
       {
-        "component": "reference",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "mobileImage",
-        "label": "Mobile Image (optional)",
-        "multi": false,
+        "label": "Mobile Image (Dynamic Media link, optional)",
         "condition": {
           "or": [
             {

@@ -113,16 +113,15 @@
           "plugins": {
             "da": {
               "name": "card",
-              "rows": 1,
-              "columns": 2,
+              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image URL</a></p><p>Image alt</p></div><div><h3>Title</h3><p>Card text</p></div></div>",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1)>picture>img[src]"
+                  "selector": "div:nth-child(1) a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
+                  "selector": "div:nth-child(1) p:nth-of-type(2)"
                 },
                 {
                   "name": "text",
@@ -197,16 +196,23 @@
           "plugins": {
             "da": {
               "name": "Hero",
-              "rows": 3,
-              "columns": 1,
+              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image URL</a></p><p>Desktop image alt</p></div></div><div><div><p><a href=\"\">Mobile image URL</a></p><p>Mobile image alt</p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
               "fields": [
                 {
                   "name": "desktopImage",
-                  "selector": "div:nth-child(1)>div>picture>img[src]"
+                  "selector": "div:nth-child(1) a[href]"
+                },
+                {
+                  "name": "desktopImageAlt",
+                  "selector": "div:nth-child(1) p:nth-of-type(2)"
                 },
                 {
                   "name": "mobileImage",
-                  "selector": "div:nth-child(2)>div>picture>img[src]"
+                  "selector": "div:nth-child(2) a[href]"
+                },
+                {
+                  "name": "mobileImageAlt",
+                  "selector": "div:nth-child(2) p:nth-of-type(2)"
                 },
                 {
                   "name": "content",
