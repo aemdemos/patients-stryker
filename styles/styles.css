@@ -227,28 +227,36 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
-/* section subheading — Futura Bold */
 h2 {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xl);
   font-weight: 700;
 }
 
-/* stat-lede subheading (ENT condition pages, e.g. "Affects 31 million adults…"):
-   a plain h2 (no gold em/strong marker) sitting beside the gold h1 in the title
-   columns. The source renders it in the light serif heading face, not Futura-bold,
-   so the emphasis reads title-bold + subhead-light. Scoped to the columns title
-   context and to h2s WITHOUT the gold marker, so section-heading h2s are untouched. */
 .columns > div > div h2:not(:has(em, strong)) {
   font-family: var(--heading-font-family);
   font-weight: 500;
 }
+
+.section.compact h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top: 30px;
+}
+
+/* category heading above a card group — sage underline separating each group,
+   matching the source's .component-subheading.border-bottom-gold. Scoped to
+   `.section.no-cta` (the card-group sections on the resources page) so it can't
+   affect h2s anywhere else. */
+main > .section.no-cta > .default-content-wrapper h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
 
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
    h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
@@ -273,13 +281,22 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
-/* bold inline text — the source renders ordinary <b>/<strong> in the body slab
-   face, just heavier (HumanistSlab712W01 bold, 11.2–14px). Only set weight here so
-   bold body copy inherits the body font; Futura is reserved for headings (see the
-   heading rules above and the heading-scoped override below). */
+/* bold inline text — Futura, matching the source's dominant span.futura-bold treatment  */
 strong,
 b {
   font-weight: 700;
+}
+
+/* gold section label — authored as bold+italic (DA has no color control).
+   Source: span[style*="#ffb500"] inside a bold wrapper; upright, not slanted.
+   Uses the display (Futura) font family. */
+main strong em,
+main em strong,
+main b i,
+main i b {
+  color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-style: normal;
 }
 
 /* bold inside a heading keeps the display face — this is what paints the gold H1
@@ -331,6 +348,8 @@ sup {
   vertical-align: baseline;
 }
 
+
+
 /* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
    small body-serif text (11.2px), tight line-height, decimal numbering, 20px indent.
    scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
@@ -364,15 +383,12 @@ h2 strong em {
   margin-bottom: 40px;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .section.compact h1 {
   margin: 30px 0 10px;
   line-height: 22.26px;
 }
 
-.section.compact h2 {
-  font-size: var(--heading-font-size-compact);
-  margin-top: 30px;
-}
 
 .section.compact p {
   font-size: var(--footnote-font-size);
@@ -389,6 +405,7 @@ h2 strong em {
   h2 strong em {
     font-size: var(--heading-font-size-compact-m);
   }
+
 }
 
 /* the source stacks the disclaimer/trademark block flush (0 gap) — only the
@@ -456,6 +473,12 @@ a:any-link:has(b) {
 sup a:any-link {
   color: inherit;
   text-decoration: none;
+}
+
+b a:any-link,
+a:any-link:has(strong),
+a:any-link:has(b) {
+  font-family: var(--display-font-family);
 }
 
 /* compact section links (e.g. reference URLs) are plain, not underlined — matches
@@ -612,9 +635,10 @@ main img {
 }
 
 /* sections — measured from source: content wrapper is max-width 1410px, centered,
-   with 15px left/right padding. Sections are separated by a 30px bottom margin. */
+   with 15px left/right padding. Section spacing is NOT uniform on the source
+   (body section margin-bottom is 0), so no blanket vertical margin is applied. */
 main > .section {
-  margin: 0 0 var(--space-section);
+  margin: 0;
 }
 
 main > .section > div {
@@ -726,20 +750,13 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 main > .section.no-cta > .default-content-wrapper h1 {
   font-size: 42px;
   margin: 40px 0;
   font-family: var(--display-font-family-bold);
 }
 
-/* category heading above a card group — sage underline separating each group,
-   matching the source's .component-subheading.border-bottom-gold. Scoped to
-   `.section.no-cta` (the card-group sections on the resources page) so it can't
-   affect h2s anywhere else. */
-main > .section.no-cta > .default-content-wrapper h2 {
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--color-surface-muted);
-}
 
 /* full-bleed section — the background spans the full viewport width while the
    inner content stays capped at the container max-width and centred. In EDS the
