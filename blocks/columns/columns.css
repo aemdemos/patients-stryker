@@ -31,9 +31,6 @@
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
 }
 
-.columns.columns-icon-grid .columns-img-col img {
-  width: 150px; /* fixed icon size, as on the reference */
-}
 
 /* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
    image is above or below the text. Neutralise the base image-column margin/padding
