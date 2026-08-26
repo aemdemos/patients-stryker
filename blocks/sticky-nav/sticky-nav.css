@@ -1,18 +1,25 @@
 /*
  * sticky-nav — in-page anchor bar migrated from patients.stryker.com IVS home.
  * Source (measured from the live site):
- *   - full-bleed bar, background #545857 (--color-secondary)
- *   - items: Futura, 21px, white, ~193px fixed width, centered as a cluster
- *     (gray bar space on both sides), 80px bar height
+ *   - full-bleed bar, background #545857 (--color-secondary), 80px tall
+ *   - items: Futura 14px, weight 400, UPPERCASE, white; ~193px fixed width,
+ *     centered as a cluster (gray bar space on both sides), 1px white dividers
  *   - sticks to the top of the viewport once scrolled past (position: sticky)
- *   - active item: gold (#ffb500) filled box with black text (scroll-spy)
+ *   - active item: gold (#ffb500) inset box (62px in the 80px bar), black text
  * Mobile: the bar scrolls horizontally rather than collapsing to a menu.
+ *
+ * NOTE: the block's own class is `.sticky-nav`, but a page can also carry
+ * `template: sticky-nav` metadata which adds `body.sticky-nav`. The bar rule
+ * below is therefore scoped to `.sticky-nav.block` (the block wrapper always has
+ * `block`) so it can never accidentally style <body>. Descendant rules
+ * (`.sticky-nav .sticky-nav-*`) are already safe.
  */
 
-.sticky-nav {
-  /* full-bleed gray bar breaking out of the section's padded container */
-  width: auto;
-  margin-inline: calc(-1 * var(--container-gutter));
+.sticky-nav.block {
+  /* true full-bleed gray bar spanning the whole viewport width, regardless of
+     the section's max-width container */
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
   background: var(--color-secondary);
 }
 
@@ -51,11 +58,17 @@
   min-height: 80px;                  /* source bar height */
   padding: 9px 4px;                  /* leaves the ~62px gold box inset */
   border: 0;
+  border-right: 1px solid var(--color-white);   /* source: white vertical divider */
   border-radius: var(--radius-none);
   color: var(--color-white);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
+}
+
+/* the last item has no trailing divider */
+.sticky-nav .sticky-nav-item:last-child {
+  border-right: 0;
 }
 
 /* the label text / gold-box carrier */
@@ -109,6 +122,5 @@
   .sticky-nav .sticky-nav-item {
     flex: 0 0 auto;
     width: 193px;
-    padding-block: 20px;
   }
 }
