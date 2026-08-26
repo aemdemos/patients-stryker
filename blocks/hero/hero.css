@@ -30,31 +30,6 @@
   height: 100%;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
-}
-
-/* ============================================================
-   Fullbleed variant — Stryker patients landing hero.
-
-   Art-directed, matching the source at every viewport (switch at 840px):
-   - Mobile/tablet (<=840px): a PORTRAIT (~4:5) image fills the block; the
-     two-tone headline + supporting copy are overlaid near the top-left.
-   - Desktop (>840px): a WIDE (~3:1) image (white panel left, people right,
-     gold rule baked in); text overlaid on the white left panel, vertically
-     centered, ~5% inset, ~40% wide.
-
-   The authored table is [row1: image(s)] [row2: h1 + p]. hero.js merges the
-   desktop + mobile DM pictures into ONE responsive <picture> (mobile served
-   via a `(max-width: 840px)` source) and splits the headline into a lead
-   sentence (light serif) + accent remainder (Futura bold).
-
-   Both viewports overlay text on the image, so the block is a single-cell
-   grid stack at all sizes; only the geometry differs across the breakpoint.
-   ============================================================ */
-
 .hero.fullbleed {
   display: grid;
   grid-template-columns: 1fr;
@@ -64,7 +39,8 @@
 }
 
 /* stack the image row and the text row in the same grid cell */
-.hero.fullbleed > div {
+.hero.fullbleed > div,
+.hero.band > div {
   grid-area: 1 / 1;
 }
 
@@ -79,15 +55,8 @@
 .hero.fullbleed img {
   display: block;
   width: 100%;
-
-  /* pin the mobile box to the portrait asset's ratio so height is
-     deterministic (the DM preset can serve a wider crop, which otherwise
-     collapses the rendered height) */
   height: auto;
   aspect-ratio: 4 / 5;
-
-  /* the assets are designed full-bleed crops (people cut-out + gold rule baked
-     in); cover fills the pinned box without letterboxing */
   object-fit: cover;
 }
 
@@ -112,8 +81,6 @@
   margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
-
-  /* scale the headline with the viewport on mobile so it isn't undersized */
   font-size: 7vw;
   line-height: 1.35;
 }
@@ -127,53 +94,322 @@
 .hero.fullbleed p {
   margin-bottom: 0;
   font-family: var(--heading-font-family);
-
-  /* scale supporting copy with the viewport on mobile */
   font-size: 3vw;
   line-height: 1.35;
 }
 
-/* keep the safety fallback: a fullbleed hero with no image renders dark copy */
+/* no-image fallback: dark copy */
 .hero.fullbleed.no-image * {
   color: var(--text-color);
 }
 
-@media (width >= 600px) {
-  .hero.fullbleed > div:last-child {
-    padding: 18% 8% 0;
-  }
+/* ===== Banner variant: copy stacked below the image on mobile, overlaid on desktop ===== */
 
-  .hero.fullbleed h1 {
-    font-size: 42px;
-  }
+/* contained drop-shadowed card — restore content containment */
+.hero-container .hero-wrapper:has(.hero.banner) {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+}
 
-  .hero.fullbleed p {
-    font-size: 22px;
+.hero.banner {
+  display: block;
+  position: static;
+
+  /* match the source card's own 20px top/bottom margin */
+  margin-block: var(--space-block-l);
+  padding: 0;
+  min-height: 0;
+  box-shadow: var(--shadow-soft);
+  overflow: clip;
+}
+
+.hero.banner picture {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  width: 100%;
+}
+
+.hero.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* copy block — stacked below the image on mobile (15px side gutter) */
+.hero.banner > div:last-child {
+  box-sizing: border-box;
+  padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+}
+
+.hero.banner h1,
+.hero.banner h2 {
+  max-width: none;
+  margin-inline: 0;
+  text-align: left;
+}
+
+/* headline — light serif base; bold → Futura, bold+italic → gold (see styles.css) */
+.hero.banner h1 {
+  margin-bottom: var(--space-block);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: 7vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* subheading — dark serif, 21px on phones then 24.5px from 480px up */
+.hero.banner h2 {
+  margin-bottom: var(--space-block);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 480px) {
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
   }
 }
 
+/* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
+.hero.banner .button-wrapper {
+  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
+}
 
-/* desktop — wide image, text overlaid on the white left panel, centered */
-@media (width >= 900px) {
+/* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
+.hero.banner .button-wrapper:has(+ .button-wrapper),
+.hero.banner .button-wrapper + .button-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hero.banner .button-wrapper + .button-wrapper {
+  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
+  margin-inline-start: 10px;
+}
+
+/* desktop — copy overlays the image, vertically centered (crossover at 840px) */
+@media (width >= 840px) {
+  .hero.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* stack the image row and the copy row in the same grid cell */
+  .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+  /* copy overlays the left half of the image */
+  .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: center;
+    max-width: 50%;
+    padding: 0 0 0 5vw;
+  }
+
+  /* keep the centred block balanced top and bottom */
+  .hero.banner .button-wrapper:last-child {
+    margin-bottom: 0;
+  }
+
+  .hero.banner h1 {
+    font-size: 3.5vw;
+  }
+
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* cap the fluid headline at 1439px */
+@media (width >= 1439px) {
+  .hero.banner h1 {
+    font-size: 49px;
+  }
+}
+
+@media (width >= 840px) {
+  .hero {
+    padding: 40px 32px;
+  }
+
   .hero.fullbleed > div:last-child {
     align-self: center;
     max-width: 45%;
     padding: 0 0 0 5vw;
   }
 
-  /* desktop asset is a wide crop — let its own ratio drive the height */
+  /* wide crop — let the asset's own ratio drive the height */
   .hero.fullbleed img {
     aspect-ratio: auto;
     object-fit: contain;
   }
 
   .hero.fullbleed h1 {
-    font-size: min(3.5vw, 49px);
+    font-size: 3.5vw;
   }
 
   .hero.fullbleed p {
     margin-top: 8px;
-    font-size: 21px;
+    font-size: 1.5vw;
     line-height: 1.35;
+  }
+}
+
+/* cap the fluid sizes at 1439px */
+@media (width >= 1439px) {
+  .hero.fullbleed h1 {
+    font-size: 49px;
+  }
+
+  .hero.fullbleed p {
+    font-size: 21px;
+  }
+}
+
+/* band variant — compact gradient bar with the World Stroke Day logo baked
+   into the authored image; a gold headline is overlaid on the left, vertically
+   centered. Reuses the fullbleed image-stacking (see .hero.fullbleed above). */
+.hero.band {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: static;
+  padding: 0;
+  min-height: 0;
+}
+
+.hero.band picture {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: block;
+  width: 100%;
+}
+
+/* the image (gradient + logo) drives the bar height */
+.hero.band img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* text overlay — gold headline on the left, vertically centered over the bar.
+   Source insets the copy 5% on mobile, 12% on desktop. */
+.hero.band > div:last-child {
+  z-index: 1;
+  box-sizing: border-box;
+  align-self: center;
+  padding-inline: 5%;
+}
+
+/* colour + bold come from authoring (bold+italic → gold) and global styles;
+   only layout and the responsive size are set here. */
+.hero.band h1 {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  font-size: 8vw;
+  line-height: 1.2;
+}
+
+/* desktop — source drops the headline to 4vw and insets the copy 12% at 840px */
+@media (width >= 840px) {
+  .hero.band > div:last-child {
+    padding-inline: 12%;
+  }
+
+  .hero.band h1 {
+    font-size: 4vw;
+  }
+}
+
+/* source caps the headline at 56px (reached ~1400px) */
+@media (width >= 1400px) {
+  .hero.band h1 {
+    font-size: 56px;
+  }
+}
+
+/* ===== Poster modifier — full-bleed banner photo with dark serif copy overlaid
+   directly on the image (as on the stroke-awareness landing page). The image fills the
+   band via object-fit: cover rather than sitting in a white side panel. Placed
+   after the band/banner rules so its higher specificity descends cleanly. ===== */
+.hero.fullbleed.poster img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* overlay the copy on the image — top-aligned and inset 5% on mobile (source) */
+.hero.fullbleed.poster > div:last-child {
+  align-self: start;
+  max-width: none;
+  padding: 5% 5% 0;
+}
+
+.hero.fullbleed.poster h1,
+.hero.fullbleed.poster p {
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+/* headline scales fluidly with the viewport (source: 10vw, capped 70px);
+   reuse the measured hero line-height token */
+.hero.fullbleed.poster h1 {
+  font-size: 10vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* supporting copy scales fluidly (source: 3vw, capped 21px) */
+.hero.fullbleed.poster p {
+  margin-top: var(--space-block);
+  font-size: 3vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* desktop — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
+   the block ~4% down (≈12% of the 480px band) and insets it 10vw from the left. */
+@media (width >= 840px) {
+  .hero.fullbleed.poster img {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+  }
+
+  /* left inset via margin (outside the width box) so the 42%-wide text area
+     matches the source and the copy stays on one line at wide viewports */
+  .hero.fullbleed.poster > div:last-child {
+    align-self: start;
+    max-width: 42%;
+    margin-inline-start: 10vw;
+    padding: 4% 0 0;
+  }
+
+  /* source drops the headline to 5vw and copy to 1.5vw at the 840px crossover */
+  .hero.fullbleed.poster h1 {
+    font-size: 5vw;
+  }
+
+  .hero.fullbleed.poster p {
+    font-size: 1.5vw;
+  }
+}
+
+/* source caps the fluid sizes at large widths (headline 70px, copy 21px) */
+@media (width >= 1440px) {
+  .hero.fullbleed.poster h1 {
+    font-size: 70px;
+  }
+
+  .hero.fullbleed.poster p {
+    font-size: 21px;
   }
 }

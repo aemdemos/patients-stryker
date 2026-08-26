@@ -21,6 +21,31 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
+// Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
+// addressed with an image sizing preset ($..width..$) or a .gif extension,
+// rather than a video manifest/extension. These must render as <img> (which
+// preserves GIF animation) instead of <video>. Kept separate so genuine DM
+// video handling below is unchanged.
+const DM_IMAGE_PRESET = /\$[^$]*width[^$]*\$/i;
+
+/** Decode a percent-encoded href/src ($..$ presets arrive encoded from anchors). */
+function decodeSrc(src) {
+  try { return decodeURIComponent(src); } catch { return src; }
+}
+
+/**
+ * True when a /is/content/ URL is actually an image (e.g. a GIF) — identified by
+ * an image sizing preset or a .gif extension, and the absence of a video
+ * extension. Used to route these to the image renderer instead of <video>.
+ * @param {string} src the link/media URL
+ * @returns {boolean}
+ */
+function isDMContentImage(src) {
+  if (!DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return false;
+  const decoded = decodeSrc(src);
+  return DM_IMAGE_PRESET.test(decoded) || /\.gif(\?|$)/i.test(decoded);
+}
+
 // hls.js — lazy-loaded only when a DM video needs it (Chrome/Firefox lack native
 // HLS). Pinned version, loaded from jsDelivr on demand. The Subresource
 // Integrity hash pins the exact bytes: the browser refuses to run the script if
@@ -42,6 +67,18 @@ export function isDMSrc(src) {
   return !!src && (
     DM_SCENE7.test(src) || DM_OPENAPI.test(src) || DM_VIDEO.test(src) || VIDEO_EXT.test(src)
   );
+}
+
+/**
+ * True when a URL is a DM / streaming VIDEO (Scene7 /is/content/ or a video
+ * container/manifest). The video block uses this to route DM video URLs to the
+ * native <video> renderer (issue #98's unified handling), while dm-support.js
+ * still converts bare DM autolinks elsewhere on the page.
+ * @param {string} src the link/media URL
+ * @returns {boolean}
+ */
+export function isDMVideoSrc(src) {
+  return !!src && (DM_VIDEO.test(src) || VIDEO_EXT.test(src));
 }
 
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
@@ -78,28 +115,42 @@ function withParams(src, params) {
 }
 
 /**
- * Build a <picture> for a Scene7 / classic DM URL.
- * fit=constrain keeps the image proportional (Scene7 otherwise upscales width
- * and clips height to the asset's native box, distorting the aspect ratio).
+ * Append a single `key=value` pair to a URL's query string verbatim, without
+ * parsing/re-serializing the rest of it. Scene7 preset flags (e.g.
+ * `$max_width_png$`, a bare key with no `=`) get corrupted by a `URL`/
+ * `URLSearchParams` round trip — `$` is percent-encoded to `%24` and the
+ * valueless key is normalized to `key=`. A plain string append leaves the
+ * authored query string untouched.
+ * @param {string} src base image URL
+ * @param {string} key param name
+ * @param {string} value param value
+ * @returns {string} the URL string with the param appended
+ */
+function appendParam(src, key, value) {
+  const sep = src.includes('?') ? '&' : '?';
+  return `${src}${sep}${key}=${value}`;
+}
+
+/**
+ * Build a <picture> for a Scene7 / classic DM URL, using the authored URL
+ * unchanged so the asset renders exactly as linked (no forced resizing/format).
+ * The one exception: a transparent asset (a `$..._png$` preset or an explicit
+ * `fmt=png`) gets `fmt=png-alpha` appended — Scene7's default delivery format
+ * otherwise flattens transparency to a white background.
  */
 function renderScene7(src, alt, eager) {
+  // decode first so a percent-encoded preset ($..._png$ arrives as %24..._png%24
+  // from a href) is matched as well as the literal form and an explicit fmt=png
+  let decoded = src;
+  try { decoded = decodeURIComponent(src); } catch { /* leave as-is on bad escape */ }
+  const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decoded);
+  const finalSrc = png ? appendParam(src, 'fmt', 'png-alpha') : src;
   const picture = document.createElement('picture');
-  BREAKPOINTS.forEach((br, i) => {
-    const srcset = withParams(src, { wid: br.width, fmt: 'jpeg', fit: 'constrain' });
-    if (i < BREAKPOINTS.length - 1) {
-      const source = document.createElement('source');
-      if (br.media) source.media = br.media;
-      source.type = 'image/jpeg';
-      source.srcset = srcset;
-      picture.append(source);
-    } else {
-      const img = document.createElement('img');
-      img.loading = eager ? 'eager' : 'lazy';
-      img.alt = alt;
-      img.src = withParams(src, { wid: br.width, fit: 'constrain' });
-      picture.append(img);
-    }
-  });
+  const img = document.createElement('img');
+  img.loading = eager ? 'eager' : 'lazy';
+  img.alt = alt;
+  img.src = finalSrc;
+  picture.append(img);
   return picture;
 }
 
@@ -124,6 +175,26 @@ function renderOpenAPI(src, alt, eager) {
       picture.append(img);
     }
   });
+  return picture;
+}
+
+/**
+ * Build a <picture> for a Scene7 /is/content/ IMAGE (e.g. an animated GIF).
+ * The original URL is used unchanged so GIF animation is preserved — unlike the
+ * Scene7 renderer, this never forces jpeg/png (which would freeze the animation)
+ * and never rewrites the sizing preset.
+ * @param {string} src the authored image URL
+ * @param {string} alt accessible text
+ * @param {boolean} eager whether to eager-load
+ * @returns {HTMLPictureElement}
+ */
+function renderContentImage(src, alt, eager) {
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  img.loading = eager ? 'eager' : 'lazy';
+  img.alt = alt;
+  img.src = src;
+  picture.append(img);
   return picture;
 }
 
@@ -173,38 +244,41 @@ function loadHlsJs() {
 }
 
 /**
- * Attach an HLS source to a <video>: native playback where supported (Safari/
- * iOS), otherwise hls.js. Falls back to a plain <source> if hls.js is
- * unavailable so at least native-HLS browsers still work.
+ * Attach an HLS source to a <video>.
+ *
+ * Prefer hls.js (software demux + JS-controlled ABR) wherever it's supported —
+ * including Safari/iOS, which also has native HLS. Native HLS on macOS Safari
+ * hands decoding to VideoToolbox, which can hard-fail on certain Scene7
+ * renditions (PIPELINE_ERROR_DECODE / VTDecompressionOutputCallback -12909),
+ * stalling playback a few seconds in; hls.js decodes in software and avoids that
+ * path. Native HLS is kept only as the fallback for browsers where hls.js can't
+ * run (e.g. older iOS Safari, which lacks Media Source Extensions).
  * @param {HTMLVideoElement} video
  * @param {string} src an .m3u8 URL
  */
 function attachHls(video, src) {
-  if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = src;
-    return;
-  }
   loadHlsJs().then((Hls) => {
     if (Hls && Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(src);
       hls.attachMedia(video);
-    } else {
-      video.src = src; // last resort — lets native-HLS UAs still try
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // no MSE / hls.js unavailable — fall back to the browser's native HLS
+      video.src = src;
     }
   });
 }
 
 /**
- * Build a native <video> for a DM / streaming video URL.
- * An optional poster frame is supported via a `poster` query param on the
- * authored URL (its value is a poster image URL); it is applied to the
+ * Build a native <video> (wrapped with a centered play-icon overlay) for a DM /
+ * streaming video URL. An optional poster frame is supported via a `poster` query
+ * param on the authored URL (its value is a poster image URL); it is applied to the
  * <video poster> and stripped from the media source.
  * @param {string} src the authored video URL
  * @param {string} label optional accessible label (from link title)
- * @returns {HTMLVideoElement}
+ * @returns {HTMLElement} a wrapper div containing the <video> and the play overlay
  */
-function renderVideo(src, label) {
+export function renderVideo(src, label) {
   const url = new URL(src, window.location.href);
   const poster = url.searchParams.get('poster');
   if (poster) url.searchParams.delete('poster');
@@ -232,13 +306,41 @@ function renderVideo(src, label) {
     if (type) source.type = type;
     video.append(source);
   }
-  return video;
+
+  // wrap the video with a centered play-icon overlay (with or without a poster):
+  // it sits over the frame before playback and fades out/in as the video is
+  // played/paused, mirroring the source's Scene7 viewer. The overlay layer itself
+  // is click-through (pointer-events:none) so the native controls stay usable; only
+  // the centered button captures clicks. Styling lives in styles/lazy-styles.css.
+  const wrapper = document.createElement('div');
+  wrapper.className = 'dm-video-wrapper';
+
+  const overlay = document.createElement('div');
+  overlay.className = 'dm-video-overlay';
+  const play = document.createElement('button');
+  play.type = 'button';
+  play.className = 'dm-video-play';
+  play.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
+  play.addEventListener('click', () => { video.play(); });
+  overlay.append(play);
+
+  // toggle the overlay from the video's own state, so it also responds when the
+  // user plays/pauses via the native controls or keyboard
+  video.addEventListener('play', () => wrapper.classList.add('is-playing'));
+  video.addEventListener('pause', () => wrapper.classList.remove('is-playing'));
+  video.addEventListener('ended', () => wrapper.classList.remove('is-playing'));
+
+  wrapper.append(video, overlay);
+  return wrapper;
 }
 
 /**
  * Pick the renderer for a DM URL, or null if it isn't a DM asset.
  */
 function dmRendererFor(src) {
+  // a /is/content/ image (GIF etc.) must be checked before the video branch,
+  // since it shares the /is/content/ path but is not a video
+  if (isDMContentImage(src)) return renderContentImage;
   if (DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return renderVideo;
   if (DM_OPENAPI.test(src)) return renderOpenAPI;
   if (DM_SCENE7.test(src)) return renderScene7;

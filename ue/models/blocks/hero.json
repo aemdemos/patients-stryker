@@ -31,6 +31,18 @@
             {
               "name": "Fullbleed",
               "value": "fullbleed"
+            },
+            {
+              "name": "Band",
+              "value": "band"
+            },
+            {
+              "name": "Banner",
+              "value": "banner"
+            },
+            {
+              "name": "Poster",
+              "value": "poster"
             }
           ]
         },
@@ -54,7 +66,11 @@
           "name": "mobileImage",
           "label": "Mobile Image (optional)",
           "multi": false,
-          "condition": { "in": ["fullbleed", { "var": "classes" }] }
+          "condition": { "or": [
+            { "in": ["fullbleed", { "var": "classes" }] },
+            { "in": ["banner", { "var": "classes" }] },
+            { "in": ["band", { "var": "classes" }] }
+          ] }
         },
         {
           "component": "text",
@@ -62,7 +78,11 @@
           "name": "mobileImageAlt",
           "label": "Mobile Image Alt",
           "value": "",
-          "condition": { "in": ["fullbleed", { "var": "classes" }] }
+          "condition": { "or": [
+            { "in": ["fullbleed", { "var": "classes" }] },
+            { "in": ["banner", { "var": "classes" }] },
+            { "in": ["band", { "var": "classes" }] }
+          ] }
         },
         {
           "component": "richtext",

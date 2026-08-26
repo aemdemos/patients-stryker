@@ -1,0 +1,291 @@
+/* Icon list — icons above captions. Breakpoints: <=650px 1-col; 651-1200px 4-up,
+   icons hidden; >=1201px cols-N. Column count from --icon-list-columns (set in JS). */
+
+/* World-map background: decorative <img> on the section; in normal flow <=840px. */
+.icon-list-container > .section-background-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* content-wrapper top spacing (label variant, all sizes) */
+.icon-list-container:has(.icon-list.label) > .default-content-wrapper,
+.icon-list-container:has(.icon-list.label) > .icon-list-wrapper {
+  margin-top: 45px;
+}
+
+/* >=841px: map becomes a band behind the content */
+@media (width >= 841px) {
+  .icon-list-container.section:has(> .section-background-image) {
+    position: relative;
+    padding-block: var(--icon-list-bg-padding);
+  }
+
+  .icon-list-container > .section-background-image {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 0;
+  }
+
+  /* lift content above the map layer */
+  .icon-list-container > .default-content-wrapper,
+  .icon-list-container > .icon-list-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* Section heading — Futura-bold gold, 31.5px (26.25px below 480px). */
+.icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  margin: 15px 0 var(--icon-list-title-gap);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--icon-list-title-size-s);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-align: center;
+}
+
+@media (width >= 480px) {
+  .icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+    font-size: var(--icon-list-title-size);
+  }
+}
+
+.icon-list ul.icon-list-items {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--icon-list-item-gap) 0;
+  margin: 0;
+  padding: 0;
+}
+
+.icon-list .icon-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--container-gutter);
+  text-align: center;
+}
+
+.icon-list .icon-list-icon {
+  margin-bottom: var(--icon-list-icon-gap);
+}
+
+.icon-list .icon-list-icon picture,
+.icon-list .icon-list-icon img {
+  display: block;
+}
+
+/* aspect-ratio reserves box height for the lazy-loaded DM icon (avoids CLS + a
+   zero-area box Chromium would skip fetching). */
+.icon-list .icon-list-icon img {
+  width: var(--icon-list-icon-width);
+  height: auto;
+  aspect-ratio: 165 / 107;
+}
+
+/* caption — Futura-bold black 14px */
+.icon-list .icon-list-text,
+.icon-list .icon-list-text p {
+  margin: 0;
+  font-family: var(--display-font-family-bold);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: var(--paragraph-line-height);
+  color: var(--color-black);
+}
+
+/* tablet: 4-up, icons hidden */
+@media (width > 650px) {
+  .icon-list ul.icon-list-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .icon-list .icon-list-icon {
+    display: none;
+  }
+}
+
+/* desktop: author column count, icons shown again */
+@media (width > 1200px) {
+  .icon-list ul.icon-list-items {
+    grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
+  }
+
+  .icon-list .icon-list-icon {
+    display: block;
+    margin-bottom: 9px;
+  }
+}
+
+/* ── Tile variant ── "risk factors of a stroke" on stroke-awareness. Near-square
+   (200x170) icons stay visible at every breakpoint; 2-up ≤650px, 5-up above (or
+   cols-4). minmax(0, 1fr), not 1fr (= minmax(auto, 1fr)), keeps columns equal —
+   else a long caption widens its column + icon and drops its caption below the row. */
+.icon-list.tile ul.icon-list-items {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--icon-list-tile-row-gap) var(--icon-list-tile-col-gap);
+  justify-content: center;
+}
+
+/* no inner horizontal padding — the icon fills its column so the grid column gap
+   is the only space between tiles (matches source). */
+.icon-list.tile .icon-list-item {
+  padding-inline: 0;
+}
+
+.icon-list.tile .icon-list-icon {
+  margin-bottom: var(--icon-list-tile-icon-gap);
+}
+
+/* caption cell — cap at icon width so long labels wrap instead of overflowing.
+   Asymmetric gap (34px above via icon margin, 24px below) matches the source's
+   trailing spacer paragraph. */
+.icon-list.tile .icon-list-text {
+  max-width: var(--icon-list-tile-icon-width);
+  margin-bottom: var(--icon-list-tile-caption-gap);
+}
+
+.icon-list.tile .icon-list-text,
+.icon-list.tile .icon-list-text p {
+  font-size: var(--icon-list-tile-caption-size);
+}
+
+.icon-list.tile .icon-list-icon img {
+  width: var(--icon-list-tile-icon-width);
+  max-width: 100%;
+  aspect-ratio: 20 / 17;
+}
+
+/* tablet + desktop: 5-up (or cols-4), icons stay visible — overrides the base
+   block's tablet icon-hide rule. The source lays the tiles out on a 12-column
+   grid where the 5 tiles span the middle 10 columns (83.333%), centred, so the
+   icons scale fluidly (≈86px → 200px) as the viewport grows from 650px to
+   ~1400px, keeping a fixed 30px gap. max-width caps the group at its natural
+   size (5 × 200px icons + 4 × 30px gaps) so icons never exceed 200px; above
+   that width the group stays capped and centred rather than stretching. */
+@media (width > 650px) {
+  .icon-list.tile ul.icon-list-items {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: var(--icon-list-tile-col-gap);
+    width: var(--icon-list-tile-grid-width);
+    max-width: calc(5 * var(--icon-list-tile-icon-width) + 4 * var(--icon-list-tile-col-gap));
+    margin-inline: auto;
+  }
+
+  /* cols-4 spans 8 of 12 columns (66.667%) */
+  .icon-list.tile.cols-4 ul.icon-list-items {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: var(--icon-list-tile-grid-width-cols-4);
+    max-width: calc(4 * var(--icon-list-tile-icon-width) + 3 * var(--icon-list-tile-col-gap));
+  }
+
+  .icon-list.tile .icon-list-icon {
+    display: block;
+    margin-bottom: var(--icon-list-tile-icon-gap);
+  }
+}
+
+/* tile section background: author via Section Style (Full Bleed + Light Gray) */
+
+/* center the intro copy above the grid */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper :is(p, h1, h2, h3, h4, h5, h6) {
+  text-align: center;
+}
+
+/* ─── (label) variant — "Symptoms of a stroke" (B.E. F.A.S.T.) ─────────────
+   Portrait icon over a bold label (gold initial) + lighter caption. Icons stay
+   visible at every breakpoint; author column count applies from tablet up. */
+.icon-list.label .icon-list-icon img {
+  width: var(--icon-list-label-icon-width);
+  max-width: 100%;   /* shrink to fit the column — prevents overflow */
+  aspect-ratio: 151 / 166;
+}
+
+/* icon → label gap: none (visual space is baked into the PNG) */
+.icon-list.label .icon-list-icon {
+  margin-bottom: var(--icon-list-label-icon-gap);
+}
+
+/* stretch text cell to column width so captions wrap instead of overflowing
+   the gutter (flex align-items:center would shrink it to its longest word) */
+.icon-list.label .icon-list-text {
+  align-self: stretch;
+}
+
+/* label — enlarged, gold initial */
+.icon-list.label .icon-list-text p:first-child {
+  font-size: var(--icon-list-label-size);
+  line-height: 1.06;
+}
+
+.icon-list.label .icon-list-text p:first-child::first-letter {
+  color: var(--color-accent);
+}
+
+/* caption — lighter, smaller serif */
+.icon-list.label .icon-list-text p:not(:first-child) {
+  margin-top: var(--icon-list-label-caption-gap);
+  font-family: var(--heading-font-family);
+  font-size: var(--icon-list-label-caption-size);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* intro copy — larger serif heading font (B.E. F.A.S.T. mnemonic in Futura-bold) */
+.icon-list-container:has(.icon-list.label) .default-content-wrapper p {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: 1.15;
+}
+
+.icon-list-container:has(.icon-list.label) .default-content-wrapper p strong {
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+}
+
+/* heading → intro-copy gap: fixed 49px (label has intro text below the heading) */
+.icon-list-container:has(.icon-list.label) .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: var(--icon-list-label-title-gap);
+}
+
+/* tablet+ : icons stay visible, honour author column count (label defaults 6-up) */
+@media (width > 650px) {
+  .icon-list.label ul.icon-list-items {
+    grid-template-columns: repeat(var(--icon-list-columns, 4), minmax(0, 1fr));
+    column-gap: var(--icon-list-label-col-gap);
+  }
+
+  .icon-list.label .icon-list-icon {
+    display: block;
+    margin-bottom: var(--icon-list-label-icon-gap);
+  }
+}
+
+/* Tile intro rhythm (matches source): heading→intro 15px, then 49px before the
+   lead-in and again before the grid. Resets the base variant's fluid title gap.
+   After the .label rules to satisfy no-descending-specificity. */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: var(--icon-list-tile-title-gap);
+}
+
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper p:first-of-type {
+  margin-bottom: var(--icon-list-tile-intro-gap);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+}
+
+/* lead-in line ("These risk factors include the following:") — Futura-bold black
+   at 17.5px, 49px above the grid. */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > .default-content-wrapper p:last-child {
+  margin-bottom: var(--icon-list-tile-intro-gap);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  color: var(--color-black);
+}

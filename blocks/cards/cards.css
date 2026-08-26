@@ -1,10 +1,11 @@
 /*
- * cards — visual design migrated from patients.stryker.com (.cols3 card groups).
- * Source responsive columns (measured on the live site — bootstrap xs/sm/md):
- *   - below 768px (mobile):        1-up, full-width stacked
- *   - 768px to 991px (tablet):     2-up
- *   - 992px and up (desktop):      3-up (5 cards read as 3 + 2)
- * ~30px gutter between cards (bootstrap 15px + 15px).
+ * cards — visual design migrated from patients.stryker.com card groups.
+ * Source responsive columns (verified from the live site's grid CSS —
+ * col-sm-* @841px, col-md-* @1024px):
+ *   - below 841px (mobile):        1-up, full-width stacked
+ *   - 841px to 1023px (tablet):    2-up
+ *   - 1024px and up (desktop):     3-up default (4-up for the resources variant)
+ * ~30px gutter between cards.
  */
 
 .cards > ul {
@@ -16,17 +17,24 @@
   gap: var(--space-section);
 }
 
-/* tablet: 2-up */
-@media (width >= 600px) {
+/* tablet: 2-up (source col-sm-* @841px) */
+@media (width >= 841px) {
   .cards > ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* desktop: 3-up */
-@media (width >= 900px) {
+/* desktop: 3-up default (source col-md-4), 4-up for resources (source col-md-3),
+   both @1024px */
+@media (width >= 1024px) {
   .cards > ul {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards.resources > ul,
+  .cards.brochure > ul,
+  .cards.linked > ul {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -79,4 +87,108 @@
  */
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
+}
+
+/* resources variant: PDF brochure card — portrait cover image over a teal
+   button. Image is full column width at its natural (portrait) ratio, no fixed
+   height. Shares the base grid (1-up, 2-up @768) but goes 4-up on desktop
+   (source col-md-3) instead of the default 3-up. */
+.cards.resources > ul > li {
+  background-color: transparent;
+}
+
+.cards.resources > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;   /* natural portrait ratio, like source img-responsive */
+}
+
+.cards.resources .cards-card-body {
+  margin: var(--space-block) 0 0;
+}
+
+/* shared title-above-image scaffolding (brochure + linked): the li is a flex
+   column and the body uses display:contents so its heading/links become flex
+   items, ordered title -> image -> (body) without moving nodes (keeps UE
+   instrumentation intact). Skins (image ratio/border, title font, body row)
+   are set per-variant below. */
+.cards.brochure > ul > li,
+.cards.linked > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  text-align: center;
+}
+
+.cards.brochure .cards-card-image,
+.cards.linked .cards-card-image {
+  order: 1;   /* image between title (0) and body (2) */
+}
+
+.cards.brochure .cards-card-body,
+.cards.linked .cards-card-body {
+  display: contents;
+}
+
+/* linked title = bold link in a <p>; decorateButtons promotes it to
+   .button-wrapper > a.button, so order/skin that (not a heading) */
+.cards.linked .cards-card-body .button-wrapper {
+  order: 0;   /* title above the image */
+  margin: 0 0 var(--space-block);
+}
+
+/* brochure skin: portrait cover image with a light border, light-serif title,
+   and a centered "Digital | Print" download-links row below. */
+.cards.brochure > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;   /* natural portrait ratio */
+  border: 1px solid var(--color-surface-muted);   /* #b2b4ae, matches source */
+}
+
+.cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
+  order: 0;   /* title above the image */
+  margin: 0 0 var(--space-block);
+
+  /* source brochure title: light serif (URW Egyptienne), weight 500, ~43px
+     (24.5px h2 x 1.75em) — not the Futura-bold the default cards h3 uses */
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-xxxl);
+  line-height: var(--heading-line-height);
+}
+
+/* linked skin: bold title above a landscape borderless image, both linking to a
+   page (IVS condition grid). */
+.cards.linked > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 680;   /* source asset ratio (~16:9) */
+  object-fit: cover;
+}
+
+/* strip button chrome -> plain bold slab-serif link (matches source) */
+.cards.linked .cards-card-body .button-wrapper a.button {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--text-color);
+  font-family: var(--body-font-family);   /* bold slab serif, source default */
+  font-weight: 700;
+  font-size: var(--heading-font-size-l);   /* 21px = source fontsize-1-5em (1.5 x 14) */
+  line-height: var(--heading-line-height);
+  text-transform: none;   /* undo the global button uppercase */
+  text-decoration: none;
+}
+
+.cards.brochure .cards-card-body p {
+  order: 2;   /* download links below the image */
+  margin: var(--space-block) 0 0;
+
+  /* source download links: light serif (urw-egyptienne) at 1.25em (fontsize-1-25em) */
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
 }
