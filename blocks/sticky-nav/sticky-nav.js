@@ -65,47 +65,33 @@ export default function decorate(block) {
     })
     .filter((t) => t.region);
 
-  // Offset a target so a jump lands below the sticky bar instead of behind it
-  // (otherwise the section's top is hidden under the 70px bar). Aim for ~115px
-  // of breathing room so the section reads as a fresh block.
-  //
-  // But a jump can only leave a gap if there's enough content above the section
-  // to scroll behind the bar. If the section sits closer to the bar's pin point
-  // than bar+GAP (e.g. the first section, just below the nav), a full gap would
-  // stop the scroll early and leave the bar unpinned (floating with content
-  // above it). So cap each offset at the distance the section sits below the
-  // pin point — the bar then always pins, keeping whatever gap the layout
-  // allows (full 115px where there's room, less for a section near the top).
-  //
-  // Computed per target at click time: layout is settled by then, whereas at
-  // decorate time the hero/content above may not have laid out yet (giving a
-  // wrong, tiny offset that never gets a chance to grow).
+  // A jump must clear the sticky bar (otherwise the section's top hides behind
+  // the 70px bar) AND leave ~115px of breathing room so the section reads as a
+  // fresh block. Rather than fold the gap into the scroll offset — which needs
+  // extra scroll room above the section and fails for the first section right
+  // below the nav — the gap lives INSIDE each section as padding-top. The
+  // scroll offset is then just the bar height: a jump lands the section's top
+  // flush under the bar (which always pins, since it only needs to clear the
+  // bar) and the intrinsic padding shows the gap. Same feel for every section,
+  // first included.
   const GAP = 115;
-  const navSection = block.closest('.section') || block;
-  const offsetFor = (region) => {
-    const bar = block.getBoundingClientRect().height || 70;
-    const navTop = navSection.getBoundingClientRect().top + window.scrollY;
-    const regionTop = region.getBoundingClientRect().top + window.scrollY;
-    const room = regionTop - navTop; // space the section sits below the pin
-    return Math.max(bar, Math.min(bar + GAP, room));
+  const applyScrollOffset = () => {
+    const bar = `${block.getBoundingClientRect().height || 70}px`;
+    targets.forEach(({ region, anchor }) => {
+      region.style.paddingTop = `${GAP}px`;
+      region.style.scrollMarginTop = bar;
+      if (anchor && anchor !== region) anchor.style.scrollMarginTop = bar;
+    });
   };
-  const applyScrollOffset = (region, anchor) => {
-    const offset = `${offsetFor(region)}px`;
-    region.style.scrollMarginTop = offset;
-    if (anchor && anchor !== region) anchor.style.scrollMarginTop = offset;
-  };
-  // seed offsets so a load-time hash jump lands correctly, then keep fresh
-  targets.forEach(({ region, anchor }) => applyScrollOffset(region, anchor));
+  applyScrollOffset();
+  window.addEventListener('resize', applyScrollOffset, { passive: true });
 
-  // smooth-scroll on click, recomputing the target's offset against the
-  // now-settled layout just before scrolling
+  // smooth-scroll on click
   items.forEach(({ item, href }) => {
     item.addEventListener('click', (e) => {
       const target = resolveTarget(href);
       if (!target) return;
       e.preventDefault();
-      const region = target.closest('.section') || target;
-      applyScrollOffset(region, target);
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
@@ -115,10 +101,10 @@ export default function decorate(block) {
       items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
     };
 
-    // active = last section whose top has reached the point where a clicked
-    // section settles (bar bottom + GAP). This line must match the scroll
-    // offset above, otherwise a click lands a section below the line and the
-    // previous item stays highlighted.
+    // active = last section whose top has crossed the line just below the bar.
+    // A clicked section settles with its top flush under the bar (its GAP now
+    // lives as internal padding, not scroll offset), so the line sits a little
+    // below the bar + gap to comfortably catch it.
     //
     // Crucially, nothing is active until the bar actually pins to the top:
     // before that we're still scrolling through the hero above the first
