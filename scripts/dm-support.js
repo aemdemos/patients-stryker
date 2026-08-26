@@ -372,16 +372,22 @@ export default function decorateDMAssets(main) {
       if (text && text !== src) displayText = text;
     }
 
-    // Authors describe the image with an alt paragraph on its own line, directly
-    // below the link (the DM link is wrapped in its own <p>; the alt is the next
-    // <p> sibling). Consume that paragraph so it feeds the alt instead of
-    // rendering as visible copy.
+    // Authored-alt convention (hero/cards): consume a plain <p> after the link's
+    // <p> as alt, but only when the two <p>s are the cell's sole children and no
+    // other alt was authored — so body copy following an inline image isn't eaten.
+    const authoredAlt = (el.tagName === 'A'
+      && (el.getAttribute('alt') || el.getAttribute('title') || displayText)) || '';
     let altParagraph = '';
     let altNode = null;
-    if (el.tagName === 'A') {
+    if (el.tagName === 'A' && !authoredAlt) {
       const linkP = el.closest('p');
+      const parent = linkP && linkP.parentElement;
       const next = linkP && linkP.nextElementSibling;
-      if (next && next.tagName === 'P' && !next.querySelector('a, picture, img, video')) {
+      const isSoleAltPair = parent
+        && parent.childElementCount === 2
+        && parent.firstElementChild === linkP
+        && next === parent.lastElementChild;
+      if (isSoleAltPair && next.tagName === 'P' && !next.querySelector('a, picture, img, video')) {
         const text = next.textContent.trim();
         if (text) { altParagraph = text; altNode = next; }
       }
