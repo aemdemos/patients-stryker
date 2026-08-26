@@ -44,6 +44,18 @@
             {
               "name": "Blue",
               "value": "blue"
+            },
+            {
+              "name": "Divider",
+              "value": "divider"
+            },
+            {
+              "name": "Spacer",
+              "value": "spacer"
+            },
+            {
+              "name": "Compact",
+              "value": "compact"
             }
           ]
         },
@@ -67,10 +79,13 @@
         "fragment",
         "hero",
         "icon-list",
+        "icon-list-tile",
         "image",
         "panel",
         "statistics",
-        "text"
+        "tabs",
+        "text",
+        "video"
       ]
     }
   ]

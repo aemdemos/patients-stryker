@@ -22,6 +22,23 @@
         "name": "robots",
         "label": "Robots",
         "description": "Index control via robots"
+      },
+      {
+        "component": "select",
+        "name": "template",
+        "label": "Template",
+        "description": "Page template that controls layout and styling",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Treatment Detail",
+            "value": "treatment-detail"
+          }
+        ]
       }
     ]
   },
@@ -72,6 +89,18 @@
           {
             "name": "Blue",
             "value": "blue"
+          },
+          {
+            "name": "Divider",
+            "value": "divider"
+          },
+          {
+            "name": "Spacer",
+            "value": "spacer"
+          },
+          {
+            "name": "Compact",
+            "value": "compact"
           }
         ]
       },
@@ -174,7 +203,7 @@
         "value": 2,
         "validation": {
           "numberMin": 1,
-          "numberMax": 3
+          "numberMax": 4
         }
       },
       {
@@ -366,11 +395,29 @@
           },
           {
             "name": "5-columnar / Tiles",
-            "value": "cols-5 tile"
+            "value": "tile"
           },
           {
             "name": "6-columnar / Label",
             "value": "cols-6 label"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "icon-list-tile",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "tile",
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "5 columns (default)",
+            "value": "tile"
           }
         ]
       }
@@ -541,6 +588,41 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tabs",
+    "fields": []
+  },
+  {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "text",
+        "name": "label",
+        "value": "",
+        "label": "Tab Label",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Content",
+        "valueType": "string",
+        "description": "Reference one or more card fragments (e.g. /fragments/card-mild) or author content directly."
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Video link",
+        "description": "Paste a video URL. YouTube (youtube.com / youtu.be / youtube-nocookie.com) is supported; it renders behind a click-to-load poster facade."
       }
     ]
   }

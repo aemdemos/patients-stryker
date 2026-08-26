@@ -14,10 +14,13 @@
       "fragment",
       "hero",
       "icon-list",
+      "icon-list-tile",
       "image",
       "panel",
       "statistics",
-      "text"
+      "tabs",
+      "text",
+      "video"
     ]
   },
   {
@@ -66,5 +69,15 @@
     "components": [
       "statistic"
     ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tab"
+    ]
+  },
+  {
+    "id": "video",
+    "components": []
   }
 ]
