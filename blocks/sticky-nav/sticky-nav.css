@@ -7,8 +7,9 @@
  *   - sticks to the top of the viewport once scrolled past (position: sticky)
  *   - active item: gold (#ffb500) inset box (62px in the 80px bar), black text
  * Responsive: hidden below 600px (not shown on small screens, per the source);
- * shown at >=600px. Items are a centered fixed-width cluster when they fit and
- * left-packed + horizontally scrollable when they don't (600–964px).
+ * shown at >=600px. Items share the row width equally (each capped at 193px):
+ * a centered fixed-width cluster at wide viewports, and narrower wrapping cells
+ * that fill 100% width below ~965px — never horizontally scrollable.
  *
  * NOTE: the block's own class is `.sticky-nav`, but a page can also carry
  * `template: sticky-nav` metadata which adds `body.sticky-nav`. The bar rule
@@ -45,20 +46,15 @@
   }
 }
 
-/* `justify-content: safe center` centers the item cluster when it fits
-   (~>=965px) and falls back to flex-start (left-packed, scrollable) when it
-   doesn't — no clipping, no extra breakpoint needed. */
+/* The list is capped to the width of five 193px items (965px) and centred, so
+   at wide viewports the items form a centred fixed-width cluster (each item
+   maxes out at 193px). Below that the list fills 100% of the available width
+   and the equal-share items simply get narrower, wrapping their labels — no
+   horizontal scroll at any width. */
 .sticky-nav .sticky-nav-list {
   display: flex;
-  max-width: var(--container-max);
+  max-width: calc(5 * 193px);
   margin-inline: auto;
-  justify-content: safe center;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.sticky-nav .sticky-nav-list::-webkit-scrollbar {
-  display: none;
 }
 
 /* each item is a transparent flex cell; the inner box (its <p>) is what fills
@@ -67,9 +63,11 @@
 .sticky-nav .sticky-nav-item {
   display: flex;
   box-sizing: border-box;
-  flex: 0 0 auto;
+  flex: 1 1 0;                       /* equal share of the row; shrinks to fit */
   align-items: stretch;              /* let the inner gold box fill the inset */
   justify-content: center;
+  min-width: 0;                      /* allow items to shrink below content size */
+  max-width: 193px;                  /* never wider than the source cell */
   min-height: 80px;                  /* source bar height */
   padding: 9px 4px;                  /* leaves the ~62px gold box inset */
   border: 0;
@@ -77,7 +75,6 @@
   border-radius: var(--radius-none);
   color: var(--color-white);
   text-decoration: none;
-  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -102,14 +99,21 @@
   line-height: 1.43;
   text-transform: uppercase;
   text-align: center;
+  overflow-wrap: break-word;         /* wrap long labels instead of overflowing */
 }
 
 .sticky-nav .sticky-nav-item:hover {
   color: var(--color-accent);
 }
 
-.sticky-nav .sticky-nav-item-current {
+/* the active item is framed by a white vertical line on BOTH sides (the source
+   adds border-left to the current item on top of the existing right divider),
+   so the gold box reads as a boxed cell — including when it is the first or
+   last item, which otherwise lack that edge divider. */
+.sticky-nav .sticky-nav-item.sticky-nav-item-current {
   color: var(--color-black);
+  border-right: 1px solid var(--color-white);
+  border-left: 1px solid var(--color-white);
 }
 
 .sticky-nav .sticky-nav-item-current p {
@@ -125,12 +129,3 @@
   outline-offset: -2px;
 }
 
-/* >=600px (nav is shown): each item is a fixed-width cell. The list's
-   `justify-content: safe center` centers the cluster once the items fit
-   (~>=965px) and left-packs + scrolls when they don't (600–964px). */
-@media (width >= 600px) {
-  .sticky-nav .sticky-nav-item {
-    flex: 0 0 auto;
-    width: 193px;
-  }
-}
