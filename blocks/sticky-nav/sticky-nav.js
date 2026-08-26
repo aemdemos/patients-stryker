@@ -81,6 +81,21 @@ export default function decorate(block) {
       e.preventDefault();
       const region = target.closest('.section') || target;
       region.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // lazy content (e.g. images) loading mid-scroll shifts the layout and can
+      // land the jump short; re-align until it settles or scroll stops moving
+      let tries = 0;
+      let lastY = -1;
+      const settle = () => {
+        const off = block.getBoundingClientRect().height || 70;
+        const aligned = Math.abs(region.getBoundingClientRect().top - off) <= 2;
+        if (!aligned && window.scrollY !== lastY && tries < 20) {
+          tries += 1;
+          lastY = window.scrollY;
+          region.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(settle, 150);
+        }
+      };
+      setTimeout(settle, 150);
     });
   });
 
