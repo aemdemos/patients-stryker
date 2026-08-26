@@ -66,7 +66,7 @@ export default function decorate(block) {
     .filter((t) => t.region);
 
   // A jump must clear the sticky bar (otherwise the section's top hides behind
-  // the 70px bar) AND leave ~115px of breathing room so the section reads as a
+  // the 70px bar) AND leave a bit of breathing room so the section reads as a
   // fresh block. Rather than fold the gap into the scroll offset — which needs
   // extra scroll room above the section and fails for the first section right
   // below the nav — the gap lives INSIDE each section as padding-top. The
@@ -74,7 +74,7 @@ export default function decorate(block) {
   // flush under the bar (which always pins, since it only needs to clear the
   // bar) and the intrinsic padding shows the gap. Same feel for every section,
   // first included.
-  const GAP = 115;
+  const GAP = 70;
   const applyScrollOffset = () => {
     const bar = `${block.getBoundingClientRect().height || 70}px`;
     targets.forEach(({ region, anchor }) => {
@@ -86,13 +86,16 @@ export default function decorate(block) {
   applyScrollOffset();
   window.addEventListener('resize', applyScrollOffset, { passive: true });
 
-  // smooth-scroll on click
+  // smooth-scroll on click — scroll the whole section (not just the heading)
+  // so its padded top aligns below the bar and the padding shows as the gap.
+  // Scrolling the heading instead would tuck that padding up behind the bar.
   items.forEach(({ item, href }) => {
     item.addEventListener('click', (e) => {
       const target = resolveTarget(href);
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const region = target.closest('.section') || target;
+      region.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
