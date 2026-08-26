@@ -56,16 +56,6 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(nav);
 
-  // smooth-scroll on click
-  items.forEach(({ item, href }) => {
-    item.addEventListener('click', (e) => {
-      const target = resolveTarget(href);
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
   // scroll-spy: track each item's containing section (not the heading itself)
   const targets = items
     .map(({ item, href }) => {
@@ -75,27 +65,50 @@ export default function decorate(block) {
     })
     .filter((t) => t.region);
 
-  // offset each target so a jump lands below the sticky bar instead of behind
-  // it (otherwise the section's top is hidden under the 70px bar). The source
-  // leaves ~115px of breathing room below the bar so the section reads as a
-  // fresh block. Set on the section itself so the whole region clears.
+  // Offset a target so a jump lands below the sticky bar instead of behind it
+  // (otherwise the section's top is hidden under the 70px bar). Aim for ~115px
+  // of breathing room so the section reads as a fresh block.
   //
-  // The first target sits directly under the bar, so there isn't 115px of
-  // content above it to scroll behind — adding the gap there would stop the
-  // scroll early and leave the bar unpinned (floating with content above it).
-  // So the first target lands flush under the bar (which pins it); the rest,
-  // which have room above, keep the full gap.
+  // But a jump can only leave a gap if there's enough content above the section
+  // to scroll behind the bar. If the section sits closer to the bar's pin point
+  // than bar+GAP (e.g. the first section, just below the nav), a full gap would
+  // stop the scroll early and leave the bar unpinned (floating with content
+  // above it). So cap each offset at the distance the section sits below the
+  // pin point — the bar then always pins, keeping whatever gap the layout
+  // allows (full 115px where there's room, less for a section near the top).
+  //
+  // Computed per target at click time: layout is settled by then, whereas at
+  // decorate time the hero/content above may not have laid out yet (giving a
+  // wrong, tiny offset that never gets a chance to grow).
   const GAP = 115;
-  const applyScrollOffset = () => {
+  const navSection = block.closest('.section') || block;
+  const offsetFor = (region) => {
     const bar = block.getBoundingClientRect().height || 70;
-    targets.forEach(({ region, anchor }, i) => {
-      const offset = i === 0 ? bar : bar + GAP;
-      region.style.scrollMarginTop = `${offset}px`;
-      if (anchor && anchor !== region) anchor.style.scrollMarginTop = `${offset}px`;
-    });
+    const navTop = navSection.getBoundingClientRect().top + window.scrollY;
+    const regionTop = region.getBoundingClientRect().top + window.scrollY;
+    const room = regionTop - navTop; // space the section sits below the pin
+    return Math.max(bar, Math.min(bar + GAP, room));
   };
-  applyScrollOffset();
-  window.addEventListener('resize', applyScrollOffset, { passive: true });
+  const applyScrollOffset = (region, anchor) => {
+    const offset = `${offsetFor(region)}px`;
+    region.style.scrollMarginTop = offset;
+    if (anchor && anchor !== region) anchor.style.scrollMarginTop = offset;
+  };
+  // seed offsets so a load-time hash jump lands correctly, then keep fresh
+  targets.forEach(({ region, anchor }) => applyScrollOffset(region, anchor));
+
+  // smooth-scroll on click, recomputing the target's offset against the
+  // now-settled layout just before scrolling
+  items.forEach(({ item, href }) => {
+    item.addEventListener('click', (e) => {
+      const target = resolveTarget(href);
+      if (!target) return;
+      e.preventDefault();
+      const region = target.closest('.section') || target;
+      applyScrollOffset(region, target);
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
   if (targets.length) {
     const setCurrent = (activeItem) => {
