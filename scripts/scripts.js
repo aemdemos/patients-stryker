@@ -233,7 +233,7 @@ function decorateSectionMetadata(main) {
           .map((s) => toClassName(s.trim()))
           .filter((s) => s);
         styles.forEach((s) => section.classList.add(s));
-      } else if (key === 'background-image') {
+      } else if (key === 'background-image' || key === 'background-image-url') {
         applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
       } else {
         section.dataset[toCamelCase(key)] = value;
@@ -244,9 +244,12 @@ function decorateSectionMetadata(main) {
     (meta.closest('.section-metadata-wrapper') || meta).remove();
   });
 
-  // published DA content exposes the value as data-background-image, not a table
-  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
+  // published DA content exposes the value as data-background-image or
+  // data-background-image-url, not a table. The DAM asset takes precedence;
+  // applySectionBackgroundImage no-ops if a background image is already applied.
+  main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
+    applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
   });
 }
 
