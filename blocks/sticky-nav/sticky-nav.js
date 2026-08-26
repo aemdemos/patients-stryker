@@ -103,22 +103,32 @@ export default function decorate(block) {
     };
 
     // active = last section whose top has reached the point where a clicked
-    // section settles (bar bottom + GAP). This must match the scroll offset
-    // above, otherwise a click lands a section below the line and the previous
-    // item stays highlighted. A small tolerance covers sub-pixel scroll rests.
-    // Nothing is active until the first section reaches the line (index -1).
+    // section settles (bar bottom + GAP). This line must match the scroll
+    // offset above, otherwise a click lands a section below the line and the
+    // previous item stays highlighted.
+    //
+    // Crucially, nothing is active until the bar actually pins to the top:
+    // before that we're still scrolling through the hero above the first
+    // section, and highlighting a section there reads as premature. A small
+    // tolerance covers sub-pixel scroll rests.
     let ticking = false;
     const update = () => {
       ticking = false;
-      const line = (block.getBoundingClientRect().height || 70) + GAP + 2;
+      const barRect = block.getBoundingClientRect();
+      const barHeight = barRect.height || 70;
+      const pinned = barRect.top <= 1; // sticky container has reached the top
+      const line = barHeight + GAP + 2;
       let activeIndex = -1;
-      targets.forEach((t, i) => {
-        if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
-      });
-      // force the last item active at page bottom (its section may be too
-      // short) — but never while still at the very top (page may be short
-      // before lazy content loads)
-      const atBottom = window.scrollY > 0 && window.innerHeight + window.scrollY
+      if (pinned) {
+        targets.forEach((t, i) => {
+          if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
+        });
+      }
+      // force the last item active at page bottom (its short section may never
+      // reach the line) — but only once the bar is pinned, else on initial
+      // load the page can be short enough (before lazy content) that this
+      // fires at the very top and wrongly lights the last item.
+      const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
         >= document.documentElement.scrollHeight - 2;
       if (atBottom) activeIndex = targets.length - 1;
       setCurrent(activeIndex >= 0 ? targets[activeIndex].item : null);
