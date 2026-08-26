@@ -115,49 +115,6 @@ function withParams(src, params) {
 }
 
 /**
- * Reserve layout space (prevent CLS) by giving an <img> intrinsic width/height
- * attributes derived from the DM URL, when the dimensions are encoded there:
- *   - a Scene7 sizing preset "$preset_666_392$"  → 666 x 392
- *   - a filename dimension suffix "…-1024x576"    → 1024 x 576
- * The browser uses width/height only for the aspect-ratio box it reserves; the
- * global `main img { width: auto; height: auto; max-width: 100% }` rule keeps the
- * image fully responsive, so these attributes never distort or hard-size it.
- * No-op when no reliable dimensions can be parsed.
- * @param {HTMLImageElement} img the image to annotate
- * @param {string} src the DM URL the dimensions are read from
- */
-function setIntrinsicSize(img, src) {
-  let decoded = src;
-  try { decoded = decodeURIComponent(src); } catch { /* leave as-is */ }
-  // Scene7 preset: $preset_<W>_<H>$ (dimensions given as width_height)
-  let m = /\$preset_(\d+)_(\d+)\$/i.exec(decoded);
-  // filename dimension suffix: <W>x<H> before any query/preset (e.g. -1024x576)
-  if (!m) m = /[_-](\d{2,5})x(\d{2,5})(?:[^\d]|$)/i.exec(decoded.split('?')[0]);
-  if (m) {
-    const w = Number(m[1]);
-    const h = Number(m[2]);
-    if (w && h) {
-      img.setAttribute('width', String(w));
-      img.setAttribute('height', String(h));
-      return;
-    }
-  }
-  // Fallback for URLs that don't encode dimensions (e.g. $max_width_1440$): once
-  // the image loads, stamp its intrinsic size so the aspect-ratio box is locked
-  // for any later layout pass. This can't prevent the first paint's shift, but it
-  // avoids extra pre-load network calls (the Scene7 image API would add one per
-  // image). Skip if a load already set natural dimensions synchronously.
-  const stamp = () => {
-    if (img.naturalWidth && img.naturalHeight && !img.hasAttribute('width')) {
-      img.setAttribute('width', String(img.naturalWidth));
-      img.setAttribute('height', String(img.naturalHeight));
-    }
-  };
-  if (img.complete && img.naturalWidth) stamp();
-  else img.addEventListener('load', stamp, { once: true });
-}
-
-/**
  * Append a single `key=value` pair to a URL's query string verbatim, without
  * parsing/re-serializing the rest of it. Scene7 preset flags (e.g.
  * `$max_width_png$`, a bare key with no `=`) get corrupted by a `URL`/
@@ -193,7 +150,6 @@ function renderScene7(src, alt, eager) {
   img.loading = eager ? 'eager' : 'lazy';
   img.alt = alt;
   img.src = finalSrc;
-  setIntrinsicSize(img, decoded);
   picture.append(img);
   return picture;
 }
@@ -216,7 +172,6 @@ function renderOpenAPI(src, alt, eager) {
       img.loading = eager ? 'eager' : 'lazy';
       img.alt = alt;
       img.src = srcset;
-      setIntrinsicSize(img, src);
       picture.append(img);
     }
   });
@@ -239,7 +194,6 @@ function renderContentImage(src, alt, eager) {
   img.loading = eager ? 'eager' : 'lazy';
   img.alt = alt;
   img.src = src;
-  setIntrinsicSize(img, src);
   picture.append(img);
   return picture;
 }
