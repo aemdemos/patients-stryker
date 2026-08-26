@@ -162,7 +162,7 @@
   line-height: var(--heading-line-height-hero);
 }
 
-/* subheading — dark serif, 21px on phones then 24.5px from 480px up */
+/* subheading — dark serif, 21px on phones then 24.5px from 600px up */
 .hero.banner h2 {
   margin-bottom: var(--space-block);
   color: var(--text-color);
@@ -187,91 +187,6 @@
 .hero.banner .button-wrapper + .button-wrapper {
   margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
   margin-inline-start: 10px;
-}
-
-/* desktop — copy overlays the image, vertically centered (crossover at 600px) */
-@media (width >= 600px) {
-  .hero.banner {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  /* stack the image row and the copy row in the same grid cell */
-  .hero.banner > div {
-    grid-area: 1 / 1;
-  }
-
-  /* copy overlays the left half of the image */
-  .hero.banner > div:last-child {
-    z-index: 1;
-    align-self: center;
-    max-width: 50%;
-    padding: 0 0 0 5vw;
-  }
-
-  /* keep the centred block balanced top and bottom */
-  .hero.banner .button-wrapper:last-child {
-    margin-bottom: 0;
-  }
-
-  .hero.banner h1 {
-    font-size: 3.5vw;
-  }
-
-  .hero.banner h2 {
-    font-size: var(--heading-font-size-xl);
-  }
-}
-
-/* cap the fluid headline at 1200px (3.5vw of 1200) */
-@media (width >= 1200px) {
-  .hero.banner h1 {
-    font-size: 42px;
-  }
-}
-
-@media (width >= 600px) {
-  .hero {
-    padding: 40px 32px;
-  }
-}
-
-/* desktop — fullbleed switches to a side-column overlay on a wide-crop image.
-   Below this the fullbleed copy keeps its mobile treatment (full-width overlay,
-   7vw/3vw text on the portrait image), so 600–900px matches the <600px view. */
-@media (width >= 900px) {
-  .hero.fullbleed > div:last-child {
-    align-self: center;
-    max-width: 45%;
-    padding: 0 0 0 5vw;
-  }
-
-  /* wide crop — let the asset's own ratio drive the height */
-  .hero.fullbleed img {
-    aspect-ratio: auto;
-    object-fit: contain;
-  }
-
-  .hero.fullbleed h1 {
-    font-size: 3.5vw;
-  }
-
-  .hero.fullbleed p {
-    margin-top: 8px;
-    font-size: 1.5vw;
-    line-height: 1.35;
-  }
-}
-
-/* cap the fluid sizes at 1200px (3.5vw / 1.5vw of 1200) */
-@media (width >= 1200px) {
-  .hero.fullbleed h1 {
-    font-size: 42px;
-  }
-
-  .hero.fullbleed p {
-    font-size: 18px;
-  }
 }
 
 /* band variant — compact gradient bar with the World Stroke Day logo baked
@@ -320,24 +235,6 @@
   line-height: 1.2;
 }
 
-/* desktop — source drops the headline to 4vw and insets the copy 12% at 600px */
-@media (width >= 600px) {
-  .hero.band > div:last-child {
-    padding-inline: 12%;
-  }
-
-  .hero.band h1 {
-    font-size: 4vw;
-  }
-}
-
-/* cap the headline at 1200px (4vw of 1200) */
-@media (width >= 1200px) {
-  .hero.band h1 {
-    font-size: 48px;
-  }
-}
-
 /* ===== Poster modifier — full-bleed banner photo with dark serif copy overlaid
    directly on the image (as on the stroke-awareness landing page). The image fills the
    band via object-fit: cover rather than sitting in a white side panel. Placed
@@ -375,9 +272,55 @@
   line-height: var(--heading-line-height-hero);
 }
 
-/* desktop — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
-   the block ~4% down (≈12% of the 480px band) and insets it 10vw from the left. */
+/* ===== Tablet and up (600px) — all variants ===== */
 @media (width >= 600px) {
+  .hero {
+    padding: 40px 32px;
+  }
+
+  /* banner — copy overlays the image, vertically centered */
+  .hero.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* stack the image row and the copy row in the same grid cell */
+  .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+  /* copy overlays the left half of the image */
+  .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: center;
+    max-width: 50%;
+    padding: 0 0 0 5vw;
+  }
+
+  /* keep the centred block balanced top and bottom */
+  .hero.banner .button-wrapper:last-child {
+    margin-bottom: 0;
+  }
+
+  .hero.banner h1 {
+    font-size: 3.5vw;
+  }
+
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  /* band — source drops the headline to 4vw and insets the copy 12% */
+  .hero.band > div:last-child {
+    padding-inline: 12%;
+  }
+
+  .hero.band h1 {
+    font-size: 4vw;
+  }
+
+  /* poster — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
+     the block ~4% down and insets it 10vw from the left. */
   .hero.fullbleed.poster img {
     aspect-ratio: 3 / 1;
     object-fit: cover;
@@ -392,7 +335,6 @@
     padding: 4% 0 0;
   }
 
-  /* source drops the headline to 5vw and copy to 1.5vw at the 840px crossover */
   .hero.fullbleed.poster h1 {
     font-size: 5vw;
   }
@@ -402,8 +344,53 @@
   }
 }
 
-/* cap the fluid sizes at 1200px (5vw / 1.5vw of 1200) */
+/* ===== Desktop (900px) — fullbleed switches to a side-column overlay on a
+   wide-crop image. Below this the fullbleed copy keeps its mobile treatment
+   (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
+   matches the <600px view. ===== */
+@media (width >= 900px) {
+  .hero.fullbleed > div:last-child {
+    align-self: center;
+    max-width: 45%;
+    padding: 0 0 0 5vw;
+  }
+
+  /* wide crop — let the asset's own ratio drive the height */
+  .hero.fullbleed img {
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .hero.fullbleed h1 {
+    font-size: 3.5vw;
+  }
+
+  .hero.fullbleed p {
+    margin-top: 8px;
+    font-size: 1.5vw;
+    line-height: 1.35;
+  }
+}
+
+/* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
+   so text stops growing past this width ===== */
 @media (width >= 1200px) {
+  .hero.banner h1 {
+    font-size: 42px;
+  }
+
+  .hero.fullbleed h1 {
+    font-size: 42px;
+  }
+
+  .hero.fullbleed p {
+    font-size: 18px;
+  }
+
+  .hero.band h1 {
+    font-size: 48px;
+  }
+
   .hero.fullbleed.poster h1 {
     font-size: 60px;
   }
