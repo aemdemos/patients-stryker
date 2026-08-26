@@ -1,9 +1,4 @@
-/*
- * Sticky Nav Block — in-page anchor bar (patients.stryker.com IVS homepage).
- * Each authored row = one nav item: cell 1 is the label, cell 2 holds a link
- * whose href is the target section id (e.g. `#overview`). Clicking smooth-
- * scrolls; a scroll-spy marks the in-view item `.sticky-nav-item-current`.
- */
+// Sticky Nav Block — in-page anchor bar; row = item (label + `#id` link) with scroll-spy.
 
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
@@ -65,15 +60,7 @@ export default function decorate(block) {
     })
     .filter((t) => t.region);
 
-  // A jump must clear the sticky bar (otherwise the section's top hides behind
-  // the 70px bar) AND leave a bit of breathing room so the section reads as a
-  // fresh block. Rather than fold the gap into the scroll offset — which needs
-  // extra scroll room above the section and fails for the first section right
-  // below the nav — the gap lives INSIDE each section as padding-top. The
-  // scroll offset is then just the bar height: a jump lands the section's top
-  // flush under the bar (which always pins, since it only needs to clear the
-  // bar) and the intrinsic padding shows the gap. Same feel for every section,
-  // first included.
+  // gap lives as section padding-top (not scroll offset) so it shows even for the first section
   const GAP = 70;
   const applyScrollOffset = () => {
     const bar = `${block.getBoundingClientRect().height || 70}px`;
@@ -86,9 +73,7 @@ export default function decorate(block) {
   applyScrollOffset();
   window.addEventListener('resize', applyScrollOffset, { passive: true });
 
-  // smooth-scroll on click — scroll the whole section (not just the heading)
-  // so its padded top aligns below the bar and the padding shows as the gap.
-  // Scrolling the heading instead would tuck that padding up behind the bar.
+  // scroll the section (not the heading) so its padded top shows the gap below the bar
   items.forEach(({ item, href }) => {
     item.addEventListener('click', (e) => {
       const target = resolveTarget(href);
@@ -104,15 +89,7 @@ export default function decorate(block) {
       items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
     };
 
-    // active = last section whose top has crossed the line just below the bar.
-    // A clicked section settles with its top flush under the bar (its GAP now
-    // lives as internal padding, not scroll offset), so the line sits a little
-    // below the bar + gap to comfortably catch it.
-    //
-    // Crucially, nothing is active until the bar actually pins to the top:
-    // before that we're still scrolling through the hero above the first
-    // section, and highlighting a section there reads as premature. A small
-    // tolerance covers sub-pixel scroll rests.
+    // active = last section past the line below the bar; nothing active until the bar pins
     let ticking = false;
     const update = () => {
       ticking = false;
@@ -126,10 +103,7 @@ export default function decorate(block) {
           if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
         });
       }
-      // force the last item active at page bottom (its short section may never
-      // reach the line) — but only once the bar is pinned, else on initial
-      // load the page can be short enough (before lazy content) that this
-      // fires at the very top and wrongly lights the last item.
+      // force the last item active at page bottom (short final section may never reach the line)
       const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
         >= document.documentElement.scrollHeight - 2;
       if (atBottom) activeIndex = targets.length - 1;
