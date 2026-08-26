@@ -373,10 +373,7 @@ main ol.footnotes ~ p {
 }
 
 main ol.footnotes li > p {
-/* compact section typography — smaller gold headings and dense heading/body rhythm */
-h2 em strong,
-h2 strong em {
-  font-size: var(--heading-font-size-compact);
+  margin-bottom: 0;
 }
 
 .section.compact {
@@ -415,7 +412,6 @@ h2 strong em {
 main > .section.compact > div ol ~ p {
   margin-bottom: 0;
 }
-
 
 
 code,
@@ -492,16 +488,7 @@ a.link-strong:any-link::after {
 a.link-strong:hover,
 a.link-strong:focus {
   color: var(--color-primary-hover);
-b a:any-link,
-a:any-link:has(strong),
-a:any-link:has(b) {
-  font-family: var(--display-font-family);
-}
-
-/* compact section links (e.g. reference URLs) are plain, not underlined — matches
-   the source's dense footer. Placed after the base link rules to keep cascade order. */
-.section.compact a:any-link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /* buttons */
@@ -680,16 +667,6 @@ main .last-modified {
   }
 }
 
-.section.compact h1 {
-  margin: 30px 0 10px;
-  line-height: 22.26px;
-}
-
-.section.compact h2 {
-  font-size: var(--heading-font-size-compact);
-  margin-top:30px;
-}
-
 
 /* flex section — lays the section's content WRAPPERS side by side at 50/50 on
    desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
@@ -810,6 +787,7 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
 }
 
 /* audience note above the fullbleed hero */
+
 /* first (title + intro + image) section — sage rule beneath it, matching the
    source's .c-page-hero-content.border-bottom-gold 1px divider */
 main > .section:first-child > .default-content-wrapper {
