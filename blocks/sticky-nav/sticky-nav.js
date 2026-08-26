@@ -80,15 +80,17 @@ export default function decorate(block) {
       items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
     };
 
-    // active = last section whose top has scrolled past the viewport top
-    // (y=0), matching the source's switch point. Nothing is active until the
-    // first section reaches the top (activeIndex stays -1).
+    // active = last section whose top has reached the bottom edge of the
+    // sticky bar, matching the source (which switches as a section comes into
+    // view just below the bar, not when it scrolls behind it). Nothing is
+    // active until the first section reaches that line (activeIndex stays -1).
     let ticking = false;
     const update = () => {
       ticking = false;
+      const line = block.getBoundingClientRect().height || 70; // bar bottom edge
       let activeIndex = -1;
       targets.forEach((t, i) => {
-        if (t.region.getBoundingClientRect().top <= 0) activeIndex = i;
+        if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
       });
       // force the last item active at page bottom (its section may be too
       // short) — but never while still at the very top (page may be short
