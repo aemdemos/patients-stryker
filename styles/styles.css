@@ -110,9 +110,7 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 
-  /* page-title gap to body — measured from source: heading margin-bottom (15px)
-     + title section margin-bottom (30px) = 45px, kept in one section here */
-  --space-title: 45px; /* icon-list block — measured from source ("Stroke facts") */
+  /* icon-list block — measured from source ("Stroke facts") */
   --icon-list-icon-width: 165px;     /* icon rendered width */
   --icon-list-icon-gap: 13px;        /* icon → caption gap (mobile); source uses 9px at desktop */
   --icon-list-title-gap: clamp(25px, 15px + 3.55vw, 75px); /* title → icon-row gap; fluid to track source (≈28px mobile → 67px @1440 → 71px @1600) */

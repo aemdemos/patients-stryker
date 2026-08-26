@@ -2,6 +2,10 @@
    Activated when page metadata sets `theme: legal`, which adds `body.legal`
    via decorateTemplateAndTheme() in scripts.js / aem.js. */
 
+:root {
+  --space-title: 45px; /* page-title gap to body — measured from source: heading margin-bottom (15px) + title section margin-bottom (30px) = 45px, kept in one section here */
+}
+
 /* legal page title: the leading h1 in the first section is the page title and
    takes the larger 45px gap to the body (source composed this from heading 15px
    + title section 30px, kept in one section). The source rendered the title as an
