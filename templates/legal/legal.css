@@ -67,3 +67,14 @@ body.legal strong a:any-link {
 body.legal main a:any-link {
   text-decoration: none;
 }
+
+body.legal a.link-strong:any-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--display-font-family);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-decoration: none;
+}
