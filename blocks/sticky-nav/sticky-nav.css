@@ -80,10 +80,6 @@
   overflow-wrap: break-word;         /* wrap long labels */
 }
 
-.sticky-nav .sticky-nav-item:hover {
-  color: var(--color-accent);
-}
-
 /* active item: gold box framed by white dividers on both sides */
 .sticky-nav .sticky-nav-item.sticky-nav-item-current {
   color: var(--color-black);
@@ -93,10 +89,6 @@
 
 .sticky-nav .sticky-nav-item-current p {
   background: var(--color-accent);
-}
-
-.sticky-nav .sticky-nav-item-current:hover {
-  color: var(--color-black);
 }
 
 .sticky-nav .sticky-nav-item:focus-visible {
