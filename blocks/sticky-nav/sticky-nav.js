@@ -98,14 +98,14 @@ export default function decorate(block) {
     };
 
     // scroll-position spy: the active section is the last one whose top has
-    // scrolled above a line just below the sticky bar. This is robust to very
-    // short sections (e.g. the single-line "Find a Doctor" CTA) that a
-    // viewport-band IntersectionObserver would skip over.
+    // scrolled past the top of the viewport — matching the source, which
+    // switches the highlight exactly when a section's top reaches y=0 (rather
+    // than offsetting by the bar height). Robust to very short sections (e.g.
+    // the single-line "Find a Doctor" CTA).
     let ticking = false;
     const update = () => {
       ticking = false;
-      const barHeight = block.getBoundingClientRect().height || 80;
-      const line = barHeight + 20; // detection line just below the pinned bar
+      const line = 0; // detection line at the top of the viewport
       let activeIndex = 0;
       targets.forEach((t, i) => {
         if (t.region.getBoundingClientRect().top <= line) activeIndex = i;

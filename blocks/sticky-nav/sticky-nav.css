@@ -56,6 +56,11 @@
   cursor: pointer;
 }
 
+/* first item keeps a left divider so the bar's left edge is always framed */
+.sticky-nav .sticky-nav-item:first-child {
+  border-left: 1px solid var(--color-white);
+}
+
 /* label / gold-box carrier */
 .sticky-nav .sticky-nav-item p {
   display: flex;
