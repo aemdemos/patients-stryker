@@ -43,7 +43,7 @@ body.legal .border-bottom-gold {
 /* stylelint-disable-next-line no-descending-specificity */
 body.legal main .section h2 {
   font-family: var(--display-font-family-bold);
-  font-size: var(--body-font-size-l);
+  font-size: var(--body-font-size-m);
   font-weight: 700;
   line-height: var(--paragraph-line-height);
   color: var(--color-accent);
