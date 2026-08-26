@@ -1,14 +1,9 @@
 /* stylelint-disable max-line-length */
 
-/* Webfonts load lazily (this file is injected by loadFonts() in scripts.js) with
-   font-display: swap. First paint uses the size-adjusted system fallbacks declared
-   eagerly in styles/styles.css; when a webface arrives it swaps in. The body
-   fallback (humanist-slab-712-fallback) is calibrated to the Arial metric group
-   (Arial ≡ Liberation Sans ≡ Arimo — metric-identical across Windows/macOS/Linux/
-   Android), so the swap is width-neutral on every platform and does not reflow the
-   long footnote paragraphs (the mobile CLS in issue #52). Because the fallback is
-   metric-matched, the webfonts are NOT preloaded — the swap is shift-free whenever
-   it lands, so paying for an eager preload buys nothing. */
+/* Webfonts load lazily (injected by loadFonts() in scripts.js) with font-display:
+   swap. First paint uses the size-adjusted system fallbacks declared eagerly in
+   styles/styles.css, so the swap is width-neutral and does not reflow content.
+   See that file for the metric-matching rationale. */
 
 /* Body — Humanist Slab 712 W01 Roman */
 @font-face {

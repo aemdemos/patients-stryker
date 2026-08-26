@@ -131,11 +131,8 @@ export default async function decorate(block) {
       const container = brandLink.closest('.button-container');
       if (container) container.className = '';
     }
-    // The logo is above the fold but the header loads in the lazy phase, so the
-    // browser would otherwise lazy-load an unsized <img> and shift content when
-    // it arrives (CLS). Load it eagerly and give it the logo's intrinsic size so
-    // the space is reserved before the bytes land. CSS keeps `height: auto` so
-    // the aspect ratio (and the responsive display width) is preserved.
+    // The logo is above the fold but the header loads lazily, so load it eagerly
+    // with intrinsic dimensions to reserve its space before the bytes land (CLS).
     const brandImg = navBrand.querySelector('img');
     if (brandImg) {
       brandImg.setAttribute('loading', 'eager');

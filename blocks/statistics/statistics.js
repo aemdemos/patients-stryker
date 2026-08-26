@@ -85,11 +85,9 @@ function setupCountUp(block) {
     });
   };
 
-  // Measure the final value's rendered width in the system fallback font (the
-  // display stack with the brand webfont family removed), off-screen. The stat's
-  // fallback (Futura → Arial-metric) can be a few px WIDER than the brand webfont
-  // at the same size, so reserving only the brand width would let the fallback
-  // overflow the box and shift the % / x / M suffix when the webfont swaps in.
+  // Measure the final value's width in the system fallback font, off-screen.
+  // The fallback can be wider than the brand webfont, so we reserve the max of
+  // both to avoid the suffix shifting when the webfont swaps in.
   const fallbackWidth = (target, finalText) => {
     const cs = window.getComputedStyle(target);
     // drop the first (brand) family so the probe renders in the fallback face
@@ -104,17 +102,10 @@ function setupCountUp(block) {
     return w;
   };
 
-  // Reserve each value's final width and pin its text to the right, so the number
-  // counting up from 0 expands leftward instead of the whole centered value
-  // re-flowing and nudging the % / x / M suffix as digits are added (the residual
-  // count-up CLS). Reserve the MAX of the brand-font and fallback-font widths so
-  // the value fits whichever font is currently rendering — otherwise a fallback
-  // that is wider than the brand overflows the box and shifts on swap. tabular-nums
-  // keeps digits equal-width so no in-between count frame exceeds the final width.
-  // MUST run only when the block is laid out (i.e. once it is in the viewport) —
-  // during decorate() the block has no layout box yet, so getBoundingClientRect()
-  // returns 0 and the reservation would be a no-op. The width>0 guard makes any
-  // premature/hidden call safely skip rather than lock in a zero width.
+  // Reserve each value's final width so the count-up expands leftward instead of
+  // reflowing the suffix as digits are added. Reserves max(brand, fallback) width
+  // so it fits whichever font is rendering. Must run once laid out (in viewport);
+  // the width>0 guard skips premature/hidden calls rather than locking in 0.
   const reserveWidths = () => {
     stats.forEach(({ el, target, parsed }) => {
       const shown = target.textContent;
@@ -128,16 +119,9 @@ function setupCountUp(block) {
     });
   };
 
-  // Resolve once the brand display font that renders the numbers is actually
-  // loaded, so reserveWidths() measures the FINAL brand-font glyph widths — not
-  // the narrower system fallback. With font-display: swap the value first paints
-  // in the fallback and swaps to the brand font whenever it arrives; if we reserve
-  // during that fallback window we lock in a too-small min-width (e.g. 166px), and
-  // the later swap grows the box to the brand width (216px), shifting the % / x / M
-  // suffix — the min-width "flapping between refreshes" bug. Awaiting the font
-  // makes the reservation deterministic. Resolves synchronously-ish when the font
-  // is already cached, and never rejects (a font load failure still resolves so we
-  // fall back to measuring whatever is rendered rather than hanging).
+  // Resolve once the brand display font is loaded, so reserveWidths() measures
+  // the final brand-font glyph widths rather than the fallback. Never rejects (a
+  // load failure still resolves, so we measure whatever is rendered).
   const displayFontReady = () => {
     const { fonts } = document;
     const cs = window.getComputedStyle(stats[0].target);
@@ -177,19 +161,13 @@ function setupCountUp(block) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         visible = true;
-        // Reserve IMMEDIATELY and hold the value at 0, so there is never a window
-        // where the box is unreserved (min-width unset) while text paints — that
-        // gap is what shifts on slow loads. reserveWidths() reserves max(brand,
-        // fallback) width, so this first pass is overflow-safe whichever font is
-        // currently rendering.
+        // reserve immediately and hold at 0 so the box is never unreserved while
+        // text paints; this first pass is overflow-safe in either font
         reserveWidths();
         render(0);
-        // Only START the count-up once the brand font is loaded AND laid out (two
-        // frames after the load resolves, since fonts.check can resolve a frame
-        // before relayout). This keeps every animated digit inside a font-stable,
-        // reserved box: the number never grows digits while the font is still
-        // swapping, so the count-up cannot contribute layout shift. Re-reserving
-        // here can only keep or widen the box (we reserve the max), never shrink.
+        // start the count-up only once the brand font is loaded and laid out (two
+        // frames, since fonts.check can resolve before relayout). Re-reserving
+        // here only ever keeps or widens the box, never shrinks it.
         displayFontReady().then(() => {
           requestAnimationFrame(() => requestAnimationFrame(() => {
             if (!visible) return; // scrolled back out while the font was loading
@@ -210,22 +188,11 @@ function setupCountUp(block) {
 /**
  * Reserve each description's rendered height as a min-height so a font swap that
  * re-wraps the text to a different line count cannot push the content below it.
- *
- * The system fallback (Arial-metric) is a different typeface than the brand body
- * font (HumanistSlab), and no CSS metric override can make two different typefaces
- * wrap identically — size-adjust matches AVERAGE advance width, but line breaks
- * depend on the width at each specific break point, so a sentence sitting on a
- * wrap boundary can flip between (e.g.) 4 and 5 lines when the webfont swaps in.
- * That re-wrap is the statistics-page mobile CLS: the taller fallback shrinks a
- * line when HumanistSlab loads and every stat below jumps up.
- *
- * Since we can't stop the re-wrap, we stop it from MOVING anything: reserve the
- * currently-rendered height (the fallback is present at first paint — its face is
- * eager+local — and wraps >= the brand font for this pair), then keep the MAX
- * across a re-measure once fonts settle. min-height only ever holds or grows, so
- * the shorter brand text just settles inside the reserved box — no shift. Worst
- * case is a few px of bottom whitespace under a long description, which is
- * imperceptible next to a layout shift.
+ * size-adjust can't guarantee identical wrapping across two typefaces, so instead
+ * of preventing the re-wrap we keep it from moving anything: reserve the current
+ * height and keep the max across a re-measure once fonts settle. min-height only
+ * holds or grows, so shorter text settles inside the reserved box — worst case a
+ * few px of harmless bottom whitespace.
  * @param {Element} block The decorated statistics block
  */
 function reserveDescriptionHeights(block) {
@@ -294,9 +261,8 @@ export default function decorate(block) {
 
   block.replaceChildren(list);
 
-  // Reserve description heights so a font-swap re-wrap can't push content (the
-  // statistics-page CLS). Runs for every variant — the reflow is independent of
-  // the count-up animation.
+  // reserve description heights so a font-swap re-wrap can't push content;
+  // runs for every variant, independent of the count-up animation
   reserveDescriptionHeights(block);
 
   // optional count-up animation, enabled via the `count-up` authoring variant
