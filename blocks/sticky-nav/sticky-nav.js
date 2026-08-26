@@ -71,9 +71,22 @@ export default function decorate(block) {
     .map(({ item, href }) => {
       const anchor = resolveTarget(href);
       const region = anchor?.closest('.section') || anchor;
-      return { item, region };
+      return { item, region, anchor };
     })
     .filter((t) => t.region);
+
+  // offset each target so a jump lands just below the sticky bar instead of
+  // behind it (otherwise the section's top is hidden under the 70px bar). Set
+  // on the section itself so the whole region, not just the heading, clears.
+  const applyScrollOffset = () => {
+    const bar = block.getBoundingClientRect().height || 70;
+    targets.forEach(({ region, anchor }) => {
+      region.style.scrollMarginTop = `${bar}px`;
+      if (anchor && anchor !== region) anchor.style.scrollMarginTop = `${bar}px`;
+    });
+  };
+  applyScrollOffset();
+  window.addEventListener('resize', applyScrollOffset, { passive: true });
 
   if (targets.length) {
     const setCurrent = (activeItem) => {
