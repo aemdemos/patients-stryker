@@ -1,115 +1,85 @@
 /*
  * sticky-nav — in-page anchor bar migrated from patients.stryker.com IVS home.
- * Source (measured from the live site):
- *   - full-bleed bar, background #545857 (--color-secondary), 80px tall
- *   - items: Futura 14px, weight 400, UPPERCASE, white; ~193px fixed width,
- *     centered as a cluster (gray bar space on both sides), 1px white dividers
- *   - sticks to the top of the viewport once scrolled past (position: sticky)
- *   - active item: gold (#ffb500) inset box (62px in the 80px bar), black text
- * Responsive: hidden below 600px (not shown on small screens, per the source);
- * shown at >=600px. Items share the row width equally (each capped at 193px):
- * a centered fixed-width cluster at wide viewports, and narrower wrapping cells
- * that fill 100% width below ~965px — never horizontally scrollable.
- *
- * NOTE: the block's own class is `.sticky-nav`, but a page can also carry
- * `template: sticky-nav` metadata which adds `body.sticky-nav`. The bar rule
- * below is therefore scoped to `.sticky-nav.block` (the block wrapper always has
- * `block`) so it can never accidentally style <body>. Descendant rules
- * (`.sticky-nav .sticky-nav-*`) are already safe.
+ * 70px full-bleed gray bar, 193px UPPERCASE items with white dividers, gold
+ * active box; sticky to top. Scoped to `.sticky-nav.block` to avoid colliding
+ * with `body.sticky-nav` (from `template: sticky-nav` metadata).
  */
 
+/* full-bleed gray bar, ignoring the section's max-width container */
 .sticky-nav.block {
-  /* true full-bleed gray bar spanning the whole viewport width, regardless of
-     the section's max-width container */
   width: 100vw;
   margin-inline: calc(50% - 50vw);
   background: var(--color-secondary);
 }
 
-/* Below 600px the sticky nav is not shown (matches the source, which omits the
-   horizontal anchor bar on small screens). It appears only at >=600px. */
+/* hidden below 600px (source omits the bar on small screens) */
 .section.sticky-nav-container {
   display: none;
 }
 
-/* the block's section carries the sticky behaviour so the bar pins below the
-   fixed site header. Sticky is applied to the section (whose parent is <main>,
-   giving it the full page height to travel) rather than the block wrapper
-   (whose parent is the short section, leaving no room to stick). */
+/* sticky on the section (its <main> parent gives it room to travel) */
 @media (width >= 600px) {
   .section.sticky-nav-container {
     display: block;
     position: sticky;
-    top: 0;               /* pins flush to the top of the viewport, matching the source */
+    top: 0;
     z-index: 100;
     padding-block: 0;
   }
 }
 
-/* The list is capped to the width of five 193px items (965px) and centred, so
-   at wide viewports the items form a centred fixed-width cluster (each item
-   maxes out at 193px). Below that the list fills 100% of the available width
-   and the equal-share items simply get narrower, wrapping their labels — no
-   horizontal scroll at any width. */
+/* capped to five 193px items + centred: fixed cluster when wide, else items
+   shrink/wrap to fill 100% width — never horizontally scrollable */
 .sticky-nav .sticky-nav-list {
   display: flex;
   max-width: calc(5 * 193px);
   margin-inline: auto;
 }
 
-/* each item is a transparent flex cell; the inner box (its <p>) is what fills
-   gold when active — an INSET box, matching the source (62px box centered in
-   the 80px bar, so gray shows above/below the gold). */
+/* transparent flex cell; its <p> is the gold box. flex:1 1 0 shares the row,
+   max-width caps at the source cell size */
 .sticky-nav .sticky-nav-item {
   display: flex;
   box-sizing: border-box;
-  flex: 1 1 0;                       /* equal share of the row; shrinks to fit */
-  align-items: stretch;              /* let the inner gold box fill the inset */
+  flex: 1 1 0;
+  align-items: stretch;
   justify-content: center;
-  min-width: 0;                      /* allow items to shrink below content size */
-  max-width: 193px;                  /* never wider than the source cell */
-  min-height: 80px;                  /* source bar height */
-  padding: 9px 4px;                  /* leaves the ~62px gold box inset */
+  min-width: 0;
+  max-width: 193px;
+  min-height: 70px;                  /* 62px box + 4+4 padding */
+  padding: 4px;
   border: 0;
-  border-right: 1px solid var(--color-white);   /* source: white vertical divider */
+  border-right: 1px solid var(--color-white);   /* white divider */
   border-radius: var(--radius-none);
   color: var(--color-white);
   text-decoration: none;
   cursor: pointer;
 }
 
-/* the last item has no trailing divider */
-.sticky-nav .sticky-nav-item:last-child {
-  border-right: 0;
-}
-
-/* the label text / gold-box carrier */
+/* label / gold-box carrier */
 .sticky-nav .sticky-nav-item p {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 62px;                  /* source gold-box height (inset in 80px bar) */
+  min-height: 62px;                  /* source gold-box height */
   margin: 0;
   padding: 0 5px;
   color: inherit;
   font-family: var(--display-font-family);
-  font-size: var(--body-font-size-m);   /* 14px, matching source */
+  font-size: var(--body-font-size-m);   /* 14px */
   font-weight: 400;
   line-height: 1.43;
   text-transform: uppercase;
   text-align: center;
-  overflow-wrap: break-word;         /* wrap long labels instead of overflowing */
+  overflow-wrap: break-word;         /* wrap long labels */
 }
 
 .sticky-nav .sticky-nav-item:hover {
   color: var(--color-accent);
 }
 
-/* the active item is framed by a white vertical line on BOTH sides (the source
-   adds border-left to the current item on top of the existing right divider),
-   so the gold box reads as a boxed cell — including when it is the first or
-   last item, which otherwise lack that edge divider. */
+/* active item: gold box framed by white dividers on both sides */
 .sticky-nav .sticky-nav-item.sticky-nav-item-current {
   color: var(--color-black);
   border-right: 1px solid var(--color-white);
