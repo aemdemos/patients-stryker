@@ -378,6 +378,19 @@ h2 strong em {
   font-size: var(--footnote-font-size);
 }
 
+/* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
+@media (width >= 600px) {
+  .section.compact h2 {
+    font-size: var(--heading-font-size-compact-m);
+    margin-top: 30px;
+  }
+
+  h2 em strong,
+  h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
+  }
+}
+
 /* the source stacks the disclaimer/trademark block flush (0 gap) — only the
    References label and the citation list carry the 15px gap. Our authored copy is
    all <p> (each with the global 15px margin-bottom), so zero the margin on every
