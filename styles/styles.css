@@ -259,54 +259,6 @@ main > .section.no-cta > .default-content-wrapper h2 {
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
-/* legal page title: the leading h1 in the first section is the page title and
-   takes the larger 45px gap to the body (source composed this from heading 15px
-   + title section 30px, kept in one section). The source rendered the title as an
-   h2.component-subheading.border-bottom-gold at 24.5px Futura-bold black with a
-   7px-padded 1px sage underline; import promotes it to <h1>, so re-create that exact
-   look here. Scoped to body.legal (set via the `theme = legal` page metadata) so it
-   never affects h1/h2s on other pages. Placed here (near the other legal rules)
-   for readability; it is more specific than the generic .section h1 rules further
-   down, so silence no-descending-specificity. */
-/* stylelint-disable-next-line no-descending-specificity */
-body.legal main .section:first-of-type h1:first-child {
-  font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 700;
-  color: var(--color-text);
-  padding-bottom: 7px;
-  margin-bottom: var(--space-title);
-  margin-top: 10px;
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
-/* sage underline matching the source's .component-subheading.border-bottom-gold
-   (1px solid #b2b4ae, 7px gap above the rule). The import strips the class off the
-   title (markdown keeps no classes), so the title's underline is applied directly
-   above; this rule covers any authored content that keeps the border-bottom-gold
-   class in DA/UE. */
-body.legal .border-bottom-gold {
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
-/* legal gold sub-section labels: source authored these as standalone
-   span.futura-bold[color:#ffb500] label paragraphs; import promotes each to <h2>.
-   Match the source exactly — Futura-bold gold, 14px / 19.25px line-height, and the
-   15px paragraph rhythm above/below (source label paragraphs had margin 0 0 15px).
-   Scoped to body.legal so h2 headings on other pages keep their own styling.
-   More specific than the .no-cta h2 rule above; silence no-descending-specificity. */
-/* stylelint-disable-next-line no-descending-specificity */
-body.legal main .section h2 {
-  font-family: var(--display-font-family-bold);
-  font-size: var(--body-font-size-l);
-  font-weight: 700;
-  line-height: var(--paragraph-line-height);
-  color: var(--color-accent);
-  margin-top: 0;
-  margin-bottom: var(--space-block);
-}
-
 
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
    h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
@@ -455,9 +407,6 @@ h2 strong em {
     font-size: var(--heading-font-size-compact-m);
   }
 
-  body.legal main .section:first-of-type h1:first-child {
-    font-size: var(--heading-font-size-xl);
-  }
 }
 
 /* the source stacks the disclaimer/trademark block flush (0 gap) — only the
@@ -533,26 +482,11 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
-body.legal strong a:any-link {
-  font-family: var(--display-font-family);
-}
-
 /* compact section links (e.g. reference URLs) are plain, not underlined — matches
    the source's dense footer. Placed after the base link rules to keep cascade order. */
 .section.compact a:any-link {
   text-decoration: none;
 }
-
-/* legal pages render in-content links as plain teal text with NO underline
-   (source: .c-rich-text-editor a → text-decoration: none, #4c7d7a). The global
-   a:any-link rule underlines links, so remove it on legal pages. Scoped to
-   body.legal so links elsewhere keep their underline. Placed after the base link
-   rules to keep cascade order (no-descending-specificity). */
-/* stylelint-disable-next-line no-descending-specificity */
-body.legal main a:any-link {
-  text-decoration: none;
-}
-
 
 /* buttons */
 p.button-wrapper {
