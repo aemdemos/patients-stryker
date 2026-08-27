@@ -37,21 +37,6 @@
           "behaviour": "columns-cell"
         }
       }
-    },
-    {
-      "title": "DM Image",
-      "id": "columns-image",
-      "model": "columns-image",
-      "plugins": {
-        "da": {
-          "name": "DM Image",
-          "unsafeHTML": "<div class=\"columns-image\"><p><a href=\"\">Image alt</a></p></div>",
-          "fields": [
-            { "name": "image", "selector": "div.columns-image a[href]" },
-            { "name": "imageAlt", "selector": "div.columns-image a" }
-          ]
-        }
-      }
     }
   ],
   "models": [
@@ -90,24 +75,6 @@
     {
       "id": "columns-cell",
       "fields": []
-    },
-    {
-      "id": "columns-image",
-      "fields": [
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image (Dynamic Media link)"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
-        }
-      ]
     }
   ],
   "filters": [
@@ -125,7 +92,7 @@
       "id": "columns-cell",
       "components": [
         "text",
-        "columns-image"
+        "image"
       ]
     }
   ]
