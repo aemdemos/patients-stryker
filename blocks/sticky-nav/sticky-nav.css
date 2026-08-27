@@ -28,6 +28,14 @@
   }
 }
 
+/* sticky-nav target sections: pad the top so the scrolled-to content clears the
+   pinned bar, and set scroll-margin so browser hash navigation lands correctly.
+   Offsets are supplied by the block JS as custom properties. */
+.section.sticky-nav-target {
+  padding-top: var(--sticky-nav-gap, 70px);
+  scroll-margin-top: var(--sticky-nav-offset, 70px);
+}
+
 /* capped to five 193px items + centred: fixed cluster when wide, else items
    shrink/wrap to fill 100% width — never horizontally scrollable */
 .sticky-nav .sticky-nav-list {

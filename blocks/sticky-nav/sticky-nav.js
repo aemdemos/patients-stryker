@@ -2,6 +2,15 @@
 
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
+// Bar height (px). Mirrors the `min-height` of `.sticky-nav-item` in the CSS and
+// is used as the scroll offset so a scrolled-to section clears the pinned bar.
+const BAR_HEIGHT = 70;
+// Extra breathing room between the pinned bar and a scrolled-to section's top.
+const GAP = 70;
+const SCROLL_DURATION = 600;
+
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /**
  * Slugify text the same way EDS does for heading ids, so an auto-derived target
  * matches the id the platform already puts on the heading.
@@ -24,13 +33,20 @@ const slug = (text) => (typeof text === 'string' ? text : '')
  * @param {Element} el
  * @param {string} id
  */
+// Author-facing warnings are noise on the live site; only surface them on
+// preview/local hosts where an author is actually editing.
+const isAuthorEnv = () => /(\.aem\.page$|\.hlx\.page$|localhost$|\.local$)/.test(window.location.hostname)
+  || window.location.hostname === '127.0.0.1';
+
 function claimId(el, id) {
   document.querySelectorAll(`[id="${CSS.escape(id)}"]`).forEach((other) => {
     if (other === el) return;
     let n = 2;
     while (document.getElementById(`${id}-${n}`)) n += 1;
-    // eslint-disable-next-line no-console
-    console.warn(`[sticky-nav] id "${id}" was also used by <${other.tagName.toLowerCase()}>; renamed it to "${id}-${n}" so the anchored section owns "${id}".`);
+    if (isAuthorEnv()) {
+      // eslint-disable-next-line no-console
+      console.warn(`[sticky-nav] id "${id}" was also used by <${other.tagName.toLowerCase()}>; renamed it to "${id}-${n}" so the anchored section owns "${id}".`);
+    }
     other.id = `${id}-${n}`;
   });
   el.id = id;
@@ -89,11 +105,17 @@ const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 /**
  * Animate scroll with easing, re-sampling the target each frame so any
  * mid-scroll layout shift (lazy content) is absorbed smoothly instead of
- * causing a second, jarring jump.
+ * causing a second, jarring jump. Honours `prefers-reduced-motion` by jumping
+ * straight to the target with no animation.
  * @param {() => number} getTargetY
  * @param {number} duration
  */
-function animateScrollTo(getTargetY, duration = 600) {
+function animateScrollTo(getTargetY, duration = SCROLL_DURATION) {
+  if (prefersReducedMotion()) {
+    window.scrollTo(0, getTargetY());
+    return;
+  }
+
   const startY = window.scrollY;
   const startTime = performance.now();
 
@@ -109,6 +131,13 @@ function animateScrollTo(getTargetY, duration = 600) {
 }
 
 export default function decorate(block) {
+  // Tear down listeners from a previous decoration (UE re-decorates on edits),
+  // then start a fresh scope so this pass's listeners can be aborted next time.
+  block.stickyNavCleanup?.abort();
+  const controller = new AbortController();
+  block.stickyNavCleanup = controller;
+  const { signal } = controller;
+
   const nav = document.createElement('nav');
   nav.className = 'sticky-nav-list';
   nav.setAttribute('aria-label', 'Section navigation');
@@ -117,20 +146,28 @@ export default function decorate(block) {
 
   [...block.children].forEach((row) => {
     const [labelCell, targetCell] = row.children;
-    if (!labelCell) return;
+    // Skip blank rows (e.g. a trailing empty cell left by authoring) — a
+    // labelless item would render as an empty, purposeless nav cell.
+    if (!labelCell || !labelCell.textContent.trim()) return;
 
     const link = targetCell?.querySelector('a');
-    const href = link?.getAttribute('href') || targetCell?.textContent.trim();
+    const raw = link?.getAttribute('href') || targetCell?.textContent.trim() || '';
+    const hash = raw.replace(/^.*#/, '').trim();
 
     const item = document.createElement('a');
     item.className = 'sticky-nav-item';
-    item.href = href && href.startsWith('#') ? href : `#${(href || '').replace(/^#/, '')}`;
+    // Resolve the target once, at decoration time, and cache the region on the
+    // item. Items with no resolvable target get no href so they stay inert
+    // (a bare `#` would scroll to the top of the page).
+    const anchor = hash ? resolveTarget(`#${hash}`) : null;
+    const region = anchor?.closest('.section') || anchor;
+    if (region) item.href = `#${hash}`;
 
     // keep the label field editable in UE
     moveInstrumentation(labelCell, item);
     item.append(...labelCell.childNodes);
 
-    items.push({ item, href });
+    items.push({ item, region, anchor });
     nav.append(item);
   });
 
@@ -139,45 +176,43 @@ export default function decorate(block) {
   block.append(nav);
 
   // scroll-spy: track each item's containing section (not the heading itself)
-  const targets = items
-    .map(({ item, href }) => {
-      const anchor = resolveTarget(href);
-      const region = anchor?.closest('.section') || anchor;
-      return { item, region, anchor };
-    })
-    .filter((t) => t.region);
+  const targets = items.filter((t) => t.region);
 
-  // gap lives as section padding-top (not scroll offset) so it shows even for the first section
-  const GAP = 70;
+  // Offset lives in CSS (see sticky-nav.css) driven by a custom property, so it
+  // is overridable and not fighting inline styles. The gap shows even for the
+  // first target because it is section padding, not a scroll offset.
   const applyScrollOffset = () => {
-    const bar = `${block.getBoundingClientRect().height || 70}px`;
+    const bar = block.getBoundingClientRect().height || BAR_HEIGHT;
     targets.forEach(({ region, anchor }) => {
-      region.style.paddingTop = `${GAP}px`;
-      region.style.scrollMarginTop = bar;
-      if (anchor && anchor !== region) anchor.style.scrollMarginTop = bar;
+      region.classList.add('sticky-nav-target');
+      region.style.setProperty('--sticky-nav-offset', `${bar}px`);
+      region.style.setProperty('--sticky-nav-gap', `${GAP}px`);
+      if (anchor && anchor !== region) anchor.style.scrollMarginTop = `${bar}px`;
     });
   };
   applyScrollOffset();
-  window.addEventListener('resize', applyScrollOffset, { passive: true });
+  window.addEventListener('resize', applyScrollOffset, { passive: true, signal });
 
   // scroll the section (not the heading) so its padded top shows the gap below the bar
-  items.forEach(({ item, href }) => {
+  targets.forEach(({ item, region }) => {
     item.addEventListener('click', (e) => {
-      const target = resolveTarget(href);
-      if (!target) return;
       e.preventDefault();
-      const region = target.closest('.section') || target;
       const getTargetY = () => {
-        const off = block.getBoundingClientRect().height || 70;
+        const off = block.getBoundingClientRect().height || BAR_HEIGHT;
         return window.scrollY + region.getBoundingClientRect().top - off;
       };
-      animateScrollTo(getTargetY, 600);
-    });
+      animateScrollTo(getTargetY);
+    }, { signal });
   });
 
   if (targets.length) {
     const setCurrent = (activeItem) => {
-      items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
+      items.forEach(({ item }) => {
+        const active = item === activeItem;
+        item.classList.toggle('sticky-nav-item-current', active);
+        if (active) item.setAttribute('aria-current', 'true');
+        else item.removeAttribute('aria-current');
+      });
     };
 
     // active = last section past the line below the bar; nothing active until the bar pins
@@ -185,7 +220,7 @@ export default function decorate(block) {
     const update = () => {
       ticking = false;
       const barRect = block.getBoundingClientRect();
-      const barHeight = barRect.height || 70;
+      const barHeight = barRect.height || BAR_HEIGHT;
       const pinned = barRect.top <= 1; // sticky container has reached the top
       const line = barHeight + GAP + 2;
       let activeIndex = -1;
@@ -207,8 +242,8 @@ export default function decorate(block) {
       requestAnimationFrame(update);
     };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true, signal });
+    window.addEventListener('resize', onScroll, { passive: true, signal });
     update();
   }
 }

@@ -51,7 +51,7 @@
           "value": "",
           "label": "Target Section",
           "valueType": "string",
-          "description": "The section this item jumps to. Use #, then either the target section's Anchor ID or its heading text slugified (e.g. 'Find a Doctor' becomes #find-a-doctor). If it matches no section's Anchor ID or heading on this page, the item still shows but clicking it does nothing."
+          "description": "Section to jump to, matching its Anchor ID with a # prefix (e.g. #find-a-doctor)."
         }
       ]
     }
