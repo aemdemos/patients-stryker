@@ -119,6 +119,12 @@
   text-align: center;
 }
 
+/* brochure cards left-align their title + links (source), unlike the centered
+   linked variant */
+.cards.brochure > ul > li {
+  text-align: left;
+}
+
 .cards.brochure .cards-card-image,
 .cards.linked .cards-card-image {
   order: 1;   /* image between title (0) and body (2) */
@@ -186,8 +192,10 @@
   order: 2;   /* download links below the image */
   margin: var(--space-block) 0 0;
 
-  /* source download links: light serif (urw-egyptienne) at 1.25em (fontsize-1-25em) */
+  /* source download links: light serif (urw-egyptienne) at 1.25em (fontsize-1-25em),
+     centered below the image while the title above stays left-aligned */
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
+  text-align: center;
 }
