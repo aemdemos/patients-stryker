@@ -221,16 +221,24 @@ function decorateFootnotes(main) {
  * Prepends a decorative `<img class="section-background-image">` to the section
  * (matches the source's inline background image, not a CSS background). Opt-in
  * blocks like icon-list position and layer it; inert for other sections.
+ * When an alt is authored the image is treated as meaningful (alt applied, not
+ * aria-hidden); otherwise it stays purely decorative (empty alt + aria-hidden).
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
+ * @param {string} [alt] optional accessible text for the background image
  */
-function applySectionBackgroundImage(section, url) {
+function applySectionBackgroundImage(section, url, alt) {
   if (!section || !url || section.querySelector(':scope > .section-background-image')) return;
   const img = document.createElement('img');
   img.className = 'section-background-image';
   img.src = url;
-  img.alt = '';
-  img.setAttribute('aria-hidden', 'true');
+  const altText = (alt || '').trim();
+  if (altText) {
+    img.alt = altText;
+  } else {
+    img.alt = '';
+    img.setAttribute('aria-hidden', 'true');
+  }
   // eager, not lazy: when absolutely positioned this box is zero-area until it
   // loads, so Chromium's lazy heuristic reads it as off-screen and never fetches.
   // It's decorative and out of flow, so eager loading is safe (no CLS).
@@ -249,6 +257,10 @@ function decorateSectionMetadata(main) {
     const section = meta.closest('.section');
     if (!section) return;
     const config = readBlockConfig(meta);
+    // resolve the alt up front — config key order isn't guaranteed, so the alt
+    // may appear after the image URL it describes.
+    const bgAltValue = config['background-image-alt'];
+    const bgAlt = Array.isArray(bgAltValue) ? bgAltValue[0] : bgAltValue;
     Object.entries(config).forEach(([key, value]) => {
       if (key === 'style') {
         const styles = (Array.isArray(value) ? value : value.split(','))
@@ -256,7 +268,9 @@ function decorateSectionMetadata(main) {
           .filter((s) => s);
         styles.forEach((s) => section.classList.add(s));
       } else if (key === 'background-image-url') {
-        applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
+        applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value, bgAlt);
+      } else if (key === 'background-image-alt') {
+        // consumed alongside background-image-url; not a data-* attribute
       } else {
         section.dataset[toCamelCase(key)] = value;
       }
@@ -271,8 +285,9 @@ function decorateSectionMetadata(main) {
   // applied. The legacy data-background-image (DAM asset) form is also honoured
   // for backward compatibility with previously-published content.
   main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
-    applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
-    applySectionBackgroundImage(section, section.dataset.backgroundImage);
+    const bgAlt = section.dataset.backgroundImageAlt;
+    applySectionBackgroundImage(section, section.dataset.backgroundImageUrl, bgAlt);
+    applySectionBackgroundImage(section, section.dataset.backgroundImage, bgAlt);
   });
 }
 

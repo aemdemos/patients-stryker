@@ -110,6 +110,13 @@
         "label": "Background Image URL (external / Dynamic Media link)",
         "valueType": "string",
         "value": ""
+      },
+      {
+        "component": "text",
+        "name": "background-image-alt",
+        "label": "Background Image Alt",
+        "valueType": "string",
+        "value": ""
       }
     ]
   },
