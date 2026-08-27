@@ -166,7 +166,8 @@
     "id": "card",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "image",
         "label": "Image (Dynamic Media link)"
       },
@@ -282,7 +283,8 @@
         ]
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "desktopImage",
         "label": "Desktop Image (Dynamic Media link)"
       },
@@ -294,7 +296,8 @@
         "value": ""
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "mobileImage",
         "label": "Mobile Image (Dynamic Media link, optional)",
         "condition": {
