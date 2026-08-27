@@ -33,11 +33,23 @@
   font-size: var(--statistics-number-size);
   font-weight: 700;
   line-height: 1;
+
+  /* equal-width digits so a mid-count value (e.g. "44%") can never be wider than
+     the final one (e.g. "50%"), which would overflow the reserved width below */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
 }
 
 .statistics .statistics-value {
   margin-bottom: var(--statistics-number-gap);
   color: var(--color-secondary);
+
+  /* Right-align the number within the width JS reserves for its final (widest)
+     value, so a count-up from 0 grows leftward and the trailing %/x/M sign stays
+     put instead of the centered value re-flowing each time a digit is added.
+     min-width is set per-item in statistics.js; text-align only takes effect once
+     a min-width makes the box wider than its text, so static blocks are unaffected. */
+  text-align: right;
 }
 
 /* per-stat colors — author-selectable in Universal Editor */

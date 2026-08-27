@@ -15,6 +15,57 @@
  * Licensed Monotype W01 fonts are referenced first with their documented system fallbacks.
  */
 
+/* stylelint-disable max-line-length */
+
+/* Size-adjusted system fallbacks — declared eagerly so first paint renders body
+   text in a metric-matched fallback, making the later swap to the brand webfont
+   (loaded lazily via fonts.css, font-display: swap) a near-zero shift instead of a
+   whole-page reflow. Because the fallback is metric-matched the webfonts are not
+   preloaded — the swap is shift-free whenever it lands. size-adjust normalizes
+   glyph width; line-gap-override: 0% keeps line height stable. The body fallback
+   anchors to the Arial metric group (Arial ≡ Liberation Sans ≡ Arimo, metric-
+   identical across OSes), so one size-adjust is width-accurate everywhere — unlike
+   serif fonts, whose per-OS metrics no single size-adjust fits. */
+@font-face {
+  font-family: "humanist-slab-712-fallback";
+  size-adjust: 104.65%;
+  line-gap-override: 0%;
+  src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
+}
+
+/* Heading fallback — anchored to the Times metric group (Times New Roman ≡
+   Liberation Serif ≡ Tinos, metric-identical across all platforms). size-adjust
+   110.82% is the measured URWEgyptienne/Tinos advance-width ratio (verified match
+   to within <1px). local('serif') is the last-resort net. */
+@font-face {
+  font-family: urw-egyptienne-fallback;
+  size-adjust: 110.82%;
+  line-gap-override: 0%;
+  src: local('Times New Roman'), local('Liberation Serif'), local('Tinos'), local('serif');
+}
+
+/* Display fallback — anchored to the Arial metric group (Arial ≡ Liberation Sans
+   ≡ Arimo). Futura Book (400) and Bold (700) need DIFFERENT size-adjusts because
+   Futura Bold is ~21% wider than Book while the Arial-group bold is only ~9%
+   wider, so a single value can't serve both weights — hence two faces. Values are
+   the measured Futura/Arimo advance-width ratios per weight (Book 99.57%, Bold
+   112.32%). local('sans-serif') is the last-resort net. */
+@font-face {
+  font-family: futura-lt-fallback;
+  font-weight: 400;
+  size-adjust: 99.57%;
+  line-gap-override: 0%;
+  src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
+}
+
+@font-face {
+  font-family: futura-lt-fallback;
+  font-weight: 700;
+  size-adjust: 112.32%;
+  line-gap-override: 0%;
+  src: local('Arial'), local('Liberation Sans'), local('Arimo'), local('sans-serif');
+}
+
 :root {
   /* brand colors */
   --color-primary: #4c7d7a;
@@ -673,7 +724,7 @@ main > .section.wide > div {
 
 /* flex section — lays the section's content WRAPPERS side by side at 50/50 on
    desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
-   Block-agnostic (issue #98's section-flex direction): each authored unit becomes
+   Block-agnostic: each authored unit becomes
    its own wrapper (`.default-content-wrapper`, `.<block>-wrapper`), so e.g. a text
    block sits beside a video without coupling the layout to a specific block.
    Reading order = source order, so the first authored wrapper sits on the left.

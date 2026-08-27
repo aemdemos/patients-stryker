@@ -131,6 +131,14 @@ export default async function decorate(block) {
       const container = brandLink.closest('.button-container');
       if (container) container.className = '';
     }
+    // The logo is above the fold but the header loads lazily, so load it eagerly
+    // with intrinsic dimensions to reserve its space before the bytes land (CLS).
+    const brandImg = navBrand.querySelector('img');
+    if (brandImg) {
+      brandImg.setAttribute('loading', 'eager');
+      if (!brandImg.getAttribute('width')) brandImg.setAttribute('width', '192');
+      if (!brandImg.getAttribute('height')) brandImg.setAttribute('height', '48');
+    }
   }
 
   // Tools: build the search form from the :search: token
