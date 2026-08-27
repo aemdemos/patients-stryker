@@ -237,6 +237,10 @@
   },
   {
     "id": "columns-cell",
+    "fields": []
+  },
+  {
+    "id": "columns-image",
     "fields": [
       {
         "component": "text",

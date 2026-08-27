@@ -164,16 +164,27 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p></div>",
-              "behaviour": "columns-cell",
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "DM Image",
+          "id": "columns-image",
+          "model": "columns-image",
+          "plugins": {
+            "da": {
+              "name": "DM Image",
+              "unsafeHTML": "<a href=\"\">Image alt</a>",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "p:first-child > a[href]"
+                  "selector": "a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "p:first-child > a"
+                  "selector": "a"
                 }
               ]
             }
