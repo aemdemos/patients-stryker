@@ -46,9 +46,10 @@
         "da": {
           "name": "DM Image",
           "type": "image",
+          "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
           "fields": [
-            { "name": "image", "selector": "a[href]" },
-            { "name": "imageAlt", "selector": "a" }
+            { "name": "image", "selector": "p > a[href]" },
+            { "name": "imageAlt", "selector": "p > a" }
           ]
         }
       }
