@@ -2,8 +2,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
-// column count from the `cols-N` variant class; default 6 for the label variant,
-// 4 otherwise
+// column count from the `cols-N` variant class; default 6 for label, else 4
 function readColumns(block) {
   const match = [...block.classList]
     .map((c) => c.match(/^cols-(\d+)$/))
@@ -13,8 +12,7 @@ function readColumns(block) {
 }
 
 /**
- * Decorates the icon-list block into a grid of items, each row [ picture ]
- * [ caption ]. Title and world-map background are on the section, not the block.
+ * Decorates the icon-list block into a grid of [ picture ][ caption ] items.
  * @param {Element} block The block element
  */
 export default function decorate(block) {
@@ -34,12 +32,7 @@ export default function decorate(block) {
 
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
-      // Icons are authored as an image URL (an <a href> to the image) whose alt
-      // text is the link's display text — the same convention as cards/hero.
-      // DM URLs are already converted to <picture> by dm-support.js (which reads
-      // the alt from the link text/title); a plain external URL is still a bare
-      // link, so turn it into an <img> here, taking its alt from the link's
-      // display text (falling back to its title).
+      // alt is the link's display text (cards/hero convention); plain URLs become <img> here
       const link = iconCell.querySelector('a[href]');
       if (link && !iconCell.querySelector('picture, img')) {
         const href = link.getAttribute('href');
@@ -62,8 +55,7 @@ export default function decorate(block) {
     list.append(item);
   });
 
-  // Re-render non-DM images at 2x the 165px icon width for hi-dpi, preserving
-  // their authored alt; DM images are left as dm-support.js rendered them.
+  // re-render non-DM images at 2x (330px) for hi-dpi; DM images left as-is
   list.querySelectorAll('picture > img').forEach((img) => {
     if (isDMSrc(img.src)) return;
     img.closest('picture').replaceWith(

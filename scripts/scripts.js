@@ -218,11 +218,8 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Prepends a decorative `<img class="section-background-image">` to the section
- * (matches the source's inline background image, not a CSS background). Opt-in
- * blocks like icon-list position and layer it; inert for other sections.
- * When an alt is authored the image is treated as meaningful (alt applied, not
- * aria-hidden); otherwise it stays purely decorative (empty alt + aria-hidden).
+ * Prepends an `<img class="section-background-image">` to the section. Authored
+ * alt makes it meaningful; blank alt keeps it decorative (empty alt + aria-hidden).
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
  * @param {string} [alt] optional accessible text for the background image
@@ -239,9 +236,7 @@ function applySectionBackgroundImage(section, url, alt) {
     img.alt = '';
     img.setAttribute('aria-hidden', 'true');
   }
-  // eager, not lazy: when absolutely positioned this box is zero-area until it
-  // loads, so Chromium's lazy heuristic reads it as off-screen and never fetches.
-  // It's decorative and out of flow, so eager loading is safe (no CLS).
+  // eager: absolutely-positioned box is zero-area until loaded, so lazy never fetches
   img.loading = 'eager';
   section.prepend(img);
 }
@@ -257,8 +252,7 @@ function decorateSectionMetadata(main) {
     const section = meta.closest('.section');
     if (!section) return;
     const config = readBlockConfig(meta);
-    // resolve the alt up front — config key order isn't guaranteed, so the alt
-    // may appear after the image URL it describes.
+    // resolve alt up front — config key order isn't guaranteed
     const bgAltValue = config['background-image-alt'];
     const bgAlt = Array.isArray(bgAltValue) ? bgAltValue[0] : bgAltValue;
     Object.entries(config).forEach(([key, value]) => {
@@ -270,7 +264,7 @@ function decorateSectionMetadata(main) {
       } else if (key === 'background-image-url') {
         applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value, bgAlt);
       } else if (key === 'background-image-alt') {
-        // consumed alongside background-image-url; not a data-* attribute
+        // consumed with background-image-url above
       } else {
         section.dataset[toCamelCase(key)] = value;
       }
@@ -280,10 +274,7 @@ function decorateSectionMetadata(main) {
     (meta.closest('.section-metadata-wrapper') || meta).remove();
   });
 
-  // published DA content exposes the value as data-background-image-url, not a
-  // table. applySectionBackgroundImage no-ops if a background image is already
-  // applied. The legacy data-background-image (DAM asset) form is also honoured
-  // for backward compatibility with previously-published content.
+  // published DA form: data-* attributes (legacy data-background-image also honoured)
   main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
     const bgAlt = section.dataset.backgroundImageAlt;
     applySectionBackgroundImage(section, section.dataset.backgroundImageUrl, bgAlt);
