@@ -45,10 +45,10 @@
       "plugins": {
         "da": {
           "name": "DM Image",
-          "unsafeHTML": "<a href=\"\">Image alt</a>",
+          "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
           "fields": [
-            { "name": "image", "selector": "a[href]" },
-            { "name": "imageAlt", "selector": "a" }
+            { "name": "image", "selector": "p:first-child > a[href]" },
+            { "name": "imageAlt", "selector": "p:first-child > a" }
           ]
         }
       }
