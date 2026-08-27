@@ -65,6 +65,13 @@
           "label": "Background Image",
           "valueType": "string",
           "multi": false
+        },
+        {
+          "component": "text",
+          "name": "anchor",
+          "label": "Anchor ID",
+          "valueType": "string",
+          "description": "Optional. A unique id for this section (e.g. treatment-options). Set this to make the section a Sticky Nav target, then use the same value as #treatment-options in the nav item's Target field. Must be unique per page — duplicates will only link to the first match."
         }
       ]
     }

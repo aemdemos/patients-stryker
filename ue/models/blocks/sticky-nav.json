@@ -50,7 +50,7 @@
           "value": "",
           "label": "Target Section",
           "valueType": "string",
-          "description": "The section id to jump to, e.g. #overview"
+          "description": "The section to jump to. Enter #<anchor>, matching the target section's Anchor ID field, e.g. #overview."
         }
       ]
     }
