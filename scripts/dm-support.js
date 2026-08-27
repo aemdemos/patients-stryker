@@ -372,38 +372,14 @@ export default function decorateDMAssets(main) {
       if (text && text !== src) displayText = text;
     }
 
-    // Authored-alt convention (hero/cards): consume a plain <p> after the link's
-    // <p> as alt, but only when the two <p>s are the cell's sole children and no
-    // other alt was authored — so body copy following an inline image isn't eaten.
-    const authoredAlt = (el.tagName === 'A'
-      && (el.getAttribute('alt') || el.getAttribute('title') || displayText)) || '';
-    let altParagraph = '';
-    let altNode = null;
-    if (el.tagName === 'A' && !authoredAlt) {
-      const linkP = el.closest('p');
-      const parent = linkP && linkP.parentElement;
-      const next = linkP && linkP.nextElementSibling;
-      const isSoleAltPair = parent
-        && parent.childElementCount === 2
-        && parent.firstElementChild === linkP
-        && next === parent.lastElementChild;
-      if (isSoleAltPair && next.tagName === 'P' && !next.querySelector('a, picture, img, video')) {
-        const text = next.textContent.trim();
-        if (text) { altParagraph = text; altNode = next; }
-      }
-    }
-
     if (render === renderVideo) {
-      const label = el.getAttribute('title') || displayText || altParagraph;
+      const label = el.getAttribute('title') || displayText;
       el.replaceWith(renderVideo(src, label));
-      if (altNode) altNode.remove();
       return;
     }
-    // alt precedence: an authored alt/title, the link's display text, then the
-    // alt paragraph below the link.
-    const alt = el.getAttribute('alt') || el.getAttribute('title')
-      || displayText || altParagraph;
+    // alt precedence: an authored alt/title, then the link's display text
+    // (authors describe hero/cards images by using the alt as the link text).
+    const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
     el.replaceWith(render(src, alt, false));
-    if (altNode) altNode.remove();
   });
 }
