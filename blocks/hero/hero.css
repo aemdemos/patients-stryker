@@ -52,6 +52,28 @@
   width: 100%;
 }
 
+/* desktop + mobile are separate pictures, each with its own alt; show the mobile
+   crop below the 900px crossover and the desktop crop at/above it (matches the
+   image/layout switch). Scoped to .hero picture so it overrides the variant
+   picture rules (e.g. .hero.fullbleed picture) that set display: block. */
+.hero picture.hero-image-desktop {
+  display: none;
+}
+
+.hero picture.hero-image-mobile {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .hero picture.hero-image-desktop {
+    display: block;
+  }
+
+  .hero picture.hero-image-mobile {
+    display: none;
+  }
+}
+
 .hero.fullbleed img {
   display: block;
   width: 100%;
