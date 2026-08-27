@@ -170,6 +170,27 @@
           }
         },
         {
+          "title": "DM Image",
+          "id": "columns-image",
+          "model": "columns-image",
+          "plugins": {
+            "da": {
+              "name": "DM Image",
+              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "a[href]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "a"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "model": "fragment",
