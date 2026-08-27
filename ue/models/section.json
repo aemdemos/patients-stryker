@@ -71,7 +71,7 @@
           "name": "anchor",
           "label": "Anchor ID",
           "valueType": "string",
-          "description": "Optional. A unique id for this section, e.g. find-a-doctor (lowercase, hyphens, no spaces or #). This is the section side of a Sticky Nav link: copy this exact value into a Sticky Nav item's Target field, prefixed with #, e.g. #find-a-doctor. Must be unique per page — duplicate ids only link to the first match."
+          "description": "Optional. A unique id for this section, e.g. find-a-doctor (lowercase, hyphens, no spaces or #). This is the section side of a Sticky Nav link: copy this exact value into a Sticky Nav item's Target field, prefixed with #, e.g. #find-a-doctor. If left blank, the Sticky Nav will fall back to the section's heading text slugified (e.g. 'Find a Doctor' matches #find-a-doctor); set this explicitly to override that or when the section has no heading. Must be unique per page — duplicate ids only link to the first match."
         }
       ]
     }

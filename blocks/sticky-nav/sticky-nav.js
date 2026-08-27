@@ -3,8 +3,53 @@
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 /**
+ * Slugify text the same way EDS does for heading ids, so an auto-derived target
+ * matches the id the platform already puts on the heading.
+ * @param {string} text
+ * @returns {string}
+ */
+const slug = (text) => (typeof text === 'string' ? text : '')
+  .toLowerCase()
+  .replace(/[^0-9a-z]/gi, '-')
+  .replace(/-+/g, '-')
+  .replace(/^-|-$/g, '');
+
+/**
+ * Make `el` the sole owner of `id`. Any other element already holding that id
+ * (e.g. a heading EDS auto-slugged to the same word) is renamed with a numeric
+ * suffix so it stays reachable, while the deliberately-anchored section keeps
+ * the canonical id. This keeps the id unique, so native deep-linking
+ * (`…/page#id` on load) and `getElementById` both resolve to the section — not
+ * to an incidental heading earlier in the document.
+ * @param {Element} el
+ * @param {string} id
+ */
+function claimId(el, id) {
+  document.querySelectorAll(`[id="${CSS.escape(id)}"]`).forEach((other) => {
+    if (other === el) return;
+    let n = 2;
+    while (document.getElementById(`${id}-${n}`)) n += 1;
+    // eslint-disable-next-line no-console
+    console.warn(`[sticky-nav] id "${id}" was also used by <${other.tagName.toLowerCase()}>; renamed it to "${id}-${n}" so the anchored section owns "${id}".`);
+    other.id = `${id}-${n}`;
+  });
+  el.id = id;
+}
+
+/**
  * Resolve a nav link's target: `#id`, bare `id`, or URL ending in `#id`.
- * Falls back to a `.section[data-anchor="<id>"]` and promotes it to a real id.
+ *
+ * A deliberate section anchor always wins over an incidental heading that
+ * merely happens to contain the same word, so the author's intent is not
+ * hijacked by e.g. a mid-page heading that slugifies to "overview". Order:
+ *   1. `.section[data-anchor="<id>"]` — the section's explicit Anchor ID field.
+ *      The section claims the id exclusively (see claimId), so duplicates from
+ *      matching heading text can't steal native hash navigation.
+ *   2. a `.section` element that already carries that id;
+ *   3. any element with that id (EDS auto-ids headings with the same slug) —
+ *      backward-compatible catch-all;
+ *   4. auto-slug fallback: the first section heading whose text slugifies to
+ *      the target, promoted to a real id so authors who set nothing still work.
  * @param {string} href
  * @returns {Element|null}
  */
@@ -13,12 +58,30 @@ function resolveTarget(href) {
   const hash = href.includes('#') ? href.slice(href.indexOf('#') + 1) : href;
   if (!hash) return null;
 
+  // 1. deliberate section-level Anchor ID takes precedence over any heading
+  const byAnchor = document.querySelector(`.section[data-anchor="${CSS.escape(hash)}"]`);
+  if (byAnchor) {
+    if (byAnchor.id !== hash) claimId(byAnchor, hash);
+    return byAnchor;
+  }
+
+  // 2. a section that already owns the id (e.g. anchor promoted on a prior pass)
+  const sectionById = document.querySelector(`.section[id="${CSS.escape(hash)}"]`);
+  if (sectionById) return sectionById;
+
+  // 3. any element with the id — usually the heading EDS auto-ids with this slug
   const byId = document.getElementById(hash);
   if (byId) return byId;
 
-  const byAnchor = document.querySelector(`.section[data-anchor="${CSS.escape(hash)}"]`);
-  if (byAnchor && !byAnchor.id) byAnchor.id = hash;
-  return byAnchor;
+  // 4. auto-slug fallback: first section heading whose text slugifies to the
+  // target, promoted to a real id so hash navigation and scroll-spy work.
+  const heading = [...document.querySelectorAll('main .section :is(h1,h2,h3,h4,h5,h6)')]
+    .find((h) => slug(h.textContent) === hash);
+  if (heading) {
+    if (!heading.id) heading.id = hash;
+    return heading;
+  }
+  return null;
 }
 
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);

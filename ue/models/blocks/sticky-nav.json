@@ -51,7 +51,7 @@
           "value": "",
           "label": "Target Section",
           "valueType": "string",
-          "description": "The section this item jumps to. Must exactly match the target section's Anchor ID, prefixed with #, e.g. #find-a-doctor. If it does not match any section's Anchor ID on this page, the item still shows but clicking it does nothing."
+          "description": "The section this item jumps to. Use #, then either the target section's Anchor ID or its heading text slugified (e.g. 'Find a Doctor' becomes #find-a-doctor). If it matches no section's Anchor ID or heading on this page, the item still shows but clicking it does nothing."
         }
       ]
     }
