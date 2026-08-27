@@ -53,19 +53,24 @@ export default function decorate(block) {
 
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
-      // Icons are authored as an image URL (an <a href> to the image). DM URLs
-      // are already converted to <picture> by dm-support.js; a plain external
-      // URL is still a bare link — turn it into an <img> here. The link's title
-      // (Icon Alt Text) becomes the image alt.
+      // Icons are authored as an image URL (an <a href> to the image), matching
+      // the cards/hero convention. DM URLs are already converted to <picture> by
+      // dm-support.js (which also consumes the "Icon alt" paragraph); a plain
+      // external URL is still a bare link — turn it into an <img> here, taking
+      // its alt from the sibling "Icon alt" <p> below the link.
       const link = iconCell.querySelector('a[href]');
       if (link && !iconCell.querySelector('picture, img')) {
         const href = link.getAttribute('href');
-        // alt from the link title (Icon Alt Text); fall back to the link's
-        // display text unless it's just the bare URL
-        const text = link.textContent.trim();
+        const linkP = link.closest('p');
+        const altP = linkP && linkP.nextElementSibling;
+        let alt = '';
+        if (altP && altP.tagName === 'P' && !altP.querySelector('a, picture, img')) {
+          alt = altP.textContent.trim();
+          altP.remove();
+        }
         const img = document.createElement('img');
         img.src = href;
-        img.alt = link.getAttribute('title') || (text === href ? '' : text);
+        img.alt = alt;
         const picture = document.createElement('picture');
         picture.append(img);
         link.replaceWith(picture);

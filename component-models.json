@@ -419,13 +419,12 @@
       {
         "component": "aem-content",
         "name": "icon",
-        "label": "Icon URL",
-        "description": "Paste an image URL (external or Dynamic Media link). It renders as the item's icon."
+        "label": "Icon (Dynamic Media link)"
       },
       {
         "component": "text",
         "name": "iconAlt",
-        "label": "Icon Alt Text",
+        "label": "Icon Alt",
         "value": "",
         "valueType": "string"
       },

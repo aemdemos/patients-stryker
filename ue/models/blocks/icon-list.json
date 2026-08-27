@@ -33,11 +33,10 @@
       "plugins": {
         "da": {
           "name": "icon-list-item",
-          "rows": 1,
-          "columns": 2,
+          "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon URL</a></p><p>Icon alt</p></div><div>Caption</div></div>",
           "fields": [
-            { "name": "icon", "selector": "div:nth-child(1)>a[href]" },
-            { "name": "iconAlt", "selector": "div:nth-child(1)>a[title]" },
+            { "name": "icon", "selector": "div:nth-child(1) a[href]" },
+            { "name": "iconAlt", "selector": "div:nth-child(1) p:nth-of-type(2)" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -83,13 +82,12 @@
         {
           "component": "aem-content",
           "name": "icon",
-          "label": "Icon URL",
-          "description": "Paste an image URL (external or Dynamic Media link). It renders as the item's icon."
+          "label": "Icon (Dynamic Media link)"
         },
         {
           "component": "text",
           "name": "iconAlt",
-          "label": "Icon Alt Text",
+          "label": "Icon Alt",
           "value": "",
           "valueType": "string"
         },

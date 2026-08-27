@@ -255,16 +255,15 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "rows": 1,
-              "columns": 2,
+              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon URL</a></p><p>Icon alt</p></div><div>Caption</div></div>",
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1)>a[href]"
+                  "selector": "div:nth-child(1) a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1)>a[title]"
+                  "selector": "div:nth-child(1) p:nth-of-type(2)"
                 },
                 {
                   "name": "text",
