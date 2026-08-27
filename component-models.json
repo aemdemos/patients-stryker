@@ -105,13 +105,6 @@
         ]
       },
       {
-        "component": "reference",
-        "name": "background-image",
-        "label": "Background Image (DAM asset)",
-        "valueType": "string",
-        "multi": false
-      },
-      {
         "component": "text",
         "name": "background-image-url",
         "label": "Background Image URL (external / Dynamic Media link)",
@@ -424,11 +417,10 @@
     "id": "icon-list-item",
     "fields": [
       {
-        "component": "reference",
+        "component": "aem-content",
         "name": "icon",
-        "label": "Icon",
-        "valueType": "string",
-        "multi": false
+        "label": "Icon URL",
+        "description": "Paste an image URL (external or Dynamic Media link). It renders as the item's icon."
       },
       {
         "component": "text",

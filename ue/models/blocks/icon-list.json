@@ -36,8 +36,8 @@
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "icon", "selector": "div:nth-child(1)>picture>img[src]" },
-            { "name": "iconAlt", "selector": "div:nth-child(1)>picture>img[alt]" },
+            { "name": "icon", "selector": "div:nth-child(1)>a[href]" },
+            { "name": "iconAlt", "selector": "div:nth-child(1)>a[title]" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -81,11 +81,10 @@
       "id": "icon-list-item",
       "fields": [
         {
-          "component": "reference",
+          "component": "aem-content",
           "name": "icon",
-          "label": "Icon",
-          "valueType": "string",
-          "multi": false
+          "label": "Icon URL",
+          "description": "Paste an image URL (external or Dynamic Media link). It renders as the item's icon."
         },
         {
           "component": "text",

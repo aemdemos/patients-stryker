@@ -260,11 +260,11 @@
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1)>picture>img[src]"
+                  "selector": "div:nth-child(1)>a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
+                  "selector": "div:nth-child(1)>a[title]"
                 },
                 {
                   "name": "text",

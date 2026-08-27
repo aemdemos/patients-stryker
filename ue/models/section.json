@@ -60,13 +60,6 @@
           ]
         },
         {
-          "component": "reference",
-          "name": "background-image",
-          "label": "Background Image (DAM asset)",
-          "valueType": "string",
-          "multi": false
-        },
-        {
           "component": "text",
           "name": "background-image-url",
           "label": "Background Image URL (external / Dynamic Media link)",
