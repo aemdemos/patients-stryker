@@ -12,25 +12,6 @@ function readColumns(block) {
   return block.classList.contains('label') ? 6 : 4;
 }
 
-// Icons are authored as bare DM autolinks, so dm-support.js renders alt="".
-// Fall back to the source's labels, keyed by DM asset name; author alt wins.
-const ICON_ALT = {
-  oneinfour: '1 in 4 people',
-  global: 'Global',
-  disability: 'Disability',
-  leadingcause: 'Leading cause',
-};
-
-function altForSrc(src) {
-  try {
-    const name = new URL(src, window.location.href).pathname.split('/').pop().toLowerCase();
-    const key = Object.keys(ICON_ALT).find((k) => name.startsWith(k));
-    return key ? ICON_ALT[key] : '';
-  } catch {
-    return '';
-  }
-}
-
 /**
  * Decorates the icon-list block into a grid of items, each row [ picture ]
  * [ caption ]. Title and world-map background are on the section, not the block.
@@ -53,21 +34,17 @@ export default function decorate(block) {
 
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
-      // Icons are authored as an image URL (an <a href> to the image), matching
-      // the cards/hero convention. DM URLs are already converted to <picture> by
-      // dm-support.js (which also consumes the "Icon alt" paragraph); a plain
-      // external URL is still a bare link — turn it into an <img> here, taking
-      // its alt from the sibling "Icon alt" <p> below the link.
+      // Icons are authored as an image URL (an <a href> to the image) whose alt
+      // text is the link's display text — the same convention as cards/hero.
+      // DM URLs are already converted to <picture> by dm-support.js (which reads
+      // the alt from the link text/title); a plain external URL is still a bare
+      // link, so turn it into an <img> here, taking its alt from the link's
+      // display text (falling back to its title).
       const link = iconCell.querySelector('a[href]');
       if (link && !iconCell.querySelector('picture, img')) {
         const href = link.getAttribute('href');
-        const linkP = link.closest('p');
-        const altP = linkP && linkP.nextElementSibling;
-        let alt = '';
-        if (altP && altP.tagName === 'P' && !altP.querySelector('a, picture, img')) {
-          alt = altP.textContent.trim();
-          altP.remove();
-        }
+        const text = link.textContent.trim();
+        const alt = text && text !== href ? text : (link.getAttribute('title') || '');
         const img = document.createElement('img');
         img.src = href;
         img.alt = alt;
@@ -85,10 +62,9 @@ export default function decorate(block) {
     list.append(item);
   });
 
-  // Backfill missing alt, then re-render non-DM images at 2x the 165px icon
-  // width for hi-dpi; DM images are left as dm-support.js rendered them.
+  // Re-render non-DM images at 2x the 165px icon width for hi-dpi, preserving
+  // their authored alt; DM images are left as dm-support.js rendered them.
   list.querySelectorAll('picture > img').forEach((img) => {
-    if (!img.alt) img.alt = altForSrc(img.src);
     if (isDMSrc(img.src)) return;
     img.closest('picture').replaceWith(
       createOptimizedPicture(img.src, img.alt, false, [{ width: '330' }]),

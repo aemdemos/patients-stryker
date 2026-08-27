@@ -420,16 +420,17 @@
     "id": "icon-list-item",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "icon",
         "label": "Icon (Dynamic Media link)"
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "iconAlt",
         "label": "Icon Alt",
-        "value": "",
-        "valueType": "string"
+        "multi": false
       },
       {
         "component": "richtext",

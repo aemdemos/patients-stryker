@@ -33,10 +33,10 @@
       "plugins": {
         "da": {
           "name": "icon-list-item",
-          "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon URL</a></p><p>Icon alt</p></div><div>Caption</div></div>",
+          "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
           "fields": [
             { "name": "icon", "selector": "div:nth-child(1) a[href]" },
-            { "name": "iconAlt", "selector": "div:nth-child(1) p:nth-of-type(2)" },
+            { "name": "iconAlt", "selector": "div:nth-child(1) a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -80,16 +80,17 @@
       "id": "icon-list-item",
       "fields": [
         {
-          "component": "aem-content",
+          "component": "text",
+          "valueType": "string",
           "name": "icon",
           "label": "Icon (Dynamic Media link)"
         },
         {
           "component": "text",
+          "valueType": "string",
           "name": "iconAlt",
           "label": "Icon Alt",
-          "value": "",
-          "valueType": "string"
+          "multi": false
         },
         {
           "component": "richtext",
