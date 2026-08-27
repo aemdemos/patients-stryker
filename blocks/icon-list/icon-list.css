@@ -1,7 +1,7 @@
-/* Icon list — icons above captions. Breakpoints: <=650px 1-col; 651-1200px 4-up,
-   icons hidden; >=1201px cols-N. Column count from --icon-list-columns (set in JS). */
+/* Icon list — icons above captions. Breakpoints: <600px 1-col; 600-1199px 4-up,
+   icons hidden; >=1200px cols-N. Column count from --icon-list-columns (set in JS). */
 
-/* World-map background: decorative <img> on the section; in normal flow <=840px. */
+/* World-map background: decorative <img> on the section; in normal flow <600px. */
 .icon-list-container > .section-background-image {
   display: block;
   width: 100%;
@@ -14,8 +14,8 @@
   margin-top: 45px;
 }
 
-/* >=841px: map becomes a band behind the content */
-@media (width >= 841px) {
+/* >=600px: map becomes a band behind the content */
+@media (width >= 600px) {
   .icon-list-container.section:has(> .section-background-image) {
     position: relative;
     padding-block: var(--icon-list-bg-padding);
@@ -35,7 +35,7 @@
   }
 }
 
-/* Section heading — Futura-bold gold, 31.5px (26.25px below 480px). */
+/* Section heading — Futura-bold gold, 31.5px (26.25px below 600px). */
 .icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
   margin: 15px 0 var(--icon-list-title-gap);
   font-family: var(--display-font-family-bold);
@@ -45,7 +45,7 @@
   text-align: center;
 }
 
-@media (width >= 480px) {
+@media (width >= 600px) {
   .icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
     font-size: var(--icon-list-title-size);
   }
@@ -97,7 +97,7 @@
 }
 
 /* tablet: 4-up, icons hidden */
-@media (width > 650px) {
+@media (width >= 600px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -108,7 +108,7 @@
 }
 
 /* desktop: author column count, icons shown again */
-@media (width > 1200px) {
+@media (width >= 1200px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
   }
@@ -120,7 +120,7 @@
 }
 
 /* ── Tile variant ── "risk factors of a stroke" on stroke-awareness. Near-square
-   (200x170) icons stay visible at every breakpoint; 2-up ≤650px, 5-up above (or
+   (200x170) icons stay visible at every breakpoint; 2-up <600px, 5-up above (or
    cols-4). minmax(0, 1fr), not 1fr (= minmax(auto, 1fr)), keeps columns equal —
    else a long caption widens its column + icon and drops its caption below the row. */
 .icon-list.tile ul.icon-list-items {
@@ -161,11 +161,11 @@
 /* tablet + desktop: 5-up (or cols-4), icons stay visible — overrides the base
    block's tablet icon-hide rule. The source lays the tiles out on a 12-column
    grid where the 5 tiles span the middle 10 columns (83.333%), centred, so the
-   icons scale fluidly (≈86px → 200px) as the viewport grows from 650px to
-   ~1400px, keeping a fixed 30px gap. max-width caps the group at its natural
+   icons scale fluidly (≈86px → 200px) as the viewport grows from 600px to
+   ~1200px, keeping a fixed 30px gap. max-width caps the group at its natural
    size (5 × 200px icons + 4 × 30px gaps) so icons never exceed 200px; above
    that width the group stays capped and centred rather than stretching. */
-@media (width > 650px) {
+@media (width >= 600px) {
   .icon-list.tile ul.icon-list-items {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: var(--icon-list-tile-col-gap);
@@ -252,7 +252,7 @@
 }
 
 /* tablet+ : icons stay visible, honour author column count (label defaults 6-up) */
-@media (width > 650px) {
+@media (width >= 600px) {
   .icon-list.label ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), minmax(0, 1fr));
     column-gap: var(--icon-list-label-col-gap);
