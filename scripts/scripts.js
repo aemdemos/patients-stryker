@@ -127,10 +127,32 @@ function decorateButtons(main) {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
+    // skip sentence-style links: full sentences ending in terminal punctuation are
+    // inline text links (e.g. the "FOR ADDITIONAL INFORMATION…" / California callouts),
+    // not calls-to-action — keep their authored bold/italic emphasis but do not buttonize.
+    if (/[.!?]$/.test(text)) return;
+
     // require authored formatting for buttonization
     const strong = a.closest('strong');
     const em = a.closest('em');
     if (!strong && !em) return;
+
+    // bold + underline (authored) → flat inline CTA: bold text in --color-primary,
+    // no underline. Must precede the button branches below, which would otherwise
+    // see the bold and turn it into a .button.primary. The <u> may wrap the anchor
+    // OR sit inside it (authors nest either way), so check both directions.
+    const ancestorU = a.closest('u');
+    const u = ancestorU || a.querySelector('u');
+    if (strong && u) {
+      a.classList.add('link-strong');
+      // unwrap the outermost bold/underline ancestor so the anchor sits directly in
+      // the <p>, then strip any <u> inside the anchor so no underline is drawn.
+      let outer = strong;
+      if (ancestorU && ancestorU.contains(strong)) outer = ancestorU;
+      outer.replaceWith(a);
+      a.querySelectorAll('u').forEach((inner) => inner.replaceWith(...inner.childNodes));
+      return;
+    }
 
     p.className = 'button-wrapper';
     a.className = 'button';

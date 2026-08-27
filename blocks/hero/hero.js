@@ -13,8 +13,9 @@ function foldMobileSource(desktopPic, mobilePic) {
   if (!mobileSrcset) return;
 
   const mobileMediaSource = document.createElement('source');
-  // serve the mobile asset below the 840px desktop crossover (matches source)
-  mobileMediaSource.media = '(max-width: 839px)';
+  // serve the mobile asset below the 900px desktop crossover (matches the CSS
+  // layout switch, so 600–899px keeps the portrait crop, not the wide desktop image)
+  mobileMediaSource.media = '(max-width: 899px)';
   mobileMediaSource.srcset = mobileSrcset;
   if (mobileSource && mobileSource.type) mobileMediaSource.type = mobileSource.type;
   desktopPic.prepend(mobileMediaSource);
