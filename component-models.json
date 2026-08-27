@@ -237,10 +237,6 @@
   },
   {
     "id": "columns-cell",
-    "fields": []
-  },
-  {
-    "id": "columns-image",
     "fields": [
       {
         "component": "text",
@@ -253,7 +249,7 @@
         "valueType": "string",
         "name": "imageAlt",
         "label": "Image Alt",
-        "value": ""
+        "multi": false
       }
     ]
   },
