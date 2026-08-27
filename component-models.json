@@ -116,7 +116,7 @@
         "name": "anchor",
         "label": "Anchor ID",
         "valueType": "string",
-        "description": "Optional. A unique id for this section (e.g. treatment-options). Set this to make the section a Sticky Nav target, then use the same value as #treatment-options in the nav item's Target field. Must be unique per page — duplicates will only link to the first match."
+        "description": "Optional. A unique id for this section, e.g. find-a-doctor (lowercase, hyphens, no spaces or #). This is the section side of a Sticky Nav link: copy this exact value into a Sticky Nav item's Target field, prefixed with #, e.g. #find-a-doctor. Must be unique per page — duplicate ids only link to the first match."
       }
     ]
   },
@@ -606,7 +606,8 @@
         "name": "label",
         "value": "",
         "label": "Label",
-        "valueType": "string"
+        "valueType": "string",
+        "description": "The text shown for this item in the sticky nav bar, e.g. Find a Doctor."
       },
       {
         "component": "text",
@@ -614,7 +615,7 @@
         "value": "",
         "label": "Target Section",
         "valueType": "string",
-        "description": "The section to jump to. Enter #<anchor>, matching the target section's Anchor ID field, e.g. #overview."
+        "description": "The section this item jumps to. Must exactly match the target section's Anchor ID, prefixed with #, e.g. #find-a-doctor. If it does not match any section's Anchor ID on this page, the item still shows but clicking it does nothing."
       }
     ]
   },

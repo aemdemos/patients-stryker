@@ -42,7 +42,8 @@
           "name": "label",
           "value": "",
           "label": "Label",
-          "valueType": "string"
+          "valueType": "string",
+          "description": "The text shown for this item in the sticky nav bar, e.g. Find a Doctor."
         },
         {
           "component": "text",
@@ -50,7 +51,7 @@
           "value": "",
           "label": "Target Section",
           "valueType": "string",
-          "description": "The section to jump to. Enter #<anchor>, matching the target section's Anchor ID field, e.g. #overview."
+          "description": "The section this item jumps to. Must exactly match the target section's Anchor ID, prefixed with #, e.g. #find-a-doctor. If it does not match any section's Anchor ID on this page, the item still shows but clicking it does nothing."
         }
       ]
     }
