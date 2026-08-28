@@ -173,7 +173,8 @@
     "id": "card",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "image",
         "label": "Image (Dynamic Media link)"
       },
@@ -289,7 +290,8 @@
         ]
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "desktopImage",
         "label": "Desktop Image (Dynamic Media link)"
       },
@@ -301,7 +303,8 @@
         "value": ""
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "mobileImage",
         "label": "Mobile Image (Dynamic Media link, optional)",
         "condition": {
@@ -600,8 +603,7 @@
         "name": "label",
         "value": "",
         "label": "Label",
-        "valueType": "string",
-        "description": "The text shown for this item in the sticky nav bar, e.g. Find a Doctor."
+        "valueType": "string"
       },
       {
         "component": "text",
@@ -609,7 +611,7 @@
         "value": "",
         "label": "Target Section",
         "valueType": "string",
-        "description": "Section to jump to, matching its Anchor ID with a # prefix (e.g. #find-a-doctor)."
+        "description": "The section id to jump to, e.g. #overview"
       }
     ]
   },

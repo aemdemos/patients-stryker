@@ -13,7 +13,7 @@
 import { moveInstrumentation } from './ue-utils.js';
 
 const setupObservers = () => {
-  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list, div.sticky-nav');
+  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList' && mutation.target.tagName === 'DIV') {
@@ -23,23 +23,6 @@ const setupObservers = () => {
           : mutation.target.attributes['data-aue-component']?.value;
 
         switch (type) {
-          case 'sticky-nav': {
-            // Rows become <a>s inside a new <nav>. Re-map each row's
-            // instrumentation to its anchor, and its label cell's to the <p>.
-            const navEl = [...addedElements].find((node) => node.tagName === 'NAV');
-            if (navEl) {
-              const removedRows = [...mutation.removedNodes].filter((node) => node.tagName === 'DIV');
-              removedRows.forEach((row, index) => {
-                const item = navEl.children[index];
-                if (!item) return;
-                moveInstrumentation(row, item);
-                const labelCell = row.children[0];
-                const labelEl = item.querySelector('p');
-                if (labelCell && labelEl) moveInstrumentation(labelCell, labelEl);
-              });
-            }
-            break;
-          }
           case 'cards':
           case 'accordion':
           case 'statistics':
