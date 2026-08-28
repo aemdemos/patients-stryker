@@ -250,12 +250,24 @@
         "name": "imageAlt",
         "label": "Image Alt",
         "multi": false
+      }
+    ]
+  },
+  {
+    "id": "dm-image",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "text",
-        "label": "Text"
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
       }
     ]
   },
