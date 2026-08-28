@@ -117,9 +117,6 @@
 .hero.banner {
   display: block;
   position: static;
-
-  /* match the source card's own 20px top/bottom margin */
-  margin-block: var(--space-block-l);
   padding: 0;
   min-height: 0;
   box-shadow: var(--shadow-soft);
@@ -198,7 +195,6 @@
   display: grid;
   grid-template-columns: 1fr;
   position: static;
-  margin-block: 0 var(--space-block-l);
   padding: 0;
   min-height: 0;
 }
