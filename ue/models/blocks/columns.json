@@ -30,11 +30,15 @@
       "title": "Columns Cell",
       "id": "columns-cell",
       "model": "columns-cell",
-      "filter": "columns-cell",
       "plugins": {
         "da": {
-          "unsafeHTML": "<div></div>",
-          "behaviour": "columns-cell"
+          "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
+          "behaviour": "columns-cell",
+          "fields": [
+            { "name": "image", "selector": "p:first-child > a[href]" },
+            { "name": "imageAlt", "selector": "p:first-child > a" },
+            { "name": "text", "selector": "p:nth-child(2)" }
+          ]
         }
       }
     },
@@ -90,7 +94,11 @@
     },
     {
       "id": "columns-cell",
-      "fields": []
+      "fields": [
+        { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
+        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false },
+        { "component": "text", "valueType": "string", "name": "text", "label": "Text" }
+      ]
     },
     {
       "id": "dm-image",
@@ -110,14 +118,6 @@
     {
       "id": "columns-row",
       "components": []
-    },
-    {
-      "id": "columns-cell",
-      "components": [
-        "text",
-        "image",
-        "dm-image"
-      ]
     }
   ]
 }
