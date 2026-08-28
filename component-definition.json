@@ -161,46 +161,11 @@
           "title": "Columns Cell",
           "id": "columns-cell",
           "model": "columns-cell",
+          "filter": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div><div><p><a href=\"\">Image alt</a></p></div><div><p>Text</p></div></div>",
-              "behaviour": "columns-cell",
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
-                },
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(2)"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "title": "DM Image",
-          "id": "dm-image",
-          "model": "dm-image",
-          "plugins": {
-            "da": {
-              "name": "DM Image",
-              "type": "image",
-              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "p > a[href]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "p > a"
-                }
-              ]
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
             }
           }
         },

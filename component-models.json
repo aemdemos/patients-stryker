@@ -237,45 +237,7 @@
   },
   {
     "id": "columns-cell",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "valueType": "string",
-        "name": "text",
-        "label": "Text"
-      }
-    ]
-  },
-  {
-    "id": "dm-image",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
-      }
-    ]
+    "fields": []
   },
   {
     "id": "fragment",
