@@ -161,45 +161,11 @@
           "title": "Columns Cell",
           "id": "columns-cell",
           "model": "columns-cell",
+          "filter": "columns-cell",
           "plugins": {
             "da": {
-              "behaviour": "columns-cell",
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "a[href]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "a"
-                },
-                {
-                  "name": "text",
-                  "selector": "p:nth-child(2)"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "title": "DM Image",
-          "id": "dm-image",
-          "model": "dm-image",
-          "plugins": {
-            "da": {
-              "name": "DM Image",
-              "type": "image",
-              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "p > a[href]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "p > a"
-                }
-              ]
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
             }
           }
         },

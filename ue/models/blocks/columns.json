@@ -30,30 +30,11 @@
       "title": "Columns Cell",
       "id": "columns-cell",
       "model": "columns-cell",
+      "filter": "columns-cell",
       "plugins": {
         "da": {
-          "behaviour": "columns-cell",
-          "fields": [
-            { "name": "image", "selector": "a[href]" },
-            { "name": "imageAlt", "selector": "a" },
-            { "name": "text", "selector": "p:nth-child(2)" }
-          ]
-        }
-      }
-    },
-    {
-      "title": "DM Image",
-      "id": "dm-image",
-      "model": "dm-image",
-      "plugins": {
-        "da": {
-          "name": "DM Image",
-          "type": "image",
-          "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
-          "fields": [
-            { "name": "image", "selector": "p > a[href]" },
-            { "name": "imageAlt", "selector": "p > a" }
-          ]
+          "unsafeHTML": "<div></div>",
+          "behaviour": "columns-cell"
         }
       }
     }
@@ -93,24 +74,7 @@
     },
     {
       "id": "columns-cell",
-      "fields": [
-        { "component": "text", "valueType": "string", "name": "image", "value": "", "label": "Image (Dynamic Media link)" },
-        { "component": "text", "valueType": "string", "name": "imageAlt", "value": "", "label": "Image Alt", "multi": false },
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
-      ]
-    },
-    {
-      "id": "dm-image",
-      "fields": [
-        { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
-        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false }
-      ]
+      "fields": []
     }
   ],
   "filters": [
@@ -126,7 +90,10 @@
     },
     {
       "id": "columns-cell",
-      "components": []
+      "components": [
+        "text",
+        "image"
+      ]
     }
   ]
 }
