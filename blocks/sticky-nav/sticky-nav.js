@@ -102,23 +102,15 @@ function resolveTarget(href) {
 
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 
-// After the ease finishes, keep re-pinning to the target for this long so lazy
-// images loading in above it (which shift layout down) don't leave the page
-// parked short of the target section.
-const SETTLE_DURATION = 600;
-
 /**
  * Animate scroll with easing, re-sampling the target each frame so any
  * mid-scroll layout shift (lazy content) is absorbed smoothly instead of
- * causing a second, jarring jump. After the ease, holds on the re-sampled
- * target through a settle window (while `isActive()` stays true) so late image
- * loads can't strand the page short of the target. Honours
- * `prefers-reduced-motion` by jumping straight to the target with no animation.
+ * causing a second, jarring jump. Honours `prefers-reduced-motion` by jumping
+ * straight to the target with no animation.
  * @param {() => number} getTargetY
- * @param {() => boolean} isActive keep correcting while this returns true
  * @param {number} duration
  */
-function animateScrollTo(getTargetY, isActive = () => false, duration = SCROLL_DURATION) {
+function animateScrollTo(getTargetY, duration = SCROLL_DURATION) {
   if (prefersReducedMotion()) {
     window.scrollTo(0, getTargetY());
     return;
@@ -128,16 +120,10 @@ function animateScrollTo(getTargetY, isActive = () => false, duration = SCROLL_D
   const startTime = performance.now();
 
   function step(now) {
-    const elapsed = now - startTime;
-    const t = Math.min(elapsed / duration, 1);
-    if (t < 1) {
-      window.scrollTo(0, startY + (getTargetY() - startY) * easeInOutQuad(t));
-      requestAnimationFrame(step);
-      return;
-    }
-    // ease done: hold on the re-sampled target during the settle window
-    window.scrollTo(0, getTargetY());
-    if (elapsed < duration + SETTLE_DURATION && isActive()) requestAnimationFrame(step);
+    const t = Math.min((now - startTime) / duration, 1);
+    const targetY = getTargetY();
+    window.scrollTo(0, startY + (targetY - startY) * easeInOutQuad(t));
+    if (t < 1) requestAnimationFrame(step);
   }
 
   requestAnimationFrame(step);
@@ -210,44 +196,32 @@ export default function decorate(block) {
   applyScrollOffset();
   window.addEventListener('resize', applyScrollOffset, { passive: true, signal });
 
-  const setCurrent = (activeItem) => {
-    items.forEach(({ item }) => {
-      const active = item === activeItem;
-      item.classList.toggle('sticky-nav-item-current', active);
-      if (active) item.setAttribute('aria-current', 'true');
-      else item.removeAttribute('aria-current');
-    });
-  };
-
-  // Item the user just clicked. While set, scroll-spy defers to it so late
-  // layout shifts (lazy images) can't flip the highlight to another section.
-  // Cleared on the next genuine user input (see releaseClick).
-  let clickedItem = null;
-
   // scroll the section (not the heading) so its padded top shows the gap below the bar
   targets.forEach(({ item, region }) => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      clickedItem = item;
-      setCurrent(item);
       const getTargetY = () => {
         const off = block.getBoundingClientRect().height || BAR_HEIGHT;
         return window.scrollY + region.getBoundingClientRect().top - off;
       };
-      animateScrollTo(getTargetY, () => clickedItem === item);
+      animateScrollTo(getTargetY);
     }, { signal });
   });
 
   if (targets.length) {
+    const setCurrent = (activeItem) => {
+      items.forEach(({ item }) => {
+        const active = item === activeItem;
+        item.classList.toggle('sticky-nav-item-current', active);
+        if (active) item.setAttribute('aria-current', 'true');
+        else item.removeAttribute('aria-current');
+      });
+    };
+
     // active = last section past the line below the bar; nothing active until the bar pins
     let ticking = false;
     const update = () => {
       ticking = false;
-      // a clicked item owns the highlight until the user scrolls away
-      if (clickedItem) {
-        setCurrent(clickedItem);
-        return;
-      }
       const barRect = block.getBoundingClientRect();
       const barHeight = barRect.height || BAR_HEIGHT;
       const pinned = barRect.top <= 1; // sticky container has reached the top
@@ -270,13 +244,6 @@ export default function decorate(block) {
       ticking = true;
       requestAnimationFrame(update);
     };
-
-    // Release the clicked-item lock only on genuine user input — not on the
-    // programmatic scrolls our own animation fires (which also emit `scroll`).
-    const releaseClick = () => { clickedItem = null; };
-    ['wheel', 'touchstart', 'keydown'].forEach((evt) => {
-      window.addEventListener(evt, releaseClick, { passive: true, signal });
-    });
 
     window.addEventListener('scroll', onScroll, { passive: true, signal });
     window.addEventListener('resize', onScroll, { passive: true, signal });
