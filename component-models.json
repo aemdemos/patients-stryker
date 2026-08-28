@@ -239,10 +239,8 @@
     "id": "columns-cell",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "image",
-        "value": "",
         "label": "Image (Dynamic Media link)"
       },
       {

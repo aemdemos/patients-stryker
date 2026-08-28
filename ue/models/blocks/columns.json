@@ -34,11 +34,11 @@
       "plugins": {
         "da": {
           "behaviour": "columns-cell",
-          "unsafeHTML": "<div><p><a href=\"\">Image URL</a></p><p>Image alt</p><p>Text</p></div>",
+          "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
           "fields": [
-            { "name": "image", "selector": "p:nth-of-type(1)" },
-            { "name": "imageAlt", "selector": "p:nth-of-type(2)" },
-            { "name": "text", "selector": "p:nth-of-type(3)" }
+            { "name": "image", "selector": "a[href]", "attribute": "href" },
+            { "name": "imageAlt", "selector": "a[href]", "attribute": "textContent" },
+            { "name": "text", "selector": "p:nth-child(2)" }
           ]
         }
       }
@@ -81,10 +81,8 @@
       "id": "columns-cell",
       "fields": [
         {
-          "component": "text",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "image",
-          "value": "",
           "label": "Image (Dynamic Media link)"
         },
         {
