@@ -172,6 +172,10 @@
                 {
                   "name": "imageAlt",
                   "selector": "a"
+                },
+                {
+                  "name": "text",
+                  "selector": "p:nth-child(2)"
                 }
               ]
             }

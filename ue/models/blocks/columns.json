@@ -35,7 +35,8 @@
           "behaviour": "columns-cell",
           "fields": [
             { "name": "image", "selector": "a[href]" },
-            { "name": "imageAlt", "selector": "a" }
+            { "name": "imageAlt", "selector": "a" },
+            { "name": "text", "selector": "p:nth-child(2)" }
           ]
         }
       }
@@ -94,7 +95,14 @@
       "id": "columns-cell",
       "fields": [
         { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
-        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false }
+        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
       ]
     },
     {
@@ -114,6 +122,10 @@
     },
     {
       "id": "columns-row",
+      "components": []
+    },
+    {
+      "id": "columns-cell",
       "components": []
     }
   ]
