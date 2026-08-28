@@ -20,10 +20,10 @@
       "plugins": {
         "da": {
           "name": "card",
-          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\" title=\"Image alt\">Image URL</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
           "fields": [
             { "name": "image", "selector": "div:nth-child(1) a[href]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1) a[title]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1) a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
