@@ -163,9 +163,13 @@ export default function decorate(block) {
     const region = anchor?.closest('.section') || anchor;
     if (region) item.href = `#${hash}`;
 
-    // keep the label field editable in UE
-    moveInstrumentation(labelCell, item);
-    item.append(...labelCell.childNodes);
+    // Row = the sticky-nav-item component, so its instrumentation goes on the
+    // <a> (keeps the item editable in UE); the label field's goes on the <p>.
+    moveInstrumentation(row, item);
+    const labelEl = labelCell.querySelector('p') || document.createElement('p');
+    moveInstrumentation(labelCell, labelEl);
+    if (!labelEl.parentElement) labelEl.append(...labelCell.childNodes);
+    item.append(labelEl);
 
     items.push({ item, region, anchor });
     nav.append(item);
