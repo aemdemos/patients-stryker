@@ -81,6 +81,11 @@ export default function parse(element, { document }) {
 
   const block = WebImporter.Blocks.createBlock(document, {
     name: 'columns',
+    // `related-links` is a reusable columns variant (blocks/columns/columns.css):
+    // gold Futura labels + "Learn more" chevron CTA. The fragment keeps its styling
+    // on this variant so it renders identically wherever it is reused, independent
+    // of any page template.
+    variants: ['related-links'],
     cells: [rowCells],
   });
   element.replaceWith(block);

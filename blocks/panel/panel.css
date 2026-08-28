@@ -61,14 +61,6 @@
   line-height: var(--panel-cta-body-line-height);
 }
 
-/* light variant (sa-resources intro availability box): source renders the body
-   copy in the URW Egyptienne heading serif (.urw-egyptienne) at 21px, regular
-   weight — NOT the HumanistSlab body face or the 17.5px cta size. */
-.panel.light .panel-body p {
-  font-family: var(--heading-font-family);
-  font-size: var(--panel-body-size-s);
-}
-
 /* bold + italic body text → gold accent  */
 .panel .panel-body strong em,
 .panel .panel-body em strong,
@@ -354,15 +346,6 @@
   .panel.wide .panel-body p {
     font-size: var(--panel-body-size-s);
     font-family: var(--heading-font-family);
-  }
-
-  /* a light panel with a single item (e.g. the sa-resources intro availability
-     box, which sits in its own flex column) must fill that column rather than
-     splitting into the 2-up grid the multi-item light panels use. Placed after
-     .panel.wide > ul so specificity order stays ascending (this rule adds :has). */
-  .panel.light > ul:has(> li:only-child),
-  .panel.light.panel-authoring:has(> div:only-child) {
-    grid-template-columns: 1fr;
   }
 }
 

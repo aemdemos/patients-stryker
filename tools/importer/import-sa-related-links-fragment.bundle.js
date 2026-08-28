@@ -41,7 +41,7 @@ var CustomImportScript = (() => {
     default: () => import_sa_related_links_fragment_default
   });
 
-  // tools/importer/parsers/columns-related-links.js
+  // tools/importer/parsers/sa-resources/columns-related-links.js
   function parse(element, { document }) {
     const columns = Array.from(element.querySelectorAll(".col-xs-12.col-sm-6.col-md-4"));
     if (!columns.length) {
@@ -86,6 +86,11 @@ var CustomImportScript = (() => {
     });
     const block = WebImporter.Blocks.createBlock(document, {
       name: "columns",
+      // `related-links` is a reusable columns variant (blocks/columns/columns.css):
+      // gold Futura labels + "Learn more" chevron CTA. The fragment keeps its styling
+      // on this variant so it renders identically wherever it is reused, independent
+      // of any page template.
+      variants: ["related-links"],
       cells: [rowCells]
     });
     element.replaceWith(block);

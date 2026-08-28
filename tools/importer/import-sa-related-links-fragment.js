@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 // PARSER IMPORTS
-import columnsRelatedLinksParser from './parsers/columns-related-links.js';
+import columnsRelatedLinksParser from './parsers/sa-resources/columns-related-links.js';
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';

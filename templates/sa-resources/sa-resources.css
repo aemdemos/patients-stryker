@@ -1,0 +1,111 @@
+/* Stroke-Awareness Resources page template.
+   Activated when page metadata sets `template: sa-resources`, which
+   scripts.js loadTemplate() uses to load this file and aem.js
+   decorateTemplateAndTheme() uses to add `body.sa-resources`.
+
+   ALL customizations for this (single) page live here, scoped under
+   body.sa-resources and targeting the page's blocks/sections STRUCTURALLY —
+   so nothing leaks into the shared block/global CSS, and there is no reliance
+   on ad-hoc block Style / page Theme names (which can collide across authors;
+   template names are single-owner and governed). */
+
+/* ===== Page-level: section rhythm + default-content typography ===== */
+
+/* intro: welcome copy is the source's fontsize-1-5em URW-Egyptienne serif (21px),
+   not the 14px body default. Scoped to the flex intro's left default-content
+   column (the panel keeps its own body sizing, below). */
+body.sa-resources .section.flex > .default-content-wrapper p {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+/* inter-section vertical rhythm — the source separates each zone by ~50px of
+   whitespace (plus the divider rule where present). The base sections carry
+   margin:0, so add a top gap to each zone after the hero. */
+body.sa-resources .section.flex,
+body.sa-resources .section.cards-container,
+body.sa-resources .section.light-gray,
+body.sa-resources .section.compact {
+  margin-top: var(--space-section-l);
+}
+
+/* the light-gray related-links band is a full-bleed colour zone: give it interior
+   breathing room (source pads the gray panel top and bottom) and remove the extra
+   top margin so the gray fill butts against the preceding section like the source. */
+body.sa-resources .section.light-gray {
+  margin-top: 0;
+  padding-block: var(--space-section-l);
+}
+
+/* the Social-media divider section: the source leaves a generous band of
+   whitespace ABOVE the rule (below the downloads cards) and below the banners
+   before the gray related-links band. The divider rule is drawn by ::before pinned
+   to the section's top edge, so margin-top pushes the rule down away from the
+   cards; the section's own 50px padding-top keeps the "Social media" heading clear
+   below the rule; padding-bottom adds the gap before the next band. */
+body.sa-resources .section.divider {
+  margin-top: var(--space-section-l);
+  padding-bottom: var(--space-section-l);
+}
+
+/* extra gap between the "Social media" heading and the banner row (source ~38px) */
+body.sa-resources .section.divider > .default-content-wrapper h2 {
+  margin-bottom: var(--space-section);
+}
+
+/* "Social media" heading — a default-content h2 that titles the social card group.
+   The source renders it in the same light serif ~43px as the card titles, not the
+   Futura-bold default h2. */
+body.sa-resources .section.cards-container > .default-content-wrapper h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-xxxl);
+  line-height: var(--heading-line-height);
+}
+
+/* ===== Panel block (intro availability box, `panel light`) ===== */
+
+/* source renders the body copy in the URW Egyptienne heading serif
+   (.urw-egyptienne) at 21px, regular weight — NOT the HumanistSlab body face or
+   the 17.5px cta size. */
+body.sa-resources .panel.light .panel-body p {
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+}
+
+/* ===== Cards block (downloads + social grids, `cards brochure`) ===== */
+
+/* brochure cards left-align their title (source), unlike the centered default. */
+body.sa-resources .cards.brochure > ul > li {
+  text-align: left;
+}
+
+/* the "Digital | Print" / "Banner N" links row is centered below the image while
+   the card title above stays left-aligned. */
+body.sa-resources .cards.brochure .cards-card-body p {
+  text-align: center;
+}
+
+/* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
+   chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
+   variant (.columns.related-links) in blocks/columns/columns.css, since the same
+   fragment is reused with the same look on other pages. Only template-specific
+   deltas would live here; there are none. */
+
+/* ===== Desktop (>=900px) ===== */
+@media (width >= 900px) {
+  /* intro: the availability panel is TOP-aligned with the welcome text (source),
+     not vertically centred as the shared .section.flex default does. */
+  body.sa-resources .section.flex {
+    align-items: start;
+  }
+
+  /* the intro availability box is a single-item panel sitting in its own flex
+     column, so it fills that column rather than splitting into the 2-up grid the
+     multi-item light panels use. */
+  body.sa-resources .panel.light > ul,
+  body.sa-resources .panel.light.panel-authoring {
+    grid-template-columns: 1fr;
+  }
+}

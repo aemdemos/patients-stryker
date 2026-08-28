@@ -41,7 +41,7 @@ var CustomImportScript = (() => {
     default: () => import_sa_resources_default
   });
 
-  // tools/importer/parsers/hero.js
+  // tools/importer/parsers/sa-resources/hero.js
   function parse(element, { document }) {
     const desktopImg = element.querySelector(
       ".experienceFragment-ef .standaloneimage img, .experienceFragment-ef img"
@@ -80,7 +80,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/panel.js
+  // tools/importer/parsers/sa-resources/panel.js
   function parse2(element, { document }) {
     const paragraphs = Array.from(element.querySelectorAll(":scope > p")).filter((p) => p.textContent.trim());
     const contentEls = paragraphs.length ? paragraphs : Array.from(element.querySelectorAll("p")).filter((p) => p.textContent.trim());
@@ -98,7 +98,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/cards-brochure.js
+  // tools/importer/parsers/sa-resources/cards-brochure.js
   function parse3(element, { document }) {
     const imageBlocks = Array.from(element.querySelectorAll(".standaloneimage"));
     const cells = [];
@@ -138,7 +138,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/fragment.js
+  // tools/importer/parsers/sa-resources/fragment.js
   var FRAGMENT_PATH = "/fragments/stroke-awareness-related-links";
   function parse4(element, { document }) {
     const link = document.createElement("a");
@@ -260,7 +260,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/patients-stryker-sa-resources-sections.js
+  // tools/importer/transformers/sa-resources/sections.js
   var SECTION_MARKER_ATTR = "data-excat-section-id";
   function styleToCell(style) {
     return String(style).trim().split(/\s+/).join(", ");
@@ -541,7 +541,9 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       const hr = document.createElement("hr");
       main.appendChild(hr);
-      WebImporter.rules.createMetadata(main, document);
+      const meta = WebImporter.Blocks.getMetadata(document);
+      meta.template = "sa-resources";
+      main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
       const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");

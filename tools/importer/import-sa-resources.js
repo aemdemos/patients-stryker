@@ -2,14 +2,15 @@
 /* global WebImporter */
 
 // PARSER IMPORTS
-import heroParser from './parsers/hero.js';
-import panelParser from './parsers/panel.js';
-import cardsBrochureParser from './parsers/cards-brochure.js';
-import fragmentParser from './parsers/fragment.js';
+import heroParser from './parsers/sa-resources/hero.js';
+import panelParser from './parsers/sa-resources/panel.js';
+import cardsBrochureParser from './parsers/sa-resources/cards-brochure.js';
+import fragmentParser from './parsers/sa-resources/fragment.js';
 
-// TRANSFORMER IMPORTS
+// TRANSFORMER IMPORTS — shared cleanup/dm live at the transformers root; the
+// section transformer is template-specific and namespaced under sa-resources/.
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import saResourcesSectionsTransformer from './transformers/patients-stryker-sa-resources-sections.js';
+import saResourcesSectionsTransformer from './transformers/sa-resources/sections.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 // PARSER REGISTRY - keys match block names in page-templates.json
@@ -195,7 +196,18 @@ export default {
     // 4. Apply WebImporter built-in rules.
     const hr = document.createElement('hr');
     main.appendChild(hr);
-    WebImporter.rules.createMetadata(main, document);
+    // Build the Metadata block from the page's own metadata, then add a
+    // `template = sa-resources` row. scripts.js loadTemplate() loads
+    // templates/sa-resources/sa-resources.css (+ .js) for this page, and aem.js
+    // decorateTemplateAndTheme adds a `sa-resources` class to <body>. ALL of this
+    // page's styling lives in that template CSS scoped under body.sa-resources —
+    // the template route is used (even for this singleton) because template names
+    // have single-owner governance and can't collide across authors, unlike ad-hoc
+    // block Style / page Theme names. NOTE: the key must be lowercase `template` —
+    // getMetadata('template') matches the meta name case-sensitively.
+    const meta = WebImporter.Blocks.getMetadata(document);
+    meta.template = 'sa-resources';
+    main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 

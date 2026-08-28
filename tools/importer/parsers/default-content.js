@@ -2,11 +2,16 @@
 /* global WebImporter */
 
 /**
- * No-op parser.
+ * Shared no-op parser (NOT template-specific — keep at the parsers/ root).
  *
- * The legal-page template is 100% default content (heading, paragraphs,
- * lists) and has no blocks. This placeholder exists only to satisfy the
- * bulk-import validator, which requires at least one parser file. It is
- * intentionally not registered in any import script and performs no work.
+ * Two purposes:
+ *  1. Satisfies the bulk-import validator, which requires the top-level
+ *     tools/importer/parsers/ directory to contain at least one .js file
+ *     (it reads that directory non-recursively, so template subfolders like
+ *     parsers/sa-resources/ do not count). This placeholder guarantees the
+ *     requirement is met regardless of which template subfolders exist.
+ *  2. Serves any all-default-content template (e.g. legal-page) that has no
+ *     blocks to parse. It is intentionally not registered in any import script
+ *     and performs no work.
  */
 export default function parse() {}
