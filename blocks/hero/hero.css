@@ -54,22 +54,25 @@
 
 /* desktop + mobile are separate pictures, each with its own alt; show the mobile
    crop below the 900px crossover and the desktop crop at/above it (matches the
-   image/layout switch). Scoped to .hero picture so it overrides the variant
-   picture rules (e.g. .hero.fullbleed picture) that set display: block. */
-.hero picture.hero-image-desktop {
+   image/layout switch). These MUST override the variant picture rules that set
+   display: block (.hero.fullbleed/.banner/.band picture, each 0,2,1) regardless
+   of source order — the banner/band rules appear LATER in the file and would
+   otherwise win the specificity tie, showing BOTH crops (the hero image twice).
+   Double the toggle class (0,3,1) so the toggle always wins. */
+.hero picture.hero-image-desktop.hero-image-desktop {
   display: none;
 }
 
-.hero picture.hero-image-mobile {
+.hero picture.hero-image-mobile.hero-image-mobile {
   display: block;
 }
 
 @media (width >= 900px) {
-  .hero picture.hero-image-desktop {
+  .hero picture.hero-image-desktop.hero-image-desktop {
     display: block;
   }
 
-  .hero picture.hero-image-mobile {
+  .hero picture.hero-image-mobile.hero-image-mobile {
     display: none;
   }
 }
