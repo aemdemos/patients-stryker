@@ -34,9 +34,9 @@
         "da": {
           "behaviour": "columns-cell",
           "fields": [
-            { "name": "image", "selector": "a[href]" },
-            { "name": "imageAlt", "selector": "a" },
-            { "name": "text", "selector": "p:nth-child(2)" }
+            { "name": "image", "selector": "p:first-child > a[href]" },
+            { "name": "imageAlt", "selector": "p:first-child > a" },
+            { "name": "text", "selector": "p:last-child" }
           ]
         }
       }
