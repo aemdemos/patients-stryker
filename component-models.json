@@ -250,6 +250,12 @@
         "name": "imageAlt",
         "label": "Image Alt",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Text"
       }
     ]
   },
