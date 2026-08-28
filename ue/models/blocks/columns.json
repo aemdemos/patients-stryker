@@ -111,7 +111,7 @@
     },
     {
       "id": "columns-cell",
-      "components": ["dm-image"]
+      "components": ["text", "dm-image"]
     }
   ]
 }
