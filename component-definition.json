@@ -164,8 +164,22 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
+              "behaviour": "columns-cell",
+              "unsafeHTML": "<div><p><a href=\"\">Image URL</a></p><p>Image alt</p><p>Text</p></div>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "p:nth-of-type(1)"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "p:nth-of-type(2)"
+                },
+                {
+                  "name": "text",
+                  "selector": "p:nth-of-type(3)"
+                }
+              ]
             }
           }
         },
