@@ -35,8 +35,8 @@
           "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
           "behaviour": "columns-cell",
           "fields": [
-            { "name": "image", "selector": "p:first-child > a[href]" },
-            { "name": "imageAlt", "selector": "p:first-child > a" },
+            { "name": "image", "selector": "a[href]" },
+            { "name": "imageAlt", "selector": "a" },
             { "name": "text", "selector": "p:nth-child(2)" }
           ]
         }
@@ -97,7 +97,7 @@
       "fields": [
         { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
         { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false },
-        { "component": "text", "valueType": "string", "name": "text", "label": "Text" }
+        { "component": "richtext", "valueType": "string", "name": "text", "label": "Text" }
       ]
     },
     {
