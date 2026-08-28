@@ -168,11 +168,13 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "a[href]"
+                  "selector": "a[href]",
+                  "attribute": "href"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "a"
+                  "selector": "a[href]",
+                  "attribute": "textContent"
                 },
                 {
                   "name": "text",

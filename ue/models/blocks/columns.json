@@ -35,8 +35,8 @@
           "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
           "behaviour": "columns-cell",
           "fields": [
-            { "name": "image", "selector": "a[href]" },
-            { "name": "imageAlt", "selector": "a" },
+            { "name": "image", "selector": "a[href]", "attribute": "href" },
+            { "name": "imageAlt", "selector": "a[href]", "attribute": "textContent" },
             { "name": "text", "selector": "p:nth-child(2)" }
           ]
         }
