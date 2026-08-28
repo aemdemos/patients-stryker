@@ -1,0 +1,113 @@
+/*
+ * Patient Education template — page-scoped styling.
+ *
+ * Every zone (title bar, intro, patient-guide cards, CTA band, resources footer,
+ * disclaimer) is one of the project's EXISTING blocks (hero, cards, columns) or
+ * default content. Those blocks are left EXACTLY as approved — this file must
+ * NOT edit any shared block CSS. Instead, every page-specific correction lives
+ * here, scoped under `body.patient-education` (the class is set by loadTemplate
+ * via decorateTemplateAndTheme in scripts.js/aem.js). The body-class prefix adds
+ * specificity, so these rules win the cascade over the bare block selectors
+ * WITHOUT changing them for any other page. Design tokens only, no hardcoded
+ * values, no new blocks.
+ */
+
+/* ── "Stryker's Neurovascular portfolio" eyebrow link ─────────────────────────
+   Sits above the title bar as a right-aligned teal standalone link (the project's
+   default link colour already matches the source teal). It's authored as the
+   page's FIRST section (a lone link paragraph), so right-align that section's
+   default content. Tight vertical rhythm so it reads as an eyebrow, not a block. */
+body.patient-education main > .section:first-child > .default-content-wrapper {
+  text-align: right;
+}
+
+body.patient-education main > .section:first-child {
+  margin-block: 0;
+  padding-block: var(--space-block);
+}
+
+/* Source renders the standalone link uppercase with a trailing chevron (its
+   .standalone-link treatment). Match with uppercase + a "›" after the link. */
+body.patient-education main > .section:first-child a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+body.patient-education main > .section:first-child a::after {
+  content: " ›";
+}
+
+/* ── Title bar (hero band) ────────────────────────────────────────────────────
+   The source title bar is a single compact gradient bar (~100px) with the gold
+   headline overlaid. The block authors desktop + mobile crops as two <picture>s
+   and the base .hero toggle shows one per breakpoint — but the shared
+   `.hero.band picture { display:block }` rule (which we must not touch) overrides
+   that toggle, so BOTH crops render stacked and the bar becomes ~2x too tall.
+   Re-assert the one-crop-per-breakpoint toggle here, scoped to this page. */
+body.patient-education .hero.band picture.hero-image-desktop {
+  display: none;
+}
+
+body.patient-education .hero.band picture.hero-image-mobile {
+  display: block;
+}
+
+/* Headline size — match the source's fluid scaling at every width (measured):
+   mobile ≈ 8vw (31.2px at 390px), desktop ≈ 4vw (51.2px at 1280px) capped at
+   ~56px (still 56px at 1920px, not the unbounded 76.8px raw 4vw). The shared hero
+   block instead uses 8vw on mobile then pins a fixed 48px from 1200px up — close
+   on mobile but a touch small and non-fluid on desktop.
+
+   IMPORTANT: this mobile base MUST precede the ≥900px block below — both rules
+   have equal specificity, so if the base came later it would win at desktop too
+   (source order breaks the media query) and the title would render at raw 8vw. */
+body.patient-education .hero.band h1 {
+  font-size: 8vw;
+}
+
+@media (width >= 900px) {
+  body.patient-education .hero.band picture.hero-image-desktop {
+    display: block;
+  }
+
+  body.patient-education .hero.band picture.hero-image-mobile {
+    display: none;
+  }
+
+  /* desktop headline: switch from the mobile 8vw to the source's 4vw, clamped so
+     it stops growing at ~56px on very wide viewports (matches the reference). */
+  body.patient-education .hero.band h1 {
+    font-size: min(4vw, 56px);
+  }
+}
+
+/* ── Intro line ──────────────────────────────────────────────────────────────
+   "Learn more about brain aneurysm…" is authored as an <h2>. The source renders
+   it in the LIGHT SERIF face (URW Egyptienne, weight 500), not the Futura-bold
+   the global h2 rule applies. Re-map the leading default-content h2 to the
+   heading serif. */
+body.patient-education main > .section > .default-content-wrapper h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+/* ── Patient-guide cards (cards resources) ────────────────────────────────────
+   The whole card is the click target, so the title text itself must not read as
+   a link. The parser links the title to its PDF; the global link styles would
+   paint it teal + underlined. Neutralise that so the title shows as plain bold
+   text (matching the source's futura-bold black title). */
+body.patient-education .cards.resources .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Gold "for more information" CTA band ─────────────────────────────────────
+   The source's .c-full-bleed-panel.bg-golden-gradient bar: a left-to-right gold
+   gradient (measured: #af6d04 → #ffb500 at 20%) with centered dark text. The
+   page authors this as a `gold, full-bleed` section; the project has no shared
+   `.section.gold` style, so define it here, scoped to this page. */
+body.patient-education main > .section.gold {
+  background-image: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+  color: var(--text-color);
+  text-align: center;
+}
