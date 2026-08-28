@@ -47,13 +47,6 @@
     "components": []
   },
   {
-    "id": "columns-cell",
-    "components": [
-      "text",
-      "dm-image"
-    ]
-  },
-  {
     "id": "icon-list",
     "components": [
       "icon-list-item"
