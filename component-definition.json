@@ -163,22 +163,20 @@
           "model": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
+              "unsafeHTML": "<div><div><p><a href=\"\">Image alt</a></p></div><div><p>Text</p></div></div>",
               "behaviour": "columns-cell",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "a[href]",
-                  "attribute": "href"
+                  "selector": "div:nth-child(1) a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "a[href]",
-                  "attribute": "textContent"
+                  "selector": "div:nth-child(1) a"
                 },
                 {
                   "name": "text",
-                  "selector": "p:nth-child(2)"
+                  "selector": "div:nth-child(2)"
                 }
               ]
             }
