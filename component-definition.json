@@ -163,20 +163,41 @@
           "model": "columns-cell",
           "plugins": {
             "da": {
-              "name": "columns-cell",
-              "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
+              "behaviour": "columns-cell",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "p:first-child > a[href]"
+                  "selector": "a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "p:first-child > a"
+                  "selector": "a"
                 },
                 {
                   "name": "text",
-                  "selector": "p:last-child"
+                  "selector": "p:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "DM Image",
+          "id": "dm-image",
+          "model": "dm-image",
+          "plugins": {
+            "da": {
+              "name": "DM Image",
+              "type": "image",
+              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "p > a[href]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "p > a"
                 }
               ]
             }
