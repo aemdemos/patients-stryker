@@ -367,11 +367,11 @@
               "fields": [
                 {
                   "name": "label",
-                  "selector": "div:nth-child(1)"
+                  "selector": "div:nth-child(1) > p"
                 },
                 {
                   "name": "target",
-                  "selector": "div:nth-child(2)"
+                  "selector": "div:nth-child(2) > p"
                 }
               ]
             }
