@@ -12,6 +12,8 @@
  * specific hostname, covering Scene7/classic DM and DM OpenAPI delivery.
  */
 
+import { moveInstrumentation } from '../ue/scripts/ue-utils.js';
+
 // host-independent DM image URL signatures
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
@@ -374,12 +376,20 @@ export default function decorateDMAssets(main) {
 
     if (render === renderVideo) {
       const label = el.getAttribute('title') || displayText;
-      el.replaceWith(renderVideo(src, label));
+      const video = renderVideo(src, label);
+      // preserve UE instrumentation so editing the asset in the editor patches
+      // the rendered element instead of dropping the authored anchor
+      moveInstrumentation(el, video);
+      el.replaceWith(video);
       return;
     }
     // alt precedence: an authored alt/title, then the link's display text
     // (authors describe hero/cards images by using the alt as the link text).
     const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
-    el.replaceWith(render(src, alt, false));
+    const picture = render(src, alt, false);
+    // carry UE instrumentation from the authored <a> onto the new <picture> so
+    // the editor can patch the image/alt in place rather than deleting it
+    moveInstrumentation(el, picture);
+    el.replaceWith(picture);
   });
 }
