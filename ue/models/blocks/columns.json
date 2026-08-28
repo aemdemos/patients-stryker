@@ -34,9 +34,25 @@
         "da": {
           "behaviour": "columns-cell",
           "fields": [
-            { "name": "image", "selector": "p:first-child > a[href]" },
-            { "name": "imageAlt", "selector": "p:first-child > a" },
+            { "name": "image", "selector": "a[href]" },
+            { "name": "imageAlt", "selector": "a" },
             { "name": "text", "selector": "p:nth-child(2)" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "DM Image",
+      "id": "dm-image",
+      "model": "dm-image",
+      "plugins": {
+        "da": {
+          "name": "DM Image",
+          "type": "image",
+          "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+          "fields": [
+            { "name": "image", "selector": "p > a[href]" },
+            { "name": "imageAlt", "selector": "p > a" }
           ]
         }
       }
@@ -80,7 +96,20 @@
       "fields": [
         { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
         { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false },
-        { "component": "richtext", "name": "text", "value": "", "label": "Text", "valueType": "string" }
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "dm-image",
+      "fields": [
+        { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
+        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false }
       ]
     }
   ],
@@ -97,10 +126,7 @@
     },
     {
       "id": "columns-cell",
-      "components": [
-        "text",
-        "image"
-      ]
+      "components": []
     }
   ]
 }
