@@ -32,27 +32,12 @@
       "model": "columns-cell",
       "plugins": {
         "da": {
-          "behaviour": "columns-cell",
+          "name": "columns-cell",
+          "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
           "fields": [
             { "name": "image", "selector": "p:first-child > a[href]" },
             { "name": "imageAlt", "selector": "p:first-child > a" },
             { "name": "text", "selector": "p:last-child" }
-          ]
-        }
-      }
-    },
-    {
-      "title": "DM Image",
-      "id": "dm-image",
-      "model": "dm-image",
-      "plugins": {
-        "da": {
-          "name": "DM Image",
-          "type": "image",
-          "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
-          "fields": [
-            { "name": "image", "selector": "p > a[href]" },
-            { "name": "imageAlt", "selector": "p > a" }
           ]
         }
       }
@@ -103,13 +88,6 @@
           "label": "Text",
           "valueType": "string"
         }
-      ]
-    },
-    {
-      "id": "dm-image",
-      "fields": [
-        { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
-        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false }
       ]
     }
   ],

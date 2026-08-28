@@ -261,24 +261,6 @@
     ]
   },
   {
-    "id": "dm-image",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
-      }
-    ]
-  },
-  {
     "id": "fragment",
     "fields": [
       {

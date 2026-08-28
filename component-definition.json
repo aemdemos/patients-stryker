@@ -163,7 +163,8 @@
           "model": "columns-cell",
           "plugins": {
             "da": {
-              "behaviour": "columns-cell",
+              "name": "columns-cell",
+              "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
               "fields": [
                 {
                   "name": "image",
@@ -176,28 +177,6 @@
                 {
                   "name": "text",
                   "selector": "p:last-child"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "title": "DM Image",
-          "id": "dm-image",
-          "model": "dm-image",
-          "plugins": {
-            "da": {
-              "name": "DM Image",
-              "type": "image",
-              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "p > a[href]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "p > a"
                 }
               ]
             }
