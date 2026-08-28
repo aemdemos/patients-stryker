@@ -7,10 +7,10 @@
       "plugins": {
         "da": {
           "name": "dm-image",
-          "unsafeHTML": "<img src=\"\" alt=\"\">",
+          "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
           "fields": [
-            { "name": "dmImage", "selector": "img[src]" },
-            { "name": "dmImageAlt", "selector": "img[alt]" }
+            { "name": "dmImage", "selector": "a[href]" },
+            { "name": "dmImageAlt", "selector": "a" }
           ]
         }
       }
@@ -25,14 +25,14 @@
           "valueType": "string",
           "name": "dmImage",
           "label": "Dynamic Media Image URL",
-          "description": "Paste the Dynamic Media asset URL (e.g. https://media-assets.stryker.com/is/image/stryker/NAME?$preset$). Rendered as a responsive <picture> at load."
+          "description": "Paste the Dynamic Media asset URL (e.g. https://media-assets.stryker.com/is/image/stryker/NAME?$preset$). Authored as a link so Edge Delivery does not rehost it; rendered as a responsive <picture> at load."
         },
         {
           "component": "text",
           "valueType": "string",
           "name": "dmImageAlt",
           "label": "Alt Text",
-          "description": "Accessible description of the image."
+          "description": "Accessible description of the image (becomes the rendered <img alt>)."
         }
       ]
     }
