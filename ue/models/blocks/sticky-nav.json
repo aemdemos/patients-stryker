@@ -22,8 +22,8 @@
           "rows": 1,
           "columns": 2,
           "fields": [
-            { "name": "label", "selector": "div:nth-child(1)" },
-            { "name": "target", "selector": "div:nth-child(2)" }
+            { "name": "label", "selector": "div:nth-child(1) > p" },
+            { "name": "target", "selector": "div:nth-child(2) > p" }
           ]
         }
       }
