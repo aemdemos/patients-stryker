@@ -163,15 +163,20 @@
           "model": "columns-cell",
           "plugins": {
             "da": {
+              "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
               "behaviour": "columns-cell",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "a[href]"
+                  "selector": "p:first-child > a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "a"
+                  "selector": "p:first-child > a"
+                },
+                {
+                  "name": "text",
+                  "selector": "p:nth-child(2)"
                 }
               ]
             }
