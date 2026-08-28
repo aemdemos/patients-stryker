@@ -117,9 +117,6 @@
 .hero.banner {
   display: block;
   position: static;
-
-  /* match the source card's own 20px top/bottom margin */
-  margin-block: var(--space-block-l);
   padding: 0;
   min-height: 0;
   box-shadow: var(--shadow-soft);
@@ -407,5 +404,23 @@
 
   .hero.fullbleed p {
     font-size: 21px;
+  }
+}
+
+.hero picture.hero-image-desktop {
+  display: none;
+}
+
+.hero picture.hero-image-mobile {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .hero picture.hero-image-desktop {
+    display: block;
+  }
+
+  .hero picture.hero-image-mobile {
+    display: none;
   }
 }

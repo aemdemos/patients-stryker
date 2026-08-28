@@ -1,27 +1,4 @@
 /**
- * Fold a mobile <picture> into a desktop <picture> as a leading, media-scoped
- * <source> so the browser downloads only the asset that matches the viewport
- * (keeps the hero a single-download LCP element).
- * @param {HTMLPictureElement} desktopPic the wide desktop picture (kept)
- * @param {HTMLPictureElement} mobilePic the portrait mobile picture (folded in)
- */
-function foldMobileSource(desktopPic, mobilePic) {
-  const mobileImg = mobilePic.querySelector('img');
-  const mobileSource = mobilePic.querySelector('source');
-  const mobileSrcset = (mobileSource && mobileSource.srcset)
-    || (mobileImg && mobileImg.getAttribute('src'));
-  if (!mobileSrcset) return;
-
-  const mobileMediaSource = document.createElement('source');
-  // serve the mobile asset below the 900px desktop crossover (matches the CSS
-  // layout switch, so 600–899px keeps the portrait crop, not the wide desktop image)
-  mobileMediaSource.media = '(max-width: 899px)';
-  mobileMediaSource.srcset = mobileSrcset;
-  if (mobileSource && mobileSource.type) mobileMediaSource.type = mobileSource.type;
-  desktopPic.prepend(mobileMediaSource);
-}
-
-/**
  * Set up the hero from its authored rows.
  *
  * Authoring model (single-column rows):
@@ -29,8 +6,10 @@ function foldMobileSource(desktopPic, mobilePic) {
  *   | <mobile image>  |  (optional)
  *   | <heading + supporting copy> |
  *
- * Merges desktop + mobile pictures into one responsive <picture> and rebuilds
- * the block into [image][content] structure the CSS overlays.
+ * Keeps desktop + mobile as SEPARATE pictures (each with its own alt) so authors
+ * can describe each crop distinctly, matching the source site. CSS toggles their
+ * visibility at the 900px crossover (.hero-image-desktop / .hero-image-mobile).
+ * The block is rebuilt into an [image][content] structure the CSS overlays.
  * @param {Element} block the hero block
  */
 function setupHero(block) {
@@ -74,11 +53,16 @@ function setupHero(block) {
     [desktopPic, mobilePic] = pics;
   }
 
-  if (desktopPic && mobilePic) foldMobileSource(desktopPic, mobilePic);
-  const heroPicture = desktopPic || mobilePic;
-
   const imageDiv = document.createElement('div');
-  if (heroPicture) imageDiv.append(heroPicture);
+  // keep both pictures (each with its own alt); CSS shows one per breakpoint.
+  // When only one is authored it carries no toggle class and always shows.
+  if (desktopPic && mobilePic) {
+    desktopPic.classList.add('hero-image-desktop');
+    mobilePic.classList.add('hero-image-mobile');
+    imageDiv.append(desktopPic, mobilePic);
+  } else if (desktopPic || mobilePic) {
+    imageDiv.append(desktopPic || mobilePic);
+  }
 
   const contentDiv = document.createElement('div');
   if (contentCell) while (contentCell.firstChild) contentDiv.append(contentCell.firstChild);
