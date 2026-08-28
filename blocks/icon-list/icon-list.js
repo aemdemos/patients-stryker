@@ -32,12 +32,12 @@ export default function decorate(block) {
 
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
-      // alt is the link's display text (cards/hero convention); plain URLs become <img> here
+      // alt is the link's title (cards/hero convention); plain URLs become <img> here
       const link = iconCell.querySelector('a[href]');
       if (link && !iconCell.querySelector('picture, img')) {
         const href = link.getAttribute('href');
         const text = link.textContent.trim();
-        const alt = text && text !== href ? text : (link.getAttribute('title') || '');
+        const alt = link.getAttribute('title') || (text && text !== href ? text : '');
         const img = document.createElement('img');
         img.src = href;
         img.alt = alt;
