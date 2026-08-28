@@ -255,7 +255,7 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\" title=\"Icon alt\">Icon URL</a></p></div><div>Caption</div></div>",
+              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
               "fields": [
                 {
                   "name": "icon",
@@ -263,7 +263,7 @@
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1) a[title]"
+                  "selector": "div:nth-child(1) a"
                 },
                 {
                   "name": "text",
