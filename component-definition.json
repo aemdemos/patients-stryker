@@ -161,11 +161,23 @@
           "title": "Columns Cell",
           "id": "columns-cell",
           "model": "columns-cell",
-          "filter": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
+              "behaviour": "columns-cell",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "p:first-child > a[href]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "p:first-child > a"
+                },
+                {
+                  "name": "text",
+                  "selector": "p:nth-child(2)"
+                }
+              ]
             }
           }
         },
