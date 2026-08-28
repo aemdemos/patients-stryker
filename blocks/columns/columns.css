@@ -446,4 +446,10 @@
   }
 }
 
+/* UE authoring — hide the add component button inside column cells
+   since behaviour-managed cells do not support custom child components */
+.columns-wrapper [data-aue-type="component"] [data-aue-behavior="column"] + button,
+.columns > div > div > div > [contenteditable] ~ button[aria-label="Add"] {
+  display: none !important;
+}
 
