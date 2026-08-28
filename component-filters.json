@@ -16,6 +16,7 @@
       "icon-list",
       "icon-list-tile",
       "image",
+      "dm-image",
       "panel",
       "statistics",
       "sticky-nav",
@@ -50,7 +51,8 @@
     "id": "columns-cell",
     "components": [
       "text",
-      "image"
+      "image",
+      "dm-image"
     ]
   },
   {

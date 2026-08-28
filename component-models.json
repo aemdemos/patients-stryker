@@ -59,6 +59,25 @@
     ]
   },
   {
+    "id": "dm-image",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "dmImage",
+        "label": "Dynamic Media Image URL",
+        "description": "Paste the Dynamic Media asset URL (e.g. https://media-assets.stryker.com/is/image/stryker/NAME?$preset$). Rendered as a responsive <picture> at load."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "dmImageAlt",
+        "label": "Alt Text",
+        "description": "Accessible description of the image."
+      }
+    ]
+  },
+  {
     "id": "section",
     "fields": [
       {

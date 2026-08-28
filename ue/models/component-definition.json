@@ -9,6 +9,9 @@
         },
         {
           "...": "./image.json#/definitions"
+        },
+        {
+          "...": "./dm-image.json#/definitions"
         }
       ]
     },
