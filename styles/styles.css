@@ -383,6 +383,10 @@ h2 strong em {
   margin-bottom: 40px;
 }
 
+.stroke-awareness-landing .section.compact {
+  margin-top: 70px;
+}
+
 /* stylelint-disable-next-line no-descending-specificity */
 .section.compact h1 {
   margin: 30px 0 10px;
@@ -840,4 +844,23 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     margin: 0 auto;
     padding: 0 var(--container-gutter);
   }
+}
+
+body.stroke-awareness-landing .hero.banner h1 {
+  font-size: clamp(30px, calc(3.94px + 3.615vw), 56px);
+}
+
+/* restate inside the 1200px cap block's viewport so the shared 42px cap can
+   never win by later source order on this page */
+@media (width >= 1200px) {
+  body.stroke-awareness-landing .hero.banner h1 {
+    font-size: clamp(30px, calc(3.94px + 3.615vw), 56px);
+  }
+}
+
+/* Word gap — the source keeps a space between "Understanding" and the gold
+   "stroke"; our authored markup collapses the leading space inside the inline
+   accent span, so restore the gap explicitly on the gold accent. */
+body.stroke-awareness-landing .hero.banner h1 em strong {
+  margin-left: 0.2em;
 }

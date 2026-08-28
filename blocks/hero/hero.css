@@ -318,6 +318,10 @@
     font-size: 4vw;
   }
 
+  .stroke-awareness-landing .hero.banner > div:last-child {
+     padding-left: 15px;
+  }
+
   /* poster — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
      the block ~4% down and insets it 10vw from the left. */
   .hero.fullbleed.poster img {
