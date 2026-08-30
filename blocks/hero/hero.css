@@ -424,12 +424,3 @@
     display: none;
   }
 }
-
-/* stroke-awareness landing — source aligns the headline flush to the wrapper
-   gutter (no extra copy-column inset), so the h1 sits at 15px on mobile and
-   30px on desktop. Higher specificity than both the mobile base rule and the
-   >=600px 5vw rule, so this single override covers all breakpoints. Placed at
-   file end to satisfy stylelint's no-descending-specificity ordering. */
-body.stroke-awareness-landing .hero.banner > div:last-child {
-  padding-left: 0;
-}
