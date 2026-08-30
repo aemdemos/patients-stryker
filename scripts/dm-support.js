@@ -365,6 +365,11 @@ export default function decorateDMAssets(main) {
     // inline. Skip anchors that already wrap media (an authored <picture>/<img>/
     // <video>) — those are not "type the URL" DM embeds and converting would
     // destroy authored content.
+    // The alt travels on the link itself: authors set it via the link's title
+    // attribute (the UE alt field maps to a[title]). A bare autolink whose visible
+    // text is the URL contributes no alt; a link with custom display text uses
+    // that as a fallback label. Skip anchors that already wrap media (an authored
+    // <picture>/<img>/<video>) — converting those would destroy authored content.
     let displayText = '';
     if (el.tagName === 'A') {
       if (el.querySelector('picture, img, video, source')) return;
@@ -377,8 +382,8 @@ export default function decorateDMAssets(main) {
       el.replaceWith(renderVideo(src, label));
       return;
     }
-    // alt precedence: an authored alt/title, then the link's display text
-    // (authors describe hero/cards images by using the alt as the link text).
+    // alt precedence: an authored alt, then the link's title attribute (the alt
+    // field), then any custom display text.
     const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
     el.replaceWith(render(src, alt, false));
   });

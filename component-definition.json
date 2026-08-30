@@ -113,7 +113,7 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\" title=\"Image alt\">Image URL</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
               "fields": [
                 {
                   "name": "image",
@@ -121,7 +121,7 @@
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1) a[title]"
                 },
                 {
                   "name": "text",
@@ -196,7 +196,7 @@
           "plugins": {
             "da": {
               "name": "Hero",
-              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
+              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\" title=\"Desktop image alt\">Desktop image URL</a></p></div></div><div><div><p><a href=\"\" title=\"Mobile image alt\">Mobile image URL</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
               "fields": [
                 {
                   "name": "desktopImage",
@@ -204,7 +204,7 @@
                 },
                 {
                   "name": "desktopImageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1) a[title]"
                 },
                 {
                   "name": "mobileImage",
@@ -212,7 +212,7 @@
                 },
                 {
                   "name": "mobileImageAlt",
-                  "selector": "div:nth-child(2) a"
+                  "selector": "div:nth-child(2) a[title]"
                 },
                 {
                   "name": "content",
