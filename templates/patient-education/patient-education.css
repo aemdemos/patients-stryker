@@ -196,3 +196,48 @@ body.patient-education main > .section.gold p a::after {
   padding-left: 0.5em;
   transform: translate(0, 2px);
 }
+
+/* ── Resources columns band (the patient-information-resources fragment) ───────
+   Fragment content is inlined into this page, so body.patient-education reaches
+   it. Match the source's per-column typography.
+
+   Column heading — authored as <p><em><strong>…; gold Futura-bold painting comes
+   from the global bold+italic marker rule, so only the size (24.5px, source
+   fontsize-1-75em) is set here. */
+body.patient-education main .columns p:has(> em > strong) {
+  font-size: var(--heading-font-size-xl);
+}
+
+/* CTA links ("Spread the word" / "Learn More") — Futura-bold, uppercase, teal,
+   with the strykericons arrow (source .standalone-link). The CTAs are plain links
+   in a 3-paragraph column (heading + copy + link); the regional column instead
+   has 8 stacked link paragraphs. So style ALL column links as CTAs first, then
+   reset the regional column (isolated by :has(4+ consecutive paragraphs)) back to
+   plain serif links. Uses only single-level :has() (nested :has()/:not(:has())
+   aren't supported in all target browsers). */
+body.patient-education main .columns a {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+body.patient-education main .columns a::after {
+  content: "\e250";
+  display: inline-block;
+  font-family: "strykericons";
+  font-size: 0.85em;
+  padding-left: 0.5em;
+  transform: translate(0, 2px);
+}
+
+/* regional column (4+ stacked paragraphs) — links stay plain URW serif, no arrow */
+body.patient-education main .columns > div > div:has(> p + p + p + p) a {
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  text-transform: none;
+}
+
+body.patient-education main .columns > div > div:has(> p + p + p + p) a::after {
+  content: none;
+}
