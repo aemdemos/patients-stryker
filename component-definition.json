@@ -178,7 +178,7 @@
                 },
                 {
                   "name": "text",
-                  "selector": "p:nth-of-type(2)"
+                  "selector": "p:not(:has(a))"
                 }
               ]
             }
