@@ -507,8 +507,15 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
    independent of the 900px column-layout breakpoint above. */
 @media (width >= 1024px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: 6.5vw;
+    font-size: min(6.5vw, 91px);
   }
 }
 
+.zip-skin-closure .columns-container h2{
+margin-top: 5%;
+}
 
+.zip-skin-closure h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
