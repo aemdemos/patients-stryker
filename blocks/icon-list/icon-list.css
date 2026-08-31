@@ -77,21 +77,6 @@
   display: block;
 }
 
-/* Alt text is authored as a separate <p> below the icon. It is applied to the
-   image's alt attribute and kept in the DOM (so UE instrumentation survives and
-   editing the alt doesn't drop the image), but hidden from the visual layout. */
-.icon-list .icon-list-icon .icon-list-alt {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: clip;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 /* aspect-ratio reserves box height for the lazy-loaded DM icon (avoids CLS + a
    zero-area box Chromium would skip fetching). */
 .icon-list .icon-list-icon img {
