@@ -199,6 +199,31 @@
     ]
   },
   {
+    "id": "brochure-cta-card",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image (Dynamic Media link)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
