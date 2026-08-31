@@ -114,9 +114,9 @@
       {
         "component": "text",
         "name": "anchor",
-        "label": "Anchor ID",
+        "label": "Anchor ID (Sticky Nav only — leave blank otherwise)",
         "valueType": "string",
-        "description": "Optional unique id (e.g. find-a-doctor). Use it as a Sticky Nav item Target with a # prefix."
+        "description": "Only needed if this page uses a Sticky Nav. Set a unique id (e.g. find-a-doctor) here, then reference it as the Sticky Nav item's Target with a # prefix (#find-a-doctor). If the page has no Sticky Nav, leave this empty."
       }
     ]
   },

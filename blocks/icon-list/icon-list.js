@@ -32,16 +32,6 @@ export default function decorate(block) {
 
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
-      // plain URLs become <img> here
-      const link = iconCell.querySelector('a[href]');
-      if (link && !iconCell.querySelector('picture, img')) {
-        const img = document.createElement('img');
-        img.src = link.getAttribute('href');
-        img.alt = '';
-        const picture = document.createElement('picture');
-        picture.append(img);
-        link.replaceWith(picture);
-      }
       item.append(iconCell);
     }
     if (textCell) {
