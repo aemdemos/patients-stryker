@@ -33,12 +33,13 @@
       "filter": "columns-cell",
       "plugins": {
         "da": {
+          "name": "columns-cell",
           "behaviour": "columns-cell",
-          "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
+          "unsafeHTML": "<div class=\"columns-cell\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
           "fields": [
-            { "name": "image", "selector": "a[href]", "attribute": "href" },
-            { "name": "imageAlt", "selector": "a[href]", "attribute": "textContent" },
-            { "name": "text", "selector": "p:nth-child(2)" }
+            { "name": "image", "selector": "div:nth-child(1) a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1) a" },
+            { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
       }
@@ -81,7 +82,8 @@
       "id": "columns-cell",
       "fields": [
         {
-          "component": "aem-content",
+          "component": "text",
+          "valueType": "string",
           "name": "image",
           "label": "Image (Dynamic Media link)"
         },
@@ -89,8 +91,8 @@
           "component": "text",
           "valueType": "string",
           "name": "imageAlt",
-          "value": "",
-          "label": "Image Alt"
+          "label": "Image Alt",
+          "multi": false
         },
         {
           "component": "richtext",

@@ -164,22 +164,21 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
+              "name": "columns-cell",
               "behaviour": "columns-cell",
-              "unsafeHTML": "<div><p><a href=\"\">Image alt</a></p><p>Text</p></div>",
+              "unsafeHTML": "<div class=\"columns-cell\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "a[href]",
-                  "attribute": "href"
+                  "selector": "div:nth-child(1) a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "a[href]",
-                  "attribute": "textContent"
+                  "selector": "div:nth-child(1) a"
                 },
                 {
                   "name": "text",
-                  "selector": "p:nth-child(2)"
+                  "selector": "div:nth-child(2)"
                 }
               ]
             }
