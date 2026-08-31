@@ -219,7 +219,13 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: var(--space-block) 0 0;
+  margin: var(--space-block-l) 0 0;   /* image-to-text gap: source 20px, 30px @480px */
+}
+
+@media (width >= 480px) {
+  .cards.brochure-cta .cards-card-body {
+    margin-top: var(--space-section);
+  }
 }
 
 /* title: Futura bold at body size (source .futura-bold, 14px). Fixed bottom gap
