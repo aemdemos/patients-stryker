@@ -359,17 +359,10 @@ export default function decorateDMAssets(main) {
     const render = dmRendererFor(src);
     if (!render) return;
 
-    // For links we support two authoring styles: a bare autolink whose visible
-    // text is the URL, and a link with custom display text (e.g. "image1"). The
-    // display text becomes the alt/label so authors can describe the asset
-    // inline. Skip anchors that already wrap media (an authored <picture>/<img>/
-    // <video>) — those are not "type the URL" DM embeds and converting would
-    // destroy authored content.
-    // The alt travels on the link itself: authors set it via the link's title
-    // attribute (the UE alt field maps to a[title]). A bare autolink whose visible
-    // text is the URL contributes no alt; a link with custom display text uses
-    // that as a fallback label. Skip anchors that already wrap media (an authored
-    // <picture>/<img>/<video>) — converting those would destroy authored content.
+    // A bare autolink whose visible text is the URL contributes no alt; a link
+    // with custom display text uses that as a fallback label. Skip anchors that
+    // already wrap media (an authored <picture>/<img>/<video>) — converting those
+    // would destroy authored content.
     let displayText = '';
     if (el.tagName === 'A') {
       if (el.querySelector('picture, img, video, source')) return;
@@ -377,14 +370,41 @@ export default function decorateDMAssets(main) {
       if (text && text !== src) displayText = text;
     }
 
+    // Alt lives in its OWN element — a plain <p> right after the link's <p> — so
+    // image and alt are two independent UE fields and editing the alt can never
+    // disturb the link's href. Only pair when the link's <p> and that alt <p> are
+    // the SOLE children of their wrapper <div> (an image-only cell); a link that
+    // shares its wrapper with real body copy is never paired, so columns text is
+    // never consumed as alt.
+    let altParagraph = '';
+    let altNode = null;
+    if (el.tagName === 'A') {
+      const linkP = el.closest('p');
+      const wrapper = linkP && linkP.parentElement;
+      const next = linkP && linkP.nextElementSibling;
+      const soleAltPair = wrapper
+        && wrapper.childElementCount === 2
+        && wrapper.firstElementChild === linkP
+        && next === wrapper.lastElementChild
+        && next.tagName === 'P'
+        && !next.querySelector('a, picture, img, video');
+      if (soleAltPair) {
+        const text = next.textContent.trim();
+        if (text) { altParagraph = text; altNode = next; }
+      }
+    }
+
     if (render === renderVideo) {
-      const label = el.getAttribute('title') || displayText;
+      const label = el.getAttribute('title') || displayText || altParagraph;
       el.replaceWith(renderVideo(src, label));
+      if (altNode) altNode.remove();
       return;
     }
-    // alt precedence: an authored alt, then the link's title attribute (the alt
-    // field), then any custom display text.
-    const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
+    // alt precedence: an authored alt/title, the link's display text, then the
+    // paired alt paragraph (sole-children image wrapper convention).
+    const alt = el.getAttribute('alt') || el.getAttribute('title')
+      || displayText || altParagraph;
     el.replaceWith(render(src, alt, false));
+    if (altNode) altNode.remove();
   });
 }
