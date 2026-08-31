@@ -198,23 +198,29 @@ body.patient-education main > .section.gold p a::after {
 }
 
 /* ── Resources columns band (the patient-information-resources fragment) ───────
-   The columns block ALREADY styles this band: its own CSS keys on
-   `.section.light-gray .columns` (serif column text, gold headings, the
-   underline-authored CTA → Futura-bold uppercase teal + chevron, plain regional
-   links, and all the spacing). The fragment authors the section with a
-   `light-gray, full-bleed` section metadata, so that inner `.section.light-gray`
-   IS an ancestor of `.columns` once embedded — the block styling activates with
-   NO template CSS needed for typography/CTA/spacing.
+   The columns block styles most of this band via `.section.light-gray .columns`
+   (serif column text, the underline-authored CTA → Futura-bold uppercase teal +
+   chevron, plain regional links, spacing). The fragment's `light-gray, full-bleed`
+   section metadata makes that inner `.section.light-gray` an ancestor of the
+   `.columns` once embedded, so the block styling activates. Two gaps remain that
+   need page CSS: */
 
-   The ONLY gap: the light-gray BACKGROUND + full-bleed padding live in
-   styles.css under `main > .section.light-gray/.full-bleed`, which require a
-   DIRECT child of main. Here the styled section is nested inside the fragment
-   block, so those don't match and the band renders white. Re-apply just the
-   background + vertical padding to the fragment's host section (a direct child of
-   main, already full-viewport width) so the gray fills edge-to-edge. Everything
-   else is the block's own approved styling. */
+/* Gap 1 — BACKGROUND + full-bleed padding: styles.css scopes these to
+   `main > .section.light-gray/.full-bleed` (a DIRECT child of main). Our styled
+   section is nested inside the fragment block, so those don't match and the band
+   renders white. Re-apply background + vertical padding to the fragment's host
+   section (a direct child of main, already full-viewport width). */
 body.patient-education main > .section:has(.columns) {
   margin-block: 0;
   padding-block: var(--space-section);
   background-color: var(--color-surface);
+}
+
+/* Gap 2 — HEADING SIZE: the column headings are authored as bold+italic
+   paragraphs (<p><em><strong>…). The global marker rule paints them gold + Futura
+   but sets no size, so they default to 14px; the source renders them at 24.5px
+   (fontsize-1-75em). Neither the block nor styles.css sizes a bold+italic
+   PARAGRAPH (only real h1–h3), so size it here. */
+body.patient-education main .columns p:has(> em > strong) {
+  font-size: var(--heading-font-size-xl);
 }
