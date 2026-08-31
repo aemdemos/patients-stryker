@@ -368,15 +368,8 @@ async function decorateLastModified(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // convert external Dynamic Media asset links into native <picture>/<video>.
-  // Skip inside the Universal Editor: dm-support replaces the authored <a href>
-  // with a <picture>, but UE reads field values back from the DOM via selectors
-  // (image => a[href]) when saving — so transforming there erases the image URL
-  // on the next edit. In UE the asset stays an editable link; on the published
-  // site (and preview) it renders normally.
-  if (!/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
-    decorateDMAssets(main);
-  }
+  // convert external Dynamic Media asset links into native <picture>/<video>
+  decorateDMAssets(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
