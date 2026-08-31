@@ -893,6 +893,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 .zip-skin-closure main > .section > .default-content-wrapper h2 + p {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
+  margin-bottom: var(--space-section); /* 30px gap before the images row below */
 }
 
 /* "Zip can help create a better patient experience." — the source renders this
@@ -928,6 +929,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--heading-line-height);
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-m);

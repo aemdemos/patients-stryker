@@ -186,6 +186,29 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
     object-fit: cover;
     object-position: top;
   }
+
+  /* the generic 50-50 rule insets the text column ~49px toward the image; on the
+     hero that squeezes the subhead onto a second line, whereas the source keeps
+     it on one. Drop the image-facing inset on the hero text cell so the subhead
+     has the full column width and stays single-line like the source. Mirrors the
+     generic image-right inset selector, scoped to the hero, to override it. */
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-right: 15px;
+  }
+
+  /* the source hero isn't a true 50-50: the copy spans most of the width with the
+     product image overlaid on the right. Our literal 50-50 leaves the text column
+     too narrow, wrapping the subhead. Give the hero copy ~65% and the image ~35%
+     so the subhead stays single-line at every desktop width (the source keeps it
+     one line), while the image still fills its column. Overrides the generic 2-up
+     and desktop 50-50 flex bases for the hero row only. */
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
+    flex: 0 0 65%;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
+    flex: 0 0 35%;
+  }
 }
 
 body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
@@ -208,7 +231,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 
 @media (width >= 600px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: 2.5vw;
+    font-size: min(2.5vw, 35px);
   }
 }
 
