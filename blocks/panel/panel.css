@@ -26,6 +26,10 @@
   text-align: center;
 }
 
+.zip-skin-closure .panel-container  {
+  padding-top: 30px;
+}
+
 /* left variant: left-align the panel content  */
 .panel.left .panel-body {
   text-align: left;

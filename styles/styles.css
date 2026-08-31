@@ -876,3 +876,12 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     padding: 0 var(--container-gutter);
   }
 }
+
+.zip-skin-closure main > .section.light-gray {
+    padding-top: 4%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-bottom: 3%;
+    margin-bottom: 100px;
+    margin-top: 100px; 
+}

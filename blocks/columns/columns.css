@@ -169,6 +169,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--heading-line-height-hero);
+  padding-top: 30px;
 }
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
