@@ -65,6 +65,13 @@
           "label": "Background Image",
           "valueType": "string",
           "multi": false
+        },
+        {
+          "component": "text",
+          "name": "anchor",
+          "label": "Anchor ID",
+          "valueType": "string",
+          "description": "Optional unique id (e.g. find-a-doctor). Use it as a Sticky Nav item Target with a # prefix."
         }
       ]
     }
