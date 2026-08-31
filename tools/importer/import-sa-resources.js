@@ -197,16 +197,17 @@ export default {
     const hr = document.createElement('hr');
     main.appendChild(hr);
     // Build the Metadata block from the page's own metadata, then add a
-    // `template = sa-resources` row. scripts.js loadTemplate() loads
-    // templates/sa-resources/sa-resources.css (+ .js) for this page, and aem.js
-    // decorateTemplateAndTheme adds a `sa-resources` class to <body>. ALL of this
-    // page's styling lives in that template CSS scoped under body.sa-resources —
-    // the template route is used (even for this singleton) because template names
-    // have single-owner governance and can't collide across authors, unlike ad-hoc
-    // block Style / page Theme names. NOTE: the key must be lowercase `template` —
-    // getMetadata('template') matches the meta name case-sensitively.
+    // `theme = sa-resources` row. aem.js decorateTemplateAndTheme adds a
+    // `sa-resources` class to <body>, and scripts.js lazily loads the single
+    // styles/themes.css when a `theme` is present. ALL of this page's styling
+    // lives in themes.css scoped under body.sa-resources. A theme (not a
+    // per-page template) is used because we don't create templates for
+    // singletons — theme names still have single-owner governance so they can't
+    // collide across authors, unlike ad-hoc block Style names. NOTE: the key must
+    // be lowercase `theme` — getMetadata('theme') matches the meta name
+    // case-sensitively.
     const meta = WebImporter.Blocks.getMetadata(document);
-    meta.template = 'sa-resources';
+    meta.theme = 'sa-resources';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

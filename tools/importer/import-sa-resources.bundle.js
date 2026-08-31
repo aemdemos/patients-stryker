@@ -542,7 +542,7 @@ var CustomImportScript = (() => {
       const hr = document.createElement("hr");
       main.appendChild(hr);
       const meta = WebImporter.Blocks.getMetadata(document);
-      meta.template = "sa-resources";
+      meta.theme = "sa-resources";
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

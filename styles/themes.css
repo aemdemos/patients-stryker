@@ -1,15 +1,20 @@
-/* Stroke-Awareness Resources page template.
-   Activated when page metadata sets `template: sa-resources`, which
-   scripts.js loadTemplate() uses to load this file and aem.js
-   decorateTemplateAndTheme() uses to add `body.sa-resources`.
+/* Theme styles.
+   This file holds CSS for pages that opt in via page metadata `theme: <name>`,
+   which adds `body.<name>` via decorateTemplateAndTheme() (aem.js). scripts.js
+   loads THIS file lazily only when a page actually declares a `theme` — so it
+   stays out of the critical styles.css and the shared block CSS, and never ships
+   to pages that don't use a theme.
 
-   ALL customizations for this (single) page live here, scoped under
-   body.sa-resources and targeting the page's blocks/sections STRUCTURALLY —
-   so nothing leaks into the shared block/global CSS, and there is no reliance
-   on ad-hoc block Style / page Theme names (which can collide across authors;
-   template names are single-owner and governed). */
+   Every rule here MUST be scoped under its `body.<theme>` selector so a theme's
+   styling can never leak onto other pages. Theme names have single-owner
+   governance (unlike ad-hoc block Style / page Theme names that collide across
+   authors), so one theme = one clearly-owned block of rules below. */
 
-/* ===== Page-level: section rhythm + default-content typography ===== */
+/* =====================================================================
+   Theme: sa-resources — Stroke-Awareness Resources page
+   ===================================================================== */
+
+/* ----- Page-level: section rhythm + default-content typography ----- */
 
 /* intro: welcome copy is the source's fontsize-1-5em URW-Egyptienne serif (21px),
    not the 14px body default. Scoped to the flex intro's left default-content
@@ -64,7 +69,7 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
   line-height: var(--heading-line-height);
 }
 
-/* ===== Panel block (intro availability box, `panel light`) ===== */
+/* ----- Panel block (intro availability box, `panel light`) ----- */
 
 /* source renders the body copy in the URW Egyptienne heading serif
    (.urw-egyptienne) at 21px, regular weight — NOT the HumanistSlab body face or
@@ -74,7 +79,7 @@ body.sa-resources .panel.light .panel-body p {
   font-size: var(--panel-body-size-s);
 }
 
-/* ===== Cards block (downloads + social grids, `cards brochure`) ===== */
+/* ----- Cards block (downloads + social grids, `cards brochure`) ----- */
 
 /* brochure cards left-align their title (source), unlike the centered default. */
 body.sa-resources .cards.brochure > ul > li {
@@ -90,10 +95,10 @@ body.sa-resources .cards.brochure .cards-card-body p {
 /* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
    chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
    variant (.columns.related-links) in blocks/columns/columns.css, since the same
-   fragment is reused with the same look on other pages. Only template-specific
+   fragment is reused with the same look on other pages. Only theme-specific
    deltas would live here; there are none. */
 
-/* ===== Desktop (>=900px) ===== */
+/* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
   /* intro: the availability panel is TOP-aligned with the welcome text (source),
      not vertically centred as the shared .section.flex default does. */
