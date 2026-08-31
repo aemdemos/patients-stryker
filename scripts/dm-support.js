@@ -394,10 +394,15 @@ export default function decorateDMAssets(main) {
       }
     }
 
+    // Keep the alt paragraph in the DOM (hidden via CSS: .dm-alt-text) rather
+    // than removing it, so the Universal Editor still has a live element bound to
+    // the alt field to edit — removing it broke the editor's re-render. It stays
+    // out of the visible layout via the hiding class.
+    if (altNode) altNode.classList.add('dm-alt-text');
+
     if (render === renderVideo) {
       const label = el.getAttribute('title') || displayText || altParagraph;
       el.replaceWith(renderVideo(src, label));
-      if (altNode) altNode.remove();
       return;
     }
     // alt precedence: an authored alt/title, the link's display text, then the
@@ -405,6 +410,5 @@ export default function decorateDMAssets(main) {
     const alt = el.getAttribute('alt') || el.getAttribute('title')
       || displayText || altParagraph;
     el.replaceWith(render(src, alt, false));
-    if (altNode) altNode.remove();
   });
 }

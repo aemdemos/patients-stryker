@@ -623,6 +623,14 @@ main img {
   height: auto;
 }
 
+/* Dynamic Media alt text — authored as a paragraph beside the image link and
+   consumed into the image's alt by dm-support.js. It stays in the DOM (so the
+   Universal Editor keeps a live element bound to the alt field) but is hidden
+   from the rendered page. */
+main .dm-alt-text {
+  display: none;
+}
+
 .icon {
   display: inline-block;
   height: 24px;

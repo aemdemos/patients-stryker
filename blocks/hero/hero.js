@@ -56,12 +56,18 @@ function setupHero(block) {
   const imageDiv = document.createElement('div');
   // keep both pictures (each with its own alt); CSS shows one per breakpoint.
   // When only one is authored it carries no toggle class and always shows.
+  // Carry each picture's hidden alt paragraph (.dm-alt-text) along with it so the
+  // Universal Editor keeps a live element bound to the alt field.
+  const withAlt = (pic) => {
+    const altP = pic.parentElement && pic.parentElement.querySelector(':scope > .dm-alt-text');
+    return altP ? [pic, altP] : [pic];
+  };
   if (desktopPic && mobilePic) {
     desktopPic.classList.add('hero-image-desktop');
     mobilePic.classList.add('hero-image-mobile');
-    imageDiv.append(desktopPic, mobilePic);
+    imageDiv.append(...withAlt(desktopPic), ...withAlt(mobilePic));
   } else if (desktopPic || mobilePic) {
-    imageDiv.append(desktopPic || mobilePic);
+    imageDiv.append(...withAlt(desktopPic || mobilePic));
   }
 
   const contentDiv = document.createElement('div');
