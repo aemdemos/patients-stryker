@@ -19,19 +19,27 @@
    default content. Tight vertical rhythm so it reads as an eyebrow, not a block. */
 body.patient-education main > .section:first-child > .default-content-wrapper {
   text-align: right;
+
+  /* the global default-content-wrapper adds a 30px bottom padding; drop it so the
+     only space below the eyebrow is the paragraph's own 15px bottom margin, as on
+     the source (which sits the link ~15px above the banner bar). */
+  padding-block: 0;
 }
 
+/* zero the section's own vertical padding too — otherwise it stacks with the
+   paragraph margin and pushes the banner ~60px down instead of the source's 15px. */
 body.patient-education main > .section:first-child {
   margin-block: 0;
-  padding-block: var(--space-block);
+  padding-block: 0;
 }
 
 /* Source renders the standalone link as Futura bold, uppercase, teal, with a
-   trailing chevron (its .standalone-link treatment: Futura LT W01 700, 14px).
-   The project's default link colour already matches the source teal; override
-   the family/weight to Futura bold and add the chevron. (The source's arrow is a
-   proprietary "strykericons" glyph the project doesn't ship, so use a plain "›"
-   — visually equivalent at this size.) */
+   trailing SOLID triangle marker (its .standalone-link treatment: Futura LT W01
+   700, 14px). The project's default link colour already matches the source teal;
+   override the family/weight to Futura bold and add the marker. (The source's
+   arrow is a proprietary "strykericons" glyph the project doesn't ship, so use a
+   filled Unicode triangle "▸" — the closest shape match to the source's solid
+   arrowhead, rather than a thin "›" chevron.) */
 body.patient-education main > .section:first-child a {
   font-family: var(--display-font-family);
   font-weight: 700;
@@ -40,7 +48,7 @@ body.patient-education main > .section:first-child a {
 }
 
 body.patient-education main > .section:first-child a::after {
-  content: " ›";
+  content: " ▸";
   font-weight: 700;
 }
 
