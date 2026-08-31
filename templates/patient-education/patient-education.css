@@ -148,9 +148,43 @@ body.patient-education .cards.resources .cards-card-body :is(h1, h2, h3, h4, h5,
    The source's .c-full-bleed-panel.bg-golden-gradient bar: a left-to-right gold
    gradient (measured: #af6d04 → #ffb500 at 20%) with centered dark text. The
    page authors this as a `gold, full-bleed` section; the project has no shared
-   `.section.gold` style, so define it here, scoped to this page. */
+   `.section.gold` style, so define it here, scoped to this page.
+   Height: the source has NO section padding — its ~71px height (@1280) is just
+   the RTE container's 2% top/bottom margins + one text line. The global section
+   padding (30px) makes ours too tall, so zero it and put the rhythm on the copy. */
 body.patient-education main > .section.gold {
   background-image: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
   color: var(--text-color);
   text-align: center;
+  padding-block: 0;
+}
+
+/* the lead copy: light serif (URW Egyptienne), matching the source; 2% top/bottom
+   margin so the band height tracks the source across widths (the global
+   default-content-wrapper's own padding is dropped so only this margin counts). */
+body.patient-education main > .section.gold > .default-content-wrapper {
+  padding-block: 0;
+}
+
+body.patient-education main > .section.gold p {
+  margin-block: 2%;
+  font-family: var(--heading-font-family);
+}
+
+/* the "PATIENTINFO.STRYKER.COM" link: Futura bold, uppercase, teal, no underline,
+   with the same strykericons arrow as the eyebrow link (source .standalone-link). */
+body.patient-education main > .section.gold p a {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+body.patient-education main > .section.gold p a::after {
+  content: "\e250";
+  display: inline-block;
+  font-family: "strykericons";
+  font-size: 0.85em;
+  padding-left: 0.5em;
+  transform: translate(0, 2px);
 }
