@@ -116,6 +116,61 @@
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
 
+/* hero row (zip-skin-closure) — the hero is authored as a 50-50 columns block
+   (headline + CTA left, product image right). It's the only 50-50 row on the
+   page carrying an <h1>, so `:has(h1)` scopes this to the hero without relying on
+   a section-metadata Style (the author dropped the `gold` tag). Doubly scoped to
+   the page theme (body.zip-skin-closure) so it can't affect any other page. The
+   source headline is a fluid Futura-bold display headline. The source scales it
+   13vw on mobile/tablet and 6.5vw from its desktop breakpoint (1024px) up — so
+   ~50px at 390px, ~100px at 768px, and ~94px at 1440px. Copy stays top-aligned
+   against the tall product image, matching the source. */
+body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+  font-family: var(--display-font-family-bold);
+  font-size: 13vw;
+  font-weight: 700;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* hero product image — the source stretches it to fill the full width of its
+   right-hand column (the intrinsic asset is only 600px wide, so left at its
+   natural size it would sit centred and under-fill the column). Force it to fill
+   the column width like the source's .img-responsive. Scoped to the hero row so
+   other 50-50 image rows keep their centred, capped images. */
+body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
+  width: 100%;
+}
+
+/* hero image is a tall product shot the source shows only the top of — it renders
+   the full-height asset as an absolutely-positioned overlay clipped to a compact
+   hero, so the long zipper is cropped rather than pushing the section down. In our
+   normal-flow layout, cap the image column height and clip the overflow to
+   reproduce that crop, keeping the hero compact. Only meaningful once the columns
+   sit side by side (tablet+); the mobile stack shows the image in full. */
+@media (width >= 600px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col {
+    max-height: 460px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    overflow: clip;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+/* hero subhead — the global `.columns p` rule enlarges body copy to 17.5px in the
+   Humanist Slab body face, but the source subhead ("The puncture-free future of
+   skin closure") is 14px in the URW Egyptienne serif at line-height 1.35. Restore
+   those here (higher specificity than the base .columns p rule wins). */
+body.zip-skin-closure .columns.columns-50-50:has(h1) p {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-hero);
+}
+
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
    on the stroke-awareness page. Typography only; layout stays columns-50-50. */
 .section.serif .columns p,
@@ -443,6 +498,16 @@
   /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
   .section.light-gray .columns p:has(a u) {
     margin-bottom: var(--space-block);
+  }
+}
+
+/* zip hero headline — the source drops from 13vw to 6.5vw at its desktop
+   breakpoint (1024px), keeping the headline from overwhelming wide viewports
+   (~94px at 1440px). This specific 1024px switch matches the source and is
+   independent of the 900px column-layout breakpoint above. */
+@media (width >= 1024px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+    font-size: 6.5vw;
   }
 }
 
