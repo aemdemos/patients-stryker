@@ -40,7 +40,15 @@ export default function decorate(block) {
       const altPara = [...iconCell.querySelectorAll('p')]
         .find((p) => p !== mediaPara && !p.querySelector('picture, img, a[href]'));
       const alt = altPara ? altPara.textContent.trim() : '';
-      if (altPara) altPara.remove();
+      // Keep the alt <p> in the DOM (visually hidden) rather than removing it: it
+      // carries the UE `iconAlt` instrumentation, and deleting it makes the editor
+      // drop the whole cell — including the image — when the alt is edited. The
+      // text is mirrored onto the image's alt, so hide the <p> from assistive tech
+      // to avoid a double announcement.
+      if (altPara) {
+        altPara.classList.add('icon-list-alt');
+        altPara.setAttribute('aria-hidden', 'true');
+      }
 
       // A plain (non-DM) URL link is still an <a> here — convert it to an <img>.
       // DM links were already turned into <picture> by decorateDMAssets page-wide.
