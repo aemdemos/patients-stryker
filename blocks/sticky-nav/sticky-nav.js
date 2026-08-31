@@ -4,7 +4,12 @@ import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 /**
  * Resolve a nav link's target: `#id`, bare `id`, or URL ending in `#id`.
- * Falls back to a `.section[data-anchor="<id>"]` and promotes it to a real id.
+ * A section explicitly authored with `data-anchor="<id>"` wins over a plain
+ * element id, because auto-generated heading ids can collide with an intended
+ * section anchor (e.g. a hero <h1>Understanding stroke</h1> auto-ids to
+ * `understanding-stroke`, the same anchor the "Understanding stroke" nav item
+ * targets on its content section). Preferring the section keeps the jump — and
+ * the sticky-nav's injected scroll padding — on the real destination.
  * @param {string} href
  * @returns {Element|null}
  */
@@ -13,12 +18,13 @@ function resolveTarget(href) {
   const hash = href.includes('#') ? href.slice(href.indexOf('#') + 1) : href;
   if (!hash) return null;
 
-  const byId = document.getElementById(hash);
-  if (byId) return byId;
-
   const byAnchor = document.querySelector(`.section[data-anchor="${CSS.escape(hash)}"]`);
-  if (byAnchor && !byAnchor.id) byAnchor.id = hash;
-  return byAnchor;
+  if (byAnchor) {
+    if (!byAnchor.id) byAnchor.id = hash;
+    return byAnchor;
+  }
+
+  return document.getElementById(hash);
 }
 
 /**
