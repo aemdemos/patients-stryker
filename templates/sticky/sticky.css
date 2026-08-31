@@ -1,0 +1,19 @@
+/* Sticky landing-page template styles.
+   Activated when page metadata sets `template: sticky`, which adds `body.sticky`
+   via decorateTemplateAndTheme() in scripts.js / aem.js. Scoped to `body.sticky`
+   so nothing here leaks onto other templates. */
+
+/* Standalone default-content paragraphs on the landing page (e.g. the video
+   intro "When someone is having a stroke...") — the source renders these as
+   14px body-serif black. A global rule (styles.css) shrinks every default
+   paragraph that follows a fullbleed hero to 12px for the bottom disclaimer;
+   that also catches the video intro, so restore the source measure here.
+   Scoped to the video section's default content. Uses :has() on the section to
+   out-specify the global `~ .section > .default-content-wrapper > p` rule.
+   The trailing `compact` disclaimer section is intentionally left at 12px. */
+body.sticky main > .section.video-container[data-anchor]:has(.default-content-wrapper) > .default-content-wrapper > p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+  color: var(--color-text);
+}

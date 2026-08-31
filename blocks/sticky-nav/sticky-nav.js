@@ -21,6 +21,18 @@ function resolveTarget(href) {
   return byAnchor;
 }
 
+/**
+ * Extract a bare anchor id from a candidate string: the part after `#`, or the
+ * whole trimmed string when it has no `#`.
+ * @param {string} s
+ * @returns {string}
+ */
+const anchorId = (s) => {
+  if (!s) return '';
+  const v = s.trim();
+  return v.includes('#') ? v.slice(v.indexOf('#') + 1) : v;
+};
+
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 
 /**
@@ -58,12 +70,20 @@ export default function decorate(block) {
     // don't render as an empty, purposeless nav item
     if (!labelCell || !labelCell.textContent.trim()) return;
 
+    // Target may be authored as a plain `#anchor` string OR as a link whose
+    // visible text is `#anchor` but whose href is a placeholder (e.g. `/`).
+    // Prefer whichever candidate actually carries an anchor id, so a stray
+    // `href="/"` never wins over the `#anchor` the author typed.
     const link = targetCell?.querySelector('a');
-    const href = link?.getAttribute('href') || targetCell?.textContent.trim();
+    const linkHref = link?.getAttribute('href') || '';
+    const cellText = targetCell?.textContent.trim() || '';
+    const id = anchorId(linkHref.includes('#') ? linkHref : cellText)
+      || anchorId(linkHref) || anchorId(cellText);
+    const href = `#${id}`;
 
     const item = document.createElement('a');
     item.className = 'sticky-nav-item';
-    item.href = href && href.startsWith('#') ? href : `#${(href || '').replace(/^#/, '')}`;
+    item.href = href;
 
     // Row = the sticky-nav-item component, so its instrumentation goes on the
     // <a> (keeps the item selectable/reorderable in UE); the label field's
