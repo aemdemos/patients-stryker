@@ -218,9 +218,7 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Prepends a decorative `<img class="section-background-image">` to the section
- * (matches the source's inline background image, not a CSS background). Opt-in
- * blocks like icon-list position and layer it; inert for other sections.
+ * Prepends a decorative `<img class="section-background-image">` to the section.
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
  */
@@ -231,9 +229,7 @@ function applySectionBackgroundImage(section, url) {
   img.src = url;
   img.alt = '';
   img.setAttribute('aria-hidden', 'true');
-  // eager, not lazy: when absolutely positioned this box is zero-area until it
-  // loads, so Chromium's lazy heuristic reads it as off-screen and never fetches.
-  // It's decorative and out of flow, so eager loading is safe (no CLS).
+  // eager: absolutely-positioned box is zero-area until loaded, so lazy never fetches
   img.loading = 'eager';
   section.prepend(img);
 }
@@ -255,7 +251,7 @@ function decorateSectionMetadata(main) {
           .map((s) => toClassName(s.trim()))
           .filter((s) => s);
         styles.forEach((s) => section.classList.add(s));
-      } else if (key === 'background-image') {
+      } else if (key === 'background-image-url') {
         applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
       } else {
         section.dataset[toCamelCase(key)] = value;
@@ -266,8 +262,9 @@ function decorateSectionMetadata(main) {
     (meta.closest('.section-metadata-wrapper') || meta).remove();
   });
 
-  // published DA content exposes the value as data-background-image, not a table
-  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
+  // published DA form: data-* attributes (legacy data-background-image also honoured)
+  main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
+    applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 }
