@@ -116,6 +116,18 @@
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
 
+/* Content 50-50 images are external Scene7 assets (1024x682) inserted with no
+   intrinsic width/height and loaded lazily. Without a reserved box they collapse
+   to 0 height until scrolled into view — on mobile that reads as a missing image
+   and causes layout shift. Reserve the 3:2 box so the image column holds its
+   height before the lazy image loads. Excludes the hero row (:has(h1)), which
+   has its own portrait crop. */
+.columns.columns-50-50:not(:has(h1)) .columns-img-col img {
+  width: 100%;
+  aspect-ratio: 1024 / 682;
+  object-fit: cover;
+}
+
 /* hero row (zip-skin-closure) — the hero is authored as a 50-50 columns block
    (headline + CTA left, product image right). It's the only 50-50 row on the
    page carrying an <h1>, so `:has(h1)` scopes this to the hero without relying on
@@ -141,6 +153,15 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
   width: 100%;
 }
 
+/* zip hero (mobile) — the source shows only the headline + subhead on mobile,
+   hiding both the tall product image and the "FIND A SURGEON" CTA. Hide them at
+   base width; the tablet breakpoint below restores them once the columns sit
+   side by side. Scoped to the zip hero row. */
+body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
+body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  display: none;
+}
+
 /* hero image is a tall product shot the source shows only the top of — it renders
    the full-height asset as an absolutely-positioned overlay clipped to a compact
    hero, so the long zipper is cropped rather than pushing the section down. In our
@@ -148,6 +169,12 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
    reproduce that crop, keeping the hero compact. Only meaningful once the columns
    sit side by side (tablet+); the mobile stack shows the image in full. */
 @media (width >= 600px) {
+  /* restore the image column and CTA hidden on mobile once the hero is 2-up */
+  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+    display: block;
+  }
+
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col {
     max-height: 460px;
     margin-bottom: 0;
