@@ -178,7 +178,7 @@
                 },
                 {
                   "name": "text",
-                  "selector": "p:last-child"
+                  "selector": "p:nth-of-type(2)"
                 }
               ]
             }

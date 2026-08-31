@@ -39,7 +39,7 @@
           "fields": [
             { "name": "image", "selector": "a[href]" },
             { "name": "imageAlt", "selector": "a" },
-            { "name": "text", "selector": "p:last-child" }
+            { "name": "text", "selector": "p:nth-of-type(2)" }
           ]
         }
       }
