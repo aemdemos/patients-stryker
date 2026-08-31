@@ -119,16 +119,19 @@ body.patient-education .hero.band h1 {
    the global h2 rule applies. Re-map the leading default-content h2 to the
    heading serif.
 
-   Spacing: the source sits this line ~30px below the title bar and ~30px above
-   the cards (its RTE container's 2%/4% margins). The global h2 only gives a 15px
-   bottom margin and 0 top, so the line ends up cramped against the banner. Add
-   the ~30px top/bottom rhythm here (page-scoped — a global h2 margin change would
-   move every other h2, e.g. card titles). NOT a global concern; belongs here. */
+   Spacing: the source's spacing is PERCENTAGE-based and scales with width — the
+   EFFECTIVE gaps (measured, banner + RTE margins combined) are ~30px top / 30px
+   bottom at 780px and ~55px top / 50px bottom at 1280px. A single fixed value
+   only matches one width. On our EDS page the h2's containing block is the
+   full-width section, and there's no separate banner-margin contribution, so a
+   symmetric 4% (of the section width) reproduces both the source's top AND bottom
+   gaps at every width (≈31px @780, ≈51px @1280). Page-scoped — a global h2 margin
+   change would move every other h2 (e.g. card titles). NOT a global concern. */
 body.patient-education main > .section > .default-content-wrapper h2 {
   font-family: var(--heading-font-family);
   font-weight: 500;
-  margin-top: var(--space-section);
-  margin-bottom: var(--space-section);
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 
 /* ── Patient-guide cards (cards resources) ────────────────────────────────────
