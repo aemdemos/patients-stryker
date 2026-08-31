@@ -111,6 +111,7 @@
 .hero-container .hero-wrapper:has(.hero.banner) {
   max-width: var(--container-max);
   margin-inline: auto;
+  padding-inline: var(--container-gutter);
 }
 
 .hero.banner {
@@ -122,9 +123,13 @@
   overflow: clip;
 }
 
-.section.text-first .hero.banner {
+/* stroke-awareness landing hero: copy stacked ABOVE the banner image on
+   mobile/tablet (the block outputs [image][content], so column-reverse lifts
+   the copy on top); switches to a left-side overlay at 900px (see below) */
+body.stroke-awareness-landing .hero.banner {
   display: flex;
   flex-direction: column-reverse;
+  box-shadow: none;
 }
 
 .hero.banner picture {
@@ -175,6 +180,11 @@
   line-height: var(--heading-line-height);
 }
 
+/* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
+.hero.banner .button-wrapper {
+  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
+}
+
 /* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
 .hero.banner .button-wrapper:has(+ .button-wrapper),
 .hero.banner .button-wrapper + .button-wrapper {
@@ -183,6 +193,7 @@
 }
 
 .hero.banner .button-wrapper + .button-wrapper {
+  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
   margin-inline-start: 10px;
 }
 
@@ -276,10 +287,16 @@
   }
 
   /* banner — copy overlays the image, vertically centered */
-  .hero.banner, 
-  .section.text-first .hero.banner  {
+  .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  /* stroke-awareness landing stays STACKED (text above image) until 900px, so
+     keep it flex here and override the base banner grid above */
+  body.stroke-awareness-landing .hero.banner {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   /* stack the image row and the copy row in the same grid cell */
@@ -306,10 +323,6 @@
 
   .hero.banner h2 {
     font-size: var(--heading-font-size-xl);
-  }
-
-  .stroke-awareness-landing .hero.banner h2 {
-    padding-bottom: 20px;
   }
 
   /* band — source drops the headline to 4vw and insets the copy 12% */
@@ -343,6 +356,14 @@
 
   .hero.fullbleed.poster p {
     font-size: 1.5vw;
+  }
+
+  /* stroke-awareness copy is stacked (not overlaid) below 900px, so keep it
+     full-width with the standard gutter padding */
+  body.stroke-awareness-landing .hero.banner > div:last-child {
+    align-self: auto;
+    max-width: none;
+    padding: var(--space-section) var(--container-gutter) var(--space-block-l);
   }
 }
 
@@ -424,41 +445,55 @@
   }
 }
 
-.section.text-first .hero.banner picture.hero-image-desktop {
+body.stroke-awareness-landing .hero.banner picture.hero-image-desktop {
   display: block;
-  box-shadow: var(--shadow-soft);
 }
 
-.section.text-first .hero.banner picture.hero-image-mobile {
+body.stroke-awareness-landing .hero.banner picture.hero-image-mobile {
   display: none;
 }
 
-.section.text-first .hero.banner picture {
+/* source puts the soft drop shadow on the image box itself (not the whole
+   banner), which reads as the thin line above the photo where it meets the
+   copy. Target every picture so it works whether one image (unclassed) or the
+   desktop/mobile pair is authored. */
+body.stroke-awareness-landing .hero.banner picture {
   box-shadow: var(--shadow-soft);
 }
 
-.section.text-first .hero.banner > div:last-child {
+body.stroke-awareness-landing .hero.banner > div:last-child {
   max-width: none;
   padding-block: var(--space-section) var(--space-block-l);
 }
 
-.stroke-awareness-landing .hero-container .hero.banner > div:last-child{
-padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+/* "Select language" — source renders it at 21px with a tight line-height (not
+   the base banner's 24.5px h2), which keeps the gap down to the buttons compact */
+body.stroke-awareness-landing .hero.banner h2 {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
 }
 
 @media (width >= 900px) {
-  .stroke-awareness-landing .section.text-first .hero.banner {
+  /* desktop overlay — copy sits over the image, so the shadow goes back on the
+     whole banner card (as the base banner variant) rather than the picture.
+     Below 900px the copy stays stacked above the image. */
+  body.stroke-awareness-landing .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
+    box-shadow: var(--shadow-soft);
   }
 
-  .section.text-first .hero.banner > div {
+  body.stroke-awareness-landing .hero.banner picture {
+    box-shadow: none;
+  }
+
+  body.stroke-awareness-landing .hero.banner > div {
     grid-area: 1 / 1;
   }
 
   /* top-align the copy in the overlay (source insets it ~65px from the top of
      the banner), rather than vertically centering it */
-  .stroke-awareness-landing .section.text-first .hero.banner > div:last-child {
+  body.stroke-awareness-landing .hero.banner > div:last-child {
     z-index: 1;
     align-self: start;
     max-width: 50%;
@@ -468,12 +503,13 @@ padding: var(--space-section) var(--container-gutter) var(--space-block-l);
   /* source spacing: 35px below the headline, 15px below "Select language" to
      the buttons (our base banner rule adds a 35px top margin to buttons which
      over-spaces them here, so reset it) */
-  .stroke-awareness-landing .section.text-first .hero.banner h1 {
+  body.stroke-awareness-landing .hero.banner h1 {
     margin-bottom: calc(var(--space-block-l) + var(--space-block));
   }
 
-  .stroke-awareness-landing .section.text-first .hero.banner .button-wrapper,
-  .stroke-awareness-landing .section.text-first .hero.banner .button-wrapper + .button-wrapper {
+  body.stroke-awareness-landing .hero.banner .button-wrapper,
+  body.stroke-awareness-landing .hero.banner .button-wrapper + .button-wrapper {
     margin-block: 0 var(--space-block);
+    padding-top: 20px;
   }
 }
