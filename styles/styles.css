@@ -777,6 +777,22 @@ main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
+/* light-gray band with only default content (no block) — the source centers this
+   short lead-in line ("Zip can help create a better patient experience"). Scoped
+   to a default-content-wrapper so the columns-based light-gray sections on other
+   pages (which live in a .columns-wrapper) keep their left-aligned layout. */
+main > .section.light-gray > .default-content-wrapper {
+  text-align: center;
+}
+
+/* centred lead-in above a 50-50 image row — the source centers the heading + intro
+   that introduce a two-up image row (e.g. "How Zip works"). Scoped via :has() to
+   sections whose block is a columns-50-50, so heading+icon-grid sections (e.g.
+   "Benefits of Zip") stay left-aligned as on the source. */
+main > .section.columns-container:has(.columns-50-50) > .default-content-wrapper {
+  text-align: center;
+}
+
 /* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
    a gray-to-teal gradient band with white text. Pair with .full-bleed. */
 main > .section.dark {
@@ -793,6 +809,24 @@ main > .section.blue {
   color: var(--color-white);
 }
 
+/* gold accent band beneath the zip hero — the source renders a decorative
+   full-bleed gold strip (.c-full-bleed-panel.bg-gold, 34px) between the hero and
+   the first callout panel. It carries no authored content, so it's reproduced as
+   a pseudo-element on the hero section. Scoped to the page theme so it can't leak
+   to other pages' first section. The section is already full-viewport width, so
+   the band is inherently edge-to-edge. */
+body.zip-skin-closure main > .section.full-bleed.columns-container:first-child {
+  padding-bottom: 0;
+}
+
+body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::after {
+  content: "";
+  display: block;
+  height: 34px;
+  margin-top: var(--space-section);
+  background-color: var(--color-accent);
+}
+
 /* divider between the fullbleed hero and the cards section — constrained to content width */
 main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper {
   border-top: 1px solid var(--color-surface-muted);
@@ -801,6 +835,7 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
 
 /* first (title + intro + image) section — sage rule beneath it, matching the
    source's .c-page-hero-content.border-bottom-gold 1px divider */
+/* stylelint-disable-next-line no-descending-specificity */
 main > .section:first-child > .default-content-wrapper {
   padding-bottom: var(--space-section);
 }
