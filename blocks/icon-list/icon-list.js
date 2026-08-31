@@ -32,18 +32,30 @@ export default function decorate(block) {
 
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
-      // alt is the link's display text (cards/hero convention); plain URLs become <img> here
+      // Alt text is authored as a separate <p> directly below the icon link/image
+      // in the same cell (the link keeps its URL as its display text). Find that
+      // <p> — the one that holds no media — and use it as the alt.
+      const media = iconCell.querySelector('picture, img, a[href]');
+      const mediaPara = media ? media.closest('p') : null;
+      const altPara = [...iconCell.querySelectorAll('p')]
+        .find((p) => p !== mediaPara && !p.querySelector('picture, img, a[href]'));
+      const alt = altPara ? altPara.textContent.trim() : '';
+      if (altPara) altPara.remove();
+
+      // A plain (non-DM) URL link is still an <a> here — convert it to an <img>.
+      // DM links were already turned into <picture> by decorateDMAssets page-wide.
       const link = iconCell.querySelector('a[href]');
       if (link && !iconCell.querySelector('picture, img')) {
-        const href = link.getAttribute('href');
-        const text = link.textContent.trim();
-        const alt = text && text !== href ? text : (link.getAttribute('title') || '');
         const img = document.createElement('img');
-        img.src = href;
+        img.src = link.getAttribute('href');
         img.alt = alt;
         const picture = document.createElement('picture');
         picture.append(img);
         link.replaceWith(picture);
+      } else {
+        // apply the authored alt onto the existing (e.g. DM-converted) image
+        const img = iconCell.querySelector('img');
+        if (img) img.alt = alt;
       }
       item.append(iconCell);
     }
