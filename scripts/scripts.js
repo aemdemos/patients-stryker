@@ -218,24 +218,17 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Prepends an `<img class="section-background-image">` to the section. Authored
- * alt makes it meaningful; blank alt keeps it decorative (empty alt + aria-hidden).
+ * Prepends a decorative `<img class="section-background-image">` to the section.
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
- * @param {string} [alt] optional accessible text for the background image
  */
-function applySectionBackgroundImage(section, url, alt) {
+function applySectionBackgroundImage(section, url) {
   if (!section || !url || section.querySelector(':scope > .section-background-image')) return;
   const img = document.createElement('img');
   img.className = 'section-background-image';
   img.src = url;
-  const altText = (alt || '').trim();
-  if (altText) {
-    img.alt = altText;
-  } else {
-    img.alt = '';
-    img.setAttribute('aria-hidden', 'true');
-  }
+  img.alt = '';
+  img.setAttribute('aria-hidden', 'true');
   // eager: absolutely-positioned box is zero-area until loaded, so lazy never fetches
   img.loading = 'eager';
   section.prepend(img);
@@ -252,9 +245,6 @@ function decorateSectionMetadata(main) {
     const section = meta.closest('.section');
     if (!section) return;
     const config = readBlockConfig(meta);
-    // resolve alt up front — config key order isn't guaranteed
-    const bgAltValue = config['background-image-alt'];
-    const bgAlt = Array.isArray(bgAltValue) ? bgAltValue[0] : bgAltValue;
     Object.entries(config).forEach(([key, value]) => {
       if (key === 'style') {
         const styles = (Array.isArray(value) ? value : value.split(','))
@@ -262,9 +252,7 @@ function decorateSectionMetadata(main) {
           .filter((s) => s);
         styles.forEach((s) => section.classList.add(s));
       } else if (key === 'background-image-url') {
-        applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value, bgAlt);
-      } else if (key === 'background-image-alt') {
-        // consumed with background-image-url above
+        applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
       } else {
         section.dataset[toCamelCase(key)] = value;
       }
@@ -276,9 +264,8 @@ function decorateSectionMetadata(main) {
 
   // published DA form: data-* attributes (legacy data-background-image also honoured)
   main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
-    const bgAlt = section.dataset.backgroundImageAlt;
-    applySectionBackgroundImage(section, section.dataset.backgroundImageUrl, bgAlt);
-    applySectionBackgroundImage(section, section.dataset.backgroundImage, bgAlt);
+    applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
+    applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 }
 
