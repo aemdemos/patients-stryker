@@ -108,8 +108,13 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(nav);
 
-  // scroll-spy: track each item's containing section (not the heading itself)
-  const targets = items
+  // scroll-spy: track each item's containing section (not the heading itself).
+  // Targets are resolved LAZILY (not cached once) because some anchors live in a
+  // fragment that loads asynchronously after this block decorates — e.g.
+  // `#patient-information` is a heading inside the related-links fragment. A
+  // one-time build would drop those late-loading targets, so they could never
+  // scroll-offset or go active. Re-resolving each pass keeps them in sync.
+  const currentTargets = () => items
     .map(({ item, href }) => {
       const anchor = resolveTarget(href);
       const region = anchor?.closest('.section') || anchor;
@@ -121,7 +126,7 @@ export default function decorate(block) {
   const GAP = 70;
   const applyScrollOffset = () => {
     const bar = `${block.getBoundingClientRect().height || 70}px`;
-    targets.forEach(({ region, anchor }) => {
+    currentTargets().forEach(({ region, anchor }) => {
       region.style.paddingTop = `${GAP}px`;
       region.style.scrollMarginTop = bar;
       if (anchor && anchor !== region) anchor.style.scrollMarginTop = bar;
@@ -145,7 +150,7 @@ export default function decorate(block) {
     });
   });
 
-  if (targets.length) {
+  if (items.length) {
     const setCurrent = (activeItem) => {
       items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
     };
@@ -154,6 +159,8 @@ export default function decorate(block) {
     let ticking = false;
     const update = () => {
       ticking = false;
+      // re-resolve targets each pass so fragment-hosted anchors are included once loaded
+      const targets = currentTargets();
       const barRect = block.getBoundingClientRect();
       const barHeight = barRect.height || 70;
       const pinned = barRect.top <= 1; // sticky container has reached the top
