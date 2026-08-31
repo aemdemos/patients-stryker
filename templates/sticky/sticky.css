@@ -17,3 +17,28 @@ body.sticky main > .section.video-container[data-anchor]:has(.default-content-wr
   line-height: var(--paragraph-line-height);
   color: var(--color-text);
 }
+
+/* Video section — the source lays the video and its supporting paragraph out as
+   two side-by-side columns. EDS delivers them as two stacked section wrappers
+   (.video-wrapper + .default-content-wrapper), so from tablet up make the section
+   a flex row and split it 50/50, vertically centring the text against the video.
+   Mobile stays stacked (base). Scoped to the anchored video section only. */
+@media (width >= 841px) {
+  body.sticky main > .section.video-container[data-anchor]:has(.video) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  body.sticky main > .section.video-container[data-anchor] > .video-wrapper,
+  body.sticky main > .section.video-container[data-anchor] > .default-content-wrapper {
+    flex: 1 1 0;
+    box-sizing: border-box;
+    max-width: 50%;
+    margin: 0;
+    padding-inline: var(--container-gutter);
+  }
+}
