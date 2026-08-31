@@ -1,8 +1,7 @@
 /*
- * sticky-nav — in-page anchor bar migrated from patients.stryker.com IVS home.
- * 70px full-bleed gray bar, 193px UPPERCASE items with white dividers, gold
- * active box; sticky to top. Scoped to `.sticky-nav.block` to avoid colliding
- * with `body.sticky-nav` (from `template: sticky-nav` metadata).
+ * sticky-nav — in-page anchor bar. 80px full-bleed gray bar, 193px UPPERCASE
+ * items (Futura 21px) with white dividers, gold active box; sticky to top.
+ * Scoped to `.sticky-nav.block` to avoid colliding with `body.sticky-nav`.
  */
 
 /* full-bleed gray bar, ignoring the section's max-width container */
@@ -46,7 +45,7 @@
   justify-content: center;
   min-width: 0;
   max-width: 193px;
-  min-height: 70px;                  /* 62px box + 4+4 padding */
+  min-height: 80px;                  /* 72px box + 4+4 padding */
   padding: 4px;
   border: 0;
   border-right: 1px solid var(--color-white);   /* white divider */
@@ -67,14 +66,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 62px;                  /* source gold-box height */
+  min-height: 72px;                  /* source gold-box height */
   margin: 0;
   padding: 0 5px;
   color: inherit;
   font-family: var(--display-font-family);
-  font-size: var(--body-font-size-m);   /* 14px */
+  font-size: var(--heading-font-size-l);   /* 21px, source Futura */
   font-weight: 400;
-  line-height: 1.43;
+  line-height: 1.06;
   text-transform: uppercase;
   text-align: center;
   overflow-wrap: break-word;         /* wrap long labels */

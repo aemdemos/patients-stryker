@@ -11,6 +11,22 @@ body.sticky main .hero.fullbleed > div:last-child {
   padding: 4% 8% 0 10%;
 }
 
+/* Section headings → gold Futura bold, like the icon-list sections. The source
+   renders every section heading in the gold accent (#ffb500); the columns and
+   fragment blocks otherwise leave them black serif. Columns headings are 31.5px
+   (matching icon-list); the fragment's 3-column headings are 24.5px. */
+body.sticky main .section .columns h3,
+body.sticky main .section .columns h2 {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  font-size: var(--icon-list-title-size);
+  color: var(--color-accent);
+}
+
+body.sticky main .section .columns.related-links h3 {
+  font-size: var(--heading-font-size-xl);
+}
+
 /* Columns body copy → 14px body-serif (not the columns variants' heading-serif).
    Lowest-specificity first, for no-descending-specificity. */
 body.sticky main .section .columns p,
@@ -45,12 +61,20 @@ body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.compa
   line-height: var(--paragraph-line-height);
 }
 
-/* Section rhythm: uniform block padding on content bands (source uses internal
-   padding, not inter-section margins); hero/sticky-nav/compact keep their own. */
+/* Section rhythm: uniform internal block padding on content bands; hero,
+   sticky-nav and compact keep their own. */
 body.sticky main > .section.columns-container,
 body.sticky main > .section.icon-list-container,
 body.sticky main > .section.fragment-container {
   padding-block: var(--space-section-l);
+}
+
+/* Colour-banded sections (light-gray): the gap above the band must be WHITE, not
+   part of the coloured fill. The internal padding above tints gray, so add a
+   white margin above each band (matching the source's ~55px white gap between a
+   section and the next coloured band). */
+body.sticky main > .section.light-gray {
+  margin-top: var(--space-section-l);
 }
 
 /* Video: stacked on mobile; 50/50 video + text row from tablet up. */

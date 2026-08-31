@@ -181,6 +181,13 @@ export default function decorate(block) {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
+    // Re-run when the page height changes (fragment/images loading in). The first
+    // pass runs before that content settles, when a briefly-short page can wrongly
+    // read as "scrolled to bottom" and activate the last item; recompute after.
+    if (typeof ResizeObserver === 'function') {
+      new ResizeObserver(onScroll).observe(document.body);
+    }
+    window.addEventListener('load', onScroll);
     update();
   }
 }
