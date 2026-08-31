@@ -18,6 +18,16 @@ body.sticky main > .section.video-container[data-anchor]:has(.default-content-wr
   color: var(--color-text);
 }
 
+/* Hero headline — the source renders "Understanding stroke" in Futura bold
+   (display font, weight 700), not the fullbleed hero's default light serif. The
+   shared hero.fullbleed CSS only switches the *second* sentence to Futura (via
+   .hero-headline-accent), but this page's single-phrase headline needs the whole
+   thing bold. Scoped to body.sticky so other fullbleed heroes keep their default. */
+body.sticky main .hero.fullbleed h1 {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
 /* Video section — the source lays the video and its supporting paragraph out as
    two side-by-side columns. EDS delivers them as two stacked section wrappers
    (.video-wrapper + .default-content-wrapper), so from tablet up make the section
