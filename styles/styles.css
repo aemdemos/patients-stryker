@@ -830,7 +830,6 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   content: "";
   display: block;
   height: 34px;
-  margin-top: var(--space-section);
   background-color: var(--color-accent);
 }
 

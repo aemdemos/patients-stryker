@@ -162,12 +162,12 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
   display: none;
 }
 
-/* hero image is a tall product shot the source shows only the top of — it renders
-   the full-height asset as an absolutely-positioned overlay clipped to a compact
-   hero, so the long zipper is cropped rather than pushing the section down. In our
-   normal-flow layout, cap the image column height and clip the overflow to
-   reproduce that crop, keeping the hero compact. Only meaningful once the columns
-   sit side by side (tablet+); the mobile stack shows the image in full. */
+/* zip hero, 2-up (>= 600px) — the source hero isn't a true 50-50: the product
+   image is an overlay pinned to the right at ~half the viewport width, while the
+   copy spans the full row width underneath. Reproduce that from the tablet
+   breakpoint up so the image matches the source's width and the crop height scales
+   with the viewport (33.333vw). The row reserves the crop height via min-height so
+   the absolutely-positioned image is always contained. */
 @media (width >= 600px) {
   /* restore the image column and CTA hidden on mobile once the hero is 2-up */
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
@@ -175,39 +175,30 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
     display: block;
   }
 
-  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col {
-    max-height: 460px;
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div {
+    position: relative;
+    min-height: 33.333vw; /* source crop height scales with viewport (~200px@600 → 480px@1440) */
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
+    flex: 0 0 100%;
+    padding-right: 15px;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 51%;
+    max-height: 33.333vw; /* matches the source's viewport-scaled crop */
     margin-bottom: 0;
-    padding-bottom: 0;
+    padding: 0;
     overflow: clip;
   }
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
     object-fit: cover;
     object-position: top;
-  }
-
-  /* the generic 50-50 rule insets the text column ~49px toward the image; on the
-     hero that squeezes the subhead onto a second line, whereas the source keeps
-     it on one. Drop the image-facing inset on the hero text cell so the subhead
-     has the full column width and stays single-line like the source. Mirrors the
-     generic image-right inset selector, scoped to the hero, to override it. */
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
-    padding-right: 15px;
-  }
-
-  /* the source hero isn't a true 50-50: the copy spans most of the width with the
-     product image overlaid on the right. Our literal 50-50 leaves the text column
-     too narrow, wrapping the subhead. Give the hero copy ~65% and the image ~35%
-     so the subhead stays single-line at every desktop width (the source keeps it
-     one line), while the image still fills its column. Overrides the generic 2-up
-     and desktop 50-50 flex bases for the hero row only. */
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
-    flex: 0 0 65%;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    flex: 0 0 35%;
   }
 }
 
@@ -229,9 +220,25 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   padding-top: 30px;
 }
 
+/* hero subhead — mapped to the source's rendered size at the breakpoint mapping
+   (EDS 600/900/1200 ↔ source 840/1024/1440 = 21/25.6/35px), same calc() approach
+   as the headline so it hits each mapped anchor and scales fluidly between. Holds
+   at 35px above 1200 (the source caps there). */
 @media (width >= 600px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: min(2.5vw, 35px);
+    font-size: calc(11.8px + 1.5333vw); /* 21px @600 → 25.6px @900 */
+  }
+}
+
+@media (width >= 900px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: calc(3.1333vw - 2.6px); /* 25.6px @900 → 35px @1200 */
+  }
+}
+
+@media (width >= 1200px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: 35px;
   }
 }
 
@@ -565,19 +572,33 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   }
 }
 
-/* zip hero headline — the source drops from 13vw to 6.5vw at its desktop
-   breakpoint (1024px), keeping the headline from overwhelming wide viewports
-   (~94px at 1440px). This specific 1024px switch matches the source and is
-   independent of the 900px column-layout breakpoint above. */
+/* zip hero headline — mapped to the source's rendered size at the EDS↔source
+   breakpoint mapping (EDS 600/900/1200 ↔ source 840/1024/1440 = 54.6/66.56/91px).
+   A verbatim source vw (6.5vw) renders too small at the narrower EDS viewport, so
+   each band uses a calc() that passes exactly through the mapped anchors and scales
+   fluidly between them. Above 1200 it holds at 91px (the source caps there too). */
 @media (width >= 600px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: min(6.5vw, 91px);
+    font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
+  }
+}
+
+@media (width >= 900px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+    font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
+  }
+}
+
+@media (width >= 1200px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+    font-size: 91px;
   }
 }
 
 .zip-skin-closure .columns-container h2{
 margin-top: 5%;
 }
+
 /* ===== related-links variant =====
    A reusable columns treatment for the stroke-awareness "related links" fragment
    (Understanding stroke / Patient information / Regional information): gold
