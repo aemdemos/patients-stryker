@@ -178,7 +178,7 @@
                 },
                 {
                   "name": "text",
-                  "selector": "p:not(:has(a))"
+                  "selector": "p:last-child"
                 }
               ]
             }
