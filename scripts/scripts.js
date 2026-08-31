@@ -433,6 +433,15 @@ async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
 
+  // Reserve the correct header height before the nav fragment loads (CLS): the
+  // default (/nav) and /nav-legal navs render a single row, while /nav-ent and
+  // /nav-ivs add a second (gold bar) row. The nav variant isn't in the DOM until
+  // the header loads lazily, so mark single-row navs from metadata here.
+  const navName = (getMetadata('nav') || '/nav').split('/').pop();
+  if (navName === 'nav' || navName === 'nav-legal') {
+    document.body.classList.add('nav-single-row');
+  }
+
   const templateName = getMetadata('template');
 
   const main = doc.querySelector('main');
