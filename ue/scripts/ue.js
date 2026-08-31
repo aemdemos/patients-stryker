@@ -11,7 +11,6 @@
  */
 
 import { moveInstrumentation } from './ue-utils.js';
-import decorateDMAssets from '../../scripts/dm-support.js';
 
 const setupObservers = () => {
   const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
@@ -66,20 +65,7 @@ const setupObservers = () => {
 
 const setupUEEventHandlers = () => {
   document.body.addEventListener('aue:content-patch', ({ detail: { patch, request } }) => {
-    const resourceEl = document.querySelector(`[data-aue-resource="${request.target.resource}"]`);
-
-    // Dynamic Media images are authored as LINKS that dm-support.js converts to
-    // <picture> on decoration. When an author edits a field on an image cell (e.g.
-    // the alt), UE re-renders that cell from source — restoring the raw <a> link
-    // and undoing the conversion, so the image "disappears" in the editor even
-    // though the href is intact. Re-run the DM conversion on the affected block so
-    // the link is turned back into a <picture>. Idempotent: already-converted
-    // pictures are skipped, non-DM content is untouched.
-    if (resourceEl?.querySelector('a[href*="/is/image/"], a[href*="/adobe/assets/"]')) {
-      decorateDMAssets(resourceEl);
-    }
-
-    let element = resourceEl;
+    let element = document.querySelector(`[data-aue-resource="${request.target.resource}"]`);
     if (element && element.getAttribute('data-aue-prop') !== patch.name) {
       element = element.querySelector(`[data-aue-prop='${patch.name}']`);
     }
