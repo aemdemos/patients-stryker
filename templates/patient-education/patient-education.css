@@ -26,15 +26,22 @@ body.patient-education main > .section:first-child {
   padding-block: var(--space-block);
 }
 
-/* Source renders the standalone link uppercase with a trailing chevron (its
-   .standalone-link treatment). Match with uppercase + a "›" after the link. */
+/* Source renders the standalone link as Futura bold, uppercase, teal, with a
+   trailing chevron (its .standalone-link treatment: Futura LT W01 700, 14px).
+   The project's default link colour already matches the source teal; override
+   the family/weight to Futura bold and add the chevron. (The source's arrow is a
+   proprietary "strykericons" glyph the project doesn't ship, so use a plain "›"
+   — visually equivalent at this size.) */
 body.patient-education main > .section:first-child a {
+  font-family: var(--display-font-family);
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 body.patient-education main > .section:first-child a::after {
   content: " ›";
+  font-weight: 700;
 }
 
 /* ── Title bar (hero band) ────────────────────────────────────────────────────
