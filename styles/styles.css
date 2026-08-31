@@ -201,6 +201,13 @@ header {
   header {
     height: calc(var(--nav-height) + var(--nav-bar-height));
   }
+
+  /* the default (/nav) and /nav-legal navs have no gold bar, so they render a
+     single row — reserve only the white-bar height for them (set eagerly on
+     body via scripts.js from the nav metadata) */
+  body.nav-single-row header {
+    height: var(--nav-height);
+  }
 }
 
 header .header,
