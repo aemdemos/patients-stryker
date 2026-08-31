@@ -111,7 +111,6 @@
 .hero-container .hero-wrapper:has(.hero.banner) {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: var(--container-gutter);
 }
 
 .hero.banner {
@@ -176,11 +175,6 @@
   line-height: var(--heading-line-height);
 }
 
-/* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
-.hero.banner .button-wrapper {
-  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
-}
-
 /* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
 .hero.banner .button-wrapper:has(+ .button-wrapper),
 .hero.banner .button-wrapper + .button-wrapper {
@@ -189,7 +183,6 @@
 }
 
 .hero.banner .button-wrapper + .button-wrapper {
-  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
   margin-inline-start: 10px;
 }
 
@@ -315,6 +308,10 @@
     font-size: var(--heading-font-size-xl);
   }
 
+  .stroke-awareness-landing .hero.banner h2 {
+    padding-bottom: 20px;
+  }
+
   /* band — source drops the headline to 4vw and insets the copy 12% */
   .hero.band > div:last-child {
     padding-inline: 12%;
@@ -436,6 +433,10 @@
   display: none;
 }
 
+.section.text-first .hero.banner picture {
+  box-shadow: var(--shadow-soft);
+}
+
 .section.text-first .hero.banner > div:last-child {
   max-width: none;
   padding-block: var(--space-section) var(--space-block-l);
@@ -445,8 +446,8 @@
 padding: var(--space-section) var(--container-gutter) var(--space-block-l);
 }
 
-@media (width >= 600px) {
-  .section.text-first .hero.banner {
+@media (width >= 900px) {
+  .stroke-awareness-landing .section.text-first .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -455,10 +456,24 @@ padding: var(--space-section) var(--container-gutter) var(--space-block-l);
     grid-area: 1 / 1;
   }
 
-  .section.text-first .hero.banner > div:last-child {
+  /* top-align the copy in the overlay (source insets it ~65px from the top of
+     the banner), rather than vertically centering it */
+  .stroke-awareness-landing .section.text-first .hero.banner > div:last-child {
     z-index: 1;
-    align-self: center;
+    align-self: start;
     max-width: 50%;
-    padding-block: 0;
+    padding-block: calc(var(--space-section-l) + var(--space-block)) 0;
+  }
+
+  /* source spacing: 35px below the headline, 15px below "Select language" to
+     the buttons (our base banner rule adds a 35px top margin to buttons which
+     over-spaces them here, so reset it) */
+  .stroke-awareness-landing .section.text-first .hero.banner h1 {
+    margin-bottom: calc(var(--space-block-l) + var(--space-block));
+  }
+
+  .stroke-awareness-landing .section.text-first .hero.banner .button-wrapper,
+  .stroke-awareness-landing .section.text-first .hero.banner .button-wrapper + .button-wrapper {
+    margin-block: 0 var(--space-block);
   }
 }
