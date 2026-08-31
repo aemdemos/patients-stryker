@@ -3,19 +3,50 @@
    via decorateTemplateAndTheme() in scripts.js / aem.js. Scoped to `body.sticky`
    so nothing here leaks onto other templates. */
 
-/* Standalone default-content paragraphs on the landing page (e.g. the video
-   intro "When someone is having a stroke...") — the source renders these as
-   14px body-serif black. A global rule (styles.css) shrinks every default
-   paragraph that follows a fullbleed hero to 12px for the bottom disclaimer;
-   that also catches the video intro, so restore the source measure here.
-   Scoped to the video section's default content. Uses :has() on the section to
-   out-specify the global `~ .section > .default-content-wrapper > p` rule.
-   The trailing `compact` disclaimer section is intentionally left at 12px. */
-body.sticky main > .section.video-container[data-anchor]:has(.default-content-wrapper) > .default-content-wrapper > p {
+/* Columns body copy (What is a stroke / Stroke is treatable / resources links) —
+   the source renders these in the same 14px HumanistSlab serif rather than the
+   larger heading-serif the columns `serif` / `light-gray` variants apply.
+   (Lowest-specificity rule first, to satisfy no-descending-specificity.) */
+body.sticky main .section .columns p,
+body.sticky main .section .columns li {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
+}
+
+/* Risk-factors lead-in ("These risk factors include the following:") — the
+   icon-list tile block renders its last default paragraph in Futura bold, but
+   the source keeps it regular 14px serif like the surrounding copy. (Placed
+   before the hero-sibling rule below to satisfy no-descending-specificity.) */
+body.sticky main > .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+}
+
+/* Default body copy across the sticky landing page — the source renders every
+   body / intro paragraph in 14px HumanistSlab serif (line-height 1.375). The
+   shared blocks render them in heading-serif, and a global rule (styles.css)
+   shrinks every default paragraph following a fullbleed hero to 12px for the
+   bottom disclaimer — both wrong for this page. This selector mirrors that
+   global rule's structure plus `body.sticky`, so it out-weighs it and restores
+   the 14px source measure for every section after the hero. The `compact`
+   disclaimer is excluded and keeps its smaller size. */
+body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > .default-content-wrapper > p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: var(--paragraph-line-height);
   color: var(--color-text);
+}
+
+/* Bottom disclaimer (compact section) — the source renders this small print at
+   11.2px HumanistSlab serif. Mirrors the global fullbleed-sibling selector's
+   structure (plus body.sticky) so it out-weighs that rule's 12px override. */
+body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.compact > .default-content-wrapper > p {
+  font-family: var(--body-font-family);
+  font-size: var(--footnote-font-size);
+  line-height: var(--paragraph-line-height);
 }
 
 /* Video section — the source lays the video and its supporting paragraph out as
