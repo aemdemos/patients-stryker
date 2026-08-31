@@ -223,8 +223,7 @@ var CustomImportScript = (() => {
         ".c-back-to-top"
       ]);
       if (isSaResources) {
-        const publishedDate = element.querySelector("#publishedDate");
-        if (publishedDate) publishedDate.removeAttribute("id");
+        WebImporter.DOMUtils.remove(element, ["#publishedDate"]);
       } else {
         WebImporter.DOMUtils.remove(element, [
           ".c-disclaimer",
@@ -453,7 +452,7 @@ var CustomImportScript = (() => {
         id: "downloads",
         name: "Downloads (4-up)",
         selector: ".cols4",
-        style: null,
+        style: "divider",
         blocks: ["cards-brochure"],
         defaultContent: []
       },

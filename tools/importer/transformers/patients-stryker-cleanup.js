@@ -151,12 +151,9 @@ export default function transform(hookName, element, payload) {
       // sa-resources authors its legal/educational disclaimer paragraphs inside
       // ".c-disclaimer" (cleaned.html lines 880-887) — that is AUTHORABLE content and
       // must survive (it becomes the trailing "compact" disclaimer section). The
-      // "Last Updated December/2025" line (`p#publishedDate`, line 892) is ALSO kept
-      // for this template: the already-migrated sibling stroke-awareness index page
-      // authors it as trailing disclaimer text, so we preserve it here to match.
-      // Just strip its id so it imports as a plain paragraph, not chrome.
-      const publishedDate = element.querySelector('#publishedDate');
-      if (publishedDate) publishedDate.removeAttribute('id');
+      // "Last Updated December/2025" line (`p#publishedDate`, line 892) is
+      // auto-generated document chrome, not authored disclaimer copy, so strip it.
+      WebImporter.DOMUtils.remove(element, ['#publishedDate']);
     } else {
       // Legal pages: ".c-disclaimer" only ever holds the auto-generated document-id /
       // "Last Updated December/2025" chrome (lines 242-244), distinct from the authored

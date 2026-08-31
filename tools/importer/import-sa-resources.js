@@ -76,7 +76,7 @@ const PAGE_TEMPLATE = {
       id: 'downloads',
       name: 'Downloads (4-up)',
       selector: '.cols4',
-      style: null,
+      style: 'divider',
       blocks: ['cards-brochure'],
       defaultContent: [],
     },

@@ -462,6 +462,7 @@
    (the .futura-bold .fontsize-1-75em headings coloured #ffb500). */
 .columns.related-links h3 {
   margin-bottom: var(--space-block);
+  padding-bottom: 2%;
   font-family: var(--display-font-family-bold);
   font-weight: 700;
   font-size: var(--heading-font-size-xl);
