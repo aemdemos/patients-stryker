@@ -123,6 +123,11 @@
   overflow: clip;
 }
 
+.section.text-first .hero.banner {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .hero.banner picture {
   position: static;
   inset: auto;
@@ -278,7 +283,8 @@
   }
 
   /* banner — copy overlays the image, vertically centered */
-  .hero.banner {
+  .hero.banner, 
+  .section.text-first .hero.banner  {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -393,10 +399,6 @@
   }
 }
 
-/* fullbleed caps at 1400px — where 3.5vw/1.5vw naturally reach 49px/21px, so the
-   headline scales smoothly to the source's max size with no jump (matches the
-   original, whose cap also lands ~1400px). Poster caps earlier (5vw hits 60px at
-   1200px), so it stays in the 1200px block above. */
 @media (width >= 1400px) {
   .hero.fullbleed h1 {
     font-size: 49px;
@@ -422,5 +424,41 @@
 
   .hero picture.hero-image-mobile {
     display: none;
+  }
+}
+
+.section.text-first .hero.banner picture.hero-image-desktop {
+  display: block;
+  box-shadow: var(--shadow-soft);
+}
+
+.section.text-first .hero.banner picture.hero-image-mobile {
+  display: none;
+}
+
+.section.text-first .hero.banner > div:last-child {
+  max-width: none;
+  padding-block: var(--space-section) var(--space-block-l);
+}
+
+.stroke-awareness-landing .hero-container .hero.banner > div:last-child{
+padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  .section.text-first .hero.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .section.text-first .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+  .section.text-first .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: center;
+    max-width: 50%;
+    padding-block: 0;
   }
 }
