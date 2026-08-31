@@ -146,36 +146,42 @@ body.patient-education .cards.resources .cards-card-body :is(h1, h2, h3, h4, h5,
 
 /* ── Gold "for more information" CTA band ─────────────────────────────────────
    The source's .c-full-bleed-panel.bg-golden-gradient bar: a left-to-right gold
-   gradient (measured: #af6d04 → #ffb500 at 20%) with centered dark text. The
-   page authors this as a `gold, full-bleed` section; the project has no shared
-   `.section.gold` style, so define it here, scoped to this page.
-   Height: the source has NO section padding — its ~71px height (@1280) is just
-   the RTE container's 2% top/bottom margins + one text line. The global section
-   padding (30px) makes ours too tall, so zero it and put the rhythm on the copy. */
+   gradient (measured: #af6d04 → #ffb500 at 20%) with centered dark text, ~71px
+   tall at 1280px (≈25px above + one 17.5px line + ≈25px below).
+
+   Height is applied as SECTION PADDING, not margin on the copy: a child <p>'s
+   vertical margins collapse straight through the padding-less section and escape
+   the gold background (leaving a ~20px squished band), whereas padding always
+   expands the box and is contained. ~2% top/bottom scales with width like the
+   source. The global default-content-wrapper padding is zeroed so it doesn't add
+   to the section padding. */
 body.patient-education main > .section.gold {
   background-image: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
   color: var(--text-color);
   text-align: center;
-  padding-block: 0;
+  padding-block: 2%;
 }
 
-/* the lead copy: light serif (URW Egyptienne), matching the source; 2% top/bottom
-   margin so the band height tracks the source across widths (the global
-   default-content-wrapper's own padding is dropped so only this margin counts). */
 body.patient-education main > .section.gold > .default-content-wrapper {
   padding-block: 0;
 }
 
+/* lead copy: light serif (URW Egyptienne) at 17.5px (source fontsize-1-25em =
+   1.25 × 14). Zero the <p>'s own margin so only the section padding sets height. */
 body.patient-education main > .section.gold p {
-  margin-block: 2%;
+  margin-block: 0;
   font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
 }
 
 /* the "PATIENTINFO.STRYKER.COM" link: Futura bold, uppercase, teal, no underline,
-   with the same strykericons arrow as the eyebrow link (source .standalone-link). */
+   with the same strykericons arrow as the eyebrow link (source .standalone-link).
+   NOTE: the source resets the link back to 14px (its fontsize-1em wrapper) even
+   though the lead copy is 17.5px — so the link is SMALLER than the lead text. */
 body.patient-education main > .section.gold p a {
   font-family: var(--display-font-family);
   font-weight: 700;
+  font-size: var(--body-font-size-m);
   text-transform: uppercase;
   text-decoration: none;
 }
