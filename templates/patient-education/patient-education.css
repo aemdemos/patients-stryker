@@ -152,14 +152,16 @@ body.patient-education .cards.resources .cards-card-body :is(h1, h2, h3, h4, h5,
    Height is applied as SECTION PADDING, not margin on the copy: a child <p>'s
    vertical margins collapse straight through the padding-less section and escape
    the gold background (leaving a ~20px squished band), whereas padding always
-   expands the box and is contained. ~2% top/bottom scales with width like the
-   source. The global default-content-wrapper padding is zeroed so it doesn't add
-   to the section padding. */
+   expands the box and is contained. The source's spacing resolves to a FIXED
+   25px top/bottom (its 2% is against a capped ~1250px container, not the full
+   viewport — so a raw 2% here over-pads on wide screens). Match with 25px so the
+   band is ~71px (25 + 21px line + 25) at every width. The global
+   default-content-wrapper padding is zeroed so it doesn't add to this. */
 body.patient-education main > .section.gold {
   background-image: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
   color: var(--text-color);
   text-align: center;
-  padding-block: 2%;
+  padding-block: 25px;
 }
 
 body.patient-education main > .section.gold > .default-content-wrapper {
