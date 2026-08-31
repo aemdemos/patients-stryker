@@ -117,10 +117,18 @@ body.patient-education .hero.band h1 {
    "Learn more about brain aneurysm…" is authored as an <h2>. The source renders
    it in the LIGHT SERIF face (URW Egyptienne, weight 500), not the Futura-bold
    the global h2 rule applies. Re-map the leading default-content h2 to the
-   heading serif. */
+   heading serif.
+
+   Spacing: the source sits this line ~30px below the title bar and ~30px above
+   the cards (its RTE container's 2%/4% margins). The global h2 only gives a 15px
+   bottom margin and 0 top, so the line ends up cramped against the banner. Add
+   the ~30px top/bottom rhythm here (page-scoped — a global h2 margin change would
+   move every other h2, e.g. card titles). NOT a global concern; belongs here. */
 body.patient-education main > .section > .default-content-wrapper h2 {
   font-family: var(--heading-font-family);
   font-weight: 500;
+  margin-top: var(--space-section);
+  margin-bottom: var(--space-section);
 }
 
 /* ── Patient-guide cards (cards resources) ────────────────────────────────────
