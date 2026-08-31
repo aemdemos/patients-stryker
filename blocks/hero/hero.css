@@ -305,14 +305,6 @@
     margin-bottom: 0;
   }
 
- .stroke-awareness-landing .hero.banner h1 {
-    font-size: 7vw;
-  }
-
-  .hero.banner h2 {
-    font-size: var(--heading-font-size-xl);
-  }
-
   /* band — source drops the headline to 4vw and insets the copy 12% */
   .hero.band > div:last-child {
     padding-inline: 12%;
@@ -320,6 +312,14 @@
 
   .hero.band h1 {
     font-size: 4vw;
+  }
+
+  .stroke-awareness-landing .hero.banner h1 {
+    font-size: 7vw;
+  }
+
+  .hero.banner h2 {
+    font-size: var(--heading-font-size-xl);
   }
 
   /* poster — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
