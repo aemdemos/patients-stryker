@@ -16,10 +16,6 @@ const transformers = [
 // document (same pattern as the /fragments/card-* documents). The main
 // patient-information page then embeds this via a `fragment` block, so the
 // resources band is authored once and shared.
-//
-// NOTE: this is the US variant, deliberately named distinctly from the existing
-// /fragments/stroke-awareness-resources (the WW variant, already in use with a
-// different middle column + /ww/ links) so the two never collide.
 const FRAGMENT = {
   name: 'patient-information-resources',
   // where the fragment document is written (DA path, no .html)
@@ -102,11 +98,9 @@ export default {
     executeTransformers('afterTransform', source, payload);
 
     // 2. Fragment body = the columns block PLUS its own section metadata. The
-    //    band's `light-gray, full-bleed` styling lives INSIDE the fragment (same
-    //    as the sibling WW /fragments/stroke-awareness-resources) so it renders
-    //    self-contained wherever it's embedded — the host page doesn't need to
-    //    re-declare the section style. No page-level metadata block (that's only
-    //    for full pages, not fragments).
+    //    band's `light-gray, full-bleed` styling lives INSIDE the fragment so it
+    //    renders self-contained wherever it's embedded. No page-level metadata
+    //    block (that's only for full pages, not fragments).
     const main = document.createElement('div');
     main.append(buildResourcesColumns(document, source));
     main.append(sectionMetadata(document, 'light-gray, full-bleed'));

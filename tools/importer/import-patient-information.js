@@ -244,11 +244,8 @@ export default {
 
     // --- Section 4: 3-column resources footer (embedded as a FRAGMENT) --------
     // The columns band is authored once in /fragments/patient-information-resources
-    // and embedded here via a Fragment block, so it can be reused across pages.
-    // (Named distinctly from the existing WW /fragments/stroke-awareness-resources,
-    // which has different content and is already in use.) The fragment carries its
-    // OWN `light-gray, full-bleed` section metadata (self-contained, matching the
-    // WW sibling), so the host page does NOT re-declare the section style here.
+    // and embedded here via a Fragment block so it can be reused across pages. The
+    // fragment carries its own `light-gray, full-bleed` section metadata.
     main.append(fragmentBlock(document, '/fragments/patient-information-resources'));
     main.append(document.createElement('hr'));
 
