@@ -878,10 +878,65 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 }
 
 .zip-skin-closure main > .section.light-gray {
-    padding-top: 4%;
-    padding-right: 15%;
-    padding-left: 15%;
-    padding-bottom: 3%;
+    padding: 4% 15% 3%;
     margin-bottom: 100px;
-    margin-top: 100px; 
+    margin-top: 100px;
+}
+
+/* "How Zip works" intro paragraph — the source renders it at 24.5px (its
+   .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.
+   Scoped to the zip page's "How Zip works" heading + its following paragraph so
+   no other intro paragraph is affected. Same size at all widths, matching source.
+   (Targets an `h2 + p`, disjoint from the earlier hero `p:first-child` rule, so the
+   descending-specificity ordering this flags can't collide at runtime.) */
+/* stylelint-disable-next-line no-descending-specificity */
+.zip-skin-closure main > .section > .default-content-wrapper h2 + p {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* "Zip can help create a better patient experience." — the source renders this
+   light-gray band headline at 35px in Futura bold (its .fontsize-2-5em), not the
+   24.5px h2 default. Scoped to the zip light-gray section headline. */
+.zip-skin-closure main > .section.light-gray h2 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+/* "How Zip works" section heading — Futura bold at 35px on the source (its
+   .fontsize-2-5em), at every width, not the 24.5px serif h2 the zip page defaults
+   to. The heading is the only columns-section h2 authored with a <strong>. */
+.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) strong {
+  font-weight: 700;
+}
+
+/* "Benefits of Zip" section heading — Futura bold at 28px on the source (its h2
+   default), at every width. Scoped to the icon-grid section's heading. */
+.zip-skin-closure main > .section.columns-container:has(.columns-icon-grid) > .default-content-wrapper h2 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+.zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  line-height: var(--heading-line-height-ml);
+}
+
+@media (width >= 900px) {
+  .zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xl);
+  }
 }

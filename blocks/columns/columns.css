@@ -188,6 +188,13 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
   }
 }
 
+body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+  font-family: var(--heading-font-family);
+  font-size: 5vw;
+  font-weight: 400;
+  line-height: var(--heading-line-height-hero);
+}
+
 /* hero subhead — the global `.columns p` rule enlarges body copy to 17.5px in the
    Humanist Slab body face, but the source subhead ("The puncture-free future of
    skin closure") is 14px in the URW Egyptienne serif at line-height 1.35. Restore
@@ -197,6 +204,12 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-size: var(--body-font-size-m);
   line-height: var(--heading-line-height-hero);
   padding-top: 30px;
+}
+
+@media (width >= 600px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: 2.5vw;
+  }
 }
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
@@ -533,7 +546,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
    breakpoint (1024px), keeping the headline from overwhelming wide viewports
    (~94px at 1440px). This specific 1024px switch matches the source and is
    independent of the 900px column-layout breakpoint above. */
-@media (width >= 1024px) {
+@media (width >= 600px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: min(6.5vw, 91px);
   }
