@@ -224,3 +224,13 @@ body.patient-education main > .section:has(.columns) {
 body.patient-education main .columns p:has(> em > strong) {
   font-size: var(--heading-font-size-xl);
 }
+
+/* ── Disclaimer (compact) top spacing ─────────────────────────────────────────
+   The compact disclaimer section sits flush against the gray resources band; the
+   source leaves ~30px above it. `.section.compact` (styles.css) only sets a
+   bottom margin, so add the top margin here, scoped to this page (a global change
+   would shift every other compact section, e.g. the ENT condition pages). Target
+   the compact section that follows the resources fragment. */
+body.patient-education main > .section.fragment-container + .section.compact {
+  margin-top: var(--space-section);
+}
