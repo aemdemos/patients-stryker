@@ -63,6 +63,7 @@ body.sa-resources .section.divider > .default-content-wrapper h2 {
    The source renders it in the same light serif ~43px as the card titles, not the
    Futura-bold default h2. */
 body.sa-resources .section.cards-container > .default-content-wrapper h2 {
+  margin: 2% 0 3%;
   font-family: var(--heading-font-family);
   font-weight: 500;
   font-size: var(--heading-font-size-xxxl);
