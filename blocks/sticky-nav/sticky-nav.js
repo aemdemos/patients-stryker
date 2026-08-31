@@ -3,13 +3,9 @@
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 /**
- * Resolve a nav link's target: `#id`, bare `id`, or URL ending in `#id`.
- * A section explicitly authored with `data-anchor="<id>"` wins over a plain
- * element id, because auto-generated heading ids can collide with an intended
- * section anchor (e.g. a hero <h1>Understanding stroke</h1> auto-ids to
- * `understanding-stroke`, the same anchor the "Understanding stroke" nav item
- * targets on its content section). Preferring the section keeps the jump — and
- * the sticky-nav's injected scroll padding — on the real destination.
+ * Resolve a nav target from an id. A `.section[data-anchor]` wins over a plain
+ * element id (auto-generated heading ids can collide). `data-anchor` may be a
+ * comma-separated list, so several items can share one section.
  * @param {string} href
  * @returns {Element|null}
  */
@@ -18,18 +14,16 @@ function resolveTarget(href) {
   const hash = href.includes('#') ? href.slice(href.indexOf('#') + 1) : href;
   if (!hash) return null;
 
-  const byAnchor = document.querySelector(`.section[data-anchor="${CSS.escape(hash)}"]`);
-  if (byAnchor) {
-    if (!byAnchor.id) byAnchor.id = hash;
-    return byAnchor;
-  }
+  const byAnchor = [...document.querySelectorAll('.section[data-anchor]')].find((s) => s.dataset.anchor
+    .split(',')
+    .some((a) => a.trim() === hash));
+  if (byAnchor) return byAnchor;
 
   return document.getElementById(hash);
 }
 
 /**
- * Extract a bare anchor id from a candidate string: the part after `#`, or the
- * whole trimmed string when it has no `#`.
+ * Bare anchor id from a string: the part after `#`, else the trimmed string.
  * @param {string} s
  * @returns {string}
  */
@@ -42,9 +36,8 @@ const anchorId = (s) => {
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 
 /**
- * Animate scroll with easing, re-sampling the target each frame so any
- * mid-scroll layout shift (lazy content) is absorbed smoothly instead of
- * causing a second, jarring jump.
+ * Eased scroll, re-sampling the target each frame so lazy-content shifts are
+ * absorbed smoothly.
  * @param {() => number} getTargetY
  * @param {number} duration
  */
@@ -72,14 +65,11 @@ export default function decorate(block) {
 
   [...block.children].forEach((row) => {
     const [labelCell, targetCell] = row.children;
-    // skip blank rows (e.g. a trailing empty cell left by authoring) so they
-    // don't render as an empty, purposeless nav item
+    // skip blank rows so they don't render as empty nav items
     if (!labelCell || !labelCell.textContent.trim()) return;
 
-    // Target may be authored as a plain `#anchor` string OR as a link whose
-    // visible text is `#anchor` but whose href is a placeholder (e.g. `/`).
-    // Prefer whichever candidate actually carries an anchor id, so a stray
-    // `href="/"` never wins over the `#anchor` the author typed.
+    // Target may be a plain `#anchor` string or a link with placeholder href
+    // (e.g. `/`). Prefer whichever candidate carries an anchor id.
     const link = targetCell?.querySelector('a');
     const linkHref = link?.getAttribute('href') || '';
     const cellText = targetCell?.textContent.trim() || '';
@@ -91,9 +81,7 @@ export default function decorate(block) {
     item.className = 'sticky-nav-item';
     item.href = href;
 
-    // Row = the sticky-nav-item component, so its instrumentation goes on the
-    // <a> (keeps the item selectable/reorderable in UE); the label field's
-    // instrumentation goes on the <p> so the label stays inline-editable.
+    // move UE instrumentation: row → <a> (selectable item), label → <p> (editable)
     moveInstrumentation(row, item);
     const labelEl = labelCell.querySelector('p') || document.createElement('p');
     moveInstrumentation(labelCell, labelEl);
@@ -108,12 +96,8 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(nav);
 
-  // scroll-spy: track each item's containing section (not the heading itself).
-  // Targets are resolved LAZILY (not cached once) because some anchors live in a
-  // fragment that loads asynchronously after this block decorates — e.g.
-  // `#patient-information` is a heading inside the related-links fragment. A
-  // one-time build would drop those late-loading targets, so they could never
-  // scroll-offset or go active. Re-resolving each pass keeps them in sync.
+  // Resolve targets lazily (not once) so anchors inside async-loaded fragments
+  // are picked up. Region = the item's containing section, not the heading.
   const currentTargets = () => items
     .map(({ item, href }) => {
       const anchor = resolveTarget(href);
@@ -135,12 +119,22 @@ export default function decorate(block) {
   applyScrollOffset();
   window.addEventListener('resize', applyScrollOffset, { passive: true });
 
-  // scroll the section (not the heading) so its padded top shows the gap below the bar
-  items.forEach(({ item, href }) => {
+  const setCurrent = (activeItem) => {
+    items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
+  };
+
+  // For items sharing one region (comma-separated `data-anchor`), active state
+  // follows the last-clicked item rather than the last in the bar.
+  let clickedItem = null;
+
+  items.forEach((entry) => {
+    const { item, href } = entry;
     item.addEventListener('click', (e) => {
       const target = resolveTarget(href);
       if (!target) return;
       e.preventDefault();
+      clickedItem = item;
+      setCurrent(item);
       const region = target.closest('.section') || target;
       const getTargetY = () => {
         const off = block.getBoundingClientRect().height || 70;
@@ -151,19 +145,14 @@ export default function decorate(block) {
   });
 
   if (items.length) {
-    const setCurrent = (activeItem) => {
-      items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
-    };
-
-    // active = last section past the line below the bar; nothing active until the bar pins
+    // active = last section past the line below the bar; inactive until the bar pins
     let ticking = false;
     const update = () => {
       ticking = false;
-      // re-resolve targets each pass so fragment-hosted anchors are included once loaded
       const targets = currentTargets();
       const barRect = block.getBoundingClientRect();
       const barHeight = barRect.height || 70;
-      const pinned = barRect.top <= 1; // sticky container has reached the top
+      const pinned = barRect.top <= 1;
       const line = barHeight + GAP + 2;
       let activeIndex = -1;
       if (pinned) {
@@ -171,11 +160,17 @@ export default function decorate(block) {
           if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
         });
       }
-      // force the last item active at page bottom (short final section may never reach the line)
+      // pin the last item at page bottom (a short final section may never reach the line)
       const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
         >= document.documentElement.scrollHeight - 2;
       if (atBottom) activeIndex = targets.length - 1;
-      setCurrent(activeIndex >= 0 ? targets[activeIndex].item : null);
+
+      if (activeIndex < 0) { setCurrent(null); return; }
+      // among items sharing the active region, prefer the clicked one
+      const activeRegion = targets[activeIndex].region;
+      const group = targets.filter((t) => t.region === activeRegion);
+      const clicked = group.find((t) => t.item === clickedItem);
+      setCurrent(clicked ? clicked.item : group[0].item);
     };
 
     const onScroll = () => {

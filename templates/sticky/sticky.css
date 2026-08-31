@@ -1,13 +1,8 @@
-/* Sticky landing-page template styles.
-   Activated when page metadata sets `template: sticky`, which adds `body.sticky`
-   via decorateTemplateAndTheme() in scripts.js / aem.js. Scoped to `body.sticky`
-   so nothing here leaks onto other templates. */
+/* Sticky landing-page template. `template: sticky` metadata adds `body.sticky`;
+   every rule is scoped to it so nothing leaks to other templates. */
 
-/* ── Hero (fullbleed) positioning ──────────────────────────────────────────
-   The source places the overlaid headline ~10% from the left and near the top
-   of the image, close under the logo. The shared hero.fullbleed CSS + the
-   section's 70px top padding push our copy too far down and too far left, so
-   override both here (scoped to this template). */
+/* Hero: place the overlaid headline ~10% from the left, near the top (drop the
+   section's 70px top padding and the shared hero's larger insets). */
 body.sticky main > .section.hero-container {
   padding-top: 0;
 }
@@ -16,10 +11,8 @@ body.sticky main .hero.fullbleed > div:last-child {
   padding: 4% 8% 0 10%;
 }
 
-/* Columns body copy (What is a stroke / Stroke is treatable / resources links) —
-   the source renders these in the same 14px HumanistSlab serif rather than the
-   larger heading-serif the columns `serif` / `light-gray` variants apply.
-   (Lowest-specificity rule first, to satisfy no-descending-specificity.) */
+/* Columns body copy → 14px body-serif (not the columns variants' heading-serif).
+   Lowest-specificity first, for no-descending-specificity. */
 body.sticky main .section .columns p,
 body.sticky main .section .columns li {
   font-family: var(--body-font-family);
@@ -27,24 +20,16 @@ body.sticky main .section .columns li {
   line-height: var(--paragraph-line-height);
 }
 
-/* Risk-factors lead-in ("These risk factors include the following:") — the
-   icon-list tile block renders its last default paragraph in Futura bold, but
-   the source keeps it regular 14px serif like the surrounding copy. (Placed
-   before the hero-sibling rule below to satisfy no-descending-specificity.) */
+/* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold.
+   Before the hero-sibling rule below, for no-descending-specificity. */
 body.sticky main > .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   font-weight: 400;
 }
 
-/* Default body copy across the sticky landing page — the source renders every
-   body / intro paragraph in 14px HumanistSlab serif (line-height 1.375). The
-   shared blocks render them in heading-serif, and a global rule (styles.css)
-   shrinks every default paragraph following a fullbleed hero to 12px for the
-   bottom disclaimer — both wrong for this page. This selector mirrors that
-   global rule's structure plus `body.sticky`, so it out-weighs it and restores
-   the 14px source measure for every section after the hero. The `compact`
-   disclaimer is excluded and keeps its smaller size. */
+/* All default body copy → 14px body-serif. Mirrors the global fullbleed-sibling
+   selector (+ body.sticky) to out-weigh its 12px shrink; excludes .compact. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > .default-content-wrapper > p {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -53,34 +38,22 @@ body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.
   color: var(--color-text);
 }
 
-/* Bottom disclaimer (compact section) — the source renders this small print at
-   11.2px HumanistSlab serif. Mirrors the global fullbleed-sibling selector's
-   structure (plus body.sticky) so it out-weighs that rule's 12px override. */
+/* Bottom disclaimer → 11.2px small print (same selector shape to win over 12px). */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.compact > .default-content-wrapper > p {
   font-family: var(--body-font-family);
   font-size: var(--footnote-font-size);
   line-height: var(--paragraph-line-height);
 }
 
-/* ── Section vertical rhythm ────────────────────────────────────────────────
-   The source gives each content band consistent internal top/bottom padding
-   (~45px) rather than margins between sections. Our content sections ship with
-   padding:0 (or a 70px top injected by sticky-nav on anchored sections), so the
-   gaps read unevenly. Apply a uniform block padding to the content sections
-   (columns / icon-list / fragment), leaving hero, sticky-nav and the compact
-   disclaimer to their own spacing. */
+/* Section rhythm: uniform block padding on content bands (source uses internal
+   padding, not inter-section margins); hero/sticky-nav/compact keep their own. */
 body.sticky main > .section.columns-container,
 body.sticky main > .section.icon-list-container,
 body.sticky main > .section.fragment-container {
   padding-block: var(--space-section-l);
 }
 
-/* Video section — the source lays the video and its supporting paragraph out as
-   two side-by-side columns. EDS delivers them as two stacked section wrappers
-   (.video-wrapper + .default-content-wrapper), so from tablet up make the section
-   a flex row and split it 50/50, vertically centring the text against the video.
-   Mobile stays stacked (base). The source also frames the video band with
-   generous top/bottom breathing room, so pad the section block. */
+/* Video: stacked on mobile; 50/50 video + text row from tablet up. */
 body.sticky main > .section.video-container {
   padding-block: var(--space-section-l);
 }
