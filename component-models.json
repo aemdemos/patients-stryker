@@ -110,6 +110,13 @@
         "label": "Background Image",
         "valueType": "string",
         "multi": false
+      },
+      {
+        "component": "text",
+        "name": "anchor",
+        "label": "Anchor ID",
+        "valueType": "string",
+        "description": "Optional unique id (e.g. find-a-doctor). Use it as a Sticky Nav item Target with a # prefix."
       }
     ]
   },
@@ -166,7 +173,8 @@
     "id": "card",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "image",
         "label": "Image (Dynamic Media link)"
       },
@@ -282,7 +290,8 @@
         ]
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "desktopImage",
         "label": "Desktop Image (Dynamic Media link)"
       },
@@ -294,7 +303,8 @@
         "value": ""
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "mobileImage",
         "label": "Mobile Image (Dynamic Media link, optional)",
         "condition": {
