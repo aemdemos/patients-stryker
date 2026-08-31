@@ -12,6 +12,20 @@
  * values, no new blocks.
  */
 
+/* Stryker icon font — the source's proprietary glyph set (self-hosted exactly as
+   the reference site does). Only the standalone-link arrow (U+E250) is used here.
+   Declared in the template stylesheet (a @font-face registers globally wherever
+   it's declared) to keep this page's dependency self-contained. The woff is the
+   source's own file (fonts/strykericons.woff, 2.4KB) — the origin ships woff/ttf
+   only, so no woff2 variant exists to add. */
+@font-face {
+  font-family: "strykericons";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/strykericons.woff') format('woff');
+}
+
 /* ── "Stryker's Neurovascular portfolio" eyebrow link ─────────────────────────
    Sits above the title bar as a right-aligned teal standalone link (the project's
    default link colour already matches the source teal). It's authored as the
@@ -33,13 +47,9 @@ body.patient-education main > .section:first-child {
   padding-block: 0;
 }
 
-/* Source renders the standalone link as Futura bold, uppercase, teal, with a
-   trailing SOLID triangle marker (its .standalone-link treatment: Futura LT W01
-   700, 14px). The project's default link colour already matches the source teal;
-   override the family/weight to Futura bold and add the marker. (The source's
-   arrow is a proprietary "strykericons" glyph the project doesn't ship, so use a
-   filled Unicode triangle "▸" — the closest shape match to the source's solid
-   arrowhead, rather than a thin "›" chevron.) */
+/* Source renders the standalone link as Futura bold, uppercase, teal (its
+   .standalone-link treatment: Futura LT W01 700, 14px). The project's default
+   link colour already matches the source teal; override the family/weight. */
 body.patient-education main > .section:first-child a {
   font-family: var(--display-font-family);
   font-weight: 700;
@@ -47,9 +57,16 @@ body.patient-education main > .section:first-child a {
   text-decoration: none;
 }
 
+/* Trailing arrow — the exact source glyph (strykericons U+E250), reproduced with
+   the reference site's own .standalone-link::after rule: 0.85em icon, 0.5em left
+   pad, nudged down 2px to sit on the text baseline. Inherits the link's teal. */
 body.patient-education main > .section:first-child a::after {
-  content: " ▸";
-  font-weight: 700;
+  content: "\e250";
+  display: inline-block;
+  font-family: "strykericons";
+  font-size: 0.85em;
+  padding-left: 0.5em;
+  transform: translate(0, 2px);
 }
 
 /* ── Title bar (hero band) ────────────────────────────────────────────────────
