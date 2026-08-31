@@ -7,11 +7,12 @@
       "plugins": {
         "da": {
           "name": "Hero",
-          "rows": 3,
-          "columns": 1,
+          "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
           "fields": [
-            { "name": "desktopImage", "selector": "div:nth-child(1)>div>picture>img[src]" },
-            { "name": "mobileImage", "selector": "div:nth-child(2)>div>picture>img[src]" },
+            { "name": "desktopImage", "selector": "div:nth-child(1) a[href]" },
+            { "name": "desktopImageAlt", "selector": "div:nth-child(1) a" },
+            { "name": "mobileImage", "selector": "div:nth-child(2) a[href]" },
+            { "name": "mobileImageAlt", "selector": "div:nth-child(2) a" },
             { "name": "content", "selector": "div:nth-child(3)>div" }
           ]
         }
@@ -47,11 +48,10 @@
           ]
         },
         {
-          "component": "reference",
+          "component": "text",
           "valueType": "string",
           "name": "desktopImage",
-          "label": "Desktop Image",
-          "multi": false
+          "label": "Desktop Image (Dynamic Media link)"
         },
         {
           "component": "text",
@@ -61,11 +61,10 @@
           "value": ""
         },
         {
-          "component": "reference",
+          "component": "text",
           "valueType": "string",
           "name": "mobileImage",
-          "label": "Mobile Image (optional)",
-          "multi": false,
+          "label": "Mobile Image (Dynamic Media link, optional)",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
             { "in": ["banner", { "var": "classes" }] },

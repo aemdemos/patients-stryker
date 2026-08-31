@@ -1,0 +1,98 @@
+/*
+ * sticky-nav — in-page anchor bar migrated from patients.stryker.com IVS home.
+ * 70px full-bleed gray bar, 193px UPPERCASE items with white dividers, gold
+ * active box; sticky to top. Scoped to `.sticky-nav.block` to avoid colliding
+ * with `body.sticky-nav` (from `template: sticky-nav` metadata).
+ */
+
+/* full-bleed gray bar, ignoring the section's max-width container */
+.sticky-nav.block {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  background: var(--color-secondary);
+}
+
+/* hidden below 600px (source omits the bar on small screens) */
+.section.sticky-nav-container {
+  display: none;
+}
+
+/* sticky on the section (its <main> parent gives it room to travel) */
+@media (width >= 600px) {
+  .section.sticky-nav-container {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding-block: 0;
+  }
+}
+
+/* capped to five 193px items + centred: fixed cluster when wide, else items
+   shrink/wrap to fill 100% width — never horizontally scrollable */
+.sticky-nav .sticky-nav-list {
+  display: flex;
+  max-width: calc(5 * 193px);
+  margin-inline: auto;
+}
+
+/* transparent flex cell; its <p> is the gold box. flex:1 1 0 shares the row,
+   max-width caps at the source cell size */
+.sticky-nav .sticky-nav-item {
+  display: flex;
+  box-sizing: border-box;
+  flex: 1 1 0;
+  align-items: stretch;
+  justify-content: center;
+  min-width: 0;
+  max-width: 193px;
+  min-height: 70px;                  /* 62px box + 4+4 padding */
+  padding: 4px;
+  border: 0;
+  border-right: 1px solid var(--color-white);   /* white divider */
+  border-radius: var(--radius-none);
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* first item keeps a left divider so the bar's left edge is always framed */
+.sticky-nav .sticky-nav-item:first-child {
+  border-left: 1px solid var(--color-white);
+}
+
+/* label / gold-box carrier */
+.sticky-nav .sticky-nav-item p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 62px;                  /* source gold-box height */
+  margin: 0;
+  padding: 0 5px;
+  color: inherit;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);   /* 14px */
+  font-weight: 400;
+  line-height: 1.43;
+  text-transform: uppercase;
+  text-align: center;
+  overflow-wrap: break-word;         /* wrap long labels */
+}
+
+/* active item: gold box framed by white dividers on both sides */
+.sticky-nav .sticky-nav-item.sticky-nav-item-current {
+  color: var(--color-black);
+  border-right: 1px solid var(--color-white);
+  border-left: 1px solid var(--color-white);
+}
+
+.sticky-nav .sticky-nav-item-current p {
+  background: var(--color-accent);
+}
+
+.sticky-nav .sticky-nav-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
