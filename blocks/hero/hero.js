@@ -17,22 +17,18 @@ function setupHero(block) {
   let mobilePic = null;
   let contentCell = null;
 
-  [...block.children].forEach((row) => {
-    const cells = [...row.children];
-    if (cells.length >= 2) {
-      const label = cells[0].textContent.trim().toLowerCase();
-      const pic = cells[1].querySelector('picture');
-      if (label === 'mobile') mobilePic = pic || mobilePic;
-      else desktopPic = pic || desktopPic;
-    } else if (cells.length === 1) {
-      const cell = cells[0];
-      const pic = cell.querySelector('picture');
-      if (pic && !cell.querySelector('h1, h2, h3, p')) {
-        if (!desktopPic) desktopPic = pic;
-        else if (!mobilePic) mobilePic = pic;
-      } else if (cell.querySelector('h1, h2, h3, p')) {
-        contentCell = cell;
-      }
+  // Flat authoring structure: each top-level cell is either an image cell
+  // (a <picture> — from the converted DM link — plus its hidden alt paragraph)
+  // or the content cell (heading + copy). The first two image cells are desktop
+  // then mobile; the cell carrying a heading is the content cell.
+  [...block.children].forEach((cell) => {
+    const pic = cell.querySelector('picture');
+    const hasHeading = cell.querySelector('h1, h2, h3, h4, h5, h6');
+    if (pic && !hasHeading) {
+      if (!desktopPic) desktopPic = pic;
+      else if (!mobilePic) mobilePic = pic;
+    } else if (hasHeading || cell.querySelector('p')) {
+      contentCell = cell;
     }
   });
 
