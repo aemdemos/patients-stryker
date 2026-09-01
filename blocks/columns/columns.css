@@ -234,6 +234,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
     font-size: 35px;
   }
+
+  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div {
+    padding-left: 90px;
+}
 }
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
