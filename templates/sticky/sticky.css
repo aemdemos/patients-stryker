@@ -19,9 +19,33 @@ body.sticky main .hero.fullbleed img {
   aspect-ratio: 1 / 1;
 }
 
-@media (width >= 900px) {
+@media (width >= 600px) {
+  body.sticky main .hero.fullbleed {
+    min-height: calc(5 * var(--space-section-l));
+  }
+
+  body.sticky main .hero picture.hero-image-desktop {
+    display: block;
+    height: 100%;
+  }
+
+  body.sticky main .hero picture.hero-image-mobile {
+    display: none;
+  }
+
   body.sticky main .hero.fullbleed img {
+    height: 100%;
     aspect-ratio: auto;
+    object-fit: cover;
+  }
+
+  body.sticky main .hero.fullbleed > div:last-child {
+    max-width: 45%;
+    padding: 4% 0 0 10%;
+  }
+
+  body.sticky main .hero.fullbleed p {
+    font-size: clamp(var(--body-font-size-m), 1.5vw, var(--heading-font-size-l));
   }
 }
 
@@ -43,7 +67,7 @@ body.sticky main .hero.fullbleed h1 {
   color: var(--color-accent);
 }
 
-@media (width >= 900px) {
+@media (width >= 600px) {
   body.sticky main .hero.fullbleed h1 {
     font-size: 5vw;
   }
@@ -67,6 +91,10 @@ body.sticky main .section .columns h2 {
   color: var(--color-accent);
 }
 
+body > main > div.serif.light-gray.section.columns-container {
+  padding-top: 0;
+}
+
 /* MOBILE BASE is 26.25px (matching the icon-list section titles); >=600px scales
    these column titles up to the desktop 31.5px. */
 @media (width >= 600px) {
@@ -77,6 +105,7 @@ body.sticky main .section .columns h2 {
 }
 
 body.sticky main .section .columns.related-links h3 {
+  padding-top: 35px;
   font-size: var(--heading-font-size-xl);
 }
 
@@ -183,18 +212,7 @@ body.sticky main .icon-list.tile .icon-list-text p {
   line-height: var(--body-line-height-l);
 }
 
-/* Icon-list / fragment band rhythm: uniform internal block padding at all widths. */
-body.sticky main > .section.icon-list-container,
-body.sticky main > .section.fragment-container {
-  padding-block: var(--space-section-l);
-}
 
-/* Columns band rhythm — MOBILE BASE: the source gives the stacked image+text
-   (columns) sections much more breathing room on mobile than the 50px band (the gap
-   into/out of these sections is ~270px larger). >=600px scales back to 50px. */
-body.sticky main > .section.columns-container {
-  padding-block: 165px;
-}
 
 @media (width >= 600px) {
   body.sticky main > .section.columns-container {
@@ -233,27 +251,6 @@ body.sticky main > .section.light-gray {
   margin-top: var(--space-section-l);
 }
 
-/* Resources fragment (related-links) — the source stacks its three columns
-   (Stroke awareness resources / Patient information / Regional information) ONE PER
-   ROW full-width through tablet, only going 3-up at the desktop breakpoint. The
-   shared light-gray block floats them 2-up from 600px, collapsing the section's
-   height. Force each column full-width in the tablet band (600–900px) to match the
-   source; the shared block's own >=900 rule restores the 3-up desktop row. */
-@media (width >= 600px) and (width < 900px) {
-  body.sticky main > .section.light-gray .columns.related-links > div > div {
-    float: none;
-    width: 100%;
-  }
-}
-
-/* Stroke facts (icon-list cols-4, no tile/label variant) — MOBILE BASE: the source
-   stacks the four stats one-per-row full-width (icons hidden), only going 4-up with
-   icons at >=1200px. The shared block goes 4-up from 600px, so hold a single column
-   as the base (through tablet) and restore 4-up at >=1200px. */
-body.sticky main .icon-list.cols-4:not(.tile, .label) ul.icon-list-items {
-  grid-template-columns: 1fr;
-}
-
 @media (width >= 1200px) {
   body.sticky main .icon-list.cols-4:not(.tile, .label) ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
@@ -282,8 +279,22 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > div {
   max-width: 100%;
 }
 
-body.sticky main > .section.serif .columns.columns-50-50 > div > div:not(.columns-img-col) {
-  padding-inline: 53px;
+body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(1) {
+  /* padding-inline: 53px; */
+  padding: 15% 10% 10%;
+}
+
+body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(2) {
+  /* padding-inline: 53px; */
+  padding-bottom: 70px;
+}
+
+body.sticky > main > div.section.video-container > div.default-content-wrapper {
+  padding: 20% 10% 10% 5%;
+}
+
+body.sticky > main > div.light-gray.section.icon-list-container > div.default-content-wrapper > h3 {
+  padding-top: 5%;
 }
 
 /* Stacked text→image gap — MOBILE BASE: in the text-FIRST row ("What is a stroke"),
@@ -297,58 +308,59 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
 }
 
 @media (width >= 600px) {
-  body.sticky main > .section.serif .columns.columns-50-50 > div > div:not(.columns-img-col) {
-    padding-inline: 89px;
+  /* The source starts its editorial image/text rows at its 840px breakpoint,
+     which maps to the local 600px tablet breakpoint. */
+  body.sticky main > .section.serif .columns.columns-50-50 > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div {
+    box-sizing: border-box;
+    float: none;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+  }
+
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(1) {
+    padding: 0 var(--container-gutter) !important;
+  }
+
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(2) {
+    padding: 0 var(--container-gutter) !important;
   }
 
   body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
-    margin-top: 123px;
+    margin-top: 0;
+  }
+
+  body.sticky main > .section.sticky-nav-container + .section.serif .columns.columns-50-50 > div {
+    padding-top: calc(2 * var(--space-block-l));
   }
 }
 
-/* Desktop: the columns are side by side, so drop the stacked text→image top gap. */
-@media (width >= 900px) {
+/* From tablet up, the columns are side by side, so drop the stacked image gap. */
+@media (width >= 600px) {
   body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
     margin-top: 0;
   }
 }
 
-/* Desktop: hand the serif columns back to the shared block's side-by-side row. My
-   stacked base rules above out-specify the shared block's own desktop rules, so
-   reset layout here; the text-cell inset is restored to the shared block's values
-   per row direction (image-left → gap on text's left; image-right → gap on both,
-   matching columns.css --col-5050-inset). */
-@media (width >= 900px) {
+/* Keep the tablet and desktop serif columns top-aligned. */
+@media (width >= 600px) {
   body.sticky main > .section.serif .columns.columns-50-50 > div {
-    flex-flow: row nowrap;
-    align-items: center;
+    align-items: start;
   }
 
   body.sticky main > .section.serif .columns.columns-50-50 > div > div {
-    flex: 0 0 50%;
     width: auto;
     max-width: none;
   }
-
-  /* image-left row (text is 2nd child): inset text's left toward the image. */
-  body.sticky main > .section.serif .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
-    padding-inline: var(--col-5050-inset, 83px) var(--container-gutter);
-  }
-
-  /* image-right row (text is 1st child): inset text's right toward the image, plus
-     its outer (left) edge, as the shared block does. */
-  body.sticky main > .section.serif .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
-    padding-inline: var(--col-5050-inset, 83px);
-  }
 }
 
-/* Video: stacked (full-width) on mobile and tablet; video + text row only from the
-   desktop breakpoint up (the source keeps this stacked until 900px). */
-body.sticky main > .section.video-container {
-  padding-block: var(--space-section-l);
-}
-
-@media (width >= 900px) {
+@media (width >= 600px) {
   body.sticky main > .section.video-container[data-anchor]:has(.video) {
     display: flex;
     flex-wrap: wrap;

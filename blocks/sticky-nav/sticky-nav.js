@@ -106,12 +106,9 @@ export default function decorate(block) {
     })
     .filter((t) => t.region);
 
-  // gap lives as section padding-top (not scroll offset) so it shows even for the first section
-  const GAP = 70;
   const applyScrollOffset = () => {
     const bar = `${block.getBoundingClientRect().height || 70}px`;
     currentTargets().forEach(({ region, anchor }) => {
-      region.style.paddingTop = `${GAP}px`;
       region.style.scrollMarginTop = bar;
       if (anchor && anchor !== region) anchor.style.scrollMarginTop = bar;
     });
