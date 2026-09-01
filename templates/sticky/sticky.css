@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 /* Sticky landing-page template. `template: sticky` metadata adds `body.sticky`;
    every rule is scoped to it so nothing leaks to other templates. */
 
@@ -197,6 +199,14 @@ body.sticky main > .section.fragment-container {
   body.sticky main > .section.compact > .default-content-wrapper {
     padding-inline: var(--space-section);
   }
+
+  /* Vertical rhythm: the source gives the image+text (columns) sections much more
+     breathing room on mobile than the default 50px band padding — the gap into and
+     out of these sections is ~270px larger. Add generous vertical padding so the
+     stacked image↔text sections match the source's taller mobile rhythm. */
+  body.sticky main > .section.columns-container {
+    padding-block: 165px;
+  }
 }
 
 /* Colour-banded sections (light-gray): the gap above the band must be WHITE, not
@@ -207,12 +217,33 @@ body.sticky main > .section.light-gray {
   margin-top: var(--space-section-l);
 }
 
-/* Video: stacked on mobile; 50/50 video + text row from tablet up. */
+/* Tablet (600–900px): the source keeps the serif 50/50 columns STACKED (image
+   below full-width text) until the desktop breakpoint — the shared columns block
+   otherwise splits them 50/50 from 600px, squishing the text to a narrow column.
+   Force column-direction and full-width cells in this range to match the source. */
+@media (width >= 600px) and (width < 900px) {
+  body.sticky main > .section.serif .columns.columns-50-50 > div {
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
+
+  /* neutralise the shared tablet image/text gutters so the stacked cells
+     fill the row edge-to-edge like the source */
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 0;
+  }
+}
+
+/* Video: stacked (full-width) on mobile and tablet; video + text row only from
+   the desktop breakpoint up. The source keeps this stacked until 900px. */
 body.sticky main > .section.video-container {
   padding-block: var(--space-section-l);
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
   body.sticky main > .section.video-container[data-anchor]:has(.video) {
     display: flex;
     flex-wrap: wrap;
@@ -233,13 +264,12 @@ body.sticky main > .section.video-container {
     padding-inline: var(--container-gutter);
   }
 
+  /* margin-left:auto pushes the copy right so the gap sits between video and text */
   body.sticky main > .section.video-container[data-anchor] > .default-content-wrapper {
     flex: 0 0 44%;
     box-sizing: border-box;
     max-width: 44%;
-    margin: 0;
-    /* push the copy to the right of its cell so the gap sits between video and text */
-    margin-left: auto;
+    margin: 0 0 0 auto;
     padding-inline: var(--container-gutter);
   }
 }
