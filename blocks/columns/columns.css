@@ -13,6 +13,10 @@
   height: auto;
 }
 
+.zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div {
+ padding-left: 70px;
+}
+
 .columns > div > div {
   box-sizing: border-box;
   padding: 0 15px;
@@ -144,11 +148,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
   line-height: var(--heading-line-height-hero);
 }
 
-/* hero product image — the source stretches it to fill the full width of its
-   right-hand column (the intrinsic asset is only 600px wide, so left at its
-   natural size it would sit centred and under-fill the column). Force it to fill
-   the column width like the source's .img-responsive. Scoped to the hero row so
-   other 50-50 image rows keep their centred, capped images. */
 body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
   width: 100%;
 }
@@ -162,12 +161,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
   display: none;
 }
 
-/* zip hero, 2-up (>= 600px) — the source hero isn't a true 50-50: the product
-   image is an overlay pinned to the right at ~half the viewport width, while the
-   copy spans the full row width underneath. Reproduce that from the tablet
-   breakpoint up so the image matches the source's width and the crop height scales
-   with the viewport (33.333vw). The row reserves the crop height via min-height so
-   the absolutely-positioned image is always contained. */
 @media (width >= 600px) {
   /* restore the image column and CTA hidden on mobile once the hero is 2-up */
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
@@ -190,10 +183,11 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
     top: 0;
     right: 0;
     width: 51%;
-    max-height: 33.333vw; /* matches the source's viewport-scaled crop */
+    max-height: 33.333vw; 
     margin-bottom: 0;
     padding: 0;
     overflow: clip;
+    padding-left: 7%;
   }
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
@@ -218,7 +212,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--heading-line-height-hero);
-  padding-top: 30px;
 }
 
 /* hero subhead — mapped to the source's rendered size at the breakpoint mapping
@@ -397,14 +390,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   text-decoration: none;
 }
 
-/* ------------------------------------------------------------------------- *
-   Responsive breakpoints — consolidated. All @media blocks live at the end of
-   the file so every responsive override lands after the mobile-first base and
-   variant rules it refines. Order within each breakpoint is preserved from the
-   original interleaved rules; 600px (tablet) precedes 900px (desktop).
- * ------------------------------------------------------------------------- */
-
-/* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
   .section.compact .columns h2 {
     font-size: var(--heading-font-size-compact-m);
@@ -433,7 +418,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   /* in an image+text row, the text column sits slightly below the image top, as
      in the reference. Only applies when the row has a picture (not text+text rows). */
   .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-    padding-top: var(--space-section);
+    padding-top: 50px;
   }
 
   /* wider gap between image and text than the base 30px gutter (reference ~64px):
@@ -596,10 +581,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   }
 }
 
-.zip-skin-closure .columns-container h2{
-margin-top: 5%;
-}
-
 /* ===== related-links variant =====
    A reusable columns treatment for the stroke-awareness "related links" fragment
    (Understanding stroke / Patient information / Regional information): gold
@@ -624,16 +605,6 @@ margin-top: 5%;
   color: var(--color-accent);
 }
 
-/* "Learn more" CTA — source renders it in Futura bold at 17.5px, teal, with a
-   chevron appended via the proprietary strykericons font (content "\e250",
-   ~0.85em); we draw the chevron in CSS so it renders without that font. Only the
-   CTA links carry it: they are the anchor in a paragraph that FOLLOWS a body-copy
-   paragraph (the "Learn more" links under the first two columns' descriptions).
-   The regional-info link list (links with no preceding body paragraph) is
-   intentionally excluded.
-   `a:any-link` (vs plain `a`) lifts specificity to (0,3,5) so the Futura family
-   beats the shared `.section.light-gray .columns a` rule (0,3,1) when this
-   fragment is inlined inside a light-gray section on a host page. */
 .columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
   display: inline-flex;
   align-items: center;
@@ -653,7 +624,6 @@ margin-top: 5%;
   border-width: 6px 0 6px 8px;
   border-color: transparent transparent transparent currentcolor;
 }
-
 
 .zip-skin-closure h2 {
   font-family: var(--heading-font-family);
