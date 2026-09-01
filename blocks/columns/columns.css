@@ -629,3 +629,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-family: var(--heading-font-family);
   font-weight: 500;
 }
+
+.zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2 {
+  padding-top: var(--space-section-l);
+}
