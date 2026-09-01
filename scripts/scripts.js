@@ -370,6 +370,16 @@ async function decorateLastModified(main) {
 export function decorateMain(main) {
   // convert external Dynamic Media asset links into native <picture>/<video>
   decorateDMAssets(main);
+  // LCP: dm-support renders every DM image loading="lazy", and aem.js's
+  // waitForFirstImage only flips the first image to eager (never sets
+  // fetchpriority). Promote the LCP candidate — the first image in main — to
+  // eager + fetchpriority=high here so it's discoverable and prioritized from
+  // the initial render, whether it's a DM image or a normal <picture>.
+  const lcpImg = main.querySelector('img');
+  if (lcpImg) {
+    lcpImg.setAttribute('loading', 'eager');
+    lcpImg.setAttribute('fetchpriority', 'high');
+  }
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
