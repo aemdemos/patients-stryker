@@ -366,82 +366,12 @@ body.stroke-awareness-landing .hero.banner {
   }
 }
 
-/* ===== Desktop (900px) — fullbleed switches to a side-column overlay on a
-   wide-crop image. Below this the fullbleed copy keeps its mobile treatment
-   (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
-   matches the <600px view. ===== */
-@media (width >= 900px) {
-  /* top-align the copy near the top of the image (matches the source, which
-     insets it ~5% of the band height), rather than vertically centering it */
-  .hero.fullbleed > div:last-child {
-    align-self: start;
-    max-width: 45%;
-    padding: 5% 0 0 5vw;
-  }
-
-  /* wide crop — let the asset's own ratio drive the height */
-  .hero.fullbleed img {
-    aspect-ratio: auto;
-    object-fit: contain;
-  }
-
-  .hero.fullbleed h1 {
-    font-size: 3.5vw;
-  }
-
-  .hero.fullbleed p {
-    margin-top: 8px;
-    font-size: 1.5vw;
-    line-height: 1.35;
-  }
-}
-
-/* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
-   so text stops growing past this width ===== */
-@media (width >= 1200px) {
-  .hero.banner h1 {
-    font-size: 42px;
-  }
-
-  .hero.band h1 {
-    font-size: 48px;
-  }
-
-  .hero.fullbleed.poster h1 {
-    font-size: 60px;
-  }
-
-  .hero.fullbleed.poster p {
-    font-size: 18px;
-  }
-}
-
-@media (width >= 1400px) {
-  .hero.fullbleed h1 {
-    font-size: 49px;
-  }
-
-  .hero.fullbleed p {
-    font-size: 21px;
-  }
-}
-
 .hero picture.hero-image-desktop {
   display: none;
 }
 
 .hero picture.hero-image-mobile {
   display: block;
-}
-
-@media (width >= 900px) {
-  .hero picture.hero-image-desktop {
-    display: block;
-  }
-
-  .hero picture.hero-image-mobile {
-    display: none;
-  }
 }
 
 body.stroke-awareness-landing .hero.banner picture.hero-image-desktop {
@@ -474,7 +404,43 @@ body.stroke-awareness-landing .hero.banner h2 {
   padding-top: 7px;
 }
 
+/* ===== Desktop (900px) — fullbleed switches to a side-column overlay on a
+   wide-crop image. Below this the fullbleed copy keeps its mobile treatment
+   (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
+   matches the <600px view. ===== */
 @media (width >= 900px) {
+  /* top-align the copy near the top of the image (matches the source, which
+     insets it ~5% of the band height), rather than vertically centering it */
+  .hero.fullbleed > div:last-child {
+    align-self: start;
+    max-width: 45%;
+    padding: 5% 0 0 5vw;
+  }
+
+  /* wide crop — let the asset's own ratio drive the height */
+  .hero.fullbleed img {
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .hero.fullbleed h1 {
+    font-size: 3.5vw;
+  }
+
+  .hero.fullbleed p {
+    margin-top: 8px;
+    font-size: 1.5vw;
+    line-height: 1.35;
+  }
+
+  .hero picture.hero-image-desktop {
+    display: block;
+  }
+
+  .hero picture.hero-image-mobile {
+    display: none;
+  }
+
   /* desktop overlay — copy sits over the image, so the shadow goes back on the
      whole banner card (as the base banner variant) rather than the picture.
      Below 900px the copy stays stacked above the image. */
@@ -505,5 +471,35 @@ body.stroke-awareness-landing .hero.banner h2 {
   body.stroke-awareness-landing .hero.banner .button-wrapper + .button-wrapper {
     margin-block: 0 var(--space-block);
     padding-top: 20px;
+  }
+}
+
+/* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
+   so text stops growing past this width ===== */
+@media (width >= 1200px) {
+  .hero.banner h1 {
+    font-size: 42px;
+  }
+
+  .hero.band h1 {
+    font-size: 48px;
+  }
+
+  .hero.fullbleed.poster h1 {
+    font-size: 60px;
+  }
+
+  .hero.fullbleed.poster p {
+    font-size: 18px;
+  }
+}
+
+@media (width >= 1400px) {
+  .hero.fullbleed h1 {
+    font-size: 49px;
+  }
+
+  .hero.fullbleed p {
+    font-size: 21px;
   }
 }
