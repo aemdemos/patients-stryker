@@ -12,9 +12,9 @@ const transformers = [
 // PAGE TEMPLATE CONFIGURATION
 // The `patient-education` template — the shared layout for the Neurovascular
 // stroke-awareness landing pages. Main content maps onto existing blocks:
-//   - title bar ................ hero (band)      — gold H1 over the Resources gradient bar
-//   - intro line ............... default content  — <h2>
-//   - patient-guide cards ...... cards (resources)— portrait covers + PDF/product links
+//   - title bar ................ hero (band)         — gold H1 over the Resources gradient bar
+//   - intro line ............... default content     — <h2>
+//   - patient-guide cards ...... cards (brochure-cta)— portrait covers + PDF link + gold CTA
 //   - gold CTA band ............ default content in a `gold, full-bleed` section
 //   - resources footer ......... columns          — 3-column link band in a `light-gray` section
 //   - disclaimer ............... default content in a `compact` section
@@ -23,7 +23,7 @@ const transformers = [
 // resources.html is a follow-up task, added to `urls` for reference.
 const PAGE_TEMPLATE = {
   name: 'patient-education',
-  description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards resources), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
+  description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
   urls: [
     'https://patients.stryker.com/us/en/stroke-awareness/patient-information.html',
     'https://patients.stryker.com/us/en/stroke-awareness/resources.html',
@@ -131,15 +131,15 @@ function buildHeroBand(doc, source) {
 }
 
 /**
- * Build the cards (resources) block from the four `.col-md-3` brochure columns.
+ * Build the cards (brochure-cta) block from the four `.col-md-3` brochure columns.
  * Each card row = [ cover image | body ]:
  *   - cover: bare DM autolink of the thumbnail (rendered as a portrait <picture>)
  *   - body:  <h3> title linking to the patient-guide PDF, an "Additional product
- *            information:" line, and a gold product-page button.
+ *            information:" line, and a gold product-page CTA button.
  */
 function buildCards(doc, source) {
   const cols = [...source.querySelectorAll('.cols4 .col-md-3')];
-  const rows = [['Cards (resources)']];
+  const rows = [['Cards (brochure-cta)']];
 
   cols.forEach((col) => {
     const coverAnchor = col.querySelector('.standaloneimage a[href]');

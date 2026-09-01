@@ -35,13 +35,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-patient-information.js
+  // import-patient-information.js
   var import_patient_information_exports = {};
   __export(import_patient_information_exports, {
     default: () => import_patient_information_default
   });
 
-  // tools/importer/transformers/patient-information-cleanup.js
+  // transformers/patient-information-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var TRACKING_HOST_RE = /(demdex\.net|munchkin|marketo|omtrdc\.net|everesttech\.net|adobedtm|contextweb\.com|thrtle\.com|doubleclick|scorecardresearch|bidswitch|adnxs)/i;
   var PLACEHOLDER_RE = /(\{\{|\}\}|\$\{|%7B%7B|%24%7B)/;
@@ -94,13 +94,13 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/import-patient-information.js
+  // import-patient-information.js
   var transformers = [
     transform
   ];
   var PAGE_TEMPLATE = {
     name: "patient-education",
-    description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards resources), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
+    description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
     urls: [
       "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html",
       "https://patients.stryker.com/us/en/stroke-awareness/resources.html"
@@ -172,7 +172,7 @@ var CustomImportScript = (() => {
   }
   function buildCards(doc, source) {
     const cols = [...source.querySelectorAll(".cols4 .col-md-3")];
-    const rows = [["Cards (resources)"]];
+    const rows = [["Cards (brochure-cta)"]];
     cols.forEach((col) => {
       const coverAnchor = col.querySelector(".standaloneimage a[href]");
       const coverImg = col.querySelector(".standaloneimage img[src]");
