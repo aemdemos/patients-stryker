@@ -371,6 +371,16 @@ main ol.footnotes li {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
+/* the footnotes list carries the small-print size, but the "References" label and
+   the trailing disclaimer/code paragraphs in the same block are authored as plain
+   <p> and would otherwise render at full body size. The source renders the whole
+   block uniformly at 11.2px, so size every paragraph in a section that contains the
+   footnotes list to match (scoped via :has so it never affects other sections). */
+main .section:has(ol.footnotes) p {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
 /* compact section (references + disclaimer at the foot of ENT condition pages) —
    the source renders this whole block as small print: 11.2px, tight ~1.2 line-height,
    including the "References"/"Disclaimer" bold labels, the numbered list, and the
@@ -397,6 +407,7 @@ h2 strong em {
 }
 
 
+/* stylelint-disable-next-line no-descending-specificity */
 .section.compact p {
   font-size: var(--footnote-font-size);
 }

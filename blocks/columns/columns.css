@@ -207,6 +207,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
   font-size: 5vw;
   font-weight: 400;
   line-height: var(--heading-line-height-hero);
+  margin-bottom: 30px;
 }
 
 /* hero subhead — the global `.columns p` rule enlarges body copy to 17.5px in the
