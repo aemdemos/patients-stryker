@@ -11,6 +11,14 @@ body.sticky main .hero.fullbleed > div:last-child {
   padding: 4% 8% 0 10%;
 }
 
+/* Sticky-nav: the list is width-capped at five 193px items (965px) but this page
+   has only four (772px). Without centring, the four items pack to the left of that
+   reserved space, shifting the whole cluster ~96px left of the bar centre. Centre
+   them so the cluster sits at the viewport centre, matching the source. */
+body.sticky main .sticky-nav .sticky-nav-list {
+  justify-content: center;
+}
+
 /* Hero headline: the source renders the single-statement "Understanding stroke"
    headline in Futura bold at a larger fluid size (10vw mobile → 5vw desktop,
    capped 70px) rather than the shared block's light-serif 7vw/3.5vw. */
