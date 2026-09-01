@@ -159,6 +159,16 @@ export default function decorate(block) {
         targets.forEach((t, i) => {
           if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
         });
+        // Rescue a trailing section that can't scroll up to the line: a short final
+        // section near the page bottom (e.g. the resources fragment) may top out
+        // before its top reaches the line, so `top <= line` never matches it. Once
+        // such a section is clearly scrolled into view (top above the viewport
+        // midpoint), treat it — and any equally-in-view sections after the current
+        // pick — as active so the corresponding nav item highlights.
+        const midline = window.innerHeight / 2;
+        targets.forEach((t, i) => {
+          if (i > activeIndex && t.region.getBoundingClientRect().top <= midline) activeIndex = i;
+        });
       }
       // pin the last item at page bottom (a short final section may never reach the line)
       const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
