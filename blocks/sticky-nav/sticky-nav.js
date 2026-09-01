@@ -153,7 +153,7 @@ export default function decorate(block) {
       const barRect = block.getBoundingClientRect();
       const barHeight = barRect.height || 70;
       const pinned = barRect.top <= 1;
-      const line = barHeight + GAP + 2;
+      const line = barHeight + 2;
       let activeIndex = -1;
       if (pinned) {
         targets.forEach((t, i) => {
@@ -165,15 +165,36 @@ export default function decorate(block) {
         // such a section is clearly scrolled into view (top above the viewport
         // midpoint), treat it — and any equally-in-view sections after the current
         // pick — as active so the corresponding nav item highlights.
-        const midline = window.innerHeight / 2;
-        targets.forEach((t, i) => {
-          if (i > activeIndex && t.region.getBoundingClientRect().top <= midline) activeIndex = i;
-        });
+        if (activeIndex < 0) {
+          const midline = window.innerHeight / 2;
+          targets.forEach((t, i) => {
+            if (t.region.getBoundingClientRect().top <= midline) activeIndex = i;
+          });
+        }
       }
-      // pin the last item at page bottom (a short final section may never reach the line)
+      // Two nav items can target one section. The loops above naturally reach
+      // the latter item last, so normalize to the first item for that region.
+      if (activeIndex >= 0) {
+        const activeRegion = targets[activeIndex].region;
+        activeIndex = targets.findIndex((t) => t.region === activeRegion);
+      }
+      // Fall back to the final item at page bottom only when no section has
+      // already qualified. This prevents the fallback from overriding a
+      // resource section that is itself near the bottom of the document.
       const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
         >= document.documentElement.scrollHeight - 2;
-      if (atBottom) activeIndex = targets.length - 1;
+      if (atBottom && activeIndex < 0) activeIndex = targets.length - 1;
+
+      // Keep the clicked item highlighted while the eased scroll crosses the
+      // preceding section. Without this, scroll-spy immediately replaces it
+      // before the target has reached its active line.
+      const clickedTarget = targets.find((t) => t.item === clickedItem);
+      const targetIsNotActive = activeIndex < 0
+        || targets[activeIndex].region !== clickedTarget?.region;
+      if (clickedTarget && targetIsNotActive) {
+        setCurrent(clickedItem);
+        return;
+      }
 
       if (activeIndex < 0) { setCurrent(null); return; }
       // among items sharing the active region, prefer the clicked one so that
