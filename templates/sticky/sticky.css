@@ -339,28 +339,7 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
   body.sticky main > .section.sticky-nav-container + .section.serif .columns.columns-50-50 > div {
     padding-top: calc(2 * var(--space-block-l));
   }
-}
 
-/* From tablet up, the columns are side by side, so drop the stacked image gap. */
-@media (width >= 600px) {
-  body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
-    margin-top: 0;
-  }
-}
-
-/* Keep the tablet and desktop serif columns top-aligned. */
-@media (width >= 600px) {
-  body.sticky main > .section.serif .columns.columns-50-50 > div {
-    align-items: start;
-  }
-
-  body.sticky main > .section.serif .columns.columns-50-50 > div > div {
-    width: auto;
-    max-width: none;
-  }
-}
-
-@media (width >= 600px) {
   body.sticky main > .section.video-container[data-anchor]:has(.video) {
     display: flex;
     flex-wrap: wrap;
