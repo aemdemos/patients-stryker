@@ -134,12 +134,12 @@ body.patient-education main > .section > .default-content-wrapper h2 {
   margin-bottom: 4%;
 }
 
-/* ── Patient-guide cards (cards resources) ────────────────────────────────────
+/* ── Patient-guide cards (cards brochure-cta) ─────────────────────────────────
    The whole card is the click target, so the title text itself must not read as
    a link. The parser links the title to its PDF; the global link styles would
    paint it teal + underlined. Neutralise that so the title shows as plain bold
    text (matching the source's futura-bold black title). */
-body.patient-education .cards.resources .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
+body.patient-education .cards.brochure-cta .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
   color: inherit;
   text-decoration: none;
 }
@@ -232,6 +232,18 @@ body.patient-education main .columns p:has(> em > strong) {
    here on the cards' host section, scoped to this page. */
 body.patient-education main > .section.cards-container {
   margin-bottom: var(--space-section);
+}
+
+/* ── Cards CLS fix — reserve the cover-image box ──────────────────────────────
+   The brochure-cta covers are runtime-injected Dynamic Media <picture> images
+   with no width/height attrs and `aspect-ratio: auto` in the shared block, so
+   each box is 0px tall until it loads, then jumps to ~500px — pushing the title,
+   label, button and everything below it down (measured CLS ~0.88 mobile / ~0.31
+   desktop, essentially the whole page CLS). All four covers share a ~3:4 ratio
+   (631×828), so reserve that box up front. The block is shared/WIP, so this is
+   applied page-scoped here rather than in blocks/cards. */
+body.patient-education .cards.brochure-cta > ul > li img {
+  aspect-ratio: 631 / 828;
 }
 
 /* ── Disclaimer (compact) top spacing ─────────────────────────────────────────
