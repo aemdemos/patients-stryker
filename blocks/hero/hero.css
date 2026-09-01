@@ -502,13 +502,6 @@ body.stroke-awareness-landing .hero.banner h2 {
     padding-block: calc(var(--space-section-l) + var(--space-block)) 0;
   }
 
-  /* source spacing: 35px below the headline, 15px below "Select language" to
-     the buttons (our base banner rule adds a 35px top margin to buttons which
-     over-spaces them here, so reset it) */
-  body.stroke-awareness-landing .hero.banner h1 {
-    margin-bottom: calc(var(--space-block-l) + var(--space-block));
-  }
-
   body.stroke-awareness-landing .hero.banner .button-wrapper,
   body.stroke-awareness-landing .hero.banner .button-wrapper + .button-wrapper {
     margin-block: 0 var(--space-block);
