@@ -225,6 +225,15 @@ body.patient-education main .columns p:has(> em > strong) {
   font-size: var(--heading-font-size-xl);
 }
 
+/* ── Cards section bottom spacing ─────────────────────────────────────────────
+   The patient-guide cards section sits flush against the gold CTA band below it;
+   the source leaves ~30px between the cards row and the gold band. The cards block
+   sets no bottom spacing (and it's shared, so we don't edit it), so add the gap
+   here on the cards' host section, scoped to this page. */
+body.patient-education main > .section.cards-container {
+  margin-bottom: var(--space-section);
+}
+
 /* ── Disclaimer (compact) top spacing ─────────────────────────────────────────
    The compact disclaimer section sits flush against the gray resources band; the
    source leaves ~30px above it. `.section.compact` (styles.css) only sets a
