@@ -184,9 +184,9 @@ body.sticky main > .section.video-container {
     padding-inline: var(--container-gutter);
   }
 
-  /* video keeps ~49% (matches the source's 675/1380); the copy column is narrower
-     (~39%, 540/1380) so a wide gutter sits between them, as on the source, rather
-     than the text filling a full half up against the video. */
+  /* video keeps ~49% (matches the source's 675/1380); the copy column is ~44%
+     (540/1380 ≈ 39% text + its gutter) leaving a modest ~7% gap between them, as on
+     the source — not a full half filling up against the video. */
   body.sticky main > .section.video-container[data-anchor] > .video-wrapper {
     flex: 0 0 49%;
     box-sizing: border-box;
@@ -196,12 +196,11 @@ body.sticky main > .section.video-container {
   }
 
   body.sticky main > .section.video-container[data-anchor] > .default-content-wrapper {
-    flex: 0 0 39%;
+    flex: 0 0 44%;
     box-sizing: border-box;
-    max-width: 39%;
+    max-width: 44%;
     margin: 0;
-    /* push the copy toward the right of its cell, opening the ~98px gap the source
-       leaves between the video and the text */
+    /* push the copy to the right of its cell so the gap sits between video and text */
     margin-left: auto;
     padding-inline: var(--container-gutter);
   }

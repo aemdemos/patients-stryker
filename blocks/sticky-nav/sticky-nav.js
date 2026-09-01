@@ -176,11 +176,17 @@ export default function decorate(block) {
       if (atBottom) activeIndex = targets.length - 1;
 
       if (activeIndex < 0) { setCurrent(null); return; }
-      // among items sharing the active region, prefer the clicked one
+      // among items sharing the active region, prefer the clicked one so that
+      // sibling items pointing at the same section (comma-separated `data-anchor`,
+      // e.g. resources + patient-information on one fragment) highlight the item the
+      // user actually clicked rather than defaulting to the last in the group.
       const activeRegion = targets[activeIndex].region;
       const group = targets.filter((t) => t.region === activeRegion);
       const clicked = group.find((t) => t.item === clickedItem);
       setCurrent(clicked ? clicked.item : group[0].item);
+      // once the highlight matches the click, drop the click lock so subsequent
+      // scrolling into a different region updates normally.
+      if (!clicked || group.length <= 1) clickedItem = null;
     };
 
     const onScroll = () => {
