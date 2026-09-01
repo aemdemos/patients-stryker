@@ -846,15 +846,28 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   }
 }
 
+/* mobile-first: the source scales the visible headline at 8vw below its 841px
+   tablet breakpoint (25.6px@320 → 30px@375 → 48px@600 → 64px@800), then drops
+   to a 4vw curve above. Track 8vw here so the phone view matches the source
+   rather than flooring flat at 30px. */
 body.stroke-awareness-landing .hero.banner h1 {
-  font-size: clamp(30px, calc(3.94px + 3.615vw), 56px);
+  font-size: 8vw;
 }
 
-/* restate inside the 1200px cap block's viewport so the shared 42px cap can
-   never win by later source order on this page */
+/* tablet/desktop: source switches to a 4vw curve at its 841px breakpoint
+   (33.6px@841 → 41px@1024 → 52px@1300), capped at 56px (the cap engages at
+   1400px). min() reproduces the source exactly. */
+@media (width >= 841px) {
+  body.stroke-awareness-landing .hero.banner h1 {
+    font-size: min(4vw, 56px);
+  }
+}
+
+/* restate inside the 1200px cap block's viewport so the shared 42px cap in
+   hero.css can never win by later source order on this page */
 @media (width >= 1200px) {
   body.stroke-awareness-landing .hero.banner h1 {
-    font-size: clamp(30px, calc(3.94px + 3.615vw), 56px);
+    font-size: min(4vw, 56px);
   }
 }
 
