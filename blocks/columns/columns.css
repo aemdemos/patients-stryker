@@ -13,8 +13,12 @@
   height: auto;
 }
 
-.zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div {
- padding-left: 70px;
+/* hero/50-50 text cell — small mobile gutter. From the 2-up breakpoint up, the
+   inset becomes a fluid 15% (set in the >=600 rule) so it scales continuously with
+   the viewport like the source (138px@920, 183px@1220, 192px@1280 = 15%), rather
+   than holding a fixed px value and stepping at 1200. */
+.zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
+ padding-left: 30px;
 }
 
 .columns > div > div {
@@ -152,10 +156,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
   width: 100%;
 }
 
-/* zip hero (mobile) — the source shows only the headline + subhead on mobile,
-   hiding both the tall product image and the "FIND A SURGEON" CTA. Hide them at
-   base width; the tablet breakpoint below restores them once the columns sit
-   side by side. Scoped to the zip hero row. */
+body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  padding-top: var(--space-block);
+}
+
 body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
 body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
   display: none;
@@ -178,16 +182,27 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
     padding-right: 15px;
   }
 
+  /* fluid 15% left inset once the hero is 2-up — scales continuously with the
+     viewport (matches the source: 138px@920, 183px@1220, 192px@1280), no fixed-px
+     step. Reuses the base rule's selector so it reliably overrides the 30px mobile
+     value at the same specificity. */
+  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
+    padding-left: 10%;
+  }
+
   body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -25px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
     width: 51%;
-    max-height: 33.333vw; 
+    max-height: 33.333vw;
     margin-bottom: 0;
+
+    /* no left padding on the image column — the zipper graphic must fill the full
+       51% column width to render at the source's scale (~652px @1280). A left
+       padding here shrinks the image (was 7% ≈ 90px → drew only 563px wide). */
     padding: 0;
     overflow: clip;
-    padding-left: 7%;
   }
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
@@ -234,10 +249,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
     font-size: 35px;
   }
-
-  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div {
-    padding-left: 90px;
-}
 }
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
@@ -422,7 +433,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   /* in an image+text row, the text column sits slightly below the image top, as
      in the reference. Only applies when the row has a picture (not text+text rows). */
   .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-    padding-top: 50px;
+    padding-top: 8.1%;
   }
 
   /* wider gap between image and text than the base 30px gutter (reference ~64px):
