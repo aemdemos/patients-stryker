@@ -10,19 +10,23 @@ const transformers = [
 ];
 
 // PAGE TEMPLATE CONFIGURATION
-// The Neurovascular "Patient information" landing page. Main content maps onto
-// existing blocks:
+// The `patient-education` template — the shared layout for the Neurovascular
+// stroke-awareness landing pages. Main content maps onto existing blocks:
 //   - title bar ................ hero (band)      — gold H1 over the Resources gradient bar
 //   - intro line ............... default content  — <h2>
-//   - 4 patient-guide cards .... cards (resources)— 4-up portrait covers + PDF/product links
+//   - patient-guide cards ...... cards (resources)— portrait covers + PDF/product links
 //   - gold CTA band ............ default content in a `gold, full-bleed` section
 //   - resources footer ......... columns          — 3-column link band in a `light-gray` section
-//   - disclaimer / doc id ...... default content
+//   - disclaimer ............... default content in a `compact` section
+//
+// Covers two pages (same layout); only patient-information is imported so far —
+// resources.html is a follow-up task, added to `urls` for reference.
 const PAGE_TEMPLATE = {
-  name: 'patient-information',
-  description: 'Neurovascular patient-information landing page: gold title bar (hero band), intro line, a 4-up row of patient-guide brochure cards (cards resources), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
+  name: 'patient-education',
+  description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards resources), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
   urls: [
     'https://patients.stryker.com/us/en/stroke-awareness/patient-information.html',
+    'https://patients.stryker.com/us/en/stroke-awareness/resources.html',
   ],
   blocks: ['hero', 'cards', 'columns'],
 };

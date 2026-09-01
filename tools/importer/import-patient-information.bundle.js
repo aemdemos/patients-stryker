@@ -99,10 +99,11 @@ var CustomImportScript = (() => {
     transform
   ];
   var PAGE_TEMPLATE = {
-    name: "patient-information",
-    description: 'Neurovascular patient-information landing page: gold title bar (hero band), intro line, a 4-up row of patient-guide brochure cards (cards resources), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
+    name: "patient-education",
+    description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards resources), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
     urls: [
-      "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html"
+      "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html",
+      "https://patients.stryker.com/us/en/stroke-awareness/resources.html"
     ],
     blocks: ["hero", "cards", "columns"]
   };
