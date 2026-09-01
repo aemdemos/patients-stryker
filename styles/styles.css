@@ -963,6 +963,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     font-size: var(--heading-font-size-xl);
   }
 }
+
 /* Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
    1200), so the source's own breakpoints translate as: source 840px → 600px,
    1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
@@ -991,6 +992,7 @@ body.stroke-awareness-landing .hero.banner h1 {
 /* Word gap — the source keeps a space between "Understanding" and the gold
    "stroke"; our authored markup collapses the leading space inside the inline
    accent span, so restore the gap explicitly on the gold accent. */
+/* stylelint-disable-next-line no-descending-specificity */
 body.stroke-awareness-landing .hero.banner h1 em strong {
   margin-left: 0.2em;
 }
