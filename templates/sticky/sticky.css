@@ -11,6 +11,27 @@ body.sticky main .hero.fullbleed > div:last-child {
   padding: 4% 8% 0 10%;
 }
 
+/* Hero headline: the source renders the single-statement "Understanding stroke"
+   headline in Futura bold at a larger fluid size (10vw mobile → 5vw desktop,
+   capped 70px) rather than the shared block's light-serif 7vw/3.5vw. */
+body.sticky main .hero.fullbleed h1 {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  font-size: 10vw;
+}
+
+@media (width >= 900px) {
+  body.sticky main .hero.fullbleed h1 {
+    font-size: 5vw;
+  }
+}
+
+@media (width >= 1400px) {
+  body.sticky main .hero.fullbleed h1 {
+    font-size: 70px;
+  }
+}
+
 /* Section headings → gold Futura bold, like the icon-list sections. The source
    renders every section heading in the gold accent (#ffb500); the columns and
    fragment blocks otherwise leave them black serif. Columns headings are 31.5px
@@ -59,6 +80,64 @@ body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.compa
   font-family: var(--body-font-family);
   font-size: var(--footnote-font-size);
   line-height: var(--paragraph-line-height);
+}
+
+/* ── Body-copy sizes matched to the source (override the 14px defaults above) ──
+   The source does NOT use a uniform 14px; each context has its own size. These
+   selectors carry a section-variant class, so they out-specify the rules above. */
+
+/* Serif 50/50 columns ("What is a stroke?", "Stroke is treatable") → 21px URW. */
+body.sticky main .section.serif .columns :is(p, li, a) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+/* Video section copy ("When someone is having a stroke…") → 21px URW. Mirrors the
+   hero-sibling selector shape so it out-weighs the 14px default-copy rule above. */
+body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.video-container > .default-content-wrapper > p {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+/* Icon-list section intros (Symptoms / Risk-factors) → 17.5px URW serif. */
+body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > .default-content-wrapper > p {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* Risk-factors lead-in ("These risk factors include the following:") keeps the
+   source's Futura bold at that 17.5px size. */
+body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+}
+
+/* Fragment (related-links) descriptions + regional links → 17.5px URW serif. */
+body.sticky main .section .columns.related-links :is(p, a) {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* CTA links ("Learn More" / "Spread the word") — the link-only paragraph that
+   follows a descriptive paragraph in the same cell. Source: 17.5px Futura bold
+   uppercase (the regional-link list, with no preceding copy, stays URW serif). */
+body.sticky main .section .columns.related-links p:not(:has(a)) + p:has(> a:only-child) > a {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Risk-factor tile captions: source line-height is 20.125px (1.15), not the tile
+   block's default 1.375 (24px at 17.5px). */
+body.sticky main .icon-list.tile .icon-list-text,
+body.sticky main .icon-list.tile .icon-list-text p {
+  line-height: var(--body-line-height-l);
 }
 
 /* Section rhythm: uniform internal block padding on content bands; hero,
