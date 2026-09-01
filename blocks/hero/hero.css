@@ -464,6 +464,7 @@ body.stroke-awareness-landing .hero.banner picture {
 body.stroke-awareness-landing .hero.banner > div:last-child {
   max-width: none;
   padding-block: var(--space-section) var(--space-block-l);
+  padding-top: 50px;
 }
 
 /* "Select language" — source renders it at 21px with a tight line-height (not
@@ -471,6 +472,7 @@ body.stroke-awareness-landing .hero.banner > div:last-child {
 body.stroke-awareness-landing .hero.banner h2 {
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
+  padding-top: 7px;
 }
 
 @media (width >= 900px) {
