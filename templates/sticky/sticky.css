@@ -13,11 +13,15 @@ body.sticky main .hero.fullbleed > div:last-child {
   padding: 4% 8% 0 10%;
 }
 
-/* Mobile hero image: the source uses a 1:1 square crop (800×800) below the desktop
-   breakpoint, not the shared block's 4:5 portrait (which renders too tall). */
-@media (width < 900px) {
+/* Hero image — MOBILE BASE: 1:1 square crop (source's 800×800), not the shared
+   block's 4:5 portrait (too tall). Desktop restores the shared block's wide crop. */
+body.sticky main .hero.fullbleed img {
+  aspect-ratio: 1 / 1;
+}
+
+@media (width >= 900px) {
   body.sticky main .hero.fullbleed img {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
   }
 }
 
@@ -36,6 +40,7 @@ body.sticky main .hero.fullbleed h1 {
   font-family: var(--display-font-family);
   font-weight: 700;
   font-size: 10vw;
+  color: var(--color-accent);
 }
 
 @media (width >= 900px) {
@@ -58,16 +63,16 @@ body.sticky main .section .columns h3,
 body.sticky main .section .columns h2 {
   font-family: var(--display-font-family);
   font-weight: 700;
-  font-size: var(--icon-list-title-size);
+  font-size: var(--icon-list-title-size-s);
   color: var(--color-accent);
 }
 
-/* Below 600px the source shrinks these column titles to 26.25px (matching the
-   icon-list section titles), not the desktop 31.5px. */
-@media (width < 600px) {
+/* MOBILE BASE is 26.25px (matching the icon-list section titles); >=600px scales
+   these column titles up to the desktop 31.5px. */
+@media (width >= 600px) {
   body.sticky main .section .columns h3,
   body.sticky main .section .columns h2 {
-    font-size: var(--icon-list-title-size-s);
+    font-size: var(--icon-list-title-size);
   }
 }
 
@@ -178,34 +183,45 @@ body.sticky main .icon-list.tile .icon-list-text p {
   line-height: var(--body-line-height-l);
 }
 
-/* Section rhythm: uniform internal block padding on content bands; hero,
-   sticky-nav and compact keep their own. */
-body.sticky main > .section.columns-container,
+/* Icon-list / fragment band rhythm: uniform internal block padding at all widths. */
 body.sticky main > .section.icon-list-container,
 body.sticky main > .section.fragment-container {
   padding-block: var(--space-section-l);
 }
 
-/* Mobile horizontal inset: the source sits its content ~51px from the screen edge
-   (15px gutter + ~36px inner padding), not the 15px default. Add that inner padding
-   on the content wrappers below the tablet breakpoint so the copy doesn't run to the
-   edges. Scoped to the text bands (columns / icon-list / fragment / compact). */
-@media (width < 600px) {
+/* Columns band rhythm — MOBILE BASE: the source gives the stacked image+text
+   (columns) sections much more breathing room on mobile than the 50px band (the gap
+   into/out of these sections is ~270px larger). >=600px scales back to 50px. */
+body.sticky main > .section.columns-container {
+  padding-block: 165px;
+}
+
+@media (width >= 600px) {
+  body.sticky main > .section.columns-container {
+    padding-block: var(--space-section-l);
+  }
+}
+
+/* Horizontal inset — MOBILE BASE: the source sits content ~45px from the screen
+   edge (15px gutter + ~30px inner), not the 15px default, so copy doesn't run to the
+   edges. Scoped to the text bands. >=600px reverts to the shared 15px gutter. */
+body.sticky main > .section.columns-container > .columns-wrapper,
+body.sticky main > .section.columns-container > .default-content-wrapper,
+body.sticky main > .section.icon-list-container > .default-content-wrapper,
+body.sticky main > .section.icon-list-container > .icon-list-wrapper,
+body.sticky main > .section.fragment-container > .fragment-wrapper,
+body.sticky main > .section.compact > .default-content-wrapper {
+  padding-inline: var(--space-section);
+}
+
+@media (width >= 600px) {
   body.sticky main > .section.columns-container > .columns-wrapper,
   body.sticky main > .section.columns-container > .default-content-wrapper,
   body.sticky main > .section.icon-list-container > .default-content-wrapper,
   body.sticky main > .section.icon-list-container > .icon-list-wrapper,
   body.sticky main > .section.fragment-container > .fragment-wrapper,
   body.sticky main > .section.compact > .default-content-wrapper {
-    padding-inline: var(--space-section);
-  }
-
-  /* Vertical rhythm: the source gives the image+text (columns) sections much more
-     breathing room on mobile than the default 50px band padding — the gap into and
-     out of these sections is ~270px larger. Add generous vertical padding so the
-     stacked image↔text sections match the source's taller mobile rhythm. */
-  body.sticky main > .section.columns-container {
-    padding-block: 165px;
+    padding-inline: var(--container-gutter);
   }
 }
 
@@ -217,28 +233,117 @@ body.sticky main > .section.light-gray {
   margin-top: var(--space-section-l);
 }
 
-/* Tablet (600–900px): the source keeps the serif 50/50 columns STACKED (image
-   below full-width text) until the desktop breakpoint — the shared columns block
-   otherwise splits them 50/50 from 600px, squishing the text to a narrow column.
-   Force column-direction and full-width cells in this range to match the source. */
+/* Resources fragment (related-links) — the source stacks its three columns
+   (Stroke awareness resources / Patient information / Regional information) ONE PER
+   ROW full-width through tablet, only going 3-up at the desktop breakpoint. The
+   shared light-gray block floats them 2-up from 600px, collapsing the section's
+   height. Force each column full-width in the tablet band (600–900px) to match the
+   source; the shared block's own >=900 rule restores the 3-up desktop row. */
 @media (width >= 600px) and (width < 900px) {
-  body.sticky main > .section.serif .columns.columns-50-50 > div {
-    flex-flow: column nowrap;
-    align-items: stretch;
-  }
-
-  /* neutralise the shared tablet image/text gutters so the stacked cells
-     fill the row edge-to-edge like the source */
-  body.sticky main > .section.serif .columns.columns-50-50 > div > div {
-    flex: 0 0 auto;
+  body.sticky main > .section.light-gray .columns.related-links > div > div {
+    float: none;
     width: 100%;
-    max-width: 100%;
-    padding-inline: 0;
   }
 }
 
-/* Video: stacked (full-width) on mobile and tablet; video + text row only from
-   the desktop breakpoint up. The source keeps this stacked until 900px. */
+/* Stroke facts (icon-list cols-4, no tile/label variant) — MOBILE BASE: the source
+   stacks the four stats one-per-row full-width (icons hidden), only going 4-up with
+   icons at >=1200px. The shared block goes 4-up from 600px, so hold a single column
+   as the base (through tablet) and restore 4-up at >=1200px. */
+body.sticky main .icon-list.cols-4:not(.tile, .label) ul.icon-list-items {
+  grid-template-columns: 1fr;
+}
+
+@media (width >= 1200px) {
+  body.sticky main .icon-list.cols-4:not(.tile, .label) ul.icon-list-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Serif 50/50 columns — MOBILE BASE: the source keeps these STACKED (image below
+   full-width text) through tablet, only going side-by-side at desktop. The shared
+   block splits them 50/50 from 600px, so hold the stacked layout as the base and
+   restore the shared desktop row at >=900px. Stacked, the text column insets more
+   than the image: 53px per side on mobile, 89px on tablet (centring the copy), while
+   the image cell keeps the 15px gutter. The wrapper is pulled to 15px so the image
+   sits near full-width. */
+body.sticky main > .section.serif.columns-container > .columns-wrapper {
+  padding-inline: var(--container-gutter);
+}
+
+body.sticky main > .section.serif .columns.columns-50-50 > div {
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+body.sticky main > .section.serif .columns.columns-50-50 > div > div {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+body.sticky main > .section.serif .columns.columns-50-50 > div > div:not(.columns-img-col) {
+  padding-inline: 53px;
+}
+
+/* Stacked text→image gap — MOBILE BASE: in the text-FIRST row ("What is a stroke"),
+   the source leaves a generous gap between the body copy and the image below it
+   (~88px mobile). The shared block only spaces BELOW the image, leaving text and
+   image touching, so add a top gap on the image cell — but ONLY when it follows the
+   text (:not(:first-child)); the image-FIRST row ("Stroke is treatable") keeps the
+   image snug above its heading. Widens to ~123px on tablet; removed at desktop. */
+body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
+  margin-top: 88px;
+}
+
+@media (width >= 600px) {
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div:not(.columns-img-col) {
+    padding-inline: 89px;
+  }
+
+  body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
+    margin-top: 123px;
+  }
+}
+
+/* Desktop: the columns are side by side, so drop the stacked text→image top gap. */
+@media (width >= 900px) {
+  body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+/* Desktop: hand the serif columns back to the shared block's side-by-side row. My
+   stacked base rules above out-specify the shared block's own desktop rules, so
+   reset layout here; the text-cell inset is restored to the shared block's values
+   per row direction (image-left → gap on text's left; image-right → gap on both,
+   matching columns.css --col-5050-inset). */
+@media (width >= 900px) {
+  body.sticky main > .section.serif .columns.columns-50-50 > div {
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div {
+    flex: 0 0 50%;
+    width: auto;
+    max-width: none;
+  }
+
+  /* image-left row (text is 2nd child): inset text's left toward the image. */
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+    padding-inline: var(--col-5050-inset, 83px) var(--container-gutter);
+  }
+
+  /* image-right row (text is 1st child): inset text's right toward the image, plus
+     its outer (left) edge, as the shared block does. */
+  body.sticky main > .section.serif .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-inline: var(--col-5050-inset, 83px);
+  }
+}
+
+/* Video: stacked (full-width) on mobile and tablet; video + text row only from the
+   desktop breakpoint up (the source keeps this stacked until 900px). */
 body.sticky main > .section.video-container {
   padding-block: var(--space-section-l);
 }
@@ -248,28 +353,28 @@ body.sticky main > .section.video-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    column-gap: 7%;                 /* ~98/1380 gap between video and copy, as source */
     max-width: var(--container-max);
     margin-inline: auto;
     padding-inline: var(--container-gutter);
   }
 
-  /* video keeps ~49% (matches the source's 675/1380); the copy column is ~44%
-     (540/1380 ≈ 39% text + its gutter) leaving a modest ~7% gap between them, as on
-     the source — not a full half filling up against the video. */
+  /* video ≈ 675/1380 of the content width, left-aligned (matches the source). */
   body.sticky main > .section.video-container[data-anchor] > .video-wrapper {
     flex: 0 0 49%;
     box-sizing: border-box;
     max-width: 49%;
     margin: 0;
-    padding-inline: var(--container-gutter);
+    padding-inline: 0;
   }
 
-  /* margin-left:auto pushes the copy right so the gap sits between video and text */
+  /* copy ≈ 540/1380 ≈ 39%, left of the gap — NOT flush to the container edge (the
+     source leaves ~80px free to its right). */
   body.sticky main > .section.video-container[data-anchor] > .default-content-wrapper {
-    flex: 0 0 44%;
+    flex: 0 0 39%;
     box-sizing: border-box;
-    max-width: 44%;
-    margin: 0 0 0 auto;
-    padding-inline: var(--container-gutter);
+    max-width: 39%;
+    margin: 0;
+    padding-inline: 0;
   }
 }
