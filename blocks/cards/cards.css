@@ -35,6 +35,12 @@
   .cards.linked > ul {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  /* minmax(0, 1fr): columns default to min-width auto, so the nowrap CTA button
+     forces overflow ~1040px — let columns shrink and ellipsis takes over */
+  .cards.brochure-cta > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .cards > ul > li {
@@ -190,4 +196,63 @@
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
+}
+
+/* brochure-cta: cover, Futura-bold title, light-serif label, gold CTA button
+   (CTA authored as bold+italic link -> .button.accent = source .btn-gold).
+   Flex column so label + button bottom-align across the row. */
+.cards.brochure-cta > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.cards.brochure-cta > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;   /* natural portrait ratio */
+  border: 1px solid var(--color-surface-muted);   /* #b2b4ae, matches source bor-gray */
+}
+
+.cards.brochure-cta .cards-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: var(--space-block-l) 0 0;   /* image-to-text gap: source 20px, 30px @480px */
+}
+
+@media (width >= 480px) {
+  .cards.brochure-cta .cards-card-body {
+    margin-top: var(--space-section);
+  }
+}
+
+/* title: Futura bold at body size (source .futura-bold, 14px). Fixed bottom gap
+   below the title on every card; label margin-top:auto (below) adds any slack. */
+.cards.brochure-cta .cards-card-body h3 {
+  margin-bottom: var(--space-section);
+  font-size: var(--body-font-size-m);
+}
+
+/* label: light serif, 1.25em. Zero bottom margin keeps it tight above the button
+   (flex items don't collapse margins). */
+.cards.brochure-cta .cards-card-body p {
+  margin-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* label absorbs extra card height so label + button bottom-align across the row */
+.cards.brochure-cta .cards-card-body p:not(.button-wrapper) {
+  margin-top: auto;
+}
+
+/* let the CTA text wrap instead of truncating when the column is narrow;
+   text-align keeps each wrapped line centered */
+.cards.brochure-cta .cards-card-body .button {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  text-align: center;
 }

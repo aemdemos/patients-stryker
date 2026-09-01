@@ -440,6 +440,7 @@ async function loadEager(doc) {
   }
 
   const templateName = getMetadata('template');
+  const themeName = getMetadata('theme');
 
   const main = doc.querySelector('main');
   if (main) {
@@ -448,6 +449,15 @@ async function loadEager(doc) {
     // Load template if specified in metadata
     if (templateName) {
       await loadTemplate(doc, templateName);
+    }
+
+    // Load themes.css if the page opts into a theme via metadata. Themed pages
+    // add `body.<theme>` (decorateTemplateAndTheme); all theme rules live in the
+    // single styles/themes.css, scoped under their body.<theme> selector, and it
+    // ships only to pages that actually declare a theme. Loaded eagerly (awaited
+    // before `appear`) so above-the-fold themed typography doesn't reflow.
+    if (themeName) {
+      await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }
 
     document.body.classList.add('appear');
