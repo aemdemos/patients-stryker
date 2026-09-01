@@ -52,28 +52,6 @@
   width: 100%;
 }
 
-/* desktop + mobile are separate pictures, each with its own alt; show the mobile
-   crop below the 900px crossover and the desktop crop at/above it (matches the
-   image/layout switch). Scoped to .hero picture so it overrides the variant
-   picture rules (e.g. .hero.fullbleed picture) that set display: block. */
-.hero picture.hero-image-desktop {
-  display: none;
-}
-
-.hero picture.hero-image-mobile {
-  display: block;
-}
-
-@media (width >= 900px) {
-  .hero picture.hero-image-desktop {
-    display: block;
-  }
-
-  .hero picture.hero-image-mobile {
-    display: none;
-  }
-}
-
 .hero.fullbleed img {
   display: block;
   width: 100%;
@@ -133,19 +111,24 @@
 .hero-container .hero-wrapper:has(.hero.banner) {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: var(--container-gutter);
 }
 
 .hero.banner {
   display: block;
   position: static;
-
-  /* match the source card's own 20px top/bottom margin */
-  margin-block: var(--space-block-l);
   padding: 0;
   min-height: 0;
   box-shadow: var(--shadow-soft);
   overflow: clip;
+}
+
+/* stroke-awareness landing hero: copy stacked ABOVE the banner image on
+   mobile/tablet (the block outputs [image][content], so column-reverse lifts
+   the copy on top); switches to a left-side overlay at 900px (see below) */
+body.stroke-awareness-landing .hero.banner {
+  display: flex;
+  flex-direction: column-reverse;
+  box-shadow: none;
 }
 
 .hero.banner picture {
@@ -308,6 +291,13 @@
     grid-template-columns: 1fr;
   }
 
+  /* stroke-awareness landing stays STACKED (text above image) until 900px, so
+     keep it flex here and override the base banner grid above */
+  body.stroke-awareness-landing .hero.banner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   /* stack the image row and the copy row in the same grid cell */
   .hero.banner > div {
     grid-area: 1 / 1;
@@ -366,6 +356,52 @@
   .hero.fullbleed.poster p {
     font-size: 1.5vw;
   }
+
+  /* stroke-awareness copy is stacked (not overlaid) below 900px, so keep it
+     full-width with the standard gutter padding */
+  body.stroke-awareness-landing .hero.banner > div:last-child {
+    align-self: auto;
+    max-width: none;
+    padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+  }
+}
+
+.hero picture.hero-image-desktop {
+  display: none;
+}
+
+.hero picture.hero-image-mobile {
+  display: block;
+}
+
+body.stroke-awareness-landing .hero.banner picture.hero-image-desktop {
+  display: block;
+}
+
+body.stroke-awareness-landing .hero.banner picture.hero-image-mobile {
+  display: none;
+}
+
+/* source puts the soft drop shadow on the image box itself (not the whole
+   banner), which reads as the thin line above the photo where it meets the
+   copy. Target every picture so it works whether one image (unclassed) or the
+   desktop/mobile pair is authored. */
+body.stroke-awareness-landing .hero.banner picture {
+  box-shadow: var(--shadow-soft);
+}
+
+body.stroke-awareness-landing .hero.banner > div:last-child {
+  max-width: none;
+  padding-block: var(--space-section) var(--space-block-l);
+  padding-top: 50px;
+}
+
+/* "Select language" — source renders it at 21px with a tight line-height (not
+   the base banner's 24.5px h2), which keeps the gap down to the buttons compact */
+body.stroke-awareness-landing .hero.banner h2 {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+  padding-top: 7px;
 }
 
 /* ===== Desktop (900px) — fullbleed switches to a side-column overlay on a
@@ -396,6 +432,46 @@
     font-size: 1.5vw;
     line-height: 1.35;
   }
+
+  .hero picture.hero-image-desktop {
+    display: block;
+  }
+
+  .hero picture.hero-image-mobile {
+    display: none;
+  }
+
+  /* desktop overlay — copy sits over the image, so the shadow goes back on the
+     whole banner card (as the base banner variant) rather than the picture.
+     Below 900px the copy stays stacked above the image. */
+  body.stroke-awareness-landing .hero.banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: var(--shadow-soft);
+  }
+
+  body.stroke-awareness-landing .hero.banner picture {
+    box-shadow: none;
+  }
+
+  body.stroke-awareness-landing .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+  /* top-align the copy in the overlay (source insets it ~65px from the top of
+     the banner), rather than vertically centering it */
+  body.stroke-awareness-landing .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: start;
+    max-width: 50%;
+    padding-block: calc(var(--space-section-l) + var(--space-block)) 0;
+  }
+
+  body.stroke-awareness-landing .hero.banner .button-wrapper,
+  body.stroke-awareness-landing .hero.banner .button-wrapper + .button-wrapper {
+    margin-block: 0 var(--space-block);
+    padding-top: 20px;
+  }
 }
 
 /* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
@@ -418,10 +494,6 @@
   }
 }
 
-/* fullbleed caps at 1400px — where 3.5vw/1.5vw naturally reach 49px/21px, so the
-   headline scales smoothly to the source's max size with no jump (matches the
-   original, whose cap also lands ~1400px). Poster caps earlier (5vw hits 60px at
-   1200px), so it stays in the 1200px block above. */
 @media (width >= 1400px) {
   .hero.fullbleed h1 {
     font-size: 49px;

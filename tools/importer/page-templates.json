@@ -60,6 +60,110 @@
       "coverageGaps": [],
       "description": "Neurovascular patient-education landing page: gold title bar (hero band), an intro line, a row of patient-guide brochure cards (cards resources) linking to PDFs and product pages, a gold 'for more information' CTA band (section style: gold, full-bleed), a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only (hero, cards, columns). Shared by patient-information and resources (resources import is a follow-up task).",
       "blocks": ["hero", "cards", "columns"]
+    },
+    {
+      "name": "sa-resources",
+      "urls": [
+        "https://patients.stryker.com/ww/en/stroke-awareness/resources.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/ww/en/stroke-awareness/resources.html",
+      "coverageGaps": [],
+      "description": "Stroke Awareness Resources landing page: hero banner, a two-column intro (default text + gold button beside a light panel) in a flex/compact section, a 4-up downloads card grid (cards brochure), a social-media card grid (cards brochure with empty heading line), a related-links fragment reference in a gray section, and a small-text disclaimer. Standalone template for future SA resource-style pages.",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".carouselslidegroup"
+          ]
+        },
+        {
+          "name": "panel",
+          "instances": [
+            ".dimensional-box"
+          ],
+          "section": "light"
+        },
+        {
+          "name": "cards-brochure",
+          "instances": [
+            ".cols4"
+          ],
+          "section": "brochure"
+        },
+        {
+          "name": "fragment",
+          "instances": [
+            ".bg-light-gray .cols3"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero",
+          "selector": ".carouselslidegroup",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "intro",
+          "name": "Intro (welcome + availability panel)",
+          "selector": ".cols2 .colctrl",
+          "style": "flex",
+          "blocks": [
+            "panel"
+          ],
+          "defaultContent": [
+            ".col-sm-6:nth-child(1) .c-rich-text-editor",
+            ".curatedcta a"
+          ]
+        },
+        {
+          "id": "downloads",
+          "name": "Downloads (4-up)",
+          "selector": ".cols4",
+          "style": "divider",
+          "blocks": [
+            "cards-brochure"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "social",
+          "name": "Social media",
+          "selector": ".cols4",
+          "style": "divider",
+          "blocks": [
+            "cards-brochure"
+          ],
+          "defaultContent": [
+            "h2"
+          ]
+        },
+        {
+          "id": "related-links",
+          "name": "Related links",
+          "selector": ".bg-light-gray .cols3",
+          "style": "light-gray",
+          "blocks": [
+            "fragment"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "disclaimer",
+          "name": "Disclaimer",
+          "selector": ".c-disclaimer",
+          "style": "compact",
+          "blocks": [],
+          "defaultContent": [
+            ".c-disclaimer p"
+          ]
+        }
+      ]
     }
   ]
 }

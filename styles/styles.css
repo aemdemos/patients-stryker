@@ -201,6 +201,13 @@ header {
   header {
     height: calc(var(--nav-height) + var(--nav-bar-height));
   }
+
+  /* the default (/nav) and /nav-legal navs have no gold bar, so they render a
+     single row — reserve only the white-bar height for them (set eagerly on
+     body via scripts.js from the nav metadata) */
+  body.nav-single-row header {
+    height: var(--nav-height);
+  }
 }
 
 header .header,
@@ -381,6 +388,10 @@ h2 strong em {
 
 .section.compact {
   margin-bottom: 40px;
+}
+
+.stroke-awareness-landing .section.compact {
+  margin-top: 70px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -841,3 +852,36 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     padding: 0 var(--container-gutter);
   }
 }
+
+/* Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
+   1200), so the source's own breakpoints translate as: source 840px → 600px,
+   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
+   mobile is a single regime below 600px.
+   mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
+   → 47.2px@590). */
+body.stroke-awareness-landing .hero.banner h1 {
+  font-size: 8vw;
+}
+
+/* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
+   EDS large breakpoint (1200px ← source 1440px). */
+@media (width >= 900px) {
+  body.stroke-awareness-landing .hero.banner h1 {
+    font-size: calc(-4.16px + 5.0133vw);
+  }
+}
+
+/* EDS large (1200px) ← source 1440px cap: 56px flat */
+@media (width >= 1200px) {
+  body.stroke-awareness-landing .hero.banner h1 {
+    font-size: 56px;
+  }
+}
+
+/* Word gap — the source keeps a space between "Understanding" and the gold
+   "stroke"; our authored markup collapses the leading space inside the inline
+   accent span, so restore the gap explicitly on the gold accent. */
+body.stroke-awareness-landing .hero.banner h1 em strong {
+  margin-left: 0.2em;
+}
+
