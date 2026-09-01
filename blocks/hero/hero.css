@@ -364,10 +364,6 @@ body.stroke-awareness-landing .hero.banner {
     max-width: none;
     padding: var(--space-section) var(--container-gutter) var(--space-block-l);
   }
-
-  .hero-container .hero-wrapper:has(.hero.banner) {
-    padding-inline: var(--container-gutter);
-}
 }
 
 /* ===== Desktop (900px) — fullbleed switches to a side-column overlay on a
@@ -398,6 +394,10 @@ body.stroke-awareness-landing .hero.banner {
     font-size: 1.5vw;
     line-height: 1.35;
   }
+
+  .hero-container .hero-wrapper:has(.hero.banner) {
+   padding-inline: var(--container-gutter);
+}
 }
 
 /* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
