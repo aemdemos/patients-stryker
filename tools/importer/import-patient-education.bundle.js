@@ -35,13 +35,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-patient-information.js
-  var import_patient_information_exports = {};
-  __export(import_patient_information_exports, {
-    default: () => import_patient_information_default
+  // import-patient-education.js
+  var import_patient_education_exports = {};
+  __export(import_patient_education_exports, {
+    default: () => import_patient_education_default
   });
 
-  // transformers/patient-information-cleanup.js
+  // transformers/patient-education-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var TRACKING_HOST_RE = /(demdex\.net|munchkin|marketo|omtrdc\.net|everesttech\.net|adobedtm|contextweb\.com|thrtle\.com|doubleclick|scorecardresearch|bidswitch|adnxs)/i;
   var PLACEHOLDER_RE = /(\{\{|\}\}|\$\{|%7B%7B|%24%7B)/;
@@ -94,7 +94,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // import-patient-information.js
+  // import-patient-education.js
   var transformers = [
     transform
   ];
@@ -210,7 +210,7 @@ var CustomImportScript = (() => {
       ["Style", style]
     ], doc);
   }
-  var import_patient_information_default = {
+  var import_patient_education_default = {
     transform: (payload) => {
       const { document, url, params } = payload;
       const source = document.body;
@@ -275,5 +275,5 @@ var CustomImportScript = (() => {
       }];
     }
   };
-  return __toCommonJS(import_patient_information_exports);
+  return __toCommonJS(import_patient_education_exports);
 })();

@@ -2,7 +2,8 @@
 /* global WebImporter */
 
 /**
- * Transformer: patient-information page cleanup.
+ * Transformer: patient-education template cleanup (shared by the page import and
+ * the resources-fragment import).
  *
  * Strips non-authorable site chrome (header, footer, cookie consent, back-to-top,
  * auto-generated document-id / "Last Updated" line, hidden AEM inputs, marketing
