@@ -197,6 +197,14 @@ body.sticky main > .section.fragment-container {
   body.sticky main > .section.compact > .default-content-wrapper {
     padding-inline: var(--space-section);
   }
+
+  /* Vertical rhythm: the source gives the image+text (columns) sections much more
+     breathing room on mobile than the default 50px band padding — the gap into and
+     out of these sections is ~270px larger. Add generous vertical padding so the
+     stacked image↔text sections match the source's taller mobile rhythm. */
+  body.sticky main > .section.columns-container {
+    padding-block: 165px;
+  }
 }
 
 /* Colour-banded sections (light-gray): the gap above the band must be WHITE, not
