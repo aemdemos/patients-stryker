@@ -446,4 +446,58 @@
   }
 }
 
+/* ===== related-links variant =====
+   A reusable columns treatment for the stroke-awareness "related links" fragment
+   (Understanding stroke / Patient information / Regional information): gold
+   Futura-bold column labels, an airy stacked-link rhythm, and a "Learn more"
+   chevron CTA. Authored as Columns (related-links); shared by every page that
+   includes this fragment (styling lives here, not in a page template). */
+
+/* roomier heading-to-body / stacked-link rhythm (source columns are airy) */
+.columns.related-links p {
+  margin-bottom: var(--space-block);
+}
+
+/* column labels — source renders these in Futura bold, GOLD, 24.5px
+   (the .futura-bold .fontsize-1-75em headings coloured #ffb500). */
+.columns.related-links h3 {
+  margin-bottom: var(--space-block);
+  padding-bottom: 2%;
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+  color: var(--color-accent);
+}
+
+/* "Learn more" CTA — source renders it in Futura bold at 17.5px, teal, with a
+   chevron appended via the proprietary strykericons font (content "\e250",
+   ~0.85em); we draw the chevron in CSS so it renders without that font. Only the
+   CTA links carry it: they are the anchor in a paragraph that FOLLOWS a body-copy
+   paragraph (the "Learn more" links under the first two columns' descriptions).
+   The regional-info link list (links with no preceding body paragraph) is
+   intentionally excluded.
+   `a:any-link` (vs plain `a`) lifts specificity to (0,3,5) so the Futura family
+   beats the shared `.section.light-gray .columns a` rule (0,3,1) when this
+   fragment is inlined inside a light-gray section on a host page. */
+.columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);   /* 17.5px */
+  font-weight: 700;
+  line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
+}
+
+.columns.related-links p:not(:has(a)) + p:has(a) a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
 

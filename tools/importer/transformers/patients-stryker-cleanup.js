@@ -20,9 +20,44 @@
 const TransformHook = { beforeTransform: 'beforeTransform', afterTransform: 'afterTransform' };
 
 export default function transform(hookName, element, payload) {
+  // The sa-resources template shares this site-wide cleanup, but a handful of the
+  // behaviours below are specific to the /legal/ long-form text pages and would
+  // corrupt sa-resources: (a) the ".c-disclaimer" removal (on legal it strips the
+  // auto "Last Updated" chrome, but on sa-resources ".c-disclaimer" holds the
+  // AUTHORABLE disclaimer paragraphs — lines 880-887 of that page's cleaned.html),
+  // and (b) the h1->h2 title demotion (sa-resources authors its hero title as an
+  // <h1>, matching the migrated index.plain.html hero). The gold-label / paragraph-
+  // merge / standalone-link rewrites are likewise legal-copy formatting. Guard all of
+  // them so ONLY the truly universal chrome removal runs on sa-resources; legal-page
+  // behaviour is unchanged (isSaResources is false whenever the template isn't
+  // sa-resources, including the current legal import).
+  const isSaResources = !!(payload && payload.template && payload.template.name === 'sa-resources');
+
   if (hookName === TransformHook.beforeTransform) {
     // Cookie consent SDK / preference center - third-party chrome (cleaned.html line 307).
     WebImporter.DOMUtils.remove(element, ['#onetrust-consent-sdk']);
+
+    if (isSaResources) {
+      // sa-resources gold CTA: the source renders "Download the full kit" as a filled
+      // gold button — <a class="btn btn-gold" href=".../Stroke-Awareness-Full-Kit.zip">
+      // (cleaned.html line 244). The project has no color/button control in default
+      // content, so gold CTAs are encoded as a BOLD + ITALIC link: decorateButtons()
+      // (scripts.js) promotes a `p a` whose anchor is wrapped in BOTH <strong> and <em>
+      // to `.button.accent` (the gold button). Wrap the ANCHOR ITSELF (strong>em>a) so
+      // a.closest('strong') and a.closest('em') are both truthy — the opposite of the
+      // legal standalone-link case, which wraps the anchor's CONTENTS to AVOID buttonizing.
+      // Drop the source btn* classes so no stale styling hooks survive the round-trip.
+      element.querySelectorAll('a.btn-gold').forEach((a) => {
+        if (a.closest('em') && a.closest('strong')) return; // idempotent
+        a.removeAttribute('class');
+        const strong = element.ownerDocument.createElement('strong');
+        const em = element.ownerDocument.createElement('em');
+        a.replaceWith(strong);
+        strong.appendChild(em);
+        em.appendChild(a);
+      });
+      return; // remaining beforeTransform work is legal-copy formatting only
+    }
 
     // Gold section labels ("Introduction", "Scope", ...) render as bold + gold #ffb500
     // (source: <span style="color:#ffb500"> nested in a bold/futura-bold wrapper).
@@ -112,13 +147,22 @@ export default function transform(hookName, element, payload) {
       '.c-back-to-top',
     ]);
 
-    // Auto-generated document-id / "Last Updated December/2025" chrome (lines 242-244).
-    // This is distinct from the authored "Last Updated: February 2025" paragraph
-    // which lives inside the rich-text region and must be preserved.
-    WebImporter.DOMUtils.remove(element, [
-      '.c-disclaimer',
-      '#publishedDate',
-    ]);
+    if (isSaResources) {
+      // sa-resources authors its legal/educational disclaimer paragraphs inside
+      // ".c-disclaimer" (cleaned.html lines 880-887) — that is AUTHORABLE content and
+      // must survive (it becomes the trailing "compact" disclaimer section). The
+      // "Last Updated December/2025" line (`p#publishedDate`, line 892) is
+      // auto-generated document chrome, not authored disclaimer copy, so strip it.
+      WebImporter.DOMUtils.remove(element, ['#publishedDate']);
+    } else {
+      // Legal pages: ".c-disclaimer" only ever holds the auto-generated document-id /
+      // "Last Updated December/2025" chrome (lines 242-244), distinct from the authored
+      // "Last Updated: February 2025" paragraph inside the rich-text region. Strip it all.
+      WebImporter.DOMUtils.remove(element, [
+        '.c-disclaimer',
+        '#publishedDate',
+      ]);
+    }
 
     // Hidden AEM helper inputs that carry no authorable content (lines 240-241).
     WebImporter.DOMUtils.remove(element, [
@@ -166,6 +210,9 @@ export default function transform(hookName, element, payload) {
     // Normalise the page title to <h2>. Most legal pages author the title as an
     // <h2> already, but a few use a native <h1>. Demote any <h1> to <h2> so every
     // legal page title is consistently an <h2>.
+    // sa-resources is exempt: it authors its hero title as an <h1> ("Resources"),
+    // matching the migrated stroke-awareness index hero, so its <h1> must be preserved.
+    if (isSaResources) return;
     element.querySelectorAll('h1').forEach((h1) => {
       const h2 = element.ownerDocument.createElement('h2');
       [...h1.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
