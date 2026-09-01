@@ -42,7 +42,7 @@ body.sticky main .hero.fullbleed h1 {
   }
 }
 
-@media (width >= 1400px) {
+@media (width >= 1200px) {
   body.sticky main .hero.fullbleed h1 {
     font-size: 70px;
   }
@@ -184,6 +184,21 @@ body.sticky main > .section.fragment-container {
   padding-block: var(--space-section-l);
 }
 
+/* Mobile horizontal inset: the source sits its content ~51px from the screen edge
+   (15px gutter + ~36px inner padding), not the 15px default. Add that inner padding
+   on the content wrappers below the tablet breakpoint so the copy doesn't run to the
+   edges. Scoped to the text bands (columns / icon-list / fragment / compact). */
+@media (width < 600px) {
+  body.sticky main > .section.columns-container > .columns-wrapper,
+  body.sticky main > .section.columns-container > .default-content-wrapper,
+  body.sticky main > .section.icon-list-container > .default-content-wrapper,
+  body.sticky main > .section.icon-list-container > .icon-list-wrapper,
+  body.sticky main > .section.fragment-container > .fragment-wrapper,
+  body.sticky main > .section.compact > .default-content-wrapper {
+    padding-inline: var(--space-section);
+  }
+}
+
 /* Colour-banded sections (light-gray): the gap above the band must be WHITE, not
    part of the coloured fill. The internal padding above tints gray, so add a
    white margin above each band (matching the source's ~55px white gap between a
@@ -197,7 +212,7 @@ body.sticky main > .section.video-container {
   padding-block: var(--space-section-l);
 }
 
-@media (width >= 841px) {
+@media (width >= 600px) {
   body.sticky main > .section.video-container[data-anchor]:has(.video) {
     display: flex;
     flex-wrap: wrap;
