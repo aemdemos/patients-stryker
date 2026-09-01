@@ -109,16 +109,22 @@ body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.video
   line-height: var(--heading-line-height);
 }
 
-/* Icon-list section intros (Symptoms / Risk-factors) → 17.5px URW serif. The source
-   constrains this centred intro copy to a narrow band (~560px) via authored line
-   breaks; our content has none, so cap the width and centre it to reproduce the
-   short, centred wrap rather than letting it span the full content width. */
+/* Icon-list section intros → 17.5px URW serif. The Symptoms (label) intro is
+   left-aligned and spans the full content width, as on the source. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > .default-content-wrapper > p {
-  max-width: 560px;
-  margin-inline: auto;
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
+}
+
+/* Risk-factors (tile) intro only: the source centres this copy in a narrow band
+   (~560px) via authored line breaks; our content has none, so cap the width and
+   centre it. The Symptoms (label) intro above is left-aligned full-width and is
+   unaffected. */
+body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p {
+  max-width: 560px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 /* Risk-factors lead-in ("These risk factors include the following:") keeps the
