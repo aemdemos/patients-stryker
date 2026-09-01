@@ -280,16 +280,15 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "rows": 1,
-              "columns": 2,
+              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1)>picture>img[src]"
+                  "selector": "div:nth-child(1) a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
+                  "selector": "div:nth-child(1) a"
                 },
                 {
                   "name": "text",
