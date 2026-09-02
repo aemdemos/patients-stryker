@@ -465,7 +465,6 @@
     flex: 0 0 50%;
   }
 
-    .section.light-gray .columns > div {
   /* 4-up: all four cells in a single row at an exact 25% each. Fixed basis (not the
      base flex:1 1 0%) so columns with differing content/padding stay equal width. */
   .columns.columns-4-cols > div {
@@ -500,13 +499,7 @@
     display: flex;
   }
 
-    .section.light-gray .columns > div > div{
-    float: none;
-    width: auto;
-  }
-
-
-  .section.light-gray .columns > div > div:nth-child(3) {
+    .section.light-gray .columns > div > div, .section.light-gray .columns > div > div:nth-child(3){
     float: none;
     width: auto;
   }
