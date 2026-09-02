@@ -19,6 +19,10 @@ body.sticky main .hero.fullbleed img {
   aspect-ratio: 1 / 1;
 }
 
+body.sticky main .section{
+  margin-top: 70px;
+}
+
 @media (width >= 600px) {
   body.sticky main .hero.fullbleed {
     min-height: calc(5 * var(--space-section-l));
@@ -87,21 +91,13 @@ body.sticky main .section .columns h3,
 body.sticky main .section .columns h2 {
   font-family: var(--display-font-family);
   font-weight: 700;
-  font-size: var(--icon-list-title-size-s);
+  font-size: var(--icon-list-title-size);
   color: var(--color-accent);
 }
 
 body > main > div.serif.light-gray.section.columns-container {
   padding-top: 0;
-}
-
-/* MOBILE BASE is 26.25px (matching the icon-list section titles); >=600px scales
-   these column titles up to the desktop 31.5px. */
-@media (width >= 600px) {
-  body.sticky main .section .columns h3,
-  body.sticky main .section .columns h2 {
-    font-size: var(--icon-list-title-size);
-  }
+  margin-bottom: 30px;
 }
 
 body.sticky main .section .columns.related-links h3 {
@@ -212,8 +208,6 @@ body.sticky main .icon-list.tile .icon-list-text p {
   line-height: var(--body-line-height-l);
 }
 
-
-
 @media (width >= 600px) {
   body.sticky main > .section.columns-container {
     padding-block: var(--space-section-l);
@@ -243,14 +237,6 @@ body.sticky main > .section.compact > .default-content-wrapper {
   }
 }
 
-/* Colour-banded sections (light-gray): the gap above the band must be WHITE, not
-   part of the coloured fill. The internal padding above tints gray, so add a
-   white margin above each band (matching the source's ~55px white gap between a
-   section and the next coloured band). */
-body.sticky main > .section.light-gray {
-  margin-top: var(--space-section-l);
-}
-
 @media (width >= 1200px) {
   body.sticky main .icon-list.cols-4:not(.tile, .label) ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
@@ -270,23 +256,26 @@ body.sticky main > .section.serif.columns-container > .columns-wrapper {
 
 body.sticky main > .section.serif .columns.columns-50-50 > div {
   flex-flow: column nowrap;
+  row-gap: 0;
   align-items: stretch;
 }
 
 body.sticky main > .section.serif .columns.columns-50-50 > div > div {
   flex: 0 0 auto;
   width: 100%;
+  margin-bottom: 35px;
   max-width: 100%;
 }
 
-body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(1) {
-  /* padding-inline: 53px; */
+body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(1):not(:has(img)) {
   padding: 15% 10% 10%;
 }
 
-body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(2) {
-  /* padding-inline: 53px; */
-  padding-bottom: 70px;
+body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(2):not(:has(img)) {
+  margin-bottom: 5%;
+  padding-top: 7%;
+  padding-right: 10%;
+  padding-left: 10%;
 }
 
 body.sticky > main > div.section.video-container > div.default-content-wrapper {
@@ -324,10 +313,7 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
     max-width: none;
   }
 
-  body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(1) {
-    padding: 0 var(--container-gutter) !important;
-  }
-
+  body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(1),
   body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(2) {
     padding: 0 var(--container-gutter) !important;
   }
