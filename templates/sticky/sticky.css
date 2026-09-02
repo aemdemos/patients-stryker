@@ -291,3 +291,9 @@ body.sticky > main > div.light-gray.section.icon-list-container {
     padding-block: 20% 5%;
   }
 }
+
+@media (width >= 1200px) {
+    body.sticky main .hero.fullbleed h1 {
+    font-size: 70px;
+  }
+}
