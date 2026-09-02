@@ -110,6 +110,33 @@ body.sa-resources .cards.brochure .cards-card-body p {
    fragment is reused with the same look on other pages. Only theme-specific
    deltas would live here; there are none. */
 
+/* =====================================================================
+   Theme: stroke-awareness-landing — Stroke-Awareness landing page
+   ===================================================================== */
+
+/* the compact references/disclaimer block sits lower on this page — the source
+   leaves a generous gap above it. */
+body.stroke-awareness-landing .section.compact {
+  margin-top: 70px;
+}
+
+/* Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
+   1200), so the source's own breakpoints translate as: source 840px → 600px,
+   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
+   mobile is a single regime below 600px.
+   mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
+   → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
+body.stroke-awareness-landing .hero.banner h1 {
+  font-size: 8vw;
+}
+
+/* Word gap — the source keeps a space between "Understanding" and the gold
+   "stroke"; our authored markup collapses the leading space inside the inline
+   accent span, so restore the gap explicitly on the gold accent. */
+body.stroke-awareness-landing .hero.banner h1 em strong {
+  margin-left: 0.2em;
+}
+
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
   /* intro: the availability panel is TOP-aligned with the welcome text (source),
@@ -125,6 +152,12 @@ body.sa-resources .cards.brochure .cards-card-body p {
   body.sa-resources .panel.light.panel-authoring {
     grid-template-columns: 1fr;
   }
+
+  /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
+     EDS large breakpoint (1200px ← source 1440px). */
+  body.stroke-awareness-landing .hero.banner h1 {
+    font-size: calc(-4.16px + 5.0133vw);
+  }
 }
 
 /* ----- Large desktop (>=1200px) ----- */
@@ -132,6 +165,11 @@ body.sa-resources .cards.brochure .cards-card-body p {
   /* enlarge the hero headline on this page beyond the shared band cap (48px in
      blocks/hero/hero.css) — a theme-specific delta. */
   body.sa-resources .hero.band h1 {
+    font-size: 56px;
+  }
+
+  /* EDS large (1200px) ← source 1440px cap: 56px flat */
+  body.stroke-awareness-landing .hero.banner h1 {
     font-size: 56px;
   }
 }
