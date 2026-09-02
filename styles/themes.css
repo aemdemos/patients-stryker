@@ -244,7 +244,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 }
 
 .zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2 {
-  padding-top: var(--space-section-l);
+  padding-top: 60px;
 }
 
 body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
@@ -310,6 +310,14 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
     padding-top: 0;
+  }
+
+  body.zip-skin-closure .full-bleed .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: 8.1%;
+    }
+
+  body.zip-skin-closure .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: 3%;
   }
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) > div {

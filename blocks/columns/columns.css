@@ -350,12 +350,6 @@
     row-gap: var(--space-section);
   }
 
-  /* in an image+text row, the text column sits slightly below the image top, as
-     in the reference. Only applies when the row has a picture (not text+text rows). */
-  .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-    padding-top: 8.1%;
-  }
-
   .columns.columns-50-50 {
     --col-5050-inset: 49px;
   }
