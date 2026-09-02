@@ -166,7 +166,8 @@
             "da": {
               "name": "columns-cell",
               "behaviour": "columns-cell",
-              "unsafeHTML": "<div><div><p><a href=\"\">Image alt</a></p></div><div><p>Text</p></div></div>",
+              "row": 1,
+              "columns": 1,
               "fields": [
                 {
                   "name": "image",
