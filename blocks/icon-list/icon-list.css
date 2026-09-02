@@ -101,10 +101,6 @@
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
   }
-
-  .icon-list .icon-list-icon {
-    display: none;
-  }
 }
 
 /* desktop: author column count, icons shown again */

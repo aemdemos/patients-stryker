@@ -49,9 +49,36 @@
   cursor: pointer;
 }
 
-/* first item keeps a left divider so the bar's left edge is always framed */
-.sticky-nav .sticky-nav-item:first-child {
+/* keyboard focus ring */
+.sticky-nav .sticky-nav-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+/* active item: gold box framed by white dividers on both sides */
+.sticky-nav .sticky-nav-item.sticky-nav-item-current {
+  color: var(--color-black);
+  border-right: 1px solid var(--color-white);
   border-left: 1px solid var(--color-white);
+}
+
+/* the active item's gold box already marks it, so suppress any stray focus ring there */
+.sticky-nav .sticky-nav-item.sticky-nav-item-current:focus,
+.sticky-nav .sticky-nav-item.sticky-nav-item-current:focus-visible {
+  outline: none;
+}
+
+/* Side borders frame the bar only once it is pinned to the viewport top. */
+.sticky-nav .sticky-nav-item:last-child {
+  border-right: 0;
+}
+
+.section.sticky-nav-pinned .sticky-nav-item:first-child {
+  border-left: 1px solid var(--color-white);
+}
+
+.section.sticky-nav-pinned .sticky-nav-item:last-child {
+  border-right: 1px solid var(--color-white);
 }
 
 /* label / gold-box carrier */
@@ -74,25 +101,15 @@
 }
 
 /* active item: gold box framed by white dividers on both sides */
-.sticky-nav .sticky-nav-item.sticky-nav-item-current {
-  color: var(--color-black);
-  border-right: 1px solid var(--color-white);
-  border-left: 1px solid var(--color-white);
+.section:not(.sticky-nav-pinned) .sticky-nav-item.sticky-nav-item-current:first-child {
+  border-left: 0;
+}
+
+.section:not(.sticky-nav-pinned) .sticky-nav-item.sticky-nav-item-current:last-child {
+  border-right: 0;
 }
 
 .sticky-nav .sticky-nav-item-current p {
   background: var(--color-accent);
-}
-
-/* keyboard focus ring */
-.sticky-nav .sticky-nav-item:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: -2px;
-}
-
-/* the active item's gold box already marks it, so suppress any stray focus ring there */
-.sticky-nav .sticky-nav-item.sticky-nav-item-current:focus,
-.sticky-nav .sticky-nav-item.sticky-nav-item-current:focus-visible {
-  outline: none;
 }
 

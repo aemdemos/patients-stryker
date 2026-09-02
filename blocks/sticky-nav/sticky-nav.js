@@ -42,6 +42,7 @@ function animateScrollTo(getTargetY, duration = 600) {
 }
 
 export default function decorate(block) {
+  const section = block.closest('.section');
   const nav = document.createElement('nav');
   nav.className = 'sticky-nav-list';
   nav.setAttribute('aria-label', 'Section navigation');
@@ -132,6 +133,7 @@ export default function decorate(block) {
       const barRect = block.getBoundingClientRect();
       const barHeight = barRect.height || 70;
       const pinned = barRect.top <= 1;
+      section?.classList.toggle('sticky-nav-pinned', pinned);
       const line = barHeight + 2;
       let activeIndex = -1;
       if (pinned) {
