@@ -5,6 +5,7 @@
 /* Hero: place the overlaid headline ~10% from the left, near the top. */
 body.sticky main > .section.hero-container {
   padding-top: 0;
+  margin-top: 0;
 }
 
 body.sticky main .hero.fullbleed > div:last-child {
@@ -59,32 +60,23 @@ body.sticky main .section .columns.related-links h3 {
 /* Columns body copy → 14px body-serif, not the columns variants' heading-serif. */
 body.sticky main .section .columns p,
 body.sticky main .section .columns li {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: var(--paragraph-line-height);
+  font: var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
 }
 
 /* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold. */
 body.sticky main > .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 400;
+  font: 400 var(--body-font-size-m) var(--body-font-family);
 }
 
 /* All default body copy → 14px body-serif, out-weighing the global 12px shrink; excludes .compact. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > .default-content-wrapper > p {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 400;
-  line-height: var(--paragraph-line-height);
+  font: 400 var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
   color: var(--color-text);
 }
 
 /* Bottom disclaimer → 11.2px small print (same selector shape to win over 12px). */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.compact > .default-content-wrapper > p {
-  font-family: var(--body-font-family);
-  font-size: var(--footnote-font-size);
-  line-height: var(--paragraph-line-height);
+  font: var(--footnote-font-size)/var(--paragraph-line-height) var(--body-font-family);
 }
 
 /* Body-copy sizes matched to the source: not a uniform 14px, each context has its own size. */
@@ -295,11 +287,5 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
     max-width: 39%;
     margin: 0;
     padding-inline: 0;
-  }
-}
-
-@media (width >= 1200px) {
-  body.sticky main .hero.fullbleed h1 {
-    font-size: 70px;
   }
 }
