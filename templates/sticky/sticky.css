@@ -251,12 +251,7 @@ body.sticky > main > div.light-gray.section.icon-list-container {
     width: auto;
     max-width: none;
   }
-
-  body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(1),
-  body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(2) {
-    padding: 0 var(--container-gutter) !important;
-  }
-
+ 
   body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
     margin-top: 0;
   }
