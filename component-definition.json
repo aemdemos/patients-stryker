@@ -113,15 +113,16 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+              "row": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>a"
                 },
                 {
                   "name": "text",
