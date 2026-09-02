@@ -26,10 +26,6 @@
   text-align: center;
 }
 
-.zip-skin-closure .panel-container  {
-  padding-top: 30px;
-}
-
 /* left variant: left-align the panel content  */
 .panel.left .panel-body {
   text-align: left;
@@ -357,17 +353,4 @@
 .panel.colored-border .panel-body {
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
-}
-
-.zip-skin-closure .panel .panel-body > p:first-child:has(strong),
-.zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) {
-  margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
-  font-size: var(--panel-heading-size);
-  line-height: var(--panel-body-line-height);
-}
-
-.zip-skin-closure .panel .panel-body > p:first-child:has(strong) strong,
-.zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) strong {
-  font-weight: 700;
 }

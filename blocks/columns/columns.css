@@ -13,23 +13,6 @@
   height: auto;
 }
 
-/* hero/50-50 text cell — small mobile gutter. From the 2-up breakpoint up, the
-   inset becomes a fluid 15% (set in the >=600 rule) so it scales continuously with
-   the viewport like the source (138px@920, 183px@1220, 192px@1280 = 15%), rather
-   than holding a fixed px value and stepping at 1200. */
-.zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
- padding-left: 30px;
-}
-
-.zip-skin-closure  main > .section.full-bleed.columns-container {
-    padding-block: 0;
-}
-
-.zip-skin-closure .columns-container .columns-wrapper .columns.columns-50-50.block.columns-2-cols p
-{
-  padding-bottom: 30px;
-}
-
 .columns > div > div {
   box-sizing: border-box;
   padding: 0 15px;
@@ -132,44 +115,6 @@
   aspect-ratio: 1024 / 682;
   object-fit: cover;
 }
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-  font-family: var(--display-font-family-bold);
-  font-size: 13vw;
-  font-weight: 700;
-  line-height: var(--heading-line-height-hero);
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
-  width: 100%;
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  padding-top: var(--space-block);
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
-body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  display: none;
-}
-
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-  font-family: var(--heading-font-family);
-  font-size: 5vw;
-  font-weight: 400;
-  line-height: var(--heading-line-height-hero);
-  margin-bottom: 30px;
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) p {
-  font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: var(--heading-line-height-hero);
-}
-
-
-
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
    on the stroke-awareness page. Typography only; layout stays columns-50-50. */
@@ -380,61 +325,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   border-color: transparent transparent transparent currentcolor;
 }
 
-.zip-skin-closure h2 {
-  font-family: var(--heading-font-family);
-  font-weight: 500;
-}
-
-.zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2 {
-  padding-top: var(--space-section-l);
-}
-
 @media (width >= 600px) {
-  /* restore the image column and CTA hidden on mobile once the hero is 2-up */
-  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-    display: block;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  padding-top: 0;
-}
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div {
-    position: relative;
-    min-height: 33.333vw; /* source crop height scales with viewport (~200px@600 → 480px@1440) */
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
-    flex: 0 0 100%;
-    padding-right: 15px;
-  }
-
-  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
-    padding-left: 10%;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -45px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
-    width: 51%;
-    margin-bottom: 0;
-    padding: 0;
-    overflow: clip;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
-    object-fit: cover;
-    object-position: top;
-    height: 100%;
-  }
-  
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: calc(11.8px + 1.5333vw); /* 21px @600 → 25.6px @900 */
-  }
-
   .section.compact .columns h2 {
     font-size: var(--heading-font-size-compact-m);
   }
@@ -525,26 +416,9 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   .section.light-gray .columns p:has(a u) {
     margin-bottom: 75px;
   }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
-  }
 }
 
 @media (width >= 900px) {
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: calc(3.1333vw - 2.6px); /* 25.6px @900 → 35px @1200 */
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  padding-top: var(--space-block);
-}
-
- body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    right: -25px;
-  }
-
-
   .columns > div {
     flex-wrap: nowrap;
   }
@@ -610,19 +484,5 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
   .section.light-gray .columns p:has(a u) {
     margin-bottom: var(--space-block);
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
-  }
-}
-
-@media (width >= 1200px) {
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: 35px;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: 91px;
   }
 }
