@@ -11,6 +11,28 @@
  */
 
 import { moveInstrumentation } from './ue-utils.js';
+import { getMetadata, toClassName } from '../../scripts/aem.js';
+import { loadTemplate } from '../../scripts/scripts.js';
+
+const getTemplates = (value) => (value || '')
+  .split(',')
+  .map((template) => toClassName(template.trim()))
+  .filter(Boolean);
+
+const getTemplateStylesheet = (template) => `${window.hlx.codeBasePath}/templates/${template}/${template}.css`;
+
+const applyTemplate = async (value) => {
+  const previousTemplates = getTemplates(document.body.dataset.ueTemplate);
+  previousTemplates.forEach((template) => {
+    document.body.classList.remove(template);
+    document.querySelector(`head > link[href="${getTemplateStylesheet(template)}"]`)?.remove();
+  });
+
+  const templates = getTemplates(value);
+  templates.forEach((template) => document.body.classList.add(template));
+  await Promise.all(templates.map((template) => loadTemplate(document, template)));
+  document.body.dataset.ueTemplate = templates.join(',');
+};
 
 const setupObservers = () => {
   const mutatingBlocks = document.querySelectorAll(
@@ -78,9 +100,16 @@ const setupObservers = () => {
 };
 
 const setupUEEventHandlers = () => {
+  document.body.dataset.ueTemplate = getMetadata('template');
+
   document.body.addEventListener(
     'aue:content-patch',
     ({ detail: { patch, request } }) => {
+      if (patch.name === 'template') {
+        applyTemplate(patch.value);
+        return;
+      }
+
       let element = document.querySelector(
         `[data-aue-resource="${request.target.resource}"]`,
       );
