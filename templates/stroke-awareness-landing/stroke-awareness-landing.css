@@ -1,0 +1,75 @@
+/* Stroke Awareness Landing template — page-scoped overrides for existing generic blocks (scoped to body.stroke-awareness-landing). Breakpoints: 600/900/1200; nothing below 600px. */
+
+/* Heading typography — hero H1 + section H3s in gold (#FFB500) Futura-bold; body copy stays serif. Extra selector element lifts specificity over hero.css. */
+body.stroke-awareness-landing main .section h1,
+body.stroke-awareness-landing main .section h1 :is(em, strong),
+body.stroke-awareness-landing main .section > .default-content-wrapper h3,
+body.stroke-awareness-landing main .section .columns h3 {
+  color: var(--color-accent);
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+}
+
+/* Columns 50/50 (serif) body copy = Humanist Slab 14px/1.375 (heading stays the generic serif rule); also beats the light-gray heading-font rule. */
+body.stroke-awareness-landing main .section.serif .columns p,
+body.stroke-awareness-landing main .section.serif .columns ul,
+body.stroke-awareness-landing main .section.serif .columns li,
+body.stroke-awareness-landing main .section.serif .columns a {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* Video section — video left half, copy right half, vertically centred at desktop; stacked below 900px. */
+@media (width >= 900px) {
+  body.stroke-awareness-landing main > .section:has(.video) {
+    display: flex;
+    align-items: center;
+    gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  body.stroke-awareness-landing main > .section:has(.video) > div {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* drop the emptied section-metadata wrapper from the flex row */
+  body.stroke-awareness-landing main > .section:has(.video) > div:empty {
+    display: none;
+  }
+}
+
+/* Sticky nav — source's taller 80px bar with 175px, 21px Futura items (generic block ships 70px/14px). */
+@media (width >= 600px) {
+  body.stroke-awareness-landing .sticky-nav .sticky-nav-item {
+    min-height: 80px;
+    height: 80px;
+    max-width: 175px;
+  }
+
+  body.stroke-awareness-landing .sticky-nav .sticky-nav-item p {
+    min-height: 72px;                  /* 80px item − 4+4 padding */
+    height: 72px;
+    padding-inline: 2px;               /* trim side padding so labels fit in fewer lines */
+    font-size: var(--heading-font-size-l);   /* 21px, source item size */
+    line-height: 30px;
+    overflow: clip;                    /* keep the bar a fixed 80px even if a label is long */
+  }
+}
+
+/* Mobile hero crop is square (1:1) to match source (600×600, 390×390); generic rule sizes it 4/5. Width stays fluid; desktop crop keeps aspect-ratio: auto. */
+body.stroke-awareness-landing .hero.fullbleed picture.hero-image-mobile img {
+  aspect-ratio: 1 / 1;
+}
+
+/* closing resources band — its own vertical rhythm as a distinct closing zone */
+body.stroke-awareness-landing main > .section.stroke-resources-section {
+  margin-block: var(--space-section);
+}
