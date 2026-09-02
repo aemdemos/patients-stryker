@@ -171,15 +171,15 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1)>p:nth-child(1)>a[href]"
+                  "selector": "a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1)>p:nth-child(1)>a"
+                  "selector": "a"
                 },
                 {
                   "name": "text",
-                  "selector": "div:nth-child(2)"
+                  "selector": "p:last-child"
                 }
               ]
             }
