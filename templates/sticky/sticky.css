@@ -256,7 +256,7 @@ body.sticky > main > div.light-gray.section.icon-list-container {
     margin-top: 0;
   }
 
-  body.sticky main > .section.sticky-nav-container + .section.serif .columns.columns-50-50 > div {
+  body.sticky main > .section.sticky-nav-container + .section.serif .columns.columns-50-50 div:nth-child(2) {
     padding-top: calc(2 * var(--space-block-l));
   }
 
