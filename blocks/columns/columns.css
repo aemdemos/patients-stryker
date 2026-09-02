@@ -201,14 +201,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
   body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
     position: absolute;
     top: 0;
-    right: -25px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
+    bottom: 0;
+    right: -45px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
     width: 51%;
-    max-height: 33.333vw;
     margin-bottom: 0;
-
-    /* no left padding on the image column — the zipper graphic must fill the full
-       51% column width to render at the source's scale (~652px @1280). A left
-       padding here shrinks the image (was 7% ≈ 90px → drew only 563px wide). */
     padding: 0;
     overflow: clip;
   }
@@ -216,6 +212,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
     object-fit: cover;
     object-position: top;
+    height: 100%;
   }
 }
 
@@ -255,6 +252,11 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
   padding-top: var(--space-block);
 }
+
+ body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
+    right: -25px;
+  }
+
 
 }
 
