@@ -21,6 +21,10 @@
  padding-left: 30px;
 }
 
+.zip-skin-closure  main > .section.full-bleed {
+    padding-block: 0;
+}
+
 .columns > div > div {
   box-sizing: border-box;
   padding: 0 15px;
@@ -172,6 +176,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
     display: block;
   }
 
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  padding-top: 0;
+}
+
   body.zip-skin-closure .columns.columns-50-50:has(h1) > div {
     position: relative;
     min-height: 33.333vw; /* source crop height scales with viewport (~200px@600 → 480px@1440) */
@@ -243,6 +251,11 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
     font-size: calc(3.1333vw - 2.6px); /* 25.6px @900 → 35px @1200 */
   }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  padding-top: var(--space-block);
+}
+
 }
 
 @media (width >= 1200px) {
