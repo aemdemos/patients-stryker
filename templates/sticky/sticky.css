@@ -20,6 +20,10 @@ body.sticky main .section{
   margin-top: 70px;
 }
 
+body.sticky main .section.sticky-nav-container {
+  margin-top: 0;
+}
+
 @media (width >= 600px) {
   body.sticky main .hero.fullbleed {
     min-height: calc(5 * var(--space-section-l));
