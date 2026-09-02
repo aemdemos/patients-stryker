@@ -175,7 +175,7 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > div:nth-child(2
 }
 
 body.sticky > main > div.section.video-container > div.default-content-wrapper {
-  padding: 20% 10% 10% 5%;
+  padding: 20% 10% 5%;
 }
 
 body.sticky > main > div.light-gray.section.icon-list-container > div.default-content-wrapper > h3 {
@@ -220,10 +220,6 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
     font-size: 5vw;
   }
 
-  body.sticky main > .section.columns-container {
-    padding-block: var(--space-section-l);
-  }
-
   body.sticky main > .section.columns-container > .columns-wrapper,
   body.sticky main > .section.columns-container > .default-content-wrapper,
   body.sticky main > .section.icon-list-container > .default-content-wrapper,
@@ -264,7 +260,6 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
   body.sticky main > .section.video-container[data-anchor]:has(.video) {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     column-gap: 7%;                 /* ~98/1380 gap between video and copy, as source */
     max-width: var(--container-max);
     margin-inline: auto;
@@ -286,6 +281,10 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
     box-sizing: border-box;
     max-width: 39%;
     margin: 0;
-    padding-inline: 0;
+    padding: 0;
+  }
+
+  body.sticky main > .section.video-container[data-anchor] > .default-content-wrapper > p {
+    padding-block: 20% 5%;
   }
 }
