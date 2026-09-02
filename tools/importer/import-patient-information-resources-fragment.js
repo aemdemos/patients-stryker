@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 // TRANSFORMER IMPORTS
-import cleanupTransformer from './transformers/patient-education-cleanup.js';
+import cleanupTransformer from './transformers/patient-information-cleanup.js';
 
 // TRANSFORMER REGISTRY
 const transformers = [

@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 /**
- * Transformer: patient-education template cleanup (shared by the page import and
+ * Transformer: patient-information page cleanup (shared by the page import and
  * the resources-fragment import).
  *
  * Strips non-authorable site chrome (header, footer, cookie consent, back-to-top,

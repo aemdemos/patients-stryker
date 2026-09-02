@@ -41,7 +41,7 @@ var CustomImportScript = (() => {
     default: () => import_patient_information_resources_fragment_default
   });
 
-  // transformers/patient-education-cleanup.js
+  // transformers/patient-information-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var TRACKING_HOST_RE = /(demdex\.net|munchkin|marketo|omtrdc\.net|everesttech\.net|adobedtm|contextweb\.com|thrtle\.com|doubleclick|scorecardresearch|bidswitch|adnxs)/i;
   var PLACEHOLDER_RE = /(\{\{|\}\}|\$\{|%7B%7B|%24%7B)/;

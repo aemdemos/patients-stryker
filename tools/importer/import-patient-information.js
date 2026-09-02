@@ -2,16 +2,17 @@
 /* global WebImporter */
 
 // TRANSFORMER IMPORTS
-import cleanupTransformer from './transformers/patient-education-cleanup.js';
+import cleanupTransformer from './transformers/patient-information-cleanup.js';
 
 // TRANSFORMER REGISTRY
 const transformers = [
   cleanupTransformer,
 ];
 
-// PAGE TEMPLATE CONFIGURATION
-// The `patient-education` template — the shared layout for the Neurovascular
-// stroke-awareness landing pages. Main content maps onto existing blocks:
+// PAGE CONFIGURATION
+// The Neurovascular "Patient Information" page — a STANDALONE page (it shares no
+// layout with any sibling, so it uses a `theme` rather than a shared template).
+// Main content maps onto existing blocks:
 //   - title bar ................ hero (band)         — gold H1 over the Resources gradient bar
 //   - intro line ............... default content     — <h2>
 //   - patient-guide cards ...... cards (brochure-cta)— portrait covers + PDF link + gold CTA
@@ -19,14 +20,13 @@ const transformers = [
 //   - resources footer ......... columns          — 3-column link band in a `light-gray` section
 //   - disclaimer ............... default content in a `compact` section
 //
-// Covers two pages (same layout); only patient-information is imported so far —
-// resources.html is a follow-up task, added to `urls` for reference.
+// Styling ships via the `patient-information` theme (styles/themes.css, scoped
+// under body.patient-information) — see meta.theme below.
 const PAGE_TEMPLATE = {
-  name: 'patient-education',
-  description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
+  name: 'patient-information',
+  description: 'Neurovascular Patient Information page (standalone): gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only; styled via the patient-information theme.',
   urls: [
     'https://patients.stryker.com/us/en/stroke-awareness/patient-information.html',
-    'https://patients.stryker.com/us/en/stroke-awareness/resources.html',
   ],
   blocks: ['hero', 'cards', 'columns'],
 };
@@ -279,11 +279,14 @@ export default {
     if (canonical && canonical.getAttribute('href')) {
       meta.canonical = canonical.getAttribute('href');
     }
-    // Assign the shared patient-education template so this page (and future pages
-    // in the family) load templates/patient-education/* and get body.patient-education
-    // (via decorateTemplateAndTheme). Key must be lowercase `template` —
-    // getMetadata('template') matches the meta name case-sensitively.
-    meta.template = 'patient-education';
+    // Assign the `patient-information` theme so this standalone page gets
+    // body.patient-information (via decorateTemplateAndTheme) and scripts.js lazily
+    // loads styles/themes.css, where all of this page's styling lives scoped under
+    // that selector. A theme (not a per-page template) is used because the page is
+    // a singleton — we don't create template folders for one-off pages, and theme
+    // names carry single-owner governance so they can't collide across authors.
+    // Key must be lowercase `theme` — getMetadata('theme') matches case-sensitively.
+    meta.theme = 'patient-information';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
 
     // 4. Normalise DM asset URLs (leave DM links intact; fix any relative URLs).

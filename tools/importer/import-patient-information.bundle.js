@@ -35,13 +35,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-patient-education.js
-  var import_patient_education_exports = {};
-  __export(import_patient_education_exports, {
-    default: () => import_patient_education_default
+  // import-patient-information.js
+  var import_patient_information_exports = {};
+  __export(import_patient_information_exports, {
+    default: () => import_patient_information_default
   });
 
-  // transformers/patient-education-cleanup.js
+  // transformers/patient-information-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var TRACKING_HOST_RE = /(demdex\.net|munchkin|marketo|omtrdc\.net|everesttech\.net|adobedtm|contextweb\.com|thrtle\.com|doubleclick|scorecardresearch|bidswitch|adnxs)/i;
   var PLACEHOLDER_RE = /(\{\{|\}\}|\$\{|%7B%7B|%24%7B)/;
@@ -94,16 +94,15 @@ var CustomImportScript = (() => {
     }
   }
 
-  // import-patient-education.js
+  // import-patient-information.js
   var transformers = [
     transform
   ];
   var PAGE_TEMPLATE = {
-    name: "patient-education",
-    description: 'Neurovascular patient-education landing page: gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only.',
+    name: "patient-information",
+    description: 'Neurovascular Patient Information page (standalone): gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only; styled via the patient-information theme.',
     urls: [
-      "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html",
-      "https://patients.stryker.com/us/en/stroke-awareness/resources.html"
+      "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html"
     ],
     blocks: ["hero", "cards", "columns"]
   };
@@ -210,7 +209,7 @@ var CustomImportScript = (() => {
       ["Style", style]
     ], doc);
   }
-  var import_patient_education_default = {
+  var import_patient_information_default = {
     transform: (payload) => {
       const { document, url, params } = payload;
       const source = document.body;
@@ -258,7 +257,7 @@ var CustomImportScript = (() => {
       if (canonical && canonical.getAttribute("href")) {
         meta.canonical = canonical.getAttribute("href");
       }
-      meta.template = "patient-education";
+      meta.theme = "patient-information";
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
       const path = WebImporter.FileUtils.sanitizePath(
@@ -275,5 +274,5 @@ var CustomImportScript = (() => {
       }];
     }
   };
-  return __toCommonJS(import_patient_education_exports);
+  return __toCommonJS(import_patient_information_exports);
 })();
