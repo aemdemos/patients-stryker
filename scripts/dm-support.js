@@ -12,6 +12,13 @@
  * specific hostname, covering Scene7/classic DM and DM OpenAPI delivery.
  */
 
+// True inside the Universal Editor iframe. There, UE reads a block's field values
+// back from the live DOM (image => a[href]) when persisting, so the authored <a>
+// must survive. On the live site/preview we replace it with the <picture> for a
+// clean, light DOM; in UE we keep the <a> (hidden) and add the <picture> beside
+// it so both the editable source node and the rendered image are present.
+const IS_UE = /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
+
 // host-independent DM image URL signatures
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
@@ -400,15 +407,29 @@ export default function decorateDMAssets(main) {
     // out of the visible layout via the hiding class.
     if (altNode) altNode.classList.add('dm-alt-text');
 
+    // On the live site/preview, replace the authored link with the rendered
+    // element (clean, light DOM). In the Universal Editor, keep the authored link
+    // in the DOM (hidden) so UE can still read a[href] back when persisting, and
+    // insert the rendered element beside it so the image/video also shows.
+    const place = (rendered) => {
+      if (IS_UE) {
+        const anchor = el.closest('p') || el;
+        anchor.classList.add('dm-source-hidden');
+        anchor.after(rendered);
+      } else {
+        el.replaceWith(rendered);
+      }
+    };
+
     if (render === renderVideo) {
       const label = el.getAttribute('title') || displayText || altParagraph;
-      el.replaceWith(renderVideo(src, label));
+      place(renderVideo(src, label));
       return;
     }
     // alt precedence: an authored alt/title, the link's display text, then the
     // paired alt paragraph (sole-children image wrapper convention).
     const alt = el.getAttribute('alt') || el.getAttribute('title')
       || displayText || altParagraph;
-    el.replaceWith(render(src, alt, false));
+    place(render(src, alt, false));
   });
 }

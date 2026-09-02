@@ -631,6 +631,13 @@ main .dm-alt-text {
   display: none;
 }
 
+/* Universal Editor only: dm-support keeps the authored DM link (hidden) beside
+   the rendered <picture>/<video> so UE can still read a[href] back when saving.
+   On the live site the link is replaced outright, so this class never appears. */
+main .dm-source-hidden {
+  display: none;
+}
+
 .icon {
   display: inline-block;
   height: 24px;
