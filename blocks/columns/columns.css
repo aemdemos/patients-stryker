@@ -21,8 +21,13 @@
  padding-left: 30px;
 }
 
-.zip-skin-closure  main > .section.full-bleed {
+.zip-skin-closure  main > .section.full-bleed.columns-container {
     padding-block: 0;
+}
+
+.zip-skin-closure .columns-container .columns-wrapper .columns.columns-50-50.block.columns-2-cols p
+{
+  padding-bottom: 30px;
 }
 
 .columns > div > div {
