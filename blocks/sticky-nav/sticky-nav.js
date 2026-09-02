@@ -54,7 +54,9 @@ export default function decorate(block) {
 
   [...block.children].forEach((row) => {
     const [labelCell, targetCell] = row.children;
-    if (!labelCell) return;
+    // skip blank rows (e.g. a trailing empty cell left by authoring) so they
+    // don't render as an empty, purposeless nav item
+    if (!labelCell || !labelCell.textContent.trim()) return;
 
     const link = targetCell?.querySelector('a');
     const href = link?.getAttribute('href') || targetCell?.textContent.trim();
@@ -63,9 +65,14 @@ export default function decorate(block) {
     item.className = 'sticky-nav-item';
     item.href = href && href.startsWith('#') ? href : `#${(href || '').replace(/^#/, '')}`;
 
-    // keep the label field editable in UE
-    moveInstrumentation(labelCell, item);
-    item.append(...labelCell.childNodes);
+    // Row = the sticky-nav-item component, so its instrumentation goes on the
+    // <a> (keeps the item selectable/reorderable in UE); the label field's
+    // instrumentation goes on the <p> so the label stays inline-editable.
+    moveInstrumentation(row, item);
+    const labelEl = labelCell.querySelector('p') || document.createElement('p');
+    moveInstrumentation(labelCell, labelEl);
+    if (!labelEl.parentElement) labelEl.append(...labelCell.childNodes);
+    item.append(labelEl);
 
     items.push({ item, href });
     nav.append(item);

@@ -105,11 +105,18 @@
         ]
       },
       {
-        "component": "reference",
-        "name": "background-image",
-        "label": "Background Image",
+        "component": "text",
+        "name": "background-image-url",
+        "label": "Background Image URL (external / Dynamic Media link)",
         "valueType": "string",
-        "multi": false
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "anchor",
+        "label": "Anchor ID (Sticky Nav only — leave blank otherwise)",
+        "valueType": "string",
+        "description": "Only needed if this page uses a Sticky Nav. Set a unique id (e.g. find-a-doctor) here, then reference it as the Sticky Nav item's Target with a # prefix (#find-a-doctor). If the page has no Sticky Nav, leave this empty."
       }
     ]
   },
@@ -155,6 +162,10 @@
             "value": "brochure"
           },
           {
+            "name": "Brochure CTA",
+            "value": "brochure-cta"
+          },
+          {
             "name": "Linked",
             "value": "linked"
           }
@@ -166,7 +177,33 @@
     "id": "card",
     "fields": [
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image (Dynamic Media link)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "brochure-cta-card",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
         "name": "image",
         "label": "Image (Dynamic Media link)"
       },
@@ -296,7 +333,8 @@
         ]
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "desktopImage",
         "label": "Desktop Image (Dynamic Media link)"
       },
@@ -308,7 +346,8 @@
         "value": ""
       },
       {
-        "component": "aem-content",
+        "component": "text",
+        "valueType": "string",
         "name": "mobileImage",
         "label": "Mobile Image (Dynamic Media link, optional)",
         "condition": {
@@ -431,18 +470,17 @@
     "id": "icon-list-item",
     "fields": [
       {
-        "component": "reference",
-        "name": "icon",
-        "label": "Icon",
+        "component": "text",
         "valueType": "string",
-        "multi": false
+        "name": "icon",
+        "label": "Icon (Dynamic Media link)"
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "iconAlt",
-        "label": "Icon Alt Text",
-        "value": "",
-        "valueType": "string"
+        "label": "Icon Alt",
+        "multi": false
       },
       {
         "component": "richtext",

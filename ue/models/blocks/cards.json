@@ -20,10 +20,26 @@
       "plugins": {
         "da": {
           "name": "card",
-          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image URL</a></p><p>Image alt</p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
           "fields": [
             { "name": "image", "selector": "div:nth-child(1) a[href]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1) p:nth-of-type(2)" },
+            { "name": "imageAlt", "selector": "div:nth-child(1) a" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Brochure CTA Card",
+      "id": "brochure-cta-card",
+      "model": "brochure-cta-card",
+      "plugins": {
+        "da": {
+          "name": "card",
+          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1) a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1) a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -44,6 +60,7 @@
             { "name": "Default", "value": "" },
             { "name": "Resources", "value": "resources" },
             { "name": "Brochure", "value": "brochure" },
+            { "name": "Brochure CTA", "value": "brochure-cta" },
             { "name": "Linked", "value": "linked" }
           ]
         }
@@ -53,7 +70,33 @@
       "id": "card",
       "fields": [
         {
-          "component": "aem-content",
+          "component": "text",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image (Dynamic Media link)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "brochure-cta-card",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
           "name": "image",
           "label": "Image (Dynamic Media link)"
         },
@@ -78,7 +121,8 @@
     {
       "id": "cards",
       "components": [
-        "card"
+        "card",
+        "brochure-cta-card"
       ]
     }
   ]

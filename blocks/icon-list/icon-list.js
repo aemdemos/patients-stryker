@@ -2,8 +2,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
-// column count from the `cols-N` variant class; default 6 for the label variant,
-// 4 otherwise
+// column count from the `cols-N` variant class; default 6 for label, else 4
 function readColumns(block) {
   const match = [...block.classList]
     .map((c) => c.match(/^cols-(\d+)$/))
@@ -12,28 +11,8 @@ function readColumns(block) {
   return block.classList.contains('label') ? 6 : 4;
 }
 
-// Icons are authored as bare DM autolinks, so dm-support.js renders alt="".
-// Fall back to the source's labels, keyed by DM asset name; author alt wins.
-const ICON_ALT = {
-  oneinfour: '1 in 4 people',
-  global: 'Global',
-  disability: 'Disability',
-  leadingcause: 'Leading cause',
-};
-
-function altForSrc(src) {
-  try {
-    const name = new URL(src, window.location.href).pathname.split('/').pop().toLowerCase();
-    const key = Object.keys(ICON_ALT).find((k) => name.startsWith(k));
-    return key ? ICON_ALT[key] : '';
-  } catch {
-    return '';
-  }
-}
-
 /**
- * Decorates the icon-list block into a grid of items, each row [ picture ]
- * [ caption ]. Title and world-map background are on the section, not the block.
+ * Decorates the icon-list block into a grid of [ picture ][ caption ] items.
  * @param {Element} block The block element
  */
 export default function decorate(block) {
@@ -48,7 +27,7 @@ export default function decorate(block) {
     moveInstrumentation(row, item);
 
     const cells = [...row.children];
-    const iconCell = cells.find((c) => c.querySelector('picture, img'));
+    const iconCell = cells.find((c) => c.querySelector('picture, img, a[href]'));
     const textCell = cells.find((c) => c !== iconCell && c.textContent.trim());
 
     if (iconCell) {
@@ -63,10 +42,8 @@ export default function decorate(block) {
     list.append(item);
   });
 
-  // Backfill missing alt, then re-render non-DM images at 2x the 165px icon
-  // width for hi-dpi; DM images are left as dm-support.js rendered them.
+  // re-render non-DM images at 2x (330px) for hi-dpi; DM images left as-is
   list.querySelectorAll('picture > img').forEach((img) => {
-    if (!img.alt) img.alt = altForSrc(img.src);
     if (isDMSrc(img.src)) return;
     img.closest('picture').replaceWith(
       createOptimizedPicture(img.src, img.alt, false, [{ width: '330' }]),
