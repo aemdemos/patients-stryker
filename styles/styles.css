@@ -424,15 +424,6 @@ main ol.footnotes li > p {
 
 }
 
-/* the source stacks the disclaimer/trademark block flush (0 gap) — only the
-   References label and the citation list carry the 15px gap. Our authored copy is
-   all <p> (each with the global 15px margin-bottom), so zero the margin on every
-   paragraph AFTER the citation list to reproduce that dense footer rhythm. */
-main > .section.compact > div ol ~ p {
-  margin-bottom: 0;
-}
-
-
 code,
 pre {
   font-size: var(--body-font-size-s);
