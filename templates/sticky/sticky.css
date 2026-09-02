@@ -187,6 +187,14 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
   margin-top: 88px;
 }
 
+body.sticky > main > div.light-gray.section.icon-list-container > div.default-content-wrapper{
+  padding-top: 35px;
+}
+
+body.sticky > main > div.light-gray.section.icon-list-container {
+  padding-bottom: 70px;
+}
+
 @media (width >= 600px) {
   body.sticky main .hero.fullbleed {
     min-height: calc(5 * var(--space-section-l));
