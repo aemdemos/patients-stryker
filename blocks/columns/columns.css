@@ -69,12 +69,6 @@
   padding-right: 3%;
 }
 
-/* compact variant — smaller heading + body typography for dense 50/50 rows.
-   Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
-   (0,2,0), so the smaller body size wins.
-   The compact selectors only apply inside a `.compact` section, mutually exclusive
-   with the serif/icon-grid/light-gray variants, so no real conflict exists (see the
-   file-level no-descending-specificity disable at the top). */
 .section.compact .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -128,27 +122,12 @@
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
 
-/* Content 50-50 images are external Scene7 assets (1024x682) inserted with no
-   intrinsic width/height and loaded lazily. Without a reserved box they collapse
-   to 0 height until scrolled into view — on mobile that reads as a missing image
-   and causes layout shift. Reserve the 3:2 box so the image column holds its
-   height before the lazy image loads. Excludes the hero row (:has(h1)), which
-   has its own portrait crop. */
 .columns.columns-50-50:not(:has(h1)) .columns-img-col img {
   width: 100%;
   aspect-ratio: 1024 / 682;
   object-fit: cover;
 }
 
-/* hero row (zip-skin-closure) — the hero is authored as a 50-50 columns block
-   (headline + CTA left, product image right). It's the only 50-50 row on the
-   page carrying an <h1>, so `:has(h1)` scopes this to the hero without relying on
-   a section-metadata Style (the author dropped the `gold` tag). Doubly scoped to
-   the page theme (body.zip-skin-closure) so it can't affect any other page. The
-   source headline is a fluid Futura-bold display headline. The source scales it
-   13vw on mobile/tablet and 6.5vw from its desktop breakpoint (1024px) up — so
-   ~50px at 390px, ~100px at 768px, and ~94px at 1440px. Copy stays top-aligned
-   against the tall product image, matching the source. */
 body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
   font-family: var(--display-font-family-bold);
   font-size: 13vw;
@@ -169,52 +148,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-docto
   display: none;
 }
 
-@media (width >= 600px) {
-  /* restore the image column and CTA hidden on mobile once the hero is 2-up */
-  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-    display: block;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  padding-top: 0;
-}
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div {
-    position: relative;
-    min-height: 33.333vw; /* source crop height scales with viewport (~200px@600 → 480px@1440) */
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
-    flex: 0 0 100%;
-    padding-right: 15px;
-  }
-
-  /* fluid 15% left inset once the hero is 2-up — scales continuously with the
-     viewport (matches the source: 138px@920, 183px@1220, 192px@1280), no fixed-px
-     step. Reuses the base rule's selector so it reliably overrides the 30px mobile
-     value at the same specificity. */
-  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
-    padding-left: 10%;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -45px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
-    width: 51%;
-    margin-bottom: 0;
-    padding: 0;
-    overflow: clip;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
-    object-fit: cover;
-    object-position: top;
-    height: 100%;
-  }
-}
 
 body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
   font-family: var(--heading-font-family);
@@ -224,47 +157,14 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
   margin-bottom: 30px;
 }
 
-/* hero subhead — the global `.columns p` rule enlarges body copy to 17.5px in the
-   Humanist Slab body face, but the source subhead ("The puncture-free future of
-   skin closure") is 14px in the URW Egyptienne serif at line-height 1.35. Restore
-   those here (higher specificity than the base .columns p rule wins). */
 body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--heading-line-height-hero);
 }
 
-/* hero subhead — mapped to the source's rendered size at the breakpoint mapping
-   (EDS 600/900/1200 ↔ source 840/1024/1440 = 21/25.6/35px), same calc() approach
-   as the headline so it hits each mapped anchor and scales fluidly between. Holds
-   at 35px above 1200 (the source caps there). */
-@media (width >= 600px) {
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: calc(11.8px + 1.5333vw); /* 21px @600 → 25.6px @900 */
-  }
-}
-
-@media (width >= 900px) {
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: calc(3.1333vw - 2.6px); /* 25.6px @900 → 35px @1200 */
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  padding-top: var(--space-block);
-}
-
- body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    right: -25px;
-  }
 
 
-}
-
-@media (width >= 1200px) {
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: 35px;
-  }
-}
 
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
    on the stroke-awareness page. Typography only; layout stays columns-50-50. */
@@ -420,7 +320,116 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   text-decoration: none;
 }
 
+
+/* desktop (>= 900px) — all columns line up in a single row */
+
+/* zip hero headline — mapped to the source's rendered size at the EDS↔source
+   breakpoint mapping (EDS 600/900/1200 ↔ source 840/1024/1440 = 54.6/66.56/91px).
+   A verbatim source vw (6.5vw) renders too small at the narrower EDS viewport, so
+   each band uses a calc() that passes exactly through the mapped anchors and scales
+   fluidly between them. Above 1200 it holds at 91px (the source caps there too). */
+
+
+
+/* ===== related-links variant =====
+   A reusable columns treatment for the stroke-awareness "related links" fragment
+   (Understanding stroke / Patient information / Regional information): gold
+   Futura-bold column labels, an airy stacked-link rhythm, and a "Learn more"
+   chevron CTA. Authored as Columns (related-links); shared by every page that
+   includes this fragment (styling lives here, not in a page template). */
+
+/* roomier heading-to-body / stacked-link rhythm (source columns are airy) */
+.columns.related-links p {
+  margin-bottom: var(--space-block);
+}
+
+/* column labels — source renders these in Futura bold, GOLD, 24.5px
+   (the .futura-bold .fontsize-1-75em headings coloured #ffb500). */
+.columns.related-links h3 {
+  margin-bottom: var(--space-block);
+  padding-bottom: 2%;
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+  color: var(--color-accent);
+}
+
+.columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);   /* 17.5px */
+  font-weight: 700;
+  line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
+}
+
+.columns.related-links p:not(:has(a)) + p:has(a) a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+.zip-skin-closure h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2 {
+  padding-top: var(--space-section-l);
+}
+
 @media (width >= 600px) {
+  /* restore the image column and CTA hidden on mobile once the hero is 2-up */
+  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+    display: block;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  padding-top: 0;
+}
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div {
+    position: relative;
+    min-height: 33.333vw; /* source crop height scales with viewport (~200px@600 → 480px@1440) */
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
+    flex: 0 0 100%;
+    padding-right: 15px;
+  }
+
+  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
+    padding-left: 10%;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -45px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
+    width: 51%;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: clip;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+  }
+  
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: calc(11.8px + 1.5333vw); /* 21px @600 → 25.6px @900 */
+  }
+
   .section.compact .columns h2 {
     font-size: var(--heading-font-size-compact-m);
   }
@@ -451,11 +460,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
     padding-top: 8.1%;
   }
 
-  /* wider gap between image and text than the base 30px gutter (reference ~64px):
-     add inset on the text column, toward the image. Image-left row → text is the
-     2nd child, inset its left; image-right row → text is the 1st child, inset its
-     right. (Avoids nested :has, which is invalid.) --col-5050-inset is overridden
-     per section variant (e.g. the serif/stroke section uses a wider gap). */
   .columns.columns-50-50 {
     --col-5050-inset: 49px;
   }
@@ -516,10 +520,26 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   .section.light-gray .columns p:has(a u) {
     margin-bottom: 75px;
   }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+    font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
+  }
 }
 
-/* desktop (>= 900px) — all columns line up in a single row */
 @media (width >= 900px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: calc(3.1333vw - 2.6px); /* 25.6px @900 → 35px @1200 */
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  padding-top: var(--space-block);
+}
+
+ body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
+    right: -25px;
+  }
+
+
   .columns > div {
     flex-wrap: nowrap;
   }
@@ -586,80 +606,18 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   .section.light-gray .columns p:has(a u) {
     margin-bottom: var(--space-block);
   }
-}
 
-/* zip hero headline — mapped to the source's rendered size at the EDS↔source
-   breakpoint mapping (EDS 600/900/1200 ↔ source 840/1024/1440 = 54.6/66.56/91px).
-   A verbatim source vw (6.5vw) renders too small at the narrower EDS viewport, so
-   each band uses a calc() that passes exactly through the mapped anchors and scales
-   fluidly between them. Above 1200 it holds at 91px (the source caps there too). */
-@media (width >= 600px) {
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
-  }
-}
-
-@media (width >= 900px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
   }
 }
 
 @media (width >= 1200px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: 35px;
+  }
+
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: 91px;
   }
-}
-
-/* ===== related-links variant =====
-   A reusable columns treatment for the stroke-awareness "related links" fragment
-   (Understanding stroke / Patient information / Regional information): gold
-   Futura-bold column labels, an airy stacked-link rhythm, and a "Learn more"
-   chevron CTA. Authored as Columns (related-links); shared by every page that
-   includes this fragment (styling lives here, not in a page template). */
-
-/* roomier heading-to-body / stacked-link rhythm (source columns are airy) */
-.columns.related-links p {
-  margin-bottom: var(--space-block);
-}
-
-/* column labels — source renders these in Futura bold, GOLD, 24.5px
-   (the .futura-bold .fontsize-1-75em headings coloured #ffb500). */
-.columns.related-links h3 {
-  margin-bottom: var(--space-block);
-  padding-bottom: 2%;
-  font-family: var(--display-font-family-bold);
-  font-weight: 700;
-  font-size: var(--heading-font-size-xl);
-  line-height: var(--heading-line-height);
-  color: var(--color-accent);
-}
-
-.columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-l);   /* 17.5px */
-  font-weight: 700;
-  line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
-}
-
-.columns.related-links p:not(:has(a)) + p:has(a) a::after {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 0 6px 8px;
-  border-color: transparent transparent transparent currentcolor;
-}
-
-.zip-skin-closure h2 {
-  font-family: var(--heading-font-family);
-  font-weight: 500;
-}
-
-.zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2 {
-  padding-top: var(--space-section-l);
 }
