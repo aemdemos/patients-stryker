@@ -2,13 +2,7 @@
 
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
-/**
- * Resolve a nav target from an id. A `.section[data-anchor]` wins over a plain
- * element id (auto-generated heading ids can collide). `data-anchor` may be a
- * comma-separated list, so several items can share one section.
- * @param {string} href
- * @returns {Element|null}
- */
+/** Resolve a nav target: `.section[data-anchor]` wins over a plain id. @param {string} href */
 function resolveTarget(href) {
   if (!href) return null;
   const hash = href.includes('#') ? href.slice(href.indexOf('#') + 1) : href;
@@ -22,11 +16,7 @@ function resolveTarget(href) {
   return document.getElementById(hash);
 }
 
-/**
- * Bare anchor id from a string: the part after `#`, else the trimmed string.
- * @param {string} s
- * @returns {string}
- */
+/** Bare anchor id from a string: the part after `#`, else the trimmed string. @param {string} s */
 const anchorId = (s) => {
   if (!s) return '';
   const v = s.trim();
@@ -35,12 +25,7 @@ const anchorId = (s) => {
 
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 
-/**
- * Eased scroll, re-sampling the target each frame so lazy-content shifts are
- * absorbed smoothly.
- * @param {() => number} getTargetY
- * @param {number} duration
- */
+/** Eased scroll, re-sampling the target each frame to absorb lazy-content shifts. */
 function animateScrollTo(getTargetY, duration = 600) {
   const startY = window.scrollY;
   const startTime = performance.now();
@@ -68,8 +53,7 @@ export default function decorate(block) {
     // skip blank rows so they don't render as empty nav items
     if (!labelCell || !labelCell.textContent.trim()) return;
 
-    // Target may be a plain `#anchor` string or a link with placeholder href
-    // (e.g. `/`). Prefer whichever candidate carries an anchor id.
+    // Target may be a plain `#anchor` string or a link; prefer whichever carries an anchor id.
     const link = targetCell?.querySelector('a');
     const linkHref = link?.getAttribute('href') || '';
     const cellText = targetCell?.textContent.trim() || '';
@@ -96,8 +80,7 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(nav);
 
-  // Resolve targets lazily (not once) so anchors inside async-loaded fragments
-  // are picked up. Region = the item's containing section, not the heading.
+  // Resolve targets lazily so anchors in async-loaded fragments are picked up.
   const currentTargets = () => items
     .map(({ item, href }) => {
       const anchor = resolveTarget(href);
@@ -120,8 +103,7 @@ export default function decorate(block) {
     items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
   };
 
-  // For items sharing one region (comma-separated `data-anchor`), active state
-  // follows the last-clicked item rather than the last in the bar.
+  // Shared-region items: active state follows the last-clicked item, not the last in the bar.
   let clickedItem = null;
 
   items.forEach((entry) => {
@@ -156,12 +138,7 @@ export default function decorate(block) {
         targets.forEach((t, i) => {
           if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
         });
-        // Rescue a trailing section that can't scroll up to the line: a short final
-        // section near the page bottom (e.g. the resources fragment) may top out
-        // before its top reaches the line, so `top <= line` never matches it. Once
-        // such a section is clearly scrolled into view (top above the viewport
-        // midpoint), treat it — and any equally-in-view sections after the current
-        // pick — as active so the corresponding nav item highlights.
+        // Rescue a trailing section that can't scroll to the line once it's clearly in view.
         if (activeIndex < 0) {
           const midline = window.innerHeight / 2;
           targets.forEach((t, i) => {
@@ -169,22 +146,17 @@ export default function decorate(block) {
           });
         }
       }
-      // Two nav items can target one section. The loops above naturally reach
-      // the latter item last, so normalize to the first item for that region.
+      // Two nav items can target one section; normalize to the first item for that region.
       if (activeIndex >= 0) {
         const activeRegion = targets[activeIndex].region;
         activeIndex = targets.findIndex((t) => t.region === activeRegion);
       }
-      // Fall back to the final item at page bottom only when no section has
-      // already qualified. This prevents the fallback from overriding a
-      // resource section that is itself near the bottom of the document.
+      // Fall back to the final item at page bottom only when no section already qualified.
       const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
         >= document.documentElement.scrollHeight - 2;
       if (atBottom && activeIndex < 0) activeIndex = targets.length - 1;
 
-      // Keep the clicked item highlighted while the eased scroll crosses the
-      // preceding section. Without this, scroll-spy immediately replaces it
-      // before the target has reached its active line.
+      // Keep the clicked item highlighted while the scroll crosses the preceding section.
       const clickedTarget = targets.find((t) => t.item === clickedItem);
       const targetIsNotActive = activeIndex < 0
         || targets[activeIndex].region !== clickedTarget?.region;
@@ -194,16 +166,12 @@ export default function decorate(block) {
       }
 
       if (activeIndex < 0) { setCurrent(null); return; }
-      // among items sharing the active region, prefer the clicked one so that
-      // sibling items pointing at the same section (comma-separated `data-anchor`,
-      // e.g. resources + patient-information on one fragment) highlight the item the
-      // user actually clicked rather than defaulting to the last in the group.
+      // Among items sharing the active region, prefer the clicked one over the last in the group.
       const activeRegion = targets[activeIndex].region;
       const group = targets.filter((t) => t.region === activeRegion);
       const clicked = group.find((t) => t.item === clickedItem);
       setCurrent(clicked ? clicked.item : group[0].item);
-      // once the highlight matches the click, drop the click lock so subsequent
-      // scrolling into a different region updates normally.
+      // Once the highlight matches the click, drop the lock so later scrolling updates normally.
       if (!clicked || group.length <= 1) clickedItem = null;
     };
 
@@ -215,9 +183,7 @@ export default function decorate(block) {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
-    // Re-run when the page height changes (fragment/images loading in). The first
-    // pass runs before that content settles, when a briefly-short page can wrongly
-    // read as "scrolled to bottom" and activate the last item; recompute after.
+    // Re-run when the page height changes, since an early pass may misread a short page as bottom.
     if (typeof ResizeObserver === 'function') {
       new ResizeObserver(onScroll).observe(document.body);
     }

@@ -1,10 +1,8 @@
 /* stylelint-disable no-descending-specificity */
 
-/* Sticky landing-page template. `template: sticky` metadata adds `body.sticky`;
-   every rule is scoped to it so nothing leaks to other templates. */
+/* Sticky landing-page template; every rule below is scoped to `body.sticky` so nothing leaks to other templates. */
 
-/* Hero: place the overlaid headline ~10% from the left, near the top (drop the
-   section's 70px top padding and the shared hero's larger insets). */
+/* Hero: place the overlaid headline ~10% from the left, near the top. */
 body.sticky main > .section.hero-container {
   padding-top: 0;
 }
@@ -13,8 +11,7 @@ body.sticky main .hero.fullbleed > div:last-child {
   padding: 4% 8% 0 10%;
 }
 
-/* Hero image — MOBILE BASE: 1:1 square crop (source's 800×800), not the shared
-   block's 4:5 portrait (too tall). Desktop restores the shared block's wide crop. */
+/* Hero image — MOBILE BASE: 1:1 square crop, not the shared block's 4:5 portrait. */
 body.sticky main .hero.fullbleed img {
   aspect-ratio: 1 / 1;
 }
@@ -53,17 +50,12 @@ body.sticky main .section{
   }
 }
 
-/* Sticky-nav: the list is width-capped at five 193px items (965px) but this page
-   has only four (772px). Without centring, the four items pack to the left of that
-   reserved space, shifting the whole cluster ~96px left of the bar centre. Centre
-   them so the cluster sits at the viewport centre, matching the source. */
+/* Sticky-nav: centre the four-item list within the five-item-wide reserved cluster. */
 body.sticky main .sticky-nav .sticky-nav-list {
   justify-content: center;
 }
 
-/* Hero headline: the source renders the single-statement "Understanding stroke"
-   headline in Futura bold at a larger fluid size (10vw mobile → 5vw desktop,
-   capped 70px) rather than the shared block's light-serif 7vw/3.5vw. */
+/* Hero headline: Futura bold at a larger fluid size (10vw mobile → 70px desktop cap), not the shared block's light-serif. */
 body.sticky main .hero.fullbleed h1 {
   font-family: var(--display-font-family);
   font-weight: 700;
@@ -83,10 +75,7 @@ body.sticky main .hero.fullbleed h1 {
   }
 }
 
-/* Section headings → gold Futura bold, like the icon-list sections. The source
-   renders every section heading in the gold accent (#ffb500); the columns and
-   fragment blocks otherwise leave them black serif. Columns headings are 31.5px
-   (matching icon-list); the fragment's 3-column headings are 24.5px. */
+/* Section headings → gold Futura bold, matching the icon-list sections. */
 body.sticky main .section .columns h3,
 body.sticky main .section .columns h2 {
   font-family: var(--display-font-family);
@@ -105,8 +94,7 @@ body.sticky main .section .columns.related-links h3 {
   font-size: var(--heading-font-size-xl);
 }
 
-/* Columns body copy → 14px body-serif (not the columns variants' heading-serif).
-   Lowest-specificity first, for no-descending-specificity. */
+/* Columns body copy → 14px body-serif, not the columns variants' heading-serif. */
 body.sticky main .section .columns p,
 body.sticky main .section .columns li {
   font-family: var(--body-font-family);
@@ -114,16 +102,14 @@ body.sticky main .section .columns li {
   line-height: var(--paragraph-line-height);
 }
 
-/* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold.
-   Before the hero-sibling rule below, for no-descending-specificity. */
+/* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold. */
 body.sticky main > .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   font-weight: 400;
 }
 
-/* All default body copy → 14px body-serif. Mirrors the global fullbleed-sibling
-   selector (+ body.sticky) to out-weigh its 12px shrink; excludes .compact. */
+/* All default body copy → 14px body-serif, out-weighing the global 12px shrink; excludes .compact. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > .default-content-wrapper > p {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -139,9 +125,7 @@ body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.compa
   line-height: var(--paragraph-line-height);
 }
 
-/* ── Body-copy sizes matched to the source (override the 14px defaults above) ──
-   The source does NOT use a uniform 14px; each context has its own size. These
-   selectors carry a section-variant class, so they out-specify the rules above. */
+/* Body-copy sizes matched to the source: not a uniform 14px, each context has its own size. */
 
 /* Serif 50/50 columns ("What is a stroke?", "Stroke is treatable") → 21px URW. */
 body.sticky main .section.serif .columns :is(p, li, a) {
@@ -150,34 +134,28 @@ body.sticky main .section.serif .columns :is(p, li, a) {
   line-height: var(--heading-line-height);
 }
 
-/* Video section copy ("When someone is having a stroke…") → 21px URW. Mirrors the
-   hero-sibling selector shape so it out-weighs the 14px default-copy rule above. */
+/* Video section copy → 21px URW, out-weighing the 14px default-copy rule above. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.video-container > .default-content-wrapper > p {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
 }
 
-/* Icon-list section intros → 17.5px URW serif. The Symptoms (label) intro is
-   left-aligned and spans the full content width, as on the source. */
+/* Icon-list section intros → 17.5px URW serif. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > .default-content-wrapper > p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
-/* Risk-factors (tile) intro only: the source centres this copy in a narrow band
-   (~560px) via authored line breaks; our content has none, so cap the width and
-   centre it. The Symptoms (label) intro above is left-aligned full-width and is
-   unaffected. */
+/* Risk-factors (tile) intro only: cap width to ~560px and centre it, matching the source. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p {
   max-width: 560px;
   margin-inline: auto;
   text-align: center;
 }
 
-/* Risk-factors lead-in ("These risk factors include the following:") keeps the
-   source's Futura bold at that 17.5px size. */
+/* Risk-factors lead-in keeps the source's Futura bold at 17.5px. */
 body.sticky main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
@@ -191,9 +169,7 @@ body.sticky main .section .columns.related-links :is(p, a) {
   line-height: var(--body-line-height-l);
 }
 
-/* CTA links ("Learn More" / "Spread the word") — the link-only paragraph that
-   follows a descriptive paragraph in the same cell. Source: 17.5px Futura bold
-   uppercase (the regional-link list, with no preceding copy, stays URW serif). */
+/* CTA links (the link-only paragraph following descriptive copy) → 17.5px Futura bold uppercase. */
 body.sticky main .section .columns.related-links p:not(:has(a)) + p:has(> a:only-child) > a {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
@@ -201,8 +177,7 @@ body.sticky main .section .columns.related-links p:not(:has(a)) + p:has(> a:only
   text-transform: uppercase;
 }
 
-/* Risk-factor tile captions: source line-height is 20.125px (1.15), not the tile
-   block's default 1.375 (24px at 17.5px). */
+/* Risk-factor tile captions: source line-height is 20.125px (1.15), not the tile block's default 1.375. */
 body.sticky main .icon-list.tile .icon-list-text,
 body.sticky main .icon-list.tile .icon-list-text p {
   line-height: var(--body-line-height-l);
@@ -214,9 +189,7 @@ body.sticky main .icon-list.tile .icon-list-text p {
   }
 }
 
-/* Horizontal inset — MOBILE BASE: the source sits content ~45px from the screen
-   edge (15px gutter + ~30px inner), not the 15px default, so copy doesn't run to the
-   edges. Scoped to the text bands. >=600px reverts to the shared 15px gutter. */
+/* Horizontal inset — MOBILE BASE: ~45px from the screen edge, not the 15px default; >=600px reverts to the shared gutter. */
 body.sticky main > .section.columns-container > .columns-wrapper,
 body.sticky main > .section.columns-container > .default-content-wrapper,
 body.sticky main > .section.icon-list-container > .default-content-wrapper,
@@ -243,13 +216,7 @@ body.sticky main > .section.compact > .default-content-wrapper {
   }
 }
 
-/* Serif 50/50 columns — MOBILE BASE: the source keeps these STACKED (image below
-   full-width text) through tablet, only going side-by-side at desktop. The shared
-   block splits them 50/50 from 600px, so hold the stacked layout as the base and
-   restore the shared desktop row at >=900px. Stacked, the text column insets more
-   than the image: 53px per side on mobile, 89px on tablet (centring the copy), while
-   the image cell keeps the 15px gutter. The wrapper is pulled to 15px so the image
-   sits near full-width. */
+/* Serif 50/50 columns — MOBILE BASE: keep them STACKED (text then image) through tablet; the shared block splits 50/50 from 600px. */
 body.sticky main > .section.serif.columns-container > .columns-wrapper {
   padding-inline: var(--container-gutter);
 }
@@ -286,19 +253,13 @@ body.sticky > main > div.light-gray.section.icon-list-container > div.default-co
   padding-top: 5%;
 }
 
-/* Stacked text→image gap — MOBILE BASE: in the text-FIRST row ("What is a stroke"),
-   the source leaves a generous gap between the body copy and the image below it
-   (~88px mobile). The shared block only spaces BELOW the image, leaving text and
-   image touching, so add a top gap on the image cell — but ONLY when it follows the
-   text (:not(:first-child)); the image-FIRST row ("Stroke is treatable") keeps the
-   image snug above its heading. Widens to ~123px on tablet; removed at desktop. */
+/* Stacked text→image gap — MOBILE BASE: ~88px gap above the image when it follows text; image-first rows stay snug. */
 body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-col:not(:first-child) {
   margin-top: 88px;
 }
 
 @media (width >= 600px) {
-  /* The source starts its editorial image/text rows at its 840px breakpoint,
-     which maps to the local 600px tablet breakpoint. */
+  /* The source's 840px editorial breakpoint maps to the local 600px tablet breakpoint. */
   body.sticky main > .section.serif .columns.columns-50-50 > div {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -345,8 +306,7 @@ body.sticky main > .section.serif .columns.columns-50-50 > div > .columns-img-co
     padding-inline: 0;
   }
 
-  /* copy ≈ 540/1380 ≈ 39%, left of the gap — NOT flush to the container edge (the
-     source leaves ~80px free to its right). */
+  /* copy ≈ 540/1380 ≈ 39%, left of the gap — not flush to the container edge. */
   body.sticky main > .section.video-container[data-anchor] > .default-content-wrapper {
     flex: 0 0 39%;
     box-sizing: border-box;

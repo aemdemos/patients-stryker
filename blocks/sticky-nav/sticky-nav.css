@@ -1,8 +1,4 @@
-/*
- * sticky-nav — in-page anchor bar. 80px full-bleed gray bar, 193px UPPERCASE
- * items (Futura 14px) with white dividers, gold active box; sticky to top.
- * Scoped to `.sticky-nav.block` to avoid colliding with `body.sticky-nav`.
- */
+/* sticky-nav — in-page anchor bar: 80px full-bleed gray bar, 193px UPPERCASE items with white dividers, gold active box; sticky to top. Scoped to `.sticky-nav.block` to avoid colliding with `body.sticky-nav`. */
 
 /* full-bleed gray bar, ignoring the section's max-width container */
 .sticky-nav.block {
@@ -27,16 +23,14 @@
   }
 }
 
-/* capped to five 193px items + centred: fixed cluster when wide, else items
-   shrink/wrap to fill 100% width — never horizontally scrollable */
+/* capped to five 193px items + centred: fixed cluster when wide, else items shrink/wrap to fill 100% width — never horizontally scrollable */
 .sticky-nav .sticky-nav-list {
   display: flex;
   max-width: calc(5 * 193px);
   margin-inline: auto;
 }
 
-/* transparent flex cell; its <p> is the gold box. flex:1 1 0 shares the row,
-   max-width caps at the source cell size */
+/* transparent flex cell; its <p> is the gold box. flex:1 1 0 shares the row, max-width caps at the source cell size */
 .sticky-nav .sticky-nav-item {
   display: flex;
   box-sizing: border-box;
@@ -96,8 +90,7 @@
   outline-offset: -2px;
 }
 
-/* the active item's gold box already marks it, so suppress any focus ring there
-   (otherwise clicking it leaves a stray outline framing the gold box). */
+/* the active item's gold box already marks it, so suppress any stray focus ring there */
 .sticky-nav .sticky-nav-item.sticky-nav-item-current:focus,
 .sticky-nav .sticky-nav-item.sticky-nav-item-current:focus-visible {
   outline: none;
