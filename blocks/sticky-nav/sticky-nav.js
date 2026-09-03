@@ -25,16 +25,39 @@ const anchorId = (s) => {
 
 const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
 
-/** Eased scroll, re-sampling the target each frame to absorb lazy-content shifts. */
-function animateScrollTo(getTargetY, duration = 600) {
-  const startY = window.scrollY;
+/**
+ * The nearest scrollable ancestor, or `window` when the page itself scrolls.
+ * On the live site this is `window`; in the Universal Editor the page renders
+ * inside a scrolling canvas element, so scroll must be read/written there.
+ * @param {Element} el
+ */
+function getScroller(el) {
+  let node = el.parentElement;
+  while (node && node !== document.body && node !== document.documentElement) {
+    const style = getComputedStyle(node);
+    if (/(auto|scroll|overlay)/.test(style.overflowY) && node.scrollHeight > node.clientHeight) {
+      return node;
+    }
+    node = node.parentElement;
+  }
+  return window;
+}
+
+/** Eased scroll on the given scroller, re-sampling the target each frame to absorb shifts. */
+function animateScrollTo(scroller, getTargetY, duration = 600) {
+  const readPos = () => (scroller === window ? window.scrollY : scroller.scrollTop);
+  const writePos = (y) => {
+    if (scroller === window) window.scrollTo(0, y);
+    else scroller.scrollTop = y;
+  };
+  const startY = readPos();
   const startTime = performance.now();
 
   function step(now) {
     const t = Math.min((now - startTime) / duration, 1);
     const eased = easeInOutQuad(t);
     const targetY = getTargetY();
-    window.scrollTo(0, startY + (targetY - startY) * eased);
+    writePos(startY + (targetY - startY) * eased);
     if (t < 1) requestAnimationFrame(step);
   }
 
@@ -43,6 +66,10 @@ function animateScrollTo(getTargetY, duration = 600) {
 
 export default function decorate(block) {
   const section = block.closest('.section');
+  // Resolve after decoration below; the live site scrolls `window`, the UE canvas
+  // scrolls a nested container. All scroll reads/writes/listeners go through this.
+  let scroller = window;
+  const scrollTarget = () => (scroller === window ? window : scroller);
   const nav = document.createElement('nav');
   nav.className = 'sticky-nav-list';
   nav.setAttribute('aria-label', 'Section navigation');
@@ -81,6 +108,11 @@ export default function decorate(block) {
   block.textContent = '';
   block.append(nav);
 
+  // Now that the block is in its final place, find the element that actually scrolls.
+  scroller = getScroller(block);
+  // Viewport top of the scroller: 0 for window, else the container's client top.
+  const scrollerTop = () => (scroller === window ? 0 : scroller.getBoundingClientRect().top);
+
   // Resolve targets lazily so anchors in async-loaded fragments are picked up.
   const currentTargets = () => items
     .map(({ item, href }) => {
@@ -118,9 +150,11 @@ export default function decorate(block) {
       const region = target.closest('.section') || target;
       const getTargetY = () => {
         const off = block.getBoundingClientRect().height || 70;
-        return window.scrollY + region.getBoundingClientRect().top - off;
+        const current = scroller === window ? window.scrollY : scroller.scrollTop;
+        // Region top relative to the scroller's own viewport, minus the sticky bar.
+        return current + region.getBoundingClientRect().top - scrollerTop() - off;
       };
-      animateScrollTo(getTargetY, 600);
+      animateScrollTo(scroller, getTargetY, 600);
     });
   });
 
@@ -132,9 +166,12 @@ export default function decorate(block) {
       const targets = currentTargets();
       const barRect = block.getBoundingClientRect();
       const barHeight = barRect.height || 70;
-      const pinned = barRect.top <= 1;
+      // Everything is measured relative to the scroller's own top edge (0 for window).
+      const top = scrollerTop();
+      const viewportH = scroller === window ? window.innerHeight : scroller.clientHeight;
+      const pinned = barRect.top - top <= 1;
       section?.classList.toggle('sticky-nav-pinned', pinned);
-      const line = barHeight + 2;
+      const line = top + barHeight + 2;
       let activeIndex = -1;
       if (pinned) {
         targets.forEach((t, i) => {
@@ -142,7 +179,7 @@ export default function decorate(block) {
         });
         // Rescue a trailing section that can't scroll to the line once it's clearly in view.
         if (activeIndex < 0) {
-          const midline = window.innerHeight / 2;
+          const midline = top + viewportH / 2;
           targets.forEach((t, i) => {
             if (t.region.getBoundingClientRect().top <= midline) activeIndex = i;
           });
@@ -154,8 +191,10 @@ export default function decorate(block) {
         activeIndex = targets.findIndex((t) => t.region === activeRegion);
       }
       // Fall back to the final item at page bottom only when no section already qualified.
-      const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
-        >= document.documentElement.scrollHeight - 2;
+      const scrollPos = scroller === window ? window.scrollY : scroller.scrollTop;
+      const scrollSize = scroller === window
+        ? document.documentElement.scrollHeight : scroller.scrollHeight;
+      const atBottom = pinned && scrollPos > 0 && viewportH + scrollPos >= scrollSize - 2;
       if (atBottom && activeIndex < 0) activeIndex = targets.length - 1;
 
       // Keep the clicked item highlighted while the scroll crosses the preceding section.
@@ -183,7 +222,8 @@ export default function decorate(block) {
       requestAnimationFrame(update);
     };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    // Listen on the actual scroller (the UE canvas, or `window` on the live site).
+    scrollTarget().addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     // Re-run when the page height changes, since an early pass may misread a short page as bottom.
     if (typeof ResizeObserver === 'function') {
