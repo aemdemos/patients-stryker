@@ -441,10 +441,6 @@ body.patient-information main > .section.fragment-container + .section.compact {
   margin-top: var(--space-section);
 }
 
-/* stylelint-disable no-descending-specificity -- theme rules deliberately carry
-   the .zip-skin-closure class so they out-specify the base block rules regardless
-   of source order; the cross-selector ordering this flags can't collide at runtime. */
-
 /* =====================================================================
    Theme: zip-skin-closure — Zip Skin Closure product page
    All rules moved here from styles/styles.css, blocks/columns/columns.css and
