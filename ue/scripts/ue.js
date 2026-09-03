@@ -11,6 +11,57 @@
  */
 
 import { moveInstrumentation } from './ue-utils.js';
+import { getMetadata, toClassName } from '../../scripts/aem.js';
+
+/*
+ * Universal Editor only: keep the body theme/template classes in sync when an
+ * author edits page metadata. decorateTemplateAndTheme() (aem.js) applies these
+ * classes ONCE at initial page load; when an author changes the Theme (or
+ * Template) dropdown, UE patches the metadata in place without re-running page
+ * decoration, so the body class would otherwise stay stale (the newly selected
+ * theme never gets added, and a deselected one never gets removed). We watch the
+ * document for metadata changes and reconcile `body.<theme>` / `body.<template>`
+ * against the current metadata value. Runs only in UE (this file is imported
+ * solely on *.ue.da.live), so there is no live-site cost.
+ */
+const syncBodyMetaClasses = () => {
+  // track the classes we last applied per metadata key, so a change from one
+  // value to another (or to None) removes the previous class before adding the new.
+  const applied = { theme: [], template: [] };
+
+  const reconcile = () => {
+    Object.keys(applied).forEach((name) => {
+      const value = getMetadata(name);
+      const classes = value
+        .split(',')
+        .map((c) => toClassName(c.trim()))
+        .filter((c) => c);
+      applied[name]
+        .filter((c) => !classes.includes(c))
+        .forEach((c) => document.body.classList.remove(c));
+      classes.forEach((c) => document.body.classList.add(c));
+      applied[name] = classes;
+    });
+  };
+
+  reconcile();
+
+  // UE writes metadata edits to the <meta> tags in <head>; observe those so the
+  // body class updates the moment the dropdown value changes.
+  const observer = new MutationObserver(reconcile);
+  observer.observe(document.head, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['content', 'name'],
+  });
+
+  // also reconcile on UE's own content events, covering patch flows that don't
+  // mutate the <head> meta tags directly.
+  ['aue:content-patch', 'aue:content-update'].forEach((evt) => {
+    document.body.addEventListener(evt, reconcile);
+  });
+};
 
 const setupObservers = () => {
   const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
@@ -80,4 +131,5 @@ const setupUEEventHandlers = () => {
 export default () => {
   setupObservers();
   setupUEEventHandlers();
+  syncBodyMetaClasses();
 };
