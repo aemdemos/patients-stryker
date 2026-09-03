@@ -118,6 +118,7 @@
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 0;
+  margin-top: 30px;
 }
 
 
@@ -507,6 +508,15 @@
   /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
   .section.light-gray .columns p:has(a u) {
     margin-bottom: var(--space-block);
+  }
+
+  .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    margin-top: 0;
+  }
+
+  .section.compact .columns.columns-50-50:not(:first-child) > div {
+    margin-top:40px;
+    margin-bottom: 30px;
   }
 }
 

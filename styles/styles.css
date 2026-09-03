@@ -392,7 +392,7 @@ main ol.footnotes li > p {
 }
 
 .section.compact {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .stroke-awareness-landing .section.compact {
