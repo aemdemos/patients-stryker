@@ -37,6 +37,10 @@
           {
             "name": "Treatment Detail",
             "value": "treatment-detail"
+          },
+          {
+            "name": "Legal",
+            "value": "legal"
           }
         ]
       },
@@ -44,7 +48,7 @@
         "component": "select",
         "name": "theme",
         "label": "Theme",
-        "description": "Page theme that applies scoped styling (styles/themes.css)",
+        "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
         "value": "",
         "options": [
           {
@@ -52,16 +56,20 @@
             "value": ""
           },
           {
-            "name": "Campaign Landing",
-            "value": "campaign-landing"
-          },
-          {
-            "name": "SA Resources",
+            "name": "Stroke Awareness Resources",
             "value": "sa-resources"
           },
           {
             "name": "Stroke Awareness Landing",
             "value": "stroke-awareness-landing"
+          },
+          {
+            "name": "Zip Skin Closure",
+            "value": "zip-skin-closure"
+          },
+          {
+            "name": "Campaign Landing",
+            "value": "campaign-landing"
           }
         ]
       }

@@ -51,6 +51,16 @@
       "blocks": []
     },
     {
+      "name": "patient-information",
+      "urls": [
+        "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html",
+      "coverageGaps": [],
+      "description": "Neurovascular Patient Information page (standalone, styled via the `patient-information` theme in styles/themes.css): gold title bar (hero band), an intro line, a row of patient-guide brochure cards (cards brochure-cta) linking to PDFs and product pages with a gold product CTA button, a gold 'for more information' CTA band (section style: gold, full-bleed), a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only (hero, cards, columns). This page shares no layout with any sibling, so it uses a theme rather than a shared template.",
+      "blocks": ["hero", "cards", "columns"]
+    },
+    {
       "name": "sa-resources",
       "urls": [
         "https://patients.stryker.com/ww/en/stroke-awareness/resources.html"
