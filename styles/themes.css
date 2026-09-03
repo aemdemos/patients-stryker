@@ -110,6 +110,46 @@ body.sa-resources .cards.brochure .cards-card-body p {
    fragment is reused with the same look on other pages. Only theme-specific
    deltas would live here; there are none. */
 
+/* ----- Embedded body fragment: re-assert section foundations -----
+   The whole resources body is embedded via one fragment block, so its sections
+   are NESTED inside `main > .section.fragment-container > .fragment` — they are
+   NOT direct children of `main`. All the foundational section rules in
+   styles.css are scoped to `main > .section…` (child combinator), so they DON'T
+   reach these nested sections: content loses its width cap + gutter, the flex
+   intro stops laying out side by side, the divider rule disappears, and the
+   light-gray band loses its background. Re-assert those rules here for sections
+   inside the fragment, scoped to this theme so nothing else is affected. Values
+   mirror styles.css exactly. */
+
+/* inner content wrapper: width cap + centred gutter (styles.css `main > .section > div`) */
+body.sa-resources .fragment .section > div {
+  box-sizing: border-box;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+/* light-gray band background (styles.css `main > .section.light-gray`) */
+body.sa-resources .fragment .section.light-gray {
+  background-color: var(--color-surface);
+}
+
+/* divider rule at the section break (styles.css `main > .section.divider` + ::before) */
+body.sa-resources .fragment .section.divider {
+  position: relative;
+  padding-top: var(--space-section-l);
+}
+
+body.sa-resources .fragment .section.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  border-top: 1px solid var(--color-surface-muted);
+}
+
 /* =====================================================================
    Theme: stroke-awareness-landing — Stroke-Awareness landing page
    ===================================================================== */
@@ -143,6 +183,34 @@ body.stroke-awareness-landing .hero.banner h1 em strong {
      not vertically centred as the shared .section.flex default does. */
   body.sa-resources .section.flex {
     align-items: start;
+  }
+
+  /* Embedded fragment: re-assert the flex-section layout (styles.css
+     `main > .section.flex` + `> div`), which doesn't reach the fragment's nested
+     intro section. Lays the welcome copy beside the availability panel, capped +
+     guttered like every other section. align-items:start matches the sa-resources
+     intro (panel top-aligned with the welcome text). */
+  body.sa-resources .fragment .section.flex {
+    display: flex;
+    align-items: start;
+    gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  /* flex children share the row; the section already carries the cap/gutter above,
+     so zero the per-`> div` cap re-asserted for non-flex sections (no double gutter). */
+  body.sa-resources .fragment .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  body.sa-resources .fragment .section.flex > div:empty {
+    display: none;
   }
 
   /* the intro availability box is a single-item panel sitting in its own flex

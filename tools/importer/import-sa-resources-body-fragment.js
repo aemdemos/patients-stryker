@@ -6,7 +6,10 @@
 import heroParser from './parsers/sa-resources/hero.js';
 import panelParser from './parsers/sa-resources/panel.js';
 import cardsBrochureParser from './parsers/sa-resources/cards-brochure.js';
-import fragmentParser from './parsers/sa-resources/fragment.js';
+// Related-links is built INLINE as a `columns` block (not a nested fragment
+// reference): a fragment-inside-a-fragment does not resolve when the outer
+// fragment is embedded in a page, so the content is inlined here instead.
+import columnsRelatedLinksParser from './parsers/sa-resources/columns-related-links.js';
 
 // TRANSFORMER IMPORTS — same shared cleanup/dm + the sa-resources section
 // transformer. They are all guarded on `payload.template.name === 'sa-resources'`,
@@ -20,7 +23,7 @@ const parsers = {
   hero: heroParser,
   panel: panelParser,
   'cards-brochure': cardsBrochureParser,
-  fragment: fragmentParser,
+  'related-links': columnsRelatedLinksParser,
 };
 
 // TRANSFORMER REGISTRY - order matters: cleanup -> sections -> dm-images.
@@ -43,10 +46,10 @@ const transformers = [
 // `name` is 'sa-resources' so the shared transformers (all guarded on that name)
 // fire exactly as they do for the full-page import. The `sections` list is the
 // sa-resources template's sections MINUS the disclaimer — so no disclaimer break
-// or Section Metadata is emitted here. The related-links band stays a NESTED
-// fragment reference (/fragments/stroke-awareness-related-links, already authored
-// and published) rather than being inlined, so it isn't duplicated; the fragment
-// block resolves nested fragments recursively at runtime.
+// or Section Metadata is emitted here. The related-links band is built INLINE as a
+// `columns` block (not a nested fragment reference): a fragment-inside-a-fragment
+// does not resolve once the outer fragment is embedded in a page, so its content
+// is inlined here to keep the whole body in one self-contained fragment.
 const FRAGMENT = {
   name: 'sa-resources',
   // where the fragment document is written (DA path, no .html)
@@ -70,7 +73,7 @@ const FRAGMENT = {
       section: 'brochure',
     },
     {
-      name: 'fragment',
+      name: 'related-links',
       instances: ['.bg-light-gray .cols3'],
     },
   ],
@@ -114,7 +117,7 @@ const FRAGMENT = {
       name: 'Related links',
       selector: '.bg-light-gray .cols3',
       style: 'light-gray',
-      blocks: ['fragment'],
+      blocks: ['related-links'],
       defaultContent: [],
     },
   ],

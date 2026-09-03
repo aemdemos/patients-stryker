@@ -138,17 +138,57 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // parsers/sa-resources/fragment.js
-  var FRAGMENT_PATH = "/fragments/stroke-awareness-related-links";
+  // parsers/sa-resources/columns-related-links.js
   function parse4(element, { document }) {
-    const link = document.createElement("a");
-    link.href = FRAGMENT_PATH;
-    link.textContent = FRAGMENT_PATH;
-    const cells = [];
-    cells.push([link]);
+    const columns = Array.from(element.querySelectorAll(".col-xs-12.col-sm-6.col-md-4"));
+    if (!columns.length) {
+      element.replaceWith(...element.childNodes);
+      return;
+    }
+    const rowCells = columns.map((col) => {
+      const cell = document.createElement("div");
+      const paras = Array.from(col.querySelectorAll("p"));
+      let prevWasBody = false;
+      paras.forEach((p) => {
+        const text = p.textContent.replace(/ /g, " ").trim();
+        const hasLink = !!p.querySelector("a");
+        if (!text && !hasLink) return;
+        const label = p.querySelector(".futura-bold");
+        if (label && !hasLink) {
+          const h3 = document.createElement("h3");
+          h3.textContent = label.textContent.replace(/ /g, " ").trim();
+          cell.append(h3);
+          prevWasBody = false;
+          return;
+        }
+        const out = document.createElement("p");
+        if (hasLink) {
+          const isCta = prevWasBody;
+          Array.from(p.querySelectorAll("a")).forEach((a, i) => {
+            if (i > 0) out.append(document.createElement("br"));
+            const clean = document.createElement("a");
+            clean.setAttribute("href", a.getAttribute("href"));
+            const linkText = a.textContent.replace(/ /g, " ").trim();
+            clean.textContent = isCta ? linkText.toUpperCase() : linkText;
+            out.append(clean);
+          });
+          prevWasBody = false;
+        } else {
+          out.textContent = text;
+          prevWasBody = true;
+        }
+        cell.append(out);
+      });
+      return cell;
+    });
     const block = WebImporter.Blocks.createBlock(document, {
-      name: "fragment",
-      cells
+      name: "columns",
+      // `related-links` is a reusable columns variant (blocks/columns/columns.css):
+      // gold Futura labels + "Learn more" chevron CTA. The fragment keeps its styling
+      // on this variant so it renders identically wherever it is reused, independent
+      // of any page template.
+      variants: ["related-links"],
+      cells: [rowCells]
     });
     element.replaceWith(block);
   }
@@ -398,7 +438,7 @@ var CustomImportScript = (() => {
     hero: parse,
     panel: parse2,
     "cards-brochure": parse3,
-    fragment: parse4
+    "related-links": parse4
   };
   var transformers = [
     transform,
@@ -428,7 +468,7 @@ var CustomImportScript = (() => {
         section: "brochure"
       },
       {
-        name: "fragment",
+        name: "related-links",
         instances: [".bg-light-gray .cols3"]
       }
     ],
@@ -472,7 +512,7 @@ var CustomImportScript = (() => {
         name: "Related links",
         selector: ".bg-light-gray .cols3",
         style: "light-gray",
-        blocks: ["fragment"],
+        blocks: ["related-links"],
         defaultContent: []
       }
     ]
