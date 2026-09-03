@@ -348,6 +348,10 @@ ul {
   padding-left: var(--list-indent);
 }
 
+ul > li :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
 /* citation superscripts — measured from source: small (75%) and only slightly
    raised. The browser default `vertical-align: super` shifts the marker up by a full
    super-step, which reads as an oversized, prominent digit and inflates the line box;
@@ -449,7 +453,7 @@ a:focus {
 /* links */
 a:any-link {
   color: var(--link-color);
-  text-decoration: underline;
+  text-decoration: none;
   overflow-wrap: break-word;
 }
 
@@ -461,10 +465,17 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
+sup a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .section.compact a:any-link {
   text-decoration: none;
   font-family: var(--display-font-family);
 }
+
+
 
 /* bold + underline authored link → flat inline CTA: uppercase Futura-bold text in
    the primary colour, no underline, with a trailing chevron. Authoring convention

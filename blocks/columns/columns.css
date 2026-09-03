@@ -60,6 +60,7 @@
   list-style-type: disc;
 }
 
+
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
    on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
    this adds the matching left/right inset to the text that follows the image. */
@@ -90,7 +91,7 @@
 }
 
 .section.compact .columns h3 {
-  font-size: var(--heading-font-size-xs);
+  font-size: var(--heading-font-size-m);
   padding-top: 10px;
   margin-bottom: 30px;
 }
