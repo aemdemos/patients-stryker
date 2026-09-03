@@ -371,6 +371,16 @@ main ol.footnotes li {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
+/* the footnotes list carries the small-print size, but the "References" label and
+   the trailing disclaimer/code paragraphs in the same block are authored as plain
+   <p> and would otherwise render at full body size. The source renders the whole
+   block uniformly at 11.2px, so size every paragraph in a section that contains the
+   footnotes list to match (scoped via :has so it never affects other sections). */
+main .section:has(ol.footnotes) p {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
 /* compact section (references + disclaimer at the foot of ENT condition pages) —
    the source renders this whole block as small print: 11.2px, tight ~1.2 line-height,
    including the "References"/"Disclaimer" bold labels, the numbered list, and the
@@ -397,6 +407,7 @@ h2 strong em {
 }
 
 
+/* stylelint-disable-next-line no-descending-specificity */
 .section.compact p {
   font-size: var(--footnote-font-size);
 }
@@ -784,6 +795,22 @@ main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
+/* light-gray band with only default content (no block) — the source centers this
+   short lead-in line ("Zip can help create a better patient experience"). Scoped
+   to a default-content-wrapper so the columns-based light-gray sections on other
+   pages (which live in a .columns-wrapper) keep their left-aligned layout. */
+main > .section.light-gray > .default-content-wrapper {
+  text-align: center;
+}
+
+/* centred lead-in above a 50-50 image row — the source centers the heading + intro
+   that introduce a two-up image row (e.g. "How Zip works"). Scoped via :has() to
+   sections whose block is a columns-50-50, so heading+icon-grid sections (e.g.
+   "Benefits of Zip") stay left-aligned as on the source. */
+main > .section.columns-container:has(.columns-50-50) > .default-content-wrapper {
+  text-align: center;
+}
+
 /* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
    a gray-to-teal gradient band with white text. Pair with .full-bleed. */
 main > .section.dark {
@@ -808,6 +835,7 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
 
 /* first (title + intro + image) section — sage rule beneath it, matching the
    source's .c-page-hero-content.border-bottom-gold 1px divider */
+/* stylelint-disable-next-line no-descending-specificity */
 main > .section:first-child > .default-content-wrapper {
   padding-bottom: var(--space-section);
 }

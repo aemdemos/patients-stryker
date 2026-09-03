@@ -440,3 +440,270 @@ body.patient-information .cards.brochure-cta > ul > li img {
 body.patient-information main > .section.fragment-container + .section.compact {
   margin-top: var(--space-section);
 }
+
+/* =====================================================================
+   Theme: zip-skin-closure — Zip Skin Closure product page
+   All rules moved here from styles/styles.css, blocks/columns/columns.css and
+   blocks/panel/panel.css; each stays scoped under .zip-skin-closure so it never
+   leaks to other pages, and themes.css ships only to pages declaring this theme.
+   ===================================================================== */
+
+/* ----- Page-level: section rhythm + default-content typography (from styles.css) ----- */
+
+/* gold accent band beneath the zip hero — the source renders a decorative
+   full-bleed gold strip (.c-full-bleed-panel.bg-gold, 34px) between the hero and
+   the first callout panel. It carries no authored content, so it's reproduced as
+   a pseudo-element on the hero section. The section is already full-viewport width,
+   so the band is inherently edge-to-edge. */
+body.zip-skin-closure main > .section.full-bleed.columns-container:first-child {
+  padding-bottom: 0;
+}
+
+body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::after {
+  content: "";
+  display: block;
+  height: 34px;
+  background-color: var(--color-accent);
+}
+
+.zip-skin-closure main > .section.light-gray {
+  padding: 4% 15% 3%;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+/* "How Zip works" intro paragraph — the source renders it at 24.5px (its
+   .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.
+   Scoped to the zip page's "How Zip works" heading + its following paragraph so
+   no other intro paragraph is affected. Same size at all widths, matching source. */
+
+/* Published wraps default content in `.default-content-wrapper`; the UE canvas
+   instead puts `richtext-container` ON the section and renders the h2/p directly
+   inside it (no default-content-wrapper). Each default-content rule below carries
+   a twin `.section.richtext-container` selector so it matches in both. The UE-only
+   class never matches on the live site, so there is no published-render change. */
+.zip-skin-closure main > .section > .default-content-wrapper h2 + p,
+.zip-skin-closure main > .section.richtext-container h2 + p {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+  margin-bottom: var(--space-section); /* 30px gap before the images row below */
+}
+
+/* "Zip can help create a better patient experience." — the source renders this
+   light-gray band headline at 35px in Futura bold (its .fontsize-2-5em), not the
+   24.5px h2 default. Scoped to the zip light-gray section headline. */
+.zip-skin-closure main > .section.light-gray h2 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+/* "How Zip works" section heading — Futura bold at 35px on the source (its
+   .fontsize-2-5em), at every width, not the 24.5px serif h2 the zip page defaults
+   to. The heading is the only columns-section h2 authored with a <strong>. */
+.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong),
+.zip-skin-closure main > .section.richtext-container.columns-container h2:has(strong) {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) strong,
+.zip-skin-closure main > .section.richtext-container.columns-container h2:has(strong) strong {
+  font-weight: 700;
+}
+
+/* "Benefits of Zip" section heading — Futura bold at 28px on the source (its h2
+   default), at every width. Scoped to the icon-grid section's heading. */
+.zip-skin-closure main > .section.columns-container:has(.columns-icon-grid) > .default-content-wrapper h2,
+.zip-skin-closure main > .section.richtext-container.columns-container:has(.columns-icon-grid) h2 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+.zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2,
+.zip-skin-closure main > .section.richtext-container:not(.columns-container, .light-gray) h2 {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  line-height: var(--heading-line-height-ml);
+}
+
+/* ----- Columns block (from blocks/columns/columns.css) ----- */
+
+/* hero/50-50 text cell — small mobile gutter. From the 2-up breakpoint up, the
+   inset becomes a fluid 10% (set in the >=600 rule) so it scales continuously with
+   the viewport like the source. */
+.zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
+  padding-left: 30px;
+}
+
+.zip-skin-closure main > .section.full-bleed.columns-container {
+  padding-block: 0;
+}
+
+.zip-skin-closure .columns-container .columns-wrapper .columns.columns-50-50.block.columns-2-cols p {
+  padding-bottom: 30px;
+}
+
+.zip-skin-closure h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2,
+.zip-skin-closure .section.richtext-container.columns-container:not(.full-bleed) h2 {
+  padding-top: 60px;
+}
+
+body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+  font-family: var(--display-font-family-bold);
+  font-size: 13vw;
+  font-weight: 700;
+  line-height: var(--heading-line-height-hero);
+}
+
+body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
+  width: 100%;
+}
+
+body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  padding-top: var(--space-block);
+}
+
+body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
+body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+  display: none;
+}
+
+body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+  font-family: var(--heading-font-family);
+  font-size: 5vw;
+  font-weight: 400;
+  line-height: var(--heading-line-height-hero);
+  margin-bottom: 30px;
+}
+
+body.zip-skin-closure .columns.columns-50-50:has(h1) p {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-hero);
+}
+
+/* ----- Panel block (from blocks/panel/panel.css) ----- */
+
+.zip-skin-closure .panel-container {
+  padding-top: 30px;
+}
+
+.zip-skin-closure .panel .panel-body > p:first-child:has(strong),
+.zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-heading-size);
+  line-height: var(--panel-body-line-height);
+}
+
+.zip-skin-closure .panel .panel-body > p:first-child:has(strong) strong,
+.zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) strong {
+  font-weight: 700;
+}
+
+/* ----- Tablet (>=600px) ----- */
+@media (width >= 600px) {
+  /* restore the image column and CTA hidden on mobile once the hero is 2-up */
+  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+    display: block;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+    padding-top: 0;
+  }
+
+  body.zip-skin-closure .full-bleed .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: 8.1%;
+    }
+
+  body.zip-skin-closure .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: 3%;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div {
+    position: relative;
+    min-height: 33.333vw; /* source crop height scales with viewport (~200px@600 → 480px@1440) */
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
+    flex: 0 0 100%;
+    padding-right: 15px;
+  }
+
+  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
+    padding-left: 10%;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -45px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
+    width: 51%;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: clip;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: calc(11.8px + 1.5333vw); /* 21px @600 → 25.6px @900 */
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+    font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
+  }
+}
+
+/* ----- Desktop (>=900px) ----- */
+@media (width >= 900px) {
+  .zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2,
+  .zip-skin-closure main > .section.richtext-container:not(.columns-container, .light-gray) h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: calc(3.1333vw - 2.6px); /* 25.6px @900 → 35px @1200 */
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
+    padding-top: var(--space-block);
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
+    right: -25px;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+    font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
+  }
+}
+
+/* ----- Large desktop (>=1200px) ----- */
+@media (width >= 1200px) {
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
+    font-size: 35px;
+  }
+
+  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
+    font-size: 91px;
+  }
+}
