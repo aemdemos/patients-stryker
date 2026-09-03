@@ -377,6 +377,44 @@ export function decorateMain(main) {
 }
 
 /**
+ * Reads a page-metadata value, falling back to the in-body `.metadata` block.
+ *
+ * On published pages (`.page`/`.live`) the aem.live pipeline promotes the
+ * `.metadata` block into `<head>` `<meta>` tags, so `getMetadata()` resolves it.
+ * In the Universal Editor the page is rendered from DA source *before* that
+ * promotion, so the value only lives in the in-body `.metadata` block — read it
+ * there as a fallback so template/theme detection works in both environments.
+ * @param {string} name The metadata key (e.g. `template`, `theme`)
+ * @param {Document} doc The document
+ * @returns {string} The resolved value, or an empty string
+ */
+function getPageMetadata(name, doc = document) {
+  const fromHead = getMetadata(name, doc);
+  if (fromHead) return fromHead;
+
+  const metaBlock = doc.querySelector('main div.metadata');
+  if (metaBlock) {
+    const config = readBlockConfig(metaBlock);
+    const value = config[toClassName(name)];
+    if (value) return Array.isArray(value) ? value.join(', ') : value;
+  }
+  return '';
+}
+
+/**
+ * Adds each comma-separated name in `value` as a normalized class on the body.
+ * Idempotent — safe even when `decorateTemplateAndTheme` already added them on
+ * published pages. Ensures the template/theme body class exists in UE too.
+ * @param {string} value Comma-separated names
+ */
+function addBodyClasses(value) {
+  value.split(',').forEach((name) => {
+    const cls = toClassName(name.trim());
+    if (cls) document.body.classList.add(cls);
+  });
+}
+
+/**
  * Decorates the template.
  * Loads template-specific CSS and JavaScript modules.
  * @param {Document} doc The document
@@ -439,12 +477,20 @@ async function loadEager(doc) {
     document.body.classList.add('nav-single-row');
   }
 
-  const templateName = getMetadata('template');
-  const themeName = getMetadata('theme');
+  // Resolve template/theme from head meta with an in-body `.metadata` fallback so
+  // detection works in the Universal Editor too (where the metadata block has not
+  // yet been promoted to head meta tags).
+  const templateName = getPageMetadata('template');
+  const themeName = getPageMetadata('theme');
 
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+
+    // decorateTemplateAndTheme (aem.js) adds the body classes from head meta on
+    // published pages; re-assert them here so they are present in UE as well.
+    if (templateName) addBodyClasses(templateName);
+    if (themeName) addBodyClasses(themeName);
 
     // Load template if specified in metadata
     if (templateName) {
