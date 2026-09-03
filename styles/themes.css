@@ -113,39 +113,45 @@ body.sa-resources .cards.brochure .cards-card-body p {
 /* ----- Embedded body fragment: re-assert section foundations -----
    The whole resources body is embedded via one fragment block, so its sections
    are NESTED inside `main > .section.fragment-container > .fragment` — they are
-   NOT direct children of `main`. All the foundational section rules in
-   styles.css are scoped to `main > .section…` (child combinator), so they DON'T
-   reach these nested sections: content loses its width cap + gutter, the flex
-   intro stops laying out side by side, the divider rule disappears, and the
-   light-gray band loses its background. Re-assert those rules here for sections
-   inside the fragment, scoped to this theme so nothing else is affected. Values
-   mirror styles.css exactly. */
+   NOT direct children of `main`. Two consequences, both fixed here:
 
-/* inner content wrapper: width cap + centred gutter (styles.css `main > .section > div`) */
-body.sa-resources .fragment .section > div {
+   1. The host `fragment-container`'s inner wrapper inherits the global
+      `main > .section > div` cap (max-width 1410px + gutter), which traps the
+      ENTIRE fragment at content width — so full-bleed sections (hero banner,
+      light-gray band) can't reach the viewport edge. Undo that cap so the
+      fragment spans the full viewport, exactly like `main` itself; each inner
+      section then bleeds or caps on its own, matching a top-level page.
+   2. The foundational `main > .section…` rules (child combinator) don't reach
+      the nested sections, so we re-assert them below for `.fragment .section…`.
+   Scoped to this theme so nothing else is affected; values mirror styles.css. */
+
+/* 1. let the fragment span the full viewport (drop the inherited content cap) */
+body.sa-resources main > .section.fragment-container > .fragment-wrapper,
+body.sa-resources main > .section.fragment-container > .fragment-wrapper > .fragment {
+  max-width: none;
+  padding: 0;
+}
+
+/* 2a. inner content wrapper: width cap + centred gutter (styles.css `main > .section > div`).
+   Exclude the hero — the hero block's own CSS (`.hero-container .hero-wrapper`)
+   deliberately uncaps its wrapper so the band image bleeds edge-to-edge; capping
+   it here would gutter the banner (1250px instead of full width). */
+body.sa-resources .fragment .section:not(.hero-container) > div {
   box-sizing: border-box;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
 }
 
-/* light-gray band — full-bleed background (styles.css `main > .section.light-gray`
-   is edge-to-edge because a top-level section spans the full viewport; nested in
-   the fragment it's capped by the fragment wrapper's 1410px, so break the band out
-   to the full viewport width with the standard 100vw/-50vw technique — same as the
-   divider rule below. `padding-block` gives the source's interior breathing room;
-   the inner `> div` keeps its own content cap (re-asserted above), so only the
-   BACKGROUND bleeds, not the columns. */
+/* 2b. light-gray band background (styles.css `main > .section.light-gray`). The
+   section now spans the full viewport (see 1 above), so the background is
+   edge-to-edge automatically; the inner `> div` keeps the content cap. */
 body.sa-resources .fragment .section.light-gray {
-  position: relative;
-  left: 50%;
-  width: 100vw;
-  margin-inline: -50vw;
   padding-block: var(--space-section-l);
   background-color: var(--color-surface);
 }
 
-/* divider rule at the section break (styles.css `main > .section.divider` + ::before) */
+/* 2c. divider rule at the section break (styles.css `main > .section.divider` + ::before) */
 body.sa-resources .fragment .section.divider {
   position: relative;
   padding-top: var(--space-section-l);
