@@ -72,6 +72,17 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
 
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
+/* The intro availability box is a SINGLE-item panel that must fill its column at
+   every width. The panel block makes `.panel.light > ul` a 2-up grid from 600px
+   (blocks/panel/panel.css), which would leave this lone item at half width on
+   tablet (600–899px). Force one column at all widths so it stays full-width
+   (matches the source). The ≥900px override below is kept for the flex-column
+   context but this base rule covers the tablet gap. */
+body.sa-resources .section.flex .panel.light > ul,
+body.sa-resources .section.flex .panel.light.panel-authoring {
+  grid-template-columns: 1fr;
+}
+
 /* source renders the body copy in the URW Egyptienne heading serif
    (.urw-egyptienne) at 21px, regular weight — NOT the HumanistSlab body face or
    the 17.5px cta size. */
