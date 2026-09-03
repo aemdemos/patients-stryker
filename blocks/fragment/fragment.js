@@ -53,6 +53,18 @@ export async function loadFragment(path) {
 export default async function decorate(block) {
   const link = block.querySelector('a');
   const path = link ? link.getAttribute('href') : block.textContent.trim();
+
+  // In the Universal Editor, do NOT inline-expand the referenced fragment. The
+  // fetched content carries no data-aue-* instrumentation, so replacing the
+  // authored link with it malforms UE's editable tree and stops UE rendering the
+  // sections that follow this block. Leave the authored link in place — it stays
+  // instrumented/editable, and the fragment's real content is authored on its own
+  // source page. On the live/preview site (below) the fragment expands as normal.
+  if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
+    block.dataset.fragmentLoaded = 'true';
+    return;
+  }
+
   const fragment = await loadFragment(path);
   if (fragment) block.replaceChildren(...fragment.childNodes);
 
