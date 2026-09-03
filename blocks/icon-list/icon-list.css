@@ -8,8 +8,8 @@
   height: auto;
 }
 
-/* content-wrapper top spacing (label variant, all sizes) */
-.icon-list-container:has(.icon-list.label) > .default-content-wrapper,
+/* authored-content top spacing (label variant, all sizes) */
+.icon-list-container:has(.icon-list.label) > div:not(.icon-list-wrapper),
 .icon-list-container:has(.icon-list.label) > .icon-list-wrapper {
   margin-top: 45px;
 }
@@ -28,7 +28,7 @@
   }
 
   /* lift content above the map layer */
-  .icon-list-container > .default-content-wrapper,
+  .icon-list-container > div:not(.icon-list-wrapper),
   .icon-list-container > .icon-list-wrapper {
     position: relative;
     z-index: 1;
@@ -36,17 +36,17 @@
 }
 
 /* Section heading — Futura-bold gold, 31.5px (26.25px below 600px). */
-.icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+.icon-list-container > div:not(.icon-list-wrapper) :is(h1, h2, h3, h4, h5, h6) {
   margin: 15px 0 var(--icon-list-title-gap);
   font-family: var(--display-font-family-bold);
-  font-size: var(--icon-list-title-size-s);
+  font-size: var(--icon-list-title-size);
   font-weight: 700;
   color: var(--color-accent);
   text-align: center;
 }
 
 @media (width >= 600px) {
-  .icon-list-container .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  .icon-list-container > div:not(.icon-list-wrapper) :is(h1, h2, h3, h4, h5, h6) {
     font-size: var(--icon-list-title-size);
   }
 }
@@ -100,10 +100,6 @@
 @media (width >= 600px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .icon-list .icon-list-icon {
-    display: none;
   }
 }
 
@@ -191,7 +187,7 @@
 
 /* center the intro copy above the grid */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > .default-content-wrapper :is(p, h1, h2, h3, h4, h5, h6) {
+  > div:not(.icon-list-wrapper) :is(p, h1, h2, h3, h4, h5, h6) {
   text-align: center;
 }
 
@@ -235,19 +231,19 @@
 }
 
 /* intro copy — larger serif heading font (B.E. F.A.S.T. mnemonic in Futura-bold) */
-.icon-list-container:has(.icon-list.label) .default-content-wrapper p {
+.icon-list-container:has(.icon-list.label) > div:not(.icon-list-wrapper) p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: 1.15;
 }
 
-.icon-list-container:has(.icon-list.label) .default-content-wrapper p strong {
+.icon-list-container:has(.icon-list.label) > div:not(.icon-list-wrapper) p strong {
   font-family: var(--display-font-family-bold);
   font-weight: 700;
 }
 
 /* heading → intro-copy gap: fixed 49px (label has intro text below the heading) */
-.icon-list-container:has(.icon-list.label) .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+.icon-list-container:has(.icon-list.label) > div:not(.icon-list-wrapper) :is(h1, h2, h3, h4, h5, h6) {
   margin-bottom: var(--icon-list-label-title-gap);
 }
 
@@ -268,12 +264,12 @@
    lead-in and again before the grid. Resets the base variant's fluid title gap.
    After the .label rules to satisfy no-descending-specificity. */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > .default-content-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  > div:not(.icon-list-wrapper) :is(h1, h2, h3, h4, h5, h6) {
   margin-bottom: var(--icon-list-tile-title-gap);
 }
 
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > .default-content-wrapper p:first-of-type {
+  > div:not(.icon-list-wrapper) p:first-of-type {
   margin-bottom: var(--icon-list-tile-intro-gap);
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
@@ -282,7 +278,7 @@
 /* lead-in line ("These risk factors include the following:") — Futura-bold black
    at 17.5px, 49px above the grid. */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > .default-content-wrapper p:last-child {
+  > div:not(.icon-list-wrapper) p:last-child {
   margin-bottom: var(--icon-list-tile-intro-gap);
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-l);
