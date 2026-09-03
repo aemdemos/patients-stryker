@@ -185,18 +185,18 @@ body.campaign-landing main .section .columns li {
 }
 
 /* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold. */
-body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
+body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(:has(> .block)) p:last-child {
   font: 400 var(--body-font-size-m) var(--body-font-family);
 }
 
 /* All default body copy → 14px body-serif, out-weighing the global 12px shrink; excludes .compact. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > .default-content-wrapper > p {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > div:not(:has(> .block)) p {
   font: 400 var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
   color: var(--color-text);
 }
 
 /* Bottom disclaimer → 11.2px small print (same selector shape to win over 12px). */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.compact > .default-content-wrapper > p {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.compact > div:not(:has(> .block)) p {
   font: var(--footnote-font-size)/var(--paragraph-line-height) var(--body-font-family);
 }
 
@@ -209,29 +209,29 @@ body.campaign-landing main .section.serif .columns :is(p, li, a) {
   line-height: var(--heading-line-height);
 }
 
-/* Video section copy → 21px URW, out-weighing the 14px default-copy rule above. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.video-container > .default-content-wrapper > p {
+/* Video copy: source applies a 1.5em light-serif span inside this text region. */
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.video-container > div:not(.video-wrapper) p {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
 }
 
 /* Icon-list section intros → 17.5px URW serif. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > .default-content-wrapper > p {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > div:not(:has(> .block)) p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
 /* Risk-factors (tile) intro only: cap width to ~560px and centre it, matching the source. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(:has(> .block)) p {
   max-width: 560px;
   margin-inline: auto;
   text-align: center;
 }
 
 /* Risk-factors lead-in keeps the source's Futura bold at 17.5px. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > .default-content-wrapper > p:last-child {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(:has(> .block)) p:last-child {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
   font-weight: 700;
@@ -260,11 +260,11 @@ body.campaign-landing main .icon-list.tile .icon-list-text p {
 
 /* Horizontal inset — MOBILE BASE: ~45px from the screen edge, not the 15px default; >=600px reverts to the shared gutter. */
 body.campaign-landing main > .section.columns-container > .columns-wrapper,
-body.campaign-landing main > .section.columns-container > .default-content-wrapper,
-body.campaign-landing main > .section.icon-list-container > .default-content-wrapper,
+body.campaign-landing main > .section.columns-container > div:not(.columns-wrapper),
+body.campaign-landing main > .section.icon-list-container > div:not(.icon-list-wrapper),
 body.campaign-landing main > .section.icon-list-container > .icon-list-wrapper,
 body.campaign-landing main > .section.fragment-container > .fragment-wrapper,
-body.campaign-landing main > .section.compact > .default-content-wrapper {
+body.campaign-landing main > .section.compact > div {
   padding-inline: var(--space-section);
 }
 
@@ -295,11 +295,11 @@ body.campaign-landing main > .section.serif .columns.columns-50-50 > div > div:n
   padding: 7% 10% 0;
 }
 
-body.campaign-landing > main > div.section.video-container > div.default-content-wrapper {
+body.campaign-landing > main > div.section.video-container > div:not(.video-wrapper) {
   padding: 20% 10% 5%;
 }
 
-body.campaign-landing > main > div.light-gray.section.icon-list-container > div.default-content-wrapper > h3 {
+body.campaign-landing > main > div.light-gray.section.icon-list-container > div:not(.icon-list-wrapper) h3 {
   padding-top: 5%;
 }
 
@@ -308,7 +308,7 @@ body.campaign-landing main > .section.serif .columns.columns-50-50 > div > .colu
   margin-top: 88px;
 }
 
-body.campaign-landing > main > div.light-gray.section.icon-list-container > div.default-content-wrapper {
+body.campaign-landing > main > div.light-gray.section.icon-list-container > div:not(.icon-list-wrapper) {
   padding-top: 35px;
 }
 
@@ -356,11 +356,11 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   }
 
   body.campaign-landing main > .section.columns-container > .columns-wrapper,
-  body.campaign-landing main > .section.columns-container > .default-content-wrapper,
-  body.campaign-landing main > .section.icon-list-container > .default-content-wrapper,
+  body.campaign-landing main > .section.columns-container > div:not(.columns-wrapper),
+  body.campaign-landing main > .section.icon-list-container > div:not(.icon-list-wrapper),
   body.campaign-landing main > .section.icon-list-container > .icon-list-wrapper,
   body.campaign-landing main > .section.fragment-container > .fragment-wrapper,
-  body.campaign-landing main > .section.compact > .default-content-wrapper {
+  body.campaign-landing main > .section.compact > div {
     padding-inline: var(--container-gutter);
   }
 
@@ -389,7 +389,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
   body.campaign-landing main > .section.video-container[data-anchor]:has(.video) {
     display: flex;
-    flex-wrap: wrap;
     column-gap: 7%;                 /* ~98/1380 gap between video and copy, as source */
     max-width: var(--container-max);
     margin-inline: auto;
@@ -406,7 +405,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   }
 
   /* copy ≈ 540/1380 ≈ 39%, left of the gap — not flush to the container edge. */
-  body.campaign-landing main > .section.video-container[data-anchor] > .default-content-wrapper {
+  body.campaign-landing main > .section.video-container[data-anchor] > div:not(.video-wrapper) {
     flex: 0 0 39%;
     box-sizing: border-box;
     max-width: 39%;
@@ -414,7 +413,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     padding: 0;
   }
 
-  body.campaign-landing main > .section.video-container[data-anchor] > .default-content-wrapper > p {
+  body.campaign-landing main > .section.video-container[data-anchor] > div:not(.video-wrapper) p {
     padding-block: 20% 5%;
   }
 }
