@@ -365,8 +365,16 @@ async function decorateLastModified(main) {
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // convert external Dynamic Media asset links into native <picture>/<video>
-  decorateDMAssets(main);
+  // convert external Dynamic Media asset links into native <picture>/<video> —
+  // but NOT inside the Universal Editor. There, images are authored as DM links
+  // (<a href>) and UE reads each field back from the live DOM via its model
+  // selector (e.g. the image link/alt anchor). Converting the <a> to a <picture>
+  // here destroys that anchor, so on save UE reads the fields as empty and wipes
+  // the image + alt (they never persist to DA). Leaving the authored <a> intact in
+  // UE keeps the field mapping readable; the published/preview render still
+  // converts as normal.
+  const isUniversalEditor = /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
+  if (!isUniversalEditor) decorateDMAssets(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
