@@ -37,6 +37,39 @@
           {
             "name": "Treatment Detail",
             "value": "treatment-detail"
+          },
+          {
+            "name": "Legal",
+            "value": "legal"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "theme",
+        "label": "Theme",
+        "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
+        "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Stroke Awareness Resources",
+            "value": "sa-resources"
+          },
+          {
+            "name": "Stroke Awareness Landing",
+            "value": "stroke-awareness-landing"
+          },
+          {
+            "name": "Zip Skin Closure",
+            "value": "zip-skin-closure"
+          },
+          {
+            "name": "Campaign Landing",
+            "value": "campaign-landing"
           }
         ]
       },
