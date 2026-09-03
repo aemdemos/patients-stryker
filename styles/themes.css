@@ -129,8 +129,19 @@ body.sa-resources .fragment .section > div {
   padding: 0 var(--container-gutter);
 }
 
-/* light-gray band background (styles.css `main > .section.light-gray`) */
+/* light-gray band — full-bleed background (styles.css `main > .section.light-gray`
+   is edge-to-edge because a top-level section spans the full viewport; nested in
+   the fragment it's capped by the fragment wrapper's 1410px, so break the band out
+   to the full viewport width with the standard 100vw/-50vw technique — same as the
+   divider rule below. `padding-block` gives the source's interior breathing room;
+   the inner `> div` keeps its own content cap (re-asserted above), so only the
+   BACKGROUND bleeds, not the columns. */
 body.sa-resources .fragment .section.light-gray {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-inline: -50vw;
+  padding-block: var(--space-section-l);
   background-color: var(--color-surface);
 }
 
