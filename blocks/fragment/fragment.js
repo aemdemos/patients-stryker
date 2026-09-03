@@ -25,13 +25,7 @@ export async function loadFragment(path) {
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
-      // Parse the fetched markup with DOMParser and adopt its nodes rather than
-      // assigning to innerHTML. innerHTML is banned (Hard Rule #1): it destroys
-      // UE data-aue-* instrumentation and trips the strict Trusted Types CSP,
-      // which was breaking fragment decoration (and every section after it, plus
-      // the header/footer that reuse this loader) in the Universal Editor.
-      const parsed = new DOMParser().parseFromString(await resp.text(), 'text/html');
-      main.append(...parsed.body.childNodes);
+      main.innerHTML = await resp.text();
 
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {
@@ -53,18 +47,6 @@ export async function loadFragment(path) {
 export default async function decorate(block) {
   const link = block.querySelector('a');
   const path = link ? link.getAttribute('href') : block.textContent.trim();
-
-  // In the Universal Editor, do NOT inline-expand the referenced fragment. The
-  // fetched content carries no data-aue-* instrumentation, so replacing the
-  // authored link with it malforms UE's editable tree and stops UE rendering the
-  // sections that follow this block. Leave the authored link in place — it stays
-  // instrumented/editable, and the fragment's real content is authored on its own
-  // source page. On the live/preview site (below) the fragment expands as normal.
-  if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
-    block.dataset.fragmentLoaded = 'true';
-    return;
-  }
-
   const fragment = await loadFragment(path);
   if (fragment) block.replaceChildren(...fragment.childNodes);
 
