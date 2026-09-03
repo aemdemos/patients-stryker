@@ -12,7 +12,30 @@
 
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
-   ===================================================================== */
+   =====================================================================
+   This theme is authored in TWO complementary tiers — both are required, keep
+   both:
+
+   1. DESIGN tier (below, until the "Embedded body fragment" divider): the look
+      of the page — typography, colours, margins, panel/card styling. These use
+      DESCENDANT selectors (e.g. `body.sa-resources .section.light-gray`,
+      `.panel.light`, `.cards.brochure`), so they match the sections at ANY depth
+      — whether the content is authored directly on a `theme: sa-resources` page
+      OR embedded via a fragment. This tier is the source of truth for the design
+      and works for both delivery modes.
+
+   2. FRAGMENT-STRUCTURE tier (the "Embedded body fragment" section): re-asserts
+      the foundational `main > .section…` layout rules (content width cap, gutter,
+      full-bleed, flex layout) that the global styles.css scopes to DIRECT children
+      of `main` and therefore cannot reach once the whole body is nested inside a
+      fragment block. These selectors are `.fragment`-scoped, so on a page that
+      authors the sections directly (no fragment) they simply don't match and are
+      inert — the native `main > .section` rules cover that case. Harmless to a
+      non-fragment page; essential to the fragment-embedded resources pages.
+
+   In short: the design tier applies everywhere; the fragment tier only kicks in
+   when the body is delivered as a fragment. A future non-fragment sa-resources
+   page stays correct on the design tier alone. */
 
 /* ----- Page-level: section rhythm + default-content typography ----- */
 
