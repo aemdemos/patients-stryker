@@ -185,7 +185,7 @@ body.campaign-landing main .section .columns li {
 }
 
 /* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold. */
-body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(:has(> .block)) p:last-child {
+body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) p:last-child {
   font: 400 var(--body-font-size-m) var(--body-font-family);
 }
 
@@ -217,21 +217,21 @@ body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .sec
 }
 
 /* Icon-list section intros → 17.5px URW serif. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > div:not(:has(> .block)) p {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > div:not(.icon-list-wrapper) p {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
 /* Risk-factors (tile) intro only: cap width to ~560px and centre it, matching the source. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(:has(> .block)) p {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) p {
   max-width: 560px;
   margin-inline: auto;
   text-align: center;
 }
 
 /* Risk-factors lead-in keeps the source's Futura bold at 17.5px. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(:has(> .block)) p:last-child {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) p:last-child {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
   font-weight: 700;
