@@ -1,5 +1,3 @@
-import { isUniversalEditor } from '../../scripts/scripts.js';
-
 /**
  * Set up the hero from its authored rows.
  *
@@ -73,12 +71,6 @@ function setupHero(block) {
 }
 
 export default function decorate(block) {
-  // In the Universal Editor, leave the authored cell structure untouched: setupHero
-  // rebuilds the block (block.replaceChildren), which destroys the DM-link anchors
-  // UE reads the image/alt fields back from — so a newly inserted or edited hero
-  // would persist empty. The published/preview render still runs setupHero fully.
-  if (isUniversalEditor()) return;
-
   setupHero(block);
 
   // Fullbleed variant: split the two-tone headline (lead sentence in light serif,

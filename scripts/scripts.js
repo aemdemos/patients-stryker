@@ -360,36 +360,13 @@ async function decorateLastModified(main) {
 }
 
 /**
- * True when running inside the Universal Editor canvas. In UE, blocks whose
- * images are authored as Dynamic Media links (<a href>) must keep that anchor
- * intact and their authored cell structure unchanged — UE reads each field back
- * from the live DOM via its model selector, so converting the <a> to a <picture>
- * or restructuring the block leaves nothing for the selector to match and the
- * field persists empty. Blocks can import this to skip destructive decoration in
- * UE. Matches the *.ue.da.live host and the `adobe-ue-preview` html class UE sets
- * on the canvas document (covers the nested preview iframe too).
- * @returns {boolean}
- */
-export function isUniversalEditor() {
-  return /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)
-    || document.documentElement.classList.contains('adobe-ue-preview');
-}
-
-/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
-  // convert external Dynamic Media asset links into native <picture>/<video> —
-  // but NOT inside the Universal Editor. There, images are authored as DM links
-  // (<a href>) and UE reads each field back from the live DOM via its model
-  // selector (e.g. the image link/alt anchor). Converting the <a> to a <picture>
-  // here destroys that anchor, so on save UE reads the fields as empty and wipes
-  // the image + alt (they never persist to DA). Leaving the authored <a> intact in
-  // UE keeps the field mapping readable; the published/preview render still
-  // converts as normal.
-  if (!isUniversalEditor()) decorateDMAssets(main);
+  // convert external Dynamic Media asset links into native <picture>/<video>
+  decorateDMAssets(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
