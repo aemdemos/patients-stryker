@@ -165,6 +165,53 @@ body.stroke-awareness-landing .hero.banner h1 em strong {
   }
 }
 
+/* =====================================================================
+   Theme: procedure-detail — Treatment/procedure detail pages
+   (e.g. /ivs/treatments/discography). Opted in via page metadata
+   `theme: procedure-detail`. The balloon-kyphoplasty page reaches the same
+   `body.procedure-detail` class via `template: procedure-detail`, so these
+   rules are kept general enough to serve both. Only page/theme-level DELTAS
+   live here — the hero.banner, panel.* and cards.resources blocks already
+   carry their full base styling in their own block CSS. */
+
+/* ----- Section vertical rhythm -----
+   The source separates each zone below the hero by a band of whitespace
+   (measured hero→intro 62px, intro→dark 61px, dark→how-it-works 82px,
+   how-it-works→gold 91px, resources→risks 91px). The base sections carry
+   margin:0, so add a consistent top gap to every zone after the hero. The
+   explicit list keeps the empty trailing (section-metadata) wrapper out of
+   the rhythm so no stray gap appears at the foot of the page. */
+body.procedure-detail main > .section.flex,
+body.procedure-detail main > .section.dark,
+body.procedure-detail main > .section.light-gray,
+body.procedure-detail main > .section.marketo-form-container,
+body.procedure-detail main > .section.cards-container,
+body.procedure-detail main > .section.compact,
+body.procedure-detail main > .section.panel-container:not(.flex, .dark) {
+  margin-top: var(--space-section-l);
+}
+
+/* ----- Light-gray copy bands (How it works / Potential risks) -----
+   The source renders these as a gray box (bg #ededec = --color-surface, set by
+   the base .section.light-gray rule) with generous interior padding (measured
+   25px). Our base light-gray only sets the fill and leaves the inner content
+   flush against the band edges, so add the interior vertical padding here. */
+body.procedure-detail main > .section.light-gray > div {
+  padding-block: 25px;
+}
+
+/* ----- Resources section heading -----
+   The source titles the brochure group with a Futura-bold h2 carrying a sage
+   rule beneath it (.component-subheading.border-bottom-gold: 1px
+   --color-surface-muted, 7px below the text). Base styles.css only draws this
+   underline for `.section.no-cta` headings; the Resources zone here is a
+   `.cards-container` section, so add the matching rule as a theme delta. The
+   h2 itself is already Futura-bold 24.5px (base h2), matching the source. */
+body.procedure-detail main > .section.cards-container > .default-content-wrapper h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
 /* ----- Large desktop (>=1200px) ----- */
 @media (width >= 1200px) {
   /* enlarge the hero headline on this page beyond the shared band cap (48px in
