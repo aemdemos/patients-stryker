@@ -132,6 +132,31 @@
           }
         },
         {
+          "title": "Brochure CTA Card",
+          "id": "brochure-cta-card",
+          "model": "brochure-cta-card",
+          "plugins": {
+            "da": {
+              "name": "card",
+              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1) a[href]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1) a"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "model": "columns",
@@ -255,16 +280,15 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "rows": 1,
-              "columns": 2,
+              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1)>picture>img[src]"
+                  "selector": "div:nth-child(1) a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
+                  "selector": "div:nth-child(1) a"
                 },
                 {
                   "name": "text",

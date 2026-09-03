@@ -1,0 +1,442 @@
+/* stylelint-disable no-descending-specificity -- each theme below is an
+   independently-owned block of rules (with its own media queries at the end), so
+   selector specificity is not monotonic across the file; ordering is by theme,
+   not by specificity. Matches the pattern used in blocks/columns/columns.css. */
+
+/* Theme styles.
+   This file holds CSS for pages that opt in via page metadata `theme: <name>`,
+   which adds `body.<name>` via decorateTemplateAndTheme() (aem.js). scripts.js
+   loads THIS file lazily only when a page actually declares a `theme` — so it
+   stays out of the critical styles.css and the shared block CSS, and never ships
+   to pages that don't use a theme.
+
+   Every rule here MUST be scoped under its `body.<theme>` selector so a theme's
+   styling can never leak onto other pages. Theme names have single-owner
+   governance (unlike ad-hoc block Style / page Theme names that collide across
+   authors), so one theme = one clearly-owned block of rules below. */
+
+/* =====================================================================
+   Theme: sa-resources — Stroke-Awareness Resources page
+   ===================================================================== */
+
+/* ----- Page-level: section rhythm + default-content typography ----- */
+
+/* intro: welcome copy is the source's fontsize-1-5em URW-Egyptienne serif (21px),
+   not the 14px body default. Scoped to the flex intro's left default-content
+   column (the panel keeps its own body sizing, below). */
+body.sa-resources .section.flex > .default-content-wrapper p {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+/* inter-section vertical rhythm — the source separates each zone by ~50px of
+   whitespace (plus the divider rule where present). The base sections carry
+   margin:0, so add a top gap to each zone after the hero. */
+body.sa-resources .section.flex,
+body.sa-resources .section.cards-container,
+body.sa-resources .section.light-gray,
+body.sa-resources .section.compact {
+  margin-top: var(--space-section-l);
+}
+
+/* the light-gray related-links band is a full-bleed colour zone: give it interior
+   breathing room (source pads the gray panel top and bottom) and remove the extra
+   top margin so the gray fill butts against the preceding section like the source. */
+body.sa-resources .section.light-gray {
+  margin-top: 0;
+  padding-block: var(--space-section-l);
+}
+
+/* the Social-media divider section: the source leaves a generous band of
+   whitespace ABOVE the rule (below the downloads cards) and below the banners
+   before the gray related-links band. The divider rule is drawn by ::before pinned
+   to the section's top edge, so margin-top pushes the rule down away from the
+   cards; the section's own 50px padding-top keeps the "Social media" heading clear
+   below the rule; padding-bottom adds the gap before the next band. */
+body.sa-resources .section.divider {
+  margin-top: var(--space-section-l);
+  padding-bottom: var(--space-section-l);
+}
+
+/* extra gap between the "Social media" heading and the banner row (source ~38px) */
+body.sa-resources .section.divider > .default-content-wrapper h2 {
+  margin-bottom: var(--space-section);
+}
+
+/* "Social media" heading — a default-content h2 that titles the social card group.
+   The source renders it in the same light serif ~43px as the card titles, not the
+   Futura-bold default h2. */
+body.sa-resources .section.cards-container > .default-content-wrapper h2 {
+  margin: 2% 0 3%;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-xxxl);
+  line-height: var(--heading-line-height);
+}
+
+/* ----- Panel block (intro availability box, `panel light`) ----- */
+
+/* source renders the body copy in the URW Egyptienne heading serif
+   (.urw-egyptienne) at 21px, regular weight — NOT the HumanistSlab body face or
+   the 17.5px cta size. */
+body.sa-resources .panel.light .panel-body p {
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-body-size-s);
+}
+
+/* inset the panel body copy from the panel edges (source), overriding the shared
+   flat 10px margin in blocks/panel/panel.css — a theme-specific delta. */
+body.sa-resources .panel.cta .panel-body,
+body.sa-resources .panel.light .panel-body,
+body.sa-resources .panel.colored-border .panel-body {
+  margin: 10px 5% 5%;
+}
+
+/* ----- Cards block (downloads + social grids, `cards brochure`) ----- */
+
+/* brochure cards left-align their title (source), unlike the centered default. */
+body.sa-resources .cards.brochure > ul > li {
+  text-align: left;
+}
+
+/* the "Digital | Print" / "Banner N" links row is centered below the image while
+   the card title above stays left-aligned. order:2 pushes the links row below the
+   image within the card body, with a 30px gap above it (source). */
+body.sa-resources .cards.brochure .cards-card-body p {
+  order: 2;
+  margin: var(--space-section) 0 0;
+  text-align: center;
+}
+
+/* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
+   chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
+   variant (.columns.related-links) in blocks/columns/columns.css, since the same
+   fragment is reused with the same look on other pages. Only theme-specific
+   deltas would live here; there are none. */
+
+/* =====================================================================
+   Theme: stroke-awareness-landing — Stroke-Awareness landing page
+   ===================================================================== */
+
+/* the compact references/disclaimer block sits lower on this page — the source
+   leaves a generous gap above it. */
+body.stroke-awareness-landing .section.compact {
+  margin-top: 70px;
+}
+
+/* Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
+   1200), so the source's own breakpoints translate as: source 840px → 600px,
+   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
+   mobile is a single regime below 600px.
+   mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
+   → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
+body.stroke-awareness-landing .hero.banner h1 {
+  font-size: 8vw;
+}
+
+/* Word gap — the source keeps a space between "Understanding" and the gold
+   "stroke"; our authored markup collapses the leading space inside the inline
+   accent span, so restore the gap explicitly on the gold accent. */
+body.stroke-awareness-landing .hero.banner h1 em strong {
+  margin-left: 0.2em;
+}
+
+/* ----- Desktop (>=900px) ----- */
+@media (width >= 900px) {
+  /* intro: the availability panel is TOP-aligned with the welcome text (source),
+     not vertically centred as the shared .section.flex default does. */
+  body.sa-resources .section.flex {
+    align-items: start;
+  }
+
+  /* the intro availability box is a single-item panel sitting in its own flex
+     column, so it fills that column rather than splitting into the 2-up grid the
+     multi-item light panels use. */
+  body.sa-resources .panel.light > ul,
+  body.sa-resources .panel.light.panel-authoring {
+    grid-template-columns: 1fr;
+  }
+
+  /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
+     EDS large breakpoint (1200px ← source 1440px). */
+  body.stroke-awareness-landing .hero.banner h1 {
+    font-size: calc(-4.16px + 5.0133vw);
+  }
+}
+
+/* ----- Large desktop (>=1200px) ----- */
+@media (width >= 1200px) {
+  /* enlarge the hero headline on this page beyond the shared band cap (48px in
+     blocks/hero/hero.css) — a theme-specific delta. */
+  body.sa-resources .hero.band h1 {
+    font-size: 56px;
+  }
+
+  /* EDS large (1200px) ← source 1440px cap: 56px flat */
+  body.stroke-awareness-landing .hero.banner h1 {
+    font-size: 56px;
+  }
+}
+
+/* =====================================================================
+   Theme: patient-information — Neurovascular Patient Information page
+   =====================================================================
+   A standalone page (it shares no layout with any sibling), so all of its
+   styling lives here as a theme scoped under `body.patient-information` rather
+   than in a per-page template folder. Every zone (title bar, intro, patient-guide
+   cards, CTA band, resources footer, disclaimer) is one of the project's EXISTING
+   blocks (hero, cards, columns, fragment) or default content — those blocks are
+   left EXACTLY as approved; the body-class prefix simply adds specificity so these
+   rules win the cascade for this page only. Design tokens only, no hardcoded
+   values, no new blocks. */
+
+/* Stryker icon font — the source's proprietary glyph set (self-hosted exactly as
+   the reference site does). Only the standalone-link arrow (U+E250) is used here.
+   A @font-face registers globally wherever it's declared; keeping it in this
+   theme block keeps the page's dependency self-contained. The woff is the source's
+   own file (fonts/strykericons.woff, 2.4KB) — the origin ships woff/ttf only, so
+   no woff2 variant exists to add. */
+@font-face {
+  font-family: strykericons;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/strykericons.woff') format('woff');
+}
+
+/* ── "Stryker's Neurovascular portfolio" eyebrow link ─────────────────────────
+   Sits above the title bar as a right-aligned teal standalone link (the project's
+   default link colour already matches the source teal). It's authored as the
+   page's FIRST section (a lone link paragraph), so right-align that section's
+   default content. Tight vertical rhythm so it reads as an eyebrow, not a block. */
+body.patient-information main > .section:first-child > .default-content-wrapper {
+  text-align: right;
+
+  /* the global default-content-wrapper adds a 30px bottom padding; drop it so the
+     only space below the eyebrow is the paragraph's own 15px bottom margin, as on
+     the source (which sits the link ~15px above the banner bar). */
+  padding-block: 0;
+}
+
+/* zero the section's own vertical padding too — otherwise it stacks with the
+   paragraph margin and pushes the banner ~60px down instead of the source's 15px. */
+body.patient-information main > .section:first-child {
+  margin-block: 0;
+  padding-block: 0;
+}
+
+/* Source renders the standalone link as Futura bold, uppercase, teal (its
+   .standalone-link treatment: Futura LT W01 700, 14px). The project's default
+   link colour already matches the source teal; override the family/weight. */
+body.patient-information main > .section:first-child a {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Trailing arrow — the exact source glyph (strykericons U+E250), reproduced with
+   the reference site's own .standalone-link::after rule: 0.85em icon, 0.5em left
+   pad, nudged down 2px to sit on the text baseline. Inherits the link's teal. */
+body.patient-information main > .section:first-child a::after {
+  content: "\e250";
+  display: inline-block;
+
+  /* icon font: no generic fallback applies (the glyph exists only here) */
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: strykericons;
+  font-size: 0.85em;
+  padding-left: 0.5em;
+  transform: translate(0, 2px);
+}
+
+/* ── Title bar (hero band) ────────────────────────────────────────────────────
+   The source title bar is a single compact gradient bar (~100px) with the gold
+   headline overlaid. The block authors desktop + mobile crops as two <picture>s
+   and the base .hero toggle shows one per breakpoint — but the shared
+   `.hero.band picture { display:block }` rule (which we must not touch) overrides
+   that toggle, so BOTH crops render stacked and the bar becomes ~2x too tall.
+   Re-assert the one-crop-per-breakpoint toggle here, scoped to this page. */
+body.patient-information .hero.band picture.hero-image-desktop {
+  display: none;
+}
+
+body.patient-information .hero.band picture.hero-image-mobile {
+  display: block;
+}
+
+/* Headline size — match the source's fluid scaling at every width (measured):
+   mobile ≈ 8vw (31.2px at 390px), desktop ≈ 4vw (51.2px at 1280px) capped at
+   ~56px (still 56px at 1920px, not the unbounded 76.8px raw 4vw). The shared hero
+   block instead uses 8vw on mobile then pins a fixed 48px from 1200px up — close
+   on mobile but a touch small and non-fluid on desktop.
+
+   IMPORTANT: this mobile base MUST precede the ≥900px block below — both rules
+   have equal specificity, so if the base came later it would win at desktop too
+   (source order breaks the media query) and the title would render at raw 8vw. */
+body.patient-information .hero.band h1 {
+  font-size: 8vw;
+}
+
+@media (width >= 900px) {
+  body.patient-information .hero.band picture.hero-image-desktop {
+    display: block;
+  }
+
+  body.patient-information .hero.band picture.hero-image-mobile {
+    display: none;
+  }
+
+  /* desktop headline: switch from the mobile 8vw to the source's 4vw, clamped so
+     it stops growing at ~56px on very wide viewports (matches the reference). */
+  body.patient-information .hero.band h1 {
+    font-size: min(4vw, 56px);
+  }
+}
+
+/* ── Intro line ──────────────────────────────────────────────────────────────
+   "Learn more about brain aneurysm…" is authored as an <h2>. The source renders
+   it in the LIGHT SERIF face (URW Egyptienne, weight 500), not the Futura-bold
+   the global h2 rule applies. Re-map the leading default-content h2 to the
+   heading serif.
+
+   Spacing: the source's spacing is PERCENTAGE-based and scales with width — the
+   EFFECTIVE gaps (measured, banner + RTE margins combined) are ~30px top / 30px
+   bottom at 780px and ~55px top / 50px bottom at 1280px. A single fixed value
+   only matches one width. On our EDS page the h2's containing block is the
+   full-width section, and there's no separate banner-margin contribution, so a
+   symmetric 4% (of the section width) reproduces both the source's top AND bottom
+   gaps at every width (≈31px @780, ≈51px @1280). Page-scoped — a global h2 margin
+   change would move every other h2 (e.g. card titles). NOT a global concern. */
+body.patient-information main > .section > .default-content-wrapper h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+/* ── Patient-guide cards (cards brochure-cta) ─────────────────────────────────
+   The whole card is the click target, so the title text itself must not read as
+   a link. The parser links the title to its PDF; the global link styles would
+   paint it teal + underlined. Neutralise that so the title shows as plain bold
+   text (matching the source's futura-bold black title). */
+body.patient-information .cards.brochure-cta .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Gold "for more information" CTA band ─────────────────────────────────────
+   The source's .c-full-bleed-panel.bg-golden-gradient bar: a left-to-right gold
+   gradient (measured: #af6d04 → #ffb500 at 20%) with centered dark text, ~71px
+   tall at 1280px (≈25px above + one 17.5px line + ≈25px below).
+
+   Height is applied as SECTION PADDING, not margin on the copy: a child <p>'s
+   vertical margins collapse straight through the padding-less section and escape
+   the gold background (leaving a ~20px squished band), whereas padding always
+   expands the box and is contained. The source's spacing resolves to a FIXED
+   25px top/bottom (its 2% is against a capped ~1250px container, not the full
+   viewport — so a raw 2% here over-pads on wide screens). Match with 25px so the
+   band is ~71px (25 + 21px line + 25) at every width. The global
+   default-content-wrapper padding is zeroed so it doesn't add to this. */
+body.patient-information main > .section.gold {
+  background-image: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+  color: var(--text-color);
+  text-align: center;
+  padding-block: 25px;
+}
+
+body.patient-information main > .section.gold > .default-content-wrapper {
+  padding-block: 0;
+}
+
+/* lead copy: light serif (URW Egyptienne) at 17.5px (source fontsize-1-25em =
+   1.25 × 14). Zero the <p>'s own margin so only the section padding sets height. */
+body.patient-information main > .section.gold p {
+  margin-block: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+}
+
+/* the "PATIENTINFO.STRYKER.COM" link: Futura bold, uppercase, teal, no underline,
+   with the same strykericons arrow as the eyebrow link (source .standalone-link).
+   NOTE: the source resets the link back to 14px (its fontsize-1em wrapper) even
+   though the lead copy is 17.5px — so the link is SMALLER than the lead text. */
+body.patient-information main > .section.gold p a {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  font-size: var(--body-font-size-m);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+body.patient-information main > .section.gold p a::after {
+  content: "\e250";
+  display: inline-block;
+
+  /* icon font: no generic fallback applies (the glyph exists only here) */
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: strykericons;
+  font-size: 0.85em;
+  padding-left: 0.5em;
+  transform: translate(0, 2px);
+}
+
+/* ── Resources columns band (the patient-information-resources fragment) ───────
+   The columns block styles most of this band via `.section.light-gray .columns`
+   (serif column text, the underline-authored CTA → Futura-bold uppercase teal +
+   chevron, plain regional links, spacing). The fragment's `light-gray, full-bleed`
+   section metadata makes that inner `.section.light-gray` an ancestor of the
+   `.columns` once embedded, so the block styling activates. Two gaps remain that
+   need page CSS: */
+
+/* Gap 1 — BACKGROUND + full-bleed padding: styles.css scopes these to
+   `main > .section.light-gray/.full-bleed` (a DIRECT child of main). Our styled
+   section is nested inside the fragment block, so those don't match and the band
+   renders white. Re-apply background + vertical padding to the fragment's host
+   section (a direct child of main, already full-viewport width). */
+body.patient-information main > .section:has(.columns) {
+  margin-block: 0;
+  padding-block: var(--space-section);
+  background-color: var(--color-surface);
+}
+
+/* Gap 2 — HEADING SIZE: the column headings are authored as bold+italic
+   paragraphs (<p><em><strong>…). The global marker rule paints them gold + Futura
+   but sets no size, so they default to 14px; the source renders them at 24.5px
+   (fontsize-1-75em). Neither the block nor styles.css sizes a bold+italic
+   PARAGRAPH (only real h1–h3), so size it here. */
+body.patient-information main .columns p:has(> em > strong) {
+  font-size: var(--heading-font-size-xl);
+}
+
+/* ── Cards section bottom spacing ─────────────────────────────────────────────
+   The patient-guide cards section sits flush against the gold CTA band below it;
+   the source leaves ~30px between the cards row and the gold band. The cards block
+   sets no bottom spacing (and it's shared, so we don't edit it), so add the gap
+   here on the cards' host section, scoped to this page. */
+body.patient-information main > .section.cards-container {
+  margin-bottom: var(--space-section);
+}
+
+/* ── Cards CLS fix — reserve the cover-image box ──────────────────────────────
+   The brochure-cta covers are runtime-injected Dynamic Media <picture> images
+   with no width/height attrs and `aspect-ratio: auto` in the shared block, so
+   each box is 0px tall until it loads, then jumps to ~500px — pushing the title,
+   label, button and everything below it down (measured CLS ~0.88 mobile / ~0.31
+   desktop, essentially the whole page CLS). All four covers share a ~3:4 ratio
+   (631×828), so reserve that box up front. The block is shared/WIP, so this is
+   applied page-scoped here rather than in blocks/cards. */
+body.patient-information .cards.brochure-cta > ul > li img {
+  aspect-ratio: 631 / 828;
+}
+
+/* ── Disclaimer (compact) top spacing ─────────────────────────────────────────
+   The compact disclaimer section sits flush against the gray resources band; the
+   source leaves ~30px above it. `.section.compact` (styles.css) only sets a
+   bottom margin, so add the top margin here, scoped to this page (a global change
+   would shift every other compact section, e.g. the ENT condition pages). Target
+   the compact section that follows the resources fragment. */
+body.patient-information main > .section.fragment-container + .section.compact {
+  margin-top: var(--space-section);
+}

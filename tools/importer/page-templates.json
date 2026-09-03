@@ -65,6 +65,53 @@
         { "name": "cards", "instances": [".cols3 > .colctrl"] },
         { "name": "panel-gold", "instances": [".text.parbase .c-rich-text-editor .bg-gold"] },
         { "name": "cards-resources", "section": "resources", "instances": [".tabs .c-tabs .tabs-content .cols4 .colctrl"] }
+      ]
+    },
+    {
+      "name": "patient-information",
+      "urls": [
+        "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html",
+      "coverageGaps": [],
+      "description": "Neurovascular Patient Information page (standalone, styled via the `patient-information` theme in styles/themes.css): gold title bar (hero band), an intro line, a row of patient-guide brochure cards (cards brochure-cta) linking to PDFs and product pages with a gold product CTA button, a gold 'for more information' CTA band (section style: gold, full-bleed), a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only (hero, cards, columns). This page shares no layout with any sibling, so it uses a theme rather than a shared template.",
+      "blocks": ["hero", "cards", "columns"]
+    },
+    {
+      "name": "sa-resources",
+      "urls": [
+        "https://patients.stryker.com/ww/en/stroke-awareness/resources.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/ww/en/stroke-awareness/resources.html",
+      "coverageGaps": [],
+      "description": "Stroke Awareness Resources landing page: hero banner, a two-column intro (default text + gold button beside a light panel) in a flex/compact section, a 4-up downloads card grid (cards brochure), a social-media card grid (cards brochure with empty heading line), a related-links fragment reference in a gray section, and a small-text disclaimer. Standalone template for future SA resource-style pages.",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".carouselslidegroup"
+          ]
+        },
+        {
+          "name": "panel",
+          "instances": [
+            ".dimensional-box"
+          ],
+          "section": "light"
+        },
+        {
+          "name": "cards-brochure",
+          "instances": [
+            ".cols4"
+          ],
+          "section": "brochure"
+        },
+        {
+          "name": "fragment",
+          "instances": [
+            ".bg-light-gray .cols3"
+          ]
+        }
       ],
       "sections": [
         {
