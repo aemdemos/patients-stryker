@@ -304,20 +304,43 @@ export function removeCtas(scope) {
 /**
  * Merges multiple `.cards` blocks in a section into one grid.
  * Preserves the first block's variant classes and removes empty extras.
+ *
+ * The merge is intended for card grids that arrive as SEPARATE fragments under
+ * one heading (e.g. tabs, or several `/fragments/card-*` embeds in one section):
+ * each cards block lives in its own `.fragment`, so removing that fragment on
+ * cleanup only drops the emptied grid.
+ *
+ * It must NOT fire for multiple cards blocks that live inside the SAME fragment
+ * (e.g. one embedded body fragment that inlines both a downloads grid and a
+ * social grid). There, every cards block shares one `.fragment` wrapper, so the
+ * cleanup below would remove that shared wrapper and delete the whole fragment.
+ * Guard against that by only merging cards blocks that sit in DISTINCT fragment
+ * wrappers (or none) — never two blocks that share the same fragment ancestor.
  * @param {Element} section The section to consolidate
  */
 export function mergeSectionCards(section) {
   const cardsBlocks = [...section.querySelectorAll('.cards')];
   if (cardsBlocks.length < 2) return;
 
-  const first = cardsBlocks[0];
+  // Only merge blocks whose fragment wrapper is unique to that block; skip any
+  // block that shares its `.fragment` ancestor with another cards block (they
+  // belong to one embedded fragment and must stay as authored).
+  const fragmentOf = (block) => block.closest('.fragment-wrapper') || block.closest('.fragment');
+  const mergeable = cardsBlocks.filter((block) => {
+    const frag = fragmentOf(block);
+    if (!frag) return true; // no fragment wrapper — safe to merge/remove the block itself
+    return cardsBlocks.filter((b) => fragmentOf(b) === frag).length === 1;
+  });
+  if (mergeable.length < 2) return;
+
+  const first = mergeable[0];
   const targetList = first.querySelector(':scope > ul');
   if (!targetList) return;
 
-  cardsBlocks.slice(1).forEach((block) => {
+  mergeable.slice(1).forEach((block) => {
     block.querySelectorAll(':scope > ul > li').forEach((li) => targetList.append(li));
     // remove the emptied cards block and its now-empty fragment/section wrappers
-    const fragmentRoot = block.closest('.fragment-wrapper') || block.closest('.fragment') || block;
+    const fragmentRoot = fragmentOf(block) || block;
     fragmentRoot.remove();
   });
 }
