@@ -83,6 +83,10 @@
   padding-bottom: 10px;
 }
 
+.section.compact .columns > div > div:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
 .section.compact .columns h2 {
   font-size: var(--heading-font-size-compact);
   margin-top: var(--space-block);
@@ -91,6 +95,8 @@
 .section.compact .columns h4 {
   font-size: var(--heading-font-size-m);
 }
+
+
 
 /* when a compact columns block also contains an h1, the h2 acts as a subheading
    and should use the standard xl size rather than the compact size */
