@@ -32,20 +32,8 @@
           "value": "",
           "options": [
             { "name": "None", "value": "" },
-            { "name": "Treatment Detail", "value": "treatment-detail" }
-          ]
-        },
-        {
-          "component": "select",
-          "name": "theme",
-          "label": "Theme",
-          "description": "Page theme that applies scoped styling (styles/themes.css)",
-          "value": "",
-          "options": [
-            { "name": "None", "value": "" },
-            { "name": "Campaign Landing", "value": "campaign-landing" },
-            { "name": "SA Resources", "value": "sa-resources" },
-            { "name": "Stroke Awareness Landing", "value": "stroke-awareness-landing" }
+            { "name": "Treatment Detail", "value": "treatment-detail" },
+            { "name": "Legal", "value": "legal" }
           ]
         }
       ]

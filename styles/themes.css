@@ -22,7 +22,6 @@
    within a theme the source order stays ascending (base → 600 → 900 → 1200) so
    the cascade is unchanged. */
 
-/* stylelint-disable no-descending-specificity */
 
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
