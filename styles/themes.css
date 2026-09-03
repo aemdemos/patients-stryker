@@ -175,7 +175,14 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
    .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.
    Scoped to the zip page's "How Zip works" heading + its following paragraph so
    no other intro paragraph is affected. Same size at all widths, matching source. */
-.zip-skin-closure main > .section > .default-content-wrapper h2 + p {
+
+/* Published wraps default content in `.default-content-wrapper`; the UE canvas
+   instead puts `richtext-container` ON the section and renders the h2/p directly
+   inside it (no default-content-wrapper). Each default-content rule below carries
+   a twin `.section.richtext-container` selector so it matches in both. The UE-only
+   class never matches on the live site, so there is no published-render change. */
+.zip-skin-closure main > .section > .default-content-wrapper h2 + p,
+.zip-skin-closure main > .section.richtext-container h2 + p {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
   margin-bottom: var(--space-section); /* 30px gap before the images row below */
@@ -194,27 +201,31 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 /* "How Zip works" section heading — Futura bold at 35px on the source (its
    .fontsize-2-5em), at every width, not the 24.5px serif h2 the zip page defaults
    to. The heading is the only columns-section h2 authored with a <strong>. */
-.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) {
+.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong),
+.zip-skin-closure main > .section.richtext-container.columns-container h2:has(strong) {
   font-family: var(--display-font-family-bold);
   font-size: var(--panel-heading-size);
   font-weight: 700;
   line-height: var(--heading-line-height);
 }
 
-.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) strong {
+.zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) strong,
+.zip-skin-closure main > .section.richtext-container.columns-container h2:has(strong) strong {
   font-weight: 700;
 }
 
 /* "Benefits of Zip" section heading — Futura bold at 28px on the source (its h2
    default), at every width. Scoped to the icon-grid section's heading. */
-.zip-skin-closure main > .section.columns-container:has(.columns-icon-grid) > .default-content-wrapper h2 {
+.zip-skin-closure main > .section.columns-container:has(.columns-icon-grid) > .default-content-wrapper h2,
+.zip-skin-closure main > .section.richtext-container.columns-container:has(.columns-icon-grid) h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-xxl);
   font-weight: 700;
   line-height: var(--heading-line-height);
 }
 
-.zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2 {
+.zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2,
+.zip-skin-closure main > .section.richtext-container:not(.columns-container, .light-gray) h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-m);
   font-weight: 700;
@@ -243,7 +254,8 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   font-weight: 500;
 }
 
-.zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2 {
+.zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2,
+.zip-skin-closure .section.richtext-container.columns-container:not(.full-bleed) h2 {
   padding-top: 60px;
 }
 
@@ -362,7 +374,8 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
-  .zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2 {
+  .zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2,
+  .zip-skin-closure main > .section.richtext-container:not(.columns-container, .light-gray) h2 {
     font-size: var(--heading-font-size-xl);
   }
 
