@@ -25,7 +25,13 @@ export async function loadFragment(path) {
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
-      main.innerHTML = await resp.text();
+      // Parse the fetched markup with DOMParser and adopt its nodes rather than
+      // assigning to innerHTML. innerHTML is banned (Hard Rule #1): it destroys
+      // UE data-aue-* instrumentation and trips the strict Trusted Types CSP,
+      // which was breaking fragment decoration (and every section after it, plus
+      // the header/footer that reuse this loader) in the Universal Editor.
+      const parsed = new DOMParser().parseFromString(await resp.text(), 'text/html');
+      main.append(...parsed.body.childNodes);
 
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {
