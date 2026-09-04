@@ -48,7 +48,12 @@
           "value": "",
           "readOnly": true,
           "condition": {
-            "!": { "var": "template" }
+            "!=": [
+              {
+                "var": "theme"
+              },
+              ""
+            ]
           }
         }
       ]
