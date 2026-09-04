@@ -26,12 +26,11 @@ const anchorId = (s) => {
   return v.includes('#') ? v.slice(v.indexOf('#') + 1) : v;
 };
 
-const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
-
 /**
  * The nearest scrollable ancestor, or `window` when the page itself scrolls.
  * On the live site this is `window`; in the Universal Editor the page renders
- * inside a scrolling canvas element, so scroll must be read/written there.
+ * inside a scrolling canvas element, so scroll-spy/sticking must read there.
+ * (Click navigation uses native scrollIntoView, which finds the scroller itself.)
  * @param {Element} el
  */
 function getScroller(el) {
@@ -44,27 +43,6 @@ function getScroller(el) {
     node = node.parentElement;
   }
   return window;
-}
-
-/** Eased scroll on the given scroller, re-sampling the target each frame to absorb shifts. */
-function animateScrollTo(scroller, getTargetY, duration = 600) {
-  const readPos = () => (scroller === window ? window.scrollY : scroller.scrollTop);
-  const writePos = (y) => {
-    if (scroller === window) window.scrollTo(0, y);
-    else scroller.scrollTop = y;
-  };
-  const startY = readPos();
-  const startTime = performance.now();
-
-  function step(now) {
-    const t = Math.min((now - startTime) / duration, 1);
-    const eased = easeInOutQuad(t);
-    const targetY = getTargetY();
-    writePos(startY + (targetY - startY) * eased);
-    if (t < 1) requestAnimationFrame(step);
-  }
-
-  requestAnimationFrame(step);
 }
 
 export default function decorate(block) {
@@ -204,13 +182,12 @@ export default function decorate(block) {
     clickedItem = item;
     setCurrent(item);
     const region = target.closest('.section') || target;
-    const getTargetY = () => {
-      const off = block.getBoundingClientRect().height || 70;
-      const current = scroller === window ? window.scrollY : scroller.scrollTop;
-      // Region top relative to the scroller's own viewport, minus the sticky bar.
-      return current + region.getBoundingClientRect().top - scrollerTop() - off;
-    };
-    animateScrollTo(scroller, getTargetY, 600);
+    // Use native scrollIntoView, not a hand-rolled animation on a guessed scroller.
+    // The browser scrolls the *correct* container automatically — critical inside
+    // the Universal Editor canvas, where the page scrolls a nested element (a
+    // hand-rolled tween there scrolls the wrong node, so the view snaps back). The
+    // bar-height offset comes from the `scroll-margin-top` set in applyScrollOffset().
+    region.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   items.forEach((entry) => {
