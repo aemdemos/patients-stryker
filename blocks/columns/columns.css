@@ -404,6 +404,14 @@
     padding-left: var(--col-5050-inset);
   }
 
+  .section.compact .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+   padding-left: 15px;
+  }
+
+  .section.compact .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top:0;
+  }
+
   .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
     padding-right: var(--col-5050-inset);
   }
