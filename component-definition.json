@@ -165,21 +165,20 @@
           "plugins": {
             "da": {
               "name": "columns-cell",
-              "behaviour": "columns-cell",
               "row": 1,
               "columns": 1,
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1)>p:nth-child(1)>a[href]"
+                  "selector": "p:nth-child(1)>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1)>p:nth-child(1)>a"
+                  "selector": "p:nth-child(1)>a"
                 },
                 {
                   "name": "text",
-                  "selector": "div:nth-child(2)"
+                  "selector": "p:nth-child(2)"
                 }
               ]
             }
