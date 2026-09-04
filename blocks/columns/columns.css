@@ -31,6 +31,18 @@
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
 }
 
+
+/* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
+   image is above or below the text. Neutralise the base image-column margin/padding
+   and the columns' own trailing margin so row-gap alone governs the spacing. */
+.section.serif .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+}
+
+.section.light-gray .columns:not(.columns-50-50) > div > div {
+  padding-inline: 24px;
+}
+
 .columns h4 {
   font-size: var(--heading-font-size-ml);
   line-height: var(--heading-line-height-ml);
@@ -47,6 +59,7 @@
   margin-bottom: 0;
   list-style-type: disc;
 }
+
 
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
    on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
@@ -77,6 +90,18 @@
   margin-top: var(--space-block);
 }
 
+.section.compact .columns h3 {
+  font-size: var(--heading-font-size-m);
+  padding-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* when a compact columns block also contains an h1, the h2 acts as a subheading
+   and should use the standard xl size rather than the compact size */
+.section.compact .columns:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
 .section.compact .columns p,
 .section.compact .columns ul,
 .section.compact .columns li {
@@ -94,7 +119,9 @@
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 0;
+  margin-top: 30px;
 }
+
 
 /* icon-grid variant — each cell is a centred icon over a serif subtitle, a bold
    Futura heading and body text (reference: zip-skin-closure "Benefits of Zip").
@@ -116,6 +143,15 @@
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
 
+/* optional bottom border — authored per-instance via the columns model's
+   "Bottom border" boolean (classes_border), which adds the `border` class.
+   Only meaningful on the 50-50 layout. Matches the source's hero divider. */
+.columns.columns-50-50.border {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+
+
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
    on the stroke-awareness page. Typography only; layout stays columns-50-50. */
 .section.serif .columns p,
@@ -134,12 +170,7 @@
   line-height: var(--heading-line-height);
 }
 
-/* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
-   image is above or below the text. Neutralise the base image-column margin/padding
-   and the columns' own trailing margin so row-gap alone governs the spacing. */
-.section.serif .columns.columns-50-50 > div {
-  row-gap: var(--space-section-l);
-}
+
 
 .section.serif .columns.columns-50-50 .columns-img-col {
   margin-bottom: 0;
@@ -197,10 +228,62 @@
   line-height: var(--heading-line-height);
 }
 
+/* navy stat box (authoring convention): a condition's stat callout is authored
+   as two inline-code lines — <p><strong><code>31 million</code></strong></p>
+   (gold number) followed by <p><code>…label…<sup>N</sup></code></p> (white
+   label). Render the pair as one seamless navy box: the number <p> carries the
+   box top + gold text, the label <p> carries the box bottom + white text, and
+   the gap between them is removed so they read as a single block. Matches the
+   source .bg-blue callout (#1c5687, 20px padding, left-aligned). */
+
+ /* label line: white body copy, box bottom padding, extra space below the box */
+.section.compact .columns p:has(> code) {
+  margin-bottom: var(--space-section);
+  padding-bottom: var(--space-block-l);
+    padding-inline: var(--space-block-l);
+  background: var(--color-navy-bright);
+}
+
+
 .columns.columns-icon-grid .columns-img-col ~ p:has(strong) {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
+}
+
+
+.section.compact .columns p:has(> strong > code)
+{
+  margin: 0;
+  padding-inline: var(--space-block-l);
+  background: var(--color-navy-bright);
+  padding-top: var(--space-block-l);
+}
+
+
+.section.compact .columns p > code {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+  color: var(--color-white);
+}
+
+/* the <code> convention is a styling hook only — never show the monospace/box
+   default the base `code` rule would otherwise apply inside the navy box */
+.section.compact .columns p > code,
+.section.compact .columns p > strong > code
+ {
+  display: inline;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.section.compact .columns p > strong > code {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  font-size: var(--panel-cta-body-size);
+  color: var(--color-accent);
 }
 
 .columns.columns-icon-grid .columns-img-col ~ p strong {
@@ -213,12 +296,7 @@
   line-height: var(--body-line-height-l);
 }
 
-/* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
-   widening the between-column gap and insetting the text. Excludes the 50-50
-   variant, which keeps the base 15px so its image is the same size on either side. */
-.section.light-gray .columns:not(.columns-50-50) > div > div {
-  padding-inline: 24px;
-}
+
 
 /* extra title-to-body gap to match the reference's larger inline-title spacing */
 .section.light-gray .columns h2 {
@@ -268,6 +346,10 @@
 .section.light-gray .columns a:focus {
   color: var(--color-primary-pressed);
   text-decoration: none;
+}
+
+  .section.light-gray .columns p:has(+ p a u) {
+  min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
 }
 
 /* ------------------------------------------------------------------------- *
@@ -359,21 +441,6 @@
     display: table;
     clear: both;
   }
-
-  .section.light-gray .columns > div > div {
-    float: left;
-    width: 50%;
-  }
-
-  /* 3rd column floats right so it lands in the right column below the 2nd */
-  .section.light-gray .columns > div > div:nth-child(3) {
-    float: right;
-  }
-
-  /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
-  .section.light-gray .columns p:has(a u) {
-    margin-bottom: 75px;
-  }
 }
 
 /* desktop (>= 900px) — all columns line up in a single row */
@@ -434,8 +501,7 @@
     display: flex;
   }
 
-  .section.light-gray .columns > div > div,
-  .section.light-gray .columns > div > div:nth-child(3) {
+    .section.light-gray .columns > div > div, .section.light-gray .columns > div > div:nth-child(3){
     float: none;
     width: auto;
   }
@@ -443,6 +509,15 @@
   /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
   .section.light-gray .columns p:has(a u) {
     margin-bottom: var(--space-block);
+  }
+
+  .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    margin-top: 0;
+  }
+
+  .section.compact .columns.columns-50-50:not(:first-child) > div {
+    margin-top:40px;
+    margin-bottom: 30px;
   }
 }
 
