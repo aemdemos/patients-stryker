@@ -60,11 +60,18 @@
           ]
         },
         {
-          "component": "reference",
-          "name": "background-image",
-          "label": "Background Image",
+          "component": "text",
+          "name": "background-image-url",
+          "label": "Background Image URL (external / Dynamic Media link)",
           "valueType": "string",
-          "multi": false
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "anchor",
+          "label": "Anchor ID (Sticky Nav only — leave blank otherwise)",
+          "valueType": "string",
+          "description": "Only needed if this page uses a Sticky Nav. Set a unique id (e.g. find-a-doctor) here, then reference it as the Sticky Nav item's Target with a # prefix (#find-a-doctor). If the page has no Sticky Nav, leave this empty."
         }
       ]
     }
@@ -83,6 +90,7 @@
         "image",
         "panel",
         "statistics",
+        "sticky-nav",
         "tabs",
         "text",
         "video"

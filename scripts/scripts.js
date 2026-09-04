@@ -127,6 +127,11 @@ function decorateButtons(main) {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
+    // skip sentence-style links: full sentences ending in terminal punctuation are
+    // inline text links (e.g. the "FOR ADDITIONAL INFORMATION…" / California callouts),
+    // not calls-to-action — keep their authored bold/italic emphasis but do not buttonize.
+    if (/[.!?]$/.test(text)) return;
+
     // require authored formatting for buttonization
     const strong = a.closest('strong');
     const em = a.closest('em');
@@ -213,9 +218,7 @@ function decorateFootnotes(main) {
 }
 
 /**
- * Prepends a decorative `<img class="section-background-image">` to the section
- * (matches the source's inline background image, not a CSS background). Opt-in
- * blocks like icon-list position and layer it; inert for other sections.
+ * Prepends a decorative `<img class="section-background-image">` to the section.
  * @param {Element} section the `.section` element
  * @param {string} url the authored background image URL
  */
@@ -226,9 +229,7 @@ function applySectionBackgroundImage(section, url) {
   img.src = url;
   img.alt = '';
   img.setAttribute('aria-hidden', 'true');
-  // eager, not lazy: when absolutely positioned this box is zero-area until it
-  // loads, so Chromium's lazy heuristic reads it as off-screen and never fetches.
-  // It's decorative and out of flow, so eager loading is safe (no CLS).
+  // eager: absolutely-positioned box is zero-area until loaded, so lazy never fetches
   img.loading = 'eager';
   section.prepend(img);
 }
@@ -250,7 +251,7 @@ function decorateSectionMetadata(main) {
           .map((s) => toClassName(s.trim()))
           .filter((s) => s);
         styles.forEach((s) => section.classList.add(s));
-      } else if (key === 'background-image') {
+      } else if (key === 'background-image-url') {
         applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
       } else {
         section.dataset[toCamelCase(key)] = value;
@@ -261,8 +262,9 @@ function decorateSectionMetadata(main) {
     (meta.closest('.section-metadata-wrapper') || meta).remove();
   });
 
-  // published DA content exposes the value as data-background-image, not a table
-  main.querySelectorAll('.section[data-background-image]').forEach((section) => {
+  // published DA form: data-* attributes (legacy data-background-image also honoured)
+  main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
+    applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 }
@@ -428,7 +430,17 @@ async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
 
+  // Reserve the correct header height before the nav fragment loads (CLS): the
+  // default (/nav) and /nav-legal navs render a single row, while /nav-ent and
+  // /nav-ivs add a second (gold bar) row. The nav variant isn't in the DOM until
+  // the header loads lazily, so mark single-row navs from metadata here.
+  const navName = (getMetadata('nav') || '/nav').split('/').pop();
+  if (navName === 'nav' || navName === 'nav-legal') {
+    document.body.classList.add('nav-single-row');
+  }
+
   const templateName = getMetadata('template');
+  const themeName = getMetadata('theme');
 
   const main = doc.querySelector('main');
   if (main) {
@@ -437,6 +449,15 @@ async function loadEager(doc) {
     // Load template if specified in metadata
     if (templateName) {
       await loadTemplate(doc, templateName);
+    }
+
+    // Load themes.css if the page opts into a theme via metadata. Themed pages
+    // add `body.<theme>` (decorateTemplateAndTheme); all theme rules live in the
+    // single styles/themes.css, scoped under their body.<theme> selector, and it
+    // ships only to pages that actually declare a theme. Loaded eagerly (awaited
+    // before `appear`) so above-the-fold themed typography doesn't reflow.
+    if (themeName) {
+      await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }
 
     document.body.classList.add('appear');

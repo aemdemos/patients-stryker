@@ -373,9 +373,12 @@ export default function decorateDMAssets(main) {
     }
 
     if (render === renderVideo) {
-      el.replaceWith(renderVideo(src, el.getAttribute('title') || displayText));
+      const label = el.getAttribute('title') || displayText;
+      el.replaceWith(renderVideo(src, label));
       return;
     }
+    // alt precedence: an authored alt/title, then the link's display text
+    // (authors describe hero/cards images by using the alt as the link text).
     const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
     el.replaceWith(render(src, alt, false));
   });
