@@ -122,9 +122,9 @@ body.procedure-detail main .panel.dark .panel-body {
   padding: 4% 2%;
 }
 
-/* Dark heading — Futura bold 26.25px gold. */
+/* Dark heading — Futura bold 26.25px gold (h3 on balloon, h2 on other pages). */
 /* stylelint-disable-next-line no-descending-specificity */
-body.procedure-detail main .panel.dark .panel-body h3 {
+body.procedure-detail main .panel.dark .panel-body :is(h2, h3) {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l-scaled);
   font-weight: 700;

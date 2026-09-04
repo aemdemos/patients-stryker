@@ -16,7 +16,11 @@
 export default function parse(element, { document }) {
   const contentCell = [];
 
-  const heading = element.querySelector('.c-rich-text-editor h3, h3');
+  // Heading level varies by page: balloon-kyphoplasty uses h3, the other IVS
+  // treatment pages use h2. Accept whichever heading the band carries.
+  const heading = element.querySelector(
+    '.c-rich-text-editor h1, .c-rich-text-editor h2, .c-rich-text-editor h3, h1, h2, h3',
+  );
   if (heading) contentCell.push(heading);
 
   // Supporting statistic paragraph(s) inside the rich-text editor.

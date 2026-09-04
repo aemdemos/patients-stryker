@@ -129,7 +129,9 @@ var CustomImportScript = (() => {
   // tools/importer/parsers/procedure-detail/panel-dark.js
   function parse3(element, { document }) {
     const contentCell = [];
-    const heading = element.querySelector(".c-rich-text-editor h3, h3");
+    const heading = element.querySelector(
+      ".c-rich-text-editor h1, .c-rich-text-editor h2, .c-rich-text-editor h3, h1, h2, h3"
+    );
     if (heading) contentCell.push(heading);
     const paras = element.querySelectorAll(".c-rich-text-editor p, p");
     paras.forEach((p) => {
@@ -196,6 +198,11 @@ var CustomImportScript = (() => {
       const imageCell = img || "";
       const bodyCell = [];
       if (learnMore) {
+        const label = learnMore.textContent.trim();
+        learnMore.textContent = "";
+        const strong = document.createElement("strong");
+        strong.textContent = label;
+        learnMore.append(strong);
         const p = document.createElement("p");
         p.append(learnMore);
         bodyCell.push(p);
