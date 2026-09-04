@@ -101,8 +101,7 @@
           "plugins": {
             "da": {
               "name": "cards",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"cards\"><div><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div></div>"
             }
           }
         },
@@ -117,11 +116,11 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
@@ -142,11 +141,11 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
@@ -221,7 +220,7 @@
           "plugins": {
             "da": {
               "name": "Hero",
-              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
+              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\" title=\"\">Desktop image</a></p></div></div><div><div><p><a href=\"\" title=\"\">Mobile image</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
               "fields": [
                 {
                   "name": "desktopImage",
@@ -229,7 +228,7 @@
                 },
                 {
                   "name": "desktopImageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1) a[title]"
                 },
                 {
                   "name": "mobileImage",
@@ -237,7 +236,7 @@
                 },
                 {
                   "name": "mobileImageAlt",
-                  "selector": "div:nth-child(2) a"
+                  "selector": "div:nth-child(2) a[title]"
                 },
                 {
                   "name": "content",
@@ -255,8 +254,7 @@
           "plugins": {
             "da": {
               "name": "icon-list",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"icon-list\"><div><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div></div>"
             }
           }
         },
@@ -268,8 +266,7 @@
           "plugins": {
             "da": {
               "name": "Icon List (tile)",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"icon-list tile\"><div><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div></div>"
             }
           }
         },
@@ -284,11 +281,11 @@
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",

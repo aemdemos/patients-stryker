@@ -8,8 +8,7 @@
       "plugins": {
         "da": {
           "name": "icon-list",
-          "rows": 1,
-          "columns": 2
+          "unsafeHTML": "<div class=\"icon-list\"><div><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div></div>"
         }
       }
     },
@@ -21,8 +20,7 @@
       "plugins": {
         "da": {
           "name": "Icon List (tile)",
-          "rows": 1,
-          "columns": 2
+          "unsafeHTML": "<div class=\"icon-list tile\"><div><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div></div>"
         }
       }
     },
@@ -35,8 +33,8 @@
           "name": "icon-list-item",
           "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
           "fields": [
-            { "name": "icon", "selector": "div:nth-child(1) a[href]" },
-            { "name": "iconAlt", "selector": "div:nth-child(1) a" },
+            { "name": "icon", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "iconAlt", "selector": "div:nth-child(1)>p>a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -82,15 +80,16 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "icon",
-          "label": "Icon (Dynamic Media link)"
+          "name": "iconAlt",
+          "label": "Icon Alt",
+          "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "iconAlt",
-          "label": "Icon Alt",
-          "multi": false
+          "name": "icon",
+          "label": "Icon (Dynamic Media link)",
+          "required": true
         },
         {
           "component": "richtext",
