@@ -212,15 +212,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
+        "name": "image",
+        "label": "Image (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "richtext",
@@ -237,15 +238,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
+        "name": "image",
+        "label": "Image (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "richtext",
