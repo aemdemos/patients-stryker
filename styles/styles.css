@@ -770,7 +770,14 @@ main > .section.no-cta > .default-content-wrapper h1 {
 main :is(h1, h2, h3, h4, h5, h6).underline {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
+  font-size: var(--heading-font-size-l);
 }
+
+main > .section.compact h2.underline {
+  font-size: var(--heading-font-size-l);
+}
+
+
 
 /* full-bleed section — the background spans the full viewport width while the
    inner content stays capped at the container max-width and centred. In EDS the
