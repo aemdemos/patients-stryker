@@ -189,8 +189,23 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
+              "name": "columns-cell",
+              "row": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "p:nth-child(1)>a[href]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "p:nth-child(1)>a"
+                },
+                {
+                  "name": "text",
+                  "selector": "p:nth-child(2)"
+                }
+              ]
             }
           }
         },
