@@ -117,11 +117,11 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
@@ -142,11 +142,11 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
