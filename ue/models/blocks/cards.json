@@ -8,8 +8,7 @@
       "plugins": {
         "da": {
           "name": "cards",
-          "rows": 1,
-          "columns": 2
+          "unsafeHTML": "<div class=\"cards\"><div><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div></div>"
         }
       }
     },
@@ -20,10 +19,10 @@
       "plugins": {
         "da": {
           "name": "card",
-          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\" title=\"\">Image</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1) a[href]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1) a[title]" },
+            { "name": "image", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>p>a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -36,10 +35,10 @@
       "plugins": {
         "da": {
           "name": "card",
-          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\" title=\"\">Image</a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
+          "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1) a[href]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1) a[title]" },
+            { "name": "image", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>p>a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -72,15 +71,16 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "image",
-          "label": "Image (Dynamic Media link)"
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
+          "name": "image",
+          "label": "Image (Dynamic Media link)",
+          "required": true
         },
         {
           "component": "richtext",
@@ -97,15 +97,16 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "image",
-          "label": "Image (Dynamic Media link)"
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
+          "name": "image",
+          "label": "Image (Dynamic Media link)",
+          "required": true
         },
         {
           "component": "richtext",
