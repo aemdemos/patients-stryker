@@ -7,12 +7,12 @@
       "plugins": {
         "da": {
           "name": "Hero",
-          "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
+          "unsafeHTML": "<div class=\"hero\"><div><p><a href=\"\">Desktop image alt</a></p></div><div><p><a href=\"\">Mobile image alt</a></p></div><div><h1>Heading</h1><p>Supporting copy</p></div></div>",
           "fields": [
-            { "name": "desktopImage", "selector": "div:nth-child(1) a[href]" },
-            { "name": "desktopImageAlt", "selector": "div:nth-child(1) a" },
-            { "name": "mobileImage", "selector": "div:nth-child(2) a[href]" },
-            { "name": "mobileImageAlt", "selector": "div:nth-child(2) a" },
+            { "name": "desktopImage", "selector": "div:nth-child(1)>div>p>a[href]" },
+            { "name": "desktopImageAlt", "selector": "div:nth-child(1)>div>p>a" },
+            { "name": "mobileImage", "selector": "div:nth-child(2)>div>p>a[href]" },
+            { "name": "mobileImageAlt", "selector": "div:nth-child(2)>div>p>a" },
             { "name": "content", "selector": "div:nth-child(3)>div" }
           ]
         }
@@ -50,12 +50,6 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "desktopImage",
-          "label": "Desktop Image (Dynamic Media link)"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
           "name": "desktopImageAlt",
           "label": "Desktop Image Alt",
           "value": ""
@@ -63,8 +57,16 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "mobileImage",
-          "label": "Mobile Image (Dynamic Media link, optional)",
+          "name": "desktopImage",
+          "label": "Desktop Image (Dynamic Media link)",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "mobileImageAlt",
+          "label": "Mobile Image Alt",
+          "value": "",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
             { "in": ["banner", { "var": "classes" }] },
@@ -74,9 +76,8 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "mobileImageAlt",
-          "label": "Mobile Image Alt",
-          "value": "",
+          "name": "mobileImage",
+          "label": "Mobile Image (Dynamic Media link, optional)",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
             { "in": ["banner", { "var": "classes" }] },
