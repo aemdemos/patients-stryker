@@ -73,8 +73,10 @@
             "value": "campaign-landing"
           }
         ],
-        "rules": {
-          "visible": "not($template)"
+        "condition": {
+          "!": {
+            "var": "template"
+          }
         }
       }
     ]
