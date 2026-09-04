@@ -194,15 +194,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
+        "name": "image",
+        "label": "Image (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "richtext",
@@ -219,15 +220,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
+        "name": "image",
+        "label": "Image (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "richtext",
@@ -450,38 +452,21 @@
     ]
   },
   {
-    "id": "icon-list-tile",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "tile",
-        "label": "Columns",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "5 columns (default)",
-            "value": "tile"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "icon-list-item",
     "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "icon",
-        "label": "Icon (Dynamic Media link)"
-      },
       {
         "component": "text",
         "valueType": "string",
         "name": "iconAlt",
         "label": "Icon Alt",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "richtext",

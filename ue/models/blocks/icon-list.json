@@ -8,21 +8,7 @@
       "plugins": {
         "da": {
           "name": "icon-list",
-          "rows": 1,
-          "columns": 2
-        }
-      }
-    },
-    {
-      "title": "Icon List (tile)",
-      "id": "icon-list-tile",
-      "model": "icon-list-tile",
-      "filter": "icon-list",
-      "plugins": {
-        "da": {
-          "name": "Icon List (tile)",
-          "rows": 1,
-          "columns": 2
+          "unsafeHTML": "<div class=\"icon-list\"><div><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div></div>"
         }
       }
     },
@@ -33,10 +19,10 @@
       "plugins": {
         "da": {
           "name": "icon-list-item",
-          "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
+          "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div>",
           "fields": [
-            { "name": "icon", "selector": "div:nth-child(1) a[href]" },
-            { "name": "iconAlt", "selector": "div:nth-child(1) a" },
+            { "name": "icon", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "iconAlt", "selector": "div:nth-child(1)>p>a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
@@ -62,35 +48,21 @@
       ]
     },
     {
-      "id": "icon-list-tile",
-      "fields": [
-        {
-          "component": "select",
-          "name": "classes",
-          "value": "tile",
-          "label": "Columns",
-          "valueType": "string",
-          "options": [
-            { "name": "5 columns (default)", "value": "tile" }
-          ]
-        }
-      ]
-    },
-    {
       "id": "icon-list-item",
       "fields": [
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "icon",
-          "label": "Icon (Dynamic Media link)"
-        },
         {
           "component": "text",
           "valueType": "string",
           "name": "iconAlt",
           "label": "Icon Alt",
           "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "icon",
+          "label": "Icon (Dynamic Media link)",
+          "required": true
         },
         {
           "component": "richtext",

@@ -101,8 +101,7 @@
           "plugins": {
             "da": {
               "name": "cards",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"cards\"><div><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div></div>"
             }
           }
         },
@@ -117,11 +116,11 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
@@ -142,11 +141,11 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
@@ -255,21 +254,7 @@
           "plugins": {
             "da": {
               "name": "icon-list",
-              "rows": 1,
-              "columns": 2
-            }
-          }
-        },
-        {
-          "title": "Icon List (tile)",
-          "id": "icon-list-tile",
-          "model": "icon-list-tile",
-          "filter": "icon-list",
-          "plugins": {
-            "da": {
-              "name": "Icon List (tile)",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"icon-list\"><div><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div></div>"
             }
           }
         },
@@ -280,15 +265,15 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
+              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div>",
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
