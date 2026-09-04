@@ -255,8 +255,7 @@
           "plugins": {
             "da": {
               "name": "icon-list",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"icon-list\"><div><div><p><a href=\"\" title=\"\">Icon</a></p></div><div>Caption</div></div></div>"
             }
           }
         },
@@ -268,8 +267,7 @@
           "plugins": {
             "da": {
               "name": "Icon List (tile)",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"icon-list tile\"><div><div><p><a href=\"\" title=\"\">Icon</a></p></div><div>Caption</div></div></div>"
             }
           }
         },
