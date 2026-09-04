@@ -101,8 +101,7 @@
           "plugins": {
             "da": {
               "name": "cards",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"cards\"><div><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div></div>"
             }
           }
         },
