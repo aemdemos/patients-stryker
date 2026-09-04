@@ -26,9 +26,12 @@ export default function decorate(block) {
     item.className = 'icon-list-item';
     moveInstrumentation(row, item);
 
-    const cells = [...row.children];
-    const iconCell = cells.find((c) => c.querySelector('picture, img, a[href]'));
-    const textCell = cells.find((c) => c !== iconCell && c.textContent.trim());
+    // Assign cells by POSITION, never by querying for the icon's media. In UE the
+    // `icon` (a[href]) and `iconAlt` (a) fields share ONE anchor; while UE patches
+    // the alt the anchor momentarily has no href, so an `a[href]` query would match
+    // nothing and the whole icon cell would be dropped (deleting it in UE + DA).
+    // DA selectors are positional too (icon = div:nth-child(1), text = div:nth-child(2)).
+    const [iconCell, textCell] = [...row.children];
 
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
