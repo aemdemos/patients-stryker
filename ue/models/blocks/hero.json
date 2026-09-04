@@ -7,7 +7,7 @@
       "plugins": {
         "da": {
           "name": "Hero",
-          "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
+          "unsafeHTML": "<div class=\"hero\"><div><p><a href=\"\">Desktop image alt</a></p></div><div><p><a href=\"\">Mobile image alt</a></p></div><div><h1>Heading</h1><p>Supporting copy</p></div></div>",
           "fields": [
             { "name": "desktopImage", "selector": "div:nth-child(1)>div>p>a[href]" },
             { "name": "desktopImageAlt", "selector": "div:nth-child(1)>div>p>a" },
@@ -48,8 +48,7 @@
           ]
         },
         {
-          "component": "text",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "desktopImage",
           "label": "Desktop Image (Dynamic Media link)"
         },
@@ -61,8 +60,7 @@
           "value": ""
         },
         {
-          "component": "text",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "mobileImage",
           "label": "Mobile Image (Dynamic Media link, optional)",
           "condition": { "or": [

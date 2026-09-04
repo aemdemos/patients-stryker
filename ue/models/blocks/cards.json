@@ -70,8 +70,7 @@
       "id": "card",
       "fields": [
         {
-          "component": "text",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "image",
           "label": "Image (Dynamic Media link)"
         },
@@ -95,8 +94,7 @@
       "id": "brochure-cta-card",
       "fields": [
         {
-          "component": "text",
-          "valueType": "string",
+          "component": "aem-content",
           "name": "image",
           "label": "Image (Dynamic Media link)"
         },

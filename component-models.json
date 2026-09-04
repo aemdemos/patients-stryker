@@ -210,8 +210,7 @@
     "id": "card",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "image",
         "label": "Image (Dynamic Media link)"
       },
@@ -235,8 +234,7 @@
     "id": "brochure-cta-card",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "image",
         "label": "Image (Dynamic Media link)"
       },
@@ -352,8 +350,7 @@
         ]
       },
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "desktopImage",
         "label": "Desktop Image (Dynamic Media link)"
       },
@@ -365,8 +362,7 @@
         "value": ""
       },
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "mobileImage",
         "label": "Mobile Image (Dynamic Media link, optional)",
         "condition": {
