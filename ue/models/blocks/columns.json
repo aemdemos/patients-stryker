@@ -35,11 +35,10 @@
         "da": {
           "name": "columns-cell",
           "behaviour": "columns-cell",
-          "row": 1,
-          "columns": 1,
+          "unsafeHTML": "<div><div><p><a href=\"\">Image alt</a></p></div><div><p>Text</p></div></div>",
           "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>p:nth-child(1)>a[href]" },
-            { "name": "imageAlt", "selector": "div:nth-child(1)>p:nth-child(1)>a" },
+            { "name": "image", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>p>a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }
