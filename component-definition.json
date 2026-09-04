@@ -201,15 +201,15 @@
           "plugins": {
             "da": {
               "name": "columns-dm-image",
-              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+              "unsafeHTML": "<div class=\"dm-image\"><p><a href=\"\">Image alt</a></p></div>",
               "fields": [
                 {
                   "name": "imageAlt",
-                  "selector": "p>a"
+                  "selector": ".dm-image>p>a"
                 },
                 {
                   "name": "image",
-                  "selector": "p>a[href]"
+                  "selector": ".dm-image>p>a[href]"
                 }
               ]
             }
