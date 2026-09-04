@@ -12,14 +12,40 @@
   display: none;
 }
 
-/* sticky on the section (its <main> parent gives it room to travel) */
+/* placeholder holds the bar's space in flow while it is JS-pinned (fixed) */
+.sticky-nav-placeholder {
+  display: none;
+}
+
+/*
+ * Sticking is JS-driven (position: fixed toggled on scroll), not CSS
+ * `position: sticky`. Pure CSS sticky silently fails when any ancestor has
+ * `overflow` or a `transform` — e.g. the Universal Editor canvas wrapper —
+ * so the bar would not stick there. Fixed + a flow placeholder is robust
+ * across the live site, preview, and the editor.
+ */
 @media (width >= 600px) {
   .section.sticky-nav-container {
     display: block;
-    position: sticky;
-    top: 0;
-    z-index: 100;
     padding-block: 0;
+  }
+
+  .section.sticky-nav-container.sticky-nav-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  /*
+   * When pinned, the section itself spans the viewport, so the inner block's
+   * full-bleed trick (width:100vw + negative margin) would overflow and add a
+   * horizontal scrollbar. Reset it to fill the already-full-width section.
+   */
+  .section.sticky-nav-container.sticky-nav-fixed .sticky-nav.block {
+    width: 100%;
+    margin-inline: 0;
   }
 }
 
