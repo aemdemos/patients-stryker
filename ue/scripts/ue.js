@@ -13,7 +13,7 @@
 import { moveInstrumentation } from './ue-utils.js';
 
 const setupObservers = () => {
-  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
+  const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list, div.sticky-nav');
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList' && mutation.target.tagName === 'DIV') {
@@ -34,6 +34,20 @@ const setupObservers = () => {
               removedDivEl.forEach((div, index) => {
                 if (index < ulEl.children.length) {
                   moveInstrumentation(div, ulEl.children[index]);
+                }
+              });
+            }
+            break;
+          case 'sticky-nav':
+            // sticky-nav rebuilds its authored <div> rows into a <nav> of <a> items;
+            // map each removed row onto the matching new <a> so instrumentation follows.
+            if (addedElements.length === 1 && addedElements[0].tagName === 'NAV') {
+              const navEl = addedElements[0];
+              const newItems = navEl.querySelectorAll('.sticky-nav-item');
+              const removedDivEl = [...mutation.removedNodes].filter((node) => node.tagName === 'DIV');
+              removedDivEl.forEach((div, index) => {
+                if (index < newItems.length) {
+                  moveInstrumentation(div, newItems[index]);
                 }
               });
             }
