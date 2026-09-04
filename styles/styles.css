@@ -762,6 +762,16 @@ main > .section.no-cta > .default-content-wrapper h1 {
 }
 
 
+/* underlined-heading authoring convention: a heading authored with UNDERLINE
+   formatting gets the source's .component-subheading.border-bottom-gold divider —
+   a 1px sage rule with a 7px gap (e.g. "ENT patient conditions"). decorateMain()
+   adds `.underline` and strips the raw <u>, so this border is the only underline
+   drawn. Works on any heading level, on any page. */
+main :is(h1, h2, h3, h4, h5, h6).underline {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
 /* full-bleed section — the background spans the full viewport width while the
    inner content stays capped at the container max-width and centred. In EDS the
    .section is already full-viewport-width and only its inner > div is capped, so

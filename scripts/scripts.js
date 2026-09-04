@@ -360,6 +360,30 @@ async function decorateLastModified(main) {
 }
 
 /**
+ * Authoring convention: an underlined heading renders with the source's sage
+ * "border-bottom-gold" divider (a 1px #b2b4ae rule with a 7px gap), e.g. the
+ * "ENT patient conditions" subheading. Authors mark it exactly like the bold/italic
+ * button convention — by applying UNDERLINE formatting to the whole heading text
+ * (rich text emits `<u>`). We detect a heading whose text is fully underlined, add
+ * `.underline` so CSS draws the border, and unwrap the raw `<u>` so no text
+ * underline is drawn on top. Partial underline (only some words) is left alone.
+ * @param {HTMLElement} main The main container element
+ */
+function decorateUnderlinedHeadings(main) {
+  main.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+    const text = heading.textContent.trim();
+    if (!text) return;
+    // the whole heading must be underlined: a single <u> whose text is the heading's
+    const us = heading.querySelectorAll('u');
+    if (us.length !== 1) return;
+    const u = us[0];
+    if (u.textContent.trim() !== text) return;
+    heading.classList.add('underline');
+    u.replaceWith(...u.childNodes); // strip the <u>, keep inner markup (e.g. gold marker)
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -373,6 +397,7 @@ export function decorateMain(main) {
   decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
+  decorateUnderlinedHeadings(main);
   decorateFootnotes(main);
 }
 
