@@ -172,11 +172,26 @@ export default function decorate(block) {
       const pinned = barRect.top - top <= 1;
       section?.classList.toggle('sticky-nav-pinned', pinned);
       const line = top + barHeight + 2;
+      // Page-bottom detection, computed up front: trailing sections often can't
+      // scroll up to the line (not enough content below them to travel that far),
+      // so the bottom of the page is what activates them.
+      const scrollPos = scroller === window ? window.scrollY : scroller.scrollTop;
+      const scrollSize = scroller === window
+        ? document.documentElement.scrollHeight : scroller.scrollHeight;
+      const atBottom = pinned && scrollPos > 0 && viewportH + scrollPos >= scrollSize - 2;
       let activeIndex = -1;
       if (pinned) {
         targets.forEach((t, i) => {
           if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
         });
+        // At the page bottom, prefer the last section that has entered the viewport:
+        // a trailing section stays visible below the line but can never reach it.
+        if (atBottom) {
+          const bottomEdge = top + viewportH;
+          targets.forEach((t, i) => {
+            if (t.region.getBoundingClientRect().top <= bottomEdge) activeIndex = i;
+          });
+        }
         // Rescue a trailing section that can't scroll to the line once it's clearly in view.
         if (activeIndex < 0) {
           const midline = top + viewportH / 2;
@@ -184,18 +199,14 @@ export default function decorate(block) {
             if (t.region.getBoundingClientRect().top <= midline) activeIndex = i;
           });
         }
+        // Last resort at the very bottom: fall back to the final item.
+        if (atBottom && activeIndex < 0) activeIndex = targets.length - 1;
       }
       // Two nav items can target one section; normalize to the first item for that region.
       if (activeIndex >= 0) {
         const activeRegion = targets[activeIndex].region;
         activeIndex = targets.findIndex((t) => t.region === activeRegion);
       }
-      // Fall back to the final item at page bottom only when no section already qualified.
-      const scrollPos = scroller === window ? window.scrollY : scroller.scrollTop;
-      const scrollSize = scroller === window
-        ? document.documentElement.scrollHeight : scroller.scrollHeight;
-      const atBottom = pinned && scrollPos > 0 && viewportH + scrollPos >= scrollSize - 2;
-      if (atBottom && activeIndex < 0) activeIndex = targets.length - 1;
 
       // Keep the clicked item highlighted while the scroll crosses the preceding section.
       const clickedTarget = targets.find((t) => t.item === clickedItem);
