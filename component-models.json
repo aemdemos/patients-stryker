@@ -72,7 +72,10 @@
             "name": "Campaign Landing",
             "value": "campaign-landing"
           }
-        ]
+        ],
+        "rules": {
+        "visible": "not(template)"
+       }
       }
     ]
   },
