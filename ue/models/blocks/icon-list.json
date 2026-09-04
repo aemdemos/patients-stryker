@@ -14,26 +14,13 @@
       }
     },
     {
-      "title": "Icon List (tile)",
-      "id": "icon-list-tile",
-      "model": "icon-list-tile",
-      "filter": "icon-list",
-      "plugins": {
-        "da": {
-          "name": "Icon List (tile)",
-          "rows": 1,
-          "columns": 2
-        }
-      }
-    },
-    {
       "title": "Icon List Item",
       "id": "icon-list-item",
       "model": "icon-list-item",
       "plugins": {
         "da": {
           "name": "icon-list-item",
-          "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
+          "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div>",
           "fields": [
             { "name": "icon", "selector": "div:nth-child(1) a[href]" },
             { "name": "iconAlt", "selector": "div:nth-child(1) a" },
@@ -57,21 +44,6 @@
             { "name": "4-columnar / Default", "value": "cols-4" },
             { "name": "5-columnar / Tiles", "value": "tile" },
             { "name": "6-columnar / Label", "value": "cols-6 label" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "icon-list-tile",
-      "fields": [
-        {
-          "component": "select",
-          "name": "classes",
-          "value": "tile",
-          "label": "Columns",
-          "valueType": "string",
-          "options": [
-            { "name": "5 columns (default)", "value": "tile" }
           ]
         }
       ]

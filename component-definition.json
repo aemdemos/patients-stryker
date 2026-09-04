@@ -261,26 +261,13 @@
           }
         },
         {
-          "title": "Icon List (tile)",
-          "id": "icon-list-tile",
-          "model": "icon-list-tile",
-          "filter": "icon-list",
-          "plugins": {
-            "da": {
-              "name": "Icon List (tile)",
-              "rows": 1,
-              "columns": 2
-            }
-          }
-        },
-        {
           "title": "Icon List Item",
           "id": "icon-list-item",
           "model": "icon-list-item",
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
+              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div>",
               "fields": [
                 {
                   "name": "icon",
