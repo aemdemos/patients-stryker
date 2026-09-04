@@ -306,22 +306,26 @@
   },
   {
     "id": "columns-cell",
-    "fields": []
-  },
-  {
-    "id": "columns-dm-image",
     "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt"
-      },
       {
         "component": "text",
         "valueType": "string",
         "name": "image",
         "label": "Image (Dynamic Media link)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text"
       }
     ]
   },
