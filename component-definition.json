@@ -280,8 +280,7 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "row": 1,
-              "columns": 2,
+              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
               "fields": [
                 {
                   "name": "icon",
