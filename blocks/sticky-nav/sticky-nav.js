@@ -1,4 +1,7 @@
-// Sticky Nav Block — in-page anchor bar; row = item (label + `#id` link) with scroll-spy.
+// Sticky Nav Block — in-page anchor bar; row = item (label + target anchor id).
+// Sticking and click-scroll are JS-driven (not CSS `position: sticky`, not href
+// jumps) so the bar works inside the Universal Editor canvas and overflow/transform
+// ancestors, where CSS sticky and native hash navigation fail. Includes scroll-spy.
 
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
@@ -23,26 +26,31 @@ const anchorId = (s) => {
   return v.includes('#') ? v.slice(v.indexOf('#') + 1) : v;
 };
 
-const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
-
-/** Eased scroll, re-sampling the target each frame to absorb lazy-content shifts. */
-function animateScrollTo(getTargetY, duration = 600) {
-  const startY = window.scrollY;
-  const startTime = performance.now();
-
-  function step(now) {
-    const t = Math.min((now - startTime) / duration, 1);
-    const eased = easeInOutQuad(t);
-    const targetY = getTargetY();
-    window.scrollTo(0, startY + (targetY - startY) * eased);
-    if (t < 1) requestAnimationFrame(step);
+/**
+ * The nearest scrollable ancestor, or `window` when the page itself scrolls.
+ * On the live site this is `window`; in the Universal Editor the page renders
+ * inside a scrolling canvas element, so scroll-spy/sticking must read there.
+ * (Click navigation uses native scrollIntoView, which finds the scroller itself.)
+ * @param {Element} el
+ */
+function getScroller(el) {
+  let node = el.parentElement;
+  while (node && node !== document.body && node !== document.documentElement) {
+    const style = getComputedStyle(node);
+    if (/(auto|scroll|overlay)/.test(style.overflowY) && node.scrollHeight > node.clientHeight) {
+      return node;
+    }
+    node = node.parentElement;
   }
-
-  requestAnimationFrame(step);
+  return window;
 }
 
 export default function decorate(block) {
   const section = block.closest('.section');
+  // Resolve after decoration below; the live site scrolls `window`, the UE canvas
+  // scrolls a nested container. All scroll reads/writes/listeners go through this.
+  let scroller = window;
+  const scrollTarget = () => (scroller === window ? window : scroller);
   const nav = document.createElement('nav');
   nav.className = 'sticky-nav-list';
   nav.setAttribute('aria-label', 'Section navigation');
@@ -62,9 +70,14 @@ export default function decorate(block) {
       || anchorId(linkHref) || anchorId(cellText);
     const href = `#${id}`;
 
+    // Like the reference site, items are JS-driven (no real href) so the click
+    // always runs our scroll handler rather than a native hash jump — which the
+    // Universal Editor and some containers intercept or handle inconsistently.
     const item = document.createElement('a');
     item.className = 'sticky-nav-item';
-    item.href = href;
+    item.setAttribute('role', 'link');
+    item.setAttribute('tabindex', '0');
+    item.dataset.target = href;
 
     // move UE instrumentation: row → <a> (selectable item), label → <p> (editable)
     moveInstrumentation(row, item);
@@ -80,6 +93,62 @@ export default function decorate(block) {
   // replace the authored table rows with the nav
   block.textContent = '';
   block.append(nav);
+
+  // Now that the block is in its final place, find the element that actually scrolls.
+  scroller = getScroller(block);
+  // Viewport top of the scroller: 0 for window, else the container's client top.
+  const scrollerTop = () => (scroller === window ? 0 : scroller.getBoundingClientRect().top);
+
+  // --- JS-driven sticking -------------------------------------------------
+  // CSS `position: sticky` silently fails when any ancestor has `overflow` or a
+  // `transform` (e.g. the Universal Editor canvas wrapper), so the bar would not
+  // stick there. We pin the section with `position: fixed` toggled on scroll and
+  // hold its place in flow with a placeholder, which is robust everywhere.
+  const placeholder = document.createElement('div');
+  placeholder.className = 'sticky-nav-placeholder';
+  placeholder.setAttribute('aria-hidden', 'true');
+  section?.insertAdjacentElement('beforebegin', placeholder);
+
+  // Bar is hidden below 600px (matches the CSS), so sticking only engages above it.
+  const canStick = () => window.matchMedia('(min-width: 600px)').matches;
+
+  let fixed = false;
+  const updateSticky = () => {
+    if (!section) return;
+    // Below the breakpoint the bar is display:none; make sure it's fully unpinned.
+    if (!canStick()) {
+      if (fixed) {
+        fixed = false;
+        section.classList.remove('sticky-nav-fixed');
+        section.style.top = '';
+        placeholder.style.display = '';
+        placeholder.style.height = '';
+      }
+      return;
+    }
+    const top = scrollerTop();
+    // Reference the placeholder while fixed (section is out of flow), else the section.
+    const ref = fixed ? placeholder : section;
+    const refTop = ref.getBoundingClientRect().top - top;
+    const shouldFix = refTop <= 0;
+    if (shouldFix === fixed) {
+      // While fixed on a container scroller, keep the bar aligned to the moving top.
+      if (fixed && scroller !== window) section.style.top = `${top}px`;
+      return;
+    }
+    fixed = shouldFix;
+    if (fixed) {
+      placeholder.style.height = `${section.offsetHeight}px`;
+      placeholder.style.display = 'block';
+      section.classList.add('sticky-nav-fixed');
+      if (scroller !== window) section.style.top = `${top}px`;
+    } else {
+      section.classList.remove('sticky-nav-fixed');
+      section.style.top = '';
+      placeholder.style.display = '';
+      placeholder.style.height = '';
+    }
+  };
 
   // Resolve targets lazily so anchors in async-loaded fragments are picked up.
   const currentTargets = () => items
@@ -107,20 +176,32 @@ export default function decorate(block) {
   // Shared-region items: active state follows the last-clicked item, not the last in the bar.
   let clickedItem = null;
 
+  const goTo = (item, href) => {
+    const target = resolveTarget(href);
+    if (!target) return;
+    clickedItem = item;
+    setCurrent(item);
+    const region = target.closest('.section') || target;
+    // Use native scrollIntoView, not a hand-rolled animation on a guessed scroller.
+    // The browser scrolls the *correct* container automatically — critical inside
+    // the Universal Editor canvas, where the page scrolls a nested element (a
+    // hand-rolled tween there scrolls the wrong node, so the view snaps back). The
+    // bar-height offset comes from the `scroll-margin-top` set in applyScrollOffset().
+    region.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   items.forEach((entry) => {
     const { item, href } = entry;
     item.addEventListener('click', (e) => {
-      const target = resolveTarget(href);
-      if (!target) return;
       e.preventDefault();
-      clickedItem = item;
-      setCurrent(item);
-      const region = target.closest('.section') || target;
-      const getTargetY = () => {
-        const off = block.getBoundingClientRect().height || 70;
-        return window.scrollY + region.getBoundingClientRect().top - off;
-      };
-      animateScrollTo(getTargetY, 600);
+      goTo(item, href);
+    });
+    // Keyboard parity with a real link (role="link"): Enter activates.
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        goTo(item, href);
+      }
     });
   });
 
@@ -129,34 +210,52 @@ export default function decorate(block) {
     let ticking = false;
     const update = () => {
       ticking = false;
+      // Recompute the pinned/fixed state first so measurements below are consistent.
+      updateSticky();
       const targets = currentTargets();
       const barRect = block.getBoundingClientRect();
       const barHeight = barRect.height || 70;
-      const pinned = barRect.top <= 1;
+      // Everything is measured relative to the scroller's own top edge (0 for window).
+      const top = scrollerTop();
+      const viewportH = scroller === window ? window.innerHeight : scroller.clientHeight;
+      const pinned = fixed;
       section?.classList.toggle('sticky-nav-pinned', pinned);
-      const line = barHeight + 2;
+      const line = top + barHeight + 2;
+      // Page-bottom detection, computed up front: trailing sections often can't
+      // scroll up to the line (not enough content below them to travel that far),
+      // so the bottom of the page is what activates them.
+      const scrollPos = scroller === window ? window.scrollY : scroller.scrollTop;
+      const scrollSize = scroller === window
+        ? document.documentElement.scrollHeight : scroller.scrollHeight;
+      const atBottom = pinned && scrollPos > 0 && viewportH + scrollPos >= scrollSize - 2;
       let activeIndex = -1;
       if (pinned) {
         targets.forEach((t, i) => {
           if (t.region.getBoundingClientRect().top <= line) activeIndex = i;
         });
+        // At the page bottom, prefer the last section that has entered the viewport:
+        // a trailing section stays visible below the line but can never reach it.
+        if (atBottom) {
+          const bottomEdge = top + viewportH;
+          targets.forEach((t, i) => {
+            if (t.region.getBoundingClientRect().top <= bottomEdge) activeIndex = i;
+          });
+        }
         // Rescue a trailing section that can't scroll to the line once it's clearly in view.
         if (activeIndex < 0) {
-          const midline = window.innerHeight / 2;
+          const midline = top + viewportH / 2;
           targets.forEach((t, i) => {
             if (t.region.getBoundingClientRect().top <= midline) activeIndex = i;
           });
         }
+        // Last resort at the very bottom: fall back to the final item.
+        if (atBottom && activeIndex < 0) activeIndex = targets.length - 1;
       }
       // Two nav items can target one section; normalize to the first item for that region.
       if (activeIndex >= 0) {
         const activeRegion = targets[activeIndex].region;
         activeIndex = targets.findIndex((t) => t.region === activeRegion);
       }
-      // Fall back to the final item at page bottom only when no section already qualified.
-      const atBottom = pinned && window.scrollY > 0 && window.innerHeight + window.scrollY
-        >= document.documentElement.scrollHeight - 2;
-      if (atBottom && activeIndex < 0) activeIndex = targets.length - 1;
 
       // Keep the clicked item highlighted while the scroll crosses the preceding section.
       const clickedTarget = targets.find((t) => t.item === clickedItem);
@@ -183,7 +282,8 @@ export default function decorate(block) {
       requestAnimationFrame(update);
     };
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    // Listen on the actual scroller (the UE canvas, or `window` on the live site).
+    scrollTarget().addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     // Re-run when the page height changes, since an early pass may misread a short page as bottom.
     if (typeof ResizeObserver === 'function') {
