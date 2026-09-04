@@ -29,6 +29,7 @@
         "label": "Template",
         "description": "Page template that controls layout and styling",
         "value": "",
+        "readOnly": true,
         "options": [
           {
             "name": "None",
