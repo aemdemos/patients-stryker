@@ -51,6 +51,23 @@
       "blocks": []
     },
     {
+      "name": "procedure-detail",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/treatments/balloon-kyphoplasty.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/treatments/balloon-kyphoplasty.html",
+      "coverageGaps": [],
+      "description": "IVS treatment/procedure detail page. Zones top-to-bottom: (1) hero (banner) title + Find a doctor CTA; (2) a 'flex' section with a default-content intro on the left and a panel (cta) benefits card on the right; (3) a full-bleed dark panel (dark wide) clinical-evidence band in a 'dark' section; (4) an h3 'How it works' heading + a cards block (3 steps: image + h4 + text); (5) a panel (gold) mid-page CTA; (6) an h2 'Resources' heading + a cards (resources) block (brochure cards); (7) a 'compact' section of default-content risks + references. Header/footer and the Marketo doctor-locator form are stripped on import. All variants reuse existing project blocks — no new block code.",
+      "blocks": [
+        { "name": "hero", "section": "hero", "instances": [".fullWidthImageHero"] },
+        { "name": "panel-cta", "section": "flex", "instances": [".cols2 > .colctrl .row > .col-sm-6:nth-child(2)"] },
+        { "name": "panel-dark", "section": "dark", "instances": [".fullbleedpanel .c-full-bleed-panel"] },
+        { "name": "cards", "instances": [".cols3 > .colctrl"] },
+        { "name": "panel-gold", "instances": [".text.parbase .c-rich-text-editor .bg-gold"] },
+        { "name": "cards-resources", "section": "resources", "instances": [".tabs .c-tabs .tabs-content .cols4 .colctrl"] }
+      ]
+    },
+    {
       "name": "patient-information",
       "urls": [
         "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html"
@@ -99,68 +116,67 @@
       "sections": [
         {
           "id": "hero",
-          "name": "Hero",
-          "selector": ".carouselslidegroup",
+          "name": "Hero / title",
+          "selector": ".fullWidthImageHero",
           "style": null,
-          "blocks": [
-            "hero"
-          ],
+          "blocks": ["hero"],
           "defaultContent": []
         },
         {
-          "id": "intro",
-          "name": "Intro (welcome + availability panel)",
-          "selector": ".cols2 .colctrl",
+          "id": "intro-benefits",
+          "name": "Intro hook + Benefits",
+          "selector": ".cols2 > .colctrl",
           "style": "flex",
-          "blocks": [
-            "panel"
-          ],
-          "defaultContent": [
-            ".col-sm-6:nth-child(1) .c-rich-text-editor",
-            ".curatedcta a"
-          ]
+          "blocks": ["panel-cta"],
+          "defaultContent": [".cols2 > .colctrl .row > .col-sm-6:nth-child(1)"]
         },
         {
-          "id": "downloads",
-          "name": "Downloads (4-up)",
-          "selector": ".cols4",
-          "style": "divider",
-          "blocks": [
-            "cards-brochure"
-          ],
+          "id": "evidence",
+          "name": "Clinical-evidence callout",
+          "selector": ".fullbleedpanel .c-full-bleed-panel",
+          "style": "dark",
+          "blocks": ["panel-dark"],
           "defaultContent": []
         },
         {
-          "id": "social",
-          "name": "Social media",
-          "selector": ".cols4",
-          "style": "divider",
-          "blocks": [
-            "cards-brochure"
-          ],
-          "defaultContent": [
-            "h2"
-          ]
+          "id": "how-it-works",
+          "name": "How it works (3 steps)",
+          "selector": ".sectionseparator",
+          "style": null,
+          "blocks": ["cards"],
+          "defaultContent": [".cols:has(h3) .c-rich-text-editor"]
         },
         {
-          "id": "related-links",
-          "name": "Related links",
-          "selector": ".bg-light-gray .cols3",
+          "id": "midpage-cta",
+          "name": "Mid-page CTA",
+          "selector": ".text.parbase .c-rich-text-editor .bg-gold",
+          "style": null,
+          "blocks": ["panel-gold"],
+          "defaultContent": []
+        },
+        {
+          "id": "resources",
+          "name": "Resources",
+          "selector": ".tabs",
+          "style": null,
+          "blocks": ["cards-resources"],
+          "defaultContent": [".tabs .c-tabs h2.component-subheading"]
+        },
+        {
+          "id": "risks",
+          "name": "Potential risks",
+          "selector": ".text.parbase .c-rich-text-editor .bg-light-gray",
           "style": "light-gray",
-          "blocks": [
-            "fragment"
-          ],
-          "defaultContent": []
+          "blocks": [],
+          "defaultContent": [".text.parbase .c-rich-text-editor .bg-light-gray"]
         },
         {
-          "id": "disclaimer",
-          "name": "Disclaimer",
-          "selector": ".c-disclaimer",
+          "id": "footnotes",
+          "name": "Footnotes + references",
+          "selector": ".c-disclaimer.page-section:not(.container)",
           "style": "compact",
           "blocks": [],
-          "defaultContent": [
-            ".c-disclaimer p"
-          ]
+          "defaultContent": [".c-disclaimer.page-section:not(.container)"]
         }
       ]
     }

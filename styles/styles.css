@@ -44,6 +44,7 @@
   --color-text-muted: #555;
   --color-disabled-bg: #b2b4ae;
   --color-disabled-text: #545857;
+  --color-required: #bf0000; /* form required asterisk / error */
   --overlay-scrim: rgb(0 0 0 / 50%);
   --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
 
@@ -79,6 +80,7 @@
   --heading-font-size-xxl: 28px;    /* h1 */
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
+  --heading-font-size-l-scaled: 26.25px; /* h3 enlarged 1.25x (fontsize-1-25em) */
   --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
@@ -104,6 +106,7 @@
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
   --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
+  --space-section-xl: 90px;
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
