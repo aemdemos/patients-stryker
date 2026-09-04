@@ -46,6 +46,7 @@
           "label": "Theme",
           "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
           "value": "",
+          "readOnly": true,
           "condition": {
             "!": { "var": "template" }
           }
