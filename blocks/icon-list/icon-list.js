@@ -1,6 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { isDMSrc } from '../../scripts/dm-support.js';
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 // column count from the `cols-N` variant class; default 6 for label, else 4
 function readColumns(block) {
@@ -21,15 +20,18 @@ export default function decorate(block) {
   const list = document.createElement('ul');
   list.className = 'icon-list-items';
 
+  // The authored row is two cells: cell 1 = icon, cell 2 = caption text. Keep
+  // both cells by position rather than detecting the icon by its <a>/<picture>.
+  // In UE the icon and its alt are two fields on one <a>; while the editor
+  // patches that anchor it can briefly carry no href, so a media/href query
+  // would fail to find the icon cell and drop it (image vanishes in UE + DA).
+  // Positional assignment keeps the cell — and its UE instrumentation — intact.
+  // Row→<li> instrumentation is moved by the mutation observer in ue/scripts/ue.js.
   [...block.children].forEach((row) => {
     const item = document.createElement('li');
     item.className = 'icon-list-item';
-    moveInstrumentation(row, item);
 
-    const cells = [...row.children];
-    const iconCell = cells.find((c) => c.querySelector('picture, img, a[href]'));
-    const textCell = cells.find((c) => c !== iconCell && c.textContent.trim());
-
+    const [iconCell, textCell] = [...row.children];
     if (iconCell) {
       iconCell.className = 'icon-list-icon';
       item.append(iconCell);
