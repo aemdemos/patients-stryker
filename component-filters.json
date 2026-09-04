@@ -49,7 +49,10 @@
   },
   {
     "id": "columns-cell",
-    "components": []
+    "components": [
+      "text",
+      "dm-image"
+    ]
   },
   {
     "id": "icon-list",

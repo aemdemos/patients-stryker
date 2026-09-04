@@ -189,21 +189,27 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
-              "name": "columns-cell",
-              "behaviour": "columns-cell",
-              "unsafeHTML": "<div><div><p><a href=\"\">Image alt</a></p></div><div><p>Text</p></div></div>",
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "Image (Dynamic Media link)",
+          "id": "dm-image",
+          "model": "dm-image",
+          "plugins": {
+            "da": {
+              "name": "dm-image",
+              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
               "fields": [
                 {
-                  "name": "image",
-                  "selector": "div:nth-child(1)>p>a[href]"
-                },
-                {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1)>p>a"
+                  "selector": "p>a"
                 },
                 {
-                  "name": "text",
-                  "selector": "div:nth-child(2)"
+                  "name": "image",
+                  "selector": "p>a[href]"
                 }
               ]
             }
