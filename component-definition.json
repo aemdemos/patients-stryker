@@ -195,6 +195,27 @@
           }
         },
         {
+          "title": "Image (Dynamic Media link)",
+          "id": "columns-dm-image",
+          "model": "columns-dm-image",
+          "plugins": {
+            "da": {
+              "name": "columns-dm-image",
+              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+              "fields": [
+                {
+                  "name": "imageAlt",
+                  "selector": "p>a"
+                },
+                {
+                  "name": "image",
+                  "selector": "p>a[href]"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "model": "fragment",
