@@ -7,13 +7,13 @@
       "plugins": {
         "da": {
           "name": "Hero",
-          "unsafeHTML": "<div class=\"hero\"><div><p><a href=\"\">Desktop image URL</a></p><p>Desktop image alt</p></div><div><p><a href=\"\">Mobile image URL</a></p><p>Mobile image alt</p></div><div><h1>Heading</h1><p>Supporting copy</p></div></div>",
+          "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image URL</a></p><p>Desktop image alt</p></div></div><div><div><p><a href=\"\">Mobile image URL</a></p><p>Mobile image alt</p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
           "fields": [
-            { "name": "desktopImage", "selector": "div:nth-child(1) > p:nth-of-type(1) a[href]" },
-            { "name": "desktopImageAlt", "selector": "div:nth-child(1) > p:nth-of-type(2)" },
-            { "name": "mobileImage", "selector": "div:nth-child(2) > p:nth-of-type(1) a[href]" },
-            { "name": "mobileImageAlt", "selector": "div:nth-child(2) > p:nth-of-type(2)" },
-            { "name": "content", "selector": "div:nth-child(3)" }
+            { "name": "desktopImage", "selector": "div:nth-child(1) p:nth-of-type(1) a[href]" },
+            { "name": "desktopImageAlt", "selector": "div:nth-child(1) p:nth-of-type(2)" },
+            { "name": "mobileImage", "selector": "div:nth-child(2) p:nth-of-type(1) a[href]" },
+            { "name": "mobileImageAlt", "selector": "div:nth-child(2) p:nth-of-type(2)" },
+            { "name": "content", "selector": "div:nth-child(3)>div" }
           ]
         }
       }

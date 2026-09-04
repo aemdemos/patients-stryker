@@ -17,10 +17,11 @@ function setupHero(block) {
   let mobilePic = null;
   let contentCell = null;
 
-  // Flat authoring structure: each top-level cell is either an image cell
-  // (a <picture> — from the converted DM link — plus its hidden alt paragraph)
-  // or the content cell (heading + copy). The first two image cells are desktop
-  // then mobile; the cell carrying a heading is the content cell.
+  // Each top-level cell is either an image cell (a <picture> — from the converted
+  // DM link — plus its hidden alt paragraph) or the content cell (heading + copy).
+  // Detection is nesting-agnostic (descendant queries), so it works whether the
+  // cell wraps its content in an extra <div> or not. First two image cells are
+  // desktop then mobile; the cell carrying a heading is the content cell.
   [...block.children].forEach((cell) => {
     const pic = cell.querySelector('picture');
     const hasHeading = cell.querySelector('h1, h2, h3, h4, h5, h6');
