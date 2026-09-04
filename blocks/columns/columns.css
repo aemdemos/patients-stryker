@@ -96,6 +96,7 @@
   margin-bottom: 30px;
 }
 
+
 /* when a compact columns block also contains an h1, the h2 acts as a subheading
    and should use the standard xl size rather than the compact size */
 .section.compact .columns:has(h1) h2 {
@@ -262,8 +263,8 @@
 
 
 .section.compact .columns p > code {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
   line-height: var(--paragraph-line-height);
   color: var(--color-white);
 }
@@ -449,6 +450,13 @@
     display: table;
     clear: both;
   }
+
+.section.compact .columns:has(p > strong > code) h3 {
+  font-size: var(--heading-font-size-l);
+  padding-top:0;
+  margin-bottom: 15px;
+}
+
 }
 
 /* desktop (>= 900px) — all columns line up in a single row */
@@ -527,6 +535,10 @@
     margin-top:40px;
     margin-bottom: 30px;
   }
+
+    .section.compact .columns p > code {
+    font-size: var(--heading-font-size-m);
+  }
 }
 
 /* ===== related-links variant =====
@@ -582,3 +594,4 @@
   border-width: 6px 0 6px 8px;
   border-color: transparent transparent transparent currentcolor;
 }
+
