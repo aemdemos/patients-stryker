@@ -820,6 +820,11 @@ main > .section.no-cta > .default-content-wrapper h1 {
   font-family: var(--display-font-family-bold);
 }
 
+/* Underlined authored headings render with the source divider treatment. */
+main :is(h1, h2, h3, h4, h5, h6).underline {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
 
 /* Full-bleed sections keep edge-to-edge backgrounds with no vertical gap between bands. */
 main > .section.full-bleed {
