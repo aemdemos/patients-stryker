@@ -49,7 +49,10 @@
             { "name": "Stroke Awareness Landing", "value": "stroke-awareness-landing" },
             { "name": "Zip Skin Closure", "value": "zip-skin-closure" },
             { "name": "Campaign Landing", "value": "campaign-landing" }
-          ]
+          ],
+          "rules": {
+          "visible": "not(template)"
+      }
         }
       ]
     }
