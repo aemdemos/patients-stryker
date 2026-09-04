@@ -29,7 +29,10 @@
         "label": "Template",
         "description": "Page template that controls layout and styling",
         "value": "",
-        "readOnly": true
+        "readOnly": true,
+        "condition": {
+          "var": "template"
+        }
       },
       {
         "component": "select",
