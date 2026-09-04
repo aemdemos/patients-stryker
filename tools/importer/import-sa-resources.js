@@ -1,124 +1,40 @@
 /* eslint-disable */
 /* global WebImporter */
 
-// PARSER IMPORTS
-import heroParser from './parsers/sa-resources/hero.js';
-import panelParser from './parsers/sa-resources/panel.js';
-import cardsBrochureParser from './parsers/sa-resources/cards-brochure.js';
-import fragmentParser from './parsers/sa-resources/fragment.js';
-
-// TRANSFORMER IMPORTS — shared cleanup/dm live at the transformers root; the
-// section transformer is template-specific and namespaced under sa-resources/.
+// TRANSFORMER IMPORTS — only the shared cleanup is needed now: this page is a
+// thin shell (one fragment embed + a per-locale disclaimer), so the block parsers
+// and the section transformer live in the BODY-fragment importer
+// (import-sa-resources-body-fragment.js), not here.
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-import saResourcesSectionsTransformer from './transformers/sa-resources/sections.js';
-import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
-// PARSER REGISTRY - keys match block names in page-templates.json
-const parsers = {
-  hero: heroParser,
-  panel: panelParser,
-  'cards-brochure': cardsBrochureParser,
-  fragment: fragmentParser,
-};
-
-// TRANSFORMER REGISTRY - order matters: cleanup -> sections -> dm-images
+// TRANSFORMER REGISTRY
 const transformers = [
   cleanupTransformer,
-  saResourcesSectionsTransformer,
-  dmImagesTransformer,
 ];
 
-// PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json (sa-resources)
-const PAGE_TEMPLATE = {
+// PAGE CONFIGURATION
+// The Stroke-Awareness Resources pages (ww + us). Both source bodies are
+// content-identical, so the entire body is authored ONCE as a shared fragment
+//   /fragments/sa-resources-body
+// (see import-sa-resources-body-fragment.js) and embedded here via a `fragment`
+// block. The ONLY per-locale difference is the trademark/disclaimer + its AP
+// number, so that is built per page from each source's own `.c-disclaimer`.
+// Styling ships via the existing `sa-resources` theme (styles/themes.css, scoped
+// body.sa-resources) — set as meta.theme below.
+const PAGE = {
   name: 'sa-resources',
-  description: 'Stroke Awareness Resources landing page: hero banner, a two-column intro (default text + gold button beside a light panel) in a flex/compact section, a 4-up downloads card grid (cards brochure), a social-media card grid (cards brochure with empty heading line), a related-links fragment reference in a gray section, and a small-text disclaimer. Standalone template for future SA resource-style pages.',
+  description: 'Stroke Awareness Resources page (ww + us): a single embed of the shared /fragments/sa-resources-body (hero, welcome intro + availability panel, downloads + social card grids, related-links band) followed by a per-locale trademark/disclaimer. Styled via the sa-resources theme.',
+  fragmentPath: '/fragments/sa-resources-body',
   urls: [
     'https://patients.stryker.com/ww/en/stroke-awareness/resources.html',
+    'https://patients.stryker.com/us/en/stroke-awareness/resources.html',
   ],
-  blocks: [
-    {
-      name: 'hero',
-      instances: ['.carouselslidegroup'],
-    },
-    {
-      name: 'panel',
-      instances: ['.dimensional-box'],
-      section: 'light',
-    },
-    {
-      name: 'cards-brochure',
-      instances: ['.cols4'],
-      section: 'brochure',
-    },
-    {
-      name: 'fragment',
-      instances: ['.bg-light-gray .cols3'],
-    },
-  ],
-  sections: [
-    {
-      id: 'hero',
-      name: 'Hero',
-      selector: '.carouselslidegroup',
-      style: null,
-      blocks: ['hero'],
-      defaultContent: [],
-    },
-    {
-      id: 'intro',
-      name: 'Intro (welcome + availability panel)',
-      selector: '.cols2 .colctrl',
-      style: 'flex',
-      blocks: ['panel'],
-      defaultContent: ['.col-sm-6:nth-child(1) .c-rich-text-editor', '.curatedcta a'],
-    },
-    {
-      id: 'downloads',
-      name: 'Downloads (4-up)',
-      selector: '.cols4',
-      style: 'divider',
-      blocks: ['cards-brochure'],
-      defaultContent: [],
-    },
-    {
-      id: 'social',
-      name: 'Social media',
-      selector: '.cols4',
-      style: 'divider',
-      blocks: ['cards-brochure'],
-      defaultContent: ['h2'],
-    },
-    {
-      id: 'related-links',
-      name: 'Related links',
-      selector: '.bg-light-gray .cols3',
-      style: 'light-gray',
-      blocks: ['fragment'],
-      defaultContent: [],
-    },
-    {
-      id: 'disclaimer',
-      name: 'Disclaimer',
-      selector: '.c-disclaimer',
-      style: 'compact',
-      blocks: [],
-      defaultContent: ['.c-disclaimer p'],
-    },
-  ],
+  blocks: ['fragment'],
 };
 
-/**
- * Execute all page transformers for a specific hook
- * @param {string} hookName - The hook name ('beforeTransform' or 'afterTransform')
- * @param {Element} element - The DOM element to transform
- * @param {Object} payload - The payload containing { document, url, html, params }
- */
+/** Execute all transformers for a specific hook. */
 function executeTransformers(hookName, element, payload) {
-  const enhancedPayload = {
-    ...payload,
-    template: PAGE_TEMPLATE,
-  };
-
+  const enhancedPayload = { ...payload, template: PAGE };
   transformers.forEach((transformerFn) => {
     try {
       transformerFn.call(null, hookName, element, enhancedPayload);
@@ -128,91 +44,83 @@ function executeTransformers(hookName, element, payload) {
   });
 }
 
-/**
- * Find all blocks on the page based on the embedded template configuration
- * @param {Document} document - The DOM document
- * @param {Object} template - The embedded PAGE_TEMPLATE object
- * @returns {Array} Array of block instances found on the page
- */
-function findBlocksOnPage(document, template) {
-  const pageBlocks = [];
-  const claimed = new Set();
+/** A plain link (href = text = the given path/url). */
+function plainLink(doc, href, text) {
+  const a = doc.createElement('a');
+  a.setAttribute('href', href);
+  a.textContent = text || href;
+  return a;
+}
 
-  template.blocks.forEach((blockDef) => {
-    blockDef.instances.forEach((selector) => {
-      const elements = document.querySelectorAll(selector);
-      if (elements.length === 0) {
-        console.warn(`Block "${blockDef.name}" selector not found: ${selector}`);
-      }
-      elements.forEach((element) => {
-        // A single element must not be claimed by more than one block (e.g. the
-        // two `.cols4` grids are both cards-brochure, but a `.cols3` inside a
-        // `.bg-light-gray` must not also be swept up by a broader selector).
-        if (claimed.has(element)) return;
-        claimed.add(element);
-        pageBlocks.push({
-          name: blockDef.name,
-          selector,
-          element,
-          section: blockDef.section || null,
-        });
-      });
-    });
-  });
+/** A `Fragment` block table referencing the fragment path (href = text = path).
+ * The fragment block fetches `${path}.plain.html` and inlines its decorated
+ * content — the fragment carries its own section styling, so nothing else is
+ * needed here. */
+function fragmentBlock(doc, path) {
+  return WebImporter.DOMUtils.createTable([
+    ['Fragment'],
+    [plainLink(doc, path, path)],
+  ], doc);
+}
 
-  console.log(`Found ${pageBlocks.length} block instances on page`);
-  return pageBlocks;
+/** A `Section Metadata` block table applying the given Style value. */
+function sectionMetadata(doc, style) {
+  return WebImporter.DOMUtils.createTable([
+    ['Section Metadata'],
+    ['Style', style],
+  ], doc);
 }
 
 // EXPORT DEFAULT CONFIGURATION
 export default {
   transform: (payload) => {
     const { document, url, params } = payload;
+    const source = document.body;
 
-    const main = document.body;
+    // 1. Cleanup: strip chrome + tracking (keeps the disclaimer copy intact).
+    executeTransformers('beforeTransform', source, payload);
+    executeTransformers('afterTransform', source, payload);
 
-    // 1. beforeTransform: cleanup + section anchor resolution / break insertion.
-    executeTransformers('beforeTransform', main, payload);
+    // 2. Build a clean main: the shared body fragment, then the per-locale
+    //    disclaimer.
+    const main = document.createElement('div');
 
-    // 2. Find and parse each block using the embedded template.
-    const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
-    pageBlocks.forEach((block) => {
-      if (!block.element.parentNode) return; // already replaced by an earlier parser
-      const parser = parsers[block.name];
-      if (parser) {
-        try {
-          parser(block.element, { document, url, params });
-        } catch (e) {
-          console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
-        }
-      } else {
-        console.warn(`No parser found for block: ${block.name}`);
-      }
+    // --- Section 1: the shared resources body (embedded as a FRAGMENT) --------
+    main.append(fragmentBlock(document, PAGE.fragmentPath));
+    main.append(document.createElement('hr'));
+
+    // --- Section 2: trademark / disclaimer (compact, per-locale) --------------
+    // Authored trademark/disclaimer paragraphs + AP number in a `compact` section.
+    // NOTE: the auto "Last Updated <month>/<year>" line (#publishedDate) is a
+    // separate independent component and is EXCLUDED, matching the sibling
+    // patient-information import.
+    const disclaimerParas = [...source.querySelectorAll('.c-disclaimer p')]
+      .filter((node) => node.id !== 'publishedDate' && node.textContent.trim());
+    disclaimerParas.forEach((node) => {
+      const p = document.createElement('p');
+      p.append(document.createTextNode(node.textContent.trim()));
+      main.append(p);
     });
+    if (disclaimerParas.length) {
+      main.append(sectionMetadata(document, 'compact'));
+    }
 
-    // 3. afterTransform: final cleanup + Section Metadata block insertion + DM image anchors.
-    executeTransformers('afterTransform', main, payload);
-
-    // 4. Apply WebImporter built-in rules.
-    const hr = document.createElement('hr');
-    main.appendChild(hr);
-    // Build the Metadata block from the page's own metadata, then add a
-    // `theme = sa-resources` row. aem.js decorateTemplateAndTheme adds a
-    // `sa-resources` class to <body>, and scripts.js lazily loads the single
-    // styles/themes.css when a `theme` is present. ALL of this page's styling
-    // lives in themes.css scoped under body.sa-resources. A theme (not a
-    // per-page template) is used because we don't create templates for
-    // singletons — theme names still have single-owner governance so they can't
-    // collide across authors, unlike ad-hoc block Style names. NOTE: the key must
-    // be lowercase `theme` — getMetadata('theme') matches the meta name
-    // case-sensitively.
+    // 3. Metadata block from the page's own <head> metadata, plus the theme row.
+    //    aem.js decorateTemplateAndTheme adds body.sa-resources and scripts.js
+    //    lazily loads styles/themes.css (where the sa-resources theme lives).
+    //    Key must be lowercase `theme` — getMetadata('theme') is case-sensitive.
     const meta = WebImporter.Blocks.getMetadata(document);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical && canonical.getAttribute('href')) {
+      meta.canonical = canonical.getAttribute('href');
+    }
     meta.theme = 'sa-resources';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
-    WebImporter.rules.transformBackgroundImages(main, document);
+
+    // 4. Normalise DM asset URLs (fix any relative URLs; DM links left intact).
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 
-    // 5. Generate sanitized path (localized path without extension).
+    // 5. Sanitized output path (localized path without extension).
     const rawPath = new URL(params.originalURL).pathname
       .replace(/\/$/, '')
       .replace(/\.html?$/, '');
@@ -223,8 +131,8 @@ export default {
       path,
       report: {
         title: document.title,
-        template: PAGE_TEMPLATE.name,
-        blocks: pageBlocks.map((b) => b.name),
+        template: PAGE.name,
+        blocks: PAGE.blocks,
       },
     }];
   },

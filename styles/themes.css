@@ -17,7 +17,30 @@
 
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
-   ===================================================================== */
+   =====================================================================
+   This theme is authored in TWO complementary tiers — both are required, keep
+   both:
+
+   1. DESIGN tier (below, until the "Embedded body fragment" divider): the look
+      of the page — typography, colours, margins, panel/card styling. These use
+      DESCENDANT selectors (e.g. `body.sa-resources .section.light-gray`,
+      `.panel.light`, `.cards.brochure`), so they match the sections at ANY depth
+      — whether the content is authored directly on a `theme: sa-resources` page
+      OR embedded via a fragment. This tier is the source of truth for the design
+      and works for both delivery modes.
+
+   2. FRAGMENT-STRUCTURE tier (the "Embedded body fragment" section): re-asserts
+      the foundational `main > .section…` layout rules (content width cap, gutter,
+      full-bleed, flex layout) that the global styles.css scopes to DIRECT children
+      of `main` and therefore cannot reach once the whole body is nested inside a
+      fragment block. These selectors are `.fragment`-scoped, so on a page that
+      authors the sections directly (no fragment) they simply don't match and are
+      inert — the native `main > .section` rules cover that case. Harmless to a
+      non-fragment page; essential to the fragment-embedded resources pages.
+
+   In short: the design tier applies everywhere; the fragment tier only kicks in
+   when the body is delivered as a fragment. A future non-fragment sa-resources
+   page stays correct on the design tier alone. */
 
 /* ----- Page-level: section rhythm + default-content typography ----- */
 
@@ -77,6 +100,17 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
 
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
+/* The intro availability box is a SINGLE-item panel that must fill its column at
+   every width. The panel block makes `.panel.light > ul` a 2-up grid from 600px
+   (blocks/panel/panel.css), which would leave this lone item at half width on
+   tablet (600–899px). Force one column at all widths so it stays full-width
+   (matches the source). The ≥900px override below is kept for the flex-column
+   context but this base rule covers the tablet gap. */
+body.sa-resources .section.flex .panel.light > ul,
+body.sa-resources .section.flex .panel.light.panel-authoring {
+  grid-template-columns: 1fr;
+}
+
 /* source renders the body copy in the URW Egyptienne heading serif
    (.urw-egyptienne) at 21px, regular weight — NOT the HumanistSlab body face or
    the 17.5px cta size. */
@@ -115,6 +149,63 @@ body.sa-resources .cards.brochure .cards-card-body p {
    fragment is reused with the same look on other pages. Only theme-specific
    deltas would live here; there are none. */
 
+/* ----- Embedded body fragment: re-assert section foundations -----
+   The whole resources body is embedded via one fragment block, so its sections
+   are NESTED inside `main > .section.fragment-container > .fragment` — they are
+   NOT direct children of `main`. Two consequences, both fixed here:
+
+   1. The host `fragment-container`'s inner wrapper inherits the global
+      `main > .section > div` cap (max-width 1410px + gutter), which traps the
+      ENTIRE fragment at content width — so full-bleed sections (hero banner,
+      light-gray band) can't reach the viewport edge. Undo that cap so the
+      fragment spans the full viewport, exactly like `main` itself; each inner
+      section then bleeds or caps on its own, matching a top-level page.
+   2. The foundational `main > .section…` rules (child combinator) don't reach
+      the nested sections, so we re-assert them below for `.fragment .section…`.
+   Scoped to this theme so nothing else is affected; values mirror styles.css. */
+
+/* 1. let the fragment span the full viewport (drop the inherited content cap) */
+body.sa-resources main > .section.fragment-container > .fragment-wrapper,
+body.sa-resources main > .section.fragment-container > .fragment-wrapper > .fragment {
+  max-width: none;
+  padding: 0;
+}
+
+/* 2a. inner content wrapper: width cap + centred gutter (styles.css `main > .section > div`).
+   Exclude the hero — the hero block's own CSS (`.hero-container .hero-wrapper`)
+   deliberately uncaps its wrapper so the band image bleeds edge-to-edge; capping
+   it here would gutter the banner (1250px instead of full width). */
+body.sa-resources .fragment .section:not(.hero-container) > div {
+  box-sizing: border-box;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+/* 2b. light-gray band background (styles.css `main > .section.light-gray`). The
+   section now spans the full viewport (see 1 above), so the background is
+   edge-to-edge automatically; the inner `> div` keeps the content cap. */
+body.sa-resources .fragment .section.light-gray {
+  padding-block: var(--space-section-l);
+  background-color: var(--color-surface);
+}
+
+/* 2c. divider rule at the section break (styles.css `main > .section.divider` + ::before) */
+body.sa-resources .fragment .section.divider {
+  position: relative;
+  padding-top: var(--space-section-l);
+}
+
+body.sa-resources .fragment .section.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  border-top: 1px solid var(--color-surface-muted);
+}
+
 /* =====================================================================
    Theme: stroke-awareness-landing — Stroke-Awareness landing page
    ===================================================================== */
@@ -148,6 +239,34 @@ body.stroke-awareness-landing .hero.banner h1 em strong {
      not vertically centred as the shared .section.flex default does. */
   body.sa-resources .section.flex {
     align-items: start;
+  }
+
+  /* Embedded fragment: re-assert the flex-section layout (styles.css
+     `main > .section.flex` + `> div`), which doesn't reach the fragment's nested
+     intro section. Lays the welcome copy beside the availability panel, capped +
+     guttered like every other section. align-items:start matches the sa-resources
+     intro (panel top-aligned with the welcome text). */
+  body.sa-resources .fragment .section.flex {
+    display: flex;
+    align-items: start;
+    gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  /* flex children share the row; the section already carries the cap/gutter above,
+     so zero the per-`> div` cap re-asserted for non-flex sections (no double gutter). */
+  body.sa-resources .fragment .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  body.sa-resources .fragment .section.flex > div:empty {
+    display: none;
   }
 
   /* the intro availability box is a single-item panel sitting in its own flex
