@@ -11,8 +11,14 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
+      // image cell = one that contains a picture and no heading/body text (the DM
+      // alt paragraph, hidden via .dm-alt-text, may sit beside the picture, so
+      // don't gate on child count).
+      if (div.querySelector('picture') && !div.querySelector('h1, h2, h3, h4, h5, h6')) {
+        div.className = 'cards-card-image';
+      } else {
+        div.className = 'cards-card-body';
+      }
     });
     ul.append(li);
   });

@@ -12,6 +12,13 @@
  * specific hostname, covering Scene7/classic DM and DM OpenAPI delivery.
  */
 
+// True inside the Universal Editor iframe. There, UE reads a block's field values
+// back from the live DOM (image => a[href]) when persisting, so the authored <a>
+// must survive. On the live site/preview we replace it with the <picture> for a
+// clean, light DOM; in UE we keep the <a> (hidden) and add the <picture> beside
+// it so both the editable source node and the rendered image are present.
+const IS_UE = /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
+
 // host-independent DM image URL signatures
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
@@ -359,12 +366,10 @@ export default function decorateDMAssets(main) {
     const render = dmRendererFor(src);
     if (!render) return;
 
-    // For links we support two authoring styles: a bare autolink whose visible
-    // text is the URL, and a link with custom display text (e.g. "image1"). The
-    // display text becomes the alt/label so authors can describe the asset
-    // inline. Skip anchors that already wrap media (an authored <picture>/<img>/
-    // <video>) — those are not "type the URL" DM embeds and converting would
-    // destroy authored content.
+    // A bare autolink whose visible text is the URL contributes no alt; a link
+    // with custom display text uses that as a fallback label. Skip anchors that
+    // already wrap media (an authored <picture>/<img>/<video>) — converting those
+    // would destroy authored content.
     let displayText = '';
     if (el.tagName === 'A') {
       if (el.querySelector('picture, img, video, source')) return;
@@ -372,14 +377,59 @@ export default function decorateDMAssets(main) {
       if (text && text !== src) displayText = text;
     }
 
+    // Alt lives in its OWN element — a plain <p> right after the link's <p> — so
+    // image and alt are two independent UE fields and editing the alt can never
+    // disturb the link's href. Only pair when the link's <p> and that alt <p> are
+    // the SOLE children of their wrapper <div> (an image-only cell); a link that
+    // shares its wrapper with real body copy is never paired, so columns text is
+    // never consumed as alt.
+    let altParagraph = '';
+    let altNode = null;
+    if (el.tagName === 'A') {
+      const linkP = el.closest('p');
+      const wrapper = linkP && linkP.parentElement;
+      const next = linkP && linkP.nextElementSibling;
+      const soleAltPair = wrapper
+        && wrapper.childElementCount === 2
+        && wrapper.firstElementChild === linkP
+        && next === wrapper.lastElementChild
+        && next.tagName === 'P'
+        && !next.querySelector('a, picture, img, video');
+      if (soleAltPair) {
+        const text = next.textContent.trim();
+        if (text) { altParagraph = text; altNode = next; }
+      }
+    }
+
+    // Keep the alt paragraph in the DOM (hidden via CSS: .dm-alt-text) rather
+    // than removing it, so the Universal Editor still has a live element bound to
+    // the alt field to edit — removing it broke the editor's re-render. It stays
+    // out of the visible layout via the hiding class.
+    if (altNode) altNode.classList.add('dm-alt-text');
+
+    // On the live site/preview, replace the authored link with the rendered
+    // element (clean, light DOM). In the Universal Editor, keep the authored link
+    // in the DOM (hidden) so UE can still read a[href] back when persisting, and
+    // insert the rendered element beside it so the image/video also shows.
+    const place = (rendered) => {
+      if (IS_UE) {
+        const anchor = el.closest('p') || el;
+        anchor.classList.add('dm-source-hidden');
+        anchor.after(rendered);
+      } else {
+        el.replaceWith(rendered);
+      }
+    };
+
     if (render === renderVideo) {
-      const label = el.getAttribute('title') || displayText;
-      el.replaceWith(renderVideo(src, label));
+      const label = el.getAttribute('title') || displayText || altParagraph;
+      place(renderVideo(src, label));
       return;
     }
-    // alt precedence: an authored alt/title, then the link's display text
-    // (authors describe hero/cards images by using the alt as the link text).
-    const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
-    el.replaceWith(render(src, alt, false));
+    // alt precedence: an authored alt/title, the link's display text, then the
+    // paired alt paragraph (sole-children image wrapper convention).
+    const alt = el.getAttribute('alt') || el.getAttribute('title')
+      || displayText || altParagraph;
+    place(render(src, alt, false));
   });
 }

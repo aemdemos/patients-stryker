@@ -17,22 +17,19 @@ function setupHero(block) {
   let mobilePic = null;
   let contentCell = null;
 
-  [...block.children].forEach((row) => {
-    const cells = [...row.children];
-    if (cells.length >= 2) {
-      const label = cells[0].textContent.trim().toLowerCase();
-      const pic = cells[1].querySelector('picture');
-      if (label === 'mobile') mobilePic = pic || mobilePic;
-      else desktopPic = pic || desktopPic;
-    } else if (cells.length === 1) {
-      const cell = cells[0];
-      const pic = cell.querySelector('picture');
-      if (pic && !cell.querySelector('h1, h2, h3, p')) {
-        if (!desktopPic) desktopPic = pic;
-        else if (!mobilePic) mobilePic = pic;
-      } else if (cell.querySelector('h1, h2, h3, p')) {
-        contentCell = cell;
-      }
+  // Each top-level cell is either an image cell (a <picture> — from the converted
+  // DM link — plus its hidden alt paragraph) or the content cell (heading + copy).
+  // Detection is nesting-agnostic (descendant queries), so it works whether the
+  // cell wraps its content in an extra <div> or not. First two image cells are
+  // desktop then mobile; the cell carrying a heading is the content cell.
+  [...block.children].forEach((cell) => {
+    const pic = cell.querySelector('picture');
+    const hasHeading = cell.querySelector('h1, h2, h3, h4, h5, h6');
+    if (pic && !hasHeading) {
+      if (!desktopPic) desktopPic = pic;
+      else if (!mobilePic) mobilePic = pic;
+    } else if (hasHeading || cell.querySelector('p')) {
+      contentCell = cell;
     }
   });
 
@@ -56,12 +53,18 @@ function setupHero(block) {
   const imageDiv = document.createElement('div');
   // keep both pictures (each with its own alt); CSS shows one per breakpoint.
   // When only one is authored it carries no toggle class and always shows.
+  // Carry each picture's hidden alt paragraph (.dm-alt-text) along with it so the
+  // Universal Editor keeps a live element bound to the alt field.
+  const withAlt = (pic) => {
+    const altP = pic.parentElement && pic.parentElement.querySelector(':scope > .dm-alt-text');
+    return altP ? [pic, altP] : [pic];
+  };
   if (desktopPic && mobilePic) {
     desktopPic.classList.add('hero-image-desktop');
     mobilePic.classList.add('hero-image-mobile');
-    imageDiv.append(desktopPic, mobilePic);
+    imageDiv.append(...withAlt(desktopPic), ...withAlt(mobilePic));
   } else if (desktopPic || mobilePic) {
-    imageDiv.append(desktopPic || mobilePic);
+    imageDiv.append(...withAlt(desktopPic || mobilePic));
   }
 
   const contentDiv = document.createElement('div');
