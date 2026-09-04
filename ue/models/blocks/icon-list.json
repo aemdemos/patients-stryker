@@ -22,8 +22,8 @@
           "name": "icon-list-item",
           "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div>",
           "fields": [
-            { "name": "icon", "selector": "div:nth-child(1) a[href]" },
-            { "name": "iconAlt", "selector": "div:nth-child(1) a" },
+            { "name": "icon", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "iconAlt", "selector": "div:nth-child(1)>p>a" },
             { "name": "text", "selector": "div:nth-child(2)" }
           ]
         }

@@ -271,11 +271,11 @@
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
