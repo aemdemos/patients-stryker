@@ -60,6 +60,7 @@
   list-style-type: disc;
 }
 
+
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
    on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
    this adds the matching left/right inset to the text that follows the image. */
@@ -90,7 +91,7 @@
 }
 
 .section.compact .columns h3 {
-  font-size: var(--heading-font-size-xs);
+  font-size: var(--heading-font-size-m);
   padding-top: 10px;
   margin-bottom: 30px;
 }
@@ -118,6 +119,7 @@
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 0;
+  margin-top: 30px;
 }
 
 
@@ -132,61 +134,6 @@
 
 .columns.columns-icon-grid .columns-img-col img {
   width: 150px; /* fixed icon size, as on the reference */
-}
-
-
-/* desktop — reference places all columns in a single row at 1024px */
-@media (width >= 1024px) {
-  .columns > div {
-    flex-wrap: nowrap;
-  }
-
-  .columns > div > div {
-    flex: 1;
-  }
-
-  /* icon-grid stays a wrapping 2-up grid on desktop (the base 1024 rule would
-     otherwise force all 6 cells into one nowrap row) */
-  .columns.columns-icon-grid > div {
-    flex-wrap: wrap;
-  }
-
-  /* 50-50 columns are a true 50% each (like the reference's col-sm-6). The base
-     flex:1 1 0% equalises content boxes, so columns with different padding end up
-     unequal and the image shrinks; a fixed 50% basis keeps both halves equal. */
-  .columns.columns-50-50 > div > div,
-  .columns.columns-icon-grid > div > div {
-    flex: 0 0 50%;
-  }
-
-  /* 4-up: all four cells in a single row at an exact 25% each. Fixed basis (not the
-     base flex:1 1 0%) so columns with differing content/padding stay equal width. */
-  .columns.columns-4-cols > div {
-    flex-wrap: nowrap;
-    row-gap: 0;
-  }
-
-  .columns.columns-4-cols > div > div {
-    flex: 0 0 25%;
-  }
-
-  /* 70-30 — an uneven two-column split (wide column left). Fixed flex bases (not
-     flex:1) so the ratio is exact regardless of each column's content/padding.
-     Desktop only; tablet keeps the even base split and mobile stays stacked,
-     matching the 50-50 variant's responsive behaviour. */
-  .columns.columns-70-30 > div > div:first-child {
-    flex: 0 0 70%;
-  }
-
-  .columns.columns-70-30 > div > div:last-child {
-    flex: 0 0 30%;
-  }
-
-  /* serif image+text rows centre the image against the text block only at desktop
-     (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
-  .section.serif .columns.columns-50-50 > div {
-    align-items: center;
-  }
 }
 
 /* 50-50 variant — two equal columns (image + text, or text + text). The base
@@ -401,19 +348,23 @@
   text-decoration: none;
 }
 
-@media (width >= 480px) {
+  .section.light-gray .columns p:has(+ p a u) {
+  min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+}
+
+/* ------------------------------------------------------------------------- *
+   Responsive breakpoints — consolidated. All @media blocks live at the end of
+   the file so every responsive override lands after the mobile-first base and
+   variant rules it refines. Order within each breakpoint is preserved from the
+   original interleaved rules; 600px (tablet) precedes 900px (desktop).
+ * ------------------------------------------------------------------------- */
+
+/* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
+@media (width >= 600px) {
   .section.compact .columns h2 {
     font-size: var(--heading-font-size-compact-m);
   }
 
-  .section.compact .columns h3 {
-    font-size: var(--heading-font-size-m);
-    margin-bottom: var(--space-block);
-  }
-}
-
-/* tablet — reference switches to a 2-up layout at 841px */
-@media (width >= 841px) {
   .columns > div {
     flex-flow: row wrap;
     align-items: flex-start;
@@ -428,6 +379,14 @@
     row-gap: var(--space-section);
   }
 
+  /* 4-up: wrap into an even 2x2 grid on tablet, with an inter-row gap so the two
+     rows don't collide (base flex:0 0 50% already gives the 2-up split) */
+  .columns.columns-4-cols > div {
+    row-gap: var(--space-section);
+  }
+
+  /* in an image+text row, the text column sits slightly below the image top, as
+     in the reference. Only applies when the row has a picture (not text+text rows). */
   .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
     padding-top: var(--space-section);
   }
@@ -441,24 +400,9 @@
     --col-5050-inset: 49px;
   }
 
- .section.light-gray .columns > div {
-   display: block;
-}
-
-  .section.light-gray .columns > div > div {
-    float: left;
-    width: 50%;
-  }
-
   .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
     padding-left: var(--col-5050-inset);
   }
-
-    /* 3rd column floats right so it lands in the right column below the 2nd */
-  .section.light-gray .columns > div > div:nth-child(3) {
-    float: right;
-  }
-
 
   .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
     padding-right: var(--col-5050-inset);
@@ -482,39 +426,25 @@
     padding-bottom: 0;
   }
 
-  .section.compact .columns h2 {
-  font-size: var(--heading-font-size-compact-m);
-}
-
-.section.compact .columns h4 {
-  font-size: var(--heading-font-size-m);
-}
-
-
-.section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)){
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top:0;
-}
-
-  /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
-  .section.light-gray .columns p:has(a u) {
-    margin-bottom: 75px;
-  }
-}
-
+  /* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
   .section.light-gray .columns p:has(+ p a u) {
-  min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
-}
+    min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+  }
+
+  /* tablet 2-up: float grid matching the reference */
+  .section.light-gray .columns > div {
+    display: block;
+  }
 
   .section.light-gray .columns > div::after {
     content: "";
     display: table;
     clear: both;
   }
+}
 
-/* desktop — reference places all columns in a single row at 1024px */
-@media (width >= 1024px) {
+/* desktop (>= 900px) — all columns line up in a single row */
+@media (width >= 900px) {
   .columns > div {
     flex-wrap: nowrap;
   }
@@ -523,8 +453,8 @@
     flex: 1;
   }
 
-  /* icon-grid stays a wrapping 2-up grid on desktop (the base 1024 rule would
-     otherwise force all 6 cells into one nowrap row) */
+  /* icon-grid stays a wrapping 2-up grid on desktop (the base desktop rule above
+     would otherwise force all 6 cells into one nowrap row) */
   .columns.columns-icon-grid > div {
     flex-wrap: wrap;
   }
@@ -537,8 +467,15 @@
     flex: 0 0 50%;
   }
 
-    .section.light-gray .columns > div {
-    display: flex;
+  /* 4-up: all four cells in a single row at an exact 25% each. Fixed basis (not the
+     base flex:1 1 0%) so columns with differing content/padding stay equal width. */
+  .columns.columns-4-cols > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  .columns.columns-4-cols > div > div {
+    flex: 0 0 25%;
   }
 
   /* 70-30 — an uneven two-column split (wide column left). Fixed flex bases (not
@@ -553,18 +490,18 @@
     flex: 0 0 30%;
   }
 
-    .section.light-gray .columns > div > div{
-    float: none;
-    width: auto;
-  }
-
   /* serif image+text rows centre the image against the text block only at desktop
      (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
   .section.serif .columns.columns-50-50 > div {
     align-items: center;
   }
 
-  .section.light-gray .columns > div > div:nth-child(3) {
+  /* desktop 3-up: revert to the base flex row */
+  .section.light-gray .columns > div {
+    display: flex;
+  }
+
+    .section.light-gray .columns > div > div, .section.light-gray .columns > div > div:nth-child(3){
     float: none;
     width: auto;
   }
@@ -573,6 +510,67 @@
   .section.light-gray .columns p:has(a u) {
     margin-bottom: var(--space-block);
   }
+
+  .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    margin-top: 0;
+  }
+
+  .section.compact .columns.columns-50-50:not(:first-child) > div {
+    margin-top:40px;
+    margin-bottom: 30px;
+  }
 }
 
+/* ===== related-links variant =====
+   A reusable columns treatment for the stroke-awareness "related links" fragment
+   (Understanding stroke / Patient information / Regional information): gold
+   Futura-bold column labels, an airy stacked-link rhythm, and a "Learn more"
+   chevron CTA. Authored as Columns (related-links); shared by every page that
+   includes this fragment (styling lives here, not in a page template). */
 
+/* roomier heading-to-body / stacked-link rhythm (source columns are airy) */
+.columns.related-links p {
+  margin-bottom: var(--space-block);
+}
+
+/* column labels — source renders these in Futura bold, GOLD, 24.5px
+   (the .futura-bold .fontsize-1-75em headings coloured #ffb500). */
+.columns.related-links h3 {
+  margin-bottom: var(--space-block);
+  padding-bottom: 2%;
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+  color: var(--color-accent);
+}
+
+/* "Learn more" CTA — source renders it in Futura bold at 17.5px, teal, with a
+   chevron appended via the proprietary strykericons font (content "\e250",
+   ~0.85em); we draw the chevron in CSS so it renders without that font. Only the
+   CTA links carry it: they are the anchor in a paragraph that FOLLOWS a body-copy
+   paragraph (the "Learn more" links under the first two columns' descriptions).
+   The regional-info link list (links with no preceding body paragraph) is
+   intentionally excluded.
+   `a:any-link` (vs plain `a`) lifts specificity to (0,3,5) so the Futura family
+   beats the shared `.section.light-gray .columns a` rule (0,3,1) when this
+   fragment is inlined inside a light-gray section on a host page. */
+.columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);   /* 17.5px */
+  font-weight: 700;
+  line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
+}
+
+.columns.related-links p:not(:has(a)) + p:has(a) a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent currentcolor;
+}
