@@ -595,3 +595,8 @@
   border-color: transparent transparent transparent currentcolor;
 }
 
+@media (width >= 1200px) {
+  .section.compact .columns p > code, .section.compact .columns p > strong > code {
+    font-size: var(--heading-font-size-m);
+  }
+}
