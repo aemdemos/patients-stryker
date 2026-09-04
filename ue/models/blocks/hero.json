@@ -48,11 +48,6 @@
           ]
         },
         {
-          "component": "aem-content",
-          "name": "desktopImage",
-          "label": "Desktop Image (Dynamic Media link)"
-        },
-        {
           "component": "text",
           "valueType": "string",
           "name": "desktopImageAlt",
@@ -60,9 +55,18 @@
           "value": ""
         },
         {
-          "component": "aem-content",
-          "name": "mobileImage",
-          "label": "Mobile Image (Dynamic Media link, optional)",
+          "component": "text",
+          "valueType": "string",
+          "name": "desktopImage",
+          "label": "Desktop Image (Dynamic Media link)",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "mobileImageAlt",
+          "label": "Mobile Image Alt",
+          "value": "",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
             { "in": ["banner", { "var": "classes" }] },
@@ -72,9 +76,8 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "mobileImageAlt",
-          "label": "Mobile Image Alt",
-          "value": "",
+          "name": "mobileImage",
+          "label": "Mobile Image (Dynamic Media link, optional)",
           "condition": { "or": [
             { "in": ["fullbleed", { "var": "classes" }] },
             { "in": ["banner", { "var": "classes" }] },
