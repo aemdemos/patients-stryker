@@ -8,8 +8,7 @@
       "plugins": {
         "da": {
           "name": "icon-list",
-          "rows": 1,
-          "columns": 2
+          "unsafeHTML": "<div class=\"icon-list\"><div><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div></div>"
         }
       }
     },
@@ -54,15 +53,16 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "icon",
-          "label": "Icon (Dynamic Media link)"
+          "name": "iconAlt",
+          "label": "Icon Alt",
+          "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "iconAlt",
-          "label": "Icon Alt",
-          "multi": false
+          "name": "icon",
+          "label": "Icon (Dynamic Media link)",
+          "required": true
         },
         {
           "component": "richtext",

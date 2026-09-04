@@ -473,15 +473,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "icon",
-        "label": "Icon (Dynamic Media link)"
+        "name": "iconAlt",
+        "label": "Icon Alt",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "iconAlt",
-        "label": "Icon Alt",
-        "multi": false
+        "name": "icon",
+        "label": "Icon (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "richtext",

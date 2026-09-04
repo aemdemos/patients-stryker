@@ -255,8 +255,7 @@
           "plugins": {
             "da": {
               "name": "icon-list",
-              "rows": 1,
-              "columns": 2
+              "unsafeHTML": "<div class=\"icon-list\"><div><div><p><a href=\"\">Icon alt</a></p></div><div><p>Caption</p></div></div></div>"
             }
           }
         },
