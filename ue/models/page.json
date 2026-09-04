@@ -25,17 +25,12 @@
           "description": "Index control via robots"
         },
         {
-          "component": "select",
+          "component": "text",
           "name": "template",
           "label": "Template",
           "description": "Page template that controls layout and styling",
           "value": "",
-          "readOnly": true,
-          "options": [
-            { "name": "None", "value": "" },
-            { "name": "Treatment Detail", "value": "treatment-detail" },
-            { "name": "Legal", "value": "legal" }
-          ]
+          "readOnly": true
         },
         {
           "component": "select",
