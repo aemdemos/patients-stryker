@@ -9,10 +9,10 @@
           "name": "Hero",
           "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
           "fields": [
-            { "name": "desktopImage", "selector": "div:nth-child(1) a[href]" },
-            { "name": "desktopImageAlt", "selector": "div:nth-child(1) a" },
-            { "name": "mobileImage", "selector": "div:nth-child(2) a[href]" },
-            { "name": "mobileImageAlt", "selector": "div:nth-child(2) a" },
+            { "name": "desktopImage", "selector": "div:nth-child(1)>div>p>a[href]" },
+            { "name": "desktopImageAlt", "selector": "div:nth-child(1)>div>p>a" },
+            { "name": "mobileImage", "selector": "div:nth-child(2)>div>p>a[href]" },
+            { "name": "mobileImageAlt", "selector": "div:nth-child(2)>div>p>a" },
             { "name": "content", "selector": "div:nth-child(3)>div" }
           ]
         }
