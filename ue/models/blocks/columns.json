@@ -33,8 +33,14 @@
       "filter": "columns-cell",
       "plugins": {
         "da": {
-          "unsafeHTML": "<div></div>",
-          "behaviour": "columns-cell"
+          "name": "columns-cell",
+          "behaviour": "columns-cell",
+          "unsafeHTML": "<div><div><p><a href=\"\">Image alt</a></p></div><div><p>Text</p></div></div>",
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>p>a" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
         }
       }
     }
@@ -74,7 +80,28 @@
     },
     {
       "id": "columns-cell",
-      "fields": []
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image (Dynamic Media link)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "text",
+          "value": "",
+          "label": "Text"
+        }
+      ]
     }
   ],
   "filters": [
@@ -90,10 +117,7 @@
     },
     {
       "id": "columns-cell",
-      "components": [
-        "text",
-        "image"
-      ]
+      "components": []
     }
   ]
 }
