@@ -717,6 +717,39 @@ main .last-modified {
   main > .section.flex > div:empty {
     display: none; /* drop the emptied section-metadata wrapper from the flex row */
   }
+
+  /* video-text section — retain the first (title) wrapper above a 70/30 video
+     and text row. The authored order is title, Video block, then text. */
+  main > .section.video-text {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  main > .section.video-text > .default-content-wrapper:first-child {
+    flex: 0 0 100%;
+  }
+
+  main > .section.video-text > .video-wrapper {
+    flex: 0 1 calc(66% - (var(--container-gutter) / 2));
+    min-width: 0;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  main > .section.video-text > .video-wrapper + .default-content-wrapper {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+main > .section.video-text p {
+  font-size: var(--body-font-size-l);
 }
 
 /* divider section —  */
