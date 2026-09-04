@@ -37,8 +37,8 @@
           "row": 1,
           "columns": 1,
           "fields": [
-            { "name": "image", "selector": "p:nth-child(1)>a[href]" },
-            { "name": "imageAlt", "selector": "p:nth-child(1)>a" },
+            { "name": "image", "selector": "p:nth-child(1)>a", "attribute": "href" },
+            { "name": "imageAlt", "selector": "p:nth-child(1)>a", "attribute": "textContent" },
             { "name": "text", "selector": "p:nth-child(2)" }
           ]
         }
