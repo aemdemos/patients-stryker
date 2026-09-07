@@ -176,7 +176,7 @@
                 },
                 {
                   "name": "text",
-                  "selector": ":scope>*:nth-child(n+2)"
+                  "selector": "p:nth-child(1) ~ *"
                 }
               ]
             }
