@@ -217,11 +217,9 @@
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "image",
-        "label": "Image (Dynamic Media link)",
-        "required": true
+        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "richtext",
@@ -243,11 +241,9 @@
         "multi": false
       },
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "aem-content",
         "name": "image",
-        "label": "Image (Dynamic Media link)",
-        "required": true
+        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "richtext",
