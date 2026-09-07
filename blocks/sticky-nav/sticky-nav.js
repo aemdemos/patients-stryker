@@ -177,14 +177,21 @@ export default function decorate(block) {
     items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
   };
 
+  // While a click-initiated smooth scroll is in flight, the clicked item stays
+  // highlighted and the scroll-spy is suppressed — otherwise the spy recomputes
+  // the active item mid-scroll and overwrites the click. Cleared once the scroll
+  // settles (or the user scrolls manually).
+  let clickedItem = null;
+
   // Click / keyboard: scroll to the section via native scrollIntoView, which
   // scrolls the correct container automatically in any environment. The bar-height
   // offset comes from the `scroll-margin-top` set in applyScrollOffset().
   const goTo = (item, href) => {
     const target = resolveTarget(href);
     if (!target) return;
-    setCurrent(item);
     const region = target.closest('.section') || target;
+    clickedItem = item;
+    setCurrent(item);
     region.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -231,10 +238,36 @@ export default function decorate(block) {
         ? document.documentElement.scrollHeight : scroller.scrollHeight;
       const atBottom = pinned && scrollPos > 0 && viewportH + scrollPos >= scrollSize - 2;
       if (atBottom && targets.length) activeIndex = targets.length - 1;
+
+      // Honor a click lock: keep the clicked item active until the scroll actually
+      // reaches its region, so the smooth scroll doesn't flicker the highlight.
+      if (clickedItem) {
+        const geomItem = activeIndex >= 0 ? targets[activeIndex].item : null;
+        if (geomItem === clickedItem) {
+          clickedItem = null; // arrived — hand control back to the scroll-spy
+        } else {
+          setCurrent(clickedItem);
+          return;
+        }
+      }
+
       setCurrent(activeIndex >= 0 ? targets[activeIndex].item : null);
     };
 
+    // Safety valve: if the clicked region can never reach the spy line (e.g. the
+    // final short section), release the lock once scrolling has settled so the
+    // highlight isn't stuck forever. Reset on every scroll event.
+    let settleTimer = 0;
+    const armSettle = () => {
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(() => {
+        clickedItem = null;
+        update();
+      }, 200);
+    };
+
     const onScroll = () => {
+      if (clickedItem) armSettle();
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(update);
