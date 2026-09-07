@@ -25,15 +25,36 @@
           "description": "Index control via robots"
         },
         {
-          "component": "select",
+          "component": "text",
           "name": "template",
           "label": "Template",
           "description": "Page template that controls layout and styling",
           "value": "",
-          "options": [
-            { "name": "None", "value": "" },
-            { "name": "Treatment Detail", "value": "treatment-detail" }
-          ]
+          "readOnly": true,
+          "condition": {
+            "!=": [
+              {
+                "var": "template"
+              },
+              ""
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "theme",
+          "label": "Theme",
+          "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
+          "value": "",
+          "readOnly": true,
+          "condition": {
+            "!=": [
+              {
+                "var": "theme"
+              },
+              ""
+            ]
+          }
         }
       ]
     }
