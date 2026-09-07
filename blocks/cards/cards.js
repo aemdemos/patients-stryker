@@ -1,7 +1,13 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { isDMSrc } from '../../scripts/dm-support.js';
+import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
+  // Convert authored DM links (<a href>) to <picture> on the block itself.
+  // decorateMain already does this at full page load, but UE re-renders a single
+  // block on edit WITHOUT re-running page decoration — so without this the freshly
+  // authored link stays a raw link until reload. Idempotent (see dm-support.js).
+  decorateDMAssets(block);
+
   // linked variant navigates within the site, so open in the same tab
   const isLinked = block.classList.contains('linked');
 

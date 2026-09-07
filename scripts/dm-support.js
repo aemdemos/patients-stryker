@@ -354,6 +354,11 @@ function dmRendererFor(src) {
  */
 export default function decorateDMAssets(main) {
   main.querySelectorAll(DM_SELECTOR).forEach((el) => {
+    // idempotency: a DM <img> already inside a <picture> has been converted (by
+    // an earlier run on this page/block). Skip it so calling decorateDMAssets
+    // more than once — page-level then block-level, or on a UE re-render — is a
+    // safe no-op rather than re-wrapping an already-rendered picture.
+    if (el.tagName === 'IMG' && el.closest('picture')) return;
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
     const render = dmRendererFor(src);
