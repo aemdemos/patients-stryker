@@ -17,36 +17,20 @@ function setupHero(block) {
   let mobilePic = null;
   let contentCell = null;
 
-  [...block.children].forEach((row) => {
-    const cells = [...row.children];
-    if (cells.length >= 2) {
-      const label = cells[0].textContent.trim().toLowerCase();
-      const pic = cells[1].querySelector('picture');
-      if (label === 'mobile') mobilePic = pic || mobilePic;
-      else desktopPic = pic || desktopPic;
-    } else if (cells.length === 1) {
-      const cell = cells[0];
-      const pic = cell.querySelector('picture');
-      if (pic && !cell.querySelector('h1, h2, h3, p')) {
-        if (!desktopPic) desktopPic = pic;
-        else if (!mobilePic) mobilePic = pic;
-      } else if (cell.querySelector('h1, h2, h3, p')) {
-        contentCell = cell;
-      }
+  // Classify each cell by content, not by position/row-count: a cell holding a
+  // <picture> (from the converted DM link) is an image cell — the first is
+  // desktop, the second mobile; a cell holding a heading/copy is the content
+  // cell. This is robust to the authored structure (matches the cards approach).
+  [...block.children].forEach((cell) => {
+    const pic = cell.querySelector('picture');
+    const hasCopy = cell.querySelector('h1, h2, h3, h4, h5, h6, p:not(:has(picture, a[href]))');
+    if (pic && !cell.querySelector('h1, h2, h3, h4, h5, h6')) {
+      if (!desktopPic) desktopPic = pic;
+      else if (!mobilePic) mobilePic = pic;
+    } else if (hasCopy) {
+      contentCell = cell;
     }
   });
-
-  // If no dedicated image rows found, look for pictures inside the content cell
-  // (DM links converted to <picture> by dm-support.js live alongside the heading)
-  if (!desktopPic && !mobilePic && contentCell) {
-    const pics = [...contentCell.querySelectorAll('picture')];
-    [desktopPic, mobilePic] = pics;
-    pics.forEach((pic) => {
-      const wrapper = pic.closest('p, div');
-      if (wrapper && wrapper.parentNode === contentCell) wrapper.remove();
-      else pic.remove();
-    });
-  }
 
   if (!desktopPic && !mobilePic) {
     const pics = [...block.querySelectorAll('picture')];

@@ -224,23 +224,23 @@
               "fields": [
                 {
                   "name": "desktopImage",
-                  "selector": "div:nth-child(1)>div>p>a[href]"
+                  "selector": "div:nth-child(1) a[href]"
                 },
                 {
                   "name": "desktopImageAlt",
-                  "selector": "div:nth-child(1)>div>p>a"
+                  "selector": "div:nth-child(1) a"
                 },
                 {
                   "name": "mobileImage",
-                  "selector": "div:nth-child(2)>div>p>a[href]"
+                  "selector": "div:nth-child(2) a[href]"
                 },
                 {
                   "name": "mobileImageAlt",
-                  "selector": "div:nth-child(2)>div>p>a"
+                  "selector": "div:nth-child(2) a"
                 },
                 {
                   "name": "content",
-                  "selector": "div:nth-child(3)>div"
+                  "selector": "div:nth-child(3)"
                 }
               ]
             }
