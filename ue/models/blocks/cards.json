@@ -46,6 +46,23 @@
           ]
         }
       }
+    },
+    {
+      "title": "Resources Card",
+      "id": "resources-card",
+      "model": "resources-card",
+      "plugins": {
+        "da": {
+          "name": "card",
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>p>a[href]" },
+            { "name": "imageAlt", "selector": "div:nth-child(1)>p>a" },
+            { "name": "text", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
     }
   ],
   "models": [
@@ -117,6 +134,31 @@
           "valueType": "string"
         }
       ]
+    },
+    {
+      "id": "resources-card",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image (Dynamic Media link)"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
     }
   ],
   "filters": [
@@ -124,7 +166,8 @@
       "id": "cards",
       "components": [
         "card",
-        "brochure-cta-card"
+        "brochure-cta-card",
+        "resources-card"
       ]
     }
   ]

@@ -159,6 +159,32 @@
           }
         },
         {
+          "title": "Resources Card",
+          "id": "resources-card",
+          "model": "resources-card",
+          "plugins": {
+            "da": {
+              "name": "card",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>p>a[href]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>p>a"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "model": "columns",
