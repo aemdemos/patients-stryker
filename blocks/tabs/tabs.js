@@ -142,7 +142,20 @@ export default async function decorate(block) {
     if (index >= 0) activate(index);
   });
 
-  // load only the initially-active (first) panel's fragment(s) up front; the rest
-  // load lazily via activate() when their tab is first selected.
-  if (panels.length) await decoratePanel(panels[0]);
+  // Load the initially-active (first) panel's fragment(s) up front so the tab is
+  // ready immediately, then PREFETCH the remaining panels in the background (after
+  // the first paint, idle time) so switching tabs is an instant visibility toggle
+  // — no click-time fetch delay. Falls back to per-tab lazy load in activate() if
+  // a panel hasn't finished prefetching yet.
+  if (!panels.length) return;
+  await decoratePanel(panels[0]);
+
+  const prefetchRest = () => {
+    panels.slice(1).forEach((panel) => { decoratePanel(panel); });
+  };
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(prefetchRest, { timeout: 2000 });
+  } else {
+    setTimeout(prefetchRest, 300);
+  }
 }
