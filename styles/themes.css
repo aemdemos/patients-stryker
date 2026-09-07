@@ -174,6 +174,29 @@ body.stroke-awareness-landing .hero.banner h1 em strong {
    live here — the hero.banner, panel.* and cards.resources blocks already
    carry their full base styling in their own block CSS. */
 
+/* ----- Hero top gap -----
+   The source floats the hero banner ~61px below the yellow nav bar (measured
+   nav-bottom→hero-image 61px). The EDS hero-container sits flush against the
+   header, so add the matching top gap above the first (hero) section. */
+body.procedure-detail main > .section.hero-container:first-child {
+  margin-top: var(--space-section-l);
+}
+
+/* ----- Hero copy anchored bottom-left -----
+   The shared .hero.banner overlay is vertically centered, but this page's
+   source pins the title + FIND A DOCTOR button to the BOTTOM-left of the image
+   (measured: title ~60% down the 460px band, button ~55px above the image
+   bottom, copy inset ~5vw from the left). Re-anchor the overlay to the bottom
+   here as a theme delta; the 55px foot gap comes from the button's own bottom
+   margin plus this padding. Only applies at the tablet+ overlay breakpoint
+   (below 600px the copy stacks under the image, matching the source). */
+@media (width >= 600px) {
+  body.procedure-detail .hero.banner > div:last-child {
+    align-self: end;
+    padding-bottom: var(--space-section-l);
+  }
+}
+
 /* ----- Section vertical rhythm -----
    The source separates each zone below the hero by a band of whitespace
    (measured hero→intro 62px, intro→dark 61px, dark→how-it-works 82px,
@@ -192,12 +215,31 @@ body.procedure-detail main > .section.panel-container:not(.flex, .dark) {
 }
 
 /* ----- Light-gray copy bands (How it works / Potential risks) -----
-   The source renders these as a gray box (bg #ededec = --color-surface, set by
-   the base .section.light-gray rule) with generous interior padding (measured
-   25px). Our base light-gray only sets the fill and leaves the inner content
-   flush against the band edges, so add the interior vertical padding here. */
-body.procedure-detail main > .section.light-gray > div {
-  padding-block: 25px;
+   The source renders these NOT as a full-viewport bleed but as a CONTAINED gray
+   box at the content width (measured l=30, w=1380 at a 1440 viewport — i.e. the
+   1410 container minus its 15px gutter), left-aligned with the gold CTA panel,
+   with ~27.6px interior padding on all sides (text inset to ~l=58).
+
+   The base `.section.light-gray` paints the fill on the whole (full-viewport)
+   section, so override that to transparent and move the fill onto the inner
+   content box, sizing it to the gutter-inset content width so its left edge
+   lines up with the gold panel. */
+body.procedure-detail main > .section.light-gray {
+  background: none;
+}
+
+/* drop the emptied (consumed section-metadata) wrapper so it can't paint a
+   stray gray box above the real content. */
+body.procedure-detail main > .section.light-gray > div:empty {
+  display: none;
+}
+
+body.procedure-detail main > .section.light-gray > .default-content-wrapper {
+  box-sizing: border-box;
+  max-width: calc(var(--container-max) - 2 * var(--container-gutter));
+  margin-inline: auto;
+  padding: 27.6px;
+  background-color: var(--color-surface);
 }
 
 /* ----- Resources section heading -----
@@ -210,6 +252,30 @@ body.procedure-detail main > .section.light-gray > div {
 body.procedure-detail main > .section.cards-container > .default-content-wrapper h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* ----- Dark statement panel heading -----
+   The dark full-bleed statement ("Diagnostic accuracy studies show evidence…")
+   is authored as an h2, but the panel block only styles h3 — so the h2 falls
+   through to the global h2 rule (Futura bold). The source renders it as a thin
+   white serif (URW-Egyptienne Light, weight 500), so restore that here as a
+   theme delta scoped to this page's dark panels. */
+body.procedure-detail main > .section.dark .panel.dark .panel-body h2 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+/* ----- Dark statement panel interior padding -----
+   The source gives this band a generous 55px top/bottom (27.6px left/right)
+   interior pad, so the statement sits near the top of a taller band. The base
+   .panel.dark .panel-body uses a flat 22.5px all round, which reads as a short
+   vertically-centered strip. Restore the source's asymmetric padding here. */
+body.procedure-detail main > .section.dark .panel.dark .panel-body {
+  padding: 55px 27.6px;
 }
 
 /* ----- Large desktop (>=1200px) ----- */
