@@ -20,16 +20,27 @@ import { loadFragment } from '../fragment/fragment.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 async function decoratePanel(panel) {
-  // load any fragment references in this panel (nested blocks don't get
-  // decorated by the page's decorateBlocks pass, which only visits top-level
-  // section blocks), then flatten each fragment's content into the panel
-  const fragments = panel.querySelectorAll('.fragment');
-  await Promise.all([...fragments].map(async (block) => {
-    const link = block.querySelector('a');
-    const path = link ? link.getAttribute('href') : block.textContent.trim();
+  // Resolve this panel's fragment references, then merge their card grids. Runs
+  // lazily — only when a tab is first shown — so a tabbed page loads just the
+  // active panel's fragment(s) up front and the rest on demand.
+  if (panel.dataset.tabPanelLoaded) return;
+  panel.dataset.tabPanelLoaded = 'true';
+
+  // Two authoring styles are supported for a fragment panel:
+  //  (a) a nested `.fragment` block, or
+  //  (b) a plain link to a `/fragments/*` path (no block-in-block).
+  const fragmentRefs = [
+    ...panel.querySelectorAll('.fragment'),
+    ...panel.querySelectorAll('a[href*="/fragments/"]'),
+  ].filter((el) => !el.closest('.fragment') || el.classList.contains('fragment'));
+
+  await Promise.all(fragmentRefs.map(async (ref) => {
+    const link = ref.tagName === 'A' ? ref : ref.querySelector('a');
+    const path = link ? link.getAttribute('href') : ref.textContent.trim();
     const fragment = await loadFragment(path);
     if (fragment) {
-      const wrapper = block.closest('.fragment-wrapper') || block;
+      // replace the fragment block wrapper, or the plain link's own paragraph
+      const wrapper = ref.closest('.fragment-wrapper') || ref.closest('p') || ref;
       wrapper.replaceWith(...fragment.childNodes);
     }
   }));
@@ -99,6 +110,8 @@ export default async function decorate(block) {
       btn.setAttribute('tabindex', selected ? '0' : '-1');
       panels[i].setAttribute('aria-hidden', selected ? 'false' : 'true');
     });
+    // lazy-load the newly shown panel's fragment(s) the first time it's activated
+    decoratePanel(panels[index]);
   };
 
   buttons.forEach((button, i) => {
@@ -129,6 +142,7 @@ export default async function decorate(block) {
     if (index >= 0) activate(index);
   });
 
-  // load fragment content for every panel
-  await Promise.all(panels.map(decoratePanel));
+  // load only the initially-active (first) panel's fragment(s) up front; the rest
+  // load lazily via activate() when their tab is first selected.
+  if (panels.length) await decoratePanel(panels[0]);
 }
