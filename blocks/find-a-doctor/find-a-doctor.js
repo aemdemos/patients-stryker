@@ -10,9 +10,12 @@
  *   - blocks/find-a-doctor/doctors.json       — the doctor records (EDS sheet shape)
  *   - blocks/find-a-doctor/zip-centroids.json — zip -> lat/long lookup for distance
  *
- * On submit it resolves the entered location to a lat/long, filters doctors
- * within the selected radius (Haversine great-circle distance), and renders the
- * matching doctor cards below the form — no external calls, no CORS.
+ * Like the source site, submitting the banner form opens the results in a NEW
+ * TAB: the new tab loads this same page with ?location=…&radius=… in the URL, and
+ * the block detects those params on load, auto-runs the search, and renders the
+ * matching doctor cards. The search resolves the entered location to a lat/long,
+ * then filters doctors within the selected radius (Haversine great-circle
+ * distance) — no external calls, no CORS.
  *
  * NOTE: the shipped JSON is SAMPLE/placeholder data (the live Stryker locator API
  * currently returns zero surgeons for this product). Replace doctors.json with a
@@ -34,6 +37,9 @@
 // Data sources (same-origin JSON — no CORS). Swap DATA_URL for a DA sheet URL.
 const DATA_URL = '/blocks/find-a-doctor/doctors.json';
 const ZIP_URL = '/blocks/find-a-doctor/zip-centroids.json';
+
+// Anchor id for the results region, so the new results tab can scroll to it.
+const RESULTS_ANCHOR = 'find-a-doctor-results';
 
 // Fallback hand-off to Stryker's own locator when a location can't be resolved
 // locally (e.g. a zip missing from the centroid table).
@@ -263,6 +269,7 @@ export default function decorate(block) {
   // --- Results region (populated on submit) ---
   const results = document.createElement('div');
   results.className = 'find-a-doctor-results';
+  results.id = RESULTS_ANCHOR;
   results.setAttribute('aria-live', 'polite');
   results.hidden = true;
 
@@ -312,21 +319,11 @@ export default function decorate(block) {
     results.append(list);
   };
 
-  // On submit: resolve location -> filter dataset by radius -> render cards.
+  // Resolve location -> filter dataset by radius -> render cards inline.
+  // Returns true if results were rendered, false if it fell back to Stryker.
   let searching = false;
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const location = locationInput.value.trim();
-    if (!location) {
-      error.hidden = false;
-      locationInput.setAttribute('aria-invalid', 'true');
-      locationInput.focus();
-      return;
-    }
-    error.hidden = true;
-    locationInput.removeAttribute('aria-invalid');
-    if (searching) return;
-
+  const runSearch = async (location, radiusValue) => {
+    if (searching) return false;
     searching = true;
     button.disabled = true;
     renderStatus('Searching…');
@@ -341,22 +338,15 @@ export default function decorate(block) {
 
     const rows = doctorData?.data;
     const zips = zipData?.data;
-    if (!Array.isArray(rows) || !zips) {
-      // Dataset unavailable — fall back to Stryker's own locator.
-      renderStatus('Opening the doctor locator in a new tab…');
-      redirectToStryker(location);
-      return;
-    }
-
-    const origin = resolveOrigin(location, zips);
+    const origin = (Array.isArray(rows) && zips) ? resolveOrigin(location, zips) : null;
     if (!origin) {
-      // Couldn't geocode locally — hand off to Stryker's locator.
+      // Dataset unavailable or location not resolvable — hand off to Stryker.
       renderStatus('Opening the doctor locator in a new tab…');
       redirectToStryker(location);
-      return;
+      return false;
     }
 
-    const radius = Number(radiusSelect.value);
+    const radius = Number(radiusValue);
     const matches = rows
       .map((row) => normalizeDoctor(row))
       .filter((d) => Number.isFinite(d.lat) && Number.isFinite(d.long))
@@ -365,6 +355,28 @@ export default function decorate(block) {
       .sort((a, b) => a.distance - b.distance);
 
     renderResults(matches, radius);
+    return true;
+  };
+
+  // On submit from the banner: open the results in a NEW TAB (mirrors the source
+  // site, which opens a dedicated results page). The new tab loads this same page
+  // with the location/radius in the query string; the block detects those params
+  // on load (below) and auto-runs the search there.
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const location = locationInput.value.trim();
+    if (!location) {
+      error.hidden = false;
+      locationInput.setAttribute('aria-invalid', 'true');
+      locationInput.focus();
+      return;
+    }
+    error.hidden = true;
+    locationInput.removeAttribute('aria-invalid');
+
+    const params = new URLSearchParams({ location, radius: radiusSelect.value });
+    const url = `${window.location.pathname}?${params.toString()}#${RESULTS_ANCHOR}`;
+    window.open(url, '_blank', 'noopener');
   });
 
   // Clear the error as soon as the author starts typing a location.
@@ -376,4 +388,20 @@ export default function decorate(block) {
   });
 
   block.replaceChildren(media, panel, results);
+
+  // Results mode: if the page was opened with ?location=…&radius=…, prefill the
+  // form and run the search inline in this (new) tab, then scroll to the results.
+  const urlParams = new URLSearchParams(window.location.search);
+  const presetLocation = urlParams.get('location');
+  if (presetLocation) {
+    locationInput.value = presetLocation;
+    const presetRadius = urlParams.get('radius');
+    if (presetRadius
+      && [...radiusSelect.options].some((o) => o.value === presetRadius)) {
+      radiusSelect.value = presetRadius;
+    }
+    runSearch(presetLocation.trim(), radiusSelect.value).then((rendered) => {
+      if (rendered) results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
 }
