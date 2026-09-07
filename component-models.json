@@ -194,16 +194,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
+        "name": "image",
+        "label": "Image (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)",
-        "required": true
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
       },
       {
         "component": "richtext",
@@ -220,16 +220,16 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
+        "name": "image",
+        "label": "Image (Dynamic Media link)",
+        "required": true
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)",
-        "required": true
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
       },
       {
         "component": "richtext",
@@ -338,13 +338,6 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "desktopImageAlt",
-        "label": "Desktop Image Alt",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
         "name": "desktopImage",
         "label": "Desktop Image (Dynamic Media link)",
         "required": true
@@ -352,9 +345,15 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "mobileImageAlt",
-        "label": "Mobile Image Alt",
-        "value": "",
+        "name": "desktopImageAlt",
+        "label": "Desktop Image Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mobileImage",
+        "label": "Mobile Image (Dynamic Media link, optional)",
         "condition": {
           "or": [
             {
@@ -387,8 +386,9 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "mobileImage",
-        "label": "Mobile Image (Dynamic Media link, optional)",
+        "name": "mobileImageAlt",
+        "label": "Mobile Image Alt",
+        "value": "",
         "condition": {
           "or": [
             {
