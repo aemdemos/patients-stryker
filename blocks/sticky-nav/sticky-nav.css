@@ -23,14 +23,19 @@
 }
 
 /*
- * Sticking is JS-driven (position: fixed toggled on scroll), not CSS
- * `position: sticky`. CSS sticky pins to the nearest scrolling ancestor, which
- * in the Universal Editor canvas is the wrong element — so the bar never pins
- * there. Fixed + a flow placeholder is robust across the page and the editor.
+ * Sticking uses native CSS `position: sticky` on the normal page (window scroll),
+ * where it works reliably. In the Universal Editor the page scrolls a nested
+ * canvas container and CSS sticky pins to the wrong ancestor, so the block's JS
+ * adds `.sticky-nav-fixed` there to pin with `position: fixed` + a flow
+ * placeholder instead. The `.sticky-nav-fixed` rule has higher specificity, so it
+ * only overrides when JS opts in (UE); the page keeps native sticky.
  */
 @media (width >= 600px) {
   .section.sticky-nav-container {
     display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
     padding-block: 0;
   }
 

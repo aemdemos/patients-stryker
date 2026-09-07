@@ -11,7 +11,11 @@ import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 /**
  * Resolve a nav link's target: `#id`, bare `id`, or URL ending in `#id`.
- * Falls back to a `.section[data-anchor="<id>"]` and promotes it to a real id.
+ * A `.section[data-anchor="<id>"]` wins over a plain element id, because an id
+ * can collide with unrelated content (e.g. the hero <h1 id="understanding-stroke">
+ * duplicates the video section's data-anchor). `data-anchor` is the authored,
+ * intended nav target, so prefer it; fall back to id for fragment-only anchors
+ * like #patient-information that have no data-anchor section.
  * @param {string} href
  * @returns {Element|null}
  */
@@ -20,12 +24,10 @@ function resolveTarget(href) {
   const hash = href.includes('#') ? href.slice(href.indexOf('#') + 1) : href;
   if (!hash) return null;
 
-  const byId = document.getElementById(hash);
-  if (byId) return byId;
-
   const byAnchor = document.querySelector(`.section[data-anchor="${CSS.escape(hash)}"]`);
-  if (byAnchor && !byAnchor.id) byAnchor.id = hash;
-  return byAnchor;
+  if (byAnchor) return byAnchor;
+
+  return document.getElementById(hash);
 }
 
 /**
@@ -121,14 +123,17 @@ export default function decorate(block) {
   applyScrollOffset();
   window.addEventListener('resize', applyScrollOffset, { passive: true });
 
-  // --- JS-driven sticking -------------------------------------------------
-  // CSS `position: sticky` sticks to the nearest scrolling ancestor, which in the
-  // UE canvas is the wrong element, so the bar never pins there. We pin the section
-  // with `position: fixed` toggled on scroll and hold its place with a placeholder.
+  // --- JS-driven sticking (UE canvas ONLY) --------------------------------
+  // On the normal page (window scroll) native CSS `position: sticky` handles this
+  // and works reliably, so we do nothing there. In the Universal Editor the page
+  // scrolls a nested container, where CSS sticky pins to the wrong ancestor and
+  // never sticks — so ONLY there we pin the section with `position: fixed` toggled
+  // on scroll, holding its place in flow with a placeholder.
+  const needsJsSticky = !isWindow;
   const placeholder = document.createElement('div');
   placeholder.className = 'sticky-nav-placeholder';
   placeholder.setAttribute('aria-hidden', 'true');
-  section?.insertAdjacentElement('beforebegin', placeholder);
+  if (needsJsSticky) section?.insertAdjacentElement('beforebegin', placeholder);
 
   // Bar is hidden below 600px (matches the CSS), so sticking only engages above it.
   const canStick = () => window.matchMedia('(min-width: 600px)').matches;
@@ -142,7 +147,8 @@ export default function decorate(block) {
     placeholder.style.height = '';
   };
   const updateSticky = () => {
-    if (!section) return;
+    // Native CSS sticky owns the window-scroll page; only intervene in the UE canvas.
+    if (!section || !needsJsSticky) return;
     if (!canStick()) {
       if (fixed) unfix();
       return;
@@ -152,15 +158,15 @@ export default function decorate(block) {
     const ref = fixed ? placeholder : section;
     const shouldFix = ref.getBoundingClientRect().top - top <= 0;
     if (shouldFix === fixed) {
-      // While fixed on a container scroller, keep the bar aligned to the moving top.
-      if (fixed && !isWindow) section.style.top = `${top}px`;
+      // While fixed on the container scroller, keep the bar aligned to the moving top.
+      if (fixed) section.style.top = `${top}px`;
       return;
     }
     if (shouldFix) {
       placeholder.style.height = `${section.offsetHeight}px`;
       placeholder.style.display = 'block';
       section.classList.add('sticky-nav-fixed');
-      section.style.top = isWindow ? '0px' : `${top}px`;
+      section.style.top = `${top}px`;
       fixed = true;
     } else {
       unfix();
@@ -202,10 +208,13 @@ export default function decorate(block) {
       ticking = false;
       updateSticky();
       const targets = currentTargets(); // re-resolve: fragment sections load async
-      const barHeight = block.getBoundingClientRect().height || 70;
+      const barRect = block.getBoundingClientRect();
+      const barHeight = barRect.height || 70;
       const top = scrollerTop();
       const viewportH = isWindow ? window.innerHeight : scroller.clientHeight;
-      const pinned = fixed;
+      // Pinned = the bar has reached the scroller's top. Works for BOTH native CSS
+      // sticky (.page) and the JS fixed fallback (UE) since both hold the bar at top.
+      const pinned = barRect.top - top <= 1;
       const line = top + barHeight + GAP + 2;
       let activeIndex = -1;
       if (pinned) {
