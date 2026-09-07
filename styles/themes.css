@@ -1177,3 +1177,34 @@ body.ivs-treatment main > .section.light-gray :is(p, li) {
   font-size: var(--body-font-size-m); /* 14px */
   line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
 }
+
+/* Theme: condition-detail (desktop 2-column layout override for IVS condition pages). */
+@media (width >= 900px) {
+  /* override the base flex row with a 2-column grid on the same section element
+     (the section's wrappers are its direct children, exactly as flex expects). */
+  body.condition-detail main > .section.flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  /* dark panel (first wrapper) → left column, spanning the full height of the
+     right-hand stack. */
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: stretch;
+  }
+
+  /* image, white symptoms panel, treatment links → right column, top-to-bottom. */
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
+    grid-column: 2;
+  }
+
+  /* the dark card fills its column height so both columns align. */
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel,
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel > ul,
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel-body {
+    height: 100%;
+  }
+}
