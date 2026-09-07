@@ -85,8 +85,11 @@ function buildWidgetAutoBlocks(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    // auto load `*/fragments/*` references
-    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment'));
+    // auto load `*/fragments/*` references — but NOT ones inside a tabs block,
+    // which lazy-loads its own panel fragments when a tab is selected (tabs.js),
+    // so they must stay as links until that tab is shown.
+    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')]
+      .filter((f) => !f.closest('.fragment') && !f.closest('.tabs'));
     if (fragments.length > 0) {
       // eslint-disable-next-line import/no-cycle
       import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {
