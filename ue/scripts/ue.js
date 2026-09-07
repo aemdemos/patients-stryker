@@ -11,6 +11,7 @@
  */
 
 import { moveInstrumentation } from './ue-utils.js';
+import decorateDMAssets from '../../scripts/dm-support.js';
 
 const setupObservers = () => {
   const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
@@ -65,7 +66,19 @@ const setupObservers = () => {
 
 const setupUEEventHandlers = () => {
   document.body.addEventListener('aue:content-patch', ({ detail: { patch, request } }) => {
-    let element = document.querySelector(`[data-aue-resource="${request.target.resource}"]`);
+    const resourceEl = document.querySelector(`[data-aue-resource="${request.target.resource}"]`);
+
+    // DM images are authored as links (<a href>) that dm-support.js converts to
+    // <picture> at page decoration. UE re-renders a block from source on edit but
+    // does NOT re-run dm-support, so the reverted <a> shows as a raw link until a
+    // full refresh. Re-run decorateDMAssets on the patched block/element so the
+    // link converts to a picture live. Idempotent: it skips anchors already
+    // wrapping media and non-DM content, so re-running is safe.
+    if (resourceEl?.querySelector?.('a[href*="/is/image/"], a[href*="/adobe/assets/"]')) {
+      decorateDMAssets(resourceEl);
+    }
+
+    let element = resourceEl;
     if (element && element.getAttribute('data-aue-prop') !== patch.name) {
       element = element.querySelector(`[data-aue-prop='${patch.name}']`);
     }

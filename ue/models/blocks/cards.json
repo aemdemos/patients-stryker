@@ -76,7 +76,8 @@
           "multi": false
         },
         {
-          "component": "aem-content",
+          "component": "text",
+          "valueType": "string",
           "name": "image",
           "label": "Image (Dynamic Media link)"
         },
@@ -100,7 +101,8 @@
           "multi": false
         },
         {
-          "component": "aem-content",
+          "component": "text",
+          "valueType": "string",
           "name": "image",
           "label": "Image (Dynamic Media link)"
         },
