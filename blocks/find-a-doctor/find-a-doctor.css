@@ -1,0 +1,170 @@
+/* find-a-doctor — presentational locator banner matching the source
+   "Find a doctor near you" section: a full-width band with the Zip product
+   image on the left and a light-gray form panel on the right (floating-label
+   location field, radius selector, teal submit button). */
+
+.find-a-doctor {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+}
+
+/* banner image */
+.find-a-doctor .find-a-doctor-media {
+  flex: 0 0 auto;
+  margin: 0;
+  line-height: 0;
+}
+
+.find-a-doctor .find-a-doctor-media picture,
+.find-a-doctor .find-a-doctor-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* form panel */
+.find-a-doctor .find-a-doctor-panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+}
+
+.find-a-doctor .find-a-doctor-title {
+  margin: 0 0 24px;
+  font-family: var(--display-font-family);
+  font-size: var(--find-a-doctor-title-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height-h4);
+  color: var(--color-black);
+  text-align: left;
+}
+
+.find-a-doctor .find-a-doctor-form {
+  margin: 0;
+}
+
+.find-a-doctor .find-a-doctor-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* floating-label field wrapper */
+.find-a-doctor .find-a-doctor-field {
+  position: relative;
+}
+
+.find-a-doctor .find-a-doctor-field input,
+.find-a-doctor .find-a-doctor-field select {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--find-a-doctor-control-height);
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-none);
+  padding: 24px 16px 1px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.find-a-doctor .find-a-doctor-field select {
+  padding-block: 0;
+  cursor: pointer;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" fill="none" stroke="%23000" stroke-width="1.5"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.find-a-doctor .find-a-doctor-field input:focus,
+.find-a-doctor .find-a-doctor-field select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* floating label */
+.find-a-doctor .find-a-doctor-label {
+  position: absolute;
+  inset-inline-start: 16px;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  color: var(--find-a-doctor-label-color);
+  pointer-events: none;
+  transition: transform 0.1s ease, font-size 0.1s ease;
+}
+
+/* raise the label when the field has focus or content (or is pre-filled) */
+.find-a-doctor .find-a-doctor-field input:focus + .find-a-doctor-label,
+.find-a-doctor .find-a-doctor-field input:not(:placeholder-shown) + .find-a-doctor-label,
+.find-a-doctor .find-a-doctor-label-filled {
+  transform: translateY(-100%);
+  inset-block-start: 20px;
+  font-size: var(--body-font-size-xs);
+}
+
+/* submit button — teal, uppercase, square corners (source .stryBtn) */
+.find-a-doctor .find-a-doctor-submit {
+  box-sizing: border-box;
+  height: var(--find-a-doctor-control-height);
+  min-width: 180px;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-none);
+  padding: 16px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.find-a-doctor .find-a-doctor-submit:hover,
+.find-a-doctor .find-a-doctor-submit:focus {
+  background-color: var(--color-primary-hover);
+}
+
+/* tablet and up — image left, form panel right (source: ~40/60 split, 200px band).
+   Controls sit in a single row within the panel. */
+@media (width >= 841px) {
+  .find-a-doctor {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .find-a-doctor .find-a-doctor-media {
+    flex: 0 0 40%;
+    max-width: 40%;
+
+    /* source crops the image to a shallow banner strip rather than its full
+       aspect ratio; cap the band height and let object-fit: cover crop it */
+    max-height: 250px;
+  }
+
+  .find-a-doctor .find-a-doctor-panel {
+    padding-inline: 40px;
+  }
+
+  .find-a-doctor .find-a-doctor-fields {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .find-a-doctor .find-a-doctor-location {
+    flex: 1 1 auto;
+  }
+
+  .find-a-doctor .find-a-doctor-radius {
+    flex: 0 0 auto;
+    min-width: 160px;
+  }
+}
