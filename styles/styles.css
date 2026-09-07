@@ -488,6 +488,29 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
+/* UE fallback: before decorateButtons() converts a bold authored link to
+   `.button.primary`, style both supported authoring nesting directions as the
+   same green button. */
+strong > a:any-link,
+a:any-link > strong {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 /* compact section links (e.g. reference URLs) are plain, not underlined — matches
    the source's dense footer. Placed after the base link rules to keep cascade order. */
 .section.compact a:any-link {

@@ -512,9 +512,18 @@ async function loadPage() {
   loadDelayed();
 }
 
-loadPage();
-
 if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
-  // eslint-disable-next-line import/no-cycle
-  await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
+  // UE only: attach observers before block decoration so transformed rows retain
+  // their data-aue-* instrumentation. Awaiting this import prevents the eager
+  // first section from racing observer setup; live-site loading is unaffected.
+  try {
+    // eslint-disable-next-line import/no-cycle
+    await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
+  } catch (e) {
+    // never let a UE-tooling failure block the page from rendering in the editor
+    // eslint-disable-next-line no-console
+    console.error('failed to initialize universal editor observers', e);
+  }
 }
+
+loadPage();
