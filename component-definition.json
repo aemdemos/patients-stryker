@@ -101,7 +101,7 @@
           "plugins": {
             "da": {
               "name": "cards",
-              "unsafeHTML": "<div class=\"cards\"><div><div><p><a href=\"\"></a></p></div><div><h3>Title</h3><p>Card text</p></div></div></div>"
+              "unsafeHTML": "<div class=\"cards\"><div><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div></div>"
             }
           }
         },
@@ -112,7 +112,7 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\"></a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
               "fields": [
                 {
                   "name": "image",
@@ -137,7 +137,7 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\"></a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
+              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
               "fields": [
                 {
                   "name": "image",
@@ -220,7 +220,7 @@
           "plugins": {
             "da": {
               "name": "Hero",
-              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\"></a></p></div></div><div><div><p><a href=\"\"></a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
+              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
               "fields": [
                 {
                   "name": "desktopImage",
