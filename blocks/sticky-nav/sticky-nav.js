@@ -241,28 +241,46 @@ export default function decorate(block) {
 
       // Honor a click lock: keep the clicked item active until the scroll actually
       // reaches its region, so the smooth scroll doesn't flicker the highlight.
+      // The clicked item's OWN region is what counts — several nav items can share
+      // one region (e.g. #resources and #patient-information both live in the
+      // resources fragment section), so compare regions, and once we've reached
+      // that region keep the clicked item (not the first item that shares it).
       if (clickedItem) {
-        const geomItem = activeIndex >= 0 ? targets[activeIndex].item : null;
-        if (geomItem === clickedItem) {
-          clickedItem = null; // arrived — hand control back to the scroll-spy
-        } else {
-          setCurrent(clickedItem);
+        const clickedTarget = targets.find((t) => t.item === clickedItem);
+        const activeRegion = activeIndex >= 0 ? targets[activeIndex].region : null;
+        if (clickedTarget && activeRegion === clickedTarget.region) {
+          clickedItem = null; // arrived at the clicked region
+          setCurrent(clickedTarget.item);
           return;
         }
+        setCurrent(clickedItem); // still travelling — hold the clicked highlight
+        return;
       }
 
+      // Among items sharing the active region, prefer the last (its heading is
+      // furthest down, so it's the one actually in view at that scroll depth).
+      if (activeIndex >= 0) {
+        const activeRegion = targets[activeIndex].region;
+        const lastInRegion = targets.map((t, i) => ({ t, i }))
+          .filter(({ t }) => t.region === activeRegion)
+          .pop();
+        if (lastInRegion) activeIndex = lastInRegion.i;
+      }
       setCurrent(activeIndex >= 0 ? targets[activeIndex].item : null);
     };
 
-    // Safety valve: if the clicked region can never reach the spy line (e.g. the
-    // final short section), release the lock once scrolling has settled so the
-    // highlight isn't stuck forever. Reset on every scroll event.
+    // Safety valve: if the clicked region can never scroll far enough to satisfy
+    // the geometry test (e.g. the final short section at page bottom), the scroll
+    // still stops. Once it settles, KEEP the clicked item active (honor the click)
+    // and release the lock so later manual scrolling updates normally.
     let settleTimer = 0;
     const armSettle = () => {
       window.clearTimeout(settleTimer);
       settleTimer = window.setTimeout(() => {
+        const held = clickedItem;
         clickedItem = null;
-        update();
+        if (held) setCurrent(held);
+        else update();
       }, 200);
     };
 
