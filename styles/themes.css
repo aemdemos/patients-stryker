@@ -425,6 +425,12 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   }
 }
 
+@media (width >= 600px) {
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
   /* Theme: sa-resources */
@@ -778,6 +784,8 @@ body.resources .section.compact {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
+    padding:0;
+    gap:0;
   }
 
   /* dark panel (first wrapper) → left column, spanning the full height of the
@@ -791,12 +799,7 @@ body.resources .section.compact {
   /* image, white symptoms panel, treatment links → right column, top-to-bottom. */
   body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
     grid-column: 2;
+    width: 100%;
   }
 
-  /* the dark card fills its column height so both columns align. */
-  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel,
-  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel > ul,
-  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel-body {
-    height: 100%;
-  }
 }
