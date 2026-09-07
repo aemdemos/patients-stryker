@@ -139,7 +139,8 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\"></a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
+              "rows": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "image",
