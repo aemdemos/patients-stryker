@@ -215,6 +215,9 @@ export default function decorate(block) {
       // Pinned = the bar has reached the scroller's top. Works for BOTH native CSS
       // sticky (.page) and the JS fixed fallback (UE) since both hold the bar at top.
       const pinned = barRect.top - top <= 1;
+      // Expose pinned state for CSS: the outer left/right borders and the full-bleed
+      // reset apply only while pinned (matches the source's framed-when-stuck look).
+      section?.classList.toggle('sticky-nav-pinned', pinned);
       const line = top + barHeight + GAP + 2;
       let activeIndex = -1;
       if (pinned) {
