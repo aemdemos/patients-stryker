@@ -101,7 +101,8 @@
           "plugins": {
             "da": {
               "name": "cards",
-              "unsafeHTML": "<div class=\"cards\"><div><div><p><a href=\"\"></a></p></div><div><h3>Title</h3><p>Card text</p></div></div></div>"
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -112,7 +113,8 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\"></a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+              "rows": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "image",
