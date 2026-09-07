@@ -123,13 +123,24 @@ export default function decorate(block) {
   applyScrollOffset();
   window.addEventListener('resize', applyScrollOffset, { passive: true });
 
-  // --- JS-driven sticking (UE canvas ONLY) --------------------------------
-  // On the normal page (window scroll) native CSS `position: sticky` handles this
-  // and works reliably, so we do nothing there. In the Universal Editor the page
-  // scrolls a nested container, where CSS sticky pins to the wrong ancestor and
-  // never sticks — so ONLY there we pin the section with `position: fixed` toggled
-  // on scroll, holding its place in flow with a placeholder.
-  const needsJsSticky = !isWindow;
+  // --- JS-driven sticking (Universal Editor ONLY) ------------------------
+  // On the normal page native CSS `position: sticky` works reliably, so we leave
+  // it alone. In the Universal Editor the page is rendered inside an IFRAME, and
+  // UE inserts wrapper/overlay elements (with overflow/transform) between the
+  // section and the scroll root — which silently disables CSS sticky. That's true
+  // whether the iframe's own `window` scrolls or a nested container does, so the
+  // right trigger is "are we in an iframe", not "is the scroller a container".
+  // There we pin the section with `position: fixed` toggled on scroll, holding
+  // its place in flow with a placeholder. `position: fixed` pins to the iframe's
+  // own viewport and is immune to the ancestor overflow/transform problem.
+  const inIframe = (() => {
+    try {
+      return window.self !== window.top;
+    } catch {
+      return true; // cross-origin access throws → we are framed
+    }
+  })();
+  const needsJsSticky = inIframe || !isWindow;
   const placeholder = document.createElement('div');
   placeholder.className = 'sticky-nav-placeholder';
   placeholder.setAttribute('aria-hidden', 'true');
