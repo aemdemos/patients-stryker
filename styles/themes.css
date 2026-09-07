@@ -754,3 +754,49 @@ body.resources main > .section.compact > div :is(p, ol, ul, li) {
 body.resources .section.compact {
   margin-bottom: 0;
 }
+
+/* =====================================================================
+   condition-detail — IVS condition pages (e.g. /us/en/ivs/conditions/back-pain)
+   Set via page metadata `theme: condition-detail` (adds body.condition-detail;
+   scripts.js lazy-loads this file). Each condition is authored as a `flex`
+   section holding four sibling items in source order:
+     1. dark panel  (condition name + description)
+     2. image       (illustrative)
+     3. white panel (symptoms list)
+     4. treatment   ("Related treatment" links)
+   The base `.section.flex` (styles.css) would lay all four out as equal columns.
+   Here we re-arrange them, at >=900px only, into the source's 2-up layout WITHOUT
+   a columns block and WITHOUT modifying the flex rule itself: the dark panel fills
+   the LEFT column full-height; the image, white panel and treatment stack in the
+   RIGHT column. Below 900px the base (no-flex) stacking applies, so nothing here
+   is needed for mobile.
+   ===================================================================== */
+@media (width >= 900px) {
+  /* override the base flex row with a 2-column grid on the same section element
+     (the section's wrappers are its direct children, exactly as flex expects). */
+  body.condition-detail main > .section.flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  /* dark panel (first wrapper) → left column, spanning the full height of the
+     right-hand stack. */
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: stretch;
+  }
+
+  /* image, white symptoms panel, treatment links → right column, top-to-bottom. */
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
+    grid-column: 2;
+  }
+
+  /* the dark card fills its column height so both columns align. */
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel,
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel > ul,
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child .panel-body {
+    height: 100%;
+  }
+}
