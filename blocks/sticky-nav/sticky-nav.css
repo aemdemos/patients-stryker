@@ -48,12 +48,12 @@
   }
 
   /*
-   * When pinned (native sticky on .page, or JS `position:fixed` in UE), the bar
-   * spans the viewport. The `width:100vw` full-bleed trick is fragile in that
-   * state (100vw counts the scrollbar, so it narrows/misaligns), so reset it to
-   * simply fill the already-full-width section.
+   * ONLY the UE fixed fallback needs a width reset: there the section is pinned
+   * with `position:fixed; left:0; right:0`, already spanning the viewport, so the
+   * block's `width:100vw` breakout would overflow and add a horizontal scrollbar.
+   * On the normal page (native sticky) the section stays in its 1410px-capped
+   * wrapper, so the block MUST keep its `100vw` breakout to render full-width.
    */
-  .section.sticky-nav-container.sticky-nav-pinned .sticky-nav.block,
   .section.sticky-nav-container.sticky-nav-fixed .sticky-nav.block {
     width: 100%;
     margin-inline: 0;
