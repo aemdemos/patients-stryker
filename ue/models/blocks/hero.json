@@ -51,8 +51,7 @@
           "component": "text",
           "valueType": "string",
           "name": "desktopImage",
-          "label": "Desktop Image (Dynamic Media link)",
-          "required": true
+          "label": "Desktop Image (Dynamic Media link)"
         },
         {
           "component": "text",

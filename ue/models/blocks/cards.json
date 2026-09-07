@@ -75,8 +75,7 @@
           "component": "text",
           "valueType": "string",
           "name": "image",
-          "label": "Image (Dynamic Media link)",
-          "required": true
+          "label": "Image (Dynamic Media link)"
         },
         {
           "component": "text",
@@ -101,8 +100,7 @@
           "component": "text",
           "valueType": "string",
           "name": "image",
-          "label": "Image (Dynamic Media link)",
-          "required": true
+          "label": "Image (Dynamic Media link)"
         },
         {
           "component": "text",
