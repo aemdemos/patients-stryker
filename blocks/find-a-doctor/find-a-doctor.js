@@ -41,15 +41,6 @@ const ZIP_URL = '/blocks/find-a-doctor/zip-centroids.json';
 // Anchor id for the results region, so the new results tab can scroll to it.
 const RESULTS_ANCHOR = 'find-a-doctor-results';
 
-// Fallback hand-off to Stryker's own locator when a location can't be resolved
-// locally (e.g. a zip missing from the centroid table).
-const LOCATOR = {
-  resultsUrl: 'https://patients.stryker.com/content/patients/us/en/zip-skin-closure/index/search-results.html',
-  anatomy: 'skin',
-  procedures: 'stryker:surgeon-locator/anatomy/skin/procedures/zip-skin-closure|Zip skin closure',
-  businessunits: 'mrm:business-units/instruments/orthopaedic-instruments',
-};
-
 const EARTH_RADIUS_MILES = 3958.8;
 const toRad = (deg) => (deg * Math.PI) / 180;
 
@@ -273,18 +264,6 @@ export default function decorate(block) {
   results.setAttribute('aria-live', 'polite');
   results.hidden = true;
 
-  // Redirect to Stryker's live locator (fallback when we can't resolve locally).
-  const redirectToStryker = (location) => {
-    const params = new URLSearchParams({
-      location,
-      radius: radiusSelect.value,
-      anatomy: LOCATOR.anatomy,
-      procedures: LOCATOR.procedures,
-      businessunits: LOCATOR.businessunits,
-    });
-    window.open(`${LOCATOR.resultsUrl}?${params.toString()}`, '_blank', 'noopener');
-  };
-
   const renderStatus = (message) => {
     results.hidden = false;
     results.replaceChildren();
@@ -338,11 +317,16 @@ export default function decorate(block) {
 
     const rows = doctorData?.data;
     const zips = zipData?.data;
-    const origin = (Array.isArray(rows) && zips) ? resolveOrigin(location, zips) : null;
+    if (!Array.isArray(rows) || !zips) {
+      // Dataset couldn't be loaded — show an inline message (stay on this page).
+      renderStatus('Sorry, the doctor directory is temporarily unavailable. Please try again later.');
+      return false;
+    }
+
+    const origin = resolveOrigin(location, zips);
     if (!origin) {
-      // Dataset unavailable or location not resolvable — hand off to Stryker.
-      renderStatus('Opening the doctor locator in a new tab…');
-      redirectToStryker(location);
+      // Location not in our data — show an inline message (no redirect).
+      renderStatus(`We couldn't find "${location}". Try a nearby zip code, city or state.`);
       return false;
     }
 
