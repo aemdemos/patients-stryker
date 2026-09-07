@@ -252,11 +252,9 @@
         "multi": false
       },
       {
-        "component": "richtext",
+        "component": "aem-content",
         "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Text"
       }
     ]
   },

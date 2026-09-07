@@ -34,12 +34,10 @@
       "plugins": {
         "da": {
           "name": "columns-cell",
-          "row": 1,
-          "columns": 1,
           "fields": [
             { "name": "image", "selector": "p:nth-child(1)>a[href]" },
             { "name": "imageAlt", "selector": "p:nth-child(1)>a" },
-            { "name": "text", "selector": "p:nth-child(2)" }
+            { "name": "text", "selector": ":scope>*:nth-child(n+2)" }
           ]
         }
       }
@@ -81,26 +79,9 @@
     {
       "id": "columns-cell",
       "fields": [
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image (Dynamic Media link)"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
-        },
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
+        { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
+        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false },
+        { "component": "aem-content", "name": "text", "label": "Text" }
       ]
     }
   ],
