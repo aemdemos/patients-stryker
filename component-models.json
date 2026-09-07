@@ -350,7 +350,7 @@
         "component": "text",
         "valueType": "string",
         "name": "mobileImage",
-        "label": "Mobile Image (Dynamic Media link, optional)",
+        "label": "Mobile Image (Dynamic Media link)",
         "condition": {
           "or": [
             {
