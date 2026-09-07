@@ -1,10 +1,23 @@
 /**
- * find-a-doctor — presentational recreation of the source "Find a doctor near you"
- * locator banner: a full-width band with the Zip product image on the left and a
- * light-gray form panel on the right (location field, radius selector, submit
- * button). The live site's search is powered by a proprietary backend (doctor
- * database + Google Maps) that cannot be migrated to EDS, so this block reproduces
- * only the banner UI — the form does not perform a search.
+ * find-a-doctor — "Find a doctor near you" locator: a full-width banner (Zip
+ * product image + light-gray form panel) plus an inline results list.
+ *
+ * The live Stryker site runs its search on a proprietary backend (surgeon
+ * database + Google Maps) whose API has no CORS headers, so a browser on the EDS
+ * domain cannot call it. Instead this block reads doctor records from a JSON
+ * dataset published alongside the block (Option A — self-contained in EDS):
+ *
+ *   - blocks/find-a-doctor/doctors.json       — the doctor records (EDS sheet shape)
+ *   - blocks/find-a-doctor/zip-centroids.json — zip -> lat/long lookup for distance
+ *
+ * On submit it resolves the entered location to a lat/long, filters doctors
+ * within the selected radius (Haversine great-circle distance), and renders the
+ * matching doctor cards below the form — no external calls, no CORS.
+ *
+ * NOTE: the shipped JSON is SAMPLE/placeholder data (the live Stryker locator API
+ * currently returns zero surgeons for this product). Replace doctors.json with a
+ * real dataset — e.g. point DATA_URL at a Document Authoring spreadsheet, which
+ * publishes as JSON in the same shape — and swap in a full US zip centroid table.
  *
  * Authoring contract (initial DOM before decoration):
  *   <div class="find-a-doctor">
@@ -17,6 +30,145 @@
  *
  * @param {Element} block The block element
  */
+
+// Data sources (same-origin JSON — no CORS). Swap DATA_URL for a DA sheet URL.
+const DATA_URL = '/blocks/find-a-doctor/doctors.json';
+const ZIP_URL = '/blocks/find-a-doctor/zip-centroids.json';
+
+// Fallback hand-off to Stryker's own locator when a location can't be resolved
+// locally (e.g. a zip missing from the centroid table).
+const LOCATOR = {
+  resultsUrl: 'https://patients.stryker.com/content/patients/us/en/zip-skin-closure/index/search-results.html',
+  anatomy: 'skin',
+  procedures: 'stryker:surgeon-locator/anatomy/skin/procedures/zip-skin-closure|Zip skin closure',
+  businessunits: 'mrm:business-units/instruments/orthopaedic-instruments',
+};
+
+const EARTH_RADIUS_MILES = 3958.8;
+const toRad = (deg) => (deg * Math.PI) / 180;
+
+/** Great-circle distance in miles between two lat/long points. */
+function distanceMiles(lat1, lon1, lat2, lon2) {
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a = Math.sin(dLat / 2) ** 2
+    + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return EARTH_RADIUS_MILES * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+/** Fetch JSON, returning null on any failure (network, parse, non-200). */
+async function fetchJson(url) {
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) return null;
+    return await resp.json();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Resolve a user-entered location to a { lat, long } origin.
+ * Supports a 5-digit zip (centroid lookup) or a "city, ST" / "city"/"ST" match
+ * against the centroid table. Returns null if it can't be resolved locally.
+ */
+function resolveOrigin(input, zipData) {
+  const value = input.trim().toLowerCase();
+  const zipMatch = value.match(/\b(\d{5})\b/);
+  if (zipMatch && zipData[zipMatch[1]]) {
+    const z = zipData[zipMatch[1]];
+    return { lat: Number(z.lat), long: Number(z.long) };
+  }
+  // City or state text match against known centroids.
+  const entries = Object.values(zipData).filter((z) => z && z.city);
+  const hit = entries.find((z) => {
+    const city = String(z.city).toLowerCase();
+    const state = String(z.state || '').toLowerCase();
+    return value === city || value === state
+      || value === `${city}, ${state}` || value.startsWith(`${city},`);
+  });
+  return hit ? { lat: Number(hit.lat), long: Number(hit.long) } : null;
+}
+
+/** Normalize a doctor record (from sheet JSON) into the fields the card needs. */
+function normalizeDoctor(row) {
+  const name = [row.firstName, row.lastName].filter(Boolean).join(' ').trim();
+  return {
+    name: row.degree ? `${name}, ${row.degree}` : name,
+    specialties: row.specialties || '',
+    facilityName: row.facilityName || '',
+    address: [row.address, [row.city, row.state].filter(Boolean).join(', '), row.zip]
+      .filter(Boolean).join(', '),
+    phone: row.phone || '',
+    profileUrl: row.profileUrl && row.profileUrl !== '#' ? row.profileUrl : '',
+    image: row.image || '',
+    lat: Number(row.lat),
+    long: Number(row.long),
+  };
+}
+
+/** Build one doctor result card as a DOM node. */
+function buildCard(doctor) {
+  const card = document.createElement('li');
+  card.className = 'find-a-doctor-card';
+
+  const body = document.createElement('div');
+  body.className = 'find-a-doctor-card-body';
+
+  const name = document.createElement('h3');
+  name.className = 'find-a-doctor-card-name';
+  name.textContent = doctor.name;
+  body.append(name);
+
+  if (doctor.specialties) {
+    const spec = document.createElement('p');
+    spec.className = 'find-a-doctor-card-spec';
+    spec.textContent = doctor.specialties;
+    body.append(spec);
+  }
+
+  if (doctor.facilityName || doctor.address) {
+    const facility = document.createElement('p');
+    facility.className = 'find-a-doctor-card-facility';
+    if (doctor.facilityName) {
+      const fname = document.createElement('strong');
+      fname.textContent = doctor.facilityName;
+      facility.append(fname);
+    }
+    if (doctor.address) {
+      if (doctor.facilityName) facility.append(document.createElement('br'));
+      facility.append(document.createTextNode(doctor.address));
+    }
+    body.append(facility);
+  }
+
+  const dist = document.createElement('p');
+  dist.className = 'find-a-doctor-card-distance';
+  dist.textContent = `${doctor.distance.toFixed(1)} miles away`;
+  body.append(dist);
+
+  const actions = document.createElement('div');
+  actions.className = 'find-a-doctor-card-actions';
+  if (doctor.phone) {
+    const call = document.createElement('a');
+    call.className = 'find-a-doctor-card-call';
+    call.href = `tel:${doctor.phone.replace(/[^\d+]/g, '')}`;
+    call.textContent = 'Call now';
+    actions.append(call);
+  }
+  if (doctor.profileUrl) {
+    const profile = document.createElement('a');
+    profile.className = 'find-a-doctor-card-profile';
+    profile.href = doctor.profileUrl;
+    profile.textContent = 'View profile';
+    actions.append(profile);
+  }
+  if (actions.children.length) body.append(actions);
+
+  card.append(body);
+  return card;
+}
+
 export default function decorate(block) {
   // Pull the authored picture (banner image) and heading text.
   const picture = block.querySelector('picture');
@@ -42,9 +194,7 @@ export default function decorate(block) {
 
   const form = document.createElement('form');
   form.className = 'find-a-doctor-form';
-  // Presentational only — there is no locator backend to submit to.
   form.setAttribute('novalidate', '');
-  form.addEventListener('submit', (e) => e.preventDefault());
 
   // Location field with a floating label (source: "* Zip code, city or state").
   const locationGroup = document.createElement('div');
@@ -100,8 +250,130 @@ export default function decorate(block) {
   fields.className = 'find-a-doctor-fields';
   fields.append(locationGroup, radiusGroup, button);
 
-  form.append(fields);
+  // Inline validation message (shown when submitting with an empty location).
+  const error = document.createElement('p');
+  error.className = 'find-a-doctor-error';
+  error.setAttribute('role', 'alert');
+  error.hidden = true;
+  error.textContent = 'Please enter a zip code, city or state.';
+
+  form.append(fields, error);
   panel.append(heading, form);
 
-  block.replaceChildren(media, panel);
+  // --- Results region (populated on submit) ---
+  const results = document.createElement('div');
+  results.className = 'find-a-doctor-results';
+  results.setAttribute('aria-live', 'polite');
+  results.hidden = true;
+
+  // Redirect to Stryker's live locator (fallback when we can't resolve locally).
+  const redirectToStryker = (location) => {
+    const params = new URLSearchParams({
+      location,
+      radius: radiusSelect.value,
+      anatomy: LOCATOR.anatomy,
+      procedures: LOCATOR.procedures,
+      businessunits: LOCATOR.businessunits,
+    });
+    window.open(`${LOCATOR.resultsUrl}?${params.toString()}`, '_blank', 'noopener');
+  };
+
+  const renderStatus = (message) => {
+    results.hidden = false;
+    results.replaceChildren();
+    const p = document.createElement('p');
+    p.className = 'find-a-doctor-status';
+    p.textContent = message;
+    results.append(p);
+  };
+
+  const renderResults = (matches, radius) => {
+    results.hidden = false;
+    results.replaceChildren();
+
+    const title = document.createElement('h3');
+    title.className = 'find-a-doctor-results-title';
+    title.textContent = matches.length
+      ? `${matches.length} doctor${matches.length === 1 ? '' : 's'} within ${radius} miles`
+      : `No doctors found within ${radius} miles`;
+    results.append(title);
+
+    if (!matches.length) {
+      const hint = document.createElement('p');
+      hint.className = 'find-a-doctor-status';
+      hint.textContent = 'Try a larger radius or a different location.';
+      results.append(hint);
+      return;
+    }
+
+    const list = document.createElement('ul');
+    list.className = 'find-a-doctor-card-list';
+    matches.forEach((doctor) => list.append(buildCard(doctor)));
+    results.append(list);
+  };
+
+  // On submit: resolve location -> filter dataset by radius -> render cards.
+  let searching = false;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const location = locationInput.value.trim();
+    if (!location) {
+      error.hidden = false;
+      locationInput.setAttribute('aria-invalid', 'true');
+      locationInput.focus();
+      return;
+    }
+    error.hidden = true;
+    locationInput.removeAttribute('aria-invalid');
+    if (searching) return;
+
+    searching = true;
+    button.disabled = true;
+    renderStatus('Searching…');
+
+    const [doctorData, zipData] = await Promise.all([
+      fetchJson(DATA_URL),
+      fetchJson(ZIP_URL),
+    ]);
+
+    searching = false;
+    button.disabled = false;
+
+    const rows = doctorData?.data;
+    const zips = zipData?.data;
+    if (!Array.isArray(rows) || !zips) {
+      // Dataset unavailable — fall back to Stryker's own locator.
+      renderStatus('Opening the doctor locator in a new tab…');
+      redirectToStryker(location);
+      return;
+    }
+
+    const origin = resolveOrigin(location, zips);
+    if (!origin) {
+      // Couldn't geocode locally — hand off to Stryker's locator.
+      renderStatus('Opening the doctor locator in a new tab…');
+      redirectToStryker(location);
+      return;
+    }
+
+    const radius = Number(radiusSelect.value);
+    const matches = rows
+      .map((row) => normalizeDoctor(row))
+      .filter((d) => Number.isFinite(d.lat) && Number.isFinite(d.long))
+      .map((d) => ({ ...d, distance: distanceMiles(origin.lat, origin.long, d.lat, d.long) }))
+      .filter((d) => d.distance <= radius)
+      .sort((a, b) => a.distance - b.distance);
+
+    renderResults(matches, radius);
+  });
+
+  // Clear the error as soon as the author starts typing a location.
+  locationInput.addEventListener('input', () => {
+    if (!error.hidden && locationInput.value.trim()) {
+      error.hidden = true;
+      locationInput.removeAttribute('aria-invalid');
+    }
+  });
+
+  block.replaceChildren(media, panel, results);
 }

@@ -110,6 +110,18 @@
   font-size: var(--body-font-size-xs);
 }
 
+/* inline validation message */
+.find-a-doctor .find-a-doctor-error {
+  margin: 8px 0 0;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xs);
+  color: var(--color-error, #c00);
+}
+
+.find-a-doctor .find-a-doctor-field input[aria-invalid='true'] {
+  border-color: var(--color-error, #c00);
+}
+
 /* submit button — teal, uppercase, square corners (source .stryBtn) */
 .find-a-doctor .find-a-doctor-submit {
   box-sizing: border-box;
@@ -133,12 +145,105 @@
   background-color: var(--color-primary-hover);
 }
 
+/* --- results list --- */
+.find-a-doctor .find-a-doctor-results {
+  padding: 24px;
+}
+
+.find-a-doctor .find-a-doctor-results-title {
+  margin: 0 0 16px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.find-a-doctor .find-a-doctor-status {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  color: var(--find-a-doctor-label-color);
+}
+
+.find-a-doctor .find-a-doctor-card-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.find-a-doctor .find-a-doctor-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-none);
+  padding: 16px;
+  background-color: var(--color-white);
+}
+
+.find-a-doctor .find-a-doctor-card-name {
+  margin: 0 0 4px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.find-a-doctor .find-a-doctor-card-spec {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-s);
+  color: var(--color-primary);
+}
+
+.find-a-doctor .find-a-doctor-card-facility,
+.find-a-doctor .find-a-doctor-card-distance {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-s);
+  color: var(--color-text-muted);
+}
+
+.find-a-doctor .find-a-doctor-card-distance {
+  margin-bottom: 12px;
+  color: var(--find-a-doctor-label-color);
+}
+
+.find-a-doctor .find-a-doctor-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.find-a-doctor .find-a-doctor-card-call,
+.find-a-doctor .find-a-doctor-card-profile {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.find-a-doctor .find-a-doctor-card-call:hover,
+.find-a-doctor .find-a-doctor-card-profile:hover {
+  text-decoration: underline;
+}
+
 /* tablet and up — image left, form panel right (source: ~40/60 split, 200px band).
-   Controls sit in a single row within the panel. */
+   Controls sit in a single row within the panel. The results list wraps full-width
+   below the banner. */
 @media (width >= 841px) {
   .find-a-doctor {
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: stretch;
+  }
+
+  .find-a-doctor .find-a-doctor-results {
+    flex: 1 1 100%;
+    padding-inline: 40px;
+  }
+
+  .find-a-doctor .find-a-doctor-card-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .find-a-doctor .find-a-doctor-media {
