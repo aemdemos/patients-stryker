@@ -236,6 +236,14 @@
     "fields": []
   },
   {
+    "id": "columns-row-image",
+    "fields": []
+  },
+  {
+    "id": "columns-row-text",
+    "fields": []
+  },
+  {
     "id": "columns-cell",
     "fields": []
   },
@@ -254,6 +262,34 @@
         "name": "imageAlt",
         "label": "Image Alt",
         "multi": false
+      }
+    ]
+  },
+  {
+    "id": "columns-cell-image",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image (Dynamic Media link)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "columns-cell-text",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "text",
+        "label": "Text"
       }
     ]
   },
