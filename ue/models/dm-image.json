@@ -1,0 +1,28 @@
+{
+  "definitions": [
+    {
+      "title": "DM Image",
+      "id": "dm-image",
+      "model": "dm-image",
+      "plugins": {
+        "da": {
+          "name": "DM Image",
+          "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+          "fields": [
+            { "name": "image", "selector": "a[href]" },
+            { "name": "imageAlt", "selector": "a" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "dm-image",
+      "fields": [
+        { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
+        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false }
+      ]
+    }
+  ]
+}

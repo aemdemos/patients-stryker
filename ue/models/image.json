@@ -27,17 +27,15 @@
       "id": "image",
       "fields": [
         {
-          "component": "text",
-          "valueType": "string",
+          "component": "reference",
           "name": "image",
-          "label": "Image (Dynamic Media link)"
+          "label": "Image",
+          "multi": false
         },
         {
           "component": "text",
-          "valueType": "string",
           "name": "imageAlt",
-          "label": "Image Alt",
-          "multi": false
+          "label": "Alt Text"
         }
       ]
     }

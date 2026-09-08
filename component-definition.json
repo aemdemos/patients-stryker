@@ -35,6 +35,27 @@
               ]
             }
           }
+        },
+        {
+          "title": "DM Image",
+          "id": "dm-image",
+          "model": "dm-image",
+          "plugins": {
+            "da": {
+              "name": "DM Image",
+              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "a[href]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "a"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -189,27 +210,6 @@
           "plugins": {
             "da": {
               "name": "columns-cell"
-            }
-          }
-        },
-        {
-          "title": "DM Image",
-          "id": "dm-image",
-          "model": "dm-image",
-          "plugins": {
-            "da": {
-              "name": "DM Image",
-              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "a[href]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "a"
-                }
-              ]
             }
           }
         },
