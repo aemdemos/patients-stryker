@@ -440,6 +440,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   body.condition-detail h2 {
     font-family: var(--heading-font-family);
     font-size: var(--condition-headline-font-size);
+    padding-top:4%;
   }
 
   body.condition-detail h4 {
@@ -470,6 +471,10 @@ body.condition-detail a:any-link {
   text-decoration: none;
 }
  
+body.condition-detail main > .section.flex {
+  margin-top: var(--space-section);
+   margin-bottom: var(--space-section);
+}
 
 @media (width >= 600px) {
   body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul,
