@@ -63,87 +63,206 @@ function isEmptyPlaceholder(el) {
   return el.textContent.replace(/ /g, ' ').trim() === '';
 }
 
-// DEFAULT-CONTENT zones that carry inline gold/Futura emphasis in their headings
-// and need it re-encoded as markup. Scoped deliberately: the block zones
-// (panel, cards, hero) self-style their headings, so we must NOT touch them —
-// only default content that renders through the global heading/emphasis CSS.
-const EMPHASIS_ZONES = ['.cols2 > .colctrl .row > .col-sm-6:first-child'];
+// The gold accent (--color-accent: #ffb500) in the rgb form getComputedStyle returns.
+const GOLD_RGB = 'rgb(255, 181, 0)';
 
 /**
- * Re-encode a default-content heading's inline GOLD segment into the emphasis
- * markup this project's global CSS understands (styles/styles.css): a gold span
- * (source `color:#ffb500`, kept as a `.futura-bold` wrapper after color-stripping)
- * → `<em><strong>` → gold + Futura, upright. Example: the intro h3's "minimally
- * invasive solution". Runs in beforeTransform so the markup exists before span
- * flattening. Scoped to EMPHASIS_ZONES so block-owned headings (e.g. panel-dark's
- * gold title, which panel.css already colors) are never rewritten.
+ * Resolve the heading elements whose inline typography must be re-encoded as
+ * emphasis markup. Deliberately BROADER than default content: it includes the
+ * dark evidence band (a block zone) because that band's heading is styled ONLY
+ * by the source's nested spans — driving it from markup (rather than hardcoded
+ * template CSS) makes it correct per-page. Each zone is safe because the DECISION
+ * is driven by the leaf's COMPUTED style (see classifyLeaf), so a serif heading
+ * stays plain and a gold/Futura one is wrapped — no blind class-name guessing.
+ *   1. Intro default-content column (`.col-sm-6:first-child`): partial gold segment.
+ *   2. Full-bleed evidence band (`.c-full-bleed-panel`): gold on balloon, plain on
+ *      the other IVS pages (their leaf computes serif/non-gold).
+ *   3. The rich-text heading immediately preceding the `.cols3` "How it works" cards.
  */
-function encodeEmphasis(root) {
-  const doc = root.ownerDocument;
-  const wrapGold = (span) => {
+function collectEmphasisHeadings(root) {
+  const headings = new Set();
+  const add = (el) => { if (el) el.querySelectorAll('h1, h2, h3, h4').forEach((h) => headings.add(h)); };
+
+  root.querySelectorAll('.cols2 > .colctrl .row > .col-sm-6:first-child').forEach(add);
+  root.querySelectorAll('.fullbleedpanel .c-full-bleed-panel').forEach(add);
+
+  // The "How it works" heading is a rich-text block just before the step cards.
+  root.querySelectorAll('.cols3').forEach((cols3) => {
+    let prev = cols3.previousElementSibling;
+    while (prev && !prev.querySelector('h1, h2, h3, h4')) prev = prev.previousElementSibling;
+    add(prev);
+  });
+
+  return [...headings];
+}
+
+/**
+ * Map a text run's deepest styled leaf to the project's typography contract,
+ * reading what the SOURCE ACTUALLY RENDERS rather than guessing from class names
+ * or inline styles (which higher-specificity site rules routinely override — the
+ * dark band's leaf carries inline `color:#ffffff` yet computes teal). Only two
+ * properties round-trip through DA/EDS markup, so only these are classified:
+ *   - gold accent  → `<em><strong>` (styles.css: `h* em strong` → gold + Futura)
+ *   - Futura, non-gold → `<strong>`  (styles.css: `h* :is(strong,b)` → display face)
+ *   - serif / normal  → plain (leave; base color/size come from block/template CSS)
+ *
+ * `win.getComputedStyle` is the source of truth in the browser import (the
+ * document is live and un-cloned — verified in html2md). Under jsdom (offline
+ * validation / no author stylesheets) computed values are empty, so fall back to
+ * the class-name / inline-color heuristic to stay useful there.
+ * @returns {'em-strong'|'strong'|'plain'}
+ */
+function classifyLeaf(el, win) {
+  let family = '';
+  let color = '';
+  if (win && typeof win.getComputedStyle === 'function') {
+    const cs = win.getComputedStyle(el);
+    family = (cs.fontFamily || '').trim();
+    color = (cs.color || '').replace(/\s+/g, ' ').trim();
+  }
+
+  let isFutura;
+  let isGold;
+  if (family) {
+    isFutura = /futura/i.test(family);
+    isGold = color === GOLD_RGB;
+  } else {
+    // jsdom fallback: no computed styles — infer from source markup.
+    isFutura = !!el.closest('.futura-bold') || /futura/i.test(el.getAttribute('style') || '');
+    isGold = !!el.closest('[style*="ffb500" i]') || /ffb500/i.test(el.getAttribute('style') || '');
+  }
+
+  if (isGold) return 'em-strong'; // gold is the accent signal (always Futura on this site)
+  if (isFutura) return 'strong';
+  return 'plain';
+}
+
+/**
+ * Wrap a single text node in the contract markup for its decision.
+ * `em-strong` → `<em><strong>text</strong></em>` (gold + Futura);
+ * `strong`    → `<strong>text</strong>` (Futura). Spans flatten to text during
+ * md conversion, so wrapping the text node itself is precise and sufficient.
+ */
+function wrapTextNode(textNode, decision, doc) {
+  const strong = doc.createElement('strong');
+  strong.textContent = textNode.textContent;
+  let outer = strong;
+  if (decision === 'em-strong') {
     const em = doc.createElement('em');
-    const strong = doc.createElement('strong');
-    while (span.firstChild) strong.append(span.firstChild);
     em.append(strong);
-    span.replaceWith(em);
-  };
-  EMPHASIS_ZONES.forEach((zoneSel) => {
-    root.querySelectorAll(zoneSel).forEach((zone) => {
-      // gold span (explicit color) OR the .futura-bold sub-segment inside a
-      // heading (the color is stripped during cleaning, but .futura-bold marks
-      // the same gold phrase). Only PARTIAL emphasis — skip a span that covers
-      // the whole heading (those headings get their face from heading rules).
-      zone.querySelectorAll('h1, h2, h3').forEach((heading) => {
-        const seg = heading.querySelector('span[style*="ffb500" i], .futura-bold');
-        if (!seg) return;
-        if (seg.textContent.trim() === heading.textContent.trim()) return;
-        if (seg.querySelector('strong, em')) return;
-        wrapGold(seg);
-      });
+    outer = em;
+  }
+  textNode.replaceWith(outer);
+}
+
+/**
+ * Re-encode inline gold/Futura typography as emphasis markup, segment-aware and
+ * driven by the COMPUTED style of each text run's deepest leaf. Replaces the old
+ * class-name `encodeEmphasis` + `encodeHowItWorksHeading` heuristics: it handles
+ * partial emphasis (intro's gold sub-phrase), whole-heading Futura (How it works),
+ * and the per-page-varying dark band from one code path. Runs in beforeTransform
+ * so the markup exists before span flattening and before the block parsers lift
+ * the headings into cells.
+ */
+function normalizeEmphasis(root) {
+  const doc = root.ownerDocument;
+  const win = doc.defaultView;
+  collectEmphasisHeadings(root).forEach((heading) => {
+    // Gather text runs first (wrapping mutates the tree as we go).
+    const walker = doc.createTreeWalker(heading, 0x4 /* SHOW_TEXT */);
+    const runs = [];
+    let node = walker.nextNode();
+    while (node) {
+      if (node.textContent.trim()) runs.push(node);
+      node = walker.nextNode();
+    }
+    runs.forEach((run) => {
+      const host = run.parentElement;
+      if (!host) return;
+      if (host.closest('em, strong')) return; // already contract-marked
+      // Skip footnote reference markers and any link text: a <sup> or an anchor
+      // (the references point to #disclaimer, e.g. a superscript "11" or a bare
+      // "*") is never typographic emphasis. Wrapping it in <strong>/<em> both
+      // mis-styles it and emits stray "**" in the markdown. Link emphasis (the
+      // contract that turns a link into a button) is handled by decorateButtons,
+      // not here; the gold phrases we DO want to wrap are plain spans, not links.
+      if (host.closest('sup, a')) return;
+      const decision = classifyLeaf(host, win);
+      if (decision === 'plain') return;
+      wrapTextNode(run, decision, doc);
     });
   });
 }
 
 /**
- * The standalone "How it works" section heading is a default-content h3 whose
- * text is FULLY wrapped in `.futura-bold` (no gold) — i.e. the whole heading
- * renders in the Futura display face, not the global serif. DA/EDS reproduces
- * that per the project's typography contract by authoring the heading text in
- * `<strong>` (styles.css: `h3 :is(strong,b)` → display font). This heading sits
- * as a rich-text block immediately before the `.cols3` step cards, so target it
- * structurally (the preceding rich-text heading of `.cols3`) rather than by
- * page-specific text, keeping the template reusable across procedure pages.
+ * Normalize citation superscripts to a BARE `<sup>` (drop the wrapping
+ * `#disclaimer` reference anchor). Source markup is `<sup><a href="#disclaimer">
+ * 1-5</a></sup>`, but the md round-trip inverts it to `<a href="#disclaimer">
+ * <sup>1-5</sup></a>`. Left as-is, the runtime `decorateFootnotes` (scripts.js)
+ * splits "1-5" into per-number `#fn-N` links INSIDE the outer `#disclaimer`
+ * anchor — nested anchors (invalid) that render as broken split links. Stripping
+ * the citation anchor leaves a bare `<sup>1-5</sup>`, which decorateFootnotes then
+ * turns into clean footnote links (matching how balloon-kyphoplasty already works).
+ * Scoped to anchors whose href is exactly the on-page `#disclaimer` reference so
+ * real content links are untouched.
  */
-function encodeHowItWorksHeading(root) {
-  const doc = root.ownerDocument;
-  root.querySelectorAll('.cols3').forEach((cols3) => {
-    // walk back to the nearest preceding sibling that carries a heading
-    let prev = cols3.previousElementSibling;
-    while (prev && !prev.querySelector('h1, h2, h3, h4')) prev = prev.previousElementSibling;
-    if (!prev) return;
-    const heading = prev.querySelector('h1, h2, h3, h4');
-    if (!heading) return;
-    const seg = heading.querySelector('.futura-bold');
-    // only a FULL-heading Futura-bold wrapper (the whole title is display face);
-    // skip partial/gold segments (handled by encodeEmphasis) and already-marked.
-    if (!seg) return;
-    if (seg.textContent.trim() !== heading.textContent.trim()) return;
-    if (heading.querySelector('strong, b, em')) return;
-    const strong = doc.createElement('strong');
-    while (heading.firstChild) strong.append(heading.firstChild);
-    heading.append(strong);
+function normalizeCitationSups(root) {
+  root.querySelectorAll('a[href="#disclaimer"]').forEach((a) => {
+    // Only unwrap when the anchor is purely a citation marker (wraps a <sup>, or
+    // sits inside one). Replace the anchor with its children, preserving the <sup>.
+    const inSup = a.closest('sup');
+    const wrapsSup = a.querySelector('sup');
+    if (!inSup && !wrapsSup) return;
+    a.replaceWith(...a.childNodes);
+  });
+}
+
+/**
+ * Keep a trailing reference marker on the same line as the gold intro phrase.
+ * The intro heading's gold segment is wrapped in `<em>` (by normalizeEmphasis)
+ * and the template CSS gives that `<em>` `display: block` so the gold phrase
+ * drops to its own line — matching the source, where line 2 is e.g.
+ * "restorative solution¹". But the reference marker (a `<sup>` or a bare
+ * `#disclaimer`/footnote `*` link) sits as a SIBLING right after the `<em>`, so
+ * the block `<em>` strands it on the next line (and its `position:relative` sup
+ * overlaps the following text). Move a marker that immediately follows the gold
+ * `<em>` INSIDE that `<em>` so the phrase and its reference stay together on one
+ * line, as authored. Scoped to the intro default-content column.
+ */
+function keepRefWithGoldLine(root) {
+  const isMarker = (el) => el && el.nodeType === 1
+    && (el.tagName === 'SUP' || (el.tagName === 'A' && (el.getAttribute('href') || '').startsWith('#')));
+  root.querySelectorAll('.cols2 > .colctrl .row > .col-sm-6:first-child h1, .cols2 > .colctrl .row > .col-sm-6:first-child h2, .cols2 > .colctrl .row > .col-sm-6:first-child h3').forEach((heading) => {
+    const gold = [...heading.querySelectorAll('em')].pop();
+    if (!gold) return;
+    // Absorb consecutive trailing markers (e.g. a sup, or a "*" link) into the em.
+    let next = gold.nextSibling;
+    while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling; // skip whitespace
+    while (isMarker(next)) {
+      const after = next.nextSibling;
+      gold.append(next);
+      next = after;
+      while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling;
+    }
   });
 }
 
 export default function transform(hookName, element, payload) {
   if (hookName === TransformHook.beforeTransform) {
-    // Re-encode inline gold emphasis in default-content headings as markup BEFORE
-    // anything strips/flattens the spans (styles.css then paints it gold+Futura).
-    encodeEmphasis(element);
+    // Re-encode inline gold/Futura typography as emphasis markup BEFORE anything
+    // strips/flattens the spans. Driven by the COMPUTED style of each heading's
+    // deepest leaf (styles.css then paints em-strong gold+Futura, strong Futura).
+    // Covers the intro gold sub-phrase, the full-Futura "How it works" heading,
+    // and the per-page-varying dark evidence band from one code path.
+    normalizeEmphasis(element);
 
-    // Re-encode the full-Futura "How it works" section heading as <strong> so it
-    // renders in the display face (styles.css h3 :is(strong,b)) instead of serif.
-    encodeHowItWorksHeading(element);
+    // Citation superscripts → bare <sup> (drop the #disclaimer reference anchor)
+    // so the runtime footnote decoration produces clean links, not nested anchors.
+    normalizeCitationSups(element);
+
+    // Keep a trailing reference marker on the same line as the gold intro phrase
+    // (the block-display <em> would otherwise strand the sup/ref on the next line).
+    keepRefWithGoldLine(element);
 
     // Marketo lead-capture "Find a doctor" form that follows the gold CTA.
     // JS-injected widget, not authorable content. #find-a-doctor is the

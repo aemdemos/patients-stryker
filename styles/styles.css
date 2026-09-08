@@ -81,6 +81,7 @@
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
   --heading-font-size-l-scaled: 26.25px; /* h3 enlarged 1.25x (fontsize-1-25em) */
+  --heading-font-size-dark-base: 24.5px; /* dark evidence band, non-gold (white serif) heading main text */
   --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
@@ -475,13 +476,19 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
-/* decorateFootnotes() (scripts.js) wraps each citation digit in an <a href="#fn-N">
-   so it jumps to the reference list. The source shows these as plain black markers,
-   not links, so suppress the inherited teal link colour + underline while keeping the
-   anchor (and its jump behaviour) intact. Placed after the base link rules so the
-   higher-specificity override reads in natural cascade order (no-descending-specificity). */
-sup a:any-link {
-  color: inherit;
+/* Footnote citation links — the counterpart to the global decorateFootnotes()
+   (scripts.js), which runs on every page and wraps each citation digit in an
+   <a href="#fn-N"> inside its <sup>. These render as teal, no underline, and
+   otherwise INHERIT their context's font family + weight (verified against the
+   source: body font/400 in body copy, URW/500 in a dark band) — NOT forced to
+   Futura bold. This rule overrides only color + underline; family/weight
+   inherit. Scoped to <sup> + #fn-* because that is what decorateFootnotes emits
+   site-wide. (Site-specific reference anchors like #disclaimer are handled in
+   the relevant template's CSS, not here.) Placed after the base link rules so
+   the override reads in natural cascade order. */
+sup a:any-link,
+a[href^="#fn-"]:any-link {
+  color: var(--link-color);
   text-decoration: none;
 }
 

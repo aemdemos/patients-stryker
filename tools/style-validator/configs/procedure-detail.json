@@ -1,0 +1,32 @@
+{
+  "previewBase": "http://localhost:3000",
+  "excludeContexts": ["marketo-form"],
+  "minTokensForCluster": 2,
+  "pairs": [
+    {
+      "name": "balloon-kyphoplasty",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/balloon-kyphoplasty.html",
+      "migrated": "/content/us/en/ivs/treatments/balloon-kyphoplasty"
+    },
+    {
+      "name": "vertebroplasty",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/vertebroplasty.html",
+      "migrated": "/content/us/en/ivs/treatments/vertebroplasty"
+    },
+    {
+      "name": "disc-decompression",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/disc-decompression.html",
+      "migrated": "/content/us/en/ivs/treatments/disc-decompression"
+    },
+    {
+      "name": "spinejack-system",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/spinejack-system.html",
+      "migrated": "/content/us/en/ivs/treatments/spinejack-system"
+    },
+    {
+      "name": "radiofrequency-ablation",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/radiofrequency-ablation.html",
+      "migrated": "/content/us/en/ivs/treatments/radiofrequency-ablation"
+    }
+  ]
+}

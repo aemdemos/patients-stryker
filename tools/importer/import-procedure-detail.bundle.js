@@ -226,49 +226,107 @@ var CustomImportScript = (() => {
     if (el.querySelector("img, picture, a, iframe, video, h1, h2, h3, h4, h5, h6")) return false;
     return el.textContent.replace(/ /g, " ").trim() === "";
   }
-  var EMPHASIS_ZONES = [".cols2 > .colctrl .row > .col-sm-6:first-child"];
-  function encodeEmphasis(root) {
-    const doc = root.ownerDocument;
-    const wrapGold = (span) => {
-      const em = doc.createElement("em");
-      const strong = doc.createElement("strong");
-      while (span.firstChild) strong.append(span.firstChild);
-      em.append(strong);
-      span.replaceWith(em);
+  var GOLD_RGB = "rgb(255, 181, 0)";
+  function collectEmphasisHeadings(root) {
+    const headings = /* @__PURE__ */ new Set();
+    const add = (el) => {
+      if (el) el.querySelectorAll("h1, h2, h3, h4").forEach((h) => headings.add(h));
     };
-    EMPHASIS_ZONES.forEach((zoneSel) => {
-      root.querySelectorAll(zoneSel).forEach((zone) => {
-        zone.querySelectorAll("h1, h2, h3").forEach((heading) => {
-          const seg = heading.querySelector('span[style*="ffb500" i], .futura-bold');
-          if (!seg) return;
-          if (seg.textContent.trim() === heading.textContent.trim()) return;
-          if (seg.querySelector("strong, em")) return;
-          wrapGold(seg);
-        });
-      });
-    });
-  }
-  function encodeHowItWorksHeading(root) {
-    const doc = root.ownerDocument;
+    root.querySelectorAll(".cols2 > .colctrl .row > .col-sm-6:first-child").forEach(add);
+    root.querySelectorAll(".fullbleedpanel .c-full-bleed-panel").forEach(add);
     root.querySelectorAll(".cols3").forEach((cols3) => {
       let prev = cols3.previousElementSibling;
       while (prev && !prev.querySelector("h1, h2, h3, h4")) prev = prev.previousElementSibling;
-      if (!prev) return;
-      const heading = prev.querySelector("h1, h2, h3, h4");
-      if (!heading) return;
-      const seg = heading.querySelector(".futura-bold");
-      if (!seg) return;
-      if (seg.textContent.trim() !== heading.textContent.trim()) return;
-      if (heading.querySelector("strong, b, em")) return;
-      const strong = doc.createElement("strong");
-      while (heading.firstChild) strong.append(heading.firstChild);
-      heading.append(strong);
+      add(prev);
+    });
+    return [...headings];
+  }
+  function classifyLeaf(el, win) {
+    let family = "";
+    let color = "";
+    if (win && typeof win.getComputedStyle === "function") {
+      const cs = win.getComputedStyle(el);
+      family = (cs.fontFamily || "").trim();
+      color = (cs.color || "").replace(/\s+/g, " ").trim();
+    }
+    let isFutura;
+    let isGold;
+    if (family) {
+      isFutura = /futura/i.test(family);
+      isGold = color === GOLD_RGB;
+    } else {
+      isFutura = !!el.closest(".futura-bold") || /futura/i.test(el.getAttribute("style") || "");
+      isGold = !!el.closest('[style*="ffb500" i]') || /ffb500/i.test(el.getAttribute("style") || "");
+    }
+    if (isGold) return "em-strong";
+    if (isFutura) return "strong";
+    return "plain";
+  }
+  function wrapTextNode(textNode, decision, doc) {
+    const strong = doc.createElement("strong");
+    strong.textContent = textNode.textContent;
+    let outer = strong;
+    if (decision === "em-strong") {
+      const em = doc.createElement("em");
+      em.append(strong);
+      outer = em;
+    }
+    textNode.replaceWith(outer);
+  }
+  function normalizeEmphasis(root) {
+    const doc = root.ownerDocument;
+    const win = doc.defaultView;
+    collectEmphasisHeadings(root).forEach((heading) => {
+      const walker = doc.createTreeWalker(
+        heading,
+        4
+        /* SHOW_TEXT */
+      );
+      const runs = [];
+      let node = walker.nextNode();
+      while (node) {
+        if (node.textContent.trim()) runs.push(node);
+        node = walker.nextNode();
+      }
+      runs.forEach((run) => {
+        const host = run.parentElement;
+        if (!host) return;
+        if (host.closest("em, strong")) return;
+        if (host.closest("sup, a")) return;
+        const decision = classifyLeaf(host, win);
+        if (decision === "plain") return;
+        wrapTextNode(run, decision, doc);
+      });
+    });
+  }
+  function normalizeCitationSups(root) {
+    root.querySelectorAll('a[href="#disclaimer"]').forEach((a) => {
+      const inSup = a.closest("sup");
+      const wrapsSup = a.querySelector("sup");
+      if (!inSup && !wrapsSup) return;
+      a.replaceWith(...a.childNodes);
+    });
+  }
+  function keepRefWithGoldLine(root) {
+    const isMarker = (el) => el && el.nodeType === 1 && (el.tagName === "SUP" || el.tagName === "A" && (el.getAttribute("href") || "").startsWith("#"));
+    root.querySelectorAll(".cols2 > .colctrl .row > .col-sm-6:first-child h1, .cols2 > .colctrl .row > .col-sm-6:first-child h2, .cols2 > .colctrl .row > .col-sm-6:first-child h3").forEach((heading) => {
+      const gold = [...heading.querySelectorAll("em")].pop();
+      if (!gold) return;
+      let next = gold.nextSibling;
+      while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling;
+      while (isMarker(next)) {
+        const after = next.nextSibling;
+        gold.append(next);
+        next = after;
+        while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling;
+      }
     });
   }
   function transform(hookName, element, payload) {
     if (hookName === TransformHook.beforeTransform) {
-      encodeEmphasis(element);
-      encodeHowItWorksHeading(element);
+      normalizeEmphasis(element);
+      normalizeCitationSups(element);
+      keepRefWithGoldLine(element);
       WebImporter.DOMUtils.remove(element, [
         ".marketoform",
         ".c-marketo-form",
@@ -592,6 +650,8 @@ var CustomImportScript = (() => {
       main.appendChild(hr);
       const meta = WebImporter.Blocks.getMetadata(document);
       meta.template = "procedure-detail";
+      const slug = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html$/, "").split("/").filter(Boolean).pop();
+      if (slug) meta.theme = `pd-${slug}`;
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

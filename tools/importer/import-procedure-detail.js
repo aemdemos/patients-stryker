@@ -160,6 +160,13 @@ export default {
     main.appendChild(hr);
     const meta = WebImporter.Blocks.getMetadata(document);
     meta.template = 'procedure-detail';
+    // Per-page hook for targeted fidelity fixes: a `theme` token becomes a
+    // `body.pd-<slug>` class (via aem.js decorateTemplateAndTheme), letting the
+    // template CSS scope a rule to one page or an OR-list of pages when the
+    // source was authored inconsistently. Slug = last path segment.
+    const slug = new URL(params.originalURL).pathname
+      .replace(/\/$/, '').replace(/\.html$/, '').split('/').filter(Boolean).pop();
+    if (slug) meta.theme = `pd-${slug}`;
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
