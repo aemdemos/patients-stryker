@@ -476,18 +476,28 @@ body.resources main .section.no-cta > .fragment-wrapper {
   margin-top: var(--space-section);
 }
 
-/* Top spacing below the header. On the live/preview render the page title's own
-   `margin: 40px 0` (styles.css) pushes the first group clear of the nav. In the
-   Universal Editor that top margin COLLAPSES through the section wrappers (no
-   block-formatting boundary at the top edge), so the title butts against the
-   nav. Move that 40px onto the first group as PADDING (which never collapses, so
-   it holds in both environments) and zero the h1's own top margin so the gap
-   stays 40px total on the live render instead of doubling to 80px. Scoped to the
-   theme and the first no-cta group only, so no other page/section is affected. */
-body.resources main .section.no-cta:first-of-type {
+/* Page title (h1) spacing, top gap + h1→h2 gap. styles.css gives the h1
+   `margin: 40px 0`, but via `main > .section...` (direct child), which FAILS in
+   the Universal Editor — UE nests the section under an instrumentation wrapper,
+   so that rule never matches and the h1 loses BOTH gaps (butting against the nav
+   above and the h2 below, per the editor screenshots).
+
+   Fix, matching both environments:
+   1. Top gap — put 40px of PADDING on `main`. Padding never collapses, and
+      `main` is always present and un-wrapped in both environments (unlike a
+      section, which UE nests, so a section/`:first-of-type` target silently
+      fails in the editor).
+   2. Re-assert the h1 margins with a DESCENDANT combinator so it matches in UE
+      too: zero the top margin (the 40px top gap now comes from `main`'s padding,
+      so this avoids doubling to 80px on live) and keep the 40px bottom margin —
+      it sits between two in-flow siblings inside the same wrapper, so it does not
+      collapse/escape, restoring the h1→h2 gap in the editor while live is
+      unchanged (same 40px it already had). */
+body.resources main {
   padding-top: 40px;
 }
 
-body.resources main .section.no-cta:first-of-type > .default-content-wrapper h1 {
+body.resources main .section.no-cta .default-content-wrapper h1 {
   margin-top: 0;
+  margin-bottom: 40px;
 }
