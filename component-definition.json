@@ -35,27 +35,6 @@
               ]
             }
           }
-        },
-        {
-          "title": "DM Image",
-          "id": "dm-image",
-          "model": "dm-image",
-          "plugins": {
-            "da": {
-              "name": "DM Image",
-              "type": "image",
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "img[src]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "img[alt]"
-                }
-              ]
-            }
-          }
         }
       ]
     },
