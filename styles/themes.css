@@ -454,15 +454,24 @@ body.patient-information main > .section.fragment-container + .section.compact {
 
 /* ~60px between consecutive brochure groups (source ≈60–64px). Applied as a
    top margin on every group after the first, matching the source's inter-zone
-   whitespace. */
-body.resources main > .section.no-cta + .section.no-cta {
+   whitespace.
+
+   NOTE: descendant combinator (`main .section`, not `main > .section`) so the
+   rule survives the Universal Editor, which nests each section under an
+   instrumentation wrapper — a strict `main > .section` chain would not match
+   there and the spacing would vanish in the editor. Sections stay siblings of
+   each other inside that wrapper, so the `+` adjacency still holds in both
+   environments. */
+body.resources main .section.no-cta + .section.no-cta {
   margin-top: calc(var(--space-section) * 2);
 }
 
 /* ~30px between each group's heading and its brochure row (source ≈30px). Set on
    the fragment wrapper with a single token; it collapses with the heading's own
    15px bottom margin to the larger value (30px). The heading's natural margins
-   (incl. the h1 title → first h2 spacing) are left untouched. */
-body.resources main > .section.no-cta > .fragment-wrapper {
+   (incl. the h1 title → first h2 spacing) are left untouched. Descendant
+   combinator for the same UE-robustness reason as above; `.fragment-wrapper`
+   remains a direct child of its section in both environments. */
+body.resources main .section.no-cta > .fragment-wrapper {
   margin-top: var(--space-section);
 }
