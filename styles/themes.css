@@ -29,6 +29,10 @@
 
 /* ----- Page-level: section rhythm + default-content typography ----- */
 
+:root {
+  --condition-headline-font-size: 26.25px;
+}
+
 /* intro: welcome copy is the source's fontsize-1-5em URW-Egyptienne serif (21px),
    not the 14px body default. Scoped to the flex intro's left default-content
    column (the panel keeps its own body sizing, below). */
@@ -424,6 +428,32 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     margin-top: 0;
   }
 }
+
+  body.condition-detail .hero-container .hero-wrapper {
+    padding: 0 var(--container-gutter);
+  }
+
+  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
+    padding-left:4%;
+  }
+  
+  body.condition-detail h2 {
+    font-family: var(--heading-font-family);
+    font-size: var(--condition-headline-font-size);
+  }
+
+  body.condition-detail h4 {
+    font-size: var(--heading-font-size-ml);
+  }
+
+  body.condition-detail h2 em strong, h2 strong em {
+     font-size: var(--condition-headline-font-size);
+  }
+
+   body.condition-detail p, ul {
+    font-size: var(--body-font-size-l);
+    line-height: var(--body-line-height-l);
+   }
 
 @media (width >= 600px) {
   body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul {
