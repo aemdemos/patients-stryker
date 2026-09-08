@@ -459,13 +459,10 @@ body.resources main > .section.no-cta + .section.no-cta {
   margin-top: calc(var(--space-section) * 2);
 }
 
-/* ~30px between each group's heading and its brochure row (source ≈30px). The
-   heading's own 15px bottom margin is zeroed (its 7px gold-underline padding is
-   left intact) and the gap is set on the fragment wrapper with a single token. */
-body.resources main > .section.no-cta > .default-content-wrapper :is(h1, h2, h3) {
-  margin-bottom: 0;
-}
-
+/* ~30px between each group's heading and its brochure row (source ≈30px). Set on
+   the fragment wrapper with a single token; it collapses with the heading's own
+   15px bottom margin to the larger value (30px). The heading's natural margins
+   (incl. the h1 title → first h2 spacing) are left untouched. */
 body.resources main > .section.no-cta > .fragment-wrapper {
   margin-top: var(--space-section);
 }
