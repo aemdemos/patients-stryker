@@ -27,30 +27,6 @@
       }
     },
     {
-      "title": "Columns Row Image",
-      "id": "columns-row-image",
-      "model": "columns-row-image",
-      "filter": "columns-row-image",
-      "plugins": {
-        "da": {
-          "name": "columns-row-image",
-          "behaviour": "columns-row"
-        }
-      }
-    },
-    {
-      "title": "Columns Row Text",
-      "id": "columns-row-text",
-      "model": "columns-row-text",
-      "filter": "columns-row-text",
-      "plugins": {
-        "da": {
-          "name": "columns-row-text",
-          "behaviour": "columns-row"
-        }
-      }
-    },
-    {
       "title": "Columns Cell",
       "id": "columns-cell",
       "model": "columns-cell",
@@ -58,34 +34,6 @@
       "plugins": {
         "da": {
           "name": "columns-cell"
-        }
-      }
-    },
-    {
-      "title": "Columns Cell Image",
-      "id": "columns-cell-image",
-      "model": "columns-cell-image",
-      "plugins": {
-        "da": {
-          "name": "Columns Cell Image",
-          "unsafeHTML": "<div class=\"columns-cell-image\"><p><a href=\"\">Image alt</a></p></div>",
-          "fields": [
-            { "name": "image", "selector": "div.columns-cell-image>p:nth-child(1)>a[href]" },
-            { "name": "imageAlt", "selector": "div.columns-cell-image>p:nth-child(1)>a" }
-          ]
-        }
-      }
-    },
-    {
-      "title": "Columns Cell Text",
-      "id": "columns-cell-text",
-      "model": "columns-cell-text",
-      "plugins": {
-        "da": {
-          "name": "Columns Cell Text",
-          "fields": [
-            { "name": "text", "selector": "p:nth-child(1) ~ *" }
-          ]
         }
       }
     }
@@ -124,35 +72,14 @@
       "fields": []
     },
     {
-      "id": "columns-row-image",
-      "fields": []
-    },
-    {
-      "id": "columns-row-text",
-      "fields": []
-    },
-    {
       "id": "columns-cell",
       "fields": []
-    },
-    {
-      "id": "columns-cell-image",
-      "fields": [
-        { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
-        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false }
-      ]
-    },
-    {
-      "id": "columns-cell-text",
-      "fields": [
-        { "component": "aem-content", "name": "text", "label": "Text" }
-      ]
     }
   ],
   "filters": [
     {
       "id": "columns",
-      "components": ["columns-row", "columns-row-image", "columns-row-text"]
+      "components": ["columns-row"]
     },
     {
       "id": "columns-row",
@@ -161,14 +88,6 @@
     {
       "id": "columns-cell",
       "components": ["text", "image"]
-    },
-    {
-      "id": "columns-row-image",
-      "components": ["columns-cell-image"]
-    },
-    {
-      "id": "columns-row-text",
-      "components": ["columns-cell-text"]
     }
   ]
 }

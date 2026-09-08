@@ -39,9 +39,7 @@
   {
     "id": "columns",
     "components": [
-      "columns-row",
-      "columns-row-image",
-      "columns-row-text"
+      "columns-row"
     ]
   },
   {
@@ -53,18 +51,6 @@
     "components": [
       "text",
       "image"
-    ]
-  },
-  {
-    "id": "columns-row-image",
-    "components": [
-      "columns-cell-image"
-    ]
-  },
-  {
-    "id": "columns-row-text",
-    "components": [
-      "columns-cell-text"
     ]
   },
   {
