@@ -440,3 +440,32 @@ body.patient-information .cards.brochure-cta > ul > li img {
 body.patient-information main > .section.fragment-container + .section.compact {
   margin-top: var(--space-section);
 }
+
+/* =====================================================================
+   Theme: resources — IVS Patient Resources page (brochure download index)
+   =====================================================================
+   The page is a stack of brochure groups, each authored as a `no-cta`
+   section: a heading (default content) + a `fragment` block of brochure
+   cards. The base sections carry margin:0, so on EDS the groups butt
+   together with only the heading's own 15px below it. The source
+   (patients.stryker.com/us/en/ivs/resources.html) separates each group by
+   ~60px of whitespace and leaves ~30px between a heading and its brochure
+   row. Add that rhythm here, scoped to this page. */
+
+/* ~60px between consecutive brochure groups (source ≈60–64px). Applied as a
+   top margin on every group after the first, matching the source's inter-zone
+   whitespace. */
+body.resources main > .section.no-cta + .section.no-cta {
+  margin-top: calc(var(--space-section) * 2);
+}
+
+/* ~30px between each group's heading and its brochure row (source ≈30px). The
+   heading's own 15px bottom margin is zeroed (its 7px gold-underline padding is
+   left intact) and the gap is set on the fragment wrapper with a single token. */
+body.resources main > .section.no-cta > .default-content-wrapper :is(h1, h2, h3) {
+  margin-bottom: 0;
+}
+
+body.resources main > .section.no-cta > .fragment-wrapper {
+  margin-top: var(--space-section);
+}
