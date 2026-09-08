@@ -34,6 +34,23 @@ export default function decorate(block) {
       titleLink.replaceWith(...titleLink.childNodes);
     });
   }
+  // resources only: the brochure PDF link is authored as the "LEARN MORE" link in
+  // the card body; the cover image is a separate DM link (rendered to a <picture>
+  // by dm-support before decoration). Wrap the image in its own anchor to the same
+  // PDF so the WHOLE card — cover image included — is a native link, not just the
+  // button. A real anchor works everywhere (keyboard, middle-click, and the UE
+  // preview) without relying on the JS click handler below.
+  if (block.classList.contains('resources')) {
+    ul.querySelectorAll('li').forEach((li) => {
+      const pdfLink = li.querySelector('.cards-card-body a[href]');
+      const picture = li.querySelector('.cards-card-image picture');
+      if (!pdfLink || !picture || picture.closest('a')) return;
+      const link = document.createElement('a');
+      link.href = pdfLink.getAttribute('href');
+      picture.replaceWith(link);
+      link.append(picture);
+    });
+  }
   ul.querySelectorAll('picture > img').forEach((img) => {
     // dm-support.js already rendered DM images at native quality; re-optimizing
     // them forces width=750 + optimize=medium and would degrade quality.
