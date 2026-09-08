@@ -689,6 +689,7 @@ main .last-modified {
 @media (width >= 600px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
+    margin-bottom: 30px;
   }
 }
 

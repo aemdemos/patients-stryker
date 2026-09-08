@@ -465,3 +465,11 @@ body.resources main .section.no-cta h1 {
 body.resources main .section.compact {
   margin-top: calc(var(--space-section) * 2);
 }
+
+body.resources main > .section.compact > div :is(p, ol, ul, li) {
+  margin-bottom: 0;
+}
+
+body.resources .section.compact {
+  margin-bottom: 0;
+}
