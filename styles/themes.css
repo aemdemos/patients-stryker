@@ -475,3 +475,19 @@ body.resources main .section.no-cta + .section.no-cta {
 body.resources main .section.no-cta > .fragment-wrapper {
   margin-top: var(--space-section);
 }
+
+/* Top spacing below the header. On the live/preview render the page title's own
+   `margin: 40px 0` (styles.css) pushes the first group clear of the nav. In the
+   Universal Editor that top margin COLLAPSES through the section wrappers (no
+   block-formatting boundary at the top edge), so the title butts against the
+   nav. Move that 40px onto the first group as PADDING (which never collapses, so
+   it holds in both environments) and zero the h1's own top margin so the gap
+   stays 40px total on the live render instead of doubling to 80px. Scoped to the
+   theme and the first no-cta group only, so no other page/section is affected. */
+body.resources main .section.no-cta:first-of-type {
+  padding-top: 40px;
+}
+
+body.resources main .section.no-cta:first-of-type > .default-content-wrapper h1 {
+  margin-top: 0;
+}
