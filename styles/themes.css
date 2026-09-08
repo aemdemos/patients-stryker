@@ -456,8 +456,14 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     margin-bottom: 25px;
    }
 
+   body.condition-detail .panel.left .panel-body p{
+    margin: 0 0 var(--space-block);
+    font-size: var(--body-font-size-l);
+}
+
 @media (width >= 600px) {
-  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul {
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul,
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark.panel-authoring {
     grid-template-columns: 1fr;
   }
 
@@ -772,10 +778,6 @@ body.patient-information .cards.brochure-cta > ul > li img {
    the compact section that follows the resources fragment. */
 body.patient-information main > .section.fragment-container + .section.compact {
   margin-top: var(--space-section);
-}
-
-body.condition-detail .panel.left .panel-body{
-  margin: 0 0 20px;
 }
 
 
