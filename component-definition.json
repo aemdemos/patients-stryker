@@ -43,15 +43,15 @@
           "plugins": {
             "da": {
               "name": "DM Image",
-              "unsafeHTML": "<p><a href=\"\">Image alt</a></p>",
+              "type": "image",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "a[href]"
+                  "selector": "img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "a"
+                  "selector": "img[alt]"
                 }
               ]
             }
