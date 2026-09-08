@@ -214,10 +214,25 @@ body.pd-radiofrequency-ablation main .panel-body a[href="#potential-risks"] {
   text-decoration: none;
 }
 
+body.pd-spinejack-system main .panel-container a[href="#fn-1"],
+body.pd-spinejack-system main .panel-container a[href="#disclaimer"],
+body.pd-radiofrequency-ablation main .panel-container a[href="#fn-1"],
+body.pd-radiofrequency-ablation main .panel-container a[href="#disclaimer"] {
+  /* fontFamily:Futura LT W01→URWEgyptienneW01-Light | fontWeight:700→500 — e.g. "1" */
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
 body.pd-balloon-kyphoplasty main .panel-body a[href="#potential-risks"] {
   /* fontFamily:HumanistSlab712W01→URWEgyptienneW01-Light | fontSize:19.5px→21px | textDecorationLine:none→underline — e.g. "Potential risks" */
   font-family: var(--body-font-family);
   text-decoration: none;
+}
+
+body.pd-disc-decompression main .panel-body a[href="#fn-3"] {
+  /* fontFamily:URWEgyptienneW01-Light→HumanistSlab712W01 | fontSize:18.5px→13px | fontWeight:500→400 — e.g. "3" */
+  font-family: var(--heading-font-family);
+  font-weight: 500;
 }
 
 /* === END AUTO-FIX === */

@@ -33,9 +33,20 @@ export function extractRunsInBrowser(options) {
       .trim()
       .toLowerCase();
   }
-  function isBoilerplate(n) {
-    if (!n || n.length < minLen) return true;
+  // `allowShort` lets meaningful short runs through the length floor. The floor
+  // exists to skip stray prose fragments, but a citation marker ("1", "*", "†")
+  // is real content we specifically want to compare — its element opts in.
+  function isBoilerplate(n, allowShort) {
+    if (!n) return true;
+    if (!allowShort && n.length < minLen) return true;
     return BOILERPLATE.some((s) => n.includes(s));
+  }
+  // Is this element a citation/reference marker (a <sup>, or a link into the
+  // on-page reference targets)? Such markers are kept even when very short.
+  function isReferenceMarker(el) {
+    if (el.closest('sup')) return true;
+    const href = el.getAttribute && el.getAttribute('href');
+    return !!(href && (href === '#disclaimer' || href.startsWith('#fn-')));
   }
   function visible(el) {
     const cs = getComputedStyle(el);
@@ -137,7 +148,8 @@ export function extractRunsInBrowser(options) {
       .map((n) => n.textContent)
       .join(' ');
     const norm = normalize(directText);
-    if (norm && !isBoilerplate(norm) && visible(el)) {
+    const allowShort = isReferenceMarker(el);
+    if (norm && !isBoilerplate(norm, allowShort) && visible(el)) {
       const cs = getComputedStyle(el);
       const rank = seenOrder.get(norm) || 0;
       seenOrder.set(norm, rank + 1);

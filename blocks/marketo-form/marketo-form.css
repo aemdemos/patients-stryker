@@ -178,7 +178,11 @@
 .marketo-form .mktoForm .mktoRadioList label {
   display: inline;
   margin: 0 0 8px;
-  font-weight: 400;
+
+  /* Source renders choice-option labels in the brand body font, bold (700) —
+     matching the field labels — not Marketo's default Helvetica 400. */
+  font-family: var(--body-font-family);
+  font-weight: 700;
   line-height: 18px;
   vertical-align: middle;
 }
