@@ -33,11 +33,21 @@
       "filter": "columns-cell",
       "plugins": {
         "da": {
-          "name": "columns-cell",
+          "name": "columns-cell"
+        }
+      }
+    },
+    {
+      "title": "DM Image",
+      "id": "dm-image",
+      "model": "dm-image",
+      "plugins": {
+        "da": {
+          "name": "DM Image",
+          "type": "image",
           "fields": [
-            { "name": "image", "selector": "p:nth-child(1)>a[href]" },
-            { "name": "imageAlt", "selector": "p:nth-child(1)>a" },
-            { "name": "text", "selector": "p:nth-child(1) ~ *" }
+            { "name": "image", "selector": "p.columns-img-col>picture>img[src]" },
+            { "name": "imageAlt", "selector": "p.columns-img-col>picture>img" }
           ]
         }
       }
@@ -78,10 +88,13 @@
     },
     {
       "id": "columns-cell",
+      "fields": []
+    },
+    {
+      "id": "dm-image",
       "fields": [
         { "component": "text", "valueType": "string", "name": "image", "label": "Image (Dynamic Media link)" },
-        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false },
-        { "component": "aem-content", "name": "text", "label": "Text" }
+        { "component": "text", "valueType": "string", "name": "imageAlt", "label": "Image Alt", "multi": false }
       ]
     }
   ],
@@ -98,7 +111,7 @@
     },
     {
       "id": "columns-cell",
-      "components": []
+      "components": ["text", "dm-image"]
     }
   ]
 }

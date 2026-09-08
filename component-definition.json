@@ -164,19 +164,26 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
-              "name": "columns-cell",
+              "name": "columns-cell"
+            }
+          }
+        },
+        {
+          "title": "DM Image",
+          "id": "dm-image",
+          "model": "dm-image",
+          "plugins": {
+            "da": {
+              "name": "DM Image",
+              "type": "image",
               "fields": [
                 {
                   "name": "image",
-                  "selector": "p:nth-child(1)>a[href]"
+                  "selector": "p.columns-img-col>picture>img[src]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "p:nth-child(1)>a"
-                },
-                {
-                  "name": "text",
-                  "selector": "p:nth-child(1) ~ *"
+                  "selector": "p.columns-img-col>picture>img"
                 }
               ]
             }

@@ -237,6 +237,10 @@
   },
   {
     "id": "columns-cell",
+    "fields": []
+  },
+  {
+    "id": "dm-image",
     "fields": [
       {
         "component": "text",
@@ -250,11 +254,6 @@
         "name": "imageAlt",
         "label": "Image Alt",
         "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "text",
-        "label": "Text"
       }
     ]
   },
