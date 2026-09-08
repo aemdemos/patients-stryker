@@ -453,11 +453,27 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
    body.condition-detail p, ul {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
+    margin-bottom: 25px;
    }
 
 @media (width >= 600px) {
   body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul {
     grid-template-columns: 1fr;
+  }
+
+  body.condition-detail .hero.banner > div:last-child {
+    align-self: end;
+    padding-left: 4%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
+    padding-left:0;
+  }
+
+  body.condition-detail .hero.banner .button-wrapper:last-child {
+    margin-bottom: 15px;
   }
 }
 
@@ -758,6 +774,11 @@ body.patient-information main > .section.fragment-container + .section.compact {
   margin-top: var(--space-section);
 }
 
+body.condition-detail .panel.left .panel-body{
+  margin: 0 0 20px;
+}
+
+
 /* =====================================================================
    Theme: resources — IVS Patient Resources page (brochure download index)
    =====================================================================
@@ -822,7 +843,7 @@ body.resources .section.compact {
      right-hand stack. */
   body.condition-detail main > .section.flex > .panel-wrapper:first-child {
     grid-column: 1;
-    grid-row: 1 / -1;
+    grid-row: 1 / span 3;
     align-self: stretch;
   }
 
