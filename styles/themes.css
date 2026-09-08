@@ -444,56 +444,15 @@ body.patient-information main > .section.fragment-container + .section.compact {
 /* =====================================================================
    Theme: resources — IVS Patient Resources page (brochure download index)
    =====================================================================
-   The page is a stack of brochure groups, each authored as a `no-cta`
-   section: a heading (default content) + a `fragment` block of brochure
-   cards. The base sections carry margin:0, so on EDS the groups butt
-   together with only the heading's own 15px below it. The source
-   (patients.stryker.com/us/en/ivs/resources.html) separates each group by
-   ~60px of whitespace and leaves ~30px between a heading and its brochure
-   row. Add that rhythm here, scoped to this page. */
-
-/* ~60px between consecutive brochure groups (source ≈60–64px). Applied as a
-   top margin on every group after the first, matching the source's inter-zone
-   whitespace.
-
-   NOTE: descendant combinator (`main .section`, not `main > .section`) so the
-   rule survives the Universal Editor, which nests each section under an
-   instrumentation wrapper — a strict `main > .section` chain would not match
-   there and the spacing would vanish in the editor. Sections stay siblings of
-   each other inside that wrapper, so the `+` adjacency still holds in both
-   environments. */
+ */
 body.resources main .section.no-cta + .section.no-cta {
   margin-top: calc(var(--space-section) * 2);
 }
 
-/* ~30px between each group's heading and its brochure row (source ≈30px). Set on
-   the fragment wrapper with a single token; it collapses with the heading's own
-   15px bottom margin to the larger value (30px). The heading's natural margins
-   (incl. the h1 title → first h2 spacing) are left untouched. Descendant
-   combinator for the same UE-robustness reason as above; `.fragment-wrapper`
-   remains a direct child of its section in both environments. */
 body.resources main .section.no-cta > .fragment-wrapper {
   margin-top: var(--space-section);
 }
 
-/* Page title (h1) spacing, top gap + h1→h2 gap. styles.css gives the h1
-   `margin: 40px 0`, but via `main > .section.no-cta > .default-content-wrapper h1`
-   — and that `.default-content-wrapper` does NOT exist in the Universal Editor,
-   where the same headings render inside a richtext block instead
-   (`.section > .richtext-wrapper > .richtext.block > h1`). So the styles.css rule
-   never matches in UE and the h1 falls back to the base 0-top / 15px-bottom
-   heading margins — butting against the nav above and the h2 below (per the
-   editor DOM/screenshots).
-
-   Fix, matching both environments:
-   1. Top gap — put 40px of PADDING on `main`. Padding never collapses, and
-      `main` is present in both environments regardless of the wrapper class.
-   2. Re-assert the h1 margins WITHOUT depending on `.default-content-wrapper`
-      (descendant of the section, so it matches the richtext-block DOM too): zero
-      the top margin (the 40px top gap now comes from `main`'s padding, avoiding a
-      double 80px on live) and set a 40px bottom margin — it sits between two
-      in-flow sibling headings, so it does not collapse/escape, restoring the
-      h1→h2 gap in the editor while live stays the same 40px it already had. */
 body.resources main {
   padding-top: 40px;
 }
