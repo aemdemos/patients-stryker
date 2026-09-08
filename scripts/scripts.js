@@ -127,10 +127,10 @@ function decorateButtons(main) {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
-    // skip sentence-style links: full sentences ending in terminal punctuation are
-    // inline text links (e.g. the "FOR ADDITIONAL INFORMATION…" / California callouts),
-    // not calls-to-action — keep their authored bold/italic emphasis but do not buttonize.
-    if (/[.!?]$/.test(text)) return;
+    // Skip sentence-style links unless the author explicitly underlined the link
+    // as a CTA. This allows punctuation in bold+underline legal callouts.
+    const hasUnderline = a.closest('u') || a.querySelector('u');
+    if (/[.!?]$/.test(text) && !hasUnderline) return;
 
     // require authored formatting for buttonization
     const strong = a.closest('strong');
