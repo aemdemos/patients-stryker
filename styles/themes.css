@@ -466,6 +466,11 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     font-size: var(--body-font-size-l);
 }
 
+body.condition-detail a:any-link {
+  text-decoration: none;
+}
+ 
+
 @media (width >= 600px) {
   body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul,
   body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark.panel-authoring {
