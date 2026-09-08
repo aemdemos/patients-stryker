@@ -456,6 +456,11 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     margin-bottom: 25px;
    }
 
+    body.condition-detail .panel.left .panel-body  {
+      margin: 0 0 var(--space-block);
+    }
+
+
    body.condition-detail .panel.left .panel-body p{
     margin: 0 0 var(--space-block);
     font-size: var(--body-font-size-l);
