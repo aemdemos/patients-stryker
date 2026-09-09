@@ -435,9 +435,10 @@ var CustomImportScript = (() => {
   var STRYKER_ORIGIN = "https://patients.stryker.com";
   var STASH = "data-excat-marketo";
   function readMarketoConfig(element) {
-    const cfg = __spreadValues({}, DEFAULTS);
+    const cfg = __spreadProps(__spreadValues({}, DEFAULTS), { present: false });
     const scaffold = element.querySelector(".marketoform, .c-marketo-form");
     if (!scaffold) return cfg;
+    cfg.present = true;
     const form = scaffold.querySelector('form[id^="mktoForm_"]');
     const idMatch = form && form.id.match(/^mktoForm_(\d+)$/);
     if (idMatch) cfg.formId = idMatch[1];
@@ -482,10 +483,7 @@ var CustomImportScript = (() => {
       }
       element.removeAttribute(STASH);
     }
-    const resources = element.querySelector(RESOURCES_SELECTOR);
-    if (!resources) return;
-    let anchor = resources.previousElementSibling;
-    if (!anchor || anchor.tagName !== "HR") anchor = resources;
+    if (!cfg.present) return;
     const block = WebImporter.Blocks.createBlock(doc, {
       name: "Marketo Form",
       cells: {
@@ -497,7 +495,19 @@ var CustomImportScript = (() => {
       }
     });
     const hr = doc.createElement("hr");
-    anchor.before(hr, block);
+    const resources = element.querySelector(RESOURCES_SELECTOR);
+    if (resources) {
+      let anchor = resources.previousElementSibling;
+      if (!anchor || anchor.tagName !== "HR") anchor = resources;
+      anchor.before(hr, block);
+      return;
+    }
+    const risksBreak = element.querySelector('hr[data-excat-section-id="risks"]');
+    if (risksBreak) {
+      risksBreak.before(hr, block);
+      return;
+    }
+    element.append(hr, block);
   }
 
   // tools/importer/transformers/procedure-detail/procedure-detail-dm.js

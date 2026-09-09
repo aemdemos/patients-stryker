@@ -61,9 +61,10 @@ const STASH = 'data-excat-marketo';
 
 /** Read the Marketo/captcha identifiers from the source .marketoform scaffold. */
 function readMarketoConfig(element) {
-  const cfg = { ...DEFAULTS };
+  const cfg = { ...DEFAULTS, present: false };
   const scaffold = element.querySelector('.marketoform, .c-marketo-form');
-  if (!scaffold) return cfg;
+  if (!scaffold) return cfg; // no form on this page (present stays false)
+  cfg.present = true;
 
   // Form id — from <form id="mktoForm_NNNN"> (real markup, always present).
   const form = scaffold.querySelector('form[id^="mktoForm_"]');
@@ -132,14 +133,11 @@ export default function transform(hookName, element, payload) {
     element.removeAttribute(STASH);
   }
 
-  const resources = element.querySelector(RESOURCES_SELECTOR);
-  if (!resources) return; // no Resources section on this page — nothing to anchor to
-
-  // The section transformer places an <hr> immediately before .tabs. Anchor to
-  // that <hr> so the form becomes its own section between the CTA and Resources;
-  // fall back to the Resources element itself if the break isn't present.
-  let anchor = resources.previousElementSibling;
-  if (!anchor || anchor.tagName !== 'HR') anchor = resources;
+  // Only inject the block if the SOURCE actually had a Marketo form scaffold.
+  // The presence flag (not the Resources section) is the correct gate: the form
+  // must be reproduced on every procedure-detail page that has one, but never
+  // fabricated on a page that doesn't (e.g. a legal page reusing this transformer).
+  if (!cfg.present) return;
 
   const block = WebImporter.Blocks.createBlock(doc, {
     name: 'Marketo Form',
@@ -151,8 +149,34 @@ export default function transform(hookName, element, payload) {
       'Captcha Challenge URL': cfg.captchaChallengeUrl,
     },
   });
-
-  // A section break so the form sits in its own section.
   const hr = doc.createElement('hr');
-  anchor.before(hr, block);
+
+  const resources = element.querySelector(RESOURCES_SELECTOR);
+  if (resources) {
+    // Standard case: the form sits just above the Resources section. The section
+    // transformer places an <hr> immediately before .tabs — anchor to that <hr>
+    // so the form becomes its own section between the CTA and Resources; fall
+    // back to the Resources element itself if the break isn't present.
+    let anchor = resources.previousElementSibling;
+    if (!anchor || anchor.tagName !== 'HR') anchor = resources;
+    anchor.before(hr, block);
+    return;
+  }
+
+  // No Resources section on this page (e.g. sacroplasty). In the source the form
+  // sits AFTER the "How it works" cards and BEFORE the risks section — the same
+  // slot the Resources section would occupy. Anchor to the risks section break so
+  // the form keeps that relative position instead of being dropped at the very end
+  // (after the gray risks box + references). The sections transformer stamps a
+  // marker <hr> (data-excat-section-id="risks") in ITS beforeTransform, which has
+  // already run by this afterTransform, so the marker is present to anchor to.
+  const risksBreak = element.querySelector('hr[data-excat-section-id="risks"]');
+  if (risksBreak) {
+    risksBreak.before(hr, block);
+    return;
+  }
+
+  // Last-resort fallback: no risks break either — append as a trailing section so
+  // the form is at least reproduced rather than lost.
+  element.append(hr, block);
 }
