@@ -246,6 +246,7 @@
   max-width: none;
   margin: 0;
   padding: 4%;
+  padding-bottom: 1%;
   background: var(--color-navy-bright);
   box-shadow: var(--shadow-soft);
   text-align: center;
