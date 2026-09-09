@@ -461,6 +461,9 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
       margin: 0 0 var(--space-block);
     }
 
+    body.condition-detail .panel.dark .panel-body {
+      padding:3%;
+    }
 
    body.condition-detail .panel.left .panel-body p{
     margin: 0 0 var(--space-block);
@@ -474,6 +477,10 @@ body.condition-detail a:any-link {
 body.condition-detail main > .section.flex {
   margin-top: var(--space-section);
    margin-bottom: var(--space-section);
+}
+
+body.condition-detail .default-content-wrapper p:last-child {
+  padding: 10px;
 }
 
 @media (width >= 600px) {
