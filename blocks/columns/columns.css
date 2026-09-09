@@ -116,6 +116,13 @@
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
 
+/* hero CTA button — hidden on mobile (< 600px), matching the source, which drops
+   the "Find a surgeon" button from the stacked hero and only shows it once the
+   layout goes side-by-side at the tablet breakpoint below. */
+.columns.columns-50-50 .button-wrapper {
+  display: none;
+}
+
 /* serif section variant — column body text in URW Egyptienne serif at 21px, as
    on the stroke-awareness page. Typography only; layout stays columns-50-50. */
 .section.serif .columns p,
@@ -301,6 +308,12 @@
      rows don't collide (base flex:0 0 50% already gives the 2-up split) */
   .columns.columns-4-cols > div {
     row-gap: var(--space-section);
+  }
+
+  /* restore the hero CTA button once the layout is side-by-side (it's hidden on
+     mobile above, matching the source) */
+  .columns.columns-50-50 .button-wrapper {
+    display: block;
   }
 
   /* in an image+text row, the text column sits slightly below the image top, as
