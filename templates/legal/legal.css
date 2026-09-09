@@ -6,6 +6,10 @@
   --space-title: 45px; /* page-title gap to body — measured from source: heading margin-bottom (15px) + title section margin-bottom (30px) = 45px, kept in one section here */
 }
 
+body.legal main .last-modified {
+  margin-bottom: 30px;
+}
+
 /* legal page title: the leading h1 in the first section is the page title and
    takes the larger 45px gap to the body (source composed this from heading 15px
    + title section 30px, kept in one section). The source rendered the title as an
@@ -69,9 +73,7 @@ body.legal main a:any-link {
 }
 
 body.legal a.link-strong:any-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  display: inline;
     font-family: var(--display-font-family);
     font-weight: 700;
     text-transform: uppercase;

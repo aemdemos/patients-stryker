@@ -129,7 +129,7 @@
 /* stroke-awareness landing hero: copy stacked ABOVE the banner image on
    mobile/tablet (the block outputs [image][content], so column-reverse lifts
    the copy on top); switches to a left-side overlay at 900px (see below) */
-body.stroke-awareness-landing .hero.banner {
+.hero-stroke.section .hero.banner {
   display: flex;
   flex-direction: column-reverse;
   box-shadow: none;
@@ -297,7 +297,7 @@ body.stroke-awareness-landing .hero.banner {
 
   /* stroke-awareness landing stays STACKED (text above image) until 900px, so
      keep it flex here and override the base banner grid above */
-  body.stroke-awareness-landing .hero.banner {
+  .hero-stroke.section .hero.banner {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -363,7 +363,7 @@ body.stroke-awareness-landing .hero.banner {
 
   /* stroke-awareness copy is stacked (not overlaid) below 900px, so keep it
      full-width with the standard gutter padding */
-  body.stroke-awareness-landing .hero.banner > div:last-child {
+  .hero-stroke.section .hero.banner > div:last-child {
     align-self: auto;
     max-width: none;
     padding: var(--space-section) var(--container-gutter) var(--space-block-l);
@@ -378,11 +378,11 @@ body.stroke-awareness-landing .hero.banner {
   display: block;
 }
 
-body.stroke-awareness-landing .hero.banner picture.hero-image-desktop {
+.hero-stroke.section .hero.banner picture.hero-image-desktop {
   display: block;
 }
 
-body.stroke-awareness-landing .hero.banner picture.hero-image-mobile {
+.hero-stroke.section .hero.banner picture.hero-image-mobile {
   display: none;
 }
 
@@ -390,11 +390,11 @@ body.stroke-awareness-landing .hero.banner picture.hero-image-mobile {
    banner), which reads as the thin line above the photo where it meets the
    copy. Target every picture so it works whether one image (unclassed) or the
    desktop/mobile pair is authored. */
-body.stroke-awareness-landing .hero.banner picture {
+.hero-stroke.section .hero.banner picture {
   box-shadow: var(--shadow-soft);
 }
 
-body.stroke-awareness-landing .hero.banner > div:last-child {
+.hero-stroke.section .hero.banner > div:last-child {
   max-width: none;
   padding-block: var(--space-section) var(--space-block-l);
   padding-top: 50px;
@@ -402,7 +402,7 @@ body.stroke-awareness-landing .hero.banner > div:last-child {
 
 /* "Select language" — source renders it at 21px with a tight line-height (not
    the base banner's 24.5px h2), which keeps the gap down to the buttons compact */
-body.stroke-awareness-landing .hero.banner h2 {
+.hero-stroke.section .hero.banner h2 {
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
   padding-top: 7px;
@@ -448,31 +448,30 @@ body.stroke-awareness-landing .hero.banner h2 {
   /* desktop overlay — copy sits over the image, so the shadow goes back on the
      whole banner card (as the base banner variant) rather than the picture.
      Below 900px the copy stays stacked above the image. */
-  body.stroke-awareness-landing .hero.banner {
+  .hero-stroke.section .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
     box-shadow: var(--shadow-soft);
   }
 
-  body.stroke-awareness-landing .hero.banner picture {
+  .hero-stroke.section .hero.banner picture {
     box-shadow: none;
   }
 
-  body.stroke-awareness-landing .hero.banner > div {
+  .hero-stroke.section .hero.banner > div {
     grid-area: 1 / 1;
   }
 
   /* top-align the copy in the overlay (source insets it ~65px from the top of
      the banner), rather than vertically centering it */
-  body.stroke-awareness-landing .hero.banner > div:last-child {
+  .hero-stroke.section .hero.banner > div:last-child {
     z-index: 1;
     align-self: start;
-    max-width: 50%;
     padding-block: calc(var(--space-section-l) + var(--space-block)) 0;
   }
 
-  body.stroke-awareness-landing .hero.banner .button-wrapper,
-  body.stroke-awareness-landing .hero.banner .button-wrapper + .button-wrapper {
+  .hero-stroke.section .hero.banner .button-wrapper,
+  .hero-stroke.section .hero.banner .button-wrapper + .button-wrapper {
     margin-block: 0 var(--space-block);
     padding-top: 20px;
   }

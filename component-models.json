@@ -24,7 +24,7 @@
         "description": "Index control via robots"
       },
       {
-        "component": "select",
+        "component": "text",
         "name": "template",
         "label": "Template",
         "description": "Page template that controls layout and styling",
@@ -42,36 +42,32 @@
             "name": "Legal",
             "value": "legal"
           }
-        ]
+        ],
+        "readOnly": true,
+        "condition": {
+          "!=": [
+            {
+              "var": "template"
+            },
+            ""
+          ]
+        }
       },
       {
-        "component": "select",
+        "component": "text",
         "name": "theme",
         "label": "Theme",
         "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
         "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Stroke Awareness Resources",
-            "value": "sa-resources"
-          },
-          {
-            "name": "Stroke Awareness Landing",
-            "value": "stroke-awareness-landing"
-          },
-          {
-            "name": "Zip Skin Closure",
-            "value": "zip-skin-closure"
-          },
-          {
-            "name": "Campaign Landing",
-            "value": "campaign-landing"
-          }
-        ]
+        "readOnly": true,
+        "condition": {
+          "!=": [
+            {
+              "var": "theme"
+            },
+            ""
+          ]
+        }
       }
     ]
   },
@@ -79,15 +75,17 @@
     "id": "image",
     "fields": [
       {
-        "component": "reference",
+        "component": "text",
+        "valueType": "string",
         "name": "image",
-        "label": "Image",
-        "multi": false
+        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt Text"
+        "label": "Image Alt",
+        "multi": false
       }
     ]
   },
@@ -368,7 +366,7 @@
         "component": "text",
         "valueType": "string",
         "name": "mobileImage",
-        "label": "Mobile Image (Dynamic Media link, optional)",
+        "label": "Mobile Image (Dynamic Media link)",
         "condition": {
           "or": [
             {
