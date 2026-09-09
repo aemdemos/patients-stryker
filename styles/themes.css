@@ -597,9 +597,16 @@ body.discography main > .section.dark .panel.dark .panel-body h2 {
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--heading-font-size-l);
   font-weight: 500;
   color: var(--color-white);
+}
+
+/* source grows the statement from 21px (mobile) to 24.5px from tablet up */
+@media (width >= 600px) {
+  body.discography main > .section.dark .panel.dark .panel-body h2 {
+    font-size: var(--heading-font-size-xl);
+  }
 }
 
 /* ----- Dark statement panel interior padding -----
@@ -609,6 +616,41 @@ body.discography main > .section.dark .panel.dark .panel-body h2 {
    vertically-centered strip. Restore the source's asymmetric padding here. */
 body.discography main > .section.dark .panel.dark .panel-body {
   padding: 55px 27.6px;
+}
+
+/* ----- Overview (cta) panel heading -----
+   The "Overview of discography" box is a panel.cta whose h3 the block renders as
+   Futura-bold 26px. The source renders it as a thin light serif (URW-Egyptienne
+   Light 500) at 17.5px on mobile, 21px from tablet up. Restore that here. */
+body.discography main .panel.cta .panel-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+@media (width >= 600px) {
+  body.discography main .panel.cta .panel-body h3 {
+    font-size: var(--heading-font-size-l);
+  }
+}
+
+/* ----- Gold CTA panel copy -----
+   The "Tired of living in pain?" gold band renders its paragraph as HumanistSlab
+   body copy (14px) in the source, but the shared gold variant applies the 21px
+   light serif. Restore the body font/size here as a theme delta. */
+body.discography main .panel.gold .panel-body p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* ----- Disclaimer paragraphs (compact section) -----
+   The source sets the fine-print disclaimer paragraphs at line-height 1.375;
+   only the numbered citation list keeps the tighter 1.2. Target the direct
+   paragraphs so the <ol> citations retain their compact rhythm. */
+body.discography main > .section.compact > div > p {
+  line-height: var(--paragraph-line-height);
 }
 
 /* ----- Large desktop (>=1200px) ----- */
