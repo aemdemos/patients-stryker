@@ -4,13 +4,17 @@
    location field, radius selector, teal submit button). */
 
 .find-a-doctor {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
-/* banner image */
+/* banner image — on mobile the source uses the photo as a full background behind
+   the form (its .mobile-bgImage), so fill the whole band; the desktop breakpoint
+   below turns it back into a side column. */
 .find-a-doctor .find-a-doctor-media {
-  flex: 0 0 auto;
+  position: absolute;
+  inset: 0;
   margin: 0;
   line-height: 0;
 }
@@ -23,14 +27,16 @@
   object-fit: cover;
 }
 
-/* form panel */
+/* form panel — on mobile it sits over the background photo (transparent), matching
+   the source; the desktop breakpoint gives it the light-gray fill on the right. */
 .find-a-doctor .find-a-doctor-panel {
+  position: relative;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 24px;
-  background-color: var(--color-surface);
+  background-color: transparent;
 }
 
 .find-a-doctor .find-a-doctor-title {
@@ -74,7 +80,10 @@
 }
 
 .find-a-doctor .find-a-doctor-field select {
-  padding-block: 0;
+  /* match the input's top padding so the value sits BELOW the raised "Radius"
+     label (the label is pre-filled/raised for the radius field); extra right
+     padding leaves room for the chevron. */
+  padding: 24px 40px 1px 16px;
   cursor: pointer;
   appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" fill="none" stroke="%23000" stroke-width="1.5"/></svg>');
@@ -101,12 +110,16 @@
   transition: transform 0.1s ease, font-size 0.1s ease;
 }
 
-/* raise the label when the field has focus or content (or is pre-filled) */
+/* raise the label when the field has focus or content (or is pre-filled).
+   Pin to a fixed offset from the TOP edge (no translateY, which would depend on
+   the label's own rendered height and drift between the mobile stacked layout and
+   the desktop row). This keeps the raised label at the same spot at every
+   breakpoint, clear of the value which sits at the 24px top padding below it. */
 .find-a-doctor .find-a-doctor-field input:focus + .find-a-doctor-label,
 .find-a-doctor .find-a-doctor-field input:not(:placeholder-shown) + .find-a-doctor-label,
 .find-a-doctor .find-a-doctor-label-filled {
-  transform: translateY(-100%);
-  inset-block-start: 20px;
+  transform: none;
+  inset-block-start: 8px;
   font-size: var(--body-font-size-xs);
 }
 
@@ -169,9 +182,12 @@
     inset: 0;
   }
 
+  /* desktop: photo becomes a side column and the panel takes the light-gray fill
+     on the right (the source's .lightgray band), so restore the surface colour. */
   .find-a-doctor .find-a-doctor-panel {
     flex: 1 1 auto;
     padding: 40px;
+    background-color: var(--color-surface);
   }
 
   .find-a-doctor .find-a-doctor-fields {

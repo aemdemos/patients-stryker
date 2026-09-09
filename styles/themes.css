@@ -478,6 +478,16 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   margin-bottom: var(--space-section-l);
 }
 
+/* the source renders the locator as a full-bleed band, edge-to-edge across the
+   whole viewport (its .c-full-bleed-panel), NOT capped inside the centered
+   content container. The section's inner > div is capped at --container-max with
+   15px gutters (styles.css); drop that cap and padding for this band so the image
+   and gray panel span the full width like the source. */
+.zip-skin-closure main > .section:has(.find-a-doctor) > .find-a-doctor-wrapper {
+  max-width: none;
+  padding-inline: 0;
+}
+
 /* "How Zip works" intro paragraph — the source renders it at 24.5px (its
    .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.
    Scoped to the zip page's "How Zip works" heading + its following paragraph so

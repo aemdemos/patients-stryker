@@ -24,9 +24,25 @@
 
 export default function decorate(block) {
   // Pull the authored picture (banner image) and heading text.
-  const picture = block.querySelector('picture');
+  let picture = block.querySelector('picture');
   const headingEl = block.querySelector('h1, h2, h3, h4, h5, h6');
   const headingText = (headingEl?.textContent || 'Find a doctor near you').trim();
+
+  // Fallback: if the banner image is still an authored link (dm-support.js hasn't
+  // converted it to a <picture> yet, or it wasn't matched in this render context),
+  // build the <img> ourselves from the link href so the banner never renders
+  // without its image.
+  if (!picture) {
+    const link = block.querySelector('a[href]');
+    const href = link?.getAttribute('href');
+    if (href) {
+      picture = document.createElement('picture');
+      const img = document.createElement('img');
+      img.src = href;
+      img.loading = 'lazy';
+      picture.append(img);
+    }
+  }
 
   // --- Banner image ---
   const media = document.createElement('div');
