@@ -363,12 +363,13 @@
     padding-left: var(--col-5050-inset);
   }
 
-  /* keep ~30px below the image (reference gap) so a tall image column doesn't sit
-     flush against the section bottom — applies whether the image is on the left
-     ("Stroke is treatable") or right ("What is a stroke?"). Padding is dropped so
-     only this margin governs the bottom gap. */
+  /* keep ~30px above and below the image (the reference gives equal breathing room
+     on both sides) so a tall image column doesn't sit flush against the section
+     edges — applies whether the image is on the left ("Stroke is treatable") or
+     right ("What is a stroke?"). Padding is dropped so only these margins govern
+     the gaps. */
   .section.serif .columns.columns-50-50 .columns-img-col {
-    margin-bottom: var(--space-section);
+    margin-block: var(--space-section);
     padding-bottom: 0;
   }
 
