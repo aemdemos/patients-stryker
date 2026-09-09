@@ -62,6 +62,15 @@
   gap: 16px;
 }
 
+/* radius is a compact box, never full width — the source caps it at 130px
+   (.stryFormfields .radius { max-width: 130px }). align-self stops the column
+   layout from stretching it to the field width. */
+.find-a-doctor .find-a-doctor-radius {
+  align-self: flex-start;
+  width: 100%;
+  max-width: 130px;
+}
+
 /* floating-label field wrapper */
 .find-a-doctor .find-a-doctor-field {
   position: relative;
@@ -103,13 +112,19 @@
 /* floating label */
 .find-a-doctor .find-a-doctor-label {
   position: absolute;
-  inset-inline-start: 16px;
+  inset-inline: 16px;
   inset-block-start: 50%;
   transform: translateY(-50%);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
   color: var(--find-a-doctor-label-color);
   pointer-events: none;
+
+  /* keep the placeholder text on one line and clip it (…) instead of wrapping and
+     overflowing below the field when the input is narrow. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   transition: transform 0.1s ease, font-size 0.1s ease;
 }
 
@@ -172,13 +187,15 @@
     align-items: stretch;
   }
 
-  /* the image no longer drives the band height: it's an absolutely-positioned
-     fill inside its column, so the band height equals the form panel and the
-     image crops to a strip (matching the source's shallow banner). */
+  /* the image column is a FLUID 30% of the band (matching the source's
+     .bannerstyle .image-section { max-width: 30% } — NOT a fixed pixel width). It
+     no longer drives the band height: the image is an absolutely-positioned fill
+     inside its column, so the band height equals the form panel and the image
+     crops to a strip (source object-fit: cover). */
   .find-a-doctor .find-a-doctor-media {
     position: relative;
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 30%;
+    max-width: 30%;
     overflow: hidden;
   }
 
@@ -211,9 +228,10 @@
     min-width: 0; /* allow the flex item to shrink below its content width */
   }
 
+  /* in the row the radius keeps its compact fixed width (source ~130px) */
   .find-a-doctor .find-a-doctor-radius {
-    flex: 0 0 auto;
-    min-width: 140px;
+    flex: 0 0 130px;
+    width: 130px;
   }
 
   .find-a-doctor .find-a-doctor-submit {
