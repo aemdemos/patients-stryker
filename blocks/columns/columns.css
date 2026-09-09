@@ -363,10 +363,12 @@
     padding-left: var(--col-5050-inset);
   }
 
-  /* drop the mobile image-stacking gap so the image doesn't carry a bottom-only
-     gap when the columns are side by side (tablet top-aligns like the reference) */
+  /* keep ~30px below the image (reference gap) so a tall image column doesn't sit
+     flush against the section bottom — applies whether the image is on the left
+     ("Stroke is treatable") or right ("What is a stroke?"). Padding is dropped so
+     only this margin governs the bottom gap. */
   .section.serif .columns.columns-50-50 .columns-img-col {
-    margin-bottom: 0;
+    margin-bottom: var(--space-section);
     padding-bottom: 0;
   }
 
@@ -455,11 +457,6 @@
     align-items: center;
   }
 
-  /* light-gray + serif keeps ~30px below the image (reference gap), rather than
-     letting a tall image sit flush against the section bottom */
-  .section.light-gray.serif .columns.columns-50-50 .columns-img-col {
-    margin-bottom: var(--space-section);
-  }
 
   /* desktop 3-up: revert to the base flex row */
   .section.light-gray .columns > div {
