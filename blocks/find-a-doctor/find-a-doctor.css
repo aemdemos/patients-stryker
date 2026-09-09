@@ -56,18 +56,27 @@
   margin: 0;
 }
 
+/* mobile: a WRAPPING row (matching the source flex model exactly). The Zip field
+   grows but never shrinks below 150px, the radius holds ~130px, and the submit
+   button holds ~180px; when they don't all fit, the button wraps to the next
+   line (so ~500px shows Zip+Radius on row 1 and the button below — the source's
+   layout). */
 .find-a-doctor .find-a-doctor-fields {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  align-items: flex-start;
   gap: 16px;
 }
 
+.find-a-doctor .find-a-doctor-location {
+  flex: 1 0 150px;
+}
+
 /* radius is a compact box, never full width — the source caps it at 130px
-   (.stryFormfields .radius { max-width: 130px }). align-self stops the column
-   layout from stretching it to the field width. */
+   (.stryFormfields .radius { max-width: 130px }). */
 .find-a-doctor .find-a-doctor-radius {
-  align-self: flex-start;
-  width: 100%;
+  flex: 0 1 130px;
+  width: 130px;
   max-width: 130px;
 }
 
@@ -100,7 +109,10 @@
 .find-a-doctor .find-a-doctor-radius-toggle {
   display: flex;
   align-items: flex-end;
-  padding: 24px 40px 1px 16px;
+
+  /* extra bottom padding lifts the "15 miles" value off the box's bottom edge so
+     it isn't flush against it, matching the source's breathing room. */
+  padding: 20px 40px 8px 16px;
   font-size: var(--find-a-doctor-radius-value-size);
   text-align: left;
   cursor: pointer;
@@ -158,13 +170,20 @@
 /* floating label */
 .find-a-doctor .find-a-doctor-label {
   position: absolute;
-  inset-inline-start: 16px;
+  inset-inline: 16px;
   inset-block-start: 50%;
   transform: translateY(-50%);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
   color: var(--find-a-doctor-label-color);
   pointer-events: none;
+
+  /* the placeholder stays on ONE line and clips with an ellipsis when the box is
+     narrow (matching the source), instead of wrapping to two lines — which was
+     making the Zip box look squeezed/taller than its neighbours. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   transition: transform 0.1s ease, font-size 0.1s ease;
 }
 
@@ -193,9 +212,12 @@
   border-color: var(--color-error, #c00);
 }
 
-/* submit button — teal, uppercase, square corners (source .stryBtn) */
+/* submit button — teal, uppercase, square corners (source .stryBtn). Holds its
+   intrinsic ~180px width and wraps to the next line when it doesn't fit next to
+   the Zip + Radius controls (matching the source .stryBtn: flex 0 1 auto). */
 .find-a-doctor .find-a-doctor-submit {
   box-sizing: border-box;
+  flex: 0 1 auto;
   height: var(--find-a-doctor-control-height);
   min-width: 180px;
   margin: 0;
@@ -227,15 +249,16 @@
     align-items: flex-start;
   }
 
+  /* the Zip field grows to fill but never shrinks below 150px (source uses
+     flex: 1 0 150px on .form-group.zip) — this stops the box from being squeezed
+     too narrow, which was pushing the controls out of alignment. */
   .find-a-doctor .find-a-doctor-location {
-    flex: 1 1 auto;
-    min-width: 0; /* allow the flex item to shrink below its content width */
+    flex: 1 0 150px;
   }
 
   /* in the row the radius keeps its compact fixed width (source ~130px) */
   .find-a-doctor .find-a-doctor-radius {
     flex: 0 0 130px;
-    align-self: auto;
     width: 130px;
   }
 
