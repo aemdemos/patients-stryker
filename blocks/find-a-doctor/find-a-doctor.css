@@ -47,7 +47,7 @@
   font-family: var(--display-font-family);
   font-size: var(--find-a-doctor-title-size);
   font-weight: 700;
-  line-height: var(--heading-line-height-h4);
+  line-height: var(--find-a-doctor-title-line-height);
   color: var(--color-black);
   text-align: left;
 }
@@ -187,15 +187,15 @@
     align-items: stretch;
   }
 
-  /* the image column is a FLUID 30% of the band (matching the source's
-     .bannerstyle .image-section { max-width: 30% } — NOT a fixed pixel width). It
-     no longer drives the band height: the image is an absolutely-positioned fill
-     inside its column, so the band height equals the form panel and the image
-     crops to a strip (source object-fit: cover). */
+  /* the image column is a FLUID 40% of the band (matching the source's
+     .bannerstyle .image-section { max-width: 40% } at the side-by-side layout —
+     NOT a fixed pixel width). It no longer drives the band height: the image is an
+     absolutely-positioned fill inside its column, so the band height equals the
+     form panel and the image crops to a strip (source object-fit: cover). */
   .find-a-doctor .find-a-doctor-media {
     position: relative;
-    flex: 0 0 30%;
-    max-width: 30%;
+    flex: 0 0 40%;
+    max-width: 40%;
     overflow: hidden;
   }
 

@@ -533,6 +533,14 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   line-height: var(--heading-line-height);
 }
 
+/* "How Zip works" — the source centres both the heading and its intro paragraph
+   above the two-image row. It's the only columns section whose h2 carries a
+   <strong>, so centre that wrapper's default content. */
+.zip-skin-closure main > .section.columns-container > .default-content-wrapper:has(h2 strong),
+.zip-skin-closure main > .section.richtext-container.columns-container:has(h2 strong) {
+  text-align: center;
+}
+
 .zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) strong,
 .zip-skin-closure main > .section.richtext-container.columns-container h2:has(strong) strong {
   font-weight: 700;
@@ -623,6 +631,17 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   padding-top: 30px;
 }
 
+/* the blue callout band ("Allowing for movement" / "Isolating the incision") sits
+   flush against the sections above and below on the source — drop the full-bleed
+   section's vertical padding and the panel-container's top padding for it. */
+.zip-skin-closure main > .section.blue.full-bleed:has(.panel.blue) {
+  padding-block: 0;
+}
+
+.zip-skin-closure main > .section.blue.full-bleed:has(.panel.blue) .panel-container {
+  padding-top: 0;
+}
+
 .zip-skin-closure .panel .panel-body > p:first-child:has(strong),
 .zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) {
   margin: 0 0 var(--space-block);
@@ -638,6 +657,12 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
+  /* "Benefits of Zip" — the source spaces the icon-grid rows further apart than
+     the shared 30px default; widen the inter-row gap to match. */
+  .zip-skin-closure main > .section.columns-container .columns.columns-icon-grid > div {
+    row-gap: var(--space-section-l);
+  }
+
   /* restore the image column and CTA hidden on mobile once the hero is 2-up */
   body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
   body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {

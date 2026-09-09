@@ -166,7 +166,8 @@
   --radius-pill: 15px;
 
   /* find-a-doctor locator banner */
-  --find-a-doctor-title-size: 32px;
+  --find-a-doctor-title-size: 24px; /* source .form-section h2: 24px/32px Futura bold */
+  --find-a-doctor-title-line-height: 1.333; /* 32px / 24px */
   --find-a-doctor-control-height: 56px;
   --find-a-doctor-label-color: #767676;
 
