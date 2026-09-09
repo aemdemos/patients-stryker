@@ -158,19 +158,13 @@
 /* floating label */
 .find-a-doctor .find-a-doctor-label {
   position: absolute;
-  inset-inline: 16px;
+  inset-inline-start: 16px;
   inset-block-start: 50%;
   transform: translateY(-50%);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
   color: var(--find-a-doctor-label-color);
   pointer-events: none;
-
-  /* keep the placeholder text on one line and clip it (…) instead of wrapping and
-     overflowing below the field when the input is narrow. */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   transition: transform 0.1s ease, font-size 0.1s ease;
 }
 
