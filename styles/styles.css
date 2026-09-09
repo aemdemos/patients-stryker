@@ -511,6 +511,27 @@ a:any-link > strong {
   text-decoration: none;
 }
 
+/* bold + underline authored links become flat teal CTAs with a trailing chevron */
+a.link-strong:any-link {
+  display: inline;
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a.link-strong:any-link::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
 /* compact section links (e.g. reference URLs) are plain, not underlined — matches
    the source's dense footer. Placed after the base link rules to keep cascade order. */
 .section.compact a:any-link {
@@ -689,6 +710,7 @@ main .last-modified {
 @media (width >= 600px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
+    margin-bottom: 30px;
   }
 }
 
