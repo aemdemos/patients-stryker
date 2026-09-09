@@ -208,16 +208,22 @@ body.procedure-detail main a[href="#disclaimer"]:any-link {
 
 body.pd-vertebroplasty main .panel.cta.wide a[href="#potential-risks"],
 body.pd-spinejack-system main .panel.cta.wide a[href="#potential-risks"],
-body.pd-radiofrequency-ablation main .panel.cta.wide a[href="#potential-risks"] {
+body.pd-radiofrequency-ablation main .panel.cta.wide a[href="#potential-risks"],
+body.pd-sacroplasty main .panel.cta.wide a[href="#potential-risks"] {
   /* fontFamily:HumanistSlab712W01→URWEgyptienneW01-Light | fontSize:17.5px→21px | textDecorationLine:none→underline — e.g. "Potential risks" */
   font-family: var(--body-font-family);
   text-decoration: none;
 }
 
-body.pd-spinejack-system main .section.flex a[href="#fn-1"],
-body.pd-spinejack-system main .section.flex a[href="#disclaimer"],
-body.pd-radiofrequency-ablation main .section.flex a[href="#fn-1"],
-body.pd-radiofrequency-ablation main .section.flex a[href="#disclaimer"] {
+body.pd-disc-decompression main .panel.cta.wide a[href="#fn-3"],
+body.pd-sacroplasty main .panel.cta.wide a[href="#fn-3"] {
+  /* fontFamily:URWEgyptienneW01-Light→HumanistSlab712W01 | fontSize:18.5px→13px | fontWeight:500→400 — e.g. "3" */
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+body.pd-spinejack-system main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"],
+body.pd-sacroplasty main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"] {
   /* fontFamily:Futura LT W01→URWEgyptienneW01-Light | fontWeight:700→500 — e.g. "1" */
   font-family: var(--display-font-family);
   font-weight: 700;
@@ -227,12 +233,6 @@ body.pd-balloon-kyphoplasty main .panel.cta.wide a[href="#potential-risks"] {
   /* fontFamily:HumanistSlab712W01→URWEgyptienneW01-Light | fontSize:19.5px→21px | textDecorationLine:none→underline — e.g. "Potential risks" */
   font-family: var(--body-font-family);
   text-decoration: none;
-}
-
-body.pd-disc-decompression main .panel.cta.wide a[href="#fn-3"] {
-  /* fontFamily:URWEgyptienneW01-Light→HumanistSlab712W01 | fontSize:18.5px→13px | fontWeight:500→400 — e.g. "3" */
-  font-family: var(--heading-font-family);
-  font-weight: 500;
 }
 
 /* === END AUTO-FIX === */

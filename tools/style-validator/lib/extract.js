@@ -131,10 +131,22 @@ export function extractRunsInBrowser(options) {
       // reference/anchor links — MUST be scoped to a real block or a section-style
       // so the rule can't leak to the same href elsewhere. Prefer block, then
       // section-style; if neither, return null (unscopable → not auto-fixable).
+      //
+      // ALSO qualify by heading zone when the marker sits in a heading. A citation
+      // number (#fn-N) is only an ordinal — decorateFootnotes splits a group like
+      // "1,3-7" into per-digit #fn-1/#fn-3/#fn-7 links, so the SAME #fn-1 recurs in
+      // different zones of one page (e.g. a gold intro heading AND a benefits list),
+      // needing opposite styling (Futura-bold in the heading, plain body font in the
+      // list). Without the heading qualifier the block/section scope still contains
+      // BOTH — the list marker lives inside the same section — so a heading-only fix
+      // leaks onto the list marker. Scoping the heading case to :is(h1..h6) keeps the
+      // two selectors disjoint so each cluster's fix stays in its own zone.
+      const inHeading = el.closest('h1,h2,h3,h4,h5,h6');
+      const head = inHeading ? ' :is(h1,h2,h3,h4,h5,h6)' : '';
       const block = blockScope(el);
-      if (block) return `.${block} a[href="${href}"]`;
+      if (block) return `.${block}${head} a[href="${href}"]`;
       const sec = sectionScope(el);
-      if (sec) return `${sec} a[href="${href}"]`;
+      if (sec) return `${sec}${head} a[href="${href}"]`;
       return null;
     }
     // block/section-scoped heading or element by tag.

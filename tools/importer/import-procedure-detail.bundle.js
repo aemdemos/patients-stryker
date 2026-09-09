@@ -304,7 +304,20 @@ var CustomImportScript = (() => {
       const inSup = a.closest("sup");
       const wrapsSup = a.querySelector("sup");
       if (!inSup && !wrapsSup) return;
+      if (!/\d/.test(a.textContent || "")) return;
       a.replaceWith(...a.childNodes);
+    });
+  }
+  function normalizeSymbolRefs(root) {
+    const SYMBOL_RE = /^[*†‡§¶]+$/;
+    root.querySelectorAll("a").forEach((a) => {
+      if (!SYMBOL_RE.test((a.textContent || "").trim())) return;
+      a.setAttribute("href", "#disclaimer");
+      if (a.closest("strong, sup")) return;
+      const em = a.closest("em");
+      if (!em) return;
+      const strong = [...em.querySelectorAll("strong")].pop();
+      if (strong) strong.append(a);
     });
   }
   function keepRefWithGoldLine(root) {
@@ -327,6 +340,7 @@ var CustomImportScript = (() => {
       normalizeEmphasis(element);
       normalizeCitationSups(element);
       keepRefWithGoldLine(element);
+      normalizeSymbolRefs(element);
       WebImporter.DOMUtils.remove(element, [
         ".marketoform",
         ".c-marketo-form",

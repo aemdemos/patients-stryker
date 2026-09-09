@@ -213,7 +213,55 @@ function normalizeCitationSups(root) {
     const inSup = a.closest('sup');
     const wrapsSup = a.querySelector('sup');
     if (!inSup && !wrapsSup) return;
+    // Only unwrap DIGIT citations. The nested-anchor breakage this guards against
+    // is digit-specific: decorateFootnotes splits "1-5" into per-number #fn-N links
+    // and would nest them inside a surviving outer anchor. Symbol markers (*, †)
+    // carry no digits, so decorateFootnotes never splits them — keep their anchor
+    // so the reference styling (sup a:any-link / a[href="#disclaimer"]) applies.
+    if (!/\d/.test(a.textContent || '')) return;
     a.replaceWith(...a.childNodes);
+  });
+}
+
+/**
+ * Normalize footnote-SYMBOL reference markers (`*`, `†`, `‡`, `§`, `¶`) that the
+ * source authors as an inline LINK inside a gold heading phrase. Two things break
+ * on import (verified on radiofrequency-ablation, the "*" after "back and neck
+ * pain"):
+ *
+ *   1. The href is mangled from `#disclaimer` to the site root `/` by the markdown
+ *      round-trip — so the marker both navigates to the homepage (a real bug) and
+ *      escapes every reference styling rule keyed on `#disclaimer` / `#fn-*`.
+ *   2. The marker lands as a SIBLING of the phrase's `<strong>` inside the gold
+ *      `<em>` (`em > strong` + `em > a`), so it misses the `em strong` heading
+ *      emphasis rule (Futura 700, heading size) and falls back to the heading's
+ *      serif face + the default link underline.
+ *
+ * The SOURCE renders this marker at full heading size, Futura bold, teal, no
+ * underline — i.e. it inherits the gold heading's emphasis treatment, only
+ * recoloured teal by the link colour. It is NOT a small superscript. So the
+ * faithful fix is structural, not a size hack: re-point the href at `#disclaimer`
+ * and, when the marker is a trailing sibling of a `<strong>` inside an `<em>`,
+ * move it INSIDE that `<strong>` so `em strong` supplies Futura + size while the
+ * existing `a[href="#disclaimer"]` rule supplies teal + no-underline. Scoped to
+ * pure symbol strings so real content links (which contain words) are untouched.
+ */
+function normalizeSymbolRefs(root) {
+  const SYMBOL_RE = /^[*†‡§¶]+$/;
+  root.querySelectorAll('a').forEach((a) => {
+    if (!SYMBOL_RE.test((a.textContent || '').trim())) return;
+    // Re-point the mangled root href at the on-page disclaimer reference so the
+    // reference styling rules recognise it as a citation marker.
+    a.setAttribute('href', '#disclaimer');
+    // If the marker sits inside a gold `<em>` as a sibling of the phrase's
+    // `<strong>`, relocate it to the end of that `<strong>` so it inherits the
+    // heading's Futura + size emphasis (matching the source). Skip when it is
+    // already inside a strong or a sup.
+    if (a.closest('strong, sup')) return;
+    const em = a.closest('em');
+    if (!em) return;
+    const strong = [...em.querySelectorAll('strong')].pop();
+    if (strong) strong.append(a);
   });
 }
 
@@ -262,7 +310,17 @@ export default function transform(hookName, element, payload) {
 
     // Keep a trailing reference marker on the same line as the gold intro phrase
     // (the block-display <em> would otherwise strand the sup/ref on the next line).
+    // This ALSO pulls a trailing symbol-link marker (the "*") INTO the gold <em>,
+    // which normalizeSymbolRefs (next) then relocates into the phrase's <strong>.
     keepRefWithGoldLine(element);
+
+    // Symbol reference markers (*, †, ‡ …) that the source authored as an inline
+    // link in a gold heading phrase → re-point at #disclaimer and, once inside the
+    // gold <em> (moved there by keepRefWithGoldLine above), relocate into the
+    // phrase's <strong> so they inherit the source's Futura emphasis instead of
+    // the heading's serif face + the default link underline. Runs LAST so the
+    // marker is already inside the <em> when it looks for the <strong>.
+    normalizeSymbolRefs(element);
 
     // Marketo lead-capture "Find a doctor" form that follows the gold CTA.
     // JS-injected widget, not authorable content. #find-a-doctor is the
