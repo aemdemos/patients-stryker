@@ -293,6 +293,24 @@
     "fields": []
   },
   {
+    "id": "find-a-doctor",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Banner Image (upload or Dynamic Media link)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "heading",
+        "value": "Find a doctor near you",
+        "label": "Heading",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {

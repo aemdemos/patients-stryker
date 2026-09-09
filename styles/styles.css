@@ -165,6 +165,15 @@
   --radius-sm: 2px;
   --radius-pill: 15px;
 
+  /* find-a-doctor locator banner */
+  --find-a-doctor-title-size: 24px; /* source .form-section h2: 24px/32px Futura bold */
+  --find-a-doctor-title-line-height: 1.333; /* 32px / 24px */
+  --find-a-doctor-radius-value-size: 18px; /* source radius dropdown value */
+  --find-a-doctor-raised-label-size: 13.5px; /* source raised floating label (18px scaled 0.75) */
+  --find-a-doctor-control-height: 56px;
+  --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
+  --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
+
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
   --container-wide: 900px;
@@ -897,4 +906,3 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     padding: 0 var(--container-gutter);
   }
 }
-

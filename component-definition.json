@@ -196,6 +196,28 @@
           }
         },
         {
+          "title": "Find a Doctor",
+          "id": "find-a-doctor",
+          "model": "find-a-doctor",
+          "plugins": {
+            "da": {
+              "name": "find-a-doctor",
+              "rows": 2,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>a[href], div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "heading",
+                  "selector": "div:nth-child(2) > h1"
+                }
+              ]
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "model": "fragment",

@@ -1,0 +1,41 @@
+{
+  "definitions": [
+    {
+      "title": "Find a Doctor",
+      "id": "find-a-doctor",
+      "model": "find-a-doctor",
+      "plugins": {
+        "da": {
+          "name": "find-a-doctor",
+          "rows": 2,
+          "columns": 1,
+          "fields": [
+            { "name": "image", "selector": "div:nth-child(1)>a[href], div:nth-child(1)>picture>img[src]" },
+            { "name": "heading", "selector": "div:nth-child(2)" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "find-a-doctor",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Banner Image (upload or Dynamic Media link)",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "heading",
+          "value": "Find a doctor near you",
+          "label": "Heading",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
