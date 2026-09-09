@@ -93,44 +93,62 @@ export function extractRunsInBrowser(options) {
   // Prefers durable signals (href, block/section class + tag) over fragile
   // structural paths. Returns null when no stable signal exists (then the fix
   // must be authored, not auto-generated).
+  // The BLOCK element for scoping — a real EDS block (`.panel`, `.cards`, `.hero`),
+  // NEVER the structural `*-container` / `*-wrapper` element EDS auto-wraps blocks
+  // and sections in. Those wrappers differ between the authoring preview and the
+  // published render (extra/empty divs), so a selector scoped to them is fragile
+  // and breaks in one environment. We match the block by an EXACT class token from
+  // a known set, not a substring, so `panel-container` can never qualify as a block.
+  const BLOCK_CLASSES = ['panel', 'cards', 'hero'];
+  const VARIANT_CLASSES = ['wide', 'dark', 'cta', 'gold', 'resources', 'banner', 'light'];
+  function blockScope(el) {
+    // nearest ancestor that carries an exact block class token (not "*-container")
+    let node = el;
+    while (node && node.classList) {
+      const classes = [...node.classList];
+      if (classes.some((c) => BLOCK_CLASSES.includes(c))) {
+        return classes.filter((c) => BLOCK_CLASSES.includes(c) || VARIANT_CLASSES.includes(c)).join('.');
+      }
+      node = node.parentElement;
+    }
+    return null;
+  }
+  // Semantic SECTION-STYLE scope (e.g. `.section.flex`, `.section.dark`) — the
+  // Style token authors set, which is environment-stable. Excludes the generated
+  // `*-container` / `*-wrapper` classes.
+  function sectionScope(el) {
+    const sec = el.closest('.section');
+    if (!sec) return null;
+    const scls = [...sec.classList]
+      .filter((c) => c !== 'section' && !c.endsWith('-container') && !c.endsWith('-wrapper'))
+      .join('.');
+    return scls ? `.section.${scls}` : null;
+  }
   function stableSelector(el) {
     const tag = el.tagName.toLowerCase();
     const href = el.getAttribute && el.getAttribute('href');
     if (tag === 'a' && href && href.startsWith('#')) {
-      // reference/anchor links — MUST be scoped to a block or section so the rule
-      // can't leak to the same href elsewhere (e.g. footnote back-references in
-      // the references list). Prefer block, then section; if neither, return null
-      // (unscopable → not safely auto-fixable, reported for human handling).
-      const block = el.closest('[class*="panel"],[class*="cards"],[class*="hero"]');
-      if (block) {
-        const cls = [...block.classList].filter((c) => /panel|cards|hero|wide|dark|cta|gold|resources|banner/.test(c)).join('.');
-        if (cls) return `.${cls} a[href="${href}"]`;
-      }
-      const sec = el.closest('.section');
-      if (sec) {
-        const scls = [...sec.classList].filter((c) => c !== 'section' && !c.endsWith('-container') && !c.endsWith('-wrapper')).join('.');
-        if (scls) return `.section.${scls} a[href="${href}"]`;
-      }
+      // reference/anchor links — MUST be scoped to a real block or a section-style
+      // so the rule can't leak to the same href elsewhere. Prefer block, then
+      // section-style; if neither, return null (unscopable → not auto-fixable).
+      const block = blockScope(el);
+      if (block) return `.${block} a[href="${href}"]`;
+      const sec = sectionScope(el);
+      if (sec) return `${sec} a[href="${href}"]`;
       return null;
     }
     // block/section-scoped heading or element by tag.
-    const block = el.closest('[class*="panel"],[class*="cards"],[class*="hero"]');
+    const block = blockScope(el);
     if (block) {
-      const cls = [...block.classList].filter((c) => /panel|cards|hero|wide|dark|cta|gold|resources|banner/.test(c)).join('.');
-      if (cls) {
-        if (/^h[1-6]$/.test(tag)) return `.${cls} :is(h1,h2,h3,h4,h5,h6)`;
-        if (el.closest('sup')) return `.${cls} sup`;
-        return `.${cls} ${tag}`;
-      }
+      if (/^h[1-6]$/.test(tag)) return `.${block} :is(h1,h2,h3,h4,h5,h6)`;
+      if (el.closest('sup')) return `.${block} sup`;
+      return `.${block} ${tag}`;
     }
-    const section = el.closest('.section');
+    const section = sectionScope(el);
     if (section) {
-      const scls = [...section.classList].filter((c) => c !== 'section' && !c.endsWith('-container')).join('.');
-      if (scls) {
-        if (/^h[1-6]$/.test(tag)) return `.section.${scls} :is(h1,h2,h3,h4,h5,h6)`;
-        if (el.closest('sup')) return `.section.${scls} sup`;
-        return `.section.${scls} ${tag}`;
-      }
+      if (/^h[1-6]$/.test(tag)) return `${section} :is(h1,h2,h3,h4,h5,h6)`;
+      if (el.closest('sup')) return `${section} sup`;
+      return `${section} ${tag}`;
     }
     return null;
   }
