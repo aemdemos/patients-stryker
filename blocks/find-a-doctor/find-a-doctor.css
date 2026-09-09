@@ -27,16 +27,19 @@
   object-fit: cover;
 }
 
-/* form panel — on mobile it sits over the background photo (transparent), matching
-   the source; the desktop breakpoint gives it the light-gray fill on the right. */
+/* form panel — on mobile the source floats a light-gray form box ON TOP of the
+   background photo, inset so the photo shows around it. Keep the gray fill and add
+   a margin so the band's background image peeks around the box (the desktop
+   breakpoint removes the margin and makes it the right-hand gray column). */
 .find-a-doctor .find-a-doctor-panel {
   position: relative;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 24px;
   padding: 24px;
-  background-color: transparent;
+  background-color: var(--color-surface);
 }
 
 .find-a-doctor .find-a-doctor-title {
@@ -158,9 +161,12 @@
   background-color: var(--color-primary-hover);
 }
 
-/* tablet and up — the source places the image on the left (~40%) and the grey
-   panel on the right (~60%), side by side, with the controls in a single row. */
-@media (width >= 600px) {
+/* desktop (>= 900px, the EDS desktop breakpoint) — the source switches from the
+   mobile background-photo + floating gray box to a side-by-side split: the image
+   on the left (~40%) and the grey panel on the right (~60%), with the controls in
+   a single row. Below 900px the mobile treatment (photo background + inset gray
+   form box) is kept. */
+@media (width >= 900px) {
   .find-a-doctor {
     flex-flow: row wrap;
     align-items: stretch;
@@ -182,10 +188,12 @@
     inset: 0;
   }
 
-  /* desktop: photo becomes a side column and the panel takes the light-gray fill
-     on the right (the source's .lightgray band), so restore the surface colour. */
+  /* desktop: photo becomes a side column and the panel is the full-height gray
+     column on the right (the source's .lightgray band) — drop the mobile float
+     margin so it fills its column edge to edge. */
   .find-a-doctor .find-a-doctor-panel {
     flex: 1 1 auto;
+    margin: 0;
     padding: 40px;
     background-color: var(--color-surface);
   }
