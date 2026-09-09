@@ -87,19 +87,53 @@ export default function decorate(block) {
 
   locationGroup.append(locationInput, locationLabel);
 
-  // Radius selector — native <select> for accessibility (source uses a custom dropdown).
+  // Radius selector — a custom accessible listbox (the source uses a custom
+  // dropdown, not a native <select>, so the open menu can be styled: square
+  // corners, white panel, light-gray hover, drop shadow. A native <select>'s
+  // option list is OS-drawn and cannot be styled to match).
   const radiusGroup = document.createElement('div');
   radiusGroup.className = 'find-a-doctor-field find-a-doctor-radius';
 
-  const radiusSelect = document.createElement('select');
-  radiusSelect.id = 'find-a-doctor-radius';
-  radiusSelect.name = 'radius';
-  radiusSelect.setAttribute('aria-label', 'Radius');
-  [['15', '15 miles'], ['25', '25 miles'], ['50', '50 miles']].forEach(([value, text]) => {
-    const opt = document.createElement('option');
-    opt.value = value;
-    opt.textContent = text;
-    radiusSelect.append(opt);
+  const radiusOptions = [['15', '15 miles'], ['25', '25 miles'], ['50', '50 miles']];
+  const [[defaultRadiusValue, defaultRadiusText]] = radiusOptions;
+  let radiusValue = defaultRadiusValue;
+
+  // hidden field so the selected radius participates in the form.
+  const radiusInput = document.createElement('input');
+  radiusInput.type = 'hidden';
+  radiusInput.name = 'radius';
+  radiusInput.value = radiusValue;
+
+  // the button shows the current value and toggles the menu (role=combobox).
+  const radiusButton = document.createElement('button');
+  radiusButton.type = 'button';
+  radiusButton.id = 'find-a-doctor-radius';
+  radiusButton.className = 'find-a-doctor-radius-toggle';
+  radiusButton.setAttribute('aria-haspopup', 'listbox');
+  radiusButton.setAttribute('aria-expanded', 'false');
+  radiusButton.setAttribute('aria-label', 'Radius');
+  const radiusValueText = document.createElement('span');
+  radiusValueText.className = 'find-a-doctor-radius-value';
+  radiusValueText.textContent = defaultRadiusText;
+  radiusButton.append(radiusValueText);
+
+  // the styleable options menu (role=listbox).
+  const radiusMenu = document.createElement('ul');
+  radiusMenu.className = 'find-a-doctor-radius-menu';
+  radiusMenu.setAttribute('role', 'listbox');
+  radiusMenu.setAttribute('aria-label', 'Radius');
+  radiusMenu.hidden = true;
+
+  const radiusItems = radiusOptions.map(([value, text], i) => {
+    const li = document.createElement('li');
+    li.className = 'find-a-doctor-radius-option';
+    li.setAttribute('role', 'option');
+    li.id = `find-a-doctor-radius-option-${i}`;
+    li.dataset.value = value;
+    li.textContent = text;
+    li.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    radiusMenu.append(li);
+    return li;
   });
 
   const radiusLabel = document.createElement('label');
@@ -107,7 +141,63 @@ export default function decorate(block) {
   radiusLabel.setAttribute('for', 'find-a-doctor-radius');
   radiusLabel.textContent = 'Radius';
 
-  radiusGroup.append(radiusSelect, radiusLabel);
+  const closeRadius = () => {
+    radiusMenu.hidden = true;
+    radiusButton.setAttribute('aria-expanded', 'false');
+    radiusButton.removeAttribute('aria-activedescendant');
+  };
+
+  const openRadius = () => {
+    radiusMenu.hidden = false;
+    radiusButton.setAttribute('aria-expanded', 'true');
+    const active = radiusItems.find((li) => li.dataset.value === radiusValue) || radiusItems[0];
+    radiusButton.setAttribute('aria-activedescendant', active.id);
+  };
+
+  const selectRadius = (li) => {
+    radiusValue = li.dataset.value;
+    radiusInput.value = radiusValue;
+    radiusValueText.textContent = li.textContent;
+    radiusItems.forEach((item) => item.setAttribute('aria-selected', item === li ? 'true' : 'false'));
+  };
+
+  radiusButton.addEventListener('click', () => {
+    if (radiusMenu.hidden) openRadius(); else closeRadius();
+  });
+
+  radiusItems.forEach((li) => {
+    li.addEventListener('click', () => {
+      selectRadius(li);
+      closeRadius();
+      radiusButton.focus();
+    });
+  });
+
+  // keyboard support: arrows move/select, Enter/Space open, Escape closes.
+  radiusButton.addEventListener('keydown', (e) => {
+    const currentIndex = radiusItems.findIndex((li) => li.dataset.value === radiusValue);
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (radiusMenu.hidden) openRadius();
+      const next = e.key === 'ArrowDown'
+        ? Math.min(currentIndex + 1, radiusItems.length - 1)
+        : Math.max(currentIndex - 1, 0);
+      selectRadius(radiusItems[next]);
+      radiusButton.setAttribute('aria-activedescendant', radiusItems[next].id);
+    } else if ((e.key === 'Enter' || e.key === ' ') && radiusMenu.hidden) {
+      e.preventDefault();
+      openRadius();
+    } else if (e.key === 'Escape') {
+      closeRadius();
+    }
+  });
+
+  // close when focus/click leaves the control.
+  document.addEventListener('click', (e) => {
+    if (!radiusGroup.contains(e.target)) closeRadius();
+  });
+
+  radiusGroup.append(radiusInput, radiusButton, radiusMenu, radiusLabel);
 
   // Submit button.
   const button = document.createElement('button');
