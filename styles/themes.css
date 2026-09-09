@@ -496,6 +496,11 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   padding-top: var(--space-section);
 }
 
+.zip-skin-closure main > .section:has(ol.footnotes) > .default-content-wrapper p {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
 /* "How Zip works" intro paragraph — the source renders it at 24.5px (its
    .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.
    Scoped to the zip page's "How Zip works" heading + its following paragraph so
@@ -591,7 +596,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 
 .zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2,
 .zip-skin-closure .section.richtext-container.columns-container:not(.full-bleed) h2 {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
@@ -651,6 +656,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-family: var(--display-font-family-bold);
   font-size: var(--panel-heading-size);
   line-height: var(--panel-body-line-height);
+}
+
+.zip-skin-closure .panel .panel-body > p:first-child:has(strong):not(:only-of-type) {
+  margin-bottom: 0;
 }
 
 .zip-skin-closure .panel .panel-body > p:first-child:has(strong) strong,
