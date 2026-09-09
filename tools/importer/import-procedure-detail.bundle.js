@@ -187,34 +187,114 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
+  // tools/importer/parsers/procedure-detail/resources-fragment-index.js
+  var PDF_TO_FRAGMENT = {
+    "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure.pdf": "/fragments/card-vertebral-augmentation",
+    "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure_ESP.pdf": "/fragments/card-vertebral-augmentation",
+    "/content/dam/m/ivs-patient/homepage/resources/OptaBlate BVN Patient Brochure.pdf": "/fragments/card-basivertebral-nerve-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/OptaBlate Patient Brochure.pdf": "/fragments/card-bone-tumor-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/Disc Decompression Patient Brochure.pdf": "/fragments/card-disc-decompression",
+    "/content/dam/m/ivs-patient/homepage/resources/Disc Decompression Patient Brochure_ESP.pdf": "/fragments/card-disc-decompression",
+    "/content/dam/m/ivs-patient/homepage/resources/Discography Patient Brochure.pdf": "/fragments/card-discography",
+    "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure.pdf": "/fragments/card-knee-pain",
+    "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure_ESP.pdf": "/fragments/card-knee-pain",
+    "/content/dam/m/ivs-patient/homepage/resources/mild Patient Brochure.pdf": "/fragments/card-mild",
+    "/content/dam/m/ivs-patient/homepage/resources/mild Patient Brochure_ESP.pdf": "/fragments/card-mild",
+    "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure.pdf": "/fragments/card-radiofrequency-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure_ESP.pdf": "/fragments/card-radiofrequency-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure.pdf": "/fragments/card-spinejack",
+    "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure_ESP.pdf": "/fragments/card-spinejack"
+  };
+  var DM_TO_FRAGMENT = {
+    "https://media-assets.stryker.com/is/image/stryker/1702476622_IVS-846502_BackPainBrochure_111623_XL-cover-photo-rev-1": "/fragments/card-vertebral-augmentation",
+    "https://media-assets.stryker.com/is/image/stryker/1712955173_WebImage_IVS-846502_BackPainBrochure_111623_ES-US-rev-1": "/fragments/card-vertebral-augmentation",
+    "https://media-assets.stryker.com/is/image/stryker/OptaBlate-BVN-patient-brochure_XL": "/fragments/card-basivertebral-nerve-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552225_D0000228551_OptaBlate_PatientBrochure_012623_XL-rev-1": "/fragments/card-bone-tumor-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552337_D0000068686_RevAA_DEK-Patient-Brochure_033021_L-rev-1": "/fragments/card-disc-decompression",
+    "https://media-assets.stryker.com/is/image/stryker/1680552319_D0000116316-AA.2_DEK-Patient-Brochure_012822_ES_L-rev-1": "/fragments/card-disc-decompression",
+    "https://media-assets.stryker.com/is/image/stryker/1680552351_1000-000-002-DiscMonitorBrochure_RevC_072117_L-rev-1": "/fragments/card-discography",
+    "https://media-assets.stryker.com/is/image/stryker/1680552247_D0000103435_KneeRFA_PatientBrochure_101121_L-rev-1": "/fragments/card-knee-pain",
+    "https://media-assets.stryker.com/is/image/stryker/1680552259_D0000239733_KneeRFA_PatientBrochure_122122_ES_XL-rev-1": "/fragments/card-knee-pain",
+    "https://media-assets.stryker.com/is/image/stryker/1750262681_IVS-1436100-REV2_mild_PatientBrochure_040925_XL_rev": "/fragments/card-mild",
+    "https://media-assets.stryker.com/is/image/stryker/1755626755_IVS-MILD-BROC-1436100_REV-1_es_XL_rev": "/fragments/card-mild",
+    "https://media-assets.stryker.com/is/image/stryker/1680552275_D0000068200-RF-BackPainBrochure_RevAA_012821_L-rev-1": "/fragments/card-radiofrequency-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552288_D0000096609AA2_RF-BackPainBrochure_RevAA_041621_ESES_L-rev-1": "/fragments/card-radiofrequency-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552090_D0000007218_SpineJack-Patient-Brochure_120220_L-2": "/fragments/card-spinejack",
+    "https://media-assets.stryker.com/is/image/stryker/1680552176_D0000096607AA2_SpineJack-Patient-Brochure_041621_ESES_L-1": "/fragments/card-spinejack"
+  };
+
   // tools/importer/parsers/procedure-detail/cards-resources.js
+  function pdfKey(href) {
+    try {
+      return decodeURI(href).trim();
+    } catch (e) {
+      return (href || "").trim();
+    }
+  }
+  function dmKey(url) {
+    return (url || "").split("?")[0].trim();
+  }
+  function resolveFragment(col) {
+    const learnMore = col.querySelector('a.btn[href], a.btn-teal[href], a[href$=".pdf"], a[href*=".pdf"]');
+    const pdfHref = learnMore && learnMore.getAttribute("href");
+    if (pdfHref) {
+      const hit = PDF_TO_FRAGMENT[pdfKey(pdfHref)];
+      if (hit) return hit;
+    }
+    const img = col.querySelector(".cta-img img, img");
+    const imgSrc = img && (img.getAttribute("src") || img.getAttribute("title"));
+    if (imgSrc) {
+      const hit = DM_TO_FRAGMENT[dmKey(imgSrc)];
+      if (hit) return hit;
+    }
+    return null;
+  }
+  function inlineCardCells(col, document) {
+    const img = col.querySelector(".cta-img img, img");
+    const learnMore = col.querySelector("a.btn[href], a.btn-teal[href]");
+    const bodyCell = [];
+    if (learnMore) {
+      const label = learnMore.textContent.trim();
+      learnMore.textContent = "";
+      const strong = document.createElement("strong");
+      strong.textContent = label;
+      learnMore.append(strong);
+      const p = document.createElement("p");
+      p.append(learnMore);
+      bodyCell.push(p);
+    }
+    return [img || "", bodyCell];
+  }
+  function fragmentBlock(path, document) {
+    const a = document.createElement("a");
+    a.setAttribute("href", path);
+    a.textContent = path;
+    return WebImporter.Blocks.createBlock(document, { name: "Fragment", cells: [[a]] });
+  }
   function parse6(element, { document }) {
-    const cells = [];
     const cols = element.querySelectorAll(':scope > .row > [class*="col-"], .row > [class*="col-md-3"]');
+    const fragmentPaths = [];
+    const inlineCells = [];
     cols.forEach((col) => {
       const img = col.querySelector(".cta-img img, img");
       const learnMore = col.querySelector("a.btn[href], a.btn-teal[href]");
       if (!img && !learnMore) return;
-      const imageCell = img || "";
-      const bodyCell = [];
-      if (learnMore) {
-        const label = learnMore.textContent.trim();
-        learnMore.textContent = "";
-        const strong = document.createElement("strong");
-        strong.textContent = label;
-        learnMore.append(strong);
-        const p = document.createElement("p");
-        p.append(learnMore);
-        bodyCell.push(p);
+      const fragmentPath = resolveFragment(col);
+      if (fragmentPath) {
+        if (!fragmentPaths.includes(fragmentPath)) fragmentPaths.push(fragmentPath);
+      } else {
+        inlineCells.push(inlineCardCells(col, document));
       }
-      cells.push([imageCell, bodyCell]);
     });
-    if (cells.length === 0) {
+    if (fragmentPaths.length === 0 && inlineCells.length === 0) {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "Cards (resources)", cells });
-    element.replaceWith(block);
+    const out = fragmentPaths.map((p) => fragmentBlock(p, document));
+    if (inlineCells.length) {
+      out.push(WebImporter.Blocks.createBlock(document, { name: "Cards (resources)", cells: inlineCells }));
+    }
+    element.replaceWith(...out);
   }
 
   // tools/importer/transformers/procedure-detail/procedure-detail-cleanup.js

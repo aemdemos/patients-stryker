@@ -128,11 +128,15 @@
   background-color: var(--color-primary);
 }
 
-/* Choice-group container: contain the floated inputs so it takes its full height. */
+/* Choice-group container: contain the floated inputs so it takes its full height.
+   width:100% overrides Marketo's inline width:580px (mktoHasWidth), which would
+   otherwise force horizontal scroll on viewports narrower than 580px. */
 .marketo-form .mktoForm .mktoCheckboxList,
 .marketo-form .mktoForm .mktoRadioList {
   display: block;
   overflow: hidden;
+  width: 100% !important;
+  box-sizing: border-box;
 }
 
 /* choice-option label: inline, bold brand body font; ::after (below) breaks each

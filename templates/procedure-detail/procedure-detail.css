@@ -1,10 +1,20 @@
 /* Procedure Detail template — overrides scoped to body.procedure-detail. */
 
+/* Mobile: space between the header and the hero (source gap ~90px above the
+   banner card); removed from 600px up where the hero overlays a wider image. */
+body.procedure-detail main > .section.hero-container {
+  margin-top: var(--space-section-xl);
+}
+
 /* Hero banner: pin copy to lower-left (overlay only exists ≥600px). */
 @media (width >= 600px) {
   body.procedure-detail main > .section .hero.banner > div:last-child {
     align-self: end;
     padding: 0 0 55px 40px;
+  }
+
+  body.procedure-detail main > .section.hero-container {
+    margin-top: 0;
   }
 }
 
@@ -25,7 +35,6 @@ body.procedure-detail main > .section.flex > .default-content-wrapper h3 em {
   display: block;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 body.procedure-detail main > .section.flex > .default-content-wrapper p {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
@@ -54,7 +63,6 @@ body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-car
   line-height: var(--heading-line-height-ml);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-card-body p {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
@@ -124,7 +132,6 @@ body.procedure-detail main .panel.dark .panel-body {
 /* Dark heading base — white serif for the plain (non-gold) evidence-band heading.
    Pages whose source heading renders gold get <em><strong> from the importer and
    are painted by the rule below instead. */
-/* stylelint-disable-next-line no-descending-specificity */
 body.procedure-detail main .panel.dark .panel-body :is(h2, h3) {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-dark-base);
