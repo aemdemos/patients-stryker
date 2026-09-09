@@ -441,6 +441,8 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     font-family: var(--heading-font-family);
     font-size: var(--condition-headline-font-size);
     padding-top:4%;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #b2b4ae;
   }
 
   body.condition-detail h4 {
@@ -449,6 +451,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
   body.condition-detail h2 em strong, h2 strong em {
      font-size: var(--condition-headline-font-size);
+   
   }
 
    body.condition-detail p, ul {
@@ -481,6 +484,14 @@ body.condition-detail main > .section.flex {
 
 body.condition-detail .default-content-wrapper p:last-child {
   padding: 10px;
+}
+
+body.condition-detail .tabs .tabs-tab p {
+  font-size:14px;
+}
+
+body.condition-detail .tabs .tabs-panel {
+  margin-bottom: 60px;
 }
 
 @media (width >= 600px) {
