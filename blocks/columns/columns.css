@@ -455,6 +455,12 @@
     align-items: center;
   }
 
+  /* light-gray + serif keeps ~30px below the image (reference gap), rather than
+     letting a tall image sit flush against the section bottom */
+  .section.light-gray.serif .columns.columns-50-50 .columns-img-col {
+    margin-bottom: var(--space-section);
+  }
+
   /* desktop 3-up: revert to the base flex row */
   .section.light-gray .columns > div {
     display: flex;
