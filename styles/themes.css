@@ -581,6 +581,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 
 .zip-skin-closure .columns-container .columns-wrapper .columns.columns-50-50.block.columns-2-cols p {
   padding-bottom: 30px;
+  padding-top: 15px;
 }
 
 .zip-skin-closure h2 {
@@ -695,7 +696,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   }
 
   .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
-    padding-left: 10%;
+    padding-left: 9.5%;
   }
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
@@ -740,7 +741,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   }
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    right: -25px;
+    right: -80px;
   }
 
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
