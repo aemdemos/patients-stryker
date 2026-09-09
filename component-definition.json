@@ -207,7 +207,7 @@
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href], div:nth-child(1) picture img[src]"
+                  "selector": "div:nth-child(1)>a[href], div:nth-child(1)>picture>img[src]"
                 },
                 {
                   "name": "heading",

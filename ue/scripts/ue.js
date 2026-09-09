@@ -14,23 +14,11 @@ import { moveInstrumentation } from './ue-utils.js';
 import { getMetadata, toClassName, loadCSS } from '../../scripts/aem.js';
 
 /*
- * Universal Editor only: keep the body theme/template classes in sync when an
- * author edits page metadata. decorateTemplateAndTheme() (aem.js) applies these
- * classes ONCE at initial page load; when an author changes the Theme (or
- * Template) dropdown, UE patches the metadata in place without re-running page
- * decoration, so the body class would otherwise stay stale (the newly selected
- * theme never gets added, and a deselected one never gets removed). We watch the
- * document for metadata changes and reconcile `body.<theme>` / `body.<template>`
- * against the current metadata value. Runs only in UE (this file is imported
- * solely on *.ue.da.live), so there is no live-site cost.
- *
- * Unlike the published .aem.page pipeline — which hoists page metadata into
- * <head> <meta> tags and drops the in-body block — the UE canvas renders page
- * metadata as an in-body `.metadata` block and does NOT always create the head
- * meta. getMetadata() only reads <head>, so we also read the in-body block here,
- * and load styles/themes.css on demand (scripts.js only loads it when a theme is
- * present at initial load, so a theme selected inside UE would otherwise have no
- * CSS to apply).
+ * UE only: keep body theme/template classes in sync when an author edits page
+ * metadata. UE patches metadata without re-running page decoration, so we watch
+ * for changes and reconcile the body classes. The UE canvas keeps metadata in an
+ * in-body `.metadata` block (not <head> meta), so we read that too and load
+ * themes.css on demand. Imported only on *.ue.da.live — no live-site cost.
  */
 
 /**
