@@ -211,7 +211,7 @@
                 },
                 {
                   "name": "heading",
-                  "selector": "div:nth-child(2)"
+                  "selector": "div:nth-child(2) > h1"
                 }
               ]
             }
