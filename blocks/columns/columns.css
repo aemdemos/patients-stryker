@@ -158,6 +158,18 @@
   margin-block: var(--space-section);
 }
 
+/* when the serif section also has a background (light-gray), the block margin
+   would fall OUTSIDE the coloured band and leave the content flush inside it.
+   Use section padding instead (space lives inside the background) and drop the
+   block margin so the spacing isn't doubled. */
+.section.light-gray.serif {
+  padding-block: var(--space-section);
+}
+
+.section.light-gray.serif .columns.columns-50-50 {
+  margin-block: 0;
+}
+
 .section.serif .columns.columns-50-50 .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
