@@ -1,9 +1,4 @@
-/*
- * sticky-nav — in-page anchor bar migrated from patients.stryker.com IVS home.
- * 70px full-bleed gray bar, 193px UPPERCASE items with white dividers, gold
- * active box; sticky to top. Scoped to `.sticky-nav.block` to avoid colliding
- * with `body.sticky-nav` (from `template: sticky-nav` metadata).
- */
+/* sticky-nav — in-page anchor bar: 80px full-bleed gray bar, 193px UPPERCASE items with white dividers, gold active box; sticky to top. Scoped to `.sticky-nav.block` to avoid colliding with `body.sticky-nav`. */
 
 /* full-bleed gray bar, ignoring the section's max-width container */
 .sticky-nav.block {
@@ -28,16 +23,14 @@
   }
 }
 
-/* capped to five 193px items + centred: fixed cluster when wide, else items
-   shrink/wrap to fill 100% width — never horizontally scrollable */
+/* capped to five 193px items + centred: fixed cluster when wide, else items shrink/wrap to fill 100% width — never horizontally scrollable */
 .sticky-nav .sticky-nav-list {
   display: flex;
   max-width: calc(5 * 193px);
   margin-inline: auto;
 }
 
-/* transparent flex cell; its <p> is the gold box. flex:1 1 0 shares the row,
-   max-width caps at the source cell size */
+/* transparent flex cell; its <p> is the gold box. flex:1 1 0 shares the row, max-width caps at the source cell size */
 .sticky-nav .sticky-nav-item {
   display: flex;
   box-sizing: border-box;
@@ -46,7 +39,7 @@
   justify-content: center;
   min-width: 0;
   max-width: 193px;
-  min-height: 70px;                  /* 62px box + 4+4 padding */
+  min-height: 80px;                  /* 72px box + 4+4 padding */
   padding: 4px;
   border: 0;
   border-right: 1px solid var(--color-white);   /* white divider */
@@ -56,28 +49,10 @@
   cursor: pointer;
 }
 
-/* first item keeps a left divider so the bar's left edge is always framed */
-.sticky-nav .sticky-nav-item:first-child {
-  border-left: 1px solid var(--color-white);
-}
-
-/* label / gold-box carrier */
-.sticky-nav .sticky-nav-item p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 62px;                  /* source gold-box height */
-  margin: 0;
-  padding: 0 5px;
-  color: inherit;
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-m);   /* 14px */
-  font-weight: 400;
-  line-height: 1.43;
-  text-transform: uppercase;
-  text-align: center;
-  overflow-wrap: break-word;         /* wrap long labels */
+/* keyboard focus ring */
+.sticky-nav .sticky-nav-item:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
 }
 
 /* active item: gold box framed by white dividers on both sides */
@@ -87,12 +62,53 @@
   border-left: 1px solid var(--color-white);
 }
 
+/* the active item's gold box already marks it, so suppress any stray focus ring there */
+.sticky-nav .sticky-nav-item.sticky-nav-item-current:focus,
+.sticky-nav .sticky-nav-item.sticky-nav-item-current:focus-visible {
+  outline: none;
+}
+
+/* Side borders frame the bar only once it is pinned to the viewport top. */
+.sticky-nav .sticky-nav-item:last-child {
+  border-right: 0;
+}
+
+.section.sticky-nav-pinned .sticky-nav-item:first-child {
+  border-left: 1px solid var(--color-white);
+}
+
+.section.sticky-nav-pinned .sticky-nav-item:last-child {
+  border-right: 1px solid var(--color-white);
+}
+
+/* label / gold-box carrier */
+.sticky-nav .sticky-nav-item p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 72px;                  /* source gold-box height */
+  margin: 0;
+  padding: 0 5px;
+  color: inherit;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);   /* 14px, source Futura */
+  font-weight: 400;
+  line-height: 1.43;                     /* 20px / 14px */
+  text-transform: uppercase;
+  text-align: center;
+  overflow-wrap: break-word;         /* wrap long labels */
+}
+
+/* active item: gold box framed by white dividers on both sides */
+.section:not(.sticky-nav-pinned) .sticky-nav-item.sticky-nav-item-current:first-child {
+  border-left: 0;
+}
+
+.section:not(.sticky-nav-pinned) .sticky-nav-item.sticky-nav-item-current:last-child {
+  border-right: 0;
+}
+
 .sticky-nav .sticky-nav-item-current p {
   background: var(--color-accent);
 }
-
-.sticky-nav .sticky-nav-item:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: -2px;
-}
-
