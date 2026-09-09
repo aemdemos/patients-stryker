@@ -345,22 +345,36 @@ function normalizePath(path) {
   return clean || '/';
 }
 
-/* Appends a "Last Modified" line to the end of the page. */
+/* Resolves the "Last Updated" label from the auto publish timestamp. */
+async function getAutoLastModified() {
+  const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
+  if (!resp.ok) return '';
+  const { data = [] } = await resp.json();
+  const current = normalizePath(window.location.pathname);
+  const row = data.find((r) => normalizePath(r.path) === current);
+  const ts = row && Number(row.lastModified);
+  if (!ts) return '';
+
+  const date = new Date(ts * 1000);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+  }).replace(' ', '/');
+}
+
+/*
+ * Appends a "Last Updated" line to the end of the page. Visibility is controlled
+ * centrally via the `last-updated` bulk-metadata setting (not per page):
+ *   - "show"           -> shown on all matching pages, using the automatic publish date
+ *   - "hide" / empty   -> hidden on all matching pages (default)
+ */
 async function decorateLastModified(main) {
   try {
-    const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
-    if (!resp.ok) return;
-    const { data = [] } = await resp.json();
-    const current = normalizePath(window.location.pathname);
-    const row = data.find((r) => normalizePath(r.path) === current);
-    const ts = row && Number(row.lastModified);
-    if (!ts) return;
+    const setting = (getMetadata('last-updated') || '').trim().toLowerCase();
+    if (setting !== 'show') return;
 
-    const date = new Date(ts * 1000);
-    const formatted = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-    }).replace(' ', '/');
+    const formatted = await getAutoLastModified();
+    if (!formatted) return;
 
     const section = document.createElement('div');
     section.className = 'section last-modified-section';
