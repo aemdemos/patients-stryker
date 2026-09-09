@@ -492,19 +492,29 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 body.discography {
   --procedure-hero-h1-size: 28px;      /* source hero headline (vs shared 42px) */
   --procedure-hero-foot: 55px;         /* whitespace below the hero button */
-  --procedure-zone-gap: 90px;          /* larger inter-zone gap the source uses
+  --procedure-zone-gap: 120px;          /* larger inter-zone gap the source uses
                                           above the copy bands (How it works /
                                           Potential risks) */
   --procedure-resources-card-gap: 71px; /* Resources heading → brochure card */
-  --procedure-body-copy-size: 1.25em;  /* default-content paragraph size (≈17.5px) */
+  --procedure-body-copy-size: 1.25em;    /* default-content paragraph size (source: 14px) */
+  --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
+}
+
+body.discography main > .section.flex > .default-content-wrapper h3 {
+  font-size: 25px;
+  line-height: var(--body-line-height-l);
 }
 
 /* ----- Body copy size -----
-   Enlarge the page's default-content paragraphs to 1.25em (≈17.5px against the
-   14px body). Scoped to the theme's default-content paragraphs; the compact
-   fine-print disclaimer keeps its own small size, so it is excluded. */
+   Match the source's default-content paragraphs (14px / 19.25px). Scoped to the
+   theme's default-content paragraphs; the compact fine-print disclaimer keeps its
+   own small size, so it is excluded. The selector relies only on the section /
+   .default-content-wrapper structure that aem.js builds in BOTH the live render
+   and the Universal Editor (which loads themes.css and adds `body.discography`
+   from the same metadata), so the sizing holds in UE as well. */
 body.discography main > .section:not(.compact) > .default-content-wrapper p {
-  font-size: var(--procedure-body-copy-size);
+  font-size: 14px;
+  line-height: var(--procedure-body-copy-line-height);
 }
 
 /* ----- Hero top gap -----
@@ -522,7 +532,7 @@ body.discography main > .section.hero-container:first-child {
    (mobile keeps the shared fluid 7vw). */
 @media (width >= 600px) {
   body.discography .hero.banner h1 {
-    font-size: var(--procedure-hero-h1-size);
+    font-size: 2.8vw;
     line-height: var(--heading-line-height);
   }
 }
@@ -556,7 +566,7 @@ body.discography main > .section.marketo-form-container,
 body.discography main > .section.cards-container,
 body.discography main > .section.compact,
 body.discography main > .section.panel-container:not(.flex, .dark) {
-  margin-top: var(--space-section-l);
+  margin-top: 75px;
 }
 
 /* ----- Enlarged gaps above the copy bands -----
@@ -647,7 +657,7 @@ body.discography main > .section.dark .panel.dark .panel-body h2 {
    .panel.dark .panel-body uses a flat 22.5px all round, which reads as a short
    vertically-centered strip. Restore the source's asymmetric padding here. */
 body.discography main > .section.dark .panel.dark .panel-body {
-  padding: 55px 27.6px;
+  padding: 70px 27.6px;
 }
 
 /* ----- Overview (cta) panel heading -----
@@ -667,14 +677,26 @@ body.discography main .panel.cta .panel-body h3 {
   }
 }
 
+body.discography main .panel.cta.wide .panel-body li {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
 /* ----- Gold CTA panel copy -----
    The "Tired of living in pain?" gold band renders its paragraph as HumanistSlab
    body copy (14px) in the source, but the shared gold variant applies the 21px
    light serif. Restore the body font/size here as a theme delta. */
 body.discography main .panel.gold .panel-body p {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: 1.5em;
   line-height: var(--paragraph-line-height);
+}
+
+body.discography main .panel.gold .panel-body p a:any-link {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  line-height: 1.06;
+  text-decoration: none;
 }
 
 /* ----- Disclaimer paragraphs (compact section) -----
