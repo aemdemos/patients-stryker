@@ -191,8 +191,7 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
+              "name": "columns-cell"
             }
           }
         },
@@ -282,15 +281,16 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
+              "rows": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
