@@ -165,8 +165,9 @@
   color: var(--text-color);
   font-family: var(--heading-font-family);
   font-weight: 500;
-  font-size: 7vw;
+  font-size: 6vw;
   line-height: var(--heading-line-height-hero);
+  padding-left: 5%;
 }
 
 /* subheading — dark serif, 21px on phones then 24.5px from 600px up */
@@ -182,6 +183,7 @@
 /* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
 .hero.banner .button-wrapper {
   margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
+  padding-left: 30px;
 }
 
 /* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
@@ -298,28 +300,6 @@
     flex-direction: column-reverse;
   }
 
-  /* stack the image row and the copy row in the same grid cell */
-  .hero.banner > div {
-    grid-area: 1 / 1;
-  }
-
-  /* copy overlays the left half of the image */
-  .hero.banner > div:last-child {
-    z-index: 1;
-    align-self: center;
-    max-width: 50%;
-    padding: 0 0 0 5vw;
-  }
-
-  /* keep the centred block balanced top and bottom */
-  .hero.banner .button-wrapper:last-child {
-    margin-bottom: 0;
-  }
-
-  .hero.banner h1 {
-    font-size: 3.5vw;
-  }
-
   .hero.banner h2 {
     font-size: var(--heading-font-size-xl);
   }
@@ -409,6 +389,26 @@
    (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
    matches the <600px view. ===== */
 @media (width >= 900px) {
+  /* stack the image row and the copy row in the same grid cell */
+  .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+    /* keep the centred block balanced top and bottom */
+  .hero.banner .button-wrapper:last-child {
+    margin-bottom: 15px;
+  }
+
+  /* copy overlays the left half of the image */
+  .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: end;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
   /* top-align the copy near the top of the image (matches the source, which
      insets it ~5% of the band height), rather than vertically centering it */
   .hero.fullbleed > div:last-child {
@@ -431,6 +431,11 @@
     margin-top: 8px;
     font-size: 1.5vw;
     line-height: 1.35;
+  }
+
+  .hero.banner h1 {
+    font-size: 3vw;
+    padding-left: 3%;
   }
 
   .hero picture.hero-image-desktop {
@@ -471,6 +476,7 @@
     margin-block: 0 var(--space-block);
     padding-top: 20px;
   }
+
 }
 
 /* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
