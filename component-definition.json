@@ -113,15 +113,16 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3>Title</h3><p>Card text</p></div></div>",
+              "rows": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
@@ -138,15 +139,16 @@
           "plugins": {
             "da": {
               "name": "card",
-              "unsafeHTML": "<div class=\"card\"><div><p><a href=\"\">Image alt</a></p></div><div><h3><a href=\"\">Title (links to PDF)</a></h3><p>Additional product information:</p><p><em><strong><a href=\"\">CTA</a></strong></em></p></div></div>",
+              "rows": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "image",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "imageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
@@ -189,8 +191,7 @@
           "filter": "columns-cell",
           "plugins": {
             "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
+              "name": "columns-cell"
             }
           }
         },
@@ -221,23 +222,23 @@
           "plugins": {
             "da": {
               "name": "Hero",
-              "unsafeHTML": "<div class=\"hero\"><div><div><p><a href=\"\">Desktop image alt</a></p></div></div><div><div><p><a href=\"\">Mobile image alt</a></p></div></div><div><div><h1>Heading</h1><p>Supporting copy</p></div></div></div>",
+              "unsafeHTML": "<div class=\"hero\"><div><p><a href=\"\">Desktop image alt</a></p></div><div><p><a href=\"\">Mobile image alt</a></p></div><div><h1>Heading</h1><p>Supporting copy</p></div></div>",
               "fields": [
                 {
                   "name": "desktopImage",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>div>p>a[href]"
                 },
                 {
                   "name": "desktopImageAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>div>p>a"
                 },
                 {
                   "name": "mobileImage",
-                  "selector": "div:nth-child(2) a[href]"
+                  "selector": "div:nth-child(2)>div>p>a[href]"
                 },
                 {
                   "name": "mobileImageAlt",
-                  "selector": "div:nth-child(2) a"
+                  "selector": "div:nth-child(2)>div>p>a"
                 },
                 {
                   "name": "content",
@@ -280,15 +281,16 @@
           "plugins": {
             "da": {
               "name": "icon-list-item",
-              "unsafeHTML": "<div class=\"icon-list-item\"><div><p><a href=\"\">Icon alt</a></p></div><div>Caption</div></div>",
+              "rows": 1,
+              "columns": 2,
               "fields": [
                 {
                   "name": "icon",
-                  "selector": "div:nth-child(1) a[href]"
+                  "selector": "div:nth-child(1)>p>a[href]"
                 },
                 {
                   "name": "iconAlt",
-                  "selector": "div:nth-child(1) a"
+                  "selector": "div:nth-child(1)>p>a"
                 },
                 {
                   "name": "text",
