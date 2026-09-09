@@ -161,12 +161,10 @@
   background-color: var(--color-primary-hover);
 }
 
-/* desktop (>= 900px, the EDS desktop breakpoint) — the source switches from the
-   mobile background-photo + floating gray box to a side-by-side split: the image
-   on the left (~40%) and the grey panel on the right (~60%), with the controls in
-   a single row. Below 900px the mobile treatment (photo background + inset gray
-   form box) is kept. */
-@media (width >= 900px) {
+/* tablet and up (>= 600px) — switch from the mobile background-photo + floating
+   gray box to a side-by-side split: the image on the left (~40%) and the grey
+   panel with the form on the right (~60%), controls in a single row. */
+@media (width >= 600px) {
   .find-a-doctor {
     flex-flow: row wrap;
     align-items: stretch;
@@ -188,9 +186,9 @@
     inset: 0;
   }
 
-  /* desktop: photo becomes a side column and the panel is the full-height gray
-     column on the right (the source's .lightgray band) — drop the mobile float
-     margin so it fills its column edge to edge. */
+  /* photo becomes the left column and the panel is the full-height gray column on
+     the right (the source's .lightgray band) — drop the mobile float margin so it
+     fills its column edge to edge. */
   .find-a-doctor .find-a-doctor-panel {
     flex: 1 1 auto;
     margin: 0;
