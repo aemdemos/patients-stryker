@@ -174,12 +174,38 @@ body.stroke-awareness-landing .hero.banner h1 em strong {
    live here — the hero.banner, panel.* and cards.resources blocks already
    carry their full base styling in their own block CSS. */
 
+/* ----- Theme tokens (procedure-detail) -----
+   Spacing/size deltas that this page needs beyond the shared tokens. Scoped to
+   the theme's body class so they exist only on procedure-detail pages and are
+   named for the theme. Values are measured against the source at desktop
+   (~1440px), the width the design is compared at. */
+body.procedure-detail {
+  --procedure-hero-h1-size: 28px;      /* source hero headline (vs shared 42px) */
+  --procedure-hero-foot: 55px;         /* whitespace below the hero button */
+  --procedure-zone-gap: 90px;          /* larger inter-zone gap the source uses
+                                          above the copy bands (How it works /
+                                          Potential risks) */
+  --procedure-resources-card-gap: 71px; /* Resources heading → brochure card */
+}
+
 /* ----- Hero top gap -----
    The source floats the hero banner ~61px below the yellow nav bar (measured
    nav-bottom→hero-image 61px). The EDS hero-container sits flush against the
    header, so add the matching top gap above the first (hero) section. */
 body.procedure-detail main > .section.hero-container:first-child {
   margin-top: var(--space-section-l);
+}
+
+/* ----- Hero headline size -----
+   The shared .hero.banner headline grows to a large 3.5vw→42px on tablet/desktop,
+   but this page's source renders "Discography" at a compact 28px light serif
+   (line-height 1.06). Pin the theme size from the tablet overlay breakpoint up
+   (mobile keeps the shared fluid 7vw). */
+@media (width >= 600px) {
+  body.procedure-detail .hero.banner h1 {
+    font-size: var(--procedure-hero-h1-size);
+    line-height: var(--heading-line-height);
+  }
 }
 
 /* ----- Hero copy anchored bottom-left -----
@@ -193,7 +219,7 @@ body.procedure-detail main > .section.hero-container:first-child {
 @media (width >= 600px) {
   body.procedure-detail .hero.banner > div:last-child {
     align-self: end;
-    padding-bottom: var(--space-section-l);
+    padding-bottom: var(--procedure-hero-foot);
   }
 }
 
@@ -212,6 +238,17 @@ body.procedure-detail main > .section.cards-container,
 body.procedure-detail main > .section.compact,
 body.procedure-detail main > .section.panel-container:not(.flex, .dark) {
   margin-top: var(--space-section-l);
+}
+
+/* ----- Enlarged gaps above the copy bands -----
+   The source leaves a noticeably deeper band of whitespace above the "How it
+   works" gray box (the light-gray zone directly after the dark statement) and
+   above "Potential risks of the procedure" (the light-gray zone after the
+   Resources cards) than above the other zones. Override the flat rhythm above
+   for just those two bands, identified by the section that precedes each. */
+body.procedure-detail main > .section.dark + .section.light-gray,
+body.procedure-detail main > .section.cards-container + .section.light-gray {
+  margin-top: var(--procedure-zone-gap);
 }
 
 /* ----- Light-gray copy bands (How it works / Potential risks) -----
@@ -252,6 +289,15 @@ body.procedure-detail main > .section.light-gray > .default-content-wrapper {
 body.procedure-detail main > .section.cards-container > .default-content-wrapper h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* ----- Resources heading → cards gap -----
+   The source drops the brochure card well below the underlined "Resources"
+   heading (measured ~71px heading-baseline→card-top). The heading's own 15px
+   bottom margin plus the cards block's spacing only yields ~15px here, so open
+   the gap by pushing the cards grid down as a theme delta. */
+body.procedure-detail main > .section.cards-container > .cards-wrapper {
+  margin-top: var(--procedure-resources-card-gap);
 }
 
 /* ----- Dark statement panel heading -----
