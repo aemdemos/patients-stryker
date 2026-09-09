@@ -392,7 +392,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   }
 
   body.campaign-landing main > .section.video-container[data-anchor]:has(.video) {
-    display: flex;
     column-gap: 7%;                 /* ~98/1380 gap between video and copy, as source */
     max-width: var(--container-max);
     margin-inline: auto;

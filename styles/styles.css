@@ -403,6 +403,10 @@ h2 strong em {
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
+  main .section.side-by-side {
+    display: flex;
+  }
+
   .section.compact h2 {
     font-size: var(--heading-font-size-compact-m);
     margin-top: 30px;
