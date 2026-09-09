@@ -222,10 +222,11 @@
   background-color: var(--color-primary-hover);
 }
 
-/* tablet and up (>= 600px) — switch from the mobile background-photo + floating
+/* tablet and up (>= 900px) — switch from the mobile background-photo + floating
    gray box to a side-by-side split: the image on the left (~40%) and the grey
-   panel with the form on the right (~60%), controls in a single row. */
-@media (width >= 600px) {
+   panel with the form on the right (~60%), controls in a single row. Maps the
+   source's 840px side-by-side breakpoint to our 900px. */
+@media (width >= 900px) {
   .find-a-doctor {
     /* nowrap so the panel can never drop below the image (wrap would restack the
        band into the mobile look) */
@@ -233,15 +234,17 @@
     align-items: stretch;
   }
 
-  /* the image column is a FLUID 40% of the band (matching the source's
-     .bannerstyle .image-section { max-width: 40% } at the side-by-side layout —
-     NOT a fixed pixel width). It no longer drives the band height: the image is an
-     absolutely-positioned fill inside its column, so the band height equals the
-     form panel and the image crops to a strip (source object-fit: cover). */
+  /* the image column is a FLUID ~30% of the band in the tablet range (matching
+     the source's narrower image-section at the side-by-side layout) so the form
+     controls keep a comfortable width — the location field must not be cramped.
+     It no longer drives the band height: the image is an absolutely-positioned
+     fill inside its column, so the band height equals the form panel and the
+     image crops to a strip (source object-fit: cover). The desktop breakpoint
+     below grows it to the source's 40%. */
   .find-a-doctor .find-a-doctor-media {
     position: relative;
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 30%;
+    max-width: 30%;
     overflow: hidden;
   }
 
@@ -282,5 +285,15 @@
 
   .find-a-doctor .find-a-doctor-submit {
     flex: 0 0 auto;
+  }
+}
+
+/* desktop (>= 1024px) — the image column grows to the source's full 40%
+   (.bannerstyle .image-section { max-width: 40% }) now that the wider band
+   leaves the form controls enough room. */
+@media (width >= 1024px) {
+  .find-a-doctor .find-a-doctor-media {
+    flex: 0 0 40%;
+    max-width: 40%;
   }
 }
