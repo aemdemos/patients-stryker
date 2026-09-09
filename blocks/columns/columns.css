@@ -48,6 +48,22 @@
   list-style-type: disc;
 }
 
+/* text-only columns (tagged .columns-text in JS) — smaller mobile type, bumped
+   up at >= 600px below */
+.columns-text h2,
+.columns-text h3,
+.columns-text h4 {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+.columns-text p,
+.columns-text ul,
+.columns-text li {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
    on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
    this adds the matching left/right inset to the text that follows the image. */
@@ -279,6 +295,21 @@
 
 /* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
+  /* text-only columns bump back up to the reference's tablet/desktop type */
+  .columns-text h2,
+  .columns-text h3,
+  .columns-text h4 {
+    font-size: var(--heading-font-size-ml);
+    line-height: var(--heading-line-height-ml);
+  }
+
+  .columns-text p,
+  .columns-text ul,
+  .columns-text li {
+    font-size: var(--body-font-size-l);
+    line-height: var(--body-line-height-l);
+  }
+
   .section.compact .columns h2 {
     font-size: var(--heading-font-size-compact-m);
   }
