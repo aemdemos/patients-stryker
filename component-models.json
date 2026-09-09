@@ -61,15 +61,17 @@
     "id": "image",
     "fields": [
       {
-        "component": "reference",
+        "component": "text",
+        "valueType": "string",
         "name": "image",
-        "label": "Image",
-        "multi": false
+        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt Text"
+        "label": "Image Alt",
+        "multi": false
       }
     ]
   },
@@ -364,7 +366,7 @@
         "component": "text",
         "valueType": "string",
         "name": "mobileImage",
-        "label": "Mobile Image (Dynamic Media link, optional)",
+        "label": "Mobile Image (Dynamic Media link)",
         "condition": {
           "or": [
             {
