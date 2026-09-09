@@ -23,8 +23,6 @@ const anchorId = (s) => {
   return v.includes('#') ? v.slice(v.indexOf('#') + 1) : v;
 };
 
-const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);
-
 /**
  * The nearest scrollable ancestor, or `window` when the page itself scrolls.
  * On the live site this is `window`; in the Universal Editor (html.adobe-ue-edit /
@@ -42,27 +40,6 @@ function getScroller(el) {
     node = node.parentElement;
   }
   return window;
-}
-
-/** Eased scroll on the given scroller, re-sampling the target each frame to absorb shifts. */
-function animateScrollTo(scroller, getTargetY, duration = 600) {
-  const readPos = () => (scroller === window ? window.scrollY : scroller.scrollTop);
-  const writePos = (y) => {
-    if (scroller === window) window.scrollTo(0, y);
-    else scroller.scrollTop = y;
-  };
-  const startY = readPos();
-  const startTime = performance.now();
-
-  function step(now) {
-    const t = Math.min((now - startTime) / duration, 1);
-    const eased = easeInOutQuad(t);
-    const targetY = getTargetY();
-    writePos(startY + (targetY - startY) * eased);
-    if (t < 1) requestAnimationFrame(step);
-  }
-
-  requestAnimationFrame(step);
 }
 
 export default function decorate(block) {
@@ -90,9 +67,14 @@ export default function decorate(block) {
       || anchorId(linkHref) || anchorId(cellText);
     const href = `#${id}`;
 
+    // No real href: a native `#hash` jump is intercepted/reverted inside the UE
+    // canvas (the "scroll a blink then snap back" symptom). We scroll via JS
+    // instead, so items are links in role only.
     const item = document.createElement('a');
     item.className = 'sticky-nav-item';
-    item.href = href;
+    item.setAttribute('role', 'link');
+    item.setAttribute('tabindex', '0');
+    item.dataset.target = href;
 
     // move UE instrumentation: row → <a> (selectable item), label → <p> (editable)
     moveInstrumentation(row, item);
@@ -140,22 +122,28 @@ export default function decorate(block) {
   // Shared-region items: active state follows the last-clicked item, not the last in the bar.
   let clickedItem = null;
 
-  items.forEach((entry) => {
-    const { item, href } = entry;
+  // Click / keyboard: scroll to the section via native scrollIntoView, which
+  // scrolls the correct container automatically in any environment. The bar-height
+  // offset comes from the `scroll-margin-top` set in applyScrollOffset().
+  const goTo = (item, href) => {
+    const target = resolveTarget(href);
+    if (!target) return;
+    const region = target.closest('.section') || target;
+    clickedItem = item;
+    setCurrent(item);
+    region.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  items.forEach(({ item, href }) => {
     item.addEventListener('click', (e) => {
-      const target = resolveTarget(href);
-      if (!target) return;
       e.preventDefault();
-      clickedItem = item;
-      setCurrent(item);
-      const region = target.closest('.section') || target;
-      const getTargetY = () => {
-        const off = block.getBoundingClientRect().height || 70;
-        const current = scroller === window ? window.scrollY : scroller.scrollTop;
-        // Region top relative to the scroller's own viewport, minus the sticky bar.
-        return current + region.getBoundingClientRect().top - scrollerTop() - off;
-      };
-      animateScrollTo(scroller, getTargetY, 600);
+      goTo(item, href);
+    });
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        goTo(item, href);
+      }
     });
   });
 
