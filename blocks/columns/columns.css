@@ -48,10 +48,9 @@
   list-style-type: disc;
 }
 
-/* text-only columns (tagged .columns-text in JS) — the column titles are peer
-   headings authored as h3/h4; normalise them to one size (smaller on mobile,
-   bumped at >= 600px below). Body copy is unchanged (stays 17.5px via base rules). */
-.columns-text h3,
+/* text-only columns (tagged .columns-text in JS) — column titles (h4) are smaller
+   on mobile (17.5px) and bump to 21.875px at >= 600px (below). Body copy is
+   unchanged (stays 17.5px at all widths via the base .columns rules). */
 .columns-text h4 {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
@@ -315,8 +314,7 @@
 
 /* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
-  /* text-only column titles bump up to the reference's tablet/desktop size */
-  .columns-text h3,
+  /* text-only column titles (h4) bump up to the reference's tablet/desktop size */
   .columns-text h4 {
     font-size: var(--heading-font-size-ml);
     line-height: var(--heading-line-height-ml);
