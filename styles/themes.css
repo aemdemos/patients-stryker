@@ -146,6 +146,10 @@ body.campaign-landing main .section {
   margin-top: 70px;
 }
 
+body.stroke-awareness-landing main .section.compact {
+  margin-top: 60px;
+}
+
 /* Hero (banner) headline sizing is scoped to the section-metadata `style:
    hero-stroke` (which adds `.hero-stroke` to the section) rather than the page
    theme, so the hero styling travels with the section wherever it's authored
