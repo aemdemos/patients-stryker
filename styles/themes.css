@@ -477,6 +477,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
    margin: 0). */
 .zip-skin-closure main > .section:has(.find-a-doctor) {
   margin-bottom: var(--space-section);
+  margin-top: 30px;
 }
 
 /* the source renders the locator as a full-bleed band, edge-to-edge across the
@@ -520,6 +521,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   font-size: var(--panel-heading-size);
   font-weight: 700;
   line-height: var(--heading-line-height);
+  text-align: center;
 }
 
 /* "How Zip works" section heading — Futura bold at 35px on the source (its
@@ -661,6 +663,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
      the shared 30px default; widen the inter-row gap to match. */
   .zip-skin-closure main > .section.columns-container .columns.columns-icon-grid > div {
     row-gap: var(--space-section-l);
+    margin-top: 20px;
   }
 
   /* restore the image column and CTA hidden on mobile once the hero is 2-up */
