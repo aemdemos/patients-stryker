@@ -474,11 +474,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   .section.hero-stroke .hero.banner h1 {
     font-size: calc(-4.16px + 5.0133vw);
   }
-
-  body.discography main > .section.dark .panel.dark .panel-body {
-    padding: 60px 27.6px;
-    }
-
 }
 
 /* =====================================================================
@@ -1232,6 +1227,14 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
   }
+
+    body.discography main > .section.flex > .default-content-wrapper {
+    padding-top: var(--space-section);
+  }
+
+    body.discography main > .section.dark .panel.dark .panel-body {
+      padding: 60px 27.6px;
+    }
 }
 
 /* ----- Large desktop (>=1200px) ----- */
