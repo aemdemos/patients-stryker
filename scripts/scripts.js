@@ -363,23 +363,17 @@ async function getAutoLastModified() {
 }
 
 /*
- * Appends a "Last Updated" line to the end of the page when the author opts in.
- * Controlled by the page-metadata field `last-updated`:
- *   - empty or "false" -> hidden (default)
- *   - "true"           -> shown, using the automatic publish date
- *   - any other value  -> shown verbatim as an author-supplied date/label
+ * Appends a "Last Updated" line to the end of the page. Visibility is controlled
+ * centrally via the `last-updated` bulk-metadata setting (not per page):
+ *   - "show"           -> shown on all matching pages, using the automatic publish date
+ *   - "hide" / empty   -> hidden on all matching pages (default)
  */
 async function decorateLastModified(main) {
   try {
-    const setting = (getMetadata('last-updated') || '').trim();
-    if (!setting || setting.toLowerCase() === 'false') return;
+    const setting = (getMetadata('last-updated') || '').trim().toLowerCase();
+    if (setting !== 'show') return;
 
-    let formatted;
-    if (setting.toLowerCase() === 'true') {
-      formatted = await getAutoLastModified();
-    } else {
-      formatted = setting;
-    }
+    const formatted = await getAutoLastModified();
     if (!formatted) return;
 
     const section = document.createElement('div');

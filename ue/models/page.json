@@ -26,12 +26,6 @@
         },
         {
           "component": "text",
-          "name": "last-updated",
-          "label": "Last Updated",
-          "description": "Controls the 'Last Updated' line at the bottom of the page. Leave empty or 'false' to hide it. Enter 'true' to show the automatic publish date, or type a custom date/label (e.g. 'September 2026') to show that value."
-        },
-        {
-          "component": "text",
           "name": "template",
           "label": "Template",
           "description": "Page template that controls layout and styling",
