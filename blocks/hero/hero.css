@@ -311,6 +311,17 @@
     padding: 0 0 0 5vw;
   }
 
+  /* the banner overlay starts at 600px, so switch to the wide desktop crop here
+     too (the shared toggle otherwise waits until 900px, leaving the portrait
+     mobile image under the overlay between 600–900px) */
+  .hero.banner picture.hero-image-desktop {
+    display: block;
+  }
+
+  .hero.banner picture.hero-image-mobile {
+    display: none;
+  }
+
   /* keep the centred block balanced top and bottom */
   .hero.banner .button-wrapper:last-child {
     margin-bottom: 0;
