@@ -420,6 +420,10 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   body.campaign-landing main > .section.video-container[data-anchor] > div:not(.video-wrapper) p {
     padding-block: 20% 5%;
   }
+
+  body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper {
+    margin-top: 0;
+  }
 }
 
 /* ----- Desktop (>=900px) ----- */
