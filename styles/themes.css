@@ -718,3 +718,36 @@ body.patient-information .cards.brochure-cta > ul > li img {
 body.patient-information main > .section.fragment-container + .section.compact {
   margin-top: var(--space-section);
 }
+
+/* =====================================================================
+   Theme: resources — IVS Patient Resources page (brochure download index)
+   =====================================================================
+ */
+body.resources main .section.no-cta + .section.no-cta {
+  margin-top: calc(var(--space-section) * 2);
+}
+
+body.resources main .section.no-cta > .fragment-wrapper {
+  margin-top: var(--space-section);
+}
+
+body.resources main {
+  padding-top: 40px;
+}
+
+body.resources main .section.no-cta h1 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+body.resources main .section.compact {
+  margin-top: calc(var(--space-section) * 2);
+}
+
+body.resources main > .section.compact > div :is(p, ol, ul, li) {
+  margin-bottom: 0;
+}
+
+body.resources .section.compact {
+  margin-bottom: 0;
+}

@@ -118,38 +118,55 @@ function decorateButtons(main) {
     a.title = a.title || a.textContent;
     const p = a.closest('p');
     const text = a.textContent.trim();
+    const paragraphText = p.textContent.trim();
+    const trailingText = paragraphText.startsWith(text) ? paragraphText.slice(text.length).trim() : '';
+    const standaloneLink = paragraphText === text || /^[.!?]$/.test(trailingText);
 
     // quick structural checks
-    if (a.querySelector('img') || p.textContent.trim() !== text) return;
+    if (a.querySelector('img') || !standaloneLink) return;
 
     // skip URL display links
     try {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
-    // skip sentence-style links: full sentences ending in terminal punctuation are
-    // inline text links (e.g. the "FOR ADDITIONAL INFORMATION…" / California callouts),
-    // not calls-to-action — keep their authored bold/italic emphasis but do not buttonize.
-    if (/[.!?]$/.test(text)) return;
-
     // require authored formatting for buttonization
     const strong = a.closest('strong');
     const em = a.closest('em');
+    const ancestorU = a.closest('u');
+    const u = ancestorU || a.querySelector('u');
+
+    // skip sentence-style links: full sentences ending in terminal punctuation are
+    // inline text links, except explicit bold + underline CTAs.
+    if (/[.!?]$/.test(text) && !(strong && u)) return;
     if (!strong && !em) return;
 
     // bold + underline (authored) → flat inline CTA: bold text in --color-primary,
     // no underline. Must precede the button branches below, which would otherwise
     // see the bold and turn it into a .button.primary. The <u> may wrap the anchor
     // OR sit inside it (authors nest either way), so check both directions.
-    const ancestorU = a.closest('u');
-    const u = ancestorU || a.querySelector('u');
     if (strong && u) {
       a.classList.add('link-strong');
       // unwrap the outermost bold/underline ancestor so the anchor sits directly in
       // the <p>, then strip any <u> inside the anchor so no underline is drawn.
-      let outer = strong;
-      if (ancestorU && ancestorU.contains(strong)) outer = ancestorU;
-      outer.replaceWith(a);
+      if (ancestorU && ancestorU.contains(strong)) {
+        strong.replaceWith(...strong.childNodes);
+        ancestorU.replaceWith(...ancestorU.childNodes);
+      } else {
+        strong.replaceWith(...strong.childNodes);
+      }
+      const parentNodes = [...a.parentElement.childNodes];
+      const trailingNodes = parentNodes.slice(parentNodes.indexOf(a) + 1);
+      const punctuationText = trailingNodes.map((node) => node.textContent).join('').trim();
+      if (/^[.!?]$/.test(punctuationText)) {
+        trailingNodes.forEach((node) => {
+          if (node.nodeType === Node.TEXT_NODE) a.append(node);
+          else {
+            a.append(...node.childNodes);
+            node.remove();
+          }
+        });
+      }
       a.querySelectorAll('u').forEach((inner) => inner.replaceWith(...inner.childNodes));
       return;
     }
@@ -328,22 +345,36 @@ function normalizePath(path) {
   return clean || '/';
 }
 
-/* Appends a "Last Modified" line to the end of the page. */
+/* Resolves the "Last Updated" label from the auto publish timestamp. */
+async function getAutoLastModified() {
+  const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
+  if (!resp.ok) return '';
+  const { data = [] } = await resp.json();
+  const current = normalizePath(window.location.pathname);
+  const row = data.find((r) => normalizePath(r.path) === current);
+  const ts = row && Number(row.lastModified);
+  if (!ts) return '';
+
+  const date = new Date(ts * 1000);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+  }).replace(' ', '/');
+}
+
+/*
+ * Appends a "Last Updated" line to the end of the page. Visibility is controlled
+ * centrally via the `last-updated` bulk-metadata setting (not per page):
+ *   - "show"           -> shown on all matching pages, using the automatic publish date
+ *   - "hide" / empty   -> hidden on all matching pages (default)
+ */
 async function decorateLastModified(main) {
   try {
-    const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
-    if (!resp.ok) return;
-    const { data = [] } = await resp.json();
-    const current = normalizePath(window.location.pathname);
-    const row = data.find((r) => normalizePath(r.path) === current);
-    const ts = row && Number(row.lastModified);
-    if (!ts) return;
+    const setting = (getMetadata('last-updated') || '').trim().toLowerCase();
+    if (setting !== 'show') return;
 
-    const date = new Date(ts * 1000);
-    const formatted = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-    }).replace(' ', '/');
+    const formatted = await getAutoLastModified();
+    if (!formatted) return;
 
     const section = document.createElement('div');
     section.className = 'section last-modified-section';
@@ -512,9 +543,18 @@ async function loadPage() {
   loadDelayed();
 }
 
-loadPage();
-
 if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
-  // eslint-disable-next-line import/no-cycle
-  await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
+  // UE only: attach observers before block decoration so transformed rows retain
+  // their data-aue-* instrumentation. Awaiting this import prevents the eager
+  // first section from racing observer setup; live-site loading is unaffected.
+  try {
+    // eslint-disable-next-line import/no-cycle
+    await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
+  } catch (e) {
+    // never let a UE-tooling failure block the page from rendering in the editor
+    // eslint-disable-next-line no-console
+    console.error('failed to initialize universal editor observers', e);
+  }
 }
+
+loadPage();
