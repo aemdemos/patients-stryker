@@ -48,20 +48,14 @@
   list-style-type: disc;
 }
 
-/* text-only columns (tagged .columns-text in JS) — smaller mobile type, bumped
-   up at >= 600px below */
+/* text-only columns (tagged .columns-text in JS) — headings are smaller on
+   mobile (17.5px) and bump up to 21.875px at >= 600px (see below). Body copy is
+   unchanged (stays 17.5px at all widths via the base .columns rules). */
 .columns-text h2,
 .columns-text h3,
 .columns-text h4 {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
-}
-
-.columns-text p,
-.columns-text ul,
-.columns-text li {
-  font-size: var(--body-font-size-m);
-  line-height: var(--paragraph-line-height);
 }
 
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
@@ -295,19 +289,12 @@
 
 /* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
-  /* text-only columns bump back up to the reference's tablet/desktop type */
+  /* text-only headings bump up to the reference's tablet/desktop size */
   .columns-text h2,
   .columns-text h3,
   .columns-text h4 {
     font-size: var(--heading-font-size-ml);
     line-height: var(--heading-line-height-ml);
-  }
-
-  .columns-text p,
-  .columns-text ul,
-  .columns-text li {
-    font-size: var(--body-font-size-l);
-    line-height: var(--body-line-height-l);
   }
 
   .section.compact .columns h2 {
