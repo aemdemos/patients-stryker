@@ -754,6 +754,7 @@ var CustomImportScript = (() => {
       main.appendChild(hr);
       const meta = WebImporter.Blocks.getMetadata(document);
       meta.template = "procedure-detail";
+      meta.nav = "/us/en/ivs/nav-ivs";
       const slug = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html$/, "").split("/").filter(Boolean).pop();
       if (slug) meta.theme = `pd-${slug}`;
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));

@@ -160,6 +160,12 @@ export default {
     main.appendChild(hr);
     const meta = WebImporter.Blocks.getMetadata(document);
     meta.template = 'procedure-detail';
+    // IVS treatment pages use the taller two-row `nav-ivs` header in production.
+    // Declare it in page metadata so the preview renders the SAME nav (matching
+    // production) and aem.js reserves the correct two-row height eagerly — without
+    // it the page falls back to the short single-row /nav, causing a header-height
+    // jump (CLS) and the wrong nav→hero spacing when the real nav loads live.
+    meta.nav = '/us/en/ivs/nav-ivs';
     // Per-page hook for targeted fidelity fixes: a `theme` token becomes a
     // `body.pd-<slug>` class (via aem.js decorateTemplateAndTheme), letting the
     // template CSS scope a rule to one page or an OR-list of pages when the

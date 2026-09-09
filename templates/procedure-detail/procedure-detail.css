@@ -1,7 +1,8 @@
 /* Procedure Detail template — overrides scoped to body.procedure-detail. */
 
-/* Mobile: space between the header and the hero (source gap ~90px above the
-   banner card); removed from 600px up where the hero overlays a wider image. */
+/* Space between the header and the hero: source gap is ~90px on mobile, 61px
+   from 600px up (where the hero overlays a wider image). Reserved regardless of
+   nav height so it holds before the nav-ivs header loads. */
 body.procedure-detail main > .section.hero-container {
   margin-top: var(--space-section-xl);
 }
@@ -14,7 +15,7 @@ body.procedure-detail main > .section.hero-container {
   }
 
   body.procedure-detail main > .section.hero-container {
-    margin-top: 0;
+    margin-top: var(--space-nav-hero-gap);
   }
 }
 
