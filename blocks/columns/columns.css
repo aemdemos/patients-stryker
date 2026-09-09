@@ -48,10 +48,9 @@
   list-style-type: disc;
 }
 
-/* text-only columns (tagged .columns-text in JS) — headings are smaller on
-   mobile (17.5px) and bump up to 21.875px at >= 600px (see below). Body copy is
-   unchanged (stays 17.5px at all widths via the base .columns rules). */
-.columns-text h2,
+/* text-only columns (tagged .columns-text in JS) — the column titles are peer
+   headings authored as h3/h4; normalise them to one size (smaller on mobile,
+   bumped at >= 600px below). Body copy is unchanged (stays 17.5px via base rules). */
 .columns-text h3,
 .columns-text h4 {
   font-size: var(--body-font-size-l);
@@ -316,8 +315,7 @@
 
 /* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
-  /* text-only headings bump up to the reference's tablet/desktop size */
-  .columns-text h2,
+  /* text-only column titles bump up to the reference's tablet/desktop size */
   .columns-text h3,
   .columns-text h4 {
     font-size: var(--heading-font-size-ml);
