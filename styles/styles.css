@@ -470,11 +470,6 @@ sup a:any-link {
   text-decoration: none;
 }
 
-.section.compact a:any-link {
-  text-decoration: none;
-  font-family: var(--display-font-family);
-}
-
 /* UE fallback: before decorateButtons() converts a bold authored link to
    `.button.primary`, style both supported authoring nesting directions as the
    same green button. */
@@ -498,6 +493,11 @@ a:any-link > strong {
   text-decoration: none;
 }
 
+.section.compact a:any-link {
+  text-decoration: none;
+  font-family: var(--display-font-family);
+}
+
 /* bold + underline authored links become flat teal CTAs with a trailing chevron */
 a.link-strong:any-link {
   display: inline;
@@ -519,27 +519,10 @@ a.link-strong:any-link::after {
   border-color: transparent transparent transparent currentcolor;
 }
 
-/* compact section links (e.g. reference URLs) are plain, not underlined — matches
-   the source's dense footer. Placed after the base link rules to keep cascade order. */
-.section.compact a:any-link {
-  text-decoration: none;
-}
-
-/* chevron drawn in CSS (the source uses a proprietary icon font); follows the
-   link colour via currentcolor */
-a.link-strong:any-link::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 4px 0 4px 5px;
-  border-color: transparent transparent transparent currentcolor;
-}
-
 a.link-strong:hover,
 a.link-strong:focus {
   color: var(--color-primary-hover);
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* buttons */
