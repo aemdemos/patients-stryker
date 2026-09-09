@@ -345,22 +345,42 @@ function normalizePath(path) {
   return clean || '/';
 }
 
-/* Appends a "Last Modified" line to the end of the page. */
+/* Resolves the "Last Updated" label from the auto publish timestamp. */
+async function getAutoLastModified() {
+  const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
+  if (!resp.ok) return '';
+  const { data = [] } = await resp.json();
+  const current = normalizePath(window.location.pathname);
+  const row = data.find((r) => normalizePath(r.path) === current);
+  const ts = row && Number(row.lastModified);
+  if (!ts) return '';
+
+  const date = new Date(ts * 1000);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+  }).replace(' ', '/');
+}
+
+/*
+ * Appends a "Last Updated" line to the end of the page when the author opts in.
+ * Controlled by the page-metadata field `last-updated`:
+ *   - empty or "false" -> hidden (default)
+ *   - "true"           -> shown, using the automatic publish date
+ *   - any other value  -> shown verbatim as an author-supplied date/label
+ */
 async function decorateLastModified(main) {
   try {
-    const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
-    if (!resp.ok) return;
-    const { data = [] } = await resp.json();
-    const current = normalizePath(window.location.pathname);
-    const row = data.find((r) => normalizePath(r.path) === current);
-    const ts = row && Number(row.lastModified);
-    if (!ts) return;
+    const setting = (getMetadata('last-updated') || '').trim();
+    if (!setting || setting.toLowerCase() === 'false') return;
 
-    const date = new Date(ts * 1000);
-    const formatted = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-    }).replace(' ', '/');
+    let formatted;
+    if (setting.toLowerCase() === 'true') {
+      formatted = await getAutoLastModified();
+    } else {
+      formatted = setting;
+    }
+    if (!formatted) return;
 
     const section = document.createElement('div');
     section.className = 'section last-modified-section';
