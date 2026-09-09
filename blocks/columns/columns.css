@@ -151,6 +151,13 @@
   row-gap: var(--space-section-l);
 }
 
+/* the internal trailing margins are zeroed (below), so the block needs its own
+   top+bottom margin to separate the section from its neighbours — otherwise a
+   taller image column leaves the block flush against the adjacent sections. */
+.section.serif .columns.columns-50-50 {
+  margin-block: var(--space-section);
+}
+
 .section.serif .columns.columns-50-50 .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
