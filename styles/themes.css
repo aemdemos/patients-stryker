@@ -473,9 +473,10 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 }
 
 /* separate the find-a-doctor band from the References block that follows it,
-   matching the source's gap below the locator (sections default to margin: 0). */
+   matching the source's ~30px gap below the locator (sections default to
+   margin: 0). */
 .zip-skin-closure main > .section:has(.find-a-doctor) {
-  margin-bottom: var(--space-section-l);
+  margin-bottom: var(--space-section);
 }
 
 /* the source renders the locator as a full-bleed band, edge-to-edge across the
@@ -486,6 +487,12 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 .zip-skin-closure main > .section:has(.find-a-doctor) > .find-a-doctor-wrapper {
   max-width: none;
   padding-inline: 0;
+}
+
+/* add breathing room above the References block that follows the locator band,
+   matching the source's gap before "References". */
+.zip-skin-closure main > .section:has(.find-a-doctor) + .section {
+  padding-top: var(--space-section);
 }
 
 /* "How Zip works" intro paragraph — the source renders it at 24.5px (its
