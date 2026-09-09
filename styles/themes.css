@@ -445,33 +445,41 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 }
 
 /* =====================================================================
-   Theme: procedure-detail — Treatment/procedure detail pages
-   (e.g. /ivs/treatments/discography). Opted in via page metadata
-   `theme: procedure-detail`. The balloon-kyphoplasty page reaches the same
-   `body.procedure-detail` class via `template: procedure-detail`, so these
-   rules are kept general enough to serve both. Only page/theme-level DELTAS
-   live here — the hero.banner, panel.* and cards.resources blocks already
-   carry their full base styling in their own block CSS. */
+   Theme: discography — /ivs/treatments/discography
+   Opted in via page metadata `theme: discography`, which adds
+   `body.discography`. Only page/theme-level DELTAS live here — the
+   hero.banner, panel.* and cards.resources blocks already carry their full
+   base styling in their own block CSS. Sibling treatment pages use their own
+   per-page themes (pd-*), so these rules are scoped to this page alone. */
 
-/* ----- Theme tokens (procedure-detail) -----
+/* ----- Theme tokens (discography) -----
    Spacing/size deltas that this page needs beyond the shared tokens. Scoped to
-   the theme's body class so they exist only on procedure-detail pages and are
+   the theme's body class so they exist only on the discography page and are
    named for the theme. Values are measured against the source at desktop
    (~1440px), the width the design is compared at. */
-body.procedure-detail {
+body.discography {
   --procedure-hero-h1-size: 28px;      /* source hero headline (vs shared 42px) */
   --procedure-hero-foot: 55px;         /* whitespace below the hero button */
   --procedure-zone-gap: 90px;          /* larger inter-zone gap the source uses
                                           above the copy bands (How it works /
                                           Potential risks) */
   --procedure-resources-card-gap: 71px; /* Resources heading → brochure card */
+  --procedure-body-copy-size: 1.25em;  /* default-content paragraph size (≈17.5px) */
+}
+
+/* ----- Body copy size -----
+   Enlarge the page's default-content paragraphs to 1.25em (≈17.5px against the
+   14px body). Scoped to the theme's default-content paragraphs; the compact
+   fine-print disclaimer keeps its own small size, so it is excluded. */
+body.discography main > .section:not(.compact) > .default-content-wrapper p {
+  font-size: var(--procedure-body-copy-size);
 }
 
 /* ----- Hero top gap -----
    The source floats the hero banner ~61px below the yellow nav bar (measured
    nav-bottom→hero-image 61px). The EDS hero-container sits flush against the
    header, so add the matching top gap above the first (hero) section. */
-body.procedure-detail main > .section.hero-container:first-child {
+body.discography main > .section.hero-container:first-child {
   margin-top: var(--space-section-l);
 }
 
@@ -481,7 +489,7 @@ body.procedure-detail main > .section.hero-container:first-child {
    (line-height 1.06). Pin the theme size from the tablet overlay breakpoint up
    (mobile keeps the shared fluid 7vw). */
 @media (width >= 600px) {
-  body.procedure-detail .hero.banner h1 {
+  body.discography .hero.banner h1 {
     font-size: var(--procedure-hero-h1-size);
     line-height: var(--heading-line-height);
   }
@@ -496,7 +504,7 @@ body.procedure-detail main > .section.hero-container:first-child {
    margin plus this padding. Only applies at the tablet+ overlay breakpoint
    (below 600px the copy stacks under the image, matching the source). */
 @media (width >= 600px) {
-  body.procedure-detail .hero.banner > div:last-child {
+  body.discography .hero.banner > div:last-child {
     align-self: end;
     padding-bottom: var(--procedure-hero-foot);
   }
@@ -509,13 +517,13 @@ body.procedure-detail main > .section.hero-container:first-child {
    margin:0, so add a consistent top gap to every zone after the hero. The
    explicit list keeps the empty trailing (section-metadata) wrapper out of
    the rhythm so no stray gap appears at the foot of the page. */
-body.procedure-detail main > .section.flex,
-body.procedure-detail main > .section.dark,
-body.procedure-detail main > .section.light-gray,
-body.procedure-detail main > .section.marketo-form-container,
-body.procedure-detail main > .section.cards-container,
-body.procedure-detail main > .section.compact,
-body.procedure-detail main > .section.panel-container:not(.flex, .dark) {
+body.discography main > .section.flex,
+body.discography main > .section.dark,
+body.discography main > .section.light-gray,
+body.discography main > .section.marketo-form-container,
+body.discography main > .section.cards-container,
+body.discography main > .section.compact,
+body.discography main > .section.panel-container:not(.flex, .dark) {
   margin-top: var(--space-section-l);
 }
 
@@ -525,8 +533,8 @@ body.procedure-detail main > .section.panel-container:not(.flex, .dark) {
    above "Potential risks of the procedure" (the light-gray zone after the
    Resources cards) than above the other zones. Override the flat rhythm above
    for just those two bands, identified by the section that precedes each. */
-body.procedure-detail main > .section.dark + .section.light-gray,
-body.procedure-detail main > .section.cards-container + .section.light-gray {
+body.discography main > .section.dark + .section.light-gray,
+body.discography main > .section.cards-container + .section.light-gray {
   margin-top: var(--procedure-zone-gap);
 }
 
@@ -540,17 +548,17 @@ body.procedure-detail main > .section.cards-container + .section.light-gray {
    section, so override that to transparent and move the fill onto the inner
    content box, sizing it to the gutter-inset content width so its left edge
    lines up with the gold panel. */
-body.procedure-detail main > .section.light-gray {
+body.discography main > .section.light-gray {
   background: none;
 }
 
 /* drop the emptied (consumed section-metadata) wrapper so it can't paint a
    stray gray box above the real content. */
-body.procedure-detail main > .section.light-gray > div:empty {
+body.discography main > .section.light-gray > div:empty {
   display: none;
 }
 
-body.procedure-detail main > .section.light-gray > .default-content-wrapper {
+body.discography main > .section.light-gray > .default-content-wrapper {
   box-sizing: border-box;
   max-width: calc(var(--container-max) - 2 * var(--container-gutter));
   margin-inline: auto;
@@ -565,7 +573,7 @@ body.procedure-detail main > .section.light-gray > .default-content-wrapper {
    underline for `.section.no-cta` headings; the Resources zone here is a
    `.cards-container` section, so add the matching rule as a theme delta. The
    h2 itself is already Futura-bold 24.5px (base h2), matching the source. */
-body.procedure-detail main > .section.cards-container > .default-content-wrapper h2 {
+body.discography main > .section.cards-container > .default-content-wrapper h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
 }
@@ -575,7 +583,7 @@ body.procedure-detail main > .section.cards-container > .default-content-wrapper
    heading (measured ~71px heading-baseline→card-top). The heading's own 15px
    bottom margin plus the cards block's spacing only yields ~15px here, so open
    the gap by pushing the cards grid down as a theme delta. */
-body.procedure-detail main > .section.cards-container > .cards-wrapper {
+body.discography main > .section.cards-container > .cards-wrapper {
   margin-top: var(--procedure-resources-card-gap);
 }
 
@@ -585,7 +593,7 @@ body.procedure-detail main > .section.cards-container > .cards-wrapper {
    through to the global h2 rule (Futura bold). The source renders it as a thin
    white serif (URW-Egyptienne Light, weight 500), so restore that here as a
    theme delta scoped to this page's dark panels. */
-body.procedure-detail main > .section.dark .panel.dark .panel-body h2 {
+body.discography main > .section.dark .panel.dark .panel-body h2 {
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
@@ -599,7 +607,7 @@ body.procedure-detail main > .section.dark .panel.dark .panel-body h2 {
    interior pad, so the statement sits near the top of a taller band. The base
    .panel.dark .panel-body uses a flat 22.5px all round, which reads as a short
    vertically-centered strip. Restore the source's asymmetric padding here. */
-body.procedure-detail main > .section.dark .panel.dark .panel-body {
+body.discography main > .section.dark .panel.dark .panel-body {
   padding: 55px 27.6px;
 }
 
