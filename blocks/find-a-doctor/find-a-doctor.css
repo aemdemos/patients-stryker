@@ -216,10 +216,38 @@
   background-color: var(--color-primary-hover);
 }
 
+/* tablet and up (>= 600px) — the three controls (Zip / Radius / Find a doctor)
+   sit on a single row, matching the source, which keeps them inline down to
+   tablet widths and only stacks them on narrow phones. This is independent of
+   the 900px image-split below: between 600–900px the band still shows the mobile
+   background-photo + floating gray box, but with the controls in a row. */
+@media (width >= 600px) {
+  .find-a-doctor .find-a-doctor-fields {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+
+  .find-a-doctor .find-a-doctor-location {
+    flex: 1 1 auto;
+    min-width: 0; /* allow the flex item to shrink below its content width */
+  }
+
+  /* in the row the radius keeps its compact fixed width (source ~130px) */
+  .find-a-doctor .find-a-doctor-radius {
+    flex: 0 0 130px;
+    align-self: auto;
+    width: 130px;
+  }
+
+  .find-a-doctor .find-a-doctor-submit {
+    flex: 0 0 auto;
+  }
+}
+
 /* tablet and up (>= 900px) — switch from the mobile background-photo + floating
    gray box to a side-by-side split: the image on the left (~40%) and the grey
-   panel with the form on the right (~60%), controls in a single row. Maps the
-   source's 840px side-by-side breakpoint to our 900px. */
+   panel with the form on the right (~60%). Maps the source's 840px side-by-side
+   breakpoint to our 900px. */
 @media (width >= 900px) {
   .find-a-doctor {
     /* nowrap so the panel can never drop below the image (wrap would restack the
@@ -256,29 +284,6 @@
     margin: 0;
     padding: 40px;
     background-color: var(--color-surface);
-  }
-
-  /* the three controls stay on one row (Zip / Radius / Find a doctor) and never
-     wrap — the location field flexes to fill, the radius and button hold their
-     size. */
-  .find-a-doctor .find-a-doctor-fields {
-    flex-flow: row nowrap;
-    align-items: flex-start;
-  }
-
-  .find-a-doctor .find-a-doctor-location {
-    flex: 1 1 auto;
-    min-width: 0; /* allow the flex item to shrink below its content width */
-  }
-
-  /* in the row the radius keeps its compact fixed width (source ~130px) */
-  .find-a-doctor .find-a-doctor-radius {
-    flex: 0 0 130px;
-    width: 130px;
-  }
-
-  .find-a-doctor .find-a-doctor-submit {
-    flex: 0 0 auto;
   }
 }
 
