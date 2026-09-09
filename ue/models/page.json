@@ -25,36 +25,20 @@
           "description": "Index control via robots"
         },
         {
-          "component": "text",
-          "name": "template",
-          "label": "Template",
-          "description": "Page template that controls layout and styling",
-          "value": "",
-          "readOnly": true,
-          "condition": {
-            "!=": [
-              {
-                "var": "template"
-              },
-              ""
-            ]
-          }
-        },
-        {
-          "component": "text",
+          "component": "select",
           "name": "theme",
           "label": "Theme",
-          "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
+          "description": "Page theme — adds body.<theme> and loads its scoped rules from styles/themes.css",
+          "valueType": "string",
           "value": "",
-          "readOnly": true,
-          "condition": {
-            "!=": [
-              {
-                "var": "theme"
-              },
-              ""
-            ]
-          }
+          "options": [
+            { "name": "None", "value": "" },
+            { "name": "Patient Information", "value": "patient-information" },
+            { "name": "Resources", "value": "resources" },
+            { "name": "SA Resources", "value": "sa-resources" },
+            { "name": "Stroke Awareness Landing", "value": "stroke-awareness-landing" },
+            { "name": "Homepage", "value": "homepage" }
+          ]
         }
       ]
     }
