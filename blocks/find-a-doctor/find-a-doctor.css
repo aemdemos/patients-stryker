@@ -6,7 +6,6 @@
 .find-a-doctor {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-surface);
 }
 
 /* banner image */
@@ -31,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 24px;
+  background-color: var(--color-surface);
 }
 
 .find-a-doctor .find-a-doctor-title {
@@ -145,118 +145,33 @@
   background-color: var(--color-primary-hover);
 }
 
-/* --- results list --- */
-.find-a-doctor .find-a-doctor-results {
-  padding: 24px;
-}
-
-.find-a-doctor .find-a-doctor-results-title {
-  margin: 0 0 16px;
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-l);
-  font-weight: 700;
-  color: var(--color-black);
-}
-
-.find-a-doctor .find-a-doctor-status {
-  margin: 0;
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-m);
-  color: var(--find-a-doctor-label-color);
-}
-
-.find-a-doctor .find-a-doctor-card-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.find-a-doctor .find-a-doctor-card {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-none);
-  padding: 16px;
-  background-color: var(--color-white);
-}
-
-.find-a-doctor .find-a-doctor-card-name {
-  margin: 0 0 4px;
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-l);
-  font-weight: 700;
-  color: var(--color-black);
-}
-
-.find-a-doctor .find-a-doctor-card-spec {
-  margin: 0 0 8px;
-  font-size: var(--body-font-size-s);
-  color: var(--color-primary);
-}
-
-.find-a-doctor .find-a-doctor-card-facility,
-.find-a-doctor .find-a-doctor-card-distance {
-  margin: 0 0 8px;
-  font-size: var(--body-font-size-s);
-  color: var(--color-text-muted);
-}
-
-.find-a-doctor .find-a-doctor-card-distance {
-  margin-bottom: 12px;
-  color: var(--find-a-doctor-label-color);
-}
-
-.find-a-doctor .find-a-doctor-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.find-a-doctor .find-a-doctor-card-call,
-.find-a-doctor .find-a-doctor-card-profile {
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--color-primary);
-}
-
-.find-a-doctor .find-a-doctor-card-call:hover,
-.find-a-doctor .find-a-doctor-card-profile:hover {
-  text-decoration: underline;
-}
-
-/* tablet and up — image left, form panel right (source: ~40/60 split, 200px band).
-   Controls sit in a single row within the panel. The results list wraps full-width
-   below the banner. */
-@media (width >= 841px) {
+/* tablet and up — the source places the image on the left (~40%) and the grey
+   panel on the right (~60%), side by side, with the controls in a single row. */
+@media (width >= 600px) {
   .find-a-doctor {
     flex-flow: row wrap;
     align-items: stretch;
   }
 
-  .find-a-doctor .find-a-doctor-results {
-    flex: 1 1 100%;
-    padding-inline: 40px;
-  }
-
-  .find-a-doctor .find-a-doctor-card-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  /* the image no longer drives the band height: it's an absolutely-positioned
+     fill inside its column, so the band height equals the form panel and the
+     image crops to a strip (matching the source's shallow banner). */
   .find-a-doctor .find-a-doctor-media {
+    position: relative;
     flex: 0 0 40%;
     max-width: 40%;
+    overflow: hidden;
+  }
 
-    /* source crops the image to a shallow banner strip rather than its full
-       aspect ratio; cap the band height and let object-fit: cover crop it */
-    max-height: 250px;
+  .find-a-doctor .find-a-doctor-media picture,
+  .find-a-doctor .find-a-doctor-media img {
+    position: absolute;
+    inset: 0;
   }
 
   .find-a-doctor .find-a-doctor-panel {
-    padding-inline: 40px;
+    flex: 1 1 auto;
+    padding: 40px;
   }
 
   .find-a-doctor .find-a-doctor-fields {

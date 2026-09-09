@@ -472,6 +472,12 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   margin-top: 100px;
 }
 
+/* separate the find-a-doctor band from the References block that follows it,
+   matching the source's gap below the locator (sections default to margin: 0). */
+.zip-skin-closure main > .section:has(.find-a-doctor) {
+  margin-bottom: var(--space-section-l);
+}
+
 /* "How Zip works" intro paragraph — the source renders it at 24.5px (its
    .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.
    Scoped to the zip page's "How Zip works" heading + its following paragraph so
