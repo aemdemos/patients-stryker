@@ -476,16 +476,8 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
-/* Footnote citation links — the counterpart to the global decorateFootnotes()
-   (scripts.js), which runs on every page and wraps each citation digit in an
-   <a href="#fn-N"> inside its <sup>. These render as teal, no underline, and
-   otherwise INHERIT their context's font family + weight (verified against the
-   source: body font/400 in body copy, URW/500 in a dark band) — NOT forced to
-   Futura bold. This rule overrides only color + underline; family/weight
-   inherit. Scoped to <sup> + #fn-* because that is what decorateFootnotes emits
-   site-wide. (Site-specific reference anchors like #disclaimer are handled in
-   the relevant template's CSS, not here.) Placed after the base link rules so
-   the override reads in natural cascade order. */
+/* Footnote citation links (from the global decorateFootnotes()) — teal, no
+   underline; family/weight inherit from context. */
 sup a:any-link,
 a[href^="#fn-"]:any-link {
   color: var(--link-color);
