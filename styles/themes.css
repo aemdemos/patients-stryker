@@ -125,20 +125,25 @@ body.stroke-awareness-landing .section.compact {
   margin-top: 70px;
 }
 
-/* Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
+/* Hero (banner) headline sizing is scoped to the section-metadata `style:
+   hero-stroke` (which adds `.hero-stroke` to the section) rather than the page
+   theme, so the hero styling travels with the section wherever it's authored
+   instead of being pinned to this one page.
+
+   Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
    1200), so the source's own breakpoints translate as: source 840px → 600px,
    1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
    mobile is a single regime below 600px.
    mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
    → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
-body.stroke-awareness-landing .hero.banner h1 {
+.section.hero-stroke .hero.banner h1 {
   font-size: 8vw;
 }
 
 /* Word gap — the source keeps a space between "Understanding" and the gold
    "stroke"; our authored markup collapses the leading space inside the inline
    accent span, so restore the gap explicitly on the gold accent. */
-body.stroke-awareness-landing .hero.banner h1 em strong {
+.section.hero-stroke .hero.banner h1 em strong {
   margin-left: 0.2em;
 }
 
@@ -160,7 +165,7 @@ body.stroke-awareness-landing .hero.banner h1 em strong {
 
   /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
      EDS large breakpoint (1200px ← source 1440px). */
-  body.stroke-awareness-landing .hero.banner h1 {
+  .section.hero-stroke .hero.banner h1 {
     font-size: calc(-4.16px + 5.0133vw);
   }
 }
@@ -174,7 +179,7 @@ body.stroke-awareness-landing .hero.banner h1 em strong {
   }
 
   /* EDS large (1200px) ← source 1440px cap: 56px flat */
-  body.stroke-awareness-landing .hero.banner h1 {
+  .section.hero-stroke .hero.banner h1 {
     font-size: 56px;
   }
 }
