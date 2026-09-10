@@ -165,6 +165,7 @@
   box-shadow: none;
   text-align: left;
   color: var(--color-white);
+  margin:0;
 }
 
 .panel.dark .panel-body h3 {
