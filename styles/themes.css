@@ -482,9 +482,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 body.discography {
   --procedure-hero-h1-size: 28px;      /* source hero headline (vs shared 42px) */
   --procedure-hero-foot: 55px;         /* whitespace below the hero button */
-  --procedure-zone-gap: 120px;          /* larger inter-zone gap the source uses
-                                          above the copy bands (How it works /
-                                          Potential risks) */
+  --procedure-zone-gap: 120px;        
   --procedure-resources-card-gap: 71px; /* Resources heading → brochure card */
   --procedure-body-copy-size: 1.25em;    /* default-content paragraph size (source: 14px) */
   --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
@@ -502,8 +500,7 @@ body.discography main .section.flex > div > h3 {
 
 body.discography main .section:not(.compact) > div > p {
   font-size: 1.25em;
-  line-height: var(--procedure-body-copy-line-height);
-  margin-bottom: 40px;
+  line-height: 1.1;
 }
 
 body.discography main > .section.hero-container:first-child {
@@ -512,12 +509,10 @@ body.discography main > .section.hero-container:first-child {
 
 @media (width >= 600px) {
   body.discography .hero.banner h1 {
-    font-size: 2.8vw;
+    font-size: 3vw;
     line-height: var(--heading-line-height);
   }
-}
 
-@media (width >= 600px) {
   body.discography .hero.banner > div:last-child {
     align-self: end;
     padding-bottom: var(--procedure-hero-foot);
@@ -534,9 +529,12 @@ body.discography main > .section.panel-container:not(.flex, .dark) {
   margin-top: 75px;
 }
 
-body.discography main > .section.dark + .section.light-gray,
 body.discography main > .section.cards-container + .section.light-gray {
   margin-top: var(--procedure-zone-gap);
+}
+
+body.discography main > .section.dark + .section.light-gray {
+  margin-top: 80px;
 }
 
 body.discography main .section.light-gray {
@@ -613,6 +611,10 @@ body.discography main .panel.cta.wide .panel-body li {
   line-height: var(--body-line-height-l);
 }
 
+body.discography main .panel .panel-body p:last-child {
+  margin: 10px 0;
+}
+
 /* ----- Gold CTA panel copy -----
    The "Tired of living in pain?" gold band renders its paragraph as HumanistSlab
    body copy (14px) in the source, but the shared gold variant applies the 21px
@@ -656,6 +658,10 @@ body.discography main > .section.compact > div > p {
   /* Theme: campaign-landing */
   body.campaign-landing main .hero.fullbleed h1 {
     font-size: 70px;
+  }
+
+   body.discography .hero.banner h1 {
+    font-size: 42px;
   }
 }
 
@@ -1242,7 +1248,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   }
 
     body.discography main .section.dark .panel.dark .panel-body {
-      padding: 60px 27.6px;
+      padding: 70px 27.6px;
     }
 }
 
@@ -1255,6 +1261,8 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: 91px;
   }
+
+
 }
 
 /* =====================================================================
