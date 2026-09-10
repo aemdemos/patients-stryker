@@ -238,12 +238,12 @@
   background-color: var(--color-primary-hover);
 }
 
-/* tablet and up (>= 900px) — the three controls (Zip / Radius / Find a doctor)
+/* tablet and up (>= 600px) — the three controls (Zip / Radius / Find a doctor)
    sit on a single row, matching the source, which keeps them inline down to
    tablet widths and only stacks them on narrow phones. This is independent of
-   the 1200px image-split below: between 900–1200px the band still shows the mobile
+   the 900px image-split below: between 600–900px the band still shows the mobile
    background-photo + floating gray box, but with the controls in a row. */
-@media (width >= 900px) {
+@media (width >= 600px) {
   .find-a-doctor .find-a-doctor-fields {
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -267,11 +267,11 @@
   }
 }
 
-/* tablet and up (>= 1200px) — switch from the mobile background-photo + floating
+/* tablet and up (>= 900px) — switch from the mobile background-photo + floating
    gray box to a side-by-side split: the image on the left (~40%) and the grey
-   panel with the form on the right (~60%). The side-by-side split lands at our
-   1200px desktop step. */
-@media (width >= 1200px) {
+   panel with the form on the right (~60%). Maps the source's 840px side-by-side
+   breakpoint to our 900px (a find-a-doctor exception; 840 maps to 900, not 600). */
+@media (width >= 900px) {
   .find-a-doctor {
     /* nowrap so the panel can never drop below the image (wrap would restack the
        band into the mobile look) */

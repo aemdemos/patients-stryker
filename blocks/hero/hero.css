@@ -124,7 +124,7 @@
 
 /* stroke-awareness landing hero: copy stacked ABOVE the banner image on
    mobile/tablet (the block outputs [image][content], so column-reverse lifts
-   the copy on top); switches to a left-side overlay at 1200px (see below) */
+   the copy on top); switches to a left-side overlay at 900px (see below) */
 .hero-stroke.section .hero.banner {
   display: flex;
   flex-direction: column-reverse;
@@ -169,7 +169,7 @@
   line-height: var(--heading-line-height-hero);
 }
 
-/* subheading — dark serif, 21px on phones then 24.5px from 900px up */
+/* subheading — dark serif, 21px on phones then 24.5px from 600px up */
 .hero.banner h2 {
   margin-bottom: var(--space-block);
   color: var(--text-color);
@@ -279,8 +279,8 @@
   line-height: var(--heading-line-height-hero);
 }
 
-/* ===== Tablet and up (900px) — all variants ===== */
-@media (width >= 900px) {
+/* ===== Tablet and up (600px) — all variants ===== */
+@media (width >= 600px) {
   .hero {
     padding: 40px 32px;
   }
@@ -291,7 +291,7 @@
     grid-template-columns: 1fr;
   }
 
-  /* stroke-awareness landing stays STACKED (text above image) until 1200px, so
+  /* stroke-awareness landing stays STACKED (text above image) until 900px, so
      keep it flex here and override the base banner grid above */
   .hero-stroke.section .hero.banner {
     display: flex;
@@ -357,7 +357,7 @@
     font-size: 1.5vw;
   }
 
-  /* stroke-awareness copy is stacked (not overlaid) below 1200px, so keep it
+  /* stroke-awareness copy is stacked (not overlaid) below 900px, so keep it
      full-width with the standard gutter padding */
   .hero-stroke.section .hero.banner > div:last-child {
     align-self: auto;
@@ -404,11 +404,11 @@
   padding-top: 7px;
 }
 
-/* ===== Desktop (1200px) — fullbleed switches to a side-column overlay on a
+/* ===== Desktop (900px) — fullbleed switches to a side-column overlay on a
    wide-crop image. Below this the fullbleed copy keeps its mobile treatment
-   (full-width overlay, 7vw/3vw text on the portrait image), so 900–1200px
-   matches the <900px view. ===== */
-@media (width >= 1200px) {
+   (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
+   matches the <600px view. ===== */
+@media (width >= 900px) {
   /* top-align the copy near the top of the image (matches the source, which
      insets it ~5% of the band height), rather than vertically centering it */
   .hero.fullbleed > div:last-child {
@@ -473,9 +473,9 @@
   }
 }
 
-/* ===== Large desktop (1800px) — cap the fluid headline/copy sizes
+/* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
    so text stops growing past this width ===== */
-@media (width >= 1800px) {
+@media (width >= 1200px) {
   .hero.banner h1 {
     font-size: 42px;
   }

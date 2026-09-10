@@ -8,7 +8,7 @@
  *
  * Keeps desktop + mobile as SEPARATE pictures (each with its own alt) so authors
  * can describe each crop distinctly, matching the source site. CSS toggles their
- * visibility at the 1200px crossover (.hero-image-desktop / .hero-image-mobile).
+ * visibility at the 900px crossover (.hero-image-desktop / .hero-image-mobile).
  * The block is rebuilt into an [image][content] structure the CSS overlays.
  * @param {Element} block the hero block
  */
