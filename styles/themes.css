@@ -503,6 +503,11 @@ body.discography main .section:not(.compact) > div > p {
   line-height: 1.1;
 }
 
+body.discography main > .section.flex.panel-container > .panel-wrapper, 
+body.discography main > .section.flex.panel-container > .panel.cta {
+  margin-top: 55px;
+}
+
 body.discography main > .section.hero-container:first-child {
   margin-top: var(--space-section-l);
 }
@@ -553,6 +558,7 @@ body.discography main .section.light-gray > div:empty {
    `.default-content-wrapper`; `:not(:empty)` skips the consumed metadata div. */
 body.discography main .section.light-gray > div:not(:empty) {
   box-sizing: border-box;
+  width: calc(100% - 2 * var(--container-gutter));
   max-width: calc(var(--container-max) - 2 * var(--container-gutter));
   margin-inline: auto;
   padding: 27.6px;
@@ -1250,6 +1256,11 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
     body.discography main .section.dark .panel.dark .panel-body {
       padding: 70px 27.6px;
     }
+
+   body.discography main > .section.flex.panel-container > .panel-wrapper,
+   body.discography main > .section.flex.panel-container > .panel.cta {
+    margin-top: unset;
+} 
 }
 
 /* ----- Large desktop (>=1200px) ----- */
