@@ -2,9 +2,12 @@ import decorateDMAssets from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
   // Convert authored DM links (<a href>) to <picture> on the block itself, so
-  // rendering works independent of page-level decoration or the UE environment.
+  // rendering works independent of page-level decoration. Skipped in the UE
+  // editor canvas: converting the <a> destroys the anchor UE binds to, making
+  // the image vanish. On the live site page-level decorateMain handles this.
   // Must precede the picture-detection loop below. Idempotent (see dm-support.js).
-  decorateDMAssets(block);
+  const inUE = /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
+  if (!inUE) decorateDMAssets(block);
 
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);

@@ -74,10 +74,13 @@ function setupHero(block) {
 
 export default function decorate(block) {
   // Convert authored DM links (<a href>) to <picture> on the block itself, so
-  // rendering works independent of page-level decoration or the UE environment.
+  // rendering works independent of page-level decoration. Skipped in the UE
+  // editor canvas: converting the <a> destroys the anchor UE binds to, making
+  // the image vanish. On the live site page-level decorateMain handles this.
   // Must precede setupHero, which classifies cells by whether they contain a
   // <picture>. Idempotent (see dm-support.js).
-  decorateDMAssets(block);
+  const inUE = /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
+  if (!inUE) decorateDMAssets(block);
   setupHero(block);
 
   // Fullbleed variant: split the two-tone headline (lead sentence in light serif,

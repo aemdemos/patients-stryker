@@ -3,11 +3,12 @@ import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
   // Convert authored DM links (<a href>) to <picture> on the block itself, so
-  // rendering works independent of page-level decoration or the UE environment.
-  // decorateMain runs this at full page load; running it here too means a block
-  // re-rendered on its own (e.g. UE editing a card child) still shows its image.
-  // Idempotent (see dm-support.js).
-  decorateDMAssets(block);
+  // rendering works independent of page-level decoration. Skipped in the UE
+  // editor canvas: converting the <a> destroys the anchor UE binds the image/alt
+  // fields to, which makes the image vanish and edits fail to persist. On the
+  // live site page-level decorateMain handles this. Idempotent (see dm-support.js).
+  const inUE = /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
+  if (!inUE) decorateDMAssets(block);
 
   // linked variant navigates within the site, so open in the same tab
   const isLinked = block.classList.contains('linked');
