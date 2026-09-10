@@ -2,6 +2,14 @@ export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
+  // text-only columns (no image, plain section, not 50-50) use smaller mobile
+  // type than the image/variant layouts — tag them so the CSS can target a
+  // single class instead of a chain of :not()/:has() conditions.
+  const variantSection = block.closest('.serif, .light-gray, .dark');
+  if (!block.querySelector('picture') && !block.classList.contains('columns-50-50') && !variantSection) {
+    block.classList.add('columns-text');
+  }
+
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       const pic = col.querySelector('picture');

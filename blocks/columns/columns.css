@@ -48,9 +48,18 @@
   list-style-type: disc;
 }
 
+/* text-only columns (tagged .columns-text in JS) — column titles (h4) are smaller
+   on mobile (17.5px) and bump to 21.875px at >= 600px (below). Body copy is
+   unchanged (stays 17.5px at all widths via the base .columns rules). */
+.columns-text h4 {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
    on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
    this adds the matching left/right inset to the text that follows the image. */
+.columns .columns-img-col ~ h3,
 .columns .columns-img-col ~ h4,
 .columns .columns-img-col ~ p {
   padding-left: 3%;
@@ -148,6 +157,25 @@
   row-gap: var(--space-section-l);
 }
 
+/* the internal trailing margins are zeroed (below), so the block needs its own
+   top+bottom margin to separate the section from its neighbours — otherwise a
+   taller image column leaves the block flush against the adjacent sections. */
+.section.serif .columns.columns-50-50 {
+  margin-block: var(--space-section);
+}
+
+/* when the serif section also has a background (light-gray), the block margin
+   would fall OUTSIDE the coloured band and leave the content flush inside it.
+   Use section padding instead (space lives inside the background) and drop the
+   block margin so the spacing isn't doubled. */
+.section.light-gray.serif {
+  padding-block: var(--space-section);
+}
+
+.section.light-gray.serif .columns.columns-50-50 {
+  margin-block: 0;
+}
+
 .section.serif .columns.columns-50-50 .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -232,6 +260,15 @@
   margin-bottom: 25px;
 }
 
+/* the gold italic-bold column titles stay 24.5px (reference). A global styles.css
+   rule shrinks `h2 em strong` to 19.9px at >= 600px; this columns-scoped override
+   keeps the titles at the intended h2 size. Targets the columns block + heading
+   marker (not a section colour), so it holds regardless of section background. */
+.columns h2 em strong,
+.columns h2 strong em {
+  font-size: var(--heading-font-size-xl);
+}
+
 /* underlined link (<u>) = flat CTA: Futura bold, uppercase, teal, with a chevron */
 .section.light-gray .columns a:has(u) {
   display: inline-flex;
@@ -286,6 +323,12 @@
 
 /* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
+  /* text-only column titles (h4) bump up to the reference's tablet/desktop size */
+  .columns-text h4 {
+    font-size: var(--heading-font-size-ml);
+    line-height: var(--heading-line-height-ml);
+  }
+
   .section.compact .columns h2 {
     font-size: var(--heading-font-size-compact-m);
   }
@@ -350,10 +393,13 @@
     padding-left: var(--col-5050-inset);
   }
 
-  /* drop the mobile image-stacking gap so the image doesn't carry a bottom-only
-     gap when the columns are side by side (tablet top-aligns like the reference) */
+  /* keep ~30px above and below the image (the reference gives equal breathing room
+     on both sides) so a tall image column doesn't sit flush against the section
+     edges — applies whether the image is on the left ("Stroke is treatable") or
+     right ("What is a stroke?"). Padding is dropped so only these margins govern
+     the gaps. */
   .section.serif .columns.columns-50-50 .columns-img-col {
-    margin-bottom: 0;
+    margin-block: var(--space-section);
     padding-bottom: 0;
   }
 
@@ -441,6 +487,7 @@
   .section.serif .columns.columns-50-50 > div {
     align-items: center;
   }
+
 
   /* desktop 3-up: revert to the base flex row */
   .section.light-gray .columns > div {
