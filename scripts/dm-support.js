@@ -12,6 +12,8 @@
  * specific hostname, covering Scene7/classic DM and DM OpenAPI delivery.
  */
 
+import { moveInstrumentation } from '../ue/scripts/ue-utils.js';
+
 // host-independent DM image URL signatures
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
@@ -348,12 +350,24 @@ function dmRendererFor(src) {
 }
 
 /**
- * Replace authored DM links/images anywhere in `main` with the matching native
+ * Replace authored DM links/images within `root` with the matching native
  * element (<picture> for images, <video> for videos).
- * @param {Element} main the container to decorate
+ *
+ * Idempotent: safe to call more than once over the same subtree. `decorateMain`
+ * runs it once page-wide before block decoration, but the Universal Editor
+ * re-renders container blocks (cards, icon-list, …) from their authored source
+ * in Layout view — restoring the raw DM links — and re-invokes only the block's
+ * own `decorate()`. Those blocks call this again over their own subtree so the
+ * DM images survive the re-render; a second pass finds nothing left to convert.
+ * @param {Element} root the container to decorate
  */
-export default function decorateDMAssets(main) {
-  main.querySelectorAll(DM_SELECTOR).forEach((el) => {
+export default function decorateDMAssets(root) {
+  root.querySelectorAll(DM_SELECTOR).forEach((el) => {
+    // An <img> already inside a <picture> is one we (or EDS) generated on an
+    // earlier pass — re-converting it would double-append preset params (e.g.
+    // fmt=png-alpha). Only a bare DM <img> or <a> should be converted.
+    if (el.tagName === 'IMG' && el.closest('picture')) return;
+
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
     const render = dmRendererFor(src);
@@ -372,14 +386,24 @@ export default function decorateDMAssets(main) {
       if (text && text !== src) displayText = text;
     }
 
+    let replacement;
     if (render === renderVideo) {
       const label = el.getAttribute('title') || displayText;
-      el.replaceWith(renderVideo(src, label));
-      return;
+      replacement = renderVideo(src, label);
+    } else {
+      // alt precedence: an authored alt/title, then the link's display text
+      // (authors describe hero/cards images by using the alt as the link text).
+      const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
+      replacement = render(src, alt, false);
     }
-    // alt precedence: an authored alt/title, then the link's display text
-    // (authors describe hero/cards images by using the alt as the link text).
-    const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
-    el.replaceWith(render(src, alt, false));
+
+    // Carry the Universal Editor instrumentation from the authored link/image
+    // onto the generated media element (the <img>/<video>) so the asset stays
+    // selectable and editable in UE after conversion. No-op on the live site,
+    // which has no data-aue-* attributes.
+    const instrTarget = replacement.querySelector('img, video') || replacement;
+    moveInstrumentation(el, instrTarget);
+
+    el.replaceWith(replacement);
   });
 }

@@ -1,7 +1,15 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { isDMSrc } from '../../scripts/dm-support.js';
+import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
+  // Convert any Dynamic Media links to <picture>/<video> before restructuring.
+  // decorateMain already ran this page-wide on first load, but the Universal
+  // Editor re-renders this container from source in Layout view (restoring the
+  // raw DM links) and re-runs only decorate() — so we re-convert here. Idempotent:
+  // already-converted images are skipped. Without this the card images flash in,
+  // then revert to plain links on the UE re-render.
+  decorateDMAssets(block);
+
   // linked variant navigates within the site, so open in the same tab
   const isLinked = block.classList.contains('linked');
 

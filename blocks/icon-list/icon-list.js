@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { isDMSrc } from '../../scripts/dm-support.js';
+import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 // column count from the `cols-N` variant class; default 6 for label, else 4
@@ -16,6 +16,11 @@ function readColumns(block) {
  * @param {Element} block The block element
  */
 export default function decorate(block) {
+  // Re-convert Dynamic Media links to <picture> — the Universal Editor re-renders
+  // this container from source in Layout view (restoring raw DM links) and re-runs
+  // only decorate(), so the page-wide pass in decorateMain isn't enough. Idempotent.
+  decorateDMAssets(block);
+
   block.style.setProperty('--icon-list-columns', readColumns(block));
 
   const list = document.createElement('ul');
