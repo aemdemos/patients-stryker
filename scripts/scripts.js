@@ -133,9 +133,12 @@ function decorateButtons(main) {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
-    // require authored formatting for buttonization
-    const strong = a.closest('strong');
-    const em = a.closest('em');
+    // require authored formatting for buttonization. Accept both tag forms:
+    // the published site emits <strong>/<em>, but DA/UE rich text emits <b>/<i>,
+    // so a gold (bold+italic) CTA must be recognized in both environments —
+    // otherwise it loses its italic and falls through to the teal primary button.
+    const strong = a.closest('strong') || a.closest('b');
+    const em = a.closest('em') || a.closest('i');
     const ancestorU = a.closest('u');
     const u = ancestorU || a.querySelector('u');
 
@@ -460,6 +463,32 @@ export async function loadTemplate(doc, templateName) {
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
+/**
+ * Read the `theme` (and `template`) from the in-body `.metadata` block and apply
+ * them as body classes. On the published site the metadata block is converted to
+ * <head> <meta> tags, so decorateTemplateAndTheme()/getMetadata() pick the theme
+ * up; but in DA Experience Workspace the page renders from the authored content
+ * where `.metadata` stays a block in <body>, so getMetadata('theme') is empty and
+ * the theme never applies. This fallback reads that block so the Workspace preview
+ * gets the same body.<theme> class (and therefore themes.css) as the live page.
+ * Returns the theme name found (or '').
+ * @param {Element} main the main element
+ * @returns {string}
+ */
+function applyThemeFromMetadataBlock(main) {
+  if (!main) return '';
+  const metaBlock = main.querySelector('.metadata, .section-metadata ~ .metadata, div.metadata');
+  if (!metaBlock) return '';
+  const config = readBlockConfig(metaBlock);
+  const addClasses = (value) => value.split(',').forEach((c) => {
+    const cls = toClassName(c.trim());
+    if (cls) document.body.classList.add(cls);
+  });
+  if (config.template) addClasses(config.template);
+  if (config.theme) addClasses(config.theme);
+  return (config.theme || '').split(',')[0].trim();
+}
+
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
@@ -474,9 +503,12 @@ async function loadEager(doc) {
   }
 
   const templateName = getMetadata('template');
-  const themeName = getMetadata('theme');
-
   const main = doc.querySelector('main');
+  // theme from <head> meta (published site) OR, as a fallback, from the in-body
+  // `.metadata` block (DA Experience Workspace, where the block isn't hoisted to
+  // <head>). The fallback also adds the body.<theme> class in that environment.
+  const themeName = getMetadata('theme') || applyThemeFromMetadataBlock(main);
+
   if (main) {
     decorateMain(main);
 
