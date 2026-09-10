@@ -243,7 +243,7 @@
    tablet widths and only stacks them on narrow phones. This is independent of
    the 900px image-split below: between 600–900px the band still shows the mobile
    background-photo + floating gray box, but with the controls in a row. */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .find-a-doctor .find-a-doctor-fields {
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -271,7 +271,7 @@
    gray box to a side-by-side split: the image on the left (~40%) and the grey
    panel with the form on the right (~60%). Maps the source's 840px side-by-side
    breakpoint to our 900px. */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   .find-a-doctor {
     /* nowrap so the panel can never drop below the image (wrap would restack the
        band into the mobile look) */
@@ -310,10 +310,10 @@
   }
 }
 
-/* desktop (>= 1024px) — the image column grows to the source's full 40%
+/* desktop (>= 1200px, source 1024px) — the image column grows to the source's full 40%
    (.bannerstyle .image-section { max-width: 40% }) now that the wider band
    leaves the form controls enough room. */
-@media (width >= 1024px) {
+@media (width >= 1200px) {
   .find-a-doctor .find-a-doctor-media {
     flex: 0 0 40%;
     max-width: 40%;

@@ -280,7 +280,7 @@
 }
 
 /* ===== Tablet and up (600px) — all variants ===== */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .hero {
     padding: 40px 32px;
   }
@@ -408,7 +408,7 @@
    wide-crop image. Below this the fullbleed copy keeps its mobile treatment
    (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
    matches the <600px view. ===== */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   /* top-align the copy near the top of the image (matches the source, which
      insets it ~5% of the band height), rather than vertically centering it */
   .hero.fullbleed > div:last-child {
@@ -475,7 +475,7 @@
 
 /* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
    so text stops growing past this width ===== */
-@media (width >= 1200px) {
+@media (width >= 1800px) {
   .hero.banner h1 {
     font-size: 42px;
   }

@@ -13,7 +13,7 @@
 }
 
 /* sticky on the section (its <main> parent gives it room to travel) */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .section.sticky-nav-container {
     display: block;
     position: sticky;

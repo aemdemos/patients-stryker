@@ -155,10 +155,9 @@ body.stroke-awareness-landing main .section.compact {
    theme, so the hero styling travels with the section wherever it's authored
    instead of being pinned to this one page.
 
-   Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
-   1200), so the source's own breakpoints translate as: source 840px → 600px,
-   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
-   mobile is a single regime below 600px.
+   Headline sizing is mapped onto the EDS standard breakpoints, so the source's
+   own breakpoints translate as: source 480px → 600px, 840px → 900px,
+   1024px → 1200px, 1440px → 1800px.
    mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
    → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
 .section.hero-stroke .hero.banner h1 {
@@ -351,7 +350,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
    ===================================================================== */
 
 /* ----- Tablet (>=600px) ----- */
-@media (width >= 600px) {
+@media (width >= 900px) {
   /* Theme: campaign-landing */
   body.campaign-landing main .hero.fullbleed {
     min-height: calc(5 * var(--space-section-l));
@@ -452,7 +451,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 }
 
 /* ----- Desktop (>=900px) ----- */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   /* Theme: sa-resources */
 
   /* intro: the availability panel is TOP-aligned with the welcome text (source),
@@ -469,15 +468,15 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     grid-template-columns: 1fr;
   }
 
-  /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
-     EDS large breakpoint (1200px ← source 1440px). */
+  /* EDS desktop (1200px) ← source 1024px: 40.96px, rising to the 56px cap at the
+     EDS large breakpoint (1800px ← source 1440px). */
   .section.hero-stroke .hero.banner h1 {
     font-size: calc(-4.16px + 5.0133vw);
   }
 }
 
 /* ----- Large desktop (>=1200px) ----- */
-@media (width >= 1200px) {
+@media (width >= 1800px) {
   /* Theme: sa-resources */
 
   /* enlarge the hero headline on this page beyond the shared band cap (48px in
@@ -597,7 +596,7 @@ body.patient-information .hero.band h1 {
   font-size: 8vw;
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   body.patient-information .hero.band picture.hero-image-desktop {
     display: block;
   }
@@ -986,7 +985,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 }
 
 /* ----- Tablet (>=600px) ----- */
-@media (width >= 600px) {
+@media (width >= 900px) {
   /* "Benefits of Zip" — the source spaces the icon-grid rows further apart than
      the shared 30px default; widen the inter-row gap to match. */
   .zip-skin-closure main > .section.columns-container .columns.columns-icon-grid > div {
@@ -1053,7 +1052,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 }
 
 /* ----- Desktop (>=900px) ----- */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   .zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2,
   .zip-skin-closure main > .section.richtext-container:not(.columns-container, .light-gray) h2 {
     font-size: var(--heading-font-size-xl);
@@ -1077,7 +1076,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 }
 
 /* ----- Large desktop (>=1200px) ----- */
-@media (width >= 1200px) {
+@media (width >= 1800px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
     font-size: 35px;
   }

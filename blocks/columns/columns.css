@@ -322,7 +322,7 @@
  * ------------------------------------------------------------------------- */
 
 /* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
-@media (width >= 600px) {
+@media (width >= 900px) {
   /* text-only column titles (h4) bump up to the reference's tablet/desktop size */
   .columns-text h4 {
     font-size: var(--heading-font-size-ml);
@@ -436,7 +436,7 @@
 }
 
 /* desktop (>= 900px) — all columns line up in a single row */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   .columns > div {
     flex-wrap: nowrap;
   }

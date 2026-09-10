@@ -18,14 +18,14 @@
 }
 
 /* tablet: 2-up */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .cards > ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* desktop: 3-up default (source col-md-4), 4-up for resources (source col-md-3) */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   .cards > ul {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -221,7 +221,7 @@
   margin: var(--space-block-l) 0 0;   /* image-to-text gap: source 20px, 30px @480px */
 }
 
-@media (width >= 480px) {
+@media (width >= 600px) {
   .cards.brochure-cta .cards-card-body {
     margin-top: var(--space-section);
   }

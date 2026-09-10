@@ -15,7 +15,7 @@
 }
 
 /* >=600px: map becomes a band behind the content */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .icon-list-container.section:has(> .section-background-image) {
     position: relative;
     padding-block: var(--icon-list-bg-padding);
@@ -45,7 +45,7 @@
   text-align: center;
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
   .icon-list-container > div:not(.icon-list-wrapper) :is(h1, h2, h3, h4, h5, h6) {
     font-size: var(--icon-list-title-size);
   }
@@ -96,14 +96,14 @@
 }
 
 /* tablet: 4-up, icons hidden */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 /* desktop: author column count, icons shown again */
-@media (width >= 1200px) {
+@media (width >= 1800px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), 1fr);
   }
@@ -160,7 +160,7 @@
    ~1200px, keeping a fixed 30px gap. max-width caps the group at its natural
    size (5 × 200px icons + 4 × 30px gaps) so icons never exceed 200px; above
    that width the group stays capped and centred rather than stretching. */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .icon-list.tile ul.icon-list-items {
     grid-template-columns: repeat(5, minmax(0, 1fr));
     column-gap: var(--icon-list-tile-col-gap);
@@ -247,7 +247,7 @@
 }
 
 /* tablet+ : icons stay visible, honour author column count (label defaults 6-up) */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .icon-list.label ul.icon-list-items {
     grid-template-columns: repeat(var(--icon-list-columns, 4), minmax(0, 1fr));
     column-gap: var(--icon-list-label-col-gap);

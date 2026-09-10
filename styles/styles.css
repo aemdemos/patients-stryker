@@ -206,7 +206,7 @@ header {
 /* reserve the desktop two-row header height (white bar + gold nav bar) here in
    eager CSS so the space is held before the lazy header block loads, preventing
    content from shifting down on load (CLS) */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   header {
     height: calc(var(--nav-height) + var(--nav-bar-height));
   }
@@ -411,7 +411,7 @@ h2 strong em {
 }
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
-@media (width >= 600px) {
+@media (width >= 900px) {
   main .section.side-by-side {
     display: flex;
   }
@@ -720,7 +720,7 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
     margin-bottom: 30px;
@@ -744,7 +744,7 @@ main > .section.wide > div {
    Reading order = source order, so the first authored wrapper sits on the left.
    The section itself is the flex container (its wrappers are the direct children);
    empty wrappers (e.g. the consumed section-metadata) collapse to zero via :empty. */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   main > .section.flex {
     display: flex;
     align-items: center;
@@ -898,7 +898,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   main > .section > div {
     box-sizing: border-box;
     max-width: var(--container-max);
