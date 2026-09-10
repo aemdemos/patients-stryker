@@ -253,10 +253,11 @@
 }
 
 /* the gold italic-bold column titles stay 24.5px (reference). A global styles.css
-   rule shrinks `h2 em strong` to 19.9px at >= 600px; this scoped override (higher
-   specificity) keeps the columns titles at the intended h2 size. */
-.section.light-gray .columns h2 em strong,
-.section.light-gray .columns h2 strong em {
+   rule shrinks `h2 em strong` to 19.9px at >= 600px; this columns-scoped override
+   keeps the titles at the intended h2 size. Targets the columns block + heading
+   marker (not a section colour), so it holds regardless of section background. */
+.columns h2 em strong,
+.columns h2 strong em {
   font-size: var(--heading-font-size-xl);
 }
 
