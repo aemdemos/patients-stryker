@@ -1,19 +1,11 @@
-/*
- * cards — visual design migrated from patients.stryker.com card groups.
- * Source responsive columns (verified from the live site's grid CSS —
- * col-sm-* @841px, col-md-* @1024px):
- *   - below 841px (mobile):        1-up, full-width stacked
- *   - 841px to 1023px (tablet):    2-up
- *   - 1024px and up (desktop):     3-up default (4-up for the resources variant)
- * ~30px gutter between cards.
- */
+/* cards — responsive: 1-up mobile, 2-up tablet, 3-up desktop (4-up resources). */
 
 .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr;   /* mobile: 1-up (matches source <768px) */
+  grid-template-columns: 1fr;
   gap: var(--space-section);
 }
 
@@ -24,7 +16,7 @@
   }
 }
 
-/* desktop: 3-up default (source col-md-4), 4-up for resources (source col-md-3) */
+/* desktop: 3-up default, 4-up for resources/brochure/linked */
 @media (width >= 900px) {
   .cards > ul {
     grid-template-columns: repeat(3, 1fr);
@@ -36,8 +28,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /* minmax(0, 1fr): columns default to min-width auto, so the nowrap CTA button
-     forces overflow ~1040px — let columns shrink and ellipsis takes over */
+  /* minmax(0, 1fr) lets columns shrink so the nowrap CTA button can't force overflow */
   .cards.brochure-cta > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -54,24 +45,19 @@
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 7 / 5;   /* source image 440 x 314 */
+  aspect-ratio: 7 / 5;
   object-fit: cover;
   border-radius: 0;
 }
 
-/* card body */
 .cards .cards-card-body {
   margin: var(--space-section) 0 0;
   color: var(--text-color);
 }
 
+/* card heading: Futura bold, not the global serif h3 */
 .cards .cards-card-body h3 {
   margin: 0 0 var(--space-block);
-
-  /* Source card heading text is wrapped in span.futura-bold and renders in
-     Futura LT W01, weight 700 (a bold sans-serif) — NOT the global serif h3.
-     Override the family/weight here to match. The real Futura bold woff2 is
-     loaded via fonts.css, so this is a genuine bold weight (no faux-bold). */
   font-family: var(--display-font-family);
   font-weight: 700;
 }
@@ -82,22 +68,11 @@
   line-height: var(--paragraph-line-height);
 }
 
-/*
- * "Learn more" CTA — the source styles it as a gray uppercase button
- * (.btn.btn-gray). The parser wraps the CTA label in <em>, so EDS's
- * decorateButtons promotes it to a `.button.secondary` — which the global
- * styles.css renders as exactly that gray uppercase button (gray fill, white
- * text, square corners). No block-level override is needed here; authors
- * control the button by adding/removing the emphasis in the content.
- */
 .cards .cards-card-body .button-wrapper {
   margin: var(--space-block) 0 0;
 }
 
-/* resources variant: PDF brochure card — portrait cover image over a teal
-   button. Image is full column width at its natural (portrait) ratio, no fixed
-   height. Shares the base grid (1-up, 2-up @768) but goes 4-up on desktop
-   (source col-md-3) instead of the default 3-up. */
+/* resources variant: PDF brochure card — portrait cover image over a teal button */
 .cards.resources > ul > li {
   background-color: transparent;
 }
@@ -105,18 +80,35 @@
 .cards.resources > ul > li img {
   width: 100%;
   height: auto;
-  aspect-ratio: auto;   /* natural portrait ratio, like source img-responsive */
+  aspect-ratio: auto;
 }
 
 .cards.resources .cards-card-body {
   margin: var(--space-block) 0 0;
 }
 
-/* shared title-above-image scaffolding (brochure + linked): the li is a flex
-   column and the body uses display:contents so its heading/links become flex
-   items, ordered title -> image -> (body) without moving nodes (keeps UE
-   instrumentation intact). Skins (image ratio/border, title font, body row)
-   are set per-variant below. */
+/* LEARN MORE — teal button fallback for a bare (non-.button) link */
+.cards.resources .cards-card-body p a:any-link:not(.button) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-primary);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* title-above-image scaffolding (brochure + linked): li is a flex column, body
+   uses display:contents so heading/links order title -> image -> body without
+   moving nodes (keeps UE instrumentation intact). */
 .cards.brochure > ul > li,
 .cards.linked > ul > li {
   display: flex;
@@ -127,7 +119,7 @@
 
 .cards.brochure .cards-card-image,
 .cards.linked .cards-card-image {
-  order: 1;   /* image between title (0) and body (2) */
+  order: 1;
 }
 
 .cards.brochure .cards-card-body,
@@ -135,44 +127,38 @@
   display: contents;
 }
 
-/* linked title = bold link in a <p>; decorateButtons promotes it to
-   .button-wrapper > a.button, so order/skin that (not a heading) */
+/* linked title = bold link promoted to a button; order/skin it as the title */
 .cards.linked .cards-card-body .button-wrapper {
-  order: 0;   /* title above the image */
+  order: 0;
   margin: 0 0 var(--space-block);
 }
 
-/* brochure skin: portrait cover image with a light border, light-serif title,
-   and a centered "Digital | Print" download-links row below. */
+/* brochure skin: portrait cover image, light border, light-serif title */
 .cards.brochure > ul > li img {
   width: 100%;
   height: auto;
-  aspect-ratio: auto;   /* natural portrait ratio */
-  border: 1px solid var(--color-surface-muted);   /* #b2b4ae, matches source */
+  aspect-ratio: auto;
+  border: 1px solid var(--color-surface-muted);
 }
 
 .cards.brochure .cards-card-body :is(h1, h2, h3, h4, h5, h6) {
-  order: 0;   /* title above the image */
+  order: 0;
   margin: 0 0 var(--space-block);
-
-  /* source brochure title: light serif (URW Egyptienne), weight 500, ~43px
-     (24.5px h2 x 1.75em) — not the Futura-bold the default cards h3 uses */
   font-family: var(--heading-font-family);
   font-weight: 500;
   font-size: var(--heading-font-size-xxxl);
   line-height: var(--heading-line-height);
 }
 
-/* linked skin: bold title above a landscape borderless image, both linking to a
-   page (IVS condition grid). */
+/* linked skin: bold title above a landscape borderless image */
 .cards.linked > ul > li img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1200 / 680;   /* source asset ratio (~16:9) */
+  aspect-ratio: 1200 / 680;
   object-fit: cover;
 }
 
-/* strip button chrome -> plain bold slab-serif link (matches source) */
+/* strip button chrome -> plain bold slab-serif link */
 .cards.linked .cards-card-body .button-wrapper a.button {
   display: inline;
   padding: 0;
@@ -180,26 +166,23 @@
   border-radius: 0;
   background: none;
   color: var(--text-color);
-  font-family: var(--body-font-family);   /* bold slab serif, source default */
+  font-family: var(--body-font-family);
   font-weight: 700;
-  font-size: var(--heading-font-size-l);   /* 21px = source fontsize-1-5em (1.5 x 14) */
+  font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
-  text-transform: none;   /* undo the global button uppercase */
+  text-transform: none;
   text-decoration: none;
 }
 
 .cards.brochure .cards-card-body p {
-  order: 2;   /* download links below the image */
+  order: 2;
   margin: var(--space-block) 0 0;
-
-  /* source download links: light serif (urw-egyptienne) at 1.25em (fontsize-1-25em) */
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
-/* brochure-cta: cover, Futura-bold title, light-serif label, gold CTA button
-   (CTA authored as bold+italic link -> .button.accent = source .btn-gold).
+/* brochure-cta: cover, Futura-bold title, light-serif label, gold CTA button.
    Flex column so label + button bottom-align across the row. */
 .cards.brochure-cta > ul > li {
   display: flex;
@@ -210,15 +193,15 @@
 .cards.brochure-cta > ul > li img {
   width: 100%;
   height: auto;
-  aspect-ratio: auto;   /* natural portrait ratio */
-  border: 1px solid var(--color-surface-muted);   /* #b2b4ae, matches source bor-gray */
+  aspect-ratio: auto;
+  border: 1px solid var(--color-surface-muted);
 }
 
 .cards.brochure-cta .cards-card-body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: var(--space-block-l) 0 0;   /* image-to-text gap: source 20px, 30px @480px */
+  margin: var(--space-block-l) 0 0;
 }
 
 @media (width >= 480px) {
@@ -227,15 +210,11 @@
   }
 }
 
-/* title: Futura bold at body size (source .futura-bold, 14px). Fixed bottom gap
-   below the title on every card; label margin-top:auto (below) adds any slack. */
 .cards.brochure-cta .cards-card-body h3 {
   margin-bottom: var(--space-section);
   font-size: var(--body-font-size-m);
 }
 
-/* label: light serif, 1.25em. Zero bottom margin keeps it tight above the button
-   (flex items don't collapse margins). */
 .cards.brochure-cta .cards-card-body p {
   margin-bottom: 0;
   font-family: var(--heading-font-family);
@@ -248,8 +227,7 @@
   margin-top: auto;
 }
 
-/* let the CTA text wrap instead of truncating when the column is narrow;
-   text-align keeps each wrapped line centered */
+/* let the CTA text wrap instead of truncating when the column is narrow */
 .cards.brochure-cta .cards-card-body .button {
   white-space: normal;
   overflow: visible;

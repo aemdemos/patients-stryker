@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "url": "https://patients.stryker.com/us/en/ivs/treatments/disc-decompression.html",
+  "path": "us/en/ivs/treatments/disc-decompression.html",
+  "timestamp": "2026-09-09T12:46:29.133Z",
+  "error": "page.goto: Target page, context or browser has been closed",
+  "errorStack": "page.goto: Target page, context or browser has been closed\n    at processUrl (/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:597:20)\n    at async main (/home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:954:22)"
+}
