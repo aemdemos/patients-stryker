@@ -286,7 +286,7 @@ header nav .nav-search-panel-input:focus {
   outline-offset: -2px;
 }
 
-/* ---- Desktop layout (900px and up) — single-row grid; gold bar full-bleed ---- */
+/* ---- Desktop layout (1200px and up) — single-row grid; gold bar full-bleed ---- */
 @media (width >= 1200px) {
   header nav {
     display: grid;

@@ -49,7 +49,7 @@
 }
 
 /* text-only columns (tagged .columns-text in JS) — column titles (h4) are smaller
-   on mobile (17.5px) and bump to 21.875px at >= 600px (below). Body copy is
+   on mobile (17.5px) and bump to 21.875px at >= 900px (below). Body copy is
    unchanged (stays 17.5px at all widths via the base .columns rules). */
 .columns-text h4 {
   font-size: var(--body-font-size-l);
@@ -125,7 +125,7 @@
   font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
 }
 
-/* hero CTA button — hidden on mobile (< 600px), matching the source, which drops
+/* hero CTA button — hidden on mobile (< 900px), matching the source, which drops
    the "Find a surgeon" button from the stacked hero and only shows it once the
    layout goes side-by-side at the tablet breakpoint below. */
 .columns.columns-50-50 .button-wrapper {
@@ -318,10 +318,10 @@
    Responsive breakpoints — consolidated. All @media blocks live at the end of
    the file so every responsive override lands after the mobile-first base and
    variant rules it refines. Order within each breakpoint is preserved from the
-   original interleaved rules; 600px (tablet) precedes 900px (desktop).
+   original interleaved rules; 900px (tablet) precedes 1200px (desktop).
  * ------------------------------------------------------------------------- */
 
-/* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
+/* tablet (>= 900px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 900px) {
   /* text-only column titles (h4) bump up to the reference's tablet/desktop size */
   .columns-text h4 {
@@ -435,7 +435,7 @@
   }
 }
 
-/* desktop (>= 900px) — all columns line up in a single row */
+/* desktop (>= 1200px) — all columns line up in a single row */
 @media (width >= 1200px) {
   .columns > div {
     flex-wrap: nowrap;
