@@ -1,3 +1,5 @@
+import decorateDMAssets from '../../scripts/dm-support.js';
+
 /**
  * Set up the hero from its authored rows.
  *
@@ -71,6 +73,11 @@ function setupHero(block) {
 }
 
 export default function decorate(block) {
+  // Convert authored DM links (<a href>) to <picture> on the block itself, so
+  // rendering works independent of page-level decoration or the UE environment.
+  // Must precede setupHero, which classifies cells by whether they contain a
+  // <picture>. Idempotent (see dm-support.js).
+  decorateDMAssets(block);
   setupHero(block);
 
   // Fullbleed variant: split the two-tone headline (lead sentence in light serif,

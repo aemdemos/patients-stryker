@@ -1,4 +1,11 @@
+import decorateDMAssets from '../../scripts/dm-support.js';
+
 export default function decorate(block) {
+  // Convert authored DM links (<a href>) to <picture> on the block itself, so
+  // rendering works independent of page-level decoration or the UE environment.
+  // Must precede the picture-detection loop below. Idempotent (see dm-support.js).
+  decorateDMAssets(block);
+
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 

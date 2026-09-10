@@ -1,5 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { isDMSrc } from '../../scripts/dm-support.js';
+import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 // column count from the `cols-N` variant class; default 6 for label, else 4
@@ -16,6 +16,10 @@ function readColumns(block) {
  * @param {Element} block The block element
  */
 export default function decorate(block) {
+  // Convert authored DM links (<a href>) to <picture> on the block itself, so
+  // rendering works independent of page-level decoration or the UE environment.
+  // Idempotent (see dm-support.js).
+  decorateDMAssets(block);
   block.style.setProperty('--icon-list-columns', readColumns(block));
 
   const list = document.createElement('ul');
