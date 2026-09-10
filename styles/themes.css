@@ -105,6 +105,10 @@ body.sa-resources .panel.colored-border .panel-body {
   margin: 10px 5% 5%;
 }
 
+body.condition-detail .panel.cta .panel-body {
+  padding: 3%;
+}
+
 /* ----- Cards block (downloads + social grids, `cards brochure`) ----- */
 
 /* brochure cards left-align their title (source), unlike the centered default. */
@@ -457,7 +461,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
    body.condition-detail p, ul {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
-    margin-bottom: 25px;
+    margin-bottom: 15px;
    }
 
     body.condition-detail .panel.left .panel-body  {
@@ -513,6 +517,10 @@ body.condition-detail .tabs .tabs-panel {
 
   body.condition-detail .hero.banner .button-wrapper:last-child {
     margin-bottom: 15px;
+  }
+
+  body.condition-detail  .panel.cta > ul {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -886,6 +894,13 @@ body.resources .section.compact {
   body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
     grid-column: 2;
     width: 100%;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta),
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta,
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
+    width: 100%;
+    min-width: 0;
   }
 
 }
