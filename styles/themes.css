@@ -490,12 +490,12 @@ body.discography {
   --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
 }
 
-body.discography main > .section.flex > .default-content-wrapper h3 {
+body.discography main .section.flex .default-content-wrapper h3 {
   font-size: 25px;
   line-height: var(--body-line-height-l);
 }
 
-body.discography main > .section:not(.compact) > .default-content-wrapper p {
+body.discography main .section:not(.compact) .default-content-wrapper p {
   font-size: 1.25em;
   line-height: var(--procedure-body-copy-line-height);
   margin-bottom: 40px;
@@ -534,17 +534,17 @@ body.discography main > .section.cards-container + .section.light-gray {
   margin-top: var(--procedure-zone-gap);
 }
 
-body.discography main > .section.light-gray {
+body.discography main .section.light-gray {
   background: none;
 }
 
 /* drop the emptied (consumed section-metadata) wrapper so it can't paint a
    stray gray box above the real content. */
-body.discography main > .section.light-gray > div:empty {
+body.discography main .section.light-gray > div:empty {
   display: none;
 }
 
-body.discography main > .section.light-gray > .default-content-wrapper {
+body.discography main .section.light-gray .default-content-wrapper {
   box-sizing: border-box;
   max-width: calc(var(--container-max) - 2 * var(--container-gutter));
   margin-inline: auto;
@@ -552,7 +552,7 @@ body.discography main > .section.light-gray > .default-content-wrapper {
   background-color: var(--color-surface);
 }
 
-body.discography main > .section.cards-container + .section.light-gray > .default-content-wrapper p {
+body.discography main .section.cards-container + .section.light-gray .default-content-wrapper p {
   font-size: var(--body-font-size-m);
   line-height: var(--procedure-body-copy-line-height);
 }
@@ -1228,11 +1228,11 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
     font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
   }
 
-    body.discography main > .section.flex > .default-content-wrapper {
+    body.discography main .section.flex > .default-content-wrapper {
     padding-top: var(--space-section);
   }
 
-    body.discography main > .section.dark .panel.dark .panel-body {
+    body.discography main .section.dark .panel.dark .panel-body {
       padding: 60px 27.6px;
     }
 }
