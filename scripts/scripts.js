@@ -133,9 +133,12 @@ function decorateButtons(main) {
       if (new URL(a.href).href === new URL(text, window.location).href) return;
     } catch { /* continue */ }
 
-    // require authored formatting for buttonization
-    const strong = a.closest('strong');
-    const em = a.closest('em');
+    // require authored formatting for buttonization. Accept both tag forms:
+    // the published site emits <strong>/<em>, but DA/UE rich text emits <b>/<i>,
+    // so a gold (bold+italic) CTA must be recognized in both environments —
+    // otherwise it loses its italic and falls through to the teal primary button.
+    const strong = a.closest('strong') || a.closest('b');
+    const em = a.closest('em') || a.closest('i');
     const ancestorU = a.closest('u');
     const u = ancestorU || a.querySelector('u');
 
