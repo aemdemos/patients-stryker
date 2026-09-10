@@ -490,12 +490,17 @@ body.discography {
   --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
 }
 
-body.discography main .section.flex .default-content-wrapper h3 {
+/* default-content typography — target the section's direct content div (`> div`)
+   rather than `.default-content-wrapper`, so these also match in the Universal
+   Editor (whose section content is not always wrapped in a
+   `.default-content-wrapper`). The `> div >` chain still excludes block copy
+   (panel/cards paragraphs nest deeper than one div below the section). */
+body.discography main .section.flex > div > h3 {
   font-size: 25px;
   line-height: var(--body-line-height-l);
 }
 
-body.discography main .section:not(.compact) .default-content-wrapper p {
+body.discography main .section:not(.compact) > div > p {
   font-size: 1.25em;
   line-height: var(--procedure-body-copy-line-height);
   margin-bottom: 40px;
@@ -544,7 +549,11 @@ body.discography main .section.light-gray > div:empty {
   display: none;
 }
 
-body.discography main .section.light-gray .default-content-wrapper {
+/* paint the gray fill on the section's content wrapper. Target the generic
+   direct-child div (not just `.default-content-wrapper`) so it also matches the
+   Universal Editor, whose section content is not always wrapped in a
+   `.default-content-wrapper`; `:not(:empty)` skips the consumed metadata div. */
+body.discography main .section.light-gray > div:not(:empty) {
   box-sizing: border-box;
   max-width: calc(var(--container-max) - 2 * var(--container-gutter));
   margin-inline: auto;
@@ -552,12 +561,12 @@ body.discography main .section.light-gray .default-content-wrapper {
   background-color: var(--color-surface);
 }
 
-body.discography main .section.cards-container + .section.light-gray .default-content-wrapper p {
+body.discography main .section.cards-container + .section.light-gray > div:not(:empty) p {
   font-size: var(--body-font-size-m);
   line-height: var(--procedure-body-copy-line-height);
 }
 
-body.discography main > .section.cards-container > .default-content-wrapper h2 {
+body.discography main .section.cards-container > div > h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
 }
@@ -1228,7 +1237,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
     font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
   }
 
-    body.discography main .section.flex > .default-content-wrapper {
+    body.discography main .section.flex > div:first-child {
     padding-top: var(--space-section);
   }
 
