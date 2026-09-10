@@ -94,6 +94,36 @@
   margin: var(--space-block) 0 0;
 }
 
+/*
+ * "Learn more" CTA in the DA/EW canvas. The canvas keeps this CTA inside an
+ * editable ProseMirror region and re-renders it from source, so decorateButtons'
+ * a.button.secondary class never sticks and the CTA shows as a plain italic link.
+ * Restyle the surviving authored structure (<em><a>) to match .button.secondary
+ * (the gray uppercase button) so Layout view reads the same as the live site.
+ * Matches only in the canvas — on the live site the <em> is already unwrapped by
+ * decorateButtons, so this never double-applies over the real button. Scoped to
+ * the default card; linked/brochure/brochure-cta/resources style their CTA
+ * differently and are excluded.
+ */
+.cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body p em > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-block) 0 0;
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  font-style: normal;   /* cancel the authoring <em> italic */
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 /* resources variant: PDF brochure card — portrait cover image over a teal
    button. Image is full column width at its natural (portrait) ratio, no fixed
    height. Shares the base grid (1-up, 2-up @768) but goes 4-up on desktop
