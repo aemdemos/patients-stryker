@@ -94,17 +94,9 @@
   margin: var(--space-block) 0 0;
 }
 
-/*
- * "Learn more" CTA in the DA/EW canvas. The canvas keeps this CTA inside an
- * editable ProseMirror region and re-renders it from source, so decorateButtons'
- * a.button.secondary class never sticks and the CTA shows as a plain italic link.
- * Restyle the surviving authored structure (<em><a>) to match .button.secondary
- * (the gray uppercase button) so Layout view reads the same as the live site.
- * Matches only in the canvas — on the live site the <em> is already unwrapped by
- * decorateButtons, so this never double-applies over the real button. Scoped to
- * the default card; linked/brochure/brochure-cta/resources style their CTA
- * differently and are excluded.
- */
+/* "Learn more" CTA in the canvas: decorateButtons' .button.secondary class is
+   wiped when the editor re-renders the field, so style the authored <em><a> to
+   match the gray button. Matches only in the canvas (live unwraps the <em>). */
 .cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body p em > a {
   display: inline-flex;
   align-items: center;

@@ -16,10 +16,8 @@ function readColumns(block) {
  * @param {Element} block The block element
  */
 export default function decorate(block) {
-  // Convert authored Dynamic Media links to <picture> before restructuring so the
-  // icon cell is detected as an image. decorateMain runs this page-wide too, but
-  // the editor canvas re-renders fields from source, so we convert on our own
-  // subtree. Idempotent (already-converted imgs skip).
+  // convert DM links to <picture> before restructuring — the canvas re-renders
+  // fields from source, so re-run here (idempotent), not just in decorateMain
   decorateDMAssets(block);
 
   block.style.setProperty('--icon-list-columns', readColumns(block));
@@ -56,11 +54,8 @@ export default function decorate(block) {
     );
   });
 
-  // The DA/EW canvas wraps each authored text field in an inline ProseMirror
-  // editor and re-renders it from source — a converted DM <picture> left inside
-  // that editable region gets overwritten by the raw link. Lift the icon image
-  // (or its link wrapper) out to a bare child of .icon-list-icon so no editor
-  // mount point remains over it. Harmless on the live site.
+  // lift the icon out of the editor wrapper so the canvas can't re-render the
+  // raw link over it (mirrors hero); harmless unwrap on the live site
   list.querySelectorAll('.icon-list-icon').forEach((cell) => {
     const picture = cell.querySelector('picture');
     if (!picture) return;

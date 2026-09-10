@@ -2,10 +2,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
-  // Convert authored Dynamic Media links to <picture> before restructuring, so
-  // the image-cell classification below sees a picture. decorateMain runs this
-  // page-wide too, but the editor canvas re-renders fields from source, so we
-  // convert again on our own subtree. Idempotent (already-converted imgs skip).
+  // convert DM links to <picture> before restructuring — the canvas re-renders
+  // fields from source, so re-run here (idempotent), not just in decorateMain
   decorateDMAssets(block);
 
   // linked variant navigates within the site, so open in the same tab
@@ -47,13 +45,8 @@ export default function decorate(block) {
     img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
   });
 
-  // The DA/EW canvas wraps each authored text field in an inline ProseMirror
-  // editor and continuously re-renders it from source — a converted DM <picture>
-  // left inside that editable region gets overwritten by the raw link (the
-  // flash-then-revert seen in Layout view). Mirror the hero block: lift the image
-  // (or its brochure-cta link wrapper) out to a bare child of .cards-card-image,
-  // dropping the editor mount point so nothing re-renders over it. Harmless on
-  // the live site — it just unwraps the picture from its editor/paragraph.
+  // lift the image out of the editor wrapper so the canvas can't re-render the
+  // raw link over it (mirrors hero); harmless unwrap on the live site
   ul.querySelectorAll('.cards-card-image').forEach((cell) => {
     const picture = cell.querySelector('picture');
     if (!picture) return;

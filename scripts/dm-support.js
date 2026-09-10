@@ -351,21 +351,14 @@ function dmRendererFor(src) {
 
 /**
  * Replace authored DM links/images within `root` with the matching native
- * element (<picture> for images, <video> for videos).
- *
- * Idempotent: safe to call more than once over the same subtree. `decorateMain`
- * runs it once page-wide before block decoration, but the Universal Editor
- * re-renders container blocks (cards, icon-list, …) from their authored source
- * in Layout view — restoring the raw DM links — and re-invokes only the block's
- * own `decorate()`. Those blocks call this again over their own subtree so the
- * DM images survive the re-render; a second pass finds nothing left to convert.
+ * element (<picture> for images, <video> for videos). Idempotent, so blocks can
+ * re-run it on their own subtree (decorateMain runs it once page-wide).
  * @param {Element} root the container to decorate
  */
 export default function decorateDMAssets(root) {
   root.querySelectorAll(DM_SELECTOR).forEach((el) => {
-    // An <img> already inside a <picture> is one we (or EDS) generated on an
-    // earlier pass — re-converting it would double-append preset params (e.g.
-    // fmt=png-alpha). Only a bare DM <img> or <a> should be converted.
+    // skip an <img> already in a <picture> (converted on an earlier pass) —
+    // re-converting would double-append preset params like fmt=png-alpha
     if (el.tagName === 'IMG' && el.closest('picture')) return;
 
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
@@ -397,10 +390,8 @@ export default function decorateDMAssets(root) {
       replacement = render(src, alt, false);
     }
 
-    // Carry the Universal Editor instrumentation from the authored link/image
-    // onto the generated media element (the <img>/<video>) so the asset stays
-    // selectable and editable in UE after conversion. No-op on the live site,
-    // which has no data-aue-* attributes.
+    // carry UE instrumentation onto the generated <img>/<video> so it stays
+    // editable after conversion (no-op on the live site)
     const instrTarget = replacement.querySelector('img, video') || replacement;
     moveInstrumentation(el, instrTarget);
 
