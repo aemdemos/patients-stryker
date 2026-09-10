@@ -328,6 +328,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   padding-bottom: 70px;
 }
 
+
 /* =====================================================================
    Responsive overrides — one @media block per breakpoint, all themes.
    ===================================================================== */
@@ -435,6 +436,8 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
   body.condition-detail .hero-container .hero-wrapper {
     padding: 0 var(--container-gutter);
+    margin-bottom: 60px;
+    margin-top:60px;
   }
 
   body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
@@ -522,6 +525,11 @@ body.condition-detail .tabs .tabs-panel {
   body.condition-detail  .panel.cta > ul {
     grid-template-columns: 1fr;
   }
+
+  body.condition-detail .columns > div {
+    flex-direction: column;
+    gap:60px;
+  }
 }
 
 /* ----- Desktop (>=900px) ----- */
@@ -541,6 +549,11 @@ body.condition-detail .tabs .tabs-panel {
   body.sa-resources .panel.light.panel-authoring {
     grid-template-columns: 1fr;
   }
+
+   body.condition-detail .columns > div {
+     flex-direction: row;
+     gap: 0;
+   }
 }
 
 /* ----- Large desktop (>=1200px) ----- */
