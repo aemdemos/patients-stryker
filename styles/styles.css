@@ -518,6 +518,44 @@ a:any-link > strong {
   text-decoration: none;
 }
 
+/* reference-marker anchors (#fn- and #disclaimer) nested in a bold heading
+   phrase are citations, not CTAs — override the button fallback above so they
+   keep the heading's inherited size/weight instead of the 14px button base. */
+strong > a[href^="#fn-"]:any-link,
+strong > a[href="#disclaimer"]:any-link,
+a[href^="#fn-"]:any-link > strong,
+a[href="#disclaimer"]:any-link > strong {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+
+/* a bold SENTENCE link (ends in terminal punctuation) is an inline text link,
+   not a button — decorateButtons tags it `link-inline` so it overrides the
+   global `strong > a` button fallback and renders as plain bold text (Futura,
+   teal, no button chrome). */
+a.link-inline:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+}
+
 /* bold + underline authored links become flat teal CTAs with a trailing chevron */
 a.link-strong:any-link {
   display: inline;
