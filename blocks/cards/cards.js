@@ -2,12 +2,10 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
-  // Convert any Dynamic Media links to <picture>/<video> before restructuring.
-  // decorateMain already ran this page-wide on first load, but the Universal
-  // Editor re-renders this container from source in Layout view (restoring the
-  // raw DM links) and re-runs only decorate() — so we re-convert here. Idempotent:
-  // already-converted images are skipped. Without this the card images flash in,
-  // then revert to plain links on the UE re-render.
+  // Convert authored Dynamic Media links to <picture> before restructuring, so
+  // the image-cell classification below sees a picture. decorateMain runs this
+  // page-wide too, but the editor canvas re-renders fields from source, so we
+  // convert again on our own subtree. Idempotent (already-converted imgs skip).
   decorateDMAssets(block);
 
   // linked variant navigates within the site, so open in the same tab
@@ -48,6 +46,21 @@ export default function decorate(block) {
     if (isDMSrc(img.src)) return;
     img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
   });
+
+  // The DA/EW canvas wraps each authored text field in an inline ProseMirror
+  // editor and continuously re-renders it from source — a converted DM <picture>
+  // left inside that editable region gets overwritten by the raw link (the
+  // flash-then-revert seen in Layout view). Mirror the hero block: lift the image
+  // (or its brochure-cta link wrapper) out to a bare child of .cards-card-image,
+  // dropping the editor mount point so nothing re-renders over it. Harmless on
+  // the live site — it just unwraps the picture from its editor/paragraph.
+  ul.querySelectorAll('.cards-card-image').forEach((cell) => {
+    const picture = cell.querySelector('picture');
+    if (!picture) return;
+    const link = picture.closest('a');
+    cell.replaceChildren(link || picture);
+  });
+
   block.replaceChildren(ul);
 
   ul.querySelectorAll('li').forEach((li) => {
