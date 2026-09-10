@@ -383,3 +383,38 @@ export default function decorateDMAssets(main) {
     el.replaceWith(render(src, alt, false));
   });
 }
+
+/**
+ * Universal Editor preview ONLY — never call on live/preview pages.
+ *
+ * Renders each authored DM IMAGE link's <picture> INSIDE its anchor (as the
+ * first child) WITHOUT removing the anchor, its `href`, or its text. This is the
+ * only way a CONTAINER block (e.g. cards) can show its image in the editor: UE
+ * re-renders container children from source on load/edit, re-inserting the raw
+ * <a href> and undoing decorateDMAssets' replacement — so replacing the anchor
+ * (as the live path does) both loses the image on re-render AND destroys the
+ * anchor UE binds the image/alt fields to. Nesting the picture keeps the anchor
+ * (UE renders/binds/persists it) while the image is visible.
+ *
+ * Imported only by ue/scripts/ue.js (loaded solely in the UE environment), so it
+ * never runs in production. Idempotent: an anchor already containing a <picture>
+ * is skipped, so it is safe to re-run on every UE mutation. Images only — video
+ * links keep their raw anchor in the editor.
+ * @param {Element} main the container to decorate
+ */
+export function previewDMImageLinks(main) {
+  main.querySelectorAll('a[href]').forEach((a) => {
+    const src = a.getAttribute('href');
+    if (!src || !isDMSrc(src)) return;
+    // already previewed on a prior run — keep idempotent
+    if (a.querySelector('picture, img, video')) return;
+    const render = dmRendererFor(src);
+    // images only: skip video URLs (they keep their raw link in the editor)
+    if (!render || render === renderVideo) return;
+    // alt from title, else the link's display text (unless it's just the URL)
+    const text = a.textContent.trim();
+    const alt = a.getAttribute('title') || (text && text !== src ? text : '');
+    a.prepend(render(src, alt, false));
+    a.classList.add('dm-ue-preview');
+  });
+}

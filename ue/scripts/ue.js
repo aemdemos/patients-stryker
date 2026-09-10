@@ -11,10 +11,19 @@
  */
 
 import { moveInstrumentation } from './ue-utils.js';
+import { previewDMImageLinks } from '../../scripts/dm-support.js';
 
 const setupObservers = () => {
   const mutatingBlocks = document.querySelectorAll('div.cards, div.columns, div.accordion, div.statistics, div.panel, div.icon-list');
   const observer = new MutationObserver((mutations) => {
+    // UE re-renders container-block children from source on edit, re-inserting
+    // the raw DM <a href> without a <picture>. Re-run the in-anchor image preview
+    // so the freshly authored/edited link shows its image in the editor canvas
+    // while the anchor (which UE binds the image/alt fields to) stays intact.
+    // Idempotent — skips anchors already carrying a picture.
+    if (mutations.some((m) => m.type === 'childList' && m.addedNodes.length)) {
+      previewDMImageLinks(document.querySelector('main') || document.body);
+    }
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList' && mutation.target.tagName === 'DIV') {
         const addedElements = mutation.addedNodes;
@@ -78,6 +87,10 @@ const setupUEEventHandlers = () => {
 };
 
 export default () => {
+  // initial pass: on live/preview, decorateMain REPLACES DM anchors with pictures;
+  // in the editor we keep the anchor and nest the picture inside it instead, so
+  // container blocks (cards) show their image without losing UE's binding anchor.
+  previewDMImageLinks(document.querySelector('main') || document.body);
   setupObservers();
   setupUEEventHandlers();
 };

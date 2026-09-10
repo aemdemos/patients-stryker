@@ -19,8 +19,15 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
+      // Image cell = a cell holding just a <picture> (live/preview, where
+      // decorateDMAssets already converted the DM link) OR a DM image link (the
+      // UE canvas, where the anchor is kept and the picture is nested inside it —
+      // see previewDMImageLinks). Matching the DM link too keeps the image cell
+      // correctly styled in the editor regardless of preview timing.
+      const dmLink = div.querySelector(':scope > p > a[href], :scope > a[href]');
+      const isImageCell = (div.children.length === 1 && div.querySelector('picture'))
+        || (dmLink && isDMSrc(dmLink.getAttribute('href')));
+      div.className = isImageCell ? 'cards-card-image' : 'cards-card-body';
     });
     ul.append(li);
   });
