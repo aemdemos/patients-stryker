@@ -304,6 +304,44 @@
   gap: 10px;
 }
 
+/* Authoring fallback — Experience Workspace renders the RAW authored table
+   (`.panel.cta > div(row) > div(cell) > h3 + ul`) before/without the block's JS
+   adding `.panel-body`, so all the `.panel-body`-scoped rules above don't apply
+   and the heading/list render at page-default sizes. Re-apply the cta box +
+   typography to that raw cell so the authoring view matches the live render.
+   Scoped to cells that are NOT `.panel-body` (i.e. only the undecorated state),
+   so the decorated live/UE-authoring output is unaffected. */
+.panel.cta > div > div:not(.panel-body) {
+  margin: 10px;
+  padding: 3%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+/* stylelint-disable-next-line no-descending-specificity -- authoring-fallback
+   selector for the undecorated raw cell; ordering vs the decorated rules is
+   intentional (this only matches before the block adds .panel-body). */
+.panel.cta > div > div:not(.panel-body) h3 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.panel.cta > div > div:not(.panel-body) h3 em,
+.panel.cta > div > div:not(.panel-body) h3 i {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.panel.cta > div > div:not(.panel-body) :is(p, ul, ol, li) {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
 @media (width >= 600px) {
   .panel.cta > ul,
   .panel.dark > ul,
