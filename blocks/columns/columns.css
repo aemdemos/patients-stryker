@@ -59,6 +59,7 @@
 /* text inset — the reference wraps heading+paragraph in an element with 3% padding
    on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
    this adds the matching left/right inset to the text that follows the image. */
+.columns .columns-img-col ~ h3,
 .columns .columns-img-col ~ h4,
 .columns .columns-img-col ~ p {
   padding-left: 3%;
