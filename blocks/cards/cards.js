@@ -1,15 +1,7 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
+import { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
-  // Convert authored DM links (<a href>) to <picture> on the block itself, so
-  // rendering works independent of page-level decoration. Skipped in the UE
-  // editor canvas: converting the <a> destroys the anchor UE binds the image/alt
-  // fields to, which makes the image vanish and edits fail to persist. On the
-  // live site page-level decorateMain handles this. Idempotent (see dm-support.js).
-  const inUE = /\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname);
-  if (!inUE) decorateDMAssets(block);
-
   // linked variant navigates within the site, so open in the same tab
   const isLinked = block.classList.contains('linked');
 
@@ -19,15 +11,8 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      // Image cell = a cell holding just a <picture> (live/preview, where
-      // decorateDMAssets already converted the DM link) OR a DM image link (the
-      // UE canvas, where the anchor is kept and the picture is nested inside it —
-      // see previewDMImageLinks). Matching the DM link too keeps the image cell
-      // correctly styled in the editor regardless of preview timing.
-      const dmLink = div.querySelector(':scope > p > a[href], :scope > a[href]');
-      const isImageCell = (div.children.length === 1 && div.querySelector('picture'))
-        || (dmLink && isDMSrc(dmLink.getAttribute('href')));
-      div.className = isImageCell ? 'cards-card-image' : 'cards-card-body';
+      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
+      else div.className = 'cards-card-body';
     });
     ul.append(li);
   });
