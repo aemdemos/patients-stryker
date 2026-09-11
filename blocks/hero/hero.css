@@ -196,6 +196,29 @@
   margin-inline-start: 10px;
 }
 
+/* DA/EW canvas: decorateButtons' .button.accent class is stripped when the editor
+   re-renders the field, so the authored <em><strong><a> language links show as
+   plain bold-italic text. Restyle them to match .button.accent (gold), and lay
+   the two language fields out inline like the decorated button-wrappers. Matches
+   only in the canvas — published unwraps the <em>/<strong>. */
+.hero.banner p em a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  font-style: normal;   /* cancel the authored <em> italic */
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 /* band variant — compact gradient bar with the World Stroke Day logo baked
    into the authored image; a gold headline is overlaid on the left, vertically
    centered. Reuses the fullbleed image-stacking (see .hero.fullbleed above). */
@@ -230,6 +253,20 @@
   box-sizing: border-box;
   align-self: center;
   padding-inline: 5%;
+}
+
+/* lay the two language fields out inline (the canvas renders each field as its
+   own block; published makes them inline-block button-wrappers). Placed after the
+   base .hero.*>div:last-child rules so specificity ascends in file order; scoped
+   to .hero-stroke, where the language buttons live. */
+.hero-stroke .hero.banner > div > div:has(p em a) {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* 10px gap between the two language buttons (mirrors .button-wrapper + .button-wrapper) */
+.hero-stroke .hero.banner > div > div:has(p em a) + div:has(p em a) {
+  margin-inline-start: 10px;
 }
 
 /* colour + bold come from authoring (bold+italic → gold) and global styles;

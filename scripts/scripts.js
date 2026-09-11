@@ -209,7 +209,6 @@ function decorateFootnotes(main) {
     .find((ol) => ol.children.length >= maxRef);
   if (!footnoteList) return;
 
-  footnoteList.classList.add('footnotes');
   [...footnoteList.children].forEach((li, i) => {
     li.id = li.id || `fn-${i + 1}`;
   });

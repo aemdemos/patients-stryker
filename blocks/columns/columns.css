@@ -15,6 +15,8 @@
 
 .columns > div > div {
   box-sizing: border-box;
+  min-width: 0; /* let flex cells shrink to their basis so a wide image (e.g. a
+     1440px DM asset) can't force the column past its share and overflow the row */
   padding: 0 15px;
 }
 

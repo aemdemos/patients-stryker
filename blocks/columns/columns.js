@@ -1,4 +1,10 @@
+import decorateDMAssets from '../../scripts/dm-support.js';
+
 export default function decorate(block) {
+  // convert DM links to <picture>/<video> before restructuring — the canvas
+  // re-renders fields from source, so run here (idempotent), not just decorateMain
+  decorateDMAssets(block);
+
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
@@ -12,6 +18,38 @@ export default function decorate(block) {
 
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
+      // The DA/EW canvas wraps each field in an inline editor that re-renders from
+      // source, overwriting a converted DM <picture>/<video> with the raw link.
+      // Climb out of any wrappers that hold ONLY this media (the editor mount, or
+      // the authored <p>) up to the column cell, then drop it into a clean <p> so
+      // no editable mount point remains over it and the img-col styling still
+      // applies. Only single-media wrappers are unwrapped, so cell text is never
+      // touched; harmless on the published site.
+      col.querySelectorAll('picture, .dm-video-wrapper').forEach((media) => {
+        let node = media;
+        while (node.parentElement
+          && node.parentElement !== col
+          && node.parentElement.childElementCount === 1
+          && node.parentElement.textContent.trim() === '') {
+          node = node.parentElement;
+        }
+        if (node !== media && node.parentElement === col) {
+          if (col.childElementCount === 1) {
+            // image-only cell (e.g. 50-50): drop the media straight into the cell
+            // so the tagging below marks the CELL as .columns-img-col — matching
+            // the published structure that layout rules target (e.g. the zip theme
+            // absolutely-positions .columns-50-50 > div > div.columns-img-col).
+            node.replaceWith(media);
+          } else {
+            // mixed cell (e.g. icon-grid): keep the image as a block-level <p>
+            // sibling so it and the text paragraphs stay siblings (img-col ~ p).
+            const p = document.createElement('p');
+            p.append(media);
+            node.replaceWith(p);
+          }
+        }
+      });
+
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('p') || pic.parentElement;
