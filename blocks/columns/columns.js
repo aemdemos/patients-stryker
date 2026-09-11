@@ -34,9 +34,19 @@ export default function decorate(block) {
           node = node.parentElement;
         }
         if (node !== media && node.parentElement === col) {
-          const p = document.createElement('p');
-          p.append(media);
-          node.replaceWith(p);
+          if (col.childElementCount === 1) {
+            // image-only cell (e.g. 50-50): drop the media straight into the cell
+            // so the tagging below marks the CELL as .columns-img-col — matching
+            // the published structure that layout rules target (e.g. the zip theme
+            // absolutely-positions .columns-50-50 > div > div.columns-img-col).
+            node.replaceWith(media);
+          } else {
+            // mixed cell (e.g. icon-grid): keep the image as a block-level <p>
+            // sibling so it and the text paragraphs stay siblings (img-col ~ p).
+            const p = document.createElement('p');
+            p.append(media);
+            node.replaceWith(p);
+          }
         }
       });
 
