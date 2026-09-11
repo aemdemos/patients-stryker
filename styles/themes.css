@@ -476,6 +476,176 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   }
 }
 
+/* =====================================================================
+   Theme: discography — /ivs/treatments/discography
+    ===================================================================== */
+body.discography {
+  --procedure-hero-h1-size: 28px;      /* source hero headline (vs shared 42px) */
+  --procedure-hero-foot: 55px;         /* whitespace below the hero button */
+  --procedure-zone-gap: 120px;        
+  --procedure-resources-card-gap: 71px; /* Resources heading → brochure card */
+  --procedure-body-copy-size: 1.25em;    /* default-content paragraph size (source: 14px) */
+  --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
+}
+
+/* default-content typography — target the section's direct content div (`> div`)
+   rather than `.default-content-wrapper`, so these also match in the Universal
+   Editor (whose section content is not always wrapped in a
+   `.default-content-wrapper`). The `> div >` chain still excludes block copy
+   (panel/cards paragraphs nest deeper than one div below the section). */
+body.discography main .section.flex > div > h3 {
+  font-size: 25px;
+  line-height: var(--body-line-height-l);
+}
+
+body.discography main .section:not(.compact) > div > p {
+  font-size: 1.25em;
+  line-height: 1.1;
+}
+
+body.discography main > .section.flex.panel-container > .panel-wrapper, 
+body.discography main > .section.flex.panel-container > .panel.cta {
+  margin-top: 55px;
+}
+
+body.discography main > .section.hero-container:first-child {
+  margin-top: var(--space-section-l);
+}
+
+@media (width >= 600px) {
+  body.discography .hero.banner h1 {
+    font-size: 3vw;
+    line-height: var(--heading-line-height);
+  }
+
+  body.discography .hero.banner > div:last-child {
+    align-self: end;
+    padding-bottom: var(--procedure-hero-foot);
+  }
+}
+
+body.discography main > .section.flex,
+body.discography main > .section.dark,
+body.discography main > .section.light-gray,
+body.discography main > .section.marketo-form-container,
+body.discography main > .section.cards-container,
+body.discography main > .section.compact,
+body.discography main > .section.panel-container:not(.flex, .dark) {
+  margin-top: 75px;
+}
+
+body.discography main > .section.cards-container + .section.light-gray {
+  margin-top: var(--procedure-zone-gap);
+}
+
+body.discography main > .section.dark + .section.light-gray {
+  margin-top: 80px;
+}
+
+body.discography main .section.light-gray {
+  background: none;
+}
+
+/* drop the emptied (consumed section-metadata) wrapper so it can't paint a
+   stray gray box above the real content. */
+body.discography main .section.light-gray > div:empty {
+  display: none;
+}
+
+/* paint the gray fill on the section's content wrapper. Target the generic
+   direct-child div (not just `.default-content-wrapper`) so it also matches the
+   Universal Editor, whose section content is not always wrapped in a
+   `.default-content-wrapper`; `:not(:empty)` skips the consumed metadata div. */
+body.discography main .section.light-gray > div:not(:empty) {
+  box-sizing: border-box;
+  width: calc(100% - 2 * var(--container-gutter));
+  max-width: calc(var(--container-max) - 2 * var(--container-gutter));
+  margin-inline: auto;
+  padding: 27.6px;
+  background-color: var(--color-surface);
+}
+
+body.discography main .section.cards-container + .section.light-gray > div:not(:empty) p {
+  font-size: var(--body-font-size-m);
+  line-height: var(--procedure-body-copy-line-height);
+}
+
+body.discography main .section.cards-container > div > h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.discography main > .section.cards-container > .cards-wrapper {
+  margin-top: var(--procedure-resources-card-gap);
+}
+
+body.discography main > .section.dark .panel.dark .panel-body h2 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+/* source grows the statement from 21px (mobile) to 24.5px from tablet up */
+@media (width >= 600px) {
+  body.discography main > .section.dark .panel.dark .panel-body h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.discography main > .section.dark .panel.dark .panel-body {
+    padding: 50px 27.6px;
+  }
+}
+
+body.discography main .panel.cta .panel-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+@media (width >= 600px) {
+  body.discography main .panel.cta .panel-body h3 {
+    font-size: var(--heading-font-size-l);
+  }
+}
+
+body.discography main .panel.cta.wide .panel-body li {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.discography main .panel .panel-body p:last-child {
+  margin: 10px 0;
+}
+
+/* ----- Gold CTA panel copy -----
+   The "Tired of living in pain?" gold band renders its paragraph as HumanistSlab
+   body copy (14px) in the source, but the shared gold variant applies the 21px
+   light serif. Restore the body font/size here as a theme delta. */
+body.discography main .panel.gold .panel-body p {
+  font-size: 1.5em;
+  line-height: var(--paragraph-line-height);
+}
+
+body.discography main .panel.gold .panel-body p a:any-link {
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  line-height: 1.06;
+  text-decoration: none;
+}
+
+/* ----- Disclaimer paragraphs (compact section) -----
+   The source sets the fine-print disclaimer paragraphs at line-height 1.375;
+   only the numbered citation list keeps the tighter 1.2. Target the direct
+   paragraphs so the <ol> citations retain their compact rhythm. */
+body.discography main > .section.compact > div > p {
+  line-height: var(--paragraph-line-height);
+}
+
 /* ----- Large desktop (>=1200px) ----- */
 @media (width >= 1200px) {
   /* Theme: sa-resources */
@@ -494,6 +664,10 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   /* Theme: campaign-landing */
   body.campaign-landing main .hero.fullbleed h1 {
     font-size: 70px;
+  }
+
+   body.discography .hero.banner h1 {
+    font-size: 42px;
   }
 }
 
@@ -1074,6 +1248,19 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
   }
+
+    body.discography main .section.flex > div:first-child {
+    padding-top: var(--space-section);
+  }
+
+    body.discography main .section.dark .panel.dark .panel-body {
+      padding: 70px 27.6px;
+    }
+
+   body.discography main > .section.flex.panel-container > .panel-wrapper,
+   body.discography main > .section.flex.panel-container > .panel.cta {
+    margin-top: unset;
+} 
 }
 
 /* ----- Large desktop (>=1200px) ----- */
@@ -1085,6 +1272,8 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: 91px;
   }
+
+
 }
 
 /* =====================================================================
