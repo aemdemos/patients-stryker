@@ -1,4 +1,10 @@
+import decorateDMAssets from '../../scripts/dm-support.js';
+
 export default function decorate(block) {
+  // convert DM links to <picture>/<video> before restructuring — the canvas
+  // re-renders fields from source, so run here (idempotent), not just decorateMain
+  decorateDMAssets(block);
+
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
@@ -12,6 +18,23 @@ export default function decorate(block) {
 
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
+      // The DA/EW canvas wraps each field in an inline editor that re-renders from
+      // source, overwriting a converted DM <picture>/<video> with the raw link.
+      // Lift the media out of that editor (into a block-level <p> the img-col
+      // styling can target) so it renders and persists. No-op on the published
+      // site, which has no contenteditable editor wrapper.
+      col.querySelectorAll('picture, .dm-video-wrapper').forEach((media) => {
+        if (!media.closest('[contenteditable]')) return;
+        let wrapper = media;
+        while (wrapper.parentElement && wrapper.parentElement !== col) {
+          wrapper = wrapper.parentElement;
+        }
+        if (wrapper === media) return;
+        const p = document.createElement('p');
+        p.append(media);
+        wrapper.replaceWith(p);
+      });
+
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('p') || pic.parentElement;
