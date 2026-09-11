@@ -366,17 +366,11 @@ sup {
 
 
 
-/* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
-   small body-serif text (11.2px), tight line-height, decimal numbering, 20px indent.
-   scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
-main ol.footnotes {
-  padding-left: var(--list-indent);
-  font-size: var(--footnote-font-size);
-  line-height: var(--footnote-line-height);
-}
-
-main ol.footnotes li {
-  margin-bottom: 0;
+/* footnotes / disclaimer list — small-print styling comes from the `compact`
+   section metadata (see .section.compact below). decorateFootnotes only tags the
+   list items with fn-N ids for citation links; scroll-margin keeps an anchored
+   footnote clear of the fixed header when a citation link jumps to it. */
+main li[id^="fn-"] {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
