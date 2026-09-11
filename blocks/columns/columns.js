@@ -20,19 +20,24 @@ export default function decorate(block) {
     [...row.children].forEach((col) => {
       // The DA/EW canvas wraps each field in an inline editor that re-renders from
       // source, overwriting a converted DM <picture>/<video> with the raw link.
-      // Lift the media out of that editor (into a block-level <p> the img-col
-      // styling can target) so it renders and persists. No-op on the published
-      // site, which has no contenteditable editor wrapper.
+      // Climb out of any wrappers that hold ONLY this media (the editor mount, or
+      // the authored <p>) up to the column cell, then drop it into a clean <p> so
+      // no editable mount point remains over it and the img-col styling still
+      // applies. Only single-media wrappers are unwrapped, so cell text is never
+      // touched; harmless on the published site.
       col.querySelectorAll('picture, .dm-video-wrapper').forEach((media) => {
-        if (!media.closest('[contenteditable]')) return;
-        let wrapper = media;
-        while (wrapper.parentElement && wrapper.parentElement !== col) {
-          wrapper = wrapper.parentElement;
+        let node = media;
+        while (node.parentElement
+          && node.parentElement !== col
+          && node.parentElement.childElementCount === 1
+          && node.parentElement.textContent.trim() === '') {
+          node = node.parentElement;
         }
-        if (wrapper === media) return;
-        const p = document.createElement('p');
-        p.append(media);
-        wrapper.replaceWith(p);
+        if (node !== media && node.parentElement === col) {
+          const p = document.createElement('p');
+          p.append(media);
+          node.replaceWith(p);
+        }
       });
 
       const pic = col.querySelector('picture');
