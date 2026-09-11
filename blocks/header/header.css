@@ -4,7 +4,7 @@
 
    Mobile-first: the base rules describe the mobile two-row bar + slide-in
    drawer; the desktop single-row grid layout lives in the
-   `@media (width >= 900px)` block at the bottom. */
+   `@media (width >= 1200px)` block at the bottom. */
 
 /* Header height is reserved eagerly in styles/styles.css (90px mobile /
    150px desktop) so the space is held before this lazy block loads — do not
@@ -286,8 +286,8 @@ header nav .nav-search-panel-input:focus {
   outline-offset: -2px;
 }
 
-/* ---- Desktop layout (900px and up) — single-row grid; gold bar full-bleed ---- */
-@media (width >= 900px) {
+/* ---- Desktop layout (1200px and up) — single-row grid; gold bar full-bleed ---- */
+@media (width >= 1200px) {
   header nav {
     display: grid;
     grid-template:
@@ -415,7 +415,7 @@ header nav .nav-search-panel-input:focus {
    /nav-root fragment renders identically during the rename transition.
    The primary links live in .nav-sections; on desktop this renders them as a plain
    right-aligned row rather than the gold bar. Mobile keeps the hamburger drawer. ---- */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   /* place the links row in the right-hand `tools` grid cell (top row) instead of
      the full-width `sections` cell below the logo, vertically centred */
   header nav:not([class*="nav-variant"]) .nav-sections,

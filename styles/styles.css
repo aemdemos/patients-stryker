@@ -117,7 +117,7 @@
   --icon-list-item-gap: 54px;        /* vertical gap between stacked items (mobile); matches source rhythm */
   --icon-list-bg-padding: clamp(23px, 2px + 2.5vw, 48px); /* heading offset into the map band; fluid to track source (≈27px @1000 → 42px @1600) */
   --icon-list-title-size: 31.5px;    /* heading: source 1.5em x 21px h3 */
-  --icon-list-title-size-s: 26.25px; /* heading below 600px: 1.5em x 17.5px */
+  --icon-list-title-size-s: 26.25px; /* heading below 900px: 1.5em x 17.5px */
 
   /* icon-list (tile) variant — measured from source ("risk factors of a stroke") */
   --icon-list-tile-icon-width: 200px; /* icon rendered width (200x170, ratio 20/17) */
@@ -206,7 +206,7 @@ header {
 /* reserve the desktop two-row header height (white bar + gold nav bar) here in
    eager CSS so the space is held before the lazy header block loads, preventing
    content from shifting down on load (CLS) */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   header {
     height: calc(var(--nav-height) + var(--nav-bar-height));
   }
@@ -410,7 +410,7 @@ h2 strong em {
   font-size: var(--footnote-font-size);
 }
 
-/* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
+/* larger compact gold headings from the 600px breakpoint up (source 480px tier) */
 @media (width >= 600px) {
   main .section.side-by-side {
     display: flex;
@@ -720,7 +720,7 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
     margin-bottom: 30px;
@@ -744,7 +744,7 @@ main > .section.wide > div {
    Reading order = source order, so the first authored wrapper sits on the left.
    The section itself is the flex container (its wrappers are the direct children);
    empty wrappers (e.g. the consumed section-metadata) collapse to zero via :empty. */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   main > .section.flex {
     display: flex;
     align-items: center;
@@ -898,7 +898,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   main > .section > div {
     box-sizing: border-box;
     max-width: var(--container-max);

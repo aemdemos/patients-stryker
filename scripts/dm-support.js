@@ -98,7 +98,7 @@ const DM_SELECTOR = [
 
 // responsive widths shared by both image renderers (desktop + mobile)
 const BREAKPOINTS = [
-  { media: '(min-width: 600px)', width: 2000 },
+  { media: '(min-width: 900px)', width: 2000 },
   { width: 750 },
 ];
 

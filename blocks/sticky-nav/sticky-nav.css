@@ -7,13 +7,13 @@
   background: var(--color-secondary);
 }
 
-/* hidden below 600px (source omits the bar on small screens) */
+/* hidden below 900px (source omits the bar on small screens) */
 .section.sticky-nav-container {
   display: none;
 }
 
 /* sticky on the section (its <main> parent gives it room to travel) */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .section.sticky-nav-container {
     display: block;
     position: sticky;

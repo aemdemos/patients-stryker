@@ -80,14 +80,14 @@
 }
 
 /* tablet: two columns */
-@media (width >= 600px) {
+@media (width >= 900px) {
   .statistics ul.statistics-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* desktop: the author-selected column count (falls back to 3) */
-@media (width >= 900px) {
+@media (width >= 1200px) {
   .statistics ul.statistics-list {
     grid-template-columns: repeat(var(--statistics-columns, 3), 1fr);
   }

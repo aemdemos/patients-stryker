@@ -2,7 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates desktop width (mobile below this)
-const isDesktop = window.matchMedia('(min-width: 900px)');
+const isDesktop = window.matchMedia('(min-width: 1200px)');
 
 // single source for the search form target — could later be sourced from nav
 // fragment metadata so locale/site changes don't require a code edit
@@ -213,7 +213,7 @@ export default async function decorate(block) {
   if (hasSearch) nav.setAttribute('data-search', 'closed');
 
   // on breakpoint change, reset any open mobile menu — but suppress the drawer
-  // slide animation so it doesn't briefly animate closed while crossing 900px
+  // slide animation so it doesn't briefly animate closed while crossing 1200px
   isDesktop.addEventListener('change', () => {
     nav.classList.add('nav-no-transition');
     if (isDesktop.matches) {

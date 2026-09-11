@@ -16,10 +16,10 @@
    authors), so one theme = one clearly-owned block of rules below.
 
    Layout: base (mobile) rules per theme come first, then the responsive
-   overrides are grouped into ONE @media block per breakpoint (600 / 900 / 1200),
+   overrides are grouped into ONE @media block per breakpoint (900 / 1200 / 1800),
    each containing every theme's rules for that breakpoint. Because themes are
    scoped to mutually-exclusive body classes they never conflict across themes;
-   within a theme the source order stays ascending (base → 600 → 900 → 1200) so
+   within a theme the source order stays ascending (base → 900 → 1200 → 1800) so
    the cascade is unchanged. */
 
 
@@ -155,12 +155,11 @@ body.stroke-awareness-landing main .section.compact {
    theme, so the hero styling travels with the section wherever it's authored
    instead of being pinned to this one page.
 
-   Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
-   1200), so the source's own breakpoints translate as: source 840px → 600px,
-   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
-   mobile is a single regime below 600px.
+   Headline sizing is mapped onto the EDS standard breakpoints, so the source's
+   own breakpoints translate as: source 480px → 600px, 840px → 900px,
+   1024px → 1200px, 1440px → 1800px.
    mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
-   → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
+   → 47.2px@590). The 1200px / 1800px steps live in the shared media blocks below. */
 .section.hero-stroke .hero.banner h1 {
   font-size: 8vw;
 }
@@ -288,7 +287,7 @@ body.campaign-landing main .icon-list.tile .icon-list-text p {
   line-height: var(--body-line-height-l);
 }
 
-/* Horizontal inset — MOBILE BASE: ~45px from the screen edge, not the 15px default; >=600px reverts to the shared gutter. */
+/* Horizontal inset — MOBILE BASE: ~45px from the screen edge, not the 15px default; >=900px reverts to the shared gutter. */
 body.campaign-landing main > .section.columns-container > .columns-wrapper,
 body.campaign-landing main > .section.columns-container > div:not(.columns-wrapper),
 body.campaign-landing main > .section.icon-list-container > div:not(.icon-list-wrapper),
@@ -298,7 +297,7 @@ body.campaign-landing main > .section.compact > div {
   padding-inline: var(--space-section);
 }
 
-/* Serif 50/50 columns — MOBILE BASE: keep them STACKED (text then image) through tablet; the shared block splits 50/50 from 600px. */
+/* Serif 50/50 columns — MOBILE BASE: keep them STACKED (text then image) through tablet; the shared block splits 50/50 from 900px. */
 body.campaign-landing main > .section.serif.columns-container > .columns-wrapper {
   padding-inline: var(--container-gutter);
 }
@@ -350,8 +349,8 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
    Responsive overrides — one @media block per breakpoint, all themes.
    ===================================================================== */
 
-/* ----- Tablet (>=600px) ----- */
-@media (width >= 600px) {
+/* ----- Tablet (>=900px) ----- */
+@media (width >= 900px) {
   /* Theme: campaign-landing */
   body.campaign-landing main .hero.fullbleed {
     min-height: calc(5 * var(--space-section-l));
@@ -394,7 +393,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     padding-inline: var(--container-gutter);
   }
 
-  /* The source's 840px editorial breakpoint maps to the local 600px tablet breakpoint. */
+  /* The source's 840px editorial breakpoint maps to the local 900px tablet breakpoint. */
   body.campaign-landing main > .section.serif .columns.columns-50-50 > div {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -451,8 +450,8 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   }
 }
 
-/* ----- Desktop (>=900px) ----- */
-@media (width >= 900px) {
+/* ----- Desktop (>=1200px) ----- */
+@media (width >= 1200px) {
   /* Theme: sa-resources */
 
   /* intro: the availability panel is TOP-aligned with the welcome text (source),
@@ -469,15 +468,15 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     grid-template-columns: 1fr;
   }
 
-  /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
-     EDS large breakpoint (1200px ← source 1440px). */
+  /* EDS desktop (1200px) ← source 1024px: 40.96px, rising to the 56px cap at the
+     EDS large breakpoint (1800px ← source 1440px). */
   .section.hero-stroke .hero.banner h1 {
     font-size: calc(-4.16px + 5.0133vw);
   }
 }
 
-/* ----- Large desktop (>=1200px) ----- */
-@media (width >= 1200px) {
+/* ----- Large desktop (>=1800px) ----- */
+@media (width >= 1800px) {
   /* Theme: sa-resources */
 
   /* enlarge the hero headline on this page beyond the shared band cap (48px in
@@ -486,7 +485,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     font-size: 56px;
   }
 
-  /* EDS large (1200px) ← source 1440px cap: 56px flat */
+  /* EDS large (1800px) ← source 1440px cap: 56px flat */
   .section.hero-stroke .hero.banner h1 {
     font-size: 56px;
   }
@@ -587,17 +586,17 @@ body.patient-information .hero.band picture.hero-image-mobile {
 /* Headline size — match the source's fluid scaling at every width (measured):
    mobile ≈ 8vw (31.2px at 390px), desktop ≈ 4vw (51.2px at 1280px) capped at
    ~56px (still 56px at 1920px, not the unbounded 76.8px raw 4vw). The shared hero
-   block instead uses 8vw on mobile then pins a fixed 48px from 1200px up — close
+   block instead uses 8vw on mobile then pins a fixed 48px from 1800px up — close
    on mobile but a touch small and non-fluid on desktop.
 
-   IMPORTANT: this mobile base MUST precede the ≥900px block below — both rules
+   IMPORTANT: this mobile base MUST precede the ≥1200px block below — both rules
    have equal specificity, so if the base came later it would win at desktop too
    (source order breaks the media query) and the title would render at raw 8vw. */
 body.patient-information .hero.band h1 {
   font-size: 8vw;
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   body.patient-information .hero.band picture.hero-image-desktop {
     display: block;
   }
@@ -985,8 +984,8 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-weight: 700;
 }
 
-/* ----- Tablet (>=600px) ----- */
-@media (width >= 600px) {
+/* ----- Tablet (>=900px) ----- */
+@media (width >= 900px) {
   /* "Benefits of Zip" — the source spaces the icon-grid rows further apart than
      the shared 30px default; widen the inter-row gap to match. */
   .zip-skin-closure main > .section.columns-container .columns.columns-icon-grid > div {
@@ -1052,8 +1051,8 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   }
 }
 
-/* ----- Desktop (>=900px) ----- */
-@media (width >= 900px) {
+/* ----- Desktop (>=1200px) ----- */
+@media (width >= 1200px) {
   .zip-skin-closure main > .section:not(.columns-container, .light-gray) > .default-content-wrapper h2,
   .zip-skin-closure main > .section.richtext-container:not(.columns-container, .light-gray) h2 {
     font-size: var(--heading-font-size-xl);
@@ -1076,8 +1075,8 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   }
 }
 
-/* ----- Large desktop (>=1200px) ----- */
-@media (width >= 1200px) {
+/* ----- Large desktop (>=1800px) ----- */
+@media (width >= 1800px) {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
     font-size: 35px;
   }
