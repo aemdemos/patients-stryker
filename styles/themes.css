@@ -1190,6 +1190,14 @@ body.ivs-treatment main > .section.light-gray {
 }
 
 body.ivs-treatment main > .section.light-gray > div {
-  padding: var(--space-section) 0; /* ~30px top/bottom inside the grey band */
+  padding: var(--space-section); /* ~30px on ALL sides so text is inset from the grey edges */
   background-color: var(--color-surface);
+}
+
+/* The reference renders this disclaimer band's body copy at the SMALLER 14px
+   size (--body-font-size-m / 19.25px line-height), not the page-wide 17.5px used
+   elsewhere. Override the theme-wide p/li size for this section only. */
+body.ivs-treatment main > .section.light-gray :is(p, li) {
+  font-size: var(--body-font-size-m); /* 14px */
+  line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
 }
