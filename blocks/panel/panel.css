@@ -207,13 +207,6 @@
   margin: 0 0 var(--space-block);
 }
 
-.panel .panel-body p:last-child:has(strong em),
-.panel .panel-body p:last-child:has(em strong),
-.panel .panel-body p:last-child:has(b i),
-.panel .panel-body p:last-child:has(i b) {
-  margin: 0;
-}
-
 .panel.colored-border .panel-body p:first-of-type {
   font-family: var(--heading-font-family);
   font-size: var(--panel-body-size-s);
