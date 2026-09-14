@@ -1140,3 +1140,11 @@ body.ivs-treatment main h3 {
 body.ivs-treatment main :is(p, li) {
   font-size: var(--body-font-size-l); /* 17.5px */
 }
+
+/* Flex side-by-side sections: the shared `.section.flex` rule vertically centres
+   its columns (align-items: center), but the reference top-aligns them — the
+   "Get back on your feet" heading should start at the top of the row, level with
+   the "Benefits" panel, not float to the vertical middle. */
+body.ivs-treatment main > .section.flex {
+  align-items: start;
+}
