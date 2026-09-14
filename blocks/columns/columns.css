@@ -196,29 +196,26 @@
   margin-bottom: 0;
 }
 
-/* dark variant — gold Futura-bold headings and white body text on the dark
-   gradient panel (reference: knee-pain "Where treatment begins" section). */
+/* dark variant — the gold Futura-bold section title (h2/h3: "What is LSS?",
+   "Before mild", "After mild") on the dark gradient panel. 26px gold. */
 .section.dark .columns h2,
-.section.dark .columns h3,
-.section.dark .columns h4 {
+.section.dark .columns h3 {
   font-family: var(--display-font-family);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--panel-cta-heading-size); /* 26px */
   font-weight: 700;
   line-height: var(--heading-line-height-ml);
   color: var(--color-accent);
 }
 
-/* before/after caption — the <h4> directly after the gold "Before/After mild"
-   <h3> is a WHITE Futura-bold caption in the reference: 17.5px / 20.125px
-   line-height, weight 700 (measured on patients.stryker.com). It keeps the
-   display font (Futura) and 700 weight inherited from the dark-heading rule
-   above, and only drops to body size and white — this makes it visibly smaller
-   than the 26px "Before/After mild" h3 title. `h3 + h4` targets exactly that
-   caption (the LSS title h4 has no preceding h3, so it keeps the gold heading
-   style above). */
-.section.dark .columns h3 + h4 {
-  font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
+/* dark-variant caption (h4: the before/after descriptive line under the gold
+   title) — WHITE Futura, 21.875px / 25.156px line-height, weight 700 per the
+   reference (patients.stryker.com DevTools). A distinct, SMALLER size than the
+   26px h3 title, styled separately by tag (no grouping, no h3+h4 adjacency). */
+.section.dark .columns h4 {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-ml); /* 21.875px */
+  font-weight: 700;
+  line-height: var(--heading-line-height-ml);
   color: var(--color-white);
 }
 
