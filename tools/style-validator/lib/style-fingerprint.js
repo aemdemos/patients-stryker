@@ -20,8 +20,32 @@ export const DEFAULT_FINGERPRINT_FIELDS = [
 /** Per-field tolerance / comparison rules. */
 const SIZE_EPSILON_PX = 0.5;
 
+/**
+ * Font-family aliases: names that denote the SAME typeface and must compare
+ * equal. A source site and its migration frequently reference the identical
+ * licensed font under DIFFERENT family names — e.g. a foundry license exposes a
+ * font one way on the source ("Some Font for AcmeCo") while the migrated project
+ * bundles the same face under its stock name ("SomeFontW01"). Without aliasing,
+ * every text run in that face reports a fontFamily mismatch even though the
+ * rendered glyphs/metrics are identical. Populate this per project via config
+ * (`fontFamilyAliases`): an object mapping each family name to a shared canonical
+ * token, e.g. { "Some Font for AcmeCo": "somefont", "SomeFontW01": "somefont" }.
+ * Empty by default so the tool ships project-agnostic.
+ */
+let familyAliases = {};
+
+/** Set alias pairs from config. Keys are lower-cased for case-insensitive match. */
+export function setFamilyAliases(extra) {
+  if (!extra || typeof extra !== 'object') return;
+  const merged = {};
+  for (const [k, v] of Object.entries(extra)) merged[k.toLowerCase()] = v;
+  familyAliases = merged;
+}
+
 function familyName(fontFamily) {
-  return (fontFamily || '').split(',')[0].replace(/["']/g, '').trim();
+  const raw = (fontFamily || '').split(',')[0].replace(/["']/g, '').trim();
+  const alias = familyAliases[raw.toLowerCase()];
+  return alias || raw;
 }
 
 function pxNumber(size) {
