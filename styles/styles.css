@@ -568,7 +568,8 @@ a.link-strong:any-link {
   text-decoration: none;
 }
 
-a.link-strong:any-link::after, strong > a.any-link:has(> u)::after {
+a.link-strong:any-link::after,
+strong > a:any-link:has(> u)::after {
   content: "";
   display: inline-block;
   margin-inline-start: calc(var(--space-block) * 0.4);
