@@ -19,6 +19,13 @@
 export function extractRunsInBrowser(options) {
   const opts = options || {};
   const minLen = opts.minLength || 2;
+  // PROJECT-SPECIFIC content-block + variant class names, passed via options
+  // (see the block-scoping note lower down). Used by both contextHint (human/AI
+  // readability) and stableSelector (auto-fix targeting). Empty when a project
+  // doesn't declare them — the tool still works, just without block-level scope.
+  const BLOCK_CLASSES = opts.blockClasses || [];
+  const VARIANT_CLASSES = opts.variantClasses || [];
+  const SCOPE_CLASSES = BLOCK_CLASSES.concat(VARIANT_CLASSES);
   const BOILERPLATE = [
     'accept all', 'accept cookies', 'cookie preferences',
     'we use cookies', 'this website uses cookies', 'cookies settings',
@@ -63,12 +70,14 @@ export function extractRunsInBrowser(options) {
   // clusters): nearest heading vs body vs a known block/section class.
   function contextHint(el) {
     const h = el.closest('h1,h2,h3,h4,h5,h6');
-    const block = el.closest('[class*="panel"],[class*="cards"],[class*="hero"]');
+    // nearest ancestor carrying a known block class (project-provided list)
+    const blockSel = BLOCK_CLASSES.map((c) => `[class~="${c}"]`).join(',');
+    const block = blockSel ? el.closest(blockSel) : null;
     const section = el.closest('.section');
     const parts = [];
     if (h) parts.push(`heading:${h.tagName.toLowerCase()}`);
     if (block) {
-      const cls = [...block.classList].filter((c) => /panel|cards|hero/.test(c)).join('.');
+      const cls = [...block.classList].filter((c) => SCOPE_CLASSES.includes(c)).join('.');
       if (cls) parts.push(`block:${cls}`);
     } else if (section) {
       const cls = [...section.classList].filter((c) => c !== 'section').join('.');
@@ -93,14 +102,14 @@ export function extractRunsInBrowser(options) {
   // Prefers durable signals (href, block/section class + tag) over fragile
   // structural paths. Returns null when no stable signal exists (then the fix
   // must be authored, not auto-generated).
-  // The BLOCK element for scoping — a real EDS block (`.panel`, `.cards`, `.hero`),
-  // NEVER the structural `*-container` / `*-wrapper` element EDS auto-wraps blocks
-  // and sections in. Those wrappers differ between the authoring preview and the
-  // published render (extra/empty divs), so a selector scoped to them is fragile
-  // and breaks in one environment. We match the block by an EXACT class token from
-  // a known set, not a substring, so `panel-container` can never qualify as a block.
-  const BLOCK_CLASSES = ['panel', 'cards', 'hero'];
-  const VARIANT_CLASSES = ['wide', 'dark', 'cta', 'gold', 'resources', 'banner', 'light'];
+  //
+  // Block scoping matches a real content block by an EXACT class token from the
+  // project-provided BLOCK_CLASSES/VARIANT_CLASSES (hoisted at the top), NEVER the
+  // structural `*-container` / `*-wrapper` wrapper (matching a substring like
+  // "panel" would catch "panel-container", whose nesting can differ between the
+  // authoring preview and the published render — a fragile selector that breaks
+  // in one environment). With no block classes provided, blockScope returns null
+  // and stableSelector falls back to section-style scope.
   function blockScope(el) {
     // nearest ancestor that carries an exact block class token (not "*-container")
     let node = el;
@@ -132,15 +141,14 @@ export function extractRunsInBrowser(options) {
       // so the rule can't leak to the same href elsewhere. Prefer block, then
       // section-style; if neither, return null (unscopable → not auto-fixable).
       //
-      // ALSO qualify by heading zone when the marker sits in a heading. A citation
-      // number (#fn-N) is only an ordinal — decorateFootnotes splits a group like
-      // "1,3-7" into per-digit #fn-1/#fn-3/#fn-7 links, so the SAME #fn-1 recurs in
-      // different zones of one page (e.g. a gold intro heading AND a benefits list),
-      // needing opposite styling (Futura-bold in the heading, plain body font in the
-      // list). Without the heading qualifier the block/section scope still contains
-      // BOTH — the list marker lives inside the same section — so a heading-only fix
-      // leaks onto the list marker. Scoping the heading case to :is(h1..h6) keeps the
-      // two selectors disjoint so each cluster's fix stays in its own zone.
+      // ALSO qualify by heading zone when the marker sits in a heading. A fragment
+      // anchor's href is not always unique on a page: a footnote-style href (e.g.
+      // "#fn-1") can recur when a citation group is split into per-item links, so
+      // the SAME href appears in different zones (e.g. inside a heading AND inside a
+      // body list) that may need opposite styling. Without a zone qualifier the
+      // block/section scope would contain BOTH, so a fix meant for the heading leaks
+      // onto the body one. Scoping the heading case to :is(h1..h6) keeps the two
+      // selectors disjoint so each cluster's fix stays in its own zone.
       const inHeading = el.closest('h1,h2,h3,h4,h5,h6');
       const head = inHeading ? ' :is(h1,h2,h3,h4,h5,h6)' : '';
       const block = blockScope(el);
@@ -183,6 +191,13 @@ export function extractRunsInBrowser(options) {
       const cs = getComputedStyle(el);
       const rank = seenOrder.get(norm) || 0;
       seenOrder.set(norm, rank + 1);
+      // Absolute page geometry (viewport rect + scroll offset) so the spacing
+      // validator can measure vertical gaps between anchors regardless of scroll.
+      const r = el.getBoundingClientRect();
+      const top = Math.round(r.top + window.scrollY);
+      const bottom = Math.round(r.bottom + window.scrollY);
+      const left = Math.round(r.left);
+      const right = Math.round(r.right);
       runs.push({
         normalizedText: norm,
         rawText: directText.replace(/\s+/g, ' ').trim(),
@@ -191,6 +206,9 @@ export function extractRunsInBrowser(options) {
         roleBucket: roleBucket(el),
         selector: stableSelector(el),
         tokenCount: norm.replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(' ').filter(Boolean).length,
+        geometry: {
+          top, bottom, left, right, height: Math.round(r.height),
+        },
         fingerprint: {
           fontFamily: familyName(cs.fontFamily),
           fontSize: cs.fontSize,
@@ -204,4 +222,38 @@ export function extractRunsInBrowser(options) {
     el = walker.nextNode();
   }
   return runs;
+}
+
+/**
+ * In-browser extractor for CONTENT boxes — visible media/embeds that occupy
+ * vertical space (images, pictures, video, svg, iframe, canvas) with a
+ * meaningful height. The spacing validator uses these (together with the text
+ * runs themselves) to decide whether the interval between two text anchors is
+ * "structural" (only whitespace/margins → a trustworthy spacing signal) or
+ * "content-spanning" (real content in between → gap reflects content height, not
+ * spacing, so it is quarantined from spacing clusters).
+ *
+ * Returns absolute page rects [{top, bottom}] for every qualifying element.
+ */
+/* eslint-disable no-undef */
+export function extractContentBoxesInBrowser() {
+  const MIN_H = 8; // px — ignore hairlines/spacers
+  const boxes = [];
+  const els = document.querySelectorAll('img, picture, video, svg, iframe, canvas');
+  els.forEach((el) => {
+    const cs = getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden') return;
+    if (parseFloat(cs.opacity) < 0.05) return;
+    const r = el.getBoundingClientRect();
+    if (r.height < MIN_H || r.width < 2) return;
+    // A <picture> and its inner <img> both report the same box — keep the outer
+    // one only (skip an <img> whose parent is a <picture>) to avoid duplicates.
+    if (el.tagName === 'IMG' && el.parentElement && el.parentElement.tagName === 'PICTURE') return;
+    boxes.push({
+      tag: el.tagName.toLowerCase(),
+      top: Math.round(r.top + window.scrollY),
+      bottom: Math.round(r.bottom + window.scrollY),
+    });
+  });
+  return boxes;
 }
