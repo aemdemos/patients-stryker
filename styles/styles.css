@@ -366,7 +366,7 @@ ul > li :is(strong, b) {
   font-family: var(--body-font-family);
 }
 
-ul > li > p {
+ul > li > p, ol > li > p {
   margin-bottom: 0;
 }
 
