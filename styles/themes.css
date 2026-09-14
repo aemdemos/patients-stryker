@@ -1128,33 +1128,15 @@ body.resources .section.compact {
    Loaded eagerly (awaited before `appear`), so above-the-fold rules here don't
    reflow the LCP hero. */
 
-/* Benefits panel (the flex side-by-side "Benefits of the treatment" box). The
-   shared `panel cta wide` block renders a 26px Futura-bold heading, 14px list
-   labels and a 37.5px pad; this page's reference instead uses the serif heading
-   scale, larger bold labels, a plain-serif "Potential risks" link, and tighter
-   padding. Match the reference here without touching the shared block. */
-
-/* heading: 21px URW-Egyptienne light (the h3 scale), not 26px Futura bold */
-body.ivs-treatment .section.flex .panel.cta .panel-body h3 {
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 500;
+/* Page-wide type scale. On the reference EVERY heading and body run is wrapped in
+   the source's `fontsize-1-25em` span (1.25x): all h3 text renders at 26.25px and
+   all body copy (paragraphs + list items) at 17.5px, rather than the shared
+   defaults (h3 21px / body 14px). This is a page-level design choice, not
+   per-section, so it's applied theme-wide here. */
+body.ivs-treatment main h3 {
+  font-size: var(--heading-font-size-l-scaled); /* 26.25px */
 }
 
-/* bold list labels: 17.5px (reference), up from the 14px body default */
-body.ivs-treatment .section.flex .panel.cta .panel-body li :is(strong, b) {
-  font-size: var(--body-font-size-l);
-}
-
-/* "Potential risks" link: 14px Humanist body, not the 21px serif the block
-   applies to a trailing link paragraph */
-body.ivs-treatment .section.flex .panel.cta .panel-body p:has(> a[href*="potential-risks"]) {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-}
-
-/* box padding: the reference pads the white box ~22.5px, tighter than the block's
-   5% (~37.5px at this column width) */
-body.ivs-treatment .section.flex .panel.cta .panel-body {
-  padding: var(--space-block-l);
+body.ivs-treatment main :is(p, li) {
+  font-size: var(--body-font-size-l); /* 17.5px */
 }
