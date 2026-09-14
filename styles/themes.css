@@ -1133,8 +1133,8 @@ body.resources .section.compact {
    so migrated ivs-treatment pages render the exact typeface as the reference.
    Scoped to the theme via a token override — other pages keep Futura LT W01. */
 body.ivs-treatment {
-  --display-font-family: "Futura for Stryker", futura-lt-fallback, arial, helvetica, sans-serif;
-  --display-font-family-bold: "Futura for Stryker", "Arial Black", arial, sans-serif;
+  --display-font-family: "Futura for Stryker", futura-for-stryker-fallback, arial, helvetica, sans-serif;
+  --display-font-family-bold: "Futura for Stryker", futura-for-stryker-fallback, "Arial Black", arial, sans-serif;
 }
 
 /* Page-wide type scale. On the reference EVERY heading and body run is wrapped in

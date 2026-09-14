@@ -92,3 +92,12 @@
   size-adjust: 89.70%;
   src: local('Arial'), local('Helvetica');
 }
+
+/* Fallback for "Futura for Stryker" — measured 91.94% of Arial's advance width
+   (vs Futura LT's 89.70%), so it needs its own size-adjust to prevent the
+   font-swap reflow / CLS on ivs-treatment headings while the webfont loads. */
+@font-face {
+  font-family: futura-for-stryker-fallback;
+  size-adjust: 91.94%;
+  src: local('Arial'), local('Helvetica');
+}
