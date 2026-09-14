@@ -100,6 +100,40 @@ repo's real (Stryker) config and doubles as a filled-in example.
 The **fix target** (which CSS file fixes land in) is NOT configured — it is
 auto-detected from each page's rendered `template`/`theme` metadata (see below).
 
+### Building a config for a new project
+
+Don't try to author a perfect config up front. Config keys fall into three
+groups by *how you obtain their value* — fill in the first group from what you
+already know, leave the rest until the first run tells you they're needed:
+
+**A. Fill in up front — you already know these from the migration you just did.**
+- `previewBase` — your dev/preview host (usually `http://localhost:3000`).
+- `pairs` — the source URLs → migrated paths you migrated. This is the migration
+  itself; you know exactly which pages map to which.
+- `blockClasses` / `variantClasses` — your project's own block + variant class
+  names (you built the blocks; they're in `blocks/`). Enables stable per-block
+  fix selectors. Omit and it still runs, just with coarser section-level scope.
+- `importScript` — the import entry you ran (`tools/importer/import-<t>.js`), or
+  `null` for a CSS-only singleton with no import pipeline.
+
+**B. Add ONLY after the first run surfaces the need — don't guess these.**
+- `fontFamilyAliases` — if the first report floods with `fontFamily` mismatches
+  that are actually the *same face under different names* (source vs bundled),
+  add the alias pairs then re-run. You can't reliably know these before seeing
+  the report; it's designed to reveal them.
+- `excludeContexts` — if the report shows noise from chrome or a third-party
+  widget (a form/embed whose markup legitimately differs), add its context-hint
+  substring to drop it.
+
+**C. Leave at default unless the source genuinely differs.**
+- `fingerprintFields`, `minTokensForCluster`, `spacing`, `spacingThresholdPx`,
+  `spacingBreakpoints` — the defaults work; only override for a specific reason
+  (e.g. the source uses breakpoints other than 390/1200).
+
+So the loop is: **copy `example.json` → fill in group A → run → add group B from
+the report → re-run.** Iterating from the first report is expected, not a sign
+the config was wrong.
+
 ## Output
 
 `migration-work/importer/text-style-diff.json` (git-ignored working artifact)
