@@ -501,6 +501,14 @@ a:any-link > strong {
   text-decoration: none;
 }
 
+strong > a:any-link > u {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--color-white);
+}
+
+
 .section.compact a:any-link {
   text-decoration: none;
   font-family: var(--display-font-family);
@@ -554,7 +562,7 @@ a.link-strong:any-link {
   text-decoration: none;
 }
 
-a.link-strong:any-link::after {
+a.link-strong:any-link::after, strong > a.link-strong:any-link::after {
   content: "";
   display: inline-block;
   margin-inline-start: calc(var(--space-block) * 0.4);
