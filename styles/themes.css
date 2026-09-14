@@ -1177,10 +1177,19 @@ body.ivs-treatment main > .section.cards-container h2 {
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
-/* Potential risks — the reference's light-gray band pads its content ~15px top and
-   bottom so the text doesn't sit flush against the cards above or the footnotes
-   below. Our .section.light-gray only sets a background, so add the vertical
-   padding here (block-scoped to the theme). */
+/* Potential risks — on the reference this light-gray band is NOT full-bleed: the
+   grey fill is content-width (≈1380px, sitting inside the grid margins), and it is
+   separated from the cards above (~136px) and the footnotes below (~61px) by outer
+   space. Our shared `.section.light-gray` fills the section edge-to-edge because
+   the background sits on the full-viewport-width `.section`. Override for this
+   theme: move the grey fill + internal padding onto the capped-width inner wrapper
+   so it stays content-width, and add outer top/bottom margin for the separation. */
 body.ivs-treatment main > .section.light-gray {
-  padding-block: var(--space-block); /* 15px */
+  margin-block: var(--space-section-xl) var(--space-section-l); /* ~90px above, 50px below */
+  background-color: transparent; /* undo the edge-to-edge fill from styles.css */
+}
+
+body.ivs-treatment main > .section.light-gray > div {
+  padding: var(--space-section) 0; /* ~30px top/bottom inside the grey band */
+  background-color: var(--color-surface);
 }
