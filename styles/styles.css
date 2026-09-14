@@ -424,23 +424,6 @@ main ol.footnotes li > p {
   font-size: var(--footnote-font-size);
 }
 
-/* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
-@media (width >= 600px) {
-  main .section.side-by-side {
-    display: flex;
-  }
-
-  .section.compact h2 {
-    font-size: var(--heading-font-size-compact-m);
-    margin-top: 30px;
-  }
-
-  h2 em strong,
-  h2 strong em {
-    font-size: var(--heading-font-size-compact-m);
-  }
-
-}
 
 code,
 pre {
@@ -925,8 +908,13 @@ main > .section.wide > div {
   max-width: var(--container-wide);
 }
 
+
 @media (width >= 600px) {
-    .section.compact h2 {
+  main .section.side-by-side {
+  display: flex;
+  }
+
+  .section.compact h2 {
   font-size: var(--heading-font-size-compact-m);
   margin-top:30px;
 }
