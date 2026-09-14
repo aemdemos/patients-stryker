@@ -105,7 +105,8 @@
 .section.compact .columns h3 {
   font-size: var(--heading-font-size-m);
   padding-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  padding-left:0;
 }
 
 
