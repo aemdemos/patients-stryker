@@ -487,7 +487,9 @@ strong > a:any-link > u {
 }
 
 em > strong > a:any-link {
-    color: var(--color-accent);
+    border-color: var(--color-accent-dark);
+    background-color: var(--color-accent);
+    color: #000;
 }
 
 /* UE fallback: before decorateButtons() converts a bold authored link to
