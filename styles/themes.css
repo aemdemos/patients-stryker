@@ -1168,6 +1168,16 @@ body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
   margin-block: var(--space-section-l); /* 50px */
 }
 
+/* "What is LSS?" dark band — the reference leaves ~71px of space between the
+   "Talk to your doctor" button (end of the flex panel section) and the top of the
+   dark band; our band butts almost against it (~12px). Add top margin to the dark
+   band that directly follows the flex section. Scoped with `.flex + .dark` so it
+   only affects the LSS band — the before/after dark band follows a plain columns
+   section that already supplies its own bottom margin. */
+body.ivs-treatment main > .section.flex + .section.dark {
+  margin-top: var(--space-section-l); /* +50px → ~62px total, matches the reference */
+}
+
 /* Resources heading — the reference underlines the "Resources" <h2> with a 1px
    gold-ish rule (border-bottom + small padding), matching its
    .component-subheading.border-bottom-gold style. Reproduce as a bottom border on
