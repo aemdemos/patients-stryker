@@ -1167,3 +1167,20 @@ body.ivs-treatment main > .section.flex {
 body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
   margin-block: var(--space-section-l); /* 50px */
 }
+
+/* Resources heading — the reference underlines the "Resources" <h2> with a 1px
+   gold-ish rule (border-bottom + small padding), matching its
+   .component-subheading.border-bottom-gold style. Reproduce as a bottom border on
+   the cards-section h2. */
+body.ivs-treatment main > .section.cards-container h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* Potential risks — the reference's light-gray band pads its content ~15px top and
+   bottom so the text doesn't sit flush against the cards above or the footnotes
+   below. Our .section.light-gray only sets a background, so add the vertical
+   padding here (block-scoped to the theme). */
+body.ivs-treatment main > .section.light-gray {
+  padding-block: var(--space-block); /* 15px */
+}
