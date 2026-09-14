@@ -366,6 +366,10 @@ ul > li :is(strong, b) {
   font-family: var(--body-font-family);
 }
 
+ul > li > p {
+  margin-bottom: 0;
+}
+
 /* citation superscripts — measured from source: small (75%) and only slightly
    raised. The browser default `vertical-align: super` shifts the marker up by a full
    super-step, which reads as an oversized, prominent digit and inflates the line box;
