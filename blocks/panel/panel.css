@@ -37,7 +37,7 @@
   line-height: var(--panel-body-line-height);
 }
 
-.panel .panel-body a:any-link {
+.panel .panel-body > p > a:any-link {
   text-decoration: underline;
 }
 
