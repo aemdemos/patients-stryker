@@ -1,0 +1,116 @@
+.metadata-rules {
+  margin-block: var(--space-section);
+  overflow-x: auto;
+}
+
+.metadata-rules .metadata-rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--body-font-size-s);
+}
+
+.metadata-rules .metadata-rules-table th,
+.metadata-rules .metadata-rules-table td {
+  padding: var(--space-block) var(--space-block-l);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.metadata-rules .metadata-rules-table thead th {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-bottom: none;
+}
+
+.metadata-rules .metadata-rules-table tbody tr:nth-child(even) {
+  background: var(--color-surface-alt);
+}
+
+.metadata-rules .metadata-rules-table code {
+  font-family: monospace;
+  font-size: var(--body-font-size-xs);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.metadata-rules .metadata-rules-col-url code {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.metadata-rules .metadata-rules-empty {
+  color: var(--color-text-muted);
+}
+
+.metadata-rules .metadata-rules-note {
+  margin-block: var(--space-block) 0;
+  font-size: var(--body-font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.metadata-rules .metadata-rules-error {
+  margin-block: var(--space-block) 0;
+  font-size: var(--body-font-size-s);
+  color: var(--color-required);
+}
+
+/* ==========================================================================
+   Header & Footer mappings authoring-guide page layout.
+   These rules style the surrounding doc (variant cards + screenshots), not the
+   block itself. They live here — rather than in the shared site stylesheet —
+   because this block's CSS only ships to pages that use the block, and the
+   metadata-rules block appears ONLY on this guide. The `main:has(.metadata-rules)`
+   guard keeps them from ever applying elsewhere, so no page theme is needed.
+   ========================================================================== */
+main:has(.metadata-rules) .section.variant-card {
+  margin-block: var(--space-section);
+}
+
+/* the card visual lives on the inner wrapper (capped at content width) rather
+   than the full-bleed .section, so the box hugs the content on wide screens */
+main:has(.metadata-rules) .section.variant-card > .default-content-wrapper {
+  padding: var(--space-section);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+}
+
+main:has(.metadata-rules) .section.variant-card > .default-content-wrapper > h3 {
+  margin-top: 0;
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* stacked screenshots: each sits on white with a light frame so it reads as a
+   captured shot rather than page content */
+main:has(.metadata-rules) .section.variant-card > .default-content-wrapper p:has(picture) {
+  margin-block: var(--space-block);
+}
+
+main:has(.metadata-rules) .section.variant-card > .default-content-wrapper picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+/* the two intro/section-lead blocks (Headers, Footers) get a touch more air
+   above them so each group of cards reads as a set */
+main:has(.metadata-rules) .section:not(.variant-card, :first-child) {
+  margin-top: calc(var(--space-section) * 1.5);
+}
+
+/* desktop: mobile screenshots shrink to their natural (narrow) size instead of
+   stretching to full width; the wider desktop shots still fill the card. Mobile
+   shots are identified by "mobile" in their alt text. */
+@media (width >= 900px) {
+  main:has(.metadata-rules) .section.variant-card > .default-content-wrapper picture img[alt*="mobile"] {
+    width: auto;
+    max-width: 100%;
+  }
+}
