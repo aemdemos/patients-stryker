@@ -209,16 +209,16 @@
 }
 
 /* before/after caption — the <h4> directly after the gold "Before/After mild"
-   <h3> is a WHITE Futura-bold subheading in the reference (21.875px / 25.156px
-   line-height, weight 700) — same size and font as a standard column h4, just
-   white instead of gold. It inherits the display font, 700 weight, size
-   (--heading-font-size-ml) and line-height (--heading-line-height-ml) from the
-   dark-heading rule above; the only difference is the colour. `h3 + h4` targets
-   exactly that caption (the LSS title h4 has no preceding h3, so it keeps the gold
-   heading style above). */
+   <h3> is a WHITE Futura-bold caption in the reference: 17.5px / 20.125px
+   line-height, weight 700 (measured on patients.stryker.com). It keeps the
+   display font (Futura) and 700 weight inherited from the dark-heading rule
+   above, and only drops to body size and white — this makes it visibly smaller
+   than the 26px "Before/After mild" h3 title. `h3 + h4` targets exactly that
+   caption (the LSS title h4 has no preceding h3, so it keeps the gold heading
+   style above). */
 .section.dark .columns h3 + h4 {
-  font-size: var(--heading-font-size-ml);
-  line-height: var(--heading-line-height-ml);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
   color: var(--color-white);
 }
 
