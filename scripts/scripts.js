@@ -122,8 +122,13 @@ function decorateButtons(main) {
     const trailingText = paragraphText.startsWith(text) ? paragraphText.slice(text.length).trim() : '';
     const standaloneLink = paragraphText === text || /^[.!?]$/.test(trailingText);
 
-    // quick structural checks
-    if (a.querySelector('img') || !standaloneLink) return;
+    // quick structural checks. A bold link that is NOT a standalone CTA (it sits
+    // inline within a larger sentence/paragraph) stays inline text — tag it so the
+    // global `strong > a` button fallback doesn't paint it as a teal button.
+    if (a.querySelector('img') || !standaloneLink) {
+      if (a.closest('strong') && !standaloneLink) a.classList.add('link-inline');
+      return;
+    }
 
     // skip URL display links
     try {

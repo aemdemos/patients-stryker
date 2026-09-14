@@ -29,6 +29,20 @@
         "label": "Template",
         "description": "Page template that controls layout and styling",
         "value": "",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Procedure Detail",
+            "value": "procedure-detail"
+          },
+          {
+            "name": "Legal",
+            "value": "legal"
+          }
+        ],
         "readOnly": true,
         "condition": {
           "!=": [
@@ -309,6 +323,24 @@
   {
     "id": "columns-cell",
     "fields": []
+  },
+  {
+    "id": "find-a-doctor",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Banner Image (upload or Dynamic Media link)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "heading",
+        "value": "Find a doctor near you",
+        "label": "Heading",
+        "valueType": "string"
+      }
+    ]
   },
   {
     "id": "fragment",

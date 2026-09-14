@@ -1,0 +1,321 @@
+/* find-a-doctor — presentational locator banner matching the source
+   "Find a doctor near you" section: a full-width band with the Zip product
+   image on the left and a light-gray form panel on the right (floating-label
+   location field, radius selector, teal submit button). */
+
+.find-a-doctor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* banner image — on mobile the source uses the photo as a full background behind
+   the form (its .mobile-bgImage), so fill the whole band; the desktop breakpoint
+   below turns it back into a side column. */
+.find-a-doctor .find-a-doctor-media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.find-a-doctor .find-a-doctor-media picture,
+.find-a-doctor .find-a-doctor-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* form panel — on mobile the source floats a light-gray form box ON TOP of the
+   background photo, inset so the photo shows around it. Keep the gray fill and add
+   a margin so the band's background image peeks around the box (the desktop
+   breakpoint removes the margin and makes it the right-hand gray column). */
+.find-a-doctor .find-a-doctor-panel {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 24px;
+  padding: 24px;
+  background-color: var(--color-surface);
+}
+
+.find-a-doctor .find-a-doctor-title {
+  margin: 0 0 24px;
+  font-family: var(--display-font-family);
+  font-size: var(--find-a-doctor-title-size);
+  font-weight: 700;
+  line-height: var(--find-a-doctor-title-line-height);
+  color: var(--color-black);
+  text-align: left;
+}
+
+.find-a-doctor .find-a-doctor-form {
+  margin: 0;
+}
+
+/* mobile: a WRAPPING row (matching the source flex model exactly). The Zip field
+   grows but never shrinks below 150px, the radius holds ~130px, and the submit
+   button holds ~180px; when they don't all fit, the button wraps to the next
+   line (so ~500px shows Zip+Radius on row 1 and the button below — the source's
+   layout). */
+.find-a-doctor .find-a-doctor-fields {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.find-a-doctor .find-a-doctor-location {
+  flex: 1 0 150px;
+}
+
+/* radius is a compact box, never full width — the source caps it at 130px
+   (.stryFormfields .radius { max-width: 130px }). */
+.find-a-doctor .find-a-doctor-radius {
+  flex: 0 1 130px;
+  width: 130px;
+  max-width: 130px;
+}
+
+/* floating-label field wrapper */
+.find-a-doctor .find-a-doctor-field {
+  position: relative;
+}
+
+.find-a-doctor .find-a-doctor-field input,
+.find-a-doctor .find-a-doctor-radius-toggle {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--find-a-doctor-control-height);
+  margin: 0;
+
+  /* the source's fields have a white (effectively invisible) border, so each box
+     reads as a flush white field on the gray panel — no visible gray outline. */
+  border: 1px solid var(--color-white);
+  border-radius: var(--radius-none);
+  padding: 24px 16px 1px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+/* radius toggle — the custom-dropdown button that shows the current value and a
+   chevron. Matches the input styling but adds right room for the caret and shows
+   the 18px Futura value below the raised "Radius" label. */
+.find-a-doctor .find-a-doctor-radius-toggle {
+  display: flex;
+  align-items: flex-end;
+
+  /* extra bottom padding lifts the "15 miles" value off the box's bottom edge so
+     it isn't flush against it, matching the source's breathing room. */
+  padding: 20px 40px 8px 16px;
+  font-size: var(--find-a-doctor-radius-value-size);
+  text-align: left;
+  cursor: pointer;
+
+  /* thin single-weight chevron in the source's muted gray, matching the source's
+     custom-dropdown caret (not the default heavy black arrow). */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"><path d="M1 1l6 6 6-6" fill="none" stroke="%23767676" stroke-width="1"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.find-a-doctor .find-a-doctor-radius-value {
+  overflow: hidden;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* open-state options menu — square-cornered white panel with a drop shadow,
+   floating over the form (source .dropdown-content). */
+.find-a-doctor .find-a-doctor-radius-menu {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 100%;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--color-white);
+  border-radius: var(--radius-none);
+  box-shadow: var(--find-a-doctor-dropdown-shadow);
+}
+
+.find-a-doctor .find-a-doctor-radius-option {
+  padding: 12px 16px;
+  font-family: var(--display-font-family);
+  font-size: var(--find-a-doctor-radius-value-size);
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+/* light-gray highlight on hover and on the selected option (source uses
+   --color-surface #edeeec, NOT the native blue). */
+.find-a-doctor .find-a-doctor-radius-option:hover,
+.find-a-doctor .find-a-doctor-radius-option[aria-selected='true'] {
+  background-color: var(--color-surface);
+}
+
+.find-a-doctor .find-a-doctor-field input:focus,
+.find-a-doctor .find-a-doctor-radius-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* floating label */
+.find-a-doctor .find-a-doctor-label {
+  position: absolute;
+  inset-inline: 16px;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  color: var(--find-a-doctor-label-color);
+  pointer-events: none;
+
+  /* the placeholder stays on ONE line and clips with an ellipsis when the box is
+     narrow (matching the source), instead of wrapping to two lines — which was
+     making the Zip box look squeezed/taller than its neighbours. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: transform 0.1s ease, font-size 0.1s ease;
+}
+
+/* raise the label when the field has focus or content (or is pre-filled).
+   Pin to a fixed offset from the TOP edge (no translateY, which would depend on
+   the label's own rendered height and drift between the mobile stacked layout and
+   the desktop row). This keeps the raised label at the same spot at every
+   breakpoint, clear of the value which sits at the 24px top padding below it. */
+.find-a-doctor .find-a-doctor-field input:focus + .find-a-doctor-label,
+.find-a-doctor .find-a-doctor-field input:not(:placeholder-shown) + .find-a-doctor-label,
+.find-a-doctor .find-a-doctor-label-filled {
+  transform: none;
+  inset-block-start: 8px;
+  font-size: var(--find-a-doctor-raised-label-size);
+}
+
+/* inline validation message */
+.find-a-doctor .find-a-doctor-error {
+  margin: 8px 0 0;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xs);
+  color: var(--color-error, #c00);
+}
+
+.find-a-doctor .find-a-doctor-field input[aria-invalid='true'] {
+  border-color: var(--color-error, #c00);
+}
+
+/* submit button — teal, uppercase, square corners (source .stryBtn). Holds its
+   intrinsic ~180px width and wraps to the next line when it doesn't fit next to
+   the Zip + Radius controls (matching the source .stryBtn: flex 0 1 auto). */
+.find-a-doctor .find-a-doctor-submit {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  height: var(--find-a-doctor-control-height);
+  min-width: 180px;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-none);
+  padding: 16px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.find-a-doctor .find-a-doctor-submit:hover,
+.find-a-doctor .find-a-doctor-submit:focus {
+  background-color: var(--color-primary-hover);
+}
+
+/* tablet and up (>= 600px) — the three controls (Zip / Radius / Find a doctor)
+   sit on a single row, matching the source, which keeps them inline down to
+   tablet widths and only stacks them on narrow phones. This is independent of
+   the 900px image-split below: between 600–900px the band still shows the mobile
+   background-photo + floating gray box, but with the controls in a row. */
+@media (width >= 600px) {
+  .find-a-doctor .find-a-doctor-fields {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+
+  /* the Zip field grows to fill but never shrinks below 150px (source uses
+     flex: 1 0 150px on .form-group.zip) — this stops the box from being squeezed
+     too narrow, which was pushing the controls out of alignment. */
+  .find-a-doctor .find-a-doctor-location {
+    flex: 1 0 150px;
+  }
+
+  /* in the row the radius keeps its compact fixed width (source ~130px) */
+  .find-a-doctor .find-a-doctor-radius {
+    flex: 0 0 130px;
+    width: 130px;
+  }
+
+  .find-a-doctor .find-a-doctor-submit {
+    flex: 0 0 auto;
+  }
+}
+
+/* tablet and up (>= 900px) — switch from the mobile background-photo + floating
+   gray box to a side-by-side split: the image on the left (~40%) and the grey
+   panel with the form on the right (~60%). Maps the source's 840px side-by-side
+   breakpoint to our 900px. */
+@media (width >= 900px) {
+  .find-a-doctor {
+    /* nowrap so the panel can never drop below the image (wrap would restack the
+       band into the mobile look) */
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+
+  /* the image column is a FLUID ~30% of the band in the tablet range (matching
+     the source's narrower image-section at the side-by-side layout) so the form
+     controls keep a comfortable width — the location field must not be cramped.
+     It no longer drives the band height: the image is an absolutely-positioned
+     fill inside its column, so the band height equals the form panel and the
+     image crops to a strip (source object-fit: cover). The desktop breakpoint
+     below grows it to the source's 40%. */
+  .find-a-doctor .find-a-doctor-media {
+    position: relative;
+    flex: 0 0 30%;
+    max-width: 30%;
+    overflow: hidden;
+  }
+
+  .find-a-doctor .find-a-doctor-media picture,
+  .find-a-doctor .find-a-doctor-media img {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* photo becomes the left column and the panel is the full-height gray column on
+     the right (the source's .lightgray band) — drop the mobile float margin so it
+     fills its column edge to edge. */
+  .find-a-doctor .find-a-doctor-panel {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 40px;
+    background-color: var(--color-surface);
+  }
+}
+
+/* desktop (>= 1024px) — the image column grows to the source's full 40%
+   (.bannerstyle .image-section { max-width: 40% }) now that the wider band
+   leaves the form controls enough room. */
+@media (width >= 1024px) {
+  .find-a-doctor .find-a-doctor-media {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}

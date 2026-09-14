@@ -30,6 +30,11 @@
           "label": "Template",
           "description": "Page template that controls layout and styling",
           "value": "",
+          "options": [
+            { "name": "None", "value": "" },
+            { "name": "Procedure Detail", "value": "procedure-detail" },
+            { "name": "Legal", "value": "legal" }
+          ],
           "readOnly": true,
           "condition": {
             "!=": [
