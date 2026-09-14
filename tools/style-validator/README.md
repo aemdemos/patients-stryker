@@ -1,10 +1,14 @@
-# Text-Style Fidelity Validator
+# Style & Spacing Fidelity Validator
 
-Post-import QA for migrated pages. It compares the **computed style of every
-visible text run** on a migrated page against the **same text on its source
-page** — ignoring DOM structure — and **clusters identical mismatches across all
-pages** so each issue can be reasoned about (and fixed) **once per issue-type,
-not once per page**.
+**Optional** post-migration QA for migrated pages (single page or template). It is
+NOT wired into the import pipeline and never runs automatically — an agent should
+*suggest* it to the user after a migration and run it only if they opt in (see
+AGENTS.md "Style & spacing fidelity validator"). It compares the **computed style
+of every visible text run** on a migrated page against the **same text on its
+source page** — ignoring DOM structure — and **clusters identical mismatches
+across all pages** so each issue can be reasoned about (and fixed) **once per
+issue-type, not once per page**. A second pass does the same for **vertical
+spacing** between anchored text runs.
 
 This exists because on hand-edited source sites the same semantic element (a
 heading, a citation superscript) is authored with wildly different nested markup
