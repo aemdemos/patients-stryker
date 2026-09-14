@@ -1157,3 +1157,13 @@ body.ivs-treatment main :is(p, li) {
 body.ivs-treatment main > .section.flex {
   align-items: start;
 }
+
+/* Plain white columns sections ("A procedure with proven results", "How it works")
+   sit flush against their neighbours because they have no colour/flex/full-bleed
+   variant to supply padding. On the reference each is separated by a divider with
+   ~50px of surrounding space. Add matching top/bottom margin so they breathe —
+   scoped to plain columns sections only (dark/full-bleed already pad themselves,
+   :not() keeps them out). */
+body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
+  margin-block: var(--space-section-l); /* 50px */
+}
