@@ -555,6 +555,10 @@ a.link-inline:any-link {
 /* bold + underline authored links become flat teal CTAs with a trailing chevron */
 a.link-strong:any-link {
   display: inline;
+  max-width: none;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-white);
   font-family: var(--display-font-family);
   font-weight: 700;
   text-transform: uppercase;
