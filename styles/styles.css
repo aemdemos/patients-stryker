@@ -517,6 +517,8 @@ a:any-link > strong {
 .section.compact a:any-link {
   text-decoration: none;
   font-family: var(--display-font-family);
+}
+
 /* reference-marker anchors (#fn- and #disclaimer) nested in a bold heading
    phrase are citations, not CTAs — override the button fallback above so they
    keep the heading's inherited size/weight instead of the 14px button base. */
