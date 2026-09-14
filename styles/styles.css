@@ -509,6 +509,29 @@ a:any-link > strong {
   text-decoration: none;
 }
 
+strong > a:any-link:has(> u)::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+strong > a:any-link:has(> u) {
+  display: inline;
+  max-width: none;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+}
 
 .section.compact a:any-link {
   text-decoration: none;
@@ -554,7 +577,6 @@ a.link-inline:any-link {
 }
 
 /* bold + underline authored links become flat teal CTAs with a trailing chevron */
-strong > a:any-link:has(> u),
 a.link-strong:any-link {
   display: inline;
   max-width: none;
@@ -568,8 +590,7 @@ a.link-strong:any-link {
   text-decoration: none;
 }
 
-a.link-strong:any-link::after,
-strong > a:any-link:has(> u)::after {
+a.link-strong:any-link::after {
   content: "";
   display: inline-block;
   margin-inline-start: calc(var(--space-block) * 0.4);
