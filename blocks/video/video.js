@@ -6,6 +6,7 @@
  */
 
 import { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
+import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 // YouTube link signatures (watch, short youtu.be, and nocookie embeds).
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
@@ -115,7 +116,21 @@ function renderFor(src, label) {
  */
 export default function decorate(block) {
   const link = block.querySelector('a[href]');
-  if (!link) return;
+  if (!link) {
+    const observer = new MutationObserver(() => {
+      if (block.querySelector('a[href]')) {
+        observer.disconnect();
+        decorate(block);
+      }
+    });
+    observer.observe(block, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['href'],
+    });
+    return;
+  }
 
   const src = link.getAttribute('href');
   // accessible label: prefer the link title, else its display text — but never a
@@ -128,5 +143,8 @@ export default function decorate(block) {
   const label = link.getAttribute('title') || (text && !isUrlText ? text : '');
 
   const player = renderFor(src, label);
-  if (player) block.replaceChildren(player);
+  if (player) {
+    moveInstrumentation(link, player.querySelector('video, iframe') || player);
+    block.replaceChildren(player);
+  }
 }
