@@ -891,12 +891,10 @@ main > .section.light-gray {
 }
 
 /* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
-   a gray-to-teal gradient band with white text. Pair with .full-bleed.
-   The reference gives the band's content ~40px of top/bottom breathing room
-   (inner .left-to-right: 27px padding + 13.5px margin); without it the heading
-   sits flush against the band's top edge. Match with vertical padding here. */
+   a gray-to-teal gradient band with white text. Pair with .full-bleed (which
+   supplies the vertical padding that gives the band its top/bottom breathing
+   room, matching the reference's ~40px inset). */
 main > .section.dark {
-  padding-block: var(--space-section);
   background: var(--panel-dark-gradient);
   color: var(--color-white);
 }
