@@ -1119,3 +1119,42 @@ body.resources main > .section.compact > div :is(p, ol, ul, li) {
 body.resources .section.compact {
   margin-bottom: 0;
 }
+
+
+/* =====================================================================
+   Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
+   =====================================================================
+   Page-specific styling that can't live in the shared block/section CSS.
+   Loaded eagerly (awaited before `appear`), so above-the-fold rules here don't
+   reflow the LCP hero. */
+
+/* Benefits panel (the flex side-by-side "Benefits of the treatment" box). The
+   shared `panel cta wide` block renders a 26px Futura-bold heading, 14px list
+   labels and a 37.5px pad; this page's reference instead uses the serif heading
+   scale, larger bold labels, a plain-serif "Potential risks" link, and tighter
+   padding. Match the reference here without touching the shared block. */
+
+/* heading: 21px URW-Egyptienne light (the h3 scale), not 26px Futura bold */
+body.ivs-treatment .section.flex .panel.cta .panel-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 500;
+}
+
+/* bold list labels: 17.5px (reference), up from the 14px body default */
+body.ivs-treatment .section.flex .panel.cta .panel-body li :is(strong, b) {
+  font-size: var(--body-font-size-l);
+}
+
+/* "Potential risks" link: 14px Humanist body, not the 21px serif the block
+   applies to a trailing link paragraph */
+body.ivs-treatment .section.flex .panel.cta .panel-body p:has(> a[href*="potential-risks"]) {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+/* box padding: the reference pads the white box ~22.5px, tighter than the block's
+   5% (~37.5px at this column width) */
+body.ivs-treatment .section.flex .panel.cta .panel-body {
+  padding: var(--space-block-l);
+}
