@@ -814,10 +814,6 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   padding-top: var(--space-section);
 }
 
-.zip-skin-closure main > .section:has(ol.footnotes) > .default-content-wrapper p {
-  font-size: var(--footnote-font-size);
-  line-height: var(--footnote-line-height);
-}
 
 /* "How Zip works" intro paragraph — the source renders it at 24.5px (its
    .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.
