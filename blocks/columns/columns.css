@@ -124,6 +124,10 @@
   line-height: var(--paragraph-line-height);
 }
 
+.section.compact .columns li > p {
+  margin-bottom: 0;
+}
+
 
 .section.compact .columns p {
   padding-left: 0;
