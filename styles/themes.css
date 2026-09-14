@@ -580,6 +580,7 @@ body.condition-detail .tabs .tabs-panel {
      flex-direction: row;
      gap: 0;
    }
+
   /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
      EDS large breakpoint (1200px ← source 1440px). */
   .section.hero-stroke .hero.banner h1 {
