@@ -107,10 +107,14 @@
 
 /* ===== Banner variant: copy stacked below the image on mobile, overlaid on desktop ===== */
 
-/* contained drop-shadowed card — restore content containment */
+/* contained drop-shadowed card — restore content containment. The inline gutter
+   keeps the banner off the viewport edges at every width (source insets the hero
+   image ~15px), and box-sizing keeps the max-width cap correct with that padding. */
 .hero-container .hero-wrapper:has(.hero.banner) {
+  box-sizing: border-box;
   max-width: var(--container-max);
   margin-inline: auto;
+  padding-inline: var(--container-gutter);
 }
 
 .hero.banner {
