@@ -498,6 +498,10 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
+em > strong > a:any-link {
+    color: var(--color-accent);
+}
+
 /* UE fallback: before decorateButtons() converts a bold authored link to
    `.button.primary`, style both supported authoring nesting directions as the
    same green button. */
