@@ -495,6 +495,25 @@ For blocks that need specific initial HTML (like hero with a picture element), u
 
 ## Testing & Quality Assurance
 
+### Text-style fidelity (post-import QA for migrated templates)
+After importing a template's pages, run the text-style validator to catch places
+where migrated text renders in a different font/size/weight/color than the source
+— the failure mode that hand-edited source markup causes and that per-page patches
+don't scale to. It compares the **computed style of every visible text run** on
+each migrated page against the same text on its source, ignoring DOM structure,
+and **clusters identical mismatches across all pages** so each issue is fixed once
+per issue-type, not once per page.
+
+```bash
+# one template, from a config of source/migrated page pairs
+node tools/style-validator/validate-text-style.js --config tools/style-validator/configs/<template>.json
+```
+
+See `tools/style-validator/README.md` for config format and how to act on each
+cluster (emphasis markup in the import parsers, zone-scoped template CSS, or a
+single invariant-based rule). Template-agnostic — a new template only needs its
+page-pair config.
+
 ### Performance
 - Follow AEM Edge Delivery performance best practices https://www.aem.live/developer/keeping-it-100
 - Images uploaded by authors are automatically optimized, all images and assets committed to git must be optimized and checked for size
