@@ -12,8 +12,6 @@
  * specific hostname, covering Scene7/classic DM and DM OpenAPI delivery.
  */
 
-import { moveInstrumentation } from '../ue/scripts/ue-utils.js';
-
 // host-independent DM image URL signatures
 const DM_SCENE7 = /\/is\/image\//i;
 const DM_OPENAPI = /\/adobe\/assets\//i;
@@ -389,11 +387,6 @@ export default function decorateDMAssets(root) {
       const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
       replacement = render(src, alt, false);
     }
-
-    // carry UE instrumentation onto the generated <img>/<video> so it stays
-    // editable after conversion (no-op on the live site)
-    const instrTarget = replacement.querySelector('img, video') || replacement;
-    moveInstrumentation(el, instrTarget);
 
     el.replaceWith(replacement);
   });

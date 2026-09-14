@@ -17,7 +17,6 @@ import { toClassName } from '../../scripts/aem.js';
 // eslint-disable-next-line import/no-cycle
 import { mergeSectionCards } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 async function decoratePanel(panel) {
   // load any fragment references in this panel (nested blocks don't get
@@ -70,7 +69,6 @@ export default async function decorate(block) {
     button.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
     button.setAttribute('tabindex', i === 0 ? '0' : '-1');
     if (labelCell) {
-      moveInstrumentation(labelCell, button);
       button.append(...labelCell.childNodes);
       labelCell.replaceWith(button);
     } else {
