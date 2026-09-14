@@ -37,6 +37,10 @@
   line-height: var(--panel-body-line-height);
 }
 
+.panel .panel-body a:any-link {
+  text-decoration: underline;
+}
+
 /* cta paragraphs containing bold+italic (the gold-label marker) */
 .panel .panel-body p:has(strong em),
 .panel .panel-body p:has(em strong),
