@@ -47,21 +47,26 @@
 }
 
 /* Size-adjusted system fallbacks — keep layout stable while webfonts load
-   (prevents font-swap CLS). size-adjust measured against each webfont's metrics. */
+   (prevents font-swap CLS). The size-adjust % is measured against the FIRST
+   local() face, so that face is listed alone: a trailing local('serif') /
+   local('sans-serif') is not a real font name and invalidates the whole src,
+   making the @font-face error so its size-adjust never applies — the fallback
+   then renders at raw system width, wraps to a different line count, and the
+   text reflows when the webfont swaps in (the mobile flex-section CLS). */
 @font-face {
   font-family: "humanist-slab-712-fallback";
   size-adjust: 91.42%;
-  src: local('Cambria'), local('Palatino'), local('Georgia'), local('serif');
+  src: local('Cambria'), local('Georgia');
 }
 
 @font-face {
   font-family: urw-egyptienne-fallback;
   size-adjust: 89.83%;
-  src: local('Georgia'), local('Rockwell'), local('Times New Roman'), local('serif');
+  src: local('Georgia');
 }
 
 @font-face {
   font-family: futura-lt-fallback;
   size-adjust: 89.70%;
-  src: local('Arial'), local('Helvetica'), local('sans-serif');
+  src: local('Arial'), local('Helvetica');
 }

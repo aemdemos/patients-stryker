@@ -1,0 +1,232 @@
+/* Procedure Detail template — overrides scoped to body.procedure-detail. */
+
+/* Space between the header and the hero: source gap is ~90px on mobile, 61px
+   from 600px up (where the hero overlays a wider image). Reserved regardless of
+   nav height so it holds before the nav-ivs header loads. */
+body.procedure-detail main > .section.hero-container {
+  margin-top: var(--space-section-xl);
+}
+
+/* Hero banner: pin copy to lower-left (overlay only exists ≥600px). */
+@media (width >= 600px) {
+  body.procedure-detail main > .section .hero.banner > div:last-child {
+    align-self: end;
+    padding: 0 0 55px 40px;
+  }
+
+  body.procedure-detail main > .section.hero-container {
+    margin-top: var(--space-nav-hero-gap);
+  }
+}
+
+/* Intro + Benefits flex section spacing. */
+body.procedure-detail main > .section.flex {
+  margin-top: 80px;
+  margin-bottom: var(--space-section);
+}
+
+/* Intro default content — 1.25x heading + body. */
+body.procedure-detail main > .section.flex > .default-content-wrapper h3 {
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: var(--heading-line-height);
+}
+
+/* Gold second line drops to its own line. */
+body.procedure-detail main > .section.flex > .default-content-wrapper h3 em {
+  display: block;
+}
+
+body.procedure-detail main > .section.flex > .default-content-wrapper p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+@media (width >= 900px) {
+  main > .section.flex {
+    align-items: baseline;
+  }
+}
+
+/* "How it works" step cards — natural image ratio (no cover-crop). */
+body.procedure-detail main .cards:not(.resources, .brochure, .linked) > ul > li img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: fill;
+}
+
+/* Step card text: 12px inset, 1.25x title + body. */
+body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-card-body {
+  padding-inline: 12px;
+}
+
+body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-card-body h4 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-card-body p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* "How it works" section rhythm. */
+body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .linked)) {
+  margin-top: var(--space-section-xl);
+  margin-bottom: var(--space-section);
+}
+
+body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .linked)) > .default-content-wrapper {
+  margin-bottom: var(--space-section);
+}
+
+/* "How it works" heading — Futura bold 26.25px (matches authored <strong>). */
+body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .linked)) > .default-content-wrapper h3 {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l-scaled);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+/* "Resources" heading: sage underline + gap below. */
+body.procedure-detail main > .section > .default-content-wrapper h2 {
+  margin-bottom: 75px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+body.procedure-detail main > .section.procedure-panel-section {
+  margin-block: var(--space-section);
+}
+
+/* "Potential risks" gray box — contained (not full-bleed), 2% inset. */
+body.procedure-detail main > .section.light-gray {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background-color: transparent;
+}
+
+@media (width >= 600px) {
+  body.procedure-detail main > .section.light-gray {
+    margin-top: var(--space-section);
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+body.procedure-detail main > .section.light-gray > .default-content-wrapper {
+  border-inline: var(--container-gutter) solid transparent;
+  padding: 2%;
+  background-color: var(--color-surface);
+  background-clip: padding-box;
+}
+
+/* Panel overrides — page-specific, kept out of the shared block. */
+
+/* Dark evidence band. */
+body.procedure-detail main .panel.dark .panel-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2% 0;
+  padding: 4% 2%;
+}
+
+/* Dark heading base — white serif for the plain (non-gold) evidence-band heading.
+   Pages whose source heading renders gold get <em><strong> from the importer and
+   are painted by the rule below instead. */
+body.procedure-detail main .panel.dark .panel-body :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-dark-base);
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+/* Citation link in the dark heading stays teal (via the global citation rule) —
+   no dark-specific override here. */
+
+/* Gold marker inside the dark heading — Futura bold gold, upright, 1.25x */
+body.procedure-detail main .panel.dark .panel-body :is(h2, h3) :is(em, strong) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l-scaled);
+  font-weight: 700;
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+/* Dark body — white serif 21px. */
+body.procedure-detail main .panel.dark .panel-body p {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+body.procedure-detail main .panel.dark .panel-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Benefits card (cta, wide) — disc bullets, 17.5px. */
+body.procedure-detail main .panel.cta.wide .panel-body ul {
+  display: block;
+  list-style: disc;
+  margin: 0 0 var(--space-block);
+  padding-left: var(--list-indent);
+}
+
+body.procedure-detail main .panel.cta.wide .panel-body ul > li {
+  list-style: disc;
+  margin-bottom: 0;
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
+/* Gold mid-page CTA link — Futura display face. */
+body.procedure-detail main .panel.gold .panel-body p strong {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+/* `#disclaimer` reference links (IVS-specific citation anchor) — teal, no
+   underline, family/weight inherited. Template-scoped, not site-wide. */
+body.procedure-detail main a[href="#disclaimer"]:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* Targeted text-fidelity fixes are generated below in the AUTO-FIX region by the
+   text-style validator — do not hand-author them here. */
+
+/* === AUTO-FIX (text-style-validator) — do not edit inside; regenerated by apply-css-fixes.js === */
+
+/* Generated from the text-style validator. Safe fields (color/family/weight/
+   style/decoration) auto-applied; font-size only with --include-size. Re-run
+   apply-css-fixes.js to regenerate; edit clusters/source, not this block. */
+
+body.pd-vertebroplasty main .panel.cta.wide a[href="#potential-risks"],
+body.pd-spinejack-system main .panel.cta.wide a[href="#potential-risks"],
+body.pd-radiofrequency-ablation main .panel.cta.wide a[href="#potential-risks"],
+body.pd-sacroplasty main .panel.cta.wide a[href="#potential-risks"] {
+  /* fontFamily:HumanistSlab712W01→URWEgyptienneW01-Light | fontSize:17.5px→21px | textDecorationLine:none→underline — e.g. "Potential risks" */
+  font-family: var(--body-font-family);
+  text-decoration: none;
+}
+
+body.pd-disc-decompression main .panel.cta.wide a[href="#fn-3"],
+body.pd-sacroplasty main .panel.cta.wide a[href="#fn-3"] {
+  /* fontFamily:URWEgyptienneW01-Light→HumanistSlab712W01 | fontSize:18.5px→13px | fontWeight:500→400 — e.g. "3" */
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+body.pd-spinejack-system main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"],
+body.pd-sacroplasty main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"] {
+  /* fontFamily:Futura LT W01→URWEgyptienneW01-Light | fontWeight:700→500 — e.g. "1" */
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+body.pd-balloon-kyphoplasty main .panel.cta.wide a[href="#potential-risks"] {
+  /* fontFamily:HumanistSlab712W01→URWEgyptienneW01-Light | fontSize:19.5px→21px | textDecorationLine:none→underline — e.g. "Potential risks" */
+  font-family: var(--body-font-family);
+  text-decoration: none;
+}
+
+/* === END AUTO-FIX === */
