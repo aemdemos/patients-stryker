@@ -65,9 +65,17 @@
 .columns .columns-img-col + h3,
 .columns .columns-img-col + h4,
 .columns .columns-img-col + p {
-  margin-top: var(--space-section); /* 30px image-to-text gap, matching the reference */
-  padding-top: 3%; /* extra top inset, matching the reference's text-wrapper padding */
+  margin-top: var(--space-block-l); /* 20px image-to-text gap, matching the reference */
+  padding-top: 0;
 }
+
+/* proven-results: the image is followed directly by a body <p> caption, and the
+   reference leaves a larger ~37px gap there (vs the ~20px before an image→heading
+   in before/after). Add the extra to the paragraph case only. */
+.columns .columns-img-col + p {
+  margin-top: var(--space-section); /* ~30px + line-box leading ≈ reference's 37px */
+}
+
 
 /* compact variant — smaller heading + body typography for dense 50/50 rows.
    Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
@@ -198,6 +206,18 @@
   font-weight: 700;
   line-height: var(--heading-line-height-ml);
   color: var(--color-accent);
+}
+
+/* before/after caption — the <h4> directly after the gold "Before/After mild"
+   <h3> is a white Futura-bold body-size caption in the reference (17.5px, weight
+   700), not another gold heading. It keeps the display font + 700 weight from the
+   rule above and only drops the size to body-size and the colour to white.
+   `h3 + h4` targets exactly that caption (the LSS title h4 has no preceding h3, so
+   it keeps the gold heading style above). */
+.section.dark .columns h3 + h4 {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+  color: var(--color-white);
 }
 
 .section.dark .columns p,
