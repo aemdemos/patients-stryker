@@ -1128,6 +1128,15 @@ body.resources .section.compact {
    Loaded eagerly (awaited before `appear`), so above-the-fold rules here don't
    reflow the LCP hero. */
 
+/* Display font: this theme uses the site's licensed "Futura for Stryker" cut
+   (downloaded from the source) instead of the boilerplate default "Futura LT W01",
+   so migrated ivs-treatment pages render the exact typeface as the reference.
+   Scoped to the theme via a token override — other pages keep Futura LT W01. */
+body.ivs-treatment {
+  --display-font-family: "Futura for Stryker", futura-lt-fallback, arial, helvetica, sans-serif;
+  --display-font-family-bold: "Futura for Stryker", "Arial Black", arial, sans-serif;
+}
+
 /* Page-wide type scale. On the reference EVERY heading and body run is wrapped in
    the source's `fontsize-1-25em` span (1.25x): all h3 text renders at 26.25px and
    all body copy (paragraphs + list items) at 17.5px, rather than the shared

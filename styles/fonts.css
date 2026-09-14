@@ -28,9 +28,29 @@
   src: url('../fonts/urw-egyptienne-light.woff2') format('woff2');
 }
 
-/* Display / buttons — Futura for Stryker Book (the site's licensed Futura cut,
-   downloaded from the source during migration so migrated pages render the exact
-   same typeface as patients.stryker.com) */
+/* Display / buttons — Futura LT W01 Book (the boilerplate's default display cut;
+   kept for pages/blocks that reference it) */
+@font-face {
+  font-family: "Futura LT W01";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/futura-lt-book.woff2') format('woff2');
+}
+
+/* Display bold — Futura LT W01 Bold */
+@font-face {
+  font-family: "Futura LT W01";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/futura-lt-bold.woff2') format('woff2');
+}
+
+/* Display — Futura for Stryker Book (the site's licensed Futura cut, downloaded
+   from the source during migration so migrated pages render the exact same
+   typeface as patients.stryker.com). Added alongside Futura LT W01, not replacing
+   it — used by the ivs-treatment theme; other pages keep Futura LT W01. */
 @font-face {
   font-family: "Futura for Stryker";
   font-style: normal;
