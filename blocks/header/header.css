@@ -500,34 +500,30 @@ header nav .nav-search-panel-input:focus {
     color: var(--color-white);
   }
 
-  /* the submenu becomes the full-width panel below the bar. column-fill:auto with
-     a bounded height fills each column top-to-bottom before wrapping (like the
-     source's fixed-height columns) rather than spreading items evenly across
-     many columns. The height caps just above 9 rows so the 11 treatments split
-     9 + 2 into two narrow columns. */
+  /* the submenu becomes the full-width panel below the bar. Items form a
+     row-major grid — each is 1/6 (16.667%) of the width, capped at 205px, matching
+     the source's 6-column AEM grid — and long labels wrap to grow their box. */
   header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
-    display: block;
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 20;
     box-sizing: border-box;
+    flex-flow: row wrap;
+    align-content: flex-start;
     width: 100%;
-    max-height: 528px;
     padding-block: 0;
     padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
-    column-width: 280px;
-    column-gap: 0;
-    column-fill: auto;
     background-color: var(--color-surface);
-    box-shadow: var(--shadow-soft);
+    border-bottom: 1px solid var(--color-black);
   }
 
   header nav .nav-sections li.nav-drop > ul li {
-    display: block;
-    width: 100%;
+    flex: 0 0 16.6667%;
+    box-sizing: border-box;
+    max-width: 205px;
     margin: 0;
-    break-inside: avoid;
   }
 
   /* submenu items don't get the top-level pipe separator */
@@ -536,12 +532,11 @@ header nav .nav-search-panel-input:focus {
   }
 
   header nav .nav-sections li.nav-drop > ul li a {
-    display: flex;
-    align-items: center;
+    display: block;
     box-sizing: border-box;
     width: 100%;
-    min-height: 51px;
-    padding: 12px 15px 12px 30px;
+    min-height: 40px;
+    padding: 8px 15px;
     border: 0;
     background-color: transparent;
     color: var(--color-black);
