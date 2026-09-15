@@ -92,6 +92,190 @@ function buildSearch(tools) {
   return true;
 }
 
+// collapse a dropdown <li> and its associated panel, keeping the parent link's
+// aria-expanded in sync
+function collapseDropdown(li) {
+  if (li.navDropClose) { li.navDropClose(); return; }
+  li.setAttribute('aria-expanded', 'false');
+  const link = li.querySelector(':scope > a');
+  if (link) link.setAttribute('aria-expanded', 'false');
+  if (li.navDropPanel) li.navDropPanel.classList.remove('nav-drop-panel-open');
+}
+
+// close any open dropdown when the user clicks outside an open one
+function closeDropdownsOnClickOutside(e) {
+  const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
+  if (!open) return;
+  // ignore clicks inside the toggle item OR its (now sibling) submenu panel
+  if (open.contains(e.target)) return;
+  if (open.navDropPanel && open.navDropPanel.contains(e.target)) return;
+  collapseDropdown(open);
+}
+
+// close any open dropdown on Escape and return focus to its toggle (the link)
+function closeDropdownsOnEscape(e) {
+  if (e.code !== 'Escape') return;
+  const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
+  if (!open) return;
+  collapseDropdown(open);
+  const toggle = open.querySelector(':scope > a.nav-drop-toggle');
+  if (toggle) toggle.focus();
+}
+
+/**
+ * Wires nav items that author a nested list as click-to-toggle dropdowns.
+ * A dropdown parent <li> holds its own link plus a child <ul> of sub-links (the
+ * standard EDS nav model). Matching the source site, clicking the parent item
+ * itself toggles its submenu (it does not navigate to the landing page); the
+ * label carries a caret affordance. Uses DOM APIs only and preserves the
+ * authored link/list nodes.
+ * @param {Element} navSections The .nav-sections element
+ */
+/**
+ * Wires dropdown items and builds the mobile drill-in track inside the drawer.
+ *
+ * Mobile model — a two-lane sliding track at the DRAWER level so the submenu
+ * covers the whole main menu (primary links + tools), not just the links:
+ *   .nav-drawer-track  (flex row, 200% wide)
+ *     .nav-drawer-lane-main  (50% = drawer width) — the main menu content
+ *     .nav-drawer-lane-sub   (50%)                — holds all submenu panels
+ * Opening adds `nav-drilled` to the drawer, translating the track -50% so the
+ * main lane slides fully offscreen-left and the sub lane slides in. Only the
+ * open panel is in-flow, so it drives the sub lane's height; flex stretch then
+ * makes BOTH lanes that tall (equal height, so a short submenu shows no gold and
+ * a tall one is fully visible without disturbing the offscreen main list).
+ *
+ * Desktop — the track/lanes become display:contents (transparent), so the panels
+ * render as flyouts per the media block below.
+ * @param {Element} drawer The .nav-drawer element (holds .nav-sections + tools)
+ */
+function buildDropdowns(drawer) {
+  if (!drawer) return;
+  const navSections = drawer.querySelector('.nav-sections');
+  const topList = navSections && navSections.querySelector('ul');
+  if (!topList) return;
+
+  const items = [...topList.querySelectorAll(':scope > li')];
+  const panels = [];
+  const openItems = [];
+
+  // build the track: wrap current drawer children as the "main" lane, add a "sub"
+  // lane for the panels
+  const track = document.createElement('div');
+  track.className = 'nav-drawer-track';
+  const mainLane = document.createElement('div');
+  mainLane.className = 'nav-drawer-lane nav-drawer-lane-main';
+  const subLane = document.createElement('div');
+  subLane.className = 'nav-drawer-lane nav-drawer-lane-sub';
+  while (drawer.firstChild) mainLane.append(drawer.firstChild);
+  track.append(mainLane, subLane);
+  drawer.append(track);
+
+  const setDrilled = () => {
+    drawer.classList.toggle('nav-drilled', openItems.some((li) => li.getAttribute('aria-expanded') === 'true'));
+  };
+
+  items.forEach((li) => {
+    const submenu = li.querySelector(':scope > ul');
+    if (!submenu) return;
+    li.classList.add('nav-drop');
+    li.setAttribute('aria-expanded', 'false');
+
+    // the parent link becomes the toggle: clicking it opens/closes the submenu
+    // rather than navigating (mirrors the source megamenu behaviour)
+    const parentLink = li.querySelector(':scope > a');
+    const toggleControl = parentLink || li;
+    toggleControl.classList.add('nav-drop-toggle');
+    if (parentLink) {
+      parentLink.setAttribute('role', 'button');
+      parentLink.setAttribute('aria-expanded', 'false');
+    }
+
+    submenu.classList.add('nav-drop-panel');
+    li.navDropPanel = submenu;
+
+    // BACK bar (mobile drill-in): first row of the panel; returns to the main
+    // list. Hidden on desktop, where the panel is a flyout instead.
+    const backItem = document.createElement('li');
+    backItem.className = 'nav-drop-back';
+    const backBtn = document.createElement('button');
+    backBtn.type = 'button';
+    backBtn.className = 'nav-drop-back-btn';
+    const backLabel = (parentLink || li).textContent.trim();
+    backBtn.setAttribute('aria-label', `Back from ${backLabel}`);
+    backBtn.textContent = 'Back';
+    backItem.append(backBtn);
+    submenu.prepend(backItem);
+    // all panels live in the sub lane; only the open one is shown
+    subLane.append(submenu);
+    panels.push(submenu);
+
+    const hidePanel = () => submenu.classList.remove('nav-drop-panel-open');
+
+    const close = () => {
+      li.setAttribute('aria-expanded', 'false');
+      if (parentLink) parentLink.setAttribute('aria-expanded', 'false');
+      setDrilled();
+      // Mobile: if that un-drilled the drawer, the track slides the sub lane back
+      // out to the right over 0.3s. Keep this panel visible so it slides out WITH
+      // the track (rather than vanishing and leaving an empty gold lane), then hide
+      // it once the slide finishes. Desktop (flyout, no slide) or switching to a
+      // sibling while still drilled (in-place swap): hide immediately.
+      if (isDesktop.matches || drawer.classList.contains('nav-drilled')) {
+        hidePanel();
+        return;
+      }
+      let done = false;
+      const onTransitionEnd = (e) => {
+        if (done || e.target !== track || e.propertyName !== 'transform') return;
+        done = true;
+        track.removeEventListener('transitionend', onTransitionEnd);
+        // guard against a fast re-open during the slide-out
+        if (li.getAttribute('aria-expanded') !== 'true') hidePanel();
+      };
+      track.addEventListener('transitionend', onTransitionEnd);
+      // fallback if the transition is suppressed (e.g. nav-no-transition)
+      window.setTimeout(() => {
+        if (done) return;
+        done = true;
+        track.removeEventListener('transitionend', onTransitionEnd);
+        if (li.getAttribute('aria-expanded') !== 'true') hidePanel();
+      }, 400);
+    };
+    const open = () => {
+      // mark expanded BEFORE collapsing siblings so that switching between two
+      // dropdowns while drilled never momentarily un-drills the drawer (which would
+      // make the outgoing panel slide out instead of swapping in place)
+      li.setAttribute('aria-expanded', 'true');
+      if (parentLink) parentLink.setAttribute('aria-expanded', 'true');
+      openItems.forEach((other) => { if (other !== li) collapseDropdown(other); });
+      submenu.classList.add('nav-drop-panel-open');
+      setDrilled();
+    };
+
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      close();
+      toggleControl.focus();
+    });
+
+    toggleControl.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (li.getAttribute('aria-expanded') === 'true') close();
+      else open();
+    });
+
+    li.navDropClose = close;
+    openItems.push(li);
+  });
+
+  if (openItems.length) {
+    document.addEventListener('click', closeDropdownsOnClickOutside);
+    window.addEventListener('keydown', closeDropdownsOnEscape);
+  }
+}
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -149,6 +333,10 @@ export default async function decorate(block) {
   if (navSections) navDrawer.append(navSections);
   if (navTools) navDrawer.append(navTools);
   nav.append(navDrawer);
+  // wire any authored nested lists as click-to-toggle dropdowns (e.g. IVS nav's
+  // Conditions / Treatments megamenu items). Called after the drawer is assembled
+  // so the mobile drill-in track can wrap the whole drawer (links + tools).
+  buildDropdowns(navDrawer);
 
   // mobile search panel + toggle (magnifier) — only when the nav has search.
   // A full-width gray band below the header holding the search input, revealed by
