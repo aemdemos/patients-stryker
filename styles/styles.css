@@ -44,6 +44,7 @@
   --color-text-muted: #555;
   --color-disabled-bg: #b2b4ae;
   --color-disabled-text: #545857;
+  --color-required: #bf0000; /* form required asterisk / error */
   --overlay-scrim: rgb(0 0 0 / 50%);
   --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
 
@@ -79,6 +80,8 @@
   --heading-font-size-xxl: 28px;    /* h1 */
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
+  --heading-font-size-l-scaled: 26.25px; /* h3 enlarged 1.25x (fontsize-1-25em) */
+  --heading-font-size-dark-base: 24.5px; /* dark evidence band, non-gold (white serif) heading main text */
   --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
   --heading-font-size-m: 17.5px;    /* h4 */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
@@ -104,6 +107,8 @@
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
   --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
+  --space-section-xl: 90px;
+  --space-nav-hero-gap: 61px; /* measured: nav→hero gap on IVS pages (≥600px) */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
@@ -164,6 +169,15 @@
   --radius-none: 0;
   --radius-sm: 2px;
   --radius-pill: 15px;
+
+  /* find-a-doctor locator banner */
+  --find-a-doctor-title-size: 24px; /* source .form-section h2: 24px/32px Futura bold */
+  --find-a-doctor-title-line-height: 1.333; /* 32px / 24px */
+  --find-a-doctor-radius-value-size: 18px; /* source radius dropdown value */
+  --find-a-doctor-raised-label-size: 13.5px; /* source raised floating label (18px scaled 0.75) */
+  --find-a-doctor-control-height: 56px;
+  --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
+  --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
@@ -403,6 +417,10 @@ h2 strong em {
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
+  main .section.side-by-side {
+    display: flex;
+  }
+
   .section.compact h2 {
     font-size: var(--heading-font-size-compact-m);
     margin-top: 30px;
@@ -472,13 +490,11 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
-/* decorateFootnotes() (scripts.js) wraps each citation digit in an <a href="#fn-N">
-   so it jumps to the reference list. The source shows these as plain black markers,
-   not links, so suppress the inherited teal link colour + underline while keeping the
-   anchor (and its jump behaviour) intact. Placed after the base link rules so the
-   higher-specificity override reads in natural cascade order (no-descending-specificity). */
-sup a:any-link {
-  color: inherit;
+/* Footnote citation links (from the global decorateFootnotes()) — teal, no
+   underline; family/weight inherit from context. */
+sup a:any-link,
+a[href^="#fn-"]:any-link {
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -486,6 +502,88 @@ b a:any-link,
 a:any-link:has(strong),
 a:any-link:has(b) {
   font-family: var(--display-font-family);
+}
+
+/* UE fallback: before decorateButtons() converts a bold authored link to
+   `.button.primary`, style both supported authoring nesting directions as the
+   same green button. */
+strong > a:any-link,
+a:any-link > strong {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* reference-marker anchors (#fn- and #disclaimer) nested in a bold heading
+   phrase are citations, not CTAs — override the button fallback above so they
+   keep the heading's inherited size/weight instead of the 14px button base. */
+strong > a[href^="#fn-"]:any-link,
+strong > a[href="#disclaimer"]:any-link,
+a[href^="#fn-"]:any-link > strong,
+a[href="#disclaimer"]:any-link > strong {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+
+/* a bold SENTENCE link (ends in terminal punctuation) is an inline text link,
+   not a button — decorateButtons tags it `link-inline` so it overrides the
+   global `strong > a` button fallback and renders as plain bold text (Futura,
+   teal, no button chrome). */
+a.link-inline:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+}
+
+/* bold + underline authored links become flat teal CTAs with a trailing chevron */
+a.link-strong:any-link {
+  display: inline;
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a.link-strong:any-link::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
 }
 
 /* compact section links (e.g. reference URLs) are plain, not underlined — matches
@@ -666,6 +764,7 @@ main .last-modified {
 @media (width >= 600px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
+    margin-bottom: 30px;
   }
 }
 
@@ -848,4 +947,3 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     padding: 0 var(--container-gutter);
   }
 }
-

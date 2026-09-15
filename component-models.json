@@ -24,7 +24,7 @@
         "description": "Index control via robots"
       },
       {
-        "component": "select",
+        "component": "text",
         "name": "template",
         "label": "Template",
         "description": "Page template that controls layout and styling",
@@ -35,10 +35,39 @@
             "value": ""
           },
           {
-            "name": "Treatment Detail",
-            "value": "treatment-detail"
+            "name": "Procedure Detail",
+            "value": "procedure-detail"
+          },
+          {
+            "name": "Legal",
+            "value": "legal"
           }
-        ]
+        ],
+        "readOnly": true,
+        "condition": {
+          "!=": [
+            {
+              "var": "template"
+            },
+            ""
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "theme",
+        "label": "Theme",
+        "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
+        "value": "",
+        "readOnly": true,
+        "condition": {
+          "!=": [
+            {
+              "var": "theme"
+            },
+            ""
+          ]
+        }
       }
     ]
   },
@@ -46,15 +75,17 @@
     "id": "image",
     "fields": [
       {
-        "component": "reference",
+        "component": "text",
+        "valueType": "string",
         "name": "image",
-        "label": "Image",
-        "multi": false
+        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt Text"
+        "label": "Image Alt",
+        "multi": false
       }
     ]
   },
@@ -276,6 +307,24 @@
     "fields": []
   },
   {
+    "id": "find-a-doctor",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Banner Image (upload or Dynamic Media link)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "heading",
+        "value": "Find a doctor near you",
+        "label": "Heading",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -335,7 +384,7 @@
         "component": "text",
         "valueType": "string",
         "name": "mobileImage",
-        "label": "Mobile Image (Dynamic Media link, optional)",
+        "label": "Mobile Image (Dynamic Media link)",
         "condition": {
           "or": [
             {
