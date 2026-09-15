@@ -68,6 +68,7 @@
 .panel .panel-body i b {
   color: var(--color-accent);
   font-style: normal;
+  font-family: var(--display-font-family);
 }
 
 
