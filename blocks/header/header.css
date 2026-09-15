@@ -146,6 +146,10 @@ header nav[aria-expanded='true'] .nav-drawer {
 header nav .nav-sections {
   grid-area: sections;
   width: 100%;
+
+  /* clip the off-canvas mobile drill-in panel (overridden to visible on desktop
+     so the flyout isn't clipped) */
+  overflow-x: hidden;
 }
 
 header nav .nav-sections .default-content-wrapper {
@@ -225,53 +229,105 @@ header nav .nav-sections li:first-child a {
    its parent. Desktop overrides (full-width gray panel) live in the media block
    at the bottom of this file, matching the source's .secondary-nav. ---- */
 header nav .nav-sections li.nav-drop > a.nav-drop-toggle {
-  /* leave room for the caret and mark it clearly interactive */
+  /* leave room for the affordance and mark it clearly interactive */
   padding-right: 40px;
   cursor: pointer;
 }
 
-/* caret glyph on the parent link. The rotated square's box centre would sit a
-   touch low optically, so it's nudged up ~2px (translateY offset just above
-   -50%) to read as vertically centred with the label. */
-header nav .nav-sections a.nav-drop-toggle::after {
+/* Mobile affordance: a `+` next to expandable items (becomes a caret on desktop
+   in the media block below). Built from two bars so it can't be confused with
+   real text. */
+header nav .nav-sections a.nav-drop-toggle::after,
+header nav .nav-sections a.nav-drop-toggle::before {
   content: '';
   position: absolute;
   right: 18px;
   top: 50%;
-  width: 8px;
-  height: 8px;
-  border: solid currentcolor;
-  border-width: 0 2px 2px 0;
-  transform: translateY(-60%) rotate(45deg);
+  background-color: currentcolor;
+}
+
+/* horizontal bar of the + */
+header nav .nav-sections a.nav-drop-toggle::before {
+  width: 14px;
+  height: 2px;
+  transform: translate(3px, -50%);
+}
+
+/* vertical bar of the + */
+header nav .nav-sections a.nav-drop-toggle::after {
+  width: 2px;
+  height: 14px;
+  transform: translate(-3px, -50%);
 }
 
 header nav .nav-sections li.nav-drop {
   position: relative;
 }
 
-header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle::after {
-  transform: translateY(-40%) rotate(-135deg);
-}
-
-/* submenu list: hidden until the parent is expanded. Light-gray panel matching
-   the source's dropdown. */
-header nav .nav-sections li.nav-drop > ul {
-  display: none;
+/* ---- Mobile drill-in: the submenu panel (now a sibling of the main list inside
+   .nav-sections) is off-canvas to the right and slides in when opened, while the
+   main list slides out to the left. The BACK bar (first row) returns to the main
+   list. Desktop overrides this with a flyout in the media block below. ---- */
+header nav .nav-sections .nav-drop-panel {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
   flex-direction: column;
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
   background-color: var(--color-surface);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
 }
 
-header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
-  display: flex;
+header nav .nav-sections .nav-drop-panel.nav-drop-panel-open {
+  transform: translateX(0);
+}
+
+/* when a panel is open, slide the main list out to the left */
+header nav .nav-sections:has(.nav-drop-panel-open) > .default-content-wrapper,
+header nav .nav-sections:has(.nav-drop-panel-open) > ul {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* BACK bar — dark-gray row with a left-pointing arrow */
+header nav .nav-sections .nav-drop-back-btn {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 20px 15px 20px 40px;
+  position: relative;
+  border: 0;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: var(--body-font-size-m);
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+}
+
+header nav .nav-sections .nav-drop-back-btn::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border: solid currentcolor;
+  border-width: 2px 0 0 2px;
+  transform: translateY(-50%) rotate(-45deg);
 }
 
 /* submenu links mirror the source: bold black title-case text on the gray
    panel, transparent background, gold fill on hover */
-header nav .nav-sections li.nav-drop > ul li a {
+header nav .nav-sections .nav-drop-panel li a {
   padding: 15px 15px 15px 30px;
   border-top: 0;
   background-color: transparent;
@@ -281,9 +337,17 @@ header nav .nav-sections li.nav-drop > ul li a {
   text-transform: none;
 }
 
-header nav .nav-sections li.nav-drop > ul li a:hover {
+header nav .nav-sections .nav-drop-panel li a:hover {
   background-color: var(--color-accent);
   color: var(--color-black);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header nav .nav-sections .nav-drop-panel,
+  header nav .nav-sections:has(.nav-drop-panel-open) > .default-content-wrapper,
+  header nav .nav-sections:has(.nav-drop-panel-open) > ul {
+    transition: none;
+  }
 }
 
 /* ---- Search field styling (desktop box + mobile panel share the input) ---- */
@@ -388,6 +452,9 @@ header nav .nav-search-panel-input:focus {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
     background-color: var(--color-accent);
+
+    /* the mobile drill-in clips its panel; the desktop flyout must not be clipped */
+    overflow-x: visible;
   }
 
   header nav .nav-sections ul {
@@ -399,7 +466,10 @@ header nav .nav-search-panel-input:focus {
     min-height: var(--nav-bar-height);
   }
 
-  header nav .nav-sections li { margin: 0 10px 0 0; }
+  header nav .nav-sections li {
+    align-self: end;
+    margin: 0 10px 0 0;
+  }
 
   header nav .nav-sections li a {
     width: auto;
@@ -481,19 +551,28 @@ header nav .nav-search-panel-input:focus {
      columns as dark-gray rows (white uppercase text, gold hover). The gold bar
      (.nav-sections) is the positioning anchor; see its rule above. ---- */
 
-  /* on desktop the panel anchors to the full-width gold bar, not the <li>, so
-     drop the item's positioning context (set for the mobile inline submenu) */
-  header nav .nav-sections li.nav-drop {
-    position: static;
+  /* the mobile `+` affordance becomes a caret on desktop */
+  header nav .nav-sections a.nav-drop-toggle::before {
+    display: none;
+  }
+
+  header nav .nav-sections a.nav-drop-toggle::after {
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    border: solid currentcolor;
+    border-width: 0 2px 2px 0;
+    background-color: transparent;
+    transform: translateY(-60%) rotate(45deg);
+  }
+
+  header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle::after {
+    transform: translateY(-40%) rotate(-135deg);
   }
 
   /* caret sits just after the label text on desktop */
   header nav .nav-sections a.nav-drop-toggle {
     padding-right: 28px;
-  }
-
-  header nav .nav-sections a.nav-drop-toggle::after {
-    right: 12px;
   }
 
   /* expanded parent shows the source's active state: dark-gray tab, white text */
@@ -502,15 +581,19 @@ header nav .nav-search-panel-input:focus {
     color: var(--color-white);
   }
 
-  /* the submenu is a full-page-width gray panel below the bar. Items are narrow
-     (≤205px, ~1/6 width) and flow top-to-bottom, wrapping into a new column when
-     they exceed the panel height — giving the source's 2-column fill-down layout.
-     `width:100%` + `max-width:none` override the centred container cap that the
-     generic `.nav-sections ul` rule applies. max-height caps the column height so
-     items wrap into the next column: ~520px clears 9 IVS treatment rows (two of
-     which wrap to 2 lines) before the 10th, giving the source's 9 + 2 split. */
-  header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
-    display: flex;
+  /* BACK bar is mobile-only */
+  header nav .nav-sections .nav-drop-back {
+    display: none;
+  }
+
+  /* the submenu panel: hidden until open, then a full-page-width gray panel below
+     the bar. Items are narrow (≤205px, ~1/6 width) and flow top-to-bottom,
+     wrapping into a new column when they exceed the panel height — giving the
+     source's 2-column fill-down layout. max-height ~520px clears 9 IVS treatment
+     rows (two of which wrap to 2 lines) before the 10th, giving the 9 + 2 split.
+     The panel is a sibling of the gold bar, so it anchors to it directly. */
+  header nav .nav-sections .nav-drop-panel {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -526,20 +609,26 @@ header nav .nav-search-panel-input:focus {
     padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
     background-color: var(--color-surface);
     border-bottom: 1px solid var(--color-black);
+    transform: none;
   }
 
-  header nav .nav-sections li.nav-drop > ul li {
+  header nav .nav-sections .nav-drop-panel.nav-drop-panel-open {
+    display: flex;
+    transform: none;
+  }
+
+  header nav .nav-sections .nav-drop-panel li {
     box-sizing: border-box;
     width: min(16.6667%, 205px);
     margin: 0;
   }
 
   /* submenu items don't get the top-level pipe separator */
-  header nav .nav-sections li.nav-drop > ul li::after {
+  header nav .nav-sections .nav-drop-panel li::after {
     content: none;
   }
 
-  header nav .nav-sections li.nav-drop > ul li a {
+  header nav .nav-sections .nav-drop-panel li a {
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -554,7 +643,7 @@ header nav .nav-search-panel-input:focus {
     white-space: normal;
   }
 
-  header nav .nav-sections li.nav-drop > ul li a:hover {
+  header nav .nav-sections .nav-drop-panel li a:hover {
     background-color: var(--color-accent);
     color: var(--color-black);
   }

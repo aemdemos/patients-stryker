@@ -92,18 +92,22 @@ function buildSearch(tools) {
   return true;
 }
 
-// collapse a dropdown <li>, keeping its parent link's aria-expanded in sync
+// collapse a dropdown <li> and its associated sibling panel, keeping the parent
+// link's aria-expanded in sync
 function collapseDropdown(li) {
   li.setAttribute('aria-expanded', 'false');
   const link = li.querySelector(':scope > a');
   if (link) link.setAttribute('aria-expanded', 'false');
+  if (li.navDropPanel) li.navDropPanel.classList.remove('nav-drop-panel-open');
 }
 
 // close any open dropdown when the user clicks outside an open one
 function closeDropdownsOnClickOutside(e) {
   const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
   if (!open) return;
+  // ignore clicks inside the toggle item OR its (now sibling) submenu panel
   if (open.contains(e.target)) return;
+  if (open.navDropPanel && open.navDropPanel.contains(e.target)) return;
   collapseDropdown(open);
 }
 
@@ -132,12 +136,11 @@ function buildDropdowns(navSections) {
   // first <ul> and take its direct-child <li>s (not any nested submenu <li>s)
   const topList = navSections.querySelector('ul');
   if (!topList) return;
-  const items = topList.querySelectorAll(':scope > li');
-  let hasDropdown = false;
+  const items = [...topList.querySelectorAll(':scope > li')];
+  const openItems = [];
   items.forEach((li) => {
     const submenu = li.querySelector(':scope > ul');
     if (!submenu) return;
-    hasDropdown = true;
     li.classList.add('nav-drop');
     li.setAttribute('aria-expanded', 'false');
 
@@ -151,24 +154,59 @@ function buildDropdowns(navSections) {
       parentLink.setAttribute('aria-expanded', 'false');
     }
 
+    // Move the submenu OUT to be a sibling panel of the top list. Keeping the
+    // main list and the submenu as siblings (not nested) is what lets the mobile
+    // drill-in slide the main list left while the panel slides in from the right
+    // — a transformed ancestor would otherwise drag the nested panel along.
+    submenu.classList.add('nav-drop-panel');
+    li.navDropPanel = submenu;
+
+    // BACK bar (mobile drill-in): first row of the panel; returns to the main
+    // list. Hidden on desktop, where the panel is a flyout instead.
+    const backItem = document.createElement('li');
+    backItem.className = 'nav-drop-back';
+    const backBtn = document.createElement('button');
+    backBtn.type = 'button';
+    backBtn.className = 'nav-drop-back-btn';
+    const backLabel = (parentLink || li).textContent.trim();
+    backBtn.setAttribute('aria-label', `Back from ${backLabel}`);
+    backBtn.textContent = 'Back';
+    backItem.append(backBtn);
+    submenu.prepend(backItem);
+    // Place the panel as a direct child of .nav-sections (a sibling of the list's
+    // wrapper). It must sit OUTSIDE the wrapper so that sliding the wrapper left
+    // on mobile doesn't carry the panel with it — the panel slides in on its own.
+    navSections.append(submenu);
+
+    const close = () => {
+      li.setAttribute('aria-expanded', 'false');
+      if (parentLink) parentLink.setAttribute('aria-expanded', 'false');
+      submenu.classList.remove('nav-drop-panel-open');
+    };
+    const open = () => {
+      openItems.forEach((other) => { if (other !== li) collapseDropdown(other); });
+      li.setAttribute('aria-expanded', 'true');
+      if (parentLink) parentLink.setAttribute('aria-expanded', 'true');
+      submenu.classList.add('nav-drop-panel-open');
+    };
+
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      close();
+      toggleControl.focus();
+    });
+
     toggleControl.addEventListener('click', (e) => {
       e.preventDefault();
-      const expanded = li.getAttribute('aria-expanded') === 'true';
-      // close sibling dropdowns before opening this one
-      li.parentElement.querySelectorAll(':scope > .nav-drop[aria-expanded="true"]')
-        .forEach((other) => {
-          if (other !== li) {
-            other.setAttribute('aria-expanded', 'false');
-            const otherLink = other.querySelector(':scope > a');
-            if (otherLink) otherLink.setAttribute('aria-expanded', 'false');
-          }
-        });
-      li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-      if (parentLink) parentLink.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      if (li.getAttribute('aria-expanded') === 'true') close();
+      else open();
     });
+
+    openItems.push(li);
   });
 
-  if (hasDropdown) {
+  if (openItems.length) {
     document.addEventListener('click', closeDropdownsOnClickOutside);
     window.addEventListener('keydown', closeDropdownsOnEscape);
   }
