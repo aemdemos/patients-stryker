@@ -5,28 +5,29 @@
  * Auto-tier CSS fix generator.
  *
  * Turns the validator's auto-fixable style clusters into scoped CSS rules and
- * writes them into a MANAGED REGION of the template stylesheet (between marker
+ * writes them into a MANAGED REGION of the target stylesheet (between marker
  * comments), so the block is fully regenerated each run — idempotent, never
  * duplicating or fighting hand-authored rules elsewhere in the file.
  *
- * Tiering is automatic from each cluster's page set (per the "fully auto" mode):
- *   - a cluster on ALL config pages           -> template-wide (body.procedure-detail)
- *   - a cluster on a SUBSET                    -> OR-list of `body.pd-<slug>`
- *   - a cluster on ONE page                    -> single `body.pd-<slug>`
- * combined with the run's own stable selector (href/block/section signal).
+ * Scoping is automatic from each cluster's page set + the report's auto-detected
+ * fixTarget (see buildTarget):
+ *   - a cluster on ALL pages    -> the whole-target scope (body.<template>)
+ *   - a cluster on a SUBSET/ONE -> an OR-list of per-page body classes
+ * combined with the run's own stable selector (href / block / section signal).
  *
  * SAFE fields (color, font-family, font-weight, font-style, text-decoration-line)
  * are applied by default — they encode "what the text is" and match the source
- * reliably. font-size is applied ONLY with --include-size, because on this class
- * of source it is frequently responsive (hero vw) or inconsistent across pages
- * (same link authored 17.5/19.5/21px); auto-pinning it would make pages WORSE
- * while satisfying the validator. Size clusters are otherwise left for a human.
+ * reliably. font-size is applied ONLY with --include-size, because on hand-edited
+ * sources it is frequently responsive (viewport-relative) or inconsistent across
+ * pages (the same element authored at different sizes); auto-pinning it would make
+ * pages WORSE while satisfying the validator. Size clusters are left for a human.
  *
- * Usage:
+ * Usage (the fix-loop orchestrator resolves --css/--token-map for you):
  *   node tools/style-validator/fix-loop/apply-css-fixes.js \
- *     --report migration-work/importer/text-style-diff.json \
- *     --css templates/procedure-detail/procedure-detail.css \
- *     --all-pages balloon-kyphoplasty,vertebroplasty,disc-decompression,spinejack-system,radiofrequency-ablation \
+ *     --report <report.json> \
+ *     --css <target.css>              # template CSS or styles/themes.css
+ *     --all-pages <name,name,...>     # page names from the validator config
+ *     [--token-map <map.json>]        # optional: computed value -> var(--token)
  *     [--include-size]
  */
 
@@ -46,20 +47,17 @@ const CSS_PROP = {
   fontSize: 'font-size',
 };
 
-// Map a computed value back to a project token where one exists, else emit the
-// literal. Keeps generated CSS consistent with the design system.
-const TOKENS = [
-  ['rgb(76, 125, 122)', 'var(--color-primary)'],
-  ['rgb(255, 181, 0)', 'var(--color-accent)'],
-  ['rgb(255, 255, 255)', 'var(--color-white)'],
-  ['rgb(0, 0, 0)', 'var(--color-black)'],
-  ['Futura LT W01', 'var(--display-font-family)'],
-  ['HumanistSlab712W01', 'var(--body-font-family)'],
-  ['URWEgyptienneW01-Light', 'var(--heading-font-family)'],
-];
+// Optional PROJECT design-token map: computed value (rgb() color or font-family
+// name) -> the CSS custom property to emit instead of the literal, so generated
+// fixes stay consistent with the target's design system. This is inherently
+// project-specific, so it is NOT hardcoded — pass it via `--token-map <file>`
+// (JSON: { "rgb(0, 0, 0)": "var(--color-black)", "Some Font W01":
+// "var(--body-font-family)" }). With no map, the literal computed value is
+// emitted (always correct, just not tokenized). Loaded in main() into `tokens`.
+let tokens = [];
 function toValue(field, raw) {
   if (field === 'textDecorationLine') return raw === 'none' ? 'none' : raw;
-  const hit = TOKENS.find(([v]) => v === raw || raw.startsWith(v));
+  const hit = tokens.find(([v]) => v === raw || raw.startsWith(v));
   return hit ? hit[1] : raw;
 }
 
@@ -75,16 +73,52 @@ function parseArgs(argv) {
   return a;
 }
 
-/** Scope prefix for a cluster: template-wide vs OR-list of per-page classes. */
-function scopePrefixes(cluster, allPages) {
+/** Scope prefix for a cluster: whole-target when it covers all pages, else an
+ * OR-list of per-page body classes. The scoping is read from the report's
+ * auto-detected fixTarget so it works for BOTH templated pages (body.<template>,
+ * each page keyed by its own body/theme class) and singletons (body.<theme>).
+ *   - target.allScope   : the "covers every page" selector (e.g. body.<template>)
+ *   - target.pageScope  : fn(pageName) → that page's own body class selector
+ */
+function scopePrefixes(cluster, allPages, target) {
   const pages = cluster.pageSlugs || cluster.pages || [];
   const coversAll = allPages.length && pages.length >= allPages.length
     && allPages.every((p) => pages.includes(p));
-  if (coversAll) return ['body.procedure-detail main'];
-  return pages.map((slug) => `body.pd-${slug} main`);
+  if (coversAll && target.allScope) return [`${target.allScope} main`];
+  return pages.map((slug) => `${target.pageScope(slug)} main`);
 }
 
-function buildRule(cluster, allPages, includeSize) {
+// Build the scoping model from the report's fixTarget + pageMeta:
+//   template → body.<template> for all-page clusters, body.<page-theme> per page;
+//   theme    → body.<page-theme> per page (singletons, no all-page scope).
+// Throws for 'none'/'mixed' (no safe scope — see below).
+function buildTarget(report) {
+  const ft = report.fixTarget || {};
+  const metaByPage = {};
+  (report.pageMeta || []).forEach((m) => { metaByPage[m.page] = m; });
+  if (ft.kind === 'template' && ft.name) {
+    return {
+      allScope: `body.${ft.name}`,
+      // A cluster on a SUBSET of pages is scoped per page via that page's own
+      // theme class (a per-page body class the import stamps as page metadata,
+      // enabling targeted per-page fixes without a bespoke selector). Falls back
+      // to the page name when a page declares no theme.
+      pageScope: (page) => `body.${(metaByPage[page] && metaByPage[page].theme) || page}`,
+    };
+  }
+  if (ft.kind === 'theme') {
+    // Singleton(s): each page scoped to its own theme class; no "all" scope.
+    return {
+      allScope: null,
+      pageScope: (page) => `body.${(metaByPage[page] && metaByPage[page].theme) || page}`,
+    };
+  }
+  // No detectable template/theme (fixTarget kind 'none' or 'mixed') — there is no
+  // safe body scope to write generated rules under, so refuse rather than guess.
+  throw new Error(`apply-css-fixes: cannot scope fixes — report fixTarget.kind="${ft.kind || 'unknown'}". Each page needs a template or theme in its metadata.`);
+}
+
+function buildRule(cluster, allPages, includeSize, target) {
   const decls = [];
   for (const d of cluster.delta) {
     if (d.field === 'fontSize') {
@@ -105,7 +139,7 @@ function buildRule(cluster, allPages, includeSize) {
   // Only fragile/artifact selectors (e.g. a bare <u>) → not safely auto-fixable;
   // skip and let it be reported for human review rather than chase the artifact.
   if (!chosen.length) return null;
-  const prefixes = scopePrefixes(cluster, allPages);
+  const prefixes = scopePrefixes(cluster, allPages, target);
   const selectors = [];
   for (const pfx of prefixes) {
     for (const sel of chosen) selectors.push(`${pfx} ${sel}`);
@@ -119,16 +153,25 @@ function buildRule(cluster, allPages, includeSize) {
 function main() {
   const args = parseArgs(process.argv);
   const report = JSON.parse(readFileSync(resolve(args.report || 'migration-work/importer/text-style-diff.json'), 'utf8'));
-  const cssPath = resolve(args.css || 'templates/procedure-detail/procedure-detail.css');
+  // Target CSS file is required (no project default): the orchestrator resolves it
+  // from the report's auto-detected fixTarget (template CSS or styles/themes.css).
+  if (!args.css) throw new Error('apply-css-fixes: --css <target.css> is required (template CSS or styles/themes.css).');
+  const cssPath = resolve(args.css);
   const allPages = (args['all-pages'] || '').split(',').map((s) => s.trim()).filter(Boolean);
   const includeSize = !!args['include-size'];
+  // Optional design-token map (see toValue). JSON object: literal -> var(--token).
+  if (args['token-map']) {
+    const map = JSON.parse(readFileSync(resolve(args['token-map']), 'utf8'));
+    tokens = Object.entries(map);
+  }
 
+  const target = buildTarget(report);
   const auto = (report.clusters || []).filter((c) => c.autoFixable);
   const rules = [];
   const applied = [];
   const skipped = [];
   for (const c of auto) {
-    const rule = buildRule(c, allPages, includeSize);
+    const rule = buildRule(c, allPages, includeSize, target);
     if (rule) { rules.push(rule); applied.push(c.key); } else skipped.push(c.key);
   }
 
