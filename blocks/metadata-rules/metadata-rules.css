@@ -1,0 +1,58 @@
+.metadata-rules {
+  margin-block: var(--space-section);
+  overflow-x: auto;
+}
+
+.metadata-rules .metadata-rules-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--body-font-size-s);
+}
+
+.metadata-rules .metadata-rules-table th,
+.metadata-rules .metadata-rules-table td {
+  padding: var(--space-block) var(--space-block-l);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.metadata-rules .metadata-rules-table thead th {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-bottom: none;
+}
+
+.metadata-rules .metadata-rules-table tbody tr:nth-child(even) {
+  background: var(--color-surface-alt);
+}
+
+.metadata-rules .metadata-rules-table code {
+  font-family: monospace;
+  font-size: var(--body-font-size-xs);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+
+.metadata-rules .metadata-rules-col-url code {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.metadata-rules .metadata-rules-empty {
+  color: var(--color-text-muted);
+}
+
+.metadata-rules .metadata-rules-note {
+  margin-block: var(--space-block) 0;
+  font-size: var(--body-font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.metadata-rules .metadata-rules-error {
+  margin-block: var(--space-block) 0;
+  font-size: var(--body-font-size-s);
+  color: var(--color-required);
+}
