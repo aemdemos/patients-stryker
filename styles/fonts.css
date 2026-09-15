@@ -69,22 +69,25 @@
 }
 
 /* Size-adjusted system fallbacks — keep layout stable while webfonts load
-   (prevents font-swap CLS). The size-adjust % is measured against the FIRST
-   local() face, so that face is listed alone: a trailing local('serif') /
-   local('sans-serif') is not a real font name and invalidates the whole src,
-   making the @font-face error so its size-adjust never applies — the fallback
-   then renders at raw system width, wraps to a different line count, and the
-   text reflows when the webfont swaps in (the mobile flex-section CLS). */
+   (prevents font-swap CLS). The size-adjust % is measured against the local()
+   base face, so the fallback occupies the same width as the webfont and text
+   doesn't re-wrap when the webfont swaps in.
+   IMPORTANT: base on Arial/Helvetica, which exist on virtually every device
+   (incl. the Android/Moto G that PSI emulates). Cambria/Georgia are NOT present
+   on Android, so a Cambria/Georgia-based fallback silently fails there — its
+   size-adjust never applies, the raw system font renders wider, wraps an extra
+   line, and the text reflows on swap (the residual mobile flex-section CLS).
+   Ratios are advance-width measurements of the webfont vs Arial. */
 @font-face {
   font-family: "humanist-slab-712-fallback";
-  size-adjust: 91.42%;
-  src: local('Cambria'), local('Georgia');
+  size-adjust: 91.37%; /* HumanistSlab712W01 vs Arial */
+  src: local('Arial'), local('Helvetica');
 }
 
 @font-face {
   font-family: urw-egyptienne-fallback;
-  size-adjust: 89.83%;
-  src: local('Georgia');
+  size-adjust: 89.72%; /* URWEgyptienneW01-Light vs Arial */
+  src: local('Arial'), local('Helvetica');
 }
 
 @font-face {
