@@ -500,9 +500,11 @@ header nav .nav-search-panel-input:focus {
     color: var(--color-white);
   }
 
-  /* the submenu becomes the full-width panel below the bar. Items form a
-     row-major grid — each is 1/6 (16.667%) of the width, capped at 205px, matching
-     the source's 6-column AEM grid — and long labels wrap to grow their box. */
+  /* the submenu is a full-page-width gray panel below the bar. Items are narrow
+     (≤205px, ~1/6 width) and flow top-to-bottom, wrapping into a new column when
+     they exceed the panel height — giving the source's 2-column fill-down layout.
+     `width:100%` + `max-width:none` override the centred container cap that the
+     generic `.nav-sections ul` rule applies. */
   header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
     display: flex;
     position: absolute;
@@ -510,9 +512,12 @@ header nav .nav-search-panel-input:focus {
     left: 0;
     z-index: 20;
     box-sizing: border-box;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     align-content: flex-start;
     width: 100%;
+    max-width: none;
+    max-height: 400px;
+    margin: 0;
     padding-block: 0;
     padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
     background-color: var(--color-surface);
@@ -520,9 +525,8 @@ header nav .nav-search-panel-input:focus {
   }
 
   header nav .nav-sections li.nav-drop > ul li {
-    flex: 0 0 16.6667%;
     box-sizing: border-box;
-    max-width: 205px;
+    width: min(16.6667%, 205px);
     margin: 0;
   }
 
