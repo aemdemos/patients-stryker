@@ -1,6 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 // column count from the `cols-N` variant class; default 6 for label, else 4
 function readColumns(block) {
@@ -28,7 +27,6 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const item = document.createElement('li');
     item.className = 'icon-list-item';
-    moveInstrumentation(row, item);
 
     const cells = [...row.children];
     const iconCell = cells.find((c) => c.querySelector('picture, img, a[href]'));

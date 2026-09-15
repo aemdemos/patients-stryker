@@ -1,5 +1,3 @@
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
-
 // Per-stat color is authored as a keyword in the row's first cell (real content,
 // so it persists through DA → preview → publish, unlike an editor-only class).
 // Map each keyword to its CSS class; the cell is consumed during decoration.
@@ -132,7 +130,6 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const item = document.createElement('li');
     item.className = 'statistics-item';
-    moveInstrumentation(row, item);
 
     const cells = [...row.children];
     // A full stat row is [color, value, description] (3 cells). The first cell is

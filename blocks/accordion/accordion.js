@@ -4,8 +4,6 @@
  * the panel body remain accessible (passes axe-core, unlike details/summary).
  */
 
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
-
 export default function decorate(block) {
   const list = document.createElement('ul');
   list.className = 'accordion-list';
@@ -15,13 +13,11 @@ export default function decorate(block) {
 
     const item = document.createElement('li');
     item.className = 'accordion-item';
-    moveInstrumentation(row, item);
 
     const button = document.createElement('button');
     button.className = 'accordion-item-label';
     button.type = 'button';
     button.setAttribute('aria-expanded', 'false');
-    moveInstrumentation(label, button);
     button.append(...label.childNodes);
 
     content.className = 'accordion-item-body';

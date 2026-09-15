@@ -464,8 +464,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   /* the intro availability box is a single-item panel sitting in its own flex
      column, so it fills that column rather than splitting into the 2-up grid the
      multi-item light panels use. */
-  body.sa-resources .panel.light > ul,
-  body.sa-resources .panel.light.panel-authoring {
+  body.sa-resources .panel.light > ul {
     grid-template-columns: 1fr;
   }
 
