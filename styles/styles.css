@@ -577,7 +577,6 @@ a.link-strong:any-link::after {
    the source's dense footer. Placed after the base link rules to keep cascade order. */
 .section.compact a:any-link {
   text-decoration: none;
-  font-family: var(--display-font-family);
 }
 
 a.link-strong:hover,
