@@ -496,6 +496,18 @@ async function loadEager(doc) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }
 
+    // Load author-guides.css for internal authoring-guide pages (documentation
+    // for authors, not part of the public site design). A page opts in via the
+    // `author-guide` metadata, whose value is the guide's slug (e.g.
+    // `header-footer-guide`). We add `body.<slug>` and load the shared file,
+    // where each guide's rules are scoped under its own `body.<slug>` selector
+    // so guides never collide and none of it reaches regular site pages.
+    const authorGuide = getMetadata('author-guide');
+    if (authorGuide) {
+      document.body.classList.add(toClassName(authorGuide));
+      await loadCSS(`${window.hlx.codeBasePath}/styles/author-guides.css`);
+    }
+
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
