@@ -216,9 +216,7 @@ header {
     height: calc(var(--nav-height) + var(--nav-bar-height));
   }
 
-  /* the default (/nav) and /nav-legal navs have no gold bar, so they render a
-     single row — reserve only the white-bar height for them (set eagerly on
-     body via scripts.js from the nav metadata) */
+    /* /nav and /nav-legal use a single-row header, so reserve only the white-bar height via body.nav-single-row. */
   body.nav-single-row header {
     height: var(--nav-height);
   }
@@ -269,22 +267,13 @@ h2 {
   margin-top: 30px;
 }
 
-.section.compact .columns h2 em strong, .columns h2 strong em {
-    font-size: var(--heading-font-size-compact);
-}
 
-/* category heading above a card group — sage underline separating each group,
-   matching the source's .component-subheading.border-bottom-gold. Scoped to
-   `.section.no-cta` (the card-group sections on the resources page) so it can't
-   affect h2s anywhere else. */
+/* category headings in .section.no-cta get a sage underline above card groups, scoped so other h2 elements are unaffected. */
 main > .section.no-cta > .default-content-wrapper h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
-
-/* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
-   h5 shares h4's font-family and line-height; font-sizes stay in the size block above. */
 h4,
 h5 {
   font-family: var(--display-font-family);
@@ -334,11 +323,7 @@ h3 :is(strong, b) {
   font-family: var(--display-font-family);
 }
 
-/* Gold headlines — the source renders its main headings in the gold accent
-   (h1 inline rgb(255,181,0); h2 via #ffb500 spans). In DA/EDS the gold marker
-   is bold+italic: the bold is kept (production headlines are bold), but the
-   italic is a color signal only and must not slant the heading, so it is
-   normalized upright. The combined marker is then painted gold. */
+/* Gold headlines */
 h1 :is(strong, em),
 h2 :is(strong, em),
 h3 :is(strong, em) {
@@ -374,12 +359,7 @@ ul > li > p, ol > li > p {
   margin-bottom: 0;
 }
 
-/* citation superscripts — measured from source: small (75%) and only slightly
-   raised. The browser default `vertical-align: super` shifts the marker up by a full
-   super-step, which reads as an oversized, prominent digit and inflates the line box;
-   the source keeps it tight to the baseline. Use a small relative raise instead so the
-   marker stays subtle and doesn't affect line-height. The link inside inherits the
-   global teal link color + hover, so only sizing/position is set here. */
+/* citation superscripts are small and slightly raised to stay subtle without affecting line-height. */
 sup {
   position: relative;
   top: -0.4em;
@@ -388,11 +368,6 @@ sup {
   vertical-align: baseline;
 }
 
-
-
-/* footnotes / disclaimer citation list — measured from source .c-disclaimer ol:
-   small body-serif text (11.2px), tight line-height, decimal numbering, 20px indent.
-   scroll-margin keeps an anchored footnote clear of the fixed header when jumped to. */
 main ol.footnotes {
   padding-left: var(--list-indent);
   font-size: var(--footnote-font-size);
@@ -547,9 +522,7 @@ strong > a:any-link:has(> u) {
   text-decoration: none;
 }
 
-/* reference-marker anchors (#fn- and #disclaimer) nested in a bold heading
-   phrase are citations, not CTAs — override the button fallback above so they
-   keep the heading's inherited size/weight instead of the 14px button base. */
+/* reference-marker anchors (#fn-, #disclaimer) are citations, so they override bold-link button fallback and keep inherited heading typography. */
 strong > a[href^="#fn-"]:any-link,
 strong > a[href="#disclaimer"]:any-link,
 a[href^="#fn-"]:any-link > strong,
@@ -567,10 +540,11 @@ a[href="#disclaimer"]:any-link > strong {
   text-transform: none;
 }
 
-/* a bold SENTENCE link (ends in terminal punctuation) is an inline text link,
-   not a button — decorateButtons tags it `link-inline` so it overrides the
-   global `strong > a` button fallback and renders as plain bold text (Futura,
-   teal, no button chrome). */
+.section.compact .columns h2 em strong, .columns h2 strong em {
+    font-size: var(--heading-font-size-compact);
+}
+
+/* bold sentence links become inline text (`link-inline`), overriding the global bold-link button fallback. */
 a.link-inline:any-link {
   display: inline;
   max-width: none;
@@ -763,18 +737,12 @@ main img {
   width: 100%;
 }
 
-/* sections — measured from source: content wrapper is max-width 1410px, centered,
-   with 15px left/right padding. Section spacing is NOT uniform on the source
-   (body section margin-bottom is 0), so no blanket vertical margin is applied. */
 main > .section {
   margin: 0;
 }
 
-
 main > .section > div {
-  box-sizing: border-box; /* the source's .container caps its OUTER box at 1410px with the
-                             15px gutter inside it (content = 1380px); border-box matches
-                             that so our content isn't 30px wider than the source */
+  box-sizing: border-box; 
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -793,25 +761,12 @@ main .last-modified {
   }
 }
 
-
-/* flex section — lays the section's content WRAPPERS side by side at 50/50 on
-   desktop; stacks on mobile/tablet. Authored via Section Metadata `Style: flex`.
-   Block-agnostic (issue #98's section-flex direction): each authored unit becomes
-   its own wrapper (`.default-content-wrapper`, `.<block>-wrapper`), so e.g. a text
-   block sits beside a video without coupling the layout to a specific block.
-   Reading order = source order, so the first authored wrapper sits on the left.
-   The section itself is the flex container (its wrappers are the direct children);
-   empty wrappers (e.g. the consumed section-metadata) collapse to zero via :empty. */
+/* flex section: at desktop, authored wrappers render in a 50/50 row in source order; on smaller screens they stack, and empty wrappers are hidden. */
 @media (width >= 900px) {
   main > .section.flex {
     display: flex;
     align-items: center;
     gap: var(--container-gutter);
-
-    /* the section itself is the flex row, so cap/centre/gutter it the same way a
-       normal section's inner > div is capped — otherwise the row spans the full
-       viewport instead of aligning with the other sections' content width.
-       border-box keeps the gutter inside the 1410px cap, matching the source. */
     box-sizing: border-box;
     max-width: var(--container-max);
     margin-inline: auto;
@@ -871,36 +826,24 @@ main > .section.no-cta > .default-content-wrapper h1 {
 }
 
 
-/* full-bleed section — the background spans the full viewport width while the
-   inner content stays capped at the container max-width and centred. In EDS the
-   .section is already full-viewport-width and only its inner > div is capped, so
-   a background here is inherently edge-to-edge. This mirrors the reference site's
-   .c-full-bleed-panel (layout) + .bg-light-gray (colour): pair .full-bleed with a
-   colour variant below to reproduce the gray 3-column band.
-   margin-block: 0 lets adjacent full-bleed panels butt together with no gap. */
+/* full-bleed section: viewport-wide background with container-capped content; pair with a color variant, and keep margin-block: 0 so adjacent bands touch. */
 main > .section.full-bleed {
   margin-block: 0;
   padding-block: var(--space-section);
 }
 
-/* section background colour variant — pair with .full-bleed for an edge-to-edge
-   fill. Keeps the default dark body text readable. Named to match the reference
-   site's .bg-light-gray. */
+/* section background colour variant  */
 main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
-/* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
-   a gray-to-teal gradient band with white text. Pair with .full-bleed. */
+/* dark colour variant —  Pair with .full-bleed. */
 main > .section.dark {
   background: var(--panel-dark-gradient);
   color: var(--color-white);
 }
 
-/* blue colour variant — the reference's .c-full-bleed-panel.bg-blue band (Zip
-   skin-closure). Same navy-bright as the .panel.blue box, so the boxes blend
-   seamlessly into the section. White default text; the panel's own CSS handles
-   gold headings. Pair with .full-bleed. */
+/* blue colour variant  */
 main > .section.blue {
   background-color: var(--color-navy-bright);
   color: var(--color-white);
@@ -912,17 +855,12 @@ main > .section.hero-container:has(.hero.fullbleed) + .section > .cards-wrapper 
   padding-top: calc(var(--space-section) * 2);
 }
 
-/* audience note above the fullbleed hero */
-
 /* first (title + intro + image) section — sage rule beneath it, matching the
    source's .c-page-hero-content.border-bottom-gold 1px divider */
 main > .section:first-child > .default-content-wrapper {
   padding-bottom: var(--space-section);
 }
 
-/* audience note above the fullbleed hero — "Information for" in the light serif
-   (URW Egyptienne), "United States patients only" in Futura bold, both at 1.25x
-   body size. Matches the source's .fontsize-1-25em + .urw-egyptienne/.futura-bold. */
 main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child {
   margin-top: var(--space-section);
   margin-bottom: var(--space-block);
@@ -931,8 +869,6 @@ main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper >
   text-align: right;
 }
 
-/* the bold segment ("United States patients only") is Futura bold, not the body
-   slab; the authored <strong> otherwise inherits the body font just heavier */
 main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper > p:first-child :is(strong, b) {
   font-family: var(--display-font-family);
   font-weight: 700;
@@ -968,13 +904,13 @@ main > .section.wide > div {
   margin-top:30px;
 }
 
-.section.compact .columns h2 em strong, .columns h2 strong em {
-  font-size: var(--heading-font-size-compact-m);
-}
-
 h2 em strong,
 h2 strong em {
     font-size: var(--heading-font-size-compact-m);
+}
+
+.section.compact .columns h2 em strong, .columns h2 strong em {
+  font-size: var(--heading-font-size-compact-m);
 }
 
   main .last-modified {
