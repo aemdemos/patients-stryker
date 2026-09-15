@@ -92,30 +92,38 @@ function buildSearch(tools) {
   return true;
 }
 
+// collapse a dropdown <li>, keeping its parent link's aria-expanded in sync
+function collapseDropdown(li) {
+  li.setAttribute('aria-expanded', 'false');
+  const link = li.querySelector(':scope > a');
+  if (link) link.setAttribute('aria-expanded', 'false');
+}
+
 // close any open dropdown when the user clicks outside an open one
 function closeDropdownsOnClickOutside(e) {
   const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
   if (!open) return;
   if (open.contains(e.target)) return;
-  open.setAttribute('aria-expanded', 'false');
+  collapseDropdown(open);
 }
 
-// close any open dropdown on Escape and return focus to its toggle
+// close any open dropdown on Escape and return focus to its toggle (the link)
 function closeDropdownsOnEscape(e) {
   if (e.code !== 'Escape') return;
   const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
   if (!open) return;
-  open.setAttribute('aria-expanded', 'false');
-  const toggle = open.querySelector(':scope > .nav-drop-toggle');
+  collapseDropdown(open);
+  const toggle = open.querySelector(':scope > a.nav-drop-toggle');
   if (toggle) toggle.focus();
 }
 
 /**
  * Wires nav items that author a nested list as click-to-toggle dropdowns.
  * A dropdown parent <li> holds its own link plus a child <ul> of sub-links (the
- * standard EDS nav model). We keep the parent link intact and add a separate
- * caret toggle button so the label stays clickable while the caret opens/closes
- * the submenu. Uses DOM APIs only and preserves the authored link/list nodes.
+ * standard EDS nav model). Matching the source site, clicking the parent item
+ * itself toggles its submenu (it does not navigate to the landing page); the
+ * label carries a caret affordance. Uses DOM APIs only and preserves the
+ * authored link/list nodes.
  * @param {Element} navSections The .nav-sections element
  */
 function buildDropdowns(navSections) {
@@ -133,21 +141,30 @@ function buildDropdowns(navSections) {
     li.classList.add('nav-drop');
     li.setAttribute('aria-expanded', 'false');
 
-    const toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'nav-drop-toggle';
-    const label = (li.querySelector(':scope > a') || li).textContent.trim();
-    toggle.setAttribute('aria-label', `Toggle ${label} submenu`);
-    // place the caret toggle right after the parent link, before the submenu
-    submenu.before(toggle);
+    // the parent link becomes the toggle: clicking it opens/closes the submenu
+    // rather than navigating (mirrors the source megamenu behaviour)
+    const parentLink = li.querySelector(':scope > a');
+    const toggleControl = parentLink || li;
+    toggleControl.classList.add('nav-drop-toggle');
+    if (parentLink) {
+      parentLink.setAttribute('role', 'button');
+      parentLink.setAttribute('aria-expanded', 'false');
+    }
 
-    toggle.addEventListener('click', (e) => {
+    toggleControl.addEventListener('click', (e) => {
       e.preventDefault();
       const expanded = li.getAttribute('aria-expanded') === 'true';
       // close sibling dropdowns before opening this one
       li.parentElement.querySelectorAll(':scope > .nav-drop[aria-expanded="true"]')
-        .forEach((other) => { if (other !== li) other.setAttribute('aria-expanded', 'false'); });
+        .forEach((other) => {
+          if (other !== li) {
+            other.setAttribute('aria-expanded', 'false');
+            const otherLink = other.querySelector(':scope > a');
+            if (otherLink) otherLink.setAttribute('aria-expanded', 'false');
+          }
+        });
       li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      if (parentLink) parentLink.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
   });
 

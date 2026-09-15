@@ -220,71 +220,63 @@ header nav .nav-sections li:first-child a {
 }
 
 /* ---- Dropdowns (nested list under a nav item, e.g. IVS Conditions/Treatments)
-   Mobile: the submenu expands inline below its parent when opened. A caret
-   toggle button sits at the right of the parent row. ---- */
-header nav .nav-sections li.nav-drop {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-header nav .nav-sections li.nav-drop > a {
-  flex: 1;
-  width: auto;
-}
-
-header nav .nav-sections .nav-drop-toggle {
-  flex: 0 0 auto;
-  box-sizing: border-box;
-  width: 60px;
-  align-self: stretch;
-  padding: 0;
-  border: 0;
-  border-top: 1px solid var(--color-white);
-  background: transparent;
-  color: var(--color-black);
+   The parent link itself is the toggle (a.nav-drop-toggle): clicking it opens
+   the submenu instead of navigating. Mobile: the submenu expands inline below
+   its parent. Desktop overrides (full-width gray panel) live in the media block
+   at the bottom of this file, matching the source's .secondary-nav. ---- */
+header nav .nav-sections li.nav-drop > a.nav-drop-toggle {
+  /* leave room for the caret and mark it clearly interactive */
+  padding-right: 40px;
   cursor: pointer;
 }
 
-/* caret glyph */
-header nav .nav-sections .nav-drop-toggle::before {
+/* caret glyph on the parent link */
+header nav .nav-sections a.nav-drop-toggle::after {
   content: '';
-  display: inline-block;
+  position: absolute;
+  right: 18px;
+  top: 50%;
   width: 8px;
   height: 8px;
-  border: 2px solid currentcolor;
+  border: solid currentcolor;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  transform-origin: center;
-  vertical-align: middle;
+  transform: translateY(-75%) rotate(45deg);
 }
 
-header nav .nav-sections li.nav-drop[aria-expanded='true'] .nav-drop-toggle::before {
-  transform: rotate(-135deg);
+header nav .nav-sections li.nav-drop {
+  position: relative;
+}
+
+header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle::after {
+  transform: translateY(-25%) rotate(-135deg);
 }
 
 /* submenu list: hidden until the parent is expanded */
 header nav .nav-sections li.nav-drop > ul {
   display: none;
-  flex-basis: 100%;
   flex-direction: column;
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: var(--color-surface-alt);
 }
 
 header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
   display: flex;
 }
 
-/* submenu links: indented, slightly smaller than the top-level rows */
+/* submenu rows mirror the source: dark-gray band, white uppercase links */
 header nav .nav-sections li.nav-drop > ul li a {
-  padding-left: 30px;
-  font-size: var(--body-font-size-s);
-  text-transform: none;
+  padding: 18px 15px 18px 30px;
+  border-top: 1px solid var(--color-white);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+}
+
+header nav .nav-sections li.nav-drop > ul li a:hover {
+  color: var(--color-accent-link-hover);
+  background-color: var(--color-secondary);
 }
 
 /* ---- Search field styling (desktop box + mobile panel share the input) ---- */
@@ -381,8 +373,10 @@ header nav .nav-search-panel-input:focus {
     width: 188px;
   }
 
-  /* gold bar spans full page width; inner list stays aligned to the container */
+  /* gold bar spans full page width; inner list stays aligned to the container.
+     position:relative makes it the anchor for the full-width dropdown panel. */
   header nav .nav-sections {
+    position: relative;
     align-self: stretch;
     width: 100vw;
     margin-inline: calc(50% - 50vw);
@@ -475,35 +469,54 @@ header nav .nav-search-panel-input:focus {
     display: none;
   }
 
-  /* ---- Dropdowns on desktop: the submenu becomes an absolute flyout panel that
-     drops below its parent item in the gold bar. ---- */
+  /* ---- Dropdowns on desktop: mirror the source's .secondary-nav — a full-width
+     light-gray panel drops below the gold bar, with the sub-links laid out in
+     columns as dark-gray rows (white uppercase text, gold hover). The gold bar
+     (.nav-sections) is the positioning anchor; see its rule above. ---- */
+
+  /* on desktop the panel anchors to the full-width gold bar, not the <li>, so
+     drop the item's positioning context (set for the mobile inline submenu) */
   header nav .nav-sections li.nav-drop {
-    position: relative;
+    position: static;
   }
 
-  /* caret sits inline next to the label, not a full-height block */
-  header nav .nav-sections .nav-drop-toggle {
-    width: auto;
-    padding: 0 8px;
-    border-top: 0;
+  /* caret sits just after the label text on desktop */
+  header nav .nav-sections a.nav-drop-toggle {
+    padding-right: 28px;
   }
 
-  header nav .nav-sections li.nav-drop > ul {
+  header nav .nav-sections a.nav-drop-toggle::after {
+    right: 12px;
+  }
+
+  /* expanded parent shows a pressed/active state in the gold bar */
+  header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle {
+    background-color: var(--color-accent-dark);
+    color: var(--color-black);
+  }
+
+  /* the submenu becomes the full-width panel below the bar */
+  header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 10;
-    width: max-content;
-    min-width: 220px;
-    padding: 5px 0;
-    background-color: var(--color-white);
+    z-index: 20;
+    box-sizing: border-box;
+    width: 100%;
+    padding-block: 0;
+    padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
+    column-width: 200px;
+    column-gap: 0;
+    background-color: var(--color-surface);
     box-shadow: var(--shadow-soft);
   }
 
   header nav .nav-sections li.nav-drop > ul li {
     display: block;
-    margin: 0;
     width: 100%;
+    margin: 0;
+    break-inside: avoid;
   }
 
   /* submenu items don't get the top-level pipe separator */
@@ -512,16 +525,23 @@ header nav .nav-search-panel-input:focus {
   }
 
   header nav .nav-sections li.nav-drop > ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
     width: 100%;
-    padding: 8px 20px;
-    white-space: nowrap;
-    font-size: var(--body-font-size-s);
+    min-height: 51px;
+    padding: 12px 15px 12px 30px;
+    border-top: 0;
+    border-bottom: 1px solid var(--color-white);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-size: var(--body-font-size-m);
     text-transform: none;
+    white-space: normal;
   }
 
   header nav .nav-sections li.nav-drop > ul li a:hover {
-    background-color: var(--color-surface-alt);
+    background-color: var(--color-secondary);
     color: var(--color-accent-link-hover);
   }
 }
