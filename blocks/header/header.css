@@ -130,6 +130,9 @@ header nav .nav-drawer {
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 10;
+
+  /* clip the off-canvas sub lane of the drill-in track (see the track rules) */
+  overflow: hidden;
 }
 
 /* suppress the slide animation while crossing the breakpoint (prevents the
@@ -146,10 +149,6 @@ header nav[aria-expanded='true'] .nav-drawer {
 header nav .nav-sections {
   grid-area: sections;
   width: 100%;
-
-  /* clip the off-canvas mobile drill-in panel (overridden to visible on desktop
-     so the flyout isn't clipped) */
-  overflow-x: hidden;
 }
 
 header nav .nav-sections .default-content-wrapper {
@@ -264,43 +263,58 @@ header nav .nav-sections li.nav-drop {
   position: relative;
 }
 
-/* ---- Mobile drill-in: a clip frame holds the main list + all submenu panels as
-   one block. The frame clips (overflow), the main list stays put, and each opaque
-   submenu panel overlays it — off-canvas right, sliding in on open. The BACK bar
-   (first row) returns to the main list. Desktop turns the frame transparent
-   (display:contents) so the panels become flyouts (media block below). ---- */
-header nav .nav-sections .nav-drop-frame {
-  position: relative;
-  overflow: hidden;
+/* ---- Mobile drill-in: a two-lane sliding track at the drawer level. The track
+   is 200% wide (main lane + sub lane, each = drawer width) and clipped by the
+   drawer. `.nav-drilled` shifts the track -50%, sliding the whole main menu
+   offscreen-left while the sub lane (submenu) slides in. align-items:stretch
+   makes both lanes equal height, so the submenu is always as tall as the main
+   menu — a short one shows no gold, a tall one isn't clipped, and the offscreen
+   main list is never resized. Desktop makes these display:contents (flyout). ---- */
+header nav .nav-drawer-track {
+  display: flex;
+  align-items: stretch;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
 }
 
-header nav .nav-sections .nav-drop-panel {
+header nav.nav-no-transition .nav-drawer-track {
+  transition: none;
+}
+
+header nav .nav-drawer.nav-drilled .nav-drawer-track {
+  transform: translateX(-50%);
+}
+
+header nav .nav-drawer-lane {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+/* the sub lane holds all panels; each panel fills the lane. Only the open panel
+   is in-flow (the rest are display:none), so it alone drives the lane height. */
+header nav .nav-drawer-lane-sub {
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
+  flex-direction: column;
+}
+
+header nav .nav-drawer .nav-drop-panel {
+  display: none;
+  flex: 1;
   flex-direction: column;
   width: 100%;
-
-  /* fill the frame so a short submenu (e.g. Conditions) shows no gold behind it;
-     the frame is grown to the panel's own height via inline min-height in JS when
-     the submenu is taller than the main list */
-  min-height: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
   background-color: var(--color-surface);
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
 }
 
-header nav .nav-sections .nav-drop-panel.nav-drop-panel-open {
-  transform: translateX(0);
+header nav .nav-drawer .nav-drop-panel.nav-drop-panel-open {
+  display: flex;
 }
 
 /* BACK bar — dark-gray row with a left-pointing arrow */
-header nav .nav-sections .nav-drop-back-btn {
+header nav .nav-drawer .nav-drop-back-btn {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -317,7 +331,7 @@ header nav .nav-sections .nav-drop-back-btn {
   cursor: pointer;
 }
 
-header nav .nav-sections .nav-drop-back-btn::before {
+header nav .nav-drawer .nav-drop-back-btn::before {
   content: '';
   position: absolute;
   left: 18px;
@@ -331,7 +345,7 @@ header nav .nav-sections .nav-drop-back-btn::before {
 
 /* submenu links mirror the source: bold black title-case text on the gray
    panel, transparent background, gold fill on hover */
-header nav .nav-sections .nav-drop-panel li a {
+header nav .nav-drawer .nav-drop-panel li a {
   padding: 15px 15px 15px 30px;
   border-top: 0;
   background-color: transparent;
@@ -341,13 +355,13 @@ header nav .nav-sections .nav-drop-panel li a {
   text-transform: none;
 }
 
-header nav .nav-sections .nav-drop-panel li a:hover {
+header nav .nav-drawer .nav-drop-panel li a:hover {
   background-color: var(--color-accent);
   color: var(--color-black);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  header nav .nav-sections .nav-drop-panel {
+  header nav .nav-drawer .nav-drop-panel {
     transition: none;
   }
 }
@@ -553,9 +567,11 @@ header nav .nav-search-panel-input:focus {
      columns as dark-gray rows (white uppercase text, gold hover). The gold bar
      (.nav-sections) is the positioning anchor; see its rule above. ---- */
 
-  /* the mobile clip frame becomes transparent on desktop so the panels can
-     render as flyouts anchored to the gold bar (not clipped inside the frame) */
-  header nav .nav-sections .nav-drop-frame {
+  /* the mobile drill-in track/lanes become transparent on desktop so the panels
+     render as flyouts anchored to the gold bar (not confined to a lane). The
+     drawer itself is already display:contents on desktop (see rule above). */
+  header nav .nav-drawer-track,
+  header nav .nav-drawer-lane {
     display: contents;
   }
 
@@ -590,7 +606,7 @@ header nav .nav-search-panel-input:focus {
   }
 
   /* BACK bar is mobile-only */
-  header nav .nav-sections .nav-drop-back {
+  header nav .nav-drawer .nav-drop-back {
     display: none;
   }
 
@@ -600,19 +616,25 @@ header nav .nav-search-panel-input:focus {
      source's 2-column fill-down layout. max-height ~520px clears 9 IVS treatment
      rows (two of which wrap to 2 lines) before the 10th, giving the 9 + 2 split.
      The panel is a sibling of the gold bar, so it anchors to it directly. */
-  header nav .nav-sections .nav-drop-panel {
+  header nav .nav-drawer .nav-drop-panel {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+
+    /* full page width regardless of which ancestor is the containing block:
+       anchor to the viewport via left:50% + margin-left:-50vw */
+    left: 50%;
     z-index: 20;
     box-sizing: border-box;
     flex-flow: column wrap;
     align-content: flex-start;
-    width: 100%;
+    width: 100vw;
     max-width: none;
-    max-height: 520px;
-    margin: 0;
+
+    /* cap the column height so items wrap into a 2nd column; ~440px clears the
+       9th treatment row (ends ~428px) before the 10th, giving the 9 + 2 split */
+    max-height: 440px;
+    margin: 0 0 0 -50vw;
     padding-block: 0;
     padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
     background-color: var(--color-surface);
@@ -620,23 +642,23 @@ header nav .nav-search-panel-input:focus {
     transform: none;
   }
 
-  header nav .nav-sections .nav-drop-panel.nav-drop-panel-open {
+  header nav .nav-drawer .nav-drop-panel.nav-drop-panel-open {
     display: flex;
     transform: none;
   }
 
-  header nav .nav-sections .nav-drop-panel li {
+  header nav .nav-drawer .nav-drop-panel li {
     box-sizing: border-box;
     width: min(16.6667%, 205px);
     margin: 0;
   }
 
   /* submenu items don't get the top-level pipe separator */
-  header nav .nav-sections .nav-drop-panel li::after {
+  header nav .nav-drawer .nav-drop-panel li::after {
     content: none;
   }
 
-  header nav .nav-sections .nav-drop-panel li a {
+  header nav .nav-drawer .nav-drop-panel li a {
     display: block;
     box-sizing: border-box;
     width: 100%;
@@ -651,7 +673,7 @@ header nav .nav-search-panel-input:focus {
     white-space: normal;
   }
 
-  header nav .nav-sections .nav-drop-panel li a:hover {
+  header nav .nav-drawer .nav-drop-panel li a:hover {
     background-color: var(--color-accent);
     color: var(--color-black);
   }

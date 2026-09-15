@@ -131,26 +131,50 @@ function closeDropdownsOnEscape(e) {
  * authored link/list nodes.
  * @param {Element} navSections The .nav-sections element
  */
-function buildDropdowns(navSections) {
-  if (!navSections) return;
-  // the top-level list may sit inside a .default-content-wrapper, so find the
-  // first <ul> and take its direct-child <li>s (not any nested submenu <li>s)
-  const topList = navSections.querySelector('ul');
+/**
+ * Wires dropdown items and builds the mobile drill-in track inside the drawer.
+ *
+ * Mobile model — a two-lane sliding track at the DRAWER level so the submenu
+ * covers the whole main menu (primary links + tools), not just the links:
+ *   .nav-drawer-track  (flex row, 200% wide)
+ *     .nav-drawer-lane-main  (50% = drawer width) — the main menu content
+ *     .nav-drawer-lane-sub   (50%)                — holds all submenu panels
+ * Opening adds `nav-drilled` to the drawer, translating the track -50% so the
+ * main lane slides fully offscreen-left and the sub lane slides in. Only the
+ * open panel is in-flow, so it drives the sub lane's height; flex stretch then
+ * makes BOTH lanes that tall (equal height, so a short submenu shows no gold and
+ * a tall one is fully visible without disturbing the offscreen main list).
+ *
+ * Desktop — the track/lanes become display:contents (transparent), so the panels
+ * render as flyouts per the media block below.
+ * @param {Element} drawer The .nav-drawer element (holds .nav-sections + tools)
+ */
+function buildDropdowns(drawer) {
+  if (!drawer) return;
+  const navSections = drawer.querySelector('.nav-sections');
+  const topList = navSections && navSections.querySelector('ul');
   if (!topList) return;
 
-  // Build a clip frame holding the main list wrapper + all submenu panels as ONE
-  // block. On mobile the frame clips (overflow:hidden); each opaque submenu panel
-  // is an absolute overlay that slides in from the right OVER the stationary main
-  // list. On desktop the frame is display:contents (transparent) so the panels
-  // render as flyouts, per the media block below.
-  const mainWrapper = topList.closest('.default-content-wrapper') || topList.parentElement;
-  const frame = document.createElement('div');
-  frame.className = 'nav-drop-frame';
-  mainWrapper.before(frame);
-  frame.append(mainWrapper);
-
   const items = [...topList.querySelectorAll(':scope > li')];
+  const panels = [];
   const openItems = [];
+
+  // build the track: wrap current drawer children as the "main" lane, add a "sub"
+  // lane for the panels
+  const track = document.createElement('div');
+  track.className = 'nav-drawer-track';
+  const mainLane = document.createElement('div');
+  mainLane.className = 'nav-drawer-lane nav-drawer-lane-main';
+  const subLane = document.createElement('div');
+  subLane.className = 'nav-drawer-lane nav-drawer-lane-sub';
+  while (drawer.firstChild) mainLane.append(drawer.firstChild);
+  track.append(mainLane, subLane);
+  drawer.append(track);
+
+  const setDrilled = () => {
+    drawer.classList.toggle('nav-drilled', openItems.some((li) => li.getAttribute('aria-expanded') === 'true'));
+  };
+
   items.forEach((li) => {
     const submenu = li.querySelector(':scope > ul');
     if (!submenu) return;
@@ -182,25 +206,22 @@ function buildDropdowns(navSections) {
     backBtn.textContent = 'Back';
     backItem.append(backBtn);
     submenu.prepend(backItem);
-    // panels live inside the frame, overlaying the main list
-    frame.append(submenu);
+    // all panels live in the sub lane; only the open one is shown
+    subLane.append(submenu);
+    panels.push(submenu);
 
     const close = () => {
       li.setAttribute('aria-expanded', 'false');
       if (parentLink) parentLink.setAttribute('aria-expanded', 'false');
       submenu.classList.remove('nav-drop-panel-open');
-      // release the mobile frame height (desktop ignores this inline style)
-      if (!isDesktop.matches) frame.style.minHeight = '';
+      setDrilled();
     };
     const open = () => {
       openItems.forEach((other) => { if (other !== li) collapseDropdown(other); });
       li.setAttribute('aria-expanded', 'true');
       if (parentLink) parentLink.setAttribute('aria-expanded', 'true');
       submenu.classList.add('nav-drop-panel-open');
-      // On mobile, grow the frame so a submenu taller than the main list is fully
-      // shown; a shorter submenu (e.g. Conditions) is stretched to fill the frame
-      // via min-height:100% in CSS, so no gold shows behind it.
-      if (!isDesktop.matches) frame.style.minHeight = `${submenu.scrollHeight}px`;
+      setDrilled();
     };
 
     backBtn.addEventListener('click', (e) => {
@@ -278,14 +299,15 @@ export default async function decorate(block) {
   // from the left on mobile. On desktop `.nav-drawer` uses display:contents so
   // the grid still places .nav-sections and .nav-tools directly.
   const navSections = nav.querySelector('.nav-sections');
-  // wire any authored nested lists as click-to-toggle dropdowns (e.g. IVS nav's
-  // Conditions / Treatments megamenu items)
-  buildDropdowns(navSections);
   const navDrawer = document.createElement('div');
   navDrawer.className = 'nav-drawer';
   if (navSections) navDrawer.append(navSections);
   if (navTools) navDrawer.append(navTools);
   nav.append(navDrawer);
+  // wire any authored nested lists as click-to-toggle dropdowns (e.g. IVS nav's
+  // Conditions / Treatments megamenu items). Called after the drawer is assembled
+  // so the mobile drill-in track can wrap the whole drawer (links + tools).
+  buildDropdowns(navDrawer);
 
   // mobile search panel + toggle (magnifier) — only when the nav has search.
   // A full-width gray band below the header holding the search input, revealed by
