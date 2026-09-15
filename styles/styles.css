@@ -545,7 +545,6 @@ strong > a:any-link:has(> u) {
 
 .section.compact a:any-link {
   text-decoration: none;
-  font-family: var(--display-font-family);
 }
 
 /* reference-marker anchors (#fn- and #disclaimer) nested in a bold heading
