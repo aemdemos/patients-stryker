@@ -210,16 +210,45 @@ function buildDropdowns(drawer) {
     subLane.append(submenu);
     panels.push(submenu);
 
+    const hidePanel = () => submenu.classList.remove('nav-drop-panel-open');
+
     const close = () => {
       li.setAttribute('aria-expanded', 'false');
       if (parentLink) parentLink.setAttribute('aria-expanded', 'false');
-      submenu.classList.remove('nav-drop-panel-open');
       setDrilled();
+      // Mobile: if that un-drilled the drawer, the track slides the sub lane back
+      // out to the right over 0.3s. Keep this panel visible so it slides out WITH
+      // the track (rather than vanishing and leaving an empty gold lane), then hide
+      // it once the slide finishes. Desktop (flyout, no slide) or switching to a
+      // sibling while still drilled (in-place swap): hide immediately.
+      if (isDesktop.matches || drawer.classList.contains('nav-drilled')) {
+        hidePanel();
+        return;
+      }
+      let done = false;
+      const onTransitionEnd = (e) => {
+        if (done || e.target !== track || e.propertyName !== 'transform') return;
+        done = true;
+        track.removeEventListener('transitionend', onTransitionEnd);
+        // guard against a fast re-open during the slide-out
+        if (li.getAttribute('aria-expanded') !== 'true') hidePanel();
+      };
+      track.addEventListener('transitionend', onTransitionEnd);
+      // fallback if the transition is suppressed (e.g. nav-no-transition)
+      window.setTimeout(() => {
+        if (done) return;
+        done = true;
+        track.removeEventListener('transitionend', onTransitionEnd);
+        if (li.getAttribute('aria-expanded') !== 'true') hidePanel();
+      }, 400);
     };
     const open = () => {
-      openItems.forEach((other) => { if (other !== li) collapseDropdown(other); });
+      // mark expanded BEFORE collapsing siblings so that switching between two
+      // dropdowns while drilled never momentarily un-drills the drawer (which would
+      // make the outgoing panel slide out instead of swapping in place)
       li.setAttribute('aria-expanded', 'true');
       if (parentLink) parentLink.setAttribute('aria-expanded', 'true');
+      openItems.forEach((other) => { if (other !== li) collapseDropdown(other); });
       submenu.classList.add('nav-drop-panel-open');
       setDrilled();
     };

@@ -168,6 +168,11 @@ header nav .nav-sections ul {
 
 header nav .nav-sections li { margin: 0; }
 
+/* EDS wraps each authored link in a <p>; drop its default bottom margin so the
+   <li> is exactly as tall as the link's hover area (no 15px gap below each item).
+   The tools links get the same treatment in the .nav-tools p rule below. */
+header nav .nav-sections p { margin: 0; }
+
 header nav .nav-sections li a {
   display: block;
   box-sizing: border-box;
@@ -346,6 +351,9 @@ header nav .nav-drawer .nav-drop-back-btn::before {
 /* submenu links mirror the source: bold black title-case text on the gray
    panel, transparent background, gold fill on hover */
 header nav .nav-drawer .nav-drop-panel li a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
   padding: 15px 15px 15px 30px;
   border-top: 0;
   background-color: transparent;
@@ -353,6 +361,7 @@ header nav .nav-drawer .nav-drop-panel li a {
   font-weight: 700;
   font-size: var(--body-font-size-m);
   text-transform: none;
+  text-decoration: none;
 }
 
 header nav .nav-drawer .nav-drop-panel li a:hover {
@@ -475,7 +484,7 @@ header nav .nav-search-panel-input:focus {
 
   header nav .nav-sections ul {
     flex-flow: row wrap;
-    align-items: center;
+    align-content: center;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
@@ -613,8 +622,9 @@ header nav .nav-search-panel-input:focus {
   /* the submenu panel: hidden until open, then a full-page-width gray panel below
      the bar. Items are narrow (≤205px, ~1/6 width) and flow top-to-bottom,
      wrapping into a new column when they exceed the panel height — giving the
-     source's 2-column fill-down layout. max-height ~520px clears 9 IVS treatment
-     rows (two of which wrap to 2 lines) before the 10th, giving the 9 + 2 split.
+     source's 2-column fill-down layout. Submenu rows are 50px (matching the
+     source's 15px vertical padding), so the ~440px cap clears 7 IVS treatment
+     rows (one wraps to 2 lines) before the 8th wraps to column 2.
      The panel is a sibling of the gold bar, so it anchors to it directly. */
   header nav .nav-drawer .nav-drop-panel {
     display: none;
@@ -632,7 +642,8 @@ header nav .nav-search-panel-input:focus {
     max-width: none;
 
     /* cap the column height so items wrap into a 2nd column; ~440px clears the
-       9th treatment row (ends ~428px) before the 10th, giving the 9 + 2 split */
+       7 IVS treatment rows in column 1 (ends ~410px, one row wraps to 2 lines)
+       before the 8th wraps to column 2 */
     max-height: 440px;
     margin: 0 0 0 -50vw;
     padding-block: 0;
@@ -662,8 +673,7 @@ header nav .nav-search-panel-input:focus {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    min-height: 40px;
-    padding: 8px 15px;
+    padding: 15px;
     border: 0;
     background-color: transparent;
     color: var(--color-black);
