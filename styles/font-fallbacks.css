@@ -17,17 +17,6 @@
   src: local('Georgia');
 }
 
-/* Wider variant for headings with a nested bold+italic run (`<em><strong>`): the
-   single-weight URW Egyptienne face has no italic/bold master, so the browser
-   synthesizes both, rendering noticeably wider than the plain text the 89.83%
-   adjustment above was measured against — wide enough to wrap onto an extra line
-   before the real webfont swaps in. Scoped in styles.css to just that combination. */
-@font-face {
-  font-family: urw-egyptienne-fallback-bi;
-  size-adjust: 96%;
-  src: local('Georgia');
-}
-
 @font-face {
   font-family: futura-lt-fallback;
   size-adjust: 89.70%;

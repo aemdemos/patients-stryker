@@ -253,13 +253,6 @@ h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
-/* see urw-egyptienne-fallback-bi in styles/font-fallbacks.css */
-h1:has(em strong, strong em),
-h3:has(em strong, strong em),
-h6:has(em strong, strong em) {
-  font-family: "URWEgyptienneW01-Light", urw-egyptienne-fallback-bi, rockwell, georgia, times, serif;
-}
-
 h2 {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xl);
