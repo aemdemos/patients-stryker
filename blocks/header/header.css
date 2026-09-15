@@ -230,7 +230,9 @@ header nav .nav-sections li.nav-drop > a.nav-drop-toggle {
   cursor: pointer;
 }
 
-/* caret glyph on the parent link */
+/* caret glyph on the parent link. The rotated square's box centre would sit a
+   touch low optically, so it's nudged up ~2px (translateY offset just above
+   -50%) to read as vertically centred with the label. */
 header nav .nav-sections a.nav-drop-toggle::after {
   content: '';
   position: absolute;
@@ -240,7 +242,7 @@ header nav .nav-sections a.nav-drop-toggle::after {
   height: 8px;
   border: solid currentcolor;
   border-width: 0 2px 2px 0;
-  transform: translateY(-75%) rotate(45deg);
+  transform: translateY(-60%) rotate(45deg);
 }
 
 header nav .nav-sections li.nav-drop {
@@ -248,7 +250,7 @@ header nav .nav-sections li.nav-drop {
 }
 
 header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle::after {
-  transform: translateY(-25%) rotate(-135deg);
+  transform: translateY(-40%) rotate(-135deg);
 }
 
 /* submenu list: hidden until the parent is expanded. Light-gray panel matching
