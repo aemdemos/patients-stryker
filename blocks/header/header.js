@@ -92,9 +92,10 @@ function buildSearch(tools) {
   return true;
 }
 
-// collapse a dropdown <li> and its associated sibling panel, keeping the parent
-// link's aria-expanded in sync
+// collapse a dropdown <li> and its associated panel, keeping the parent link's
+// aria-expanded in sync
 function collapseDropdown(li) {
+  if (li.navDropClose) { li.navDropClose(); return; }
   li.setAttribute('aria-expanded', 'false');
   const link = li.querySelector(':scope > a');
   if (link) link.setAttribute('aria-expanded', 'false');
@@ -136,6 +137,18 @@ function buildDropdowns(navSections) {
   // first <ul> and take its direct-child <li>s (not any nested submenu <li>s)
   const topList = navSections.querySelector('ul');
   if (!topList) return;
+
+  // Build a clip frame holding the main list wrapper + all submenu panels as ONE
+  // block. On mobile the frame clips (overflow:hidden); each opaque submenu panel
+  // is an absolute overlay that slides in from the right OVER the stationary main
+  // list. On desktop the frame is display:contents (transparent) so the panels
+  // render as flyouts, per the media block below.
+  const mainWrapper = topList.closest('.default-content-wrapper') || topList.parentElement;
+  const frame = document.createElement('div');
+  frame.className = 'nav-drop-frame';
+  mainWrapper.before(frame);
+  frame.append(mainWrapper);
+
   const items = [...topList.querySelectorAll(':scope > li')];
   const openItems = [];
   items.forEach((li) => {
@@ -154,10 +167,6 @@ function buildDropdowns(navSections) {
       parentLink.setAttribute('aria-expanded', 'false');
     }
 
-    // Move the submenu OUT to be a sibling panel of the top list. Keeping the
-    // main list and the submenu as siblings (not nested) is what lets the mobile
-    // drill-in slide the main list left while the panel slides in from the right
-    // — a transformed ancestor would otherwise drag the nested panel along.
     submenu.classList.add('nav-drop-panel');
     li.navDropPanel = submenu;
 
@@ -173,21 +182,25 @@ function buildDropdowns(navSections) {
     backBtn.textContent = 'Back';
     backItem.append(backBtn);
     submenu.prepend(backItem);
-    // Place the panel as a direct child of .nav-sections (a sibling of the list's
-    // wrapper). It must sit OUTSIDE the wrapper so that sliding the wrapper left
-    // on mobile doesn't carry the panel with it — the panel slides in on its own.
-    navSections.append(submenu);
+    // panels live inside the frame, overlaying the main list
+    frame.append(submenu);
 
     const close = () => {
       li.setAttribute('aria-expanded', 'false');
       if (parentLink) parentLink.setAttribute('aria-expanded', 'false');
       submenu.classList.remove('nav-drop-panel-open');
+      // release the mobile frame height (desktop ignores this inline style)
+      if (!isDesktop.matches) frame.style.minHeight = '';
     };
     const open = () => {
       openItems.forEach((other) => { if (other !== li) collapseDropdown(other); });
       li.setAttribute('aria-expanded', 'true');
       if (parentLink) parentLink.setAttribute('aria-expanded', 'true');
       submenu.classList.add('nav-drop-panel-open');
+      // On mobile, grow the frame so a submenu taller than the main list is fully
+      // shown; a shorter submenu (e.g. Conditions) is stretched to fill the frame
+      // via min-height:100% in CSS, so no gold shows behind it.
+      if (!isDesktop.matches) frame.style.minHeight = `${submenu.scrollHeight}px`;
     };
 
     backBtn.addEventListener('click', (e) => {
@@ -203,6 +216,7 @@ function buildDropdowns(navSections) {
       else open();
     });
 
+    li.navDropClose = close;
     openItems.push(li);
   });
 

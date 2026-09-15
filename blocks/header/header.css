@@ -264,10 +264,16 @@ header nav .nav-sections li.nav-drop {
   position: relative;
 }
 
-/* ---- Mobile drill-in: the submenu panel (now a sibling of the main list inside
-   .nav-sections) is off-canvas to the right and slides in when opened, while the
-   main list slides out to the left. The BACK bar (first row) returns to the main
-   list. Desktop overrides this with a flyout in the media block below. ---- */
+/* ---- Mobile drill-in: a clip frame holds the main list + all submenu panels as
+   one block. The frame clips (overflow), the main list stays put, and each opaque
+   submenu panel overlays it — off-canvas right, sliding in on open. The BACK bar
+   (first row) returns to the main list. Desktop turns the frame transparent
+   (display:contents) so the panels become flyouts (media block below). ---- */
+header nav .nav-sections .nav-drop-frame {
+  position: relative;
+  overflow: hidden;
+}
+
 header nav .nav-sections .nav-drop-panel {
   display: flex;
   position: absolute;
@@ -276,6 +282,11 @@ header nav .nav-sections .nav-drop-panel {
   z-index: 2;
   flex-direction: column;
   width: 100%;
+
+  /* fill the frame so a short submenu (e.g. Conditions) shows no gold behind it;
+     the frame is grown to the panel's own height via inline min-height in JS when
+     the submenu is taller than the main list */
+  min-height: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -286,13 +297,6 @@ header nav .nav-sections .nav-drop-panel {
 
 header nav .nav-sections .nav-drop-panel.nav-drop-panel-open {
   transform: translateX(0);
-}
-
-/* when a panel is open, slide the main list out to the left */
-header nav .nav-sections:has(.nav-drop-panel-open) > .default-content-wrapper,
-header nav .nav-sections:has(.nav-drop-panel-open) > ul {
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
 }
 
 /* BACK bar — dark-gray row with a left-pointing arrow */
@@ -343,9 +347,7 @@ header nav .nav-sections .nav-drop-panel li a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  header nav .nav-sections .nav-drop-panel,
-  header nav .nav-sections:has(.nav-drop-panel-open) > .default-content-wrapper,
-  header nav .nav-sections:has(.nav-drop-panel-open) > ul {
+  header nav .nav-sections .nav-drop-panel {
     transition: none;
   }
 }
@@ -550,6 +552,12 @@ header nav .nav-search-panel-input:focus {
      light-gray panel drops below the gold bar, with the sub-links laid out in
      columns as dark-gray rows (white uppercase text, gold hover). The gold bar
      (.nav-sections) is the positioning anchor; see its rule above. ---- */
+
+  /* the mobile clip frame becomes transparent on desktop so the panels can
+     render as flyouts anchored to the gold bar (not clipped inside the frame) */
+  header nav .nav-sections .nav-drop-frame {
+    display: contents;
+  }
 
   /* the mobile `+` affordance becomes a caret on desktop */
   header nav .nav-sections a.nav-drop-toggle::before {
