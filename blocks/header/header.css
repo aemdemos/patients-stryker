@@ -251,7 +251,8 @@ header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle::
   transform: translateY(-25%) rotate(-135deg);
 }
 
-/* submenu list: hidden until the parent is expanded */
+/* submenu list: hidden until the parent is expanded. Light-gray panel matching
+   the source's dropdown. */
 header nav .nav-sections li.nav-drop > ul {
   display: none;
   flex-direction: column;
@@ -259,24 +260,28 @@ header nav .nav-sections li.nav-drop > ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  background-color: var(--color-surface);
 }
 
 header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
   display: flex;
 }
 
-/* submenu rows mirror the source: dark-gray band, white uppercase links */
+/* submenu links mirror the source: bold black title-case text on the gray
+   panel, transparent background, gold fill on hover */
 header nav .nav-sections li.nav-drop > ul li a {
-  padding: 18px 15px 18px 30px;
-  border-top: 1px solid var(--color-white);
-  background-color: var(--color-secondary);
-  color: var(--color-white);
+  padding: 15px 15px 15px 30px;
+  border-top: 0;
+  background-color: transparent;
+  color: var(--color-black);
+  font-weight: 700;
   font-size: var(--body-font-size-m);
+  text-transform: none;
 }
 
 header nav .nav-sections li.nav-drop > ul li a:hover {
-  color: var(--color-accent-link-hover);
-  background-color: var(--color-secondary);
+  background-color: var(--color-accent);
+  color: var(--color-black);
 }
 
 /* ---- Search field styling (desktop box + mobile panel share the input) ---- */
@@ -489,13 +494,17 @@ header nav .nav-search-panel-input:focus {
     right: 12px;
   }
 
-  /* expanded parent shows a pressed/active state in the gold bar */
+  /* expanded parent shows the source's active state: dark-gray tab, white text */
   header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle {
-    background-color: var(--color-accent-dark);
-    color: var(--color-black);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
   }
 
-  /* the submenu becomes the full-width panel below the bar */
+  /* the submenu becomes the full-width panel below the bar. column-fill:auto with
+     a bounded height fills each column top-to-bottom before wrapping (like the
+     source's fixed-height columns) rather than spreading items evenly across
+     many columns. The height caps just above 9 rows so the 11 treatments split
+     9 + 2 into two narrow columns. */
   header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
     display: block;
     position: absolute;
@@ -504,10 +513,12 @@ header nav .nav-search-panel-input:focus {
     z-index: 20;
     box-sizing: border-box;
     width: 100%;
+    max-height: 528px;
     padding-block: 0;
     padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
-    column-width: 200px;
+    column-width: 280px;
     column-gap: 0;
+    column-fill: auto;
     background-color: var(--color-surface);
     box-shadow: var(--shadow-soft);
   }
@@ -531,18 +542,18 @@ header nav .nav-search-panel-input:focus {
     width: 100%;
     min-height: 51px;
     padding: 12px 15px 12px 30px;
-    border-top: 0;
-    border-bottom: 1px solid var(--color-white);
-    background-color: var(--color-secondary);
-    color: var(--color-white);
+    border: 0;
+    background-color: transparent;
+    color: var(--color-black);
+    font-weight: 700;
     font-size: var(--body-font-size-m);
     text-transform: none;
     white-space: normal;
   }
 
   header nav .nav-sections li.nav-drop > ul li a:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-accent-link-hover);
+    background-color: var(--color-accent);
+    color: var(--color-black);
   }
 }
 
