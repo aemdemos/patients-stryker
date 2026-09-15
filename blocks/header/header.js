@@ -92,6 +92,71 @@ function buildSearch(tools) {
   return true;
 }
 
+// close any open dropdown when the user clicks outside an open one
+function closeDropdownsOnClickOutside(e) {
+  const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
+  if (!open) return;
+  if (open.contains(e.target)) return;
+  open.setAttribute('aria-expanded', 'false');
+}
+
+// close any open dropdown on Escape and return focus to its toggle
+function closeDropdownsOnEscape(e) {
+  if (e.code !== 'Escape') return;
+  const open = document.querySelector('#nav .nav-drop[aria-expanded="true"]');
+  if (!open) return;
+  open.setAttribute('aria-expanded', 'false');
+  const toggle = open.querySelector(':scope > .nav-drop-toggle');
+  if (toggle) toggle.focus();
+}
+
+/**
+ * Wires nav items that author a nested list as click-to-toggle dropdowns.
+ * A dropdown parent <li> holds its own link plus a child <ul> of sub-links (the
+ * standard EDS nav model). We keep the parent link intact and add a separate
+ * caret toggle button so the label stays clickable while the caret opens/closes
+ * the submenu. Uses DOM APIs only and preserves the authored link/list nodes.
+ * @param {Element} navSections The .nav-sections element
+ */
+function buildDropdowns(navSections) {
+  if (!navSections) return;
+  // the top-level list may sit inside a .default-content-wrapper, so find the
+  // first <ul> and take its direct-child <li>s (not any nested submenu <li>s)
+  const topList = navSections.querySelector('ul');
+  if (!topList) return;
+  const items = topList.querySelectorAll(':scope > li');
+  let hasDropdown = false;
+  items.forEach((li) => {
+    const submenu = li.querySelector(':scope > ul');
+    if (!submenu) return;
+    hasDropdown = true;
+    li.classList.add('nav-drop');
+    li.setAttribute('aria-expanded', 'false');
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'nav-drop-toggle';
+    const label = (li.querySelector(':scope > a') || li).textContent.trim();
+    toggle.setAttribute('aria-label', `Toggle ${label} submenu`);
+    // place the caret toggle right after the parent link, before the submenu
+    submenu.before(toggle);
+
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const expanded = li.getAttribute('aria-expanded') === 'true';
+      // close sibling dropdowns before opening this one
+      li.parentElement.querySelectorAll(':scope > .nav-drop[aria-expanded="true"]')
+        .forEach((other) => { if (other !== li) other.setAttribute('aria-expanded', 'false'); });
+      li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  if (hasDropdown) {
+    document.addEventListener('click', closeDropdownsOnClickOutside);
+    window.addEventListener('keydown', closeDropdownsOnEscape);
+  }
+}
+
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -144,6 +209,9 @@ export default async function decorate(block) {
   // from the left on mobile. On desktop `.nav-drawer` uses display:contents so
   // the grid still places .nav-sections and .nav-tools directly.
   const navSections = nav.querySelector('.nav-sections');
+  // wire any authored nested lists as click-to-toggle dropdowns (e.g. IVS nav's
+  // Conditions / Treatments megamenu items)
+  buildDropdowns(navSections);
   const navDrawer = document.createElement('div');
   navDrawer.className = 'nav-drawer';
   if (navSections) navDrawer.append(navSections);

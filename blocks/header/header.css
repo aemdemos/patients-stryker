@@ -219,6 +219,74 @@ header nav .nav-sections li:first-child a {
   border-top: 0;
 }
 
+/* ---- Dropdowns (nested list under a nav item, e.g. IVS Conditions/Treatments)
+   Mobile: the submenu expands inline below its parent when opened. A caret
+   toggle button sits at the right of the parent row. ---- */
+header nav .nav-sections li.nav-drop {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+header nav .nav-sections li.nav-drop > a {
+  flex: 1;
+  width: auto;
+}
+
+header nav .nav-sections .nav-drop-toggle {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 60px;
+  align-self: stretch;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--color-white);
+  background: transparent;
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+/* caret glyph */
+header nav .nav-sections .nav-drop-toggle::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid currentcolor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transform-origin: center;
+  vertical-align: middle;
+}
+
+header nav .nav-sections li.nav-drop[aria-expanded='true'] .nav-drop-toggle::before {
+  transform: rotate(-135deg);
+}
+
+/* submenu list: hidden until the parent is expanded */
+header nav .nav-sections li.nav-drop > ul {
+  display: none;
+  flex-basis: 100%;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--color-surface-alt);
+}
+
+header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
+  display: flex;
+}
+
+/* submenu links: indented, slightly smaller than the top-level rows */
+header nav .nav-sections li.nav-drop > ul li a {
+  padding-left: 30px;
+  font-size: var(--body-font-size-s);
+  text-transform: none;
+}
+
 /* ---- Search field styling (desktop box + mobile panel share the input) ---- */
 header nav .nav-search-input {
   box-sizing: border-box;
@@ -405,6 +473,56 @@ header nav .nav-search-panel-input:focus {
   header nav .nav-hamburger,
   header nav .nav-search-toggle {
     display: none;
+  }
+
+  /* ---- Dropdowns on desktop: the submenu becomes an absolute flyout panel that
+     drops below its parent item in the gold bar. ---- */
+  header nav .nav-sections li.nav-drop {
+    position: relative;
+  }
+
+  /* caret sits inline next to the label, not a full-height block */
+  header nav .nav-sections .nav-drop-toggle {
+    width: auto;
+    padding: 0 8px;
+    border-top: 0;
+  }
+
+  header nav .nav-sections li.nav-drop > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: max-content;
+    min-width: 220px;
+    padding: 5px 0;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-soft);
+  }
+
+  header nav .nav-sections li.nav-drop > ul li {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  /* submenu items don't get the top-level pipe separator */
+  header nav .nav-sections li.nav-drop > ul li::after {
+    content: none;
+  }
+
+  header nav .nav-sections li.nav-drop > ul li a {
+    display: block;
+    width: 100%;
+    padding: 8px 20px;
+    white-space: nowrap;
+    font-size: var(--body-font-size-s);
+    text-transform: none;
+  }
+
+  header nav .nav-sections li.nav-drop > ul li a:hover {
+    background-color: var(--color-surface-alt);
+    color: var(--color-accent-link-hover);
   }
 }
 
