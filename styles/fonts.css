@@ -68,36 +68,6 @@
   src: url('../fonts/futura-for-stryker-bold.woff2') format('woff2');
 }
 
-/* Size-adjusted system fallbacks — keep layout stable while webfonts load
-   (prevents font-swap CLS). The size-adjust % is measured against the FIRST
-   local() face, so that face is listed alone: a trailing local('serif') /
-   local('sans-serif') is not a real font name and invalidates the whole src,
-   making the @font-face error so its size-adjust never applies — the fallback
-   then renders at raw system width, wraps to a different line count, and the
-   text reflows when the webfont swaps in (the mobile flex-section CLS). */
-@font-face {
-  font-family: "humanist-slab-712-fallback";
-  size-adjust: 91.42%;
-  src: local('Cambria'), local('Georgia');
-}
-
-@font-face {
-  font-family: urw-egyptienne-fallback;
-  size-adjust: 89.83%;
-  src: local('Georgia');
-}
-
-@font-face {
-  font-family: futura-lt-fallback;
-  size-adjust: 89.70%;
-  src: local('Arial'), local('Helvetica');
-}
-
-/* Fallback for "Futura for Stryker" — measured 91.94% of Arial's advance width
-   (vs Futura LT's 89.70%), so it needs its own size-adjust to prevent the
-   font-swap reflow / CLS on ivs-treatment headings while the webfont loads. */
-@font-face {
-  font-family: futura-for-stryker-fallback;
-  size-adjust: 91.94%;
-  src: local('Arial'), local('Helvetica');
-}
+/* Size-adjusted system fallbacks live in styles/font-fallbacks.css (loaded
+   eagerly in head.html) so they register before first paint on mobile, ahead
+   of this file's deferred webfont downloads. See that file for details. */
