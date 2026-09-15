@@ -398,12 +398,12 @@
     grid-area: 1 / 1;
   }
 
-    /* keep the centred block balanced top and bottom */
+  /* keep the centred block balanced top and bottom */
   .hero.banner .button-wrapper:last-child {
     margin-bottom: 15px;
   }
 
-  /* copy overlays the left half of the image */
+  /* copy overlays the image, bottom-aligned */
   .hero.banner > div:last-child {
     z-index: 1;
     align-self: end;
