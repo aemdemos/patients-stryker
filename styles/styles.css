@@ -269,6 +269,10 @@ h2 {
   margin-top: 30px;
 }
 
+.section.compact .columns h2 em strong, .columns h2 strong em {
+    font-size: var(--heading-font-size-compact);
+}
+
 /* category heading above a card group — sage underline separating each group,
    matching the source's .component-subheading.border-bottom-gold. Scoped to
    `.section.no-cta` (the card-group sections on the resources page) so it can't
@@ -963,6 +967,10 @@ main > .section.wide > div {
   .section.compact h2 {
   font-size: var(--heading-font-size-compact-m);
   margin-top:30px;
+}
+
+.section.compact .columns h2 em strong, .columns h2 strong em {
+  font-size: var(--heading-font-size-compact-m);
 }
 
 h2 em strong,
