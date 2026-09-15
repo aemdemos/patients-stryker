@@ -148,6 +148,11 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+
+  /* Reserve the image box before it loads so the hero doesn't push the copy
+     below down as it arrives (mobile CLS). This is the mobile crop's ratio
+     (mild-hero_1200x680, ~1.76:1); the desktop crop overrides to 3:1 at 900px. */
+  aspect-ratio: 1200 / 680;
 }
 
 /* copy block — stacked below the image on mobile (15px side gutter) */
@@ -444,6 +449,12 @@
 
   .hero picture.hero-image-desktop {
     display: block;
+  }
+
+  /* desktop crop (mild-hero_1920x640) is 3:1 — reserve that box so the wider
+     banner doesn't shift the copy as it loads. */
+  .hero.banner img {
+    aspect-ratio: 1920 / 640;
   }
 
   .hero picture.hero-image-mobile {
