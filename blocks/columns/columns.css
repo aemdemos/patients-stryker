@@ -18,14 +18,6 @@
   padding: 0 15px;
 }
 
-.columns .columns-img-col {
-  /* image-to-heading gap = 30px margin below the image + 3% padding for the
-     text wrapper the reference has (ours is flat siblings, so this padding lives
-     on the image column). padding doesn't collapse with the margin, so they add. */
-  margin-bottom: var(--space-section); /* 30px gap below the image */
-  padding-bottom: 3%; /* additional gap before the heading, matches the reference's percentage-based text-wrapper padding */
-}
-
 .columns .columns-img-col img {
   display: block;
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
@@ -56,15 +48,34 @@
   line-height: var(--body-line-height-l);
 }
 
-/* text inset — the reference wraps heading+paragraph in an element with 3% padding
-   on all sides. Vertical (top) inset lives on .columns-img-col's padding-bottom;
-   this adds the matching left/right inset to the text that follows the image. */
+/* text inset — the reference wraps the heading+paragraph that sit below an image
+   in an element with 3% padding on all sides. We render flat siblings, so the
+   inset lives on the text that follows the image: left/right on every following
+   element, and the vertical image-to-text gap on the FIRST element after the
+   image (the `+` adjacent sibling). Because this gap is a property of the
+   image→text relationship, a column whose image has no following text (the 70-30
+   image-beside-text layout) gets no gap at all — no positional special-casing. */
 .columns .columns-img-col ~ h3,
 .columns .columns-img-col ~ h4,
 .columns .columns-img-col ~ p {
   padding-left: 3%;
   padding-right: 3%;
 }
+
+.columns .columns-img-col + h3,
+.columns .columns-img-col + h4,
+.columns .columns-img-col + p {
+  margin-top: var(--space-block-l); /* 20px image-to-text gap, matching the reference */
+  padding-top: 0;
+}
+
+/* proven-results: the image is followed directly by a body <p> caption, and the
+   reference leaves a larger ~37px gap there (vs the ~20px before an image→heading
+   in before/after). Add the extra to the paragraph case only. */
+.columns .columns-img-col + p {
+  margin-top: var(--space-section); /* ~30px + line-box leading ≈ reference's 37px */
+}
+
 
 /* compact variant — smaller heading + body typography for dense 50/50 rows.
    Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
@@ -185,16 +196,30 @@
   margin-bottom: 0;
 }
 
-/* dark variant — gold Futura-bold headings and white body text on the dark
-   gradient panel (reference: knee-pain "Where treatment begins" section). */
-.section.dark .columns h2,
-.section.dark .columns h3,
-.section.dark .columns h4 {
+/* dark variant — the gold Futura-bold section title (h3: "What is LSS?",
+   "Before mild", "After mild") on the dark gradient panel. 26px gold. Only h3
+   titles and h4 captions occur in these dark columns, so each heading level gets
+   its own rule with its own size — never grouped. */
+.section.dark .columns h3 {
   font-family: var(--display-font-family);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--panel-cta-heading-size); /* 26px */
   font-weight: 700;
   line-height: var(--heading-line-height-ml);
   color: var(--color-accent);
+}
+
+/* dark-variant caption (h4: the before/after descriptive line under the gold
+   title). On the reference the text renders in the Egyptienne SERIF light face
+   (span.urw-egyptienne), NOT Futura — white, 21.875px / 25.156px line-height.
+   Use the heading (Egyptienne) font at its light master weight so it matches the
+   thin serif look rather than a heavy geometric sans. Distinct, smaller size than
+   the 26px h3 title; styled separately by tag (no grouping, no h3+h4 adjacency). */
+.section.dark .columns h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-ml); /* 21.875px */
+  font-weight: 500;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-white);
 }
 
 .section.dark .columns p,

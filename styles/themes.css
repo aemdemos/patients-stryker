@@ -1119,3 +1119,95 @@ body.resources main > .section.compact > div :is(p, ol, ul, li) {
 body.resources .section.compact {
   margin-bottom: 0;
 }
+
+
+/* =====================================================================
+   Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
+   =====================================================================
+   Page-specific styling that can't live in the shared block/section CSS.
+   Loaded eagerly (awaited before `appear`), so above-the-fold rules here don't
+   reflow the LCP hero. */
+
+/* Display font: this theme uses the site's licensed "Futura for Stryker" cut
+   (downloaded from the source) instead of the boilerplate default "Futura LT W01",
+   so migrated ivs-treatment pages render the exact typeface as the reference.
+   Scoped to the theme via a token override — other pages keep Futura LT W01. */
+body.ivs-treatment {
+  --display-font-family: "Futura for Stryker", futura-for-stryker-fallback, arial, helvetica, sans-serif;
+  --display-font-family-bold: "Futura for Stryker", futura-for-stryker-fallback, "Arial Black", arial, sans-serif;
+}
+
+/* Page-wide type scale. On the reference EVERY heading and body run is wrapped in
+   the source's `fontsize-1-25em` span (1.25x): all h3 text renders at 26.25px and
+   all body copy (paragraphs + list items) at 17.5px, rather than the shared
+   defaults (h3 21px / body 14px). This is a page-level design choice, not
+   per-section, so it's applied theme-wide here. */
+body.ivs-treatment main h3 {
+  font-size: var(--heading-font-size-l-scaled); /* 26.25px */
+}
+
+body.ivs-treatment main :is(p, li) {
+  font-size: var(--body-font-size-l); /* 17.5px */
+}
+
+/* Flex side-by-side sections: the shared `.section.flex` rule vertically centres
+   its columns (align-items: center), but the reference top-aligns them — the
+   "Get back on your feet" heading should start at the top of the row, level with
+   the "Benefits" panel, not float to the vertical middle. */
+body.ivs-treatment main > .section.flex {
+  align-items: start;
+}
+
+/* Plain white columns sections ("A procedure with proven results", "How it works")
+   sit flush against their neighbours because they have no colour/flex/full-bleed
+   variant to supply padding. On the reference each is separated by a divider with
+   ~50px of surrounding space. Add matching top/bottom margin so they breathe —
+   scoped to plain columns sections only (dark/full-bleed already pad themselves,
+   :not() keeps them out). */
+body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
+  margin-block: var(--space-section-l); /* 50px */
+}
+
+/* "What is LSS?" dark band — the reference leaves ~71px of space between the
+   "Talk to your doctor" button (end of the flex panel section) and the top of the
+   dark band; our band butts almost against it (~12px). Add top margin to the dark
+   band that directly follows the flex section. Scoped with `.flex + .dark` so it
+   only affects the LSS band — the before/after dark band follows a plain columns
+   section that already supplies its own bottom margin. */
+body.ivs-treatment main > .section.flex + .section.dark {
+  margin-top: var(--space-section-l); /* +50px → ~62px total, matches the reference */
+}
+
+/* Resources heading — the reference underlines the "Resources" <h2> with a 1px
+   gold-ish rule (border-bottom + small padding), matching its
+   .component-subheading.border-bottom-gold style. Reproduce as a bottom border on
+   the cards-section h2. */
+body.ivs-treatment main > .section.cards-container h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* Potential risks — on the reference this light-gray band is NOT full-bleed: the
+   grey fill is content-width (≈1380px, sitting inside the grid margins), and it is
+   separated from the cards above (~136px) and the footnotes below (~61px) by outer
+   space. Our shared `.section.light-gray` fills the section edge-to-edge because
+   the background sits on the full-viewport-width `.section`. Override for this
+   theme: move the grey fill + internal padding onto the capped-width inner wrapper
+   so it stays content-width, and add outer top/bottom margin for the separation. */
+body.ivs-treatment main > .section.light-gray {
+  margin-block: var(--space-section-xl) var(--space-section-l); /* ~90px above, 50px below */
+  background-color: transparent; /* undo the edge-to-edge fill from styles.css */
+}
+
+body.ivs-treatment main > .section.light-gray > div {
+  padding: var(--space-section); /* ~30px on ALL sides so text is inset from the grey edges */
+  background-color: var(--color-surface);
+}
+
+/* The reference renders this disclaimer band's body copy at the SMALLER 14px
+   size (--body-font-size-m / 19.25px line-height), not the page-wide 17.5px used
+   elsewhere. Override the theme-wide p/li size for this section only. */
+body.ivs-treatment main > .section.light-gray :is(p, li) {
+  font-size: var(--body-font-size-m); /* 14px */
+  line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
+}
