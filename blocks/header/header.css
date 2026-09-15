@@ -504,7 +504,9 @@ header nav .nav-search-panel-input:focus {
      (≤205px, ~1/6 width) and flow top-to-bottom, wrapping into a new column when
      they exceed the panel height — giving the source's 2-column fill-down layout.
      `width:100%` + `max-width:none` override the centred container cap that the
-     generic `.nav-sections ul` rule applies. */
+     generic `.nav-sections ul` rule applies. max-height caps the column height so
+     items wrap into the next column: ~520px clears 9 IVS treatment rows (two of
+     which wrap to 2 lines) before the 10th, giving the source's 9 + 2 split. */
   header nav .nav-sections li.nav-drop[aria-expanded='true'] > ul {
     display: flex;
     position: absolute;
@@ -516,7 +518,7 @@ header nav .nav-search-panel-input:focus {
     align-content: flex-start;
     width: 100%;
     max-width: none;
-    max-height: 400px;
+    max-height: 520px;
     margin: 0;
     padding-block: 0;
     padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
