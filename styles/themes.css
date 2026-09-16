@@ -464,8 +464,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   /* the intro availability box is a single-item panel sitting in its own flex
      column, so it fills that column rather than splitting into the 2-up grid the
      multi-item light panels use. */
-  body.sa-resources .panel.light > ul,
-  body.sa-resources .panel.light.panel-authoring {
+  body.sa-resources .panel.light > ul {
     grid-template-columns: 1fr;
   }
 
@@ -814,10 +813,6 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   padding-top: var(--space-section);
 }
 
-.zip-skin-closure main > .section:has(ol.footnotes) > .default-content-wrapper p {
-  font-size: var(--footnote-font-size);
-  line-height: var(--footnote-line-height);
-}
 
 /* "How Zip works" intro paragraph — the source renders it at 24.5px (its
    .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.

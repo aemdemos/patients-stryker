@@ -115,7 +115,24 @@ function renderFor(src, label) {
  */
 export default function decorate(block) {
   const link = block.querySelector('a[href]');
-  if (!link) return;
+  if (!link) {
+    // In the EW canvas the block content (the video link) can be injected after
+    // decorate() first runs, so there's no link yet. Watch for it to appear, then
+    // decorate. No-op on the live site, where the link is present up front.
+    const observer = new MutationObserver(() => {
+      if (block.querySelector('a[href]')) {
+        observer.disconnect();
+        decorate(block);
+      }
+    });
+    observer.observe(block, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['href'],
+    });
+    return;
+  }
 
   const src = link.getAttribute('href');
   // accessible label: prefer the link title, else its display text — but never a
