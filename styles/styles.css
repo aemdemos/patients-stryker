@@ -498,10 +498,7 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
-/* UE fallback: before decorateButtons() converts a bold authored link to
-   `.button.primary`, style both supported authoring nesting directions as the
-   same green button. */
-strong > a:any-link,
+strong > a.link-inline:any-link, strong > a:any-link,
 a:any-link > strong {
   box-sizing: border-box;
   display: inline-flex;
