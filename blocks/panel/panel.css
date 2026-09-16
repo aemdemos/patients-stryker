@@ -68,7 +68,6 @@
 .panel .panel-body i b {
   color: var(--color-accent);
   font-style: normal;
-  font-family: var(--display-font-family);
 }
 
 
@@ -129,10 +128,6 @@
   text-decoration: none;
 }
 
-.panel .panel-body > p > a:any-link {
-  text-decoration: underline;
-}
-
 /* Universal Editor fallback */
 .panel.cta a:any-link:has(em),
 .panel.cta a:any-link:has(strong) {
@@ -161,6 +156,43 @@
 .panel.cta a:any-link:has(strong) strong {
   font-style: normal;
   color: inherit;
+}
+
+/* EW-authored panel sentence links can arrive as either <strong><a><u>…</u></a></strong>
+  or <a><strong><u>…</u></strong></a>; reset both button-fallback branches. */
+.panel .panel-body strong > a:any-link:has(> u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.panel .panel-body a:any-link > strong:has(> u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.panel .panel-body strong > a:any-link:has(> u) > u,
+.panel .panel-body a:any-link > strong:has(> u) > u {
+  text-decoration: none;
 }
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
@@ -209,6 +241,13 @@
 
 .panel .panel-body p:last-child {
   margin: 0 0 var(--space-block);
+}
+
+.panel .panel-body p:last-child:has(strong em),
+.panel .panel-body p:last-child:has(em strong),
+.panel .panel-body p:last-child:has(b i),
+.panel .panel-body p:last-child:has(i b) {
+  margin: 0;
 }
 
 .panel.colored-border .panel-body p:first-of-type {

@@ -46,7 +46,6 @@
   --color-disabled-text: #545857;
   --color-required: #bf0000; /* form required asterisk / error */
   --overlay-scrim: rgb(0 0 0 / 50%);
-  --video-poster-overlay-gradient: linear-gradient(180deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 28%) 22%, transparent 52%);
   --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
 
   /* boilerplate color aliases (consumed by blocks) */
@@ -396,7 +395,7 @@ h2 strong em {
 }
 
 .section.compact {
-  margin-bottom: 0;
+  margin-bottom: 40px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -499,9 +498,6 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
-/* UE fallback: before decorateButtons() converts a bold authored link to
-   `.button.primary`, style both supported authoring nesting directions as the
-   same green button. */
 strong > a:any-link,
 a:any-link > strong {
   box-sizing: border-box;
@@ -521,13 +517,6 @@ a:any-link > strong {
   text-transform: uppercase;
   text-decoration: none;
 }
-
-em > strong > a:any-link {
-    border-color: var(--color-accent-dark);
-    background-color: var(--color-accent);
-    color: #000;
-}
-
 
 /* reference-marker anchors (#fn- and #disclaimer) nested in a bold heading
    phrase are citations, not CTAs — override the button fallback above so they
@@ -565,16 +554,12 @@ a.link-inline:any-link {
   font-size: var(--heading-font-size-l);
   font-weight: 700;
   text-transform: none;
+  text-decoration: none;
 }
 
 /* bold + underline authored links become flat teal CTAs with a trailing chevron */
-strong > a:any-link:has(> u),
 a.link-strong:any-link {
   display: inline;
-  max-width: none;
-  border: 0;
-  padding: 0;
-  background-color: var(--color-white);
   font-family: var(--display-font-family);
   font-weight: 700;
   text-transform: uppercase;
