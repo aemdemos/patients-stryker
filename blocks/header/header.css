@@ -232,36 +232,23 @@ header nav .nav-sections li:first-child a {
    the submenu instead of navigating. Mobile: the submenu expands inline below
    its parent. Desktop overrides (full-width gray panel) live in the media block
    at the bottom of this file, matching the source's .secondary-nav. ---- */
-header nav .nav-sections li.nav-drop > a.nav-drop-toggle {
+header nav .nav-sections li.nav-drop a.nav-drop-toggle {
   /* leave room for the affordance and mark it clearly interactive */
   padding-right: 40px;
   cursor: pointer;
 }
 
-/* Mobile affordance: a `+` next to expandable items (becomes a caret on desktop
-   in the media block below). Built from two bars so it can't be confused with
-   real text. */
-header nav .nav-sections a.nav-drop-toggle::after,
-header nav .nav-sections a.nav-drop-toggle::before {
-  content: '';
+/* Mobile affordance: a bold `+` next to expandable items. Mobile-only — the
+   desktop media block below hides it (the source has no caret on desktop). */
+header nav .nav-sections a.nav-drop-toggle::after {
+  content: '+';
   position: absolute;
   right: 18px;
   top: 50%;
-  background-color: currentcolor;
-}
-
-/* horizontal bar of the + */
-header nav .nav-sections a.nav-drop-toggle::before {
-  width: 14px;
-  height: 2px;
-  transform: translate(3px, -50%);
-}
-
-/* vertical bar of the + */
-header nav .nav-sections a.nav-drop-toggle::after {
-  width: 2px;
-  height: 14px;
-  transform: translate(-3px, -50%);
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 2vw;
+  line-height: 1;
 }
 
 header nav .nav-sections li.nav-drop {
@@ -442,6 +429,27 @@ header nav .nav-search-panel-input:focus {
   outline-offset: -2px;
 }
 
+/* ---- Legal variant (logo-only, no menu/search) — mobile ----
+   nav-legal has no primary links or tools, so the hamburger would open an empty
+   drawer. Hide it, and reclaim the freed space by enlarging the logo and
+   centring it vertically in the header bar (rather than the top-aligned two-row
+   layout the other variants use). */
+header nav.nav-variant-legal .nav-hamburger {
+  display: none;
+}
+
+header nav.nav-variant-legal .nav-brand {
+  flex: 1 1 auto;
+  align-self: center;
+  padding-top: 0;
+}
+
+/* ~75% of the desktop logo (188px) — smaller than desktop so mobile doesn't feel
+   oversized, but larger than the cramped default to fill the freed hamburger space */
+header nav.nav-variant-legal .nav-brand img {
+  width: 140px;
+}
+
 /* ---- Desktop layout (900px and up) — single-row grid; gold bar full-bleed ---- */
 @media (width >= 900px) {
   header nav {
@@ -466,6 +474,12 @@ header nav .nav-search-panel-input:focus {
   }
 
   header nav .nav-brand img {
+    width: 188px;
+  }
+
+  /* the legal logo enlargement is mobile-only (it reclaims the hidden hamburger's
+     space); desktop has no hamburger, so keep the standard logo size */
+  header nav.nav-variant-legal .nav-brand img {
     width: 188px;
   }
 
@@ -584,32 +598,18 @@ header nav .nav-search-panel-input:focus {
     display: contents;
   }
 
-  /* the mobile `+` affordance becomes a caret on desktop */
-  header nav .nav-sections a.nav-drop-toggle::before {
+  /* the `+` affordance is mobile-only; the source shows no caret on desktop */
+  header nav .nav-sections a.nav-drop-toggle::after {
     display: none;
   }
 
-  header nav .nav-sections a.nav-drop-toggle::after {
-    right: 12px;
-    width: 8px;
-    height: 8px;
-    border: solid currentcolor;
-    border-width: 0 2px 2px 0;
-    background-color: transparent;
-    transform: translateY(-60%) rotate(45deg);
-  }
-
-  header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle::after {
-    transform: translateY(-40%) rotate(-135deg);
-  }
-
-  /* caret sits just after the label text on desktop */
-  header nav .nav-sections a.nav-drop-toggle {
-    padding-right: 28px;
+  /* no affordance on desktop, so no extra right padding needed */
+  header nav .nav-sections li.nav-drop a.nav-drop-toggle {
+    padding-right: 15px;
   }
 
   /* expanded parent shows the source's active state: dark-gray tab, white text */
-  header nav .nav-sections li.nav-drop[aria-expanded='true'] > a.nav-drop-toggle {
+  header nav .nav-sections li.nav-drop[aria-expanded='true'] a.nav-drop-toggle {
     background-color: var(--color-secondary);
     color: var(--color-white);
   }

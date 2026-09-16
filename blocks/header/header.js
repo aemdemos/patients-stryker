@@ -182,8 +182,11 @@ function buildDropdowns(drawer) {
     li.setAttribute('aria-expanded', 'false');
 
     // the parent link becomes the toggle: clicking it opens/closes the submenu
-    // rather than navigating (mirrors the source megamenu behaviour)
-    const parentLink = li.querySelector(':scope > a');
+    // rather than navigating (mirrors the source megamenu behaviour). EDS wraps
+    // the authored link in a <p>, so accept either a direct child <a> or one
+    // nested in a paragraph (li > p > a); the `+`/caret affordance is styled on
+    // a.nav-drop-toggle, so the class must land on the anchor, not the <li>.
+    const parentLink = li.querySelector(':scope > a, :scope > p > a');
     const toggleControl = parentLink || li;
     toggleControl.classList.add('nav-drop-toggle');
     if (parentLink) {
