@@ -128,22 +128,6 @@
   text-decoration: none;
 }
 
-/* EW-authored panel sentence links can arrive as <strong><a><u>...</u></a></strong>
-   without the runtime link-inline class; style this structure as inline text. */
-.panel .panel-body strong > a:any-link:has(> u) {
-  display: inline;
-  max-width: none;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background-color: transparent;
-  color: var(--link-color);
-  font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 700;
-  text-transform: none;
-}
-
 /* Universal Editor fallback */
 .panel.cta a:any-link:has(em),
 .panel.cta a:any-link:has(strong) {
@@ -172,6 +156,36 @@
 .panel.cta a:any-link:has(strong) strong {
   font-style: normal;
   color: inherit;
+}
+
+/* EW-authored panel sentence links can arrive as either <strong><a><u>…</u></a></strong>
+  or <a><strong><u>…</u></strong></a>; reset both button-fallback branches. */
+.panel .panel-body strong > a:any-link:has(> u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+}
+
+.panel .panel-body a:any-link > strong:has(> u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
 }
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
