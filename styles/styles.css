@@ -558,7 +558,7 @@ a.link-inline:any-link {
 }
 
 /* bold + underline authored links become flat teal CTAs with a trailing chevron */
-a.link-strong:any-link {
+a.link-strong:any-link, a:any-link > strong:has(u) {
   display: inline;
   font-family: var(--display-font-family);
   font-weight: 700;
