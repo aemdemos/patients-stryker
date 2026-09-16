@@ -689,6 +689,24 @@ header nav.nav-variant-legal .nav-brand img {
   }
 }
 
+/* ---- Intermediate desktop (900–1199px): the source shrinks the primary-nav and
+   submenu text here so the horizontal bar fits without crowding. Match it with the
+   12px token. Authored mobile-first: this 900px block sets 12px, and the 1200px
+   block below restores the 14px used at wider widths (no max-width query). ---- */
+@media (width >= 900px) {
+  header nav .nav-sections li a,
+  header nav .nav-drawer .nav-drop-panel li a {
+    font-size: var(--body-font-size-xs);
+  }
+}
+
+@media (width >= 1200px) {
+  header nav .nav-sections li a,
+  header nav .nav-drawer .nav-drop-panel li a {
+    font-size: var(--body-font-size-m);
+  }
+}
+
 /* ---- Default header (/nav — the site-root category nav): logo + category links,
    no search. Applies to the variant-less default nav; named variants (ent/ivs/legal)
    carry a .nav-variant-* class and keep the full-bleed gold-bar base styling instead.
