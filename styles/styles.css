@@ -498,7 +498,7 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
-strong > a.link-inline:any-link, strong > a:any-link,
+strong > a:any-link,
 a:any-link > strong {
   box-sizing: border-box;
   display: inline-flex;
