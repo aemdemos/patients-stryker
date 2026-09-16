@@ -187,6 +187,12 @@
   font-size: var(--heading-font-size-l);
   font-weight: 700;
   text-transform: none;
+  text-decoration: none;
+}
+
+.panel .panel-body strong > a:any-link:has(> u) > u,
+.panel .panel-body a:any-link > strong:has(> u) > u {
+  text-decoration: none;
 }
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
