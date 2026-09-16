@@ -498,12 +498,6 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
-em > strong > a:any-link {
-    border-color: var(--color-accent-dark);
-    background-color: var(--color-accent);
-    color: #000;
-}
-
 /* UE fallback: before decorateButtons() converts a bold authored link to
    `.button.primary`, style both supported authoring nesting directions as the
    same green button. */
@@ -526,6 +520,13 @@ a:any-link > strong {
   text-transform: uppercase;
   text-decoration: none;
 }
+
+em > strong > a:any-link {
+    border-color: var(--color-accent-dark);
+    background-color: var(--color-accent);
+    color: #000;
+}
+
 
 /* reference-marker anchors (#fn- and #disclaimer) nested in a bold heading
    phrase are citations, not CTAs — override the button fallback above so they
@@ -944,14 +945,6 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
   font-size: var(--body-font-size-xs);
   line-height: var(--paragraph-line-height);
-}
-
-.section.compact h2 {
-  font-size: var(--heading-font-size-compact);
-}
-
-.section.compact p {
-  font-size: var(--footnote-font-size);  
 }
 
 @media (width >= 900px) {
