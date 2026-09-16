@@ -92,6 +92,11 @@
   margin-top: var(--space-block);
 }
 
+.section.compact .columns h2 em strong {
+  font-size: var(--heading-font-size-compact);
+}
+
+
 .section.compact .columns h4 {
   font-size: var(--heading-font-size-m);
 }
@@ -537,6 +542,10 @@
   .section.compact .columns.columns-50-50:not(:first-child) > div {
     margin-top:40px;
     margin-bottom: 30px;
+  }
+
+  .section.compact .columns h2 em strong {
+    font-size: var(--heading-font-size-compact-m);
   }
 }
 
