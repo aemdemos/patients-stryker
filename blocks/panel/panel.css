@@ -195,28 +195,6 @@
   text-decoration: none;
 }
 
-/* EW fallback for the gold panel action link: keep it as inline text CTA,
-   not the global strong-link button fallback. */
-.panel.gold .panel-body strong > a:any-link:has(u),
-.panel.gold .panel-body a:any-link > strong:has(u) {
-  display: inline;
-  max-width: none;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background-color: transparent;
-  font-family: var(--display-font-family);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-.panel.gold .panel-body strong > a:any-link:has(u) u,
-.panel.gold .panel-body a:any-link > strong:has(u) u {
-  text-decoration: none;
-}
-
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
   padding: 22.5px;
