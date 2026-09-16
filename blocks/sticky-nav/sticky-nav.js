@@ -1,7 +1,5 @@
 // Sticky Nav Block — in-page anchor bar; row = item (label + `#id` link) with scroll-spy.
 
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
-
 /** Resolve a nav target: `.section[data-anchor]` wins over a plain id. @param {string} href */
 function resolveTarget(href) {
   if (!href) return null;
@@ -76,10 +74,7 @@ export default function decorate(block) {
     item.setAttribute('tabindex', '0');
     item.dataset.target = href;
 
-    // move UE instrumentation: row → <a> (selectable item), label → <p> (editable)
-    moveInstrumentation(row, item);
     const labelEl = labelCell.querySelector('p') || document.createElement('p');
-    moveInstrumentation(labelCell, labelEl);
     if (!labelEl.parentElement) labelEl.append(...labelCell.childNodes);
     item.append(labelEl);
 

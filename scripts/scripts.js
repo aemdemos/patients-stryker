@@ -214,7 +214,6 @@ function decorateFootnotes(main) {
     .find((ol) => ol.children.length >= maxRef);
   if (!footnoteList) return;
 
-  footnoteList.classList.add('footnotes');
   [...footnoteList.children].forEach((li, i) => {
     li.id = li.id || `fn-${i + 1}`;
   });
@@ -558,20 +557,6 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
-}
-
-if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
-  // UE only: attach observers before block decoration so transformed rows retain
-  // their data-aue-* instrumentation. Awaiting this import prevents the eager
-  // first section from racing observer setup; live-site loading is unaffected.
-  try {
-    // eslint-disable-next-line import/no-cycle
-    await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
-  } catch (e) {
-    // never let a UE-tooling failure block the page from rendering in the editor
-    // eslint-disable-next-line no-console
-    console.error('failed to initialize universal editor observers', e);
-  }
 }
 
 loadPage();
