@@ -46,6 +46,7 @@
   --color-disabled-text: #545857;
   --color-required: #bf0000; /* form required asterisk / error */
   --overlay-scrim: rgb(0 0 0 / 50%);
+  --video-poster-overlay-gradient: linear-gradient(180deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 28%) 22%, transparent 52%);
   --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
 
   /* boilerplate color aliases (consumed by blocks) */
