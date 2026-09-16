@@ -159,8 +159,9 @@
 }
 
 /* EW-authored panel sentence links can arrive as either <strong><a><u>…</u></a></strong>
-  or <a><strong><u>…</u></strong></a>; reset both button-fallback branches. */
-.panel .panel-body strong > a:any-link:has(> u) {
+  or <a><strong><u>…</u></strong></a>; use descendant matching because EW may
+  wrap content and break strict direct-child selectors. */
+.panel .panel-body strong > a:any-link:has(u) {
   display: inline;
   max-width: none;
   padding: 0;
@@ -175,7 +176,7 @@
   text-decoration: none;
 }
 
-.panel .panel-body a:any-link > strong:has(> u) {
+.panel .panel-body a:any-link > strong:has(u) {
   display: inline;
   max-width: none;
   padding: 0;
@@ -190,8 +191,8 @@
   text-decoration: none;
 }
 
-.panel .panel-body strong > a:any-link:has(> u) > u,
-.panel .panel-body a:any-link > strong:has(> u) > u {
+.panel .panel-body strong > a:any-link:has(u) u,
+.panel .panel-body a:any-link > strong:has(u) u {
   text-decoration: none;
 }
 
