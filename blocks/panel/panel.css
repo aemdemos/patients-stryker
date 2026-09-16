@@ -128,9 +128,11 @@
   text-decoration: none;
 }
 
-/* Universal Editor fallback */
+/* Experience Workspace (EW) fallback */
 .panel.cta a:any-link:has(em),
-.panel.cta a:any-link:has(strong) {
+.panel.cta a:any-link:has(strong),
+.panel.cta .panel-cta em > strong > a:any-link,
+.panel.cta .panel-cta strong > em > a:any-link {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
