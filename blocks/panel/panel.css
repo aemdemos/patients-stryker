@@ -172,6 +172,7 @@
   font-size: var(--heading-font-size-l);
   font-weight: 700;
   text-transform: none;
+  text-decoration: none;
 }
 
 .panel .panel-body a:any-link > strong:has(> u) {
