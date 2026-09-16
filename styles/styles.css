@@ -409,6 +409,10 @@ h2 strong em {
   font-size: var(--footnote-font-size);
 }
 
+main > .section.video-text p {
+  font-size: var(--body-font-size-l);
+}
+
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
   main .section.side-by-side {
@@ -834,10 +838,6 @@ main > .section.wide > div {
   }
 }
 
-main > .section.video-text p {
-  font-size: var(--body-font-size-l);
-}
-
 /* divider section — a full-viewport-width sage rule at the section break, matching
    the source's .sectionseparator hr (1px --color-surface-muted, spanning the whole
    viewport). The line is drawn as a ::before pinned to the FULL viewport width (100vw
@@ -983,14 +983,6 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
   font-size: var(--body-font-size-xs);
   line-height: var(--paragraph-line-height);
-}
-
-.section.compact h2 {
-  font-size: var(--heading-font-size-compact);
-}
-
-.section.compact p {
-  font-size: var(--footnote-font-size);  
 }
 
 @media (width >= 900px) {
