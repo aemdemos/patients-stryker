@@ -175,7 +175,7 @@
   text-decoration: none;
 }
 
-.panel .panel-body a:any-link > strong:has(> u) {
+.panel .panel-body a:any-link > strong:has(u) {
   display: inline;
   max-width: none;
   padding: 0;
