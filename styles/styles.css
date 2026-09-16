@@ -554,6 +554,7 @@ a.link-inline:any-link {
   font-size: var(--heading-font-size-l);
   font-weight: 700;
   text-transform: none;
+  text-decoration: none;
 }
 
 /* bold + underline authored links become flat teal CTAs with a trailing chevron */
