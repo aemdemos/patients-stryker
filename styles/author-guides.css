@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Author guides — shared stylesheet for internal authoring-guide pages.
+
+   These pages are documentation for authors (e.g. the Header & Footer mappings
+   guide); they are not part of the public site design. A page opts in with the
+   `author-guide` metadata, whose value is the guide's slug — that slug becomes a
+   `body.<slug>` class and triggers loading this file (see loadEager in
+   scripts.js).
+
+   Every guide's rules MUST be scoped under its own `body.<slug>` selector so
+   multiple guides can share this file without colliding, and so none of it can
+   reach regular site pages. Add a new `=== <slug> ===` section per guide.
+   ========================================================================== */
+
+/* ==========================================================================
+   header-footer-guide — Header & Footer mappings
+   (metadata: author-guide = header-footer-guide)
+   ========================================================================== */
+
+/* Variant card — each documented item (a nav or footer variant) is authored as
+   its own section with the "variant-card" Style, rendered as a distinct box. */
+body.header-footer-guide main .section.variant-card {
+  margin-block: var(--space-section);
+}
+
+/* the card visual lives on the inner wrapper (capped at content width) rather
+   than the full-bleed .section, so the box hugs the content on wide screens */
+body.header-footer-guide main .section.variant-card > .default-content-wrapper {
+  padding: var(--space-section);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+}
+
+body.header-footer-guide main .section.variant-card > .default-content-wrapper > h3 {
+  margin-top: 0;
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* stacked screenshots: each sits on white with a light frame so it reads as a
+   captured shot rather than page content */
+body.header-footer-guide main .section.variant-card > .default-content-wrapper p:has(picture) {
+  margin-block: var(--space-block);
+}
+
+body.header-footer-guide main .section.variant-card > .default-content-wrapper picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+/* section-lead blocks (e.g. Headers, Footers) get a touch more air above them
+   so each group of cards reads as a set */
+body.header-footer-guide main .section:not(.variant-card, :first-child) {
+  margin-top: calc(var(--space-section) * 1.5);
+}
+
+/* desktop: mobile screenshots shrink to their natural (narrow) size instead of
+   stretching to full width; the wider desktop shots still fill the card. Mobile
+   shots are identified by "mobile" in their alt text. */
+@media (width >= 900px) {
+  body.header-footer-guide main .section.variant-card > .default-content-wrapper picture img[alt*="mobile"] {
+    width: auto;
+    max-width: 100%;
+  }
+}

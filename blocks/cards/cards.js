@@ -60,9 +60,15 @@ export default function decorate(block) {
     const link = li.querySelector('a');
     if (link) {
       const target = isLinked ? '_self' : '_blank';
-      li.addEventListener('click', (e) => {
-        if (!e.target.closest('a')) window.open(link.href, target, 'noopener');
-      });
+      // Only the `linked` variant makes the whole card clickable (it links to a
+      // page). Other variants keep their in-card links (image / "Learn more") as
+      // the only click targets, so clicking the card text does nothing — matching
+      // the source, where the descriptive text is not clickable.
+      if (isLinked) {
+        li.addEventListener('click', (e) => {
+          if (!e.target.closest('a')) window.open(link.href, target, 'noopener');
+        });
+      }
       link.target = target;
       link.rel = 'noopener';
     }

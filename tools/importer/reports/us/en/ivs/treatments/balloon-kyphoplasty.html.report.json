@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "url": "https://patients.stryker.com/us/en/ivs/treatments/balloon-kyphoplasty.html",
+  "path": "us/en/ivs/treatments/balloon-kyphoplasty.html",
+  "timestamp": "2026-09-01T18:25:45.753Z",
+  "error": "CustomImportScript.default not found after 10s. The bundled script may not have loaded correctly. Check browser console for errors.",
+  "errorStack": "Error: CustomImportScript.default not found after 10s. The bundled script may not have loaded correctly. Check browser console for errors.\n    at processUrl (file:///home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:662:13)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:472:9)\n    at async main (file:///home/node/.excat-marketplaces/excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:954:22)"
+}

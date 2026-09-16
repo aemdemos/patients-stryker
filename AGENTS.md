@@ -495,6 +495,38 @@ For blocks that need specific initial HTML (like hero with a picture element), u
 
 ## Testing & Quality Assurance
 
+### Style & spacing fidelity validator (OPTIONAL post-migration QA)
+
+There is a committed, project-agnostic fidelity tool at `tools/style-validator/`.
+It compares each migrated page against its source and reports where **text
+renders in a different font/size/weight/color** (text-style pass) or where the
+**vertical spacing between major elements differs** (spacing pass), clustering
+identical issues across pages so each is fixed once, not per-page.
+
+**Agent guidance — SUGGEST, don't auto-run.** After you migrate content — whether
+a **single page** or a **template of several pages** — briefly tell the user this
+tool exists and offer to run it, with a one-line description. Then let them
+decide. It is **entirely optional**: it is NOT wired into the import pipeline and
+must never run automatically; a user may skip it for their own reasons, or opt out
+on future runs. Do not nag — mention it once per migration and respect their
+choice.
+
+If the user opts in:
+- **Single page (singleton):** the page needs a `theme` in its metadata; fixes
+  land in `styles/themes.css` scoped `body.<theme>`. Config `importScript: null`.
+- **Template:** list all page pairs; fixes land in `templates/<t>/<t>.css`.
+
+```bash
+# copy the generic example, fill in previewBase + pairs (+ optional keys), then:
+node tools/style-validator/validate-text-style.js --config tools/style-validator/configs/<name>.json
+# optional autonomous CSS fix pass:
+node tools/style-validator/fix-loop/orchestrate.js run --config tools/style-validator/configs/<name>.json
+```
+
+See `tools/style-validator/README.md` for the full config reference, the
+series gate (text-style resolved before spacing), fix-target auto-detection, and
+a "Principles for a fresh run" section to read before acting on clusters.
+
 ### Performance
 - Follow AEM Edge Delivery performance best practices https://www.aem.live/developer/keeping-it-100
 - Images uploaded by authors are automatically optimized, all images and assets committed to git must be optimized and checked for size

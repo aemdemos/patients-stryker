@@ -59,9 +59,28 @@ function setupHero(block) {
   if (desktopPic && mobilePic) {
     desktopPic.classList.add('hero-image-desktop');
     mobilePic.classList.add('hero-image-mobile');
-    imageDiv.append(desktopPic, mobilePic);
+
+    // The hero image is the LCP element on every breakpoint, and aem.js's
+    // waitForFirstImage eager-loads only the FIRST <img> in DOM order. With the
+    // desktop crop first, on mobile the visible mobile crop was left lazy and its
+    // fetch deferred — the cause of the poor mobile LCP. Order the crop shown at
+    // the CURRENT breakpoint (crossover 900px, per hero.css) FIRST so it is the
+    // eager LCP candidate and mark it high priority; the hidden crop is
+    // display:none and set lazy, so it never enters the viewport and its fetch is
+    // skipped (no double download competing for the mobile connection).
+    const desktopShown = window.matchMedia('(width >= 900px)').matches;
+    const [lcpPic, otherPic] = desktopShown
+      ? [desktopPic, mobilePic] : [mobilePic, desktopPic];
+    const lcpImg = lcpPic.querySelector('img');
+    const otherImg = otherPic.querySelector('img');
+    if (lcpImg) { lcpImg.setAttribute('loading', 'eager'); lcpImg.setAttribute('fetchpriority', 'high'); }
+    if (otherImg) { otherImg.setAttribute('loading', 'lazy'); otherImg.removeAttribute('fetchpriority'); }
+    imageDiv.append(lcpPic, otherPic);
   } else if (desktopPic || mobilePic) {
-    imageDiv.append(desktopPic || mobilePic);
+    const only = desktopPic || mobilePic;
+    imageDiv.append(only);
+    const img = only.querySelector('img');
+    if (img) { img.setAttribute('loading', 'eager'); img.setAttribute('fetchpriority', 'high'); }
   }
 
   const contentDiv = document.createElement('div');

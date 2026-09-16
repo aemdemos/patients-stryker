@@ -122,8 +122,13 @@ function decorateButtons(main) {
     const trailingText = paragraphText.startsWith(text) ? paragraphText.slice(text.length).trim() : '';
     const standaloneLink = paragraphText === text || /^[.!?]$/.test(trailingText);
 
-    // quick structural checks
-    if (a.querySelector('img') || !standaloneLink) return;
+    // quick structural checks. A bold link that is NOT a standalone CTA (it sits
+    // inline within a larger sentence/paragraph) stays inline text — tag it so the
+    // global `strong > a` button fallback doesn't paint it as a teal button.
+    if (a.querySelector('img') || !standaloneLink) {
+      if (a.closest('strong') && !standaloneLink) a.classList.add('link-inline');
+      return;
+    }
 
     // skip URL display links
     try {
@@ -488,6 +493,18 @@ async function loadEager(doc) {
     // before `appear`) so above-the-fold themed typography doesn't reflow.
     if (themeName) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
+    }
+
+    // Load author-guides.css for internal authoring-guide pages (documentation
+    // for authors, not part of the public site design). A page opts in via the
+    // `author-guide` metadata, whose value is the guide's slug (e.g.
+    // `header-footer-guide`). We add `body.<slug>` and load the shared file,
+    // where each guide's rules are scoped under its own `body.<slug>` selector
+    // so guides never collide and none of it reaches regular site pages.
+    const authorGuide = getMetadata('author-guide');
+    if (authorGuide) {
+      document.body.classList.add(toClassName(authorGuide));
+      await loadCSS(`${window.hlx.codeBasePath}/styles/author-guides.css`);
     }
 
     document.body.classList.add('appear');

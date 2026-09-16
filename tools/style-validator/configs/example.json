@@ -1,0 +1,25 @@
+{
+  "_comment": "Generic starting config. Copy, rename, and fill in your own pages. Only previewBase + pairs are required; every other key is optional (see README 'Config format'). Delete keys you don't need.",
+  "previewBase": "http://localhost:3000",
+  "pairs": [
+    {
+      "name": "home",
+      "source": "https://source-site.example.com/index.html",
+      "migrated": "/content/index"
+    }
+  ],
+
+  "minTokensForCluster": 2,
+  "excludeContexts": [],
+
+  "blockClasses": [],
+  "variantClasses": [],
+
+  "fontFamilyAliases": {},
+
+  "spacing": true,
+  "spacingThresholdPx": 15,
+  "spacingBreakpoints": [390, 1200],
+
+  "importScript": null
+}
