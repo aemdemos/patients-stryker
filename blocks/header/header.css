@@ -130,6 +130,9 @@ header nav .nav-drawer {
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 10;
+
+  /* clip the off-canvas sub lane of the drill-in track (see the track rules) */
+  overflow: hidden;
 }
 
 /* suppress the slide animation while crossing the breakpoint (prevents the
@@ -164,6 +167,11 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections li { margin: 0; }
+
+/* EDS wraps each authored link in a <p>; drop its default bottom margin so the
+   <li> is exactly as tall as the link's hover area (no 15px gap below each item).
+   The tools links get the same treatment in the .nav-tools p rule below. */
+header nav .nav-sections p { margin: 0; }
 
 header nav .nav-sections li a {
   display: block;
@@ -217,6 +225,141 @@ header nav .nav-tools p a:hover {
 /* no divider above the very first menu item */
 header nav .nav-sections li:first-child a {
   border-top: 0;
+}
+
+/* ---- Dropdowns (nested list under a nav item, e.g. IVS Conditions/Treatments)
+   The parent link itself is the toggle (a.nav-drop-toggle): clicking it opens
+   the submenu instead of navigating. Mobile: the submenu expands inline below
+   its parent. Desktop overrides (full-width gray panel) live in the media block
+   at the bottom of this file, matching the source's .secondary-nav. ---- */
+header nav .nav-sections li.nav-drop a.nav-drop-toggle {
+  /* leave room for the affordance and mark it clearly interactive */
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Mobile affordance: a bold `+` next to expandable items. Mobile-only — the
+   desktop media block below hides it (the source has no caret on desktop). */
+header nav .nav-sections a.nav-drop-toggle::after {
+  content: '+';
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 2vw;
+  line-height: 1;
+}
+
+header nav .nav-sections li.nav-drop {
+  position: relative;
+}
+
+/* ---- Mobile drill-in: a two-lane sliding track at the drawer level. The track
+   is 200% wide (main lane + sub lane, each = drawer width) and clipped by the
+   drawer. `.nav-drilled` shifts the track -50%, sliding the whole main menu
+   offscreen-left while the sub lane (submenu) slides in. align-items:stretch
+   makes both lanes equal height, so the submenu is always as tall as the main
+   menu — a short one shows no gold, a tall one isn't clipped, and the offscreen
+   main list is never resized. Desktop makes these display:contents (flyout). ---- */
+header nav .nav-drawer-track {
+  display: flex;
+  align-items: stretch;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+header nav.nav-no-transition .nav-drawer-track {
+  transition: none;
+}
+
+header nav .nav-drawer.nav-drilled .nav-drawer-track {
+  transform: translateX(-50%);
+}
+
+header nav .nav-drawer-lane {
+  flex: 0 0 50%;
+  width: 50%;
+}
+
+/* the sub lane holds all panels; each panel fills the lane. Only the open panel
+   is in-flow (the rest are display:none), so it alone drives the lane height. */
+header nav .nav-drawer-lane-sub {
+  display: flex;
+  flex-direction: column;
+}
+
+header nav .nav-drawer .nav-drop-panel {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--color-surface);
+}
+
+header nav .nav-drawer .nav-drop-panel.nav-drop-panel-open {
+  display: flex;
+}
+
+/* BACK bar — dark-gray row with a left-pointing arrow */
+header nav .nav-drawer .nav-drop-back-btn {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 20px 15px 20px 40px;
+  position: relative;
+  border: 0;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: inherit;
+  font-size: var(--body-font-size-m);
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+}
+
+header nav .nav-drawer .nav-drop-back-btn::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border: solid currentcolor;
+  border-width: 2px 0 0 2px;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* submenu links mirror the source: bold black title-case text on the gray
+   panel, transparent background, gold fill on hover */
+header nav .nav-drawer .nav-drop-panel li a {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 15px 15px 30px;
+  border-top: 0;
+  background-color: transparent;
+  color: var(--color-black);
+  font-weight: 700;
+  font-size: var(--body-font-size-m);
+  text-transform: none;
+  text-decoration: none;
+}
+
+header nav .nav-drawer .nav-drop-panel li a:hover {
+  background-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header nav .nav-drawer .nav-drop-panel {
+    transition: none;
+  }
 }
 
 /* ---- Search field styling (desktop box + mobile panel share the input) ---- */
@@ -286,6 +429,27 @@ header nav .nav-search-panel-input:focus {
   outline-offset: -2px;
 }
 
+/* ---- Legal variant (logo-only, no menu/search) — mobile ----
+   nav-legal has no primary links or tools, so the hamburger would open an empty
+   drawer. Hide it, and reclaim the freed space by enlarging the logo and
+   centring it vertically in the header bar (rather than the top-aligned two-row
+   layout the other variants use). */
+header nav.nav-variant-legal .nav-hamburger {
+  display: none;
+}
+
+header nav.nav-variant-legal .nav-brand {
+  flex: 1 1 auto;
+  align-self: center;
+  padding-top: 0;
+}
+
+/* ~75% of the desktop logo (188px) — smaller than desktop so mobile doesn't feel
+   oversized, but larger than the cramped default to fill the freed hamburger space */
+header nav.nav-variant-legal .nav-brand img {
+  width: 140px;
+}
+
 /* ---- Desktop layout (900px and up) — single-row grid; gold bar full-bleed ---- */
 @media (width >= 900px) {
   header nav {
@@ -313,24 +477,38 @@ header nav .nav-search-panel-input:focus {
     width: 188px;
   }
 
-  /* gold bar spans full page width; inner list stays aligned to the container */
+  /* the legal logo enlargement is mobile-only (it reclaims the hidden hamburger's
+     space); desktop has no hamburger, so keep the standard logo size */
+  header nav.nav-variant-legal .nav-brand img {
+    width: 188px;
+  }
+
+  /* gold bar spans full page width; inner list stays aligned to the container.
+     position:relative makes it the anchor for the full-width dropdown panel. */
   header nav .nav-sections {
+    position: relative;
     align-self: stretch;
     width: 100vw;
     margin-inline: calc(50% - 50vw);
     background-color: var(--color-accent);
+
+    /* the mobile drill-in clips its panel; the desktop flyout must not be clipped */
+    overflow-x: visible;
   }
 
   header nav .nav-sections ul {
     flex-flow: row wrap;
-    align-items: center;
+    align-content: center;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
     min-height: var(--nav-bar-height);
   }
 
-  header nav .nav-sections li { margin: 0 10px 0 0; }
+  header nav .nav-sections li {
+    align-self: end;
+    margin: 0 10px 0 0;
+  }
 
   header nav .nav-sections li a {
     width: auto;
@@ -405,6 +583,127 @@ header nav .nav-search-panel-input:focus {
   header nav .nav-hamburger,
   header nav .nav-search-toggle {
     display: none;
+  }
+
+  /* ---- Dropdowns on desktop: mirror the source's .secondary-nav — a full-width
+     light-gray panel drops below the gold bar, with the sub-links laid out in
+     columns as dark-gray rows (white uppercase text, gold hover). The gold bar
+     (.nav-sections) is the positioning anchor; see its rule above. ---- */
+
+  /* the mobile drill-in track/lanes become transparent on desktop so the panels
+     render as flyouts anchored to the gold bar (not confined to a lane). The
+     drawer itself is already display:contents on desktop (see rule above). */
+  header nav .nav-drawer-track,
+  header nav .nav-drawer-lane {
+    display: contents;
+  }
+
+  /* the `+` affordance is mobile-only; the source shows no caret on desktop */
+  header nav .nav-sections a.nav-drop-toggle::after {
+    display: none;
+  }
+
+  /* no affordance on desktop, so no extra right padding needed */
+  header nav .nav-sections li.nav-drop a.nav-drop-toggle {
+    padding-right: 15px;
+  }
+
+  /* expanded parent shows the source's active state: dark-gray tab, white text */
+  header nav .nav-sections li.nav-drop[aria-expanded='true'] a.nav-drop-toggle {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+
+  /* BACK bar is mobile-only */
+  header nav .nav-drawer .nav-drop-back {
+    display: none;
+  }
+
+  /* the submenu panel: hidden until open, then a full-page-width gray panel below
+     the bar. Items are narrow (≤205px, ~1/6 width) and flow top-to-bottom,
+     wrapping into a new column when they exceed the panel height — giving the
+     source's 2-column fill-down layout. Submenu rows are 50px (matching the
+     source's 15px vertical padding), so the ~440px cap clears 7 IVS treatment
+     rows (one wraps to 2 lines) before the 8th wraps to column 2.
+     The panel is a sibling of the gold bar, so it anchors to it directly. */
+  header nav .nav-drawer .nav-drop-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+
+    /* full page width regardless of which ancestor is the containing block:
+       anchor to the viewport via left:50% + margin-left:-50vw */
+    left: 50%;
+    z-index: 20;
+    box-sizing: border-box;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    width: 100vw;
+    max-width: none;
+
+    /* cap the column height so items wrap into a 2nd column; ~440px clears the
+       7 IVS treatment rows in column 1 (ends ~410px, one row wraps to 2 lines)
+       before the 8th wraps to column 2 */
+    max-height: 440px;
+    margin: 0 0 0 -50vw;
+    padding-block: 0;
+    padding-inline: max(var(--container-gutter), calc(50vw - var(--container-max) / 2));
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-black);
+    transform: none;
+  }
+
+  header nav .nav-drawer .nav-drop-panel.nav-drop-panel-open {
+    display: flex;
+    transform: none;
+  }
+
+  header nav .nav-drawer .nav-drop-panel li {
+    box-sizing: border-box;
+    width: min(16.6667%, 205px);
+    margin: 0;
+  }
+
+  /* submenu items don't get the top-level pipe separator */
+  header nav .nav-drawer .nav-drop-panel li::after {
+    content: none;
+  }
+
+  header nav .nav-drawer .nav-drop-panel li a {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    background-color: transparent;
+    color: var(--color-black);
+    font-weight: 700;
+    font-size: var(--body-font-size-m);
+    text-transform: none;
+    white-space: normal;
+  }
+
+  header nav .nav-drawer .nav-drop-panel li a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+  }
+}
+
+/* ---- Intermediate desktop (900–1199px): the source shrinks the primary-nav and
+   submenu text here so the horizontal bar fits without crowding. Match it with the
+   12px token. Authored mobile-first: this 900px block sets 12px, and the 1200px
+   block below restores the 14px used at wider widths (no max-width query). ---- */
+@media (width >= 900px) {
+  header nav .nav-sections li a,
+  header nav .nav-drawer .nav-drop-panel li a {
+    font-size: var(--body-font-size-xs);
+  }
+}
+
+@media (width >= 1200px) {
+  header nav .nav-sections li a,
+  header nav .nav-drawer .nav-drop-panel li a {
+    font-size: var(--body-font-size-m);
   }
 }
 
