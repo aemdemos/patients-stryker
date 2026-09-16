@@ -141,6 +141,8 @@
    global teal strong-link button. */
 .panel.cta a:any-link:has(em),
 .panel.cta a:any-link:has(strong),
+.panel.cta .panel-cta em > strong > a:any-link,
+.panel.cta .panel-cta strong > em > a:any-link,
 .panel.cta em > a:any-link,
 .panel.cta strong > a:any-link {
   box-sizing: border-box;
