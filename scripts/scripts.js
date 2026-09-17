@@ -554,7 +554,11 @@ async function applySectionBackgrounds(main) {
   if (!map) return;
   sections.forEach((section) => {
     const color = map[(section.dataset.background || '').trim().toLowerCase()];
-    if (color) section.style.backgroundColor = color;
+    if (!color) return;
+    // write the style attribute as a string so the colour keeps its authored
+    // form (e.g. #1c5687); setting section.style.* re-serialises it to rgb().
+    const existing = (section.getAttribute('style') || '').trim().replace(/;$/, '');
+    section.setAttribute('style', `${existing ? `${existing}; ` : ''}background-color: ${color}`);
   });
 }
 
