@@ -17,6 +17,7 @@ import {
 } from './aem.js';
 
 import decorateDMAssets from './dm-support.js';
+import { applySectionBackgrounds } from './utils.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -288,20 +289,6 @@ function decorateSectionMetadata(main) {
     applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
-
-  // `background` block-option (data-background): a raw colour (#hex/rgb/hsl) is
-  // painted directly, keeping its authored form; anything else is an option name
-  // (e.g. "blue"), added as a class so the existing `.section.<name>` rules apply.
-  main.querySelectorAll('.section[data-background]').forEach((section) => {
-    const value = (section.dataset.background || '').trim();
-    if (!value) return;
-    if (/^(#|rgb|hsl)/i.test(value)) {
-      const existing = (section.getAttribute('style') || '').trim().replace(/;$/, '');
-      section.setAttribute('style', `${existing ? `${existing}; ` : ''}background-color: ${value}`);
-    } else {
-      section.classList.add(toClassName(value));
-    }
-  });
 }
 
 /**
@@ -546,6 +533,7 @@ async function loadLazy(doc) {
   await loadSections(main);
 
   decorateLastModified(main);
+  applySectionBackgrounds(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
