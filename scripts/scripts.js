@@ -523,9 +523,10 @@ async function loadEager(doc) {
 
 /*
  * Section backgrounds. Authors pick a colour from the DA library `background`
- * block-option, so section metadata stores the colour code (→ data-background).
- * Map that colour back to its option name and add it as a class so the section
- * reuses the matching `.section.<name>` styling. No-op if the sheet/option is
+ * block-option, which stores the option name on the section (→ data-background,
+ * e.g. "blue"). Resolve that name to its colour via the block-option's
+ * `name=colour` list in /.da/library/blocks.json and paint the section, so the
+ * sheet stays the single source of truth. No-op if the sheet/option is
  * unavailable or no section opts in.
  */
 async function getSectionBackgroundMap() {
@@ -538,7 +539,7 @@ async function getSectionBackgroundMap() {
     const map = {};
     option.values.split('|').forEach((entry) => {
       const [name, color] = entry.split('=').map((s) => s.trim());
-      if (name && color) map[color.toLowerCase()] = name;
+      if (name && color) map[name.toLowerCase()] = color;
     });
     return map;
   } catch {
@@ -552,8 +553,8 @@ async function applySectionBackgrounds(main) {
   const map = await getSectionBackgroundMap();
   if (!map) return;
   sections.forEach((section) => {
-    const name = map[(section.dataset.background || '').trim().toLowerCase()];
-    if (name) section.classList.add(name);
+    const color = map[(section.dataset.background || '').trim().toLowerCase()];
+    if (color) section.style.backgroundColor = color;
   });
 }
 
