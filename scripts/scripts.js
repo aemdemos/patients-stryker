@@ -288,6 +288,14 @@ function decorateSectionMetadata(main) {
     applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
+
+  // `background` block-option: authored as data-background="<name>"; add it as a
+  // class so the existing `.section.<name>` colour/layout rules apply (same as
+  // the Style field).
+  main.querySelectorAll('.section[data-background]').forEach((section) => {
+    const name = toClassName((section.dataset.background || '').trim());
+    if (name) section.classList.add(name);
+  });
 }
 
 /**
@@ -521,47 +529,6 @@ async function loadEager(doc) {
   }
 }
 
-/*
- * Section backgrounds. Authors pick a colour from the DA library `background`
- * block-option, which stores the option name on the section (→ data-background,
- * e.g. "blue"). Resolve that name to its colour via the block-option's
- * `name=colour` list in /.da/library/blocks.json and paint the section, so the
- * sheet stays the single source of truth. No-op if the sheet/option is
- * unavailable or no section opts in.
- */
-async function getSectionBackgroundMap() {
-  try {
-    const resp = await fetch(`${window.hlx.codeBasePath}/.da/library/blocks.json`);
-    if (!resp.ok) return null;
-    const json = await resp.json();
-    const option = json.options?.data?.find((o) => o.key === 'background');
-    if (!option?.values) return null;
-    const map = {};
-    option.values.split('|').forEach((entry) => {
-      const [name, color] = entry.split('=').map((s) => s.trim());
-      if (name && color) map[name.toLowerCase()] = color;
-    });
-    return map;
-  } catch {
-    return null;
-  }
-}
-
-async function applySectionBackgrounds(main) {
-  const sections = [...main.querySelectorAll('.section[data-background]')];
-  if (!sections.length) return;
-  const map = await getSectionBackgroundMap();
-  if (!map) return;
-  sections.forEach((section) => {
-    const color = map[(section.dataset.background || '').trim().toLowerCase()];
-    if (!color) return;
-    // write the style attribute as a string so the colour keeps its authored
-    // form (e.g. #1c5687); setting section.style.* re-serialises it to rgb().
-    const existing = (section.getAttribute('style') || '').trim().replace(/;$/, '');
-    section.setAttribute('style', `${existing ? `${existing}; ` : ''}background-color: ${color}`);
-  });
-}
-
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -573,7 +540,6 @@ async function loadLazy(doc) {
   await loadSections(main);
 
   decorateLastModified(main);
-  applySectionBackgrounds(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
