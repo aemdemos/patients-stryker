@@ -521,6 +521,42 @@ async function loadEager(doc) {
   }
 }
 
+/*
+ * Section backgrounds. Authors pick a colour from the DA library `background`
+ * block-option, so section metadata stores the colour code (→ data-background).
+ * Map that colour back to its option name and add it as a class so the section
+ * reuses the matching `.section.<name>` styling. No-op if the sheet/option is
+ * unavailable or no section opts in.
+ */
+async function getSectionBackgroundMap() {
+  try {
+    const resp = await fetch(`${window.hlx.codeBasePath}/.da/library/blocks.json`);
+    if (!resp.ok) return null;
+    const json = await resp.json();
+    const option = json.options?.data?.find((o) => o.key === 'background');
+    if (!option?.values) return null;
+    const map = {};
+    option.values.split('|').forEach((entry) => {
+      const [name, color] = entry.split('=').map((s) => s.trim());
+      if (name && color) map[color.toLowerCase()] = name;
+    });
+    return map;
+  } catch {
+    return null;
+  }
+}
+
+async function applySectionBackgrounds(main) {
+  const sections = [...main.querySelectorAll('.section[data-background]')];
+  if (!sections.length) return;
+  const map = await getSectionBackgroundMap();
+  if (!map) return;
+  sections.forEach((section) => {
+    const name = map[(section.dataset.background || '').trim().toLowerCase()];
+    if (name) section.classList.add(name);
+  });
+}
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -532,6 +568,7 @@ async function loadLazy(doc) {
   await loadSections(main);
 
   decorateLastModified(main);
+  applySectionBackgrounds(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
