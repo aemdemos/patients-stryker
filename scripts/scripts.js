@@ -289,12 +289,18 @@ function decorateSectionMetadata(main) {
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
   });
 
-  // `background` block-option: authored as data-background="<name>"; add it as a
-  // class so the existing `.section.<name>` colour/layout rules apply (same as
-  // the Style field).
+  // `background` block-option (data-background): a raw colour (#hex/rgb/hsl) is
+  // painted directly, keeping its authored form; anything else is an option name
+  // (e.g. "blue"), added as a class so the existing `.section.<name>` rules apply.
   main.querySelectorAll('.section[data-background]').forEach((section) => {
-    const name = toClassName((section.dataset.background || '').trim());
-    if (name) section.classList.add(name);
+    const value = (section.dataset.background || '').trim();
+    if (!value) return;
+    if (/^(#|rgb|hsl)/i.test(value)) {
+      const existing = (section.getAttribute('style') || '').trim().replace(/;$/, '');
+      section.setAttribute('style', `${existing ? `${existing}; ` : ''}background-color: ${value}`);
+    } else {
+      section.classList.add(toClassName(value));
+    }
   });
 }
 
