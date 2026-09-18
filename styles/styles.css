@@ -302,6 +302,16 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
+main p:has(code) {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+}
+
+main p:has(code) :is(strong em, em strong, b i, i b),
+main p:has(code) :is(strong em code, em strong code, b i code, i b code) {
+  color: var(--color-accent);
+}
+
 /* bold inline text — Futura, matching the source's dominant span.futura-bold treatment  */
 strong,
 b {
@@ -413,6 +423,7 @@ main > .section.video-text p {
   font-size: var(--body-font-size-l);
 }
 
+
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
   main .section.side-by-side {
@@ -448,6 +459,14 @@ main > .section.compact > div ol li p {
 code,
 pre {
   font-size: var(--body-font-size-s);
+}
+
+main p:has(code) code {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.35;
 }
 
 pre {
@@ -759,6 +778,24 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
+.section.compact .columns p:has(code) {
+  padding: 20px;
+  padding-bottom:0;
+  margin-bottom: 0;
+  font-size: 3vw;
+  line-height: 24px;
+}
+
+.section.compact .columns p:has(code) + p:has(code) {
+  padding-top: 0;
+  padding-bottom:20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
+
+
+
 @media (width >= 600px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
@@ -835,6 +872,10 @@ main > .section.wide > div {
   main > .section.video-text > .video-wrapper + .default-content-wrapper {
     flex: 1 1 0;
     min-width: 0;
+  }
+
+  .section.compact .columns p:has(code) {
+    font-size:1.5vw;
   }
 }
 
@@ -991,5 +1032,11 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
+  }
+}
+
+@media (width >=1200px) {
+  .section.compact .columns p:has(code) {
+    font-size: 18px;
   }
 }
