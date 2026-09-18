@@ -160,9 +160,8 @@
   color: inherit;
 }
 
-/* EW-authored panel sentence links can arrive as either <strong><a><u>…</u></a></strong>
-  or <a><strong><u>…</u></strong></a>; use descendant matching because EW may
-  wrap content and break strict direct-child selectors. */
+/* EW fallback for wrapped panel sentence links */
+/* stylelint-disable-next-line no-descending-specificity */
 .panel .panel-body strong > a:any-link:has(u) {
   display: inline;
   max-width: none;
@@ -319,6 +318,11 @@
   border-top-color: var(--color-purple);
 }
 
+/* EW list content in left&cta panels: keep list-item paragraph rhythm tight */
+.panel.left .panel-body .prosemirror-editor :is(ul, ol) > li > p,
+.panel.cta .panel-body .prosemirror-editor :is(ul, ol) > li > p {
+  margin-bottom: 0;
+}
 
 @media (width >= 600px) {
   .panel.cta > ul,
@@ -366,7 +370,3 @@
 }
 }
 
-/* EW list content in left panels: keep list-item paragraph rhythm tight */
-.panel.left .panel-body .prosemirror-editor :is(ul, ol) > li > p {
-  margin-bottom: 0;
-}
