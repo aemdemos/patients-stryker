@@ -17,6 +17,7 @@ import {
 } from './aem.js';
 
 import decorateDMAssets from './dm-support.js';
+import { applySectionBackgrounds } from './utils.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -557,6 +558,7 @@ async function loadLazy(doc) {
   await loadSections(main);
 
   decorateLastModified(main);
+  applySectionBackgrounds(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
