@@ -1,0 +1,523 @@
+[
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image"
+      },
+      {
+        "component": "text",
+        "name": "robots",
+        "label": "Robots",
+        "description": "Index control via robots"
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          },
+          {
+            "name": "Full Bleed",
+            "value": "full-bleed"
+          },
+          {
+            "name": "Light Gray",
+            "value": "light-gray"
+          },
+          {
+            "name": "Serif",
+            "value": "serif"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Compact",
+            "value": "compact"
+          },
+          {
+            "name": "Video Text",
+            "value": "video-text"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "name": "background-image",
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Resources",
+            "value": "resources"
+          },
+          {
+            "name": "Brochure",
+            "value": "brochure"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "columns",
+        "label": "Number of Columns",
+        "value": 2,
+        "validation": {
+          "numberMin": 1,
+          "numberMax": 3
+        }
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Layout",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "50-50 Layout",
+            "value": "columns-50-50"
+          },
+          {
+            "name": "Icon Grid",
+            "value": "columns-icon-grid"
+          }
+        ],
+        "condition": {
+          "==": [
+            {
+              "var": "columns"
+            },
+            2
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "columns-row",
+    "fields": []
+  },
+  {
+    "id": "columns-cell",
+    "fields": []
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "text",
+        "name": "urlText",
+        "label": "Fragment URL Text"
+      },
+      {
+        "component": "text",
+        "name": "url",
+        "label": "Fragment URL",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Fullbleed",
+            "value": "fullbleed"
+          },
+          {
+            "name": "Band",
+            "value": "band"
+          },
+          {
+            "name": "Banner",
+            "value": "banner"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "desktopImage",
+        "label": "Desktop Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "desktopImageAlt",
+        "label": "Desktop Image Alt",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "mobileImage",
+        "label": "Mobile Image (optional)",
+        "multi": false,
+        "condition": {
+          "or": [
+            {
+              "in": [
+                "fullbleed",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "banner",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "band",
+                {
+                  "var": "classes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mobileImageAlt",
+        "label": "Mobile Image Alt",
+        "value": "",
+        "condition": {
+          "or": [
+            {
+              "in": [
+                "fullbleed",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "banner",
+                {
+                  "var": "classes"
+                }
+              ]
+            },
+            {
+              "in": [
+                "band",
+                {
+                  "var": "classes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "icon-list",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "cols-4",
+        "label": "Columns",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "4 columns",
+            "value": "cols-4"
+          },
+          {
+            "name": "5 columns",
+            "value": "cols-5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "icon-list-item",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "icon",
+        "label": "Icon",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "iconAlt",
+        "label": "Icon Alt Text",
+        "value": "",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "panel",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "CTA",
+            "value": "cta"
+          },
+          {
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "name": "Gold",
+            "value": "gold"
+          },
+          {
+            "name": "Gray",
+            "value": "gray"
+          },
+          {
+            "name": "Wide",
+            "value": "wide"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "panel-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "statistics",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Layout",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "2 columns",
+            "value": "cols-2"
+          },
+          {
+            "name": "2 columns + count up",
+            "value": "cols-2 count-up"
+          },
+          {
+            "name": "3 columns",
+            "value": "cols-3"
+          },
+          {
+            "name": "3 columns + count up",
+            "value": "cols-3 count-up"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "statistic",
+    "fields": [
+      {
+        "component": "select",
+        "name": "color",
+        "label": "Stat color",
+        "value": "teal",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Teal",
+            "value": "teal"
+          },
+          {
+            "name": "Gold",
+            "value": "gold"
+          },
+          {
+            "name": "Dark gold",
+            "value": "dark-gold"
+          },
+          {
+            "name": "Navy",
+            "value": "navy"
+          },
+          {
+            "name": "Sage",
+            "value": "sage"
+          },
+          {
+            "name": "Purple",
+            "value": "purple"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "value",
+        "value": "",
+        "label": "Stat",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      }
+    ]
+  }
+]

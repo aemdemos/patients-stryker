@@ -88,6 +88,16 @@
   margin-top: var(--space-block);
 }
 
+.section.compact .columns h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+/* when a compact columns block also contains an h1, the h2 acts as a subheading
+   and should use the standard xl size rather than the compact size */
+.section.compact .columns:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
 .section.compact .columns p,
 .section.compact .columns ul,
 .section.compact .columns li {
@@ -378,6 +388,14 @@
 
   .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
     padding-left: var(--col-5050-inset);
+  }
+
+  .section.compact .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+   padding-left: 15px;
+  }
+
+  .section.compact .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top:0;
   }
 
   .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {

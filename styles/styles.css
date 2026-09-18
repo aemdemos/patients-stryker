@@ -302,6 +302,16 @@ p {
   line-height: var(--paragraph-line-height);
 }
 
+main p:has(code) {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+}
+
+main p:has(code) :is(strong em, em strong, b i, i b),
+main p:has(code) :is(strong em code, em strong code, b i code, i b code) {
+  color: var(--color-accent);
+}
+
 /* bold inline text — Futura, matching the source's dominant span.futura-bold treatment  */
 strong,
 b {
@@ -409,6 +419,11 @@ h2 strong em {
   font-size: var(--footnote-font-size);
 }
 
+main > .section.video-text p {
+  font-size: var(--body-font-size-l);
+}
+
+
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
   main .section.side-by-side {
@@ -444,6 +459,14 @@ main > .section.compact > div ol li p {
 code,
 pre {
   font-size: var(--body-font-size-s);
+}
+
+main p:has(code) code {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.35;
 }
 
 pre {
@@ -755,6 +778,34 @@ main .last-modified {
   letter-spacing: 0.02em;
 }
 
+.section.compact .columns p:has(code) {
+  padding: 20px;
+  padding-bottom:0;
+  margin-bottom: 0;
+  font-size: 3vw;
+  line-height: 24px;
+}
+
+.section.compact .columns p:has(code) + p:has(code) {
+  padding-top: 0;
+  padding-bottom:20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
+/* EW wraps each authored paragraph in .prosemirror-editor, so apply the same
+   second-line spacing/style when code paragraphs are adjacent via wrappers. */
+.section.compact .columns .prosemirror-editor:has(p:has(code))
+  + .prosemirror-editor:has(p:has(code)) p:has(code) {
+  padding-top: 0;
+  padding-bottom:20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
+
+
+
 @media (width >= 600px) {
   main .last-modified {
     font-size: var(--body-font-size-s);
@@ -803,6 +854,39 @@ main > .section.wide > div {
   main > .section.flex > div:empty {
     display: none; /* drop the emptied section-metadata wrapper from the flex row */
   }
+
+  /* video-text section — retain the first (title) wrapper above a 70/30 video
+     and text row. The authored order is title, Video block, then text. */
+  main > .section.video-text {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  main > .section.video-text > .default-content-wrapper:first-child {
+    flex: 0 0 100%;
+  }
+
+  main > .section.video-text > .video-wrapper {
+    flex: 0 1 calc(66% - (var(--container-gutter) / 2));
+    min-width: 0;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  main > .section.video-text > .video-wrapper + .default-content-wrapper {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .section.compact .columns p:has(code) {
+    font-size:1.5vw;
+  }
 }
 
 /* divider section — a full-viewport-width sage rule at the section break, matching
@@ -838,6 +922,7 @@ main > .section.spacer {
   height: var(--space-section);
 }
 
+
 main > .section.spacer > div {
   display: none;
 }
@@ -856,6 +941,23 @@ main > .section.no-cta > .default-content-wrapper h1 {
   margin: 40px 0;
   font-family: var(--display-font-family-bold);
 }
+
+
+/* underlined-heading authoring convention: a heading authored with UNDERLINE
+   formatting gets the source's .component-subheading.border-bottom-gold divider —
+   a 1px sage rule with a 7px gap (e.g. "ENT patient conditions"). decorateMain()
+   adds `.underline` and strips the raw <u>, so this border is the only underline
+   drawn. Works on any heading level, on any page. */
+main :is(h1, h2, h3, h4, h5, h6).underline {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+  font-size: var(--heading-font-size-l);
+}
+
+main > .section.compact h2.underline {
+  font-size: var(--heading-font-size-l);
+}
+
 
 
 /* full-bleed section — the background spans the full viewport width while the
@@ -941,5 +1043,11 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-gutter);
+  }
+}
+
+@media (width >=1200px) {
+  .section.compact .columns p:has(code) {
+    font-size: 18px;
   }
 }
