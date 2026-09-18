@@ -69,38 +69,3 @@ export function getLocalizedUILabel(labelKey, templateType, doc = document) {
   const language = getMetadata('language', doc) || 'en';
   return getUILabel(labelKey, templateType, language);
 }
-
-/**
- * Move attributes from one element to another
- * @param {Element} from Source element
- * @param {Element} to Target element
- * @param {string[]} attributes Optional list of attributes to move
- */
-export function moveAttributes(from, to, attributes) {
-  if (!attributes) {
-    // eslint-disable-next-line no-param-reassign
-    attributes = [...from.attributes].map(({ nodeName }) => nodeName);
-  }
-  attributes.forEach((attr) => {
-    const value = from.getAttribute(attr);
-    if (value) {
-      to.setAttribute(attr, value);
-      from.removeAttribute(attr);
-    }
-  });
-}
-
-/**
- * Move instrumentation attributes (data-aue-*, data-richtext-*)
- * @param {Element} from Source element
- * @param {Element} to Target element
- */
-export function moveInstrumentation(from, to) {
-  moveAttributes(
-    from,
-    to,
-    [...from.attributes]
-      .map(({ nodeName }) => nodeName)
-      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
-  );
-}

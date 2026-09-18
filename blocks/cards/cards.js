@@ -1,7 +1,11 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
-import { isDMSrc } from '../../scripts/dm-support.js';
+import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 
 export default function decorate(block) {
+  // convert DM links to <picture> before restructuring — the canvas re-renders
+  // fields from source, so re-run here (idempotent), not just in decorateMain
+  decorateDMAssets(block);
+
   // linked variant navigates within the site, so open in the same tab
   const isLinked = block.classList.contains('linked');
 
@@ -40,15 +44,31 @@ export default function decorate(block) {
     if (isDMSrc(img.src)) return;
     img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]));
   });
+
+  // lift the image out of the editor wrapper so the canvas can't re-render the
+  // raw link over it (mirrors hero); harmless unwrap on the live site
+  ul.querySelectorAll('.cards-card-image').forEach((cell) => {
+    const picture = cell.querySelector('picture');
+    if (!picture) return;
+    const link = picture.closest('a');
+    cell.replaceChildren(link || picture);
+  });
+
   block.replaceChildren(ul);
 
   ul.querySelectorAll('li').forEach((li) => {
     const link = li.querySelector('a');
     if (link) {
       const target = isLinked ? '_self' : '_blank';
-      li.addEventListener('click', (e) => {
-        if (!e.target.closest('a')) window.open(link.href, target, 'noopener');
-      });
+      // Only the `linked` variant makes the whole card clickable (it links to a
+      // page). Other variants keep their in-card links (image / "Learn more") as
+      // the only click targets, so clicking the card text does nothing — matching
+      // the source, where the descriptive text is not clickable.
+      if (isLinked) {
+        li.addEventListener('click', (e) => {
+          if (!e.target.closest('a')) window.open(link.href, target, 'noopener');
+        });
+      }
       link.target = target;
       link.rel = 'noopener';
     }

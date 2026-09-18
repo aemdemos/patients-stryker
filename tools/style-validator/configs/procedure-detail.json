@@ -1,0 +1,55 @@
+{
+  "previewBase": "http://localhost:3000",
+  "excludeContexts": ["marketo-form"],
+  "minTokensForCluster": 2,
+  "spacingThresholdPx": 15,
+  "spacingBreakpoints": [390, 1200],
+  "blockClasses": ["panel", "cards", "hero"],
+  "variantClasses": ["wide", "dark", "cta", "gold", "resources", "banner", "light"],
+  "importScript": "tools/importer/import-procedure-detail.js",
+  "fontFamilyAliases": {
+    "Humanist 712 for Stryker": "humanist-slab",
+    "HumanistSlab712W01": "humanist-slab",
+    "Futura for Stryker": "futura",
+    "Futura LT W01": "futura",
+    "Egyptienne for Stryker Light": "egyptienne-light",
+    "URWEgyptienneW01-Light": "egyptienne-light"
+  },
+  "pairs": [
+    {
+      "name": "balloon-kyphoplasty",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/balloon-kyphoplasty.html",
+      "migrated": "/content/us/en/ivs/treatments/balloon-kyphoplasty"
+    },
+    {
+      "name": "vertebroplasty",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/vertebroplasty.html",
+      "migrated": "/content/us/en/ivs/treatments/vertebroplasty"
+    },
+    {
+      "name": "disc-decompression",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/disc-decompression.html",
+      "migrated": "/content/us/en/ivs/treatments/disc-decompression"
+    },
+    {
+      "name": "spinejack-system",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/spinejack-system.html",
+      "migrated": "/content/us/en/ivs/treatments/spinejack-system"
+    },
+    {
+      "name": "radiofrequency-ablation",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/radiofrequency-ablation.html",
+      "migrated": "/content/us/en/ivs/treatments/radiofrequency-ablation"
+    },
+    {
+      "name": "bone-tumor-ablation",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/bone-tumor-ablation.html",
+      "migrated": "/content/us/en/ivs/treatments/bone-tumor-ablation"
+    },
+    {
+      "name": "sacroplasty",
+      "source": "https://patients.stryker.com/us/en/ivs/treatments/sacroplasty.html",
+      "migrated": "/content/us/en/ivs/treatments/sacroplasty"
+    }
+  ]
+}
