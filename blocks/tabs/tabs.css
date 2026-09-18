@@ -15,6 +15,10 @@
   display: block;
 }
 
+.tabs-wrapper {
+  position: relative;
+}
+
 /* row is the tab component's element — collapse its box so the button and panel
    become flex items of .tabs (keeps label nested under its tab in UE) */
 .tabs .tabs-tab-row {
@@ -26,6 +30,22 @@
   flex-wrap: nowrap;
   overflow: auto hidden;
   scrollbar-gutter: stable;
+  padding-right: 18px;
+}
+
+/* mobile/tablet scroll cue — black right chevron indicating horizontal overflow */
+.tabs-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 12px;
+  border-color: transparent transparent transparent var(--color-black);
+  pointer-events: none;
+  padding-right:15px;
 }
 
 /* logical tablist for assistive tech: owns the tab buttons via aria-owns, so it
@@ -97,6 +117,10 @@
 }
 
 @media (width >= 900px) {
+  .tabs-wrapper::after {
+    content: none;
+  }
+
   .tabs {
     display: flex;
     flex-wrap: wrap;
