@@ -793,6 +793,16 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
+/* EW wraps each authored paragraph in .prosemirror-editor, so apply the same
+   second-line spacing/style when code paragraphs are adjacent via wrappers. */
+.section.compact .columns .prosemirror-editor:has(p:has(code))
+  + .prosemirror-editor:has(p:has(code)) p:has(code) {
+  padding-top: 0;
+  padding-bottom:20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
 
 
 
@@ -912,14 +922,6 @@ main > .section.spacer {
   height: var(--space-section);
 }
 
-/* EW wraps each authored paragraph in its own .prosemirror-editor node, so the
-   second code line is not a direct p sibling. Mirror the same spacing override
-   for adjacent EW wrappers to keep editor rendering aligned with preview. */
-.section.compact .columns .prosemirror-editor:has(p:has(code))
-  + .prosemirror-editor:has(p:has(code)) p:has(code) {
-  padding-top: 0;
-  margin-bottom: 30px;
-}
 
 main > .section.spacer > div {
   display: none;
