@@ -119,6 +119,10 @@
   padding-right: 0;
 }
 
+.section.compact .columns p strong {
+  font-family: var(--display-font-family);
+}
+
 .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
   padding-left: 15px;
   padding-right: 15px;
