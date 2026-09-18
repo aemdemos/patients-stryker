@@ -165,13 +165,6 @@ body.stroke-awareness-landing main .section.compact {
   font-size: 8vw;
 }
 
-/* Word gap — the source keeps a space between "Understanding" and the gold
-   "stroke"; our authored markup collapses the leading space inside the inline
-   accent span, so restore the gap explicitly on the gold accent. */
-.section.hero-stroke .hero.banner h1 em strong {
-  margin-left: 0.2em;
-}
-
 body.campaign-landing main .section.sticky-nav-container {
   margin-top: 0;
 }
