@@ -160,6 +160,24 @@
   color: inherit;
 }
 
+/* EW-authored panel sentence links can arrive as either <strong><a><u>…</u></a></strong>
+  or <a><strong><u>…</u></strong></a>; use descendant matching because EW may
+  wrap content and break strict direct-child selectors. */
+.panel .panel-body strong > a:any-link:has(u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
+}
+
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
   padding: 22.5px;
