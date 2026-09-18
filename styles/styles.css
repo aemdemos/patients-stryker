@@ -912,6 +912,15 @@ main > .section.spacer {
   height: var(--space-section);
 }
 
+/* EW wraps each authored paragraph in its own .prosemirror-editor node, so the
+   second code line is not a direct p sibling. Mirror the same spacing override
+   for adjacent EW wrappers to keep editor rendering aligned with preview. */
+.section.compact .columns .prosemirror-editor:has(p:has(code))
+  + .prosemirror-editor:has(p:has(code)) p:has(code) {
+  padding-top: 0;
+  margin-bottom: 30px;
+}
+
 main > .section.spacer > div {
   display: none;
 }
