@@ -73,6 +73,11 @@
   font-size: var(--heading-font-size-m);
 }
 
+/* EW config */
+.section.compact .columns .columns-img-col ~ .prosemirror-editor h3 {
+  font-size: var(--heading-font-size-m);
+}
+
 /* compact variant — smaller heading + body typography for dense 50/50 rows.
    Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
    (0,2,0), so the smaller body size wins.
