@@ -475,12 +475,9 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     border-bottom: 1px solid #b2b4ae;
   }
 
-  body.condition-detail h2:has(em strong),
-  body.condition-detail h2:has(strong em),
-  body.condition-detailx h2:has(em strong),
-  body.condition-detailx h2:has(strong em) {
+  body.condition-detail h2:has(em strong) {
     border-bottom: 0;
-    padding-left: 1.5%;
+    padding-left: 10px;
   }
 
   body.condition-detail h4 {
