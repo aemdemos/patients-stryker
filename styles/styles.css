@@ -306,6 +306,7 @@ p {
 strong,
 b {
   font-weight: 700;
+  font-family: var(--display-font-family);
 }
 
 /* gold section label — authored as bold+italic (DA has no color control).
