@@ -106,6 +106,9 @@
   font-size: var(--heading-font-size-compact);
 }
 
+.section.compact .columns h3 strong {
+  font-size: var(--heading-font-size-m);
+}
 
 .section.compact .columns h4 {
   font-size: var(--heading-font-size-m);
