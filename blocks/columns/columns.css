@@ -377,7 +377,8 @@
     line-height: var(--heading-line-height-ml);
   }
 
-  .section.compact .columns h2 {
+  .section.compact .columns h2,
+  .section.compact .columns h2 em strong {
     font-size: var(--heading-font-size-compact-m);
   }
 
@@ -564,9 +565,6 @@
     margin-bottom: 30px;
   }
 
-  .section.compact .columns h2 em strong {
-    font-size: var(--heading-font-size-compact-m);
-  }
 }
 
 /* ===== related-links variant =====
