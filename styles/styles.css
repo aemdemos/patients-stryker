@@ -269,6 +269,8 @@ h2 {
   margin-top: 30px;
 }
 
+
+
 /* category heading above a card group — sage underline separating each group,
    matching the source's .component-subheading.border-bottom-gold. Scoped to
    `.section.no-cta` (the card-group sections on the resources page) so it can't

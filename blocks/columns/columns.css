@@ -133,6 +133,10 @@
   font-family: var(--display-font-family);
 }
 
+.section.compact .columns.columns-50-50.border-bottom {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
 .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
   padding-left: 15px;
   padding-right: 15px;
@@ -417,6 +421,8 @@
   .columns.columns-50-50 {
     --col-5050-inset: 49px;
   }
+
+   
 
   .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
     padding-left: var(--col-5050-inset);
