@@ -244,12 +244,15 @@
   margin: 0 0 var(--space-block);
 }
 
-
 .panel.gray .panel-body p {
   margin: 0 0 var(--space-block);
   font-family: var(--body-font-family);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-body-line-height-m);
+}
+
+.panel .panel-body strong > a:any-link:has(u) u, .panel .panel-body a:any-link > strong:has(u) u {
+    text-decoration: none; 
 }
 
 .panel.colored-border .panel-body p {
