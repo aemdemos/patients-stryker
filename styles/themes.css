@@ -875,6 +875,10 @@ body.patient-information main > .section.fragment-container + .section.compact {
    so the band is inherently edge-to-edge. */
 body.zip-skin-closure main > .section.full-bleed.columns-container:first-child {
   padding-bottom: 0;
+
+  /* the hero image column bleeds right: -80px off the edge (intentional); clip
+     it at the section/viewport edge so the bleed stays but adds no page scroll */
+  overflow-x: clip;
 }
 
 body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::after {
