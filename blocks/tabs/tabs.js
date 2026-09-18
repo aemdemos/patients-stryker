@@ -33,6 +33,23 @@ async function decoratePanel(panel) {
     }
   }));
 
+  // tabs may contain plain fragment links (not autoblocked into .fragment);
+  // resolve those links in-place so tab panels render fragment content reliably.
+  const fragmentLinks = [...panel.querySelectorAll('a[href*="/fragments/"]')]
+    .filter((a) => !a.closest('.fragment'));
+  await Promise.all(fragmentLinks.map(async (link) => {
+    const path = link.getAttribute('href');
+    const fragment = await loadFragment(path);
+    if (!fragment) return;
+    const p = link.closest('p');
+    const replaceTarget = p
+      && p.querySelectorAll('a').length === 1
+      && p.textContent.trim() === link.textContent.trim()
+      ? p
+      : link;
+    replaceTarget.replaceWith(...fragment.childNodes);
+  }));
+
   // merge the panel's card grids (from one or more fragments) into a single row
   mergeSectionCards(panel);
 }
