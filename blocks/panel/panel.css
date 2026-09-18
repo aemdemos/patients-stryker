@@ -344,3 +344,8 @@
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
 }
+
+/* EW list content in left panels: keep list-item paragraph rhythm tight */
+.panel.left .panel-body .prosemirror-editor :is(ul, ol) > li > p {
+  margin-bottom: 0;
+}
