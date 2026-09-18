@@ -61,6 +61,9 @@ export default async function decorate(block) {
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
+  const tabRail = document.createElement('div');
+  tabRail.className = 'tabs-rail';
+
   const rows = [...block.children];
   const buttons = [];
   const panels = [];
@@ -91,6 +94,7 @@ export default async function decorate(block) {
     } else {
       row.prepend(button);
     }
+    tabRail.append(button);
 
     // panel is the content cell — labelled by its tab, hidden unless active
     const panel = contentCell || document.createElement('div');
@@ -132,6 +136,7 @@ export default async function decorate(block) {
     });
   });
 
+  block.prepend(tabRail);
   block.prepend(tablist);
 
   // load fragment content for every panel
