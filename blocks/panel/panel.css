@@ -128,9 +128,11 @@
   text-decoration: none;
 }
 
-/* Universal Editor fallback */
+/* Experience Workspace (EW) fallback */
 .panel.cta a:any-link:has(em),
-.panel.cta a:any-link:has(strong) {
+.panel.cta a:any-link:has(strong),
+.panel.cta .panel-cta em > strong > a:any-link,
+.panel.cta .panel-cta strong > em > a:any-link {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -158,6 +160,23 @@
   color: inherit;
 }
 
+/* EW fallback for wrapped panel sentence links */
+/* stylelint-disable-next-line no-descending-specificity */
+.panel .panel-body strong > a:any-link:has(u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
+}
+
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
   padding: 22.5px;
@@ -165,6 +184,7 @@
   box-shadow: none;
   text-align: left;
   color: var(--color-white);
+  margin:0;
 }
 
 .panel.dark .panel-body h3 {
@@ -183,12 +203,15 @@
   margin: 0 0 var(--space-block);
 }
 
-
 .panel.gray .panel-body p {
   margin: 0 0 var(--space-block);
   font-family: var(--body-font-family);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-body-line-height-m);
+}
+
+.panel .panel-body strong > a:any-link:has(u) u, .panel .panel-body a:any-link > strong:has(u) u {
+    text-decoration: none; 
 }
 
 .panel.colored-border .panel-body p {
@@ -295,6 +318,11 @@
   border-top-color: var(--color-purple);
 }
 
+/* EW list content in left&cta panels: keep list-item paragraph rhythm tight */
+.panel.left .panel-body .prosemirror-editor :is(ul, ol) > li > p,
+.panel.cta .panel-body .prosemirror-editor :is(ul, ol) > li > p {
+  margin-bottom: 0;
+}
 
 @media (width >= 600px) {
   .panel.cta > ul,
@@ -341,3 +369,4 @@
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
 }
+

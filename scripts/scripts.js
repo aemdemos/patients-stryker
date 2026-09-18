@@ -86,8 +86,11 @@ function buildWidgetAutoBlocks(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    // auto load `*/fragments/*` references
-    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment'));
+    // auto load `*/fragments/*` references — but NOT ones inside a tabs block,
+    // which lazy-loads its own panel fragments when a tab is selected (tabs.js),
+    // so they must stay as links until that tab is shown.
+    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')]
+      .filter((f) => !f.closest('.fragment') && !f.closest('.tabs'));
     if (fragments.length > 0) {
       // eslint-disable-next-line import/no-cycle
       import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {
@@ -413,6 +416,41 @@ export function decorateMain(main) {
 }
 
 /**
+ * EW/ProseMirror can re-render editable default content from source after the
+ * initial page decoration, which brings DM URLs back as raw links. Observe
+ * editor mutations and re-run DM conversion (idempotent) on demand.
+ * @param {Element} main The main element
+ */
+function observeEWDMRerenders(main) {
+  let scheduled = false;
+
+  const schedule = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(() => {
+      scheduled = false;
+      decorateDMAssets(main);
+    });
+  };
+
+  const observer = new MutationObserver((mutations) => {
+    const shouldReDecorate = mutations.some((m) => [...m.addedNodes].some((n) => (
+      n.nodeType === Node.ELEMENT_NODE
+      && (
+        n.matches?.('.prosemirror-editor, .ProseMirror, [data-prose-index]')
+        || n.querySelector?.('.prosemirror-editor, .ProseMirror, [data-prose-index]')
+        || n.matches?.('a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]')
+        || n.querySelector?.('a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]')
+      )
+    )));
+
+    if (shouldReDecorate) schedule();
+  });
+
+  observer.observe(main, { childList: true, subtree: true });
+}
+
+/**
  * Decorates the template.
  * Loads template-specific CSS and JavaScript modules.
  * @param {Document} doc The document
@@ -481,6 +519,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    observeEWDMRerenders(main);
 
     // Load template if specified in metadata
     if (templateName) {
