@@ -78,12 +78,9 @@
   font-size: var(--heading-font-size-m);
 }
 
-/* compact variant — smaller heading + body typography for dense 50/50 rows.
-   Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
-   (0,2,0), so the smaller body size wins.
-   The compact selectors only apply inside a `.compact` section, mutually exclusive
-   with the serif/icon-grid/light-gray variants, so no real conflict exists (see the
-   file-level no-descending-specificity disable at the top). */
+ .section 
+
+/* compact variant — smaller heading + body typography for dense 50/50 rows. */
 .section.compact .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;

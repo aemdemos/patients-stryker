@@ -358,12 +358,7 @@ ul {
   padding-left: var(--list-indent);
 }
 
-/* citation superscripts — measured from source: small (75%) and only slightly
-   raised. The browser default `vertical-align: super` shifts the marker up by a full
-   super-step, which reads as an oversized, prominent digit and inflates the line box;
-   the source keeps it tight to the baseline. Use a small relative raise instead so the
-   marker stays subtle and doesn't affect line-height. The link inside inherits the
-   global teal link color + hover, so only sizing/position is set here. */
+/* citation superscripts  */
 sup {
   position: relative;
   top: -0.4em;
@@ -372,12 +367,15 @@ sup {
   vertical-align: baseline;
 }
 
+/* EW wraps authored content with `.prosemirror-editor`; remove paragraph trailing
+   margin in list items so compact/reference list rhythm matches preview/live. */
+.prosemirror-editor :is(ul, ol) > li > p {
+  margin-bottom: 0;
+}
 
 
-/* footnotes / disclaimer list — small-print styling comes from the `compact`
-   section metadata (see .section.compact below). decorateFootnotes only tags the
-   list items with fn-N ids for citation links; scroll-margin keeps an anchored
-   footnote clear of the fixed header when a citation link jumps to it. */
+
+/* footnotes / disclaimer list */
 main li[id^="fn-"] {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
