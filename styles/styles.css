@@ -422,10 +422,6 @@ main > .section.video-text p {
 
 }
 
-/* Keep compact disclaimer paragraphs flush after the references list. */
-main > .section.compact > div ol ~ p {
-  margin-bottom: 0;
-}
 
 /* citations wrap their text in a <p> per list item; the global 15px margin-bottom
    would space the references apart, but the source list is flush (li margin 0). */
