@@ -25,11 +25,7 @@
 
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
-   =====================================================================
-   Typography, colours, margins, panel/card styling. Descendant selectors, so
-   they apply whether the body is authored directly or embedded via a fragment
-   (fragment.js hoists a whole-section embed to a direct child of main, so the
-   global `main > .section…` layout rules reach these sections natively). */
+   ===================================================================== */
 
 /* ----- Page-level: section rhythm + default-content typography ----- */
 
@@ -89,9 +85,7 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
 
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
-/* The intro availability box is a single-item panel — keep it one column at all
-   widths so it fills its column, overriding the panel block's 2-up grid from
-   600px (which would leave this lone item half-width on tablet). */
+/* single-item panel: one column at all widths (override the panel 2-up grid) */
 body.sa-resources .section.flex .panel.light > ul,
 body.sa-resources .section.flex .panel.light.panel-authoring {
   grid-template-columns: 1fr;
