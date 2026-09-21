@@ -98,9 +98,11 @@
 .section.compact .columns h3 strong {
   font-size: var(--heading-font-size-m);
 }
+
 .section.compact .columns h4 {
   font-size: var(--heading-font-size-m);
 }
+
 /* when a compact columns block also contains an h1, the h2 acts as a subheading
    and should use the standard xl size rather than the compact size */
 .section.compact .columns:has(h1) h2 {
@@ -113,6 +115,9 @@
 
 
 .section.compact .columns p {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
   padding-left: 0;
   padding-right: 0;
 }
@@ -222,17 +227,12 @@
 .section.dark .columns li::marker {
   color: var(--color-black);
 }
-.section.compact .columns p,
+
 .section.compact .columns ul,
-.section.compact .columns li{
+.section.compact .columns li {
   font-size: var(--body-font-size-m);
   font-family: var(--body-font-family);
   line-height: var(--paragraph-line-height);
-}
-
-.section.compact .columns p {
-  padding-left:0;
-  padding-right:0;
 }
 
 /* light-gray variant — column text uses the serif heading font */

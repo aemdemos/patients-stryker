@@ -862,10 +862,6 @@ main > .section.wide > div {
   }
 }
 
-main > .section.video-text p {
-  font-size: var(--body-font-size-l);
-}
-
 /* Divider sections draw a full-viewport top rule and preserve source spacing. */
 main > .section.divider {
   position: relative;
