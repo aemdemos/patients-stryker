@@ -778,6 +778,29 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
+/* EW compact fallback for non-columns layouts (split ProseMirror wrappers). */
+/* stylelint-disable no-descending-specificity */
+.section.compact .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em))) p,
+.section.compact .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em)))
+  + .prosemirror-editor:has(p:has(:is(code, sup))) p {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+  padding: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 3vw;
+  line-height: 24px;
+}
+
+.section.compact .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em)))
+  + .prosemirror-editor:has(p:has(:is(code, sup))) p {
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+/* stylelint-enable no-descending-specificity */
+
 /* EW splits the callout lines into sibling wrappers, not sibling paragraphs. */
 /* stylelint-disable-next-line no-descending-specificity */
 .section.compact .columns .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em)))
