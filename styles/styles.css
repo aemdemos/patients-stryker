@@ -778,6 +778,12 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
+/* EW renders each authored line in its own ProseMirror wrapper, so the
+   paragraph sibling selector above does not match there. */
+.section.compact .columns .prosemirror-editor + .prosemirror-editor p:has(code) {
+  margin-bottom: 30px;
+}
+
 /* EW deterministic fallback: compact callouts are sibling ProseMirror wrappers. */
 /* stylelint-disable no-descending-specificity */
 .section.compact > .default-content-wrapper > .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em))) p,
