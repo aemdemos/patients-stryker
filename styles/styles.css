@@ -208,16 +208,7 @@ header {
   height: var(--nav-height);
 }
 
-/* Reserve desktop two-row header height early to prevent CLS on load. */
-@media (width >= 900px) {
-  header {
-    height: calc(var(--nav-height) + var(--nav-bar-height));
-  }
 
-  body.nav-single-row header {
-    height: var(--nav-height);
-  }
-}
 
 header .header,
 footer .footer {
@@ -397,24 +388,6 @@ main > .section.video-text p {
   font-size: var(--body-font-size-l);
 }
 
-
-/* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
-@media (width >= 600px) {
-  main .section.side-by-side {
-    display: flex;
-  }
-
-  .section.compact h2 {
-    font-size: var(--heading-font-size-compact-m);
-    margin-top: 30px;
-  }
-
-  h2 em strong,
-  h2 strong em {
-    font-size: var(--heading-font-size-compact-m);
-  }
-
-}
 
 main > .section.compact > div ol li p {
   margin-bottom: 0;
@@ -767,56 +740,6 @@ main > .section.wide > div {
   max-width: var(--container-wide);
 }
 
-/* Flex sections lay authored wrappers side by side on desktop and stack below 900px. */
-@media (width >= 900px) {
-  main > .section.flex {
-    display: flex;
-    align-items: center;
-    gap: var(--container-gutter);
-    box-sizing: border-box;
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding-inline: var(--container-gutter);
-  }
-
-  main > .section.flex > div {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
-  main > .section.flex > div:empty {
-    display: none; 
-  }
-
-  /* video-text section — retain the first (title) wrapper above a 70/30 video
-     and text row. The authored order is title, Video block, then text. */
-  main > .section.video-text {
-    display: flex;
-    flex-flow: row wrap;
-    gap: var(--container-gutter);
-    box-sizing: border-box;
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding-inline: var(--container-gutter);
-  }
-
-  main > .section.video-text > .default-content-wrapper:first-child {
-    flex: 0 0 100%;
-    padding-left:0;
-  }
-
-  main > .section.video-text > .video-wrapper {
-    flex: 0 1 calc(66% - (var(--container-gutter) / 2));
-    min-width: 0;
-    padding-left:0;
-    padding-right:0;
-  }
-
-  main > .section.video-text > .video-wrapper + .default-content-wrapper {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-}
 
 /* Divider sections draw a full-viewport top rule and preserve source spacing. */
 main > .section.divider {
@@ -934,11 +857,85 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   line-height: var(--paragraph-line-height);
 }
 
+/* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
+@media (width >= 600px) {
+  main .section.side-by-side {
+    display: flex;
+  }
+
+  .section.compact h2 {
+    font-size: var(--heading-font-size-compact-m);
+    margin-top: 30px;
+  }
+
+  h2 em strong,
+  h2 strong em {
+    font-size: var(--heading-font-size-compact-m);
+  }
+}
+
+
 @media (width >= 900px) {
-  main > .section > div {
+    header {
+    height: calc(var(--nav-height) + var(--nav-bar-height));
+  }
+
+  body.nav-single-row header {
+    height: var(--nav-height);
+  }
+
+/* Flex sections lay authored wrappers side by side on desktop and stack below 900px. */
+  main > .section.flex {
+    display: flex;
+    align-items: center;
+    gap: var(--container-gutter);
     box-sizing: border-box;
     max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 var(--container-gutter);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  main > .section > div {
+   box-sizing: border-box;
+   max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+  }
+
+  main > .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  main > .section.flex > div:empty {
+    display: none; 
+  }
+
+  /* video-text section  */
+  main > .section.video-text {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  main > .section.video-text > .default-content-wrapper:first-child {
+    flex: 0 0 100%;
+    padding-left:0;
+  }
+
+  main > .section.video-text > .video-wrapper {
+    flex: 0 1 calc(66% - (var(--container-gutter) / 2));
+    min-width: 0;
+    padding-left:0;
+    padding-right:0;
+  }
+
+  main > .section.video-text > .video-wrapper + .default-content-wrapper {
+    flex: 1 1 0;
+    min-width: 0;
   }
 }
