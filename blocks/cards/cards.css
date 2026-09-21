@@ -97,10 +97,11 @@
 /* Same canvas fallback for the bold+italic (<em><strong><a>) high-impact CTA:
    decorateButtons' .button.accent class is wiped when the editor re-renders the
    field, so the authored link would otherwise fall back to the global bold-link
-   button (teal). Restyle it gold to match .button.accent. Matches only in the
-   canvas (live unwraps the <em>/<strong>). */
-.cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body p em strong > a,
-.cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body p strong em > a {
+   button (teal). Restyle it gold to match .button.accent. Applies in resources
+   too (its bare-link LEARN MORE fallback is scoped to a direct p > a so it
+   doesn't compete here). Matches only in the canvas (live unwraps the <em>/<strong>). */
+.cards:not(.linked, .brochure, .brochure-cta) .cards-card-body p em strong > a,
+.cards:not(.linked, .brochure, .brochure-cta) .cards-card-body p strong em > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -134,8 +135,9 @@
   margin: var(--space-block) 0 0;
 }
 
-/* LEARN MORE — teal button fallback for a bare (non-.button) link */
-.cards.resources .cards-card-body p a:any-link:not(.button) {
+/* LEARN MORE — teal button fallback for a bare (non-.button) link. Child
+   combinator so it doesn't also catch the em/strong-wrapped accent CTA below. */
+.cards.resources .cards-card-body p > a:any-link:not(.button) {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
