@@ -202,6 +202,17 @@ body.procedure-detail main .panel.cta.wide .panel-body ul > li {
   line-height: var(--panel-cta-body-line-height);
 }
 
+/* EW authoring canvas wraps each <li>'s inline content in a <p>, which then
+   picks up the .panel.wide .panel-body p rule (21px, serif heading font) instead
+   of the bullet styling above — the benefits list renders oversized in EW. Match
+   the bullet <p> back to the <li>. No-op on the live site (no such <p> exists). */
+body.procedure-detail main .panel.cta.wide .panel-body ul > li > p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
 /* Gold mid-page CTA link — Futura display face. */
 body.procedure-detail main .panel.gold .panel-body p strong {
   font-family: var(--display-font-family);
