@@ -102,6 +102,10 @@ const BREAKPOINTS = [
   { width: 750 },
 ];
 
+// EW editable surfaces (ProseMirror) must keep authored links as links; converting
+// to media nodes there is unstable and gets rewritten by the editor.
+const EW_EDITOR_ROOT = '.da-prose-mirror, .ProseMirror, .prosemirror-editor, [data-prose-index]';
+
 /**
  * Append query params to a DM URL without dropping existing ones.
  * @param {string} src base image URL
@@ -355,6 +359,9 @@ function dmRendererFor(src) {
  */
 export default function decorateDMAssets(root) {
   root.querySelectorAll(DM_SELECTOR).forEach((el) => {
+    // Keep author-entered DM links untouched in EW editable DOM.
+    if (el.closest(EW_EDITOR_ROOT)) return;
+
     // skip an <img> already in a <picture> (converted on an earlier pass) —
     // re-converting would double-append preset params like fmt=png-alpha
     if (el.tagName === 'IMG' && el.closest('picture')) return;
