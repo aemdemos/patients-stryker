@@ -779,7 +779,8 @@ main .last-modified {
 }
 
 /* EW fallback outside block wrappers: code callouts may be split per paragraph. */
-.section.compact .prosemirror-editor:has(p:has(code)) p:has(code) {
+/* stylelint-disable-next-line no-descending-specificity */
+main .section .prosemirror-editor:has(p:has(code)) p:has(code) {
   padding: 20px;
   padding-bottom: 0;
   margin-bottom: 0;
@@ -787,7 +788,7 @@ main .last-modified {
   line-height: 24px;
 }
 
-.section.compact .prosemirror-editor:has(p:has(code))
+main .section .prosemirror-editor:has(p:has(code))
   + .prosemirror-editor:has(p:has(code)) p:has(code) {
   padding-top: 0;
   padding-bottom: 20px;
@@ -795,42 +796,6 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
-/* EW fallback: canvas wrappers may not carry .section.compact on the section node. */
-main .section .prosemirror-editor:has(.ProseMirror p:has(code)) .ProseMirror p:has(code) {
-  padding: 20px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  font-size: 3vw;
-  line-height: 24px;
-}
-
-main .section .prosemirror-editor:has(.ProseMirror p:has(code))
-  + .prosemirror-editor:has(.ProseMirror p:has(code)) .ProseMirror p:has(code) {
-  padding-top: 0;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-  font-family: var(--heading-font-family);
-}
-
-/* EW wraps each authored paragraph in .prosemirror-editor, so apply the same
-   second-line spacing/style when code paragraphs are adjacent via wrappers. */
-.section.compact .columns .prosemirror-editor:has(p:has(code))
-  + .prosemirror-editor:has(p:has(code)) p:has(code) {
-  padding-top: 0;
-  padding-bottom:20px;
-  margin-bottom: 30px;
-  font-family: var(--heading-font-family);
-}
-
-
-
-
-@media (width >= 600px) {
-  main .last-modified {
-    font-size: var(--body-font-size-s);
-    margin-bottom: 30px;
-  }
-}
 
 /* section width variants */
 main > .section.narrow > div {
@@ -947,12 +912,14 @@ main :is(h1, h2, h3, h4, h5, h6).underline {
 }
 
 /* EW fallback: ProseMirror keeps raw <u> markers instead of .underline class. */
+/* stylelint-disable-next-line no-descending-specificity */
 main .prosemirror-editor :is(h1, h2, h3, h4, h5, h6):has(> u) {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
   font-size: var(--heading-font-size-xl);
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 main .prosemirror-editor :is(h1, h2, h3, h4, h5, h6):has(> u) > u {
   text-decoration: none;
 }
