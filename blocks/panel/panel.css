@@ -401,7 +401,12 @@
     font-size: var(--panel-body-size-s);
     font-family: var(--heading-font-family);
   }
-}
+
+  .panel.cta .panel-body h3 {
+    line-height: var(--heading-line-height-ml);
+    font-size: 26.25px
+  }
+} 
 
 @media (width >= 900px) {
 .panel.colored-border .panel-body {
