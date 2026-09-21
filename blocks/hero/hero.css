@@ -174,7 +174,7 @@
   font-weight: 500;
   font-size: 6vw;
   line-height: var(--heading-line-height-hero);
-  padding-left: 5%;
+  padding-left: 30px; /* match the button-wrapper inset so the title lines up with the CTA */
 }
 
 /* subheading — dark serif, 21px on phones then 24.5px from 600px up */
@@ -487,7 +487,6 @@
 
   .hero.banner h1 {
     font-size: 3vw;
-    padding-left: 3%;
   }
 
   .hero picture.hero-image-desktop {
