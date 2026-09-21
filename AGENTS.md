@@ -23,7 +23,7 @@ ul.append(li);
 el.append(ul);
 ```
 
-Why: `innerHTML` destroys UE `data-aue-*` attributes, creates XSS vectors, and prevents incremental DOM updates.
+Why: `innerHTML` breaks the EW editor's inline instrumentation, creates XSS vectors, and prevents incremental DOM updates.
 
 ### 2. No Hardcoded Values — Use CSS Tokens
 
@@ -88,90 +88,7 @@ breakpoint when the source itself uses one for that specific component.
 
 This is the core EDS library. It is never modified per-project.
 
-### 7. Never Edit Root `component-*.json` Files Directly
-
-```
-❌ NEVER edit: component-definition.json, component-models.json, component-filters.json
-✅ ALWAYS edit: ue/models/blocks/{blockname}.json → then run `npm run build:json`
-```
-
-### 8. UE `classes` Field — Prefer `multiselect`, but `select` When Needed
-
-For most style variants, use `multiselect` (per DA docs — lets authors combine
-options):
-
-```json
-{ "component": "multiselect", "name": "classes" }
-```
-
-Exception: on a **container block** (one with repeatable children, e.g. `cards`,
-`statistics`), a `multiselect` `classes` field has been observed to break child
-persistence in UE (children flatten/vanish on reload), while `select` works.
-The `statistics` block uses `select` for this reason. So on container blocks,
-use `select` with an explicit empty `Default` option:
-
-```json
-{
-  "component": "select",
-  "name": "classes",
-  "value": "",
-  "valueType": "string",
-  "options": [
-    { "name": "Default", "value": "" },
-    { "name": "Resources", "value": "resources" }
-  ]
-}
-```
-
-Choose based on the block type and whether children persist correctly in UE.
-
-### 9. Container Blocks Need Separate Child Definitions Per Variant
-
-When a block variant has a different authored structure (e.g., cards with images vs cards without images), create separate child component definitions:
-
-```json
-// ❌ NEVER — reuse image+text child for a text-only variant
-// Forces authors to see empty image fields they must ignore
-
-// ✅ ALWAYS — create variant-specific child components
-// cards → accepts "card" children (image + text)
-// cards (cta) → accepts "card-cta" children (text only, no image field)
-```
-
-Each variant's filter should only allow its matching child type.
-
-### 10. UE Component Definitions — Always in `ue/models/blocks/`
-
-When creating or modifying a block with UE authoring support:
-
-```
-❌ NEVER — hand-edit root JSON or skip UE config for authorable blocks
-❌ NEVER — reuse a child component model that has fields irrelevant to the variant
-✅ ALWAYS — create ue/models/blocks/{blockname}.json with definitions, models, and filters
-✅ PREFER — "component": "multiselect" for the classes (variant) field, but use "select" on container blocks where multiselect breaks child persistence (see Rule 8)
-✅ ALWAYS — create separate child component models when variants have different fields
-✅ ALWAYS — add block to section filter in ue/models/section.json
-✅ ALWAYS — run `npm run build:json` after any change to ue/models/
-```
-
-Reference: https://docs.da.live/developers/reference/universal-editor
-
-### 11. UE Instrumentation — Preserve `data-aue-*` Attributes
-
-When a block's `decorate()` function restructures DOM (e.g., wraps children in `<ul><li>`), the original UE instrumentation attributes must be moved to the new elements:
-
-```js
-// ❌ NEVER — destroy authored elements without moving instrumentation
-div.remove(); // had data-aue-* attributes
-
-// ✅ ALWAYS — use moveInstrumentation before removing/replacing
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
-moveInstrumentation(originalDiv, newLi);
-```
-
-Add a mutation observer in `ue/scripts/ue.js` only if the block structurally transforms its children during decoration.
-
-### 12. CSS Shorthand When Available
+### 7. CSS Shorthand When Available
 
 ```css
 /* ❌ NEVER */
@@ -189,14 +106,14 @@ margin-block: 0;
 
 ## Project Overview
 
-This project is the **Stryker Patients** website — a patient-facing content site built on EDS with **Document Authoring (DA)** and **Universal Editor (UE)** as the authoring interfaces. It is based on the https://github.com/adobe/aem-boilerplate/ project. You are expected to follow the coding style and practices established in the boilerplate, but add functionality according to the needs of the site.
+This project is the **Stryker Patients** website — a patient-facing content site built on EDS with **Document Authoring (DA)** / **Experience Workspace (EW)** as the authoring interface. It is based on the https://github.com/adobe/aem-boilerplate/ project. You are expected to follow the coding style and practices established in the boilerplate, but add functionality according to the needs of the site.
 
-The repository provides the basic structure, blocks, and configuration needed to run a complete site with `*.aem.live` as the backend. Content is authored via DA (admin.da.live) and edited in-context via the Universal Editor.
+The repository provides the basic structure, blocks, and configuration needed to run a complete site with `*.aem.live` as the backend. Content is authored via DA (admin.da.live) and edited in **Experience Workspace (EW)** — the `da.live/canvas` visual editor.
 
 ### Key Technologies
 - Edge Delivery Services for AEM Sites (documentation at https://www.aem.live/ – search with `site:www.aem.live` to restrict web search results)
 - Document Authoring (DA) at admin.da.live for content creation
-- Universal Editor (UE) for in-context WYSIWYG editing (reference: https://docs.da.live/developers/reference/universal-editor)
+- Experience Workspace (EW) — the `da.live/canvas` visual editor — for in-context editing
 - Vanilla JavaScript (ES6+), no transpiling, no build steps
 - CSS3 with modern features, no Tailwind or other CSS frameworks
 - HTML5 semantic markup generated by the aem.live backend, decorated by our code
@@ -226,26 +143,6 @@ The repository provides the basic structure, blocks, and configuration needed to
     ├── aem.js           # Core AEM Library for Edge Delivery page decoration logic (NEVER MODIFY THIS FILE)
     ├── scripts.js       # Global JavaScript utilities, main entry point for page decoration
     └── delayed.js       # Delayed functionality such as martech loading
-├── ue/              # Universal Editor instrumentation
-    ├── scripts/         # UE-specific runtime scripts
-    │   ├── ue.js            # Mutation observers & UE event handlers
-    │   └── ue-utils.js      # Helpers (moveInstrumentation, moveAttributes)
-    └── models/          # Source-of-truth UE component definitions (split per block)
-        ├── component-definition.json   # Aggregator (uses glob refs)
-        ├── component-models.json       # Aggregator (uses glob refs)
-        ├── component-filters.json      # Aggregator (uses glob refs)
-        ├── text.json
-        ├── image.json
-        ├── section.json
-        ├── page.json
-        └── blocks/          # Per-block UE definitions
-            ├── cards.json
-            ├── columns.json
-            ├── fragment.json
-            └── hero.json
-├── component-definition.json   # BUILT OUTPUT — do not edit directly
-├── component-models.json       # BUILT OUTPUT — do not edit directly
-├── component-filters.json      # BUILT OUTPUT — do not edit directly
 ├── fonts/           # Web fonts
 ├── icons/           # SVG icons
 ├── head.html        # Global HTML head content
@@ -324,195 +221,47 @@ Pages are progressively loaded in three phases to maximize performance. This pro
 * Lazy - load all other page content, including the header and footer.
 * Delayed - load things that can be safely loaded later here and incur a performance penalty when loaded earlier
 
-## Universal Editor & Document Authoring (DA+UE)
+## Authoring (Document Authoring / Experience Workspace)
 
-This project uses **Document Authoring (DA)** for content creation and the **Universal Editor (UE)** for in-context WYSIWYG editing. The UE integration requires component definitions that describe how blocks can be authored and edited.
+Content is authored in **Document Authoring (DA)** and edited in **Experience Workspace (EW)** — the `da.live/canvas` visual editor. EW renders content inline (ProseMirror). There is **no Universal Editor component config** in this project: the `ue/` models/scripts and the `component-*.json` + `build:json` pipeline were removed once authoring moved fully to EW.
 
-Reference documentation: https://docs.da.live/developers/reference/universal-editor
-
-### How UE Works with EDS
-
-When a page is opened in the Universal Editor (via `*.ue.da.live`), the editor reads three JSON configuration files from the project root to understand the available components:
-
-| File | Purpose |
-|------|---------|
-| `component-definition.json` | Declares available components (blocks), their IDs, models, filters, and DA plugins |
-| `component-models.json` | Defines the editing UI fields for each component (text inputs, image pickers, etc.) |
-| `component-filters.json` | Controls which child components can be inserted into which parent containers |
-
-**These root JSON files are BUILT OUTPUT.** Never edit them directly — they are generated by `npm run build:json` from the source files in `ue/models/`.
-
-### UE Project Structure
-
-```
-ue/
-├── scripts/
-│   ├── ue.js           # Loaded only in UE environment — handles DOM mutation
-│   │                   # observers and UE event handlers for blocks that
-│   │                   # transform their DOM structure during decoration
-│   └── ue-utils.js     # moveInstrumentation() and moveAttributes() helpers
-└── models/             # SOURCE OF TRUTH for component definitions
-    ├── component-definition.json   # Aggregator with glob refs: "./blocks/*.json#/definitions"
-    ├── component-models.json       # Aggregator with glob refs: "./blocks/*.json#/models"
-    ├── component-filters.json      # Aggregator with glob refs: "./blocks/*.json#/filters"
-    ├── text.json                   # Default content: text component
-    ├── image.json                  # Default content: image component
-    ├── section.json                # Section component + section filters
-    ├── page.json                   # Page-level metadata model
-    └── blocks/                     # One file per block
-        ├── cards.json
-        ├── columns.json
-        ├── fragment.json
-        └── hero.json
-```
-
-### Build Pipeline (`npm run build:json`)
-
-The `merge-json-cli` tool resolves glob references (`"...": "./blocks/*.json#/definitions"`) in the aggregator files and consolidates everything into the three root JSON files.
-
-```bash
-npm run build:json
-```
-
-A **husky pre-commit hook** automatically runs `build:json` whenever files in `ue/models/` are staged, ensuring the root files are always in sync.
-
-### Adding UE Support for a New Block
-
-When creating a new block that should be editable in Universal Editor:
-
-1. **Create the block definition file** at `ue/models/blocks/{blockname}.json`:
-
-```json
-{
-  "definitions": [
-    {
-      "title": "My Block",
-      "id": "my-block",
-      "model": "my-block",
-      "filter": "my-block",
-      "plugins": {
-        "da": {
-          "rows": 1,
-          "columns": 2,
-          "fields": [
-            { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
-            { "name": "text", "selector": "div:nth-child(2)" }
-          ]
-        }
-      }
-    }
-  ],
-  "models": [
-    {
-      "id": "my-block",
-      "fields": [
-        {
-          "component": "reference",
-          "name": "image",
-          "label": "Image"
-        },
-        {
-          "component": "richtext",
-          "name": "text",
-          "label": "Text",
-          "valueType": "string"
-        }
-      ]
-    }
-  ],
-  "filters": [
-    {
-      "id": "my-block",
-      "components": ["my-block-item"]
-    }
-  ]
-}
-```
-
-2. **Add the block to the section filter** in `ue/models/section.json` (under `filters[0].components`).
-
-3. **Run `npm run build:json`** to regenerate the root files (or let the pre-commit hook do it).
-
-4. **If the block transforms its DOM** (e.g., converts `<div>` children to `<ul><li>` structure), add a mutation observer case in `ue/scripts/ue.js` to preserve instrumentation attributes via `moveInstrumentation()`.
-
-### Block Types for UE
-
-| Type | Description | Example |
-|------|-------------|---------|
-| **Simple** | Fixed fields, single content unit | Hero, Quote, Fragment |
-| **Container** | Parent with repeatable child items | Cards (parent) → Card (child), Columns → Rows → Cells |
-| **Key-Value** | Configuration pairs displayed as columns | Metadata, Section metadata |
-
-### UE Instrumentation Rules
-
-**`ue/scripts/ue.js`** is loaded ONLY when the page is opened in the Universal Editor (hostname matches `*.ue.da.live`). It has zero performance impact on the live site.
-
-Key rules:
-
-- **Never modify `ue/scripts/ue.js` for styling or functionality** — it exists solely to maintain UE data attributes during DOM transformations
-- **`moveInstrumentation(from, to)`** — transfers all `data-aue-*` and `data-richtext-*` attributes from the original element to the decorated element. Use this when your block's `decorate()` function replaces or restructures authored DOM nodes.
-- **MutationObserver pattern** — for blocks that transform children (e.g., cards converts divs to ul/li), observe mutations and re-apply instrumentation to the new elements
-- **`aue:content-patch` handler** — handles image/media updates by cleaning stale srcset attributes when UE patches content
-
-### DA Plugin Configuration
-
-The `plugins.da` object in component definitions tells DA how to create new instances of a component:
-
-```json
-"plugins": {
-  "da": {
-    "name": "blockname",        // Block name for table header
-    "rows": 1,                   // Number of initial rows
-    "columns": 2,                // Number of columns
-    "fields": [                  // CSS selectors for field mapping
-      { "name": "image", "selector": "div:nth-child(1)>picture>img[src]" },
-      { "name": "text", "selector": "div:nth-child(2)" }
-    ]
-  }
-}
-```
-
-For blocks that need specific initial HTML (like hero with a picture element), use `unsafeHTML` instead:
-
-```json
-"plugins": {
-  "da": {
-    "unsafeHTML": "<div class=\"hero\"><div><div><picture>...</picture><h1></h1></div></div></div>",
-    "fields": [...]
-  }
-}
-```
-
-### Hard Rules for UE Configuration
-
-1. **Never edit root `component-*.json` files directly** — always edit in `ue/models/` and run `build:json`
-2. **Every authorable block needs a model** — without it, UE shows no editing fields
-3. **Container blocks need both parent and child definitions** — e.g., `cards` (container) + `card` (child item)
-4. **Filters control insertion** — if a block isn't listed in `section.json` filters, authors cannot insert it
-5. **Field selectors must match authored HTML** — inspect the block's initial DOM structure (before decoration) to determine correct selectors
-6. **Keep `ue.js` minimal** — only add mutation observers for blocks that structurally transform their DOM during decoration
-7. **Test in UE after changes** — open your page at `https://{branch}--{repo}--{owner}.aem.page/` in the Universal Editor to verify editing works
+Implications for block code:
+- Blocks are plain EDS blocks decorated by their `decorate()` function — no `component-*.json` definitions/models/filters to maintain, and no `build:json` step.
+- EW mounts an inline editor on each authored field and re-renders it from source, so decoration applied *inside* an editable region can be reverted. For media/CTAs that must survive, lift the rendered element out of the editable wrapper in `decorate()` (see `blocks/cards`, `blocks/columns`, `blocks/hero` for the pattern) rather than relying on runtime `data-aue-*` instrumentation.
 
 ## Testing & Quality Assurance
 
-### Text-style fidelity (post-import QA for migrated templates)
-After importing a template's pages, run the text-style validator to catch places
-where migrated text renders in a different font/size/weight/color than the source
-— the failure mode that hand-edited source markup causes and that per-page patches
-don't scale to. It compares the **computed style of every visible text run** on
-each migrated page against the same text on its source, ignoring DOM structure,
-and **clusters identical mismatches across all pages** so each issue is fixed once
-per issue-type, not once per page.
+### Style & spacing fidelity validator (OPTIONAL post-migration QA)
+
+There is a committed, project-agnostic fidelity tool at `tools/style-validator/`.
+It compares each migrated page against its source and reports where **text
+renders in a different font/size/weight/color** (text-style pass) or where the
+**vertical spacing between major elements differs** (spacing pass), clustering
+identical issues across pages so each is fixed once, not per-page.
+
+**Agent guidance — SUGGEST, don't auto-run.** After you migrate content — whether
+a **single page** or a **template of several pages** — briefly tell the user this
+tool exists and offer to run it, with a one-line description. Then let them
+decide. It is **entirely optional**: it is NOT wired into the import pipeline and
+must never run automatically; a user may skip it for their own reasons, or opt out
+on future runs. Do not nag — mention it once per migration and respect their
+choice.
+
+If the user opts in:
+- **Single page (singleton):** the page needs a `theme` in its metadata; fixes
+  land in `styles/themes.css` scoped `body.<theme>`. Config `importScript: null`.
+- **Template:** list all page pairs; fixes land in `templates/<t>/<t>.css`.
 
 ```bash
-# one template, from a config of source/migrated page pairs
-node tools/style-validator/validate-text-style.js --config tools/style-validator/configs/<template>.json
+# copy the generic example, fill in previewBase + pairs (+ optional keys), then:
+node tools/style-validator/validate-text-style.js --config tools/style-validator/configs/<name>.json
+# optional autonomous CSS fix pass:
+node tools/style-validator/fix-loop/orchestrate.js run --config tools/style-validator/configs/<name>.json
 ```
 
-See `tools/style-validator/README.md` for config format and how to act on each
-cluster (emphasis markup in the import parsers, zone-scoped template CSS, or a
-single invariant-based rule). Template-agnostic — a new template only needs its
-page-pair config.
+See `tools/style-validator/README.md` for the full config reference, the
+series gate (text-style resolved before spacing), fix-target auto-detection, and
+a "Principles for a fresh run" section to read before acting on clusters.
 
 ### Performance
 - Follow AEM Edge Delivery performance best practices https://www.aem.live/developer/keeping-it-100
@@ -601,7 +350,6 @@ For a change to appear in AEM Coder preview, the following files must be edited:
 | Block behaviour | `blocks/{blockname}/{blockname}.js` |
 | Global tokens | `styles/styles.css` |
 | Post-LCP / animation | `styles/lazy-styles.css` |
-| UE component config | `ue/models/blocks/{blockname}.json` then `npm run build:json` |
 
 After editing block files, the preview reloads automatically — no drafts file needed.
 
@@ -648,7 +396,6 @@ When a block needs a full-width background inside a padded container:
 - [ ] `blocks/{blockname}/{blockname}.js` edited with all decoration logic
 - [ ] Change is visible in preview at `http://localhost:3000/`
 - [ ] `npm run lint` passes with zero errors
-- [ ] If block is authorable: `ue/models/blocks/{blockname}.json` exists and `build:json` run
 - [ ] Images optimized (< 100KB for committed assets)
 - [ ] Accessibility: proper headings, alt text, keyboard navigation
 

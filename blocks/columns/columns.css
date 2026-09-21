@@ -15,7 +15,13 @@
 
 .columns > div > div {
   box-sizing: border-box;
+  min-width: 0; 
   padding: 0 15px;
+}
+
+.columns .columns-img-col {
+  margin-bottom: var(--space-section);
+  padding-bottom: 3%;
 }
 
 .columns .columns-img-col img {
@@ -40,21 +46,13 @@
   list-style-type: disc;
 }
 
-/* text-only columns (tagged .columns-text in JS) — column titles (h4) are smaller
-   on mobile (17.5px) and bump to 21.875px at >= 600px (below). Body copy is
-   unchanged (stays 17.5px at all widths via the base .columns rules). */
+/* Text-only columns: h4 uses a smaller mobile size and scales up at 600px+. */
 .columns-text h4 {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
-/* text inset — the reference wraps the heading+paragraph that sit below an image
-   in an element with 3% padding on all sides. We render flat siblings, so the
-   inset lives on the text that follows the image: left/right on every following
-   element, and the vertical image-to-text gap on the FIRST element after the
-   image (the `+` adjacent sibling). Because this gap is a property of the
-   image→text relationship, a column whose image has no following text (the 70-30
-   image-beside-text layout) gets no gap at all — no positional special-casing. */
+/* Text after the image gets a 3% horizontal inset. */
 .columns .columns-img-col ~ h3,
 .columns .columns-img-col ~ h4,
 .columns .columns-img-col ~ p {
@@ -62,27 +60,17 @@
   padding-right: 3%;
 }
 
-.columns .columns-img-col + h3,
-.columns .columns-img-col + h4,
-.columns .columns-img-col + p {
-  margin-top: var(--space-block-l); /* 20px image-to-text gap, matching the reference */
-  padding-top: 0;
+.section.compact .columns .columns-img-col ~ h3 {
+  padding-left: 0;
+  font-size: var(--heading-font-size-m);
 }
 
-/* proven-results: the image is followed directly by a body <p> caption, and the
-   reference leaves a larger ~37px gap there (vs the ~20px before an image→heading
-   in before/after). Add the extra to the paragraph case only. */
-.columns .columns-img-col + p {
-  margin-top: var(--space-section); /* ~30px + line-box leading ≈ reference's 37px */
+/* EW config */
+.section.compact .columns .columns-img-col ~ .prosemirror-editor h3 {
+  font-size: var(--heading-font-size-m);
 }
 
-
-/* compact variant — smaller heading + body typography for dense 50/50 rows.
-   Typography only; layout stays columns-50-50. (0,3,0) beats base .columns p
-   (0,2,0), so the smaller body size wins.
-   The compact selectors only apply inside a `.compact` section, mutually exclusive
-   with the serif/icon-grid/light-gray variants, so no real conflict exists (see the
-   file-level no-descending-specificity disable at the top). */
+/* compact variant — smaller heading + body typography for dense 50/50 rows. */
 .section.compact .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -92,34 +80,61 @@
   padding-bottom: 10px;
 }
 
+.section.compact .columns > div > div:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
 .section.compact .columns h2 {
   font-size: var(--heading-font-size-compact);
   margin-top: var(--space-block);
 }
 
-.section.compact .columns p,
-.section.compact .columns ul,
-.section.compact .columns li {
-  font-size: var(--body-font-size-m);
-  font-family: var(--body-font-family);
-  line-height: var(--paragraph-line-height);
+.section.compact .columns h2 em strong {
+  font-size: var(--heading-font-size-compact);
 }
+
+.section.compact .columns h3 strong {
+  font-size: var(--heading-font-size-m);
+}
+
+.section.compact .columns h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+
+
+/* when a compact columns block also contains an h1, the h2 acts as a subheading
+   and should use the standard xl size rather than the compact size */
+.section.compact .columns:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+.section.compact .columns li > p {
+  margin-bottom: 0;
+}
+
 
 .section.compact .columns p {
   padding-left: 0;
   padding-right: 0;
 }
 
+.section.compact .columns p strong {
+  font-family: var(--display-font-family);
+}
+
+.section.compact .columns.columns-50-50.border-bottom {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
 .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 0;
+  margin-top: 30px;
 }
 
-/* icon-grid variant — each cell is a centred icon over a serif subtitle, a bold
-   Futura heading and body text (reference: zip-skin-closure "Benefits of Zip").
-   Cell text is left-aligned; only the icon centres. Layout (2-up + row gap) lives
-   in the tablet/desktop media queries below. */
+/* Icon-grid variant: centered icon with left-aligned text content. */
 .columns.columns-icon-grid .columns-img-col {
   margin-bottom: var(--space-section); /* 30px icon-to-subtitle gap */
   padding-bottom: 0;
@@ -129,22 +144,17 @@
   width: 150px; /* fixed icon size, as on the reference */
 }
 
-/* 50-50 variant — two equal columns (image + text, or text + text). The base
-   .columns rules already produce the 50/50 side-by-side layout; these rules match
-   the reference's heading size and the small top offset on the text column. */
+/* 50-50 variant: equal columns with tuned heading sizing. */
 .columns.columns-50-50 h4 {
-  font-size: var(--heading-font-size-l); /* 21px, not the 1.25x-enlarged h4 */
+  font-size: var(--heading-font-size-l); 
 }
 
-/* hero CTA button — hidden on mobile (< 600px), matching the source, which drops
-   the "Find a surgeon" button from the stacked hero and only shows it once the
-   layout goes side-by-side at the tablet breakpoint below. */
+/* hero CTA button — hidden on mobile */
 .columns.columns-50-50 .button-wrapper {
   display: none;
 }
 
-/* serif section variant — column body text in URW Egyptienne serif at 21px, as
-   on the stroke-awareness page. Typography only; layout stays columns-50-50. */
+
 .section.serif .columns p,
 .section.serif .columns ul,
 .section.serif .columns li,
@@ -161,24 +171,17 @@
   line-height: var(--heading-line-height);
 }
 
-/* stacked (mobile) image↔text gap: a single row-gap so it's the same whether the
-   image is above or below the text. Neutralise the base image-column margin/padding
-   and the columns' own trailing margin so row-gap alone governs the spacing. */
+/* Mobile stacked 50-50 rows use row-gap for image/text spacing. */
 .section.serif .columns.columns-50-50 > div {
   row-gap: var(--space-section-l);
 }
 
-/* the internal trailing margins are zeroed (below), so the block needs its own
-   top+bottom margin to separate the section from its neighbours — otherwise a
-   taller image column leaves the block flush against the adjacent sections. */
+/* Add top and bottom spacing around serif 50-50 blocks. */
 .section.serif .columns.columns-50-50 {
   margin-block: var(--space-section);
 }
 
-/* when the serif section also has a background (light-gray), the block margin
-   would fall OUTSIDE the coloured band and leave the content flush inside it.
-   Use section padding instead (space lives inside the background) and drop the
-   block margin so the spacing isn't doubled. */
+/* Light-gray serif sections use section padding and remove block margin. */
 .section.light-gray.serif {
   padding-block: var(--space-section);
 }
@@ -236,6 +239,15 @@
   color: var(--color-black);
 }
 
+.section.compact .columns p,
+.section.compact .columns ul,
+.section.compact .columns li{
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
+}
+
+
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
 .section.light-gray .columns ul,
@@ -246,9 +258,6 @@
 
 /* icon-grid cell text — subtitle (serif), bold Futura heading, then body */
 .columns.columns-icon-grid .columns-img-col ~ p {
-  /* inset the text so it sits inboard of the (centred) icon, as the reference does
-     at every width — its text wrapper has ~12.4% margin. Percentage scales with the
-     cell, keeping the same proportion when stacked (mobile) and 2-up (tablet/desktop). */
   margin-block: 0 var(--space-block);
   margin-inline: 12.4%;
   padding: 0;
@@ -273,9 +282,7 @@
   line-height: var(--body-line-height-l);
 }
 
-/* extra ~9px inner inset per column (reference has it as a nested wrapper margin),
-   widening the between-column gap and insetting the text. Excludes the 50-50
-   variant, which keeps the base 15px so its image is the same size on either side. */
+/* Add extra inner inset for non-50-50 light-gray columns. */
 .section.light-gray .columns:not(.columns-50-50) > div > div {
   padding-inline: 24px;
 }
@@ -285,10 +292,7 @@
   margin-bottom: 25px;
 }
 
-/* the gold italic-bold column titles stay 24.5px (reference). A global styles.css
-   rule shrinks `h2 em strong` to 19.9px at >= 600px; this columns-scoped override
-   keeps the titles at the intended h2 size. Targets the columns block + heading
-   marker (not a section colour), so it holds regardless of section background. */
+/* Keep gold h2 marker text at the intended columns heading size. */
 .columns h2 em strong,
 .columns h2 strong em {
   font-size: var(--heading-font-size-xl);
@@ -339,12 +343,6 @@
   text-decoration: none;
 }
 
-/* ------------------------------------------------------------------------- *
-   Responsive breakpoints — consolidated. All @media blocks live at the end of
-   the file so every responsive override lands after the mobile-first base and
-   variant rules it refines. Order within each breakpoint is preserved from the
-   original interleaved rules; 600px (tablet) precedes 900px (desktop).
- * ------------------------------------------------------------------------- */
 
 /* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
@@ -354,7 +352,8 @@
     line-height: var(--heading-line-height-ml);
   }
 
-  .section.compact .columns h2 {
+  .section.compact .columns h2,
+  .section.compact .columns h2 em strong {
     font-size: var(--heading-font-size-compact-m);
   }
 
@@ -390,14 +389,12 @@
     padding-top: var(--space-section);
   }
 
-  /* wider gap between image and text than the base 30px gutter (reference ~64px):
-     add inset on the text column, toward the image. Image-left row → text is the
-     2nd child, inset its left; image-right row → text is the 1st child, inset its
-     right. (Avoids nested :has, which is invalid.) --col-5050-inset is overridden
-     per section variant (e.g. the serif/stroke section uses a wider gap). */
+  /* Use an inset variable to widen the 50-50 image/text gap. */
   .columns.columns-50-50 {
     --col-5050-inset: 49px;
   }
+
+   
 
   .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
     padding-left: var(--col-5050-inset);
@@ -418,11 +415,7 @@
     padding-left: var(--col-5050-inset);
   }
 
-  /* keep ~30px above and below the image (the reference gives equal breathing room
-     on both sides) so a tall image column doesn't sit flush against the section
-     edges — applies whether the image is on the left ("Stroke is treatable") or
-     right ("What is a stroke?"). Padding is dropped so only these margins govern
-     the gaps. */
+  /* Keep equal top and bottom spacing around serif 50-50 images. */
   .section.serif .columns.columns-50-50 .columns-img-col {
     margin-block: var(--space-section);
     padding-bottom: 0;
@@ -476,9 +469,7 @@
     flex-wrap: wrap;
   }
 
-  /* 50-50 columns are a true 50% each (like the reference's col-sm-6). The base
-     flex:1 1 0% equalises content boxes, so columns with different padding end up
-     unequal and the image shrinks; a fixed 50% basis keeps both halves equal. */
+  /* 50-50 columns  */
   .columns.columns-50-50 > div > div,
   .columns.columns-icon-grid > div > div {
     flex: 0 0 50%;
@@ -495,10 +486,7 @@
     flex: 0 0 25%;
   }
 
-  /* 70-30 — an uneven two-column split (wide column left). Fixed flex bases (not
-     flex:1) so the ratio is exact regardless of each column's content/padding.
-     Desktop only; tablet keeps the even base split and mobile stays stacked,
-     matching the 50-50 variant's responsive behaviour. */
+  /* 70-30 — an uneven two-column split (wide column left). */
   .columns.columns-70-30 > div > div:first-child {
     flex: 0 0 70%;
   }
@@ -529,16 +517,20 @@
   .section.light-gray .columns p:has(a u) {
     margin-bottom: var(--space-block);
   }
+
+  .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    margin-top: 0;
+  }
+
+  .section.compact .columns.columns-50-50:not(:first-child) > div {
+    margin-top:40px;
+    margin-bottom: 30px;
+  }
+
 }
 
-/* ===== related-links variant =====
-   A reusable columns treatment for the stroke-awareness "related links" fragment
-   (Understanding stroke / Patient information / Regional information): gold
-   Futura-bold column labels, an airy stacked-link rhythm, and a "Learn more"
-   chevron CTA. Authored as Columns (related-links); shared by every page that
-   includes this fragment (styling lives here, not in a page template). */
 
-/* roomier heading-to-body / stacked-link rhythm (source columns are airy) */
+/* Roomier heading-to-body spacing. */
 .columns.related-links p {
   margin-bottom: var(--space-block);
 }
@@ -555,16 +547,7 @@
   color: var(--color-accent);
 }
 
-/* "Learn more" CTA — source renders it in Futura bold at 17.5px, teal, with a
-   chevron appended via the proprietary strykericons font (content "\e250",
-   ~0.85em); we draw the chevron in CSS so it renders without that font. Only the
-   CTA links carry it: they are the anchor in a paragraph that FOLLOWS a body-copy
-   paragraph (the "Learn more" links under the first two columns' descriptions).
-   The regional-info link list (links with no preceding body paragraph) is
-   intentionally excluded.
-   `a:any-link` (vs plain `a`) lifts specificity to (0,3,5) so the Futura family
-   beats the shared `.section.light-gray .columns a` rule (0,3,1) when this
-   fragment is inlined inside a light-gray section on a host page. */
+/* Style only the related-links "Learn more" CTA links. */
 .columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
   display: inline-flex;
   align-items: center;

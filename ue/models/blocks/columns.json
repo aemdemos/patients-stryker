@@ -33,7 +33,8 @@
       "filter": "columns-cell",
       "plugins": {
         "da": {
-          "name": "columns-cell"
+          "unsafeHTML": "<div></div>",
+          "behaviour": "columns-cell"
         }
       }
     }
@@ -50,7 +51,7 @@
           "value": 2,
           "validation": {
             "numberMin": 1,
-            "numberMax": 4
+            "numberMax": 3
           }
         },
         {
@@ -64,6 +65,13 @@
             { "name": "Icon Grid", "value": "columns-icon-grid" }
           ],
           "condition": { "==": [{ "var": "columns" }, 2] }
+        },
+        {
+          "component": "boolean",
+          "name": "classes_border",
+          "label": "Bottom border",
+          "valueType": "string",
+          "condition": { "in": ["columns-50-50", { "var": "classes" }] }
         }
       ]
     },
@@ -79,7 +87,9 @@
   "filters": [
     {
       "id": "columns",
-      "components": ["columns-row"]
+      "components": [
+        "columns-row"
+      ]
     },
     {
       "id": "columns-row",
@@ -87,7 +97,10 @@
     },
     {
       "id": "columns-cell",
-      "components": ["text", "image"]
+      "components": [
+        "text",
+        "image"
+      ]
     }
   ]
 }

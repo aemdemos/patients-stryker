@@ -1,10 +1,4 @@
-/*
- * panel — the source "dimensional-box" (patients.stryker.com).
- * Default styling measured from the Zip Skin Closure homepage: a white box with
- * a soft drop shadow, centered heading + body copy, ~30px padding. The `cta`
- * variant (IVS homepage) is left-aligned with a Futura-bold heading and a gold
- * "LEARN MORE" button below the box.
- */
+/* Panel styles from the source dimensional-box pattern, including default and CTA variants. */
 .panel > ul {
   list-style: none;
   margin: 0;
@@ -158,6 +152,43 @@
   color: inherit;
 }
 
+/* EW-authored panel sentence links can arrive as either <strong><a><u>…</u></a></strong>
+  or <a><strong><u>…</u></strong></a>; reset both button-fallback branches. */
+.panel .panel-body strong > a:any-link:has(> u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.panel .panel-body a:any-link > strong:has(u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.panel .panel-body strong > a:any-link:has(> u) > u,
+.panel .panel-body a:any-link > strong:has(> u) > u {
+  text-decoration: none;
+}
+
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
   padding: 22.5px;
@@ -257,8 +288,7 @@
   gap:0;
 } 
 
-.panel.blue > ul > li,
-.panel.blue.panel-authoring > div {
+.panel.blue > ul > li {
   display: flex;
 }
 
@@ -292,29 +322,17 @@
   border-top: var(--panel-colored-border-width) solid var(--color-accent);
 }
 
-.panel.colored-border > ul > li:last-child .panel-body,
-.panel.colored-border.panel-authoring > div:last-child .panel-body {
+.panel.colored-border > ul > li:last-child .panel-body {
   border-top-color: var(--color-purple);
 }
 
-/* Universal Editor authoring view */
-.panel.panel-authoring {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
 
 @media (width >= 600px) {
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
   .panel.blue > ul,
-  .panel.colored-border > ul,
-  .panel.cta.panel-authoring,
-  .panel.dark.panel-authoring,
-  .panel.light.panel-authoring,
-  .panel.blue.panel-authoring,
-  .panel.colored-border.panel-authoring {
+  .panel.colored-border > ul {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -339,8 +357,7 @@
 }
 
   /* wide variant */
-  .panel.wide > ul,
-  .panel.wide.panel-authoring {
+  .panel.wide > ul {
     grid-template-columns: 1fr;
   }
 

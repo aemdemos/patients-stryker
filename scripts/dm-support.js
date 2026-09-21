@@ -348,12 +348,17 @@ function dmRendererFor(src) {
 }
 
 /**
- * Replace authored DM links/images anywhere in `main` with the matching native
- * element (<picture> for images, <video> for videos).
- * @param {Element} main the container to decorate
+ * Replace authored DM links/images within `root` with the matching native
+ * element (<picture> for images, <video> for videos). Idempotent, so blocks can
+ * re-run it on their own subtree (decorateMain runs it once page-wide).
+ * @param {Element} root the container to decorate
  */
-export default function decorateDMAssets(main) {
-  main.querySelectorAll(DM_SELECTOR).forEach((el) => {
+export default function decorateDMAssets(root) {
+  root.querySelectorAll(DM_SELECTOR).forEach((el) => {
+    // skip an <img> already in a <picture> (converted on an earlier pass) —
+    // re-converting would double-append preset params like fmt=png-alpha
+    if (el.tagName === 'IMG' && el.closest('picture')) return;
+
     const src = el.tagName === 'A' ? el.getAttribute('href') : el.getAttribute('src');
     if (!src) return;
     const render = dmRendererFor(src);
@@ -372,14 +377,17 @@ export default function decorateDMAssets(main) {
       if (text && text !== src) displayText = text;
     }
 
+    let replacement;
     if (render === renderVideo) {
       const label = el.getAttribute('title') || displayText;
-      el.replaceWith(renderVideo(src, label));
-      return;
+      replacement = renderVideo(src, label);
+    } else {
+      // alt precedence: an authored alt/title, then the link's display text
+      // (authors describe hero/cards images by using the alt as the link text).
+      const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
+      replacement = render(src, alt, false);
     }
-    // alt precedence: an authored alt/title, then the link's display text
-    // (authors describe hero/cards images by using the alt as the link text).
-    const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
-    el.replaceWith(render(src, alt, false));
+
+    el.replaceWith(replacement);
   });
 }

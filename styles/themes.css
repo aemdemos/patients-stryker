@@ -165,13 +165,6 @@ body.stroke-awareness-landing main .section.compact {
   font-size: 8vw;
 }
 
-/* Word gap — the source keeps a space between "Understanding" and the gold
-   "stroke"; our authored markup collapses the leading space inside the inline
-   accent span, so restore the gap explicitly on the gold accent. */
-.section.hero-stroke .hero.banner h1 em strong {
-  margin-left: 0.2em;
-}
-
 body.campaign-landing main .section.sticky-nav-container {
   margin-top: 0;
 }
@@ -464,8 +457,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   /* the intro availability box is a single-item panel sitting in its own flex
      column, so it fills that column rather than splitting into the 2-up grid the
      multi-item light panels use. */
-  body.sa-resources .panel.light > ul,
-  body.sa-resources .panel.light.panel-authoring {
+  body.sa-resources .panel.light > ul {
     grid-template-columns: 1fr;
   }
 
@@ -775,6 +767,10 @@ body.patient-information main > .section.fragment-container + .section.compact {
    so the band is inherently edge-to-edge. */
 body.zip-skin-closure main > .section.full-bleed.columns-container:first-child {
   padding-bottom: 0;
+
+  /* the hero image column bleeds right: -80px off the edge (intentional); clip
+     it at the section/viewport edge so the bleed stays but adds no page scroll */
+  overflow-x: clip;
 }
 
 body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::after {
@@ -814,10 +810,6 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   padding-top: var(--space-section);
 }
 
-.zip-skin-closure main > .section:has(ol.footnotes) > .default-content-wrapper p {
-  font-size: var(--footnote-font-size);
-  line-height: var(--footnote-line-height);
-}
 
 /* "How Zip works" intro paragraph — the source renders it at 24.5px (its
    .fontsize-1-75em), not the 14px default body size. Body slab face, as authored.

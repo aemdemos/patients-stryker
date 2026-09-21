@@ -22,52 +22,6 @@
         "name": "robots",
         "label": "Robots",
         "description": "Index control via robots"
-      },
-      {
-        "component": "text",
-        "name": "template",
-        "label": "Template",
-        "description": "Page template that controls layout and styling",
-        "value": "",
-        "options": [
-          {
-            "name": "None",
-            "value": ""
-          },
-          {
-            "name": "Procedure Detail",
-            "value": "procedure-detail"
-          },
-          {
-            "name": "Legal",
-            "value": "legal"
-          }
-        ],
-        "readOnly": true,
-        "condition": {
-          "!=": [
-            {
-              "var": "template"
-            },
-            ""
-          ]
-        }
-      },
-      {
-        "component": "text",
-        "name": "theme",
-        "label": "Theme",
-        "description": "Page-level theme that adds body.<theme> and loads its scoped rules from styles/themes.css",
-        "value": "",
-        "readOnly": true,
-        "condition": {
-          "!=": [
-            {
-              "var": "theme"
-            },
-            ""
-          ]
-        }
       }
     ]
   },
@@ -75,17 +29,15 @@
     "id": "image",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "reference",
         "name": "image",
-        "label": "Image (Dynamic Media link)"
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text",
-        "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt",
-        "multi": false
+        "label": "Alt Text"
       }
     ]
   },
@@ -136,18 +88,11 @@
         ]
       },
       {
-        "component": "text",
-        "name": "background-image-url",
-        "label": "Background Image URL (external / Dynamic Media link)",
+        "component": "reference",
+        "name": "background-image",
+        "label": "Background Image",
         "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "anchor",
-        "label": "Anchor ID (Sticky Nav only — leave blank otherwise)",
-        "valueType": "string",
-        "description": "Only needed if this page uses a Sticky Nav. Set a unique id (e.g. find-a-doctor) here, then reference it as the Sticky Nav item's Target with a # prefix (#find-a-doctor). If the page has no Sticky Nav, leave this empty."
+        "multi": false
       }
     ]
   },
@@ -193,10 +138,6 @@
             "value": "brochure"
           },
           {
-            "name": "Brochure CTA",
-            "value": "brochure-cta"
-          },
-          {
             "name": "Linked",
             "value": "linked"
           }
@@ -208,35 +149,11 @@
     "id": "card",
     "fields": [
       {
-        "component": "text",
+        "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image (Dynamic Media link)"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Image Alt",
+        "label": "Image",
         "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "brochure-cta-card",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image (Dynamic Media link)"
       },
       {
         "component": "text",
@@ -265,7 +182,7 @@
         "value": 2,
         "validation": {
           "numberMin": 1,
-          "numberMax": 4
+          "numberMax": 3
         }
       },
       {
@@ -295,6 +212,20 @@
             2
           ]
         }
+      },
+      {
+        "component": "boolean",
+        "name": "classes_border",
+        "label": "Bottom border",
+        "valueType": "string",
+        "condition": {
+          "in": [
+            "columns-50-50",
+            {
+              "var": "classes"
+            }
+          ]
+        }
       }
     ]
   },
@@ -305,24 +236,6 @@
   {
     "id": "columns-cell",
     "fields": []
-  },
-  {
-    "id": "find-a-doctor",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Banner Image (upload or Dynamic Media link)",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "heading",
-        "value": "Find a doctor near you",
-        "label": "Heading",
-        "valueType": "string"
-      }
-    ]
   },
   {
     "id": "fragment",
@@ -368,10 +281,11 @@
         ]
       },
       {
-        "component": "text",
+        "component": "reference",
         "valueType": "string",
         "name": "desktopImage",
-        "label": "Desktop Image (Dynamic Media link)"
+        "label": "Desktop Image",
+        "multi": false
       },
       {
         "component": "text",
@@ -381,10 +295,11 @@
         "value": ""
       },
       {
-        "component": "text",
+        "component": "reference",
         "valueType": "string",
         "name": "mobileImage",
-        "label": "Mobile Image (Dynamic Media link)",
+        "label": "Mobile Image (optional)",
+        "multi": false,
         "condition": {
           "or": [
             {
@@ -473,7 +388,7 @@
           },
           {
             "name": "5-columnar / Tiles",
-            "value": "tile"
+            "value": "cols-5 tile"
           },
           {
             "name": "6-columnar / Label",
@@ -484,38 +399,21 @@
     ]
   },
   {
-    "id": "icon-list-tile",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "tile",
-        "label": "Columns",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "5 columns (default)",
-            "value": "tile"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "icon-list-item",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
+        "component": "reference",
         "name": "icon",
-        "label": "Icon (Dynamic Media link)"
+        "label": "Icon",
+        "valueType": "string",
+        "multi": false
       },
       {
         "component": "text",
-        "valueType": "string",
         "name": "iconAlt",
-        "label": "Icon Alt",
-        "multi": false
+        "label": "Icon Alt Text",
+        "value": "",
+        "valueType": "string"
       },
       {
         "component": "richtext",
@@ -665,54 +563,6 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "sticky-nav",
-    "fields": []
-  },
-  {
-    "id": "sticky-nav-item",
-    "fields": [
-      {
-        "component": "text",
-        "name": "label",
-        "value": "",
-        "label": "Label",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "target",
-        "value": "",
-        "label": "Target Section",
-        "valueType": "string",
-        "description": "The section id to jump to, e.g. #overview"
-      }
-    ]
-  },
-  {
-    "id": "tabs",
-    "fields": []
-  },
-  {
-    "id": "tab",
-    "fields": [
-      {
-        "component": "text",
-        "name": "label",
-        "value": "",
-        "label": "Tab Label",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "content",
-        "value": "",
-        "label": "Content",
-        "valueType": "string",
-        "description": "Reference one or more card fragments (e.g. /fragments/card-mild) or author content directly."
       }
     ]
   },

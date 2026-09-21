@@ -12,7 +12,8 @@
  *     text in different roles (e.g. a nav "Resources" vs a heading "Resources")
  *     does not pair.
  *   - context exclusion: runs whose context hint matches an excludeContexts
- *     pattern (e.g. the Marketo form iframe) are dropped before diffing.
+ *     pattern (e.g. a third-party form/embed whose markup differs) are dropped
+ *     before diffing.
  *   - short-run gate: exact style mismatches on runs below minTokensForCluster
  *     are recorded but marked non-loop-eligible (too ambiguous to auto-fix).
  *   - suspect flag: an exact-text pair whose role buckets differ is reported as

@@ -41,9 +41,22 @@ body.procedure-detail main > .section.flex > .default-content-wrapper p {
   line-height: var(--body-line-height-l);
 }
 
+/* Mobile: the flex columns stack (intro copy above the benefits panel); the
+   source leaves ~47-57px between the intro's last line and the panel heading,
+   but stacked the migrated gap is only ~33px. Add the ~14px shortfall as
+   padding above the panel wrapper (padding, not margin, so it can't collapse).
+   Removed at 900px where the columns sit side-by-side (no stacking). */
+body.procedure-detail main > .section.flex > .panel-wrapper {
+  padding-top: var(--space-block);
+}
+
 @media (width >= 900px) {
   main > .section.flex {
     align-items: baseline;
+  }
+
+  body.procedure-detail main > .section.flex > .panel-wrapper {
+    padding-top: 0;
   }
 }
 
@@ -96,6 +109,17 @@ body.procedure-detail main > .section > .default-content-wrapper h2 {
 
 body.procedure-detail main > .section.procedure-panel-section {
   margin-block: var(--space-section);
+}
+
+/* Resources cards section spacing. The resources brochures load via fragment
+   blocks that merge into a `.cards.resources` grid.
+   - padding-bottom: ~45px of space under the "Learn more" buttons INSIDE the
+     section (matches source; a card margin would collapse and add nothing).
+   - margin-bottom: separates the section from the following "Potential risks"
+     box (source ~90px; otherwise only the next section's 30px margin applies). */
+body.procedure-detail main > .section:has(.cards.resources) {
+  padding-bottom: var(--space-section-l);
+  margin-bottom: var(--space-section-xl);
 }
 
 /* "Potential risks" gray box — contained (not full-bleed), 2% inset. */

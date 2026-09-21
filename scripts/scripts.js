@@ -17,6 +17,7 @@ import {
 } from './aem.js';
 
 import decorateDMAssets from './dm-support.js';
+import { applySectionBackgrounds } from './utils.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -214,7 +215,6 @@ function decorateFootnotes(main) {
     .find((ol) => ol.children.length >= maxRef);
   if (!footnoteList) return;
 
-  footnoteList.classList.add('footnotes');
   [...footnoteList.children].forEach((li, i) => {
     li.id = li.id || `fn-${i + 1}`;
   });
@@ -496,6 +496,18 @@ async function loadEager(doc) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }
 
+    // Load author-guides.css for internal authoring-guide pages (documentation
+    // for authors, not part of the public site design). A page opts in via the
+    // `author-guide` metadata, whose value is the guide's slug (e.g.
+    // `header-footer-guide`). We add `body.<slug>` and load the shared file,
+    // where each guide's rules are scoped under its own `body.<slug>` selector
+    // so guides never collide and none of it reaches regular site pages.
+    const authorGuide = getMetadata('author-guide');
+    if (authorGuide) {
+      document.body.classList.add(toClassName(authorGuide));
+      await loadCSS(`${window.hlx.codeBasePath}/styles/author-guides.css`);
+    }
+
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
@@ -521,6 +533,7 @@ async function loadLazy(doc) {
   await loadSections(main);
 
   decorateLastModified(main);
+  applySectionBackgrounds(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -546,20 +559,6 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
-}
-
-if (/\.(stage-ue|ue)\.da\.live$/.test(window.location.hostname)) {
-  // UE only: attach observers before block decoration so transformed rows retain
-  // their data-aue-* instrumentation. Awaiting this import prevents the eager
-  // first section from racing observer setup; live-site loading is unaffected.
-  try {
-    // eslint-disable-next-line import/no-cycle
-    await import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
-  } catch (e) {
-    // never let a UE-tooling failure block the page from rendering in the editor
-    // eslint-disable-next-line no-console
-    console.error('failed to initialize universal editor observers', e);
-  }
 }
 
 loadPage();
