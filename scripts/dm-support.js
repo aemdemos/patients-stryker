@@ -102,8 +102,9 @@ const BREAKPOINTS = [
   { width: 750 },
 ];
 
-// DA authoring surface (inside EW editor mount): keep raw DM links editable as links.
-const DA_EDITOR_ROOT = '.ew-editor-doc-mount .da-prose-mirror';
+// DA authoring surface: keep raw DM links editable as links. We match both the
+// outer DA wrapper and the editable ProseMirror root used in EW.
+const DA_EDITOR_ROOT = '.da-prose-mirror, .ew-editor-doc .ProseMirror[contenteditable="true"]';
 
 /**
  * Append query params to a DM URL without dropping existing ones.
