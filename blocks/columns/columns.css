@@ -331,9 +331,7 @@
 }
 
 
-/* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
 @media (width >= 600px) {
-  /* text-only column titles (h4) bump up to the reference's tablet/desktop size */
   .columns-text h4 {
     font-size: var(--heading-font-size-ml);
     line-height: var(--heading-line-height-ml);
@@ -343,6 +341,16 @@
   .section.compact .columns h2 em strong {
     font-size: var(--heading-font-size-compact-m);
   }
+
+  .section.compact .columns h3 strong {
+    font-size: var(--heading-font-size-l);
+  }
+
+  .section.compact .columns p:has(code) strong {
+    font-size: var(--heading-font-size-l);
+  }
+
+ 
 
   .columns > div {
     flex-flow: row wrap;
