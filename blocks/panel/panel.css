@@ -122,9 +122,14 @@
   text-decoration: none;
 }
 
-/* Universal Editor fallback */
+/* Editor fallback — the runtime .button.accent class is reverted in EW, so match
+   the authored bold+italic CTA structurally. The em/strong can wrap the anchor
+   (em > strong > a) or sit inside it; cover both so the gold fill wins over the
+   global teal strong-link button. */
 .panel.cta a:any-link:has(em),
-.panel.cta a:any-link:has(strong) {
+.panel.cta a:any-link:has(strong),
+.panel.cta em > a:any-link,
+.panel.cta strong > a:any-link {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -144,8 +149,10 @@
   color: #000;
 }
 
-/* the authored em/strong nested inside that button must not re-italicize or
+/* the authored em/strong (inside OR wrapping the anchor) must not re-italicize or
    recolor the label (declared after the button rule to keep specificity order) */
+.panel.cta em:has(> a:any-link),
+.panel.cta strong:has(> a:any-link),
 .panel.cta a:any-link:has(em) em,
 .panel.cta a:any-link:has(strong) strong {
   font-style: normal;
