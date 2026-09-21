@@ -778,7 +778,18 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
+/* EW splits the callout lines into sibling wrappers, not sibling paragraphs. */
+/* stylelint-disable-next-line no-descending-specificity */
+.section.compact .columns .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em)))
+  + .prosemirror-editor p:has(:is(code, sup)) {
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
 /* EW fallbacks for blue callouts when paragraphs are split or markup is normalized. */
+/* stylelint-disable no-descending-specificity */
 main > .section.blue .columns .prosemirror-editor:has(p:has(code)) p:has(code),
 main > .section.blue .columns .prosemirror-editor:has(p:has(:is(strong, b, em > strong, strong > em))) p,
 main > .section.blue .columns .prosemirror-editor:has(p:has(:is(strong, b, em > strong, strong > em)))
@@ -801,6 +812,7 @@ main > .section.blue .columns .prosemirror-editor:has(p:has(:is(strong, b, em > 
   margin-bottom: 30px;
   font-family: var(--heading-font-family);
 }
+/* stylelint-enable no-descending-specificity */
 
 
 /* section width variants */
