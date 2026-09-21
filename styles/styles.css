@@ -782,7 +782,7 @@ main .last-modified {
 /* EW renders each authored line in its own ProseMirror wrapper, so the
    paragraph sibling selector above does not match there. */
 /* stylelint-disable no-descending-specificity */
-.section.compact .columns .prosemirror-editor:has(+ .prosemirror-editor:has(p:has(code))) p {
+.section.compact .columns .prosemirror-editor:has(p:has(:is(em > strong > code, strong > em > code, strong > code))) p {
   margin-bottom: 0;
 }
 
