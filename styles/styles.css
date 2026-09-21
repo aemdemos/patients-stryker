@@ -375,6 +375,8 @@ main > .section.compact > div :is(p, ol, ul, li) {
   line-height: var(--footnote-line-height);
 }
 
+
+
 /* compact section typography — smaller gold headings and dense heading/body rhythm */
 h2 em strong,
 h2 strong em {
@@ -422,6 +424,13 @@ main > .section.video-text p {
 main > .section.compact > div ol li p {
   margin-bottom: 0;
 }
+
+
+/* stylelint-disable-next-line no-descending-specificity */
+main > .section.compact:has(ol > li) p > strong {
+  font-family: var(--body-font-family);
+}
+
 
 code,
 pre {
@@ -485,6 +494,7 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
+/* stylelint-disable no-descending-specificity */
 strong > a:any-link,
 a:any-link > strong {
   box-sizing: border-box;
@@ -544,6 +554,7 @@ a[href="#disclaimer"]:any-link > strong {
   line-height: inherit;
   text-transform: none;
 }
+/* stylelint-enable no-descending-specificity */
 
 /* Render sentence-style bold links as inline text, not buttons. */
 a.link-inline:any-link {
@@ -771,8 +782,6 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
-/* EW wraps authored lines into separate ProseMirror editors, so apply
-   the callout spacing by content pattern instead of paragraph adjacency. */
 .section.compact .columns  p:has(:is(em > strong > code, strong > em > code)) {
   margin: 0;
 }
@@ -829,6 +838,7 @@ main > .section.wide > div {
 
   main > .section.video-text > .default-content-wrapper:first-child {
     flex: 0 0 100%;
+    padding-left:0;
   }
 
   main > .section.video-text > .video-wrapper {

@@ -342,15 +342,9 @@
     font-size: var(--heading-font-size-compact-m);
   }
 
-  .section.compact .columns h3 strong {
+  .section.compact .columns:has(p code) h3 strong {
     font-size: var(--heading-font-size-l);
   }
-
-  .section.compact .columns p:has(code) strong {
-    font-size: var(--heading-font-size-l);
-  }
-
- 
 
   .columns > div {
     flex-flow: row wrap;
