@@ -795,6 +795,23 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
+/* EW fallback: canvas wrappers may not carry .section.compact on the section node. */
+main .section .prosemirror-editor:has(.ProseMirror p:has(code)) .ProseMirror p:has(code) {
+  padding: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 3vw;
+  line-height: 24px;
+}
+
+main .section .prosemirror-editor:has(.ProseMirror p:has(code))
+  + .prosemirror-editor:has(.ProseMirror p:has(code)) .ProseMirror p:has(code) {
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
 /* EW wraps each authored paragraph in .prosemirror-editor, so apply the same
    second-line spacing/style when code paragraphs are adjacent via wrappers. */
 .section.compact .columns .prosemirror-editor:has(p:has(code))
