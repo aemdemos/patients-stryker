@@ -778,6 +778,11 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
+.section.compact .columns .prosemirror-editor p:has(code) {
+margin-bottom: 0;
+}
+
+
 /* EW renders each authored line in its own ProseMirror wrapper, so the
    paragraph sibling selector above does not match there. */
 .section.compact .columns .prosemirror-editor + .prosemirror-editor p:has(code) {
