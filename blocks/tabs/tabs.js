@@ -17,7 +17,6 @@ import { toClassName } from '../../scripts/aem.js';
 // eslint-disable-next-line import/no-cycle
 import { mergeSectionCards } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
 async function decoratePanel(panel) {
   // load any fragment references in this panel (nested blocks don't get
@@ -70,7 +69,6 @@ export default async function decorate(block) {
     button.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
     button.setAttribute('tabindex', i === 0 ? '0' : '-1');
     if (labelCell) {
-      moveInstrumentation(labelCell, button);
       button.append(...labelCell.childNodes);
       labelCell.replaceWith(button);
     } else {
@@ -118,16 +116,6 @@ export default async function decorate(block) {
   });
 
   block.prepend(tablist);
-
-  // Universal Editor: when an author selects a component (or its child) that
-  // lives in a hidden tab, reveal that tab so the selection is visible.
-  // `aue:ui-select` only fires in the editor, so this is inert on the live site.
-  document.addEventListener('aue:ui-select', (e) => {
-    const selected = e.detail?.element || e.target;
-    const rowEl = selected?.closest?.('.tabs-tab-row');
-    const index = rows.indexOf(rowEl);
-    if (index >= 0) activate(index);
-  });
 
   // load fragment content for every panel
   await Promise.all(panels.map(decoratePanel));

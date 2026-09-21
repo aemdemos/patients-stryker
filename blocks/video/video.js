@@ -11,6 +11,34 @@ import { isDMVideoSrc, renderVideo } from '../../scripts/dm-support.js';
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
 
 /**
+ * Returns true if text is a full http(s) URL.
+ * @param {string} text candidate label text
+ * @returns {boolean}
+ */
+function isUrlText(text) {
+  try {
+    const url = new URL(text, window.location.href);
+    return /^https?:$/.test(url.protocol) && /^https?:\/\//i.test(text);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Picks a human-friendly title for the facade, never a raw URL.
+ * @param {string} titleAttr link title attribute
+ * @param {string} textContent link text content
+ * @returns {string}
+ */
+function cleanVideoLabel(titleAttr, textContent) {
+  const candidates = [titleAttr, textContent]
+    .map((value) => (value || '').trim())
+    .filter(Boolean);
+  const valid = candidates.find((value) => !isUrlText(value));
+  return valid || 'Stryker patient animation';
+}
+
+/**
  * Extract the 11-char video id from any common YouTube URL shape
  * (watch?v=, youtu.be/ID, /embed/ID, /shorts/ID). Returns '' if none.
  * @param {string} src the authored YouTube URL
@@ -38,59 +66,16 @@ function renderYouTube(id, label) {
   const wrapper = document.createElement('div');
   wrapper.className = 'video-embed';
 
-  // poster thumbnail
-  const poster = document.createElement('img');
-  poster.className = 'video-embed-poster';
-  poster.loading = 'lazy';
-  poster.alt = ''; // decorative — the play button and watch link convey purpose
-  poster.width = 1280;
-  poster.height = 720;
-  // fallback chain maxres → sd → hq: advance on a load error, or on the 120×90
-  // grey placeholder YouTube serves (with a 200) for a missing size
-  const posterFallbacks = ['sddefault', 'hqdefault'];
-  const advance = () => {
-    const next = posterFallbacks.shift();
-    if (next) poster.src = `https://i.ytimg.com/vi/${id}/${next}.jpg`;
-  };
-  poster.addEventListener('error', advance);
-  poster.addEventListener('load', () => {
-    if (poster.naturalWidth && poster.naturalWidth <= 120) advance();
-  });
-  poster.src = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+  // Render native YouTube UI immediately so pre-play and post-play controls match.
+  const iframe = document.createElement('iframe');
+  iframe.className = 'video-embed-iframe';
+  iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0`;
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+  iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+  iframe.title = label || 'YouTube video player';
+  iframe.loading = 'lazy';
 
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = 'video-embed-play';
-  button.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
-
-  // load the real player on click
-  button.addEventListener('click', () => {
-    const iframe = document.createElement('iframe');
-    iframe.className = 'video-embed-iframe';
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
-    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
-    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-    iframe.title = label || 'YouTube video player';
-    wrapper.replaceChildren(iframe);
-  });
-
-  // "Watch on YouTube" corner link
-  const watch = document.createElement('a');
-  watch.className = 'video-embed-watch';
-  watch.href = `https://www.youtube.com/watch?v=${id}`;
-  watch.target = '_blank';
-  watch.rel = 'noopener';
-  const watchText = document.createElement('span');
-  watchText.className = 'video-embed-watch-text';
-  watchText.textContent = 'Watch on';
-  const logo = document.createElement('img');
-  logo.className = 'video-embed-watch-logo';
-  logo.src = `${window.hlx.codeBasePath}/icons/youtube.svg`;
-  logo.alt = 'YouTube';
-  logo.loading = 'lazy';
-  watch.append(watchText, logo);
-
-  wrapper.append(poster, button, watch);
+  wrapper.append(iframe);
   return wrapper;
 }
 
@@ -115,17 +100,28 @@ function renderFor(src, label) {
  */
 export default function decorate(block) {
   const link = block.querySelector('a[href]');
-  if (!link) return;
+  if (!link) {
+    // In the EW canvas the block content (the video link) can be injected after
+    // decorate() first runs, so there's no link yet. Watch for it to appear, then
+    // decorate. No-op on the live site, where the link is present up front.
+    const observer = new MutationObserver(() => {
+      if (block.querySelector('a[href]')) {
+        observer.disconnect();
+        decorate(block);
+      }
+    });
+    observer.observe(block, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['href'],
+    });
+    return;
+  }
 
   const src = link.getAttribute('href');
-  // accessible label: prefer the link title, else its display text — but never a
-  // bare URL (a plain autolink's text is the URL itself, which shouldn't leak into
-  // alt/aria)
   const text = link.textContent.trim();
-  const isUrlText = (() => {
-    try { return /^https?:$/.test(new URL(text, window.location.href).protocol) && /^https?:\/\//i.test(text); } catch { return false; }
-  })();
-  const label = link.getAttribute('title') || (text && !isUrlText ? text : '');
+  const label = cleanVideoLabel(link.getAttribute('title'), text);
 
   const player = renderFor(src, label);
   if (player) block.replaceChildren(player);

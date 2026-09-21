@@ -15,6 +15,77 @@
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
+  z-index: 0;
+}
+
+/* top-weighted tint to match source treatment before playback starts */
+.video .video-embed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--video-poster-overlay-gradient);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.video .video-embed.is-playing::after {
+  content: none;
+}
+
+.video [class~="ytmVideoInfoVideoDetailsContainer"] {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  color: var(--color-white);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.video [class~="ytmVideoInfoBrandBadge"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: #343434;
+  font-family: var(--display-font-family);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.video [class~="ytmVideoInfoText"] {
+  display: grid;
+  gap: 2px;
+}
+
+.video [class~="ytmVideoInfoVideoTitle"],
+.video [class~="ytmVideoInfoVideoSubtitle"] {
+  margin: 0;
+}
+
+.video [class~="ytmVideoInfoVideoTitle"] {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.video [class~="ytmVideoInfoVideoSubtitle"] {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.video .video-embed.is-playing [class~="ytmVideoInfoVideoDetailsContainer"] {
+  display: none;
 }
 
 /* transparent click target over the poster; holds the play button (::before/::after) */
@@ -25,6 +96,7 @@
   border: 0;
   background: none;
   cursor: pointer;
+  z-index: 2;
 }
 
 /* play button: red rounded rectangle (::before) with a white triangle (::after) */
@@ -56,27 +128,65 @@
   opacity: 0.85;
 }
 
+.video [class~="action-menu-engagement-buttons-wrapper"] {
+  position: absolute;
+  left: 20px;
+  bottom: 14px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.video [class~="action-menu-engagement-button"] {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 42px;
+  border: 0;
+  border-radius: 22px;
+  background: rgb(130 130 130 / 58%);
+}
+
+.video [class~="action-menu-engagement-button"]::before,
+.video [class~="action-menu-engagement-button"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 11px;
+  height: 7px;
+  border: 2px solid var(--color-white);
+  border-radius: 7px;
+  transform: translateY(-50%) rotate(-25deg);
+}
+
+.video [class~="action-menu-engagement-button"]::before {
+  left: 19px;
+}
+
+.video [class~="action-menu-engagement-button"]::after {
+  left: 26px;
+}
+
 /* "Watch on YouTube" corner link: a dark pill flush against the bottom-right edge */
 .video .video-embed-watch {
   position: absolute;
-  right: 0;
-  bottom: 5px;
+  right: 20px;
+  bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 9px;
-  height: 47px;
-  padding: 0 12px;
-  background: rgb(23 23 23 / 80%);
-  border-top-left-radius: var(--radius-sm);
-  border-bottom-left-radius: var(--radius-sm);
+  gap: 6px;
+  height: 42px;
+  padding: 0 18px;
+  background: rgb(95 95 95 / 64%);
+  border-radius: 22px;
   color: var(--color-white);
-  font-family: arial, helvetica, sans-serif;
-  font-size: 16px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 16px;
+  line-height: 1;
   white-space: nowrap;
   text-decoration: none;
   transition: background 0.15s ease;
+  z-index: 2;
 }
 
 .video .video-embed-watch:hover {
@@ -84,8 +194,8 @@
 }
 
 .video .video-embed-watch-logo {
-  width: 72px;
-  height: 16px;
+  width: 78px;
+  height: 18px;
 }
 
 .video .video-embed-iframe {
@@ -94,4 +204,5 @@
   width: 100%;
   height: 100%;
   border: 0;
+  z-index: 3;
 }
