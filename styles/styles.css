@@ -254,11 +254,6 @@ h2 {
   font-weight: 700;
 }
 
-.columns > div > div h2:not(:has(em, strong)) {
-  font-family: var(--heading-font-family);
-  font-weight: 500;
-}
-
 .section.compact h2 {
   font-size: var(--heading-font-size-compact);
   margin-top: 30px;
@@ -828,7 +823,6 @@ main > .section.wide > div {
   main > .section.video-text {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
     gap: var(--container-gutter);
     box-sizing: border-box;
     max-width: var(--container-max);
