@@ -94,6 +94,31 @@
   text-decoration: none;
 }
 
+/* Same canvas fallback for the bold+italic (<em><strong><a>) high-impact CTA:
+   decorateButtons' .button.accent class is wiped when the editor re-renders the
+   field, so the authored link would otherwise fall back to the global bold-link
+   button (teal). Restyle it gold to match .button.accent. Matches only in the
+   canvas (live unwraps the <em>/<strong>). */
+.cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body p em strong > a,
+.cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body p strong em > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-block) 0 0;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  font-style: normal;   /* cancel the authoring <em> italic */
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 /* resources variant: PDF brochure card — portrait cover image over a teal button */
 .cards.resources > ul > li {
   background-color: transparent;
