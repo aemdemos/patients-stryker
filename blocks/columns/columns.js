@@ -16,6 +16,27 @@ export default function decorate(block) {
     block.classList.add('columns-text');
   }
 
+  // Published content sometimes flattens citation superscripts inside compact
+  // code callouts (e.g. "...sinusitis4" instead of "...sinusitis<sup>4</sup>").
+  // Rebuild the trailing citation as <sup> so footnote linking can run normally.
+  if (block.closest('.section.compact')) {
+    block.querySelectorAll('p > code').forEach((code) => {
+      if (code.querySelector('sup')) return;
+
+      const raw = code.textContent || '';
+      const match = raw.match(/^(.*?)(\d+(?:\s*,\s*\d+)*)\s*$/);
+      if (!match) return;
+
+      const body = match[1];
+      const refs = match[2];
+      if (!/[A-Za-z)]\s*$/.test(body)) return;
+
+      const sup = document.createElement('sup');
+      sup.textContent = refs.replace(/\s+/g, '');
+      code.replaceChildren(document.createTextNode(body), sup);
+    });
+  }
+
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
       // The DA/EW canvas wraps each field in an inline editor that re-renders from

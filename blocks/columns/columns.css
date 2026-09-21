@@ -342,10 +342,13 @@
   line-height: 24px;
 }
 
-.section.compact .columns p:has(code) code {
+.section.compact .columns p:has(code) code  {
   font-size: 3vw;
 }
 
+.section.compact .columns p:has(code) code sup {
+  color: var(--color-white);
+}
 
 .section.compact .columns p:has(code) + p:has(code) {
   padding-top: 0;
