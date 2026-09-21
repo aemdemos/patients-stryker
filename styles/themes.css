@@ -1143,21 +1143,10 @@ body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
   margin-block: var(--space-section-l); /* 50px */
 }
 
-/* Dark 50-50 band ("What is LSS?") — image bleeds full band height, so drop the
-   section padding + image-column spacing (text column re-adds its inset below).
-   Keyed on the .columns-50-50 variant, so the plain-columns dark band is unaffected. */
+/* "What is LSS?" dark 50-50 band — page-level gap to the flex section above it.
+   (The edge-to-edge image-bleed rendering lives in the columns block CSS.) */
 body.ivs-treatment main > .section.dark:has(.columns-50-50) {
   margin-top: var(--space-section-l);
-  padding-block: 0;
-}
-
-body.ivs-treatment main > .section.dark .columns-50-50 .columns-img-col {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-body.ivs-treatment main > .section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-  padding-block: var(--space-section);
 }
 
 /* Resources heading — 1px gold underline on the cards-section h2. */

@@ -119,6 +119,13 @@
   padding-right: 0;
 }
 
+/* inline bold in body copy keeps the body font (bold weight), not the global
+   Futura display face — bold should emphasise, not switch typeface. Compact
+   columns opt back into the display font below. */
+.columns p :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
 .section.compact .columns p strong {
   font-family: var(--display-font-family);
 }
@@ -229,6 +236,23 @@
    marker inherits the black <li> and the text lives in a white span) */
 .section.dark .columns li::marker {
   color: var(--color-black);
+}
+
+/* dark 50-50 band: the image bleeds the full band height, so drop the section's
+   own block padding and the image column's margin/padding (the text column re-adds
+   its inset below). Keyed on the 50-50 variant so plain-columns dark bands keep
+   their default spacing. */
+.section.dark:has(.columns-50-50) {
+  padding-block: 0;
+}
+
+.section.dark .columns-50-50 .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+  padding-block: var(--space-section);
 }
 
 .section.compact .columns p,
