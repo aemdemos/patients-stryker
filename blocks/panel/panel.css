@@ -64,6 +64,13 @@
   font-style: normal;
 }
 
+/* bold list labels stay in the body serif (bold), not the global Futura display
+   font — matches the reference's inline "Quick recovery time:" style. */
+.panel .panel-body li strong,
+.panel .panel-body li b {
+  font-family: var(--body-font-family);
+}
+
 
 /* ---- cta variant */
 .panel.cta > ul > li,
