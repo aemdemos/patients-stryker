@@ -102,10 +102,6 @@ const BREAKPOINTS = [
   { width: 750 },
 ];
 
-// DA authoring surface: keep raw DM links editable as links. We match both the
-// outer DA wrapper and the editable ProseMirror root used in EW.
-const DA_EDITOR_ROOT = '.da-prose-mirror, .ew-editor-doc .ProseMirror[contenteditable="true"]';
-
 /**
  * Append query params to a DM URL without dropping existing ones.
  * @param {string} src base image URL
@@ -359,10 +355,6 @@ function dmRendererFor(src) {
  */
 export default function decorateDMAssets(root) {
   root.querySelectorAll(DM_SELECTOR).forEach((el) => {
-    // Keep links untouched in DA authoring canvas, but allow conversion in
-    // EW-rendered output panes.
-    if (el.closest(DA_EDITOR_ROOT)) return;
-
     // skip an <img> already in a <picture> (converted on an earlier pass) —
     // re-converting would double-append preset params like fmt=png-alpha
     if (el.tagName === 'IMG' && el.closest('picture')) return;
