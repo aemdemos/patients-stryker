@@ -778,6 +778,19 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
+/* EW wraps authored lines into separate ProseMirror editors, so apply
+   the callout spacing by content pattern instead of paragraph adjacency. */
+.section.compact .columns .prosemirror-editor p:has(:is(em > strong > code, strong > em > code)) {
+  margin: 0;
+}
+
+.section.compact .columns .prosemirror-editor p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
 /* section width variants */
 main > .section.narrow > div {
   max-width: var(--container-narrow);
