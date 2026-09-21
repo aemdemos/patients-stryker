@@ -778,9 +778,13 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
-/* EW fallback outside block wrappers: code callouts may be split per paragraph. */
-/* stylelint-disable-next-line no-descending-specificity */
-main .section .prosemirror-editor:has(p:has(code)) p:has(code) {
+/* EW fallbacks for blue callouts when paragraphs are split or markup is normalized. */
+main > .section.blue .columns .prosemirror-editor:has(p:has(code)) p:has(code),
+main > .section.blue .columns .prosemirror-editor:has(p:has(:is(strong, b, em > strong, strong > em))) p,
+main > .section.blue .columns .prosemirror-editor:has(p:has(:is(strong, b, em > strong, strong > em)))
+  + .prosemirror-editor:has(p:has(sup)) p {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
   padding: 20px;
   padding-bottom: 0;
   margin-bottom: 0;
@@ -788,28 +792,9 @@ main .section .prosemirror-editor:has(p:has(code)) p:has(code) {
   line-height: 24px;
 }
 
-main .section .prosemirror-editor:has(p:has(code))
-  + .prosemirror-editor:has(p:has(code)) p:has(code) {
-  padding-top: 0;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-  font-family: var(--heading-font-family);
-}
-
-/* EW may normalize code callouts to emphasis/superscript markup after re-render. */
-/* stylelint-disable-next-line no-descending-specificity */
-main .section .columns .prosemirror-editor:has(p:has(:is(em > strong, strong > em))) p,
-main .section .columns .prosemirror-editor:has(p:has(:is(em > strong, strong > em)))
-  + .prosemirror-editor:has(p:has(sup)) p {
-  background-color: var(--color-navy-bright);
-  color: var(--color-white);
-  padding: 20px;
-  margin-bottom: 0;
-  font-size: 3vw;
-  line-height: 24px;
-}
-
-main .section .columns .prosemirror-editor:has(p:has(:is(em > strong, strong > em)))
+main > .section.blue .columns .prosemirror-editor:has(p:has(code))
+  + .prosemirror-editor:has(p:has(code)) p:has(code),
+main > .section.blue .columns .prosemirror-editor:has(p:has(:is(strong, b, em > strong, strong > em)))
   + .prosemirror-editor:has(p:has(sup)) p {
   padding-top: 0;
   padding-bottom: 20px;
