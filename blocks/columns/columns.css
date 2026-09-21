@@ -199,10 +199,7 @@
   margin-bottom: 0;
 }
 
-/* dark variant — the gold Futura-bold section title (h3: "What is LSS?",
-   "Before mild", "After mild") on the dark gradient panel. 26px gold. Only h3
-   titles and h4 captions occur in these dark columns, so each heading level gets
-   its own rule with its own size — never grouped. */
+/* dark variant — gold Futura-bold section title (h3). 26px gold. */
 .section.dark .columns h3 {
   font-family: var(--display-font-family);
   font-size: var(--panel-cta-heading-size); /* 26px */
@@ -211,12 +208,7 @@
   color: var(--color-accent);
 }
 
-/* dark-variant caption (h4: the before/after descriptive line under the gold
-   title). On the reference the text renders in the Egyptienne SERIF light face
-   (span.urw-egyptienne), NOT Futura — white, 21.875px / 25.156px line-height.
-   Use the heading (Egyptienne) font at its light master weight so it matches the
-   thin serif look rather than a heavy geometric sans. Distinct, smaller size than
-   the 26px h3 title; styled separately by tag (no grouping, no h3+h4 adjacency). */
+/* dark-variant caption (h4) — Egyptienne serif light, white, 21.875px. */
 .section.dark .columns h4 {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-ml); /* 21.875px */

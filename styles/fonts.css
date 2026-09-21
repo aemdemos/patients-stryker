@@ -28,8 +28,7 @@
   src: url('../fonts/urw-egyptienne-light.woff2') format('woff2');
 }
 
-/* Display / buttons — Futura LT W01 Book (the boilerplate's default display cut;
-   kept for pages/blocks that reference it) */
+/* Display / buttons — Futura LT W01 Book (boilerplate default display cut) */
 @font-face {
   font-family: "Futura LT W01";
   font-style: normal;
@@ -47,10 +46,8 @@
   src: url('../fonts/futura-lt-bold.woff2') format('woff2');
 }
 
-/* Display — Futura for Stryker Book (the site's licensed Futura cut, downloaded
-   from the source during migration so migrated pages render the exact same
-   typeface as patients.stryker.com). Added alongside Futura LT W01, not replacing
-   it — used by the ivs-treatment theme; other pages keep Futura LT W01. */
+/* Display — Futura for Stryker Book (site's licensed Futura cut; used by the
+   ivs-treatment theme, alongside Futura LT W01). */
 @font-face {
   font-family: "Futura for Stryker";
   font-style: normal;
@@ -93,9 +90,8 @@
   src: local('Arial'), local('Helvetica');
 }
 
-/* Fallback for "Futura for Stryker" — measured 91.94% of Arial's advance width
-   (vs Futura LT's 89.70%), so it needs its own size-adjust to prevent the
-   font-swap reflow / CLS on ivs-treatment headings while the webfont loads. */
+/* Fallback for "Futura for Stryker" — size-adjust 91.94% of Arial to prevent
+   font-swap CLS on ivs-treatment headings while the webfont loads. */
 @font-face {
   font-family: futura-for-stryker-fallback;
   size-adjust: 91.94%;

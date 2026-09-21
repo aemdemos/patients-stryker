@@ -801,9 +801,7 @@ main > .section.spacer {
   height: var(--space-section);
 }
 
-/* larger spacer variant — a taller fixed gap (2× the base unit, ~60px) for spots
-   that need more breathing room than the default spacer, e.g. above a full-bleed
-   hero. Authored as Style `spacer, large`. */
+/* larger spacer variant — 2× the base gap (~60px). Authored as `spacer, large`. */
 main > .section.spacer.large {
   height: calc(2 * var(--space-section));
 }
@@ -839,10 +837,7 @@ main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
-/* dark colour variant — the reference's .bg-dark-teal-gradient full-bleed panel:
-   a gray-to-teal gradient band with white text. Pair with .full-bleed (which
-   supplies the vertical padding that gives the band its top/bottom breathing
-   room, matching the reference's ~40px inset). */
+/* dark colour variant — gray-to-teal gradient band, white text; pair with .full-bleed. */
 main > .section.dark {
   background: var(--panel-dark-gradient);
   color: var(--color-white);
