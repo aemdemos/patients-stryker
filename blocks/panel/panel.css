@@ -379,3 +379,16 @@
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
 }
+
+/* EW wraps list-item text in a <p>; keep it at the bare-<li> body typography. */
+/* stylelint-disable no-descending-specificity */
+.panel.cta .panel-body li > p,
+.panel.light .panel-body li > p,
+.panel.wide .panel-body li > p,
+.panel.colored-border .panel-body li > p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--body-line-height);
+}
+/* stylelint-enable no-descending-specificity */
