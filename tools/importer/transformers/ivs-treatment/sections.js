@@ -7,19 +7,20 @@
  * Template-scoped: acts ONLY on the ivs-treatment template (guarded by
  * payload.template.name). Inert for every other template.
  *
- * The mild page (migration-work/cleaned.html) is modelled as 10 sections
+ * The mild page (migration-work/cleaned.html) is modelled as 11 sections
  * (tools/importer/page-templates.json → ivs-treatment.sections):
  *
- *   0 hero              .pDiv.bg-shadow                        style: none   (first — no break)
- *   1 get-back-benefits .cols2:has(.dimensional-box)          style: flex
- *   2 what-is-lss       dark teal panel (LSS, no h4)          style: dark
- *   3 proven-results    intro .text + .cols2 stat charts      style: none
- *   4 before-after      dark teal panel (has h4)              style: dark, full-bleed
- *   5 how-it-works      heading .text + .cols3                style: none
- *   6 tired-of-pain     .has-background.bg-gold               style: none  (block-owned gold band)
- *   7 resources         h2 + .cols4                            style: none
- *   8 potential-risks   .has-background.bg-lighter-gray       style: light-gray
- *   9 disclaimer        .c-disclaimer (paras + footnotes ol)  style: compact
+ *    0 hero              .pDiv.bg-shadow                        style: none   (first — no break)
+ *    1 get-back-benefits .cols2:has(.dimensional-box)          style: flex
+ *    2 what-is-lss       dark teal panel (LSS, no h4)          style: dark, full-bleed
+ *    3 proven-results    intro .text + .cols2 stat charts      style: none
+ *    4 before-after      dark teal panel (has h4)              style: dark, full-bleed
+ *    5 how-it-works      heading .text + .cols3                style: none
+ *    6 tired-of-pain     .has-background.bg-gold               style: none  (block-owned gold band)
+ *    7 contact-form      Marketo doctor-locator form           style: none
+ *    8 resources         h2 + .cols4                            style: none
+ *    9 potential-risks   .has-background.bg-lighter-gray       style: light-gray
+ *   10 disclaimer        .c-disclaimer (paras + footnotes ol)  style: compact
  *
  * Mirrors the migrated IVS sibling content/us/en/ivs/treatments/disc-decompression:
  * flex (get-back + benefits), dark (LSS + before/after), gold panel (owns its own
