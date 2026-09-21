@@ -778,22 +778,6 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
-
-/* EW renders each authored line in its own ProseMirror wrapper, so the
-   paragraph sibling selector above does not match there. */
-/* stylelint-disable no-descending-specificity */
-.section.compact .columns .prosemirror-editor:has(p:has(:is(em > strong > code, strong > em > code, strong > code))) p {
-  margin-bottom: 0;
-}
-
-.section.compact .columns .prosemirror-editor + .prosemirror-editor p:has(code) {
-  margin-bottom: 30px;
-}
-/* stylelint-enable no-descending-specificity */
-
-
-
-
 /* section width variants */
 main > .section.narrow > div {
   max-width: var(--container-narrow);
