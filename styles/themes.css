@@ -26,15 +26,10 @@
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    =====================================================================
-   The look of the page — typography, colours, margins, panel/card styling. The
-   rules use DESCENDANT selectors (e.g. `body.sa-resources .section.light-gray`,
-   `.panel.light`, `.cards.brochure`), so they match whether the content is
-   authored directly on a `theme: sa-resources` page OR embedded via a fragment.
-
-   No fragment-structure re-assertions are needed: the resources body is embedded
-   as a whole-section fragment, which blocks/fragment/fragment.js hoists to be a
-   direct child of `main` (see PR #247), so the global `main > .section…`
-   foundation rules in styles.css reach these sections natively. */
+   Typography, colours, margins, panel/card styling. Descendant selectors, so
+   they apply whether the body is authored directly or embedded via a fragment
+   (fragment.js hoists a whole-section embed to a direct child of main, so the
+   global `main > .section…` layout rules reach these sections natively). */
 
 /* ----- Page-level: section rhythm + default-content typography ----- */
 
@@ -94,12 +89,9 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
 
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
-/* The intro availability box is a SINGLE-item panel that must fill its column at
-   every width. The panel block makes `.panel.light > ul` a 2-up grid from 600px
-   (blocks/panel/panel.css), which would leave this lone item at half width on
-   tablet (600–899px). Force one column at all widths so it stays full-width
-   (matches the source). The ≥900px override below is kept for the flex-column
-   context but this base rule covers the tablet gap. */
+/* The intro availability box is a single-item panel — keep it one column at all
+   widths so it fills its column, overriding the panel block's 2-up grid from
+   600px (which would leave this lone item half-width on tablet). */
 body.sa-resources .section.flex .panel.light > ul,
 body.sa-resources .section.flex .panel.light.panel-authoring {
   grid-template-columns: 1fr;

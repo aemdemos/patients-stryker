@@ -327,26 +327,17 @@ export function removeCtas(scope) {
  * Merges multiple `.cards` blocks in a section into one grid.
  * Preserves the first block's variant classes and removes empty extras.
  *
- * The merge is intended for card grids that arrive as SEPARATE fragments under
- * one heading (e.g. tabs, or several `/fragments/card-*` embeds in one section):
- * each cards block lives in its own `.fragment`, so removing that fragment on
- * cleanup only drops the emptied grid.
- *
- * It must NOT fire for multiple cards blocks that live inside the SAME fragment
- * (e.g. one embedded body fragment that inlines both a downloads grid and a
- * social grid). There, every cards block shares one `.fragment` wrapper, so the
- * cleanup below would remove that shared wrapper and delete the whole fragment.
- * Guard against that by only merging cards blocks that sit in DISTINCT fragment
- * wrappers (or none) — never two blocks that share the same fragment ancestor.
+ * Only merges grids that live in distinct fragment wrappers (or none) — e.g.
+ * several `/fragments/card-*` embeds under one heading. Cards blocks that share
+ * one `.fragment` wrapper (one body fragment inlining two grids) are left alone,
+ * since removing that shared wrapper would delete the whole fragment.
  * @param {Element} section The section to consolidate
  */
 export function mergeSectionCards(section) {
   const cardsBlocks = [...section.querySelectorAll('.cards')];
   if (cardsBlocks.length < 2) return;
 
-  // Only merge blocks whose fragment wrapper is unique to that block; skip any
-  // block that shares its `.fragment` ancestor with another cards block (they
-  // belong to one embedded fragment and must stay as authored).
+  // skip any block that shares its fragment wrapper with another cards block
   const fragmentOf = (block) => block.closest('.fragment-wrapper') || block.closest('.fragment');
   const mergeable = cardsBlocks.filter((block) => {
     const frag = fragmentOf(block);
