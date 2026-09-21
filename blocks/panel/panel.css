@@ -12,6 +12,12 @@
   margin: 0;
 }
 
+/* content bullet lists inside the panel body use filled discs (nested <ul> would
+   otherwise default to hollow circles). */
+.panel .panel-body ul {
+  list-style-type: disc;
+}
+
 .panel .panel-body {
   margin: 10px;
   padding: 3%;
@@ -200,6 +206,17 @@
 
 .panel .panel-body strong > a:any-link:has(> u) > u,
 .panel .panel-body a:any-link > strong:has(> u) > u {
+  text-decoration: none;
+}
+
+/* plain underlined inline link (e.g. "Potential risks") — small body-size teal
+   link, no underline, matching the reference (distinct from the bold CTA links). */
+.panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--body-font-size-m);
+  text-decoration: none;
+}
+
+.panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) u {
   text-decoration: none;
 }
 
