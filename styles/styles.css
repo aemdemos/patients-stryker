@@ -39,6 +39,7 @@
   --color-black: #000;
   --color-surface: #edeeec;
   --color-surface-alt: #f8f8f8;
+  --color-surface-dim: #dfe1de; /* deeper neutral grey band (e.g. disclaimer panel) */
   --color-surface-muted: #b2b4ae;
   --color-border: #ddd;
   --color-text-muted: #555;

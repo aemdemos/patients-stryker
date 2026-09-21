@@ -1180,7 +1180,7 @@ body.ivs-treatment main > .section.light-gray > .default-content-wrapper {
   width: min(100% - 2 * var(--container-gutter), var(--container-max) - 2 * var(--container-gutter));
   margin-inline: auto;
   padding: var(--space-section);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-dim);
 }
 
 /* Disclaimer band copy renders at the smaller 14px size, not the page-wide 17.5px. */
