@@ -104,7 +104,7 @@ const BREAKPOINTS = [
 
 // EW editable surfaces (ProseMirror) must keep authored links as links; converting
 // to media nodes there is unstable and gets rewritten by the editor.
-const EW_EDITOR_ROOT = '.da-prose-mirror, .ProseMirror, .prosemirror-editor, [data-prose-index]';
+const EW_EDITOR_ROOT = '.da-prose-mirror, [data-prose-index]';
 
 /**
  * Append query params to a DM URL without dropping existing ones.
