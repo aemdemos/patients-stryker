@@ -1214,6 +1214,7 @@ body.resources main > .section.compact > div :is(p, ol, ul, li) {
 body.resources .section.compact {
   margin-bottom: 0;
 }
+
 /* =====================================================================
    Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
    ===================================================================== */
@@ -1279,6 +1280,7 @@ body.ivs-treatment main > .section.light-gray :is(p, li) {
   font-size: var(--body-font-size-m); /* 14px */
   line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
 }
+
 /* Theme: condition-detail (desktop 2-column layout override for IVS condition pages). */
 @media (width >= 900px) {
   body.condition-detail main > .section.flex {

@@ -141,10 +141,10 @@
    global teal strong-link button. */
 .panel.cta a:any-link:has(em),
 .panel.cta a:any-link:has(strong),
-.panel.cta .panel-cta em > strong > a:any-link,
-.panel.cta .panel-cta strong > em > a:any-link,
 .panel.cta em > a:any-link,
-.panel.cta strong > a:any-link {
+.panel.cta strong > a:any-link,
+.panel.cta .panel-cta em > strong > a:any-link,
+.panel.cta .panel-cta strong > em > a:any-link {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -193,6 +193,7 @@
   text-transform: none;
   text-decoration: none;
 }
+
 .panel .panel-body strong > a:any-link:has(> u) > u,
 .panel .panel-body a:any-link > strong:has(> u) > u {
   text-decoration: none;
@@ -204,6 +205,7 @@
   font-family: var(--body-font-family);
   font-size: var(--panel-cta-body-size);
 }
+
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
   padding: 22.5px;
