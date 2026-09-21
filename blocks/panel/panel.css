@@ -193,7 +193,6 @@
   text-transform: none;
   text-decoration: none;
 }
-
 .panel .panel-body strong > a:any-link:has(> u) > u,
 .panel .panel-body a:any-link > strong:has(> u) > u {
   text-decoration: none;
@@ -377,6 +376,11 @@
     font-size: var(--panel-heading-size-s);
   }
 
+  .panel.cta .panel-body h3 {
+    line-height: var(--heading-line-height-ml);
+    font-size: 26.25px;
+  }
+
     .panel.wide .panel-body h3 {
     font-weight: 700;
     font-family: var(--display-font-family);
@@ -400,11 +404,6 @@
   .panel.wide .panel-body p {
     font-size: var(--panel-body-size-s);
     font-family: var(--heading-font-family);
-  }
-
-  .panel.cta .panel-body h3 {
-    line-height: var(--heading-line-height-ml);
-    font-size: 26.25px
   }
 } 
 
