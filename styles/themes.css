@@ -1173,7 +1173,12 @@ body.ivs-treatment main > .section.light-gray {
   background-color: transparent; /* undo the edge-to-edge fill from styles.css */
 }
 
-body.ivs-treatment main > .section.light-gray > div {
+/* Target only the content wrapper (not the stray empty section div, which would
+   otherwise render as a hollow grey bar). Keep the grey band the width of the
+   centered content column so it aligns with the section above at any viewport. */
+body.ivs-treatment main > .section.light-gray > .default-content-wrapper {
+  width: min(100% - 2 * var(--container-gutter), var(--container-max) - 2 * var(--container-gutter));
+  margin-inline: auto;
   padding: var(--space-section);
   background-color: var(--color-surface);
 }
