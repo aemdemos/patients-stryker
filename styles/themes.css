@@ -616,6 +616,18 @@ body.discography main .panel.cta.wide .panel-body li {
   line-height: var(--body-line-height-l);
 }
 
+/* EW authoring canvas wraps each <li>'s inline content in a <p>, which then picks
+   up the shared .panel.wide .panel-body p rule (21px light serif, 10px margins via
+   the p:last-child delta below) instead of the bullet styling above — the overview
+   list renders oversized and gapped in EW. Match the bullet <p> back to the <li>.
+   No-op on the live site (no such <p> exists). */
+body.discography main .panel.cta.wide .panel-body li > p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
 body.discography main .panel .panel-body p:last-child {
   margin: 10px 0;
 }
