@@ -98,10 +98,11 @@
    decorateButtons' .button.accent class is wiped when the editor re-renders the
    field, so the authored link would otherwise fall back to the global bold-link
    button (teal). Restyle it gold to match .button.accent. Applies in resources
-   too (its bare-link LEARN MORE fallback is scoped to a direct p > a so it
-   doesn't compete here). Matches only in the canvas (live unwraps the <em>/<strong>). */
-.cards:not(.linked, .brochure, .brochure-cta) .cards-card-body p em strong > a,
-.cards:not(.linked, .brochure, .brochure-cta) .cards-card-body p strong em > a {
+   and brochure-cta too — both variants use the accent button by design (their
+   bare/real-.button fallbacks are scoped narrowly enough not to compete here).
+   Matches only in the canvas (live unwraps the <em>/<strong>). */
+.cards:not(.linked, .brochure) .cards-card-body p em strong > a,
+.cards:not(.linked, .brochure) .cards-card-body p strong em > a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
