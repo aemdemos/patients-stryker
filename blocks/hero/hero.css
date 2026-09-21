@@ -153,10 +153,13 @@
   aspect-ratio: 1200 / 680;
 }
 
-/* copy block — stacked below the image on mobile (15px side gutter) */
+/* copy block — stacked below the image on mobile (15px side gutter). The extra
+   30px left inset applies to the whole copy column so the title and CTA line up
+   whether or not the CTA keeps its runtime .button-wrapper class (EW reverts it). */
 .hero.banner > div:last-child {
   box-sizing: border-box;
   padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+  padding-left: calc(var(--container-gutter) + 30px);
 }
 
 .hero.banner h1,
@@ -174,7 +177,6 @@
   font-weight: 500;
   font-size: 6vw;
   line-height: var(--heading-line-height-hero);
-  padding-left: 30px; /* match the button-wrapper inset so the title lines up with the CTA */
 }
 
 /* subheading — dark serif, 21px on phones then 24.5px from 600px up */
@@ -190,7 +192,6 @@
 /* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
 .hero.banner .button-wrapper {
   margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
-  padding-left: 30px;
 }
 
 /* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
@@ -325,13 +326,6 @@
   line-height: var(--heading-line-height-hero);
 }
 
-/* stroke-awareness hero is stacked full-width, so the condition/treatment banner
-   insets added in #219 (h1 5%, buttons 30px) don't apply — keep the copy flush
-   with the section gutter, matching the source. */
-.hero-stroke.section .hero.banner h1,
-.hero-stroke.section .hero.banner .button-wrapper {
-  padding-left: 0;
-}
 
 /* ===== Tablet and up (600px) — all variants ===== */
 @media (width >= 600px) {
@@ -426,6 +420,7 @@
   max-width: none;
   padding-block: var(--space-section) var(--space-block-l);
   padding-top: 50px;
+  padding-left: var(--container-gutter); /* stacked stroke hero: flush, no 30px banner inset */
 }
 
 /* "Select language" — source renders it at 21px with a tight line-height (not
