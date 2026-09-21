@@ -359,9 +359,8 @@ sup {
   vertical-align: baseline;
 }
 
-/* EW wraps authored content with `.prosemirror-editor`; remove paragraph trailing
-   margin in list items so compact/reference list rhythm matches preview/live. */
-.prosemirror-editor :is(ul, ol) > li > p {
+/* EW -remove paragraph trailing margin in list items */
+:is(ul, ol) > li > p {
   margin-bottom: 0;
 }
 
