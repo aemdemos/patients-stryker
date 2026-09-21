@@ -796,6 +796,27 @@ main .section .prosemirror-editor:has(p:has(code))
   font-family: var(--heading-font-family);
 }
 
+/* EW may normalize code callouts to emphasis/superscript markup after re-render. */
+/* stylelint-disable-next-line no-descending-specificity */
+main .section .columns .prosemirror-editor:has(p:has(:is(em > strong, strong > em))) p,
+main .section .columns .prosemirror-editor:has(p:has(:is(em > strong, strong > em)))
+  + .prosemirror-editor:has(p:has(sup)) p {
+  background-color: var(--color-navy-bright);
+  color: var(--color-white);
+  padding: 20px;
+  margin-bottom: 0;
+  font-size: 3vw;
+  line-height: 24px;
+}
+
+main .section .columns .prosemirror-editor:has(p:has(:is(em > strong, strong > em)))
+  + .prosemirror-editor:has(p:has(sup)) p {
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
 
 /* section width variants */
 main > .section.narrow > div {
