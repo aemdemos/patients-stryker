@@ -365,8 +365,6 @@ sup {
   margin-bottom: 0;
 }
 
-
-
 /* footnotes / disclaimer list */
 main li[id^="fn-"] {
   scroll-margin-top: calc(var(--nav-height) + 10px);
@@ -776,11 +774,11 @@ main .last-modified {
 
 /* EW wraps authored lines into separate ProseMirror editors, so apply
    the callout spacing by content pattern instead of paragraph adjacency. */
-.section.compact .columns .prosemirror-editor p:has(:is(em > strong > code, strong > em > code)) {
+.section.compact .columns  p:has(:is(em > strong > code, strong > em > code)) {
   margin: 0;
 }
 
-.section.compact .columns .prosemirror-editor p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
+.section.compact .columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
   padding-top: 0;
   padding-bottom: 20px;
   margin-bottom: 30px;
