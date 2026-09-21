@@ -778,10 +778,6 @@ main .last-modified {
   font-family: var(--heading-font-family);
 }
 
-.section.compact .columns .prosemirror-editor p:has(code) {
-margin-bottom: 0;
-}
-
 
 /* EW renders each authored line in its own ProseMirror wrapper, so the
    paragraph sibling selector above does not match there. */
@@ -789,28 +785,7 @@ margin-bottom: 0;
   margin-bottom: 30px;
 }
 
-/* EW deterministic fallback: compact callouts are sibling ProseMirror wrappers. */
-/* stylelint-disable no-descending-specificity */
-.section.compact > .default-content-wrapper > .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em))) p,
-.section.compact > .default-content-wrapper > .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em)))
-  + .prosemirror-editor:has(p:has(:is(code, sup))) p {
-  background-color: var(--color-navy-bright);
-  color: var(--color-white);
-  padding: 20px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  font-size: 3vw;
-  line-height: 24px;
-}
 
-.section.compact > .default-content-wrapper > .prosemirror-editor:has(p:has(:is(code, strong, b, em > strong, strong > em)))
-  + .prosemirror-editor:has(p:has(:is(code, sup))) p {
-  padding-top: 0;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-  font-family: var(--heading-font-family);
-}
-/* stylelint-enable no-descending-specificity */
 
 
 /* section width variants */
