@@ -912,6 +912,17 @@ main :is(h1, h2, h3, h4, h5, h6).underline {
   font-size: var(--heading-font-size-l);
 }
 
+/* EW fallback: ProseMirror keeps raw <u> markers instead of .underline class. */
+main .prosemirror-editor :is(h1, h2, h3, h4, h5, h6):has(> u) {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+  font-size: var(--heading-font-size-l);
+}
+
+main .prosemirror-editor :is(h1, h2, h3, h4, h5, h6):has(> u) > u {
+  text-decoration: none;
+}
+
 /* Full-bleed sections keep edge-to-edge backgrounds with no vertical gap between bands. */
 main > .section.full-bleed {
   margin-block: 0;
