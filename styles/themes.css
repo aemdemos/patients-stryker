@@ -1111,3 +1111,69 @@ body.resources main > .section.compact > div :is(p, ol, ul, li) {
 body.resources .section.compact {
   margin-bottom: 0;
 }
+
+/* =====================================================================
+   Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
+   ===================================================================== */
+
+/* Display font: use the site's "Futura for Stryker" cut via a token override,
+   scoped to this theme (other pages keep Futura LT W01). */
+body.ivs-treatment {
+  --display-font-family: "Futura for Stryker", futura-for-stryker-fallback, arial, helvetica, sans-serif;
+  --display-font-family-bold: "Futura for Stryker", futura-for-stryker-fallback, "Arial Black", arial, sans-serif;
+}
+
+/* Page-wide type scale (reference wraps everything in a 1.25x span): h3 26.25px,
+   body/li 17.5px, vs the shared defaults. */
+body.ivs-treatment main h3 {
+  font-size: var(--heading-font-size-l-scaled); /* 26.25px */
+}
+
+body.ivs-treatment main :is(p, li) {
+  font-size: var(--body-font-size-l); /* 17.5px */
+}
+
+/* Flex sections: top-align columns (shared rule centres them; reference top-aligns). */
+body.ivs-treatment main > .section.flex {
+  align-items: start;
+}
+
+/* Plain columns sections: ~50px top/bottom margin (dark/full-bleed pad themselves). */
+body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
+  margin-block: var(--space-section-l); /* 50px */
+}
+
+/* "What is LSS?" dark 50-50 band — page-level gap to the flex section above it.
+   (The edge-to-edge image-bleed rendering lives in the columns block CSS.) */
+body.ivs-treatment main > .section.dark:has(.columns-50-50) {
+  margin-top: var(--space-section-l);
+}
+
+/* Resources heading — 1px gold underline on the cards-section h2. */
+body.ivs-treatment main > .section.cards-container h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* Potential risks — make the light-gray band content-width (not full-bleed): move
+   the grey fill + padding onto the inner wrapper and add outer margin for spacing. */
+body.ivs-treatment main > .section.light-gray {
+  margin-block: var(--space-section-xl) var(--space-section-l); /* ~90px above, 50px below */
+  background-color: transparent; /* undo the edge-to-edge fill from styles.css */
+}
+
+/* Target only the content wrapper (not the stray empty section div, which would
+   otherwise render as a hollow grey bar). Keep the grey band the width of the
+   centered content column so it aligns with the section above at any viewport. */
+body.ivs-treatment main > .section.light-gray > .default-content-wrapper {
+  width: min(100% - 2 * var(--container-gutter), var(--container-max) - 2 * var(--container-gutter));
+  margin-inline: auto;
+  padding: var(--space-section);
+  background-color: var(--color-surface-dim);
+}
+
+/* Disclaimer band copy renders at the smaller 14px size, not the page-wide 17.5px. */
+body.ivs-treatment main > .section.light-gray :is(p, li) {
+  font-size: var(--body-font-size-m); /* 14px */
+  line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
+}

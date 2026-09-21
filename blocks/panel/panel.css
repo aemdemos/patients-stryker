@@ -12,6 +12,12 @@
   margin: 0;
 }
 
+/* content bullet lists inside the panel body use filled discs (nested <ul> would
+   otherwise default to hollow circles). */
+.panel .panel-body ul {
+  list-style-type: disc;
+}
+
 .panel .panel-body {
   margin: 10px;
   padding: 3%;
@@ -62,6 +68,13 @@
 .panel .panel-body i b {
   color: var(--color-accent);
   font-style: normal;
+}
+
+/* bold list labels stay in the body serif (bold), not the global Futura display
+   font — matches the reference's inline "Quick recovery time:" style. */
+.panel .panel-body li strong,
+.panel .panel-body li b {
+  font-family: var(--body-font-family);
 }
 
 
@@ -122,9 +135,14 @@
   text-decoration: none;
 }
 
-/* Universal Editor fallback */
+/* Editor fallback — the runtime .button.accent class is reverted in EW, so match
+   the authored bold+italic CTA structurally. The em/strong can wrap the anchor
+   (em > strong > a) or sit inside it; cover both so the gold fill wins over the
+   global teal strong-link button. */
 .panel.cta a:any-link:has(em),
-.panel.cta a:any-link:has(strong) {
+.panel.cta a:any-link:has(strong),
+.panel.cta em > a:any-link,
+.panel.cta strong > a:any-link {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -144,8 +162,10 @@
   color: #000;
 }
 
-/* the authored em/strong nested inside that button must not re-italicize or
+/* the authored em/strong (inside OR wrapping the anchor) must not re-italicize or
    recolor the label (declared after the button rule to keep specificity order) */
+.panel.cta em:has(> a:any-link),
+.panel.cta strong:has(> a:any-link),
 .panel.cta a:any-link:has(em) em,
 .panel.cta a:any-link:has(strong) strong {
   font-style: normal;
@@ -187,6 +207,13 @@
 .panel .panel-body strong > a:any-link:has(> u) > u,
 .panel .panel-body a:any-link > strong:has(> u) > u {
   text-decoration: none;
+}
+
+/* plain underlined inline link (e.g. "Potential risks") — keep it at the list-item
+   body font/size, not the larger wide-panel serif paragraph style (underline stays). */
+.panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
 }
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
@@ -235,6 +262,17 @@
 
 .panel .panel-body p:last-child {
   margin: 0 0 var(--space-block);
+}
+
+/* EW wraps list-item text in a <p>; keep it at the bare-<li> body typography. */
+.panel.cta .panel-body li > p,
+.panel.light .panel-body li > p,
+.panel.wide .panel-body li > p,
+.panel.colored-border .panel-body li > p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--body-line-height);
 }
 
 .panel .panel-body p:last-child:has(strong em),

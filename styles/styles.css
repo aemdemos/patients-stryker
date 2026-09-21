@@ -39,6 +39,7 @@
   --color-black: #000;
   --color-surface: #edeeec;
   --color-surface-alt: #f8f8f8;
+  --color-surface-dim: #dfe1de; /* deeper neutral grey band (e.g. disclaimer panel) */
   --color-surface-muted: #b2b4ae;
   --color-border: #ddd;
   --color-text-muted: #555;
@@ -801,6 +802,11 @@ main > .section.spacer {
   height: var(--space-section);
 }
 
+/* larger spacer variant — 2× the base gap (~60px). Authored as `spacer, large`. */
+main > .section.spacer.large {
+  height: calc(2 * var(--space-section));
+}
+
 main > .section.spacer > div {
   display: none;
 }
@@ -832,7 +838,7 @@ main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
-/* dark colour variant. */
+/* dark colour variant — gray-to-teal gradient band, white text; pair with .full-bleed. */
 main > .section.dark {
   background: var(--panel-dark-gradient);
   color: var(--color-white);
