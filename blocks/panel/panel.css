@@ -209,15 +209,11 @@
   text-decoration: none;
 }
 
-/* plain underlined inline link (e.g. "Potential risks") — small body-size teal
-   link, no underline, matching the reference (distinct from the bold CTA links). */
+/* plain underlined inline link (e.g. "Potential risks") — keep it at the list-item
+   body font/size, not the larger wide-panel serif paragraph style (underline stays). */
 .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
-  font-size: var(--body-font-size-m);
-  text-decoration: none;
-}
-
-.panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) u {
-  text-decoration: none;
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
 }
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
