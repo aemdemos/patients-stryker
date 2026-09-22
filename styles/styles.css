@@ -390,6 +390,10 @@ h2 strong em {
   font-size: var(--footnote-font-size);
 }
 
+ em strong >a:any-link {
+  background-color: var(--color-accent);
+}
+
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
   main .section.side-by-side {
@@ -497,8 +501,7 @@ a:any-link > strong {
 /* EW can author strong+underline links without runtime classes. Match that
    structure directly so they do not inherit the global strong-link button style. */
 strong > a:any-link:has(u),
-a:any-link > strong:has(u),
-em > strong > a:any-link {
+a:any-link > strong:has(u) {
   display: inline;
   max-width: none;
   padding: 0;
@@ -517,8 +520,7 @@ strong > a:any-link:has(u) {
 }
 
 strong > a:any-link:has(u) u,
-a:any-link > strong:has(u) u,
-em > strong > a:any-link u {
+a:any-link > strong:has(u) u {
   text-decoration: none;
     display: inline;
   max-width: none;
@@ -578,7 +580,6 @@ a.link-strong:any-link {
   font-family: var(--display-font-family);
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-accent);
   text-decoration: none;
 }
 
