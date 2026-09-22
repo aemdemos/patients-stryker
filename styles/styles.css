@@ -392,6 +392,8 @@ h2 strong em {
 
  em strong >a:any-link {
   background-color: var(--color-accent);
+  color: #000;
+  border-color: var(--color-accent-dark);
 }
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
