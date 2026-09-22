@@ -149,6 +149,15 @@
   display: contents;
 }
 
+/* EW canvas wraps each authored field in editor <div>s, which would otherwise
+   become the flex items and break the title/image/link ordering above. Make
+   those wrappers transparent so the real <h_>/<p> keep their `order`. Published
+   has no wrapper divs here, so this is a no-op there. */
+.cards.brochure .cards-card-body div,
+.cards.linked .cards-card-body div {
+  display: contents;
+}
+
 /* linked title = bold link promoted to a button; order/skin it as the title */
 .cards.linked .cards-card-body .button-wrapper {
   order: 0;
