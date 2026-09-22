@@ -475,7 +475,8 @@ a:any-link:has(b) {
 }
 
 strong > a:any-link,
-a:any-link > strong {
+a:any-link > strong,
+strong > a.link-inline:any-link  {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -497,7 +498,8 @@ a:any-link > strong {
 /* EW can author strong+underline links without runtime classes. Match that
    structure directly so they do not inherit the global strong-link button style. */
 strong > a:any-link:has(u),
-a:any-link > strong:has(u) {
+a:any-link > strong:has(u),
+strong > a.link-inline:any-link:has(u) u {
   display: inline;
   max-width: none;
   padding: 0;
@@ -514,6 +516,12 @@ a:any-link > strong:has(u) {
 strong > a:any-link:has(u) u,
 a:any-link > strong:has(u) u {
   text-decoration: none;
+      display: inline;
+    font-family: var(--display-font-family);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 /* Keep bold heading reference anchors styled as citations, not CTA buttons. */
@@ -536,6 +544,24 @@ a[href="#disclaimer"]:any-link > strong {
 
 /* Render sentence-style bold links as inline text, not buttons. */
 a.link-inline:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
+}
+
+/* EW does not always preserve runtime classes like .link-inline; mirror the
+   same inline-bold-link rendering from authored structure alone. */
+p > strong > a:any-link,
+p > a:any-link > strong {
   display: inline;
   max-width: none;
   padding: 0;
