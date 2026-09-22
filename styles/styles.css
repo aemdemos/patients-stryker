@@ -523,14 +523,14 @@ a:any-link > strong:has(u) u {
 :is(em, strong) :is(em, strong) > a:any-link:not(:has(u)) {
   border-color: var(--color-accent-dark);
   background-color: var(--color-accent);
-  color: #000;
+  color: var(--color-black);
 }
 
 :is(em, strong) :is(em, strong) > a:any-link:not(:has(u)):hover,
 :is(em, strong) :is(em, strong) > a:any-link:not(:has(u)):focus-visible {
   border-color: var(--color-accent-active);
   background-color: var(--color-accent-hover);
-  color: #000;
+  color: var(--color-black);
 }
 
 /* Keep bold heading reference anchors styled as citations, not CTA buttons. */
