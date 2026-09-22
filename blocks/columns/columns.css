@@ -157,11 +157,6 @@
   font-size: var(--heading-font-size-l); 
 }
 
-/* hero CTA button — hidden on mobile */
-.columns.columns-50-50 .button-wrapper {
-  display: none;
-}
-
 
 .section.serif .columns p,
 .section.serif .columns ul,
