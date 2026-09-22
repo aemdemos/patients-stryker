@@ -557,24 +557,6 @@ a[href="#disclaimer"]:any-link > strong {
 }
 
 
-/* EW does not always preserve runtime classes like .link-inline; mirror the
-   same bold+underline convention from authored structure alone. */
-.prosemirror-editor p > em > strong > a:any-link,
-.prosemirror-editor p > strong > a:any-link:has(u),
-.prosemirror-editor p > a:any-link > strong:has(u) {
-  display: inline;
-  max-width: none;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background-color: transparent;
-  color: var(--color-accent);
-  font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-}
 
 /* bold + underline authored links become flat golden CTAs with a trailing chevron */
 a.link-strong:any-link {
