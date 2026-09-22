@@ -475,8 +475,7 @@ a:any-link:has(b) {
 }
 
 strong > a:any-link,
-a:any-link > strong,
-strong > a.link-inline:any-link  {
+a:any-link > strong {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -499,7 +498,7 @@ strong > a.link-inline:any-link  {
    structure directly so they do not inherit the global strong-link button style. */
 strong > a:any-link:has(u),
 a:any-link > strong:has(u),
-strong > a.link-inline:any-link:has(u) u {
+em > strong > a:any-link {
   display: inline;
   max-width: none;
   padding: 0;
@@ -509,19 +508,30 @@ strong > a.link-inline:any-link:has(u) u {
   font-family: var(--display-font-family);
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
+strong > a:any-link:has(u) {
+  background-color: var(--color-white);
+}
+
 strong > a:any-link:has(u) u,
-a:any-link > strong:has(u) u {
+a:any-link > strong:has(u) u,
+em > strong > a:any-link u {
   text-decoration: none;
-      display: inline;
-    font-family: var(--display-font-family);
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    text-decoration: none;
+    display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
+  text-decoration: none;
 }
 
 /* Keep bold heading reference anchors styled as citations, not CTA buttons. */
@@ -542,55 +552,50 @@ a[href="#disclaimer"]:any-link > strong {
   text-transform: none;
 }
 
-/* Render sentence-style bold links as inline text, not buttons. */
-a.link-inline:any-link {
+
+/* EW does not always preserve runtime classes like .link-inline; mirror the
+   same bold+underline convention from authored structure alone. */
+.prosemirror-editor p > em > strong > a:any-link,
+.prosemirror-editor p > strong > a:any-link:has(u),
+.prosemirror-editor p > a:any-link > strong:has(u) {
   display: inline;
   max-width: none;
   padding: 0;
   border: 0;
   border-radius: 0;
   background-color: transparent;
-  color: var(--link-color);
+  color: var(--color-accent);
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l);
   font-weight: 700;
-  text-transform: none;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
-/* EW does not always preserve runtime classes like .link-inline; mirror the
-   same inline-bold-link rendering from authored structure alone. */
-p > strong > a:any-link,
-p > a:any-link > strong {
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    border: 1px solid var(--color-primary-dark);
-    border-radius: var(--radius-none);
-    padding: 9px 12px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-family: var(--display-font-family);
-    font-size: var(--body-font-size-m);
-    font-weight: 400;
-    line-height: 1.3;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-/* bold + underline authored links become flat teal CTAs with a trailing chevron */
+/* bold + underline authored links become flat golden CTAs with a trailing chevron */
 a.link-strong:any-link {
   display: inline;
   font-family: var(--display-font-family);
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
 a.link-strong:any-link::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+.prosemirror-editor p > em > strong > a:any-link::after,
+.prosemirror-editor p > strong > a:any-link:has(u)::after,
+.prosemirror-editor p > a:any-link:has(> strong:has(u))::after {
   content: "";
   display: inline-block;
   margin-inline-start: calc(var(--space-block) * 0.4);
