@@ -352,7 +352,7 @@ sup {
 
 /* EW wraps authored content with `.prosemirror-editor`; remove paragraph trailing
    margin in list items so compact/reference list rhythm matches preview/live. */
-.prosemirror-editor :is(ul, ol) > li > p {
+:is(ul, ol) > li > p {
   margin-bottom: 0;
 }
 
@@ -406,8 +406,9 @@ em > a:any-link {
     text-decoration: none;
     font-family: var(--display-font-family);
     font-size: var(--body-font-size-m);
-        border-radius: var(--radius-none);
+    border-radius: var(--radius-none);
     padding: 9px 12px;
+     font-style: normal;
 }
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
@@ -525,6 +526,7 @@ a:any-link > strong:has(u) {
   border-radius: 0;
   background-color: transparent;
   font-family: var(--display-font-family);
+  font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -576,25 +578,13 @@ a[href="#disclaimer"]:any-link > strong {
 a.link-strong:any-link {
   display: inline;
   font-family: var(--display-font-family);
+  font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 a.link-strong:any-link::after {
-  content: "";
-  display: inline-block;
-  margin-inline-start: calc(var(--space-block) * 0.4);
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 6px 0 6px 6px;
-  border-color: transparent transparent transparent currentcolor;
-}
-
-.prosemirror-editor p > em > strong > a:any-link::after,
-.prosemirror-editor p > strong > a:any-link:has(u)::after,
-.prosemirror-editor p > a:any-link:has(> strong:has(u))::after {
   content: "";
   display: inline-block;
   margin-inline-start: calc(var(--space-block) * 0.4);
