@@ -148,9 +148,6 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-
-  /* reserve the image box before load to avoid mobile CLS; mobile crop 1200x680 */
-  aspect-ratio: 1200 / 680;
 }
 
 /* copy block — stacked below the image on mobile (15px side gutter). The extra
@@ -486,11 +483,6 @@
 
   .hero picture.hero-image-desktop {
     display: block;
-  }
-
-  /* desktop crop 1920x640 is 3:1 */
-  .hero.banner img {
-    aspect-ratio: 1920 / 640;
   }
 
   .hero picture.hero-image-mobile {
