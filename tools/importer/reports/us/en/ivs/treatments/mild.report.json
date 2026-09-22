@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://patients.stryker.com/us/en/ivs/treatments/mild.html",
+  "path": "us/en/ivs/treatments/mild",
+  "timestamp": "2026-09-14T22:29:12.776Z",
+  "title": "mild procedure | Interventional Spine | Stryker",
+  "template": "ivs-treatment",
+  "blocks": [
+    "hero",
+    "panel",
+    "panel-cta",
+    "columns-50-50",
+    "columns",
+    "columns",
+    "columns",
+    "cards-brochure",
+    "marketo-form"
+  ]
+}

@@ -94,6 +94,28 @@
   text-decoration: none;
 }
 
+/* Canvas fallback for the bold+italic (<em><strong><a>) high-impact CTA — same
+   idea as the secondary fallback above, but restyled gold to match .button.accent. */
+.cards:not(.linked, .brochure) .cards-card-body p em strong > a,
+.cards:not(.linked, .brochure) .cards-card-body p strong em > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-block) 0 0;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  font-style: normal;   /* cancel the authoring <em> italic */
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 /* brochure links (Digital | Print, Banner N) are plain teal text, no underline */
 .cards.brochure .cards-card-body p a:any-link {
   text-decoration: none;
@@ -114,8 +136,9 @@
   margin: var(--space-block) 0 0;
 }
 
-/* LEARN MORE — teal button fallback for a bare (non-.button) link */
-.cards.resources .cards-card-body p a:any-link:not(.button) {
+/* LEARN MORE — teal button fallback for a bare (non-.button) link. Child
+   combinator so it doesn't also catch the em/strong-wrapped accent CTA below. */
+.cards.resources .cards-card-body p > a:any-link:not(.button) {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
