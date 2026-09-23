@@ -352,7 +352,7 @@ sup {
 
 /* EW wraps authored content with `.prosemirror-editor`; remove paragraph trailing
    margin in list items so compact/reference list rhythm matches preview/live. */
-.prosemirror-editor :is(ul, ol) > li > p {
+:is(ul, ol) > li > p {
   margin-bottom: 0;
 }
 
@@ -389,6 +389,70 @@ h2 strong em {
 .section.compact p {
   font-size: var(--footnote-font-size);
 }
+
+/* links */
+a:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+  overflow-wrap: break-word;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+strong > a:any-link,
+a:any-link > strong {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+em > a:any-link {
+   border-color: var(--color-secondary);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--display-font-family);
+    font-size: var(--body-font-size-m);
+    border-radius: var(--radius-none);
+    padding: 9px 12px;
+     font-style: normal;
+}
+
+/* Footnote citation links (from the global decorateFootnotes()) — teal, no
+   underline; family/weight inherit from context. */
+sup a:any-link,
+a[href^="#fn-"]:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+ em strong > a:any-link {
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  border-color: var(--color-accent-dark);
+}
+
+
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
@@ -439,60 +503,7 @@ button {
   font: inherit;
 }
 
-/* links */
-a:any-link {
-  color: var(--link-color);
-  text-decoration: underline;
-  overflow-wrap: break-word;
-}
 
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  text-decoration: none;
-}
-
-/* Remove underline from bold and bold+italic links. */
-strong a:any-link,
-b a:any-link,
-a:any-link:has(strong),
-a:any-link:has(b) {
-  text-decoration: none;
-}
-
-/* Footnote citation links (from the global decorateFootnotes()) — teal, no
-   underline; family/weight inherit from context. */
-sup a:any-link,
-a[href^="#fn-"]:any-link {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-b a:any-link,
-a:any-link:has(strong),
-a:any-link:has(b) {
-  font-family: var(--display-font-family);
-}
-
-strong > a:any-link,
-a:any-link > strong {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  border: 1px solid var(--color-primary-dark);
-  border-radius: var(--radius-none);
-  padding: 9px 12px;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 400;
-  line-height: 1.3;
-  text-transform: uppercase;
-  text-decoration: none;
-}
 
 /* EW can author strong+underline links without runtime classes. Match that
    structure directly so they do not inherit the global strong-link button style. */
@@ -505,15 +516,31 @@ a:any-link > strong:has(u) {
   border-radius: 0;
   background-color: transparent;
   font-family: var(--display-font-family);
+  font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: none;
+}
+
+strong > a:any-link:has(u) {
+  background-color: var(--color-white);
 }
 
 strong > a:any-link:has(u) u,
 a:any-link > strong:has(u) u {
   text-decoration: none;
+    display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
 }
 
 /* EW canvas keeps the authored <em><strong><a> markup (decorateButtons doesn't
@@ -551,29 +578,15 @@ a[href="#disclaimer"]:any-link > strong {
   text-transform: none;
 }
 
-/* Render sentence-style bold links as inline text, not buttons. */
-a.link-inline:any-link {
-  display: inline;
-  max-width: none;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background-color: transparent;
-  color: var(--link-color);
-  font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 700;
-  text-transform: none;
-  text-decoration: none;
-}
 
-/* bold + underline authored links become flat teal CTAs with a trailing chevron */
+
+/* bold + underline authored links become flat golden CTAs with a trailing chevron */
 a.link-strong:any-link {
   display: inline;
   font-family: var(--display-font-family);
+  font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-primary);
   text-decoration: none;
 }
 
