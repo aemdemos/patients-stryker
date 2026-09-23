@@ -149,6 +149,20 @@
   display: contents;
 }
 
+/* EW canvas wraps each authored field in an editor <div>, which becomes the flex
+   item instead of the <h_>/<p> inside it — so the brochure title/link lost their
+   `order` above and both sat above the image. Re-apply the order to the wrapper
+   itself based on what it holds (keeping the wrapper's box, so spacing/margins are
+   unchanged). Published has no wrapper divs (the <h_>/<p> are direct children), so
+   these `> div` selectors never match there — a no-op on the published page. */
+.cards.brochure .cards-card-body > div:has(:is(h1, h2, h3, h4, h5, h6)) {
+  order: 0;
+}
+
+.cards.brochure .cards-card-body > div:has(p) {
+  order: 2;
+}
+
 /* linked title = bold link promoted to a button; order/skin it as the title */
 .cards.linked .cards-card-body .button-wrapper {
   order: 0;
