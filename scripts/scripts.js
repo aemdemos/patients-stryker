@@ -557,6 +557,11 @@ async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadSections(main);
 
+  // Some block decorators reconstruct citation superscripts from authored text
+  // during lazy loading; run footnote linking again so those new <sup> nodes
+  // are converted to #fn-N links as well.
+  decorateFootnotes(main);
+
   decorateLastModified(main);
   applySectionBackgrounds(main);
 

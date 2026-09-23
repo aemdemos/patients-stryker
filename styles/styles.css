@@ -436,6 +436,8 @@ a[href^="#fn-"]:any-link {
   text-decoration: none;
 }
 
+
+
 a:any-link > strong:has(u) {
   display: inline;
   max-width: none;
@@ -448,6 +450,10 @@ a:any-link > strong:has(u) {
   text-transform: uppercase;
   color: var(--color-primary);
   text-decoration: none;
+}
+
+a[href^="#fn-"]:any-link {
+  color: var(--color-white);
 }
 
 /* Keep bold heading reference anchors styled as citations, not CTA buttons. */
@@ -520,7 +526,9 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
-
+code > sup a:any-link {
+  color: var(--color-white);
+}
 
 /* EW can author strong+underline links without runtime classes. Match that
    structure directly so they do not inherit the global strong-link button style. */
