@@ -116,6 +116,11 @@
   text-decoration: none;
 }
 
+/* brochure links (Digital | Print, Banner N) are plain teal text, no underline */
+.cards.brochure .cards-card-body p a:any-link {
+  text-decoration: none;
+}
+
 /* resources variant: PDF brochure card — portrait cover image over a teal button */
 .cards.resources > ul > li {
   background-color: transparent;

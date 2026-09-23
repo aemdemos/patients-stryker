@@ -291,59 +291,6 @@ function decorateSectionMetadata(main) {
   });
 }
 
-/**
- * Removes CTA links/buttons from sections styled with `no-cta`.
- * Runs after fragment content loads so hidden CTAs are removed from the DOM.
- * @param {Element} scope The container to clean
- */
-export function removeCtas(scope) {
-  scope.querySelectorAll('.button-wrapper').forEach((wrapper) => {
-    const cta = wrapper.querySelector('a.button');
-    if (!cta) return;
-    const href = cta.getAttribute('href');
-
-    // Move the CTA PDF link onto the card image before removing the button.
-    // This keeps brochure cards clickable on `no-cta` sections.
-    const card = wrapper.closest('li') || wrapper.closest('.cards-card-image, .cards-card-body')?.parentElement;
-    const image = card && card.querySelector('.cards-card-image picture, .cards-card-image img');
-    if (href && image && !image.closest('a')) {
-      const picture = image.closest('picture') || image;
-      const holder = picture.closest('.cards-card-image') || picture.parentElement;
-      const a = document.createElement('a');
-      a.href = href;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      picture.replaceWith(a);
-      a.append(picture);
-      // keep the click target obvious for the whole image cell
-      if (holder) holder.style.cursor = 'pointer';
-    }
-
-    wrapper.remove();
-  });
-}
-
-/**
- * Merges multiple `.cards` blocks in a section into one grid.
- * Preserves the first block's variant classes and removes empty extras.
- * @param {Element} section The section to consolidate
- */
-export function mergeSectionCards(section) {
-  const cardsBlocks = [...section.querySelectorAll('.cards')];
-  if (cardsBlocks.length < 2) return;
-
-  const first = cardsBlocks[0];
-  const targetList = first.querySelector(':scope > ul');
-  if (!targetList) return;
-
-  cardsBlocks.slice(1).forEach((block) => {
-    block.querySelectorAll(':scope > ul > li').forEach((li) => targetList.append(li));
-    // remove the emptied cards block and its now-empty fragment/section wrappers
-    const fragmentRoot = block.closest('.fragment-wrapper') || block.closest('.fragment') || block;
-    fragmentRoot.remove();
-  });
-}
-
 /* Normalizes a pathname for comparison against query-index paths */
 function normalizePath(path) {
   const clean = path.replace(/\.html$/, '').replace(/\/+$/, '');

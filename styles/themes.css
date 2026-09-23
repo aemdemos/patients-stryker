@@ -85,6 +85,12 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
 
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
+/* single-item panel: one column at all widths (override the panel 2-up grid) */
+body.sa-resources .section.flex .panel.light > ul,
+body.sa-resources .section.flex .panel.light.panel-authoring {
+  grid-template-columns: 1fr;
+}
+
 /* source renders the body copy in the URW Egyptienne heading serif
    (.urw-egyptienne) at 21px, regular weight — NOT the HumanistSlab body face or
    the 17.5px cta size. */
