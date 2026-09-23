@@ -360,33 +360,33 @@
   text-decoration: none;
 }
 
-.section.compact .columns p:has(code)  {
+ .columns p:has(code)  {
   padding: 20px;
   padding-bottom:0;
   margin-bottom: 0;
   line-height: 24px;
 }
 
-.section.compact .columns p:has(code) code  {
+ .columns p:has(code) code  {
   font-size: 3vw;
 }
 
-.section.compact .columns p:has(code) code sup {
+ .columns p:has(code) code sup {
   color: var(--color-white);
 }
 
-.section.compact .columns p:has(code) + p:has(code) {
+ .columns p:has(code) + p:has(code) {
   padding-top: 0;
   padding-bottom:20px;
   margin-bottom: 30px;
   font-family: var(--heading-font-family);
 }
 
-.section.compact .columns  p:has(:is(em > strong > code, strong > em > code)) {
+ .columns  p:has(:is(em > strong > code, strong > em > code)) {
   margin: 0;
 }
 
-.section.compact .columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
+ .columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
   padding-top: 0;
   padding-bottom: 20px;
   margin-bottom: 30px;
@@ -405,7 +405,7 @@
     font-size: var(--heading-font-size-compact-m);
   }
 
-  .section.compact .columns:has(p code) h3 strong {
+  .columns:has(p code) h3 strong {
     font-size: var(--heading-font-size-l);
   }
 
@@ -587,7 +587,7 @@
     margin-bottom: 30px;
   }
 
-   .section.compact .columns p:has(code) code {
+   .columns p:has(code) code {
     font-size:1.5vw;
   }
 
@@ -633,7 +633,7 @@
 }
 
 @media (width >=1200px) {
-  .section.compact .columns p:has(code) code {
+ .columns p:has(code) code {
     font-size: 21px;
   }
 }
