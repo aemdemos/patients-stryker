@@ -71,7 +71,7 @@
 }
 
 /* EW config */
-.section.compact .columns .columns-img-col ~ .prosemirror-editor h3 {
+.section.compact .columns .columns-img-col ~ h3 {
   font-size: var(--heading-font-size-m);
 }
 
