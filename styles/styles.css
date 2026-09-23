@@ -199,6 +199,7 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height);
+  overflow-x: hidden;
 }
 
 body.appear {
@@ -531,19 +532,31 @@ strong > a:any-link:has(u) {
   border-radius: 0;
   background-color: transparent;
   font-family: var(--display-font-family);
+  font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
-main :is(h1, h2, h3, h4, h5, h6):has(> u) > u {
-  text-decoration: none;
+ strong > a:any-link:has(u){
+  background-color: var(--color-white);
 }
 
 strong > a:any-link:has(u) u,
 a:any-link > strong:has(u) u {
   text-decoration: none;
+    display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  text-transform: none;
 }
 
 /* EW canvas keeps the authored <em><strong><a> markup (decorateButtons doesn't
@@ -566,29 +579,15 @@ a:any-link > strong:has(u) u {
 
 
 
-/* Render sentence-style bold links as inline text, not buttons. */
-a.link-inline:any-link {
-  display: inline;
-  max-width: none;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background-color: transparent;
-  color: var(--link-color);
-  font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 700;
-  text-transform: none;
-  text-decoration: none;
-}
 
-/* bold + underline authored links become flat teal CTAs with a trailing chevron */
+
+/* bold + underline authored links become flat golden CTAs with a trailing chevron */
 a.link-strong:any-link {
   display: inline;
   font-family: var(--display-font-family);
+  font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--color-primary);
   text-decoration: none;
 }
 
