@@ -20,8 +20,8 @@
 }
 
 .columns .columns-img-col {
-  margin-bottom: var(--space-section); 
-  padding-bottom: 3%; 
+  margin-bottom: var(--space-section);
+  padding-bottom: 3%;
 }
 
 .columns .columns-img-col img {
@@ -66,7 +66,7 @@
 }
 
 .section.compact .columns .columns-img-col ~ h3 {
-  padding-left:0;
+  padding-left: 0;
   font-size: var(--heading-font-size-m);
 }
 
@@ -74,8 +74,6 @@
 .section.compact .columns .columns-img-col ~ .prosemirror-editor h3 {
   font-size: var(--heading-font-size-m);
 }
-
- .section 
 
 /* compact variant — smaller heading + body typography for dense 50/50 rows. */
 .section.compact .columns-img-col {
@@ -125,6 +123,13 @@
   line-height: var(--paragraph-line-height);
   padding-left: 0;
   padding-right: 0;
+}
+
+/* inline bold in body copy keeps the body font (bold weight), not the global
+   Futura display face — bold should emphasise, not switch typeface. Compact
+   columns opt back into the display font below. */
+.columns p :is(strong, b) {
+  font-family: var(--body-font-family);
 }
 
 .section.compact .columns p strong {
@@ -202,16 +207,22 @@
   margin-bottom: 0;
 }
 
-/* dark variant — gold Futura-bold headings and white body text on the dark
-   gradient panel (reference: knee-pain "Where treatment begins" section). */
-.section.dark .columns h2,
-.section.dark .columns h3,
-.section.dark .columns h4 {
+/* dark variant — gold Futura-bold section title (h3). 26px gold. */
+.section.dark .columns h3 {
   font-family: var(--display-font-family);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--panel-cta-heading-size); /* 26px */
   font-weight: 700;
   line-height: var(--heading-line-height-ml);
   color: var(--color-accent);
+}
+
+/* dark-variant caption (h4) — Egyptienne serif light, white, 21.875px. */
+.section.dark .columns h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-ml); /* 21.875px */
+  font-weight: 500;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-white);
 }
 
 .section.dark .columns p,
@@ -228,6 +239,24 @@
   color: var(--color-black);
 }
 
+/* dark 50-50 band: the image bleeds the full band height, so drop the section's
+   own block padding and the image column's margin/padding (the text column re-adds
+   its inset below). Keyed on the 50-50 variant so plain-columns dark bands keep
+   their default spacing. */
+.section.dark:has(.columns-50-50) {
+  padding-block: 0;
+}
+
+.section.dark .columns-50-50 .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+  padding-block: var(--space-section);
+}
+
+.section.compact .columns p,
 .section.compact .columns ul,
 .section.compact .columns li {
   font-size: var(--body-font-size-m);

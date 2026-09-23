@@ -39,6 +39,7 @@
   --color-black: #000;
   --color-surface: #edeeec;
   --color-surface-alt: #f8f8f8;
+  --color-surface-dim: #dfe1de; /* deeper neutral grey band (e.g. disclaimer panel) */
   --color-surface-muted: #b2b4ae;
   --color-border: #ddd;
   --color-text-muted: #555;
@@ -505,6 +506,23 @@ a:any-link > strong:has(u) u {
   text-decoration: none;
 }
 
+/* EW canvas keeps the authored <em><strong><a> markup (decorateButtons doesn't
+   run there). decorateButtons turns an em+strong CTA into an accent button
+   (a.button.accent); the strong>a fallback above would otherwise paint it primary
+   (green), so repaint the em+strong structure accent to match the published look. */
+:is(em, strong) :is(em, strong) > a:any-link:not(:has(u)) {
+  border-color: var(--color-accent-dark);
+  background-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+:is(em, strong) :is(em, strong) > a:any-link:not(:has(u)):hover,
+:is(em, strong) :is(em, strong) > a:any-link:not(:has(u)):focus-visible {
+  border-color: var(--color-accent-active);
+  background-color: var(--color-accent-hover);
+  color: var(--color-black);
+}
+
 /* Keep bold heading reference anchors styled as citations, not CTA buttons. */
 strong > a[href^="#fn-"]:any-link,
 strong > a[href="#disclaimer"]:any-link,
@@ -764,6 +782,10 @@ main > .section.spacer {
   height: var(--space-section);
 }
 
+/* larger spacer variant — 2× the base gap (~60px). Authored as `spacer, large`. */
+main > .section.spacer.large {
+  height: calc(2 * var(--space-section));
+}
 
 main > .section.spacer > div {
   display: none;
@@ -808,7 +830,7 @@ main > .section.light-gray {
   background-color: var(--color-surface);
 }
 
-/* dark colour variant. */
+/* dark colour variant — gray-to-teal gradient band, white text; pair with .full-bleed. */
 main > .section.dark {
   background: var(--panel-dark-gradient);
   color: var(--color-white);
