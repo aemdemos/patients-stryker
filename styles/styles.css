@@ -530,16 +530,12 @@ strong > a:any-link:has(u) {
   padding: 0;
   border: 0;
   border-radius: 0;
-  background-color: transparent;
   font-family: var(--display-font-family);
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-accent);
   text-decoration: none;
-}
-
- strong > a:any-link:has(u){
   background-color: var(--color-white);
 }
 

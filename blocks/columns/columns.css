@@ -70,10 +70,6 @@
   font-size: var(--heading-font-size-m);
 }
 
-/* EW config */
-.section.compact .columns .columns-img-col ~ h3 {
-  font-size: var(--heading-font-size-m);
-}
 
 /* compact variant — smaller heading + body typography for dense 50/50 rows. */
 .section.compact .columns-img-col {
@@ -360,22 +356,22 @@
   text-decoration: none;
 }
 
- .columns p:has(code)  {
+ .section.compact .columns p:has(code)  {
   padding: 20px;
   padding-bottom:0;
   margin-bottom: 0;
   line-height: 24px;
 }
 
- .columns p:has(code) code  {
+  .columns p:has(code) code  {
   font-size: 3vw;
 }
 
- .columns p:has(code) code sup {
+  .columns p:has(code) code sup {
   color: var(--color-white);
 }
 
- .columns p:has(code) + p:has(code) {
+ .section.compact .columns p:has(code) + p:has(code) {
   padding-top: 0;
   padding-bottom:20px;
   margin-bottom: 30px;
@@ -386,7 +382,7 @@
   margin: 0;
 }
 
- .columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
+.columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
   padding-top: 0;
   padding-bottom: 20px;
   margin-bottom: 30px;
@@ -587,7 +583,7 @@
     margin-bottom: 30px;
   }
 
-   .columns p:has(code) code {
+  .columns p:has(code) code {
     font-size:1.5vw;
   }
 
