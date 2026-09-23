@@ -136,8 +136,9 @@
   font-family: var(--display-font-family);
 }
 
-.section.compact .columns.columns-50-50.border-bottom {
+.columns.columns-50-50.border-bottom {
   border-bottom: 1px solid var(--color-surface-muted);
+  padding-bottom: var(--space-section-l);
 }
 
 .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {

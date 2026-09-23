@@ -374,7 +374,7 @@ h2 strong em {
   margin-bottom: 40px;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
+
 .section.compact h1 {
   margin: 30px 0 10px;
   line-height: 22.26px;
@@ -394,8 +394,79 @@ main > .section.compact > div ol li p {
   margin-bottom: 0;
 }
 
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
 
-/* stylelint-disable-next-line no-descending-specificity */
+/* links */
+a:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+  overflow-wrap: break-word;
+}
+
+strong > a:any-link,
+a:any-link > strong {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: var(--radius-none);
+  padding: 9px 12px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Footnote citation links (from the global decorateFootnotes()) — teal, no
+   underline; family/weight inherit from context. */
+sup a:any-link,
+a[href^="#fn-"]:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:any-link > strong:has(u) {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Keep bold heading reference anchors styled as citations, not CTA buttons. */
+strong > a[href^="#fn-"]:any-link,
+strong > a[href="#disclaimer"]:any-link,
+a[href^="#fn-"]:any-link > strong,
+a[href="#disclaimer"]:any-link > strong {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+}
+
 main > .section.compact:has(ol > li) p > strong {
   font-family: var(--body-font-family);
 }
@@ -428,18 +499,9 @@ button {
   font: inherit;
 }
 
-/* links */
-a:any-link {
-  color: var(--link-color);
-  text-decoration: underline;
-  overflow-wrap: break-word;
-}
 
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  text-decoration: none;
-}
+
+
 
 /* Remove underline from bold and bold+italic links. */
 strong a:any-link,
@@ -449,13 +511,7 @@ a:any-link:has(b) {
   text-decoration: none;
 }
 
-/* Footnote citation links (from the global decorateFootnotes()) — teal, no
-   underline; family/weight inherit from context. */
-sup a:any-link,
-a[href^="#fn-"]:any-link {
-  color: var(--link-color);
-  text-decoration: none;
-}
+
 
 b a:any-link,
 a:any-link:has(strong),
@@ -463,31 +519,11 @@ a:any-link:has(b) {
   font-family: var(--display-font-family);
 }
 
-/* stylelint-disable no-descending-specificity */
-strong > a:any-link,
-a:any-link > strong {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  border: 1px solid var(--color-primary-dark);
-  border-radius: var(--radius-none);
-  padding: 9px 12px;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 400;
-  line-height: 1.3;
-  text-transform: uppercase;
-  text-decoration: none;
-}
+
 
 /* EW can author strong+underline links without runtime classes. Match that
    structure directly so they do not inherit the global strong-link button style. */
-strong > a:any-link:has(u),
-a:any-link > strong:has(u) {
+strong > a:any-link:has(u) {
   display: inline;
   max-width: none;
   padding: 0;
@@ -498,6 +534,10 @@ a:any-link > strong:has(u) {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-primary);
+  text-decoration: none;
+}
+
+main :is(h1, h2, h3, h4, h5, h6):has(> u) > u {
   text-decoration: none;
 }
 
@@ -523,24 +563,8 @@ a:any-link > strong:has(u) u {
   color: var(--color-black);
 }
 
-/* Keep bold heading reference anchors styled as citations, not CTA buttons. */
-strong > a[href^="#fn-"]:any-link,
-strong > a[href="#disclaimer"]:any-link,
-a[href^="#fn-"]:any-link > strong,
-a[href="#disclaimer"]:any-link > strong {
-  display: inline;
-  max-width: none;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background-color: transparent;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  text-transform: none;
-}
-/* stylelint-enable no-descending-specificity */
+
+
 
 /* Render sentence-style bold links as inline text, not buttons. */
 a.link-inline:any-link {
@@ -799,7 +823,6 @@ main .section.highlight {
   padding: var(--space-section) 0;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 main > .section.no-cta > .default-content-wrapper h1 {
   font-size: 42px;
   margin: 40px 0;
@@ -814,10 +837,8 @@ main :is(h1, h2, h3, h4, h5, h6):has(> u) {
   font-size: var(--heading-font-size-xl);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-main :is(h1, h2, h3, h4, h5, h6):has(> u) > u {
-  text-decoration: none;
-}
+
+
 
 /* Full-bleed sections keep edge-to-edge backgrounds with no vertical gap between bands. */
 main > .section.full-bleed {
