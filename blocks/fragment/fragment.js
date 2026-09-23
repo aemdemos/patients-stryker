@@ -55,6 +55,23 @@ function isWholeSectionEmbed(section, block) {
   return blocks.length === 1 && blocks[0] === block;
 }
 
+/**
+ * True when rendering inside the DA / Experience Workspace canvas (da.live),
+ * either directly or in its preview iframe. The hoist below removes the fragment
+ * block, which is what EW anchors its in-context "edit fragment" affordance to —
+ * so in the editor we must keep the block (skip the hoist) and only hoist on the
+ * delivered page.
+ */
+function isDaEditor() {
+  try {
+    const daHost = /(^|\.)da\.live$/;
+    if (daHost.test(window.location.hostname)) return true;
+    if (window.self !== window.top && document.referrer
+      && daHost.test(new URL(document.referrer).hostname)) return true;
+  } catch { /* cross-origin referrer — ignore */ }
+  return false;
+}
+
 export default async function decorate(block) {
   const link = block.querySelector('a');
   const path = link ? link.getAttribute('href') : block.textContent.trim();
@@ -67,8 +84,11 @@ export default async function decorate(block) {
   // Whole-section fragment: hoist its sections to be direct children of `main`
   // (replacing the host section) so an embedded fragment renders identically to
   // its standalone page — page/theme rules scoped to `main > .section` match.
+  // Skipped in the DA/EW editor: the hoist removes the fragment block, and EW
+  // needs that block in place to offer in-context fragment editing, so there we
+  // keep it nested (the hoist still runs on the delivered page).
   const sections = [...fragment.children].filter((el) => el.classList.contains('section'));
-  if (sections.length && isWholeSectionEmbed(section, block)) {
+  if (sections.length && isWholeSectionEmbed(section, block) && !isDaEditor()) {
     if (noCta) sections.forEach((s) => removeCtas(s));
     section.replaceWith(...sections);
     return;
