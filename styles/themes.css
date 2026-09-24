@@ -1100,7 +1100,8 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 
  body.condition-detail .panel.gold .panel-body {
   margin:0;
-  padding: 3%;
+  padding-top: 3%;
+  padding-bottom: 2%;
  }
 
 
