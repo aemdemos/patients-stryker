@@ -1084,6 +1084,11 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   padding-block: var(--space-section);
  }
 
+ body.condition-detail .panel.gold .panel-body {
+  margin:0;
+  padding: 3%;
+ }
+
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
   /* "Benefits of Zip" — the source spaces the icon-grid rows further apart than
