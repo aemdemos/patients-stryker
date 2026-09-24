@@ -147,10 +147,8 @@ function decorateButtons(main) {
     if (/[.!?]$/.test(text) && !(strong && u)) return;
     if (!strong && !em) return;
 
-    // bold + underline (authored) → flat inline CTA: bold text in --color-primary,
-    // no underline. Must precede the button branches below, which would otherwise
-    // see the bold and turn it into a .button.primary. The <u> may wrap the anchor
-    // OR sit inside it (authors nest either way), so check both directions.
+    // Bold + underline becomes a flat inline CTA (not .button.primary).
+    // Handle both nesting forms: <u> around <a> or <u> inside <a>.
     if (strong && u) {
       a.classList.add('link-strong');
       // unwrap the outermost bold/underline ancestor so the anchor sits directly in
@@ -396,13 +394,8 @@ async function decorateLastModified(main) {
 }
 
 /**
- * Authoring convention: an underlined heading renders with the source's sage
- * "border-bottom-gold" divider (a 1px #b2b4ae rule with a 7px gap), e.g. the
- * "ENT patient conditions" subheading. Authors mark it exactly like the bold/italic
- * button convention — by applying UNDERLINE formatting to the whole heading text
- * (rich text emits `<u>`). We detect a heading whose text is fully underlined, add
- * `.underline` so CSS draws the border, and unwrap the raw `<u>` so no text
- * underline is drawn on top. Partial underline (only some words) is left alone.
+ * If a heading is fully wrapped in `<u>`, add `.underline` for the divider style
+ * and unwrap `<u>` to avoid text underlining. Partial underline is unchanged.
  * @param {HTMLElement} main The main container element
  */
 function decorateUnderlinedHeadings(main) {
@@ -521,12 +514,8 @@ async function loadEager(doc) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }
 
-    // Load author-guides.css for internal authoring-guide pages (documentation
-    // for authors, not part of the public site design). A page opts in via the
-    // `author-guide` metadata, whose value is the guide's slug (e.g.
-    // `header-footer-guide`). We add `body.<slug>` and load the shared file,
-    // where each guide's rules are scoped under its own `body.<slug>` selector
-    // so guides never collide and none of it reaches regular site pages.
+    // Internal authoring-guide pages opt in via `author-guide` metadata.
+    // Add `body.<slug>` and load shared `author-guides.css` (scoped per guide).
     const authorGuide = getMetadata('author-guide');
     if (authorGuide) {
       document.body.classList.add(toClassName(authorGuide));
