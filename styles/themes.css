@@ -522,7 +522,7 @@ body.condition-detail .columns.columns-50-50 > div {
 }
 
 body.condition-detail .columns ul > li > p,
-body.condition-detail .cards-card-body ul > li > p {
+body.condition-detail .cards .cards-card-body ul > li > p {
   margin: 0;
 }
 
