@@ -489,6 +489,9 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     list-style: disc;
    }
 
+   
+
+
     body.condition-detail .panel.left .panel-body  {
       margin: 0 0 var(--space-block);
     }
@@ -516,6 +519,10 @@ body.condition-detail .columns.columns-50-50 > div {
   row-gap: var(--space-section-l);
   padding-right:2%;
   padding-left:2%;
+}
+
+body.condition-detail .columns ul > li > p {
+  margin: 0;
 }
 
 
