@@ -511,6 +511,13 @@ body.condition-detail main > .section.flex {
    margin-bottom: var(--space-section);
 }
 
+/* Mobile condition-detail 50-50 rows stack; add a clear gap between the two cells. */
+body.condition-detail .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+  padding-right:2%;
+  padding-left:2%;
+}
+
 
 body.condition-detail .tabs .tabs-tab p {
   font-size:14px;
@@ -1088,6 +1095,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   margin:0;
   padding: 3%;
  }
+
 
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
