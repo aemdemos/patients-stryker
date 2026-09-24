@@ -521,7 +521,8 @@ body.condition-detail .columns.columns-50-50 > div {
   padding-left:2%;
 }
 
-body.condition-detail .columns ul > li > p {
+body.condition-detail .columns ul > li > p,
+body.condition-detail .cards ul > li > p {
   margin: 0;
 }
 
