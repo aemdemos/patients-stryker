@@ -432,6 +432,7 @@ function observeEWDMRerenders(main) {
   if (!isEWCanvas()) return;
 
   let scheduled = false;
+  const dmLinkSelector = 'a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]';
 
   const schedule = () => {
     if (scheduled) return;
@@ -443,15 +444,22 @@ function observeEWDMRerenders(main) {
   };
 
   const observer = new MutationObserver((mutations) => {
-    const shouldReDecorate = mutations.some((m) => [...m.addedNodes].some((n) => (
-      n.nodeType === Node.ELEMENT_NODE
-      && (
-        n.matches?.('.prosemirror-editor, .ProseMirror, [data-prose-index]')
-        || n.querySelector?.('.prosemirror-editor, .ProseMirror, [data-prose-index]')
-        || n.matches?.('a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]')
-        || n.querySelector?.('a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]')
-      )
-    )));
+    const shouldReDecorate = mutations.some((m) => {
+      const { target } = m;
+      const targetEl = target.nodeType === Node.ELEMENT_NODE ? target : target.parentElement;
+
+      if (
+        targetEl
+        && (targetEl.matches?.(dmLinkSelector) || targetEl.querySelector?.(dmLinkSelector))
+      ) {
+        return true;
+      }
+
+      return [...m.addedNodes].some((n) => (
+        n.nodeType === Node.ELEMENT_NODE
+        && (n.matches?.(dmLinkSelector) || n.querySelector?.(dmLinkSelector))
+      ));
+    });
 
     if (shouldReDecorate) schedule();
   });
