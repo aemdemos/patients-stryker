@@ -20,6 +20,7 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 // common video containers / streaming manifests
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
+const HTTP_URL = /^https?:\/\//i;
 
 // Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
 // addressed with an image sizing preset ($..width..$) or a .gif extension,
@@ -387,6 +388,25 @@ export default function decorateDMAssets(root) {
       const alt = el.getAttribute('alt') || el.getAttribute('title') || displayText;
       replacement = render(src, alt, false);
     }
+
+    el.replaceWith(replacement);
+  });
+
+  // EW can re-render a DM field as a plain URL text node (not an <a>). Convert
+  // URL-only text wrappers as well so the canvas doesn't stay on raw URLs.
+  root.querySelectorAll('p, div, span, li').forEach((el) => {
+    if (el.querySelector('a, picture, img, video, source')) return;
+    if (el.childElementCount > 0) return;
+
+    const text = el.textContent.trim();
+    if (!text || !HTTP_URL.test(text)) return;
+
+    const render = dmRendererFor(text);
+    if (!render) return;
+
+    const replacement = render === renderVideo
+      ? renderVideo(text, el.getAttribute('title') || '')
+      : render(text, el.getAttribute('alt') || el.getAttribute('title') || '', false);
 
     el.replaceWith(replacement);
   });

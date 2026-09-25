@@ -433,6 +433,7 @@ function observeEWDMRerenders(main) {
 
   let scheduled = false;
   const dmLinkSelector = 'a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]';
+  const dmTextPattern = /(https?:\/\/[^\s]*)(\/is\/image\/|\/adobe\/assets\/|\/is\/content\/)/i;
   const hasDMLink = (node) => (
     node
     && node.nodeType === Node.ELEMENT_NODE
@@ -450,6 +451,10 @@ function observeEWDMRerenders(main) {
 
   const observer = new MutationObserver((mutations) => {
     const shouldReDecorate = mutations.some((m) => {
+      if (m.type === 'characterData' && dmTextPattern.test(m.target.textContent || '')) {
+        return true;
+      }
+
       const { target } = m;
       const targetEl = target.nodeType === Node.ELEMENT_NODE ? target : target.parentElement;
 
