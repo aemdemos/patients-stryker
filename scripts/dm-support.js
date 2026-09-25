@@ -44,7 +44,25 @@ function liftDefaultContentMedia(media, root) {
 
   const proseEditor = media.closest('.prosemirror-editor');
   if (proseEditor && proseEditor.parentElement === defaultWrapper) {
-    proseEditor.replaceWith(media);
+    const existingRender = defaultWrapper.querySelector(':scope > .dm-ew-rendered-media');
+    if (existingRender) existingRender.remove();
+
+    const rendered = document.createElement('div');
+    rendered.className = 'dm-ew-rendered-media';
+    rendered.append(media);
+    defaultWrapper.insertBefore(rendered, proseEditor);
+
+    const proseRoot = proseEditor.querySelector('.ProseMirror');
+    const proseLinks = proseRoot ? [...proseRoot.querySelectorAll('a[href]')] : [];
+    if (proseRoot && proseLinks.length === 1) {
+      const proseText = proseRoot.textContent.replace(/\s+/g, '');
+      const linkText = proseLinks[0].textContent.replace(/\s+/g, '');
+      if (proseText && proseText === linkText) {
+        proseEditor.style.display = 'none';
+        proseEditor.setAttribute('aria-hidden', 'true');
+      }
+    }
+
     return;
   }
 
