@@ -425,6 +425,11 @@ function isEWCanvas() {
     || !!document.querySelector('.default-content-wrapper');
 }
 
+function isEWEditMode() {
+  return document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-edit');
+}
+
 /**
  * EW can re-render editable default content wrappers from source after the
  * initial page decoration, which brings DM URLs back as raw links. Observe
@@ -434,6 +439,7 @@ function isEWCanvas() {
 function observeEWDMRerenders(main) {
   if (!isEWCanvas()) return;
 
+  const preserveAuthoredDefaultContent = isEWEditMode();
   let scheduled = false;
   const dmLinkSelector = 'a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]';
   const dmTextPattern = /(https?:\/\/[^\s]*)(\/is\/image\/|\/adobe\/assets\/|\/is\/content\/)/i;
@@ -441,6 +447,9 @@ function observeEWDMRerenders(main) {
     node
     && node.nodeType === Node.ELEMENT_NODE
     && (node.matches?.(dmLinkSelector) || node.querySelector?.(dmLinkSelector))
+  );
+  const inEditableDefaultContent = (node) => (
+    !!node?.closest?.('.default-content-wrapper')
   );
 
   const schedule = () => {
@@ -454,12 +463,15 @@ function observeEWDMRerenders(main) {
 
   const observer = new MutationObserver((mutations) => {
     const shouldReDecorate = mutations.some((m) => {
+      const targetEl = m.target.nodeType === Node.ELEMENT_NODE ? m.target : m.target.parentElement;
+
+      if (preserveAuthoredDefaultContent && inEditableDefaultContent(targetEl)) {
+        return false;
+      }
+
       if (m.type === 'characterData' && dmTextPattern.test(m.target.textContent || '')) {
         return true;
       }
-
-      const { target } = m;
-      const targetEl = target.nodeType === Node.ELEMENT_NODE ? target : target.parentElement;
 
       if (hasDMLink(targetEl)) {
         return true;
@@ -470,7 +482,9 @@ function observeEWDMRerenders(main) {
       }
 
       return [...m.addedNodes].some((n) => (
-        hasDMLink(n)
+        (n.nodeType === Node.ELEMENT_NODE)
+        && !(preserveAuthoredDefaultContent && inEditableDefaultContent(n))
+        && hasDMLink(n)
       ));
     });
 
