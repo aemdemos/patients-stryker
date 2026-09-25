@@ -21,6 +21,118 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
+function isEWCanvas() {
+  return document.documentElement.classList.contains('adobe-ue-preview')
+    || document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-preview')
+    || document.body?.classList.contains('adobe-ue-edit');
+}
+
+/**
+ * EW can re-render editable default content from source, replacing converted
+ * media with authored URLs. For media inside `.default-content-wrapper`, climb
+ * out of empty single-purpose wrappers (editable root, paragraph wrapper, etc.)
+ * and place media directly under the default-content wrapper.
+ * @param {Element} media converted DM media element
+ * @param {Element} root current decoration root boundary
+ */
+function liftDefaultContentMedia(media, root) {
+  if (!isEWCanvas() || !media?.parentElement) return;
+
+  const defaultWrapper = media.closest('.default-content-wrapper');
+  if (!defaultWrapper || !root.contains(defaultWrapper)) return;
+
+  const proseEditor = media.closest('.prosemirror-editor');
+  if (proseEditor && proseEditor.parentElement === defaultWrapper) {
+    const existingRender = defaultWrapper.querySelector(':scope > .dm-ew-rendered-media');
+    if (existingRender) existingRender.remove();
+
+    const rendered = document.createElement('div');
+    rendered.className = 'dm-ew-rendered-media';
+    rendered.append(media);
+    defaultWrapper.insertBefore(rendered, proseEditor);
+
+    const proseRoot = proseEditor.querySelector('.ProseMirror');
+    const proseLinks = proseRoot ? [...proseRoot.querySelectorAll('a[href]')] : [];
+    if (proseRoot && proseLinks.length === 1) {
+      const proseText = proseRoot.textContent.replace(/\s+/g, '');
+      const linkText = proseLinks[0].textContent.replace(/\s+/g, '');
+      if (proseText && proseText === linkText) {
+        proseEditor.style.display = 'none';
+        proseEditor.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    return;
+  }
+
+  let node = media;
+  while (
+    node.parentElement
+    && node.parentElement !== defaultWrapper
+    && node.parentElement.childElementCount === 1
+    && node.parentElement.textContent.trim() === ''
+  ) {
+    node = node.parentElement;
+  }
+
+  if (node !== media && node.parentElement === defaultWrapper) {
+    node.replaceWith(media);
+  }
+}
+
+/**
+ * EW can re-render authored DM URLs as plain text nodes. Promote those URL text
+ * nodes back to anchors so the existing DM selector pipeline can convert them.
+ * Restricted to default content wrappers to avoid touching authored rich text.
+ * @param {Element} root decoration root
+ */
+function promoteDMTextUrls(root) {
+  if (!isEWCanvas()) return;
+
+  const wrappers = root.matches?.('.default-content-wrapper')
+    ? [root]
+    : [...root.querySelectorAll('.default-content-wrapper')];
+
+  wrappers.forEach((wrapper) => {
+    const walker = document.createTreeWalker(wrapper, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+      if (parent
+        && !parent.closest('a, picture, video, source, script, style')
+        && parent.childElementCount === 0) {
+        const raw = node.textContent?.trim();
+        if (raw && !/\s/.test(raw)) {
+          let href;
+          try {
+            href = new URL(raw, window.location.href).toString();
+          } catch {
+            href = null;
+          }
+
+          const isDMHref = DM_SCENE7.test(href)
+            || DM_OPENAPI.test(href)
+            || DM_VIDEO.test(href)
+            || VIDEO_EXT.test(href);
+          if (href && isDMHref) {
+            textNodes.push({ node, href });
+          }
+        }
+      }
+    }
+
+    textNodes.forEach(({ node, href }) => {
+      const a = document.createElement('a');
+      a.href = href;
+      a.textContent = href;
+      node.replaceWith(a);
+    });
+  });
+}
+
 // Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
 // addressed with an image sizing preset ($..width..$) or a .gif extension,
 // rather than a video manifest/extension. These must render as <img> (which
@@ -354,6 +466,8 @@ function dmRendererFor(src) {
  * @param {Element} root the container to decorate
  */
 export default function decorateDMAssets(root) {
+  promoteDMTextUrls(root);
+
   root.querySelectorAll(DM_SELECTOR).forEach((el) => {
     // skip an <img> already in a <picture> (converted on an earlier pass) —
     // re-converting would double-append preset params like fmt=png-alpha
@@ -389,5 +503,6 @@ export default function decorateDMAssets(root) {
     }
 
     el.replaceWith(replacement);
+    liftDefaultContentMedia(replacement, root);
   });
 }

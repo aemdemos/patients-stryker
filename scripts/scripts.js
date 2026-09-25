@@ -413,6 +413,95 @@ export function decorateMain(main) {
 }
 
 /**
+ * Returns true when running inside the Experience Workspace canvas.
+ * @returns {boolean}
+ */
+function isEWCanvas() {
+  return document.documentElement.classList.contains('adobe-ue-preview')
+    || document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-preview')
+    || document.body?.classList.contains('adobe-ue-edit');
+}
+
+/**
+ * EW can re-render default content wrappers from source, restoring authored URLs.
+ * Observe those wrapper mutations and re-run DM conversion on the affected
+ * wrapper(s) only.
+ * @param {Element} main The main element
+ */
+function observeEWDefaultContentRerenders(main) {
+  if (!isEWCanvas()) return;
+
+  const pendingWrappers = new Set();
+  let scheduled = false;
+  let fullPassRequested = false;
+
+  const queueWrapper = (wrapper, requestFullPass = false) => {
+    if (requestFullPass) fullPassRequested = true;
+    if (wrapper) pendingWrappers.add(wrapper);
+    if (scheduled) return;
+
+    scheduled = true;
+    window.requestAnimationFrame(() => {
+      scheduled = false;
+
+      if (fullPassRequested) {
+        decorateDMAssets(main);
+        fullPassRequested = false;
+        pendingWrappers.clear();
+        return;
+      }
+
+      if (pendingWrappers.size === 0) {
+        main.querySelectorAll('.default-content-wrapper').forEach((w) => pendingWrappers.add(w));
+      }
+
+      pendingWrappers.forEach((w) => decorateDMAssets(w));
+      pendingWrappers.clear();
+    });
+  };
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      // EW/ProseMirror may rewrite content in ways that temporarily bypass
+      // wrapper-specific targeting; schedule a throttled full-pass conversion.
+      queueWrapper(null, true);
+
+      const target = mutation.target.nodeType === Node.ELEMENT_NODE
+        ? mutation.target
+        : mutation.target.parentElement;
+
+      const targetWrapper = target?.closest?.('.default-content-wrapper');
+      if (targetWrapper) queueWrapper(targetWrapper);
+
+      [...mutation.addedNodes].forEach((node) => {
+        if (node.nodeType !== Node.ELEMENT_NODE) return;
+        if (node.matches('.default-content-wrapper')) {
+          queueWrapper(node);
+          return;
+        }
+
+        const wrapper = node.closest('.default-content-wrapper');
+        if (wrapper) queueWrapper(wrapper);
+        node.querySelectorAll?.('.default-content-wrapper').forEach((w) => queueWrapper(w));
+      });
+    });
+  });
+
+  observer.observe(main, {
+    childList: true,
+    subtree: true,
+    characterData: true,
+    attributes: true,
+    attributeFilter: ['href', 'src'],
+  });
+
+  main.querySelectorAll('.default-content-wrapper').forEach((wrapper) => {
+    decorateDMAssets(wrapper);
+  });
+}
+
+/**
  * Decorates the template.
  * Loads template-specific CSS and JavaScript modules.
  * @param {Document} doc The document
@@ -481,6 +570,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    observeEWDefaultContentRerenders(main);
 
     // Load template if specified in metadata
     if (templateName) {
