@@ -413,6 +413,80 @@ export function decorateMain(main) {
 }
 
 /**
+ * Returns true when running inside the Experience Workspace canvas.
+ * DA source editing should keep authored URLs untouched.
+ * @returns {boolean}
+ */
+function isEWCanvas() {
+  return document.documentElement.classList.contains('adobe-ue-preview')
+    || document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-preview')
+    || document.body?.classList.contains('adobe-ue-edit')
+    || !!document.querySelector('.default-content-wrapper');
+}
+
+/**
+ * EW can re-render editable default content wrappers from source after the
+ * initial page decoration, which brings DM URLs back as raw links. Observe
+ * editor mutations and re-run DM conversion (idempotent) on demand.
+ * @param {Element} main The main element
+ */
+function observeEWDMRerenders(main) {
+  if (!isEWCanvas()) return;
+
+  let scheduled = false;
+  const dmLinkSelector = 'a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]';
+  const dmTextPattern = /(https?:\/\/[^\s]*)(\/is\/image\/|\/adobe\/assets\/|\/is\/content\/)/i;
+  const hasDMLink = (node) => (
+    node
+    && node.nodeType === Node.ELEMENT_NODE
+    && (node.matches?.(dmLinkSelector) || node.querySelector?.(dmLinkSelector))
+  );
+
+  const schedule = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(() => {
+      scheduled = false;
+      decorateDMAssets(main);
+    });
+  };
+
+  const observer = new MutationObserver((mutations) => {
+    const shouldReDecorate = mutations.some((m) => {
+      if (m.type === 'characterData' && dmTextPattern.test(m.target.textContent || '')) {
+        return true;
+      }
+
+      const { target } = m;
+      const targetEl = target.nodeType === Node.ELEMENT_NODE ? target : target.parentElement;
+
+      if (hasDMLink(targetEl)) {
+        return true;
+      }
+
+      if (targetEl?.closest?.(dmLinkSelector)) {
+        return true;
+      }
+
+      return [...m.addedNodes].some((n) => (
+        hasDMLink(n)
+      ));
+    });
+
+    if (shouldReDecorate) schedule();
+  });
+
+  observer.observe(main, {
+    childList: true,
+    subtree: true,
+    characterData: true,
+    attributes: true,
+    attributeFilter: ['href', 'src'],
+  });
+}
+
+/**
  * Decorates the template.
  * Loads template-specific CSS and JavaScript modules.
  * @param {Document} doc The document
@@ -481,6 +555,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    observeEWDMRerenders(main);
 
     // Load template if specified in metadata
     if (templateName) {
