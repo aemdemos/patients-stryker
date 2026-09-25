@@ -977,6 +977,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-weight: 700;
 }
 
+body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
+  display: none;
+}
+
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
   /* "Benefits of Zip" — the source spaces the icon-grid rows further apart than
@@ -1042,6 +1046,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
   }
+
+  body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
+  display: block;
+}
 }
 
 /* ----- Desktop (>=900px) ----- */

@@ -147,10 +147,8 @@ function decorateButtons(main) {
     if (/[.!?]$/.test(text) && !(strong && u)) return;
     if (!strong && !em) return;
 
-    // bold + underline (authored) → flat inline CTA: bold text in --color-primary,
-    // no underline. Must precede the button branches below, which would otherwise
-    // see the bold and turn it into a .button.primary. The <u> may wrap the anchor
-    // OR sit inside it (authors nest either way), so check both directions.
+    // Bold + underline becomes a flat inline CTA (not .button.primary).
+    // Handle both nesting forms: <u> around <a> or <u> inside <a>.
     if (strong && u) {
       a.classList.add('link-strong');
       // unwrap the outermost bold/underline ancestor so the anchor sits directly in
@@ -396,6 +394,25 @@ async function decorateLastModified(main) {
 }
 
 /**
+ * If a heading is fully wrapped in `<u>`, add `.underline` for the divider style
+ * and unwrap `<u>` to avoid text underlining. Partial underline is unchanged.
+ * @param {HTMLElement} main The main container element
+ */
+function decorateUnderlinedHeadings(main) {
+  main.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+    const text = heading.textContent.trim();
+    if (!text) return;
+    // the whole heading must be underlined: a single <u> whose text is the heading's
+    const us = heading.querySelectorAll('u');
+    if (us.length !== 1) return;
+    const u = us[0];
+    if (u.textContent.trim() !== text) return;
+    heading.classList.add('underline');
+    u.replaceWith(...u.childNodes); // strip the <u>, keep inner markup (e.g. gold marker)
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -409,6 +426,7 @@ export function decorateMain(main) {
   decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
+  decorateUnderlinedHeadings(main);
   decorateFootnotes(main);
 }
 
@@ -496,12 +514,8 @@ async function loadEager(doc) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }
 
-    // Load author-guides.css for internal authoring-guide pages (documentation
-    // for authors, not part of the public site design). A page opts in via the
-    // `author-guide` metadata, whose value is the guide's slug (e.g.
-    // `header-footer-guide`). We add `body.<slug>` and load the shared file,
-    // where each guide's rules are scoped under its own `body.<slug>` selector
-    // so guides never collide and none of it reaches regular site pages.
+    // Internal authoring-guide pages opt in via `author-guide` metadata.
+    // Add `body.<slug>` and load shared `author-guides.css` (scoped per guide).
     const authorGuide = getMetadata('author-guide');
     if (authorGuide) {
       document.body.classList.add(toClassName(authorGuide));
@@ -531,6 +545,11 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+
+  // Some block decorators reconstruct citation superscripts from authored text
+  // during lazy loading; run footnote linking again so those new <sup> nodes
+  // are converted to #fn-N links as well.
+  decorateFootnotes(main);
 
   decorateLastModified(main);
   applySectionBackgrounds(main);

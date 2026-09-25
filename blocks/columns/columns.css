@@ -34,6 +34,11 @@
   line-height: var(--heading-line-height-ml);
 }
 
+.columns > div > div h2:not(:has(em, strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
 .columns p,
 .columns ul,
 .columns li {
@@ -65,10 +70,6 @@
   font-size: var(--heading-font-size-m);
 }
 
-/* EW config */
-.section.compact .columns .columns-img-col ~ .prosemirror-editor h3 {
-  font-size: var(--heading-font-size-m);
-}
 
 /* compact variant — smaller heading + body typography for dense 50/50 rows. */
 .section.compact .columns-img-col {
@@ -101,8 +102,6 @@
   font-size: var(--heading-font-size-m);
 }
 
-
-
 /* when a compact columns block also contains an h1, the h2 acts as a subheading
    and should use the standard xl size rather than the compact size */
 .section.compact .columns:has(h1) h2 {
@@ -115,6 +114,9 @@
 
 
 .section.compact .columns p {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
   padding-left: 0;
   padding-right: 0;
 }
@@ -130,8 +132,9 @@
   font-family: var(--display-font-family);
 }
 
-.section.compact .columns.columns-50-50.border-bottom {
+.columns.columns-50-50.border-bottom {
   border-bottom: 1px solid var(--color-surface-muted);
+  padding-bottom: var(--space-section-l);
 }
 
 .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
@@ -154,11 +157,6 @@
 /* 50-50 variant: equal columns with tuned heading sizing. */
 .columns.columns-50-50 h4 {
   font-size: var(--heading-font-size-l); 
-}
-
-/* hero CTA button — hidden on mobile */
-.columns.columns-50-50 .button-wrapper {
-  display: none;
 }
 
 
@@ -257,12 +255,11 @@
 
 .section.compact .columns p,
 .section.compact .columns ul,
-.section.compact .columns li{
+.section.compact .columns li {
   font-size: var(--body-font-size-m);
   font-family: var(--body-font-family);
   line-height: var(--paragraph-line-height);
 }
-
 
 /* light-gray variant — column text uses the serif heading font */
 .section.light-gray .columns p,
@@ -359,10 +356,41 @@
   text-decoration: none;
 }
 
+ .section.compact .columns p:has(code)  {
+  padding: 20px;
+  padding-bottom:0;
+  margin-bottom: 0;
+  line-height: 24px;
+}
 
-/* tablet (>= 600px) — columns switch from stacked (1-up) to a 2-up layout */
+  .columns p:has(code) code  {
+  font-size: 3vw;
+}
+
+  .columns p:has(code) code sup {
+  color: var(--color-white);
+}
+
+ .section.compact .columns p:has(code) + p:has(code) {
+  padding-top: 0;
+  padding-bottom:20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
+ .columns  p:has(:is(em > strong > code, strong > em > code)) {
+  margin: 0;
+}
+
+.columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
+  padding-top: 0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: var(--heading-font-family);
+}
+
+
 @media (width >= 600px) {
-  /* text-only column titles (h4) bump up to the reference's tablet/desktop size */
   .columns-text h4 {
     font-size: var(--heading-font-size-ml);
     line-height: var(--heading-line-height-ml);
@@ -371,6 +399,10 @@
   .section.compact .columns h2,
   .section.compact .columns h2 em strong {
     font-size: var(--heading-font-size-compact-m);
+  }
+
+  .section.compact .columns:has(p code) h3 strong {
+    font-size: var(--heading-font-size-l);
   }
 
   .columns > div {
@@ -414,6 +446,14 @@
 
   .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
     padding-left: var(--col-5050-inset);
+  }
+
+  .section.compact .columns.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+   padding-left: 15px;
+  }
+
+  .section.compact .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top:0;
   }
 
   .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
@@ -543,6 +583,10 @@
     margin-bottom: 30px;
   }
 
+  .columns p:has(code) code {
+    font-size:1.5vw;
+  }
+
 }
 
 
@@ -582,4 +626,10 @@
   border-style: solid;
   border-width: 6px 0 6px 8px;
   border-color: transparent transparent transparent currentcolor;
+}
+
+@media (width >=1200px) {
+ .columns p:has(code) code {
+    font-size: 21px;
+  }
 }
