@@ -86,11 +86,8 @@ function buildWidgetAutoBlocks(main) {
  */
 function buildAutoBlocks(main) {
   try {
-    // auto load `*/fragments/*` references — but NOT ones inside a tabs block,
-    // which lazy-loads its own panel fragments when a tab is selected (tabs.js),
-    // so they must stay as links until that tab is shown.
-    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')]
-      .filter((f) => !f.closest('.fragment') && !f.closest('.tabs'));
+    // auto load `*/fragments/*` references
+    const fragments = [...main.querySelectorAll('a[href*="/fragments/"]')].filter((f) => !f.closest('.fragment'));
     if (fragments.length > 0) {
       // eslint-disable-next-line import/no-cycle
       import('../blocks/fragment/fragment.js').then(({ loadFragment }) => {
@@ -416,13 +413,35 @@ export function decorateMain(main) {
 }
 
 /**
- * EW/ProseMirror can re-render editable default content from source after the
+ * Returns true when running inside the Experience Workspace canvas.
+ * DA source editing should keep authored URLs untouched.
+ * @returns {boolean}
+ */
+function isEWCanvas() {
+  return document.documentElement.classList.contains('adobe-ue-preview')
+    || document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-preview')
+    || document.body?.classList.contains('adobe-ue-edit')
+    || !!document.querySelector('.default-content-wrapper');
+}
+
+/**
+ * EW can re-render editable default content wrappers from source after the
  * initial page decoration, which brings DM URLs back as raw links. Observe
  * editor mutations and re-run DM conversion (idempotent) on demand.
  * @param {Element} main The main element
  */
 function observeEWDMRerenders(main) {
+  if (!isEWCanvas()) return;
+
   let scheduled = false;
+  const dmLinkSelector = 'a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]';
+  const dmTextPattern = /(https?:\/\/[^\s]*)(\/is\/image\/|\/adobe\/assets\/|\/is\/content\/)/i;
+  const hasDMLink = (node) => (
+    node
+    && node.nodeType === Node.ELEMENT_NODE
+    && (node.matches?.(dmLinkSelector) || node.querySelector?.(dmLinkSelector))
+  );
 
   const schedule = () => {
     if (scheduled) return;
@@ -434,20 +453,37 @@ function observeEWDMRerenders(main) {
   };
 
   const observer = new MutationObserver((mutations) => {
-    const shouldReDecorate = mutations.some((m) => [...m.addedNodes].some((n) => (
-      n.nodeType === Node.ELEMENT_NODE
-      && (
-        n.matches?.('.prosemirror-editor, .ProseMirror, [data-prose-index]')
-        || n.querySelector?.('.prosemirror-editor, .ProseMirror, [data-prose-index]')
-        || n.matches?.('a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]')
-        || n.querySelector?.('a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]')
-      )
-    )));
+    const shouldReDecorate = mutations.some((m) => {
+      if (m.type === 'characterData' && dmTextPattern.test(m.target.textContent || '')) {
+        return true;
+      }
+
+      const { target } = m;
+      const targetEl = target.nodeType === Node.ELEMENT_NODE ? target : target.parentElement;
+
+      if (hasDMLink(targetEl)) {
+        return true;
+      }
+
+      if (targetEl?.closest?.(dmLinkSelector)) {
+        return true;
+      }
+
+      return [...m.addedNodes].some((n) => (
+        hasDMLink(n)
+      ));
+    });
 
     if (shouldReDecorate) schedule();
   });
 
-  observer.observe(main, { childList: true, subtree: true });
+  observer.observe(main, {
+    childList: true,
+    subtree: true,
+    characterData: true,
+    attributes: true,
+    attributeFilter: ['href', 'src'],
+  });
 }
 
 /**
