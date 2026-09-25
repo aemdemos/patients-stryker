@@ -21,11 +21,11 @@
 
 /* Headings — URW Egyptienne W01 Light (single light master; weight range so 300–500 headings use it) */
 @font-face {
-  font-family: "URWEgyptienneW01-Light";
-  font-style: normal;
-  font-weight: 300 500;
-  font-display: swap;
-  src: url('../fonts/urw-egyptienne-light.woff2') format('woff2');
+    font-family: "Egyptienne for Stryker Light";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/egyptienne-for-stryker_light.woff2') format('woff2');
 }
 
 /* Display / buttons — Futura LT W01 Book (boilerplate default display cut) */
@@ -76,6 +76,14 @@
   font-family: "humanist-slab-712-fallback";
   size-adjust: 91.42%;
   src: local('Cambria'), local('Georgia');
+}
+
+@font-face {
+    font-family: "Humanist 712 for Stryker";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/humanist712-for-stryker.woff2') format('woff2');
 }
 
 @font-face {
