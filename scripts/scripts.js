@@ -425,9 +425,9 @@ function isEWCanvas() {
     || !!document.querySelector('.default-content-wrapper');
 }
 
-function isEWEditMode() {
-  return document.documentElement.classList.contains('adobe-ue-edit')
-    || document.body?.classList.contains('adobe-ue-edit');
+function isDAAuthoringSurface() {
+  const { hostname } = window.location;
+  return hostname === 'admin.da.live' || hostname.endsWith('.admin.da.live');
 }
 
 /**
@@ -439,7 +439,7 @@ function isEWEditMode() {
 function observeEWDMRerenders(main) {
   if (!isEWCanvas()) return;
 
-  const preserveAuthoredDefaultContent = isEWEditMode();
+  const preserveAuthoredDefaultContent = isDAAuthoringSurface();
   let scheduled = false;
   const dmLinkSelector = 'a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]';
   const dmTextPattern = /(https?:\/\/[^\s]*)(\/is\/image\/|\/adobe\/assets\/|\/is\/content\/)/i;

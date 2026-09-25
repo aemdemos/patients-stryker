@@ -30,9 +30,9 @@ function isEWCanvas() {
     || !!document.querySelector('.default-content-wrapper');
 }
 
-function isEWEditMode() {
-  return document.documentElement.classList.contains('adobe-ue-edit')
-    || document.body?.classList.contains('adobe-ue-edit');
+function isDAAuthoringSurface() {
+  const { hostname } = window.location;
+  return hostname === 'admin.da.live' || hostname.endsWith('.admin.da.live');
 }
 
 function isEditableDefaultContent(el) {
@@ -397,7 +397,7 @@ function dmRendererFor(src) {
  * @param {Element} root the container to decorate
  */
 export default function decorateDMAssets(root) {
-  const preserveAuthoredDefaultContent = isEWEditMode();
+  const preserveAuthoredDefaultContent = isDAAuthoringSurface();
 
   root.querySelectorAll(DM_SELECTOR).forEach((el) => {
     // In EW edit mode, keep authored default-content links untouched so DA
