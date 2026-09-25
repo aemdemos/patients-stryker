@@ -37,10 +37,10 @@ import { dirname, resolve, join } from 'path';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
 
-import { captureRuns, captureGeometry, captureMeta } from './lib/capture.js';
-import { pairRuns, clusterMismatches } from './lib/diff.js';
+import { captureGeometry, captureMeta } from './lib/capture.js';
+import { pairRuns, clusterMismatches, isDiffedPair } from './lib/diff.js';
 import { computeSpacingFindings } from './lib/spacing.js';
-import { DEFAULT_FINGERPRINT_FIELDS, setFamilyAliases } from './lib/style-fingerprint.js';
+import { DEFAULT_FINGERPRINT_FIELDS, SIZE_FIELDS, setFamilyAliases } from './lib/style-fingerprint.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -93,9 +93,11 @@ function resolveMigratedUrl(migrated, previewBase) {
 
 // Non-size field mismatches across loop-eligible clusters — the text-style
 // progress metric AND the series gate (spacing is held while this is > 0).
+// Sizing fields (font-size, line-height) are excluded: see SIZE_FIELDS.
 function eligibleNonSizeFieldMismatchesOf(loopEligible) {
   return loopEligible
-    .reduce((sum, c) => sum + (c.count * c.delta.filter((d) => d.field !== 'fontSize').length), 0);
+    .reduce((sum, c) => sum
+      + (c.count * c.delta.filter((d) => !SIZE_FIELDS.has(d.field)).length), 0);
 }
 
 // Auto-detect where fixes for these pages should land, from their rendered
@@ -141,47 +143,72 @@ async function main() {
     minTokensForCluster: cfg.minTokensForCluster ?? 1,
   };
 
-  // Spacing pass config (opt-out via "spacing": false). Reuses the same pairs.
+  // Spacing pass config (opt-out via "spacing": false). Reuses the same captures.
   const spacingEnabled = cfg.spacing !== false;
   const spacingBreakpoints = cfg.spacingBreakpoints || [390, 1200];
   const spacingThresholdPx = cfg.spacingThresholdPx ?? 15;
+  // Text-style breakpoints: text is measured at EVERY one of these widths, so a
+  // mobile-only or desktop-only difference (e.g. a heading that is right on
+  // desktop but too large on mobile) is caught. Defaults to the spacing
+  // breakpoints; override with `textStyleBreakpoints`.
+  const textStyleBreakpoints = cfg.textStyleBreakpoints || spacingBreakpoints;
+  // One capture per width serves both passes (same extractor, same settle).
+  const captureBreakpoints = [
+    ...new Set(textStyleBreakpoints.concat(spacingEnabled ? spacingBreakpoints : [])),
+  ].sort((a, b) => a - b);
 
   const perPage = [];
   const spacingPerPage = [];
   const pageMeta = []; // { page, template, theme } — for auto-detecting fix target
-  const totals = {
-    exact: 0, substring: 0, partial: 0, missing: 0, countMismatch: 0, suspect: 0, excluded: 0,
-  };
+  const statKeys = ['exact', 'crossrole', 'subset', 'segmentation', 'substring', 'partial', 'missing',
+    'countMismatch', 'suspect', 'excluded'];
+  const totals = Object.fromEntries(statKeys.map((k) => [k, 0]));
   try {
     for (const pair of cfg.pairs) {
       const migratedUrl = resolveMigratedUrl(pair.migrated, previewBase);
       process.stderr.write(`[validate] ${pair.name}\n  source:   ${pair.source}\n  migrated: ${migratedUrl}\n`);
-      const [sourceRuns, migratedRuns, meta] = await Promise.all([
-        captureRuns(browser, pair.source, cfg),
-        captureRuns(browser, migratedUrl, cfg),
+      const geomOpts = { ...cfg, breakpoints: captureBreakpoints };
+      const [srcGeom, migGeom, meta] = await Promise.all([
+        captureGeometry(browser, pair.source, geomOpts),
+        captureGeometry(browser, migratedUrl, geomOpts),
         captureMeta(browser, migratedUrl, cfg),
       ]);
       pageMeta.push({ page: pair.name, template: meta.template, theme: meta.theme });
-      const { pairs, stats } = pairRuns(sourceRuns, migratedRuns, pairOpts);
-      perPage.push({ page: pair.name, source: pair.source, migrated: migratedUrl, pairs, stats });
-      for (const k of Object.keys(totals)) totals[k] += stats[k] || 0;
-      const styleMismatch = pairs.filter((p) => p.matchType === 'exact' && p.delta.length).length;
-      process.stderr.write(`  runs: src=${sourceRuns.length} mig=${migratedRuns.length} | exact=${stats.exact} suspect=${stats.suspect} substring=${stats.substring} partial=${stats.partial} missing=${stats.missing} excluded=${stats.excluded} | styleMismatches=${styleMismatch}\n`);
 
-      // Spacing: capture geometry + content boxes at each breakpoint, both sides.
+      // Text-style: pair + diff at each breakpoint, tagging every pair with the
+      // width it was measured at (clusters then record their breakpoints).
+      const pagePairs = [];
+      const pageStats = Object.fromEntries(statKeys.map((k) => [k, 0]));
+      const statsByBreakpoint = {};
+      for (const bp of textStyleBreakpoints) {
+        const s = srcGeom[bp] || { runs: [] };
+        const m = migGeom[bp] || { runs: [] };
+        const { pairs, stats } = pairRuns(s.runs, m.runs, pairOpts);
+        pairs.forEach((p) => { p.breakpoint = bp; pagePairs.push(p); });
+        statsByBreakpoint[bp] = stats;
+        for (const k of statKeys) pageStats[k] += stats[k] || 0;
+        const styleMismatch = pairs.filter((p) => isDiffedPair(p) && p.delta.length).length;
+        process.stderr.write(`  @${bp}px runs: src=${s.runs.length} mig=${m.runs.length} | exact=${stats.exact} crossrole=${stats.crossrole} subset=${stats.subset} segmentation=${stats.segmentation} suspect=${stats.suspect} substring=${stats.substring} partial=${stats.partial} missing=${stats.missing} excluded=${stats.excluded} | styleMismatches=${styleMismatch}\n`);
+      }
+      perPage.push({
+        page: pair.name,
+        source: pair.source,
+        migrated: migratedUrl,
+        pairs: pagePairs,
+        stats: pageStats,
+        statsByBreakpoint,
+      });
+      for (const k of statKeys) totals[k] += pageStats[k];
+
+      // Spacing: geometry + content boxes at each spacing breakpoint, both sides.
       if (spacingEnabled) {
-        const geomOpts = { ...cfg, breakpoints: spacingBreakpoints };
-        const [srcGeom, migGeom] = await Promise.all([
-          captureGeometry(browser, pair.source, geomOpts),
-          captureGeometry(browser, migratedUrl, geomOpts),
-        ]);
         const byBreakpoint = {};
         for (const bp of spacingBreakpoints) {
-          const s = srcGeom[bp] || { runs: [], contentBoxes: [] };
-          const m = migGeom[bp] || { runs: [], contentBoxes: [] };
+          const s = srcGeom[bp] || { runs: [], contentBoxes: [], boundaries: {} };
+          const m = migGeom[bp] || { runs: [], contentBoxes: [], boundaries: {} };
           byBreakpoint[bp] = {
-            sourceRuns: s.runs, sourceBoxes: s.contentBoxes,
-            migratedRuns: m.runs, migratedBoxes: m.contentBoxes,
+            sourceRuns: s.runs, sourceBoxes: s.contentBoxes, sourceBoundaries: s.boundaries || {},
+            migratedRuns: m.runs, migratedBoxes: m.contentBoxes, boundaries: m.boundaries || {},
           };
         }
         spacingPerPage.push({ page: pair.name, byBreakpoint });
@@ -203,7 +230,7 @@ async function main() {
     })
     : emptySpacing;
 
-  const clusters = clusterMismatches(perPage, pairOpts);
+  const clusters = clusterMismatches(perPage, { ...pairOpts, breakpoints: textStyleBreakpoints });
   const loopEligible = clusters.filter((c) => c.loopEligible);
   const ineligible = clusters.filter((c) => !c.loopEligible);
 
@@ -231,6 +258,7 @@ async function main() {
     pageMeta,
     fixTarget,
     fingerprintFields: fields,
+    textStyleBreakpoints,
     guards: {
       excludeContexts: pairOpts.excludeContexts,
       minTokensForCluster: pairOpts.minTokensForCluster,
@@ -253,30 +281,84 @@ async function main() {
       contentSpanning: spacing.contentSpanning,
     },
     clusters,
-    perPage: perPage.map(({ page, source, migrated, stats, pairs }) => ({
-      page, source, migrated, stats,
-      styleMismatches: pairs.filter((p) => p.matchType === 'exact' && p.delta.length).length,
-      suspects: pairs.filter((p) => p.matchType === 'suspect').map((p) => ({ text: p.text, migratedContext: p.migratedContext, sourceContext: p.sourceContext })),
+    perPage: perPage.map(({
+      page, source, migrated, stats, statsByBreakpoint, pairs,
+    }) => ({
+      page, source, migrated, stats, statsByBreakpoint,
+      styleMismatches: pairs.filter((p) => isDiffedPair(p) && p.delta.length).length,
+      suspects: pairs.filter((p) => p.matchType === 'suspect').map((p) => ({
+        text: p.text,
+        breakpoint: p.breakpoint,
+        migratedContext: p.migratedContext,
+        sourceContext: p.sourceContext,
+      })),
     })),
   };
   const outFile = join(outDir, 'text-style-diff.json');
   writeFileSync(outFile, JSON.stringify(report, null, 2));
 
   // Human-readable summary to stdout.
-  process.stdout.write(`\n=== Text-style validation: ${cfg.pairs.length} page(s) ===\n`);
-  process.stdout.write(`Pairing: exact=${totals.exact} suspect=${totals.suspect} substring=${totals.substring} partial=${totals.partial} missing=${totals.missing} excluded=${totals.excluded}\n`);
+  process.stdout.write(`\n=== Text-style validation: ${cfg.pairs.length} page(s) @ ${textStyleBreakpoints.join('/')}px ===\n`);
+  process.stdout.write(`Pairing (summed over breakpoints): exact=${totals.exact} crossrole=${totals.crossrole} subset=${totals.subset} segmentation=${totals.segmentation} suspect=${totals.suspect} substring=${totals.substring} partial=${totals.partial} missing=${totals.missing} excluded=${totals.excluded}\n`);
   process.stdout.write(`Style-mismatch clusters: ${clusters.length} (loop-eligible: ${loopEligible.length}, ineligible: ${ineligible.length})\n`);
-  process.stdout.write(`Field mismatches (loop-eligible): ${eligibleFieldMismatches} total, ${eligibleNonSizeFieldMismatches} excluding font-size\n\n`);
+  process.stdout.write(`Field mismatches (loop-eligible): ${eligibleFieldMismatches} total, ${eligibleNonSizeFieldMismatches} excluding sizing (font-size, line-height)\n`);
+  process.stdout.write('(lineHeight is compared and shown as a ratio of font-size, e.g. 1.15)\n\n');
+  const MAX_TEXTS = 10;
   const printCluster = (c, i) => {
-    process.stdout.write(`#${i + 1}  [${c.pages.length} page(s), ${c.count} run(s), roles: ${c.roleBuckets.join('/')}]  ${c.key}\n`);
+    // Cross-role clusters (source→migrated tag change, e.g. h2→p) are flagged so
+    // the fix can be a re-tag/authoring change, not only CSS.
+    const retag = c.crossRoleCount ? `  [re-tagged: ${c.roleMismatches.join(', ')}]` : '';
+    // Segmentation clusters: the source split the phrase into ≥2 tones the migrated
+    // collapsed to one run (a markup/parser fix, not CSS).
+    const seg = c.segmentationCount ? '  [segmentation: source multi-tone collapsed]' : '';
+    // Breakpoint-specific: occurs at only some widths → needs a media-query-scoped
+    // fix (not auto-fixable; the boundary between sampled widths is unknown).
+    const bps = c.breakpoints.length ? ` @${c.breakpoints.join('/')}px` : '';
+    const bpOnly = c.breakpointSpecific ? '  [breakpoint-specific]' : '';
+    process.stdout.write(`#${i + 1}  [${c.pages.length} page(s), ${c.count} run(s)${bps}, roles: ${c.roleBuckets.join('/')}]  ${c.key}${retag}${seg}${bpOnly}\n`);
+    // Every distinct text in the cluster (not just the first sample), so a
+    // multi-member cluster can't read as a single issue.
+    (c.texts || []).slice(0, MAX_TEXTS).forEach((t) => {
+      const tb = t.breakpoints.length && t.breakpoints.length !== c.breakpoints.length ? `  @${t.breakpoints.join('/')}px` : '';
+      process.stdout.write(`     - "${t.text.slice(0, 60)}"${tb}\n`);
+    });
+    if ((c.texts || []).length > MAX_TEXTS) process.stdout.write(`     …and ${c.texts.length - MAX_TEXTS} more (see report JSON)\n`);
     const s = c.samples[0];
-    if (s) process.stdout.write(`     e.g. "${s.text.slice(0, 60)}"  ctx: ${s.migratedContext}\n`);
+    if (s) process.stdout.write(`     ctx: ${s.migratedContext}\n`);
+    // Show the per-segment source tones the migrated lost, so the defect is legible.
+    if (s && s.segmentParts && s.segmentParts.length > 1) {
+      s.segmentParts.forEach((p) => {
+        const fp = p.fingerprint || {};
+        process.stdout.write(`       source tone: "${(p.text || '').slice(0, 30)}"  ${fp.fontFamily || ''} ${fp.color || ''}\n`);
+      });
+    }
   };
   process.stdout.write('LOOP-ELIGIBLE:\n');
   loopEligible.forEach(printCluster);
   if (ineligible.length) {
     process.stdout.write('\nINELIGIBLE (too short / ambiguous — reported only):\n');
     ineligible.forEach(printCluster);
+  }
+
+  // SUSPECTS — same text present in source under a role that doesn't match, with
+  // MORE THAN ONE candidate role (genuinely ambiguous). These are NOT auto-diffed,
+  // but they are printed here (previously buried in the JSON only) so a clean
+  // headline count can't hide them: each may be a real defect a human should judge.
+  // De-duplicated across breakpoints (the same ambiguous text recurs per width).
+  const suspectMap = new Map();
+  perPage.forEach(({ page, pairs }) => pairs
+    .filter((p) => p.matchType === 'suspect')
+    .forEach((p) => {
+      const k = `${page}|${p.text}`;
+      if (!suspectMap.has(k)) suspectMap.set(k, { page, ...p });
+    }));
+  const allSuspects = [...suspectMap.values()];
+  if (allSuspects.length) {
+    process.stdout.write(`\nSUSPECTS (${allSuspects.length}) — ambiguous text/role, not auto-diffed; review manually:\n`);
+    allSuspects.slice(0, 20).forEach((p) => {
+      process.stdout.write(`   "${(p.text || '').slice(0, 50)}"  src:${p.sourceContext} → mig:${p.migratedContext}\n`);
+    });
+    if (allSuspects.length > 20) process.stdout.write(`   …and ${allSuspects.length - 20} more (see report JSON)\n`);
   }
 
   // Spacing summary.
@@ -296,6 +378,18 @@ async function main() {
     if (spacingHigh.length) { process.stdout.write('HIGH-CONFIDENCE (top-to-bottom):\n'); spacingHigh.forEach(printSpacing); }
     const inconsistent = spacing.clusters.filter((c) => c.directionInconsistent);
     if (inconsistent.length) { process.stdout.write('\nDOWN-RANKED (direction-inconsistent across breakpoints):\n'); inconsistent.forEach(printSpacing); }
+    // CONTENT-SPANNING — gaps over threshold that were quarantined (media/other
+    // content in the interval, or overlapping/side-by-side anchors). Low
+    // confidence and NOT gated on, but printed (previously JSON-only) so a
+    // real margin bug hiding behind an image or a two-column zone is at least
+    // visible for human review rather than silently dropped.
+    if (spacing.contentSpanning && spacing.contentSpanning.length) {
+      process.stdout.write(`\nCONTENT-SPANNING (${spacing.contentSpanning.length}, quarantined — review, not auto-fixed):\n`);
+      spacing.contentSpanning.slice(0, 15).forEach((g) => {
+        process.stdout.write(`   @${g.breakpoint}px Δ${g.delta > 0 ? '+' : ''}${g.delta}px  ${g.transition}\n     "${(g.fromText || '').slice(0, 24)}" → "${(g.toText || '').slice(0, 24)}"\n`);
+      });
+      if (spacing.contentSpanning.length > 15) process.stdout.write(`   …and ${spacing.contentSpanning.length - 15} more (see report JSON)\n`);
+    }
   }
 
   process.stdout.write(`\nFull report: ${outFile}\n`);

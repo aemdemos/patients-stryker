@@ -1,0 +1,22 @@
+{
+  "status": "success",
+  "url": "https://patients.stryker.com/us/en/ivs/index.html",
+  "path": "us/en/ivs/index",
+  "timestamp": "2026-09-22T10:22:25.357Z",
+  "title": "Homepage | Stryker",
+  "template": "ivs-home",
+  "blocks": [
+    "hero",
+    "sticky-nav",
+    "columns",
+    "columns",
+    "columns",
+    "panel-gold",
+    "cards",
+    "statistics",
+    "statistics",
+    "panel-cta",
+    "panel-cta",
+    "panel-gold-cta"
+  ]
+}

@@ -243,6 +243,38 @@
           ]
         }
       ]
+    },
+    {
+      "name": "ivs-home",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/index.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/index.html",
+      "coverageGaps": [],
+      "description": "IVS patient homepage (standalone singleton, styled via the `ivs-home` theme in styles/themes.css). Zones top-to-bottom: (1) hero (banner) 'Pain doesn't hold the power. You do.' + Find a doctor CTA; (2) a sticky-nav in-page anchor bar (Overview/Testimonials/Find a Doctor/Resources/Disclaimer); (3) a 'flex' intro section — default 'Making every moment matter.' text left + a video block right; (4) a gold panel band 'There's hope ahead'; (5) a 4-up cards (linked) pain-type grid (back/neck, knee, hip, shoulder); (6) a statistics dashboard (6 metrics, two 3-up rows); (7) a 'flex' section of two panel (cta) spotlights (VCF; radiofrequency ablation); (8) two testimonial columns (Janet; Lynn) on a dark-teal band — text left + video right; (9) a gold panel band 'Tired of living in pain?'; (10) a marketo-form doctor-finder; (12) a 'compact' disclaimer/references section. The Resources brochure tabs (zone 11) are DEFERRED pending an incoming block. Header/footer and the runtime Scene7 video chrome are stripped on import; all mapped blocks reuse existing project blocks — no new block code.",
+      "blocks": [
+        { "name": "hero", "section": "hero", "instances": [".fullWidthImageHero"] },
+        { "name": "sticky-nav", "section": "anchor-nav", "instances": [".c-navigation-bar .nav-wrap"] },
+        { "name": "columns", "instances": [".cols2:has(.standalonevideo)"] },
+        { "name": "panel-gold", "section": "hope", "instances": [".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"] },
+        { "name": "cards", "section": "pain-cards", "instances": [".cols4 > .colctrl"] },
+        { "name": "statistics", "section": "statistics", "instances": [".cols3 > .colctrl"] },
+        { "name": "panel-cta", "section": "spotlights", "instances": [".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"] },
+        { "name": "panel-gold-cta", "section": "find-doctor", "instances": [".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"] }
+      ],
+      "sections": [
+        { "id": "hero", "name": "Hero banner", "selector": ".fullWidthImageHero", "style": null, "blocks": ["hero"], "defaultContent": [] },
+        { "id": "anchor-nav", "name": "Sticky anchor bar", "selector": ".c-navigation-bar", "style": null, "blocks": ["sticky-nav"], "defaultContent": [] },
+        { "id": "intro-video", "name": "Intro: text + video", "selector": ".cols2:has(.standalonevideo):not(.fullbleedpanel *)", "style": "flex", "anchor": "overview", "blocks": ["columns"], "defaultContent": [] },
+        { "id": "hope", "name": "There's hope ahead (gold)", "selector": ".text.parbase:has(.bg-gold .fontsize-1-25em)", "style": null, "blocks": ["panel-gold"], "defaultContent": [] },
+        { "id": "pain-cards", "name": "Pain-type cards", "selector": ".cols4", "style": null, "blocks": ["cards"], "defaultContent": [] },
+        { "id": "statistics", "name": "Statistics dashboard", "selector": ".cols3", "style": "divider", "spacerBefore": true, "blocks": ["statistics"], "defaultContent": [] },
+        { "id": "spotlights", "name": "Condition/treatment spotlights", "selector": ".cols2:has(.dimensional-box)", "style": "flex", "blocks": ["panel-cta"], "defaultContent": [] },
+        { "id": "testimonials", "name": "Patient testimonials (dark teal)", "selector": ".fullbleedpanel:has(.bg-dark-teal-gradient)", "style": "dark", "anchor": "testimonials", "blocks": ["columns"], "defaultContent": [] },
+        { "id": "find-doctor", "name": "Find a doctor (gold)", "selector": ".text.parbase:has(.bg-gold a[href*='physicianlocator'])", "style": null, "anchor": "find-a-doctor", "blocks": ["panel-gold-cta"], "defaultContent": [] },
+        { "id": "marketo", "name": "Doctor-finder form", "selector": ".marketoform", "style": null, "anchor": "resources", "blocks": ["marketo-form"], "defaultContent": [] },
+        { "id": "disclaimer", "name": "Disclaimer + references", "selector": ".c-disclaimer.page-section:not(.container)", "style": "compact", "anchor": "disclaimer", "blocks": [], "defaultContent": [".c-disclaimer.page-section:not(.container)"] }
+      ]
     }
   ]
 }

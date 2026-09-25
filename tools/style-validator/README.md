@@ -73,7 +73,8 @@ repo's real (Stryker) config and doubles as a filled-in example.
   ],
 
   // ---- optional ----
-  "fingerprintFields": ["fontFamily","fontSize","fontWeight","fontStyle","color","textDecorationLine"],
+  "fingerprintFields": ["fontFamily","fontSize","fontWeight","fontStyle","color","textDecorationLine","lineHeight"],
+  "textStyleBreakpoints": [390, 1200],          // widths text is measured at (default: spacingBreakpoints)
   "minTokensForCluster": 2,                     // shorter runs reported, not auto-fixed
   "excludeContexts": ["some-widget"],           // context-hint substrings to drop (3rd-party forms/embeds)
 
@@ -134,6 +135,27 @@ So the loop is: **copy `example.json` → fill in group A → run → add group 
 the report → re-run.** Iterating from the first report is expected, not a sign
 the config was wrong.
 
+## What the text-style pass compares
+
+- **Every breakpoint.** Text is measured at each `textStyleBreakpoints` width
+  (default: the spacing breakpoints, 390/1200), so a heading that is right on
+  desktop but too large on mobile is caught. Each cluster records the widths it
+  occurs at (`breakpoints`). A cluster present at only SOME widths is flagged
+  `breakpointSpecific` — it needs a media-query-scoped fix whose boundary the tool
+  can't know (it only samples a few widths), so it is reported but never
+  auto-fixed (an unconditional rule would regress the widths that are correct).
+- **Seven properties:** font family, size, weight, style, color, decoration, and
+  **line height**. Line height is compared as a **ratio of the run's font size**
+  (the unitless value a designer authors, e.g. `1.15`), with a 0.05 tolerance —
+  so a wrong font size is not double-reported as a line-height mismatch too.
+  Cluster keys show it as a ratio (`lineHeight:1.15→1.06`).
+- **Sizing fields** (font size, line height) are reported but excluded from the
+  "non-size" progress metric and series gate, and are only auto-applied with
+  `--include-size`. `orchestrate.js plan` lists them in a separate SIZING section
+  so they aren't read as "done".
+- **Every member is listed.** The console prints all distinct texts in a cluster
+  (up to 10; full list in the report's `texts`), not just the first sample.
+
 ## Output
 
 `migration-work/importer/text-style-diff.json` (git-ignored working artifact)
@@ -144,9 +166,26 @@ plus a console summary. Each **cluster** carries:
 - `pages` / `count` — where and how often it occurs (worst-first ordering)
 - `samples` — example text, context hint, and both fingerprints
 
-`pairingStats` reports match quality (`exact` / `substring` / `partial` /
-`missing` / `countMismatch`) so you can judge whether the pairing is trustworthy
-before acting on the clusters.
+`pairingStats` reports match quality so you can judge whether the pairing is
+trustworthy before acting on the clusters. The match types, and which are
+style-diffed:
+
+| Type | Meaning | Diffed? |
+|---|---|---|
+| `exact` | same text, same role bucket | yes |
+| `crossrole` | same text, one different source role (author/parser re-tag, e.g. source `<h2>` → migrated `<p>`) | yes — delta carries a `roleMismatch` |
+| `subset` | migrated run's phrase is one styled sub-run of the source (or vice-versa); no exact twin | yes — vs the covering source segment |
+| `segmentation` | source split the phrase into ≥2 differently-styled runs the migrated collapsed into one (e.g. "Making every moment <gold>matter.</gold>" flattened to one plain run) | yes — vs the leading tone; `segmentParts` lists every lost tone. Surfaced even when the leading tone matches, because the collapsed multi-tone treatment is itself the defect (usually a parser/markup fix, not CSS) |
+| `suspect` | same text under ≥2 source roles, none matching the migrated role (genuinely ambiguous) | no — printed for human review |
+| `substring` / `partial` / `missing` | weak/no content overlap after segment detection fails | no |
+
+Role bucket is a **disambiguating tiebreaker, not a hard gate** — a legitimate
+re-tag (`crossrole`) is compared, not skipped. `segmentation`/`subset` catch the
+class where source and migrated **segment the same text differently**, which
+content-identity pairing alone misses (the migrated run has no exact twin because
+one side split a phrase). Both are why a "clean" `exact` count is not sufficient
+evidence of fidelity — always scan the `crossrole` / `segmentation` clusters and
+the printed `SUSPECTS` list too.
 
 ## How to act on clusters
 
@@ -266,13 +305,25 @@ are side-by-side flex/grid columns or two wrapped lines of one heading, not a
 stacked gap). This is what separates a real margin bug from "a third-party
 widget rendered taller than the source" and from a two-column zone.
 
-**Noise controls.** Page **chrome** (global nav/header/footer) and **widget
-internals** (a form's own field rhythm) are excluded as anchors — they differ
-structurally between source and migrated and aren't page-layout signals.
-Extend the exclusions per project via `excludeContexts`.
+**Noise controls.** Global **chrome** (`<header>`/`<footer>`, identified
+structurally by `el.closest('header, footer')`, plus their imagery like the
+header logo) is excluded as an anchor — its content differs between source and
+migrated and can change on publish. NOTE this is a *structural* test, not a
+`nav`/`header` context substring: an in-page `<nav>` that lives in main content
+(e.g. the **sticky-nav** anchor bar) is real page content and IS a valid anchor.
+**Widget internals** (a form's own field rhythm) are excluded via `excludeContexts`.
 `sup` citation markers are excluded as endpoints (their gaps are superscript
 positioning, not layout). Clusters whose delta **sign disagrees across
 breakpoints** are down-ranked as likely content reflow, not a fixable margin.
+
+**Boundary anchors (chrome edges).** Because chrome *content* is excluded, the
+gap "is the hero flush to the header?" would have no anchor. So the pass also
+emits two **boundary gaps**: `header-bottom → first page content` and
+`last page content → footer-top`. The chrome content varies, but its EDGE is a
+comparable landmark on both pages, and "first/last content" uses the nearest
+non-chrome text run OR content box (so an image-first hero is caught, not
+skipped). A boundary is silently omitted when its chrome element isn't rendered
+(e.g. no footer in local preview → `footerTop: null`).
 
 **Output.** Under `spacing` in the report JSON: `stats`, `clusters` (structural,
 clustered by landmark-to-landmark transition, sorted **top-to-bottom** so the

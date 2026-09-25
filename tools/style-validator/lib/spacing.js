@@ -37,50 +37,56 @@ const EPS = 2; // px tolerance when testing whether an element sits in an interv
 // gaps were positive (33/47/57/90px); negatives were only column/heading overlaps.
 const MAX_NEGATIVE_GAP = -8;
 
-// Context substrings that are page CHROME, not "major elements of the page" —
-// excluded from spacing anchors because they differ structurally between source
-// and migrated (global nav/header/footer) and are not a page-layout signal. This
-// is a generic default; a project adds its own chrome/widget context substrings
-// (e.g. a specific form or embed) via config `excludeContexts`, matched against
-// each run's contextHint. Match is substring-based, so 'nav' catches nav-*.
-const DEFAULT_SPACING_EXCLUDE = ['nav', 'header', 'footer'];
-
+// Global page chrome (header/footer) is excluded from spacing ANCHORS because its
+// content differs structurally between source and migrated and can change on
+// publish — but its EDGES become boundary anchors instead (see boundaryGaps), so
+// header/footer-adjacent spacing (e.g. a hero flush to the header) is still
+// measured. Chrome is identified by each run's `chrome` flag (set from
+// `el.closest('header, footer')` in extract.js), NOT a contextHint substring: the
+// former `'nav'` substring wrongly dropped the in-page sticky-nav block (real
+// page content that happens to render as <nav>). A project may still drop
+// specific widgets/embeds via config `excludeContexts` (substring on contextHint).
 function matchesAny(hint, patterns) {
   if (!patterns || !patterns.length) return false;
   return patterns.some((p) => (hint || '').includes(p));
 }
 
-/** Exact-pair source↔migrated runs (same text+role+dup-rank), in migrated order.
- * Mirrors the exact-match keying used by diff.js so anchors are consistent.
+/** Pair source↔migrated runs into positional anchors, in migrated order.
+ * Pairs by CONTENT with role as a disambiguating tiebreaker (mirrors diff.js):
+ * an unconsumed source run with identical text pairs even when its role differs
+ * (an author/parser re-tag, e.g. source <h2> → migrated <p>), so re-tagged runs
+ * still serve as spacing anchors instead of vanishing from coverage. Each source
+ * run is consumed at most once (front-to-back) to keep repeats order-stable.
  * Runs whose context matches `excludeContexts` are dropped (chrome/widget noise),
  * as are `sup` runs — inline citation markers are not page-layout landmarks and
  * their gaps reflect superscript positioning, not spacing. */
 function pairAnchors(sourceRuns, migratedRuns, excludeContexts) {
-  const keep = (r) => r.roleBucket !== 'sup' && !matchesAny(r.contextHint, excludeContexts);
+  const keep = (r) => r.roleBucket !== 'sup' && !r.chrome
+    && !matchesAny(r.contextHint, excludeContexts) && r.geometry;
   const src = sourceRuns.filter(keep);
   const mig = migratedRuns.filter(keep);
-  const srcByKey = new Map();
+  const srcByText = new Map();
   for (const r of src) {
-    srcByKey.set(`${r.normalizedText}#${r.roleBucket}#${r.dupRank}`, r);
+    if (!srcByText.has(r.normalizedText)) srcByText.set(r.normalizedText, []);
+    srcByText.get(r.normalizedText).push(r);
   }
-  const migRank = new Map();
+  const consumed = new Set();
   const anchors = [];
   for (const m of mig) {
-    const rkey = `${m.normalizedText}#${m.roleBucket}`;
-    const rank = migRank.get(rkey) || 0;
-    migRank.set(rkey, rank + 1);
-    const s = srcByKey.get(`${m.normalizedText}#${m.roleBucket}#${rank}`);
-    if (s && s.geometry && m.geometry) {
-      anchors.push({
-        normalizedText: m.normalizedText,
-        text: m.rawText,
-        roleBucket: m.roleBucket,
-        srcCtx: s.contextHint,
-        migCtx: m.contextHint,
-        src: s.geometry,
-        mig: m.geometry,
-      });
-    }
+    const sameText = (srcByText.get(m.normalizedText) || []).filter((r) => !consumed.has(r));
+    if (!sameText.length) continue;
+    // Prefer a same-role source run; else take the first unconsumed (re-tag).
+    const s = sameText.find((r) => r.roleBucket === m.roleBucket) || sameText[0];
+    consumed.add(s);
+    anchors.push({
+      normalizedText: m.normalizedText,
+      text: m.rawText,
+      roleBucket: m.roleBucket,
+      srcCtx: s.contextHint,
+      migCtx: m.contextHint,
+      src: s.geometry,
+      mig: m.geometry,
+    });
   }
   return anchors;
 }
@@ -157,6 +163,87 @@ function pageBreakpointGaps({ sourceRuns, sourceBoxes, migratedRuns, migratedBox
   return gaps;
 }
 
+/**
+ * Boundary gaps: header-bottom → first page content, and last page content →
+ * footer-top, on source vs migrated. The chrome CONTENT is excluded as an anchor
+ * (it differs between source/migrated), but its EDGE is a comparable landmark, so
+ * this is what catches "the hero sits flush to the header" — previously
+ * unmeasurable because no anchor existed at that boundary.
+ *
+ * "First/last page content" = the topmost/bottommost NON-CHROME content edge:
+ * the nearest text run OR content box (image/video), whichever is closer to the
+ * chrome edge. Using content boxes (not just text) is essential — the hero leads
+ * with an IMAGE, so a text-only anchor would miss it and quarantine the gap.
+ * @returns {Array<gapFinding>}
+ */
+function boundaryGaps({ sourceRuns, sourceBoxes, migratedRuns, migratedBoxes, boundaries }, srcBoundaries, breakpoint) {
+  const gaps = [];
+  const EDGE_EPS = 2;
+
+  // Topmost / bottommost non-chrome content edge on a side. BOTH text runs and
+  // content boxes must exclude chrome (a header logo <img> would otherwise be the
+  // "first content" and drive the gap negative).
+  const contentEdges = (runs, boxes) => {
+    const runTops = runs.filter((r) => r.geometry && !r.chrome).map((r) => r.geometry);
+    const boxTops = (boxes || []).filter((g) => !g.chrome);
+    const items = runTops.concat(boxTops);
+    if (!items.length) return null;
+    return {
+      firstTop: Math.min(...items.map((g) => g.top)),
+      lastBottom: Math.max(...items.map((g) => g.bottom)),
+    };
+  };
+  const migEdges = contentEdges(migratedRuns, migratedBoxes);
+  const srcEdges = contentEdges(sourceRuns, sourceBoxes);
+  if (!migEdges || !srcEdges) return gaps;
+
+  // header-bottom → first content top
+  const mHeader = boundaries && boundaries.headerBottom;
+  const sHeader = srcBoundaries && srcBoundaries.headerBottom;
+  if (mHeader != null && sHeader != null) {
+    const migratedGap = migEdges.firstTop - mHeader;
+    const sourceGap = srcEdges.firstTop - sHeader;
+    // Only emit when both sides are sane (content below the header edge).
+    if (migratedGap >= -EDGE_EPS && sourceGap >= -EDGE_EPS) {
+      gaps.push({
+        breakpoint,
+        fromText: '[header]', toText: '[first content]',
+        fromCtx: 'chrome:header-edge', toCtx: 'content:first',
+        fromRole: 'boundary', toRole: 'boundary',
+        sourceGap: Math.round(sourceGap),
+        migratedGap: Math.round(migratedGap),
+        delta: Math.round(migratedGap - sourceGap),
+        contentSpanning: false, // an edge→content gap is a true spacing signal
+        anchorTop: -1, // sort FIRST (topmost boundary)
+        boundary: true,
+      });
+    }
+  }
+
+  // last content bottom → footer-top
+  const mFooter = boundaries && boundaries.footerTop;
+  const sFooter = srcBoundaries && srcBoundaries.footerTop;
+  if (mFooter != null && sFooter != null) {
+    const migratedGap = mFooter - migEdges.lastBottom;
+    const sourceGap = sFooter - srcEdges.lastBottom;
+    if (migratedGap >= -EDGE_EPS && sourceGap >= -EDGE_EPS) {
+      gaps.push({
+        breakpoint,
+        fromText: '[last content]', toText: '[footer]',
+        fromCtx: 'content:last', toCtx: 'chrome:footer-edge',
+        fromRole: 'boundary', toRole: 'boundary',
+        sourceGap: Math.round(sourceGap),
+        migratedGap: Math.round(migratedGap),
+        delta: Math.round(migratedGap - sourceGap),
+        contentSpanning: false,
+        anchorTop: Number.MAX_SAFE_INTEGER, // sort LAST (bottommost boundary)
+        boundary: true,
+      });
+    }
+  }
+  return gaps;
+}
+
 /** Stable transition signature so the same landmark-to-landmark gap clusters
  * across pages. Context hints are template-stable (block/section classes). */
 function transitionKey(gap) {
@@ -171,14 +258,18 @@ function transitionKey(gap) {
  */
 export function computeSpacingFindings(perPage, opts = {}) {
   const threshold = opts.thresholdPx ?? 15;
-  const excludeContexts = (opts.excludeContexts || []).concat(DEFAULT_SPACING_EXCLUDE);
+  const excludeContexts = opts.excludeContexts || [];
 
-  // 1) Gather every gap for every page/breakpoint.
+  // 1) Gather every gap for every page/breakpoint — inter-anchor gaps PLUS the
+  // header/footer boundary gaps (chrome-edge → first/last content).
   const allGaps = [];
   for (const { page, byBreakpoint } of perPage) {
     for (const bp of Object.keys(byBreakpoint)) {
-      const gaps = pageBreakpointGaps(byBreakpoint[bp], Number(bp), excludeContexts);
+      const data = byBreakpoint[bp];
+      const gaps = pageBreakpointGaps(data, Number(bp), excludeContexts);
       gaps.forEach((g) => allGaps.push({ ...g, page }));
+      boundaryGaps(data, data.sourceBoundaries, Number(bp))
+        .forEach((g) => allGaps.push({ ...g, page }));
     }
   }
 

@@ -1111,3 +1111,230 @@ body.resources main > .section.compact > div :is(p, ol, ul, li) {
 body.resources .section.compact {
   margin-bottom: 0;
 }
+
+/* =====================================================================
+   Theme: ivs-home — IVS patient homepage (standalone singleton)
+   =====================================================================
+   Zones (top→bottom): hero (banner) · sticky-nav · flex intro (text+video) ·
+   gold panel · cards (linked) pain grid · statistics dashboard · flex spotlights
+   (panel cta ×2) · testimonials (columns text+video) on a dark-teal band ·
+   gold panel CTA · marketo-form · compact disclaimer. All zones reuse existing
+   blocks; only page-level rhythm + the dark-teal testimonial band are themed here.
+   Base (mobile) rules first, responsive overrides grouped by breakpoint at the end. */
+
+/* inter-section vertical rhythm — separate each zone below the hero. The base
+   sections carry margin:0, so add a top gap to each zone after the hero/nav. */
+body.ivs-home main > .section.flex,
+body.ivs-home main > .section.cards-container,
+body.ivs-home main > .section.statistics-container,
+body.ivs-home main > .section.panel-container,
+body.ivs-home main > .section.marketo-form-container,
+body.ivs-home main > .section.compact {
+  margin-top: var(--space-section-l);
+}
+
+/* 20px gap between the hero and the sticky-nav (author-specified — the source
+   renders them flush, but a small breather reads better here). On mobile the nav
+   is display:none so this margin collapses harmlessly. */
+body.ivs-home main > .section.sticky-nav-container {
+  margin-top: 20px;
+}
+
+/* hero sits 60px below the header (author-specified — the source is only ~11px,
+   but that reads too tight against the header here). */
+body.ivs-home main > .section.hero-container {
+  margin-top: 60px;
+}
+
+/* hero headline + subheading: in the source both are left-aligned on the SAME
+   edge and wrap within one ~527px column, so the subheading starts directly below
+   the headline and the two share a right wrap boundary. The shared hero.banner CSS
+   indents only the h1 (padding-left:5%, resolved against each element's own width)
+   and lets both run full-width (max-width:none, box-sizing:content-box). That left
+   the h2 misaligned (its 5% ≠ the h1's 5%) and let both span the whole viewport.
+   Pin BOTH to the SAME fixed left inset and the SAME border-box column width so
+   they align exactly and wrap as one unit. Scoped to this page; the shared block
+   is unchanged for other heroes. */
+body.ivs-home .hero.banner h1,
+body.ivs-home .hero.banner h2 {
+  box-sizing: border-box;
+  max-width: 33rem;   /* ≈528px column incl. padding, matching the source text block */
+  padding-left: 34px; /* fixed inset so h1 and h2 text align on the same edge */
+}
+
+/* intro (the "Making every moment" flex section, anchor `overview`) — top gap to
+   the element above it. The sticky-nav only exists at ≥600px, so the gap differs
+   by breakpoint (validator, both breakpoints):
+   - mobile (no nav): source hero→intro ≈ 92px; the shared rhythm gives 50px → 61px here.
+   - desktop (≥600px, nav present): source nav→intro ≈ 86px → 86px at the breakpoint below.
+   Scoped to the overview anchor so the OTHER flex section (spotlights) keeps 50px. */
+body.ivs-home main > .section.flex[data-anchor="overview"] {
+  margin-top: 61px;
+}
+
+/* testimonials: dark-teal full-bleed band. The base `.section.dark` gradient is
+   the generic dark panel; give this band edge-to-edge fill + interior padding so
+   the two testimonial columns sit on one continuous teal zone (matching source).
+   Mobile: the source leaves a larger gap (~68px) above the band once the
+   spotlights stack — bump the top margin here; the desktop gap already matches at
+   --space-section-l, so it is reset back to 50px at ≥900px below. */
+body.ivs-home main > .section.dark {
+  margin-block: 68px 0;
+  padding-block: var(--space-section-l);
+}
+
+/* The two testimonials (Janet, then Lynn) are two columns blocks fused in this one
+   gray/teal band. Separate them with a gap made from PADDING on the second block,
+   not margin — a margin would open a white strip through the band, whereas padding
+   keeps the gray fill continuous while pushing Lynn's content down. */
+body.ivs-home main > .section.dark > .columns-wrapper + .columns-wrapper {
+  padding-top: var(--space-section-l);
+}
+
+/* gold "There's hope ahead" band → pain-type cards. The shared rhythm gives the
+   cards section 50px top margin, but the source packs the cards closer under the
+   gold band (validator anchor gap h4→h3: source 54px mobile / 77px desktop, vs
+   migrated ~97px). Tighten it — more on mobile (where the block padding stacks
+   taller). Mobile base here; desktop relaxes toward the source 77px below. */
+body.ivs-home main > .section.cards-container {
+  margin-top: 8px;
+}
+
+/* find-a-doctor gold CTA → sits further BELOW the testimonial band than the
+   default 50px (source anchor gap Lynn→"Tired of living": 182px desktop; the
+   band's own bottom padding covers most, leaving ~35px extra needed at desktop).
+   Mobile already matches (~344 vs 350), so the bump is desktop-only, below. */
+
+/* compact disclaimer: the source keeps ~15px between the footnote/disclaimer
+   paragraphs and the reference list (the global `p`/`li` 15px margin already
+   matches), so DON'T zero those gaps. The product-code line ("IVS-GSNPS-…") sits
+   ~30px below the reference list in the source — add that top gap. */
+body.ivs-home main > .section.compact > div > ol {
+  margin-bottom: var(--space-section);
+}
+
+/* "There's hope ahead" gold band: the source renders the h2 at fontsize-1-25em
+   Futura-bold (24.5 × 1.25 ≈ 30.6px) and the h4 sub-line at fontsize-1-25em in
+   the Egyptienne serif (21.9px) — not the default 24.5/17.5 panel headings. */
+body.ivs-home .panel.gold .panel-body h2 {
+  font-size: calc(var(--heading-font-size-xl) * 1.25);
+}
+
+body.ivs-home .panel.gold .panel-body h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-ml);
+}
+
+/* pain-type cards: the source renders each card label ("Back and neck pain") in
+   the bold Humanist BODY face, not the Futura display face the cards `.linked`
+   heading defaults to. The <h3> role is correct for the block (it carries the
+   card's link + makes the whole card clickable); only the typeface differs by
+   design, so restore the source family here (scoped CSS, per the validator's
+   fontFamily cluster). Weight/size already match the source. */
+body.ivs-home .cards.linked .cards-card-body h3 {
+  font-family: var(--body-font-family);
+}
+
+/* The label is wrapped in the card's link, which picks up the default teal +
+   underline anchor styling — but the source renders it plain BLACK with NO
+   underline (the whole card is the click target, so the label needn't look like
+   a text link). Match the source. */
+body.ivs-home .cards.linked .cards-card-body h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* statistics: the source sits each metric's description directly under its big
+   number (~0px gap); the shared block default leaves 18px. Scope the tighter gap
+   to this page (the shared token is used elsewhere) — a both-breakpoint spacing
+   cluster the validator flagged. */
+body.ivs-home .statistics .statistics-value {
+  margin-bottom: 0;
+}
+
+/* intro heading "Making every moment matter.": the source renders it at
+   fontsize-1-25em (26.25px), not the columns block's base 21px h3. Scope the
+   larger size here (validator font-size delta 21→26.25). */
+body.ivs-home .columns.columns-2-cols h3 {
+  font-size: var(--heading-font-size-l-scaled);
+}
+
+/* spotlight panels (cta, wide) — body copy. The source keeps it in the Humanist
+   BODY face at 17.5px at every width. The `wide` variant (needed for the
+   full-width single-column layout) also switches its paragraph to the heading
+   serif at 21px from 600px up — styling meant for another page's panel — so
+   restore the cta body typography here. The footnote markers (sup) inherit it. */
+body.ivs-home .panel.cta.wide .panel-body p {
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+}
+
+/* spotlight panel headings — mobile base: the source renders them at 21.9px with
+   1.15 leading (the block default is 26px at 1.06); 26.25px from 480px (below). */
+body.ivs-home .panel.cta .panel-body h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+/* the source's own breakpoint for the spotlight panel heading size */
+@media (width >= 480px) {
+  body.ivs-home .panel.cta .panel-body h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+}
+
+/* ivs-home tablet/desktop overrides */
+@media (width >= 600px) {
+  /* the sticky-nav appears at ≥600px and sits between the hero and the intro, so
+     the intro's top gap is measured from the NAV (source ≈86px), larger than the
+     mobile hero→intro gap. */
+  body.ivs-home main > .section.flex[data-anchor="overview"] {
+    margin-top: 86px;
+  }
+}
+
+@media (width >= 900px) {
+  /* the extra mobile gap above the testimonials band isn't present once the
+     spotlights sit side-by-side — restore the standard section gap at desktop. */
+  body.ivs-home main > .section.dark {
+    margin-top: var(--space-section-l);
+  }
+
+  /* cards sit a little further below the gold band on desktop than on mobile
+     (source anchor gap 77px desktop vs 54px mobile). */
+  body.ivs-home main > .section.cards-container {
+    margin-top: 30px;
+  }
+
+  /* find-a-doctor gold CTA: +35px below the testimonial band on desktop to match
+     the source (anchor gap 182px vs the default 147px). Mobile stays at 50px. */
+  body.ivs-home main > .section.panel-container[data-anchor="find-a-doctor"] {
+    margin-top: 85px;
+  }
+
+  /* pain-cards: the shared cards block jumps straight to 4-up at 900px, but in the
+     900–969px band the columns are too narrow and "Back and neck pain" wraps to a
+     second line, pushing that card's image down. The source never goes 4-up while
+     cramped (it had an intermediate breakpoint). Hold 2-up through this band and
+     restore 4-up at ≥970px (below), where the longest label fits on one line. */
+  body.ivs-home .cards.linked > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* enough width for the 4-up pain-cards without the "Back and neck pain" label
+   wrapping (measured: it fits on one line from ~970px). */
+@media (width >= 970px) {
+  body.ivs-home .cards.linked > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* hero headline: at ≥1200px the block caps h1 at 42px, but the source computes
+   38.4px there (its fontsize-3vw curve). Match the source cap on this page. */
+@media (width >= 1200px) {
+  body.ivs-home .hero.banner h1 {
+    font-size: 38.4px;
+  }
+}
+

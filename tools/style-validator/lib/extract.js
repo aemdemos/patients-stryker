@@ -204,6 +204,14 @@ export function extractRunsInBrowser(options) {
         dupRank: rank,
         contextHint: contextHint(el),
         roleBucket: roleBucket(el),
+        // Global page chrome = inside <header>/<footer>. Reliable structural test
+        // (not a contextHint substring): a `<nav>` that lives in main content —
+        // e.g. the in-page sticky-nav block, which renders as <nav> — is NOT
+        // chrome and stays a valid spacing anchor. Header/footer content differs
+        // between source and migrated (and can change on publish), so the spacing
+        // pass drops these as anchors — but their EDGES are used as boundary
+        // anchors (see extractBoundaryAnchorsInBrowser).
+        chrome: !!el.closest('header, footer'),
         selector: stableSelector(el),
         tokenCount: norm.replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(' ').filter(Boolean).length,
         geometry: {
@@ -216,6 +224,8 @@ export function extractRunsInBrowser(options) {
           fontStyle: cs.fontStyle,
           color: cs.color,
           textDecorationLine: cs.textDecorationLine,
+          // compared as a ratio of fontSize (see style-fingerprint lineHeightRatio)
+          lineHeight: cs.lineHeight,
         },
       });
     }
@@ -251,9 +261,56 @@ export function extractContentBoxesInBrowser() {
     if (el.tagName === 'IMG' && el.parentElement && el.parentElement.tagName === 'PICTURE') return;
     boxes.push({
       tag: el.tagName.toLowerCase(),
+      // Chrome flag (same test as text runs): a box inside <header>/<footer> —
+      // e.g. the header logo — is NOT page content, so the boundary-gap pass must
+      // ignore it when finding the first/last content edge (otherwise the header
+      // logo, sitting at the very top, makes header→content gaps negative and
+      // suppresses the very signal we want).
+      chrome: !!el.closest('header, footer'),
       top: Math.round(r.top + window.scrollY),
       bottom: Math.round(r.bottom + window.scrollY),
     });
   });
   return boxes;
+}
+
+/**
+ * Extract the page's global-chrome EDGE anchors: the bottom edge of the
+ * <header> and the top edge of the <footer>. These are the landmarks where
+ * chrome ends and page content begins/ends.
+ *
+ * Header/footer CONTENT is excluded from spacing (it differs between source and
+ * migrated, and can change on publish), so "is the hero flush to the header?"
+ * was previously unmeasurable — no anchor existed at that boundary. The chrome
+ * content varies, but the EDGE (header bottom / footer top) is a comparable
+ * landmark on both pages: the gap from it to the first/last piece of page
+ * content is exactly the top/bottom page spacing. Returned as absolute page
+ * offsets so the spacing pass can measure header-bottom → first content and
+ * last content → footer-top, catching a hero that sits flush to the header.
+ *
+ * @returns {{headerBottom:number|null, footerTop:number|null}}
+ */
+/* eslint-disable no-undef */
+export function extractBoundaryAnchorsInBrowser() {
+  const visibleEls = (sel) => [...document.querySelectorAll(sel)].filter((el) => {
+    const cs = getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden') return false;
+    const r = el.getBoundingClientRect();
+    return r.height >= 2 && r.width >= 2;
+  });
+  const edge = (el, side) => Math.round(el.getBoundingClientRect()[side] + window.scrollY);
+  // Header's true LOWER edge = lowest bottom among header elements.
+  const visibleBottom = (sel) => {
+    const els = visibleEls(sel);
+    return els.length ? Math.max(...els.map((el) => edge(el, 'bottom'))) : null;
+  };
+  // Footer's true UPPER edge = highest top among footer elements.
+  const visibleTop = (sel) => {
+    const els = visibleEls(sel);
+    return els.length ? Math.min(...els.map((el) => edge(el, 'top'))) : null;
+  };
+  return {
+    headerBottom: visibleBottom('header, #header, .header'),
+    footerTop: visibleTop('footer, #footer, .footer'),
+  };
 }
