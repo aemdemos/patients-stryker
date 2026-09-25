@@ -21,6 +21,42 @@ const DM_OPENAPI = /\/adobe\/assets\//i;
 const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 
+function isEWCanvas() {
+  return document.documentElement.classList.contains('adobe-ue-preview')
+    || document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-preview')
+    || document.body?.classList.contains('adobe-ue-edit');
+}
+
+/**
+ * EW can re-render editable default content from source, replacing converted
+ * media with authored URLs. For media inside `.default-content-wrapper`, climb
+ * out of empty single-purpose wrappers (editable root, paragraph wrapper, etc.)
+ * and place media directly under the default-content wrapper.
+ * @param {Element} media converted DM media element
+ * @param {Element} root current decoration root boundary
+ */
+function liftDefaultContentMedia(media, root) {
+  if (!isEWCanvas() || !media?.parentElement) return;
+
+  const defaultWrapper = media.closest('.default-content-wrapper');
+  if (!defaultWrapper || !root.contains(defaultWrapper)) return;
+
+  let node = media;
+  while (
+    node.parentElement
+    && node.parentElement !== defaultWrapper
+    && node.parentElement.childElementCount === 1
+    && node.parentElement.textContent.trim() === ''
+  ) {
+    node = node.parentElement;
+  }
+
+  if (node !== media && node.parentElement === defaultWrapper) {
+    node.replaceWith(media);
+  }
+}
+
 // Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
 // addressed with an image sizing preset ($..width..$) or a .gif extension,
 // rather than a video manifest/extension. These must render as <img> (which
@@ -389,5 +425,6 @@ export default function decorateDMAssets(root) {
     }
 
     el.replaceWith(replacement);
+    liftDefaultContentMedia(replacement, root);
   });
 }
