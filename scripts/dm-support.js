@@ -22,6 +22,36 @@ const DM_VIDEO = /\/is\/content\//i;
 const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 const HTTP_URL = /^https?:\/\//i;
 
+function isEWCanvas() {
+  return document.documentElement.classList.contains('adobe-ue-preview')
+    || document.documentElement.classList.contains('adobe-ue-edit');
+}
+
+/**
+ * In EW, inline editor wrappers can re-render authored URLs over converted DM
+ * media. Lift media out of single-purpose wrappers so no editable mount remains
+ * directly over the rendered <picture>/<video>.
+ * @param {Element} media converted DM media element
+ * @param {Element} root current decoration root boundary
+ */
+function liftOutOfEditorWrappers(media, root) {
+  if (!isEWCanvas() || !media?.parentElement) return;
+
+  let node = media;
+  while (
+    node.parentElement
+    && node.parentElement !== root
+    && node.parentElement.childElementCount === 1
+    && node.parentElement.textContent.trim() === ''
+  ) {
+    node = node.parentElement;
+  }
+
+  if (node !== media && node.parentElement) {
+    node.replaceWith(media);
+  }
+}
+
 // Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
 // addressed with an image sizing preset ($..width..$) or a .gif extension,
 // rather than a video manifest/extension. These must render as <img> (which
@@ -390,6 +420,7 @@ export default function decorateDMAssets(root) {
     }
 
     el.replaceWith(replacement);
+    liftOutOfEditorWrappers(replacement, root);
   });
 
   // EW can re-render a DM field as a plain URL text node (not an <a>). Convert
@@ -409,5 +440,6 @@ export default function decorateDMAssets(root) {
       : render(text, el.getAttribute('alt') || el.getAttribute('title') || '', false);
 
     el.replaceWith(replacement);
+    liftOutOfEditorWrappers(replacement, root);
   });
 }
