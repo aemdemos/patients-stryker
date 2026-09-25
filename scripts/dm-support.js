@@ -36,7 +36,7 @@ function isEWEditMode() {
 }
 
 function isEditableDefaultContent(el) {
-  return !!el.closest('.default-content-wrapper');
+  return !!el.closest('.default-content-wrapper [contenteditable="true"]');
 }
 
 /**

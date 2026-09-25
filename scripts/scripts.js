@@ -449,7 +449,7 @@ function observeEWDMRerenders(main) {
     && (node.matches?.(dmLinkSelector) || node.querySelector?.(dmLinkSelector))
   );
   const inEditableDefaultContent = (node) => (
-    !!node?.closest?.('.default-content-wrapper')
+    !!node?.closest?.('.default-content-wrapper [contenteditable="true"]')
   );
 
   const schedule = () => {
