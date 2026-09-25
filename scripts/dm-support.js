@@ -30,6 +30,15 @@ function isEWCanvas() {
     || !!document.querySelector('.default-content-wrapper');
 }
 
+function isEWEditMode() {
+  return document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-edit');
+}
+
+function isEditableDefaultContent(el) {
+  return !!el.closest('.default-content-wrapper');
+}
+
 /**
  * In EW, inline editor wrappers can re-render authored URLs over converted DM
  * media. Lift media out of single-purpose wrappers so no editable mount remains
@@ -388,7 +397,13 @@ function dmRendererFor(src) {
  * @param {Element} root the container to decorate
  */
 export default function decorateDMAssets(root) {
+  const preserveAuthoredDefaultContent = isEWEditMode();
+
   root.querySelectorAll(DM_SELECTOR).forEach((el) => {
+    // In EW edit mode, keep authored default-content links untouched so DA
+    // source fields remain editable and stable.
+    if (preserveAuthoredDefaultContent && isEditableDefaultContent(el)) return;
+
     // skip an <img> already in a <picture> (converted on an earlier pass) —
     // re-converting would double-append preset params like fmt=png-alpha
     if (el.tagName === 'IMG' && el.closest('picture')) return;
@@ -429,6 +444,8 @@ export default function decorateDMAssets(root) {
   // EW can re-render a DM field as a plain URL text node (not an <a>). Convert
   // URL-only text wrappers as well so the canvas doesn't stay on raw URLs.
   root.querySelectorAll('p, div, span, li').forEach((el) => {
+    if (preserveAuthoredDefaultContent && isEditableDefaultContent(el)) return;
+
     if (el.querySelector('a, picture, img, video, source')) return;
     if (el.childElementCount > 0) return;
 
