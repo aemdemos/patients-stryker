@@ -57,6 +57,58 @@ function liftDefaultContentMedia(media, root) {
   }
 }
 
+/**
+ * EW can re-render authored DM URLs as plain text nodes. Promote those URL text
+ * nodes back to anchors so the existing DM selector pipeline can convert them.
+ * Restricted to default content wrappers to avoid touching authored rich text.
+ * @param {Element} root decoration root
+ */
+function promoteDMTextUrls(root) {
+  if (!isEWCanvas()) return;
+
+  const wrappers = root.matches?.('.default-content-wrapper')
+    ? [root]
+    : [...root.querySelectorAll('.default-content-wrapper')];
+
+  wrappers.forEach((wrapper) => {
+    const walker = document.createTreeWalker(wrapper, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+      if (parent
+        && !parent.closest('a, picture, video, source, script, style')
+        && parent.childElementCount === 0) {
+        const raw = node.textContent?.trim();
+        if (raw && !/\s/.test(raw)) {
+          let href;
+          try {
+            href = new URL(raw, window.location.href).toString();
+          } catch {
+            href = null;
+          }
+
+          const isDMHref = DM_SCENE7.test(href)
+            || DM_OPENAPI.test(href)
+            || DM_VIDEO.test(href)
+            || VIDEO_EXT.test(href);
+          if (href && isDMHref) {
+            textNodes.push({ node, href });
+          }
+        }
+      }
+    }
+
+    textNodes.forEach(({ node, href }) => {
+      const a = document.createElement('a');
+      a.href = href;
+      a.textContent = href;
+      node.replaceWith(a);
+    });
+  });
+}
+
 // Scene7 /is/content/ also serves still/animated IMAGES (e.g. GIFs) when
 // addressed with an image sizing preset ($..width..$) or a .gif extension,
 // rather than a video manifest/extension. These must render as <img> (which
@@ -390,6 +442,8 @@ function dmRendererFor(src) {
  * @param {Element} root the container to decorate
  */
 export default function decorateDMAssets(root) {
+  promoteDMTextUrls(root);
+
   root.querySelectorAll(DM_SELECTOR).forEach((el) => {
     // skip an <img> already in a <picture> (converted on an earlier pass) —
     // re-converting would double-append preset params like fmt=png-alpha
