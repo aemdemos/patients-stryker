@@ -433,6 +433,11 @@ function observeEWDMRerenders(main) {
 
   let scheduled = false;
   const dmLinkSelector = 'a[href*="/is/image/"], a[href*="/adobe/assets/"], a[href*="/is/content/"]';
+  const hasDMLink = (node) => (
+    node
+    && node.nodeType === Node.ELEMENT_NODE
+    && (node.matches?.(dmLinkSelector) || node.querySelector?.(dmLinkSelector))
+  );
 
   const schedule = () => {
     if (scheduled) return;
@@ -448,23 +453,29 @@ function observeEWDMRerenders(main) {
       const { target } = m;
       const targetEl = target.nodeType === Node.ELEMENT_NODE ? target : target.parentElement;
 
-      if (
-        targetEl
-        && (targetEl.matches?.(dmLinkSelector) || targetEl.querySelector?.(dmLinkSelector))
-      ) {
+      if (hasDMLink(targetEl)) {
+        return true;
+      }
+
+      if (targetEl?.closest?.(dmLinkSelector)) {
         return true;
       }
 
       return [...m.addedNodes].some((n) => (
-        n.nodeType === Node.ELEMENT_NODE
-        && (n.matches?.(dmLinkSelector) || n.querySelector?.(dmLinkSelector))
+        hasDMLink(n)
       ));
     });
 
     if (shouldReDecorate) schedule();
   });
 
-  observer.observe(main, { childList: true, subtree: true });
+  observer.observe(main, {
+    childList: true,
+    subtree: true,
+    characterData: true,
+    attributes: true,
+    attributeFilter: ['href', 'src'],
+  });
 }
 
 /**
