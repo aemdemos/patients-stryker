@@ -24,7 +24,10 @@ const HTTP_URL = /^https?:\/\//i;
 
 function isEWCanvas() {
   return document.documentElement.classList.contains('adobe-ue-preview')
-    || document.documentElement.classList.contains('adobe-ue-edit');
+    || document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-preview')
+    || document.body?.classList.contains('adobe-ue-edit')
+    || !!document.querySelector('.default-content-wrapper');
 }
 
 /**

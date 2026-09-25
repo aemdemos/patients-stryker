@@ -419,11 +419,14 @@ export function decorateMain(main) {
  */
 function isEWCanvas() {
   return document.documentElement.classList.contains('adobe-ue-preview')
-    || document.documentElement.classList.contains('adobe-ue-edit');
+    || document.documentElement.classList.contains('adobe-ue-edit')
+    || document.body?.classList.contains('adobe-ue-preview')
+    || document.body?.classList.contains('adobe-ue-edit')
+    || !!document.querySelector('.default-content-wrapper');
 }
 
 /**
- * EW/ProseMirror can re-render editable default content from source after the
+ * EW can re-render editable default content wrappers from source after the
  * initial page decoration, which brings DM URLs back as raw links. Observe
  * editor mutations and re-run DM conversion (idempotent) on demand.
  * @param {Element} main The main element
