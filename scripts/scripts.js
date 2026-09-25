@@ -434,14 +434,24 @@ function observeEWDefaultContentRerenders(main) {
 
   const pendingWrappers = new Set();
   let scheduled = false;
+  let fullPassRequested = false;
 
-  const queueWrapper = (wrapper) => {
+  const queueWrapper = (wrapper, requestFullPass = false) => {
+    if (requestFullPass) fullPassRequested = true;
     if (wrapper) pendingWrappers.add(wrapper);
     if (scheduled) return;
 
     scheduled = true;
     window.requestAnimationFrame(() => {
       scheduled = false;
+
+      if (fullPassRequested) {
+        decorateDMAssets(main);
+        fullPassRequested = false;
+        pendingWrappers.clear();
+        return;
+      }
+
       if (pendingWrappers.size === 0) {
         main.querySelectorAll('.default-content-wrapper').forEach((w) => pendingWrappers.add(w));
       }
@@ -453,6 +463,10 @@ function observeEWDefaultContentRerenders(main) {
 
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
+      // EW/ProseMirror may rewrite content in ways that temporarily bypass
+      // wrapper-specific targeting; schedule a throttled full-pass conversion.
+      queueWrapper(null, true);
+
       const target = mutation.target.nodeType === Node.ELEMENT_NODE
         ? mutation.target
         : mutation.target.parentElement;
