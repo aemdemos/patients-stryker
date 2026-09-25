@@ -42,6 +42,12 @@ function liftDefaultContentMedia(media, root) {
   const defaultWrapper = media.closest('.default-content-wrapper');
   if (!defaultWrapper || !root.contains(defaultWrapper)) return;
 
+  const proseEditor = media.closest('.prosemirror-editor');
+  if (proseEditor && proseEditor.parentElement === defaultWrapper) {
+    proseEditor.replaceWith(media);
+    return;
+  }
+
   let node = media;
   while (
     node.parentElement
