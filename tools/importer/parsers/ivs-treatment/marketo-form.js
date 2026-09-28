@@ -19,16 +19,31 @@
  *
  * Key/value block: one row per config pair (readBlockConfig lowercases + hyphenates
  * the key cell, so "Base URL" -> base-url, "Munchkin ID" -> munchkin-id, etc.).
+ *
+ * Not every IVS page uses the same form: get-the-facts ships form 2945 under the
+ * same Munchkin. The source carries the ids as data-marketo-* attributes on the
+ * form container, so read them when present and fall back to the mild defaults.
  */
-const CONFIG_ROWS = [
-  ['Base URL', '//lp.stryker.com'],
-  ['Munchkin ID', '338-WAP-571'],
-  ['Form ID', '4893'],
-  ['Captcha Script', 'https://patients.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js'],
-  ['Captcha Challenge URL', 'https://patients.stryker.com/bin/stryker/captcha/challenge'],
-];
+const DEFAULTS = {
+  baseUrl: '//lp.stryker.com',
+  munchkinId: '338-WAP-571',
+  formId: '4893',
+};
 
 export default function parse(element, { document }) {
+  const attr = (name) => {
+    const el = element.querySelector(`[${name}]`) || (element.hasAttribute(name) ? element : null);
+    const value = el && el.getAttribute(name).trim();
+    return value || null;
+  };
+  const CONFIG_ROWS = [
+    ['Base URL', attr('data-marketo-base-url') || DEFAULTS.baseUrl],
+    ['Munchkin ID', attr('data-marketo-munchkin-id') || DEFAULTS.munchkinId],
+    ['Form ID', attr('data-marketo-form-id') || DEFAULTS.formId],
+    ['Captcha Script', 'https://patients.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js'],
+    ['Captcha Challenge URL', 'https://patients.stryker.com/bin/stryker/captcha/challenge'],
+  ];
+
   const cells = CONFIG_ROWS.map(([key, value]) => {
     const k = document.createElement('div');
     k.textContent = key;

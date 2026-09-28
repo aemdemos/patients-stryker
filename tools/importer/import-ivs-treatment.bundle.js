@@ -44,7 +44,7 @@ var CustomImportScript = (() => {
   // tools/importer/parsers/ivs-treatment/hero.js
   function parse(element, { document }) {
     const picture = element.querySelector(".imgBoxId picture");
-    const heading = element.querySelector(".largeheadline h1, h1");
+    const heading = element.querySelector(".largeheadline h1") || element.querySelector("h1");
     const ctaAnchor = element.querySelector(".curatedcta a[href]");
     const cells = [];
     const source = picture && picture.querySelector("source[srcset]");
@@ -78,6 +78,12 @@ var CustomImportScript = (() => {
       em.append(strong);
       h1.append(em);
       contentCell.push(h1);
+    }
+    const subheading = element.querySelector(".largeheadline h2");
+    if (subheading && subheading.textContent.trim()) {
+      const h2 = document.createElement("h2");
+      h2.textContent = subheading.textContent.replace(/\s+/g, " ").trim();
+      contentCell.push(h2);
     }
     if (ctaAnchor && ctaAnchor.textContent.trim()) {
       const p = document.createElement("p");
@@ -115,7 +121,13 @@ var CustomImportScript = (() => {
     const heading = box.querySelector("h1, h2, h3, h4, h5, h6");
     if (heading) {
       const h = document.createElement(heading.tagName.toLowerCase());
-      h.append(...heading.childNodes);
+      if (heading.tagName !== "H3" && heading.querySelector(".futura-bold") && !heading.querySelector('strong, b, [style*="ffb500" i]')) {
+        const strong = document.createElement("strong");
+        strong.textContent = heading.textContent.replace(/\s+/g, " ").trim();
+        h.append(strong);
+      } else {
+        h.append(...heading.childNodes);
+      }
       cell.push(h);
     }
     const list = box.querySelector("ul, ol");
@@ -165,8 +177,10 @@ var CustomImportScript = (() => {
     if (anchor) {
       const strong = document.createElement("strong");
       const a = document.createElement("a");
+      const u = document.createElement("u");
       a.setAttribute("href", anchor.getAttribute("href"));
-      a.textContent = linkText;
+      u.textContent = linkText;
+      a.append(u);
       strong.append(a);
       p.append(strong);
     }
@@ -287,14 +301,24 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/ivs-treatment/marketo-form.js
-  var CONFIG_ROWS = [
-    ["Base URL", "//lp.stryker.com"],
-    ["Munchkin ID", "338-WAP-571"],
-    ["Form ID", "4893"],
-    ["Captcha Script", "https://patients.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js"],
-    ["Captcha Challenge URL", "https://patients.stryker.com/bin/stryker/captcha/challenge"]
-  ];
+  var DEFAULTS = {
+    baseUrl: "//lp.stryker.com",
+    munchkinId: "338-WAP-571",
+    formId: "4893"
+  };
   function parse7(element, { document }) {
+    const attr = (name) => {
+      const el = element.querySelector(`[${name}]`) || (element.hasAttribute(name) ? element : null);
+      const value = el && el.getAttribute(name).trim();
+      return value || null;
+    };
+    const CONFIG_ROWS = [
+      ["Base URL", attr("data-marketo-base-url") || DEFAULTS.baseUrl],
+      ["Munchkin ID", attr("data-marketo-munchkin-id") || DEFAULTS.munchkinId],
+      ["Form ID", attr("data-marketo-form-id") || DEFAULTS.formId],
+      ["Captcha Script", "https://patients.stryker.com/etc.clientlibs/stryker/components/content/altcha/altcha.js"],
+      ["Captcha Challenge URL", "https://patients.stryker.com/bin/stryker/captcha/challenge"]
+    ];
     const cells = CONFIG_ROWS.map(([key, value]) => {
       const k = document.createElement("div");
       k.textContent = key;
@@ -329,6 +353,16 @@ var CustomImportScript = (() => {
             em.appendChild(strong);
             span.replaceWith(em);
           });
+        });
+        element.querySelectorAll(".buttonset a.btn-gold").forEach((a) => {
+          if (a.closest("em") && a.closest("strong")) return;
+          a.removeAttribute("class");
+          a.removeAttribute("style");
+          const strong = element.ownerDocument.createElement("strong");
+          const em = element.ownerDocument.createElement("em");
+          a.replaceWith(strong);
+          strong.appendChild(em);
+          em.appendChild(a);
         });
         return;
       }
@@ -516,6 +550,7 @@ var CustomImportScript = (() => {
           spacerMeta.before(hr);
         }
       }
+      const nextBreakAfter = (node) => [...element.querySelectorAll("hr")].find((hr) => hr !== node && !node.contains(hr) && node.compareDocumentPosition(hr) & 4);
       for (let i = sections.length - 1; i >= 0; i -= 1) {
         const section = sections[i];
         if (!section.style) continue;
@@ -532,7 +567,9 @@ var CustomImportScript = (() => {
           name: "Section Metadata",
           cells: { style: styleToCell(section.style) }
         });
-        anchor.after(metadataBlock);
+        const sectionEnd = nextBreakAfter(anchor);
+        if (sectionEnd) sectionEnd.before(metadataBlock);
+        else element.append(metadataBlock);
         if (marker) {
           marker.removeAttribute(SECTION_MARKER_ATTR);
           if (i === 0) marker.remove();
@@ -635,14 +672,27 @@ var CustomImportScript = (() => {
     // Add the same `spacer, large` empty section BELOW the hero (between the hero
     // and the first content section) to match the reference spacing under the hero.
     heroBottomSpacer: true,
+    // Extra per-page theme class layered on `ivs-treatment` (page-only type
+    // overrides in styles/themes.css). Keyed by the localized path, no extension.
+    pageThemes: {
+      "/us/en/ivs/get-the-facts": "ivs-get-the-facts"
+    },
     urls: [
-      "https://patients.stryker.com/us/en/ivs/treatments/mild.html"
+      "https://patients.stryker.com/us/en/ivs/treatments/mild.html",
+      "https://patients.stryker.com/us/en/ivs/get-the-facts.html"
     ],
     blocks: [
       { name: "hero", instances: [".pDiv.bg-shadow"], section: "banner" },
       { name: "panel", instances: [".col-xs-12.col-sm-6:has(.dimensional-box)"], section: "cta wide" },
       { name: "panel-cta", instances: [".has-background.bg-gold"], section: "gold" },
-      { name: "columns-50-50", instances: [".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h3):not(:has(h4))"] },
+      {
+        name: "columns-50-50",
+        instances: [
+          ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h3):not(:has(h4))",
+          // get-the-facts: h2 heading + standalone image (no h3)
+          ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(.standaloneimage):not(:has(h4))"
+        ]
+      },
       {
         name: "columns",
         instances: [
@@ -671,6 +721,18 @@ var CustomImportScript = (() => {
         style: "dark, full-bleed",
         blocks: ["columns-50-50"],
         defaultContent: []
+      },
+      {
+        // get-the-facts: h1 + paragraph + gold LEARN MORE button right after the
+        // dark panel. Needs its own break or it would fall into the dark section.
+        // The source opens it with a full-width ".sectionseparator > hr" rule
+        // (#b2b4ae, 50px below) — the project's `divider` section style.
+        id: "restore",
+        name: "Don't just manage the pain (text + button)",
+        selector: ".text.parbase:has(h1):has(+ .buttonset)",
+        style: "divider",
+        blocks: [],
+        defaultContent: [".text.parbase:has(h1):has(+ .buttonset)", ".buttonset"]
       },
       {
         id: "proven-results",
@@ -796,12 +858,13 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       const hr = document.createElement("hr");
       main.appendChild(hr);
+      const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
       const meta = WebImporter.Blocks.getMetadata(document);
-      meta.theme = "ivs-treatment";
+      const pageTheme = PAGE_TEMPLATE.pageThemes && PAGE_TEMPLATE.pageThemes[rawPath];
+      meta.theme = pageTheme ? `ivs-treatment, ${pageTheme}` : "ivs-treatment";
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
-      const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
       const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
       return [{
         element: main,

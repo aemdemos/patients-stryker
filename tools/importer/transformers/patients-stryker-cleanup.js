@@ -83,6 +83,23 @@ export default function transform(hookName, element, payload) {
         });
       });
 
+      // Default-content gold buttons (e.g. get-the-facts "LEARN MORE" in a
+      // ".buttonset" outside any block) are <a class="btn btn-gold">. Encode them
+      // as <strong><em><a> so decorateButtons() promotes them to the gold
+      // .button.accent — same encoding as the sa-resources branch below. Block
+      // parsers (hero, panel) rebuild their own CTAs from href + text, so this
+      // wrap is harmless for anchors they consume.
+      element.querySelectorAll('.buttonset a.btn-gold').forEach((a) => {
+        if (a.closest('em') && a.closest('strong')) return; // idempotent
+        a.removeAttribute('class');
+        a.removeAttribute('style');
+        const strong = element.ownerDocument.createElement('strong');
+        const em = element.ownerDocument.createElement('em');
+        a.replaceWith(strong);
+        strong.appendChild(em);
+        em.appendChild(a);
+      });
+
       // (Footnote-superscript unwrap runs in afterTransform — see below — because
       // the "#disclaimer" jump-links are normalized by WebImporter rules after the
       // block parsers run, so beforeTransform is too early to catch every shape.)
