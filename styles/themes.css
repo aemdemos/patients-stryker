@@ -1250,9 +1250,9 @@ body.bvn-ablation main > .section.flex.dark > .default-content-wrapper p {
   color: var(--color-white);
 }
 
-/* mobile: the video runs edge to edge under the text, as on the source */
+/* stacked: the video sits under the text with a 15px side inset */
 body.bvn-ablation main > .section.flex.dark > .video-wrapper {
-  padding: 0;
+  padding: 0 var(--container-gutter);
 }
 
 /* ----- Stats + symptoms (divider section: full-width rule above) ----- */
@@ -1264,7 +1264,7 @@ body.bvn-ablation main > .section.statistics-container {
 }
 
 body.bvn-ablation main .statistics {
-  --statistics-number-size: var(--statistics-number-size-fluid);
+  --statistics-number-size: min(var(--statistics-number-size-fluid), var(--statistics-number-size-l));
   --statistics-number-gap: 0.25em; /* source counter line box is ~1.6x its size */
   --statistics-item-gap: var(--space-block);
 }
@@ -1475,16 +1475,22 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     min-width: 0;
   }
 
+  /* the leftover empty section div (shared rule only hides it from 900px) */
+  body.bvn-ablation main > .section.flex > div:empty {
+    display: none;
+  }
+
   body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
     padding-top: 0;
   }
 
-  /* dark band stays full-bleed: no max-width, halves run to the viewport edges */
+  /* dark band background stays full-bleed; its content is held to the
+     container width on wide screens (the padding resolves to 0 below it) */
   body.bvn-ablation main > .section.flex.dark {
     gap: 0;
     max-width: none;
     margin-top: calc(var(--space-section) * 2);
-    padding: 0;
+    padding: 0 calc((100vw - var(--container-max)) / 2);
   }
 
   /* exact halves (flex-basis 0 would let the padded text column grow wider) */
@@ -1502,7 +1508,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   }
 
   body.bvn-ablation main .statistics {
-    --statistics-number-size: var(--statistics-number-size-fluid-l);
+    --statistics-number-size: var(--statistics-number-size-l);
   }
 
   body.bvn-ablation main .statistics ul.statistics-list {

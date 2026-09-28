@@ -119,7 +119,7 @@
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
   --statistics-number-size-fluid: 13vw; /* source counter (fontsize-6-5-vw) on mobile */
-  --statistics-number-size-fluid-l: 6.5vw; /* source counter from 841px */
+  --statistics-number-size-l: 90px; /* counter size from 841px (bvn-ablation) */
 
   /* icon-list block — measured from source ("Stroke facts") */
   --icon-list-icon-width: 165px;     /* icon rendered width */
