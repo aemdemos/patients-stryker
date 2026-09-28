@@ -1180,17 +1180,13 @@ body.ivs-treatment main > .section.light-gray :is(p, li) {
 
 /* =====================================================================
    Theme: ivs-get-the-facts — layered on ivs-treatment. The source authors this
-   page's copy at 1.5x (21px) and its hero title at a fixed 28px.
+   page's copy at 1.5x (21px).
    ===================================================================== */
 
 /* second selector outranks the columns block's dark-section body size */
 body.ivs-get-the-facts main :is(p, li),
 body.ivs-get-the-facts main > .section.dark .columns :is(p, li) {
   font-size: var(--body-font-size-xl); /* 21px */
-}
-
-body.ivs-get-the-facts .hero.banner h1 {
-  font-size: var(--heading-font-size-xxl); /* 28px at every width */
 }
 
 body.ivs-get-the-facts .panel.gold .panel-body p {
