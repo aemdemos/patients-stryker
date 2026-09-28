@@ -95,9 +95,6 @@
   padding-bottom: 7px;
 }
 
-.tabs .tabs-tab:hover p {
-  border-bottom-color: var(--color-accent);
-}
 
 .tabs .tabs-tab:focus-visible {
   outline: 2px solid var(--color-primary);
