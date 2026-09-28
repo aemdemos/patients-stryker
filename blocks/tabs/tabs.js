@@ -13,12 +13,56 @@
  * element uses `aria-owns` to logically own the tabs for assistive tech.
  */
 
-import { toClassName } from '../../scripts/aem.js';
+import { decorateBlock, loadBlock, toClassName } from '../../scripts/aem.js';
 // eslint-disable-next-line import/no-cycle
 import { mergeSectionCards } from '../../scripts/scripts.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-async function decoratePanel(panel) {
+const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
+
+function buildVideoBlock(link) {
+  const block = document.createElement('div');
+  block.className = 'video';
+
+  const row = document.createElement('div');
+  const cell = document.createElement('div');
+
+  cell.append(link);
+  row.append(cell);
+  block.append(row);
+
+  return block;
+}
+
+async function decorateVideoContent(panel) {
+  const videos = [...panel.querySelectorAll(':scope .video')]
+    .filter((el) => !el.classList.contains('block'));
+
+  await Promise.all(videos.map(async (video) => {
+    decorateBlock(video);
+    await loadBlock(video);
+  }));
+
+  const links = [...panel.querySelectorAll('a[href]')]
+    .filter((link) => YOUTUBE.test(link.getAttribute('href') || ''))
+    .filter((link) => !link.closest('.video'));
+
+  await Promise.all(links.map(async (link) => {
+    const parent = link.parentElement;
+    if (!parent) return;
+
+    const singleLinkLine = parent.textContent.trim() === link.textContent.trim()
+      && parent.querySelectorAll('a').length === 1;
+    if (!singleLinkLine) return;
+
+    const block = buildVideoBlock(link);
+    parent.replaceWith(block);
+    decorateBlock(block);
+    await loadBlock(block);
+  }));
+}
+
+async function decoratePanel(panel, isVideoVariant = false) {
   // load any fragment references in this panel (nested blocks don't get
   // decorated by the page's decorateBlocks pass, which only visits top-level
   // section blocks), then flatten each fragment's content into the panel
@@ -52,9 +96,13 @@ async function decoratePanel(panel) {
 
   // merge the panel's card grids (from one or more fragments) into a single row
   mergeSectionCards(panel);
+
+  if (isVideoVariant) await decorateVideoContent(panel);
 }
 
 export default async function decorate(block) {
+  const isVideoVariant = block.classList.contains('video');
+
   // logical tablist for assistive tech — owns the tabs via aria-owns rather than
   // containing them, so the buttons can stay inside their tab component subtrees
   const tablist = document.createElement('div');
@@ -140,5 +188,5 @@ export default async function decorate(block) {
   block.prepend(tablist);
 
   // load fragment content for every panel
-  await Promise.all(panels.map(decoratePanel));
+  await Promise.all(panels.map((panel) => decoratePanel(panel, isVideoVariant)));
 }
