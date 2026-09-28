@@ -20,6 +20,20 @@ import { loadFragment } from '../fragment/fragment.js';
 
 const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
 
+function isSingleLinkLine(link) {
+  const parent = link.parentElement;
+  if (!parent) return false;
+  return parent.textContent.trim() === link.textContent.trim()
+    && parent.querySelectorAll('a').length === 1;
+}
+
+function hasPendingVideoLinks(panel) {
+  return [...panel.querySelectorAll('a[href]')]
+    .some((link) => YOUTUBE.test(link.getAttribute('href') || '')
+      && !link.closest('[data-block-name="video"]')
+      && isSingleLinkLine(link));
+}
+
 function buildVideoBlock(link) {
   const block = document.createElement('div');
   block.className = 'video';
@@ -45,15 +59,12 @@ async function decorateVideoContent(panel) {
 
   const links = [...panel.querySelectorAll('a[href]')]
     .filter((link) => YOUTUBE.test(link.getAttribute('href') || ''))
-    .filter((link) => !link.closest('.video'));
+    .filter((link) => !link.closest('[data-block-name="video"]'))
+    .filter((link) => isSingleLinkLine(link));
 
   await Promise.all(links.map(async (link) => {
     const parent = link.parentElement;
     if (!parent) return;
-
-    const singleLinkLine = parent.textContent.trim() === link.textContent.trim()
-      && parent.querySelectorAll('a').length === 1;
-    if (!singleLinkLine) return;
 
     const block = buildVideoBlock(link);
     parent.replaceWith(block);
@@ -97,7 +108,30 @@ async function decoratePanel(panel, isVideoVariant = false) {
   // merge the panel's card grids (from one or more fragments) into a single row
   mergeSectionCards(panel);
 
-  if (isVideoVariant) await decorateVideoContent(panel);
+  if (isVideoVariant) {
+    await decorateVideoContent(panel);
+
+    // In EW, panel fields may be mounted after this block is already loaded.
+    // Watch for late YouTube links and convert them to nested video blocks.
+    if (!panel.dataset.tabsVideoObserverBound) {
+      const observer = new MutationObserver(async () => {
+        if (!hasPendingVideoLinks(panel)) return;
+        if (panel.dataset.tabsVideoDecorating === 'true') return;
+        panel.dataset.tabsVideoDecorating = 'true';
+        await decorateVideoContent(panel);
+        panel.dataset.tabsVideoDecorating = 'false';
+      });
+
+      observer.observe(panel, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['href'],
+      });
+
+      panel.dataset.tabsVideoObserverBound = 'true';
+    }
+  }
 }
 
 export default async function decorate(block) {

@@ -139,4 +139,23 @@
   .tabs .tabs-panel {
     order: 2;
   }
+
+  .tabs.video .tabs-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-section);
+    align-items: start;
+  }
+
+  .tabs.video .tabs-panel > .video,
+  .tabs.video .tabs-panel > iframe {
+    order: 2;
+    width: 100%;
+  }
+
+  .tabs.video .tabs-panel > p,
+  .tabs.video .tabs-panel > div:not(.video) {
+    order: 1;
+    margin: 0;
+  }
 }
