@@ -1307,37 +1307,27 @@ body.ivs-treatment main > .section.light-gray :is(p, li) {
   line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
 }
 
-/* =====================================================================
-   Theme: ivs-get-the-facts — layered on ivs-treatment. The source authors this
-   page's copy at 1.5x (21px).
-   ===================================================================== */
+/* ----- Theme: ivs-get-the-facts (layered on ivs-treatment) ----- */
 
 body.ivs-get-the-facts main :is(p, li) {
   font-size: var(--body-font-size-xl); /* 21px */
 }
 
-/* "Why is treatment important?" dark 50-50 band. The source authors this band's
-   spacing on the page itself (a spacer paragraph above/below the columns, and a
-   3% margin + 3% padding on the text box), so it lives here rather than in the
-   shared columns block. Text stacks over a centred image until the source's
-   841px column breakpoint. */
+/* "Why is treatment important?" dark 50-50 band */
 body.ivs-get-the-facts main > .section.dark:has(.columns-50-50) {
   padding-block: var(--space-band-dark);
 }
 
-/* padding percentages resolve against the row, so 6% ≈ the source's 3% + 3% of
-   the (full-width) stacked column */
+/* stacked text inset (6% of the row ≈ source 3% margin + 3% padding) */
 body.ivs-get-the-facts main > .section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
   padding: 6% calc(var(--container-gutter) + 6%);
 }
 
-/* outranks the columns block's dark-section body size and line-height */
 body.ivs-get-the-facts main > .section.dark .columns :is(p, li) {
   font-size: var(--body-font-size-xl); /* 21px */
   line-height: var(--heading-line-height); /* 1.06 → 22.26px */
 }
 
-/* the source title's line box measures 1.35x its size (34px at 24.5px) */
 body.ivs-get-the-facts main > .section.dark .columns h2 {
   line-height: var(--heading-line-height-hero); /* 1.35 */
 }
@@ -1363,22 +1353,17 @@ body.ivs-get-the-facts main > .section.dark .columns h2 em strong {
     flex-basis: 50%;
   }
 
-  /* half-width column: 3% of the row ≈ the source's 3% + 3% of the column */
   body.ivs-get-the-facts main > .section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
     padding: 3% calc(var(--container-gutter) + 3%);
   }
 }
 
-/* "Don't just manage the pain" (divider section). The shared divider supplies the
-   source's full-width rule; below it the source stacks its separator gap, an empty
-   spacer block and the text box's 3% top padding, and after the button another
-   empty spacer block. Phones use the source's smaller 20px gaps. */
+/* "Don't just manage the pain" divider section spacing */
 body.ivs-get-the-facts main > .section.divider {
   padding-top: calc(2 * var(--space-block-l) + 3%); /* 20 + 20 + 3% */
   padding-bottom: var(--space-section); /* 10px button inset + 20px spacer block */
 }
 
-/* the source's 1% bottom padding on the text box, collapsing with the p margin */
 body.ivs-get-the-facts main > .section.divider .button-wrapper {
   margin-top: calc(var(--space-block) + 1%);
 }
@@ -1390,9 +1375,7 @@ body.ivs-get-the-facts main > .section.divider .button-wrapper {
   }
 }
 
-/* "Tired of living in pain?" gold band: the source band spans the full content
-   width (the shared panel insets it 10px each side) with 3% / 10px / 2% padding.
-   The shared 10px vertical margin is kept so the gaps around the band stay put. */
+/* "Tired of living in pain?" gold band: full content width */
 body.ivs-get-the-facts .panel.gold .panel-body {
   margin-inline: 0;
   padding: 3% var(--space-block-s) 2%;
@@ -1402,26 +1385,16 @@ body.ivs-get-the-facts .panel.gold .panel-body p {
   font-size: var(--panel-body-size); /* 24.5px */
 }
 
-/* the bold+underline sentence link ("Let's find a doctor who can help.") takes the
-   prompt line's 24.5px instead of the shared panel link size */
 body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
   font-size: inherit;
 }
 
-/* Hero offset: the `spacer, large` sections above and below the hero already give
-   the source's ~60px gaps, so no extra vertical margin on the banner wrapper
-   (keeps the page matching the reference if the shared hero adds one). */
+/* Hero: spacer sections provide the ~60px offsets */
 body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
   margin-block: 0;
 }
 
-/* Hero title: this page's source uses the larger fontsize-3-5-vw headline scale
-   (7vw → 3.5vw from 840px → 49px from 1439px) in a half-width copy column
-   (col-sm-6), which is what wraps the title onto two lines on desktop.
-   The whole title is the gold Futura <em><strong> run, so the h1 itself uses the
-   same face: with the serif base font as the line's strut, the two fonts'
-   mismatched baselines inflate each line box beyond line-height (taller line
-   gap, title pushed up, extra space above the subheading). */
+/* Hero title: source 3.5vw scale (7vw → 3.5vw → 49px); single font avoids inflated line boxes */
 body.ivs-get-the-facts .hero.banner h1 {
   font-family: var(--display-font-family);
   font-size: 7vw;
@@ -1433,9 +1406,7 @@ body.ivs-get-the-facts .hero.banner h1 {
   }
 }
 
-/* half-width copy column once the copy overlays the image (hero banner ≥900px);
-   no right padding — the other half is image, and the source's text width
-   (50% minus its left inset) needs the room to keep the title on two lines */
+/* half-width copy column on desktop (two-line title) */
 @media (width >= 900px) {
   body.ivs-get-the-facts .hero.banner > div:last-child {
     max-width: 50%;
