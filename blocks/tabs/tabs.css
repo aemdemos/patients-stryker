@@ -128,7 +128,7 @@
 
   .tabs .tabs-tab-row,
   .tabs .tabs-rail {
-    display: contents;
+    display: block;
   }
 
   .tabs .tabs-tab {
