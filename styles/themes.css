@@ -1313,6 +1313,17 @@ body.ivs-get-the-facts main :is(p, li) {
   font-size: var(--body-font-size-xl); /* 21px */
 }
 
+/* Hero: spacer sections provide the ~60px offsets */
+body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
+  margin-block: 0;
+}
+
+/* Hero title: source 3.5vw scale; single font avoids inflated line boxes */
+body.ivs-get-the-facts .hero.banner h1 {
+  font-family: var(--display-font-family);
+  font-size: 7vw;
+}
+
 /* "Why is treatment important?" dark 50-50 band */
 body.ivs-get-the-facts main > .section.dark:has(.columns-50-50) {
   padding-block: var(--space-band-dark);
@@ -1333,29 +1344,7 @@ body.ivs-get-the-facts main > .section.dark .columns h2 {
 }
 
 body.ivs-get-the-facts main > .section.dark .columns h2 em strong {
-  font-size: var(--heading-font-size-l); /* 21px on phones */
-}
-
-@media (width >= 480px) {
-  body.ivs-get-the-facts main > .section.dark .columns h2 em strong {
-    font-size: var(--heading-font-size-xl); /* 24.5px */
-  }
-}
-
-@media (width >= 600px) {
-  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
-    flex-basis: 100%;
-  }
-}
-
-@media (width >= 841px) {
-  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
-    flex-basis: 50%;
-  }
-
-  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-    padding: 3% calc(var(--container-gutter) + 3%);
-  }
+  font-size: var(--heading-font-size-l); /* 21px */
 }
 
 /* "Don't just manage the pain" divider section spacing */
@@ -1366,13 +1355,6 @@ body.ivs-get-the-facts main > .section.divider {
 
 body.ivs-get-the-facts main > .section.divider .button-wrapper {
   margin-top: calc(var(--space-block) + 1%);
-}
-
-@media (width >= 480px) {
-  body.ivs-get-the-facts main > .section.divider {
-    padding-top: calc(var(--space-section-l) + var(--space-section) + 3%); /* 50 + 30 + 3% */
-    padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
-  }
 }
 
 /* "Tired of living in pain?" gold band: full content width */
@@ -1389,34 +1371,42 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
   font-size: inherit;
 }
 
-/* Hero: spacer sections provide the ~60px offsets */
-body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
-  margin-block: 0;
-}
+/* ----- Tablet (>=600px) ----- */
+@media (width >= 600px) {
+  body.ivs-get-the-facts main > .section.dark .columns h2 em strong {
+    font-size: var(--heading-font-size-xl); /* 24.5px */
+  }
 
-/* Hero title: source 3.5vw scale (7vw → 3.5vw → 49px); single font avoids inflated line boxes */
-body.ivs-get-the-facts .hero.banner h1 {
-  font-family: var(--display-font-family);
-  font-size: 7vw;
-}
+  /* dark band stays stacked on tablet */
+  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
+    flex-basis: 100%;
+  }
 
-@media (width >= 840px) {
-  body.ivs-get-the-facts .hero.banner h1 {
-    font-size: 3.5vw;
+  body.ivs-get-the-facts main > .section.divider {
+    padding-top: calc(var(--space-section-l) + var(--space-section) + 3%); /* 50 + 30 + 3% */
+    padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
   }
 }
 
-/* half-width copy column on desktop (two-line title) */
+/* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
+  body.ivs-get-the-facts .hero.banner h1 {
+    font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* capped at 49px */
+  }
+
+  /* half-width copy column (two-line title) */
   body.ivs-get-the-facts .hero.banner > div:last-child {
     max-width: 50%;
     padding-right: 0;
   }
-}
 
-@media (width >= 1439px) {
-  body.ivs-get-the-facts .hero.banner h1 {
-    font-size: var(--heading-font-size-hero-xl); /* 49px */
+  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
+    flex-basis: 50%;
+  }
+
+  /* half-width column: 3% of the row ≈ source 3% + 3% of the column */
+  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding: 3% calc(var(--container-gutter) + 3%);
   }
 }
 
