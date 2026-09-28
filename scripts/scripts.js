@@ -16,7 +16,7 @@ import {
   getMetadata,
 } from './aem.js';
 
-import decorateDMAssets from './dm-support.js';
+import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
 import { applySectionBackgrounds } from './utils.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
@@ -420,6 +420,7 @@ function decorateUnderlinedHeadings(main) {
 export function decorateMain(main) {
   // convert external Dynamic Media asset links into native <picture>/<video>
   decorateDMAssets(main);
+  liftDefaultContentDMMedia(main);
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
