@@ -1261,8 +1261,22 @@ body.ivs-get-the-facts main > .section.divider .button-wrapper {
   }
 }
 
+/* "Tired of living in pain?" gold band: the source band spans the full content
+   width (the shared panel insets it 10px each side) with 3% / 10px / 2% padding.
+   The shared 10px vertical margin is kept so the gaps around the band stay put. */
+body.ivs-get-the-facts .panel.gold .panel-body {
+  margin-inline: 0;
+  padding: 3% var(--space-block-s) 2%;
+}
+
 body.ivs-get-the-facts .panel.gold .panel-body p {
   font-size: var(--panel-body-size); /* 24.5px */
+}
+
+/* the bold+underline sentence link ("Let's find a doctor who can help.") takes the
+   prompt line's 24.5px instead of the shared panel link size */
+body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
+  font-size: inherit;
 }
 
 /* Hero title: this page's source uses the larger fontsize-3-5-vw headline scale
