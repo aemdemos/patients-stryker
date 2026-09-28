@@ -115,7 +115,10 @@
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-gutter);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
 
 .hero.banner {
   display: block;
