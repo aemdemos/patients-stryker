@@ -1195,8 +1195,13 @@ body.ivs-get-the-facts .panel.gold .panel-body p {
 
 /* Hero title: this page's source uses the larger fontsize-3-5-vw headline scale
    (7vw → 3.5vw from 840px → 49px from 1439px) in a half-width copy column
-   (col-sm-6), which is what wraps the title onto two lines on desktop. */
+   (col-sm-6), which is what wraps the title onto two lines on desktop.
+   The whole title is the gold Futura <em><strong> run, so the h1 itself uses the
+   same face: with the serif base font as the line's strut, the two fonts'
+   mismatched baselines inflate each line box beyond line-height (taller line
+   gap, title pushed up, extra space above the subheading). */
 body.ivs-get-the-facts .hero.banner h1 {
+  font-family: var(--display-font-family);
   font-size: 7vw;
 }
 
