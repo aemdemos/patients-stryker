@@ -1098,6 +1098,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
 }
+
  body.condition-detail .section.dark:has(.columns-50-50) {
   padding-block: var(--space-section);
  }
