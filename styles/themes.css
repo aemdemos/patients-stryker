@@ -1279,6 +1279,13 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
   font-size: inherit;
 }
 
+/* Hero offset: the `spacer, large` sections above and below the hero already give
+   the source's ~60px gaps, so no extra vertical margin on the banner wrapper
+   (keeps the page matching the reference if the shared hero adds one). */
+body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
+  margin-block: 0;
+}
+
 /* Hero title: this page's source uses the larger fontsize-3-5-vw headline scale
    (7vw → 3.5vw from 840px → 49px from 1439px) in a half-width copy column
    (col-sm-6), which is what wraps the title onto two lines on desktop.
