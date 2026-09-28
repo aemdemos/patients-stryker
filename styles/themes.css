@@ -1240,6 +1240,27 @@ body.ivs-get-the-facts main > .section.dark .columns h2 em strong {
   }
 }
 
+/* "Don't just manage the pain" (divider section). The shared divider supplies the
+   source's full-width rule; below it the source stacks its separator gap, an empty
+   spacer block and the text box's 3% top padding, and after the button another
+   empty spacer block. Phones use the source's smaller 20px gaps. */
+body.ivs-get-the-facts main > .section.divider {
+  padding-top: calc(2 * var(--space-block-l) + 3%); /* 20 + 20 + 3% */
+  padding-bottom: var(--space-section); /* 10px button inset + 20px spacer block */
+}
+
+/* the source's 1% bottom padding on the text box, collapsing with the p margin */
+body.ivs-get-the-facts main > .section.divider .button-wrapper {
+  margin-top: calc(var(--space-block) + 1%);
+}
+
+@media (width >= 480px) {
+  body.ivs-get-the-facts main > .section.divider {
+    padding-top: calc(var(--space-section-l) + var(--space-section) + 3%); /* 50 + 30 + 3% */
+    padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
+  }
+}
+
 body.ivs-get-the-facts .panel.gold .panel-body p {
   font-size: var(--panel-body-size); /* 24.5px */
 }
