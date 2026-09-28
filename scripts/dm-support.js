@@ -391,3 +391,26 @@ export default function decorateDMAssets(root) {
     el.replaceWith(replacement);
   });
 }
+
+/**
+ * Move a standalone default-content DM media into a fresh <p>, so the EW canvas
+ * editor (which re-renders authored elements from source) can't revert it to the
+ * raw link — as cards/columns do for blocks. Identical markup on the live site.
+ * @param {Element} main the container to decorate
+ */
+export function liftDefaultContentDMMedia(main) {
+  main.querySelectorAll('picture, .dm-video-wrapper').forEach((media) => {
+    if (media.tagName === 'PICTURE' && !isDMSrc(media.querySelector('img')?.getAttribute('src'))) return;
+    // the authored <p> must hold only this media (runs before the editor mounts)
+    const wrapper = media.parentElement;
+    if (!wrapper || wrapper.tagName !== 'P' || wrapper.childElementCount !== 1
+      || wrapper.textContent.trim() !== '') return;
+    // only default content: the <p> must sit directly in a section
+    const container = wrapper.parentElement;
+    if (!container || !(container.parentElement === main
+      || container.classList.contains('default-content-wrapper'))) return;
+    const p = document.createElement('p');
+    p.append(media);
+    wrapper.replaceWith(p);
+  });
+}
