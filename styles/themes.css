@@ -482,15 +482,19 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
    
   }
 
-   body.condition-detail p, body.condition-detail ul {
+  body.condition-detail main p, body.condition-detail main ul {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
     margin-bottom: 15px;
-    list-style: disc;
+    list-style: none;
    }
 
-   
-
+   /* Lists default to no bullets — matches how every block (panel, tabs, cards,
+      columns) already resets its own <ul>. Only content-authored lists inside
+      default-content-wrapper opt back in to bullets. */
+   body.condition-detail main .default-content-wrapper ul {
+    list-style: disc;
+   }
 
     body.condition-detail .panel.left .panel-body  {
       margin: 0 0 var(--space-block);
