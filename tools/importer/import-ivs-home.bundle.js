@@ -367,6 +367,103 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
+  // tools/importer/parsers/procedure-detail/resources-fragment-index.js
+  var PDF_TO_FRAGMENT = {
+    "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure.pdf": "/fragments/card-vertebral-augmentation",
+    "/content/dam/m/ivs-patient/homepage/resources/VCF Patient Brochure_ESP.pdf": "/fragments/card-vertebral-augmentation",
+    "/content/dam/m/ivs-patient/homepage/resources/OptaBlate BVN Patient Brochure.pdf": "/fragments/card-basivertebral-nerve-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/OptaBlate Patient Brochure.pdf": "/fragments/card-bone-tumor-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/Disc Decompression Patient Brochure.pdf": "/fragments/card-disc-decompression",
+    "/content/dam/m/ivs-patient/homepage/resources/Disc Decompression Patient Brochure_ESP.pdf": "/fragments/card-disc-decompression",
+    "/content/dam/m/ivs-patient/homepage/resources/Discography Patient Brochure.pdf": "/fragments/card-discography",
+    "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure.pdf": "/fragments/card-knee-pain",
+    "/content/dam/m/ivs-patient/homepage/resources/Genicular RFA Patient Brochure_ESP.pdf": "/fragments/card-knee-pain",
+    "/content/dam/m/ivs-patient/homepage/resources/mild Patient Brochure.pdf": "/fragments/card-mild",
+    "/content/dam/m/ivs-patient/homepage/resources/mild Patient Brochure_ESP.pdf": "/fragments/card-mild",
+    "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure.pdf": "/fragments/card-radiofrequency-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/RF Patient Brochure_ESP.pdf": "/fragments/card-radiofrequency-ablation",
+    "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure.pdf": "/fragments/card-spinejack",
+    "/content/dam/m/ivs-patient/homepage/resources/SpineJack Patient Brochure_ESP.pdf": "/fragments/card-spinejack"
+  };
+  var DM_TO_FRAGMENT = {
+    "https://media-assets.stryker.com/is/image/stryker/1702476622_IVS-846502_BackPainBrochure_111623_XL-cover-photo-rev-1": "/fragments/card-vertebral-augmentation",
+    "https://media-assets.stryker.com/is/image/stryker/1712955173_WebImage_IVS-846502_BackPainBrochure_111623_ES-US-rev-1": "/fragments/card-vertebral-augmentation",
+    "https://media-assets.stryker.com/is/image/stryker/OptaBlate-BVN-patient-brochure_XL": "/fragments/card-basivertebral-nerve-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552225_D0000228551_OptaBlate_PatientBrochure_012623_XL-rev-1": "/fragments/card-bone-tumor-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552337_D0000068686_RevAA_DEK-Patient-Brochure_033021_L-rev-1": "/fragments/card-disc-decompression",
+    "https://media-assets.stryker.com/is/image/stryker/1680552319_D0000116316-AA.2_DEK-Patient-Brochure_012822_ES_L-rev-1": "/fragments/card-disc-decompression",
+    "https://media-assets.stryker.com/is/image/stryker/1680552351_1000-000-002-DiscMonitorBrochure_RevC_072117_L-rev-1": "/fragments/card-discography",
+    "https://media-assets.stryker.com/is/image/stryker/1680552247_D0000103435_KneeRFA_PatientBrochure_101121_L-rev-1": "/fragments/card-knee-pain",
+    "https://media-assets.stryker.com/is/image/stryker/1680552259_D0000239733_KneeRFA_PatientBrochure_122122_ES_XL-rev-1": "/fragments/card-knee-pain",
+    "https://media-assets.stryker.com/is/image/stryker/1750262681_IVS-1436100-REV2_mild_PatientBrochure_040925_XL_rev": "/fragments/card-mild",
+    "https://media-assets.stryker.com/is/image/stryker/1755626755_IVS-MILD-BROC-1436100_REV-1_es_XL_rev": "/fragments/card-mild",
+    "https://media-assets.stryker.com/is/image/stryker/1680552275_D0000068200-RF-BackPainBrochure_RevAA_012821_L-rev-1": "/fragments/card-radiofrequency-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552288_D0000096609AA2_RF-BackPainBrochure_RevAA_041621_ESES_L-rev-1": "/fragments/card-radiofrequency-ablation",
+    "https://media-assets.stryker.com/is/image/stryker/1680552090_D0000007218_SpineJack-Patient-Brochure_120220_L-2": "/fragments/card-spinejack",
+    "https://media-assets.stryker.com/is/image/stryker/1680552176_D0000096607AA2_SpineJack-Patient-Brochure_041621_ESES_L-1": "/fragments/card-spinejack"
+  };
+
+  // tools/importer/parsers/ivs-home/tabs.js
+  var normPdf = (href) => {
+    try {
+      const path = new URL(href, "https://patients.stryker.com").pathname;
+      return decodeURI(path).trim();
+    } catch (e) {
+      return (href || "").trim();
+    }
+  };
+  var normDm = (src) => (src || "").split("?")[0].trim();
+  var toResourcesPath = (path) => path.replace(/^\/fragments\/(?!resources\/)/, "/fragments/resources/");
+  function panelFragments(panel) {
+    const paths = [];
+    panel.querySelectorAll(".curatedcta .cta-img").forEach((card) => {
+      const link = card.querySelector("a[href]");
+      const img = card.querySelector("img");
+      const path = link && PDF_TO_FRAGMENT[normPdf(link.getAttribute("href"))] || img && DM_TO_FRAGMENT[normDm(img.getAttribute("src"))];
+      if (!path) {
+        console.warn("tabs: no fragment found for brochure", link && link.getAttribute("href"));
+        return;
+      }
+      const resourcesPath = toResourcesPath(path);
+      if (!paths.includes(resourcesPath)) paths.push(resourcesPath);
+    });
+    return paths;
+  }
+  function parse9(element, { document }) {
+    const cells = [];
+    element.querySelectorAll("ul.tab .tab-link").forEach((tabLink) => {
+      const label = tabLink.textContent.trim();
+      const panelId = (tabLink.getAttribute("href") || "").replace(/^#/, "");
+      const panel = panelId ? element.querySelector(`[id="${panelId}"]`) : null;
+      if (!label || !panel) return;
+      const paths = panelFragments(panel);
+      if (!paths.length) return;
+      const labelP = document.createElement("p");
+      labelP.textContent = label;
+      const contentP = document.createElement("p");
+      paths.forEach((path, i) => {
+        if (i > 0) contentP.append(document.createElement("br"));
+        const a = document.createElement("a");
+        a.href = path;
+        const name = path.split("/").pop().replace(/^card-/, "").replace(/-/g, " ");
+        a.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+        contentP.append(a);
+      });
+      cells.push([labelP, contentP]);
+    });
+    if (!cells.length) {
+      element.remove();
+      return;
+    }
+    const sourceHeading = element.querySelector("h2");
+    const heading = document.createElement("h2");
+    const strong = document.createElement("strong");
+    strong.textContent = sourceHeading ? sourceHeading.textContent.trim() : "Resources";
+    heading.append(strong);
+    const block = WebImporter.Blocks.createBlock(document, { name: "Tabs", cells });
+    element.replaceWith(heading, block);
+  }
+
   // tools/importer/transformers/ivs-home/ivs-home-marketo.js
   var DEFAULTS = {
     baseUrl: "//lp.stryker.com",
@@ -433,7 +530,6 @@ var CustomImportScript = (() => {
   function transform2(hookName, element, payload) {
     if (hookName === TransformHook2.beforeTransform) {
       normalizeCitationSups(element);
-      WebImporter.DOMUtils.remove(element, [".tabs", ".c-tabs"]);
       element.querySelectorAll(".c-navigation-bar .menu-trigger, .c-navigation-bar h3.page-title").forEach((el) => el.remove());
       WebImporter.DOMUtils.remove(element, [".jumpbarparsys", ".section-title"]);
       element.querySelectorAll(".c-full-bleed-panel.bg-gray").forEach((el) => {
@@ -599,7 +695,8 @@ var CustomImportScript = (() => {
     "panel-gold-cta": parse5,
     cards: parse6,
     statistics: parse7,
-    "panel-cta": parse8
+    "panel-cta": parse8,
+    tabs: parse9
   };
   var transformers = [
     transform3,
@@ -609,7 +706,7 @@ var CustomImportScript = (() => {
   ];
   var PAGE_TEMPLATE = {
     name: "ivs-home",
-    description: `IVS patient homepage (standalone singleton, theme ivs-home). Zones: hero (banner) + Find a doctor CTA; sticky-nav anchor bar; a flex intro (text left + video right); a gold panel "There's hope ahead"; a 4-up cards (linked) pain grid; a statistics dashboard (6 metrics); a flex pair of panel (cta) spotlights; two testimonial columns (text + video) on a dark-teal band; a gold panel "Tired of living in pain?"; a marketo-form doctor finder; a compact disclaimer/references section. Resources tabs (zone 11) DEFERRED. Header/footer + Scene7 video chrome stripped on import.`,
+    description: `IVS patient homepage (standalone singleton, theme ivs-home). Zones: hero (banner) + Find a doctor CTA; sticky-nav anchor bar; a flex intro (text left + video right); a gold panel "There's hope ahead"; a 4-up cards (linked) pain grid; a statistics dashboard (6 metrics); a flex pair of panel (cta) spotlights; two testimonial columns (text + video) on a dark-teal band; a gold panel "Tired of living in pain?"; a marketo-form doctor finder; a Resources heading + tabs block referencing the /fragments/resources/ brochure card fragments; a compact disclaimer/references section. Header/footer + Scene7 video chrome stripped on import.`,
     urls: [
       "https://patients.stryker.com/us/en/ivs/index.html"
     ],
@@ -618,10 +715,11 @@ var CustomImportScript = (() => {
       { name: "sticky-nav", section: "anchor-nav", instances: [".c-navigation-bar .nav-wrap"] },
       { name: "columns", instances: [".cols2:has(.standalonevideo)"] },
       { name: "panel-gold", section: "hope", instances: [".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"] },
-      { name: "cards", section: "pain-cards", instances: [".cols4 > .colctrl"] },
+      { name: "cards", section: "pain-cards", instances: [".cols4:not(.tabs .cols4) > .colctrl"] },
       { name: "statistics", section: "statistics", instances: [".cols3 > .colctrl"] },
       { name: "panel-cta", section: "spotlights", instances: [".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"] },
-      { name: "panel-gold-cta", section: "find-doctor", instances: [".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"] }
+      { name: "panel-gold-cta", section: "find-doctor", instances: [".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"] },
+      { name: "tabs", section: "resources", instances: [".tabs:has(.c-tabs)"] }
     ],
     sections: [
       { id: "hero", name: "Hero banner", selector: ".fullWidthImageHero", style: null, anchor: null, blocks: ["hero"], defaultContent: [] },
@@ -634,6 +732,7 @@ var CustomImportScript = (() => {
       { id: "testimonials", name: "Patient testimonials (dark teal)", selector: ".fullbleedpanel:has(.bg-dark-teal-gradient)", style: "dark", anchor: "testimonials", blocks: ["columns"], defaultContent: [] },
       { id: "find-doctor", name: "Find a doctor (gold)", selector: ".text.parbase:has(.bg-gold a[href*='physicianlocator'])", style: null, anchor: "find-a-doctor", blocks: ["panel-gold-cta"], defaultContent: [] },
       { id: "marketo", name: "Doctor-finder form", selector: ".marketoform", style: null, anchor: "resources", blocks: ["marketo-form"], defaultContent: [] },
+      { id: "resources", name: "Resources brochure tabs", selector: ".tabs:has(.c-tabs)", style: null, anchor: null, spacerBefore: true, blocks: ["tabs"], defaultContent: [".tabs .c-tabs h2.component-subheading"] },
       { id: "disclaimer", name: "Disclaimer + references", selector: ".c-disclaimer.page-section:not(.container)", style: "compact", anchor: "disclaimer", blocks: [], defaultContent: [".c-disclaimer.page-section:not(.container)"] }
     ]
   };

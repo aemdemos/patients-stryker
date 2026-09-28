@@ -19,7 +19,8 @@
  *   8. testimonials .fullbleedpanel:has(.bg-dark-teal…)       style: dark         anchor: testimonials
  *   9. find-doctor  .text.parbase:has(.bg-gold a[…locator])   style: —            anchor: find-a-doctor
  *  10. marketo      .marketoform                              style: —            anchor: resources
- *  11. disclaimer   .c-disclaimer.page-section:not(.container) style: compact     anchor: disclaimer
+ *  11. resources    .tabs:has(.c-tabs)                        style: —            anchor: —  (spacer before)
+ *  12. disclaimer   .c-disclaimer.page-section:not(.container) style: compact     anchor: disclaimer
  *
  * The `anchor` value becomes `data-anchor` on the section (scripts.js
  * decorateSectionMetadata), which the sticky-nav block resolves as its scroll

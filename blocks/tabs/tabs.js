@@ -33,6 +33,21 @@ async function decoratePanel(panel) {
     }
   }));
 
+  // plain `/fragments/` links (skipped by the page-level auto-blocking) — a
+  // paragraph may hold several links separated by <br>, so load them all, then
+  // replace each paragraph once with its fragments' content in authored order
+  const links = [...panel.querySelectorAll('a[href*="/fragments/"]')];
+  const loaded = await Promise.all(links.map((a) => loadFragment(new URL(a.href).pathname)));
+  const paragraphs = new Map();
+  links.forEach((a, i) => {
+    const p = a.closest('p') || a;
+    if (!paragraphs.has(p)) paragraphs.set(p, []);
+    if (loaded[i]) paragraphs.get(p).push(...loaded[i].childNodes);
+  });
+  paragraphs.forEach((nodes, p) => {
+    if (nodes.length) p.replaceWith(...nodes);
+  });
+
   // merge the panel's card grids (from one or more fragments) into a single row
   mergeSectionCards(panel);
 }

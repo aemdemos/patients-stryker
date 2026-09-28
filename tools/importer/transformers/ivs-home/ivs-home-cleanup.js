@@ -14,10 +14,6 @@
  *
  * Page-specific chrome (beforeTransform — sits in the content flow, so it must be
  * gone before the block parsers / section transformer see it):
- *   - .tabs / .c-tabs .................. Resources brochure widget — DEFERRED this
- *                                        pass (an incoming block will handle it);
- *                                        removed so the cards parser never picks up
- *                                        its `.cols4` brochures.
  *   - .c-navigation-bar .menu-trigger .. mobile menu toggle ("X") chrome.
  *   - .c-navigation-bar h3.page-title .. duplicate page-title heading in the nav bar.
  *   - .jumpbarparsys / .section-title .. empty in-page anchor-target divs (the
@@ -28,6 +24,9 @@
  *   - .c-full-bleed-panel.bg-gray ...... empty gray spacer band between the
  *                                        testimonials and the "find a doctor" CTA.
  *   - .localpagenavigation ............. empty local-page-navigation config box.
+ *
+ * The Resources brochure widget (.tabs / .c-tabs) is NOT removed here — the
+ * ivs-home tabs parser turns it into a Resources heading + `tabs` block.
  *
  * The Marketo form scaffold (.marketoform) is NOT removed here — the ivs-home
  * marketo transformer (which runs before this one) reads its identifiers and
@@ -75,10 +74,6 @@ export default function transform(hookName, element, payload) {
   if (hookName === TransformHook.beforeTransform) {
     // Citation superscripts → bare <sup> so runtime footnote decoration is clean.
     normalizeCitationSups(element);
-
-    // Deferred Resources brochure widget — remove entirely so the cards parser
-    // never picks up its `.cols4` brochures (this pass excludes Resources).
-    WebImporter.DOMUtils.remove(element, ['.tabs', '.c-tabs']);
 
     // Nav-bar chrome that must not survive next to the sticky-nav block.
     element.querySelectorAll('.c-navigation-bar .menu-trigger, .c-navigation-bar h3.page-title').forEach((el) => el.remove());

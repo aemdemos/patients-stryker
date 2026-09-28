@@ -3,7 +3,8 @@
  * Source tab nav (measured from the live site):
  *   - labels: Futura LT W01, 14px, uppercase, black, ~12px 30px padding
  *   - items separated by a 1px #dfe1de right border, wrapping to new rows
- *   - active label: 1px gold (#ffb500) bottom border; inactive: transparent
+ *   - active label: 1px gold (#ffb500) bottom border under the label text only
+ *     (on the inner <p>, not the button); inactive: transparent
  * Panels below hold brochure cards (a "cards resources" grid, styled by that
  * block). Each tab's button + panel stay inside their authored row so the
  * Universal Editor keeps the label nested under its tab; the visual tab bar is
@@ -39,7 +40,6 @@
   margin: 0;
   border: 0;
   border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid transparent;
   border-radius: var(--radius-none);
   padding: 12px 30px 7px;
   background: none;
@@ -55,18 +55,16 @@
 
 .tabs .tabs-tab p {
   margin: 0;
-}
-
-.tabs .tabs-tab-first {
-  padding-left: 0;
+  border-bottom: 1px solid transparent;
 }
 
 .tabs .tabs-tab[aria-selected="true"] {
-  border-bottom-color: var(--color-accent);
   cursor: default;
 }
 
-.tabs .tabs-tab:hover {
+/* underline only the label text, not the whole tab */
+.tabs .tabs-tab[aria-selected="true"] p,
+.tabs .tabs-tab:hover p {
   border-bottom-color: var(--color-accent);
 }
 

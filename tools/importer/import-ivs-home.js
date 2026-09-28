@@ -10,6 +10,7 @@ import panelGoldCtaParser from './parsers/ivs-home/panel-gold-cta.js';
 import cardsParser from './parsers/ivs-home/cards.js';
 import statisticsParser from './parsers/ivs-home/statistics.js';
 import panelCtaParser from './parsers/ivs-home/panel-cta.js';
+import tabsParser from './parsers/ivs-home/tabs.js';
 
 // TRANSFORMER IMPORTS
 // NOTE: the legal-page's transformers/patients-stryker-cleanup.js is intentionally
@@ -31,6 +32,7 @@ const parsers = {
   cards: cardsParser,
   statistics: statisticsParser,
   'panel-cta': panelCtaParser,
+  tabs: tabsParser,
 };
 
 // TRANSFORMER REGISTRY
@@ -45,8 +47,7 @@ const parsers = {
 //  - marketo: reads the `.marketoform` identifiers and replaces the scaffold in
 //    place with an authored `marketo-form` block (beforeTransform), between the
 //    section-break marker and the disclaimer break already placed by sections.
-//  - cleanup: removes the deferred Resources tabs, nav chrome, empty anchor
-//    markers, and gray spacer (beforeTransform) + global chrome (afterTransform).
+//  - cleanup: removes nav chrome, empty anchor markers, and gray spacer (beforeTransform) + global chrome (afterTransform).
 //  - dm LAST: rewrites DM <img> to anchors in afterTransform, after the block
 //    parsers have lifted image references into block cells.
 const transformers = [
@@ -60,7 +61,7 @@ const transformers = [
 // Kept in sync with tools/importer/page-templates.json.
 const PAGE_TEMPLATE = {
   name: 'ivs-home',
-  description: 'IVS patient homepage (standalone singleton, theme ivs-home). Zones: hero (banner) + Find a doctor CTA; sticky-nav anchor bar; a flex intro (text left + video right); a gold panel "There\'s hope ahead"; a 4-up cards (linked) pain grid; a statistics dashboard (6 metrics); a flex pair of panel (cta) spotlights; two testimonial columns (text + video) on a dark-teal band; a gold panel "Tired of living in pain?"; a marketo-form doctor finder; a compact disclaimer/references section. Resources tabs (zone 11) DEFERRED. Header/footer + Scene7 video chrome stripped on import.',
+  description: 'IVS patient homepage (standalone singleton, theme ivs-home). Zones: hero (banner) + Find a doctor CTA; sticky-nav anchor bar; a flex intro (text left + video right); a gold panel "There\'s hope ahead"; a 4-up cards (linked) pain grid; a statistics dashboard (6 metrics); a flex pair of panel (cta) spotlights; two testimonial columns (text + video) on a dark-teal band; a gold panel "Tired of living in pain?"; a marketo-form doctor finder; a Resources heading + tabs block referencing the /fragments/resources/ brochure card fragments; a compact disclaimer/references section. Header/footer + Scene7 video chrome stripped on import.',
   urls: [
     'https://patients.stryker.com/us/en/ivs/index.html',
   ],
@@ -69,10 +70,11 @@ const PAGE_TEMPLATE = {
     { name: 'sticky-nav', section: 'anchor-nav', instances: ['.c-navigation-bar .nav-wrap'] },
     { name: 'columns', instances: ['.cols2:has(.standalonevideo)'] },
     { name: 'panel-gold', section: 'hope', instances: [".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"] },
-    { name: 'cards', section: 'pain-cards', instances: ['.cols4 > .colctrl'] },
+    { name: 'cards', section: 'pain-cards', instances: ['.cols4:not(.tabs .cols4) > .colctrl'] },
     { name: 'statistics', section: 'statistics', instances: ['.cols3 > .colctrl'] },
     { name: 'panel-cta', section: 'spotlights', instances: [".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"] },
     { name: 'panel-gold-cta', section: 'find-doctor', instances: [".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"] },
+    { name: 'tabs', section: 'resources', instances: ['.tabs:has(.c-tabs)'] },
   ],
   sections: [
     { id: 'hero', name: 'Hero banner', selector: '.fullWidthImageHero', style: null, anchor: null, blocks: ['hero'], defaultContent: [] },
@@ -85,6 +87,7 @@ const PAGE_TEMPLATE = {
     { id: 'testimonials', name: 'Patient testimonials (dark teal)', selector: '.fullbleedpanel:has(.bg-dark-teal-gradient)', style: 'dark', anchor: 'testimonials', blocks: ['columns'], defaultContent: [] },
     { id: 'find-doctor', name: 'Find a doctor (gold)', selector: ".text.parbase:has(.bg-gold a[href*='physicianlocator'])", style: null, anchor: 'find-a-doctor', blocks: ['panel-gold-cta'], defaultContent: [] },
     { id: 'marketo', name: 'Doctor-finder form', selector: '.marketoform', style: null, anchor: 'resources', blocks: ['marketo-form'], defaultContent: [] },
+    { id: 'resources', name: 'Resources brochure tabs', selector: '.tabs:has(.c-tabs)', style: null, anchor: null, spacerBefore: true, blocks: ['tabs'], defaultContent: ['.tabs .c-tabs h2.component-subheading'] },
     { id: 'disclaimer', name: 'Disclaimer + references', selector: '.c-disclaimer.page-section:not(.container)', style: 'compact', anchor: 'disclaimer', blocks: [], defaultContent: ['.c-disclaimer.page-section:not(.container)'] },
   ],
 };
@@ -158,13 +161,6 @@ export default {
 
     // 3. afterTransform: global chrome removal, Section Metadata blocks, DM anchors.
     executeTransformers('afterTransform', main, payload);
-
-    // NOTE (deferred Resources): the Resources brochure tabs (zone 11) are
-    // intentionally NOT imported this pass — an incoming block will handle them.
-    // ivs-home-cleanup.js strips the `.tabs` widget so it produces no content. To
-    // add it later: (a) stop removing `.tabs`/`.c-tabs` in ivs-home-cleanup.js,
-    // (b) add a parser + a `blocks[]`/`sections[]` entry (anchor `resources`
-    // already exists on the marketo section) here and in page-templates.json.
 
     // 4. Built-in rules. Add an <hr> to separate the Metadata block, then build
     //    it from the page's own metadata and stamp `theme = ivs-home` so aem.js
