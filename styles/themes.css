@@ -1447,6 +1447,8 @@ body.ivs-get-the-facts .hero.banner h1 {
   body.ivs-get-the-facts .hero.banner h1 {
     font-size: var(--heading-font-size-hero-xl); /* 49px */
   }
+}
+
 /* Theme: condition-detail (desktop 2-column layout override for IVS condition pages). */
 @media (width >= 900px) {
   body.condition-detail main > .section.flex {
