@@ -102,6 +102,25 @@ overflow: clip auto;
 margin-block: 0;
 ```
 
+### 8. Never Add `eslint-disable` to Silence a Lint Error
+
+```js
+// ❌ NEVER — hides the problem instead of fixing it
+// eslint-disable-next-line no-unused-vars
+const config = loadConfig();
+
+// ✅ ALWAYS — fix the actual issue (use the variable, remove it, or
+// restructure the code) so the rule passes on its own merits
+```
+
+Fix the code so it satisfies the rule (rename, remove, refactor, or use the
+value) instead of suppressing the check. If a rule is genuinely wrong for a
+specific, justified case, raise it with the user and change the shared
+`.eslintrc.js` config rather than adding a per-line disable. This applies to
+new/changed code in `blocks/`, `scripts/`, `styles/`, and `templates/`.
+Pre-existing disables (e.g. in `tools/importer/`, `tools/style-validator/`)
+may remain as-is — do not add new ones.
+
 ---
 
 ## Project Overview
@@ -367,7 +386,7 @@ Only create a file in `drafts/` when there is no authored CMS page to test again
 2. **Show a diff after each section** — never implement multiple sections at once without showing diffs.
 3. **One file at a time for risky changes** — when touching `styles/styles.css`, complete and diff each logical section before moving on.
 4. **For `styles/styles.css` changes:** show diff after each section, never batch.
-5. **Run lint fix before finishing** — after writing any CSS or JS, always run `npm run lint:fix` then verify `npm run lint` reports zero errors.
+5. **Run lint fix before finishing** — after writing any CSS or JS, always run `npm run lint:fix` then verify `npm run lint` reports zero errors. Never resolve a remaining error by adding an `eslint-disable` comment (see Hard Rule 8) — fix the code instead.
 
 ### Code Quality Rules
 
@@ -395,7 +414,7 @@ When a block needs a full-width background inside a padded container:
 - [ ] `blocks/{blockname}/{blockname}.css` edited with all styles
 - [ ] `blocks/{blockname}/{blockname}.js` edited with all decoration logic
 - [ ] Change is visible in preview at `http://localhost:3000/`
-- [ ] `npm run lint` passes with zero errors
+- [ ] `npm run lint` passes with zero errors (no new `eslint-disable` comments added)
 - [ ] Images optimized (< 100KB for committed assets)
 - [ ] Accessibility: proper headings, alt text, keyboard navigation
 
