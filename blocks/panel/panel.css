@@ -407,7 +407,7 @@
 
   .panel.wide .panel-body p {
     font-size: var(--panel-body-size-s);
-    font-family: var(--heading-font-family);
+    font-family: var(--body-font-family);
   }
 } 
 
