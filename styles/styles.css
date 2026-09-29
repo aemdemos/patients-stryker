@@ -58,10 +58,10 @@
   --link-hover-color: var(--color-primary-hover);
 
   /* fonts */
-  --body-font-family: "HumanistSlab712W01", "humanist-slab-712-fallback", cambria, palatino, serif;
-  --heading-font-family: "URWEgyptienneW01-Light", urw-egyptienne-fallback, rockwell, georgia, times, serif;
-  --display-font-family: "Futura LT W01", futura-lt-fallback, arial, helvetica, sans-serif;
-  --display-font-family-bold: "Futura LT W01", "Arial Black", arial, sans-serif;
+  --body-font-family: "Humanist 712 for Stryker", cambria, palatino,serif;
+  --heading-font-family: "Egyptienne for Stryker Light", rockwell, georgia, times, serif;
+  --display-font-family: "Futura for Stryker", "Arial Black", arial, sans-serif;
+  --display-font-family-bold: "Futura for Stryker", "Arial Black", arial, sans-serif;
 
   /* body sizes (fixed px — source typography is non-responsive) */
   --body-font-size-m: 14px;
@@ -70,6 +70,7 @@
 
   /* body sizes (1.25x scale — some blocks enlarge text via an inner span) */
   --body-font-size-l: 17.5px;       /* 1.25 x 14 */
+  --body-font-size-xl: 21px;        /* 1.5 x 14 */
   
   /* footnote */
   --footnote-font-size: 11.2px;
@@ -77,6 +78,7 @@
 
 
   /* heading sizes */
+  --heading-font-size-hero-xl: 49px; /* large hero headline cap — source fontsize-3-5-vw at ≥1439px */
   --heading-font-size-xxxl: 43px;   /* brochure card title — 24.5px x 1.75 (source fontsize-1-75em) */
   --heading-font-size-xxl: 28px;    /* h1 */
   --heading-font-size-xl: 24.5px;   /* h2 */
@@ -102,6 +104,7 @@
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
+  --space-block-s: 10px;
   --space-block: 15px;
   --space-block-l: 20px; /* measured: hero banner card margin (.pDiv.bg-shadow) */
   --space-inset-m: 25px; /* measured: source rich-text inset at desktop (dark band copy, text columns, gold CTA) */
@@ -112,6 +115,7 @@
   --space-section: 30px;
   --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
   --space-section-xl: 90px;
+  --space-band-dark: 54px; /* measured: dark 50-50 band top/bottom (source spacer paragraph 39px + 15px) */
   --space-nav-hero-gap: 61px; /* measured: nav→hero gap on IVS pages (≥600px) */
 
   /* statistics block — measured from source: big number size + surrounding gaps */

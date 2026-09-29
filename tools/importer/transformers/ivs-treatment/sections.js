@@ -154,8 +154,15 @@ export default function transform(hookName, element, payload) {
       }
     }
 
-    // Parsers have now replaced the styled section elements. Anchor each styled
-    // section's metadata to the marker <hr> placed in beforeTransform.
+    // Parsers have now replaced the styled section elements. Locate each styled
+    // section via the marker <hr> placed in beforeTransform, then place its
+    // Section Metadata at the END of the section — immediately before the next
+    // section-break <hr> in document order (or at the end of main for the last
+    // section) — so authors see the section's content first and its metadata last.
+    const nextBreakAfter = (node) => [...element.querySelectorAll('hr')]
+      // 4 = Node.DOCUMENT_POSITION_FOLLOWING
+      .find((hr) => hr !== node && !node.contains(hr)
+        && (node.compareDocumentPosition(hr) & 4));
     for (let i = sections.length - 1; i >= 0; i -= 1) {
       const section = sections[i];
       if (!section.style) continue;
@@ -174,7 +181,9 @@ export default function transform(hookName, element, payload) {
         name: 'Section Metadata',
         cells: { style: styleToCell(section.style) },
       });
-      anchor.after(metadataBlock);
+      const sectionEnd = nextBreakAfter(anchor);
+      if (sectionEnd) sectionEnd.before(metadataBlock);
+      else element.append(metadataBlock);
 
       if (marker) {
         marker.removeAttribute(SECTION_MARKER_ATTR);
