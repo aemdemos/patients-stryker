@@ -7,18 +7,6 @@ body.procedure-detail main > .section.hero-container {
   margin-top: var(--space-section-xl);
 }
 
-/* Hero banner: pin copy to lower-left (overlay only exists ≥600px). */
-@media (width >= 600px) {
-  body.procedure-detail main > .section .hero.banner > div:last-child {
-    align-self: end;
-    padding: 0 0 55px 40px;
-  }
-
-  body.procedure-detail main > .section.hero-container {
-    margin-top: var(--space-nav-hero-gap);
-  }
-}
-
 /* Intro + Benefits flex section spacing. */
 body.procedure-detail main > .section.flex {
   margin-top: 80px;
@@ -184,7 +172,7 @@ body.procedure-detail main .panel.dark .panel-body p {
 }
 
 body.procedure-detail main .panel.dark .panel-body p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 /* Benefits card (cta, wide) — disc bullets, 17.5px. */
