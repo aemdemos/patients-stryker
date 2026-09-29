@@ -1265,7 +1265,6 @@ body.ivs-home main > .section.hero-container {
 body.ivs-home .hero.banner h1,
 body.ivs-home .hero.banner h2 {
   box-sizing: border-box;
-  max-width: 47%;
 }
 
 body.ivs-home main > .section.flex[data-anchor="overview"] {
@@ -1354,6 +1353,11 @@ body.ivs-home .panel.cta .panel-body h3 {
 
   body.ivs-home .cards.linked > ul {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.ivs-home .hero.banner h1,
+  body.ivs-home .hero.banner h2 {
+    max-width: 47%;
   }
 }
 

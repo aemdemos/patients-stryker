@@ -132,24 +132,36 @@ function appendParam(src, key, value) {
 }
 
 /**
- * Build a <picture> for a Scene7 / classic DM URL, using the authored URL
- * unchanged so the asset renders exactly as linked (no forced resizing/format).
- * The one exception: a transparent asset (a `$..._png$` preset or an explicit
- * `fmt=png`) gets `fmt=png-alpha` appended — Scene7's default delivery format
- * otherwise flattens transparency to a white background.
+ * Final delivery URL for a Scene7 / classic DM image: the authored URL unchanged
+ * so the asset renders exactly as linked (no forced resizing/format). The one
+ * exception: a transparent asset (a `$..._png$` preset or an explicit `fmt=png`)
+ * gets `fmt=png-alpha` appended — Scene7's default delivery format otherwise
+ * flattens transparency to a white background.
+ *
+ * Exported so callers that need the URL before the <picture> exists (e.g. the
+ * hero LCP preload in scripts.js) emit byte-identical URLs and don't cause a
+ * second download.
+ * @param {string} src the authored image URL
+ * @returns {string} the delivery URL
  */
-function renderScene7(src, alt, eager) {
+export function scene7Src(src) {
   // decode first so a percent-encoded preset ($..._png$ arrives as %24..._png%24
   // from a href) is matched as well as the literal form and an explicit fmt=png
   let decoded = src;
   try { decoded = decodeURIComponent(src); } catch { /* leave as-is on bad escape */ }
   const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decoded);
-  const finalSrc = png ? appendParam(src, 'fmt', 'png-alpha') : src;
+  return png ? appendParam(src, 'fmt', 'png-alpha') : src;
+}
+
+/**
+ * Build a <picture> for a Scene7 / classic DM URL.
+ */
+function renderScene7(src, alt, eager) {
   const picture = document.createElement('picture');
   const img = document.createElement('img');
   img.loading = eager ? 'eager' : 'lazy';
   img.alt = alt;
-  img.src = finalSrc;
+  img.src = scene7Src(src);
   picture.append(img);
   return picture;
 }
@@ -244,7 +256,7 @@ function loadHlsJs() {
 }
 
 /**
- * Attach an HLS source to a <video>.
+ * Wire up an HLS source on a <video> once hls.js is available.
  *
  * Prefer hls.js (software demux + JS-controlled ABR) wherever it's supported —
  * including Safari/iOS, which also has native HLS. Native HLS on macOS Safari
@@ -255,9 +267,10 @@ function loadHlsJs() {
  * run (e.g. older iOS Safari, which lacks Media Source Extensions).
  * @param {HTMLVideoElement} video
  * @param {string} src an .m3u8 URL
+ * @returns {Promise<void>} resolves once a playable source is attached
  */
-function attachHls(video, src) {
-  loadHlsJs().then((Hls) => {
+function initHls(video, src) {
+  return loadHlsJs().then((Hls) => {
     if (Hls && Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(src);
@@ -267,6 +280,43 @@ function attachHls(video, src) {
       video.src = src;
     }
   });
+}
+
+/**
+ * Attach an HLS source to a <video>, on demand only.
+ *
+ * hls.js is ~123KB of script that parses a manifest and spins up a demuxer, and
+ * none of it produces anything visible — the poster frame is what the user sees
+ * until they press play. So nothing is loaded until playback is actually
+ * requested: the play overlay, a pointer/keyboard interaction with the native
+ * controls, or a `play` event. A page full of videos therefore costs nothing at
+ * all until one is played.
+ * @param {HTMLVideoElement} video
+ * @param {string} src an .m3u8 URL
+ * @returns {() => Promise<void>} starts the (idempotent) attach and resolves when
+ * the video has a playable source
+ */
+function attachHls(video, src) {
+  let ready;
+  const start = () => {
+    if (!ready) ready = initHls(video, src);
+    return ready;
+  };
+
+  // interacting with the native controls means playback is imminent
+  ['pointerdown', 'keydown'].forEach((type) => {
+    video.addEventListener(type, start, { once: true });
+  });
+  // a play attempt that lands before the source is attached fails silently, so
+  // re-issue it once the attach completes
+  video.addEventListener('play', () => {
+    const pending = !ready;
+    start().then(() => {
+      if (pending && video.paused) video.play().catch(() => {});
+    });
+  });
+
+  return start;
 }
 
 /**
@@ -288,16 +338,19 @@ export function renderVideo(src, label) {
   video.className = 'dm-video';
   video.controls = true;
   video.playsInline = true;
-  video.preload = 'metadata';
+  // with a poster there is nothing to show before playback, so skip the metadata
+  // fetch entirely; without one, `metadata` gives the browser a first frame
+  video.preload = poster ? 'none' : 'metadata';
   // sizing/appearance lives in CSS (.dm-video in styles/lazy-styles.css) so it
   // can be adjusted without touching this script
   if (poster) video.poster = poster;
   if (label) video.setAttribute('aria-label', label);
 
   const hlsSrc = preferHls(mediaSrc);
+  let startMedia = () => Promise.resolve();
   if (/\.m3u8(\?|$)/i.test(hlsSrc)) {
     // HLS (incl. Scene7 .mpd rewritten to .m3u8): native or hls.js
-    attachHls(video, hlsSrc);
+    startMedia = attachHls(video, hlsSrc);
   } else {
     // progressive/other container the browser can play directly
     const source = document.createElement('source');
@@ -321,7 +374,10 @@ export function renderVideo(src, label) {
   play.type = 'button';
   play.className = 'dm-video-play';
   play.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
-  play.addEventListener('click', () => { video.play(); });
+  play.addEventListener('click', () => {
+    // the HLS source is attached lazily, so make sure it is there before playing
+    startMedia().then(() => video.play().catch(() => {}));
+  });
   overlay.append(play);
 
   // toggle the overlay from the video's own state, so it also responds when the
