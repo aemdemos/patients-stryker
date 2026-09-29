@@ -89,6 +89,12 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
 
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
+/* single-item panel: one column at all widths (override the panel 2-up grid) */
+body.sa-resources .section.flex .panel.light > ul,
+body.sa-resources .section.flex .panel.light.panel-authoring {
+  grid-template-columns: 1fr;
+}
+
 /* source renders the body copy in the URW Egyptienne heading serif
    (.urw-egyptienne) at 21px, regular weight — NOT the HumanistSlab body face or
    the 17.5px cta size. */
@@ -477,19 +483,16 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     font-size: var(--heading-font-size-ml);
   }
 
-  body.condition-detail h2 em strong, h2 strong em {
+  body.condition-detail h2 em strong, body.condition-detail h2 strong em {
      font-size: var(--condition-headline-font-size);
    
   }
 
-   body.condition-detail p, ul {
+  body.condition-detail main p, body.condition-detail main ul {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
     margin-bottom: 15px;
-    list-style: disc;
    }
-
-   
 
 
     body.condition-detail .panel.left .panel-body  {
