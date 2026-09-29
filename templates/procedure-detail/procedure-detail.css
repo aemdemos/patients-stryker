@@ -11,7 +11,7 @@ body.procedure-detail main > .section.hero-container {
 @media (width >= 600px) {
   body.procedure-detail main > .section .hero.banner > div:last-child {
     align-self: end;
-    padding: 0 0 55px 40px;
+    padding: 20px 40px;
   }
 
   body.procedure-detail main > .section.hero-container {
