@@ -382,7 +382,7 @@
   margin: 0;
 }
 
-.columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
+.section.compact .columns p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
   padding-top: 0;
   padding-bottom: 20px;
   margin-bottom: 30px;
