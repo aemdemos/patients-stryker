@@ -477,19 +477,16 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     font-size: var(--heading-font-size-ml);
   }
 
-  body.condition-detail h2 em strong, h2 strong em {
+  body.condition-detail h2 em strong, body.condition-detail h2 strong em {
      font-size: var(--condition-headline-font-size);
    
   }
 
-   body.condition-detail p, ul {
+  body.condition-detail main p, body.condition-detail main ul {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
     margin-bottom: 15px;
-    list-style: disc;
    }
-
-   
 
 
     body.condition-detail .panel.left .panel-body  {
