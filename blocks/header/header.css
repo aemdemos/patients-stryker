@@ -40,9 +40,12 @@ header nav .nav-brand {
 
 header nav .nav-brand p { margin: 0; }
 
+/* aspect-ratio reserves the logo box from its intrinsic ratio so the logo can't
+   shift content when it loads (CLS: Lighthouse flags it as an unsized image) */
 header nav .nav-brand img {
   width: 100px;
   height: auto;
+  aspect-ratio: 192 / 48;
   display: block;
 }
 

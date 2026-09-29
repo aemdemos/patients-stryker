@@ -10,12 +10,8 @@ body.legal main .last-modified {
   margin-bottom: 30px;
 }
 
-/* legal page title: the leading h1 in the first section is the page title and
-   takes the larger 45px gap to the body (source composed this from heading 15px
-   + title section 30px, kept in one section). The source rendered the title as an
-   h2.component-subheading.border-bottom-gold at 24.5px Futura-bold black with a
-   7px-padded 1px sage underline; import promotes it to <h1>, so re-create that exact
-   look here. */
+/* Legal page title: style the first-section h1 like the source subheading,
+  including the larger 45px spacing and sage underline. */
 /* stylelint-disable-next-line no-descending-specificity */
 body.legal main .section:first-of-type h1:first-child {
   font-family: var(--display-font-family);
@@ -34,20 +30,14 @@ body.legal main .section:first-of-type h1:first-child {
   }
 }
 
-/* sage underline matching the source's .component-subheading.border-bottom-gold
-   (1px solid #b2b4ae, 7px gap above the rule). The import strips the class off the
-   title (markdown keeps no classes), so the title's underline is applied directly
-   above; this rule covers any authored content that keeps the border-bottom-gold
-   class in DA/UE. */
+/* Sage underline style for border-bottom-gold headings (including authored ones). */
 body.legal .border-bottom-gold {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
-/* legal gold sub-section labels: source authored these as standalone
-   span.futura-bold[color:#ffb500] label paragraphs; import promotes each to <h2>.
-   Match the source exactly — Futura-bold gold, 14px / 19.25px line-height, and the
-   15px paragraph rhythm above/below (source label paragraphs had margin 0 0 15px). */
+/* Legal gold sub-section labels: style promoted h2s to match source label
+  typography and spacing. */
 /* stylelint-disable-next-line no-descending-specificity */
 body.legal main .section h2 {
   font-family: var(--display-font-family-bold);
@@ -64,9 +54,7 @@ body.legal strong a:any-link {
   font-family: var(--display-font-family);
 }
 
-/* legal pages render in-content links as plain teal text with NO underline
-   (source: .c-rich-text-editor a → text-decoration: none, #4c7d7a). The global
-   a:any-link rule underlines links, so remove it on legal pages. */
+/* Legal content links are plain teal text without underline. */
 /* stylelint-disable-next-line no-descending-specificity */
 body.legal main a:any-link {
   text-decoration: none;
@@ -79,4 +67,8 @@ body.legal a.link-strong:any-link {
     text-transform: uppercase;
     color: var(--color-primary);
     text-decoration: none;
+}
+
+body.legal strong {
+  font-family: var(--body-font-family);
 }

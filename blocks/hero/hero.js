@@ -116,4 +116,18 @@ export default function decorate(block) {
   if (!block.querySelector(':scope > div:first-child picture')) {
     block.classList.add('no-image');
   }
+
+  // stroke headline: the published pipeline drops the space before the inline
+  // gold accent ("Understanding<em>stroke</em>") while the editor keeps it.
+  // Restore it when missing so the gap is one space in both — no margin hack
+  // that would double the gap in the editor.
+  if (block.closest('.hero-stroke')) {
+    block.querySelectorAll('h1 em').forEach((em) => {
+      const prev = em.previousSibling;
+      if (prev && prev.nodeType === Node.TEXT_NODE && prev.textContent
+        && !/\s$/.test(prev.textContent)) {
+        prev.textContent += ' ';
+      }
+    });
+  }
 }

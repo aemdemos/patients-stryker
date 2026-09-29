@@ -29,6 +29,10 @@
 
 /* ----- Page-level: section rhythm + default-content typography ----- */
 
+:root {
+  --condition-headline-font-size: 26.25px;
+}
+
 /* intro: welcome copy is the source's fontsize-1-5em URW-Egyptienne serif (21px),
    not the 14px body default. Scoped to the flex intro's left default-content
    column (the panel keeps its own body sizing, below). */
@@ -101,6 +105,10 @@ body.sa-resources .panel.colored-border .panel-body {
   margin: 10px 5% 5%;
 }
 
+body.condition-detail .panel.cta .panel-body {
+  padding: 3%;
+}
+
 /* ----- Cards block (downloads + social grids, `cards brochure`) ----- */
 
 /* brochure cards left-align their title (source), unlike the centered default. */
@@ -163,13 +171,6 @@ body.stroke-awareness-landing main .section.compact {
    → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
 .section.hero-stroke .hero.banner h1 {
   font-size: 8vw;
-}
-
-/* Word gap — the source keeps a space between "Understanding" and the gold
-   "stroke"; our authored markup collapses the leading space inside the inline
-   accent span, so restore the gap explicitly on the gold accent. */
-.section.hero-stroke .hero.banner h1 em strong {
-  margin-left: 0.2em;
 }
 
 body.campaign-landing main .section.sticky-nav-container {
@@ -448,6 +449,112 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
   body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper {
     margin-top: 0;
+  }
+}
+
+  body.condition-detail .hero-container .hero-wrapper {
+    padding: 0 var(--container-gutter);
+  }
+
+  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
+    padding-left:4%;
+  }
+  
+  body.condition-detail h2 {
+    font-family: var(--heading-font-family);
+    font-size: var(--condition-headline-font-size);
+    padding-top:4%;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #b2b4ae;
+  }
+
+  body.condition-detail h2:has(em strong) {
+    border-bottom: 0;
+    padding-left: 10px;
+  }
+
+  body.condition-detail h4 {
+    font-size: var(--heading-font-size-ml);
+  }
+
+  body.condition-detail h2 em strong, body.condition-detail h2 strong em {
+     font-size: var(--condition-headline-font-size);
+   
+  }
+
+  body.condition-detail main p, body.condition-detail main ul {
+    font-size: var(--body-font-size-l);
+    line-height: var(--body-line-height-l);
+    margin-bottom: 15px;
+   }
+
+
+    body.condition-detail .panel.left .panel-body  {
+      margin: 0 0 var(--space-block);
+    }
+
+    body.condition-detail .panel.dark .panel-body {
+      padding:3%;
+    }
+
+   body.condition-detail .panel.left .panel-body p{
+    margin: 0 0 var(--space-block);
+    font-size: var(--body-font-size-l);
+}
+
+body.condition-detail a:any-link {
+  text-decoration: none;
+}
+ 
+body.condition-detail main > .section.flex {
+  margin-top: var(--space-section);
+   margin-bottom: var(--space-section);
+}
+
+/* Mobile condition-detail 50-50 rows stack; add a clear gap between the two cells. */
+body.condition-detail .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+  padding-right:2%;
+  padding-left:2%;
+}
+
+body.condition-detail .columns ul > li > p,
+body.procedure-detail .cards .cards-card-body ul > li > p {
+  margin: 0;
+}
+
+
+body.condition-detail .tabs .tabs-tab p {
+  font-size:14px;
+}
+
+body.condition-detail .tabs .tabs-panel {
+  margin-bottom: 60px;
+}
+
+@media (width >= 600px) {
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul,
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark.panel-authoring {
+    grid-template-columns: 1fr;
+  }
+
+  body.condition-detail .hero.banner > div:last-child {
+    align-self: end;
+    padding-left: 4%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
+    padding-left:0;
+  }
+
+  body.condition-detail .hero.banner .button-wrapper:last-child {
+    margin-bottom: 15px;
+  }
+
+  body.condition-detail  .panel.cta > ul {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -944,6 +1051,7 @@ body.patient-information main > .section.fragment-container + .section.compact {
   margin-top: var(--space-section);
 }
 
+
 /* =====================================================================
    Theme: zip-skin-closure — Zip Skin Closure product page
    All rules moved here from styles/styles.css, blocks/columns/columns.css and
@@ -1170,6 +1278,17 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-weight: 700;
 }
 
+ body.condition-detail .section.dark:has(.columns-50-50) {
+  padding-block: var(--space-section);
+ }
+
+ body.condition-detail .panel.gold .panel-body {
+  margin:0;
+  padding-top: 3%;
+  padding-bottom: 2%;
+ }
+
+
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
   /* "Benefits of Zip" — the source spaces the icon-grid rows further apart than
@@ -1318,4 +1437,100 @@ body.resources main > .section.compact > div :is(p, ol, ul, li) {
 
 body.resources .section.compact {
   margin-bottom: 0;
+}
+
+/* =====================================================================
+   Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
+   ===================================================================== */
+
+/* Display font: use the site's "Futura for Stryker" cut via a token override,
+   scoped to this theme (other pages keep Futura LT W01). */
+body.ivs-treatment {
+  --display-font-family: "Futura for Stryker", futura-for-stryker-fallback, arial, helvetica, sans-serif;
+  --display-font-family-bold: "Futura for Stryker", futura-for-stryker-fallback, "Arial Black", arial, sans-serif;
+}
+
+/* Page-wide type scale (reference wraps everything in a 1.25x span): h3 26.25px,
+   body/li 17.5px, vs the shared defaults. */
+body.ivs-treatment main h3 {
+  font-size: var(--heading-font-size-l-scaled); /* 26.25px */
+}
+
+body.ivs-treatment main :is(p, li) {
+  font-size: var(--body-font-size-l); /* 17.5px */
+}
+
+/* Flex sections: top-align columns (shared rule centres them; reference top-aligns). */
+body.ivs-treatment main > .section.flex {
+  align-items: start;
+}
+
+/* Plain columns sections: ~50px top/bottom margin (dark/full-bleed pad themselves). */
+body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
+  margin-block: var(--space-section-l); /* 50px */
+}
+
+/* "What is LSS?" dark 50-50 band — page-level gap to the flex section above it.
+   (The edge-to-edge image-bleed rendering lives in the columns block CSS.) */
+body.ivs-treatment main > .section.dark:has(.columns-50-50) {
+  margin-top: var(--space-section-l);
+}
+
+/* Resources heading — 1px gold underline on the cards-section h2. */
+body.ivs-treatment main > .section.cards-container h2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* Potential risks — make the light-gray band content-width (not full-bleed): move
+   the grey fill + padding onto the inner wrapper and add outer margin for spacing. */
+body.ivs-treatment main > .section.light-gray {
+  margin-block: var(--space-section-xl) var(--space-section-l); /* ~90px above, 50px below */
+  background-color: transparent; /* undo the edge-to-edge fill from styles.css */
+}
+
+/* Target only the content wrapper (not the stray empty section div, which would
+   otherwise render as a hollow grey bar). Keep the grey band the width of the
+   centered content column so it aligns with the section above at any viewport. */
+body.ivs-treatment main > .section.light-gray > .default-content-wrapper {
+  width: min(100% - 2 * var(--container-gutter), var(--container-max) - 2 * var(--container-gutter));
+  margin-inline: auto;
+  padding: var(--space-section);
+  background-color: var(--color-surface-dim);
+}
+
+/* Disclaimer band copy renders at the smaller 14px size, not the page-wide 17.5px. */
+body.ivs-treatment main > .section.light-gray :is(p, li) {
+  font-size: var(--body-font-size-m); /* 14px */
+  line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
+}
+
+/* Theme: condition-detail (desktop 2-column layout override for IVS condition pages). */
+@media (width >= 900px) {
+  body.condition-detail main > .section.flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding:0;
+    gap:0;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: stretch;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta),
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta,
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
+    width: 100%;
+    min-width: 0;
+  }
+
 }
