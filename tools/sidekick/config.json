@@ -1,0 +1,13 @@
+{
+  "project": "Stryker Patients",
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Block Library",
+      "environments": ["edit", "dev", "preview"],
+      "url": "/tools/sidekick/library.html",
+      "isPalette": true,
+      "paletteRect": "top: auto; bottom: 20px; left: 20px; height: 520px; width: 420px;"
+    }
+  ]
+}
