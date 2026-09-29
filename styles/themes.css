@@ -1318,6 +1318,109 @@ body.ivs-treatment main > .section.light-gray :is(p, li) {
   line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
 }
 
+/* ----- Theme: ivs-get-the-facts (layered on ivs-treatment) ----- */
+
+body.ivs-get-the-facts main :is(p, li) {
+  font-size: var(--body-font-size-xl); /* 21px */
+}
+
+/* Hero: spacer sections provide the ~60px offsets */
+body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
+  margin-block: 0;
+}
+
+/* Hero title: source 3.5vw scale; single font avoids inflated line boxes */
+body.ivs-get-the-facts .hero.banner h1 {
+  font-family: var(--display-font-family);
+  font-size: 7vw;
+}
+
+/* "Why is treatment important?" dark 50-50 band */
+body.ivs-get-the-facts main > .section.dark:has(.columns-50-50) {
+  padding-block: var(--space-band-dark);
+}
+
+/* stacked text inset (6% of the row ≈ source 3% margin + 3% padding) */
+body.ivs-get-the-facts main > .section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+  padding: 6% calc(var(--container-gutter) + 6%);
+}
+
+body.ivs-get-the-facts main > .section.dark .columns :is(p, li) {
+  font-size: var(--body-font-size-xl); /* 21px */
+  line-height: var(--heading-line-height); /* 1.06 → 22.26px */
+}
+
+body.ivs-get-the-facts main > .section.dark .columns h2 {
+  line-height: var(--heading-line-height-hero); /* 1.35 */
+}
+
+body.ivs-get-the-facts main > .section.dark .columns h2 em strong {
+  font-size: var(--heading-font-size-l); /* 21px */
+}
+
+/* "Don't just manage the pain" divider section spacing */
+body.ivs-get-the-facts main > .section.divider {
+  padding-top: calc(2 * var(--space-block-l) + 3%); /* 20 + 20 + 3% */
+  padding-bottom: var(--space-section); /* 10px button inset + 20px spacer block */
+}
+
+body.ivs-get-the-facts main > .section.divider .button-wrapper {
+  margin-top: calc(var(--space-block) + 1%);
+}
+
+/* "Tired of living in pain?" gold band: full content width */
+body.ivs-get-the-facts .panel.gold .panel-body {
+  margin-inline: 0;
+  padding: 3% var(--space-block-s) 2%;
+}
+
+body.ivs-get-the-facts .panel.gold .panel-body p {
+  font-size: var(--panel-body-size); /* 24.5px */
+}
+
+body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
+  font-size: inherit;
+}
+
+/* ----- Tablet (>=600px) ----- */
+@media (width >= 600px) {
+  body.ivs-get-the-facts main > .section.dark .columns h2 em strong {
+    font-size: var(--heading-font-size-xl); /* 24.5px */
+  }
+
+  /* dark band stays stacked on tablet */
+  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
+    flex-basis: 100%;
+  }
+
+  body.ivs-get-the-facts main > .section.divider {
+    padding-top: calc(var(--space-section-l) + var(--space-section) + 3%); /* 50 + 30 + 3% */
+    padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
+  }
+}
+
+/* ----- Desktop (>=900px) ----- */
+@media (width >= 900px) {
+  body.ivs-get-the-facts .hero.banner h1 {
+    font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* capped at 49px */
+  }
+
+  /* half-width copy column (two-line title) */
+  body.ivs-get-the-facts .hero.banner > div:last-child {
+    max-width: 50%;
+    padding-right: 0;
+  }
+
+  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
+    flex-basis: 50%;
+  }
+
+  /* half-width column: 3% of the row ≈ source 3% + 3% of the column */
+  body.ivs-get-the-facts main > .section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding: 3% calc(var(--container-gutter) + 3%);
+  }
+}
+
 /* Theme: condition-detail (desktop 2-column layout override for IVS condition pages). */
 @media (width >= 900px) {
   body.condition-detail main > .section.flex {
