@@ -14,9 +14,7 @@
  */
 
 import { toClassName } from '../../scripts/aem.js';
-// eslint-disable-next-line import/no-cycle
-import { mergeSectionCards } from '../../scripts/scripts.js';
-import { loadFragment } from '../fragment/fragment.js';
+import { loadFragment, mergeSectionCards } from '../fragment/fragment.js';
 
 async function decoratePanel(panel) {
   // load any fragment references in this panel (nested blocks don't get
