@@ -43,7 +43,18 @@ export default function parse(element, { document }) {
   const heading = box.querySelector('h1, h2, h3, h4, h5, h6');
   if (heading) {
     const h = document.createElement(heading.tagName.toLowerCase());
-    h.append(...heading.childNodes);
+    // A non-h3 box heading authored in Futura bold (e.g. get-the-facts "More
+    // about VCFs" <h2>) would otherwise lose its weight — the span is dropped on
+    // import and a plain h2 renders in the serif. Encode it as <strong> (bold →
+    // Futura display face). The h3 panel heading is already Futura via panel.css.
+    if (heading.tagName !== 'H3' && heading.querySelector('.futura-bold')
+      && !heading.querySelector('strong, b, [style*="ffb500" i]')) {
+      const strong = document.createElement('strong');
+      strong.textContent = heading.textContent.replace(/\s+/g, ' ').trim();
+      h.append(strong);
+    } else {
+      h.append(...heading.childNodes);
+    }
     cell.push(h);
   }
 
