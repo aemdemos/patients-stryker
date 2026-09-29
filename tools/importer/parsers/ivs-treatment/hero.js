@@ -37,7 +37,8 @@
  */
 export default function parse(element, { document }) {
   const picture = element.querySelector('.imgBoxId picture');
-  const heading = element.querySelector('.largeheadline h1, h1');
+  // Prefer the authored headline over any hidden SEO duplicate <h1>.
+  const heading = element.querySelector('.largeheadline h1') || element.querySelector('h1');
   const ctaAnchor = element.querySelector('.curatedcta a[href]');
 
   const cells = [];
@@ -80,6 +81,15 @@ export default function parse(element, { document }) {
     em.append(strong);
     h1.append(em);
     contentCell.push(h1);
+  }
+  // Optional subheading (e.g. get-the-facts "Understand what's causing your
+  // pain") — a plain <h2> in the headline stack; hero banner styles it as the
+  // dark serif subheading.
+  const subheading = element.querySelector('.largeheadline h2');
+  if (subheading && subheading.textContent.trim()) {
+    const h2 = document.createElement('h2');
+    h2.textContent = subheading.textContent.replace(/\s+/g, ' ').trim();
+    contentCell.push(h2);
   }
   if (ctaAnchor && ctaAnchor.textContent.trim()) {
     const p = document.createElement('p');
