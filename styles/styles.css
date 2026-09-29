@@ -452,10 +452,6 @@ a:any-link > strong:has(u) {
   text-decoration: none;
 }
 
-a[href^="#fn-"]:any-link {
-  color: var(--color-white);
-}
-
 /* Keep bold heading reference anchors styled as citations, not CTA buttons. */
 strong > a[href^="#fn-"]:any-link,
 strong > a[href="#disclaimer"]:any-link,
@@ -472,6 +468,10 @@ a[href="#disclaimer"]:any-link > strong {
   font-weight: inherit;
   line-height: inherit;
   text-transform: none;
+}
+
+code sup a[href^="#fn-"]:any-link {
+  color: var(--color-white);
 }
 
 main > .section.compact:has(ol > li) p > strong {
