@@ -117,6 +117,7 @@
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
+  --statistics-number-size-s: 78.8px;
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
 

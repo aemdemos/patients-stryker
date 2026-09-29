@@ -30,7 +30,7 @@
 .statistics .statistics-value p {
   margin: 0;
   font-family: var(--display-font-family);
-  font-size: var(--statistics-number-size);
+  font-size: var(--statistics-number-size-s);
   font-weight: 700;
   line-height: 1;
 }
@@ -83,6 +83,15 @@
 @media (width >= 600px) {
   .statistics ul.statistics-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .statistics .statistics-value,
+  .statistics .statistics-value p {
+    margin: 0;
+    font-family: var(--display-font-family);
+    font-size: var(--statistics-number-size);
+    font-weight: 700;
+    line-height: 1;
   }
 }
 
