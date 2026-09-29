@@ -1408,14 +1408,12 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 }
 
 /* ----- Responsive (bvn-ablation) ----- */
+
 @media (width >= 600px) {
-  /* the hero block switches to its overlay layout at 600px */
   body.bvn-ablation main > .section.hero-container {
     margin-top: var(--space-nav-hero-gap);
   }
-}
-
-@media (width >= 841px) {
+  
   body.bvn-ablation main > .section > .default-content-wrapper h3 {
     font-size: var(--heading-font-size-l-scaled); /* 26.25px */
   }
@@ -1533,9 +1531,13 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   }
 }
 
-@media (width >= 1024px) {
+@media (width >= 900px) {
   body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.bvn-ablation .hero.banner > div:last-child {
+      max-width: 33%;
   }
 
   body.bvn-ablation main > .section.columns-container .columns > div {
