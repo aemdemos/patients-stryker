@@ -57,7 +57,7 @@ footer .footer .footer-links-secondary {
   /* the source constrains footer content to the left 6 of 9 columns (two-thirds),
      leaving the right third empty (reserved for future social links) */
   footer .footer .footer-links {
-    width: 66.667%;
+    width: 75%;
   }
 
   /* drop the trailing pipe at this breakpoint... */
