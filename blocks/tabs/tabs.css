@@ -15,37 +15,66 @@
   display: block;
 }
 
-.tabs-wrapper {
-  position: relative;
-}
-
 /* row is the tab component's element — collapse its box so the button and panel
    become flex items of .tabs (keeps label nested under its tab in UE) */
 .tabs .tabs-tab-row {
   display: block;
 }
 
-.tabs .tabs-rail {
+/* scroller = [prev chevron][scrollable rail][next chevron]. The chevrons are
+   laid out (not overlaid) so they never cover a tab label; JS toggles `hidden`
+   on them, so they take no space unless the rail actually overflows. */
+.tabs .tabs-scroller {
   display: flex;
-  flex-wrap: nowrap;
-  overflow: auto hidden;
-  scrollbar-gutter: stable;
-  padding-right: 18px;
+  align-items: stretch;
+  width: 100%;
 }
 
-/* mobile/tablet scroll cue — black right chevron indicating horizontal overflow */
-.tabs-wrapper::after {
+.tabs .tabs-rail {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  min-width: 0;
+  overflow: auto hidden;
+}
+
+/* horizontal scroll cue/control — black triangle pointing in its travel
+   direction, shown only while the rail has somewhere left to scroll */
+.tabs .tabs-scroll {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-none);
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.tabs .tabs-scroll[hidden] {
+  display: none;
+}
+
+.tabs .tabs-scroll::before {
   content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 10px 0 10px 12px;
   border-color: transparent transparent transparent var(--color-black);
-  pointer-events: none;
-  padding-right:15px;
+}
+
+.tabs .tabs-scroll-prev::before {
+  border-width: 10px 12px 10px 0;
+  border-color: transparent var(--color-black) transparent transparent;
+}
+
+.tabs .tabs-scroll:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
 }
 
 /* logical tablist for assistive tech: owns the tab buttons via aria-owns, so it
@@ -77,9 +106,13 @@
   cursor: pointer;
 }
 
+.tabs .tabs-tab:last-child {
+  border-right: none;
+}
+
 .tabs .tabs-tab p {
   margin: 0;
-  border-bottom: 1px solid transparent;
+  padding: 12px 0 7px;
 }
 
 .tabs .tabs-tab-first {
@@ -91,7 +124,7 @@
 }
 
 .tabs .tabs-tab[aria-selected="true"] p {
-  border-bottom-color: var(--color-accent);
+  border-bottom: 1px solid var(--color-accent);
   padding-bottom: 7px;
 }
 
@@ -118,10 +151,6 @@
 }
 
 @media (width >= 900px) {
-  .tabs-wrapper::after {
-    content: none;
-  }
-
   .tabs {
     display: flex;
     flex-wrap: wrap;

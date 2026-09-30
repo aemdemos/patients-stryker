@@ -1517,6 +1517,367 @@ body.ivs-treatment main > .section.light-gray :is(p, li) {
   line-height: var(--paragraph-line-height); /* 1.375 → 19.25px, matches reference */
 }
 
+
+/* =====================================================================
+   Theme: bvn-ablation — Basivertebral nerve ablation IVS treatment page
+   Singleton (NOT the procedure-detail template). Rules that look like the
+   procedure-detail template's are deliberate copies so template changes never
+   reach this page. Breakpoints follow the source grid: 841px (col-sm) and
+   1024px (col-md); media blocks sit at the end of this theme.
+   ===================================================================== */
+
+/* Display font: the source's "Futura for Stryker" cut (as on the mild page). */
+body.bvn-ablation {
+  --display-font-family: "Futura for Stryker", futura-for-stryker-fallback, arial, helvetica, sans-serif;
+  --display-font-family-bold: "Futura for Stryker", futura-for-stryker-fallback, "Arial Black", arial, sans-serif;
+}
+
+/* ----- Page-wide type: the source wraps its copy in a 1.25x span ----- */
+body.bvn-ablation main > .section:is(.flex, .cards-container, .columns-container) :is(p, li),
+body.bvn-ablation main .statistics .statistics-desc,
+body.bvn-ablation main .statistics .statistics-desc p {
+  font-size: var(--body-font-size-l); /* 17.5px */
+  line-height: var(--body-line-height-l-nested);
+}
+
+body.bvn-ablation main > .section > .default-content-wrapper h3 {
+  font-size: var(--heading-font-size-ml); /* 21.875px on mobile */
+  line-height: var(--heading-line-height-ml);
+}
+
+body.bvn-ablation main > .section:is(.cards-container, .columns-container) > .default-content-wrapper h3 {
+  margin-bottom: var(--space-block);
+}
+
+/* ----- Footnote markers -----
+   The "*" and "†" markers are authored as placeholder links (href="/") purely to
+   carry the symbol — they are not navigable, so they must not read as links.
+   Scoped to this theme so genuine home links elsewhere keep their underline. */
+body.bvn-ablation main a[href="/"] {
+  text-decoration: none;
+}
+
+/* ----- Hero: gap under the header ----- */
+body.bvn-ablation main > .section.hero-container {
+  margin-top: var(--space-section-xl);
+}
+
+/* ----- Intro + Benefits (flex) ----- */
+body.bvn-ablation main > .section.flex:not(.dark) {
+  margin-block: calc(var(--space-section-l) + var(--space-block)) 0; /* ~65px under the hero */
+}
+
+body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
+  padding-top: var(--space-block);
+}
+
+body.bvn-ablation main .panel.cta.wide .panel-body ul {
+  display: block;
+  list-style: disc;
+  margin: 0 0 var(--space-block);
+  padding-left: var(--list-indent);
+}
+
+body.bvn-ablation main .panel.cta.wide .panel-body ul > li {
+  list-style: disc;
+  margin-bottom: 0;
+}
+
+/* ----- Dark band: default text beside the video block (flex, dark) ----- */
+body.bvn-ablation main > .section.flex.dark {
+  margin-top: calc(var(--space-section-l) - var(--space-block)); /* ~35px */
+  padding-bottom: var(--space-section-l);
+}
+
+body.bvn-ablation main > .section.flex.dark > .default-content-wrapper {
+  padding: var(--space-inset-m) var(--container-gutter);
+}
+
+body.bvn-ablation main > .section.flex.dark > .default-content-wrapper p {
+  color: var(--color-white);
+}
+
+/* stacked: the video sits under the text with a 15px side inset */
+body.bvn-ablation main > .section.flex.dark > .video-wrapper {
+  padding: 0 var(--container-gutter);
+}
+
+/* ----- Stats + symptoms (divider section: full-width rule above) ----- */
+
+/* the divider rule sits on the band's bottom edge, then the counters */
+body.bvn-ablation main > .section.statistics-container {
+  margin-top: 0;
+  padding-top: var(--space-section);
+}
+
+body.bvn-ablation main .statistics {
+  --statistics-number-size: min(var(--statistics-number-size-fluid), var(--statistics-number-size-l));
+  --statistics-number-gap: 0.25em; /* source counter line box is ~1.6x its size */
+  --statistics-item-gap: var(--space-block);
+}
+
+body.bvn-ablation main .statistics .statistics-value,
+body.bvn-ablation main .statistics .statistics-value p {
+  line-height: var(--heading-line-height-hero);
+}
+
+/* source stacks the two counters until its 841px grid (block goes 2-up at 600) */
+body.bvn-ablation main .statistics ul.statistics-list {
+  grid-template-columns: 1fr;
+}
+
+body.bvn-ablation main > .section.statistics-container > .panel-wrapper {
+  margin-top: calc(var(--space-section) * 2);
+}
+
+body.bvn-ablation main .panel.gray .panel-body h4 {
+  font-size: var(--heading-font-size-m); /* 17.5px on mobile */
+  line-height: var(--heading-line-height-h4);
+}
+
+body.bvn-ablation main .panel.gray .panel-body li {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l-nested);
+}
+
+/* ----- How it works: 4 step cards (1-up → 2-up → 4-up) ----- */
+body.bvn-ablation main > .section.cards-container:not(:has(.cards.resources)) {
+  margin-top: var(--space-section);
+}
+
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
+  grid-template-columns: 1fr;
+  gap: 0 var(--space-section);
+}
+
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul > li img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: fill;
+}
+
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
+  margin-top: var(--space-block-l);
+}
+
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body p {
+  margin-bottom: var(--space-block);
+}
+
+/* ----- What you can expect: 3 text columns (1-up → 2-up → 3-up) ----- */
+body.bvn-ablation main > .section.columns-container {
+  margin-top: var(--space-section);
+  padding-top: var(--space-section);
+}
+
+/* the source's rich-text inset (~12px) inside each 15px-gutter column */
+body.bvn-ablation main > .section.columns-container .columns > div > div {
+  margin-bottom: var(--space-block);
+  padding: var(--space-block) var(--space-inset-m);
+}
+
+/* ----- Gold CTA: black serif question + teal Futura-bold link, centered ----- */
+body.bvn-ablation main > .section.panel-container:has(.panel.gold) {
+  margin-top: var(--space-section);
+}
+
+body.bvn-ablation main .panel.gold .panel-body {
+  margin: 0;
+  padding: 3% var(--space-block) 2%; /* source inset scales with the box: 37.5/25px at desktop */
+}
+
+/* "Tired of living in pain?" — the panel's own serif, but black and 21px */
+body.bvn-ablation main .panel.gold .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l); /* 21px */
+  font-weight: 400;
+  line-height: var(--heading-line-height);
+  color: var(--text-color);
+}
+
+/* "Let's find a doctor who can help." — Futura bold teal, plain text link:
+   undo the global strong-link → button styling */
+body.bvn-ablation main .panel.gold .panel-body strong,
+body.bvn-ablation main .panel.gold .panel-body a:any-link {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+/* the form and Resources sections sit ~30px below the section above */
+body.bvn-ablation main > .section:is(.marketo-form-container, .fragment-container) {
+  margin-top: var(--space-section);
+}
+
+/* ----- Resources: sage underline under the heading ----- */
+body.bvn-ablation main > .section.fragment-container > .default-content-wrapper h2 {
+  margin-bottom: calc(var(--space-section-l) + var(--space-section)); /* ~80px to the cards */
+  padding-bottom: var(--heading-underline-gap);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* ----- Potential risks: contained deeper-gray box (not full-bleed) ----- */
+body.bvn-ablation main > .section.light-gray {
+  margin-block: calc(var(--space-section-xl) + var(--space-section-l)) calc(var(--space-section) * 2);
+  background-color: transparent;
+}
+
+body.bvn-ablation main > .section.light-gray > .default-content-wrapper {
+  width: min(100% - 2 * var(--container-gutter), var(--container-max) - 2 * var(--container-gutter));
+  margin-inline: auto;
+  padding: 2%; /* the source's rich-text inset scales with the box */
+  background-color: var(--color-surface-dim);
+}
+
+body.bvn-ablation main > .section.light-gray :is(p, li) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* ----- Footnotes: the lead notes paragraph uses the looser 1.375 leading ----- */
+body.bvn-ablation main > .section.compact > .default-content-wrapper > p:first-child {
+  line-height: var(--paragraph-line-height);
+}
+
+/* `#disclaimer` reference markers — teal, no underline. */
+body.bvn-ablation main a[href="#disclaimer"]:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* ----- Responsive (bvn-ablation) ----- */
+
+@media (width >= 600px) {
+  body.bvn-ablation main > .section.hero-container {
+    margin-top: var(--space-nav-hero-gap);
+  }
+  
+  body.bvn-ablation main > .section > .default-content-wrapper h3 {
+    font-size: var(--heading-font-size-l-scaled); /* 26.25px */
+  }
+
+  /* desktop vertical rhythm (measured at 1280px) */
+  body.bvn-ablation main > .section:is(.cards-container, .columns-container) > .default-content-wrapper h3 {
+    margin-bottom: calc(var(--space-block) * 2);
+  }
+
+  body.bvn-ablation main > .section.flex:not(.dark) {
+    margin-top: calc(var(--space-section-l) + var(--space-section)); /* ~80px */
+  }
+
+  body.bvn-ablation main > .section.statistics-container {
+    padding-top: calc(var(--space-section-l) + var(--space-block-l)); /* ~70px */
+  }
+
+  body.bvn-ablation main > .section.statistics-container > .panel-wrapper {
+    margin-top: calc(var(--space-section-l) + var(--space-section)); /* ~80px */
+  }
+
+  body.bvn-ablation main > .section.cards-container:not(:has(.cards.resources)) {
+    margin-top: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
+    margin-top: var(--space-section);
+  }
+
+  body.bvn-ablation main > .section.columns-container {
+    margin-top: calc(var(--space-section-l) + var(--space-block));
+    padding-top: calc(var(--space-section-l) + var(--space-block));
+  }
+
+  body.bvn-ablation main > .section.panel-container:has(.panel.gold) {
+    margin-top: var(--space-section-l);
+  }
+
+  /* intro copy starts ~20px below the benefits card top (rich-text inset) */
+  body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
+    padding-top: var(--space-block-l);
+  }
+
+  /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */
+  body.bvn-ablation main > .section.flex {
+    display: flex;
+    align-items: start;
+    gap: var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  body.bvn-ablation main > .section.flex > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* the leftover empty section div (shared rule only hides it from 900px) */
+  body.bvn-ablation main > .section.flex > div:empty {
+    display: none;
+  }
+
+  body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
+    padding-top: 0;
+  }
+
+  /* dark band background stays full-bleed; its content is held to the
+     container width on wide screens (the padding resolves to 0 below it) */
+  body.bvn-ablation main > .section.flex.dark {
+    gap: 0;
+    max-width: none;
+    margin-top: calc(var(--space-section) * 2);
+    padding: 0 calc((100vw - var(--container-max)) / 2);
+  }
+
+  /* exact halves (flex-basis 0 would let the padded text column grow wider) */
+  body.bvn-ablation main > .section.flex.dark > div {
+    flex: 0 0 50%;
+    max-width: none;
+  }
+
+  body.bvn-ablation main > .section.flex.dark > .default-content-wrapper {
+    padding: var(--space-inset-m) var(--space-block) var(--space-inset-m) calc(var(--container-gutter) + var(--space-inset-m));
+  }
+
+  body.bvn-ablation main > .section.flex.dark > .video-wrapper {
+    padding: 0 var(--container-gutter);
+  }
+
+  body.bvn-ablation main .statistics {
+    --statistics-number-size: var(--statistics-number-size-l);
+  }
+
+  body.bvn-ablation main .statistics ul.statistics-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.bvn-ablation main .panel.gray .panel-body h4 {
+    font-size: var(--heading-font-size-ml); /* 21.875px */
+    line-height: var(--heading-line-height-ml);
+  }
+
+  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.bvn-ablation main > .section.columns-container .columns > div {
+    flex-flow: row wrap;
+  }
+
+  body.bvn-ablation main > .section.columns-container .columns > div > div {
+    flex: 0 0 50%;
+  }
+}
+
 /* ----- Theme: ivs-get-the-facts (layered on ivs-treatment) ----- */
 
 body.ivs-get-the-facts main :is(p, li) {
@@ -1600,6 +1961,22 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
 
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
+  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.bvn-ablation .hero.banner > div:last-child {
+      max-width: 33%;
+  }
+
+  body.bvn-ablation main > .section.columns-container .columns > div {
+    flex-wrap: nowrap;
+  }
+
+  body.bvn-ablation main > .section.columns-container .columns > div > div {
+    flex: 1 1 0;
+  }
+  
   body.ivs-get-the-facts .hero.banner h1 {
     font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* capped at 49px */
   }
