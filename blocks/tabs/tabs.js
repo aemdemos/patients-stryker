@@ -107,6 +107,49 @@ export default async function decorate(block) {
 
   tablist.setAttribute('aria-owns', buttons.map((b) => b.id).join(' '));
 
+  // horizontal scroll controls — the rail only scrolls when the tabs are too
+  // wide for it (narrow viewports); at desktop the rail wraps instead, so these
+  // stay hidden. Visibility is driven purely by measured overflow.
+  const scroller = document.createElement('div');
+  scroller.className = 'tabs-scroller';
+
+  const createScrollButton = (dir) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `tabs-scroll tabs-scroll-${dir}`;
+    btn.setAttribute('aria-label', dir === 'prev' ? 'Scroll tabs left' : 'Scroll tabs right');
+    btn.hidden = true;
+    btn.addEventListener('click', () => {
+      const step = Math.max(tabRail.clientWidth * 0.8, 120);
+      tabRail.scrollBy({ left: dir === 'prev' ? -step : step, behavior: 'smooth' });
+    });
+    return btn;
+  };
+
+  const prevButton = createScrollButton('prev');
+  const nextButton = createScrollButton('next');
+  scroller.append(prevButton, tabRail, nextButton);
+
+  // hide each chevron at the end of its travel, and both when there is no
+  // overflow at all (i.e. no horizontal scrollbar)
+  const updateScrollButtons = () => {
+    const maxScroll = tabRail.scrollWidth - tabRail.clientWidth;
+    const overflows = maxScroll > 1;
+    prevButton.hidden = !overflows || tabRail.scrollLeft <= 1;
+    nextButton.hidden = !overflows || tabRail.scrollLeft >= maxScroll - 1;
+  };
+
+  tabRail.addEventListener('scroll', updateScrollButtons, { passive: true });
+  if ('ResizeObserver' in window) {
+    // watch the rail (viewport resizes) and each tab (label reflow / font swap),
+    // since content growth changes scrollWidth without resizing the rail itself
+    const observer = new ResizeObserver(updateScrollButtons);
+    observer.observe(tabRail);
+    buttons.forEach((button) => observer.observe(button));
+  } else {
+    window.addEventListener('resize', updateScrollButtons);
+  }
+
   const activate = (index) => {
     buttons.forEach((btn, i) => {
       const selected = i === index;
@@ -132,9 +175,14 @@ export default async function decorate(block) {
     });
   });
 
-  block.prepend(tabRail);
+  block.prepend(scroller);
   block.prepend(tablist);
 
   // load fragment content for every panel
   await Promise.all(panels.map(decoratePanel));
+
+  // measure once the tabs are laid out (and again after webfonts settle, since
+  // the Futura labels are wider than the fallback and can create overflow)
+  updateScrollButtons();
+  if (document.fonts) document.fonts.ready.then(updateScrollButtons);
 }
