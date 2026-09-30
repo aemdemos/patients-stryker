@@ -26,13 +26,13 @@
 /* Each row is a flex track (overrides Marketo's float-based columns) */
 .marketo-form .mktoForm .mktoFormRow {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   gap: 0 20px;
   width: 100% !important;
 }
 
 .marketo-form .mktoForm .mktoFormCol {
-  flex: 1 1 220px;
+  flex: 1 1;
   float: none !important;
   width: auto !important;
   min-width: 0;
@@ -87,6 +87,27 @@
   border: 0;
   border-radius: 0;
   padding: 9px 12px;
+  max-width: var(--form-field-max-width);
+}
+
+/* source gives inputs/selects a 40px min-height; textareas stay auto-sized */
+.marketo-form .mktoForm input[type="text"],
+.marketo-form .mktoForm input[type="email"],
+.marketo-form .mktoForm input[type="tel"],
+.marketo-form .mktoForm input[type="number"],
+.marketo-form .mktoForm input[type="url"],
+.marketo-form .mktoForm select.mktoField {
+  min-height: var(--form-field-min-height);
+}
+
+/* source suppresses the browser focus ring (`outline:0`) and keeps the grey fill,
+   so a focused field never shows a blue ring over the red invalid border */
+.marketo-form .mktoForm input.mktoField:focus,
+.marketo-form .mktoForm select.mktoField:focus,
+.marketo-form .mktoForm textarea.mktoField:focus {
+  outline: 0;
+  border: 1px solid var(--color-surface);
+  color: var(--color-black);
 }
 
 /* checkboxes/radios — flat 18px gray square before its label (appearance:none,
@@ -198,27 +219,40 @@
   margin-block: var(--space-block);
 }
 
-/* ---- Validation / error state: white flyout tooltip with a red border/arrow
-   and a red-bordered invalid field (replaces Marketo's red-orange pill) ---- */
+/* ---- Validation / error state — mirrors the source site's `.c-marketo-form`
+   treatment: the message is taken out of Marketo's absolutely-positioned flyout
+   and flows inline under the field as a white box with a thick red border. ---- */
 
-/* the error message box — white flyout, red border, body font, no shadow */
+/* un-float Marketo's absolute tooltip so it stacks below the field it belongs to */
+.marketo-form .mktoForm .mktoError {
+  position: static;
+  float: left;
+  clear: both;
+  width: 100% !important;
+  max-width: var(--form-field-max-width);
+}
+
+/* source hides the pointer arrow entirely (the box is inline, not a flyout) */
+.marketo-form .mktoForm .mktoError .mktoErrorArrowWrap {
+  display: none;
+}
+
+/* the error message box — white fill, black text, 10px red border, no shadow */
 .marketo-form .mktoForm .mktoError .mktoErrorMsg {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   font-weight: 400;
   color: var(--color-black);
   background: var(--color-white);
-  border: 2px solid var(--color-required);
+  border: var(--space-block-s) solid var(--color-error);
   border-radius: 0;
-  padding: 8px 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* keep the 10px border + 30px inset inside the field width */
+  padding: var(--space-block-s) var(--space-inset-l);
+  margin: var(--space-block-xs) 0 0;
   box-shadow: none !important; /* kill Marketo's drop shadow + inset highlight */
   text-shadow: none;
-}
-
-/* the little pointer arrow — match the red border */
-.marketo-form .mktoForm .mktoError .mktoErrorArrow {
-  background-color: var(--color-white);
-  border-color: var(--color-required);
 }
 
 /* the invalid field itself — red border, keep the gray fill */
@@ -226,7 +260,17 @@
 .marketo-form .mktoForm input.mktoInvalid,
 .marketo-form .mktoForm select.mktoInvalid,
 .marketo-form .mktoForm textarea.mktoInvalid {
-  border: 2px solid var(--color-required) !important;
+  border: 2px solid var(--color-error) !important;
+}
+
+@media (width >= 600px) {
+  .marketo-form .mktoForm .mktoFormCol {
+    flex: 1 1 220px;
+  }
+  
+  .marketo-form .mktoForm .mktoFormRow {
+    flex-direction: row;
+  }
 }
 
 /* stylelint-enable selector-class-pattern */

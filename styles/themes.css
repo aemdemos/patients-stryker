@@ -1342,6 +1342,14 @@ body.bvn-ablation main > .section:is(.cards-container, .columns-container) > .de
   margin-bottom: var(--space-block);
 }
 
+/* ----- Footnote markers -----
+   The "*" and "†" markers are authored as placeholder links (href="/") purely to
+   carry the symbol — they are not navigable, so they must not read as links.
+   Scoped to this theme so genuine home links elsewhere keep their underline. */
+body.bvn-ablation main a[href="/"] {
+  text-decoration: none;
+}
+
 /* ----- Hero: gap under the header ----- */
 body.bvn-ablation main > .section.hero-container {
   margin-top: var(--space-section-xl);
