@@ -7,7 +7,6 @@ body.procedure-detail main > .section.hero-container {
   margin-top: var(--space-section-xl);
 }
 
-
 /* Intro + Benefits flex section spacing. */
 body.procedure-detail main > .section.flex {
   margin-top: 80px;
@@ -90,10 +89,17 @@ body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resourc
 }
 
 /* "Resources" heading: sage underline + gap below. */
-body.procedure-detail main > .section > .default-content-wrapper h2 {
+ main > .section > .default-content-wrapper h2 {
   margin-bottom: 75px;
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* EW fix: if author underlines h2 text (<u>), remove text underline so
+   the visual underline is only the h2 border-bottom. */
+ main > .section > .default-content-wrapper h2 > u {
+  text-decoration: none;
+  color: inherit;
 }
 
 body.procedure-detail main > .section.procedure-panel-section {

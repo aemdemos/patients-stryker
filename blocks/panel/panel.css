@@ -298,10 +298,6 @@
   text-align: center;
 }
 
-body.procedure-detail main > .section.panel-container:has(.panel.gold) {
-  margin-top: 75px;
-}
-
 /* ---- gray variant  */
 .panel.gray .panel-body {
   padding: 2%;
