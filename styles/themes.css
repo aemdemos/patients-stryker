@@ -605,17 +605,17 @@ body.discography a:any-link {
     text-decoration: none;
 }
 
-/* default-content typography — target the section's direct content div (`> div`)
-   rather than `.default-content-wrapper`, so these also match in the Universal
-   Editor (whose section content is not always wrapped in a
-   `.default-content-wrapper`). The `> div >` chain still excludes block copy
-   (panel/cards paragraphs nest deeper than one div below the section). */
-body.discography main .section.flex > div > h3 {
+/* default-content typography — match the content wrapper with a descendant
+   combinator so the copy is styled wherever it sits inside the wrapper. Block
+   copy is excluded because blocks live in their own `*-wrapper` divs, never in
+   `.default-content-wrapper`; `:not(li p)` keeps list items on their own
+   rhythm rather than picking up paragraph styling. */
+body.discography main .section.flex > .default-content-wrapper h3 {
   font-size: var(--headline-font-size);
   line-height: var(--body-line-height-l);
 }
 
-body.discography main .section:not(.compact) > div > p {
+body.discography main .section:not(.compact) > .default-content-wrapper p:not(li p) {
   font-size: var(--procedure-body-copy-size);
   line-height: 1.1;
 }
@@ -675,7 +675,7 @@ body.discography main .section.cards-container + .section.light-gray > div:not(:
   line-height: var(--procedure-body-copy-line-height);
 }
 
-body.discography main .section.cards-container > div > h2 {
+body.discography main .section.cards-container > .default-content-wrapper h2 {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
 }
@@ -765,7 +765,7 @@ body.discography main .panel.gold .panel-body p a:any-link {
    The source sets the fine-print disclaimer paragraphs at line-height 1.375;
    only the numbered citation list keeps the tighter 1.2. Target the direct
    paragraphs so the <ol> citations retain their compact rhythm. */
-body.discography main > .section.compact > div > p {
+body.discography main > .section.compact > .default-content-wrapper p:not(li p) {
   line-height: var(--paragraph-line-height);
 }
 
