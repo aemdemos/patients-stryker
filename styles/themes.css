@@ -929,6 +929,8 @@ body.patient-information main > .section > .default-content-wrapper h2 {
   font-weight: 500;
   margin-top: 4%;
   margin-bottom: 4%;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 /* ── Patient-guide cards (cards brochure-cta) ─────────────────────────────────
