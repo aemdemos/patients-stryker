@@ -47,6 +47,11 @@ body.legal main .section h2 {
   margin-bottom: var(--space-block);
 }
 
+body.legal main > .section > .default-content-wrapper h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 /* bold links in legal body use the display (Futura) font family */
 body.legal strong a:any-link {
   font-family: var(--display-font-family);
