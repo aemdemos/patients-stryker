@@ -95,10 +95,11 @@
       plugins: {
         blocks: {
           encodeImages: false,
+          // one preview per site breakpoint (600 / 900 / 1200)
           viewPorts: [
-            { width: '100%', label: 'Desktop', icon: 'device-desktop', default: true },
-            { width: '768px', label: 'Tablet', icon: 'device-tablet' },
-            { width: '390px', label: 'Mobile', icon: 'device-phone' },
+            { width: '1200px', label: 'Desktop', icon: 'device-desktop', default: true },
+            { width: '900px', label: 'Tablet', icon: 'device-tablet' },
+            { width: '600px', label: 'Mobile', icon: 'device-phone' },
           ],
         },
       },
