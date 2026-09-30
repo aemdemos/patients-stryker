@@ -12,7 +12,6 @@ body.legal main .last-modified {
 
 /* Legal page title: style the first-section h1 like the source subheading,
   including the larger 45px spacing and sage underline. */
-/* stylelint-disable-next-line no-descending-specificity */
 body.legal main .section:first-of-type h1:first-child {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l);
@@ -38,7 +37,6 @@ body.legal .border-bottom-gold {
 
 /* Legal gold sub-section labels: style promoted h2s to match source label
   typography and spacing. */
-/* stylelint-disable-next-line no-descending-specificity */
 body.legal main .section h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-m);
@@ -49,13 +47,17 @@ body.legal main .section h2 {
   margin-bottom: var(--space-block);
 }
 
+body.legal main > .section > .default-content-wrapper h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 /* bold links in legal body use the display (Futura) font family */
 body.legal strong a:any-link {
   font-family: var(--display-font-family);
 }
 
 /* Legal content links are plain teal text without underline. */
-/* stylelint-disable-next-line no-descending-specificity */
 body.legal main a:any-link {
   text-decoration: none;
 }
@@ -71,4 +73,12 @@ body.legal a.link-strong:any-link {
 
 body.legal strong {
   font-family: var(--body-font-family);
+}
+
+/* DA-authored bold+underline labels (e.g. Effective Date) should keep display
+   typography without showing an underline in publish. */
+body.legal :is(strong, b) > u {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-decoration: none;
 }
