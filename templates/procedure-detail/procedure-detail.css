@@ -7,17 +7,6 @@ body.procedure-detail main > .section.hero-container {
   margin-top: var(--space-section-xl);
 }
 
-/* Hero banner: pin copy to lower-left (overlay only exists ≥600px). */
-@media (width >= 600px) {
-  body.procedure-detail main > .section .hero.banner > div:last-child {
-    align-self: end;
-    padding: 20px 40px;
-  }
-
-  body.procedure-detail main > .section.hero-container {
-    margin-top: var(--space-nav-hero-gap);
-  }
-}
 
 /* Intro + Benefits flex section spacing. */
 body.procedure-detail main > .section.flex {
@@ -132,6 +121,15 @@ body.procedure-detail main > .section.light-gray {
 @media (width >= 600px) {
   body.procedure-detail main > .section.light-gray {
     margin-top: var(--space-section);
+  }
+
+    body.procedure-detail main > .section .hero.banner > div:last-child {
+    align-self: end;
+    padding: 20px 40px;
+  }
+
+  body.procedure-detail main > .section.hero-container {
+    margin-top: var(--space-nav-hero-gap);
   }
 }
 
