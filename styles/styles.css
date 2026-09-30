@@ -573,6 +573,19 @@ a:any-link > strong:has(u) u {
   text-transform: none;
 }
 
+strong > a:any-link:has(u) u::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: calc(var(--space-block) * 0.4);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+
+
 /* EW canvas keeps the authored <em><strong><a> markup (decorateButtons doesn't
    run there). decorateButtons turns an em+strong CTA into an accent button
    (a.button.accent); the strong>a fallback above would otherwise paint it primary
