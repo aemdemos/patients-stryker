@@ -182,7 +182,7 @@ body.procedure-detail main .panel.dark .panel-body p {
 }
 
 body.procedure-detail main .panel.dark .panel-body p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 /* Benefits card (cta, wide) — disc bullets, 17.5px. */
@@ -196,6 +196,17 @@ body.procedure-detail main .panel.cta.wide .panel-body ul {
 body.procedure-detail main .panel.cta.wide .panel-body ul > li {
   list-style: disc;
   margin-bottom: 0;
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
+/* EW authoring canvas wraps each <li>'s inline content in a <p>, which then
+   picks up the .panel.wide .panel-body p rule (21px, serif heading font) instead
+   of the bullet styling above — the benefits list renders oversized in EW. Match
+   the bullet <p> back to the <li>. No-op on the live site (no such <p> exists). */
+body.procedure-detail main .panel.cta.wide .panel-body ul > li > p {
+  margin: 0;
+  font-family: var(--body-font-family);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-cta-body-line-height);
 }
