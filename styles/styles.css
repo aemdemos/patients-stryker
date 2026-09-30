@@ -562,7 +562,7 @@ a:any-link > strong:has(u) u {
   background-color: transparent;
   color: var(--link-color);
   font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
+  font-size: var(--body-font-size-m);
   font-weight: 700;
   text-transform: none;
 }
