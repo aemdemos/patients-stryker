@@ -958,6 +958,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   font-weight: 700;
   line-height: var(--heading-line-height);
   text-align: center;
+    border-bottom: none;
 }
 
 /* "How Zip works" section heading — Futura bold at 35px on the source (its
@@ -1028,6 +1029,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 .zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2,
 .zip-skin-closure .section.richtext-container.columns-container:not(.full-bleed) h2 {
   padding-top: 80px;
+  border-bottom: none;
 }
 
 body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
