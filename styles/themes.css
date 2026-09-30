@@ -1098,6 +1098,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   font-weight: 700;
 }
 
+body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
+  display: none;
+}
+
  body.condition-detail .section.dark:has(.columns-50-50) {
   padding-block: var(--space-section);
  }
@@ -1108,6 +1112,9 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   padding-bottom: 2%;
  }
 
+ body.procedure-detail main > .section.panel-container:has(.panel.gold) {
+  margin-top: 75px;
+}
 
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
@@ -1174,6 +1181,10 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
   }
+
+  body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
+  display: block;
+}
 }
 
 /* ----- Desktop (>=900px) ----- */
