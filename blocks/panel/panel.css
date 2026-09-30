@@ -206,7 +206,7 @@
    body font/size, not the larger wide-panel serif paragraph style (underline stays). */
 .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
   font-family: var(--body-font-family);
-  font-size: var(--panel-cta-body-size);
+  font-size: var(--panel-heading-size-s);
 }
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
