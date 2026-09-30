@@ -131,7 +131,9 @@
   margin-top: 10px;
 }
 
-.panel.colored-border a:any-link {
+/* panel body links are plain teal text, no underline (matches source) */
+.panel.colored-border a:any-link,
+.panel.light a:any-link {
   text-decoration: none;
 }
 
@@ -405,7 +407,7 @@
 
   .panel.wide .panel-body p {
     font-size: var(--panel-body-size-s);
-    font-family: var(--heading-font-family);
+    font-family: var(--body-font-family);
   }
 } 
 

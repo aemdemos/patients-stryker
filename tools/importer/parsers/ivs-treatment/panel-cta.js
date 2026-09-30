@@ -36,10 +36,15 @@ export default function parse(element, { document }) {
     p.append(document.createElement('br'));
   }
   if (anchor) {
+    // Bold + underline is the authoring convention for the source's inline bold
+    // teal link (<strong><a><u>…</u></a></strong>): panel.css styles it as a flat
+    // inline Futura link. Bold alone would fall through to the button style.
     const strong = document.createElement('strong');
     const a = document.createElement('a');
+    const u = document.createElement('u');
     a.setAttribute('href', anchor.getAttribute('href'));
-    a.textContent = linkText;
+    u.textContent = linkText;
+    a.append(u);
     strong.append(a);
     p.append(strong);
   }
