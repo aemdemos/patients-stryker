@@ -45,7 +45,8 @@
   --color-text-muted: #555;
   --color-disabled-bg: #b2b4ae;
   --color-disabled-text: #545857;
-  --color-required: #bf0000; /* form required asterisk / error */
+  --color-required: #bf0000; /* form required asterisk */
+  --color-error: #b83c27; /* form validation error border (source .mktoErrorMsg / .mktoInvalid) */
   --overlay-scrim: rgb(0 0 0 / 50%);
   --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
 
@@ -96,6 +97,7 @@
      headings 1.06, h4 20.125px/17.5px (1.15) */
   --body-line-height: 1.4286;
   --body-line-height-l: 1.15;       /* 20.125px / 17.5px */
+  --body-line-height-l-nested: 1.22; /* measured: a 1.25x span inside a 14px/20px source paragraph renders ~21.3px lines */
   --paragraph-line-height: 1.375;
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
@@ -103,9 +105,17 @@
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
+  --space-block-xs: 5px;
   --space-block-s: 10px;
   --space-block: 15px;
   --space-block-l: 20px; /* measured: hero banner card margin (.pDiv.bg-shadow) */
+  --space-inset-m: 25px; /* measured: source rich-text inset at desktop (dark band copy, text columns, gold CTA) */
+  --space-inset-l: 30px; /* measured: source form error message horizontal inset */
+
+  /* form fields — measured from source `.c-marketo-form .form-control` */
+  --form-field-max-width: 420px;
+  --form-field-min-height: 40px;
+  --heading-underline-gap: 7px; /* measured: h2 text → 1px underline (component-subheading) */
   --list-indent: 17px;
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
@@ -119,6 +129,8 @@
   --statistics-number-size: 92px;
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
+  --statistics-number-size-fluid: 13vw; /* source counter (fontsize-6-5-vw) on mobile */
+  --statistics-number-size-l: 90px; /* counter size from 841px (bvn-ablation) */
 
   /* icon-list block — measured from source ("Stroke facts") */
   --icon-list-icon-width: 165px;     /* icon rendered width */
