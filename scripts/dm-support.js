@@ -132,36 +132,24 @@ function appendParam(src, key, value) {
 }
 
 /**
- * Final delivery URL for a Scene7 / classic DM image: the authored URL unchanged
- * so the asset renders exactly as linked (no forced resizing/format). The one
- * exception: a transparent asset (a `$..._png$` preset or an explicit `fmt=png`)
- * gets `fmt=png-alpha` appended — Scene7's default delivery format otherwise
- * flattens transparency to a white background.
- *
- * Exported so callers that need the URL before the <picture> exists (e.g. the
- * hero LCP preload in scripts.js) emit byte-identical URLs and don't cause a
- * second download.
- * @param {string} src the authored image URL
- * @returns {string} the delivery URL
+ * Build a <picture> for a Scene7 / classic DM URL, using the authored URL
+ * unchanged so the asset renders exactly as linked (no forced resizing/format).
+ * The one exception: a transparent asset (a `$..._png$` preset or an explicit
+ * `fmt=png`) gets `fmt=png-alpha` appended — Scene7's default delivery format
+ * otherwise flattens transparency to a white background.
  */
-export function scene7Src(src) {
+function renderScene7(src, alt, eager) {
   // decode first so a percent-encoded preset ($..._png$ arrives as %24..._png%24
   // from a href) is matched as well as the literal form and an explicit fmt=png
   let decoded = src;
   try { decoded = decodeURIComponent(src); } catch { /* leave as-is on bad escape */ }
   const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decoded);
-  return png ? appendParam(src, 'fmt', 'png-alpha') : src;
-}
-
-/**
- * Build a <picture> for a Scene7 / classic DM URL.
- */
-function renderScene7(src, alt, eager) {
+  const finalSrc = png ? appendParam(src, 'fmt', 'png-alpha') : src;
   const picture = document.createElement('picture');
   const img = document.createElement('img');
   img.loading = eager ? 'eager' : 'lazy';
   img.alt = alt;
-  img.src = scene7Src(src);
+  img.src = finalSrc;
   picture.append(img);
   return picture;
 }

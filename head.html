@@ -4,12 +4,6 @@
   move-to-http-header="true"
 />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!-- hero/LCP imagery is served from Dynamic Media, so warm the connection at
-     parse time: the image URLs only become fetchable once scripts.js has
-     rewritten the authored links, and paying DNS + TCP + TLS at that point costs
-     several hundred ms of LCP on mobile. No `crossorigin` — plain <img> fetches
-     are not CORS requests and would not reuse a CORS-mode connection. -->
-<link rel="preconnect" href="https://media-assets.stryker.com"/>
 <script nonce="aem" src="/scripts/aem.js" type="module"></script>
 <script nonce="aem" src="/scripts/scripts.js" type="module"></script>
 <link rel="stylesheet" href="/styles/styles.css"/>
