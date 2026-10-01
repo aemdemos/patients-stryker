@@ -210,18 +210,26 @@
   align-self: stretch;
 }
 
-/* label — the text cell's first paragraph: enlarged, gold initial */
-.icon-list.label .icon-list-text > p:first-child {
+/* label = the text cell's first item, caption = every later one. Each rule
+   matches the paragraph either as that item itself or nested inside it, so the
+   split holds whether paragraphs sit directly in the cell or are individually
+   wrapped (as in the authoring canvas). */
+
+/* label — enlarged, gold initial */
+.icon-list.label .icon-list-text > p:first-child,
+.icon-list.label .icon-list-text > :first-child p {
   font-size: var(--icon-list-label-size);
   line-height: 1.06;
 }
 
-.icon-list.label .icon-list-text > p:first-child::first-letter {
+.icon-list.label .icon-list-text > p:first-child::first-letter,
+.icon-list.label .icon-list-text > :first-child p::first-letter {
   color: var(--color-accent);
 }
 
-/* caption — every later paragraph: lighter, smaller serif */
-.icon-list.label .icon-list-text > p:not(:first-child) {
+/* caption — lighter, smaller serif */
+.icon-list.label .icon-list-text > p:not(:first-child),
+.icon-list.label .icon-list-text > :not(:first-child) p {
   margin-top: var(--icon-list-label-caption-gap);
   font-family: var(--heading-font-family);
   font-size: var(--icon-list-label-caption-size);
@@ -239,25 +247,6 @@
 .icon-list-container:has(.icon-list.label) > div:not(.icon-list-wrapper) p strong {
   font-family: var(--display-font-family-bold);
   font-weight: 700;
-}
-
-/* EW canvas: each paragraph sits in its own .prosemirror-editor wrapper, so
-   every <p> is a :first-child — key the label/caption split on the wrapper */
-.icon-list.label .icon-list-text > .prosemirror-editor:not(:first-child) p {
-  margin-top: var(--icon-list-label-caption-gap);
-  font-family: var(--heading-font-family);
-  font-size: var(--icon-list-label-caption-size);
-  font-weight: 400;
-  line-height: 1.15;
-}
-
-.icon-list.label .icon-list-text > .prosemirror-editor:first-child p:first-child {
-  font-size: var(--icon-list-label-size);
-  line-height: 1.06;
-}
-
-.icon-list.label .icon-list-text > .prosemirror-editor:first-child p:first-child::first-letter {
-  color: var(--color-accent);
 }
 
 /* heading → intro-copy gap: fixed 49px (label has intro text below the heading) */
@@ -286,8 +275,16 @@
   margin-bottom: var(--icon-list-tile-title-gap);
 }
 
+/* intro vs lead-in: the lead-in is the default content's last item, the intro
+   any earlier paragraph. Each rule matches the paragraph either as that item
+   itself or nested inside it, so it holds whether the content sits directly in
+   the wrapper or each item is individually wrapped (as in the authoring canvas). */
+
+/* intro paragraph — serif, 49px above the lead-in */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > div:not(.icon-list-wrapper) p:first-of-type {
+  > div:not(.icon-list-wrapper) > p:not(:last-child),
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > div:not(.icon-list-wrapper) > :not(:last-child) p {
   margin-bottom: var(--icon-list-tile-intro-gap);
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
@@ -296,7 +293,9 @@
 /* lead-in line ("These risk factors include the following:") — Futura-bold black
    at 17.5px, 49px above the grid. */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > div:not(.icon-list-wrapper) p:last-child {
+  > div:not(.icon-list-wrapper) > p:last-child,
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > div:not(.icon-list-wrapper) > :last-child p {
   margin-bottom: var(--icon-list-tile-intro-gap);
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-l);

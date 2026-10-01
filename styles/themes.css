@@ -206,9 +206,15 @@ body.campaign-landing main .section .columns h2 {
   color: var(--color-accent);
 }
 
-/* Tabs section heading ("Hear from stroke survivors") → centred, as source. */
+/* Tabs section heading ("Hear from stroke survivors") → centred gold Futura bold,
+   as source. Styled on the heading itself (like the other section headings) so it
+   doesn't depend on authored bold+italic markup, which EW editing can drop. */
 body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
   margin-bottom: var(--space-section);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  color: var(--color-accent);
   text-align: center;
 }
 
@@ -228,8 +234,10 @@ body.campaign-landing main .section .columns li {
   font: var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
 }
 
-/* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold. */
-body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) p:last-child {
+/* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold.
+   (the last item, matched directly or nested — see icon-list.css) */
+body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > p:last-child,
+body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > :last-child p {
   font: 400 var(--body-font-size-m) var(--body-font-family);
 }
 
@@ -275,7 +283,8 @@ body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .sec
 }
 
 /* Risk-factors lead-in keeps the source's Futura bold at 17.5px. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) p:last-child {
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > p:last-child,
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > :last-child p {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
   font-weight: 700;
