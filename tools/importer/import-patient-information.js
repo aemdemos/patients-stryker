@@ -17,14 +17,15 @@ const transformers = [
 //   - intro line ............... default content     — <h2>
 //   - patient-guide cards ...... cards (brochure-cta)— portrait covers + PDF link + gold CTA
 //   - gold CTA band ............ default content in a `gold, full-bleed` section
-//   - resources footer ......... columns          — 3-column link band in a `light-gray` section
+//   - resources footer ......... columns (related-links) — 3-column link band in a
+//                                `light-gray, full-bleed` section (inline, no fragment)
 //   - disclaimer ............... default content in a `compact` section
 //
 // Styling ships via the `patient-information` theme (styles/themes.css, scoped
 // under body.patient-information) — see meta.theme below.
 const PAGE_TEMPLATE = {
   name: 'patient-information',
-  description: 'Neurovascular Patient Information page (standalone): gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only; styled via the patient-information theme.',
+  description: 'Neurovascular Patient Information page (standalone): gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns related-links) on a light-gray, full-bleed band, and a trademark/disclaimer block. Reuses existing blocks only; styled via the patient-information theme.',
   urls: [
     'https://patients.stryker.com/us/en/stroke-awareness/patient-information.html',
   ],
@@ -93,14 +94,59 @@ function heading(doc, level, ...nodes) {
   return h;
 }
 
-/** A `Fragment` block table referencing the fragment path (href = text = path).
- * Matches the project's authored convention (see /us/en/ivs/resources). The
- * fragment block fetches `${path}.plain.html` and inlines its decorated content. */
-function fragmentBlock(doc, path) {
-  return WebImporter.DOMUtils.createTable([
-    ['Fragment'],
-    [plainLink(doc, path, path)],
-  ], doc);
+/**
+ * Build the 3-column resources band as a `columns (related-links)` block. The
+ * variant carries ALL of the band's display (gold Futura labels, CTA links with
+ * chevron, plain regional links, 3-up/2-up layout); the gray full-bleed band comes
+ * from the section's `light-gray, full-bleed` metadata, not from the block.
+ * Each column keeps its gold label, supporting copy and links, moved from the source.
+ */
+function buildResourcesColumns(doc, source) {
+  const cols = [...source.querySelectorAll('.bg-light-gray .cols3 .col-md-4')];
+  const cells = cols.map((col) => {
+    const cell = doc.createElement('div');
+    // Move every authored paragraph across (labels, copy, links), skipping the
+    // empty `&nbsp;` spacer paragraphs the source uses for vertical rhythm.
+    [...col.querySelectorAll('.text .c-rich-text-editor > div')].forEach((rt) => {
+      [...rt.children].forEach((node) => {
+        const txt = node.textContent.replace(/ /g, ' ').trim();
+        if (!txt && !node.querySelector('a, img, picture')) return; // drop spacers
+        cell.append(node);
+      });
+    });
+    // Column labels: the cleanup transformer encodes the source's gold labels as a
+    // bold+italic paragraph. Author them as real <h3><em><strong> headings — the
+    // related-links variant styles `h3` (gold Futura 24.5px) and they're proper
+    // headings for the column, not body copy.
+    // The label may sit inside source wrapper spans (e.g. a font-size span), so
+    // match any bold+italic descendant that makes up the paragraph's whole text.
+    [...cell.children].forEach((node) => {
+      if (node.tagName !== 'P' || node.querySelector('a')) return;
+      const label = node.querySelector('strong > em, em > strong');
+      const text = node.textContent.trim();
+      if (!label || !text || label.textContent.trim() !== text) return;
+      const em = doc.createElement('em');
+      const strong = doc.createElement('strong');
+      strong.textContent = text;
+      em.append(strong);
+      node.replaceWith(heading(doc, 'h3', em));
+    });
+    // CTA links ("Spread the word" / "Learn More") — author as UNDERLINE-ONLY
+    // (<a><u>…</u></a>). The related-links variant styles the underline-authored
+    // CTA as the flat Futura-bold uppercase teal link + chevron. The CTA is NOT
+    // wrapped in <strong>: a bold link would trip decorateButtons (strong+u →
+    // .link-strong strips the <u>; bold alone → a filled button). Underline-only
+    // makes decorateButtons bail, so the <u> survives. Regional links get no <u>.
+    [...cell.querySelectorAll('a')].forEach((a) => {
+      const isCta = a.closest('.standalone-link') || a.querySelector('.standalone-link');
+      if (!isCta || a.querySelector('u')) return;
+      const u = doc.createElement('u');
+      while (a.firstChild) u.appendChild(a.firstChild);
+      a.appendChild(u);
+    });
+    return cell;
+  });
+  return WebImporter.DOMUtils.createTable([['Columns (related-links)'], cells], doc);
 }
 
 /**
@@ -246,11 +292,11 @@ export default {
     main.append(sectionMetadata(document, 'gold, full-bleed'));
     main.append(document.createElement('hr'));
 
-    // --- Section 4: 3-column resources footer (embedded as a FRAGMENT) --------
-    // The columns band is authored once in /fragments/patient-information-resources
-    // and embedded here via a Fragment block so it can be reused across pages. The
-    // fragment carries its own `light-gray, full-bleed` section metadata.
-    main.append(fragmentBlock(document, '/fragments/patient-information-resources'));
+    // --- Section 4: 3-column resources footer (inline columns related-links) ---
+    // Authored inline on the page (no fragment). The block variant owns the band's
+    // link/CTA display; the section metadata owns the gray full-bleed band.
+    main.append(buildResourcesColumns(document, source));
+    main.append(sectionMetadata(document, 'light-gray, full-bleed'));
     main.append(document.createElement('hr'));
 
     // --- Section 5: trademark / disclaimer (compact) --------------------------
