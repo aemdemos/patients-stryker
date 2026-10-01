@@ -207,15 +207,22 @@ body.campaign-landing main .section .columns h2 {
 }
 
 /* Tabs section heading ("Hear from stroke survivors") → centred gold Futura bold,
-   as source. Styled on the heading itself (like the other section headings) so it
-   doesn't depend on authored bold+italic markup, which EW editing can drop. */
+   same size as the other section headings: 26.25px below 600px, 31.5px above
+   (source: 1.5em span on the h3). Styled on the heading itself so it doesn't
+   depend on authored bold+italic markup, which EW editing can drop. */
 body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
   margin-bottom: var(--space-section);
   font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
+  font-size: var(--icon-list-title-size-s);
   font-weight: 700;
   color: var(--color-accent);
   text-align: center;
+}
+
+@media (width >= 600px) {
+  body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
+    font-size: var(--icon-list-title-size);
+  }
 }
 
 body.campaign-landing > main > div.serif.light-gray.section.columns-container {

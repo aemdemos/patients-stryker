@@ -106,17 +106,16 @@
   cursor: pointer;
 }
 
+/* last tab: no divider and no trailing padding (source: 0 0 0 30px), so the
+   tab bar is only as wide as its labels need */
 .tabs .tabs-tab:last-child {
+  padding-right: 0;
   border-right: none;
 }
 
 .tabs .tabs-tab p {
   margin: 0;
   padding: 12px 0 7px;
-}
-
-.tabs .tabs-tab-first {
-  padding-left: 0;
 }
 
 .tabs .tabs-tab[aria-selected="true"] {
