@@ -289,6 +289,65 @@ function decorateSectionMetadata(main) {
   });
 }
 
+// section styles that lay out each tab's panel rather than the whole section
+const TAB_PANEL_STYLES = ['side-by-side'];
+
+/**
+ * Turns `tabbed` sections into a tabs block. Each heading of the section's
+ * deepest heading level is a tab title; the content after it (text, blocks)
+ * up to the next title is that tab's panel. Content before the first title
+ * stays above the tabs. Panels are handed to the tabs block as inline sections
+ * carrying the section's panel layout styles (e.g. side-by-side); all other
+ * section styles (e.g. backgrounds) stay on the section.
+ * @param {Element} main The container element
+ */
+function buildTabbedSections(main) {
+  main.querySelectorAll(':scope > .section.tabbed').forEach((section) => {
+    // unwrap default content and (still undecorated) blocks, in authored order
+    const nodes = [...section.children].flatMap((wrapper) => [...wrapper.children]);
+    const headings = nodes.filter((node) => /^H[1-6]$/.test(node.tagName));
+    if (!headings.length) return;
+    const level = Math.max(...headings.map((h) => Number(h.tagName[1])));
+
+    const intro = [];
+    const tabs = [];
+    nodes.forEach((node) => {
+      if (node.tagName === `H${level}`) {
+        tabs.push({ title: node, content: [] });
+      } else if (tabs.length) {
+        tabs[tabs.length - 1].content.push(node);
+      } else {
+        intro.push(node);
+      }
+    });
+
+    const panelStyles = TAB_PANEL_STYLES.filter((cls) => section.classList.contains(cls));
+    section.classList.remove(...panelStyles);
+
+    const rows = tabs.map(({ title, content }) => {
+      const label = document.createElement('p');
+      label.textContent = title.textContent.trim();
+      const panel = document.createElement('div');
+      panel.dataset.tabsSection = '';
+      panel.classList.add(...panelStyles);
+      panel.append(...content);
+      return [{ elems: [label] }, { elems: [panel] }];
+    });
+
+    const wrappers = [];
+    if (intro.length) {
+      const introWrapper = document.createElement('div');
+      introWrapper.className = 'default-content-wrapper';
+      introWrapper.append(...intro);
+      wrappers.push(introWrapper);
+    }
+    const tabsWrapper = document.createElement('div');
+    tabsWrapper.append(buildBlock('tabs', rows));
+    wrappers.push(tabsWrapper);
+    section.replaceChildren(...wrappers);
+  });
+}
+
 /* Normalizes a pathname for comparison against query-index paths */
 function normalizePath(path) {
   const clean = path.replace(/\.html$/, '').replace(/\/+$/, '');
@@ -372,6 +431,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateSectionMetadata(main);
+  buildTabbedSections(main);
   decorateBlocks(main);
   decorateButtons(main);
   decorateUnderlinedHeadings(main);

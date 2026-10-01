@@ -162,6 +162,9 @@
   --icon-list-label-icon-gap: 0px;      /* icon → label gap (source: 0; visual space is baked into the PNG) */
   --icon-list-label-title-gap: 49px;    /* heading → intro-copy gap (source: 15px margin + spacer paragraph ≈ 49px) */
 
+  /* tabs block — side-by-side panel (copy + video), measured from source ("Hear from stroke survivors") */
+  --tabs-panel-copy-padding: 36px 36px 18px; /* copy above the video on mobile */
+
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
   --panel-cta-heading-size: 26px; /* cta variant h3 */
