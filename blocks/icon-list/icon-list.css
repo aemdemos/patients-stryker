@@ -210,18 +210,18 @@
   align-self: stretch;
 }
 
-/* label — enlarged, gold initial */
-.icon-list.label .icon-list-text p:first-child {
+/* label — the text cell's first paragraph: enlarged, gold initial */
+.icon-list.label .icon-list-text > p:first-child {
   font-size: var(--icon-list-label-size);
   line-height: 1.06;
 }
 
-.icon-list.label .icon-list-text p:first-child::first-letter {
+.icon-list.label .icon-list-text > p:first-child::first-letter {
   color: var(--color-accent);
 }
 
-/* caption — lighter, smaller serif */
-.icon-list.label .icon-list-text p:not(:first-child) {
+/* caption — every later paragraph: lighter, smaller serif */
+.icon-list.label .icon-list-text > p:not(:first-child) {
   margin-top: var(--icon-list-label-caption-gap);
   font-family: var(--heading-font-family);
   font-size: var(--icon-list-label-caption-size);
@@ -239,6 +239,25 @@
 .icon-list-container:has(.icon-list.label) > div:not(.icon-list-wrapper) p strong {
   font-family: var(--display-font-family-bold);
   font-weight: 700;
+}
+
+/* EW canvas: each paragraph sits in its own .prosemirror-editor wrapper, so
+   every <p> is a :first-child — key the label/caption split on the wrapper */
+.icon-list.label .icon-list-text > .prosemirror-editor:not(:first-child) p {
+  margin-top: var(--icon-list-label-caption-gap);
+  font-family: var(--heading-font-family);
+  font-size: var(--icon-list-label-caption-size);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.icon-list.label .icon-list-text > .prosemirror-editor:first-child p:first-child {
+  font-size: var(--icon-list-label-size);
+  line-height: 1.06;
+}
+
+.icon-list.label .icon-list-text > .prosemirror-editor:first-child p:first-child::first-letter {
+  color: var(--color-accent);
 }
 
 /* heading → intro-copy gap: fixed 49px (label has intro text below the heading) */
