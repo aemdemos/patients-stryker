@@ -289,13 +289,16 @@ function decorateSectionMetadata(main) {
   });
 }
 
+// section styles that lay out each tab's panel rather than the whole section
+const TAB_PANEL_STYLES = ['side-by-side'];
+
 /**
  * Turns `tabbed` sections into a tabs block. Each heading of the section's
  * deepest heading level is a tab title; the content after it (text, blocks)
  * up to the next title is that tab's panel. Content before the first title
  * stays above the tabs. Panels are handed to the tabs block as inline sections
- * carrying the section's other styles (e.g. side-by-side), which it renders
- * like fragments.
+ * carrying the section's panel layout styles (e.g. side-by-side); all other
+ * section styles (e.g. backgrounds) stay on the section.
  * @param {Element} main The container element
  */
 function buildTabbedSections(main) {
@@ -318,8 +321,7 @@ function buildTabbedSections(main) {
       }
     });
 
-    // the section's other styles (e.g. side-by-side) lay out each panel instead
-    const panelStyles = [...section.classList].filter((cls) => !['section', 'tabbed'].includes(cls));
+    const panelStyles = TAB_PANEL_STYLES.filter((cls) => section.classList.contains(cls));
     section.classList.remove(...panelStyles);
 
     const rows = tabs.map(({ title, content }) => {

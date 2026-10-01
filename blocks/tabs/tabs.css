@@ -150,10 +150,11 @@
   margin: 0;
 }
 
-/* a panel can instead hold a "side-by-side" fragment section (copy + video
-   block), e.g. stroke-awareness "Hear from stroke survivors". Source: copy is a
-   21px light-serif lead stacked over the video on mobile; from 900px the copy
-   (~39%) sits left of a ~49% video, mirroring the page's video section. */
+/* a panel can instead hold a "side-by-side" section (copy + video block) — from
+   a `tabbed` section or a fragment — e.g. stroke-awareness "Hear from stroke
+   survivors". Source: copy is a 21px light-serif lead stacked over the video on
+   mobile; from 900px the copy (~39%) sits left of a ~49% video, mirroring the
+   page's video section. */
 .tabs .tabs-panel:has(> .section.side-by-side) {
   margin-top: 0;
 }
@@ -163,14 +164,8 @@
   margin: 0;
 }
 
-.tabs .tabs-panel > .section.side-by-side > div {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-
 .tabs .tabs-panel > .section.side-by-side > .default-content-wrapper {
-  padding: 36px 36px 18px;
+  padding: var(--tabs-panel-copy-padding);
 }
 
 .tabs .tabs-panel > .section.side-by-side p {

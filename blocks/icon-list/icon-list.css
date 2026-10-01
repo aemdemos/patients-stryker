@@ -210,12 +210,10 @@
   align-self: stretch;
 }
 
-/* label = the text cell's first item, caption = every later one. Each rule
-   matches the paragraph either as that item itself or nested inside it, so the
-   split holds whether paragraphs sit directly in the cell or are individually
-   wrapped (as in the authoring canvas). */
-
-/* label — enlarged, gold initial */
+/* label (the text cell's first item) — enlarged, gold initial; caption (every
+   later item) below. Each rule matches the paragraph either as that item itself
+   or nested inside it, so the split holds whether paragraphs sit directly in
+   the cell or are individually wrapped (as in the authoring canvas). */
 .icon-list.label .icon-list-text > p:first-child,
 .icon-list.label .icon-list-text > :first-child p {
   font-size: var(--icon-list-label-size);
@@ -275,12 +273,10 @@
   margin-bottom: var(--icon-list-tile-title-gap);
 }
 
-/* intro vs lead-in: the lead-in is the default content's last item, the intro
-   any earlier paragraph. Each rule matches the paragraph either as that item
-   itself or nested inside it, so it holds whether the content sits directly in
-   the wrapper or each item is individually wrapped (as in the authoring canvas). */
-
-/* intro paragraph — serif, 49px above the lead-in */
+/* intro paragraph (any item before the last) — serif, 49px above the lead-in.
+   Intro and lead-in rules match the paragraph either as that item itself or
+   nested inside it, so they hold whether the content sits directly in the
+   wrapper or each item is individually wrapped (as in the authoring canvas). */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
   > div:not(.icon-list-wrapper) > p:not(:last-child),
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)

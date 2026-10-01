@@ -13,13 +13,18 @@
  * element uses `aria-owns` to logically own the tabs for assistive tech.
  */
 
-import { loadSections, toClassName } from '../../scripts/aem.js';
-import { decorateMain } from '../../scripts/scripts.js';
+import {
+  decorateBlocks,
+  decorateSections,
+  loadSections,
+  toClassName,
+} from '../../scripts/aem.js';
 import { loadFragment, mergeSectionCards } from '../fragment/fragment.js';
 
 async function decoratePanel(panel) {
   // panels built from a `tabbed` section hold inline sections (text + blocks
-  // such as video) — decorate and load them the same way as fragment content.
+  // such as video). The page has already decorated their content (images,
+  // buttons, etc.); only the section wrappers and nested blocks are missing.
   // Block decoration wraps the cell's content in a <p>, which is dropped here.
   const inline = [...panel.querySelectorAll('[data-tabs-section]')];
   if (inline.length) {
@@ -27,7 +32,9 @@ async function decoratePanel(panel) {
     const main = document.createElement('main');
     main.append(...inline);
     if (wrapper !== panel && !wrapper.textContent.trim()) wrapper.remove();
-    decorateMain(main);
+    inline.forEach((section) => section.removeAttribute('data-tabs-section'));
+    decorateSections(main);
+    decorateBlocks(main);
     await loadSections(main);
     panel.prepend(...main.childNodes);
   }
