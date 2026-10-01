@@ -95,6 +95,20 @@ function heading(doc, level, ...nodes) {
 }
 
 /**
+ * Map an old-site internal link to its path on the migrated EDS site: drop the
+ * patients.stryker.com origin, `index.html` → trailing `/`, strip `.html`
+ * (e.g. /us/en/stroke-awareness/resources.html → /us/en/stroke-awareness/resources,
+ * /us/en/stroke-awareness/index.html → /us/en/stroke-awareness/). A root-relative
+ * path resolves on whichever host serves the page (.aem.page / .aem.live / prod).
+ * External links (other hosts) are returned unchanged.
+ */
+function toSitePath(href) {
+  const m = (href || '').match(/^(?:https?:\/\/patients\.stryker\.com)?(\/[^?#]*)\.html([?#].*)?$/i);
+  if (!m) return href;
+  return `${m[1].replace(/\/index$/i, '/')}${m[2] || ''}`;
+}
+
+/**
  * Build the 3-column resources band as a `columns (related-links)` block. The
  * variant carries ALL of the band's display (gold Futura labels, CTA links with
  * chevron, plain regional links, 3-up/2-up layout); the gray full-bleed band comes
@@ -137,6 +151,10 @@ function buildResourcesColumns(doc, source) {
     // wrapped in <strong>: a bold link would trip decorateButtons (strong+u →
     // .link-strong strips the <u>; bold alone → a filled button). Underline-only
     // makes decorateButtons bail, so the <u> survives. Regional links get no <u>.
+    // Internal links → new-site paths (the source's .html URLs 404 on EDS).
+    [...cell.querySelectorAll('a[href]')].forEach((a) => {
+      a.setAttribute('href', toSitePath(a.getAttribute('href')));
+    });
     [...cell.querySelectorAll('a')].forEach((a) => {
       const isCta = a.closest('.standalone-link') || a.querySelector('.standalone-link');
       if (!isCta || a.querySelector('u')) return;

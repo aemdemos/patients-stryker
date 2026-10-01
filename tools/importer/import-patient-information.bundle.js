@@ -149,6 +149,11 @@ var CustomImportScript = (() => {
     nodes.forEach((n) => n && h.append(n));
     return h;
   }
+  function toSitePath(href) {
+    const m = (href || "").match(/^(?:https?:\/\/patients\.stryker\.com)?(\/[^?#]*)\.html([?#].*)?$/i);
+    if (!m) return href;
+    return `${m[1].replace(/\/index$/i, "/")}${m[2] || ""}`;
+  }
   function buildResourcesColumns(doc, source) {
     const cols = [...source.querySelectorAll(".bg-light-gray .cols3 .col-md-4")];
     const cells = cols.map((col) => {
@@ -170,6 +175,9 @@ var CustomImportScript = (() => {
         strong.textContent = text;
         em.append(strong);
         node.replaceWith(heading(doc, "h3", em));
+      });
+      [...cell.querySelectorAll("a[href]")].forEach((a) => {
+        a.setAttribute("href", toSitePath(a.getAttribute("href")));
       });
       [...cell.querySelectorAll("a")].forEach((a) => {
         const isCta = a.closest(".standalone-link") || a.querySelector(".standalone-link");
