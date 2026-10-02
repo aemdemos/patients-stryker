@@ -22,6 +22,22 @@
    within a theme the source order stays ascending (base → 600 → 900 → 1200) so
    the cascade is unchanged. */
 
+/* =====================================================================
+   Theme: website-accessibility
+   ===================================================================== */
+
+body.website-accessibility p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* =====================================================================
+   Theme: cookie-disclaimer
+   ===================================================================== */
+
+body.cookie-disclaimer main .section h2 {
+  font-size: var(--heading-font-size-l);
+}
 
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
