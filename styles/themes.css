@@ -47,7 +47,8 @@ body.long-page-detail main > .section.compact:nth-child(1 of .section.compact) {
   margin-bottom: 20px;
 }
 
-body.long-page-detail ul > li > p strong {
+body.long-page-detail .section.compact ul > li > p strong,
+body.long-page-detail .section.compact ul > li > strong {
   font-family: var(--body-font-family);
 }
 
