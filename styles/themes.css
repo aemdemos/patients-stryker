@@ -419,6 +419,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   body.long-page-detail h2 em strong,
   body.long-page-detail .section.compact .columns h2 em strong {
     font-size: var(--heading-font-size-long-page-detail);
+    line-height: var(--heading-line-height-long-page-detail);
   }
 
   /* Theme: campaign-landing */
