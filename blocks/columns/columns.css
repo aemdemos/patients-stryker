@@ -483,6 +483,13 @@
    band and full-bleed spacing come from the section metadata (light-gray,
    full-bleed), so the block renders the same in any section. */
 
+/* band's own top/bottom inset (source: ~30px above the labels, ~50px below the last
+   link incl. its margin), so the band looks right without a `full-bleed` section.
+   :where() keeps it low-specificity so page themes (e.g. sa-resources) still win. */
+main > .section:has(> div > :where(.columns.related-links)) {
+  padding-block: var(--space-section);
+}
+
 /* column text uses the serif heading font */
 .columns.related-links p,
 .columns.related-links ul,
@@ -523,8 +530,10 @@
   color: var(--color-accent);
 }
 
-/* Style only the related-links "Learn more" CTA links. */
-.columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
+/* Plain "Learn more" CTA: the link in the last item of a column whose second item
+   is copy, not a link (link-list columns like Regional information are skipped).
+   Keyed on the column's children, so it holds whatever wraps each field. */
+.columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :last-child a:any-link:not(:has(u)) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -534,7 +543,7 @@
   line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
 }
 
-.columns.related-links p:not(:has(a)) + p:has(a) a::after {
+.columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :last-child a:not(:has(u))::after {
   content: "";
   display: inline-block;
   width: 0;
@@ -544,9 +553,16 @@
   border-color: transparent transparent transparent currentcolor;
 }
 
-/* underline-authored CTA (<u>): also teal + uppercase */
-.columns.related-links p:not(:has(a)) + p:has(a) a:has(u) {
-  color: var(--link-color);
+/* underline-authored CTA (<u>): the <u> marks the CTA on its own, so no sibling
+   context is needed — it renders the same on the page and in the editor */
+.columns.related-links p a:any-link:has(u) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
   text-transform: uppercase;
 }
 
@@ -558,7 +574,9 @@
 /* chevron sized to the reference's strykericons arrow (U+E250 at 11.9px draws a
    6px-wide, 11px-tall solid triangle). Drawn as a clipped box, not borders, since
    browsers round border widths to whole pixels (5.5px → 5px). */
-.columns.related-links p:not(:has(a)) + p:has(a) a:has(u)::after {
+.columns.related-links p a:any-link:has(u)::after {
+  content: "";
+  display: inline-block;
   width: 6px;
   height: 11px;
   border: 0;
@@ -584,8 +602,10 @@
 }
 
 @media (width >= 600px) {
-  /* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
-  .columns.related-links p:has(+ p a u) {
+  /* reserve 2 lines for the pre-CTA body (the 2nd item of a CTA column) so the
+     CTAs align (2-up and 3-up); matches the paragraph however the field is wrapped */
+  .columns.related-links > div > div:not(:has(> :nth-child(2) a)) > p:nth-child(2),
+  .columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :nth-child(2) p {
     min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
   }
 
@@ -617,15 +637,32 @@
 }
 
 @media (width >= 900px) {
-  /* desktop 3-up: revert to the base flex row */
+  /* desktop 3-up: equal columns on a shared row grid (label / copy / CTA / rest),
+     so CTAs line up whatever the label and copy lengths. The last track takes the
+     link-list column's extra height so it doesn't stretch the other rows. */
   .columns.related-links > div {
-    display: flex;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto auto 1fr;
+  }
+
+  /* the tablet float clearfix would otherwise become an extra grid column */
+  .columns.related-links > div::after {
+    content: none;
   }
 
   .columns.related-links > div > div,
   .columns.related-links > div > div:nth-child(3) {
+    grid-row: 1 / -1;
     float: none;
     width: auto;
+  }
+
+  /* CTA columns (2nd item is copy, not a link) share the row grid */
+  .columns.related-links > div > div:not(:has(> :nth-child(2) a)) {
+    display: grid;
+    grid-template-rows: subgrid;
   }
 
   /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
