@@ -407,7 +407,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
   /* Theme: long-page-detail */
-  body.long-page-detail .section.compact h1 {
+  body.long-page-detail h1 {
     margin-bottom: 30px;
   }
 
