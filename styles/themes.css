@@ -1489,8 +1489,236 @@ body.resources .section.compact {
   margin-bottom: 0;
 }
 
-/* =====================================================================
-   Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
+/* Theme: ivs-home */
+body.ivs-home main > .section.flex,
+body.ivs-home main > .section.cards-container,
+body.ivs-home main > .section.statistics-container,
+body.ivs-home main > .section.panel-container,
+body.ivs-home main > .section.marketo-form-container,
+body.ivs-home main > .section.compact {
+  margin-top: var(--space-section-xl);
+}
+
+body.ivs-home main > .section.sticky-nav-container {
+  margin-top: 20px;
+}
+
+body.ivs-home main > .section.hero-container {
+  margin-top: 60px;
+}
+
+body.ivs-home .hero.banner h1,
+body.ivs-home .hero.banner h2 {
+  box-sizing: border-box;
+}
+
+body.ivs-home main > .section.flex[data-anchor="overview"] {
+  margin-top: 61px;
+}
+
+body.ivs-home main > .section.dark {
+  margin-block: 68px 0;
+  padding-block: var(--space-section-l);
+}
+
+body.ivs-home main > .section.dark > .columns-wrapper + .columns-wrapper {
+  padding-top: var(--space-section-xl);
+}
+
+/* source keeps text + video stacked until its 841px grid breakpoint */
+body.ivs-home .columns > div {
+  flex-flow: column;
+  align-items: stretch;
+}
+
+body.ivs-home .columns > div > div {
+  flex: none;
+}
+
+body.ivs-home .columns > div > div + div {
+  margin-top: var(--space-block);
+}
+
+/* source's Scene7 player has no frame and fills its 16:9 box */
+body.ivs-home .dm-video {
+  border: 0;
+  object-fit: cover;
+}
+
+body.ivs-home main > .section.cards-container {
+  margin-top: var(--space-section);
+}
+
+/* stats band: source has 40px from the cards to the rule, ~20px rule→numbers */
+body.ivs-home main > .section.divider {
+  margin-top: var(--space-block-s);
+  padding-top: var(--space-block-l);
+}
+
+body.ivs-home main > .section.compact > div > ol {
+  margin-bottom: var(--space-section);
+}
+
+/* source's mobile banner type (<480px): 26.25px heading, 17.5px subheading */
+body.ivs-home .panel.gold .panel-body h2 {
+  margin-bottom: var(--space-inset-m);
+  font-size: calc(var(--heading-font-size-l) * 1.25);
+  line-height: var(--heading-line-height-h4);
+}
+
+body.ivs-home .panel.gold .panel-body h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+}
+
+body.ivs-home .cards.linked .cards-card-body h3 {
+  font-family: var(--body-font-family);
+}
+
+body.ivs-home .cards.linked .cards-card-body h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* source numbers sit in a ~1.6x line box, leaving a gap above the description
+   (statistics.css resets the value's margin from 600px, so re-apply it here) */
+body.ivs-home .statistics {
+  --statistics-number-gap: 0.3em;
+}
+
+body.ivs-home .statistics .statistics-value {
+  margin-bottom: var(--statistics-number-gap);
+}
+
+body.ivs-home .columns.columns-2-cols h3 {
+  font-size: var(--heading-font-size-ml);
+}
+
+body.ivs-home .panel.cta.wide .panel-body p {
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+}
+
+body.ivs-home .panel.cta .panel-body h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+@media (width >= 480px) {
+  body.ivs-home .panel.gold .panel-body h2 {
+    font-size: calc(var(--heading-font-size-xl) * 1.25);
+  }
+
+  body.ivs-home .panel.gold .panel-body h4 {
+    font-size: var(--heading-font-size-ml);
+  }
+}
+
+@media (width >= 600px) {
+  body.ivs-home main > .section.flex[data-anchor="overview"] {
+    margin-top: 86px;
+  }
+  
+  body.ivs-home .columns.columns-2-cols h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.ivs-home .panel.cta .panel-body h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.ivs-home main > .section.cards-container {
+    margin-top: var(--space-section-l);
+  }
+
+  body.ivs-home main > .section.divider {
+    margin-top: var(--space-section);
+    padding-top: var(--space-section-l);
+  }
+}
+
+@media (width >= 841px) {
+  body.ivs-home .columns > div {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+
+  body.ivs-home .columns > div > div {
+    flex: 1;
+  }
+
+  body.ivs-home .columns > div > div + div {
+    margin-top: 0;
+  }
+
+  /* the source overlays the hero copy on the image from 841px; the shared
+     hero.css switches at 900px, so mirror its desktop banner rules here */
+  body.ivs-home .hero.banner > div {
+    grid-area: 1 / 1;
+  }
+
+  body.ivs-home .hero.banner > div:last-child {
+    z-index: 1;
+    align-self: end;
+    max-width: 100%;
+    padding-block: var(--space-block-l);
+    margin-bottom: var(--space-block-l);
+  }
+
+  body.ivs-home .hero.banner .button-wrapper:last-child {
+    margin-bottom: var(--space-block);
+  }
+
+  body.ivs-home .hero picture.hero-image-desktop {
+    display: block;
+  }
+
+  body.ivs-home .hero picture.hero-image-mobile {
+    display: none;
+  }
+
+  body.ivs-home .hero.banner h1 {
+    font-size: 3vw;
+  }
+
+  body.ivs-home .hero.banner h1,
+  body.ivs-home .hero.banner h2 {
+    max-width: 47%;
+  }
+}
+
+@media (width >= 900px) {
+  body.ivs-home main > .section.dark {
+    margin-top: var(--space-section-xl);
+  }
+
+  body.ivs-home main > .section.cards-container {
+    margin-top: calc(var(--space-section) + var(--space-block-s));
+  }
+
+  body.ivs-home main > .section.panel-container[data-anchor="find-a-doctor"] {
+    margin-top: 85px;
+  }
+
+  body.ivs-home .cards.linked > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 970px) {
+  body.ivs-home .cards.linked > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* source keeps the 3vw headline, capped at 42px (from ~1400px) */
+@media (width >= 1200px) {
+  body.ivs-home .hero.banner h1 {
+    font-size: min(3vw, var(--heading-font-size-hero-max));
+  }
+}
+
+/* Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
    ===================================================================== */
 
 /* Display font: use the site's "Futura for Stryker" cut via a token override,

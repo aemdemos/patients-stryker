@@ -7,7 +7,7 @@
  * the importer uses) so the tool needs no extra dependency locally.
  */
 
-import { extractRunsInBrowser, extractContentBoxesInBrowser } from './extract.js';
+import { extractRunsInBrowser, extractContentBoxesInBrowser, extractBoundaryAnchorsInBrowser } from './extract.js';
 
 // Nudge lazy/late layout (fonts, deferred images, decoration) to settle before
 // measuring geometry: scroll the whole page then return to top.
@@ -124,7 +124,8 @@ export async function captureGeometry(browser, url, opts = {}) {
         minLength, blockClasses, variantClasses,
       });
       const contentBoxes = await page.evaluate(extractContentBoxesInBrowser);
-      out[width] = { runs, contentBoxes };
+      const boundaries = await page.evaluate(extractBoundaryAnchorsInBrowser);
+      out[width] = { runs, contentBoxes, boundaries };
     } finally {
       await context.close();
     }

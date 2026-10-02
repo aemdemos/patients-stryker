@@ -2,8 +2,9 @@ import { readBlockConfig, loadScript } from '../../scripts/aem.js';
 
 /**
  * Marketo form block. Mounts a Marketo Forms 2.0 form (via forms2.min.js +
- * MktoForms2.loadForm) and optionally an Altcha captcha. Third-party scripts
- * load in the delayed phase (idle callback) to stay off the critical path.
+ * MktoForms2.loadForm) and optionally an Altcha captcha. Third-party scripts are
+ * held back until the block approaches the viewport, so they stay off the
+ * critical path.
  *
  * Authoring model (key/value rows; captcha rows optional):
  *   | Marketo Form         |                                              |
@@ -67,7 +68,18 @@ export default function decorate(block) {
       .catch((e) => console.error('marketo-form: failed to load forms2.min.js', e));
   };
 
-  if ('requestIdleCallback' in window) {
+  // forms2.min.js is ~10s of main-thread work on a mid-tier phone, and the form
+  // is typically well below the fold — hold it until the block is actually
+  // approaching the viewport so it never competes with LCP. Falls back to the
+  // previous idle-callback behaviour where IntersectionObserver is unavailable.
+  if (typeof IntersectionObserver === 'function') {
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      loadForm();
+    }, { rootMargin: '400px' });
+    observer.observe(block);
+  } else if ('requestIdleCallback' in window) {
     window.requestIdleCallback(loadForm, { timeout: 3000 });
   } else {
     window.setTimeout(loadForm, 3000);
