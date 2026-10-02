@@ -630,15 +630,32 @@
 }
 
 @media (width >= 900px) {
-  /* desktop 3-up: revert to the base flex row */
+  /* desktop 3-up: equal columns on a shared row grid (label / copy / CTA / rest),
+     so CTAs line up whatever the label and copy lengths. The last track takes the
+     link-list column's extra height so it doesn't stretch the other rows. */
   .columns.related-links > div {
-    display: flex;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto auto 1fr;
+  }
+
+  /* the tablet float clearfix would otherwise become an extra grid column */
+  .columns.related-links > div::after {
+    content: none;
   }
 
   .columns.related-links > div > div,
   .columns.related-links > div > div:nth-child(3) {
+    grid-row: 1 / -1;
     float: none;
     width: auto;
+  }
+
+  /* CTA columns (2nd item is copy, not a link) share the row grid */
+  .columns.related-links > div > div:not(:has(> :nth-child(2) a)) {
+    display: grid;
+    grid-template-rows: subgrid;
   }
 
   /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
