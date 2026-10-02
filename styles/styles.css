@@ -367,7 +367,8 @@ sup {
 }
 
 /* footnotes / disclaimer list */
-main li[id^="fn-"] {
+main li[id^="fn-"],
+main .footnote-anchor[id^="fn-"] {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
@@ -841,6 +842,14 @@ main > .section.spacer {
 /* larger spacer variant — 2× the base gap (~60px). Authored as `spacer, large`. */
 main > .section.spacer.large {
   height: calc(2 * var(--space-section));
+}
+
+main > .section.spacer.xlarge {
+  height: calc(3 * var(--space-section));
+}
+
+main > .section.spacer.xxlarge {
+  height: calc(4 * var(--space-section));
 }
 
 main > .section.spacer > div {
