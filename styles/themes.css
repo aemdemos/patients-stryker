@@ -40,6 +40,41 @@ body.cookie-disclaimer main .section h2 {
 }
 
 /* =====================================================================
+   Theme: long-page-detail
+   ===================================================================== */
+
+body.long-page-detail main > .section.compact:nth-child(1 of .section.compact) {
+  margin-bottom: 20px;
+}
+
+body.long-page-detail .section.compact ul > li > p strong,
+body.long-page-detail .section.compact ul > li > strong,
+body.long-page-detail .section.divider ul > li > strong{
+  font-family: var(--body-font-family);
+}
+
+body.long-page-detail .accordion .accordion-item-open .accordion-item-label {
+  border-bottom: none;
+}
+
+body.long-page-detail a:any-link {
+  text-decoration: none;
+}
+
+body.long-page-detail .section.compact .columns h2,
+body.long-page-detail .section.compact .columns h2 em strong {
+  margin-top: 0;
+}
+
+body.long-page-detail .section.compact .columns li {
+  line-height: var(--body-line-height);
+}
+
+body.long-page-detail .accordion .accordion-item-label p {
+  line-height: var(--body-line-height-l);
+}
+
+/* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    ===================================================================== */
 
@@ -398,6 +433,21 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
+  /* Theme: long-page-detail */
+  body.long-page-detail main > .section.compact:nth-child(1 of .section.compact) {
+    margin-bottom: 30px;
+  }
+
+  body.long-page-detail h2 em strong,
+  body.long-page-detail .section.compact .columns h2 em strong {
+    font-size: var(--heading-font-size-long-page-detail);
+    line-height: var(--heading-line-height-long-page-detail);
+  }
+
+  body.long-page-detail .section.compact h1 {
+  line-height: var(--heading-line-height);
+}
+
   /* Theme: campaign-landing */
   body.campaign-landing main .hero.fullbleed {
     min-height: calc(5 * var(--space-section-l));
