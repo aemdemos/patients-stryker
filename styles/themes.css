@@ -1336,7 +1336,7 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
  }
 
  body.procedure-detail main > .section.panel-container:has(.panel.gold) {
-  margin-top: 75px;
+  margin-top: var(--space-section-xl);
 }
 
 /* ----- Tablet (>=600px) ----- */
@@ -1839,7 +1839,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 
   /* intro copy starts ~20px below the benefits card top (rich-text inset) */
   body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
-    padding-top: var(--space-block-l);
+    padding: var(--space-block-l) 0 0;
   }
 
   /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */
