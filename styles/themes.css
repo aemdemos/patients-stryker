@@ -66,6 +66,10 @@ body.long-page-detail .section.compact .columns h2 em strong {
   margin-top: 0;
 }
 
+body.long-page-detail .section.compact .columns li {
+  line-height: var(--body-line-height);
+}
+
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    ===================================================================== */
