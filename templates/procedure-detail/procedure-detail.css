@@ -130,7 +130,13 @@ body.procedure-detail main > .section.light-gray {
   background-color: transparent;
 }
 
-@media (width >= 600px) {
+body.procedure-detail main .hero p {
+  font-size: var(--heading-font-size-xl);
+  font-family: var(--heading-font-family);
+  line-height: var(--body-line-height-m);
+}
+
+@media (width >= 900px) {
   body.procedure-detail main > .section.light-gray {
     margin-top: var(--space-section);
   }
@@ -138,6 +144,7 @@ body.procedure-detail main > .section.light-gray {
     body.procedure-detail main > .section .hero.banner > div:last-child {
     align-self: end;
     padding: 20px 40px;
+    max-width: 50%;
   }
 
   body.procedure-detail main > .section.hero-container {
