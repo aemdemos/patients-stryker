@@ -70,6 +70,7 @@ body.long-page-detail .section.compact .columns li {
   line-height: var(--body-line-height);
 }
 
+
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    ===================================================================== */
@@ -439,6 +440,10 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     font-size: var(--heading-font-size-long-page-detail);
     line-height: var(--heading-line-height-long-page-detail);
   }
+
+  body.long-page-detail .section.compact h1 {
+  line-height: var(--heading-line-height);
+}
 
   /* Theme: campaign-landing */
   body.campaign-landing main .hero.fullbleed {
