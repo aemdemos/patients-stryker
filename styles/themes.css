@@ -48,7 +48,8 @@ body.long-page-detail main > .section.compact:nth-child(1 of .section.compact) {
 }
 
 body.long-page-detail .section.compact ul > li > p strong,
-body.long-page-detail .section.compact ul > li > strong {
+body.long-page-detail .section.compact ul > li > strong,
+body.long-page-detail .section.divider ul > li > strong{
   font-family: var(--body-font-family);
 }
 
