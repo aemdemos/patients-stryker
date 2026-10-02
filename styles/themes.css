@@ -70,6 +70,9 @@ body.long-page-detail .section.compact .columns li {
   line-height: var(--body-line-height);
 }
 
+body.long-page-detail .accordion .accordion-item-label p {
+  line-height: var(--body-line-height-l);
+}
 
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
