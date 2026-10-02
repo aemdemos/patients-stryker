@@ -21,7 +21,7 @@ body.procedure-detail main > .section.flex > .default-content-wrapper h3 {
 
 /* Gold second line drops to its own line. */
 body.procedure-detail main > .section.flex > .default-content-wrapper h3 em {
-  display: block;
+  display: inline;
 }
 
 body.procedure-detail main > .section.flex > .default-content-wrapper p {
@@ -36,6 +36,10 @@ body.procedure-detail main > .section.flex > .default-content-wrapper p {
    Removed at 900px where the columns sit side-by-side (no stacking). */
 body.procedure-detail main > .section.flex > .panel-wrapper {
   padding-top: var(--space-block);
+}
+
+body.procedure-detail main > .columns.block.columns-3-cols ol,ul {
+  padding-left: 32px;
 }
 
 @media (width >= 900px) {
@@ -90,10 +94,14 @@ body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resourc
 
 /* "Resources" heading: sage underline + gap below. */
 body.procedure-detail main > .section > .default-content-wrapper h2 {
-  margin-bottom: 75px;
   padding-bottom: 7px;
-  border-bottom: 1px solid var(--color-surface-muted);
 }
+
+body.procedure-detail main > .section > .default-content-wrapper #resources {
+  border-bottom: 1px solid var(--color-surface-muted);
+  margin-bottom: 75px;
+}
+
 body.procedure-detail main > .section.procedure-panel-section {
   margin-block: var(--space-section);
 }

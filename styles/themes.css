@@ -1077,33 +1077,11 @@ body.patient-information main > .section.gold p a::after {
   transform: translate(0, 2px);
 }
 
-/* ── Resources columns band (the patient-information-resources fragment) ───────
-   The columns block styles most of this band via `.section.light-gray .columns`
-   (serif column text, the underline-authored CTA → Futura-bold uppercase teal +
-   chevron, plain regional links, spacing). The fragment's `light-gray, full-bleed`
-   section metadata makes that inner `.section.light-gray` an ancestor of the
-   `.columns` once embedded, so the block styling activates. Two gaps remain that
-   need page CSS: */
-
-/* Gap 1 — BACKGROUND + full-bleed padding: styles.css scopes these to
-   `main > .section.light-gray/.full-bleed` (a DIRECT child of main). Our styled
-   section is nested inside the fragment block, so those don't match and the band
-   renders white. Re-apply background + vertical padding to the fragment's host
-   section (a direct child of main, already full-viewport width). */
-body.patient-information main > .section:has(.columns) {
-  margin-block: 0;
-  padding-block: var(--space-section);
-  background-color: var(--color-surface);
-}
-
-/* Gap 2 — HEADING SIZE: the column headings are authored as bold+italic
-   paragraphs (<p><em><strong>…). The global marker rule paints them gold + Futura
-   but sets no size, so they default to 14px; the source renders them at 24.5px
-   (fontsize-1-75em). Neither the block nor styles.css sizes a bold+italic
-   PARAGRAPH (only real h1–h3), so size it here. */
-body.patient-information main .columns p:has(> em > strong) {
-  font-size: var(--heading-font-size-xl);
-}
+/* ── Resources columns band ───────────────────────────────────────────────────
+   No page CSS: the band is a `columns (related-links)` block whose look (gold
+   labels, CTA links, plain regional links, 3-up/2-up layout) comes from the block
+   variant, and whose gray full-bleed band comes from the section metadata
+   (`light-gray, full-bleed`). */
 
 /* ── Cards section bottom spacing ─────────────────────────────────────────────
    The patient-guide cards section sits flush against the gold CTA band below it;
@@ -1126,14 +1104,16 @@ body.patient-information .cards.brochure-cta > ul > li img {
   aspect-ratio: 631 / 828;
 }
 
-/* ── Disclaimer (compact) top spacing ─────────────────────────────────────────
-   The compact disclaimer section sits flush against the gray resources band; the
-   source leaves ~30px above it. `.section.compact` (styles.css) only sets a
-   bottom margin, so add the top margin here, scoped to this page (a global change
-   would shift every other compact section, e.g. the ENT condition pages). Target
-   the compact section that follows the resources fragment. */
-body.patient-information main > .section.fragment-container + .section.compact {
-  margin-top: var(--space-section);
+/* AP number (own compact section): top up the 40px gap to the source's 50/60px */
+body.patient-information main > .section.compact + .section.compact {
+  padding-top: var(--space-block-s);
+}
+
+/* ----- Tablet (>=600px) ----- */
+@media (width >= 600px) {
+  body.patient-information main > .section.compact + .section.compact {
+    padding-top: var(--space-block-l);
+  }
 }
 
 
@@ -1378,7 +1358,7 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
  }
 
  body.procedure-detail main > .section.panel-container:has(.panel.gold) {
-  margin-top: 75px;
+  margin-top: var(--space-section-xl);
 }
 
 /* ----- Tablet (>=600px) ----- */
@@ -1881,7 +1861,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 
   /* intro copy starts ~20px below the benefits card top (rich-text inset) */
   body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
-    padding-top: var(--space-block-l);
+    padding: var(--space-block-l) 0 0;
   }
 
   /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */

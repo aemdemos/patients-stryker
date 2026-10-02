@@ -99,6 +99,7 @@
   --body-line-height: 1.4286;
   --body-line-height-l: 1.15;       /* 20.125px / 17.5px */
   --body-line-height-l-nested: 1.22; /* measured: a 1.25x span inside a 14px/20px source paragraph renders ~21.3px lines */
+  --related-links-line-height: 1.314; /* measured: 17.5px link inside a 14px/19.25px source paragraph renders 23px lines */
   --paragraph-line-height: 1.375;
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
@@ -368,7 +369,8 @@ sup {
 }
 
 /* footnotes / disclaimer list */
-main li[id^="fn-"] {
+main li[id^="fn-"],
+main .footnote-anchor[id^="fn-"] {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
@@ -842,6 +844,14 @@ main > .section.spacer {
 /* larger spacer variant — 2× the base gap (~60px). Authored as `spacer, large`. */
 main > .section.spacer.large {
   height: calc(2 * var(--space-section));
+}
+
+main > .section.spacer.xlarge {
+  height: calc(3 * var(--space-section));
+}
+
+main > .section.spacer.xxlarge {
+  height: calc(4 * var(--space-section));
 }
 
 main > .section.spacer > div {
