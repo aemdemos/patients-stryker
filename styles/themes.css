@@ -1024,14 +1024,16 @@ body.patient-information .cards.brochure-cta > ul > li img {
   aspect-ratio: 631 / 828;
 }
 
-/* ── Disclaimer (compact) top spacing ─────────────────────────────────────────
-   The compact disclaimer section sits flush against the gray resources band; the
-   source leaves ~30px above it. `.section.compact` (styles.css) only sets a
-   bottom margin, so add the top margin here, scoped to this page (a global change
-   would shift every other compact section, e.g. the ENT condition pages). Target
-   the compact section that follows the resources fragment. */
-body.patient-information main > .section.fragment-container + .section.compact {
-  margin-top: var(--space-section);
+/* AP number (own compact section): top up the 40px gap to the source's 50/60px */
+body.patient-information main > .section.compact + .section.compact {
+  padding-top: var(--space-block-s);
+}
+
+/* ----- Tablet (>=600px) ----- */
+@media (width >= 600px) {
+  body.patient-information main > .section.compact + .section.compact {
+    padding-top: var(--space-block-l);
+  }
 }
 
 

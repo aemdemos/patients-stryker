@@ -295,6 +295,12 @@ export default {
     main.append(buildCards(document, source));
     main.append(document.createElement('hr'));
 
+    // Empty `spacer` section (styles.css `main > .section.spacer`, fixed 30px):
+    // the source leaves ~70–80px between the cards and the gold band; the cards
+    // section's own 30px bottom margin + this spacer reproduces it.
+    main.append(sectionMetadata(document, 'spacer'));
+    main.append(document.createElement('hr'));
+
     // --- Section 3: gold "for more information" CTA band ----------------------
     const goldBand = source.querySelector('.bg-golden-gradient');
     if (goldBand) {
@@ -317,22 +323,38 @@ export default {
     main.append(sectionMetadata(document, 'light-gray, full-bleed'));
     main.append(document.createElement('hr'));
 
-    // --- Section 5: trademark / disclaimer (compact) --------------------------
-    // Trademark/disclaimer paragraphs + AP number in a `compact` section (small
-    // footnote text), matching the sibling ww/stroke-awareness/resources page.
+    // Empty `spacer` section (30px) between the gray band and the disclaimer — the
+    // source leaves ~34px there; without it the disclaimer sits flush on the band.
+    main.append(sectionMetadata(document, 'spacer'));
+    main.append(document.createElement('hr'));
+
+    // --- Sections 5–6: trademark / disclaimer + AP number (compact) -----------
+    // Small footnote text in `compact` sections. On the source the trademark
+    // paragraphs sit in an inner `.c-disclaimer.page-section` and the AP number in
+    // the outer `.c-disclaimer`, separated by a gap. Keep that split: one compact
+    // section per disclaimer container (the patient-information theme spaces the
+    // second one to match the source's gap above the AP number).
     // NOTE: the "Last Updated <month>/<year>" line (#publishedDate) is EXCLUDED —
     // it's handled by a separate, independent component and must not be baked in.
-    // `.c-disclaimer` wraps BOTH the authored trademark paragraphs AND the
-    // auto-generated `#publishedDate` ("Last Updated …") line. Take the authored
-    // paragraphs but explicitly drop #publishedDate (separate component, per above).
     const disclaimerParas = [...source.querySelectorAll('.c-disclaimer p')]
       .filter((node) => node.id !== 'publishedDate' && node.textContent.trim());
+    const disclaimerGroups = [];
     disclaimerParas.forEach((node) => {
-      main.append(heading(document, 'p', document.createTextNode(node.textContent.trim())));
+      const container = node.closest('.c-disclaimer');
+      let group = disclaimerGroups.find((g) => g.container === container);
+      if (!group) {
+        group = { container, paras: [] };
+        disclaimerGroups.push(group);
+      }
+      group.paras.push(node);
     });
-    if (disclaimerParas.length) {
+    disclaimerGroups.forEach((group, i) => {
+      if (i > 0) main.append(document.createElement('hr'));
+      group.paras.forEach((node) => {
+        main.append(heading(document, 'p', document.createTextNode(node.textContent.trim())));
+      });
       main.append(sectionMetadata(document, 'compact'));
-    }
+    });
 
     // 3. Metadata block from the page's own <head> metadata (Title, Description,
     //    og:title, og:description are picked up automatically). Add the canonical

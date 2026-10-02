@@ -501,6 +501,11 @@
   margin-bottom: var(--space-block);
 }
 
+/* link lists (e.g. Regional information): source 23px line box → 38px rhythm */
+.columns.related-links :is(h3, p:has(> a:only-child)) + p:has(> a:only-child) {
+  line-height: var(--related-links-line-height);
+}
+
 /* extra title-to-body gap to match the reference's larger inline-title spacing */
 .columns.related-links h2 {
   margin-bottom: 25px;

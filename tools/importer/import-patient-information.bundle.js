@@ -266,6 +266,8 @@ var CustomImportScript = (() => {
       if (introH2) main.append(heading(document, "h2", document.createTextNode(introH2.textContent.trim())));
       main.append(buildCards(document, source));
       main.append(document.createElement("hr"));
+      main.append(sectionMetadata(document, "spacer"));
+      main.append(document.createElement("hr"));
       const goldBand = source.querySelector(".bg-golden-gradient");
       if (goldBand) {
         const bandP = goldBand.querySelector("p");
@@ -281,13 +283,26 @@ var CustomImportScript = (() => {
       main.append(buildResourcesColumns(document, source));
       main.append(sectionMetadata(document, "light-gray, full-bleed"));
       main.append(document.createElement("hr"));
+      main.append(sectionMetadata(document, "spacer"));
+      main.append(document.createElement("hr"));
       const disclaimerParas = [...source.querySelectorAll(".c-disclaimer p")].filter((node) => node.id !== "publishedDate" && node.textContent.trim());
+      const disclaimerGroups = [];
       disclaimerParas.forEach((node) => {
-        main.append(heading(document, "p", document.createTextNode(node.textContent.trim())));
+        const container = node.closest(".c-disclaimer");
+        let group = disclaimerGroups.find((g) => g.container === container);
+        if (!group) {
+          group = { container, paras: [] };
+          disclaimerGroups.push(group);
+        }
+        group.paras.push(node);
       });
-      if (disclaimerParas.length) {
+      disclaimerGroups.forEach((group, i) => {
+        if (i > 0) main.append(document.createElement("hr"));
+        group.paras.forEach((node) => {
+          main.append(heading(document, "p", document.createTextNode(node.textContent.trim())));
+        });
         main.append(sectionMetadata(document, "compact"));
-      }
+      });
       const meta = WebImporter.Blocks.getMetadata(document);
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical && canonical.getAttribute("href")) {
