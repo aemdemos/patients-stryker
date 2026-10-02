@@ -13,6 +13,12 @@ body.procedure-detail main > .section.flex {
   margin-bottom: var(--space-section);
 }
 
+body.bvn-ablation main > .section.flex > div {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+}
+
 /* Intro default content — 1.25x heading + body. */
 body.procedure-detail main > .section.flex > .default-content-wrapper h3 {
   font-size: var(--heading-font-size-l-scaled);

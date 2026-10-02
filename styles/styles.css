@@ -977,7 +977,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 /* Flex sections lay authored wrappers side by side on desktop and stack below 900px. */
   main > .section.flex {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: var(--container-gutter);
     box-sizing: border-box;
     max-width: var(--container-max);
