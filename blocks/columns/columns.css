@@ -483,6 +483,13 @@
    band and full-bleed spacing come from the section metadata (light-gray,
    full-bleed), so the block renders the same in any section. */
 
+/* band's own top/bottom inset (source: ~30px above the labels, ~50px below the last
+   link incl. its margin), so the band looks right without a `full-bleed` section.
+   :where() keeps it low-specificity so page themes (e.g. sa-resources) still win. */
+main > .section:has(> div > :where(.columns.related-links)) {
+  padding-block: var(--space-section);
+}
+
 /* column text uses the serif heading font */
 .columns.related-links p,
 .columns.related-links ul,
