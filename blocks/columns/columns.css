@@ -595,8 +595,10 @@
 }
 
 @media (width >= 600px) {
-  /* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
-  .columns.related-links p:has(+ p a u) {
+  /* reserve 2 lines for the pre-CTA body (the 2nd item of a CTA column) so the
+     CTAs align (2-up and 3-up); matches the paragraph however the field is wrapped */
+  .columns.related-links > div > div:not(:has(> :nth-child(2) a)) > p:nth-child(2),
+  .columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :nth-child(2) p {
     min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
   }
 
