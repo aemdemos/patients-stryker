@@ -35,13 +35,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-patient-information.js
+  // tools/importer/import-patient-information.js
   var import_patient_information_exports = {};
   __export(import_patient_information_exports, {
     default: () => import_patient_information_default
   });
 
-  // transformers/patient-information-cleanup.js
+  // tools/importer/transformers/patient-information-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   var TRACKING_HOST_RE = /(demdex\.net|munchkin|marketo|omtrdc\.net|everesttech\.net|adobedtm|contextweb\.com|thrtle\.com|doubleclick|scorecardresearch|bidswitch|adnxs)/i;
   var PLACEHOLDER_RE = /(\{\{|\}\}|\$\{|%7B%7B|%24%7B)/;
@@ -94,13 +94,13 @@ var CustomImportScript = (() => {
     }
   }
 
-  // import-patient-information.js
+  // tools/importer/import-patient-information.js
   var transformers = [
     transform
   ];
   var PAGE_TEMPLATE = {
     name: "patient-information",
-    description: 'Neurovascular Patient Information page (standalone): gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns) on a light-gray band, and a trademark/disclaimer block. Reuses existing blocks only; styled via the patient-information theme.',
+    description: 'Neurovascular Patient Information page (standalone): gold title bar (hero band), intro line, a row of patient-guide brochure cards (cards brochure-cta), a gold "for more information" CTA band, a 3-column resources footer (columns related-links) on a light-gray, full-bleed band, and a trademark/disclaimer block. Reuses existing blocks only; styled via the patient-information theme.',
     urls: [
       "https://patients.stryker.com/us/en/stroke-awareness/patient-information.html"
     ],
@@ -149,11 +149,46 @@ var CustomImportScript = (() => {
     nodes.forEach((n) => n && h.append(n));
     return h;
   }
-  function fragmentBlock(doc, path) {
-    return WebImporter.DOMUtils.createTable([
-      ["Fragment"],
-      [plainLink(doc, path, path)]
-    ], doc);
+  function toSitePath(href) {
+    const m = (href || "").match(/^(?:https?:\/\/patients\.stryker\.com)?(\/[^?#]*)\.html([?#].*)?$/i);
+    if (!m) return href;
+    return `${m[1].replace(/\/index$/i, "/")}${m[2] || ""}`;
+  }
+  function buildResourcesColumns(doc, source) {
+    const cols = [...source.querySelectorAll(".bg-light-gray .cols3 .col-md-4")];
+    const cells = cols.map((col) => {
+      const cell = doc.createElement("div");
+      [...col.querySelectorAll(".text .c-rich-text-editor > div")].forEach((rt) => {
+        [...rt.children].forEach((node) => {
+          const txt = node.textContent.replace(/ /g, " ").trim();
+          if (!txt && !node.querySelector("a, img, picture")) return;
+          cell.append(node);
+        });
+      });
+      [...cell.children].forEach((node) => {
+        if (node.tagName !== "P" || node.querySelector("a")) return;
+        const label = node.querySelector("strong > em, em > strong");
+        const text = node.textContent.trim();
+        if (!label || !text || label.textContent.trim() !== text) return;
+        const em = doc.createElement("em");
+        const strong = doc.createElement("strong");
+        strong.textContent = text;
+        em.append(strong);
+        node.replaceWith(heading(doc, "h3", em));
+      });
+      [...cell.querySelectorAll("a[href]")].forEach((a) => {
+        a.setAttribute("href", toSitePath(a.getAttribute("href")));
+      });
+      [...cell.querySelectorAll("a")].forEach((a) => {
+        const isCta = a.closest(".standalone-link") || a.querySelector(".standalone-link");
+        if (!isCta || a.querySelector("u")) return;
+        const u = doc.createElement("u");
+        while (a.firstChild) u.appendChild(a.firstChild);
+        a.appendChild(u);
+      });
+      return cell;
+    });
+    return WebImporter.DOMUtils.createTable([["Columns (related-links)"], cells], doc);
   }
   function buildHeroBand(doc, source) {
     const bgImgs = [...source.querySelectorAll("img.img-responsive.u-inline-block")].filter((img) => /Resources-background/i.test(img.getAttribute("src") || ""));
@@ -231,6 +266,8 @@ var CustomImportScript = (() => {
       if (introH2) main.append(heading(document, "h2", document.createTextNode(introH2.textContent.trim())));
       main.append(buildCards(document, source));
       main.append(document.createElement("hr"));
+      main.append(sectionMetadata(document, "spacer"));
+      main.append(document.createElement("hr"));
       const goldBand = source.querySelector(".bg-golden-gradient");
       if (goldBand) {
         const bandP = goldBand.querySelector("p");
@@ -243,15 +280,29 @@ var CustomImportScript = (() => {
       }
       main.append(sectionMetadata(document, "gold, full-bleed"));
       main.append(document.createElement("hr"));
-      main.append(fragmentBlock(document, "/fragments/patient-information-resources"));
+      main.append(buildResourcesColumns(document, source));
+      main.append(sectionMetadata(document, "light-gray, full-bleed"));
+      main.append(document.createElement("hr"));
+      main.append(sectionMetadata(document, "spacer"));
       main.append(document.createElement("hr"));
       const disclaimerParas = [...source.querySelectorAll(".c-disclaimer p")].filter((node) => node.id !== "publishedDate" && node.textContent.trim());
+      const disclaimerGroups = [];
       disclaimerParas.forEach((node) => {
-        main.append(heading(document, "p", document.createTextNode(node.textContent.trim())));
+        const container = node.closest(".c-disclaimer");
+        let group = disclaimerGroups.find((g) => g.container === container);
+        if (!group) {
+          group = { container, paras: [] };
+          disclaimerGroups.push(group);
+        }
+        group.paras.push(node);
       });
-      if (disclaimerParas.length) {
+      disclaimerGroups.forEach((group, i) => {
+        if (i > 0) main.append(document.createElement("hr"));
+        group.paras.forEach((node) => {
+          main.append(heading(document, "p", document.createTextNode(node.textContent.trim())));
+        });
         main.append(sectionMetadata(document, "compact"));
-      }
+      });
       const meta = WebImporter.Blocks.getMetadata(document);
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical && canonical.getAttribute("href")) {
