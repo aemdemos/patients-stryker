@@ -43,7 +43,7 @@ body.cookie-disclaimer main .section h2 {
    Theme: long-page-detail
    ===================================================================== */
 
-body.long-page-detail main > .section:first-child {
+body.long-page-detail .section:first-child {
   margin-bottom: 20px;
 }
 
@@ -407,7 +407,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
   /* Theme: long-page-detail */
-body.long-page-detail main > .section:first-child {
+body.long-page-detail .section:first-child {
   margin-bottom: 30px;
 }
 
