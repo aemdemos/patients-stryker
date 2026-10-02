@@ -61,6 +61,11 @@ body.long-page-detail a:any-link {
   text-decoration: none;
 }
 
+body.long-page-detail .section.compact .columns h2,
+body.long-page-detail .section.compact .columns h2 em strong {
+  margin-top: 0;
+}
+
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    ===================================================================== */
