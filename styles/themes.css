@@ -688,6 +688,16 @@ body.discography {
   --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
 }
 
+body.discography main > .section.flex > .default-content-wrapper p {
+    font-size: var(--body-font-size-l);
+    line-height: var(--body-line-height-l);
+}
+
+body.discography main #how-it-works + p {
+    font-size: var(--body-font-size-l);
+    line-height: var(--body-line-height-l);
+}
+
 body.discography a:any-link {
     text-decoration: none;
 }
@@ -702,10 +712,7 @@ body.discography main .section.flex > .default-content-wrapper h3 {
   line-height: var(--body-line-height-l);
 }
 
-body.discography main .section:not(.compact) > .default-content-wrapper p:not(li p) {
-  font-size: var(--procedure-body-copy-size);
-  line-height: 1.1;
-}
+
 
 body.discography main > .section.flex.panel-container > .panel-wrapper, 
 body.discography main > .section.flex.panel-container > .panel.cta {
@@ -1805,6 +1812,12 @@ body.bvn-ablation main > .section.light-gray > .default-content-wrapper {
   background-color: var(--color-surface-dim);
 }
 
+body.bvn-ablation main > .section > .default-content-wrapper #resources {
+  border-bottom: 1px solid var(--color-surface-muted);
+  padding-bottom: 7px;
+}
+
+
 body.bvn-ablation main > .section.light-gray :is(p, li) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
@@ -1866,15 +1879,10 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     margin-top: var(--space-section-l);
   }
 
-  /* intro copy starts ~20px below the benefits card top (rich-text inset) */
-  body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
-    padding: var(--space-block-l) 0 0;
-  }
-
   /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */
   body.bvn-ablation main > .section.flex {
     display: flex;
-    align-items: start;
+    align-items: baseline;
     gap: var(--container-gutter);
     box-sizing: border-box;
     max-width: var(--container-max);
@@ -1885,6 +1893,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   body.bvn-ablation main > .section.flex > div {
     flex: 1 1 0;
     min-width: 0;
+    padding: 0;
   }
 
   /* the leftover empty section div (shared rule only hides it from 900px) */
