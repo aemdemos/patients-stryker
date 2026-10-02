@@ -544,9 +544,16 @@
   border-color: transparent transparent transparent currentcolor;
 }
 
-/* underline-authored CTA (<u>): also teal + uppercase */
-.columns.related-links p:not(:has(a)) + p:has(a) a:has(u) {
-  color: var(--link-color);
+/* underline-authored CTA (<u>): the <u> marks the CTA on its own, so no sibling
+   context is needed — it renders the same on the page and in the editor */
+.columns.related-links p a:any-link:has(u) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
   text-transform: uppercase;
 }
 
@@ -558,7 +565,9 @@
 /* chevron sized to the reference's strykericons arrow (U+E250 at 11.9px draws a
    6px-wide, 11px-tall solid triangle). Drawn as a clipped box, not borders, since
    browsers round border widths to whole pixels (5.5px → 5px). */
-.columns.related-links p:not(:has(a)) + p:has(a) a:has(u)::after {
+.columns.related-links p a:any-link:has(u)::after {
+  content: "";
+  display: inline-block;
   width: 6px;
   height: 11px;
   border: 0;
