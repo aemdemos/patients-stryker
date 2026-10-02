@@ -57,6 +57,9 @@ body.long-page-detail .accordion .accordion-item-open .accordion-item-label {
   border-bottom: none;
 }
 
+body.long-page-detail a:any-link {
+  text-decoration: none;
+}
 
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
