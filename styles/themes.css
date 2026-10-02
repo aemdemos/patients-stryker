@@ -693,7 +693,7 @@ body.discography main > .section.flex > .default-content-wrapper p {
     line-height: var(--body-line-height-l);
 }
 
-#how-it-works + p {
+body.discography main #how-it-works + p {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
 }
