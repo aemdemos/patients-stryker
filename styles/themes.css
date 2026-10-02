@@ -40,6 +40,14 @@ body.cookie-disclaimer main .section h2 {
 }
 
 /* =====================================================================
+   Theme: long-page-detail
+   ===================================================================== */
+
+body.long-page-detail .section.compact h1 {
+  margin-bottom: 20px;
+}
+
+/* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    ===================================================================== */
 
@@ -398,6 +406,11 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
 /* ----- Tablet (>=600px) ----- */
 @media (width >= 600px) {
+  /* Theme: long-page-detail */
+  body.long-page-detail .section.compact h1 {
+    margin-bottom: 30px;
+  }
+
   /* Theme: campaign-landing */
   body.campaign-landing main .hero.fullbleed {
     min-height: calc(5 * var(--space-section-l));
