@@ -35,7 +35,7 @@ body.website-accessibility p {
    Theme: cookie-disclaimer
    ===================================================================== */
 
-body.cookie-disclaimer h2 {
+body.cookie-disclaimer main .section h2 {
   font-size: var(--heading-font-size-l);
 }
 
