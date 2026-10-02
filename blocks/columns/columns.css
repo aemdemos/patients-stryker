@@ -523,8 +523,10 @@
   color: var(--color-accent);
 }
 
-/* Style only the related-links "Learn more" CTA links. */
-.columns.related-links p:not(:has(a)) + p:has(a) a:any-link {
+/* Plain "Learn more" CTA: the link in the last item of a column whose second item
+   is copy, not a link (link-list columns like Regional information are skipped).
+   Keyed on the column's children, so it holds whatever wraps each field. */
+.columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :last-child a:any-link:not(:has(u)) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -534,7 +536,7 @@
   line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
 }
 
-.columns.related-links p:not(:has(a)) + p:has(a) a::after {
+.columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :last-child a:not(:has(u))::after {
   content: "";
   display: inline-block;
   width: 0;
