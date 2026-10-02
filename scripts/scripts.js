@@ -16,7 +16,12 @@ import {
   getMetadata,
 } from './aem.js';
 
-import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
+import decorateDMAssets, {
+  liftDefaultContentDMMedia,
+  isDMSrc,
+  isDMVideoSrc,
+  scene7Src,
+} from './dm-support.js';
 import { applySectionBackgrounds } from './utils.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
@@ -485,6 +490,39 @@ export async function loadTemplate(doc, templateName) {
 }
 
 /**
+ * Preloads the hero's LCP image before the page is decorated.
+ *
+ * Hero crops are authored as plain links to external Dynamic Media assets, so
+ * the image URL is invisible to the browser's preload scanner — the fetch would
+ * otherwise only be queued once decoration has rewritten the link into an <img>,
+ * and at default priority. Emitting a high-priority <link rel="preload"> as the
+ * very first thing scripts.js does starts the download immediately instead
+ * (measured: ~4.9s of LCP "load delay" on mobile before this).
+ * @param {Element} main The main element, before decoration
+ */
+function preloadHeroImage(main) {
+  const hero = main.querySelector('.hero');
+  if (!hero) return;
+
+  const sources = [...hero.querySelectorAll('a[href]')]
+    .map((a) => a.getAttribute('href'))
+    .filter((href) => href && isDMSrc(href) && !isDMVideoSrc(href));
+  if (!sources.length) return;
+
+  // hero.js keeps the crops in authored order, [desktop, mobile], and CSS shows
+  // one per breakpoint — preload only the one this viewport will actually paint.
+  const desktop = window.matchMedia('(width >= 900px)').matches;
+  const href = (!desktop && sources[1]) || sources[0];
+
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.fetchPriority = 'high';
+  link.href = scene7Src(href);
+  document.head.append(link);
+}
+
+/**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
@@ -506,6 +544,7 @@ async function loadEager(doc) {
 
   const main = doc.querySelector('main');
   if (main) {
+    preloadHeroImage(main);
     decorateMain(main);
 
     // Load template if specified in metadata
