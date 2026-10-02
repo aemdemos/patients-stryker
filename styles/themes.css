@@ -47,6 +47,10 @@ body.long-page-detail main > .section.compact:nth-child(1 of .section.compact) {
   margin-bottom: 20px;
 }
 
+body.long-page-detail ul > li > p strong {
+  font-family: var(--body-font-family);
+}
+
 /* =====================================================================
    Theme: sa-resources — Stroke-Awareness Resources page
    ===================================================================== */
