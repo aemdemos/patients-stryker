@@ -211,6 +211,7 @@
   /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height */
   --nav-height: 90px;
   --nav-bar-height: 60px;
+  --nav-toggle-icon-size: 16px; /* mobile menu "+" (its 2vw size at 800px) */
 }
 
 body {

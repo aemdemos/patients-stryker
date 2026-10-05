@@ -250,7 +250,7 @@ header nav .nav-sections a.nav-drop-toggle::after {
   top: 50%;
   transform: translateY(-50%);
   font-weight: bold;
-  font-size: 2vw;
+  font-size: var(--nav-toggle-icon-size);
   line-height: 1;
 }
 
