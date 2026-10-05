@@ -7,6 +7,7 @@
 .library-preview {
   --library-preview-border: 1px solid var(--color-surface-muted);
   --library-preview-radius: 6px;
+  --library-preview-label-font: system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
 }
 
 /* the preview shows blocks only — no site chrome */
@@ -70,9 +71,11 @@
   border-start-end-radius: var(--library-preview-radius);
   background-color: var(--color-surface);
   color: var(--color-secondary);
-  font-family: var(--display-font-family);
+
+  /* editor UI, not site content: the OS interface font, which has a true semibold */
+  font-family: var(--library-preview-label-font);
   font-size: var(--body-font-size-m);
-  font-weight: 700;
+  font-weight: 600;
   line-height: var(--body-line-height);
   white-space: nowrap;
 
