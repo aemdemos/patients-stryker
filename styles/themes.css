@@ -556,7 +556,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   
   body.condition-detail h2 {
     font-family: var(--heading-font-family);
-    font-size: var(--condition-headline-font-size);
+    font-size: var(--heading-font-size-ml);
     padding-top:4%;
     padding-bottom: 7px;
     border-bottom: 1px solid #b2b4ae;
@@ -564,7 +564,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
   body.condition-detail h2:has(em strong) {
     border-bottom: 0;
-    padding-left: 10px;
   }
 
   body.condition-detail h4 {
@@ -572,8 +571,7 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   }
 
   body.condition-detail h2 em strong, body.condition-detail h2 strong em {
-     font-size: var(--condition-headline-font-size);
-   
+     font-size: var(--heading-font-size-ml);
   }
 
   body.condition-detail main p, body.condition-detail main ul {
@@ -2034,6 +2032,14 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
   body.ivs-get-the-facts main > .section.divider {
     padding-top: calc(var(--space-section-l) + var(--space-section) + 3%); /* 50 + 30 + 3% */
     padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
+  }
+
+  body.condition-detail h2 {
+     font-size: var(--condition-headline-font-size);
+  }
+
+    body.condition-detail h2 em strong, body.condition-detail h2 strong em {
+     font-size: var(--condition-headline-font-size);
   }
 }
 
