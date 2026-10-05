@@ -1923,10 +1923,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   body.bvn-ablation main > .section.flex.dark > .default-content-wrapper {
     margin-right: 0%;
     margin-top: 0%;
-    padding-top: 2%;
-    padding-right: 3%;
-    padding-left: 2%;
-    padding-bottom: 3%;
+    padding: 2% 3% 3% 2%;
   }
 
   body.bvn-ablation main > .section.flex.dark > .video-wrapper {
