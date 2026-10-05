@@ -235,11 +235,7 @@
   color: var(--color-black);
 }
 
-/* 50-50 row with an image in an edge-to-edge band: the image bleeds the full band
-   height, so drop the section's own block padding and the image column's
-   margin/padding (the text column re-adds its inset below). Keyed on layout
-   (full-bleed + image), not on the section colour; text-only bands keep the
-   default full-bleed padding. */
+/* full-bleed 50-50 with an image: image bleeds the band height, text column keeps the inset */
 .section.full-bleed:has(.columns-50-50 picture) {
   padding-block: 0;
 }

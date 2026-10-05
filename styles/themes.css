@@ -1274,8 +1274,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   padding-block: 0;
 }
 
-/* full-bleed Columns (50-50) text column: cancel the block's 30px image-row inset
-   so the theme's own spacing applies (the >=600 rule sets padding-top) */
+/* cancel the block's full-bleed 50-50 text inset; theme sets its own */
 body.zip-skin-closure .full-bleed .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
   padding-block: 0;
 }
