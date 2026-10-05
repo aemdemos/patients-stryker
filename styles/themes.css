@@ -2101,4 +2101,8 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
     min-width: 0;
   }
 
+  body.long-page-detail  main > .section.flex {
+    align-items: start;
+  }
+
 }
