@@ -1,0 +1,54 @@
+/*
+ * DA / Experience Workspace block library preview (see da-library-preview.js).
+ * Frames each variant and labels it with its name; loaded only on
+ * /.da/library/ pages.
+ */
+
+/* the preview shows blocks only — no site chrome */
+.library-preview header,
+.library-preview footer {
+  display: none;
+}
+
+.library-preview main {
+  padding: 0 var(--space-block-s) var(--space-section);
+}
+
+/* one outlined frame per variant; a variant may span several sections */
+.library-preview main > .section.library-variant {
+  position: relative;
+  overflow: clip visible;
+  border-inline: 1px solid var(--color-surface-muted);
+}
+
+.library-preview main > .section.library-variant-start {
+  margin-block-start: var(--space-section-l);
+  border-block-start: 1px solid var(--color-surface-muted);
+}
+
+.library-preview main > .section.library-variant-end {
+  border-block-end: 1px solid var(--color-surface-muted);
+}
+
+/* style-only variants (no content) keep a visible frame */
+.library-preview main > .section.library-variant-empty {
+  min-height: var(--space-section);
+}
+
+/* name tab sitting on the frame's top edge */
+.library-preview main > .section.library-variant-start[data-library-label]::after {
+  content: attr(data-library-label);
+  position: absolute;
+  inset-block-end: 100%;
+  inset-inline-start: 0;
+  padding: var(--space-block-xs) var(--space-block-s);
+  border: 1px solid var(--color-surface-muted);
+  border-block-end: 0;
+  border-inline-start: 0;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xs);
+  line-height: var(--body-line-height);
+  white-space: nowrap;
+}
