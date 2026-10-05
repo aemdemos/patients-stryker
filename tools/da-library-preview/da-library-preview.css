@@ -18,6 +18,7 @@
 .library-preview main > .section.library-variant {
   position: relative;
   overflow: clip visible;
+  overflow-clip-margin: 1px; /* keep the name tab's left border, which sits on the frame */
   border-inline: 1px solid var(--color-surface-muted);
 }
 
@@ -30,6 +31,15 @@
   border-block-end: 1px solid var(--color-surface-muted);
 }
 
+/* breathing room inside the frame, on top of the section's own spacing */
+.library-preview main > .section.library-variant-start > div:first-child {
+  padding-block-start: var(--space-block-l);
+}
+
+.library-preview main > .section.library-variant-end > div:last-child {
+  padding-block-end: var(--space-block-l);
+}
+
 /* style-only variants (no content) keep a visible frame */
 .library-preview main > .section.library-variant-empty {
   min-height: var(--space-section);
@@ -40,11 +50,10 @@
   content: attr(data-library-label);
   position: absolute;
   inset-block-end: 100%;
-  inset-inline-start: 0;
+  inset-inline-start: -1px;
   padding: var(--space-block-xs) var(--space-block-s);
   border: 1px solid var(--color-surface-muted);
   border-block-end: 0;
-  border-inline-start: 0;
   background-color: var(--color-surface);
   color: var(--color-text-muted);
   font-family: var(--display-font-family);
