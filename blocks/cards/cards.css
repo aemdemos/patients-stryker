@@ -56,17 +56,10 @@
 }
 
 /* card heading: Futura bold, not the global serif h3 */
-.cards .cards-card-body :is(h2, h3) {
+.cards .cards-card-body h3 {
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family);
   font-weight: 700;
-}
-
-/* h2 title: same look as h3 (drop the global h2 size and underline) */
-.cards .cards-card-body h2 {
-  padding-bottom: 0;
-  border-bottom: 0;
-  font-size: var(--heading-font-size-l);
 }
 
 .cards .cards-card-body p {
