@@ -63,15 +63,22 @@
   position: absolute;
   inset-block-end: 100%;
   inset-inline-start: -1px;
-  padding: var(--space-block-xs) var(--space-block-s);
+  padding: var(--space-block-xs) var(--space-block);
   border: var(--library-preview-border);
   border-block-end: 0;
   border-start-start-radius: var(--library-preview-radius);
   border-start-end-radius: var(--library-preview-radius);
   background-color: var(--color-surface);
-  color: var(--color-text-muted);
+  color: var(--color-secondary);
   font-family: var(--display-font-family);
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
   line-height: var(--body-line-height);
   white-space: nowrap;
+
+  /* long names on narrow previews end in an ellipsis instead of being cut */
+  box-sizing: border-box;
+  max-width: calc(100% + 1px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
