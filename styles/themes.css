@@ -1882,7 +1882,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */
   body.bvn-ablation main > .section.flex {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     gap: var(--container-gutter);
     box-sizing: border-box;
     max-width: var(--container-max);
@@ -1893,7 +1893,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   body.bvn-ablation main > .section.flex > div {
     flex: 1 1 0;
     min-width: 0;
-    padding: 0;
+    padding: 1% 0 0;
   }
 
   /* the leftover empty section div (shared rule only hides it from 900px) */
@@ -1921,7 +1921,9 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   }
 
   body.bvn-ablation main > .section.flex.dark > .default-content-wrapper {
-    padding: var(--space-inset-m) var(--space-block) var(--space-inset-m) calc(var(--container-gutter) + var(--space-inset-m));
+    margin-right: 0%;
+    margin-top: 0%;
+    padding: 2% 3% 3% 2%;
   }
 
   body.bvn-ablation main > .section.flex.dark > .video-wrapper {
