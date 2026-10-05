@@ -875,7 +875,7 @@ main > .section.no-cta > .default-content-wrapper h1 {
 
 /* Underlined authored headings render with the source divider treatment. */
 main :is(h1, h2, h3, h4, h5, h6).underline,
-main :is(h1, h2, h3, h4, h5, h6):has(> u) {
+main :is(h1, h2, h3, h4, h5, h6):has(> u, > :is(strong, b, em, i) > u) {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
   font-size: var(--heading-font-size-xl);
@@ -883,9 +883,10 @@ main :is(h1, h2, h3, h4, h5, h6):has(> u) {
 
 
 
-/* EW fix: if author underlines h2 text (<u>), remove text underline so
-   the visual underline is only the h2 border-bottom. */
- main > .section > .default-content-wrapper h2 > u {
+/* EW fix: if author underlines h2 text (<u>, also inside bold/italic), remove
+   the text underline so the visual underline is only the h2 border-bottom. */
+main > .section > .default-content-wrapper h2 > u,
+main > .section > .default-content-wrapper h2 > :is(strong, b, em, i) > u {
   text-decoration: none;
   color: inherit;
 }
