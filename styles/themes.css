@@ -1274,6 +1274,11 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
   padding-block: 0;
 }
 
+/* cancel the block's full-bleed 50-50 text inset; theme sets its own */
+body.zip-skin-closure .full-bleed .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+  padding-block: 0;
+}
+
 .zip-skin-closure .columns-container .columns-wrapper .columns.columns-50-50.block.columns-2-cols p {
   padding-bottom: 30px;
   padding-top: 15px;
@@ -1360,10 +1365,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
 }
-
- body.condition-detail .section.dark:has(.columns-50-50) {
-  padding-block: var(--space-section);
- }
 
  body.condition-detail .panel.gold .panel-body {
   margin:0;
