@@ -235,20 +235,17 @@
   color: var(--color-black);
 }
 
-/* dark 50-50 band: the image bleeds the full band height, so drop the section's
-   own block padding and the image column's margin/padding (the text column re-adds
-   its inset below). Keyed on the 50-50 variant so plain-columns dark bands keep
-   their default spacing. */
-.section.dark:has(.columns-50-50) {
+/* full-bleed 50-50 with an image: image bleeds the band height, text column keeps the inset */
+.section.full-bleed:has(.columns-50-50 picture) {
   padding-block: 0;
 }
 
-.section.dark .columns-50-50 .columns-img-col {
+.section.full-bleed .columns-50-50 .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+.section.full-bleed .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
   padding-block: var(--space-section);
 }
 
