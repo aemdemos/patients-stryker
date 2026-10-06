@@ -1646,6 +1646,10 @@ body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
   padding-top: var(--space-block);
 }
 
+body.bvn-ablation .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--display-font-family)
+}
+
 body.bvn-ablation main .panel.cta.wide .panel-body ul {
   display: block;
   list-style: disc;
