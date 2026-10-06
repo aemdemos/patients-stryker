@@ -145,6 +145,7 @@
 .icon-list.tile .icon-list-text,
 .icon-list.tile .icon-list-text p {
   font-size: var(--icon-list-tile-caption-size);
+  line-height: var(--body-line-height-l);
 }
 
 .icon-list.tile .icon-list-icon img {
@@ -263,6 +264,14 @@
     display: block;
     margin-bottom: var(--icon-list-label-icon-gap);
   }
+}
+
+/* tile intro + lead-in: capped width, centred, tight line-height (source) */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > div:not(.icon-list-wrapper) p {
+  max-width: var(--icon-list-tile-intro-width);
+  margin-inline: auto;
+  line-height: var(--body-line-height-l);
 }
 
 /* Tile intro rhythm (matches source): heading→intro 15px, then 49px before the
