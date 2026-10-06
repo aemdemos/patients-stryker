@@ -1342,7 +1342,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
 .zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) {
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
-  font-size: var(--panel-heading-size);
   line-height: var(--panel-body-line-height);
 }
 
@@ -1350,10 +1349,7 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   margin-bottom: 0;
 }
 
-.zip-skin-closure .panel .panel-body > p:first-child:has(strong) strong,
-.zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) strong {
-  font-weight: 700;
-}
+
 
 body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
