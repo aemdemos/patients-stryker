@@ -317,6 +317,7 @@
   background: var(--color-accent);
   box-shadow: none;
   text-align: center;
+  margin:0;
 }
 
 /* ---- gray variant  */
