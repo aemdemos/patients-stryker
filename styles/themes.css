@@ -290,7 +290,7 @@ body.condition-detail main > .section.light-gray > .default-content-wrapper > h4
       line-height: var(--heading-line-height-h4);
 }
 
-body.condition-detail main > .tabs .tabs-tab {
+body.condition-detail .tabs .tabs-tab {
   padding: 0 30px;
 }
 
