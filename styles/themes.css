@@ -554,25 +554,23 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     padding-left:4%;
   }
   
-  body.condition-detail h2 {
+  body.condition-detail h3 {
     font-family: var(--heading-font-family);
     font-size: var(--heading-font-size-ml);
-    padding-top:4%;
     padding-bottom: 7px;
-    border-bottom: 1px solid #b2b4ae;
+    line-height: var(--heading-line-height);
   }
 
-  body.condition-detail h2:has(em strong) {
-    border-bottom: 0;
+  body.condition-detail h3 em strong, body.condition-detail h3 strong em {
+    font-size: var(--heading-font-size-ml);
   }
+ 
 
   body.condition-detail h4 {
     font-size: var(--heading-font-size-ml);
   }
 
-  body.condition-detail h2 em strong, body.condition-detail h2 strong em {
-     font-size: var(--heading-font-size-ml);
-  }
+
 
   body.condition-detail main p, body.condition-detail main ul {
     font-size: var(--body-font-size-l);
@@ -2034,12 +2032,14 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
     padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
   }
 
-  body.condition-detail h2 {
-     font-size: var(--condition-headline-font-size);
+  body.condition-detail h3 {
+     font-size: var(--heading-font-size-l-scaled);
+     line-height: var(--heading-line-height-ml);
   }
 
-    body.condition-detail h2 em strong, body.condition-detail h2 strong em {
-     font-size: var(--condition-headline-font-size);
+    body.condition-detail h3 em strong, body.condition-detail h3 strong em {
+     font-size: var(--heading-font-size-l-scaled);
+     line-height: var(--heading-line-height-ml);
   }
 }
 
