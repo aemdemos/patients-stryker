@@ -1,0 +1,87 @@
+/*
+ * DA / Experience Workspace block library preview (see da-library-preview.js).
+ * Frames each variant and labels it with its name; loaded only on
+ * /.da/library/ pages.
+ */
+
+.library-preview {
+  --library-preview-border: 1px solid var(--color-surface-muted);
+  --library-preview-radius: 6px;
+  --library-preview-label-font: system-ui, -apple-system, "Segoe UI", roboto, sans-serif;
+}
+
+/* the preview shows blocks only — no site chrome */
+.library-preview header,
+.library-preview footer {
+  display: none;
+}
+
+.library-preview main {
+  padding: 0 var(--space-block-s) var(--space-section);
+}
+
+/*
+ * one outlined frame per variant; a variant may span several sections.
+ * clip-path trims full-viewport section decorations (e.g. the divider rule) at
+ * the frame's sides, while leaving room above for the name tab.
+ */
+.library-preview main > .section.library-variant {
+  position: relative;
+  clip-path: inset(-100vh 0);
+  border-inline: var(--library-preview-border);
+}
+
+/* top-left stays square: the name tab sits on that corner */
+.library-preview main > .section.library-variant-start {
+  margin-block-start: var(--space-section-l);
+  border-block-start: var(--library-preview-border);
+  border-start-end-radius: var(--library-preview-radius);
+}
+
+.library-preview main > .section.library-variant-end {
+  border-block-end: var(--library-preview-border);
+  border-end-start-radius: var(--library-preview-radius);
+  border-end-end-radius: var(--library-preview-radius);
+}
+
+/* style-only variants (no content) keep a visible frame */
+.library-preview main > .section.library-variant-empty {
+  min-height: var(--space-section);
+}
+
+/* breathing room inside the frame, on top of the section's own spacing */
+.library-preview main > .section.library-variant-start > div:first-child {
+  padding-block-start: var(--space-block-l);
+}
+
+.library-preview main > .section.library-variant-end > div:last-child {
+  padding-block-end: var(--space-block-l);
+}
+
+/* name tab sitting on the frame's top edge */
+.library-preview main > .section.library-variant-start[data-library-label]::after {
+  content: attr(data-library-label);
+  position: absolute;
+  inset-block-end: 100%;
+  inset-inline-start: -1px;
+  padding: var(--space-block-xs) var(--space-block);
+  border: var(--library-preview-border);
+  border-block-end: 0;
+  border-start-start-radius: var(--library-preview-radius);
+  border-start-end-radius: var(--library-preview-radius);
+  background-color: var(--color-surface);
+  color: var(--color-secondary);
+
+  /* editor UI, not site content: the OS interface font, which has a true semibold */
+  font-family: var(--library-preview-label-font);
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+  line-height: var(--body-line-height);
+  white-space: nowrap;
+
+  /* long names on narrow previews end in an ellipsis instead of being cut */
+  box-sizing: border-box;
+  max-width: calc(100% + 1px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

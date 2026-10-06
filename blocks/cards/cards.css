@@ -72,6 +72,26 @@
   margin: var(--space-block) 0 0;
 }
 
+/* default cards: bottom-align the CTA across a row. Grid rows already give the
+   cards in a row equal height; make each card a column whose body fills it and
+   push the body's last item (the "Learn more" CTA) to the bottom. The last item
+   is the button paragraph on the published page and its editor wrapper in the
+   authoring canvas, so this holds in both. (brochure-cta has its own version.) */
+.cards:not(.linked, .brochure, .brochure-cta, .resources) > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.cards:not(.linked, .brochure, .brochure-cta, .resources) .cards-card-body > :last-child {
+  margin-top: auto;
+}
+
 /* "Learn more" CTA in the canvas: decorateButtons' .button.secondary class is
    wiped when the editor re-renders the field, so style the authored <em><a> to
    match the gray button. Matches only in the canvas (live unwraps the <em>). */

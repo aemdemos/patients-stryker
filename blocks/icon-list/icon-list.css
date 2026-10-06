@@ -210,18 +210,24 @@
   align-self: stretch;
 }
 
-/* label — enlarged, gold initial */
-.icon-list.label .icon-list-text p:first-child {
+/* label (the text cell's first item) — enlarged, gold initial; caption (every
+   later item) below. Each rule matches the paragraph either as that item itself
+   or nested inside it, so the split holds whether paragraphs sit directly in
+   the cell or are individually wrapped (as in the authoring canvas). */
+.icon-list.label .icon-list-text > p:first-child,
+.icon-list.label .icon-list-text > :first-child p {
   font-size: var(--icon-list-label-size);
   line-height: 1.06;
 }
 
-.icon-list.label .icon-list-text p:first-child::first-letter {
+.icon-list.label .icon-list-text > p:first-child::first-letter,
+.icon-list.label .icon-list-text > :first-child p::first-letter {
   color: var(--color-accent);
 }
 
 /* caption — lighter, smaller serif */
-.icon-list.label .icon-list-text p:not(:first-child) {
+.icon-list.label .icon-list-text > p:not(:first-child),
+.icon-list.label .icon-list-text > :not(:first-child) p {
   margin-top: var(--icon-list-label-caption-gap);
   font-family: var(--heading-font-family);
   font-size: var(--icon-list-label-caption-size);
@@ -267,8 +273,14 @@
   margin-bottom: var(--icon-list-tile-title-gap);
 }
 
+/* intro paragraph (any item before the last) — serif, 49px above the lead-in.
+   Intro and lead-in rules match the paragraph either as that item itself or
+   nested inside it, so they hold whether the content sits directly in the
+   wrapper or each item is individually wrapped (as in the authoring canvas). */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > div:not(.icon-list-wrapper) p:first-of-type {
+  > div:not(.icon-list-wrapper) > p:not(:last-child),
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > div:not(.icon-list-wrapper) > :not(:last-child) p {
   margin-bottom: var(--icon-list-tile-intro-gap);
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
@@ -277,7 +289,9 @@
 /* lead-in line ("These risk factors include the following:") — Futura-bold black
    at 17.5px, 49px above the grid. */
 .icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
-  > div:not(.icon-list-wrapper) p:last-child {
+  > div:not(.icon-list-wrapper) > p:last-child,
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > div:not(.icon-list-wrapper) > :last-child p {
   margin-bottom: var(--icon-list-tile-intro-gap);
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-l);

@@ -107,7 +107,10 @@
   cursor: pointer;
 }
 
+/* last tab: no divider and no trailing padding (source: 0 0 0 30px), so the
+   tab bar is only as wide as its labels need */
 .tabs .tabs-tab:last-child {
+  padding-right: 0;
   border-right: none;
 }
 
@@ -146,7 +149,48 @@
   margin: 0;
 }
 
+/* a panel can instead hold a "side-by-side" section (copy + video block) — from
+   a `tabbed` section or a fragment — e.g. stroke-awareness "Hear from stroke
+   survivors". Source: copy is a 21px light-serif lead stacked over the video on
+   mobile; from 900px the copy (~39%) sits left of a ~49% video, mirroring the
+   page's video section. */
+.tabs .tabs-panel:has(> .section.side-by-side) {
+  margin-top: 0;
+}
+
+.tabs .tabs-panel > .section.side-by-side {
+  display: block;
+  margin: 0;
+}
+
+.tabs .tabs-panel > .section.side-by-side > .default-content-wrapper {
+  padding: var(--tabs-panel-copy-padding);
+}
+
+.tabs .tabs-panel > .section.side-by-side p {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--body-line-height-l-nested);
+}
+
 @media (width >= 900px) {
+  .tabs .tabs-panel > .section.side-by-side {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .tabs .tabs-panel > .section.side-by-side > .default-content-wrapper {
+    flex: 0 0 39%;
+    box-sizing: border-box;
+    margin-inline-start: 5%;
+    padding: 5% 0 0;
+  }
+
+  .tabs .tabs-panel > .section.side-by-side > .video-wrapper {
+    flex: 0 0 49%;
+  }
+
   .tabs {
     display: flex;
     flex-wrap: wrap;

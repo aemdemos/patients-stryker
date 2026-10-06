@@ -250,7 +250,7 @@ header nav .nav-sections a.nav-drop-toggle::after {
   top: 50%;
   transform: translateY(-50%);
   font-weight: bold;
-  font-size: 2vw;
+  font-size: var(--nav-toggle-icon-size);
   line-height: 1;
 }
 
@@ -371,10 +371,10 @@ header nav .nav-search-input {
   height: 100%;
   border: 0;
   background: transparent;
-  padding: 6px 8px;
+  padding: 8px 8px 8px 11px; /* source: 14px text, 11px inset, 220px box */
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-s);
-  width: 180px;
+  font-size: var(--body-font-size-m);
+  width: 178px;
 }
 
 header nav .nav-search-input:focus {
@@ -573,8 +573,17 @@ header nav.nav-variant-legal .nav-brand img {
     background-color: var(--color-surface);
   }
 
-  /* desktop magnifier: teal by default, darker teal on hover */
+  /* desktop magnifier: 21px glyph placed as on source (11px top / 9px bottom /
+     11px right). The SVG has empty space below the glyph, so pin it to the top. */
+  header nav .nav-search-submit {
+    padding: 2px 11px 0 10px;
+  }
+
   header nav .nav-search-submit::before {
+    width: 21px;
+    height: 21px;
+    mask-size: 100% auto;
+    mask-position: top;
     background-color: var(--color-primary);
   }
 

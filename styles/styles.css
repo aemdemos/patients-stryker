@@ -93,17 +93,20 @@
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
   --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
   --heading-font-size-compact-m: 19.9px; /* compact section h2 ≥480px (measured) */
+  --heading-font-size-long-page-detail: 19.6px; /* long-page-detail h2 (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
   --body-line-height: 1.4286;
   --body-line-height-l: 1.15;       /* 20.125px / 17.5px */
   --body-line-height-l-nested: 1.22; /* measured: a 1.25x span inside a 14px/20px source paragraph renders ~21.3px lines */
+  --related-links-line-height: 1.314; /* measured: 17.5px link inside a 14px/19.25px source paragraph renders 23px lines */
   --paragraph-line-height: 1.375;
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
+  --heading-line-height-long-page-detail: 1.2; /* long-page-detail h2 (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block-xs: 5px;
@@ -164,6 +167,9 @@
   --icon-list-label-icon-gap: 0px;      /* icon → label gap (source: 0; visual space is baked into the PNG) */
   --icon-list-label-title-gap: 49px;    /* heading → intro-copy gap (source: 15px margin + spacer paragraph ≈ 49px) */
 
+  /* tabs block — side-by-side panel (copy + video), measured from source ("Hear from stroke survivors") */
+  --tabs-panel-copy-padding: 36px 36px 18px; /* copy above the video on mobile */
+
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
   --panel-cta-heading-size: 26px; /* cta variant h3 */
@@ -207,6 +213,7 @@
   /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height */
   --nav-height: 90px;
   --nav-bar-height: 60px;
+  --nav-toggle-icon-size: 16px; /* mobile menu "+" (its 2vw size at 800px) */
 }
 
 body {
@@ -269,29 +276,6 @@ h2 {
   font-size: var(--heading-font-size-compact);
   margin-top: 30px;
 }
-
-/* "Resources" heading: sage underline + gap below. */
- main > .section > .default-content-wrapper h2 {
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
-/* Gold-label headings authored as <h2><em><strong>...</strong></em></h2>
-   should not render the section divider line. */
-main > .section > .default-content-wrapper h2:has(> em > :is(strong, b)),
-main > .section.no-cta > .default-content-wrapper h2:has(> em > :is(strong, b)) {
-  padding-bottom: 0;
-  border-bottom: 0;
-
-
-
-main > .section.no-cta > .default-content-wrapper h2 {
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
-}
-
 
 
 /* h4/h5 — measured from source: Futura Bold, line-height ~1.15 (h4 20.125px/17.5px).
@@ -388,7 +372,8 @@ sup {
 }
 
 /* footnotes / disclaimer list */
-main li[id^="fn-"] {
+main li[id^="fn-"],
+main .footnote-anchor[id^="fn-"] {
   scroll-margin-top: calc(var(--nav-height) + 10px);
 }
 
@@ -864,6 +849,14 @@ main > .section.spacer.large {
   height: calc(2 * var(--space-section));
 }
 
+main > .section.spacer.xlarge {
+  height: calc(3 * var(--space-section));
+}
+
+main > .section.spacer.xxlarge {
+  height: calc(4 * var(--space-section));
+}
+
 main > .section.spacer > div {
   display: none;
 }
@@ -884,7 +877,7 @@ main > .section.no-cta > .default-content-wrapper h1 {
 
 /* Underlined authored headings render with the source divider treatment. */
 main :is(h1, h2, h3, h4, h5, h6).underline,
-main :is(h1, h2, h3, h4, h5, h6):has(> u) {
+main :is(h1, h2, h3, h4, h5, h6):has(> u, > :is(strong, b, em, i) > u) {
   padding-bottom: 7px;
   border-bottom: 1px solid var(--color-surface-muted);
   font-size: var(--heading-font-size-xl);
@@ -892,9 +885,10 @@ main :is(h1, h2, h3, h4, h5, h6):has(> u) {
 
 
 
-/* EW fix: if author underlines h2 text (<u>), remove text underline so
-   the visual underline is only the h2 border-bottom. */
- main > .section > .default-content-wrapper h2 > u {
+/* EW fix: if author underlines h2 text (<u>, also inside bold/italic), remove
+   the text underline so the visual underline is only the h2 border-bottom. */
+main > .section > .default-content-wrapper h2 > u,
+main > .section > .default-content-wrapper h2 > :is(strong, b, em, i) > u {
   text-decoration: none;
   color: inherit;
 }
@@ -950,14 +944,20 @@ main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper p
   font-weight: 700;
 }
 
-/* bottom-of-page disclaimer content below cards — smaller text matching source */
+/* bottom-of-page disclaimer below cards — source: 11.2px / 15.4px */
 main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper {
   margin-top: var(--space-section);
 }
 
 main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
-  font-size: var(--body-font-size-xs);
+  font-size: var(--footnote-font-size);
   line-height: var(--paragraph-line-height);
+}
+
+/* page ending in text: 45px before the footer (source spacing, "Last Updated"
+   hidden). Margin so it merges, not stacks; skip emptied metadata wrappers. */
+main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
+  margin-bottom: calc(var(--space-section) + var(--space-block));
 }
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
@@ -990,7 +990,7 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
 /* Flex sections lay authored wrappers side by side on desktop and stack below 900px. */
   main > .section.flex {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--container-gutter);
     box-sizing: border-box;
     max-width: var(--container-max);
@@ -999,10 +999,9 @@ main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-conten
   }
 
   main > .section > div {
-   box-sizing: border-box;
-   max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-gutter);
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin: 0 auto;
   }
 
   main > .section.flex > div {

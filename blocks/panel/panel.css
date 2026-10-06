@@ -91,7 +91,7 @@
 .panel.colored-border .panel-body {
   max-width: none;
   margin: 0;
-  padding: 5%;
+  padding: 3%;
   text-align: left;
 }
 
@@ -205,7 +205,7 @@
    body font/size, not the larger wide-panel serif paragraph style (underline stays). */
 .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
   font-family: var(--body-font-family);
-  font-size: var(--panel-cta-body-size);
+  font-size: var(--panel-heading-size-s);
 }
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
@@ -283,6 +283,13 @@
 .panel .panel-body p:last-child:has(b i),
 .panel .panel-body p:last-child:has(i b) {
   margin: 0;
+}
+
+/* list-item paragraphs (e.g. EW wraps list-item text in a <p>) in left & cta
+   panels: keep the list rhythm tight */
+.panel.left .panel-body :is(ul, ol) > li > p,
+.panel.cta .panel-body :is(ul, ol) > li > p {
+  margin-bottom: 0;
 }
 
 .panel.colored-border .panel-body p:first-of-type {
@@ -365,12 +372,6 @@
 
 .panel.colored-border > ul > li:last-child .panel-body {
   border-top-color: var(--color-purple);
-}
-
-/* EW list content in left&cta panels: keep list-item paragraph rhythm tight */
-.panel.left .panel-body .prosemirror-editor :is(ul, ol) > li > p,
-.panel.cta .panel-body .prosemirror-editor :is(ul, ol) > li > p {
-  margin-bottom: 0;
 }
 
 @media (width >= 600px) {

@@ -237,6 +237,118 @@ function decorateFootnotes(main) {
   });
 }
 
+const SYMBOL_NAMES = {
+  '*': 'asterisk',
+  '†': 'dagger',
+  '‡': 'double-dagger',
+  '§': 'section',
+};
+const SYMBOL_RUN = '(\\*+|†+|‡+|§+)';
+
+/**
+ * Returns the footnote id for a symbol run, e.g. `†` → `fn-dagger`, `††` → `fn-dagger-2`.
+ * @param {string} run A run of one repeated footnote symbol
+ * @returns {string} The footnote id
+ */
+function symbolFootnoteId(run) {
+  return `fn-${SYMBOL_NAMES[run[0]]}${run.length > 1 ? `-${run.length}` : ''}`;
+}
+
+/**
+ * Links symbol citations (`*`, `†`, `††`, `‡`, `§`) to their footnote definitions.
+ * Definitions are lines of a default-content paragraph in a small-print (`.compact`)
+ * section, split by `<br>`, that start with the symbol run, e.g.
+ * `<p>*Up to 12 months<br>†The use of two…</p>`.
+ * References are symbol runs in `<sup>`, in placeholder links (`<a href="/">*</a>`),
+ * or trailing a word in body text (`Rapid*`). Only symbols with a definition are linked.
+ * @param {HTMLElement} main The main container element
+ */
+function decorateSymbolFootnotes(main) {
+  const startRe = new RegExp(`^\\s*${SYMBOL_RUN}`);
+  const defs = new Map();
+  const defNodes = new Set();
+
+  // 1. Definitions: anchor each paragraph line that starts with a symbol run.
+  main.querySelectorAll('.section.compact p').forEach((p) => {
+    if (p.closest('.block')) return;
+    let lineStart = true;
+    [...p.childNodes].forEach((node) => {
+      if (node.nodeName === 'BR') {
+        lineStart = true;
+        return;
+      }
+      if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains('footnote-anchor')) {
+        if (!defs.has(node.id)) defs.set(node.id, node);
+        return;
+      }
+      const text = node.textContent;
+      if (!text.trim()) return;
+      const match = lineStart && text.match(startRe);
+      lineStart = false;
+      if (!match) return;
+      defNodes.add(node);
+      const id = symbolFootnoteId(match[1]);
+      if (defs.has(id) || document.getElementById(id)) return;
+      const anchor = document.createElement('span');
+      anchor.className = 'footnote-anchor';
+      anchor.id = id;
+      node.before(anchor);
+      defs.set(id, anchor);
+    });
+  });
+  if (!defs.size) return;
+
+  const createLink = (run) => {
+    const a = document.createElement('a');
+    a.href = `#${symbolFootnoteId(run)}`;
+    a.textContent = run;
+    return a;
+  };
+
+  // 2. Placeholder links whose text is only a symbol run (import artifacts).
+  const onlyRe = new RegExp(`^\\s*${SYMBOL_RUN}\\s*$`);
+  main.querySelectorAll('a').forEach((a) => {
+    const match = a.textContent.match(onlyRe);
+    if (!match || !['/', '', '#'].includes(a.getAttribute('href') ?? '')) return;
+    const id = symbolFootnoteId(match[1]);
+    if (defs.has(id)) a.href = `#${id}`;
+  });
+
+  // 3. Symbol runs in text: inside <sup>, or directly trailing a word/element.
+  const walker = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (/[*†‡§]/.test(node.textContent) && !node.parentElement.closest('a, script, style')
+      && ![...defNodes].some((def) => def.contains(node))) {
+      textNodes.push(node);
+    }
+  }
+  const refRe = new RegExp(`${SYMBOL_RUN}(?![\\p{L}\\p{N}])`, 'gu');
+  textNodes.forEach((node) => {
+    const text = node.textContent;
+    const inSup = !!node.parentElement.closest('sup');
+    const fragment = document.createDocumentFragment();
+    let last = 0;
+    [...text.matchAll(refRe)].forEach((match) => {
+      const { index } = match;
+      const run = match[1];
+      if (!defs.has(symbolFootnoteId(run))) return;
+      if (!inSup) {
+        const trailsContent = index > 0
+          ? !/\s/.test(text[index - 1])
+          : node.previousSibling && node.previousSibling.nodeName !== 'BR';
+        if (!trailsContent) return;
+      }
+      fragment.append(text.slice(last, index), createLink(run));
+      last = index + run.length;
+    });
+    if (!last) return;
+    fragment.append(text.slice(last));
+    node.replaceWith(fragment);
+  });
+}
+
 /**
  * Prepends a decorative `<img class="section-background-image">` to the section.
  * @param {Element} section the `.section` element
@@ -286,6 +398,65 @@ function decorateSectionMetadata(main) {
   main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
     applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
     applySectionBackgroundImage(section, section.dataset.backgroundImage);
+  });
+}
+
+// section styles that lay out each tab's panel rather than the whole section
+const TAB_PANEL_STYLES = ['side-by-side'];
+
+/**
+ * Turns `tabbed` sections into a tabs block. Each heading of the section's
+ * deepest heading level is a tab title; the content after it (text, blocks)
+ * up to the next title is that tab's panel. Content before the first title
+ * stays above the tabs. Panels are handed to the tabs block as inline sections
+ * carrying the section's panel layout styles (e.g. side-by-side); all other
+ * section styles (e.g. backgrounds) stay on the section.
+ * @param {Element} main The container element
+ */
+function buildTabbedSections(main) {
+  main.querySelectorAll(':scope > .section.tabbed').forEach((section) => {
+    // unwrap default content and (still undecorated) blocks, in authored order
+    const nodes = [...section.children].flatMap((wrapper) => [...wrapper.children]);
+    const headings = nodes.filter((node) => /^H[1-6]$/.test(node.tagName));
+    if (!headings.length) return;
+    const level = Math.max(...headings.map((h) => Number(h.tagName[1])));
+
+    const intro = [];
+    const tabs = [];
+    nodes.forEach((node) => {
+      if (node.tagName === `H${level}`) {
+        tabs.push({ title: node, content: [] });
+      } else if (tabs.length) {
+        tabs[tabs.length - 1].content.push(node);
+      } else {
+        intro.push(node);
+      }
+    });
+
+    const panelStyles = TAB_PANEL_STYLES.filter((cls) => section.classList.contains(cls));
+    section.classList.remove(...panelStyles);
+
+    const rows = tabs.map(({ title, content }) => {
+      const label = document.createElement('p');
+      label.textContent = title.textContent.trim();
+      const panel = document.createElement('div');
+      panel.dataset.tabsSection = '';
+      panel.classList.add(...panelStyles);
+      panel.append(...content);
+      return [{ elems: [label] }, { elems: [panel] }];
+    });
+
+    const wrappers = [];
+    if (intro.length) {
+      const introWrapper = document.createElement('div');
+      introWrapper.className = 'default-content-wrapper';
+      introWrapper.append(...intro);
+      wrappers.push(introWrapper);
+    }
+    const tabsWrapper = document.createElement('div');
+    tabsWrapper.append(buildBlock('tabs', rows));
+    wrappers.push(tabsWrapper);
+    section.replaceChildren(...wrappers);
   });
 }
 
@@ -372,10 +543,12 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateSectionMetadata(main);
+  buildTabbedSections(main);
   decorateBlocks(main);
   decorateButtons(main);
   decorateUnderlinedHeadings(main);
   decorateFootnotes(main);
+  decorateSymbolFootnotes(main);
 }
 
 /**
@@ -446,6 +619,13 @@ async function loadEager(doc) {
 
   const main = doc.querySelector('main');
   if (main) {
+    // DA/EW block library preview tweaks (tools/da-library-preview) — remove
+    // this block to opt out.
+    if (window.location.pathname.startsWith('/.da/library/')) {
+      const { default: decorateLibraryPreview } = await import('../tools/da-library-preview/da-library-preview.js');
+      decorateLibraryPreview(main);
+    }
+
     decorateMain(main);
 
     // Load template if specified in metadata
@@ -498,6 +678,7 @@ async function loadLazy(doc) {
   // during lazy loading; run footnote linking again so those new <sup> nodes
   // are converted to #fn-N links as well.
   decorateFootnotes(main);
+  decorateSymbolFootnotes(main);
 
   decorateLastModified(main);
   applySectionBackgrounds(main);
