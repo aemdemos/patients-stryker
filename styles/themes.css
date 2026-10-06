@@ -1632,22 +1632,32 @@ body.bvn-ablation main a[href="/"] {
   text-decoration: none;
 }
 
-/* ----- Hero: gap under the header ----- */
+/* ----- Hero: gap under the header; on mobile a sage rule closes the hero
+   (the source's empty border-bottom-gold column, shown at its smallest size) ----- */
 body.bvn-ablation main > .section.hero-container {
   margin-top: var(--space-section-xl);
+  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* ----- Intro + Benefits (flex) ----- */
 body.bvn-ablation main > .section.flex:not(.dark) {
-  margin-block: calc(var(--space-section-l) + var(--space-block)) 0; /* ~65px under the hero */
+  margin-block: calc(var(--space-section-l) - var(--space-block) / 2) 0; /* ~42px under the hero rule */
 }
 
 body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
   padding-top: var(--space-block);
 }
 
-body.bvn-ablation .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
-  font-size: var(--display-font-family)
+/* mobile type (source below its 480px breakpoint): benefits heading 21.875px */
+body.bvn-ablation main .panel.cta h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+/* "Potential risks" link: body size at every width (the panel block enlarges
+   underlined links to 21.5px on mobile; the source keeps 17.5px) */
+body.bvn-ablation main .panel.cta .panel-body p > a:any-link:has(> u) {
+  font-size: inherit;
 }
 
 body.bvn-ablation main .panel.cta.wide .panel-body ul {
@@ -1795,6 +1805,8 @@ body.bvn-ablation main > .section.light-gray > .default-content-wrapper {
 body.bvn-ablation main > .section > .default-content-wrapper #resources {
   border-bottom: 1px solid var(--color-surface-muted);
   padding-bottom: 7px;
+  font-size: var(--heading-font-size-l); /* 21px on mobile */
+  line-height: var(--heading-line-height);
 }
 
 
@@ -1803,8 +1815,13 @@ body.bvn-ablation main > .section.light-gray :is(p, li) {
   line-height: var(--paragraph-line-height);
 }
 
-/* ----- Footnotes: the lead notes paragraph uses the looser 1.375 leading ----- */
-body.bvn-ablation main > .section.compact > .default-content-wrapper > p:first-child {
+body.bvn-ablation main > .section.light-gray h4 {
+  font-size: var(--body-font-size-m); /* 14px on mobile */
+  line-height: var(--heading-line-height-h4);
+}
+
+/* ----- Footnotes: paragraphs use the looser 1.375 leading (the list keeps 1.2) ----- */
+body.bvn-ablation main > .section.compact > .default-content-wrapper > p {
   line-height: var(--paragraph-line-height);
 }
 
@@ -1819,6 +1836,21 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 @media (width >= 600px) {
   body.bvn-ablation main > .section.hero-container {
     margin-top: var(--space-nav-hero-gap);
+    border-bottom: 0;
+  }
+
+  /* tablet/desktop type (the mobile sizes above apply below 600px) */
+  body.bvn-ablation main .panel.cta h3 {
+    font-size: var(--panel-cta-heading-size); /* panel block's 26px */
+    line-height: var(--heading-line-height);
+  }
+
+  body.bvn-ablation main > .section > .default-content-wrapper #resources {
+    font-size: var(--heading-font-size-xl); /* 24.5px */
+  }
+
+  body.bvn-ablation main > .section.light-gray h4 {
+    font-size: var(--heading-font-size-m); /* 17.5px */
   }
   
   body.bvn-ablation main > .section > .default-content-wrapper h3 {
