@@ -125,7 +125,8 @@
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
 }
 
 .panel.cta .panel-cta {
@@ -433,6 +434,12 @@
     font-size: var(--panel-body-size-s);
     font-family: var(--body-font-family);
   }
+
+  .panel.cta .panel-body h3,
+.panel.light .panel-body h3,
+.panel.colored-border .panel-body h3 {
+   font-size: var(--panel-cta-heading-size);
+}
 } 
 
 @media (width >= 900px) {
