@@ -443,7 +443,7 @@
     },
     {
       "name": "bvn-ablation",
-      "description": "Basivertebral nerve ablation (BVNA) IVS treatment page — SINGLETON (not part of procedure-detail), styled via the `bvn-ablation` theme in styles/themes.css. Sections: hero (banner) + Find a doctor; flex intro text + panel (cta, wide) benefits; flex+dark band of default text beside a DM video block; statistics (count-up, cols-2) + panel (gray) symptoms box; How it works H3 + 4-step cards; What you can expect H3 + 3-up text columns; panel (gold) CTA; Marketo find-a-doctor form; Resources H2 + BVN brochure card fragment; light-gray potential risks; compact footnotes/references. Existing blocks only; parsers/transformers under bvn-ablation/ are copies so template changes don't affect it.",
+      "description": "Basivertebral nerve ablation (BVNA) IVS treatment page — SINGLETON (not part of procedure-detail), styled via the `bvn-ablation` theme in styles/themes.css. Sections: hero (banner) + Find a doctor; flex intro text + panel (cta, wide) benefits; flex+dark band of default text beside a DM video block; statistics (count-up, cols-2) + panel (gray) symptoms box; How it works H3 + 4-step columns (library \"Columns – Steps (4 up)\"); What you can expect H3 + 3-up text columns; panel (gold) CTA; Marketo find-a-doctor form; Resources H2 + BVN brochure card fragment; light-gray potential risks; compact footnotes/references. Existing blocks only; parsers/transformers under bvn-ablation/ are copies so template changes don't affect it.",
       "urls": [
         "https://patients.stryker.com/us/en/ivs/treatments/basivertebral-nerve-ablation.html"
       ],
@@ -481,7 +481,7 @@
           ]
         },
         {
-          "name": "cards-steps",
+          "name": "columns-steps",
           "instances": [
             ".cols4:not(.tabs .cols4)"
           ]

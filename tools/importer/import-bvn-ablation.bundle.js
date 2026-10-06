@@ -195,26 +195,33 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/bvn-ablation/cards-steps.js
+  // tools/importer/parsers/bvn-ablation/columns-steps.js
   function parse6(element, { document }) {
-    const cells = [];
     const ogTitle = document.querySelector('meta[property="og:title"]');
     const topic = (ogTitle && ogTitle.getAttribute("content") || document.title.split("|")[0]).trim();
+    const row = [];
     element.querySelectorAll('.row > [class*="col-md-3"]').forEach((col) => {
       const img = col.querySelector(".standaloneimage img, img");
       const paras = [...col.querySelectorAll(".c-rich-text-editor p")].filter((p) => p.textContent.trim());
       if (!img && paras.length === 0) return;
       if (img && /^x*$/i.test((img.getAttribute("alt") || "").trim())) {
-        img.setAttribute("alt", `${topic}, step ${cells.length + 1}`);
+        img.setAttribute("alt", `${topic}, step ${row.length + 1}`);
         img.removeAttribute("title");
       }
-      cells.push([img || "", paras]);
+      const cell = [];
+      if (img) {
+        const p = document.createElement("p");
+        p.append(img);
+        cell.push(p);
+      }
+      cell.push(...paras);
+      row.push(cell);
     });
-    if (cells.length === 0) {
+    if (row.length === 0) {
       element.replaceWith(...element.childNodes);
       return;
     }
-    const block = WebImporter.Blocks.createBlock(document, { name: "Cards", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "Columns", cells: [row] });
     element.replaceWith(block);
   }
 
@@ -734,7 +741,7 @@ var CustomImportScript = (() => {
     video: parse3,
     statistics: parse4,
     "panel-gray": parse5,
-    "cards-steps": parse6,
+    "columns-steps": parse6,
     "columns-text": parse7,
     "panel-gold": parse8,
     "cards-resources": parse9
@@ -757,7 +764,7 @@ var CustomImportScript = (() => {
       { name: "video", instances: [".fullbleedpanel .standalonevideo"] },
       { name: "statistics", instances: [".cols2:has(.numbercounter)"] },
       { name: "panel-gray", instances: [".c-rich-text-editor .bg-light-gray"] },
-      { name: "cards-steps", instances: [".cols4:not(.tabs .cols4)"] },
+      { name: "columns-steps", instances: [".cols4:not(.tabs .cols4)"] },
       { name: "columns-text", instances: [".cols3"] },
       { name: "panel-gold", instances: [".c-rich-text-editor .bg-gold"] },
       { name: "cards-resources", instances: [".tabs .c-tabs .tabs-content .cols4 .colctrl"] }
