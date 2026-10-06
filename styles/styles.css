@@ -382,6 +382,9 @@ main > .section.compact > div :is(p, ol, ul, li) {
   line-height: var(--footnote-line-height);
 }
 
+main > .section.compact > div > p {
+ line-height: var(--paragraph-line-height);
+}
 
 
 /* compact section typography — smaller gold headings and dense heading/body rhythm */
