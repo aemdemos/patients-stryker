@@ -92,6 +92,13 @@
   margin-top: auto;
 }
 
+/* brochure-cta title shows as plain text: JS moves its PDF link to the cover,
+   but the authoring canvas keeps the authored link */
+.cards.brochure-cta .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* "Learn more" CTA in the canvas: decorateButtons' .button.secondary class is
    wiped when the editor re-renders the field, so style the authored <em><a> to
    match the gray button. Matches only in the canvas (live unwraps the <em>). */
@@ -187,6 +194,11 @@
   text-align: center;
 }
 
+/* brochure title is left-aligned (source); its links row stays centered */
+.cards.brochure > ul > li {
+  text-align: left;
+}
+
 .cards.brochure .cards-card-image,
 .cards.linked .cards-card-image {
   order: 1;
@@ -258,26 +270,36 @@
   text-decoration: none;
 }
 
+/* "Digital | Print" / "Banner N" links row: centered below the image, 30px gap
+   above (source) */
 .cards.brochure .cards-card-body p {
   order: 2;
-  margin: var(--space-block) 0 0;
+  margin: var(--space-section) 0 0;
+  text-align: center;
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
 /* brochure-cta: cover, Futura-bold title, light-serif label, gold CTA button.
-   Flex column so label + button bottom-align across the row. */
+   Flex column so label + button bottom-align across the row. 30px gap below
+   the row (source). */
+.cards.brochure-cta {
+  margin-bottom: var(--space-section);
+}
+
 .cards.brochure-cta > ul > li {
   display: flex;
   flex-direction: column;
   background-color: transparent;
 }
 
+/* covers are ~3:4 (631×828); reserve the box so late-loading DM images don't
+   shift the layout (CLS) */
 .cards.brochure-cta > ul > li img {
   width: 100%;
   height: auto;
-  aspect-ratio: auto;
+  aspect-ratio: 631 / 828;
   border: 1px solid var(--color-surface-muted);
 }
 
