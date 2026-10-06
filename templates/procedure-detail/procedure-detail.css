@@ -133,7 +133,7 @@ body.procedure-detail main > .section.light-gray {
   background-color: transparent;
 }
 
-body.procedure-detail main .hero p {
+body.procedure-detail main .hero:not(:where(.band)) p {
   font-size: var(--heading-font-size-xl);
   font-family: var(--heading-font-family);
   line-height: var(--body-line-height-m);

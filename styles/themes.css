@@ -180,19 +180,11 @@ body.condition-detail .panel.cta .panel-body {
    Theme: campaign-landing — Stroke-Awareness campaign landing page
    ===================================================================== */
 
-/* Hero: place the overlaid headline ~10% from the left, near the top. */
+/* Hero: its look comes from the `hero-campaign` section style (blocks/hero);
+   only the theme's section spacing is reset here. */
 body.campaign-landing main > .section.hero-container {
   padding-top: 0;
   margin-top: 0;
-}
-
-body.campaign-landing main .hero.fullbleed > div:last-child {
-  padding: 4% 8% 0 10%;
-}
-
-/* Hero image — MOBILE BASE: 1:1 square crop, not the shared block's 4:5 portrait. */
-body.campaign-landing main .hero.fullbleed img {
-  aspect-ratio: 1 / 1;
 }
 
 body.campaign-landing main .section {
@@ -225,14 +217,6 @@ body.campaign-landing main .section.sticky-nav-container {
 /* Sticky-nav: centre the four-item list within the five-item-wide reserved cluster. */
 body.campaign-landing main .sticky-nav .sticky-nav-list {
   justify-content: center;
-}
-
-/* Hero headline: Futura bold at a larger fluid size (10vw mobile → 70px desktop cap), not the shared block's light-serif. */
-body.campaign-landing main .hero.fullbleed h1 {
-  font-family: var(--display-font-family);
-  font-weight: 700;
-  font-size: 10vw;
-  color: var(--color-accent);
 }
 
 /* Section headings → gold Futura bold, matching the icon-list sections. */
@@ -435,38 +419,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 }
 
   /* Theme: campaign-landing */
-  body.campaign-landing main .hero.fullbleed {
-    min-height: calc(5 * var(--space-section-l));
-  }
-
-  body.campaign-landing main .hero:not(:where(.band)) picture.hero-image-desktop {
-    display: block;
-    height: 100%;
-  }
-
-  body.campaign-landing main .hero:not(:where(.band)) picture.hero-image-mobile {
-    display: none;
-  }
-
-  body.campaign-landing main .hero.fullbleed img {
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;
-  }
-
-  body.campaign-landing main .hero.fullbleed > div:last-child {
-    max-width: 45%;
-    padding: 4% 0 0 10%;
-  }
-
-  body.campaign-landing main .hero.fullbleed p {
-    font-size: clamp(var(--body-font-size-m), 1.5vw, var(--heading-font-size-l));
-  }
-
-  body.campaign-landing main .hero.fullbleed h1 {
-    font-size: 5vw;
-  }
-
   body.campaign-landing main > .section.columns-container > .columns-wrapper,
   body.campaign-landing main > .section.columns-container > div:not(.columns-wrapper),
   body.campaign-landing main > .section.icon-list-container > div:not(.icon-list-wrapper),
@@ -855,11 +807,6 @@ body.discography main > .section.compact > .default-content-wrapper p:not(li p) 
   /* EDS large (1200px) ← source 1440px cap: 56px flat */
   .section.hero-stroke .hero.banner h1 {
     font-size: 56px;
-  }
-
-  /* Theme: campaign-landing */
-  body.campaign-landing main .hero.fullbleed h1 {
-    font-size: 70px;
   }
 
    body.discography .hero.banner h1 {
