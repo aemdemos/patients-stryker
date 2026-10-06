@@ -79,12 +79,16 @@
   text-align: left;
 }
 
+/* overflow-wrap: never split a headline word mid-word. Editable text in the
+   authoring canvas inherits break-word + break-spaces (a space before a <br>
+   then takes up width), which otherwise breaks "Understanding" in two. */
 .hero.fullbleed h1 {
   margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
   font-size: 7vw;
   line-height: 1.35;
+  overflow-wrap: normal;
 }
 
 /* second sentence of the headline — Futura bold (see hero.js) */

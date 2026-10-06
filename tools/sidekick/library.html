@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Block Library | Stryker Patients</title>
+  <script type="module" src="https://www.aem.live/tools/sidekick/library/index.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    sidekick-library {
+      display: block;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <script type="module">
+    /*
+     * Sidekick Library fed from the DA block library sheet (/.da/library/blocks),
+     * so both libraries share one list of blocks and one set of block documents.
+     * - The sheet stores content.da.live URLs (they need a login); the same
+     *   documents are served by this site, so paths are rewritten to it.
+     * - The sheet's rows live in `data` (plus a DA-only `options` sheet); the
+     *   Sidekick Library expects a `blocks` list, so it gets just the rows.
+     * - library-container-start/end markers only matter to the DA library; they
+     *   are stripped so copying a variant doesn't copy the marker tables.
+     * - The published .plain.html turns each Section Metadata table into section
+     *   classes (style) and data-* attributes (other keys). The table is rebuilt
+     *   so the preview keeps the section style and Copy includes it.
+     */
+    const SHEET = '/.da/library/blocks.json';
+    const DA_SOURCE = 'https://content.da.live/aemdemos/patients-stryker';
+    const DOCS = '/.da/library/blocks/';
+    const MARKERS = '.library-container-start, .library-container-end';
+
+    const nativeFetch = window.fetch.bind(window);
+
+    function toSiteUrl(path) {
+      const sitePath = path.startsWith(DA_SOURCE) ? path.slice(DA_SOURCE.length) : path;
+      return new URL(sitePath, window.location.origin).href;
+    }
+
+    function rebuildSectionMetadata(doc) {
+      doc.querySelectorAll('body > div').forEach((section) => {
+        const rows = [];
+        if (section.classList.length) rows.push(['style', [...section.classList].join(', ')]);
+        [...section.attributes]
+          .filter(({ name }) => name.startsWith('data-'))
+          .forEach(({ name, value }) => rows.push([name.slice(5), value]));
+        if (!rows.length || section.querySelector(':scope > .section-metadata')) return;
+
+        const table = doc.createElement('div');
+        table.className = 'section-metadata';
+        rows.forEach(([key, value]) => {
+          const row = doc.createElement('div');
+          const keyCell = doc.createElement('div');
+          const valueCell = doc.createElement('div');
+          keyCell.textContent = key;
+          valueCell.textContent = value;
+          row.append(keyCell, valueCell);
+          table.append(row);
+        });
+        section.insertBefore(table, section.querySelector(':scope > .library-metadata'));
+        [...section.attributes].forEach(({ name }) => section.removeAttribute(name));
+      });
+    }
+
+    window.fetch = async (input, init) => {
+      const resp = await nativeFetch(input, init);
+      const { pathname } = new URL(input instanceof Request ? input.url : input, window.location.href);
+      if (!resp.ok || !pathname.startsWith(DOCS) || !pathname.endsWith('.plain.html')) return resp;
+      const doc = new DOMParser().parseFromString(await resp.text(), 'text/html');
+      doc.querySelectorAll(MARKERS).forEach((marker) => marker.remove());
+      rebuildSectionMetadata(doc);
+      return new Response(doc.documentElement.outerHTML, {
+        status: resp.status,
+        headers: { 'content-type': 'text/html' },
+      });
+    };
+
+    const sheet = await (await nativeFetch(SHEET)).json();
+    const rows = (sheet.data?.data ?? sheet.data ?? [])
+      .filter((row) => row.name && row.path)
+      .map((row) => ({ ...row, path: toSiteUrl(row.path) }));
+    const base = URL.createObjectURL(new Blob([JSON.stringify({ data: rows })], { type: 'application/json' }));
+
+    const library = document.createElement('sidekick-library');
+    library.config = {
+      base,
+      plugins: {
+        blocks: {
+          encodeImages: false,
+          // one preview per site breakpoint (600 / 900 / 1200)
+          viewPorts: [
+            { width: '1200px', label: 'Desktop', icon: 'device-desktop', default: true },
+            { width: '900px', label: 'Tablet', icon: 'device-tablet' },
+            { width: '600px', label: 'Mobile', icon: 'device-phone' },
+          ],
+        },
+      },
+    };
+    document.body.prepend(library);
+  </script>
+</body>
+</html>
