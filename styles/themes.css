@@ -1284,7 +1284,7 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   } 
 
   body.condition-detail .hero.banner > div:last-child {
-    width: 50%;
+    width: 55%;
   }
       
 }
@@ -1298,7 +1298,6 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: 91px;
   }
-
 
 }
 
