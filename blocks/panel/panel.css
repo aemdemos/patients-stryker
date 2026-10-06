@@ -306,7 +306,8 @@
 
 /* ---- gold variant */
 .panel.gold .panel-body {
-  padding: 22.5px;
+  padding-top: 3%;
+  padding-bottom: 2%;
   background: var(--color-accent);
   box-shadow: none;
   text-align: center;
@@ -410,6 +411,13 @@
 }
 
   /* wide variant */
+  .panel.wide .panel-body {
+    max-width: none;
+    margin: 2% 0;
+    padding: 4% 2%;
+    text-align: left;
+  }
+
   .panel.wide > ul {
     grid-template-columns: 1fr;
   }
