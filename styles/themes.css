@@ -1544,6 +1544,10 @@ body.ivs-home main > .section.hero-container {
   margin-top: 60px;
 }
 
+body.ivs-home main #resources {
+  font-size: var(--heading-font-size-l);
+}
+
 body.ivs-home .hero.banner h1,
 body.ivs-home .hero.banner h2 {
   box-sizing: border-box;
@@ -1659,6 +1663,10 @@ body.ivs-home .panel.cta .panel-body h3 {
 @media (width >= 600px) {
   body.ivs-home main > .section.flex[data-anchor="overview"] {
     margin-top: 86px;
+  }
+
+  body.ivs-home main #resources {
+    font-size: var(--heading-font-size-xl);
   }
   
   body.ivs-home .columns.columns-2-cols h3 {
