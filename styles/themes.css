@@ -164,22 +164,6 @@ body.sa-resources .panel.colored-border .panel-body {
 }
 
 
-/* ----- Cards block (downloads + social grids, `cards brochure`) ----- */
-
-/* brochure cards left-align their title (source), unlike the centered default. */
-body.sa-resources .cards.brochure > ul > li {
-  text-align: left;
-}
-
-/* the "Digital | Print" / "Banner N" links row is centered below the image while
-   the card title above stays left-aligned. order:2 pushes the links row below the
-   image within the card body, with a 30px gap above it (source). */
-body.sa-resources .cards.brochure .cards-card-body p {
-  order: 2;
-  margin: var(--space-section) 0 0;
-  text-align: center;
-}
-
 /* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
    chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
    variant (.columns.related-links) in blocks/columns/columns.css, since the same
@@ -190,19 +174,11 @@ body.sa-resources .cards.brochure .cards-card-body p {
    Theme: campaign-landing — Stroke-Awareness campaign landing page
    ===================================================================== */
 
-/* Hero: place the overlaid headline ~10% from the left, near the top. */
+/* Hero: its look comes from the `hero-campaign` section style (blocks/hero);
+   only the theme's section spacing is reset here. */
 body.campaign-landing main > .section.hero-container {
   padding-top: 0;
   margin-top: 0;
-}
-
-body.campaign-landing main .hero.fullbleed > div:last-child {
-  padding: 4% 8% 0 10%;
-}
-
-/* Hero image — MOBILE BASE: 1:1 square crop, not the shared block's 4:5 portrait. */
-body.campaign-landing main .hero.fullbleed img {
-  aspect-ratio: 1 / 1;
 }
 
 body.campaign-landing main .section {
@@ -213,21 +189,6 @@ body.stroke-awareness-landing main .section.compact {
   margin-top: 60px;
 }
 
-/* Hero (banner) headline sizing is scoped to the section-metadata `style:
-   hero-stroke` (which adds `.hero-stroke` to the section) rather than the page
-   theme, so the hero styling travels with the section wherever it's authored
-   instead of being pinned to this one page.
-
-   Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
-   1200), so the source's own breakpoints translate as: source 840px → 600px,
-   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
-   mobile is a single regime below 600px.
-   mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
-   → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
-.section.hero-stroke .hero.banner h1 {
-  font-size: 8vw;
-}
-
 body.campaign-landing main .section.sticky-nav-container {
   margin-top: 0;
 }
@@ -235,14 +196,6 @@ body.campaign-landing main .section.sticky-nav-container {
 /* Sticky-nav: centre the four-item list within the five-item-wide reserved cluster. */
 body.campaign-landing main .sticky-nav .sticky-nav-list {
   justify-content: center;
-}
-
-/* Hero headline: Futura bold at a larger fluid size (10vw mobile → 70px desktop cap), not the shared block's light-serif. */
-body.campaign-landing main .hero.fullbleed h1 {
-  font-family: var(--display-font-family);
-  font-weight: 700;
-  font-size: 10vw;
-  color: var(--color-accent);
 }
 
 /* Section headings → gold Futura bold, matching the icon-list sections. */
@@ -315,15 +268,9 @@ body.campaign-landing main .section .columns li {
   font: var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
 }
 
-/* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold.
-   (the last item, matched directly or nested — see icon-list.css) */
-body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > p:last-child,
-body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > :last-child p {
-  font: 400 var(--body-font-size-m) var(--body-font-family);
-}
-
-/* All default body copy → 14px body-serif, out-weighing the global 12px shrink; excludes .compact. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > div:not(:has(> .block)) p {
+/* All default body copy → 14px body-serif, out-weighing the global 12px shrink;
+   excludes .compact and icon-list sections (the block styles its own intro copy). */
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact, .icon-list-container) > div:not(:has(> .block)) p {
   font: 400 var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
   color: var(--color-text);
 }
@@ -349,28 +296,6 @@ body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .sec
   line-height: var(--heading-line-height);
 }
 
-/* Icon-list section intros → 17.5px URW serif. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > div:not(.icon-list-wrapper) p {
-  font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
-}
-
-/* Risk-factors (tile) intro only: cap width to ~560px and centre it, matching the source. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) p {
-  max-width: 560px;
-  margin-inline: auto;
-  text-align: center;
-}
-
-/* Risk-factors lead-in keeps the source's Futura bold at 17.5px. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > p:last-child,
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > :last-child p {
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-l);
-  font-weight: 700;
-}
-
 /* Fragment (related-links) descriptions + regional links → 17.5px URW serif. */
 body.campaign-landing main .section .columns.related-links :is(p, a) {
   font-family: var(--heading-font-family);
@@ -384,12 +309,6 @@ body.campaign-landing main .section .columns.related-links p:not(:has(a)) + p:ha
   font-size: var(--body-font-size-l);
   font-weight: 700;
   text-transform: uppercase;
-}
-
-/* Risk-factor tile captions: source line-height is 20.125px (1.15), not the tile block's default 1.375. */
-body.campaign-landing main .icon-list.tile .icon-list-text,
-body.campaign-landing main .icon-list.tile .icon-list-text p {
-  line-height: var(--body-line-height-l);
 }
 
 /* Horizontal inset — MOBILE BASE: ~45px from the screen edge, not the 15px default; >=600px reverts to the shared gutter. */
@@ -472,38 +391,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 }
 
   /* Theme: campaign-landing */
-  body.campaign-landing main .hero.fullbleed {
-    min-height: calc(5 * var(--space-section-l));
-  }
-
-  body.campaign-landing main .hero picture.hero-image-desktop {
-    display: block;
-    height: 100%;
-  }
-
-  body.campaign-landing main .hero picture.hero-image-mobile {
-    display: none;
-  }
-
-  body.campaign-landing main .hero.fullbleed img {
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;
-  }
-
-  body.campaign-landing main .hero.fullbleed > div:last-child {
-    max-width: 45%;
-    padding: 4% 0 0 10%;
-  }
-
-  body.campaign-landing main .hero.fullbleed p {
-    font-size: clamp(var(--body-font-size-m), 1.5vw, var(--heading-font-size-l));
-  }
-
-  body.campaign-landing main .hero.fullbleed h1 {
-    font-size: 5vw;
-  }
-
   body.campaign-landing main > .section.columns-container > .columns-wrapper,
   body.campaign-landing main > .section.columns-container > div:not(.columns-wrapper),
   body.campaign-landing main > .section.icon-list-container > div:not(.icon-list-wrapper),
@@ -683,12 +570,6 @@ body.condition-detail .tabs .tabs-panel {
      multi-item light panels use. */
   body.sa-resources .panel.light > ul {
     grid-template-columns: 1fr;
-  }
-
-  /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
-     EDS large breakpoint (1200px ← source 1440px). */
-  .section.hero-stroke .hero.banner h1 {
-    font-size: calc(-4.16px + 5.0133vw);
   }
 }
 
@@ -881,24 +762,6 @@ body.discography main > .section.compact > .default-content-wrapper p:not(li p) 
 
 /* ----- Large desktop (>=1200px) ----- */
 @media (width >= 1200px) {
-  /* Theme: sa-resources */
-
-  /* enlarge the hero headline on this page beyond the shared band cap (48px in
-     blocks/hero/hero.css) — a theme-specific delta. */
-  body.sa-resources .hero.band h1 {
-    font-size: 56px;
-  }
-
-  /* EDS large (1200px) ← source 1440px cap: 56px flat */
-  .section.hero-stroke .hero.banner h1 {
-    font-size: 56px;
-  }
-
-  /* Theme: campaign-landing */
-  body.campaign-landing main .hero.fullbleed h1 {
-    font-size: 70px;
-  }
-
    body.discography .hero.banner h1 {
     font-size: 42px;
   }
@@ -976,50 +839,6 @@ body.patient-information main > .section:first-child a::after {
   transform: translate(0, 2px);
 }
 
-/* ── Title bar (hero band) ────────────────────────────────────────────────────
-   The source title bar is a single compact gradient bar (~100px) with the gold
-   headline overlaid. The block authors desktop + mobile crops as two <picture>s
-   and the base .hero toggle shows one per breakpoint — but the shared
-   `.hero.band picture { display:block }` rule (which we must not touch) overrides
-   that toggle, so BOTH crops render stacked and the bar becomes ~2x too tall.
-   Re-assert the one-crop-per-breakpoint toggle here, scoped to this page. */
-body.patient-information .hero.band picture.hero-image-desktop {
-  display: none;
-}
-
-body.patient-information .hero.band picture.hero-image-mobile {
-  display: block;
-}
-
-/* Headline size — match the source's fluid scaling at every width (measured):
-   mobile ≈ 8vw (31.2px at 390px), desktop ≈ 4vw (51.2px at 1280px) capped at
-   ~56px (still 56px at 1920px, not the unbounded 76.8px raw 4vw). The shared hero
-   block instead uses 8vw on mobile then pins a fixed 48px from 1200px up — close
-   on mobile but a touch small and non-fluid on desktop.
-
-   IMPORTANT: this mobile base MUST precede the ≥900px block below — both rules
-   have equal specificity, so if the base came later it would win at desktop too
-   (source order breaks the media query) and the title would render at raw 8vw. */
-body.patient-information .hero.band h1 {
-  font-size: 8vw;
-}
-
-@media (width >= 900px) {
-  body.patient-information .hero.band picture.hero-image-desktop {
-    display: block;
-  }
-
-  body.patient-information .hero.band picture.hero-image-mobile {
-    display: none;
-  }
-
-  /* desktop headline: switch from the mobile 8vw to the source's 4vw, clamped so
-     it stops growing at ~56px on very wide viewports (matches the reference). */
-  body.patient-information .hero.band h1 {
-    font-size: min(4vw, 56px);
-  }
-}
-
 /* ── Intro line ──────────────────────────────────────────────────────────────
    "Learn more about brain aneurysm…" is authored as an <h2>. The source renders
    it in the LIGHT SERIF face (URW Egyptienne, weight 500), not the Futura-bold
@@ -1039,16 +858,6 @@ body.patient-information main > .section > .default-content-wrapper h2 {
   font-weight: 500;
   margin-top: 4%;
   margin-bottom: 4%;
-}
-
-/* ── Patient-guide cards (cards brochure-cta) ─────────────────────────────────
-   The whole card is the click target, so the title text itself must not read as
-   a link. The parser links the title to its PDF; the global link styles would
-   paint it teal + underlined. Neutralise that so the title shows as plain bold
-   text (matching the source's futura-bold black title). */
-body.patient-information .cards.brochure-cta .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* ── Gold "for more information" CTA band ─────────────────────────────────────
@@ -1112,27 +921,6 @@ body.patient-information main > .section.gold p a::after {
    labels, CTA links, plain regional links, 3-up/2-up layout) comes from the block
    variant, and whose gray full-bleed band comes from the section metadata
    (`light-gray, full-bleed`). */
-
-/* ── Cards section bottom spacing ─────────────────────────────────────────────
-   The patient-guide cards section sits flush against the gold CTA band below it;
-   the source leaves ~30px between the cards row and the gold band. The cards block
-   sets no bottom spacing (and it's shared, so we don't edit it), so add the gap
-   here on the cards' host section, scoped to this page. */
-body.patient-information main > .section.cards-container {
-  margin-bottom: var(--space-section);
-}
-
-/* ── Cards CLS fix — reserve the cover-image box ──────────────────────────────
-   The brochure-cta covers are runtime-injected Dynamic Media <picture> images
-   with no width/height attrs and `aspect-ratio: auto` in the shared block, so
-   each box is 0px tall until it loads, then jumps to ~500px — pushing the title,
-   label, button and everything below it down (measured CLS ~0.88 mobile / ~0.31
-   desktop, essentially the whole page CLS). All four covers share a ~3:4 ratio
-   (631×828), so reserve that box up front. The block is shared/WIP, so this is
-   applied page-scoped here rather than in blocks/cards. */
-body.patient-information .cards.brochure-cta > ul > li img {
-  aspect-ratio: 631 / 828;
-}
 
 /* AP number (own compact section): top up the 40px gap to the source's 50/60px */
 body.patient-information main > .section.compact + .section.compact {
@@ -1974,17 +1762,6 @@ body.ivs-get-the-facts main :is(p, li) {
   font-size: var(--body-font-size-xl); /* 21px */
 }
 
-/* Hero: spacer sections provide the ~60px offsets */
-body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
-  margin-block: 0;
-}
-
-/* Hero title: source 3.5vw scale; single font avoids inflated line boxes */
-body.ivs-get-the-facts .hero.banner h1 {
-  font-family: var(--display-font-family);
-  font-size: 7vw;
-}
-
 /* "Why is treatment important?" dark 50-50 band */
 body.ivs-get-the-facts main > .section.dark:has(.columns-50-50) {
   padding-block: var(--space-band-dark);
@@ -2077,16 +1854,6 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
     flex: 1 1 0;
   }
   
-  body.ivs-get-the-facts .hero.banner h1 {
-    font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* capped at 49px */
-  }
-
-  /* half-width copy column (two-line title) */
-  body.ivs-get-the-facts .hero.banner > div:last-child {
-    max-width: 50%;
-    padding-right: 0;
-  }
-
   body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
     flex-basis: 50%;
   }
