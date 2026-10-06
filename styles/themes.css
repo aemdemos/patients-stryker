@@ -94,6 +94,11 @@ body.sa-resources .section.flex > .default-content-wrapper p {
   line-height: var(--heading-line-height);
 }
 
+/* intro columns sit flush with the section edges (no side gutter) */
+body.sa-resources main > .section.flex > div {
+  padding-inline: 0;
+}
+
 /* inter-section vertical rhythm — the source separates each zone by ~50px of
    whitespace (plus the divider rule where present). The base sections carry
    margin:0, so add a top gap to each zone after the hero. */
@@ -102,6 +107,7 @@ body.sa-resources .section.cards-container,
 body.sa-resources .section.light-gray,
 body.sa-resources .section.compact {
   margin-top: var(--space-section-l);
+  padding-inline: var(--container-gutter);
 }
 
 /* the light-gray related-links band is a full-bleed colour zone: give it interior
@@ -139,6 +145,21 @@ body.sa-resources .section.cards-container > .default-content-wrapper h2 {
   line-height: var(--heading-line-height);
 }
 
+/* h2s (card titles + "Social media") step down below 600px */
+body.sa-resources main h2,
+body.sa-resources .section.cards-container > .default-content-wrapper h2,
+body.sa-resources .cards.brochure .cards-card-body h2 {
+  font-size: var(--heading-font-size-xxxl-s);
+}
+
+@media (width >= 600px) {
+  body.sa-resources main h2,
+  body.sa-resources .section.cards-container > .default-content-wrapper h2,
+  body.sa-resources .cards.brochure .cards-card-body h2 {
+    font-size: var(--heading-font-size-xxxl);
+  }
+}
+
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
 /* single-item panel: one column at all widths (override the panel 2-up grid) */
@@ -161,6 +182,13 @@ body.sa-resources .panel.cta .panel-body,
 body.sa-resources .panel.light .panel-body,
 body.sa-resources .panel.colored-border .panel-body {
   margin: 10px 5% 5%;
+  padding: 5%;
+}
+
+/* the last two covers of the first brochure grid are borderless on the source */
+body.sa-resources main > .section:not(.section:has(.cards.brochure) ~ .section)
+  .cards.brochure > ul > li:nth-last-child(-n + 2) img {
+  border: 0;
 }
 
 body.condition-detail .panel.cta .panel-body {
