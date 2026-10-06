@@ -354,13 +354,9 @@
     font-size: var(--heading-font-size-xl);
   }
 
-  /* band — source drops the headline to 4vw and insets the copy 12% */
+  /* band — source insets the copy 12% (headline size: see the 840px query) */
   .hero.band > div:last-child {
     padding-inline: 12%;
-  }
-
-  .hero.band h1 {
-    font-size: 4vw;
   }
 
   /* poster — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
@@ -393,6 +389,13 @@
     align-self: auto;
     max-width: none;
     padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+  }
+}
+
+/* band headline — source: 8vw below 840px, 4vw above, capped at 56px */
+@media (width >= 840px) {
+  .hero.band h1 {
+    font-size: min(4vw, 56px);
   }
 }
 
@@ -534,10 +537,6 @@
 @media (width >= 1200px) {
   .hero.banner h1 {
     font-size: 42px;
-  }
-
-  .hero.band h1 {
-    font-size: 48px;
   }
 
   .hero.fullbleed.poster h1 {

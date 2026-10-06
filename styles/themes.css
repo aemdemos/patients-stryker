@@ -439,12 +439,12 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     min-height: calc(5 * var(--space-section-l));
   }
 
-  body.campaign-landing main .hero picture.hero-image-desktop {
+  body.campaign-landing main .hero:not(:where(.band)) picture.hero-image-desktop {
     display: block;
     height: 100%;
   }
 
-  body.campaign-landing main .hero picture.hero-image-mobile {
+  body.campaign-landing main .hero:not(:where(.band)) picture.hero-image-mobile {
     display: none;
   }
 
@@ -852,14 +852,6 @@ body.discography main > .section.compact > .default-content-wrapper p:not(li p) 
 
 /* ----- Large desktop (>=1200px) ----- */
 @media (width >= 1200px) {
-  /* Theme: sa-resources */
-
-  /* enlarge the hero headline on this page beyond the shared band cap (48px in
-     blocks/hero/hero.css) — a theme-specific delta. */
-  body.sa-resources .hero.band h1 {
-    font-size: 56px;
-  }
-
   /* EDS large (1200px) ← source 1440px cap: 56px flat */
   .section.hero-stroke .hero.banner h1 {
     font-size: 56px;
@@ -947,49 +939,8 @@ body.patient-information main > .section:first-child a::after {
   transform: translate(0, 2px);
 }
 
-/* ── Title bar (hero band) ────────────────────────────────────────────────────
-   The source title bar is a single compact gradient bar (~100px) with the gold
-   headline overlaid. The block authors desktop + mobile crops as two <picture>s
-   and the base .hero toggle shows one per breakpoint — but the shared
-   `.hero.band picture { display:block }` rule (which we must not touch) overrides
-   that toggle, so BOTH crops render stacked and the bar becomes ~2x too tall.
-   Re-assert the one-crop-per-breakpoint toggle here, scoped to this page. */
-body.patient-information .hero.band picture.hero-image-desktop {
-  display: none;
-}
-
-body.patient-information .hero.band picture.hero-image-mobile {
-  display: block;
-}
-
-/* Headline size — match the source's fluid scaling at every width (measured):
-   mobile ≈ 8vw (31.2px at 390px), desktop ≈ 4vw (51.2px at 1280px) capped at
-   ~56px (still 56px at 1920px, not the unbounded 76.8px raw 4vw). The shared hero
-   block instead uses 8vw on mobile then pins a fixed 48px from 1200px up — close
-   on mobile but a touch small and non-fluid on desktop.
-
-   IMPORTANT: this mobile base MUST precede the ≥900px block below — both rules
-   have equal specificity, so if the base came later it would win at desktop too
-   (source order breaks the media query) and the title would render at raw 8vw. */
-body.patient-information .hero.band h1 {
-  font-size: 8vw;
-}
-
-@media (width >= 900px) {
-  body.patient-information .hero.band picture.hero-image-desktop {
-    display: block;
-  }
-
-  body.patient-information .hero.band picture.hero-image-mobile {
-    display: none;
-  }
-
-  /* desktop headline: switch from the mobile 8vw to the source's 4vw, clamped so
-     it stops growing at ~56px on very wide viewports (matches the reference). */
-  body.patient-information .hero.band h1 {
-    font-size: min(4vw, 56px);
-  }
-}
+/* Title bar: `hero band` styling (crop toggle, headline size) lives in the
+   variant (blocks/hero), not this theme. */
 
 /* ── Intro line ──────────────────────────────────────────────────────────────
    "Learn more about brain aneurysm…" is authored as an <h2>. The source renders
