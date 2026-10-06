@@ -619,6 +619,13 @@ async function loadEager(doc) {
 
   const main = doc.querySelector('main');
   if (main) {
+    // DA/EW block library preview tweaks (tools/da-library-preview) — remove
+    // this block to opt out.
+    if (window.location.pathname.startsWith('/.da/library/')) {
+      const { default: decorateLibraryPreview } = await import('../tools/da-library-preview/da-library-preview.js');
+      decorateLibraryPreview(main);
+    }
+
     decorateMain(main);
 
     // Load template if specified in metadata
