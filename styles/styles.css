@@ -64,6 +64,12 @@
   --display-font-family: "Futura for Stryker", "Arial Black", arial, sans-serif;
   --display-font-family-bold: "Futura for Stryker", "Arial Black", arial, sans-serif;
 
+  /* font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;   /* light serif (Egyptienne) headings */
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
   /* body sizes (fixed px — source typography is non-responsive) */
   --body-font-size-m: 14px;
   --body-font-size-s: 13px;
@@ -255,7 +261,7 @@ h6 {
   margin-top: 0;
   margin-bottom: var(--space-block);
   font-family: var(--heading-font-family);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: var(--heading-line-height);
   scroll-margin: 40px;
 }
@@ -268,7 +274,7 @@ h6 { font-size: var(--heading-font-size-xs); }
 h2 {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xl);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .section.compact h2 {
@@ -282,7 +288,7 @@ h2 {
 h4,
 h5 {
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height-h4);
 }
 
@@ -313,7 +319,7 @@ main p:has(code) :is(strong em code, em strong code, b i code, i b code) {
 /* bold inline text — Futura, matching the source's dominant span.futura-bold treatment  */
 strong,
 b {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-family: var(--display-font-family);
 }
 
@@ -441,7 +447,7 @@ a:any-link > strong {
   color: var(--color-white);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   line-height: 1.3;
   text-transform: uppercase;
   text-decoration: none;
@@ -465,7 +471,7 @@ a:any-link > strong:has(u) {
   border-radius: 0;
   background-color: transparent;
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   color: var(--color-primary);
   text-decoration: none;
@@ -559,7 +565,7 @@ strong > a:any-link:has(u) {
   border-radius: 0;
   font-family: var(--display-font-family);
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   color: var(--color-accent);
   text-decoration: none;
@@ -578,7 +584,7 @@ a:any-link > strong:has(u) u {
   color: var(--link-color);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: none;
 }
 
@@ -624,7 +630,7 @@ a.link-strong:any-link {
   display: inline;
   font-family: var(--display-font-family);
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -664,7 +670,7 @@ button.button {
   padding: 9px 12px;
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   line-height: 1.3;
   text-transform: uppercase;
   text-decoration: none;
@@ -940,7 +946,7 @@ main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper p
 /* Keep the audience-note bold segment in Futura bold instead of body slab. */
 main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper p:first-child :is(strong, b) {
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 /* bottom-of-page disclaimer below cards — source: 11.2px / 15.4px */

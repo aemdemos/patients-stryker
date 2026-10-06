@@ -19,7 +19,7 @@
 
 .metadata-rules .metadata-rules-table thead th {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--color-white);
   background: var(--color-primary);
   border-bottom: none;
@@ -37,7 +37,7 @@
 }
 
 .metadata-rules .metadata-rules-col-url code {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--text-color);
 }
 

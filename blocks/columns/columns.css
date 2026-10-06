@@ -36,7 +36,7 @@
 
 .columns > div > div h2:not(:has(em, strong)) {
   font-family: var(--heading-font-family);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .columns p,
@@ -207,7 +207,7 @@
 .section.dark .columns h3 {
   font-family: var(--display-font-family);
   font-size: var(--panel-cta-heading-size); /* 26px */
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height-ml);
   color: var(--color-accent);
 }
@@ -216,7 +216,7 @@
 .section.dark .columns h4 {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-ml); /* 21.875px */
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: var(--heading-line-height-ml);
   color: var(--color-white);
 }
@@ -274,7 +274,7 @@
 }
 
 .columns.columns-icon-grid .columns-img-col ~ p strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .columns.columns-icon-grid .columns-img-col ~ p:has(strong) + p {
@@ -521,7 +521,7 @@ main > .section:has(> div > :where(.columns.related-links)) {
   margin-bottom: var(--space-block);
   padding-bottom: 2%;
   font-family: var(--display-font-family-bold);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
   color: var(--color-accent);
@@ -536,7 +536,7 @@ main > .section:has(> div > :where(.columns.related-links)) {
   gap: 6px;
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);   /* 17.5px */
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
 }
 
@@ -558,7 +558,7 @@ main > .section:has(> div > :where(.columns.related-links)) {
   gap: 6px;
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--body-line-height-l);
   text-transform: uppercase;
 }

@@ -55,7 +55,7 @@
   color: #343434;
   font-family: var(--display-font-family);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 1;
   text-transform: lowercase;
 }
@@ -73,14 +73,14 @@
 .video [class~="ytmVideoInfoVideoTitle"] {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-m);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 1.1;
 }
 
 .video [class~="ytmVideoInfoVideoSubtitle"] {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1.1;
 }
 
@@ -181,7 +181,7 @@
   color: var(--color-white);
   font-family: Roboto, Arial, sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1;
   white-space: nowrap;
   text-decoration: none;
