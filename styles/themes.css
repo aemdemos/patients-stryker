@@ -1438,7 +1438,7 @@ body.bvn-ablation {
 }
 
 /* ----- Page-wide type: the source wraps its copy in a 1.25x span ----- */
-body.bvn-ablation main > .section:is(.flex, .cards-container, .columns-container) :is(p, li):not(:where(.cards:is(.brochure, .brochure-cta) *)),
+body.bvn-ablation main > .section:is(.flex, .cards-container, .columns-container) :is(p, li),
 body.bvn-ablation main .statistics .statistics-desc,
 body.bvn-ablation main .statistics .statistics-desc p {
   font-size: var(--body-font-size-l); /* 17.5px */
@@ -1550,22 +1550,22 @@ body.bvn-ablation main > .section.cards-container:not(:has(.cards.resources)) {
   margin-top: var(--space-section);
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul {
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
   grid-template-columns: 1fr;
   gap: 0 var(--space-section);
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul > li img {
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul > li img {
   aspect-ratio: auto;
   height: auto;
   object-fit: fill;
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body {
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
   margin-top: var(--space-block-l);
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body p {
+body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body p {
   margin-bottom: var(--space-block);
 }
 
@@ -1697,7 +1697,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body {
+  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
     margin-top: var(--space-section);
   }
 
@@ -1774,7 +1774,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     line-height: var(--heading-line-height-ml);
   }
 
-  body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul {
+  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1859,7 +1859,7 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
 
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
-  body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul {
+  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
