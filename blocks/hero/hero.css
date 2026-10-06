@@ -636,3 +636,27 @@
     font-size: 56px;
   }
 }
+
+/* ===== hero-facts section style (IVS "Get the facts") — banner with a Futura
+   headline (7vw → 3.5vw, capped 49px) and a half-width copy column on desktop.
+   No wrapper margin: spacer sections around it provide the offsets. ===== */
+.hero-facts.section .hero-wrapper:has(.hero.banner) {
+  margin-block: 0;
+}
+
+/* single font avoids inflated line boxes */
+.hero-facts.section .hero.banner h1 {
+  font-family: var(--display-font-family);
+  font-size: 7vw;
+}
+
+@media (width >= 900px) {
+  .hero-facts.section .hero.banner h1 {
+    font-size: min(3.5vw, var(--heading-font-size-hero-xl));
+  }
+
+  .hero-facts.section .hero.banner > div:last-child {
+    max-width: 50%;
+    padding-right: 0;
+  }
+}

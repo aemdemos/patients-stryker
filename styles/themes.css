@@ -1793,17 +1793,6 @@ body.ivs-get-the-facts main :is(p, li) {
   font-size: var(--body-font-size-xl); /* 21px */
 }
 
-/* Hero: spacer sections provide the ~60px offsets */
-body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
-  margin-block: 0;
-}
-
-/* Hero title: source 3.5vw scale; single font avoids inflated line boxes */
-body.ivs-get-the-facts .hero.banner h1 {
-  font-family: var(--display-font-family);
-  font-size: 7vw;
-}
-
 /* "Why is treatment important?" dark 50-50 band */
 body.ivs-get-the-facts main > .section.dark:has(.columns-50-50) {
   padding-block: var(--space-band-dark);
@@ -1886,16 +1875,6 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
     flex: 1 1 0;
   }
   
-  body.ivs-get-the-facts .hero.banner h1 {
-    font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* capped at 49px */
-  }
-
-  /* half-width copy column (two-line title) */
-  body.ivs-get-the-facts .hero.banner > div:last-child {
-    max-width: 50%;
-    padding-right: 0;
-  }
-
   body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
     flex-basis: 50%;
   }
