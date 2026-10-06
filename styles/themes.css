@@ -1596,6 +1596,11 @@ body.ivs-home main > .section.compact > div > ol {
   margin-bottom: var(--space-section);
 }
 
+body.ivs-home .panel.gold .panel-body {
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
 /* source's mobile banner type (<480px): 26.25px heading, 17.5px subheading */
 body.ivs-home .panel.gold .panel-body h2 {
   margin-bottom: var(--space-inset-m);
