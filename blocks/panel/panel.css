@@ -408,6 +408,12 @@
     font-family: var(--display-font-family);
   }
 
+  .panel.cta .panel-body h3,
+.panel.light .panel-body h3,
+.panel.colored-border .panel-body h3 {
+   font-size: var(--panel-cta-heading-size);
+}
+
   .fragment .panel.gray .panel-body h3{
   font-size:var(--panel-heading-size-xs);
 }
@@ -435,11 +441,7 @@
     font-family: var(--body-font-family);
   }
 
-  .panel.cta .panel-body h3,
-.panel.light .panel-body h3,
-.panel.colored-border .panel-body h3 {
-   font-size: var(--panel-cta-heading-size);
-}
+
 } 
 
 @media (width >= 900px) {

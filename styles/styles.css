@@ -382,6 +382,14 @@ main > .section.compact > div :is(p, ol, ul, li) {
   line-height: var(--footnote-line-height);
 }
 
+.section.compact p {
+  font-size: var(--footnote-font-size);
+}
+
+main > .section.video-text p {
+  font-size: var(--body-font-size-l);
+}
+
 main > .section.compact > div > p {
  line-height: var(--paragraph-line-height);
 }
@@ -401,15 +409,6 @@ h2 strong em {
 .section.compact h1 {
   margin: 30px 0 10px;
   line-height: 22.26px;
-}
-
-
-.section.compact p {
-  font-size: var(--footnote-font-size);
-}
-
-main > .section.video-text p {
-  font-size: var(--body-font-size-l);
 }
 
 

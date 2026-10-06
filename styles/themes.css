@@ -247,6 +247,11 @@ body.condition-detail .tabs .tabs-tab {
   padding: 0 30px;
 }
 
+body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--body-font-size-l);
+}
+ 
+
 @media (width >= 600px) {
   body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
     font-size: var(--icon-list-title-size);
