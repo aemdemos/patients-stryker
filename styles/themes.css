@@ -1282,6 +1282,11 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   body.discography main > .section.flex.panel-container > .panel.cta {
   margin-top: unset;
   } 
+
+  body.condition-detail .hero.banner > div:last-child {
+    width: 50%;
+  }
+      
 }
 
 /* ----- Large desktop (>=1200px) ----- */
