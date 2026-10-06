@@ -622,9 +622,9 @@ main > .section:has(> div > :where(.columns.related-links)) {
     width: 50%;
   }
 
-  /* 3rd column floats right so it lands in the right column below the 2nd */
+  /* 3rd column starts a new row on the left, below the 1st (as on the source) */
   .columns.related-links > div > div:nth-child(3) {
-    float: right;
+    clear: left;
   }
 
   /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
