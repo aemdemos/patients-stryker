@@ -290,6 +290,10 @@ body.condition-detail main > .section.light-gray > .default-content-wrapper > h4
       line-height: var(--heading-line-height-h4);
 }
 
+body.condition-detail main > .tabs .tabs-tab {
+  padding: 0 30px;
+}
+
 @media (width >= 600px) {
   body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
     font-size: var(--icon-list-title-size);
