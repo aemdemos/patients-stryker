@@ -167,9 +167,6 @@ body.condition-detail .panel.cta .panel-body {
   padding: 3%;
 }
 
-/* Downloads + social grids (`cards brochure`): all card styling lives in the
-   variant (blocks/cards), not this theme. */
-
 /* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
    chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
    variant (.columns.related-links) in blocks/columns/columns.css, since the same
@@ -860,9 +857,6 @@ body.patient-information main > .section:first-child a::after {
   transform: translate(0, 2px);
 }
 
-/* Title bar: `hero band` styling (crop toggle, headline size) lives in the
-   variant (blocks/hero), not this theme. */
-
 /* ── Intro line ──────────────────────────────────────────────────────────────
    "Learn more about brain aneurysm…" is authored as an <h2>. The source renders
    it in the LIGHT SERIF face (URW Egyptienne, weight 500), not the Futura-bold
@@ -883,9 +877,6 @@ body.patient-information main > .section > .default-content-wrapper h2 {
   margin-top: 4%;
   margin-bottom: 4%;
 }
-
-/* Patient-guide cards: all styling (incl. title link, cover box, bottom gap)
-   lives in the `cards brochure-cta` variant (blocks/cards), not this theme. */
 
 /* ── Gold "for more information" CTA band ─────────────────────────────────────
    The source's .c-full-bleed-panel.bg-golden-gradient bar: a left-to-right gold
