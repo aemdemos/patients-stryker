@@ -39,6 +39,7 @@
 
 .panel .panel-body > p:has(strong) {
   font-size: var(--panel-heading-size);
+  margin-bottom: 15px;
 }
 
 /* cta paragraphs containing bold+italic (the gold-label marker) */
