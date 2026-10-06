@@ -211,7 +211,7 @@
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
-  padding: 22.5px;
+  padding: 3%;
   background: var(--panel-dark-gradient);
   box-shadow: none;
   text-align: left;
