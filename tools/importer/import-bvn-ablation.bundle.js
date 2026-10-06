@@ -298,7 +298,7 @@ var CustomImportScript = (() => {
     "https://media-assets.stryker.com/is/image/stryker/1680552176_D0000096607AA2_SpineJack-Patient-Brochure_041621_ESES_L-1": "/fragments/card-spinejack"
   };
 
-  // tools/importer/parsers/bvn-ablation/cards-resources.js
+  // tools/importer/parsers/bvn-ablation/tabs-resources.js
   function pdfKey(href) {
     try {
       return decodeURI(href).trim();
@@ -312,16 +312,10 @@ var CustomImportScript = (() => {
   function resolveFragment(col) {
     const learnMore = col.querySelector('a.btn[href], a.btn-teal[href], a[href$=".pdf"], a[href*=".pdf"]');
     const pdfHref = learnMore && learnMore.getAttribute("href");
-    if (pdfHref) {
-      const hit = PDF_TO_FRAGMENT[pdfKey(pdfHref)];
-      if (hit) return hit;
-    }
+    if (pdfHref && PDF_TO_FRAGMENT[pdfKey(pdfHref)]) return PDF_TO_FRAGMENT[pdfKey(pdfHref)];
     const img = col.querySelector(".cta-img img, img");
     const imgSrc = img && (img.getAttribute("src") || img.getAttribute("title"));
-    if (imgSrc) {
-      const hit = DM_TO_FRAGMENT[dmKey(imgSrc)];
-      if (hit) return hit;
-    }
+    if (imgSrc && DM_TO_FRAGMENT[dmKey(imgSrc)]) return DM_TO_FRAGMENT[dmKey(imgSrc)];
     return null;
   }
   function inlineCardCells(col, document) {
@@ -340,34 +334,48 @@ var CustomImportScript = (() => {
     }
     return [img || "", bodyCell];
   }
-  function fragmentBlock(path, document) {
-    const a = document.createElement("a");
-    a.setAttribute("href", path);
-    a.textContent = path;
-    return WebImporter.Blocks.createBlock(document, { name: "Fragment", cells: [[a]] });
-  }
   function parse9(element, { document }) {
-    const cols = element.querySelectorAll(':scope > .row > [class*="col-"], .row > [class*="col-md-3"]');
-    const fragmentPaths = [];
+    const rows = [];
     const inlineCells = [];
-    cols.forEach((col) => {
-      const img = col.querySelector(".cta-img img, img");
-      const learnMore = col.querySelector("a.btn[href], a.btn-teal[href]");
-      if (!img && !learnMore) return;
-      const fragmentPath = resolveFragment(col);
-      if (fragmentPath) {
-        if (!fragmentPaths.includes(fragmentPath)) fragmentPaths.push(fragmentPath);
-      } else {
-        inlineCells.push(inlineCardCells(col, document));
-      }
+    const links = [...element.querySelectorAll('.tabs-nav a.tab-link[href^="#"]')];
+    const tabs = links.length ? links.map((a) => ({
+      label: a.textContent.trim(),
+      panel: element.querySelector(`[id="${a.getAttribute("href").slice(1)}"]`)
+    })) : [...element.querySelectorAll(".tab-content")].map((panel) => ({ label: "", panel }));
+    tabs.forEach(({ label, panel }) => {
+      if (!panel) return;
+      const paths = [];
+      panel.querySelectorAll('.cols4 .row > [class*="col-"]').forEach((col) => {
+        const img = col.querySelector(".cta-img img, img");
+        const learnMore = col.querySelector("a.btn[href], a.btn-teal[href]");
+        if (!img && !learnMore) return;
+        const path = resolveFragment(col);
+        if (path) {
+          if (!paths.includes(path)) paths.push(path);
+        } else {
+          inlineCells.push(inlineCardCells(col, document));
+        }
+      });
+      if (!paths.length) return;
+      const contentCell = paths.map((path) => {
+        const p = document.createElement("p");
+        const a = document.createElement("a");
+        a.setAttribute("href", path);
+        a.textContent = label || path;
+        p.append(a);
+        return p;
+      });
+      rows.push([label, contentCell]);
     });
-    if (fragmentPaths.length === 0 && inlineCells.length === 0) {
+    const out = [];
+    if (rows.length) out.push(WebImporter.Blocks.createBlock(document, { name: "Tabs", cells: rows }));
+    if (inlineCells.length) {
+      console.warn(`tabs-resources: ${inlineCells.length} brochure(s) without a card fragment kept inline`);
+      out.push(WebImporter.Blocks.createBlock(document, { name: "Cards (resources)", cells: inlineCells }));
+    }
+    if (!out.length) {
       element.replaceWith(...element.childNodes);
       return;
-    }
-    const out = fragmentPaths.map((p) => fragmentBlock(p, document));
-    if (inlineCells.length) {
-      out.push(WebImporter.Blocks.createBlock(document, { name: "Cards (resources)", cells: inlineCells }));
     }
     element.replaceWith(...out);
   }
@@ -591,7 +599,7 @@ var CustomImportScript = (() => {
       ]);
       WebImporter.DOMUtils.remove(element, [".localpagenavigation"]);
       element.querySelectorAll(".sectionseparator hr, hr.section-separator").forEach((hr) => hr.remove());
-      WebImporter.DOMUtils.remove(element, [".tabs-nav"]);
+      WebImporter.DOMUtils.remove(element, [".tabs-overflow-nav"]);
       element.querySelectorAll(".curatedcta").forEach((cta) => {
         if (isEmptyPlaceholder(cta)) cta.remove();
       });
@@ -744,7 +752,7 @@ var CustomImportScript = (() => {
     "columns-steps": parse6,
     "columns-text": parse7,
     "panel-gold": parse8,
-    "cards-resources": parse9
+    "tabs-resources": parse9
   };
   var transformers = [
     transform,
@@ -767,7 +775,7 @@ var CustomImportScript = (() => {
       { name: "columns-steps", instances: [".cols4:not(.tabs .cols4)"] },
       { name: "columns-text", instances: [".cols3"] },
       { name: "panel-gold", instances: [".c-rich-text-editor .bg-gold"] },
-      { name: "cards-resources", instances: [".tabs .c-tabs .tabs-content .cols4 .colctrl"] }
+      { name: "tabs-resources", instances: [".tabs .c-tabs .tab-container"] }
     ],
     sections: [
       { id: "hero", name: "Hero", selector: ".fullWidthImageHero", style: null },

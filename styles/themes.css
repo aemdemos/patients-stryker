@@ -1771,15 +1771,8 @@ body.bvn-ablation main .panel.gold .panel-body a:any-link {
 }
 
 /* the form and Resources sections sit ~30px below the section above */
-body.bvn-ablation main > .section:is(.marketo-form-container, .fragment-container) {
+body.bvn-ablation main > .section:is(.marketo-form-container, .tabs-container) {
   margin-top: var(--space-section);
-}
-
-/* ----- Resources: sage underline under the heading ----- */
-body.bvn-ablation main > .section.fragment-container > .default-content-wrapper h2 {
-  margin-bottom: calc(var(--space-section-l) + var(--space-section)); /* ~80px to the cards */
-  padding-bottom: var(--heading-underline-gap);
-  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* ----- Potential risks: contained deeper-gray box (not full-bleed) ----- */
