@@ -617,3 +617,22 @@
     font-size: 70px;
   }
 }
+
+/* ===== hero-stroke section style — headline size (source: 8vw on phones,
+   40.96px at 1024px rising to a 56px cap at 1440px; mapped to 900/1200).
+   Kept in the block so it works on any page, themed or not. ===== */
+.hero-stroke.section .hero.banner h1 {
+  font-size: 8vw;
+}
+
+@media (width >= 900px) {
+  .hero-stroke.section .hero.banner h1 {
+    font-size: calc(-4.16px + 5.0133vw);
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-stroke.section .hero.banner h1 {
+    font-size: 56px;
+  }
+}

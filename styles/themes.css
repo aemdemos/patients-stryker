@@ -195,21 +195,6 @@ body.stroke-awareness-landing main .section.compact {
   margin-top: 60px;
 }
 
-/* Hero (banner) headline sizing is scoped to the section-metadata `style:
-   hero-stroke` (which adds `.hero-stroke` to the section) rather than the page
-   theme, so the hero styling travels with the section wherever it's authored
-   instead of being pinned to this one page.
-
-   Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
-   1200), so the source's own breakpoints translate as: source 840px → 600px,
-   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
-   mobile is a single regime below 600px.
-   mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
-   → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
-.section.hero-stroke .hero.banner h1 {
-  font-size: 8vw;
-}
-
 body.campaign-landing main .section.sticky-nav-container {
   margin-top: 0;
 }
@@ -607,12 +592,6 @@ body.condition-detail .tabs .tabs-panel {
   body.sa-resources .panel.light > ul {
     grid-template-columns: 1fr;
   }
-
-  /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
-     EDS large breakpoint (1200px ← source 1440px). */
-  .section.hero-stroke .hero.banner h1 {
-    font-size: calc(-4.16px + 5.0133vw);
-  }
 }
 
 /* =====================================================================
@@ -804,11 +783,6 @@ body.discography main > .section.compact > .default-content-wrapper p:not(li p) 
 
 /* ----- Large desktop (>=1200px) ----- */
 @media (width >= 1200px) {
-  /* EDS large (1200px) ← source 1440px cap: 56px flat */
-  .section.hero-stroke .hero.banner h1 {
-    font-size: 56px;
-  }
-
    body.discography .hero.banner h1 {
     font-size: 42px;
   }
