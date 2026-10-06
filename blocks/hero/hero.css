@@ -331,6 +331,44 @@
 }
 
 
+/* ===== Section styles — opt-in via section metadata `Style`. Their tablet /
+   desktop rules live in the shared breakpoint blocks below. ===== */
+
+/* hero-campaign (campaign landing): fullbleed with a gold Futura headline over
+   a square mobile / cover-filled desktop image; plain fullbleed is unchanged */
+.hero-campaign.section .hero.fullbleed > div:last-child {
+  padding: 4% 8% 0 10%;
+}
+
+.hero-campaign.section .hero.fullbleed img {
+  aspect-ratio: 1 / 1;
+}
+
+.hero-campaign.section .hero.fullbleed h1 {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: 10vw;
+  color: var(--color-accent);
+}
+
+/* hero-stroke headline (source: 8vw on phones, 40.96px at 1024px rising to a
+   56px cap at 1440px; mapped to 900/1200) */
+.hero-stroke.section .hero.banner h1 {
+  font-size: 8vw;
+}
+
+/* hero-facts (IVS "Get the facts"): Futura headline (7vw → 3.5vw, capped 49px),
+   half-width copy on desktop; no wrapper margin (spacer sections provide it) */
+.hero-facts.section .hero-wrapper:has(.hero.banner) {
+  margin-block: 0;
+}
+
+/* single font avoids inflated line boxes */
+.hero-facts.section .hero.banner h1 {
+  font-family: var(--display-font-family);
+  font-size: 7vw;
+}
+
 /* ===== Tablet and up (600px) — all variants ===== */
 @media (width >= 600px) {
   .hero {
@@ -354,13 +392,9 @@
     font-size: var(--heading-font-size-xl);
   }
 
-  /* band — source drops the headline to 4vw and insets the copy 12% */
+  /* band — source insets the copy 12% (headline size: see the 900px block) */
   .hero.band > div:last-child {
     padding-inline: 12%;
-  }
-
-  .hero.band h1 {
-    font-size: 4vw;
   }
 
   /* poster — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
@@ -393,6 +427,39 @@
     align-self: auto;
     max-width: none;
     padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+  }
+
+  /* hero-campaign: desktop crop from 600px, cover-filling a min-height box */
+  .hero-campaign.section .hero.fullbleed {
+    min-height: calc(5 * var(--space-section-l));
+  }
+
+  .hero-campaign.section .hero.fullbleed picture.hero-image-desktop {
+    display: block;
+    height: 100%;
+  }
+
+  .hero-campaign.section .hero.fullbleed picture.hero-image-mobile {
+    display: none;
+  }
+
+  .hero-campaign.section .hero.fullbleed img {
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+
+  .hero-campaign.section .hero.fullbleed > div:last-child {
+    max-width: 45%;
+    padding: 4% 0 0 10%;
+  }
+
+  .hero-campaign.section .hero.fullbleed p {
+    font-size: clamp(var(--body-font-size-m), 1.5vw, var(--heading-font-size-l));
+  }
+
+  .hero-campaign.section .hero.fullbleed h1 {
+    font-size: 5vw;
   }
 }
 
@@ -527,6 +594,23 @@
     padding-top: 20px;
   }
 
+  /* band headline — source: 8vw on smaller screens, 4vw above, capped at 56px */
+  .hero.band h1 {
+    font-size: min(4vw, 56px);
+  }
+
+  .hero-stroke.section .hero.banner h1 {
+    font-size: calc(-4.16px + 5.0133vw);
+  }
+
+  .hero-facts.section .hero.banner h1 {
+    font-size: min(3.5vw, var(--heading-font-size-hero-xl));
+  }
+
+  .hero-facts.section .hero.banner > div:last-child {
+    max-width: 50%;
+    padding-right: 0;
+  }
 }
 
 /* ===== Large desktop (1200px) — cap the fluid headline/copy sizes (vw × 1200)
@@ -536,16 +620,20 @@
     font-size: 42px;
   }
 
-  .hero.band h1 {
-    font-size: 48px;
-  }
-
   .hero.fullbleed.poster h1 {
     font-size: 60px;
   }
 
   .hero.fullbleed.poster p {
     font-size: 18px;
+  }
+
+  .hero-campaign.section .hero.fullbleed h1 {
+    font-size: 70px;
+  }
+
+  .hero-stroke.section .hero.banner h1 {
+    font-size: 56px;
   }
 }
 
