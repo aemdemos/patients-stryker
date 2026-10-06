@@ -167,21 +167,8 @@ body.condition-detail .panel.cta .panel-body {
   padding: 3%;
 }
 
-/* ----- Cards block (downloads + social grids, `cards brochure`) ----- */
-
-/* brochure cards left-align their title (source), unlike the centered default. */
-body.sa-resources .cards.brochure > ul > li {
-  text-align: left;
-}
-
-/* the "Digital | Print" / "Banner N" links row is centered below the image while
-   the card title above stays left-aligned. order:2 pushes the links row below the
-   image within the card body, with a 30px gap above it (source). */
-body.sa-resources .cards.brochure .cards-card-body p {
-  order: 2;
-  margin: var(--space-section) 0 0;
-  text-align: center;
-}
+/* Downloads + social grids (`cards brochure`): all card styling lives in the
+   variant (blocks/cards), not this theme. */
 
 /* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
    chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
@@ -1025,15 +1012,8 @@ body.patient-information main > .section > .default-content-wrapper h2 {
   margin-bottom: 4%;
 }
 
-/* ── Patient-guide cards (cards brochure-cta) ─────────────────────────────────
-   The whole card is the click target, so the title text itself must not read as
-   a link. The parser links the title to its PDF; the global link styles would
-   paint it teal + underlined. Neutralise that so the title shows as plain bold
-   text (matching the source's futura-bold black title). */
-body.patient-information .cards.brochure-cta .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
-  color: inherit;
-  text-decoration: none;
-}
+/* Patient-guide cards: all styling (incl. title link, cover box, bottom gap)
+   lives in the `cards brochure-cta` variant (blocks/cards), not this theme. */
 
 /* ── Gold "for more information" CTA band ─────────────────────────────────────
    The source's .c-full-bleed-panel.bg-golden-gradient bar: a left-to-right gold
@@ -1096,27 +1076,6 @@ body.patient-information main > .section.gold p a::after {
    labels, CTA links, plain regional links, 3-up/2-up layout) comes from the block
    variant, and whose gray full-bleed band comes from the section metadata
    (`light-gray, full-bleed`). */
-
-/* ── Cards section bottom spacing ─────────────────────────────────────────────
-   The patient-guide cards section sits flush against the gold CTA band below it;
-   the source leaves ~30px between the cards row and the gold band. The cards block
-   sets no bottom spacing (and it's shared, so we don't edit it), so add the gap
-   here on the cards' host section, scoped to this page. */
-body.patient-information main > .section.cards-container {
-  margin-bottom: var(--space-section);
-}
-
-/* ── Cards CLS fix — reserve the cover-image box ──────────────────────────────
-   The brochure-cta covers are runtime-injected Dynamic Media <picture> images
-   with no width/height attrs and `aspect-ratio: auto` in the shared block, so
-   each box is 0px tall until it loads, then jumps to ~500px — pushing the title,
-   label, button and everything below it down (measured CLS ~0.88 mobile / ~0.31
-   desktop, essentially the whole page CLS). All four covers share a ~3:4 ratio
-   (631×828), so reserve that box up front. The block is shared/WIP, so this is
-   applied page-scoped here rather than in blocks/cards. */
-body.patient-information .cards.brochure-cta > ul > li img {
-  aspect-ratio: 631 / 828;
-}
 
 /* AP number (own compact section): top up the 40px gap to the source's 50/60px */
 body.patient-information main > .section.compact + .section.compact {
@@ -1607,7 +1566,7 @@ body.bvn-ablation {
 }
 
 /* ----- Page-wide type: the source wraps its copy in a 1.25x span ----- */
-body.bvn-ablation main > .section:is(.flex, .cards-container, .columns-container) :is(p, li),
+body.bvn-ablation main > .section:is(.flex, .cards-container, .columns-container) :is(p, li):not(:where(.cards:is(.brochure, .brochure-cta) *)),
 body.bvn-ablation main .statistics .statistics-desc,
 body.bvn-ablation main .statistics .statistics-desc p {
   font-size: var(--body-font-size-l); /* 17.5px */
@@ -1719,22 +1678,22 @@ body.bvn-ablation main > .section.cards-container:not(:has(.cards.resources)) {
   margin-top: var(--space-section);
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
+body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul {
   grid-template-columns: 1fr;
   gap: 0 var(--space-section);
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul > li img {
+body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul > li img {
   aspect-ratio: auto;
   height: auto;
   object-fit: fill;
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
+body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body {
   margin-top: var(--space-block-l);
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body p {
+body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body p {
   margin-bottom: var(--space-block);
 }
 
@@ -1866,7 +1825,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
+  body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body {
     margin-top: var(--space-section);
   }
 
@@ -1943,7 +1902,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     line-height: var(--heading-line-height-ml);
   }
 
-  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
+  body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2039,7 +1998,7 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
 
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
-  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
+  body.bvn-ablation main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 

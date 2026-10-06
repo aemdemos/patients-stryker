@@ -62,39 +62,39 @@ body.procedure-detail main > .columns.block.columns-3-cols ol,ul {
 }
 
 /* "How it works" step cards — natural image ratio (no cover-crop). */
-body.procedure-detail main .cards:not(.resources, .brochure, .linked) > ul > li img {
+body.procedure-detail main .cards:not(.resources, .brochure, .brochure-cta, .linked) > ul > li img {
   aspect-ratio: auto;
   height: auto;
   object-fit: fill;
 }
 
 /* Step card text: 12px inset, 1.25x title + body. */
-body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-card-body {
+body.procedure-detail main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body {
   padding-inline: 12px;
 }
 
-body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-card-body h4 {
+body.procedure-detail main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body h4 {
   font-size: var(--heading-font-size-ml);
   line-height: var(--heading-line-height-ml);
 }
 
-body.procedure-detail main .cards:not(.resources, .brochure, .linked) .cards-card-body p {
+body.procedure-detail main .cards:not(.resources, .brochure, .brochure-cta, .linked) .cards-card-body p {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
 /* "How it works" section rhythm. */
-body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .linked)) {
+body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .brochure-cta, .linked)) {
   margin-top: var(--space-section-xl);
   margin-bottom: var(--space-section);
 }
 
-body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .linked)) > .default-content-wrapper {
+body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .brochure-cta, .linked)) > .default-content-wrapper {
   margin-bottom: var(--space-section);
 }
 
 /* "How it works" heading — Futura bold 26.25px (matches authored <strong>). */
-body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .linked)) > .default-content-wrapper h3 {
+body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .brochure-cta, .linked)) > .default-content-wrapper h3 {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l-scaled);
   font-weight: 700;
