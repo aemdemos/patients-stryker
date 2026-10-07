@@ -376,14 +376,7 @@
   display: flex;
 }
 
-.panel.blue .panel-body p:first-child {
-  max-width: none;
-  margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
-  font-size: var(--heading-font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-accent);
-}
+
 
 .panel.gray .panel-body h3 {
   max-width: none;
