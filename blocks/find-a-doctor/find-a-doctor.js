@@ -156,6 +156,8 @@ export default function decorate(block) {
     radiusButton.setAttribute('aria-expanded', 'true');
     const active = radiusItems.find((li) => li.dataset.value === radiusValue) || radiusItems[0];
     radiusButton.setAttribute('aria-activedescendant', active.id);
+    // the menu has a max-height and scrolls; keep the current option in view
+    active.scrollIntoView({ block: 'nearest' });
   };
 
   const selectRadius = (li) => {
@@ -188,6 +190,7 @@ export default function decorate(block) {
         : Math.max(currentIndex - 1, 0);
       selectRadius(radiusItems[next]);
       radiusButton.setAttribute('aria-activedescendant', radiusItems[next].id);
+      radiusItems[next].scrollIntoView({ block: 'nearest' });
     } else if ((e.key === 'Enter' || e.key === ' ') && radiusMenu.hidden) {
       e.preventDefault();
       openRadius();

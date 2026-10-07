@@ -208,6 +208,10 @@
   --find-a-doctor-control-height: 56px;
   --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
   --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
+  --find-a-doctor-dropdown-max-height: 171.5px; /* source: ~3.5 options visible, the rest scroll */
+  --find-a-doctor-option-line-height: 24px; /* source option 24px line → 49px row incl. divider */
+  --find-a-doctor-option-divider: #f2f2f2; /* source 1px separator under each option */
+  --find-a-doctor-option-highlight: #f2f2f7; /* source hover / selected option background */
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
