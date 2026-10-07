@@ -15,7 +15,7 @@ body.legal main .last-modified {
 body.legal main .section:first-of-type h1:first-child {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-text);
   padding-bottom: 7px;
   margin-bottom: var(--space-title);
@@ -40,7 +40,7 @@ body.legal .border-bottom-gold {
 body.legal main .section h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-m);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--paragraph-line-height);
   color: var(--color-accent);
   margin-top: 0;
@@ -60,7 +60,7 @@ body.legal main a:any-link {
 body.legal a.link-strong:any-link {
   display: inline;
     font-family: var(--display-font-family);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     color: var(--color-primary);
     text-decoration: none;
@@ -74,6 +74,6 @@ body.legal strong {
    typography without showing an underline in publish. */
 body.legal :is(strong, b) > u {
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-decoration: none;
 }
