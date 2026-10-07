@@ -70,7 +70,8 @@
   gap:0;
 } 
 
-.panel.cta .panel-body ul {
+.panel.cta .panel-body ul,
+.panel.left .panel-body ul {
   font-size: var(--panel-cta-body-size);
   line-height: var(--body-line-height-l);
   margin-bottom: 15px;
