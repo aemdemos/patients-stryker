@@ -594,10 +594,9 @@ body.discography {
   --discography-how-gap-bottom-l: 91px; /* same gap from tablet up */
 
   /* "Potential risks" section top margin; the 30px spacer section above it adds
-     to this, giving the source's 99 / 139 / 136px gap below the LEARN MORE button */
-  --discography-risks-gap-top: 69px;   /* source < 480px */
-  --discography-risks-gap-top-m: 109px; /* source 480–840px */
-  --discography-risks-gap-top-l: 106px; /* source >= 841px */
+     to this, giving the source's 99 / 136px gap below the LEARN MORE button */
+  --discography-risks-gap-top: 69px;   /* source mobile */
+  --discography-risks-gap-top-l: 106px; /* source >= 841px (EDS 600) */
   --discography-risks-gap-bottom: 41px; /* risks box → disclaimer (source < 480px) */
   --discography-risks-gap-bottom-l: 61px; /* same gap from tablet up */
 }
@@ -799,17 +798,11 @@ body.discography main > .section > .default-content-wrapper h2 {
   }
 
   body.discography main > .section.spacer + .section.light-gray {
-    margin-top: var(--discography-risks-gap-top-m);
+    margin-top: var(--discography-risks-gap-top-l);
   }
 
   body.discography main > .section.spacer + .section.light-gray + .section.compact {
     margin-top: var(--discography-risks-gap-bottom-l);
-  }
-}
-
-@media (width >= 841px) {
-  body.discography main > .section.spacer + .section.light-gray {
-    margin-top: var(--discography-risks-gap-top-l);
   }
 }
 

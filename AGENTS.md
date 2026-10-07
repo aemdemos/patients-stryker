@@ -75,14 +75,24 @@ never use `max-width` media queries.
 @media (max-width: 768px) { }
 
 /* ✅ ALWAYS — base styles are mobile, scale up */
-@media (min-width: 841px) { }
-@media (min-width: 1024px) { }
+@media (width >= 600px) { }
+@media (width >= 900px) { }
+@media (width >= 1200px) { }
 ```
 
-Use the original site's breakpoints as-is. The live site's grid CSS switches at
-**841px** (tablet, `col-sm-*`) and **1024px** (desktop, `col-md-*`); match those
-so migrated blocks line up with the source. Only introduce a different
-breakpoint when the source itself uses one for that specific component.
+The EDS site uses exactly three breakpoints: **600px**, **900px** and
+**1200px**. They replace the source site's breakpoints as follows:
+
+| Source breakpoint | EDS breakpoint |
+|---|---|
+| 480px | dropped (no EDS equivalent) |
+| 840/841px (tablet, `col-sm-*`) | **600px** |
+| 1024px (desktop, `col-md-*`) | **900px** |
+| 1440px | **1200px** |
+
+Never introduce any other breakpoint, even when the source uses one for a
+specific component — map the source value to the nearest EDS breakpoint above
+instead. Base (mobile) styles take the source's smallest-viewport values.
 
 ### 6. Never Modify `scripts/aem.js`
 
@@ -180,7 +190,7 @@ The repository provides the basic structure, blocks, and configuration needed to
 - Follow Stylelint standard configuration
 - Use modern CSS features (CSS Grid, Flexbox, CSS Custom Properties)
 - Maintain responsive design principles
-  - Declare styles mobile first, use `min-width` media queries at the original site's breakpoints (841px tablet, 1024px desktop) for tablet and desktop
+  - Declare styles mobile first, use `min-width` media queries only at the EDS breakpoints 600px, 900px and 1200px (see Hard Rule 5 for how they map to the source's breakpoints)
 - Ensure all selectors are scoped to the block.
   - Bad: `.item-list`
   - Good: `.{blockname} .item-list`   
