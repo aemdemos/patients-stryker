@@ -1021,7 +1021,7 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
     display: none; 
   }
  
-  .section.flex > .panel.cta > ul,
+  .section.flex > .panel-wrapper:has(> .panel.cta) > .panel.cta > ul,
   .section.flex > .panel-wrapper:has(.panel.cta),
   .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta, 
   .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
