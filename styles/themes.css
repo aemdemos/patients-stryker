@@ -588,6 +588,18 @@ body.discography {
   --procedure-resources-card-gap: 71px; /* Resources heading → brochure card */
   --procedure-body-copy-size: 1.25em;    /* default-content paragraph size (source: 14px) */
   --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
+  --discography-how-gap-top: 42px;     /* dark band → "How it works" box (source < 480px) */
+  --discography-how-gap-top-l: 82px;   /* same gap from tablet up */
+  --discography-how-gap-bottom: 61px;  /* "How it works" box → gold band (source < 480px) */
+  --discography-how-gap-bottom-l: 91px; /* same gap from tablet up */
+
+  /* "Potential risks" section top margin; the 30px spacer section above it adds
+     to this, giving the source's 99 / 139 / 136px gap below the LEARN MORE button */
+  --discography-risks-gap-top: 69px;   /* source < 480px */
+  --discography-risks-gap-top-m: 109px; /* source 480–840px */
+  --discography-risks-gap-top-l: 106px; /* source >= 841px */
+  --discography-risks-gap-bottom: 41px; /* risks box → disclaimer (source < 480px) */
+  --discography-risks-gap-bottom-l: 61px; /* same gap from tablet up */
 }
 
 body.discography main > .section.flex > .default-content-wrapper p {
@@ -597,7 +609,7 @@ body.discography main > .section.flex > .default-content-wrapper p {
 
 body.discography main #how-it-works + p {
     font-size: var(--body-font-size-l);
-    line-height: var(--body-line-height-l);
+    line-height: var(--paragraph-line-height-l-nested); /* source: 21.25px lines */
 }
 
 body.discography a:any-link {
@@ -619,7 +631,7 @@ body.discography main .section.flex > .default-content-wrapper h3 {
    restored in the (width >= 600px) block below. */
 body.discography main .panel.cta .panel-body h2 {
   font-size: var(--heading-font-size-ml);
-  line-height: var(--heading-line-height-ml);
+  line-height: var(--heading-line-height-ml-nested); /* source line pitch at every width */
 }
 
 body.discography main .section.light-gray h3 {
@@ -629,6 +641,7 @@ body.discography main .section.light-gray h3 {
 
 body.discography main .section.light-gray h4 {
   font-size: var(--heading-font-size-xs);
+  line-height: var(--body-line-height); /* source mixed-font line: 20.1px @14px, 25.1px @17.5px */
 }
 
 /* "Potential risks" anchor link: the source keeps it at 21px / 1.06 at every
@@ -664,7 +677,19 @@ body.discography main > .section.cards-container + .section.light-gray {
 }
 
 body.discography main > .section.dark + .section.light-gray {
-  margin-top: 80px;
+  margin-top: var(--discography-how-gap-top);
+}
+
+body.discography main > .section.dark + .section.light-gray + .section.panel-container {
+  margin-top: var(--discography-how-gap-bottom);
+}
+
+body.discography main > .section.spacer + .section.light-gray {
+  margin-top: var(--discography-risks-gap-top);
+}
+
+body.discography main > .section.spacer + .section.light-gray + .section.compact {
+  margin-top: var(--discography-risks-gap-bottom);
 }
 
 body.discography main .section.light-gray {
@@ -680,13 +705,16 @@ body.discography main .section.light-gray > div:empty {
 /* paint the gray fill on the section's content wrapper. Target the generic
    direct-child div (not just `.default-content-wrapper`) so it also matches the
    Universal Editor, whose section content is not always wrapped in a
-   `.default-content-wrapper`; `:not(:empty)` skips the consumed metadata div. */
+   `.default-content-wrapper`; `:not(:empty)` skips the consumed metadata div.
+   The source pads these boxes by 2% of the box's own width on every side.
+   Percent padding resolves against the section, so derive the box width
+   (section minus gutters, capped at the container max) and take 2% of that. */
 body.discography main .section.light-gray > div:not(:empty) {
   box-sizing: border-box;
   width: calc(100% - 2 * var(--container-gutter));
   max-width: calc(var(--container-max) - 2 * var(--container-gutter));
   margin-inline: auto;
-  padding: 27.6px;
+  padding: calc((min(100%, var(--container-max)) - 2 * var(--container-gutter)) * 0.02);
   background-color: var(--color-surface);
 }
 
@@ -745,7 +773,7 @@ body.discography main > .section > .default-content-wrapper h2 {
   /* the source keeps the overview box at a uniform 3% padding at every width;
      the shared wide-panel rule switches to 4% 2% with a 2% block margin. */
   body.discography main .panel.cta.wide .panel-body {
-    margin: 0 var(--space-block-s) 0 0;
+    margin: 0 var(--space-block-s) var(--space-block-s) 0;
     padding: 3%;
   }
 
@@ -760,6 +788,28 @@ body.discography main > .section > .default-content-wrapper h2 {
 
   body.discography main > .section > .default-content-wrapper h2 {
     font-size: var(--heading-font-size-xl);
+  }
+
+  body.discography main > .section.dark + .section.light-gray {
+    margin-top: var(--discography-how-gap-top-l);
+  }
+
+  body.discography main > .section.dark + .section.light-gray + .section.panel-container {
+    margin-top: var(--discography-how-gap-bottom-l);
+  }
+
+  body.discography main > .section.spacer + .section.light-gray {
+    margin-top: var(--discography-risks-gap-top-m);
+  }
+
+  body.discography main > .section.spacer + .section.light-gray + .section.compact {
+    margin-top: var(--discography-risks-gap-bottom-l);
+  }
+}
+
+@media (width >= 841px) {
+  body.discography main > .section.spacer + .section.light-gray {
+    margin-top: var(--discography-risks-gap-top-l);
   }
 }
 
@@ -776,14 +826,22 @@ body.discography main .panel.cta .panel-body h3 {
   }
 }
 
-/* source overview box sits 10px in from its column's right edge at every width */
+/* source overview box sits 10px in from its column's right edge, with 10px
+   below it, at every width */
 body.discography main .panel.cta.wide .panel-body {
   margin-inline-end: var(--space-block-s);
+  margin-block-end: var(--space-block-s);
+}
+
+/* the source CTA sits 10px under the box; drop the button wrapper's 12px top
+   margin so the box's 10px bottom margin sets the gap */
+body.discography main .panel.cta .panel-cta .button-wrapper {
+  margin-top: 0;
 }
 
 body.discography main .panel.cta.wide .panel-body li {
   font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
+  line-height: var(--list-line-height-l-nested);
 }
 
 /* EW authoring canvas wraps each <li>'s inline content in a <p>, which then picks
@@ -795,17 +853,29 @@ body.discography main .panel.cta.wide .panel-body li > p {
   margin: 0;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
+  line-height: var(--list-line-height-l-nested);
 }
 
 body.discography main .panel .panel-body p:last-child {
   margin: 10px 0;
 }
 
+/* "Potential risks" closes the overview box with the source's 15px gap */
+body.discography main .panel.cta.wide .panel-body > p:last-child {
+  margin: 0 0 var(--space-block);
+}
+
+/* source gold band keeps a fixed 10px side inset at every width (the shared
+   panel uses 3% on all sides); the 3% / 2% block padding already matches. */
+body.discography main .panel.gold .panel-body {
+  padding-inline: var(--space-block-s);
+}
+
 /* ----- Gold CTA panel copy -----
    The "Tired of living in pain?" gold band renders its paragraph as HumanistSlab
    body copy (14px) in the source, but the shared gold variant applies the 21px
    light serif. Restore the body font/size here as a theme delta. */
+
 body.discography main .panel.gold .panel-body p {
   font-size: 1.5em;
   line-height: var(--heading-line-height); /* source: 22.26px at every width */
