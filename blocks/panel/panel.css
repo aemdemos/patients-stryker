@@ -455,6 +455,12 @@
     grid-template-columns: 1fr;
   }
 
+  @media (width >= 600px) {
+    .section.flex .panel-wrapper > .panel.cta > ul {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .panel.wide .panel-body p {
     font-size: var(--panel-body-size-s);
     font-family: var(--body-font-family);
@@ -468,4 +474,3 @@
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
 }
-

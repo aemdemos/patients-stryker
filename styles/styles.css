@@ -983,6 +983,16 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
   h2 strong em {
     font-size: var(--heading-font-size-compact-m);
   }
+
+   
+  .section.flex > .panel-wrapper:has(> .panel.cta) > .panel.cta > ul,
+  .section.flex > .panel-wrapper:has(.panel.cta),
+  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta, 
+  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -1020,15 +1030,7 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
   main > .section.flex > div:empty {
     display: none; 
   }
- 
-  .section.flex > .panel-wrapper:has(> .panel.cta) > .panel.cta > ul,
-  .section.flex > .panel-wrapper:has(.panel.cta),
-  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta, 
-  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
-        width: 100%;
-        min-width: 0;
-        grid-template-columns: 1fr;
-    }
+
 
   /* video-text section  */
   main > .section.video-text {
