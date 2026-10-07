@@ -983,6 +983,7 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
   h2 strong em {
     font-size: var(--heading-font-size-compact-m);
   }
+
 }
 
 
@@ -1020,6 +1021,7 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
   main > .section.flex > div:empty {
     display: none; 
   }
+
 
   /* video-text section  */
   main > .section.video-text {

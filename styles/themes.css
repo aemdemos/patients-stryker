@@ -486,14 +486,14 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     font-size: var(--heading-font-size-ml);
   }
 
+  body.condition-detail h2 em strong, body.condition-detail h2 strong em {
+     font-size: var(--condition-headline-font-size);
+  }
 
-
-  body.condition-detail main p, body.condition-detail main ul {
+body.condition-detail main p, body.condition-detail main ul {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
-    margin-bottom: 15px;
-   }
-
+}
 
     body.condition-detail .panel.left .panel-body  {
       margin: 0 0 var(--space-block);
@@ -1154,17 +1154,6 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   padding-top: 0;
 }
 
-.zip-skin-closure .panel .panel-body > p:first-child:has(strong),
-.zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) {
-  margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
-  font-size: var(--panel-heading-size);
-  line-height: var(--panel-body-line-height);
-}
-
-.zip-skin-closure .panel .panel-body > p:first-child:has(strong):not(:only-of-type) {
-  margin-bottom: 0;
-}
 
 .zip-skin-closure .panel .panel-body > p:first-child:has(strong) strong,
 .zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) strong {

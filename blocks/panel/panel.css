@@ -37,6 +37,11 @@
   line-height: var(--panel-body-line-height);
 }
 
+.panel .panel-body > p:has(strong) {
+  font-size: var(--panel-heading-size);
+  margin-bottom: 15px;
+}
+
 /* cta paragraphs containing bold+italic (the gold-label marker) */
 .panel .panel-body p:has(strong em),
 .panel .panel-body p:has(em strong),
@@ -59,6 +64,17 @@
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-cta-body-line-height);
+}
+
+.panel.blue > ul {
+  gap:0;
+} 
+
+.panel.cta .panel-body ul,
+.panel.left .panel-body ul {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--body-line-height-l);
+  margin-bottom: 15px;
 }
 
 /* bold + italic body text → gold accent  */
@@ -261,7 +277,7 @@
 .panel.blue .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
-  line-height: var(--panel-cta-body-line-height);
+  line-height: var(--panel-body-line-height-m);
   color: var(--color-white);
 }
 
@@ -281,10 +297,21 @@
 .panel.wide .panel-body li > p,
 .panel.colored-border .panel-body li > p {
   margin: 0;
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family); 
   font-size: var(--panel-cta-body-size);
   line-height: var(--body-line-height);
 }
+
+.panel.blue .panel-body p:has(strong em),
+.panel.blue .panel-body p:has(em strong),
+.panel.blue .panel-body p:has(b i),
+.panel.blue .panel-body p:has(i b) {
+  font-size: var(--panel-body-size);
+  font-family: var(--display-font-family-bold);
+}
+
+
+
 
 .panel .panel-body p:last-child:has(strong em),
 .panel .panel-body p:last-child:has(em strong),
@@ -292,6 +319,7 @@
 .panel .panel-body p:last-child:has(i b) {
   margin: 0;
 }
+
 
 /* list-item paragraphs (e.g. EW wraps list-item text in a <p>) in left & cta
    panels: keep the list rhythm tight */
@@ -335,29 +363,20 @@
   max-width: none;
   margin: 0;
   padding: 4%;
-  padding-bottom: 1%;
+  padding-bottom: 10px;
   background: var(--color-navy-bright);
   box-shadow: var(--shadow-soft);
   text-align: center;
   flex: 1;
 }
 
-.panel.blue > ul {
-  gap:0;
-} 
+
 
 .panel.blue > ul > li {
   display: flex;
 }
 
-.panel.blue .panel-body p:first-child {
-  max-width: none;
-  margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
-  font-size: var(--heading-font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-accent);
-}
+
 
 .panel.gray .panel-body h3 {
   max-width: none;
@@ -441,6 +460,15 @@
     font-family: var(--body-font-family);
   }
 
+  .section.flex > .panel.cta > ul,
+  .section.flex > .panel-wrapper:has(> .panel.cta) > .panel.cta > ul,
+  .section.flex > .panel-wrapper:has(.panel.cta),
+  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta, 
+  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: 1fr;
+    }
 
 } 
 
