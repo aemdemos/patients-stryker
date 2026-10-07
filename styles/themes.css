@@ -625,6 +625,13 @@ body.discography main .section.flex > .default-content-wrapper h3 {
   line-height: var(--heading-line-height-ml);
 }
 
+/* the source pads the intro copy's box by 3% of the column width at the top.
+   Percent padding on the heading resolves against the column, so it tracks the
+   source at every width. */
+body.discography main .section.flex > .default-content-wrapper > h3:first-child {
+  padding-top: 3%;
+}
+
 /* ----- Mobile text sizes (source < 480px, EDS < 600px) -----
    The source drops these headings a step on phones; the larger sizes are
    restored in the (width >= 600px) block below. */
