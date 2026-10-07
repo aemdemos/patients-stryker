@@ -125,7 +125,8 @@
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
 }
 
 .panel.cta .panel-cta {
@@ -211,7 +212,7 @@
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
-  padding: 22.5px;
+  padding: 3%;
   background: var(--panel-dark-gradient);
   box-shadow: none;
   text-align: left;
@@ -268,6 +269,12 @@
   margin: 0 0 var(--space-block);
 }
 
+.panel.dark.wide .panel-body h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-dark-base);
+}
+
+
 /* EW wraps list-item text in a <p>; keep it at the bare-<li> body typography. */
 .panel.cta .panel-body li > p,
 .panel.light .panel-body li > p,
@@ -306,10 +313,12 @@
 
 /* ---- gold variant */
 .panel.gold .panel-body {
-  padding: 22.5px;
+  padding-top: 3%;
+  padding-bottom: 2%;
   background: var(--color-accent);
   box-shadow: none;
   text-align: center;
+  margin:0;
 }
 
 /* ---- gray variant  */
@@ -399,6 +408,12 @@
     font-family: var(--display-font-family);
   }
 
+  .panel.cta .panel-body h3,
+.panel.light .panel-body h3,
+.panel.colored-border .panel-body h3 {
+   font-size: var(--panel-cta-heading-size);
+}
+
   .fragment .panel.gray .panel-body h3{
   font-size:var(--panel-heading-size-xs);
 }
@@ -410,6 +425,13 @@
 }
 
   /* wide variant */
+  .panel.wide .panel-body {
+    max-width: none;
+    margin: 2% 0;
+    padding: 4% 2%;
+    text-align: left;
+  }
+
   .panel.wide > ul {
     grid-template-columns: 1fr;
   }
@@ -418,6 +440,8 @@
     font-size: var(--panel-body-size-s);
     font-family: var(--body-font-family);
   }
+
+
 } 
 
 @media (width >= 900px) {
@@ -425,4 +449,3 @@
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
 }
-

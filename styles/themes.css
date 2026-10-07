@@ -163,9 +163,6 @@ body.sa-resources .panel.colored-border .panel-body {
   margin: 10px 5% 5%;
 }
 
-body.condition-detail .panel.cta .panel-body {
-  padding: 3%;
-}
 
 /* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
    chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
@@ -222,6 +219,38 @@ body.campaign-landing main > .section.tabs-container > .default-content-wrapper 
   color: var(--color-accent);
   text-align: center;
 }
+
+body.condition-detail main > .section.light-gray {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: transparent;
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper {
+   border-inline: var(--container-gutter) solid transparent;
+    padding: 2%;
+    background-color: var(--color-surface);
+    background-clip: padding-box;
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
+font-family: var(--body-font-family);
+    font-size: var(--body-font-size-m);
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+      font-size: var(--heading-font-size-m);
+      line-height: var(--heading-line-height-h4);
+}
+
+body.condition-detail .tabs .tabs-tab {
+  padding: 0 30px;
+}
+
+body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--body-font-size-l);
+}
+ 
 
 @media (width >= 600px) {
   body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
@@ -441,27 +470,23 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     padding-left:4%;
   }
   
-  body.condition-detail h2 {
+  body.condition-detail h3 {
     font-family: var(--heading-font-family);
-    font-size: var(--condition-headline-font-size);
-    padding-top:4%;
+    font-size: var(--heading-font-size-ml);
     padding-bottom: 7px;
-    border-bottom: 1px solid #b2b4ae;
+    line-height: var(--heading-line-height);
   }
 
-  body.condition-detail h2:has(em strong) {
-    border-bottom: 0;
-    padding-left: 10px;
+  body.condition-detail h3 em strong, body.condition-detail h3 strong em {
+    font-size: var(--heading-font-size-ml);
   }
+ 
 
   body.condition-detail h4 {
     font-size: var(--heading-font-size-ml);
   }
 
-  body.condition-detail h2 em strong, body.condition-detail h2 strong em {
-     font-size: var(--condition-headline-font-size);
-   
-  }
+
 
   body.condition-detail main p, body.condition-detail main ul {
     font-size: var(--body-font-size-l);
@@ -472,10 +497,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
     body.condition-detail .panel.left .panel-body  {
       margin: 0 0 var(--space-block);
-    }
-
-    body.condition-detail .panel.dark .panel-body {
-      padding:3%;
     }
 
    body.condition-detail .panel.left .panel-body p{
@@ -1154,11 +1175,6 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
 }
 
- body.condition-detail .panel.gold .panel-body {
-  margin:0;
-  padding-top: 3%;
-  padding-bottom: 2%;
- }
 
  body.procedure-detail main > .section.panel-container:has(.panel.gold) {
   margin-top: var(--space-section-xl);
@@ -1266,6 +1282,11 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   body.discography main > .section.flex.panel-container > .panel.cta {
   margin-top: unset;
   } 
+
+  body.condition-detail .hero.banner > div:last-child {
+    width: 55%;
+  }
+      
 }
 
 /* ----- Large desktop (>=1200px) ----- */
@@ -1277,7 +1298,6 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
     font-size: 91px;
   }
-
 
 }
 
@@ -1812,6 +1832,16 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
   body.ivs-get-the-facts main > .section.divider {
     padding-top: calc(var(--space-section-l) + var(--space-section) + 3%); /* 50 + 30 + 3% */
     padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
+  }
+
+  body.condition-detail h3 {
+     font-size: var(--heading-font-size-l-scaled);
+     line-height: var(--heading-line-height-ml);
+  }
+
+    body.condition-detail h3 em strong, body.condition-detail h3 strong em {
+     font-size: var(--heading-font-size-l-scaled);
+     line-height: var(--heading-line-height-ml);
   }
 }
 
