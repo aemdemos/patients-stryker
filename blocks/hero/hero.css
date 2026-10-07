@@ -392,11 +392,6 @@
     font-size: var(--heading-font-size-xl);
   }
 
-  /* band — source insets the copy 12% (headline size: see the 900px block) */
-  .hero.band > div:last-child {
-    padding-inline: 12%;
-  }
-
   /* poster — wide 3:1 crop with the copy overlaid on the image. Source top-aligns
      the block ~4% down and insets it 10vw from the left. */
   .hero.fullbleed.poster img {
@@ -527,6 +522,13 @@
     margin-bottom: 20px;
   }
 
+  /* band — the 12% inset, 4vw headline and desktop image all switch at 900px.
+     Below that the band keeps its mobile treatment (5% inset, 8vw headline);
+     widening the inset any earlier wraps the headline. */
+  .hero.band > div:last-child {
+    padding-inline: 12%;
+  }
+
   /* top-align the copy near the top of the image (matches the source, which
      insets it ~5% of the band height), rather than vertically centering it */
   .hero.fullbleed > div:last-child {
@@ -594,7 +596,7 @@
     padding-top: 20px;
   }
 
-  /* band headline — source: 8vw on smaller screens, 4vw above, capped at 56px */
+  /* band headline — 8vw below 900px, 4vw from here, capped at 56px */
   .hero.band h1 {
     font-size: min(4vw, 56px);
   }
