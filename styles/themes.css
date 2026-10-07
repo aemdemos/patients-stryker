@@ -610,8 +610,32 @@ body.discography a:any-link {
    `.default-content-wrapper`; `:not(li p)` keeps list items on their own
    rhythm rather than picking up paragraph styling. */
 body.discography main .section.flex > .default-content-wrapper h3 {
-  font-size: var(--headline-font-size);
+  font-size: var(--heading-font-size-ml); /* source mobile: 21.875px / 25.16px */
+  line-height: var(--heading-line-height-ml);
+}
+
+/* ----- Mobile text sizes (source < 480px, EDS < 600px) -----
+   The source drops these headings a step on phones; the larger sizes are
+   restored in the (width >= 600px) block below. */
+body.discography main .panel.cta .panel-body h2 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+body.discography main .section.light-gray h3 {
+  font-size: var(--heading-font-size-m);
   line-height: var(--body-line-height-l);
+}
+
+body.discography main .section.light-gray h4 {
+  font-size: var(--heading-font-size-xs);
+}
+
+/* "Potential risks" anchor link: the source keeps it at 21px / 1.06 at every
+   width (the shared panel rule sets 21.5px). */
+body.discography main .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
 }
 
 
@@ -689,10 +713,18 @@ body.discography main > .section.dark .panel.dark .panel-body h2 {
   color: var(--color-white);
 }
 
+/* source sizes the evidence band with fluid insets at every width: 4% / 2%
+   padding plus a 2% block margin, so the band scales with the viewport. */
+body.discography main > .section.dark .panel.dark .panel-body {
+  margin: 2% 0;
+  padding: 4% 2%;
+}
+
 body.discography main > .section > .default-content-wrapper h2 {
     margin-bottom: 75px;
     padding-bottom: 7px;
     border-bottom: 1px solid var(--color-surface-muted);
+    font-size: var(--heading-font-size-l); /* source mobile: 21px */
 }
 
 /* source grows the statement from 21px (mobile) to 24.5px from tablet up */
@@ -701,8 +733,33 @@ body.discography main > .section > .default-content-wrapper h2 {
     font-size: var(--heading-font-size-xl);
   }
 
-  body.discography main > .section.dark .panel.dark .panel-body {
-    padding: 50px 27.6px;
+  body.discography main .section.flex > .default-content-wrapper h3 {
+    font-size: var(--headline-font-size);
+    line-height: var(--body-line-height-l);
+  }
+
+  body.discography main .panel.cta .panel-body h2 {
+    font-size: var(--headline-font-size); /* source: 26.25px / 30.19px */
+  }
+
+  /* the source keeps the overview box at a uniform 3% padding at every width;
+     the shared wide-panel rule switches to 4% 2% with a 2% block margin. */
+  body.discography main .panel.cta.wide .panel-body {
+    margin: 0 var(--space-block-s) 0 0;
+    padding: 3%;
+  }
+
+  body.discography main .section.light-gray h3 {
+    font-size: var(--heading-font-size-ml); /* source: 21.875px / 25.16px */
+    line-height: var(--heading-line-height-ml);
+  }
+
+  body.discography main .section.light-gray h4 {
+    font-size: var(--heading-font-size-m);
+  }
+
+  body.discography main > .section > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xl);
   }
 }
 
@@ -717,6 +774,11 @@ body.discography main .panel.cta .panel-body h3 {
   body.discography main .panel.cta .panel-body h3 {
     font-size: var(--heading-font-size-l);
   }
+}
+
+/* source overview box sits 10px in from its column's right edge at every width */
+body.discography main .panel.cta.wide .panel-body {
+  margin-inline-end: var(--space-block-s);
 }
 
 body.discography main .panel.cta.wide .panel-body li {
@@ -746,7 +808,7 @@ body.discography main .panel .panel-body p:last-child {
    light serif. Restore the body font/size here as a theme delta. */
 body.discography main .panel.gold .panel-body p {
   font-size: 1.5em;
-  line-height: var(--paragraph-line-height);
+  line-height: var(--heading-line-height); /* source: 22.26px at every width */
 }
 
 body.discography main .panel.gold .panel-body p a:any-link {
@@ -1274,14 +1336,19 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
     font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
   }
 
-  body.discography main .section.dark .panel.dark .panel-body {
-    padding: 70px 27.6px;
-  }
-
   body.discography main > .section.flex.panel-container > .panel-wrapper,
   body.discography main > .section.flex.panel-container > .panel.cta {
   margin-top: unset;
-  } 
+  }
+
+  body.discography main > .section.flex > div {
+    padding-inline: 0;
+  }
+
+  /* source column gutter: 15px padding on each side of the two columns */
+  body.discography main > .section.flex {
+    gap: calc(2 * var(--container-gutter));
+  }
 
   body.condition-detail .hero.banner > div:last-child {
     width: 55%;
