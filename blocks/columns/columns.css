@@ -249,6 +249,53 @@
   padding-block: var(--space-section);
 }
 
+/* ===== columns-hero section style — 50-50 hero: big headline, serif subhead and
+   CTA on the left, image on the right (hidden on phones; fills the right half of
+   the viewport on desktop, band height 1/3 of the viewport width). Opt in with
+   section metadata Style `full-bleed, columns-hero`. Tablet/desktop rules live in
+   the 600/900 blocks below. ===== */
+.columns-hero.section.columns-container {
+  padding-block: 0;
+  overflow-x: clip; /* the tablet image column bleeds past the right edge */
+}
+
+.columns-hero.section .columns.columns-50-50 > div > div:not(.columns-img-col) {
+  padding-block: 0;
+  padding-left: var(--space-section);
+}
+
+.columns-hero.section .columns.columns-50-50 h1 {
+  font-family: var(--display-font-family-bold);
+  font-size: 13vw;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+.columns-hero.section .columns.columns-50-50 h2 {
+  margin-bottom: var(--space-section);
+  font-family: var(--heading-font-family);
+  font-size: 5vw;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-hero);
+}
+
+.columns-hero.section .columns.columns-50-50 p {
+  padding-block: var(--space-block) var(--space-section);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-hero);
+}
+
+/* phones show the copy only: no image, no CTA button (as on the source) */
+.columns-hero.section .columns.columns-50-50 .columns-img-col,
+.columns-hero.section .columns.columns-50-50 .button-wrapper {
+  display: none;
+}
+
+.columns-hero.section .columns.columns-50-50 .columns-img-col img {
+  width: 100%;
+}
+
 .section.compact .columns p,
 .section.compact .columns ul,
 .section.compact .columns li {
@@ -370,6 +417,49 @@
     padding-top: var(--space-section);
   }
 
+  /* columns-hero: copy spans the row; the image column is overlaid on the right,
+     bleeding slightly past the edge, and sets the band height (1/3 viewport) */
+  .columns-hero.section .columns.columns-50-50 > div {
+    position: relative;
+    min-height: 33.333vw;
+  }
+
+  .columns-hero.section .columns.columns-50-50 > div > div:not(.columns-img-col) {
+    flex: 0 0 100%;
+    padding-top: 8.1%;
+    padding-left: 9.5%;
+  }
+
+  .columns-hero.section .columns.columns-50-50 .button-wrapper {
+    display: block;
+  }
+
+  .columns-hero.section .columns.columns-50-50 .columns-img-col {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -45px;
+    width: 51%;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: clip;
+  }
+
+  .columns-hero.section .columns.columns-50-50 .columns-img-col img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .columns-hero.section .columns.columns-50-50 h1 {
+    font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
+  }
+
+  .columns-hero.section .columns.columns-50-50 h2 {
+    font-size: calc(11.8px + 1.5333vw); /* 21px @600 → 25.6px @900 */
+  }
+
   /* Use an inset variable to widen the 50-50 image/text gap. */
   .columns.columns-50-50 {
     --col-5050-inset: 49px;
@@ -472,6 +562,52 @@
     font-size:1.5vw;
   }
 
+  /* columns-hero desktop (source): the band spans the whole viewport, the image
+     fills exactly its right half (top-cropped; the source image runs 12px past
+     the half and is clipped, which the +12px reproduces), and the copy sits 15vw
+     in and 1/12 of the viewport width down, with viewport-scaled type. */
+  .columns-hero.section > .columns-wrapper {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  .columns-hero.section .columns.columns-50-50 > div {
+    margin-inline: 0;
+  }
+
+  .columns-hero.section .columns.columns-50-50 > div > div:not(.columns-img-col) {
+    padding-top: 8.333vw;
+    padding-left: 15vw;
+  }
+
+  .columns-hero.section .columns.columns-50-50 .columns-img-col {
+    left: 50%;
+    right: 0;
+    width: auto;
+  }
+
+  .columns-hero.section .columns.columns-50-50 .columns-img-col img {
+    width: calc(100% + 12px);
+    max-width: none;
+    object-position: left top;
+  }
+
+  .columns-hero.section .columns.columns-50-50 h1 {
+    font-size: min(6.5vw, 91px);
+  }
+
+  /* subhead sits ~0.35em lower than the h1's 15px bottom margin it collapses with */
+  .columns-hero.section .columns.columns-50-50 h2 {
+    margin-top: calc(var(--space-block) + 0.35em);
+    font-size: min(2.5vw, 35px);
+  }
+
+  /* CTA row: viewport-scaled gap above, nothing below, so the band stays 1/3 tall */
+  .columns-hero.section .columns.columns-50-50 p:last-child {
+    margin-bottom: 0;
+    padding-top: 1.6vw;
+    padding-bottom: 0;
+  }
 }
 
 
