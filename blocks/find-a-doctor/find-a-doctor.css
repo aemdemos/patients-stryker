@@ -38,7 +38,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 24px;
-  padding: 24px;
+  padding: 32px 24px; /* source: 32px top/bottom on phones, 24px sides at all widths */
   background-color: var(--color-surface);
 }
 
@@ -244,6 +244,11 @@
    the 900px image-split below: between 600–900px the band still shows the mobile
    background-photo + floating gray box, but with the controls in a row. */
 @media (width >= 600px) {
+  /* controls sit in one row here, so the source drops to an even 24px inset */
+  .find-a-doctor .find-a-doctor-panel {
+    padding: 24px;
+  }
+
   .find-a-doctor .find-a-doctor-fields {
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -305,7 +310,7 @@
   .find-a-doctor .find-a-doctor-panel {
     flex: 1 1 auto;
     margin: 0;
-    padding: 40px;
+    padding: 40px 24px; /* source: taller band, same 24px side inset */
     background-color: var(--color-surface);
   }
 }

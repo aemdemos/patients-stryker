@@ -94,7 +94,11 @@ export default function decorate(block) {
   const radiusGroup = document.createElement('div');
   radiusGroup.className = 'find-a-doctor-field find-a-doctor-radius';
 
-  const radiusOptions = [['15', '15 miles'], ['25', '25 miles'], ['50', '50 miles']];
+  // same options as the source; the first one (5 miles) is the default
+  const radiusOptions = [
+    ['5', '5 miles'], ['10', '10 miles'], ['15', '15 miles'], ['25', '25 miles'],
+    ['50', '50 miles'], ['75', '75 miles'], ['100', '100 miles'], ['250', '250 miles'],
+  ];
   const [[defaultRadiusValue, defaultRadiusText]] = radiusOptions;
   let radiusValue = defaultRadiusValue;
 
