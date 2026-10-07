@@ -249,7 +249,7 @@ header nav .nav-sections a.nav-drop-toggle::after {
   right: 18px;
   top: 50%;
   transform: translateY(-50%);
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   font-size: var(--nav-toggle-icon-size);
   line-height: 1;
 }
@@ -348,7 +348,7 @@ header nav .nav-drawer .nav-drop-panel li a {
   border-top: 0;
   background-color: transparent;
   color: var(--color-black);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size-m);
   text-transform: none;
   text-decoration: none;
@@ -689,7 +689,7 @@ header nav.nav-variant-legal .nav-brand img {
     border: 0;
     background-color: transparent;
     color: var(--color-black);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: var(--body-font-size-m);
     text-transform: none;
     white-space: normal;

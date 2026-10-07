@@ -59,7 +59,7 @@
 .marketo-form .mktoForm .mktoLabel {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-black);
   margin: 0 0 5px;
   padding: 0;
@@ -168,7 +168,7 @@
   margin: 0 0 8px;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 18px;
   vertical-align: middle;
 }
@@ -185,7 +185,7 @@
 .marketo-form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   color: var(--color-white);
   background-color: var(--color-primary);
@@ -242,7 +242,7 @@
 .marketo-form .mktoForm .mktoError .mktoErrorMsg {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   color: var(--color-black);
   background: var(--color-white);
   border: var(--space-block-s) solid var(--color-error);
