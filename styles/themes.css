@@ -267,7 +267,7 @@ font-family: var(--body-font-family);
 }
 
 body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
-      font-size: var(--heading-font-size-m);
+      font-size: var(--heading-font-size-xs);
       line-height: var(--heading-line-height-h4);
 }
 
@@ -285,6 +285,10 @@ body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(st
   body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
     font-size: var(--icon-list-title-size);
   }
+
+  body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+      font-size: var(--heading-font-size-m);
+}
 }
 
 body.campaign-landing > main > div.serif.light-gray.section.columns-container {
