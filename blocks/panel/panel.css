@@ -285,9 +285,16 @@
   margin: 0 0 var(--space-block);
 }
 
+.panel.dark.wide .panel-body {
+  margin: 2% 0;
+  padding: 4% 2%;
+}
+
 .panel.dark.wide .panel-body h2 {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-dark-base);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-medium);
+  line-height: var( --heading-line-height);
 }
 
 
@@ -421,6 +428,11 @@
     line-height: var(--heading-line-height-ml);
     font-size: 26.25px;
   }
+
+  .panel.dark.wide .panel-body h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-dark-base);
+}
 
     .panel.wide .panel-body h3 {
     font-weight: var(--font-weight-bold);

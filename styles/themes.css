@@ -277,6 +277,7 @@ body.condition-detail .tabs .tabs-tab {
 
 body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
   font-size: var(--body-font-size-l);
+  line-height: var(--heading-line-height-ml);
 }
  
 
