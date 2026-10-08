@@ -39,7 +39,10 @@ export default function transform(hookName, element, payload) {
   // (hero, panel, panel-cta), so the legal-copy gold-span / paragraph-merge /
   // standalone-link rewrites must NOT run here. Only the universal chrome removal
   // (header/footer/onetrust/back-to-top/hidden inputs/tracking) applies.
-  const isIvsTreatment = !!(payload && payload.template && payload.template.name === 'ivs-treatment');
+  // ivs-get-the-facts shares the same source skin and parsers, so it gets the
+  // same treatment.
+  const isIvsTreatment = !!(payload && payload.template
+    && ['ivs-treatment', 'ivs-get-the-facts'].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment;
 
   if (hookName === TransformHook.beforeTransform) {

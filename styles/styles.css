@@ -110,11 +110,14 @@
   --related-links-line-height: 1.314; /* measured: 17.5px link inside a 14px/19.25px source paragraph renders 23px lines */
   --paragraph-line-height: 1.375;
   --paragraph-line-height-l-nested: 1.2143; /* measured: a 1.25x span inside a 14px/19.25px source paragraph renders 21.25px lines */
+  --paragraph-line-height-xl-nested: 1.107; /* measured: a 21px span inside a 14px/19.25px source paragraph renders 23.25px lines */
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
   --heading-line-height-ml-nested: 1.46; /* measured: 1.25x Futura span inside a 17.5px/1.06 serif source h3 renders 32.15px lines (38.2px @26.25px) */
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
+  --heading-line-height-xl-nested-s: 28px; /* measured: a 21px span inside a 21px/1.06 source h2 renders 28px lines */
+  --heading-line-height-xl-nested: 34px; /* measured: a 24.5px span inside a 24.5px/1.06 source h2 renders a 34px line */
   --heading-line-height-long-page-detail: 1.2; /* long-page-detail h2 (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */

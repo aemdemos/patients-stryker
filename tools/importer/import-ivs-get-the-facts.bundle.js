@@ -35,10 +35,10 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-ivs-treatment.js
-  var import_ivs_treatment_exports = {};
-  __export(import_ivs_treatment_exports, {
-    default: () => import_ivs_treatment_default
+  // tools/importer/import-ivs-get-the-facts.js
+  var import_ivs_get_the_facts_exports = {};
+  __export(import_ivs_get_the_facts_exports, {
+    default: () => import_ivs_get_the_facts_default
   });
 
   // tools/importer/parsers/ivs-treatment/hero.js
@@ -229,84 +229,13 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/ivs-treatment/columns.js
-  function isEmptyNode(node) {
-    if (node.querySelector && node.querySelector("img, picture")) return false;
-    return !node.textContent.replace(/ /g, " ").trim();
-  }
-  function parse5(element, { document }) {
-    const row = element.querySelector(".colctrl .row") || element.querySelector(".row");
-    const columns = row ? Array.from(row.children).filter((c) => /\bcol-/.test(c.className)) : [];
-    const cells = [];
-    columns.forEach((col) => {
-      const cellNodes = [];
-      const img = col.querySelector(".standaloneimage img, img");
-      if (img) cellNodes.push(img);
-      col.querySelectorAll(".text.parbase, .c-rich-text-editor").forEach((rte) => {
-        if (rte.querySelector(".c-rich-text-editor")) return;
-        Array.from(rte.children).forEach((wrapper) => {
-          Array.from(wrapper.children).forEach((node) => {
-            if (isEmptyNode(node)) return;
-            cellNodes.push(node);
-          });
-        });
-      });
-      if (cellNodes.length) cells.push(cellNodes);
-    });
-    if (!cells.length) {
-      element.replaceWith(...element.childNodes);
-      return;
-    }
-    const block = WebImporter.Blocks.createBlock(document, {
-      name: "columns",
-      cells: [cells]
-    });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/ivs-treatment/cards-brochure.js
-  function parse6(element, { document }) {
-    const row = element.querySelector(".colctrl .row") || element.querySelector(".row");
-    const columns = row ? Array.from(row.children).filter((c) => /\bcol-/.test(c.className)) : [];
-    const cells = [];
-    columns.forEach((col) => {
-      const img = col.querySelector(".cta-img img, img");
-      if (!img) return;
-      const learnMore = Array.from(col.querySelectorAll("a[href]")).find((a) => !a.querySelector("img") && a.textContent.trim());
-      const imageCell = document.createElement("div");
-      imageCell.append(img);
-      const bodyCell = document.createElement("div");
-      if (learnMore) {
-        const p = document.createElement("p");
-        const strong = document.createElement("strong");
-        const a = document.createElement("a");
-        a.setAttribute("href", learnMore.getAttribute("href"));
-        a.textContent = learnMore.textContent.replace(/\s+/g, " ").trim();
-        strong.append(a);
-        p.append(strong);
-        bodyCell.append(p);
-      }
-      cells.push([imageCell, bodyCell]);
-    });
-    if (!cells.length) {
-      element.replaceWith(...element.childNodes);
-      return;
-    }
-    const block = WebImporter.Blocks.createBlock(document, {
-      name: "cards",
-      variants: ["resources"],
-      cells
-    });
-    element.replaceWith(block);
-  }
-
   // tools/importer/parsers/ivs-treatment/marketo-form.js
   var DEFAULTS = {
     baseUrl: "//lp.stryker.com",
     munchkinId: "338-WAP-571",
     formId: "4893"
   };
-  function parse7(element, { document }) {
+  function parse5(element, { document }) {
     const attr = (name) => {
       const el = element.querySelector(`[${name}]`) || (element.hasAttribute(name) ? element : null);
       const value = el && el.getAttribute(name).trim();
@@ -647,93 +576,67 @@ var CustomImportScript = (() => {
     });
   }
 
-  // tools/importer/import-ivs-treatment.js
+  // tools/importer/import-ivs-get-the-facts.js
   var parsers = {
     hero: parse,
     panel: parse2,
     "panel-cta": parse3,
     "columns-50-50": parse4,
-    columns: parse5,
-    "cards-brochure": parse6,
-    "marketo-form": parse7
+    "marketo-form": parse5
   };
   var transformers = [
     transform,
     transform2,
     transform3
   ];
+  var THEME = "ivs-get-the-facts";
   var PAGE_TEMPLATE = {
-    name: "ivs-treatment",
-    description: "Interventional Spine (IVS) treatment page (mild\xAE procedure).",
-    // Prepend one empty spacer section (Style `spacer, large`, ~60px) above the
-    // hero to match the source's ~60px top offset. Uses the .section.spacer.large
-    // variant in styles.css — a single empty section, no theme.
+    name: "ivs-get-the-facts",
+    description: 'Interventional Spine (IVS) "Get the facts" page (vertebral compression fractures).',
+    // Same `spacer, large` empty sections above and below the hero as the mild page.
     topSpacer: true,
-    // Add the same `spacer, large` empty section BELOW the hero (between the hero
-    // and the first content section) to match the reference spacing under the hero.
     heroBottomSpacer: true,
-    // The IVS "Get the facts" page has its own template/importer
-    // (import-ivs-get-the-facts.js) that reuses these parsers.
     urls: [
-      "https://patients.stryker.com/us/en/ivs/treatments/mild.html"
+      "https://patients.stryker.com/us/en/ivs/get-the-facts.html"
     ],
     blocks: [
       { name: "hero", instances: [".pDiv.bg-shadow"], section: "banner" },
       { name: "panel", instances: [".col-xs-12.col-sm-6:has(.dimensional-box)"], section: "cta wide" },
       { name: "panel-cta", instances: [".has-background.bg-gold"], section: "gold" },
-      { name: "columns-50-50", instances: [".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h3):not(:has(h4))"] },
-      {
-        name: "columns",
-        instances: [
-          ".cols2:has(.standaloneimage):not(.c-full-bleed-panel .cols2)",
-          ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h4)",
-          ".cols3"
-        ]
-      },
-      { name: "cards-brochure", instances: [".cols4"], section: "resources" },
+      // "Why is treatment important?": h2 heading + standalone image (no h3)
+      { name: "columns-50-50", instances: [".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(.standaloneimage):not(:has(h4))"] },
       { name: "marketo-form", instances: [".marketoform"] }
     ],
     sections: [
-      { id: "hero", name: "Hero banner", selector: ".pDiv.bg-shadow", style: null, blocks: ["hero"], defaultContent: [] },
+      // `hero-facts` → hero.css Futura headline (7vw → 3.5vw, capped 49px).
+      { id: "hero", name: "Hero banner", selector: ".pDiv.bg-shadow", style: "hero-facts", blocks: ["hero"], defaultContent: [] },
       {
-        id: "get-back-benefits",
-        name: "Get back on your feet + Benefits panel (side-by-side)",
+        id: "what-is-vcf",
+        name: "What is a VCF? + More about VCFs panel (side-by-side)",
         selector: ".cols2:has(.dimensional-box)",
         style: "flex",
         blocks: ["panel"],
         defaultContent: [".cols2:has(.dimensional-box) .col-xs-12.col-sm-6:not(:has(.dimensional-box)) .c-rich-text-editor"]
       },
       {
-        id: "what-is-lss",
-        name: "What is LSS? (dark)",
+        id: "why-treatment",
+        name: "Why is treatment important? (dark)",
         selector: ".c-full-bleed-panel.bg-dark-teal-gradient:not(:has(h4))",
         style: "dark, full-bleed",
         blocks: ["columns-50-50"],
         defaultContent: []
       },
       {
-        id: "proven-results",
-        name: "A procedure with proven results",
-        selector: ".text.parbase:has(h3):has(+ .cols2)",
-        style: null,
-        blocks: ["columns"],
-        defaultContent: [".text.parbase:has(h3):has(+ .cols2) .c-rich-text-editor"]
-      },
-      {
-        id: "before-after",
-        name: "Before / After comparison (dark)",
-        selector: ".c-full-bleed-panel.bg-dark-teal-gradient:has(h4)",
-        style: "dark, full-bleed",
-        blocks: ["columns"],
-        defaultContent: []
-      },
-      {
-        id: "how-it-works",
-        name: "How it works (3-up text columns)",
-        selector: ".text.parbase:has(h3):has(+ .cols3)",
-        style: null,
-        blocks: ["columns"],
-        defaultContent: [".text.parbase:has(h3):has(+ .cols3) .c-rich-text-editor"]
+        // h1 + paragraph + gold LEARN MORE button right after the dark panel. Needs
+        // its own break or it would fall into the dark section. The source opens it
+        // with a full-width ".sectionseparator > hr" rule (#b2b4ae, 50px below) —
+        // the project's `divider` section style.
+        id: "restore",
+        name: "Don't just manage the pain (text + button)",
+        selector: ".text.parbase:has(h1):has(+ .buttonset)",
+        style: "divider",
+        blocks: [],
+        defaultContent: [".text.parbase:has(h1):has(+ .buttonset)", ".buttonset"]
       },
       {
         id: "tired-of-pain",
@@ -750,22 +653,6 @@ var CustomImportScript = (() => {
         style: null,
         blocks: ["marketo-form"],
         defaultContent: []
-      },
-      {
-        id: "resources",
-        name: "Resources",
-        selector: ".c-tabs",
-        style: null,
-        blocks: ["cards-brochure"],
-        defaultContent: ["h2.component-subheading"]
-      },
-      {
-        id: "potential-risks",
-        name: "Potential risks of the procedure",
-        selector: ".has-background.bg-lighter-gray",
-        style: "light-gray",
-        blocks: [],
-        defaultContent: [".has-background.bg-lighter-gray"]
       },
       {
         id: "disclaimer",
@@ -787,6 +674,12 @@ var CustomImportScript = (() => {
       } catch (e) {
         console.error(`Transformer failed at ${hookName}:`, e);
       }
+    });
+  }
+  function stripInternalHtmlExtensions(main) {
+    main.querySelectorAll('a[href^="/"]:not([href^="//"])').forEach((a) => {
+      const match = a.getAttribute("href").match(/^([^?#]*)\.html?([?#].*)?$/);
+      if (match) a.setAttribute("href", match[1] + (match[2] || ""));
     });
   }
   function findBlocksOnPage(document, template) {
@@ -813,7 +706,7 @@ var CustomImportScript = (() => {
     console.log(`Found ${pageBlocks.length} block instances on page`);
     return pageBlocks;
   }
-  var import_ivs_treatment_default = {
+  var import_ivs_get_the_facts_default = {
     transform: (payload) => {
       const { document, url, params } = payload;
       const main = document.body;
@@ -833,14 +726,15 @@ var CustomImportScript = (() => {
         }
       });
       executeTransformers("afterTransform", main, payload);
+      stripInternalHtmlExtensions(main);
       const hr = document.createElement("hr");
       main.appendChild(hr);
-      const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
       const meta = WebImporter.Blocks.getMetadata(document);
-      meta.theme = "ivs-treatment";
+      meta.theme = THEME;
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
       const path = WebImporter.FileUtils.sanitizePath(rawPath === "" ? "/index" : rawPath);
       return [{
         element: main,
@@ -853,5 +747,5 @@ var CustomImportScript = (() => {
       }];
     }
   };
-  return __toCommonJS(import_ivs_treatment_exports);
+  return __toCommonJS(import_ivs_get_the_facts_exports);
 })();
