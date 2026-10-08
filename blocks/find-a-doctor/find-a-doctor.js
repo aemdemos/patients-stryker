@@ -1,3 +1,5 @@
+import { readBlockConfig } from '../../scripts/aem.js';
+
 /**
  * find-a-doctor — "Find a doctor near you" locator banner (front-end only): a
  * full-width band with the Zip product image on the left and a light-gray form
@@ -19,10 +21,153 @@
  * Dynamic Media image links are already converted to <picture> by dm-support.js
  * (decorateDMAssets runs before decorateBlocks).
  *
+ * `anatomy` variant — the search bar of the search-results page: no banner image,
+ * and an extra required "Area of Body" dropdown after the radius. The heading is
+ * shown only when authored (the source search bar has none). Optional key/value
+ * rows set the dropdown:
+ *   <div><div>Area of body</div><div>Skin</div></div>                 // preselected
+ *   <div><div>Area of body options</div><div>Hip and knee, Skin, …</div></div>
+ *
  * @param {Element} block The block element
  */
 
+// the source's area-of-body list, used when the block doesn't author its own
+const DEFAULT_ANATOMY_OPTIONS = ['Hip and knee', 'Shoulder and neck', 'Skin', 'Spine (Back)'];
+
+/**
+ * Builds the anatomy variant's "Area of Body" dropdown — the same custom listbox
+ * as the radius selector (and the same classes, so it shares its styling).
+ * Option values follow the source: lowercase, commas dropped, spaces → hyphens.
+ * @param {Element} block the block element (reads the optional config rows)
+ * @param {Function} [onSelect] called after the user picks an option
+ * @returns {{group: Element, button: Element, getValue: Function}}
+ */
+function buildAnatomySelect(block, onSelect = () => {}) {
+  const config = readBlockConfig(block);
+  const asText = (v) => (Array.isArray(v) ? v.join(', ') : (v || '')).trim();
+  const toValue = (label) => label.toLowerCase().replace(/,/g, '').replace(/ /g, '-');
+  const authored = asText(config['area-of-body-options']).split(',').map((s) => s.trim()).filter(Boolean);
+  const options = (authored.length ? authored : DEFAULT_ANATOMY_OPTIONS)
+    .map((text) => [toValue(text), text]);
+  const preselected = toValue(asText(config['area-of-body']));
+  let value = options.some(([v]) => v === preselected) ? preselected : '';
+
+  const group = document.createElement('div');
+  group.className = 'find-a-doctor-field find-a-doctor-anatomy';
+
+  const input = document.createElement('input');
+  input.type = 'hidden';
+  input.name = 'anatomy';
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.id = 'find-a-doctor-anatomy';
+  button.className = 'find-a-doctor-radius-toggle';
+  button.setAttribute('aria-haspopup', 'listbox');
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-label', 'Area of Body');
+  const valueText = document.createElement('span');
+  valueText.className = 'find-a-doctor-radius-value';
+  button.append(valueText);
+
+  const menu = document.createElement('ul');
+  menu.className = 'find-a-doctor-radius-menu';
+  menu.setAttribute('role', 'listbox');
+  menu.setAttribute('aria-label', 'Area of Body');
+  menu.hidden = true;
+
+  const items = options.map(([optionValue, text], i) => {
+    const li = document.createElement('li');
+    li.className = 'find-a-doctor-radius-option';
+    li.setAttribute('role', 'option');
+    li.id = `find-a-doctor-anatomy-option-${i}`;
+    li.dataset.value = optionValue;
+    li.textContent = text;
+    menu.append(li);
+    return li;
+  });
+
+  const label = document.createElement('label');
+  label.className = 'find-a-doctor-label';
+  label.setAttribute('for', 'find-a-doctor-anatomy');
+  const req = document.createElement('span');
+  req.setAttribute('aria-hidden', 'true');
+  req.textContent = '* ';
+  label.append(req, document.createTextNode('Area of Body'));
+
+  // reflect the value: shown text, hidden input, selected option, raised label
+  const select = (next) => {
+    value = next;
+    input.value = value;
+    const item = items.find((li) => li.dataset.value === value);
+    valueText.textContent = item ? item.textContent : '';
+    items.forEach((li) => li.setAttribute('aria-selected', li === item ? 'true' : 'false'));
+    label.classList.toggle('find-a-doctor-label-filled', !!item);
+  };
+
+  const close = () => {
+    menu.hidden = true;
+    button.setAttribute('aria-expanded', 'false');
+    button.removeAttribute('aria-activedescendant');
+  };
+
+  const open = () => {
+    menu.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
+    const active = items.find((li) => li.dataset.value === value) || items[0];
+    button.setAttribute('aria-activedescendant', active.id);
+    active.scrollIntoView({ block: 'nearest' });
+  };
+
+  button.addEventListener('click', () => {
+    if (menu.hidden) open(); else close();
+  });
+
+  items.forEach((li) => {
+    li.addEventListener('click', () => {
+      select(li.dataset.value);
+      button.removeAttribute('aria-invalid');
+      onSelect();
+      close();
+      button.focus();
+    });
+  });
+
+  // keyboard support: arrows move/select, Enter/Space open, Escape closes.
+  button.addEventListener('keydown', (e) => {
+    const index = items.findIndex((li) => li.dataset.value === value);
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (menu.hidden) open();
+      const next = e.key === 'ArrowDown'
+        ? Math.min(index + 1, items.length - 1)
+        : Math.max(index - 1, 0);
+      select(items[next].dataset.value);
+      button.removeAttribute('aria-invalid');
+      onSelect();
+      button.setAttribute('aria-activedescendant', items[next].id);
+      items[next].scrollIntoView({ block: 'nearest' });
+    } else if ((e.key === 'Enter' || e.key === ' ') && menu.hidden) {
+      e.preventDefault();
+      open();
+    } else if (e.key === 'Escape') {
+      close();
+    }
+  });
+
+  // close when focus/click leaves the control.
+  document.addEventListener('click', (e) => {
+    if (!group.contains(e.target)) close();
+  });
+
+  select(value);
+  group.append(input, button, menu, label);
+  return { group, button, getValue: () => value };
+}
+
 export default function decorate(block) {
+  const isAnatomy = block.classList.contains('anatomy');
+
   // Pull the authored picture (banner image) and heading text.
   let picture = block.querySelector('picture');
   const headingEl = block.querySelector('h1, h2, h3, h4, h5, h6');
@@ -214,7 +359,15 @@ export default function decorate(block) {
 
   const fields = document.createElement('div');
   fields.className = 'find-a-doctor-fields';
-  fields.append(locationGroup, radiusGroup, button);
+  // anatomy variant: the extra "Area of Body" dropdown sits after the radius
+  // picking an area hides the "select an area of body" message
+  const hideAnatomyError = () => {
+    const errorEl = form.querySelector('.find-a-doctor-error');
+    if (errorEl && !locationInput.hasAttribute('aria-invalid')) errorEl.hidden = true;
+  };
+  const anatomy = isAnatomy ? buildAnatomySelect(block, hideAnatomyError) : null;
+  if (anatomy) fields.append(locationGroup, radiusGroup, anatomy.group, button);
+  else fields.append(locationGroup, radiusGroup, button);
 
   // Inline validation message (shown when submitting with an empty location).
   const error = document.createElement('p');
@@ -224,16 +377,28 @@ export default function decorate(block) {
   error.textContent = 'Please enter a zip code, city or state.';
 
   form.append(fields, error);
-  panel.append(heading, form);
+  // anatomy variant: the heading only when authored (the source search bar has none)
+  if (isAnatomy && !headingEl) panel.append(form);
+  else panel.append(heading, form);
 
   // On submit: validate the location field (front-end only — no search backend).
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = locationInput.value.trim();
     if (!location) {
+      error.textContent = 'Please enter a zip code, city or state.';
       error.hidden = false;
       locationInput.setAttribute('aria-invalid', 'true');
       locationInput.focus();
+    } else if (anatomy && !anatomy.getValue()) {
+      // anatomy variant: the area of body is required too
+      error.textContent = 'Please select an area of body.';
+      error.hidden = false;
+      anatomy.button.setAttribute('aria-invalid', 'true');
+      anatomy.button.focus();
+    } else {
+      error.hidden = true;
+      anatomy?.button.removeAttribute('aria-invalid');
     }
   });
 
@@ -245,5 +410,7 @@ export default function decorate(block) {
     }
   });
 
-  block.replaceChildren(media, panel);
+  // anatomy variant: no banner image
+  if (isAnatomy) block.replaceChildren(panel);
+  else block.replaceChildren(media, panel);
 }

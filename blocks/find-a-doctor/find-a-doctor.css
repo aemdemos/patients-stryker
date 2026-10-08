@@ -328,3 +328,83 @@
     max-width: 40%;
   }
 }
+
+/* ===== anatomy variant — the search bar of the search-results page: no banner
+   image and an extra "Area of Body" dropdown (it reuses the radius dropdown's
+   classes/styling). The gray panel becomes the bar, inset 24px on every side
+   like the source. Author it in a `light-gray, full-bleed` section so the gray
+   continues edge to edge. Source layout:
+   - mobile: location + radius, then area of body, then the button
+   - 600px: location / radius / area of body in one row, the button below
+   - 841px: all four controls in one row ===== */
+
+/* the panel's own 24px inset is the band; drop the section's 30px top/bottom */
+main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) {
+  padding-block: 0;
+}
+
+/* the source bar spans the viewport (minus its 24px inset) up to 1392px, centered */
+main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-doctor-wrapper {
+  max-width: calc(var(--find-a-doctor-bar-max) + 2 * var(--find-a-doctor-bar-gutter));
+  padding-inline: 0;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-panel {
+  margin: 0;
+  padding: var(--find-a-doctor-bar-gutter);
+}
+
+.find-a-doctor.anatomy .find-a-doctor-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-areas:
+    "location radius"
+    "anatomy anatomy"
+    "submit submit";
+  gap: var(--find-a-doctor-bar-gap);
+  align-items: start;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-location {
+  grid-area: location;
+}
+
+/* in the bar the radius fills its grid column (not the default 130px box) */
+.find-a-doctor.anatomy .find-a-doctor-radius {
+  grid-area: radius;
+  width: auto;
+  max-width: none;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-anatomy {
+  grid-area: anatomy;
+}
+
+/* the button keeps its intrinsic width (source ~149px), left-aligned */
+.find-a-doctor.anatomy .find-a-doctor-submit {
+  grid-area: submit;
+  justify-self: start;
+  min-width: 0;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-radius-toggle[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+/* 600px — location / radius / area of body share the first row */
+@media (width >= 600px) {
+  .find-a-doctor.anatomy .find-a-doctor-fields {
+    grid-template-columns: minmax(0, 1fr) var(--find-a-doctor-bar-radius-width) minmax(0, 1fr);
+    grid-template-areas:
+      "location radius anatomy"
+      "submit . .";
+  }
+}
+
+/* 841px — the button joins the row */
+@media (width >= 841px) {
+  .find-a-doctor.anatomy .find-a-doctor-fields {
+    grid-template-columns: minmax(0, 1fr) var(--find-a-doctor-bar-radius-width) minmax(0, 1fr) auto;
+    grid-template-areas: "location radius anatomy submit";
+  }
+}
