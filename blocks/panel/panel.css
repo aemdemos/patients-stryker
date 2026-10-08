@@ -262,6 +262,7 @@
 .panel .panel-body strong > a:any-link:has(u) u, .panel .panel-body a:any-link > strong:has(u) u {
     text-decoration: none; 
     font-size: var(--heading-font-size-l);
+    line-height: var(--heading-line-height);
 }
 
 .panel .panel-body strong > a:any-link:has(u) u::after,
