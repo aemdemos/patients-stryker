@@ -262,8 +262,9 @@ body.condition-detail main > .section.light-gray > .default-content-wrapper {
 }
 
 body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
-font-family: var(--body-font-family);
+   font-family: var(--body-font-family);
     font-size: var(--body-font-size-m);
+    line-height: var( --paragraph-line-height);
 }
 
 body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
