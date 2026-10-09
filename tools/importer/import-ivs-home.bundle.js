@@ -151,9 +151,11 @@ var CustomImportScript = (() => {
       src: "https://media-assets.stryker.com/is/content/stryker/1659642804_VCF-Patient-Testimonial_Janet-Kliebert-FINAL_Resized-1-AVS.m3u8",
       poster: "https://media-assets.stryker.com/is/image/stryker/1659642804_VCF-Patient-Testimonial_Janet-Kliebert-FINAL_Resized-1-AVS"
     },
-    // Lynn testimonial — mild® procedure
+    // Lynn testimonial — mild® procedure. The stream is the viewer's
+    // data-asset-path (IVS-MILD-VID-…); the Martha-Lynn thumbnail is only its
+    // poster (data-viewermodifiers VideoPlayer.posterimage), not a video.
     dynamicmedia_66170736: {
-      src: "https://media-assets.stryker.com/is/content/stryker/Martha-Lynn-mild-patient-testimonial-thumbnail.m3u8",
+      src: "https://media-assets.stryker.com/is/content/stryker/IVS-MILD-VID-1983629-EN_US-AVS.m3u8",
       poster: "https://media-assets.stryker.com/is/image/stryker/Martha-Lynn-mild-patient-testimonial-thumbnail"
     }
   };

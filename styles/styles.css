@@ -204,6 +204,29 @@
   --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
   --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
 
+  /* video player controls — measured from the source's Dynamic Media (Scene7) VideoViewer */
+  --video-controls-height: 36px;
+  --video-controls-bg: rgb(0 0 0 / 75%);
+  --video-controls-button-size: 28px;
+  --video-controls-button-hover-bg: #666;
+  --video-controls-icon-color: #ddd;
+  --video-controls-icon-shadow: drop-shadow(1px 1px 1px rgb(0 0 0 / 35%));
+  --video-controls-font: 10px/1 arial, helvetica, sans-serif;
+  --video-controls-time-color: #999;
+  --video-controls-track-height: 8px;
+  --video-controls-track-bg: #555;
+  --video-controls-track-loaded: #666;
+  --video-controls-track-played: #999;
+  --video-controls-knob-color: var(--color-white);
+  --video-controls-knob-height: 14px;
+  --video-controls-volume-height: 83px; /* pop-up volume panel above the mute button */
+  --video-controls-bubble-bg: var(--color-black);
+  --video-controls-volume-bg: #ddd;
+  --video-controls-volume-fill: #ababab;
+  --video-controls-fade: 0.3s ease;
+  --video-icon-effect-size: 80px; /* centered play/replay icon over the paused frame */
+  --video-icon-effect-bg: rgb(0 0 0 / 50%);
+
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
   --container-wide: 900px;
@@ -524,6 +547,12 @@ textarea,
 select,
 button {
   font: inherit;
+}
+
+/* DM video control bar is styled in lazy-styles.css; keep its raw buttons and
+   sliders out of the layout until then */
+.dm-video-controls {
+  display: none;
 }
 
 
