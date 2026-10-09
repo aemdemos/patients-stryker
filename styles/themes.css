@@ -402,23 +402,35 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   padding-bottom: 70px;
 }
 
-body.zip-search-results > main > .section:first-child > .default-content-wrapper {
+/* =====================================================================
+   Theme: search-results — the find-a-doctor search-results pages
+   (/us/en/zip-skin-closure/index/search-results, /us/en/ivs/find-a-doctor/search-results)
+   - plain h1 (ivs): the source text is a fontsize-1-5em span — 42px/44.52px
+     Egyptienne Light at every width (the h1 tag itself is the default 28px)
+   - bold h1 + the line below it (zip "Love Zip?" headline): viewport-scaled
+   ===================================================================== */
+body.search-results main h1 {
+  font-size: var(--heading-font-size-xxl-l);
+  line-height: var(--heading-line-height);
+}
+
+body.search-results > main > .section:first-child > .default-content-wrapper:has(h1 strong) {
   margin-bottom: 20px;
   padding-bottom: 0;
 }
  
-body.zip-search-results > main > .section.compact > div > p {
+body.search-results > main > .section.compact > div > p {
   font-family: var(--body-font-family);
 }
 
-body.zip-search-results h1 {
+body.search-results main h1:has(strong) {
   font-size: var(--heading-zip-search-results-m);
   padding-top: 4%;
   line-height: var(--heading-line-height-zip-search-results);
   margin-bottom: 0;
 }
 
-body.zip-search-results p {
+body.search-results main h1:has(strong) + p {
   font-size: var(--heading-zip-search-results);
   line-height: var(--body-line-height-l);
   font-family: var(--heading-font-family);
@@ -627,11 +639,11 @@ body.condition-detail .tabs .tabs-panel {
     grid-template-columns: 1fr;
   }
 
-  body.zip-search-results h1 {
+  body.search-results main h1:has(strong) {
     font-size: var(--heading-zip-search-results-s);
   }
 
-  body.zip-search-results p {
+  body.search-results main h1:has(strong) + p {
     font-size: var(--heading-zip-search-results-xs);
   }
 }
@@ -1950,15 +1962,15 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
 }
 
 @media (width >=1200px) {
-  body.zip-search-results h1 {
+  body.search-results main h1:has(strong) {
     font-size: var(--find-a-doctor-control-height);
   }
 
-  body.zip-search-results p {
+  body.search-results main h1:has(strong) + p {
     font-size: var(--panel-heading-size);
   }
 
-  body.zip-search-results > main > .section:first-child > .default-content-wrapper {
+  body.search-results > main > .section:first-child > .default-content-wrapper:has(h1 strong) {
     margin-bottom: var(--space-section-l);
   }
 }
