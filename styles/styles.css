@@ -85,6 +85,10 @@
 
 
   /* heading sizes */
+  --heading-zip-search-results-m: 8vw; /* zip search results h1 (source fontsize-8-vw) */
+  --heading-zip-search-results: 5vw; /* zip search results h1 (source fontsize-5-vw) */
+  --heading-zip-search-results-s: 4vw; /* zip search results h1 (source fontsize-4-vw) */
+  --heading-zip-search-results-xs: 2.5vw; /* zip search results h1 (source fontsize-2-5-vw) */
   --heading-font-size-hero-xl: 49px; /* large hero headline cap — source fontsize-3-5-vw at ≥1439px */
   --heading-font-size-xxxl: 43px;   /* brochure card title — 24.5px x 1.75 (source fontsize-1-75em) */
   --heading-font-size-xxxl-s: 36.75px; /* brochure card title <600px — 21px x 1.75 */
@@ -116,6 +120,7 @@
   --heading-line-height-ml-nested: 1.46; /* measured: 1.25x Futura span inside a 17.5px/1.06 serif source h3 renders 32.15px lines (38.2px @26.25px) */
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
   --heading-line-height-long-page-detail: 1.2; /* long-page-detail h2 (measured) */
+  --heading-line-height-zip-search-results: 1.35; /* zip search results h1 (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block-xs: 5px;
