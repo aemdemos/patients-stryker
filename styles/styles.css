@@ -814,10 +814,20 @@ main > .section {
 }
 
 main > .section > div {
-  box-sizing: border-box; 
+  box-sizing: border-box;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
+}
+
+/* Default gap between consecutive blocks in the same section, so authors don't
+   need a spacer section between them. :where() keeps it at the base wrapper
+   rule's specificity, so block and theme rules still win. Opt out per section
+   with the `flush` style. `flex` sections are excluded too: their wrappers are
+   a row on desktop, and their stacked mobile spacing is tuned per theme.
+   Other side-by-side layouts reset it at their breakpoints. */
+main > .section:where(:not(.flush, .flex)) > :where(div:not(.default-content-wrapper)) + div:where(:not(.default-content-wrapper)) {
+  margin-top: var(--space-section);
 }
 
 main .last-modified {
@@ -982,6 +992,11 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
     display: flex;
   }
 
+  /* side-by-side wrappers sit in a row, so drop the default stacked block gap */
+  main > .section:where(.side-by-side) > div {
+    margin-top: 0;
+  }
+
   .section.compact h2 {
     font-size: var(--heading-font-size-compact-m);
     margin-top: 30px;
@@ -1015,10 +1030,17 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
     padding-inline: var(--container-gutter);
   }
 
+  /* inline only — a `margin` shorthand here would wipe the default block gap */
   main > .section > div {
     box-sizing: border-box;
     max-width: var(--container-max);
-    margin: 0 auto;
+    margin-inline: auto;
+  }
+
+  /* video-text wrappers sit side by side here (spaced by the section's gap),
+     so drop the default stacked block gap */
+  main > .section:where(.video-text) > div {
+    margin-top: 0;
   }
 
   main > .section.flex > div {
