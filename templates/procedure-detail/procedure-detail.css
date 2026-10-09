@@ -24,8 +24,8 @@ body.bvn-ablation main > .section.flex > div {
 
 /* Intro default content — 1.25x heading + body. */
 body.procedure-detail main > .section > .default-content-wrapper h3 {
-  font-size: var(--heading-font-size-m);
   line-height: var(--heading-line-height);
+  font-size: var( --heading-font-size-ml);
 }
 
 /* Gold second line drops to its own line. */
