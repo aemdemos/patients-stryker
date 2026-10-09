@@ -47,8 +47,8 @@
   --color-disabled-text: #545857;
   --color-required: #bf0000; /* form required asterisk */
   --color-error: #b83c27; /* form validation error border (source .mktoErrorMsg / .mktoInvalid) */
-  --overlay-scrim: rgb(0 0 0 / 50%);
-  --shadow-soft: 0 0 10px rgb(0 0 0 / 30%);
+  --overlay-scrim: rgb(0 0 0 / 0.5);
+  --shadow-soft: 0 0 10px rgb(0 0 0 / 0.3);
 
   /* boilerplate color aliases (consumed by blocks) */
   --background-color: var(--color-white);
@@ -95,6 +95,7 @@
   --heading-font-size-dark-base: 24.5px; /* dark evidence band, non-gold (white serif) heading main text */
   --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
   --heading-font-size-m: 17.5px;    /* h4 */
+  --heading-font-size-hero-max: 42px; /* hero banner headline cap (source 3vw → 42px) */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
   --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
@@ -137,9 +138,13 @@
   --space-section-xl: 90px;
   --space-band-dark: 54px; /* measured: dark 50-50 band top/bottom (source spacer paragraph 39px + 15px) */
   --space-nav-hero-gap: 61px; /* measured: nav→hero gap on IVS pages (≥600px) */
+  --space-ivs-home-intro: 61px; /* measured: ivs-home anchor nav → intro (overview) section, mobile */
+  --space-ivs-home-section-m: 86px; /* measured: ivs-home larger section gap — nav → intro ≥600px, → find-a-doctor panel ≥900px */
+  --space-ivs-home-band: 68px; /* measured: ivs-home spotlights → dark testimonial band, below 900px */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
+  --statistics-number-size-s: 78.8px;
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
   --statistics-number-size-fluid: 13vw; /* source counter (fontsize-6-5-vw) on mobile */
@@ -211,11 +216,40 @@
   --find-a-doctor-raised-label-size: 13.5px; /* source raised floating label (18px scaled 0.75) */
   --find-a-doctor-control-height: 56px;
   --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
-  --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
+  --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 0.2); /* source .dropdown-content shadow */
   --find-a-doctor-dropdown-max-height: 171.5px; /* source: ~3.5 options visible, the rest scroll */
   --find-a-doctor-option-line-height: 24px; /* source option 24px line → 49px row incl. divider */
   --find-a-doctor-option-divider: #f2f2f2; /* source 1px separator under each option */
   --find-a-doctor-option-highlight: #f2f2f7; /* source hover / selected option background */
+
+  /* marketo-form block — space held for the form while its scripts load,
+     measured from the rendered IVS doctor-finder form (Marketo form 4893) */
+  --marketo-form-reserved-height: 1046px;
+  --marketo-form-reserved-height-m: 802px; /* ≥600px */
+  --marketo-form-reserved-height-l: 784px; /* ≥900px */
+
+  /* video player controls — measured from the source's Dynamic Media (Scene7) VideoViewer */
+  --video-controls-height: 36px;
+  --video-controls-bg: rgb(0 0 0 / 0.75);
+  --video-controls-button-size: 28px;
+  --video-controls-button-hover-bg: #666;
+  --video-controls-icon-color: #ddd;
+  --video-controls-icon-shadow: drop-shadow(1px 1px 1px rgb(0 0 0 / 0.35));
+  --video-controls-font: 10px/1 arial, helvetica, sans-serif;
+  --video-controls-time-color: #999;
+  --video-controls-track-height: 8px;
+  --video-controls-track-bg: #555;
+  --video-controls-track-loaded: #666;
+  --video-controls-track-played: #999;
+  --video-controls-knob-color: var(--color-white);
+  --video-controls-knob-height: 14px;
+  --video-controls-volume-height: 83px; /* pop-up volume panel above the mute button */
+  --video-controls-bubble-bg: var(--color-black);
+  --video-controls-volume-bg: #ddd;
+  --video-controls-volume-fill: #ababab;
+  --video-controls-fade: 0.3s ease;
+  --video-icon-effect-size: 80px; /* centered play/replay icon over the paused frame */
+  --video-icon-effect-bg: rgb(0 0 0 / 0.5);
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
@@ -539,6 +573,12 @@ textarea,
 select,
 button {
   font: inherit;
+}
+
+/* DM video control bar is styled in lazy-styles.css; keep its raw buttons and
+   sliders out of the layout until then */
+.dm-video-controls {
+  display: none;
 }
 
 

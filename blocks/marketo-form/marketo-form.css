@@ -11,6 +11,24 @@
   padding-block: var(--space-section);
 }
 
+/* hold the rendered form's height while its scripts load (.is-loading is set
+   by marketo-form.js), so the page doesn't shift when it appears */
+.marketo-form.is-loading form {
+  min-height: var(--marketo-form-reserved-height);
+}
+
+@media (width >= 600px) {
+  .marketo-form.is-loading form {
+    min-height: var(--marketo-form-reserved-height-m);
+  }
+}
+
+@media (width >= 900px) {
+  .marketo-form.is-loading form {
+    min-height: var(--marketo-form-reserved-height-l);
+  }
+}
+
 /* stylelint-disable selector-class-pattern */
 
 /* Neutralise Marketo's inline fixed pixel widths and drive the layout ourselves

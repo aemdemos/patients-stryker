@@ -84,6 +84,15 @@
   .statistics ul.statistics-list {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .statistics .statistics-value,
+  .statistics .statistics-value p {
+    margin: 0;
+    font-family: var(--display-font-family);
+    font-size: var(--statistics-number-size);
+    font-weight: 700;
+    line-height: 1;
+  }
 }
 
 /* desktop: the author-selected column count (falls back to 3) */

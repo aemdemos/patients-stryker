@@ -34,6 +34,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { dirname, resolve, join } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
+import { SIZE_FIELDS } from '../lib/style-fingerprint.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(__dirname, '..', '..', '..');
@@ -99,11 +100,14 @@ function fixSurfaceHint(cluster) {
   if (onlyMarkupDrivable && cluster.roleBuckets.every((r) => r === 'heading' || r === 'body')) {
     return 'likely import emphasis markup (parser/transformer) — family/weight/style round-trips via <strong>/<em>';
   }
-  if (fieldsChanged.has('fontSize') || fieldsChanged.has('textDecorationLine')
+  const bpNote = cluster.breakpointSpecific
+    ? ` — only @${cluster.breakpoints.join('/')}px: scope the fix to a media query at the source's breakpoint`
+    : '';
+  if ([...fieldsChanged].some((f) => SIZE_FIELDS.has(f)) || fieldsChanged.has('textDecorationLine')
     || cluster.delta.some((d) => d.field === 'color')) {
-    return 'scoped CSS (template CSS or styles/themes.css) — size/decoration/color cannot round-trip through markup';
+    return `scoped CSS (template CSS or styles/themes.css) — size/line-height/decoration/color cannot round-trip through markup${bpNote}`;
   }
-  return 'inspect: import markup or scoped CSS depending on which computes the source value';
+  return `inspect: import markup or scoped CSS depending on which computes the source value${bpNote}`;
 }
 
 /** High-confidence structural spacing clusters, ordered top-to-bottom. Empty
@@ -120,13 +124,15 @@ function spacingClusters(report) {
 function cmdPlan() {
   const report = readReport();
   const styleEligible = (report.clusters || []).filter((c) => c.loopEligible);
-  // Non-size style clusters are the ones the loop acts on (size is human review).
+  // Non-size style clusters are the ones the loop acts on (sizing — font-size,
+  // line-height — is human review; listed separately below so it isn't hidden).
   const styleActionable = styleEligible
-    .filter((c) => c.delta.some((d) => d.field !== 'fontSize'));
+    .filter((c) => c.delta.some((d) => !SIZE_FIELDS.has(d.field)));
+  const sizeOnly = styleEligible.filter((c) => !styleActionable.includes(c));
   const held = report.spacing && report.spacing.heldForTextStyle;
   const spacing = spacingClusters(report); // [] while the series gate is closed
 
-  if (!styleActionable.length && !spacing.length) {
+  if (!styleActionable.length && !spacing.length && !sizeOnly.length) {
     if (held) {
       // Should not happen (gate opens exactly when styleActionable hits 0), but be
       // explicit: text is clean, so re-validate to release the held spacing set.
@@ -146,12 +152,13 @@ function cmdPlan() {
     console.log(`=== TEXT-STYLE (resolve first — ${styleActionable.length} cluster(s)) ===`);
     if (held) console.log(`(spacing held: ${report.spacing.stats.highConfidenceClusters} cluster(s) waiting until text-style is clean)\n`);
     styleActionable.forEach((c, i) => {
-      const s = c.samples[0] || {};
       const marker = i === 0 ? ' ← NEXT' : '';
-      console.log(`#${i + 1}  [${c.pages.length} page(s): ${c.pages.join(', ')}]  ${c.key}${marker}`);
-      console.log(`    e.g. "${(s.text || '').slice(0, 50)}"  hint: ${fixSurfaceHint(c)}`);
+      const bps = c.breakpoints && c.breakpoints.length ? ` @${c.breakpoints.join('/')}px` : '';
+      console.log(`#${i + 1}  [${c.pages.length} page(s): ${c.pages.join(', ')}${bps}]  ${c.key}${marker}`);
+      (c.texts || c.samples || []).slice(0, 10).forEach((t) => console.log(`    - "${(t.text || '').slice(0, 50)}"`));
+      console.log(`    hint: ${fixSurfaceHint(c)}`);
     });
-  } else {
+  } else if (spacing.length) {
     console.log(`=== SPACING (text-style clean — top-to-bottom, ${spacing.length} cluster(s)) ===`);
     spacing.forEach((c, i) => {
       const s = c.instances[0] || {};
@@ -160,6 +167,17 @@ function cmdPlan() {
       console.log(`    transition: ${c.transition}`);
       console.log(`    e.g. "${(s.fromText || '').slice(0, 30)}" → "${(s.toText || '').slice(0, 30)}"  src ${s.sourceGap}px vs mig ${s.migratedGap}px`);
       console.log('    fix: usually the section margin/padding at this breakpoint (template CSS for a templated page, styles/themes.css for a singleton); occasionally a structural markup cause in the import scripts.');
+    });
+  }
+  // Sizing-only clusters don't gate the loop, but they are real differences —
+  // list them so a human/AI reviews them instead of reading the plan as "done".
+  if (sizeOnly.length) {
+    console.log(`\n=== SIZING (font-size / line-height — review; not gating, ${sizeOnly.length} cluster(s)) ===`);
+    sizeOnly.forEach((c, i) => {
+      const bps = c.breakpoints && c.breakpoints.length ? ` @${c.breakpoints.join('/')}px` : '';
+      console.log(`#${i + 1}  [${c.pages.length} page(s)${bps}]  ${c.key}`);
+      (c.texts || c.samples || []).slice(0, 10).forEach((t) => console.log(`    - "${(t.text || '').slice(0, 50)}"`));
+      console.log(`    hint: ${fixSurfaceHint(c)}`);
     });
   }
   console.log('\nNext: fix the NEXT target at its root cause, then — if you changed MARKUP —');
@@ -267,6 +285,16 @@ function cmdApply(args) {
     '--css', resolveTargetCss(args),
     '--all-pages', allPages];
   if (args['include-size']) cssArgs.push('--include-size');
+  // Pass the config's fontFamilyAliases so the generator can rewrite a SOURCE font
+  // name to the project's own loadable family (else it would emit an unloadable
+  // source name that silently falls back to serif). Written to a temp file the
+  // generator reads via --font-aliases.
+  if (cfg.fontFamilyAliases && Object.keys(cfg.fontFamilyAliases).length) {
+    if (!existsSync(STATE_DIR)) mkdirSync(STATE_DIR, { recursive: true });
+    const aliasFile = join(STATE_DIR, 'font-aliases.json');
+    writeFileSync(aliasFile, JSON.stringify(cfg.fontFamilyAliases, null, 2));
+    cssArgs.push('--font-aliases', aliasFile);
+  }
   execFileSync('node', cssArgs, { cwd: REPO, stdio: 'inherit' });
   return 0;
 }

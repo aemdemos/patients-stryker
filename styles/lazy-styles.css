@@ -15,14 +15,28 @@
   border: 1px solid var(--color-black);
 }
 
-/* wrapper positions the play-icon overlay over the video frame */
+/* wrapper positions the play-icon overlay and the control bar over the video
+   frame. The icon glyphs are SVG masks (painted in the controls' icon color),
+   redrawn from the source Scene7 viewer's sprites on a 28px grid (80px for the
+   large centered icon). */
 .dm-video-wrapper {
+  --dm-icon-play: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M10 8v12l10-6z'/></svg>");
+  --dm-icon-pause: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M8 7h4v14H8zm7 0h4v14h-4z'/></svg>");
+  --dm-icon-replay: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-2 -2 28 28'><path d='M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z'/><path d='M10 10v6l5-3z'/></svg>");
+  --dm-icon-volume: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M5 11h5l3-3.5v13L10 17H5zm10.5 2H17v2h-1.5z'/><path d='M19 10.5a5 5 0 0 1 0 7m3-10a9 9 0 0 1 0 13' fill='none' stroke='black' stroke-width='1.8'/></svg>");
+  --dm-icon-muted: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M5 11h5l3-3.5v13L10 17H5z'/></svg>");
+  --dm-icon-fullscreen: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M23 5v8l-2.8-2.8-4 4-2.4-2.4 4-4L15 5zM5 23v-8l2.8 2.8 4-4 2.4 2.4-4 4L13 23z'/></svg>");
+  --dm-icon-fullscreen-exit: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M13 15v8l-2.8-2.8-3.4 3.4-2.4-2.4 3.4-3.4L5 15zm2-2V5l2.8 2.8 3.4-3.4 2.4 2.4-3.4 3.4L23 13z'/></svg>");
+  --dm-icon-play-large: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><path d='M33 29v22l20-11z'/></svg>");
+  --dm-icon-replay-large: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-12 -12 48 48'><path d='M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z'/><path d='M10 10v6l5-3z'/></svg>");
+
   position: relative;
 }
 
-/* overlay layer is click-through so the native <video> controls stay usable;
-   only the centered play button (below) captures clicks. It fades out while the
-   video is playing and back in when paused/ended (.is-playing on the wrapper). */
+/* overlay layer is click-through so clicks reach the video (which toggles
+   play/pause); only the centered play button (below) captures them. It fades
+   out while the video is playing and back in when paused/ended (.is-playing on
+   the wrapper). */
 .dm-video-overlay {
   position: absolute;
   inset: 0;
@@ -31,52 +45,323 @@
   justify-content: center;
   pointer-events: none;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--video-controls-fade), visibility var(--video-controls-fade);
 }
 
 .dm-video-wrapper.is-playing .dm-video-overlay {
   opacity: 0;
+  visibility: hidden;
 }
 
-/* centered play button — a semi-transparent dark circle (::before) with a white
-   triangle (::after), matching the source's Scene7 viewer overlay. Re-enable
-   pointer events on the button itself so it's clickable within the overlay. */
+/* centered play button — the source viewer's "icon effect": an 80px translucent
+   black circle with a light-grey triangle (a replay arrow once the video has
+   ended). Re-enable pointer events on the button so it's clickable within the
+   overlay. */
 .dm-video-play {
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: var(--video-icon-effect-size);
+  height: var(--video-icon-effect-size);
   padding: 0;
   border: 0;
-  background: none;
+  border-radius: 50%;
+  background: var(--video-icon-effect-bg);
   pointer-events: auto;
   cursor: pointer;
-}
-
-.dm-video-play::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: rgb(0 0 0 / 60%);
-  transition: background 0.15s ease;
 }
 
 .dm-video-play::after {
   content: "";
   position: absolute;
   inset: 0;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 13px 0 13px 22px;
-  border-color: transparent transparent transparent var(--color-white);
-
-  /* nudge the triangle right so it looks optically centered in the circle */
-  transform: translateX(3px);
+  background: var(--video-controls-icon-color);
+  mask: var(--dm-icon-play-large) center / 100% no-repeat;
 }
 
-.dm-video-play:hover::before,
-.dm-video-play:focus-visible::before {
-  background: rgb(0 0 0 / 80%);
+.dm-video-wrapper.is-ended .dm-video-play::after {
+  mask-image: var(--dm-icon-replay-large);
+}
+
+.dm-video-play:focus-visible {
+  outline: 2px solid var(--video-controls-icon-color);
+  outline-offset: 2px;
+}
+
+/* control bar (scripts/video-controls.js) — the source viewer's 36px strip of
+   75% black along the bottom edge. Hidden until the pointer is over the player
+   or focus is inside it (.show-controls), then fades out again once playback
+   has been idle for a moment. */
+.dm-video-wrapper .dm-video-controls {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: var(--video-controls-height);
+  padding: 0 5px 0 4px;
+  background: var(--video-controls-bg);
+  font: var(--video-controls-font);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--video-controls-fade);
+}
+
+.dm-video-wrapper.show-controls .dm-video-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* square icon buttons; hover shows the source's flat grey "over" tile */
+.dm-video-button {
+  flex: none;
+  width: var(--video-controls-button-size);
+  height: var(--video-controls-button-size);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.dm-video-button:hover,
+.dm-video-button:focus-visible {
+  background: var(--video-controls-button-hover-bg);
+}
+
+.dm-video-button:focus-visible {
+  outline: 1px solid var(--video-controls-icon-color);
+  outline-offset: -1px;
+}
+
+/* the glyph is a mask on ::before; the soft drop shadow sits on the span so the
+   mask doesn't clip it */
+.dm-video-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: var(--video-controls-icon-shadow);
+}
+
+.dm-video-icon::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--video-controls-icon-color);
+  mask: var(--dm-icon) center / 100% no-repeat;
+}
+
+.dm-video-toggle {
+  --dm-icon: var(--dm-icon-play);
+}
+
+.dm-video-toggle.is-pause {
+  --dm-icon: var(--dm-icon-pause);
+}
+
+.dm-video-toggle.is-replay {
+  --dm-icon: var(--dm-icon-replay);
+}
+
+.dm-video-mute {
+  --dm-icon: var(--dm-icon-volume);
+
+  width: calc(var(--video-controls-button-size) + 2px);
+}
+
+.dm-video-mute.is-muted {
+  --dm-icon: var(--dm-icon-muted);
+}
+
+.dm-video-fullscreen {
+  --dm-icon: var(--dm-icon-fullscreen);
+}
+
+.dm-video-fullscreen.is-exit {
+  --dm-icon: var(--dm-icon-fullscreen-exit);
+}
+
+/* sliders: a native range input, fully transparent, sits over each drawn track
+   so pointer, keyboard and screen-reader handling stay native */
+.dm-video-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* seek track: 8px dark track, lighter loaded and played fills, white knob.
+   Starts 8px after the play button and ends 10px before the time readout. */
+.dm-video-seek {
+  position: relative;
+  flex: 1;
+  height: var(--video-controls-track-height);
+  margin-inline: 6px 8px;
+}
+
+/* the seek input's hit area covers the full height of the bar */
+.dm-video-seek .dm-video-range {
+  inset: auto 0;
+  top: calc((var(--video-controls-track-height) - var(--video-controls-height)) / 2);
+  height: var(--video-controls-height);
+}
+
+.dm-video-track {
+  position: absolute;
+  inset: 0;
+  background: var(--video-controls-track-bg);
+  overflow: clip;
+}
+
+.dm-video-track-loaded,
+.dm-video-track-played {
+  position: absolute;
+  inset: 0 auto 0 0;
+}
+
+.dm-video-track-loaded {
+  width: calc(var(--dm-loaded, 0) * 100%);
+  background: var(--video-controls-track-loaded);
+}
+
+.dm-video-track-played {
+  width: calc(var(--dm-played, 0) * 100%);
+  background: var(--video-controls-track-played);
+}
+
+.dm-video-seek:has(.dm-video-range:focus-visible) .dm-video-track {
+  outline: 1px solid var(--video-controls-icon-color);
+  outline-offset: 2px;
+}
+
+.dm-video-knob {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--dm-played, 0) * (100% - var(--video-controls-track-height)));
+  width: var(--video-controls-track-height);
+  height: var(--video-controls-knob-height);
+  translate: 0 -50%;
+  background: var(--video-controls-knob-color);
+  pointer-events: none;
+}
+
+/* time bubble over the knob while scrubbing (black tag with a tail) */
+.dm-video-bubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: calc(var(--dm-played, 0) * (100% - var(--video-controls-track-height)) + var(--video-controls-track-height) / 2);
+  min-width: 58px;
+  padding-inline: 6px;
+  border-radius: 4px;
+  background: var(--video-controls-bubble-bg);
+  color: var(--color-white);
+  line-height: 24px;
+  text-align: center;
+  white-space: nowrap;
+  translate: -50% 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dm-video-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 6px solid transparent;
+  border-top-color: var(--video-controls-bubble-bg);
+  border-bottom: 0;
+  translate: -50% 0;
+}
+
+.dm-video-wrapper.is-scrubbing .dm-video-bubble:not(:empty) {
+  opacity: 1;
+}
+
+/* elapsed / total, small grey Arial */
+.dm-video-time {
+  flex: none;
+  min-width: 56px;
+  color: var(--video-controls-time-color);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* mute button + vertical volume slider that pops up above it on hover/focus */
+.dm-video-volume {
+  position: relative;
+  flex: none;
+  display: flex;
+}
+
+.dm-video-volume-popup {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: var(--video-controls-volume-height);
+  background: var(--video-controls-volume-bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--video-controls-fade);
+}
+
+.dm-video-volume:hover .dm-video-volume-popup,
+.dm-video-volume:has(:focus-visible) .dm-video-volume-popup {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dm-video-volume-track {
+  position: absolute;
+  inset: 11px auto 11px 50%;
+  width: var(--video-controls-track-height);
+  translate: -50% 0;
+  background: var(--video-controls-track-loaded);
+}
+
+.dm-video-volume-fill {
+  position: absolute;
+  inset: auto 0 0;
+  height: calc(var(--dm-volume, 1) * 100%);
+  background: var(--video-controls-volume-fill);
+}
+
+.dm-video-volume-knob {
+  position: absolute;
+  bottom: calc(var(--dm-volume, 1) * 100% - var(--video-controls-track-height) / 2);
+  left: 50%;
+  width: var(--video-controls-knob-height);
+  height: var(--video-controls-track-height);
+  translate: -50% 0;
+  background: var(--video-controls-knob-color);
+}
+
+.dm-video-volume-popup:has(.dm-video-range:focus-visible) {
+  outline: 1px solid var(--video-controls-icon-color);
+  outline-offset: -1px;
+}
+
+/* bottom-to-top slider, spanning the drawn volume track */
+.dm-video-range-vertical {
+  inset: 11px 0 auto;
+  height: calc(100% - 22px);
+  writing-mode: vertical-lr;
+  direction: rtl;
+}
+
+/* full screen (the wrapper, so the custom bar comes along): letterbox the video */
+.dm-video-wrapper.is-fullscreen {
+  display: flex;
+  align-items: center;
+  background: var(--color-black);
+}
+
+.dm-video-wrapper.is-fullscreen .dm-video {
+  height: 100%;
+  aspect-ratio: auto;
+  border: 0;
+  object-fit: contain;
 }
