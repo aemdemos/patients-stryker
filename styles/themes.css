@@ -1943,3 +1943,9 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
   }
 
 }
+
+@media (width >=1200px) {
+  body.zip-search-results h1 {
+    font-size: var(--find-a-doctor-control-height);
+  }
+}
