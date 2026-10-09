@@ -328,3 +328,181 @@
     max-width: 40%;
   }
 }
+
+/* ===== anatomy variant — the search bar of the search-results page: no banner
+   image and an extra "Area of Body" dropdown (it reuses the radius dropdown's
+   classes/styling). The gray panel becomes the bar, inset 24px on every side
+   like the source. Author it in a `light-gray, full-bleed` section so the gray
+   continues edge to edge. Below the controls is the filter row (disabled
+   "Procedures" dropdown + "Filters Selected:" badges). Source layout:
+   - mobile: location + radius, area of body, procedures, filters selected, button
+   - 600px: location / radius / area of body in one row, then procedures,
+     filters selected and the button, one per row
+   - 900px (source 841px): all four controls in one row, then procedures and
+     filters selected side by side ===== */
+
+/* the panel's own 24px inset is the band; drop the section's 30px top/bottom */
+main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) {
+  padding-block: 0;
+}
+
+/* the source bar spans the viewport (minus its 24px inset) up to 1392px, centered */
+main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-doctor-wrapper {
+  max-width: calc(var(--find-a-doctor-bar-max) + 2 * var(--find-a-doctor-bar-gutter));
+  padding-inline: 0;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-panel {
+  margin: 0;
+  padding: var(--find-a-doctor-bar-gutter);
+}
+
+.find-a-doctor.anatomy .find-a-doctor-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-areas:
+    "location radius"
+    "anatomy anatomy"
+    "filters filters"
+    "submit submit";
+  gap: var(--find-a-doctor-bar-gap);
+  align-items: start;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-location {
+  grid-area: location;
+}
+
+/* in the bar the radius fills its grid column (not the default 130px box) */
+.find-a-doctor.anatomy .find-a-doctor-radius {
+  grid-area: radius;
+  width: auto;
+  max-width: none;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-anatomy {
+  grid-area: anatomy;
+}
+
+/* the button keeps its intrinsic width (source ~149px), left-aligned */
+.find-a-doctor.anatomy .find-a-doctor-submit {
+  grid-area: submit;
+  justify-self: start;
+  min-width: 0;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-radius-toggle[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+/* filter row — stacked on mobile (source: 24px between the items and 24px
+   above the button, i.e. 8px on top of the 16px grid gap) */
+.find-a-doctor.anatomy .find-a-doctor-filters {
+  grid-area: filters;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--find-a-doctor-bar-gutter);
+  align-items: start;
+  margin-block-end: calc(var(--find-a-doctor-bar-gutter) - var(--find-a-doctor-bar-gap));
+}
+
+/* "Procedures" — disabled gray dropdown with white text and chevron */
+.find-a-doctor.anatomy .find-a-doctor-procedures-toggle {
+  align-items: center;
+  padding: 2px 40px 6px 16px;
+  border-color: var(--find-a-doctor-procedures-bg);
+  color: var(--color-white);
+  background-color: var(--find-a-doctor-procedures-bg);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"><path d="M1 1l6 6 6-6" fill="none" stroke="%23fff" stroke-width="1.5"/></svg>');
+  cursor: default;
+}
+
+/* "Filters Selected:" */
+.find-a-doctor.anatomy .find-a-doctor-selected-title {
+  margin: 0 0 8px;
+  font-family: var(--body-font-family);
+  font-size: var(--find-a-doctor-selected-title-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--find-a-doctor-selected-line-height);
+  color: var(--color-black);
+}
+
+.find-a-doctor.anatomy .find-a-doctor-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--display-font-family);
+  line-height: var(--find-a-doctor-selected-line-height);
+}
+
+.find-a-doctor.anatomy .find-a-doctor-no-filter {
+  font-family: var(--body-font-family);
+  font-size: var(--find-a-doctor-radius-value-size);
+  color: var(--color-black);
+}
+
+/* selected-filter badge — white on blue, with the ✖ remove button on the right */
+.find-a-doctor.anatomy .find-a-doctor-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 1px var(--find-a-doctor-badge-remove-size) 2px 8px;
+  font-size: var(--body-font-size-xs);
+  line-height: var(--find-a-doctor-selected-line-height);
+  color: var(--color-white);
+  background-color: var(--color-navy-bright);
+}
+
+.find-a-doctor.anatomy .find-a-doctor-badge-remove {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: var(--find-a-doctor-badge-remove-size);
+  height: var(--find-a-doctor-badge-remove-size);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path d="M1 1l6 6M7 1l-6 6" stroke="%23fff" stroke-width="2"/></svg>') no-repeat center;
+  cursor: pointer;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-badge-remove:focus-visible {
+  outline: 3px solid var(--color-white);
+  outline-offset: -5px;
+}
+
+/* 600px — location / radius / area of body share the first row; the filter
+   items keep stacking (32px apart), procedures at the source's 224px */
+@media (width >= 600px) {
+  .find-a-doctor.anatomy .find-a-doctor-fields {
+    grid-template-columns: minmax(0, 1fr) var(--find-a-doctor-bar-radius-width) minmax(0, 1fr);
+    grid-template-areas:
+      "location radius anatomy"
+      "filters filters filters"
+      "submit . .";
+  }
+
+  .find-a-doctor.anatomy .find-a-doctor-filters {
+    gap: var(--find-a-doctor-filters-gap);
+    margin-block-end: 0;
+  }
+
+  .find-a-doctor.anatomy .find-a-doctor-procedures {
+    width: var(--find-a-doctor-procedures-width);
+  }
+}
+
+/* 900px (source 841px) — the button joins the row; procedures and filters
+   selected sit side by side in two halves */
+@media (width >= 900px) {
+  .find-a-doctor.anatomy .find-a-doctor-fields {
+    grid-template-columns: minmax(0, 1fr) var(--find-a-doctor-bar-radius-width) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "location radius anatomy submit"
+      "filters filters filters filters";
+  }
+
+  .find-a-doctor.anatomy .find-a-doctor-filters {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}

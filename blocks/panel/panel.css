@@ -108,8 +108,9 @@
 .panel.colored-border .panel-body {
   max-width: none;
   margin: 0;
-  padding: 3%;
+  padding: 5%;
   text-align: left;
+  margin-bottom: 1%;
 }
 
 .panel .panel-body h3 {

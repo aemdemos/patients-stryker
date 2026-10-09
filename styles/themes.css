@@ -402,6 +402,36 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   padding-bottom: 70px;
 }
 
+/* Theme: search-results — IVS and Zip Skin Closure find-a-doctor results pages. */
+body.search-results main h1 {
+  font-size: var(--heading-font-size-xxl-l);
+  line-height: var(--heading-line-height);
+  margin-bottom: 3%;
+}
+
+body.search-results > main > .section:first-child > .default-content-wrapper:has(h1 strong) {
+  margin-bottom: 30px;
+  padding-bottom: 0;
+}
+ 
+body.search-results > main > .section.compact > div > p {
+  font-family: var(--body-font-family);
+}
+
+body.search-results main h1:has(strong) {
+  font-size: var(--heading-zip-search-results-m);
+  padding-top: 4%;
+  line-height: var(--heading-line-height-zip-search-results);
+  margin-bottom: 0;
+}
+
+body.search-results main h1:has(strong) + p {
+  font-size: var(--heading-zip-search-results);
+  line-height: var(--body-line-height);
+  font-family: var(--heading-font-family);
+  margin-bottom: 0;
+}
+
 /* =====================================================================
    Responsive overrides — one @media block per breakpoint, all themes.
    ===================================================================== */
@@ -603,6 +633,14 @@ body.condition-detail .tabs .tabs-panel {
      multi-item light panels use. */
   body.sa-resources .panel.light > ul {
     grid-template-columns: 1fr;
+  }
+
+  body.search-results main h1:has(strong) {
+    font-size: var(--heading-zip-search-results-s);
+  }
+
+  body.search-results main h1:has(strong) + p {
+    font-size: var(--heading-zip-search-results-xs);
   }
 }
 
@@ -1917,4 +1955,18 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
     min-width: 0;
   }
 
+}
+
+@media (width >=1200px) {
+  body.search-results main h1:has(strong) {
+    font-size: var(--find-a-doctor-control-height);
+  }
+
+  body.search-results main h1:has(strong) + p {
+    font-size: var(--panel-heading-size);
+  }
+
+  body.search-results > main > .section:first-child > .default-content-wrapper:has(h1 strong) {
+    margin-bottom: var(--space-section-l);
+  }
 }

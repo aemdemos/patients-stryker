@@ -85,10 +85,15 @@
 
 
   /* heading sizes */
+  --heading-zip-search-results-m: 8vw; /* zip search results h1 (source fontsize-8-vw) */
+  --heading-zip-search-results: 5vw; /* zip search results h1 (source fontsize-5-vw) */
+  --heading-zip-search-results-s: 4vw; /* zip search results h1 (source fontsize-4-vw) */
+  --heading-zip-search-results-xs: 2.5vw; /* zip search results h1 (source fontsize-2-5-vw) */
   --heading-font-size-hero-xl: 49px; /* large hero headline cap — source fontsize-3-5-vw at ≥1439px */
   --heading-font-size-xxxl: 43px;   /* brochure card title — 24.5px x 1.75 (source fontsize-1-75em) */
   --heading-font-size-xxxl-s: 36.75px; /* brochure card title <600px — 21px x 1.75 */
   --heading-font-size-xxl: 28px;    /* h1 */
+  --heading-font-size-xxl-l: 42px;  /* h1 enlarged 1.5x (source fontsize-1-5em span) */
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
   --heading-font-size-l-scaled: 26.25px; /* h3 enlarged 1.25x (fontsize-1-25em) */
@@ -116,6 +121,7 @@
   --heading-line-height-ml-nested: 1.46; /* measured: 1.25x Futura span inside a 17.5px/1.06 serif source h3 renders 32.15px lines (38.2px @26.25px) */
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
   --heading-line-height-long-page-detail: 1.2; /* long-page-detail h2 (measured) */
+  --heading-line-height-zip-search-results: 1.35; /* zip search results h1 (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block-xs: 5px;
@@ -216,6 +222,16 @@
   --find-a-doctor-option-line-height: 24px; /* source option 24px line → 49px row incl. divider */
   --find-a-doctor-option-divider: #f2f2f2; /* source 1px separator under each option */
   --find-a-doctor-option-highlight: #f2f2f7; /* source hover / selected option background */
+  --find-a-doctor-bar-gutter: 24px; /* source search-results bar: 24px band inset on every side */
+  --find-a-doctor-bar-gap: 16px; /* source gap between search-bar controls */
+  --find-a-doctor-bar-radius-width: 145px; /* source radius box in the search-bar row */
+  --find-a-doctor-bar-max: 1392px; /* source search-bar form max width (centered) */
+  --find-a-doctor-procedures-bg: #8e8e93; /* source disabled "Procedures" filter dropdown */
+  --find-a-doctor-procedures-width: 224px; /* source filter dropdown width (≥600px) */
+  --find-a-doctor-filters-gap: 32px; /* source gap between the filter dropdown and Filters Selected */
+  --find-a-doctor-selected-title-size: 16px; /* source "Filters Selected:" 16px/21px bold */
+  --find-a-doctor-selected-line-height: 21px; /* source filter title + badge line */
+  --find-a-doctor-badge-remove-size: 24px; /* source badge ✖ hit area */
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
