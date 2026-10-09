@@ -1937,13 +1937,13 @@ body.ivs-contact main h2 {
 }
 
 /* Intro copy: the source wraps it in a 1.5x size span (14px → 21px), tight leading. */
-body.ivs-contact main > .section:first-child p {
+body.ivs-contact main > .section:has(h1) p {
   font-size: var(--body-font-size-xl); /* 21px */
   line-height: var(--heading-line-height); /* 1.06 */
 }
 
 /* FIND A DOCTOR sits ~50px below the intro (source spacer paragraph + button margin). */
-body.ivs-contact main > .section:first-child .button-wrapper {
+body.ivs-contact main > .section:has(h1) .button-wrapper {
   margin-top: var(--space-section-l); /* 50px */
 }
 

@@ -259,7 +259,7 @@ var CustomImportScript = (() => {
       element.querySelectorAll('a[href*="/ivs/find-a-doctor"]').forEach((a) => {
         a.setAttribute("href", "https://physicianlocator.strykerivs.com/");
       });
-      WebImporter.DOMUtils.remove(element, [".sectionseparator", ".c-contactus"]);
+      WebImporter.DOMUtils.remove(element, [".sectionseparator", ".c-contactus", ".c-back-button"]);
       const form = element.querySelector(".marketoform");
       const disclaimer = element.querySelector(".c-disclaimer.page-section");
       [[form, "contact-form"], [disclaimer, "disclaimer"]].forEach(([el, id]) => {
@@ -280,6 +280,7 @@ var CustomImportScript = (() => {
         element.append(sectionMetadata(document, "compact"));
       }
       element.querySelectorAll(`hr[${MARKER_ATTR}]`).forEach((hr) => hr.removeAttribute(MARKER_ATTR));
+      element.prepend(sectionMetadata(document, "spacer, xlarge"), document.createElement("hr"));
     }
   }
 

@@ -10,6 +10,7 @@
  * Source: https://patients.stryker.com/us/en/ivs/contact.html (migration-work/cleaned.html)
  * Sections (tools/importer/page-templates.json → ivs-contact.sections):
  *
+ *   0 spacer        (added)                                                      style: spacer, xlarge
  *   1 intro         .text.parbase (h1, h2, intro p) + .buttonset FIND A DOCTOR   style: none
  *   2 contact-form  .sectionseparator hr + .marketoform                          style: divider
  *   3 disclaimer    .c-disclaimer.page-section (+ doc-code .c-disclaimer)        style: compact
@@ -57,9 +58,9 @@ export default function transform(hookName, element, payload) {
     });
 
     // 3. Source divider → library `divider` section style (added in afterTransform).
-    //    ".c-contactus" is an empty component the live page fills at runtime with a
-    //    referrer-based "back" link (e.g. to a surgeon profile) — not authorable.
-    WebImporter.DOMUtils.remove(element, ['.sectionseparator', '.c-contactus']);
+    //    ".c-contactus" (empty) and ".c-back-button" are source chrome: the live page
+    //    sometimes renders a "back" link there (e.g. to a surgeon profile) — not authorable.
+    WebImporter.DOMUtils.remove(element, ['.sectionseparator', '.c-contactus', '.c-back-button']);
 
     // 4. Section-break markers. Block parsers run between the hooks and replace
     //    .marketoform, so the marker is inserted BEFORE it and survives the swap.
@@ -89,5 +90,9 @@ export default function transform(hookName, element, payload) {
     }
 
     element.querySelectorAll(`hr[${MARKER_ATTR}]`).forEach((hr) => hr.removeAttribute(MARKER_ATTR));
+
+    // Library "Section Metadata – spacer, xlarge (~90px gap)": an otherwise EMPTY
+    // first section that opens a fixed gap between the header and "Contact us".
+    element.prepend(sectionMetadata(document, 'spacer, xlarge'), document.createElement('hr'));
   }
 }
