@@ -258,6 +258,93 @@ Implications for block code:
 - Blocks are plain EDS blocks decorated by their `decorate()` function — no `component-*.json` definitions/models/filters to maintain, and no `build:json` step.
 - EW mounts an inline editor on each authored field and re-renders it from source, so decoration applied *inside* an editable region can be reverted. For media/CTAs that must survive, lift the rendered element out of the editable wrapper in `decorate()` (see `blocks/cards`, `blocks/columns`, `blocks/hero` for the pattern) rather than relying on runtime `data-aue-*` instrumentation.
 
+### Block Library — the catalog of blocks, variants and section styles
+
+The Block Library is the **authoritative list of every block, block variant and section style this site supports**, with a sample and authoring rules for each. It serves two audiences:
+
+- **Authors** browse it in the DA / EW "Insert block" library and in the Sidekick Library (https://main--patients-stryker--aemdemos.aem.page/tools/sidekick/library.html?plugin=blocks).
+- **Agents (you)** must use it to choose blocks and variants — see below.
+
+#### Agents: consult the library before choosing or building a block
+
+Whenever you decide how content should be authored — migrating/importing a page, writing an import parser, creating test content in `drafts/`, or asked to "add a section like X" — **check the library first** and reuse an existing block + variant + section style before proposing anything new. Order of preference:
+
+1. An existing **library variant** that fits as-is (match its sample structure exactly).
+2. An existing variant plus a **section style** from the library (e.g. `dark, full-bleed`, `compact`, `divider`, `hero-facts`).
+3. A **new variant** of an existing block (a new class on a block in `blocks/`).
+4. A **new block** — only when nothing above fits; explain why to the user first.
+
+How to read it (no login needed — use the preview origin, or `http://localhost:3000` when the dev server is running):
+
+```bash
+B=https://main--patients-stryker--aemdemos.aem.page
+# 1. List blocks — rows are in .data.data; .options.data holds the allowed section styles/backgrounds
+curl -s $B/.da/library/blocks.json | jq '{blocks: [.data.data[].name], options: .options.data}'
+# 2. Read one block's variants — sample markup + a library-metadata table per variant
+curl -s $B/.da/library/blocks/cards.plain.html
+```
+
+Each variant in a block document is a section containing:
+- The **sample block** (e.g. `<div class="cards resources">`) — this is the content contract: rows, cells, element types and order. Import output and drafts must match it.
+- A **`library-metadata`** table with `name` (e.g. "Cards (resources) – Brochure downloads"), `description` (authoring rules: which cells hold what, which text formatting to use, required section style, where to place it) and `searchtags` (keywords to match against source content).
+- Optional section classes / `data-*` attributes on the section = the **Section Metadata** the variant needs.
+
+Treat the `description` rules as requirements: required section styles, cell contents and formatting must be reproduced exactly. Formatting terms in descriptions (bold, italic, underline on links/headings/text) follow the **Authoring conventions** page — see the next section. If the library and the code in `blocks/` disagree, flag it to the user rather than guessing.
+
+#### How it is wired
+
+Shared content (lives in DA, not in git):
+- **Blocks sheet:** `/.da/library/blocks` (served as `/.da/library/blocks.json`) — one row per block with `name` and `path` (`content.da.live` URLs). The `options` sheet lists the section `style` and `background` values offered in DA.
+- **Block documents:** `/.da/library/blocks/{blockname}` — one document per block holding all its variants. Multi-part variants are wrapped in `library-container-start` / `library-container-end` marker tables (used by the DA library only).
+
+Code (in git):
+- `tools/sidekick/config.json` — registers the "Block Library" Sidekick palette (plugin id `library`).
+- `tools/sidekick/library.html` — loads the Sidekick Library from the same sheet. At runtime it rewrites `content.da.live` paths to the site origin, passes only the `data` rows as the `blocks` list, strips the `library-container-*` markers, and rebuilds **Section Metadata** tables from section classes / `data-*` attributes so previews keep section styles and Copy includes them. Preview viewports match the EDS breakpoints (1200 / 900 / 600px).
+
+#### Keeping it current
+
+Adding or updating a library entry is a DA content change — add a row to the blocks sheet and create/update `/.da/library/blocks/{blockname}` (sample + `library-metadata` with name, description, searchtags), then preview/publish. No code change is needed. **Whenever you build a new block or variant, or change a block's content structure, tell the user the library entry needs adding or updating** so authors and future agent runs stay in sync.
+
+### Authoring conventions (formatting = styling)
+
+Authors style links, buttons, headings and text using **only font formatting** (bold, italic, underline, heading level, a link alone on its own line); the site's decoration code turns that formatting into buttons, colours and dividers. The rules live on a DA page owned by authors:
+
+**https://main--patients-stryker--aemdemos.aem.live/.da/docs/authoring-guide/authoring-conventions**
+
+**The rules are intentionally not copied here** — authors change and extend them, and a copy would go stale. Instead:
+
+- **Always read the live page, never from memory.** At the start of any task that creates or changes content or decides how something is styled — migrations, import parsers/transformers, `drafts/` content, formatting advice to authors — fetch it fresh. Do not rely on an earlier read, a previous session or this file:
+  ```bash
+  curl -s https://main--patients-stryker--aemdemos.aem.live/.da/docs/authoring-guide/authoring-conventions.md
+  ```
+  The page includes example images; open them when the text alone doesn't make a rule clear.
+- **Apply it with plain formatting.** Produce the formatting the page prescribes using `<strong>`, `<em>`, `<u>`, the right heading level, and links on their own line where a button is intended. Never add custom classes, extra blocks or CSS to achieve a style that a convention already covers.
+- **When migrating, map source styles to conventions.** Measure the source element (e.g. button colour/shape, heading colour, underline/divider) and pick the convention that produces it.
+- **Verify the result.** The page shows what to author, not always what it renders as. Confirm the outcome in the preview (decorated classes, computed colours); use the decoration code in `scripts/scripts.js` only to understand how a rule is applied. If the page, the Block Library descriptions and the rendered result disagree, flag it to the user rather than guessing.
+- **Keep it current.** The page is owned by authors. If a code change adds or changes a formatting rule, tell the user the conventions page needs updating.
+
+### Link rewriting in import scripts (drop `.html`)
+
+EDS serves pages **without** the `.html` extension, so every import script must rewrite links to the customer's own pages when content is migrated. This is implemented once in the shared cleanup transformer `tools/importer/transformers/patients-stryker-cleanup.js` (`rewriteSourceLink`, run in `afterTransform` after the block parsers, for every template). Every import script must include that transformer — do not re-implement the rewrite per template; change the shared function if the rules below change.
+
+Which links to rewrite — links to customer pages only:
+- Root-relative paths (`/us/en/...html`) and absolute links on the source host (`https://patients.stryker.com/...html`). Absolute source-host links become root-relative paths on our side.
+- Leave everything else untouched: other domains (e.g. `https://www.stryker.com/...html`, third-party sites), assets and downloads (`/content/dam/...`, `.pdf`, images), `mailto:` / `tel:` and in-page `#anchors`.
+
+How to rewrite:
+- **Regular pages:** drop the extension, `/something/page.html` → `/something/page`.
+  e.g. `https://patients.stryker.com/us/en/ivs/treatments/mild.html` → `/us/en/ivs/treatments/mild`
+- **`index.html` pages are special:** `/something/index.html` → **`/something/`** (keep the trailing slash). Never `/something/index` — that path returns 404 on aem.live. The site root `/index.html` → `/`.
+  - `https://patients.stryker.com/us/en/ivs/index.html` → `/us/en/ivs/` (https://main--patients-stryker--aemdemos.aem.live/us/en/ivs/)
+  - `https://patients.stryker.com/us/en/ent/index.html` → `/us/en/ent/` (https://main--patients-stryker--aemdemos.aem.live/us/en/ent/)
+- Keep any query string and `#hash` on the rewritten link (e.g. `.../back-pain.html#disclaimer` → `.../back-pain#disclaimer`).
+- If the source link redirects (e.g. `/us/en/ivs/find-a-doctor.html` 301 → `https://physicianlocator.strykerivs.com/`), link to the final target instead, matching what the migrated sibling pages use.
+
+This is about **links**. The imported document for an index page is still saved at `/something/index` (`WebImporter.FileUtils.sanitizePath`), which EDS serves at `/something/`.
+
+**Verify** after every import: the output must contain no source-page `.html` links and no `/index` links, e.g.
+`grep -oE 'href="(https://patients\.stryker\.com)?/[^"]*(\.html|/index)([?#][^"]*)?"' content/<path>.plain.html` should print nothing.
+
 ## Testing & Quality Assurance
 
 ### Style & spacing fidelity validator (OPTIONAL post-migration QA)
