@@ -206,7 +206,7 @@
 /* dark variant — gold Futura-bold section title (h3). 26px gold. */
 .section.dark .columns h3 {
   font-family: var(--display-font-family);
-  font-size: var(--panel-cta-heading-size); /* 26px */
+  font-size: var(--heading-font-size-ml); /* 26px */
   font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height-ml);
   color: var(--color-accent);
@@ -379,6 +379,10 @@
   .section.compact .columns h2,
   .section.compact .columns h2 em strong {
     font-size: var(--heading-font-size-compact-m);
+  }
+
+  .section.dark .columns h3 {
+  font-size: var(--panel-cta-heading-size); /* 26px */
   }
 
   .section.compact .columns:has(p code) h3 strong {

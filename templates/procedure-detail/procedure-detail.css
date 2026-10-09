@@ -24,8 +24,8 @@ body.bvn-ablation main > .section.flex > div {
 
 /* Intro default content — 1.25x heading + body. */
 body.procedure-detail main > .section > .default-content-wrapper h3 {
-  font-size: var(--heading-font-size-l-scaled);
   line-height: var(--heading-line-height);
+  font-size: var( --heading-font-size-ml);
 }
 
 /* Gold second line drops to its own line. */
@@ -59,6 +59,11 @@ body.procedure-detail main > .columns.block.columns-3-cols ol,ul {
   body.procedure-detail main > .section.flex > .panel-wrapper {
     padding-top: 0;
   }
+
+  body.procedure-detail main > .section > .default-content-wrapper h3 {
+  font-size: var(--heading-font-size-l-scaled);
+  }
+
 }
 
 /* "How it works" step cards — natural image ratio (no cover-crop). */
@@ -139,6 +144,10 @@ body.procedure-detail main .hero p {
   line-height: var(--body-line-height-m);
 }
 
+body.procedure-detail main .columns .columns-img-col ~ h4 {
+  font-size: var(--heading-font-size-m);
+}
+
 @media (width >= 900px) {
   body.procedure-detail main > .section.light-gray {
     margin-top: var(--space-section);
@@ -152,6 +161,10 @@ body.procedure-detail main .hero p {
 
   body.procedure-detail main > .section.hero-container {
     margin-top: var(--space-nav-hero-gap);
+  }
+
+    body.procedure-detail main .columns .columns-img-col ~ h4 {
+        font-size: var(--heading-font-size-ml);
   }
 }
 
@@ -179,10 +192,11 @@ body.procedure-detail main .panel.dark .panel-body {
    are painted by the rule below instead. */
 body.procedure-detail main .panel.dark .panel-body :is(h2, h3) {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-dark-base);
   font-weight: var(--font-weight-medium);
   color: var(--color-white);
 }
+
+
 
 /* Citation link in the dark heading stays teal (via the global citation rule) —
    no dark-specific override here. */
