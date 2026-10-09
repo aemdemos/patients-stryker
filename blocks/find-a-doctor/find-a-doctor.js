@@ -23,7 +23,9 @@ import { readBlockConfig } from '../../scripts/aem.js';
  *
  * `anatomy` variant — the search bar of the search-results page: no banner image,
  * and an extra required "Area of Body" dropdown after the radius. The heading is
- * shown only when authored (the source search bar has none). Optional key/value
+ * shown only when authored (the source search bar has none). Below the controls
+ * sit a disabled, empty "Procedures" dropdown and a "Filters Selected:" list with
+ * a removable badge for the selected area of body (as on the source). Optional key/value
  * rows set the dropdown:
  *   <div><div>Area of body</div><div>Skin</div></div>                 // preselected
  *   <div><div>Area of body options</div><div>Hip and knee, Skin, …</div></div>
@@ -162,7 +164,90 @@ function buildAnatomySelect(block, onSelect = () => {}) {
 
   select(value);
   group.append(input, button, menu, label);
-  return { group, button, getValue: () => value };
+  return {
+    group, button, getValue: () => value, setValue: select,
+  };
+}
+
+/**
+ * Builds the anatomy variant's "Procedures" filter dropdown. Like the source
+ * search bar before a search runs, it has no options and stays disabled.
+ * @returns {Element} the field group
+ */
+function buildProceduresSelect() {
+  const group = document.createElement('div');
+  group.className = 'find-a-doctor-field find-a-doctor-procedures';
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'find-a-doctor-radius-toggle find-a-doctor-procedures-toggle';
+  button.disabled = true;
+  button.setAttribute('aria-haspopup', 'listbox');
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-label', 'Procedures');
+  const valueText = document.createElement('span');
+  valueText.className = 'find-a-doctor-radius-value';
+  valueText.textContent = 'Procedures';
+  button.append(valueText);
+
+  // empty options menu (the source fills it from search results)
+  const menu = document.createElement('ul');
+  menu.className = 'find-a-doctor-radius-menu';
+  menu.setAttribute('role', 'listbox');
+  menu.setAttribute('aria-label', 'Procedures');
+  menu.hidden = true;
+
+  group.append(button, menu);
+  return group;
+}
+
+/**
+ * Builds the anatomy variant's "Filters Selected:" list — one removable badge
+ * for the selected area of body ("No filters selected" when there is none).
+ * @param {{button: Element, getValue: Function, setValue: Function}} anatomy
+ * @returns {{group: Element, update: Function}}
+ */
+function buildSelectedFilters(anatomy) {
+  const group = document.createElement('div');
+  group.className = 'find-a-doctor-selected';
+
+  const title = document.createElement('h3');
+  title.className = 'find-a-doctor-selected-title';
+  title.textContent = 'Filters Selected:';
+
+  const badges = document.createElement('div');
+  badges.className = 'find-a-doctor-badges';
+
+  const update = () => {
+    const value = anatomy.getValue();
+    const option = anatomy.group.querySelector(`[role="option"][data-value="${value}"]`);
+    if (!value || !option) {
+      const none = document.createElement('span');
+      none.className = 'find-a-doctor-no-filter';
+      none.textContent = 'No filters selected';
+      badges.replaceChildren(none);
+      return;
+    }
+    const badge = document.createElement('span');
+    badge.className = 'find-a-doctor-badge';
+    badge.textContent = option.textContent;
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'find-a-doctor-badge-remove';
+    remove.setAttribute('aria-label', `Remove filter ${option.textContent}`);
+    // removing the badge clears the area of body
+    remove.addEventListener('click', () => {
+      anatomy.setValue('');
+      update();
+      anatomy.button.focus();
+    });
+    badge.append(remove);
+    badges.replaceChildren(badge);
+  };
+
+  update();
+  group.append(title, badges);
+  return { group, update };
 }
 
 export default function decorate(block) {
@@ -365,9 +450,19 @@ export default function decorate(block) {
     const errorEl = form.querySelector('.find-a-doctor-error');
     if (errorEl && !locationInput.hasAttribute('aria-invalid')) errorEl.hidden = true;
   };
-  const anatomy = isAnatomy ? buildAnatomySelect(block, hideAnatomyError) : null;
-  if (anatomy) fields.append(locationGroup, radiusGroup, anatomy.group, button);
-  else fields.append(locationGroup, radiusGroup, button);
+  let selectedFilters = null;
+  const anatomy = isAnatomy ? buildAnatomySelect(block, () => {
+    hideAnatomyError();
+    selectedFilters?.update();
+  }) : null;
+  if (anatomy) {
+    // the filter row below the controls: Procedures dropdown + Filters Selected
+    selectedFilters = buildSelectedFilters(anatomy);
+    const filters = document.createElement('div');
+    filters.className = 'find-a-doctor-filters';
+    filters.append(buildProceduresSelect(), selectedFilters.group);
+    fields.append(locationGroup, radiusGroup, anatomy.group, button, filters);
+  } else fields.append(locationGroup, radiusGroup, button);
 
   // Inline validation message (shown when submitting with an empty location).
   const error = document.createElement('p');

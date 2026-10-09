@@ -220,6 +220,12 @@
   --find-a-doctor-bar-gap: 16px; /* source gap between search-bar controls */
   --find-a-doctor-bar-radius-width: 145px; /* source radius box in the search-bar row */
   --find-a-doctor-bar-max: 1392px; /* source search-bar form max width (centered) */
+  --find-a-doctor-procedures-bg: #8e8e93; /* source disabled "Procedures" filter dropdown */
+  --find-a-doctor-procedures-width: 224px; /* source filter dropdown width (≥600px) */
+  --find-a-doctor-filters-gap: 32px; /* source gap between the filter dropdown and Filters Selected */
+  --find-a-doctor-selected-title-size: 16px; /* source "Filters Selected:" 16px/21px bold */
+  --find-a-doctor-selected-line-height: 21px; /* source filter title + badge line */
+  --find-a-doctor-badge-remove-size: 24px; /* source badge ✖ hit area */
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
