@@ -402,20 +402,15 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   padding-bottom: 70px;
 }
 
-/* =====================================================================
-   Theme: search-results — the find-a-doctor search-results pages
-   (/us/en/zip-skin-closure/index/search-results, /us/en/ivs/find-a-doctor/search-results)
-   - plain h1 (ivs): the source text is a fontsize-1-5em span — 42px/44.52px
-     Egyptienne Light at every width (the h1 tag itself is the default 28px)
-   - bold h1 + the line below it (zip "Love Zip?" headline): viewport-scaled
-   ===================================================================== */
+/* Theme: search-results — IVS and Zip Skin Closure find-a-doctor results pages. */
 body.search-results main h1 {
   font-size: var(--heading-font-size-xxl-l);
   line-height: var(--heading-line-height);
+  margin-bottom: 3%;
 }
 
 body.search-results > main > .section:first-child > .default-content-wrapper:has(h1 strong) {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   padding-bottom: 0;
 }
  
@@ -432,8 +427,9 @@ body.search-results main h1:has(strong) {
 
 body.search-results main h1:has(strong) + p {
   font-size: var(--heading-zip-search-results);
-  line-height: var(--body-line-height-l);
+  line-height: var(--body-line-height);
   font-family: var(--heading-font-family);
+  margin-bottom: 0;
 }
 
 /* =====================================================================
