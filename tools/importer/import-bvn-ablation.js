@@ -13,10 +13,10 @@ import panelCtaParser from './parsers/bvn-ablation/panel-cta.js';
 import videoParser from './parsers/bvn-ablation/video.js';
 import statisticsParser from './parsers/bvn-ablation/statistics.js';
 import panelGrayParser from './parsers/bvn-ablation/panel-gray.js';
-import cardsStepsParser from './parsers/bvn-ablation/cards-steps.js';
+import columnsStepsParser from './parsers/bvn-ablation/columns-steps.js';
 import columnsTextParser from './parsers/bvn-ablation/columns-text.js';
 import panelGoldParser from './parsers/bvn-ablation/panel-gold.js';
-import cardsResourcesParser from './parsers/bvn-ablation/cards-resources.js';
+import tabsResourcesParser from './parsers/bvn-ablation/tabs-resources.js';
 
 // TRANSFORMER IMPORTS
 import marketoTransformer from './transformers/bvn-ablation/bvn-ablation-marketo.js';
@@ -31,10 +31,10 @@ const parsers = {
   video: videoParser,
   statistics: statisticsParser,
   'panel-gray': panelGrayParser,
-  'cards-steps': cardsStepsParser,
+  'columns-steps': columnsStepsParser,
   'columns-text': columnsTextParser,
   'panel-gold': panelGoldParser,
-  'cards-resources': cardsResourcesParser,
+  'tabs-resources': tabsResourcesParser,
 };
 
 // TRANSFORMER REGISTRY — order matters (each runs on both hooks in this order):
@@ -62,10 +62,10 @@ const PAGE_TEMPLATE = {
     { name: 'video', instances: ['.fullbleedpanel .standalonevideo'] },
     { name: 'statistics', instances: ['.cols2:has(.numbercounter)'] },
     { name: 'panel-gray', instances: ['.c-rich-text-editor .bg-light-gray'] },
-    { name: 'cards-steps', instances: ['.cols4:not(.tabs .cols4)'] },
+    { name: 'columns-steps', instances: ['.cols4:not(.tabs .cols4)'] },
     { name: 'columns-text', instances: ['.cols3'] },
     { name: 'panel-gold', instances: ['.c-rich-text-editor .bg-gold'] },
-    { name: 'cards-resources', instances: ['.tabs .c-tabs .tabs-content .cols4 .colctrl'] },
+    { name: 'tabs-resources', instances: ['.tabs .c-tabs .tab-container'] },
   ],
   sections: [
     { id: 'hero', name: 'Hero', selector: '.fullWidthImageHero', style: null },
