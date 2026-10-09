@@ -402,13 +402,18 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
   padding-bottom: 70px;
 }
 
-body.zip-search-results >main > .section:first-child > .default-content-wrapper {
-  padding-bottom: var(--container-gutter);
+body.zip-search-results > main > .section:first-child > .default-content-wrapper {
+  margin-bottom: 20px;
+  padding-bottom: 0;
+}
+ 
+body.zip-search-results > main > .section.compact > div > p {
+  font-family: var(--body-font-family);
 }
 
 body.zip-search-results h1 {
   font-size: var(--heading-zip-search-results-m);
-  padding-top: 3%;
+  padding-top: 4%;
   line-height: var(--heading-line-height-zip-search-results);
   margin-bottom: 0;
 }
@@ -1951,5 +1956,9 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
 
   body.zip-search-results p {
     font-size: var(--panel-heading-size);
+  }
+
+  body.zip-search-results > main > .section:first-child > .default-content-wrapper {
+    margin-bottom: var(--space-section-l);
   }
 }
