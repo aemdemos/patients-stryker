@@ -94,7 +94,11 @@ export default function decorate(block) {
   const radiusGroup = document.createElement('div');
   radiusGroup.className = 'find-a-doctor-field find-a-doctor-radius';
 
-  const radiusOptions = [['15', '15 miles'], ['25', '25 miles'], ['50', '50 miles']];
+  // same options as the source; the first one (5 miles) is the default
+  const radiusOptions = [
+    ['5', '5 miles'], ['10', '10 miles'], ['15', '15 miles'], ['25', '25 miles'],
+    ['50', '50 miles'], ['75', '75 miles'], ['100', '100 miles'], ['250', '250 miles'],
+  ];
   const [[defaultRadiusValue, defaultRadiusText]] = radiusOptions;
   let radiusValue = defaultRadiusValue;
 
@@ -152,6 +156,8 @@ export default function decorate(block) {
     radiusButton.setAttribute('aria-expanded', 'true');
     const active = radiusItems.find((li) => li.dataset.value === radiusValue) || radiusItems[0];
     radiusButton.setAttribute('aria-activedescendant', active.id);
+    // the menu has a max-height and scrolls; keep the current option in view
+    active.scrollIntoView({ block: 'nearest' });
   };
 
   const selectRadius = (li) => {
@@ -184,6 +190,7 @@ export default function decorate(block) {
         : Math.max(currentIndex - 1, 0);
       selectRadius(radiusItems[next]);
       radiusButton.setAttribute('aria-activedescendant', radiusItems[next].id);
+      radiusItems[next].scrollIntoView({ block: 'nearest' });
     } else if ((e.key === 'Enter' || e.key === ' ') && radiusMenu.hidden) {
       e.preventDefault();
       openRadius();

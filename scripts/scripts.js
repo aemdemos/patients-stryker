@@ -373,6 +373,13 @@ function applySectionBackgroundImage(section, url) {
  * @param {Element} main The main container element
  */
 function decorateSectionMetadata(main) {
+  // section metadata `Id` → the section's id, so in-page links (`#find-a-doctor`)
+  // can target it. Normalised like a class name; skipped if the id is taken.
+  const applySectionId = (section, value) => {
+    const id = toClassName(Array.isArray(value) ? value[0] : value);
+    if (id && !document.getElementById(id) && !main.querySelector(`[id="${id}"]`)) section.id = id;
+  };
+
   main.querySelectorAll('.section .section-metadata').forEach((meta) => {
     const section = meta.closest('.section');
     if (!section) return;
@@ -385,6 +392,8 @@ function decorateSectionMetadata(main) {
         styles.forEach((s) => section.classList.add(s));
       } else if (key === 'background-image-url') {
         applySectionBackgroundImage(section, Array.isArray(value) ? value[0] : value);
+      } else if (key === 'id') {
+        applySectionId(section, value);
       } else {
         section.dataset[toCamelCase(key)] = value;
       }
@@ -395,6 +404,10 @@ function decorateSectionMetadata(main) {
   });
 
   // published DA form: data-* attributes (legacy data-background-image also honoured)
+  main.querySelectorAll('.section[data-id]').forEach((section) => {
+    applySectionId(section, section.dataset.id);
+  });
+
   main.querySelectorAll('.section[data-background-image], .section[data-background-image-url]').forEach((section) => {
     applySectionBackgroundImage(section, section.dataset.backgroundImageUrl);
     applySectionBackgroundImage(section, section.dataset.backgroundImage);

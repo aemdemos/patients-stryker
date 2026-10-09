@@ -30,8 +30,8 @@
 .statistics .statistics-value p {
   margin: 0;
   font-family: var(--display-font-family);
-  font-size: var(--statistics-number-size-s);
-  font-weight: 700;
+  font-size: var(--statistics-number-size);
+  font-weight: var(--font-weight-bold);
   line-height: 1;
 }
 
@@ -66,7 +66,7 @@
 .statistics .statistics-desc strong,
 .statistics .statistics-desc b {
   font-family: var(--body-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 /* footnote reference links sit as small superscripts, teal like other links

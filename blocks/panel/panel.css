@@ -36,6 +36,11 @@
   line-height: var(--panel-body-line-height);
 }
 
+.panel .panel-body > p:has(strong) {
+  font-size: var(--panel-heading-size);
+  margin-bottom: 15px;
+}
+
 /* cta paragraphs containing bold+italic (the gold-label marker) */
 .panel .panel-body p:has(strong em),
 .panel .panel-body p:has(em strong),
@@ -58,6 +63,17 @@
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
   line-height: var(--panel-cta-body-line-height);
+}
+
+.panel.blue > ul {
+  gap:0;
+} 
+
+.panel.cta .panel-body ul,
+.panel.left .panel-body ul {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--body-line-height-l);
+  margin-bottom: 15px;
 }
 
 /* bold + italic body text → gold accent  */
@@ -100,7 +116,7 @@
   margin: 0 auto 30px;
   font-family: var(--display-font-family);
   font-size: var(--panel-heading-size);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-black);
 }
 
@@ -124,7 +140,8 @@
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
-  font-size: var(--panel-cta-heading-size);
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
 }
 
 .panel.cta .panel-cta {
@@ -158,7 +175,7 @@
   background-color: var(--color-accent);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   font-style: normal;
   line-height: 1.3;
   text-transform: uppercase;
@@ -191,7 +208,7 @@
   color: var(--link-color);
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: none;
   text-decoration: none;
 }
@@ -210,7 +227,7 @@
 
 /* ---- dark variant (IVS condition sections, left column) -------------- */
 .panel.dark .panel-body {
-  padding: 22.5px;
+  padding: 3%;
   background: var(--panel-dark-gradient);
   box-shadow: none;
   text-align: left;
@@ -224,7 +241,7 @@
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-size: var(--panel-cta-heading-size);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   color: var(--color-accent);
 }
 
@@ -259,7 +276,7 @@
 .panel.blue .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--panel-cta-body-size);
-  line-height: var(--panel-cta-body-line-height);
+  line-height: var(--panel-body-line-height-m);
   color: var(--color-white);
 }
 
@@ -267,16 +284,33 @@
   margin: 0 0 var(--space-block);
 }
 
+.panel.dark.wide .panel-body h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-dark-base);
+}
+
+
 /* EW wraps list-item text in a <p>; keep it at the bare-<li> body typography. */
 .panel.cta .panel-body li > p,
 .panel.light .panel-body li > p,
 .panel.wide .panel-body li > p,
 .panel.colored-border .panel-body li > p {
   margin: 0;
-  font-family: var(--body-font-family);
+  font-family: var(--body-font-family); 
   font-size: var(--panel-cta-body-size);
   line-height: var(--body-line-height);
 }
+
+.panel.blue .panel-body p:has(strong em),
+.panel.blue .panel-body p:has(em strong),
+.panel.blue .panel-body p:has(b i),
+.panel.blue .panel-body p:has(i b) {
+  font-size: var(--panel-body-size);
+  font-family: var(--display-font-family-bold);
+}
+
+
+
 
 .panel .panel-body p:last-child:has(strong em),
 .panel .panel-body p:last-child:has(em strong),
@@ -284,6 +318,7 @@
 .panel .panel-body p:last-child:has(i b) {
   margin: 0;
 }
+
 
 /* list-item paragraphs (e.g. EW wraps list-item text in a <p>) in left & cta
    panels: keep the list rhythm tight */
@@ -305,10 +340,12 @@
 
 /* ---- gold variant */
 .panel.gold .panel-body {
-  padding: 22.5px;
+  padding-top: 3%;
+  padding-bottom: 2%;
   background: var(--color-accent);
   box-shadow: none;
   text-align: center;
+  margin:0;
 }
 
 /* ---- gray variant  */
@@ -325,36 +362,27 @@
   max-width: none;
   margin: 0;
   padding: 4%;
-  padding-bottom: 1%;
+  padding-bottom: 10px;
   background: var(--color-navy-bright);
   box-shadow: var(--shadow-soft);
   text-align: center;
   flex: 1;
 }
 
-.panel.blue > ul {
-  gap:0;
-} 
+
 
 .panel.blue > ul > li {
   display: flex;
 }
 
-.panel.blue .panel-body p:first-child {
-  max-width: none;
-  margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
-  font-size: var(--heading-font-size-xl);
-  font-weight: 700;
-  color: var(--color-accent);
-}
+
 
 .panel.gray .panel-body h3 {
   max-width: none;
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family-bold);
   font-size: var(--panel-heading-size-xs);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-black);
 }
 
@@ -394,9 +422,15 @@
   }
 
     .panel.wide .panel-body h3 {
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-family: var(--display-font-family);
   }
+
+  .panel.cta .panel-body h3,
+.panel.light .panel-body h3,
+.panel.colored-border .panel-body h3 {
+   font-size: var(--panel-cta-heading-size);
+}
 
   .fragment .panel.gray .panel-body h3{
   font-size:var(--panel-heading-size-xs);
@@ -409,6 +443,13 @@
 }
 
   /* wide variant */
+  .panel.wide .panel-body {
+    max-width: none;
+    margin: 2% 0;
+    padding: 4% 2%;
+    text-align: left;
+  }
+
   .panel.wide > ul {
     grid-template-columns: 1fr;
   }
@@ -417,6 +458,17 @@
     font-size: var(--panel-body-size-s);
     font-family: var(--body-font-family);
   }
+
+  .section.flex > .panel.cta > ul,
+  .section.flex > .panel-wrapper:has(> .panel.cta) > .panel.cta > ul,
+  .section.flex > .panel-wrapper:has(.panel.cta),
+  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta, 
+  .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: 1fr;
+    }
+
 } 
 
 @media (width >= 900px) {
@@ -424,4 +476,3 @@
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
 }
-

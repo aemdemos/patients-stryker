@@ -94,6 +94,11 @@ body.sa-resources .section.flex > .default-content-wrapper p {
   line-height: var(--heading-line-height);
 }
 
+/* intro columns sit flush with the section edges (no side gutter) */
+body.sa-resources main > .section.flex > div {
+  padding-inline: 0;
+}
+
 /* inter-section vertical rhythm — the source separates each zone by ~50px of
    whitespace (plus the divider rule where present). The base sections carry
    margin:0, so add a top gap to each zone after the hero. */
@@ -102,6 +107,7 @@ body.sa-resources .section.cards-container,
 body.sa-resources .section.light-gray,
 body.sa-resources .section.compact {
   margin-top: var(--space-section-l);
+  padding-inline: var(--container-gutter);
 }
 
 /* the light-gray related-links band is a full-bleed colour zone: give it interior
@@ -134,9 +140,24 @@ body.sa-resources .section.divider > .default-content-wrapper h2 {
 body.sa-resources .section.cards-container > .default-content-wrapper h2 {
   margin: 2% 0 3%;
   font-family: var(--heading-font-family);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   font-size: var(--heading-font-size-xxxl);
   line-height: var(--heading-line-height);
+}
+
+/* h2s (card titles + "Social media") step down below 600px */
+body.sa-resources main h2,
+body.sa-resources .section.cards-container > .default-content-wrapper h2,
+body.sa-resources .cards.brochure .cards-card-body h2 {
+  font-size: var(--heading-font-size-xxxl-s);
+}
+
+@media (width >= 600px) {
+  body.sa-resources main h2,
+  body.sa-resources .section.cards-container > .default-content-wrapper h2,
+  body.sa-resources .cards.brochure .cards-card-body h2 {
+    font-size: var(--heading-font-size-xxxl);
+  }
 }
 
 /* ----- Panel block (intro availability box, `panel light`) ----- */
@@ -161,27 +182,15 @@ body.sa-resources .panel.cta .panel-body,
 body.sa-resources .panel.light .panel-body,
 body.sa-resources .panel.colored-border .panel-body {
   margin: 10px 5% 5%;
+  padding: 5%;
 }
 
-body.condition-detail .panel.cta .panel-body {
-  padding: 3%;
+/* the last two covers of the first brochure grid are borderless on the source */
+body.sa-resources main > .section:not(.section:has(.cards.brochure) ~ .section)
+  .cards.brochure > ul > li:nth-last-child(-n + 2) img {
+  border: 0;
 }
 
-/* ----- Cards block (downloads + social grids, `cards brochure`) ----- */
-
-/* brochure cards left-align their title (source), unlike the centered default. */
-body.sa-resources .cards.brochure > ul > li {
-  text-align: left;
-}
-
-/* the "Digital | Print" / "Banner N" links row is centered below the image while
-   the card title above stays left-aligned. order:2 pushes the links row below the
-   image within the card body, with a 30px gap above it (source). */
-body.sa-resources .cards.brochure .cards-card-body p {
-  order: 2;
-  margin: var(--space-section) 0 0;
-  text-align: center;
-}
 
 /* NOTE: the related-links fragment's own styling (gold Futura labels, "Learn more"
    chevron CTAs, airy column rhythm) is NOT here — it's a reusable columns block
@@ -193,19 +202,11 @@ body.sa-resources .cards.brochure .cards-card-body p {
    Theme: campaign-landing — Stroke-Awareness campaign landing page
    ===================================================================== */
 
-/* Hero: place the overlaid headline ~10% from the left, near the top. */
+/* Hero: its look comes from the `hero-campaign` section style (blocks/hero);
+   only the theme's section spacing is reset here. */
 body.campaign-landing main > .section.hero-container {
   padding-top: 0;
   margin-top: 0;
-}
-
-body.campaign-landing main .hero.fullbleed > div:last-child {
-  padding: 4% 8% 0 10%;
-}
-
-/* Hero image — MOBILE BASE: 1:1 square crop, not the shared block's 4:5 portrait. */
-body.campaign-landing main .hero.fullbleed img {
-  aspect-ratio: 1 / 1;
 }
 
 body.campaign-landing main .section {
@@ -214,21 +215,6 @@ body.campaign-landing main .section {
 
 body.stroke-awareness-landing main .section.compact {
   margin-top: 60px;
-}
-
-/* Hero (banner) headline sizing is scoped to the section-metadata `style:
-   hero-stroke` (which adds `.hero-stroke` to the section) rather than the page
-   theme, so the hero styling travels with the section wherever it's authored
-   instead of being pinned to this one page.
-
-   Headline sizing is mapped onto the EDS standard breakpoints (600 / 900 /
-   1200), so the source's own breakpoints translate as: source 840px → 600px,
-   1024px → 900px, 1440px → 1200px. The source's 480px breakpoint is dropped —
-   mobile is a single regime below 600px.
-   mobile-first: 8vw (matches the source phone curve — 25.6px@320 → 30px@375
-   → 47.2px@590). The 900px / 1200px steps live in the shared media blocks below. */
-.section.hero-stroke .hero.banner h1 {
-  font-size: 8vw;
 }
 
 body.campaign-landing main .section.sticky-nav-container {
@@ -240,19 +226,11 @@ body.campaign-landing main .sticky-nav .sticky-nav-list {
   justify-content: center;
 }
 
-/* Hero headline: Futura bold at a larger fluid size (10vw mobile → 70px desktop cap), not the shared block's light-serif. */
-body.campaign-landing main .hero.fullbleed h1 {
-  font-family: var(--display-font-family);
-  font-weight: 700;
-  font-size: 10vw;
-  color: var(--color-accent);
-}
-
 /* Section headings → gold Futura bold, matching the icon-list sections. */
 body.campaign-landing main .section .columns h3,
 body.campaign-landing main .section .columns h2 {
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: var(--icon-list-title-size);
   color: var(--color-accent);
 }
@@ -265,10 +243,42 @@ body.campaign-landing main > .section.tabs-container > .default-content-wrapper 
   margin-bottom: var(--space-section);
   font-family: var(--display-font-family);
   font-size: var(--icon-list-title-size-s);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-accent);
   text-align: center;
 }
+
+body.condition-detail main > .section.light-gray {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: transparent;
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper {
+   border-inline: var(--container-gutter) solid transparent;
+    padding: 2%;
+    background-color: var(--color-surface);
+    background-clip: padding-box;
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
+font-family: var(--body-font-family);
+    font-size: var(--body-font-size-m);
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+      font-size: var(--heading-font-size-m);
+      line-height: var(--heading-line-height-h4);
+}
+
+body.condition-detail .tabs .tabs-tab {
+  padding: 0 30px;
+}
+
+body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--body-font-size-l);
+}
+ 
 
 @media (width >= 600px) {
   body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
@@ -291,16 +301,10 @@ body.campaign-landing main .section .columns li {
   font: var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
 }
 
-/* Risk-factors lead-in: regular 14px serif, not the tile block's Futura bold.
-   (the last item, matched directly or nested — see icon-list.css) */
-body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > p:last-child,
-body.campaign-landing main > .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > :last-child p {
-  font: 400 var(--body-font-size-m) var(--body-font-family);
-}
-
-/* All default body copy → 14px body-serif, out-weighing the global 12px shrink; excludes .compact. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact) > div:not(:has(> .block)) p {
-  font: 400 var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
+/* All default body copy → 14px body-serif, out-weighing the global 12px shrink;
+   excludes .compact and icon-list sections (the block styles its own intro copy). */
+body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section:not(.compact, .icon-list-container) > div:not(:has(> .block)) p {
+  font: var(--font-weight-regular) var(--body-font-size-m)/var(--paragraph-line-height) var(--body-font-family);
   color: var(--color-text);
 }
 
@@ -325,28 +329,6 @@ body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .sec
   line-height: var(--heading-line-height);
 }
 
-/* Icon-list section intros → 17.5px URW serif. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container > div:not(.icon-list-wrapper) p {
-  font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
-}
-
-/* Risk-factors (tile) intro only: cap width to ~560px and centre it, matching the source. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) p {
-  max-width: 560px;
-  margin-inline: auto;
-  text-align: center;
-}
-
-/* Risk-factors lead-in keeps the source's Futura bold at 17.5px. */
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > p:last-child,
-body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .section.icon-list-container:has(.icon-list.tile) > div:not(.icon-list-wrapper) > :last-child p {
-  font-family: var(--display-font-family);
-  font-size: var(--body-font-size-l);
-  font-weight: 700;
-}
-
 /* Fragment (related-links) descriptions + regional links → 17.5px URW serif. */
 body.campaign-landing main .section .columns.related-links :is(p, a) {
   font-family: var(--heading-font-family);
@@ -358,14 +340,8 @@ body.campaign-landing main .section .columns.related-links :is(p, a) {
 body.campaign-landing main .section .columns.related-links p:not(:has(a)) + p:has(> a:only-child) > a {
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-}
-
-/* Risk-factor tile captions: source line-height is 20.125px (1.15), not the tile block's default 1.375. */
-body.campaign-landing main .icon-list.tile .icon-list-text,
-body.campaign-landing main .icon-list.tile .icon-list-text p {
-  line-height: var(--body-line-height-l);
 }
 
 /* Horizontal inset — MOBILE BASE: ~45px from the screen edge, not the 15px default; >=600px reverts to the shared gutter. */
@@ -448,38 +424,6 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 }
 
   /* Theme: campaign-landing */
-  body.campaign-landing main .hero.fullbleed {
-    min-height: calc(5 * var(--space-section-l));
-  }
-
-  body.campaign-landing main .hero picture.hero-image-desktop {
-    display: block;
-    height: 100%;
-  }
-
-  body.campaign-landing main .hero picture.hero-image-mobile {
-    display: none;
-  }
-
-  body.campaign-landing main .hero.fullbleed img {
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;
-  }
-
-  body.campaign-landing main .hero.fullbleed > div:last-child {
-    max-width: 45%;
-    padding: 4% 0 0 10%;
-  }
-
-  body.campaign-landing main .hero.fullbleed p {
-    font-size: clamp(var(--body-font-size-m), 1.5vw, var(--heading-font-size-l));
-  }
-
-  body.campaign-landing main .hero.fullbleed h1 {
-    font-size: 5vw;
-  }
-
   body.campaign-landing main > .section.columns-container > .columns-wrapper,
   body.campaign-landing main > .section.columns-container > div:not(.columns-wrapper),
   body.campaign-landing main > .section.icon-list-container > div:not(.icon-list-wrapper),
@@ -554,18 +498,17 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
     padding-left:4%;
   }
   
-  body.condition-detail h2 {
+  body.condition-detail h3 {
     font-family: var(--heading-font-family);
-    font-size: var(--condition-headline-font-size);
-    padding-top:4%;
+    font-size: var(--heading-font-size-ml);
     padding-bottom: 7px;
-    border-bottom: 1px solid #b2b4ae;
+    line-height: var(--heading-line-height);
   }
 
-  body.condition-detail h2:has(em strong) {
-    border-bottom: 0;
-    padding-left: 10px;
+  body.condition-detail h3 em strong, body.condition-detail h3 strong em {
+    font-size: var(--heading-font-size-ml);
   }
+ 
 
   body.condition-detail h4 {
     font-size: var(--heading-font-size-ml);
@@ -573,22 +516,15 @@ body.campaign-landing > main > div.light-gray.section.icon-list-container {
 
   body.condition-detail h2 em strong, body.condition-detail h2 strong em {
      font-size: var(--condition-headline-font-size);
-   
   }
 
-  body.condition-detail main p, body.condition-detail main ul {
+body.condition-detail main p, body.condition-detail main ul {
     font-size: var(--body-font-size-l);
     line-height: var(--body-line-height-l);
-    margin-bottom: 15px;
-   }
-
+}
 
     body.condition-detail .panel.left .panel-body  {
       margin: 0 0 var(--space-block);
-    }
-
-    body.condition-detail .panel.dark .panel-body {
-      padding:3%;
     }
 
    body.condition-detail .panel.left .panel-body p{
@@ -668,12 +604,6 @@ body.condition-detail .tabs .tabs-panel {
   body.sa-resources .panel.light > ul {
     grid-template-columns: 1fr;
   }
-
-  /* EDS desktop (900px) ← source 1024px: 40.96px, rising to the 56px cap at the
-     EDS large breakpoint (1200px ← source 1440px). */
-  .section.hero-stroke .hero.banner h1 {
-    font-size: calc(-4.16px + 5.0133vw);
-  }
 }
 
 /* =====================================================================
@@ -686,6 +616,17 @@ body.discography {
   --procedure-resources-card-gap: 71px; /* Resources heading → brochure card */
   --procedure-body-copy-size: 1.25em;    /* default-content paragraph size (source: 14px) */
   --procedure-body-copy-line-height: 1.375; /* source body copy 19.25px / 14px */
+  --discography-how-gap-top: 42px;     /* dark band → "How it works" box (source < 480px) */
+  --discography-how-gap-top-l: 82px;   /* same gap from tablet up */
+  --discography-how-gap-bottom: 61px;  /* "How it works" box → gold band (source < 480px) */
+  --discography-how-gap-bottom-l: 91px; /* same gap from tablet up */
+
+  /* "Potential risks" section top margin; the 30px spacer section above it adds
+     to this, giving the source's 99 / 136px gap below the LEARN MORE button */
+  --discography-risks-gap-top: 69px;   /* source mobile */
+  --discography-risks-gap-top-l: 106px; /* source >= 841px (EDS 600) */
+  --discography-risks-gap-bottom: 41px; /* risks box → disclaimer (source < 480px) */
+  --discography-risks-gap-bottom-l: 61px; /* same gap from tablet up */
 }
 
 body.discography main > .section.flex > .default-content-wrapper p {
@@ -695,7 +636,7 @@ body.discography main > .section.flex > .default-content-wrapper p {
 
 body.discography main #how-it-works + p {
     font-size: var(--body-font-size-l);
-    line-height: var(--body-line-height-l);
+    line-height: var(--paragraph-line-height-l-nested); /* source: 21.25px lines */
 }
 
 body.discography a:any-link {
@@ -708,8 +649,40 @@ body.discography a:any-link {
    `.default-content-wrapper`; `:not(li p)` keeps list items on their own
    rhythm rather than picking up paragraph styling. */
 body.discography main .section.flex > .default-content-wrapper h3 {
-  font-size: var(--headline-font-size);
+  font-size: var(--heading-font-size-ml); /* source mobile: 21.875px / 25.16px */
+  line-height: var(--heading-line-height-ml);
+}
+
+/* the source pads the intro copy's box by 3% of the column width at the top.
+   Percent padding on the heading resolves against the column, so it tracks the
+   source at every width. */
+body.discography main .section.flex > .default-content-wrapper > h3:first-child {
+  padding-top: 3%;
+}
+
+/* ----- Mobile text sizes (source < 480px, EDS < 600px) -----
+   The source drops these headings a step on phones; the larger sizes are
+   restored in the (width >= 600px) block below. */
+body.discography main .panel.cta .panel-body h2 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml-nested); /* source line pitch at every width */
+}
+
+body.discography main .section.light-gray h3 {
+  font-size: var(--heading-font-size-m);
   line-height: var(--body-line-height-l);
+}
+
+body.discography main .section.light-gray h4 {
+  font-size: var(--heading-font-size-xs);
+  line-height: var(--body-line-height); /* source mixed-font line: 20.1px @14px, 25.1px @17.5px */
+}
+
+/* "Potential risks" anchor link: the source keeps it at 21px / 1.06 at every
+   width (the shared panel rule sets 21.5px). */
+body.discography main .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
 }
 
 
@@ -738,7 +711,19 @@ body.discography main > .section.cards-container + .section.light-gray {
 }
 
 body.discography main > .section.dark + .section.light-gray {
-  margin-top: 80px;
+  margin-top: var(--discography-how-gap-top);
+}
+
+body.discography main > .section.dark + .section.light-gray + .section.panel-container {
+  margin-top: var(--discography-how-gap-bottom);
+}
+
+body.discography main > .section.spacer + .section.light-gray {
+  margin-top: var(--discography-risks-gap-top);
+}
+
+body.discography main > .section.spacer + .section.light-gray + .section.compact {
+  margin-top: var(--discography-risks-gap-bottom);
 }
 
 body.discography main .section.light-gray {
@@ -754,13 +739,16 @@ body.discography main .section.light-gray > div:empty {
 /* paint the gray fill on the section's content wrapper. Target the generic
    direct-child div (not just `.default-content-wrapper`) so it also matches the
    Universal Editor, whose section content is not always wrapped in a
-   `.default-content-wrapper`; `:not(:empty)` skips the consumed metadata div. */
+   `.default-content-wrapper`; `:not(:empty)` skips the consumed metadata div.
+   The source pads these boxes by 2% of the box's own width on every side.
+   Percent padding resolves against the section, so derive the box width
+   (section minus gutters, capped at the container max) and take 2% of that. */
 body.discography main .section.light-gray > div:not(:empty) {
   box-sizing: border-box;
   width: calc(100% - 2 * var(--container-gutter));
   max-width: calc(var(--container-max) - 2 * var(--container-gutter));
   margin-inline: auto;
-  padding: 27.6px;
+  padding: calc((min(100%, var(--container-max)) - 2 * var(--container-gutter)) * 0.02);
   background-color: var(--color-surface);
 }
 
@@ -783,14 +771,22 @@ body.discography main > .section.dark .panel.dark .panel-body h2 {
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   color: var(--color-white);
+}
+
+/* source sizes the evidence band with fluid insets at every width: 4% / 2%
+   padding plus a 2% block margin, so the band scales with the viewport. */
+body.discography main > .section.dark .panel.dark .panel-body {
+  margin: 2% 0;
+  padding: 4% 2%;
 }
 
 body.discography main > .section > .default-content-wrapper h2 {
     margin-bottom: 75px;
     padding-bottom: 7px;
     border-bottom: 1px solid var(--color-surface-muted);
+    font-size: var(--heading-font-size-l); /* source mobile: 21px */
 }
 
 /* source grows the statement from 21px (mobile) to 24.5px from tablet up */
@@ -799,15 +795,56 @@ body.discography main > .section > .default-content-wrapper h2 {
     font-size: var(--heading-font-size-xl);
   }
 
-  body.discography main > .section.dark .panel.dark .panel-body {
-    padding: 50px 27.6px;
+  body.discography main .section.flex > .default-content-wrapper h3 {
+    font-size: var(--headline-font-size);
+    line-height: var(--body-line-height-l);
+  }
+
+  body.discography main .panel.cta .panel-body h2 {
+    font-size: var(--headline-font-size); /* source: 26.25px / 30.19px */
+  }
+
+  /* the source keeps the overview box at a uniform 3% padding at every width;
+     the shared wide-panel rule switches to 4% 2% with a 2% block margin. */
+  body.discography main .panel.cta.wide .panel-body {
+    margin: 0 var(--space-block-s) var(--space-block-s) 0;
+    padding: 3%;
+  }
+
+  body.discography main .section.light-gray h3 {
+    font-size: var(--heading-font-size-ml); /* source: 21.875px / 25.16px */
+    line-height: var(--heading-line-height-ml);
+  }
+
+  body.discography main .section.light-gray h4 {
+    font-size: var(--heading-font-size-m);
+  }
+
+  body.discography main > .section > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.discography main > .section.dark + .section.light-gray {
+    margin-top: var(--discography-how-gap-top-l);
+  }
+
+  body.discography main > .section.dark + .section.light-gray + .section.panel-container {
+    margin-top: var(--discography-how-gap-bottom-l);
+  }
+
+  body.discography main > .section.spacer + .section.light-gray {
+    margin-top: var(--discography-risks-gap-top-l);
+  }
+
+  body.discography main > .section.spacer + .section.light-gray + .section.compact {
+    margin-top: var(--discography-risks-gap-bottom-l);
   }
 }
 
 body.discography main .panel.cta .panel-body h3 {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-m);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   color: var(--color-black);
 }
 
@@ -817,9 +854,22 @@ body.discography main .panel.cta .panel-body h3 {
   }
 }
 
+/* source overview box sits 10px in from its column's right edge, with 10px
+   below it, at every width */
+body.discography main .panel.cta.wide .panel-body {
+  margin-inline-end: var(--space-block-s);
+  margin-block-end: var(--space-block-s);
+}
+
+/* the source CTA sits 10px under the box; drop the button wrapper's 12px top
+   margin so the box's 10px bottom margin sets the gap */
+body.discography main .panel.cta .panel-cta .button-wrapper {
+  margin-top: 0;
+}
+
 body.discography main .panel.cta.wide .panel-body li {
   font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
+  line-height: var(--list-line-height-l-nested);
 }
 
 /* EW authoring canvas wraps each <li>'s inline content in a <p>, which then picks
@@ -831,26 +881,38 @@ body.discography main .panel.cta.wide .panel-body li > p {
   margin: 0;
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-l);
-  line-height: var(--body-line-height-l);
+  line-height: var(--list-line-height-l-nested);
 }
 
 body.discography main .panel .panel-body p:last-child {
   margin: 10px 0;
 }
 
+/* "Potential risks" closes the overview box with the source's 15px gap */
+body.discography main .panel.cta.wide .panel-body > p:last-child {
+  margin: 0 0 var(--space-block);
+}
+
+/* source gold band keeps a fixed 10px side inset at every width (the shared
+   panel uses 3% on all sides); the 3% / 2% block padding already matches. */
+body.discography main .panel.gold .panel-body {
+  padding-inline: var(--space-block-s);
+}
+
 /* ----- Gold CTA panel copy -----
    The "Tired of living in pain?" gold band renders its paragraph as HumanistSlab
    body copy (14px) in the source, but the shared gold variant applies the 21px
    light serif. Restore the body font/size here as a theme delta. */
+
 body.discography main .panel.gold .panel-body p {
   font-size: 1.5em;
-  line-height: var(--paragraph-line-height);
+  line-height: var(--heading-line-height); /* source: 22.26px at every width */
 }
 
 body.discography main .panel.gold .panel-body p a:any-link {
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-l);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 1.06;
   text-decoration: none;
 }
@@ -865,24 +927,6 @@ body.discography main > .section.compact > .default-content-wrapper p:not(li p) 
 
 /* ----- Large desktop (>=1200px) ----- */
 @media (width >= 1200px) {
-  /* Theme: sa-resources */
-
-  /* enlarge the hero headline on this page beyond the shared band cap (48px in
-     blocks/hero/hero.css) — a theme-specific delta. */
-  body.sa-resources .hero.band h1 {
-    font-size: 56px;
-  }
-
-  /* EDS large (1200px) ← source 1440px cap: 56px flat */
-  .section.hero-stroke .hero.banner h1 {
-    font-size: 56px;
-  }
-
-  /* Theme: campaign-landing */
-  body.campaign-landing main .hero.fullbleed h1 {
-    font-size: 70px;
-  }
-
    body.discography .hero.banner h1 {
     font-size: 42px;
   }
@@ -909,7 +953,7 @@ body.discography main > .section.compact > .default-content-wrapper p:not(li p) 
 @font-face {
   font-family: strykericons;
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   font-display: swap;
   src: url('/fonts/strykericons.woff') format('woff');
 }
@@ -940,7 +984,7 @@ body.patient-information main > .section:first-child {
    link colour already matches the source teal; override the family/weight. */
 body.patient-information main > .section:first-child a {
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -960,50 +1004,6 @@ body.patient-information main > .section:first-child a::after {
   transform: translate(0, 2px);
 }
 
-/* ── Title bar (hero band) ────────────────────────────────────────────────────
-   The source title bar is a single compact gradient bar (~100px) with the gold
-   headline overlaid. The block authors desktop + mobile crops as two <picture>s
-   and the base .hero toggle shows one per breakpoint — but the shared
-   `.hero.band picture { display:block }` rule (which we must not touch) overrides
-   that toggle, so BOTH crops render stacked and the bar becomes ~2x too tall.
-   Re-assert the one-crop-per-breakpoint toggle here, scoped to this page. */
-body.patient-information .hero.band picture.hero-image-desktop {
-  display: none;
-}
-
-body.patient-information .hero.band picture.hero-image-mobile {
-  display: block;
-}
-
-/* Headline size — match the source's fluid scaling at every width (measured):
-   mobile ≈ 8vw (31.2px at 390px), desktop ≈ 4vw (51.2px at 1280px) capped at
-   ~56px (still 56px at 1920px, not the unbounded 76.8px raw 4vw). The shared hero
-   block instead uses 8vw on mobile then pins a fixed 48px from 1200px up — close
-   on mobile but a touch small and non-fluid on desktop.
-
-   IMPORTANT: this mobile base MUST precede the ≥900px block below — both rules
-   have equal specificity, so if the base came later it would win at desktop too
-   (source order breaks the media query) and the title would render at raw 8vw. */
-body.patient-information .hero.band h1 {
-  font-size: 8vw;
-}
-
-@media (width >= 900px) {
-  body.patient-information .hero.band picture.hero-image-desktop {
-    display: block;
-  }
-
-  body.patient-information .hero.band picture.hero-image-mobile {
-    display: none;
-  }
-
-  /* desktop headline: switch from the mobile 8vw to the source's 4vw, clamped so
-     it stops growing at ~56px on very wide viewports (matches the reference). */
-  body.patient-information .hero.band h1 {
-    font-size: min(4vw, 56px);
-  }
-}
-
 /* ── Intro line ──────────────────────────────────────────────────────────────
    "Learn more about brain aneurysm…" is authored as an <h2>. The source renders
    it in the LIGHT SERIF face (URW Egyptienne, weight 500), not the Futura-bold
@@ -1020,19 +1020,9 @@ body.patient-information .hero.band h1 {
    change would move every other h2 (e.g. card titles). NOT a global concern. */
 body.patient-information main > .section > .default-content-wrapper h2 {
   font-family: var(--heading-font-family);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   margin-top: 4%;
   margin-bottom: 4%;
-}
-
-/* ── Patient-guide cards (cards brochure-cta) ─────────────────────────────────
-   The whole card is the click target, so the title text itself must not read as
-   a link. The parser links the title to its PDF; the global link styles would
-   paint it teal + underlined. Neutralise that so the title shows as plain bold
-   text (matching the source's futura-bold black title). */
-body.patient-information .cards.brochure-cta .cards-card-body :is(h1, h2, h3, h4, h5, h6) a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* ── Gold "for more information" CTA band ─────────────────────────────────────
@@ -1073,7 +1063,7 @@ body.patient-information main > .section.gold p {
    though the lead copy is 17.5px — so the link is SMALLER than the lead text. */
 body.patient-information main > .section.gold p a {
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size-m);
   text-transform: uppercase;
   text-decoration: none;
@@ -1096,27 +1086,6 @@ body.patient-information main > .section.gold p a::after {
    labels, CTA links, plain regional links, 3-up/2-up layout) comes from the block
    variant, and whose gray full-bleed band comes from the section metadata
    (`light-gray, full-bleed`). */
-
-/* ── Cards section bottom spacing ─────────────────────────────────────────────
-   The patient-guide cards section sits flush against the gold CTA band below it;
-   the source leaves ~30px between the cards row and the gold band. The cards block
-   sets no bottom spacing (and it's shared, so we don't edit it), so add the gap
-   here on the cards' host section, scoped to this page. */
-body.patient-information main > .section.cards-container {
-  margin-bottom: var(--space-section);
-}
-
-/* ── Cards CLS fix — reserve the cover-image box ──────────────────────────────
-   The brochure-cta covers are runtime-injected Dynamic Media <picture> images
-   with no width/height attrs and `aspect-ratio: auto` in the shared block, so
-   each box is 0px tall until it loads, then jumps to ~500px — pushing the title,
-   label, button and everything below it down (measured CLS ~0.88 mobile / ~0.31
-   desktop, essentially the whole page CLS). All four covers share a ~3:4 ratio
-   (631×828), so reserve that box up front. The block is shared/WIP, so this is
-   applied page-scoped here rather than in blocks/cards. */
-body.patient-information .cards.brochure-cta > ul > li img {
-  aspect-ratio: 631 / 828;
-}
 
 /* AP number (own compact section): top up the 40px gap to the source's 50/60px */
 body.patient-information main > .section.compact + .section.compact {
@@ -1145,14 +1114,6 @@ body.patient-information main > .section.compact + .section.compact {
    the first callout panel. It carries no authored content, so it's reproduced as
    a pseudo-element on the hero section. The section is already full-viewport width,
    so the band is inherently edge-to-edge. */
-body.zip-skin-closure main > .section.full-bleed.columns-container:first-child {
-  padding-bottom: 0;
-
-  /* the hero image column bleeds right: -80px off the edge (intentional); clip
-     it at the section/viewport edge so the bleed stays but adds no page scroll */
-  overflow-x: clip;
-}
-
 body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::after {
   content: "";
   display: block;
@@ -1214,7 +1175,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 .zip-skin-closure main > .section.light-gray h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--panel-heading-size);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
   text-align: center;
 }
@@ -1226,7 +1187,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 .zip-skin-closure main > .section.richtext-container.columns-container h2:has(strong) {
   font-family: var(--display-font-family-bold);
   font-size: var(--panel-heading-size);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
 }
 
@@ -1240,7 +1201,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 
 .zip-skin-closure main > .section.columns-container > .default-content-wrapper h2:has(strong) strong,
 .zip-skin-closure main > .section.richtext-container.columns-container h2:has(strong) strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 /* "Benefits of Zip" section heading — Futura bold at 28px on the source (its h2
@@ -1249,7 +1210,7 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 .zip-skin-closure main > .section.richtext-container.columns-container:has(.columns-icon-grid) h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-xxl);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
 }
 
@@ -1257,75 +1218,26 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 .zip-skin-closure main > .section.richtext-container:not(.columns-container, .light-gray) h2 {
   font-family: var(--display-font-family-bold);
   font-size: var(--heading-font-size-m);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height-ml);
 }
 
 /* ----- Columns block (from blocks/columns/columns.css) ----- */
 
-/* hero/50-50 text cell — small mobile gutter. From the 2-up breakpoint up, the
-   inset becomes a fluid 10% (set in the >=600 rule) so it scales continuously with
-   the viewport like the source. */
-.zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
-  padding-left: 30px;
-}
-
-.zip-skin-closure main > .section.full-bleed.columns-container {
-  padding-block: 0;
-}
-
-/* cancel the block's full-bleed 50-50 text inset; theme sets its own */
-body.zip-skin-closure .full-bleed .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-  padding-block: 0;
-}
-
-.zip-skin-closure .columns-container .columns-wrapper .columns.columns-50-50.block.columns-2-cols p {
+/* not the columns-hero band — its type and spacing come from blocks/columns */
+.zip-skin-closure .columns-container:not(.columns-hero) .columns-wrapper .columns.columns-50-50.block.columns-2-cols p {
   padding-bottom: 30px;
   padding-top: 15px;
 }
 
 .zip-skin-closure h2 {
   font-family: var(--heading-font-family);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .zip-skin-closure .section.columns-container:not(.full-bleed) .default-content-wrapper h2,
 .zip-skin-closure .section.richtext-container.columns-container:not(.full-bleed) h2 {
   padding-top: 80px;
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-  font-family: var(--display-font-family-bold);
-  font-size: 13vw;
-  font-weight: 700;
-  line-height: var(--heading-line-height-hero);
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
-  width: 100%;
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  padding-top: var(--space-block);
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
-body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-  display: none;
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-  font-family: var(--heading-font-family);
-  font-size: 5vw;
-  font-weight: 400;
-  line-height: var(--heading-line-height-hero);
-  margin-bottom: 30px;
-}
-
-body.zip-skin-closure .columns.columns-50-50:has(h1) p {
-  font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: var(--heading-line-height-hero);
 }
 
 /* ----- Panel block (from blocks/panel/panel.css) ----- */
@@ -1345,32 +1257,16 @@ body.zip-skin-closure .columns.columns-50-50:has(h1) p {
   padding-top: 0;
 }
 
-.zip-skin-closure .panel .panel-body > p:first-child:has(strong),
-.zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) {
-  margin: 0 0 var(--space-block);
-  font-family: var(--display-font-family-bold);
-  font-size: var(--panel-heading-size);
-  line-height: var(--panel-body-line-height);
-}
-
-.zip-skin-closure .panel .panel-body > p:first-child:has(strong):not(:only-of-type) {
-  margin-bottom: 0;
-}
 
 .zip-skin-closure .panel .panel-body > p:first-child:has(strong) strong,
 .zip-skin-closure .panel .panel-body > p:nth-child(2):has(strong) strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
 }
 
- body.condition-detail .panel.gold .panel-body {
-  margin:0;
-  padding-top: 3%;
-  padding-bottom: 2%;
- }
 
  body.procedure-detail main > .section.panel-container:has(.panel.gold) {
   margin-top: var(--space-section-xl);
@@ -1385,61 +1281,8 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
     margin-top: 20px;
   }
 
-  /* restore the image column and CTA hidden on mobile once the hero is 2-up */
-  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col,
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-    display: block;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-    padding-top: 0;
-  }
-
-  body.zip-skin-closure .full-bleed .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-    padding-top: 8.1%;
-    }
-
   body.zip-skin-closure .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
     padding-top: 3%;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div {
-    position: relative;
-    min-height: 33.333vw; /* source crop height scales with viewport (~200px@600 → 480px@1440) */
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div:first-child:not(:has(picture)) {
-    flex: 0 0 100%;
-    padding-right: 15px;
-  }
-
-  .zip-skin-closure .full-bleed.columns-container .columns.columns-50-50 > div > div:not(.columns-img-col) {
-    padding-left: 9.5%;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -45px; /* nudge the zipper graphic ~25px right so it bleeds slightly off the edge, matching the source */
-    width: 51%;
-    margin-bottom: 0;
-    padding: 0;
-    overflow: clip;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) .columns-img-col img {
-    object-fit: cover;
-    object-position: top;
-    height: 100%;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: calc(11.8px + 1.5333vw); /* 21px @600 → 25.6px @900 */
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: calc(30.68px + 3.9867vw); /* 54.6px @600 → 66.56px @900 */
   }
 
   body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
@@ -1454,43 +1297,24 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
     font-size: var(--heading-font-size-xl);
   }
 
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: calc(3.1333vw - 2.6px); /* 25.6px @900 → 35px @1200 */
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) p:has(a[href="#find-a-doctor-near-you"]) {
-    padding-top: var(--space-block);
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) > div > div.columns-img-col {
-    right: -80px;
-  }
-
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: calc(8.1467vw - 6.76px); /* 66.56px @900 → 91px @1200 */
-  }
-
-  body.discography main .section.dark .panel.dark .panel-body {
-    padding: 70px 27.6px;
-  }
-
   body.discography main > .section.flex.panel-container > .panel-wrapper,
   body.discography main > .section.flex.panel-container > .panel.cta {
   margin-top: unset;
-  } 
-}
-
-/* ----- Large desktop (>=1200px) ----- */
-@media (width >= 1200px) {
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h2 {
-    font-size: 35px;
   }
 
-  body.zip-skin-closure .columns.columns-50-50:has(h1) h1 {
-    font-size: 91px;
+  body.discography main > .section.flex > div {
+    padding-inline: 0;
   }
 
+  /* source column gutter: 15px padding on each side of the two columns */
+  body.discography main > .section.flex {
+    gap: calc(2 * var(--container-gutter));
+  }
 
+  body.condition-detail .hero.banner > div:last-child {
+    width: 55%;
+  }
+      
 }
 
 /* =====================================================================
@@ -2007,7 +1831,7 @@ body.bvn-ablation main .panel.gold .panel-body p {
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l); /* 21px */
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   line-height: var(--heading-line-height);
   color: var(--text-color);
 }
@@ -2022,7 +1846,7 @@ body.bvn-ablation main .panel.gold .panel-body a:any-link {
   background: none;
   font-family: var(--display-font-family);
   font-size: inherit;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: inherit;
   text-transform: none;
   text-decoration: none;
@@ -2209,17 +2033,6 @@ body.ivs-get-the-facts main :is(p, li) {
   font-size: var(--body-font-size-xl); /* 21px */
 }
 
-/* Hero: spacer sections provide the ~60px offsets */
-body.ivs-get-the-facts .hero-container .hero-wrapper:has(.hero.banner) {
-  margin-block: 0;
-}
-
-/* Hero title: source 3.5vw scale; single font avoids inflated line boxes */
-body.ivs-get-the-facts .hero.banner h1 {
-  font-family: var(--display-font-family);
-  font-size: 7vw;
-}
-
 /* "Why is treatment important?" dark 50-50 band */
 body.ivs-get-the-facts main > .section.dark:has(.columns-50-50) {
   padding-block: var(--space-band-dark);
@@ -2282,6 +2095,16 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
     padding-top: calc(var(--space-section-l) + var(--space-section) + 3%); /* 50 + 30 + 3% */
     padding-bottom: calc(var(--space-section) + var(--space-block-l)); /* 10 + 30 + ~10 */
   }
+
+  body.condition-detail h3 {
+     font-size: var(--heading-font-size-l-scaled);
+     line-height: var(--heading-line-height-ml);
+  }
+
+    body.condition-detail h3 em strong, body.condition-detail h3 strong em {
+     font-size: var(--heading-font-size-l-scaled);
+     line-height: var(--heading-line-height-ml);
+  }
 }
 
 /* ----- Desktop (>=900px) ----- */
@@ -2302,16 +2125,6 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
     flex: 1 1 0;
   }
   
-  body.ivs-get-the-facts .hero.banner h1 {
-    font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* capped at 49px */
-  }
-
-  /* half-width copy column (two-line title) */
-  body.ivs-get-the-facts .hero.banner > div:last-child {
-    max-width: 50%;
-    padding-right: 0;
-  }
-
   body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
     flex-basis: 50%;
   }
