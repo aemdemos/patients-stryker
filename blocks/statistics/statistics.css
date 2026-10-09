@@ -84,7 +84,7 @@
   .statistics ul.statistics-list {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .statistics .statistics-value,
   .statistics .statistics-value p {
     margin: 0;

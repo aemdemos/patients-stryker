@@ -226,13 +226,18 @@ export default function decorate(block) {
       requestAnimationFrame(update);
     };
 
-    // Wiring the scroll-spy costs a forced layout per nav item, and none of it
-    // matters until the user scrolls — so keep it off the critical path and let
-    // the page reach LCP first.
+    // Scroll/resize listeners cost nothing until they fire, so wire them now —
+    // scrolling before the deferred setup below still updates the active item.
+    // Listen on the actual scroller (the UE canvas, or `window` on the live site).
+    scrollTarget().addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // The re-sync wiring and its extra pass cost a forced layout per nav item,
+    // so keep them off the critical path and let the page reach LCP first.
     const startScrollSpy = () => {
-      // Listen on the actual scroller (the UE canvas, or `window` on the live site).
-      scrollTarget().addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll, { passive: true });
+      // Anchors from lazily loaded fragments may have arrived since the first
+      // pass cached the targets (and `load` has often fired by now), so re-resolve.
+      invalidateTargets();
       // Re-run when the page height changes, since an early pass may misread a
       // short page as bottom. `update()` toggles a class on the section, which
       // resizes `body` and would re-trigger the observer synchronously — an

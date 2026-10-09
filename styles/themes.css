@@ -1361,11 +1361,11 @@ body.ivs-home main > .section.compact {
 }
 
 body.ivs-home main > .section.sticky-nav-container {
-  margin-top: 20px;
+  margin-top: var(--space-block-l);
 }
 
 body.ivs-home main > .section.hero-container {
-  margin-top: 60px;
+  margin-top: var(--space-nav-hero-gap);
 }
 
 body.ivs-home main #resources {
@@ -1378,11 +1378,11 @@ body.ivs-home .hero.banner h2 {
 }
 
 body.ivs-home main > .section.flex[data-anchor="overview"] {
-  margin-top: 61px;
+  margin-top: var(--space-ivs-home-intro);
 }
 
 body.ivs-home main > .section.dark {
-  margin-block: 68px 0;
+  margin-block: var(--space-ivs-home-band) 0;
   padding-block: var(--space-section-l);
 }
 
@@ -1390,7 +1390,8 @@ body.ivs-home main > .section.dark > .columns-wrapper + .columns-wrapper {
   padding-top: var(--space-section-xl);
 }
 
-/* source keeps text + video stacked until its 841px grid breakpoint */
+/* text + video stay stacked until 900px (the source's 841px grid breakpoint,
+   mapped to the EDS 900px breakpoint) */
 body.ivs-home .columns > div {
   flex-flow: column;
   align-items: stretch;
@@ -1424,12 +1425,18 @@ body.ivs-home main > .section.compact > div > ol {
   margin-bottom: var(--space-section);
 }
 
+/* the source's panels sit flush in their section (shared panel.css keeps a
+   10px margin for the other pages) */
+body.ivs-home .panel .panel-body {
+  margin: 0;
+}
+
 body.ivs-home .panel.gold .panel-body {
   padding-top: 3%;
   padding-bottom: 2%;
 }
 
-/* source's mobile banner type (<480px): 26.25px heading, 17.5px subheading */
+/* source's mobile banner type (<600px): 26.25px heading, 17.5px subheading */
 body.ivs-home .panel.gold .panel-body h2 {
   margin-bottom: var(--space-inset-m);
   font-size: calc(var(--heading-font-size-l) * 1.25);
@@ -1474,7 +1481,7 @@ body.ivs-home .panel.cta .panel-body h3 {
   line-height: var(--heading-line-height-ml);
 }
 
-@media (width >= 480px) {
+@media (width >= 600px) {
   body.ivs-home .panel.gold .panel-body h2 {
     font-size: calc(var(--heading-font-size-xl) * 1.25);
   }
@@ -1482,17 +1489,15 @@ body.ivs-home .panel.cta .panel-body h3 {
   body.ivs-home .panel.gold .panel-body h4 {
     font-size: var(--heading-font-size-ml);
   }
-}
 
-@media (width >= 600px) {
   body.ivs-home main > .section.flex[data-anchor="overview"] {
-    margin-top: 86px;
+    margin-top: var(--space-ivs-home-section-m);
   }
 
   body.ivs-home main #resources {
     font-size: var(--heading-font-size-xl);
   }
-  
+
   body.ivs-home .columns.columns-2-cols h3 {
     font-size: var(--heading-font-size-l-scaled);
   }
@@ -1511,7 +1516,7 @@ body.ivs-home .panel.cta .panel-body h3 {
   }
 }
 
-@media (width >= 841px) {
+@media (width >= 900px) {
   body.ivs-home .columns > div {
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -1525,8 +1530,8 @@ body.ivs-home .panel.cta .panel-body h3 {
     margin-top: 0;
   }
 
-  /* the source overlays the hero copy on the image from 841px; the shared
-     hero.css switches at 900px, so mirror its desktop banner rules here */
+  /* the source overlays the hero copy on the image on desktop (its 841px
+     breakpoint, mapped to 900px) */
   body.ivs-home .hero.banner > div {
     grid-area: 1 / 1;
   }
@@ -1559,9 +1564,7 @@ body.ivs-home .panel.cta .panel-body h3 {
   body.ivs-home .hero.banner h2 {
     max-width: 47%;
   }
-}
 
-@media (width >= 900px) {
   body.ivs-home main > .section.dark {
     margin-top: var(--space-section-xl);
   }
@@ -1571,7 +1574,7 @@ body.ivs-home .panel.cta .panel-body h3 {
   }
 
   body.ivs-home main > .section.panel-container[data-anchor="find-a-doctor"] {
-    margin-top: 85px;
+    margin-top: var(--space-ivs-home-section-m);
   }
 
   body.ivs-home .cards.linked > ul {
@@ -1579,20 +1582,20 @@ body.ivs-home .panel.cta .panel-body h3 {
   }
 }
 
-@media (width >= 970px) {
+@media (width >= 1200px) {
+  /* the source goes 4-up at 970px, mapped to the EDS 1200px breakpoint */
   body.ivs-home .cards.linked > ul {
     grid-template-columns: repeat(4, 1fr);
   }
-}
 
-/* source keeps the 3vw headline, capped at 42px (from ~1400px) */
-@media (width >= 1200px) {
+  /* source keeps the 3vw headline, capped at 42px (from ~1400px) */
   body.ivs-home .hero.banner h1 {
     font-size: min(3vw, var(--heading-font-size-hero-max));
   }
 }
 
-/* Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
+/* =====================================================================
+   Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
    ===================================================================== */
 
 /* Display font: use the site's "Futura for Stryker" cut via a token override,
@@ -1947,7 +1950,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 
   /* intro copy starts ~20px below the benefits card top (rich-text inset) */
   body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
-    padding-top: var(--space-block-l); 
+    padding-top: var(--space-block-l);
   }
 
   /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */

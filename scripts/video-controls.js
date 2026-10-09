@@ -144,6 +144,8 @@ export default function addVideoControls(wrapper, video, play, loadDuration = nu
   // length read ahead of playback (loadDuration), until the media reports its own
   let presetDuration = NaN;
   const getDuration = () => (isDuration(video.duration) ? video.duration : presetDuration);
+  // position chosen on the seek bar before the media was attached (see seekTo)
+  let pendingSeek = null;
 
   const updateToggle = () => {
     const { ended } = video;
@@ -155,7 +157,7 @@ export default function addVideoControls(wrapper, video, play, loadDuration = nu
   };
 
   const updateTime = () => {
-    const { currentTime } = video;
+    const currentTime = pendingSeek ?? video.currentTime;
     const duration = getDuration();
     const played = isDuration(duration) ? Math.min(currentTime / duration, 1) : 0;
     wrapper.style.setProperty('--dm-played', played);
@@ -237,29 +239,61 @@ export default function addVideoControls(wrapper, video, play, loadDuration = nu
   };
 
   toggle.addEventListener('click', togglePlay);
-  // clicking the picture itself plays / pauses, like the source viewer
-  video.addEventListener('click', togglePlay);
+  // clicking the picture itself plays / pauses, like the source viewer. On touch
+  // there is no hover to reveal the bar, so a tap while it's hidden only reveals
+  // it; the next tap toggles. (Runs before the wrapper's pointerdown → show().)
+  let revealOnly = false;
+  video.addEventListener('pointerdown', (e) => {
+    revealOnly = e.pointerType === 'touch' && !wrapper.classList.contains('show-controls');
+  });
+  video.addEventListener('click', () => {
+    if (revealOnly) {
+      revealOnly = false;
+      return;
+    }
+    togglePlay();
+  });
 
   const seekTo = () => {
-    const fraction = Number(seekInput.value) / SEEK_STEPS;
-    const { duration } = video;
-    wrapper.style.setProperty('--dm-played', fraction);
-    if (isDuration(duration)) {
-      bubble.textContent = formatTime(fraction * duration);
-      video.currentTime = fraction * duration;
+    const duration = getDuration();
+    if (!isDuration(duration)) {
+      // length not known yet (nothing loaded or read ahead): leave the knob put
+      updateTime();
+      return;
     }
+    const target = (Number(seekInput.value) / SEEK_STEPS) * duration;
+    bubble.textContent = formatTime(target);
+    if (isDuration(video.duration)) {
+      video.currentTime = target;
+    } else {
+      // the media isn't attached until playback starts (HLS, preload="none"):
+      // hold the position and apply it once the stream's metadata arrives
+      pendingSeek = target;
+    }
+    updateTime();
   };
 
+  video.addEventListener('loadedmetadata', () => {
+    if (pendingSeek === null) return;
+    video.currentTime = pendingSeek;
+    pendingSeek = null;
+  });
+
+  // the release can land outside the slider (or the page), so listen on window
+  // for the length of the drag rather than on the input itself
+  const endScrub = () => {
+    window.removeEventListener('pointerup', endScrub);
+    window.removeEventListener('pointercancel', endScrub);
+    scrubbing = false;
+    wrapper.classList.remove('is-scrubbing');
+    updateTime();
+  };
   seekInput.addEventListener('pointerdown', () => {
     scrubbing = true;
     wrapper.classList.add('is-scrubbing');
+    window.addEventListener('pointerup', endScrub);
+    window.addEventListener('pointercancel', endScrub);
   });
-  const endScrub = () => {
-    scrubbing = false;
-    wrapper.classList.remove('is-scrubbing');
-  };
-  seekInput.addEventListener('pointerup', endScrub);
-  seekInput.addEventListener('pointercancel', endScrub);
   seekInput.addEventListener('input', seekTo);
 
   mute.addEventListener('click', () => {
