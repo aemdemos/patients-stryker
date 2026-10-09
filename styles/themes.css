@@ -1918,3 +1918,65 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
   }
 
 }
+
+/* =====================================================================
+   Theme: ivs-contact — Interventional Spine "Contact us" page
+   ===================================================================== */
+
+/* Page title: the source wraps the bold H1 in a 1.5x size span (28px → 42px). */
+body.ivs-contact main h1 {
+  font-size: var(--heading-font-size-xxl-scaled); /* 42px */
+}
+
+/* Subheading: light serif (Egyptienne), not the shared Futura bold h2. */
+body.ivs-contact main h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l); /* 21px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--paragraph-line-height); /* 1.375 */
+}
+
+/* Intro copy: the source wraps it in a 1.5x size span (14px → 21px), tight leading. */
+body.ivs-contact main > .section:first-child p {
+  font-size: var(--body-font-size-xl); /* 21px */
+  line-height: var(--heading-line-height); /* 1.06 */
+}
+
+/* FIND A DOCTOR sits ~50px below the intro (source spacer paragraph + button margin). */
+body.ivs-contact main > .section:first-child .button-wrapper {
+  margin-top: var(--space-section-l); /* 50px */
+}
+
+/* Contact form section: the divider line sits ~20px above the form on phones
+   (~50px from 600px); the block's own top padding would add another 30px. */
+body.ivs-contact main > .section.divider {
+  padding-top: var(--space-block-l); /* 20px */
+}
+
+body.ivs-contact main > .section.divider .marketo-form {
+  padding-block: 0 var(--space-block-xs); /* ~30px submit → disclaimer on phones */
+}
+
+/* Document reference number (last disclaimer line) sits in its own source
+   container: ~20px below the trademarks on phones, ~30px from 600px. */
+body.ivs-contact main > .section.compact .default-content-wrapper > p:last-of-type {
+  margin-top: var(--space-block-l); /* 20px */
+}
+
+@media (width >= 600px) {
+  body.ivs-contact main > .section.compact .default-content-wrapper > p:last-of-type {
+    margin-top: var(--space-section); /* 30px */
+  }
+
+  body.ivs-contact main h2 {
+    font-size: var(--heading-font-size-xl); /* 24.5px */
+  }
+
+  body.ivs-contact main > .section.divider {
+    padding-top: var(--space-section-l); /* 50px */
+  }
+
+  body.ivs-contact main > .section.divider .marketo-form {
+    padding-bottom: var(--space-inset-m); /* ~40px submit → disclaimer */
+  }
+}

@@ -89,6 +89,7 @@
   --heading-font-size-xxxl: 43px;   /* brochure card title — 24.5px x 1.75 (source fontsize-1-75em) */
   --heading-font-size-xxxl-s: 36.75px; /* brochure card title <600px — 21px x 1.75 */
   --heading-font-size-xxl: 28px;    /* h1 */
+  --heading-font-size-xxl-scaled: 42px; /* h1 enlarged 1.5x (source fontsize-1-5em) */
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
   --heading-font-size-l-scaled: 26.25px; /* h3 enlarged 1.25x (fontsize-1-25em) */

@@ -505,6 +505,65 @@
           ]
         }
       ]
+    },
+    {
+      "name": "ivs-contact",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/contact.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/contact.html",
+      "description": "IVS Contact us page (standalone): page title, intro, Marketo contact form, Find a doctor CTA, compact disclaimer.",
+      "blocks": [
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".marketoform"
+          ]
+        }
+      ],
+      "urlPattern": "/us/en/ivs/contact",
+      "sections": [
+        {
+          "id": "1",
+          "name": "intro",
+          "selector": [
+            ".main.content .text.parbase"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1",
+            "h2",
+            "p",
+            ".buttonset a.btn-gold"
+          ]
+        },
+        {
+          "id": "2",
+          "name": "contact-form",
+          "selector": [
+            ".main.content .sectionseparator",
+            ".marketoform"
+          ],
+          "style": "divider",
+          "blocks": [
+            "marketo-form"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "3",
+          "name": "disclaimer",
+          "selector": [
+            ".c-disclaimer.page-section"
+          ],
+          "style": "compact",
+          "blocks": [],
+          "defaultContent": [
+            ".c-disclaimer p"
+          ]
+        }
+      ]
     }
   ]
 }

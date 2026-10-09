@@ -19,6 +19,39 @@
 
 const TransformHook = { beforeTransform: 'beforeTransform', afterTransform: 'afterTransform' };
 
+// Customer (source) site host. Absolute links on this host are rewritten to
+// root-relative EDS paths; links to any other host are left untouched.
+const SOURCE_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+
+/**
+ * Rewrite a link to a customer page into its EDS path (AGENTS.md → "Link
+ * rewriting in import scripts"). EDS serves pages without the extension:
+ *   /us/en/ivs/treatments/mild.html          → /us/en/ivs/treatments/mild
+ *   https://patients.stryker.com/us/en/ivs/index.html → /us/en/ivs/   (index pages keep the trailing slash; /index 404s)
+ *   /index.html                              → /
+ *   .../back-pain.html#disclaimer            → .../back-pain#disclaimer (query + hash kept)
+ * Returns null for anything that must stay as-is: other hosts, protocol-relative
+ * URLs, mailto:/tel:, in-page #anchors, and non-page links such as assets and
+ * downloads (/content/dam/..., .pdf, images) — only .html/.htm page links change.
+ * @param {string} href raw href attribute value
+ * @returns {string|null} rewritten href, or null to leave the link unchanged
+ */
+function rewriteSourceLink(href) {
+  if (!href) return null;
+  const value = href.trim();
+  let rest;
+  if (value.startsWith('/') && !value.startsWith('//')) rest = value;
+  else if (SOURCE_HOST_RE.test(value)) rest = value.replace(SOURCE_HOST_RE, '') || '/';
+  else return null;
+
+  const [, path, suffix = ''] = rest.match(/^([^?#]*)([?#].*)?$/);
+  if (!/\.html?$/i.test(path) || path.startsWith('/content/dam/')) return null;
+
+  let edsPath = path.replace(/\.html?$/i, '');
+  if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, '');
+  return `${edsPath || '/'}${suffix}`;
+}
+
 export default function transform(hookName, element, payload) {
   // The sa-resources template shares this site-wide cleanup, but a handful of the
   // behaviours below are specific to the /legal/ long-form text pages and would
@@ -39,7 +72,11 @@ export default function transform(hookName, element, payload) {
   // (hero, panel, panel-cta), so the legal-copy gold-span / paragraph-merge /
   // standalone-link rewrites must NOT run here. Only the universal chrome removal
   // (header/footer/onetrust/back-to-top/hidden inputs/tracking) applies.
-  const isIvsTreatment = !!(payload && payload.template && payload.template.name === 'ivs-treatment');
+  // The standalone ivs-contact page shares the same IVS chrome and rules: it keeps
+  // its <h1>, its ".c-disclaimer" disclaimer is authorable, and its default-content
+  // ".buttonset a.btn-gold" (FIND A DOCTOR) becomes a Bold + Italic gold button.
+  const isIvsTreatment = !!(payload && payload.template
+    && ['ivs-treatment', 'ivs-contact'].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment;
 
   if (hookName === TransformHook.beforeTransform) {
@@ -310,6 +347,13 @@ export default function transform(hookName, element, payload) {
     });
     element.querySelectorAll('p').forEach((p) => {
       if (!p.textContent.trim() && !p.querySelector('img, picture, a')) p.remove();
+    });
+
+    // Customer page links → EDS paths (drop .html; index.html → trailing slash).
+    // Runs for every template, after the block parsers, so block cells are covered.
+    element.querySelectorAll('a[href]').forEach((a) => {
+      const rewritten = rewriteSourceLink(a.getAttribute('href'));
+      if (rewritten !== null) a.setAttribute('href', rewritten);
     });
 
     // Normalise the page title to <h2>. Most legal pages author the title as an
