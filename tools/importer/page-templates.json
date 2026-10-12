@@ -247,12 +247,8 @@
     {
       "name": "ivs-treatment",
       "description": "Interventional Spine (IVS) treatment page (mild® procedure). Sections: full-bleed hero (photo + H1 + gold CTA); a flex side-by-side section pairing default text ('Get back on your feet') with a white 'Benefits of the treatment' panel; a dark teal 'What is LSS?' section (columns 70-30, text + DM diagram); a 'proven results' section (default heading/intro above a default 2-up columns block of DM stat charts); a dark teal Before/After comparison (default 2-up columns, DM diagrams); a 'How it works' section (default heading above a 3-up text-only columns block); a gold 'Tired of living in pain?' CTA panel; a Resources cards grid (brochure-cta, 2 PDF thumbnails); a light-gray 'Potential risks' default-content block; and a compact inline disclaimer + footnotes region. Standalone template for future IVS treatment pages. All DM/Scene7 images round-trip via the shared patients-stryker-dm-images transformer. The physician-contact Marketo form between the CTA and Resources is not migrated.",
-      "pageThemes": {
-        "/us/en/ivs/get-the-facts": "ivs-get-the-facts"
-      },
       "urls": [
-        "https://patients.stryker.com/us/en/ivs/treatments/mild.html",
-        "https://patients.stryker.com/us/en/ivs/get-the-facts.html"
+        "https://patients.stryker.com/us/en/ivs/treatments/mild.html"
       ],
       "representativeUrl": "https://patients.stryker.com/us/en/ivs/treatments/mild.html",
       "coverageGaps": [],
@@ -283,8 +279,7 @@
         {
           "name": "columns-50-50",
           "instances": [
-            ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h3):not(:has(h4))",
-            ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(.standaloneimage):not(:has(h4))"
+            ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h3):not(:has(h4))"
           ]
         },
         {
@@ -341,17 +336,6 @@
             "columns-50-50"
           ],
           "defaultContent": []
-        },
-        {
-          "id": "restore",
-          "name": "Don't just manage the pain (text + button)",
-          "selector": ".text.parbase:has(h1):has(+ .buttonset)",
-          "style": "divider",
-          "blocks": [],
-          "defaultContent": [
-            ".text.parbase:has(h1):has(+ .buttonset)",
-            ".buttonset"
-          ]
         },
         {
           "id": "proven-results",
@@ -428,6 +412,127 @@
           "defaultContent": [
             ".has-background.bg-lighter-gray"
           ]
+        },
+        {
+          "id": "disclaimer",
+          "name": "Disclaimer + footnotes",
+          "selector": ".c-disclaimer",
+          "style": "compact",
+          "blocks": [],
+          "defaultContent": [
+            ".c-disclaimer"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ivs-get-the-facts",
+      "description": "Interventional Spine (IVS) 'Get the facts' page (vertebral compression fractures). Same source skin as the mild page (ivs-treatment) and reuses its parsers/transformers, but its own section structure and standalone `ivs-get-the-facts` theme. Sections: full-bleed hero (photo + H1 + H2 + gold CTA, section style `hero-facts`); a flex side-by-side section pairing default text ('What is a VCF?') with a white 'More about VCFs' panel; a dark teal 'Why is treatment important?' section (columns 50-50, text + DM diagram); a divider section ('Don't just manage the pain', h1 + text + LEARN MORE button); a gold 'Tired of living in pain?' CTA panel; the physician-contact Marketo form; and a compact inline disclaimer + footnotes region.",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/get-the-facts.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/get-the-facts.html",
+      "coverageGaps": [],
+      "topSpacer": true,
+      "heroBottomSpacer": true,
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".pDiv.bg-shadow"
+          ],
+          "section": "banner"
+        },
+        {
+          "name": "panel",
+          "instances": [
+            ".col-xs-12.col-sm-6:has(.dimensional-box)"
+          ],
+          "section": "cta wide"
+        },
+        {
+          "name": "panel-cta",
+          "instances": [
+            ".has-background.bg-gold"
+          ],
+          "section": "gold"
+        },
+        {
+          "name": "columns-50-50",
+          "instances": [
+            ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(.standaloneimage):not(:has(h4))"
+          ]
+        },
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".marketoform"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero banner",
+          "selector": ".pDiv.bg-shadow",
+          "style": "hero-facts",
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "what-is-vcf",
+          "name": "What is a VCF? + More about VCFs panel (side-by-side)",
+          "selector": ".cols2:has(.dimensional-box)",
+          "style": "flex",
+          "blocks": [
+            "panel"
+          ],
+          "defaultContent": [
+            ".cols2:has(.dimensional-box) .col-xs-12.col-sm-6:not(:has(.dimensional-box)) .c-rich-text-editor"
+          ]
+        },
+        {
+          "id": "why-treatment",
+          "name": "Why is treatment important? (dark)",
+          "selector": ".c-full-bleed-panel.bg-dark-teal-gradient:not(:has(h4))",
+          "style": "dark, full-bleed",
+          "blocks": [
+            "columns-50-50"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "restore",
+          "name": "Don't just manage the pain (text + button)",
+          "selector": ".text.parbase:has(h1):has(+ .buttonset)",
+          "style": "divider",
+          "blocks": [],
+          "defaultContent": [
+            ".text.parbase:has(h1):has(+ .buttonset)",
+            ".buttonset"
+          ]
+        },
+        {
+          "id": "tired-of-pain",
+          "name": "Tired of living in pain? (CTA panel)",
+          "selector": ".has-background.bg-gold",
+          "style": null,
+          "blocks": [
+            "panel-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "contact-form",
+          "name": "Physician contact form",
+          "selector": ".marketoform",
+          "style": null,
+          "blocks": [
+            "marketo-form"
+          ],
+          "defaultContent": []
         },
         {
           "id": "disclaimer",
