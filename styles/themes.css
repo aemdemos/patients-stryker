@@ -407,6 +407,7 @@ body.search-results main h1 {
   font-size: var(--heading-font-size-xxl-l);
   line-height: var(--heading-line-height);
   margin-bottom: 3%;
+  margin-top: 10px;
 }
 
 body.search-results > main > .section:first-child > .default-content-wrapper:has(h1 strong) {

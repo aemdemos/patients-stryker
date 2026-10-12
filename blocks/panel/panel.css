@@ -94,6 +94,9 @@
   font-family: var(--body-font-family);
 }
 
+.panel.colored-border > ul  {
+  marging-bottom: var(--space-inset-m);
+}
 
 /* ---- cta variant */
 .panel.cta > ul > li,
