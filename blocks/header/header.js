@@ -319,13 +319,9 @@ export default async function decorate(block) {
       if (container) container.className = '';
     }
     // the logo is authored as a `:header-logo:` icon token; EDS icons get an
-    // empty alt and lazy loading, so restore the link's accessible name and load
-    // the above-the-fold logo eagerly
+    // empty alt, so restore the home link's accessible name
     const logo = navBrand.querySelector('.icon-header-logo img');
-    if (logo) {
-      logo.alt = 'Stryker';
-      logo.loading = 'eager';
-    }
+    if (logo) logo.alt = 'Stryker';
   }
 
   // Tools: build the search form from the :search: token

@@ -54,15 +54,11 @@ header nav .nav-brand img {
 }
 
 /* SVG logo authored as a `:header-logo:` icon: undo the global 24px icon box so
-   the width rules above size it, and reserve its box from the SVG viewBox */
+   the width/aspect-ratio rules above size it (the cropped SVG is also ~4:1) */
 header nav .nav-brand .icon {
   display: block;
   width: auto;
   height: auto;
-}
-
-header nav .nav-brand .icon-header-logo img {
-  aspect-ratio: 713.93 / 179.17;
 }
 
 /* ---- Hamburger (mobile) — pinned to the left of row 2 ---- */
