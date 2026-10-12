@@ -95,7 +95,7 @@
 }
 
 .panel.colored-border > ul  {
-  marging-bottom: var(--space-inset-m);
+  margin-bottom: var(--space-inset-m);
 }
 
 /* ---- cta variant */
