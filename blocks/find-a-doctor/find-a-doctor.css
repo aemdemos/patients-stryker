@@ -3,16 +3,6 @@
    image on the left and a light-gray form panel on the right (floating-label
    location field, radius selector, teal submit button). */
 
-/* Stryker icon font — the source's own glyph set (fonts/strykericons.woff is the
-   source file, unchanged). Only the dropdown arrow (U+E259) is used here. */
-@font-face {
-  font-family: strykericons;
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('/fonts/strykericons.woff') format('woff');
-}
-
 .find-a-doctor {
   position: relative;
   display: flex;
