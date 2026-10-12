@@ -1443,6 +1443,27 @@ body.ivs-get-the-facts main .panel.cta .panel-body h2 {
   line-height: var(--heading-line-height-xl-nested-s); /* 28px */
 }
 
+/* Panel box: 10px side margin + 3% side padding, as the source's
+   .dimensional-box (3% of the column width). */
+body.ivs-get-the-facts main .panel.cta .panel-body {
+  margin-inline: var(--space-block-s);
+  padding-inline: 3%;
+}
+
+/* Hero copy column: 15px side padding; headline/subhead indented 4% of the column
+   and the CTA 40px from it (gutter + inset), matching the source. */
+body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child {
+  padding-inline: var(--container-gutter);
+}
+
+body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > :is(h1, h2) {
+  padding-left: 4%;
+}
+
+body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > .button-wrapper {
+  padding-left: var(--space-inset-m);
+}
+
 /* Flex sections: top-align columns (shared rule centres them; reference top-aligns). */
 body.ivs-get-the-facts main > .section.flex {
   align-items: start;
@@ -1482,6 +1503,11 @@ body.ivs-get-the-facts main > .section.divider {
 
 body.ivs-get-the-facts main > .section.divider .button-wrapper {
   margin-top: calc(var(--space-block) + 1%);
+}
+
+/* source text column keeps a 3% right gap (the button is unaffected) */
+body.ivs-get-the-facts main > .section.divider .default-content-wrapper > :is(h1, p:not(.button-wrapper)) {
+  padding-right: 3%;
 }
 
 /* "Tired of living in pain?" gold band: full content width */
@@ -1524,6 +1550,12 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
 }
 
 @media (width >= 900px) {
+  /* intro + panel: two equal 50% columns with no gap/section inset, as the source grid */
+  body.ivs-get-the-facts main > .section.flex {
+    gap: 0;
+    padding-inline: 0;
+  }
+
   body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
     flex-basis: 50%;
   }
