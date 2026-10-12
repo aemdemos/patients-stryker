@@ -70,6 +70,10 @@
   gap:0;
 } 
 
+.panel.colored-border > ul  {
+  margin-bottom: var(--space-inset-m);
+}
+
 .panel.cta .panel-body ul,
 .panel.left .panel-body ul {
   font-size: var(--panel-cta-body-size);
@@ -94,9 +98,7 @@
   font-family: var(--body-font-family);
 }
 
-.panel.colored-border > ul  {
-  margin-bottom: var(--space-inset-m);
-}
+
 
 /* ---- cta variant */
 .panel.cta > ul > li,

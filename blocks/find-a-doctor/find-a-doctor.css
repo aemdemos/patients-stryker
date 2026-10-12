@@ -37,10 +37,6 @@
   object-fit: cover;
 }
 
-/* form panel — on mobile the source floats a light-gray form box ON TOP of the
-   background photo, inset so the photo shows around it. Keep the gray fill and add
-   a margin so the band's background image peeks around the box (the desktop
-   breakpoint removes the margin and makes it the right-hand gray column). */
 .find-a-doctor .find-a-doctor-panel {
   position: relative;
   flex: 1 1 auto;
@@ -66,11 +62,6 @@
   margin: 0;
 }
 
-/* mobile: a WRAPPING row (matching the source flex model exactly). The Zip field
-   grows but never shrinks below 150px, the radius holds ~130px, and the submit
-   button holds ~180px; when they don't all fit, the button wraps to the next
-   line (so ~500px shows Zip+Radius on row 1 and the button below — the source's
-   layout). */
 .find-a-doctor .find-a-doctor-fields {
   display: flex;
   flex-flow: row wrap;
@@ -110,24 +101,16 @@
   background-color: var(--color-white);
 }
 
-/* radius toggle — the custom-dropdown button that shows the current value.
-   Matches the input styling but adds right room for the arrow and shows the
-   18px Futura value below the raised "Radius" label. */
+
 .find-a-doctor .find-a-doctor-radius-toggle {
   display: flex;
   align-items: flex-end;
-
-  /* extra bottom padding lifts the "15 miles" value off the box's bottom edge so
-     it isn't flush against it, matching the source's breathing room. */
   padding: 20px 40px 8px 16px;
   font-size: var(--find-a-doctor-radius-value-size);
   text-align: left;
   cursor: pointer;
 }
 
-/* dropdown arrow — the source's exact glyph (strykericons U+E259) drawn by its
-   .select-container::after rule: 20px, centered in a 44px box flush right, a
-   little below the middle; flipped while the list is open (.focused). */
 .find-a-doctor .find-a-doctor-field:has(> .find-a-doctor-radius-toggle)::after {
   content: "\e259" / "";
   position: absolute;
@@ -268,104 +251,10 @@
   background-color: var(--color-primary-hover);
 }
 
-/* tablet and up (>= 600px) — the three controls (Zip / Radius / Find a doctor)
-   sit on a single row, matching the source, which keeps them inline down to
-   tablet widths and only stacks them on narrow phones. This is independent of
-   the 900px image-split below: between 600–900px the band still shows the mobile
-   background-photo + floating gray box, but with the controls in a row. */
-@media (width >= 600px) {
-  /* controls sit in one row here, so the source drops to an even 24px inset */
-  .find-a-doctor .find-a-doctor-panel {
-    padding: 24px;
-  }
 
-  .find-a-doctor .find-a-doctor-fields {
-    flex-flow: row nowrap;
-    align-items: flex-start;
-  }
 
-  /* the Zip field grows to fill but never shrinks below 150px (source uses
-     flex: 1 0 150px on .form-group.zip) — this stops the box from being squeezed
-     too narrow, which was pushing the controls out of alignment. */
-  .find-a-doctor .find-a-doctor-location {
-    flex: 1 0 150px;
-  }
-
-  /* in the row the radius keeps its compact fixed width (source ~130px) */
-  .find-a-doctor .find-a-doctor-radius {
-    flex: 0 0 130px;
-    width: 130px;
-  }
-
-  .find-a-doctor .find-a-doctor-submit {
-    flex: 0 0 auto;
-  }
-}
-
-/* tablet and up (>= 900px) — switch from the mobile background-photo + floating
-   gray box to a side-by-side split: the image on the left (~40%) and the grey
-   panel with the form on the right (~60%). Maps the source's 840px side-by-side
-   breakpoint to our 900px. */
-@media (width >= 900px) {
-  .find-a-doctor {
-    /* nowrap so the panel can never drop below the image (wrap would restack the
-       band into the mobile look) */
-    flex-flow: row nowrap;
-    align-items: stretch;
-  }
-
-  /* the image column is a FLUID ~30% of the band in the tablet range (matching
-     the source's narrower image-section at the side-by-side layout) so the form
-     controls keep a comfortable width — the location field must not be cramped.
-     It no longer drives the band height: the image is an absolutely-positioned
-     fill inside its column, so the band height equals the form panel and the
-     image crops to a strip (source object-fit: cover). The desktop breakpoint
-     below grows it to the source's 40%. */
-  .find-a-doctor .find-a-doctor-media {
-    position: relative;
-    flex: 0 0 30%;
-    max-width: 30%;
-    overflow: hidden;
-  }
-
-  .find-a-doctor .find-a-doctor-media picture,
-  .find-a-doctor .find-a-doctor-media img {
-    position: absolute;
-    inset: 0;
-  }
-
-  /* photo becomes the left column and the panel is the full-height gray column on
-     the right (the source's .lightgray band) — drop the mobile float margin so it
-     fills its column edge to edge. */
-  .find-a-doctor .find-a-doctor-panel {
-    flex: 1 1 auto;
-    margin: 0;
-    padding: 40px 24px; /* source: taller band, same 24px side inset */
-    background-color: var(--color-surface);
-  }
-}
-
-/* desktop (>= 1024px) — the image column grows to the source's full 40%
-   (.bannerstyle .image-section { max-width: 40% }) now that the wider band
-   leaves the form controls enough room. */
-@media (width >= 1024px) {
-  .find-a-doctor .find-a-doctor-media {
-    flex: 0 0 40%;
-    max-width: 40%;
-  }
-}
-
-/* ===== anatomy variant — the search bar of the search-results page: no banner
-   image and an extra "Area of Body" dropdown (it reuses the radius dropdown's
-   classes/styling). The gray panel becomes the bar, inset 24px on every side
-   like the source. Author it in a `light-gray, full-bleed` section so the gray
-   continues edge to edge. Below the controls is the filter row (disabled
-   "Procedures" dropdown + "Filters Selected:" badges). Source layout:
-   - mobile: location + radius, area of body, procedures, filters selected, button
-   - 600px: location / radius / area of body in one row, then procedures,
-     filters selected and the button, one per row
-   - 900px (source 841px): all four controls in one row, then procedures and
-     filters selected side by side ===== */
+/* Anatomy variant: full-width search bar with extra Area of Body and filter
+   controls; layout adapts from stacked on mobile to rows at larger breakpoints. */
 
 /* the panel's own 24px inset is the band; drop the section's 30px top/bottom */
 main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) {
@@ -421,8 +310,6 @@ main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-do
   border-color: var(--color-error);
 }
 
-/* filter row — stacked on mobile (source: 24px between the items and 24px
-   above the button, i.e. 8px on top of the 16px grid gap) */
 .find-a-doctor.anatomy .find-a-doctor-filters {
   grid-area: filters;
   display: grid;
@@ -500,10 +387,35 @@ main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-do
   outline-offset: -5px;
 }
 
-/* 600px — location / radius / area of body share the first row; the filter
-   items keep stacking (32px apart), procedures at the source's 224px */
 @media (width >= 600px) {
-  .find-a-doctor.anatomy .find-a-doctor-fields {
+  /* controls sit in one row here, so the source drops to an even 24px inset */
+  .find-a-doctor .find-a-doctor-panel {
+    padding: 24px;
+  }
+
+  .find-a-doctor .find-a-doctor-fields {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+
+  /* the Zip field grows to fill but never shrinks below 150px (source uses
+     flex: 1 0 150px on .form-group.zip) — this stops the box from being squeezed
+     too narrow, which was pushing the controls out of alignment. */
+  .find-a-doctor .find-a-doctor-location {
+    flex: 1 0 150px;
+  }
+
+  /* in the row the radius keeps its compact fixed width (source ~130px) */
+  .find-a-doctor .find-a-doctor-radius {
+    flex: 0 0 130px;
+    width: 130px;
+  }
+
+  .find-a-doctor .find-a-doctor-submit {
+    flex: 0 0 auto;
+  }
+
+    .find-a-doctor.anatomy .find-a-doctor-fields {
     grid-template-columns: minmax(0, 1fr) var(--find-a-doctor-bar-radius-width) minmax(0, 1fr);
     grid-template-areas:
       "location radius anatomy"
@@ -521,10 +433,37 @@ main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-do
   }
 }
 
-/* 900px (source 841px) — the button joins the row; procedures and filters
-   selected sit side by side in two halves */
+/* tablet and up (>= 900px) — switch from the mobile background-photo + floating
+   gray box to a side-by-side split */
 @media (width >= 900px) {
-  .find-a-doctor.anatomy .find-a-doctor-fields {
+  .find-a-doctor {
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+
+  /* Tablet image column is ~30%; desktop grows it to ~40%. The image fills its
+     column and crops to the form panel's height. */
+  .find-a-doctor .find-a-doctor-media {
+    position: relative;
+    flex: 0 0 30%;
+    max-width: 30%;
+    overflow: hidden;
+  }
+
+  .find-a-doctor .find-a-doctor-media picture,
+  .find-a-doctor .find-a-doctor-media img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .find-a-doctor .find-a-doctor-panel {
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 40px 24px; /* source: taller band, same 24px side inset */
+    background-color: var(--color-surface);
+  }
+
+    .find-a-doctor.anatomy .find-a-doctor-fields {
     grid-template-columns: minmax(0, 1fr) var(--find-a-doctor-bar-radius-width) minmax(0, 1fr) auto;
     grid-template-areas:
       "location radius anatomy submit"
@@ -533,5 +472,14 @@ main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-do
 
   .find-a-doctor.anatomy .find-a-doctor-filters {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var (--find-a-doctor-bar-gap-xxl);
   }
 }
+
+@media (width >= 1200px) {
+  .find-a-doctor .find-a-doctor-media {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+

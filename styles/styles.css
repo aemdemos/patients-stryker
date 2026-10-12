@@ -228,6 +228,7 @@
   --find-a-doctor-option-highlight: #f2f2f7; /* source hover / selected option background */
   --find-a-doctor-bar-gutter: 24px; /* source search-results bar: 24px band inset on every side */
   --find-a-doctor-bar-gap: 16px; /* source gap between search-bar controls */
+  --find-a-doctor-bar-gap-xxl: 70px;
   --find-a-doctor-bar-radius-width: 145px; /* source radius box in the search-bar row */
   --find-a-doctor-bar-max: 1392px; /* source search-bar form max width (centered) */
   --find-a-doctor-procedures-bg: #8e8e93; /* source disabled "Procedures" filter dropdown */
