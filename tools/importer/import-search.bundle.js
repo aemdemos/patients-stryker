@@ -193,11 +193,13 @@ var CustomImportScript = (() => {
   ];
   var PAGE_TEMPLATE = {
     name: "search",
-    description: "ENT site search page \u2014 SINGLETON, migrated as a static page (search functionality to be implemented later). All default content, no blocks: h1 'Search Results', h2 'Showing results for:', the no-results message and suggestions list. The interactive search form, hidden inputs and Load more button are dropped. Styled via the `search` theme.",
+    description: "ENT site search page \u2014 SINGLETON. Default content plus one block: h1 'Search Results', h2 'Showing results for:', a Search block (placeholder text only \u2014 the block builds the form), the no-results message and suggestions list. Hidden inputs and the Load more button are dropped. Styled via the `search` theme.",
     urls: [
       "https://patients.stryker.com/us/en/ent/search.html"
     ],
-    blocks: []
+    blocks: [
+      { name: "search", instances: [".search-header .search-bar"] }
+    ]
   };
   function executeTransformers(hookName, element, payload) {
     const enhancedPayload = __spreadProps(__spreadValues({}, payload), {
@@ -226,6 +228,13 @@ var CustomImportScript = (() => {
       const heading = document.createElement("h2");
       heading.textContent = h2.textContent.trim().replace(/:.*$/, ":");
       out.append(heading);
+    }
+    const input = header.querySelector('.search-bar input[name="q"]');
+    if (input) {
+      out.append(WebImporter.Blocks.createBlock(document, {
+        name: "Search",
+        cells: [[input.getAttribute("placeholder") || "Search this site"]]
+      }));
     }
     const message = [...header.querySelectorAll(":scope > div")].find((div) => !div.classList.contains("search-bar") && div.querySelector("ul"));
     if (message) {
@@ -278,6 +287,12 @@ var CustomImportScript = (() => {
         while (title.firstChild) h1.appendChild(title.firstChild);
         title.replaceWith(h1);
       }
+      const spacerMeta = WebImporter.Blocks.createBlock(document, {
+        name: "Section Metadata",
+        cells: { style: "spacer" }
+      });
+      main.prepend(document.createElement("hr"));
+      main.prepend(spacerMeta);
       const hr = document.createElement("hr");
       main.appendChild(hr);
       const meta = WebImporter.Blocks.getMetadata(document);
@@ -294,7 +309,7 @@ var CustomImportScript = (() => {
         report: {
           title: document.title,
           template: PAGE_TEMPLATE.name,
-          blocks: []
+          blocks: ["search"]
         }
       }];
     }

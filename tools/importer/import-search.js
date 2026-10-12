@@ -10,16 +10,18 @@ const transformers = [
 ];
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
-// The ENT search page is migrated as a static page: search functionality will be
-// implemented later in the project, so only the authorable text is kept. All
-// default content, no blocks.
+// The ENT search page: search results are implemented later in the project, so
+// only the authorable text is kept — default content plus the Search block, which
+// renders the search field (same form as the header search).
 const PAGE_TEMPLATE = {
   name: 'search',
-  description: 'ENT site search page — SINGLETON, migrated as a static page (search functionality to be implemented later). All default content, no blocks: h1 \'Search Results\', h2 \'Showing results for:\', the no-results message and suggestions list. The interactive search form, hidden inputs and Load more button are dropped. Styled via the `search` theme.',
+  description: 'ENT site search page — SINGLETON. Default content plus one block: h1 \'Search Results\', h2 \'Showing results for:\', a Search block (placeholder text only — the block builds the form), the no-results message and suggestions list. Hidden inputs and the Load more button are dropped. Styled via the `search` theme.',
   urls: [
     'https://patients.stryker.com/us/en/ent/search.html',
   ],
-  blocks: [],
+  blocks: [
+    { name: 'search', instances: ['.search-header .search-bar'] },
+  ],
 };
 
 /**
@@ -44,9 +46,10 @@ function executeTransformers(hookName, element, payload) {
 }
 
 /**
- * Rebuilds the search widget as plain default content: h1, h2, the no-results
- * message split into paragraphs, and the suggestions list without the literal
- * bullet characters. The form, hidden inputs and Load more button are dropped.
+ * Rebuilds the search widget as authorable content: h1, h2, a Search block (the
+ * field's placeholder), the no-results message split into paragraphs, and the
+ * suggestions list without the literal bullet characters. Hidden inputs and the
+ * Load more button are dropped.
  * @param {Document} document
  * @param {Element} main
  */
@@ -69,6 +72,16 @@ function buildSearchContent(document, main) {
     const heading = document.createElement('h2');
     heading.textContent = h2.textContent.trim().replace(/:.*$/, ':');
     out.append(heading);
+  }
+
+  // the search field becomes a `Search` block (one cell: the placeholder text);
+  // the block builds the form itself, so only the authorable text is kept
+  const input = header.querySelector('.search-bar input[name="q"]');
+  if (input) {
+    out.append(WebImporter.Blocks.createBlock(document, {
+      name: 'Search',
+      cells: [[input.getAttribute('placeholder') || 'Search this site']],
+    }));
   }
 
   // the no-results message is a bare <div> holding text nodes separated by <br>,
@@ -123,7 +136,7 @@ export default {
     // 1. Execute beforeTransform transformers (initial cleanup)
     executeTransformers('beforeTransform', main, payload);
 
-    // 2. No blocks on this template — rebuild the search widget as default content.
+    // 2. Rebuild the search widget as default content + the Search block.
     buildSearchContent(document, main);
 
     // 3. Execute afterTransform transformers (final cleanup)
@@ -138,6 +151,16 @@ export default {
       while (title.firstChild) h1.appendChild(title.firstChild);
       title.replaceWith(h1);
     }
+
+    // Empty `spacer` section (30px) above the h1 — the source leaves 30px (mobile)
+    // to 40px (desktop) between the header and the title; without it the h1 sits
+    // flush under the nav.
+    const spacerMeta = WebImporter.Blocks.createBlock(document, {
+      name: 'Section Metadata',
+      cells: { style: 'spacer' },
+    });
+    main.prepend(document.createElement('hr'));
+    main.prepend(spacerMeta);
 
     // 4. Apply WebImporter built-in rules
     const hr = document.createElement('hr');
@@ -161,7 +184,7 @@ export default {
       report: {
         title: document.title,
         template: PAGE_TEMPLATE.name,
-        blocks: [],
+        blocks: ['search'],
       },
     }];
   },
