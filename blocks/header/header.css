@@ -49,6 +49,18 @@ header nav .nav-brand img {
   display: block;
 }
 
+/* SVG logo authored as a `:header-logo:` icon: undo the global 24px icon box so
+   the width rules above size it, and reserve its box from the SVG viewBox */
+header nav .nav-brand .icon {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+header nav .nav-brand .icon-header-logo img {
+  aspect-ratio: 804.84 / 271.61;
+}
+
 /* ---- Hamburger (mobile) — pinned to the left of row 2 ---- */
 header nav .nav-hamburger {
   grid-area: hamburger;
