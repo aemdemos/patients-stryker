@@ -217,6 +217,10 @@
   --find-a-doctor-raised-label-size: 13.5px; /* source raised floating label (18px scaled 0.75) */
   --find-a-doctor-control-height: 56px;
   --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
+  --find-a-doctor-caret-color: #767979; /* source dropdown arrow (strykericons U+E259) */
+  --find-a-doctor-caret-size: 20px; /* source arrow glyph size */
+  --find-a-doctor-caret-box: 44px; /* source arrow box (glyph centered in it) */
+  --find-a-doctor-caret-line-height: 11.66px; /* source arrow line box */
   --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
   --find-a-doctor-dropdown-max-height: 171.5px; /* source: ~3.5 options visible, the rest scroll */
   --find-a-doctor-option-line-height: 24px; /* source option 24px line → 49px row incl. divider */

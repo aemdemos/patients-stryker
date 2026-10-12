@@ -3,6 +3,16 @@
    image on the left and a light-gray form panel on the right (floating-label
    location field, radius selector, teal submit button). */
 
+/* Stryker icon font — the source's own glyph set (fonts/strykericons.woff is the
+   source file, unchanged). Only the dropdown arrow (U+E259) is used here. */
+@font-face {
+  font-family: strykericons;
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('/fonts/strykericons.woff') format('woff');
+}
+
 .find-a-doctor {
   position: relative;
   display: flex;
@@ -103,9 +113,9 @@
   background-color: var(--color-white);
 }
 
-/* radius toggle — the custom-dropdown button that shows the current value and a
-   chevron. Matches the input styling but adds right room for the caret and shows
-   the 18px Futura value below the raised "Radius" label. */
+/* radius toggle — the custom-dropdown button that shows the current value.
+   Matches the input styling but adds right room for the arrow and shows the
+   18px Futura value below the raised "Radius" label. */
 .find-a-doctor .find-a-doctor-radius-toggle {
   display: flex;
   align-items: flex-end;
@@ -116,12 +126,31 @@
   font-size: var(--find-a-doctor-radius-value-size);
   text-align: left;
   cursor: pointer;
+}
 
-  /* thin single-weight chevron in the source's muted gray, matching the source's
-     custom-dropdown caret (not the default heavy black arrow). */
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"><path d="M1 1l6 6 6-6" fill="none" stroke="%23767676" stroke-width="1"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 16px center;
+/* dropdown arrow — the source's exact glyph (strykericons U+E259) drawn by its
+   .select-container::after rule: 20px, centered in a 44px box flush right, a
+   little below the middle; flipped while the list is open (.focused). */
+.find-a-doctor .find-a-doctor-field:has(> .find-a-doctor-radius-toggle)::after {
+  content: "\e259" / "";
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 56%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--find-a-doctor-caret-box);
+  height: var(--find-a-doctor-caret-box);
+  font-family: strykericons, sans-serif;
+  font-size: var(--find-a-doctor-caret-size);
+  line-height: var(--find-a-doctor-caret-line-height);
+  color: var(--find-a-doctor-caret-color);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.find-a-doctor .find-a-doctor-field:has(> .find-a-doctor-radius-toggle[aria-expanded='true'])::after {
+  transform: rotate(180deg) translateY(67%);
 }
 
 .find-a-doctor .find-a-doctor-radius-value {
@@ -406,15 +435,18 @@ main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-do
   margin-block-end: calc(var(--find-a-doctor-bar-gutter) - var(--find-a-doctor-bar-gap));
 }
 
-/* "Procedures" — disabled gray dropdown with white text and chevron */
+/* "Procedures" — disabled gray dropdown with white text and arrow */
 .find-a-doctor.anatomy .find-a-doctor-procedures-toggle {
   align-items: center;
   padding: 2px 40px 6px 16px;
   border-color: var(--find-a-doctor-procedures-bg);
   color: var(--color-white);
   background-color: var(--find-a-doctor-procedures-bg);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"><path d="M1 1l6 6 6-6" fill="none" stroke="%23fff" stroke-width="1.5"/></svg>');
   cursor: default;
+}
+
+.find-a-doctor.anatomy .find-a-doctor-procedures::after {
+  color: var(--color-white);
 }
 
 /* "Filters Selected:" */
