@@ -115,11 +115,14 @@
   --related-links-line-height: 1.314; /* measured: 17.5px link inside a 14px/19.25px source paragraph renders 23px lines */
   --paragraph-line-height: 1.375;
   --paragraph-line-height-l-nested: 1.2143; /* measured: a 1.25x span inside a 14px/19.25px source paragraph renders 21.25px lines */
+  --paragraph-line-height-xl-nested: 1.107; /* measured: a 21px span inside a 14px/19.25px source paragraph renders 23.25px lines */
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
   --heading-line-height-ml-nested: 1.46; /* measured: 1.25x Futura span inside a 17.5px/1.06 serif source h3 renders 32.15px lines (38.2px @26.25px) */
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
+  --heading-line-height-xl-nested-s: 28px; /* measured: a 21px span inside a 21px/1.06 source h2 renders 28px lines */
+  --heading-line-height-xl-nested: 34px; /* measured: a 24.5px span inside a 24.5px/1.06 source h2 renders a 34px line */
   --heading-line-height-long-page-detail: 1.2; /* long-page-detail h2 (measured) */
   --heading-line-height-zip-search-results: 1.35; /* zip search results h1 (measured) */
 
@@ -136,6 +139,7 @@
   --form-field-min-height: 40px;
   --heading-underline-gap: 7px; /* measured: h2 text → 1px underline (component-subheading) */
   --list-indent: 17px;
+  --list-indent-l: 40px; /* measured: search page suggestions list (browser-default ul indent) */
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
@@ -237,6 +241,13 @@
   --find-a-doctor-selected-title-size: 16px; /* source "Filters Selected:" 16px/21px bold */
   --find-a-doctor-selected-line-height: 21px; /* source filter title + badge line */
   --find-a-doctor-badge-remove-size: 24px; /* source badge ✖ hit area */
+
+  /* in-page search field — measured from source .search-header .search-bar */
+  --search-field-width: 305px;
+  --search-field-padding: 8px 11px; /* source: 14px text, 11px inset */
+  --search-icon-size: 24px;
+  --search-icon-inset: 6px; /* source magnifier sits 6px from the field's right edge */
+  --search-icon-offset: 3px; /* glyph sits high in search.svg; matches source glyph position */
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;

@@ -1,0 +1,55 @@
+/* in-page search field — same form as the header search, styled to the source
+   .search-header .search-bar: a 305px light-gray field with the magnifier inside
+   on the right. Identical at every breakpoint. */
+.search .search-form {
+  display: flex;
+  box-sizing: border-box;
+  width: var(--search-field-width);
+  max-width: 100%;
+  height: var(--form-field-min-height);
+  margin: 0 0 var(--space-block-xs);
+  background-color: var(--color-surface);
+}
+
+.search .search-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  padding: var(--search-field-padding);
+  background: transparent;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+.search .search-input:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.search .search-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0 var(--search-icon-inset);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* the magnifier — same SVG mask as the header search, painted with
+   background-color so it stays colorable. The SVG has empty space below the
+   glyph, so nudge it down to sit where the source glyph does. */
+.search .search-submit::before {
+  content: '';
+  display: block;
+  width: var(--search-icon-size);
+  height: var(--search-icon-size);
+  translate: 0 var(--search-icon-offset);
+  mask: url('/icons/search.svg') no-repeat center / contain;
+  background-color: var(--color-primary);
+}
+
+.search .search-submit:hover::before,
+.search .search-submit:focus-visible::before {
+  background-color: var(--color-primary-pressed);
+}
