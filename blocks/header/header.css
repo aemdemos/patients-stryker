@@ -31,10 +31,14 @@ header nav {
   font-family: var(--display-font-family);
 }
 
-/* ---- Brand (logo) — full-width row 1 on mobile ---- */
+/* ---- Brand (logo) — full-width row 1 on mobile. The relative offset moves
+   only the logo down to the source position, without reflowing the
+   hamburger/magnifier row below it ---- */
 header nav .nav-brand {
   grid-area: brand;
   flex: 0 0 100%;
+  position: relative;
+  top: var(--nav-brand-offset-mobile);
   padding-top: 12px;
 }
 
@@ -456,6 +460,7 @@ header nav.nav-variant-legal .nav-hamburger {
 header nav.nav-variant-legal .nav-brand {
   flex: 1 1 auto;
   align-self: center;
+  top: 0;
   padding-top: 0;
 }
 
@@ -485,6 +490,7 @@ header nav.nav-variant-legal .nav-brand img {
 
   header nav .nav-brand {
     flex: none;
+    top: 0;
     padding-top: 0;
   }
 
