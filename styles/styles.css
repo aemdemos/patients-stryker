@@ -259,6 +259,7 @@
   --nav-height: 90px;
   --nav-bar-height: 60px;
   --nav-toggle-icon-size: 16px; /* mobile menu "+" (its 2vw size at 800px) */
+  --nav-brand-offset-mobile: 3.5px; /* measured: source mobile logo sits 21px from the top */
 }
 
 body {

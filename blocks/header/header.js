@@ -318,6 +318,10 @@ export default async function decorate(block) {
       const container = brandLink.closest('.button-container');
       if (container) container.className = '';
     }
+    // the logo is authored as a `:header-logo:` icon token; EDS icons get an
+    // empty alt, so restore the home link's accessible name
+    const logo = navBrand.querySelector('.icon-header-logo img');
+    if (logo) logo.alt = 'Stryker';
   }
 
   // Tools: build the search form from the :search: token
