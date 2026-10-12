@@ -398,7 +398,6 @@
   background: var(--color-surface);
   box-shadow: none;
   border-top: var(--panel-colored-border-width) solid var(--color-accent);
-  margin-bottom: var(--space-inset-l);
 }
 
 .panel.colored-border > ul > li:last-child .panel-body {
