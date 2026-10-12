@@ -398,6 +398,7 @@
   background: var(--color-surface);
   box-shadow: none;
   border-top: var(--panel-colored-border-width) solid var(--color-accent);
+  margin-bottom: var(--space-inset-l);
 }
 
 .panel.colored-border > ul > li:last-child .panel-body {
@@ -413,6 +414,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+
+   .panel.colored-border > ul {
+    margin-bottom: var(--space-section-l);
+   }
 
   .panel.gray .panel-body h3 {
     font-size: var(--panel-heading-size-s);

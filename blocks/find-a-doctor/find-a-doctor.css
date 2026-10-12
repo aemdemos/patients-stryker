@@ -101,9 +101,6 @@
   width: 100%;
   height: var(--find-a-doctor-control-height);
   margin: 0;
-
-  /* the source's fields have a white (effectively invisible) border, so each box
-     reads as a flush white field on the gray panel — no visible gray outline. */
   border: 1px solid var(--color-white);
   border-radius: var(--radius-none);
   padding: 24px 16px 1px;
@@ -207,7 +204,7 @@
   inset-block-start: 50%;
   transform: translateY(-50%);
   font-family: var(--display-font-family);
-  font-size: var(--body-font-size-l);
+  font-size: var(--find-a-doctor-radius-value-size);
   color: var(--find-a-doctor-label-color);
   pointer-events: none;
 
