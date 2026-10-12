@@ -525,6 +525,13 @@
   padding-top: 7px;
 }
 
+/* "Select language" is authored bold+italic (gold); keep it at the subhead's 21px
+   at every width like the source, not the global compact h2 em/strong sizes
+   (16.8px, 19.9px from 600px) */
+.hero-stroke.section .hero.banner h2 :is(em, strong) {
+  font-size: inherit;
+}
+
 /* ===== Desktop (900px) — fullbleed switches to a side-column overlay on a
    wide-crop image. Below this the fullbleed copy keeps its mobile treatment
    (full-width overlay, 7vw/3vw text on the portrait image), so 600–900px
