@@ -137,6 +137,7 @@
   --space-section-xl: 90px;
   --space-band-dark: 54px; /* measured: dark 50-50 band top/bottom (source spacer paragraph 39px + 15px) */
   --space-nav-hero-gap: 61px; /* measured: nav→hero gap on IVS pages (≥600px) */
+  --hero-language-button-width: 164px; /* source: both stroke-landing language buttons share one width */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
