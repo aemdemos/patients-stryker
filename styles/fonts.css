@@ -28,7 +28,7 @@
 }
 
 /* Display — Futura for Stryker Book (site's licensed Futura cut; used by the
-   ivs-treatment theme, alongside Futura LT W01). */
+   ivs-treatment and ivs-get-the-facts themes, alongside Futura LT W01). */
 @font-face {
   font-family: "Futura for Stryker";
   font-style: normal;
@@ -72,7 +72,7 @@
 }
 
 /* Fallback for "Futura for Stryker" — size-adjust 91.94% of Arial to prevent
-   font-swap CLS on ivs-treatment headings while the webfont loads. */
+   font-swap CLS on ivs-treatment / ivs-get-the-facts headings while the webfont loads. */
 @font-face {
   font-family: futura-for-stryker-fallback;
   size-adjust: 91.94%;
