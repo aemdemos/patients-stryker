@@ -40,6 +40,29 @@ body.cookie-disclaimer main .section h2 {
 }
 
 /* =====================================================================
+   Theme: search (ENT static search page — h1/h2 stack directly, the
+   no-results message reads as one block of lines above an indented list)
+   ===================================================================== */
+
+body.search main .section h1 {
+  margin-bottom: 0;
+}
+
+body.search main .section h2 {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
+body.search main .section p {
+  margin-bottom: 0;
+  line-height: var(--body-line-height);
+}
+
+body.search main .section ul {
+  padding-left: var(--list-indent-l);
+}
+
+/* =====================================================================
    Theme: long-page-detail
    ===================================================================== */
 

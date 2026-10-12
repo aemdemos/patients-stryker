@@ -505,6 +505,14 @@
           ]
         }
       ]
+    },
+    {
+      "name": "search",
+      "description": "ENT site search page — SINGLETON, migrated as a static page (search functionality to be implemented later). All default content, no blocks: h1 'Search Results', h2 'Showing results for:', the no-results message and suggestions list. The interactive search form, hidden inputs and Load more button are dropped. Styled via the `search` theme.",
+      "urls": [
+        "https://patients.stryker.com/us/en/ent/search.html"
+      ],
+      "blocks": []
     }
   ]
 }
