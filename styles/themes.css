@@ -1520,8 +1520,11 @@ body.ivs-get-the-facts .panel.gold .panel-body p {
   font-size: var(--panel-body-size); /* 24.5px */
 }
 
-body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) {
+/* link text follows the 24.5px / 25.97px paragraph (panel.css sets the <u> to 21px) */
+body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u),
+body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) u {
   font-size: inherit;
+  line-height: inherit;
 }
 
 @media (width >= 600px) {
