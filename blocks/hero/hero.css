@@ -285,11 +285,6 @@
   vertical-align: top;
 }
 
-/* 10px gap between the two language buttons (mirrors .button-wrapper + .button-wrapper) */
-.hero-stroke .hero.banner > div > div:has(p em a) + div:has(p em a) {
-  margin-inline-start: 10px;
-}
-
 /* the language buttons share one fixed width (source: 164px each) rather than
    hugging their labels — published buttons and the canvas fallback alike */
 .hero-stroke.section .hero.banner .button-wrapper .button,
@@ -497,16 +492,34 @@
   box-shadow: var(--shadow-soft);
 }
 
+/* the copy lays out in wrapping rows: headline and subhead take full rows, the
+   language buttons share a row exactly 10px apart and, on screens too narrow for
+   both, wrap flush-left 10px below each other (as on the source) */
 .hero-stroke.section .hero.banner > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-block-s);
   max-width: none;
   padding-block: var(--space-section) var(--space-block-l);
   padding-top: 50px;
   padding-left: var(--container-gutter); /* stacked stroke hero: flush, no 30px banner inset */
 }
 
+.hero-stroke.section .hero.banner > div:last-child > :not(.button-wrapper, div:has(p em a)) {
+  flex: 0 0 100%;
+}
+
+/* the 35px gap above the buttons sits on the subhead (below), so a wrapped second
+   button is only 10px under the first; 10px below the last button (source) */
+.hero-stroke.section .hero.banner .button-wrapper,
+.hero-stroke.section .hero.banner .button-wrapper + .button-wrapper {
+  margin: 0 0 var(--space-block-s);
+}
+
 /* "Select language" — source renders it at 21px with a tight line-height (not
    the base banner's 24.5px h2), which keeps the gap down to the buttons compact */
 .hero-stroke.section .hero.banner h2 {
+  margin-bottom: calc(var(--space-block) + var(--space-block-l) + var(--space-block));
   font-size: var(--heading-font-size-l);
   line-height: var(--heading-line-height);
   padding-top: 7px;
@@ -610,6 +623,11 @@
     z-index: 1;
     align-self: start;
     padding-block: calc(var(--space-block) + 1.5vw) 0;
+  }
+
+  /* desktop: the buttons' own 20px top padding spaces them from the subhead */
+  .hero-stroke.section .hero.banner h2 {
+    margin-bottom: var(--space-block);
   }
 
   .hero-stroke.section .hero.banner .button-wrapper,
