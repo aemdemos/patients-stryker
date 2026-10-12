@@ -34,6 +34,32 @@ function decodeSrc(src) {
 }
 
 /**
+ * Reserve the image box (avoid CLS): some DM presets encode the asset's pixel
+ * size as two numbers, e.g. `$preset_666_392$` → 666×392. Setting those as the
+ * img width/height attributes gives the browser the intrinsic aspect-ratio so it
+ * holds space before the (lazy) image loads. Presets that carry only a width cap
+ * (e.g. `$max_width_1440$`) have no height to derive, so this returns null.
+ * @param {string} src the DM URL (encoded or decoded)
+ * @returns {{width:number,height:number}|null}
+ */
+function presetDimensions(src) {
+  const preset = decodeSrc(src).match(/\$[^$]*\$/);
+  if (!preset) return null;
+  const nums = preset[0].match(/(\d{2,5})\D+(\d{2,5})/);
+  if (!nums) return null;
+  return { width: Number(nums[1]), height: Number(nums[2]) };
+}
+
+/** Apply preset-derived pixel dimensions to a DM <img> so it reserves space. */
+function reserveDimensions(img, src) {
+  const dims = presetDimensions(src);
+  if (dims) {
+    img.width = dims.width;
+    img.height = dims.height;
+  }
+}
+
+/**
  * True when a /is/content/ URL is actually an image (e.g. a GIF) — identified by
  * an image sizing preset or a .gif extension, and the absence of a video
  * extension. Used to route these to the image renderer instead of <video>.
@@ -150,6 +176,7 @@ function renderScene7(src, alt, eager) {
   img.loading = eager ? 'eager' : 'lazy';
   img.alt = alt;
   img.src = finalSrc;
+  reserveDimensions(img, src);
   picture.append(img);
   return picture;
 }
@@ -172,6 +199,7 @@ function renderOpenAPI(src, alt, eager) {
       img.loading = eager ? 'eager' : 'lazy';
       img.alt = alt;
       img.src = srcset;
+      reserveDimensions(img, src);
       picture.append(img);
     }
   });
@@ -194,6 +222,7 @@ function renderContentImage(src, alt, eager) {
   img.loading = eager ? 'eager' : 'lazy';
   img.alt = alt;
   img.src = src;
+  reserveDimensions(img, src);
   picture.append(img);
   return picture;
 }
