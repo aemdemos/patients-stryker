@@ -162,6 +162,14 @@ export default {
     main.prepend(document.createElement('hr'));
     main.prepend(spacerMeta);
 
+    // Same empty `spacer` section (30px) below the content, so the suggestions
+    // list doesn't sit flush on the footer.
+    main.append(document.createElement('hr'));
+    main.append(WebImporter.Blocks.createBlock(document, {
+      name: 'Section Metadata',
+      cells: { style: 'spacer' },
+    }));
+
     // 4. Apply WebImporter built-in rules
     const hr = document.createElement('hr');
     main.appendChild(hr);

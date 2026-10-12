@@ -293,6 +293,11 @@ var CustomImportScript = (() => {
       });
       main.prepend(document.createElement("hr"));
       main.prepend(spacerMeta);
+      main.append(document.createElement("hr"));
+      main.append(WebImporter.Blocks.createBlock(document, {
+        name: "Section Metadata",
+        cells: { style: "spacer" }
+      }));
       const hr = document.createElement("hr");
       main.appendChild(hr);
       const meta = WebImporter.Blocks.getMetadata(document);
