@@ -216,6 +216,9 @@ export default {
     // (awaited before `appear`) when a `theme` is present. Key must be lowercase
     // `theme` (getMetadata matches the meta name case-sensitively).
     const meta = WebImporter.Blocks.getMetadata(document);
+    // The site-wide "| Stryker" title suffix comes from the project metadata
+    // (title:suffix), so drop it from the source <title> to avoid doubling it.
+    if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     meta.theme = THEME;
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
