@@ -142,9 +142,9 @@
   box-shadow: none;
 }
 
-/* stacked (below 900px) the stroke hero runs edge to edge like the source — no
-   side gutter on its wrapper; the copy keeps its own inset. The contained card
-   (with gutter) returns at 900px. */
+/* the stroke hero runs edge to edge like the source — no side gutter on its
+   wrapper (still capped at --container-max on very wide screens); the copy keeps
+   its own inset. */
 .hero-stroke.section .hero-wrapper:has(.hero.banner) {
   padding-inline: 0;
 }
@@ -596,10 +596,6 @@
   /* desktop overlay — copy sits over the image, so the shadow goes back on the
      whole banner card (as the base banner variant) rather than the picture.
      Below 900px the copy stays stacked above the image. */
-  .hero-stroke.section .hero-wrapper:has(.hero.banner) {
-    padding-inline: var(--container-gutter);
-  }
-
   .hero-stroke.section .hero.banner {
     display: grid;
     grid-template-columns: 1fr;
