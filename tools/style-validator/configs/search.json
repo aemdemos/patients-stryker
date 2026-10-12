@@ -1,0 +1,25 @@
+{
+  "previewBase": "http://localhost:3000",
+  "excludeContexts": [],
+  "minTokensForCluster": 2,
+  "spacingThresholdPx": 15,
+  "spacingBreakpoints": [390, 1200],
+  "blockClasses": [],
+  "variantClasses": [],
+  "importScript": null,
+  "fontFamilyAliases": {
+    "Humanist 712 for Stryker": "humanist-slab",
+    "HumanistSlab712W01": "humanist-slab",
+    "Futura for Stryker": "futura",
+    "Futura LT W01": "futura",
+    "Egyptienne for Stryker Light": "egyptienne-light",
+    "URWEgyptienneW01-Light": "egyptienne-light"
+  },
+  "pairs": [
+    {
+      "name": "ent-search",
+      "source": "https://patients.stryker.com/us/en/ent/search.html",
+      "migrated": "/content/us/en/ent/search"
+    }
+  ]
+}

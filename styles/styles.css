@@ -133,6 +133,7 @@
   --form-field-min-height: 40px;
   --heading-underline-gap: 7px; /* measured: h2 text → 1px underline (component-subheading) */
   --list-indent: 17px;
+  --list-indent-l: 40px; /* measured: search page suggestions list (browser-default ul indent) */
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
@@ -219,6 +220,13 @@
   --find-a-doctor-option-line-height: 24px; /* source option 24px line → 49px row incl. divider */
   --find-a-doctor-option-divider: #f2f2f2; /* source 1px separator under each option */
   --find-a-doctor-option-highlight: #f2f2f7; /* source hover / selected option background */
+
+  /* in-page search field — measured from source .search-header .search-bar */
+  --search-field-width: 305px;
+  --search-field-padding: 8px 11px; /* source: 14px text, 11px inset */
+  --search-icon-size: 24px;
+  --search-icon-inset: 6px; /* source magnifier sits 6px from the field's right edge */
+  --search-icon-offset: 3px; /* glyph sits high in search.svg; matches source glyph position */
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
