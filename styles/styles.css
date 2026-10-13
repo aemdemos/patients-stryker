@@ -143,6 +143,7 @@
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+  --space-footer-end: 40px; /* measured: source footer space below the secondary links (≥480px) */
   --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
   --space-section-xl: 90px;
   --space-band-dark: 54px; /* measured: dark 50-50 band top/bottom (source spacer paragraph 39px + 15px) */
