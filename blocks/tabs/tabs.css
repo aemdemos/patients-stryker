@@ -93,9 +93,8 @@
 .tabs .tabs-tab {
   margin: 0;
   border: 0;
-  border-right: 1px solid var(--color-border);
   border-radius: var(--radius-none);
-  padding: 12px 30px 7px;
+  padding: 12px var(--tabs-tab-padding-inline) 7px;
   background: none;
   color: var(--color-black);
   font-family: var(--display-font-family);
@@ -111,12 +110,24 @@
    tab bar is only as wide as its labels need */
 .tabs .tabs-tab:last-child {
   padding-right: 0;
-  border-right: none;
 }
 
 .tabs .tabs-tab p {
+  position: relative;
   margin: 0;
   padding: 12px 0 7px;
+}
+
+/* divider between tabs — anchored to the label (not the button) so it always spans
+   just the label's box, like the source's border on the label-height <li>, whatever
+   vertical padding a theme gives the button (e.g. condition-detail's 0 30px).
+   Pushed out by the button's side padding to sit at the button's right edge. */
+.tabs .tabs-tab:not(:last-child) p::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  right: calc(-1 * var(--tabs-tab-padding-inline));
+  border-right: 1px solid var(--color-surface-dim);
 }
 
 .tabs .tabs-tab[aria-selected="true"] {
