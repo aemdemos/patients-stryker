@@ -43,15 +43,19 @@ box-shadow: var(--shadow-default);
 
 If a needed token doesn't exist within 2px of your value, create it in `:root` in `styles/styles.css`.
 
-### 3. Alpha Values Must Be Decimal, Not Percentage
+### 3. Alpha Values Must Be Percentage, Not Decimal
 
 ```css
-/* ❌ NEVER — stylelint error */
-background: rgb(255 255 255 / 70%);
+/* ❌ NEVER — stylelint error (alpha-value-notation) */
+background: rgb(255 255 255 / 0.7);
 
 /* ✅ ALWAYS */
-background: rgb(255 255 255 / 0.7);
+background: rgb(255 255 255 / 70%);
 ```
+
+This is enforced by `stylelint-config-standard` (`alpha-value-notation:
+"percentage"`), including inside custom properties. `opacity` and the other
+`*-opacity` properties are exempt and keep plain numbers (`opacity: 0.7`).
 
 ### 4. All CSS Selectors Must Be Scoped to Block Name
 
