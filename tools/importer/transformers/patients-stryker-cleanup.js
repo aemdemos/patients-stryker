@@ -72,11 +72,10 @@ export default function transform(hookName, element, payload) {
   // (hero, panel, panel-cta), so the legal-copy gold-span / paragraph-merge /
   // standalone-link rewrites must NOT run here. Only the universal chrome removal
   // (header/footer/onetrust/back-to-top/hidden inputs/tracking) applies.
-  // The standalone ivs-contact page shares the same IVS chrome and rules: it keeps
-  // its <h1>, its ".c-disclaimer" disclaimer is authorable, and its default-content
-  // ".buttonset a.btn-gold" (FIND A DOCTOR) becomes a Bold + Italic gold button.
+  // ivs-get-the-facts, ivs-contact share the same source skin and parsers, so it gets the
+  // same treatment.
   const isIvsTreatment = !!(payload && payload.template
-    && ['ivs-treatment', 'ivs-contact'].includes(payload.template.name));
+    && ['ivs-treatment', 'ivs-get-the-facts', 'ivs-contact'].includes(payload.template.name));
   const isSkinnedContent = isSaResources || isIvsTreatment;
 
   if (hookName === TransformHook.beforeTransform) {
