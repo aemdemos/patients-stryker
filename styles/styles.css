@@ -143,10 +143,12 @@
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+  --space-footer-end: 40px; /* measured: source footer space below the secondary links (≥480px) */
   --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
   --space-section-xl: 90px;
   --space-band-dark: 54px; /* measured: dark 50-50 band top/bottom (source spacer paragraph 39px + 15px) */
   --space-nav-hero-gap: 61px; /* measured: nav→hero gap on IVS pages (≥600px) */
+  --hero-language-button-width: 164px; /* source: both stroke-landing language buttons share one width */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
@@ -259,6 +261,7 @@
   --nav-height: 90px;
   --nav-bar-height: 60px;
   --nav-toggle-icon-size: 16px; /* mobile menu "+" (its 2vw size at 800px) */
+  --nav-brand-offset-mobile: 3.5px; /* measured: source mobile logo sits 21px from the top */
 }
 
 body {
