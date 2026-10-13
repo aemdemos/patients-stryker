@@ -6,6 +6,13 @@
    (set in JS from the cols-N authoring variant); rows flow automatically.
    Mobile-first: one column, then 2 up, then the authored column count. */
 
+/* number size: the source's smallest-viewport size on phones, one size from
+   600px up. Set as a block-level property so page themes can still override
+   --statistics-number-size on .statistics (e.g. bvn-ablation). */
+.statistics {
+  --statistics-number-size: var(--statistics-number-size-s);
+}
+
 .statistics ul.statistics-list {
   list-style: none;
   display: grid;
@@ -81,17 +88,17 @@
 
 /* tablet: two columns */
 @media (width >= 600px) {
+  .statistics {
+    --statistics-number-size: var(--statistics-number-size-m);
+  }
+
   .statistics ul.statistics-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .statistics .statistics-value,
-  .statistics .statistics-value p {
-    margin: 0;
-    font-family: var(--display-font-family);
-    font-size: var(--statistics-number-size);
-    font-weight: 700;
-    line-height: 1;
+  /* no gap under the number from 600px (themes re-add their own) */
+  .statistics .statistics-value {
+    margin-bottom: 0;
   }
 }
 
