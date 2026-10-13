@@ -50,7 +50,35 @@ footer .footer .footer-links-secondary {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 15px;
+
+  /* source .g-footer-recall: 20px below the primary row on phones (30px from
+     600px), and 10px between its links (li margin-bottom: 10px) */
+  gap: var(--space-block-s);
+  margin-top: var(--space-block-l);
+}
+
+/* footers with a secondary group end 30px below its last link (40px from 600px)
+   — the source's 10px li margin + 20/30px row margin — not the 60px a
+   single-row footer uses */
+footer .footer > div:has(.footer-links-secondary) {
+  padding-bottom: var(--space-section);
+}
+
+/* WW footer (the one with a secondary group — move-lives-together, stroke WW):
+   the source .g-footer-disclaimer puts the copyright on its own line on phones and
+   tablets, and the links wrap beneath it (desktop puts them back inline below) */
+footer .footer > div:has(.footer-links-secondary) .footer-links li:first-child {
+  flex-basis: 100%;
+}
+
+@media (width >= 600px) {
+  footer .footer .footer-links-secondary {
+    margin-top: var(--space-section);
+  }
+
+  footer .footer > div:has(.footer-links-secondary) {
+    padding-bottom: var(--space-footer-end);
+  }
 }
 
 @media (width >= 1024px) {
@@ -72,6 +100,19 @@ footer .footer .footer-links-secondary {
   footer .footer .footer-links li:not(:first-child)::before {
     content: "|";
     padding-right: 5px;
+  }
+
+  /* WW footer: copyright back inline; between links the source li also holds a
+     collapsed space after its "|" (≈4px), so links sit 24px apart (and the last
+     one wraps on move-lives-together, as on the source). The pipe after the
+     copyright is a separate source span without that space, so the first link
+     keeps the default spacing. */
+  footer .footer > div:has(.footer-links-secondary) .footer-links li:first-child {
+    flex-basis: auto;
+  }
+
+  footer .footer > div:has(.footer-links-secondary) .footer-links li:nth-child(n + 3)::before {
+    padding-right: 9px;
   }
 }
 
