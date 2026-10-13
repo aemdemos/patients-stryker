@@ -317,7 +317,21 @@ export default async function decorate(block) {
       brandLink.classList.remove('button');
       const container = brandLink.closest('.button-container');
       if (container) container.className = '';
+
+      // page metadata `Logo Link` overrides where the logo goes on specific pages
+      // (the nav fragment is shared): a URL or `#` replaces the link target;
+      // `none` renders the logo as a plain image with no link
+      const logoLink = getMetadata('logo-link').trim();
+      if (logoLink.toLowerCase() === 'none') {
+        brandLink.replaceWith(...brandLink.childNodes);
+      } else if (logoLink) {
+        brandLink.href = logoLink;
+      }
     }
+    // the logo is authored as a `:header-logo:` icon token; EDS icons get an
+    // empty alt, so restore the home link's accessible name
+    const logo = navBrand.querySelector('.icon-header-logo img');
+    if (logo) logo.alt = 'Stryker';
   }
 
   // Tools: build the search form from the :search: token
