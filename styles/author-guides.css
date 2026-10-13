@@ -35,7 +35,7 @@ body.header-footer-guide main .section.variant-card > .default-content-wrapper {
 body.header-footer-guide main .section.variant-card > .default-content-wrapper > h3 {
   margin-top: 0;
   font-family: var(--display-font-family-bold);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary);
 }
 

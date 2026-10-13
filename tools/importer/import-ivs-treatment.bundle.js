@@ -337,7 +337,7 @@ var CustomImportScript = (() => {
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
   function transform(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
-    const isIvsTreatment = !!(payload && payload.template && payload.template.name === "ivs-treatment");
+    const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts"].includes(payload.template.name));
     const isSkinnedContent = isSaResources || isIvsTreatment;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
@@ -485,7 +485,7 @@ var CustomImportScript = (() => {
     return String(style).split(",").map((s) => s.trim()).filter(Boolean).join(", ");
   }
   function transform2(hookName, element, payload) {
-    if (!payload || !payload.template || payload.template.name !== "ivs-treatment") return;
+    if (!payload || !payload.template || !["ivs-treatment", "ivs-get-the-facts"].includes(payload.template.name)) return;
     const sections = payload.template.sections || [];
     if (sections.length < 2) return;
     if (hookName === "beforeTransform") {
@@ -672,27 +672,16 @@ var CustomImportScript = (() => {
     // Add the same `spacer, large` empty section BELOW the hero (between the hero
     // and the first content section) to match the reference spacing under the hero.
     heroBottomSpacer: true,
-    // Extra per-page theme class layered on `ivs-treatment` (page-only type
-    // overrides in styles/themes.css). Keyed by the localized path, no extension.
-    pageThemes: {
-      "/us/en/ivs/get-the-facts": "ivs-get-the-facts"
-    },
+    // The IVS "Get the facts" page has its own template/importer
+    // (import-ivs-get-the-facts.js) that reuses these parsers.
     urls: [
-      "https://patients.stryker.com/us/en/ivs/treatments/mild.html",
-      "https://patients.stryker.com/us/en/ivs/get-the-facts.html"
+      "https://patients.stryker.com/us/en/ivs/treatments/mild.html"
     ],
     blocks: [
       { name: "hero", instances: [".pDiv.bg-shadow"], section: "banner" },
       { name: "panel", instances: [".col-xs-12.col-sm-6:has(.dimensional-box)"], section: "cta wide" },
       { name: "panel-cta", instances: [".has-background.bg-gold"], section: "gold" },
-      {
-        name: "columns-50-50",
-        instances: [
-          ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h3):not(:has(h4))",
-          // get-the-facts: h2 heading + standalone image (no h3)
-          ".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(.standaloneimage):not(:has(h4))"
-        ]
-      },
+      { name: "columns-50-50", instances: [".c-full-bleed-panel.bg-dark-teal-gradient .cols2:has(h3):not(:has(h4))"] },
       {
         name: "columns",
         instances: [
@@ -721,18 +710,6 @@ var CustomImportScript = (() => {
         style: "dark, full-bleed",
         blocks: ["columns-50-50"],
         defaultContent: []
-      },
-      {
-        // get-the-facts: h1 + paragraph + gold LEARN MORE button right after the
-        // dark panel. Needs its own break or it would fall into the dark section.
-        // The source opens it with a full-width ".sectionseparator > hr" rule
-        // (#b2b4ae, 50px below) — the project's `divider` section style.
-        id: "restore",
-        name: "Don't just manage the pain (text + button)",
-        selector: ".text.parbase:has(h1):has(+ .buttonset)",
-        style: "divider",
-        blocks: [],
-        defaultContent: [".text.parbase:has(h1):has(+ .buttonset)", ".buttonset"]
       },
       {
         id: "proven-results",
@@ -860,8 +837,7 @@ var CustomImportScript = (() => {
       main.appendChild(hr);
       const rawPath = new URL(params.originalURL).pathname.replace(/\/$/, "").replace(/\.html?$/, "");
       const meta = WebImporter.Blocks.getMetadata(document);
-      const pageTheme = PAGE_TEMPLATE.pageThemes && PAGE_TEMPLATE.pageThemes[rawPath];
-      meta.theme = pageTheme ? `ivs-treatment, ${pageTheme}` : "ivs-treatment";
+      meta.theme = "ivs-treatment";
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

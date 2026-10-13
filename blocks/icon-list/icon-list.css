@@ -40,7 +40,7 @@
   margin: 15px 0 var(--icon-list-title-gap);
   font-family: var(--display-font-family-bold);
   font-size: var(--icon-list-title-size);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-accent);
   text-align: center;
 }
@@ -90,7 +90,7 @@
   margin: 0;
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-m);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--paragraph-line-height);
   color: var(--color-black);
 }
@@ -145,6 +145,7 @@
 .icon-list.tile .icon-list-text,
 .icon-list.tile .icon-list-text p {
   font-size: var(--icon-list-tile-caption-size);
+  line-height: var(--body-line-height-l);
 }
 
 .icon-list.tile .icon-list-icon img {
@@ -231,7 +232,7 @@
   margin-top: var(--icon-list-label-caption-gap);
   font-family: var(--heading-font-family);
   font-size: var(--icon-list-label-caption-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   line-height: 1.15;
 }
 
@@ -244,7 +245,7 @@
 
 .icon-list-container:has(.icon-list.label) > div:not(.icon-list-wrapper) p strong {
   font-family: var(--display-font-family-bold);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 /* heading → intro-copy gap: fixed 49px (label has intro text below the heading) */
@@ -263,6 +264,14 @@
     display: block;
     margin-bottom: var(--icon-list-label-icon-gap);
   }
+}
+
+/* tile intro + lead-in: capped width, centred, tight line-height (source) */
+.icon-list-container:has(> .icon-list-wrapper > .icon-list.tile)
+  > div:not(.icon-list-wrapper) p {
+  max-width: var(--icon-list-tile-intro-width);
+  margin-inline: auto;
+  line-height: var(--body-line-height-l);
 }
 
 /* Tile intro rhythm (matches source): heading→intro 15px, then 49px before the
@@ -295,6 +304,6 @@
   margin-bottom: var(--icon-list-tile-intro-gap);
   font-family: var(--display-font-family-bold);
   font-size: var(--body-font-size-l);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--color-black);
 }

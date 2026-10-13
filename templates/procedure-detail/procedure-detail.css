@@ -97,7 +97,7 @@ body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resourc
 body.procedure-detail main > .section:has(> .cards-wrapper > .cards:not(.resources, .brochure, .linked)) > .default-content-wrapper h3 {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l-scaled);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height);
 }
 
@@ -180,7 +180,7 @@ body.procedure-detail main .panel.dark .panel-body {
 body.procedure-detail main .panel.dark .panel-body :is(h2, h3) {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-dark-base);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   color: var(--color-white);
 }
 
@@ -191,7 +191,7 @@ body.procedure-detail main .panel.dark .panel-body :is(h2, h3) {
 body.procedure-detail main .panel.dark .panel-body :is(h2, h3) :is(em, strong) {
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-l-scaled);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-style: normal;
   color: var(--color-accent);
 }
@@ -236,7 +236,7 @@ body.procedure-detail main .panel.cta.wide .panel-body ul > li > p {
 /* Gold mid-page CTA link — Futura display face. */
 body.procedure-detail main .panel.gold .panel-body p strong {
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 /* `#disclaimer` reference links (IVS-specific citation anchor) — teal, no
@@ -268,14 +268,14 @@ body.pd-disc-decompression main .panel.cta.wide a[href="#fn-3"],
 body.pd-sacroplasty main .panel.cta.wide a[href="#fn-3"] {
   /* fontFamily:URWEgyptienneW01-Light→HumanistSlab712W01 | fontSize:18.5px→13px | fontWeight:500→400 — e.g. "3" */
   font-family: var(--heading-font-family);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 body.pd-spinejack-system main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"],
 body.pd-sacroplasty main .section.flex :is(h1,h2,h3,h4,h5,h6) a[href="#fn-1"] {
   /* fontFamily:Futura LT W01→URWEgyptienneW01-Light | fontWeight:700→500 — e.g. "1" */
   font-family: var(--display-font-family);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 body.pd-balloon-kyphoplasty main .panel.cta.wide a[href="#potential-risks"] {

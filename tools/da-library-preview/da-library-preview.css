@@ -75,7 +75,7 @@
   /* editor UI, not site content: the OS interface font, which has a true semibold */
   font-family: var(--library-preview-label-font);
   font-size: var(--body-font-size-m);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: var(--body-line-height);
   white-space: nowrap;
 

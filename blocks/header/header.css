@@ -31,10 +31,14 @@ header nav {
   font-family: var(--display-font-family);
 }
 
-/* ---- Brand (logo) — full-width row 1 on mobile ---- */
+/* ---- Brand (logo) — full-width row 1 on mobile. The relative offset moves
+   only the logo down to the source position, without reflowing the
+   hamburger/magnifier row below it ---- */
 header nav .nav-brand {
   grid-area: brand;
   flex: 0 0 100%;
+  position: relative;
+  top: var(--nav-brand-offset-mobile);
   padding-top: 12px;
 }
 
@@ -47,6 +51,14 @@ header nav .nav-brand img {
   height: auto;
   aspect-ratio: 192 / 48;
   display: block;
+}
+
+/* SVG logo authored as a `:header-logo:` icon: undo the global 24px icon box so
+   the width/aspect-ratio rules above size it (the cropped SVG is also ~4:1) */
+header nav .nav-brand .icon {
+  display: block;
+  width: auto;
+  height: auto;
 }
 
 /* ---- Hamburger (mobile) — pinned to the left of row 2 ---- */
@@ -249,7 +261,7 @@ header nav .nav-sections a.nav-drop-toggle::after {
   right: 18px;
   top: 50%;
   transform: translateY(-50%);
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   font-size: var(--nav-toggle-icon-size);
   line-height: 1;
 }
@@ -348,7 +360,7 @@ header nav .nav-drawer .nav-drop-panel li a {
   border-top: 0;
   background-color: transparent;
   color: var(--color-black);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size-m);
   text-transform: none;
   text-decoration: none;
@@ -444,6 +456,7 @@ header nav.nav-variant-legal .nav-hamburger {
 header nav.nav-variant-legal .nav-brand {
   flex: 1 1 auto;
   align-self: center;
+  top: 0;
   padding-top: 0;
 }
 
@@ -473,6 +486,7 @@ header nav.nav-variant-legal .nav-brand img {
 
   header nav .nav-brand {
     flex: none;
+    top: 0;
     padding-top: 0;
   }
 
@@ -689,7 +703,7 @@ header nav.nav-variant-legal .nav-brand img {
     border: 0;
     background-color: transparent;
     color: var(--color-black);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     font-size: var(--body-font-size-m);
     text-transform: none;
     white-space: normal;

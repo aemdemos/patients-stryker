@@ -93,7 +93,7 @@
   color: inherit;
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);   /* 14px, source Futura */
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   line-height: 1.43;                     /* 20px / 14px */
   text-transform: uppercase;
   text-align: center;
