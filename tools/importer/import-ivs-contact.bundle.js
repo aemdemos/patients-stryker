@@ -279,6 +279,9 @@ var CustomImportScript = (() => {
       if (disclaimerMarker) {
         element.append(sectionMetadata(document, "compact"));
       }
+      if (formMarker) {
+        formMarker.before(document.createElement("hr"), sectionMetadata(document, "spacer"));
+      }
       element.querySelectorAll(`hr[${MARKER_ATTR}]`).forEach((hr) => hr.removeAttribute(MARKER_ATTR));
       element.prepend(sectionMetadata(document, "spacer, xlarge"), document.createElement("hr"));
     }

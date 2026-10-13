@@ -12,6 +12,7 @@
  *
  *   0 spacer        (added)                                                      style: spacer, xlarge
  *   1 intro         .text.parbase (h1, h2, intro p) + .buttonset FIND A DOCTOR   style: none
+ *   - spacer        (added, after the FIND A DOCTOR section)                     style: spacer
  *   2 contact-form  .sectionseparator hr + .marketoform                          style: divider
  *   3 disclaimer    .c-disclaimer.page-section (+ doc-code .c-disclaimer)        style: compact
  *
@@ -87,6 +88,12 @@ export default function transform(hookName, element, payload) {
     // (the page Metadata block is appended after this by the import script).
     if (disclaimerMarker) {
       element.append(sectionMetadata(document, 'compact'));
+    }
+
+    // Library "Section Metadata – spacer (empty gap)" (~30px): an otherwise EMPTY
+    // section between the intro / FIND A DOCTOR section and the contact form.
+    if (formMarker) {
+      formMarker.before(document.createElement('hr'), sectionMetadata(document, 'spacer'));
     }
 
     element.querySelectorAll(`hr[${MARKER_ATTR}]`).forEach((hr) => hr.removeAttribute(MARKER_ATTR));
