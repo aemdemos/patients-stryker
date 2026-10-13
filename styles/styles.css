@@ -85,10 +85,15 @@
 
 
   /* heading sizes */
+  --heading-zip-search-results-m: 8vw; /* zip search results h1 (source fontsize-8-vw) */
+  --heading-zip-search-results: 5vw; /* zip search results h1 (source fontsize-5-vw) */
+  --heading-zip-search-results-s: 4vw; /* zip search results h1 (source fontsize-4-vw) */
+  --heading-zip-search-results-xs: 2.5vw; /* zip search results h1 (source fontsize-2-5-vw) */
   --heading-font-size-hero-xl: 49px; /* large hero headline cap — source fontsize-3-5-vw at ≥1439px */
   --heading-font-size-xxxl: 43px;   /* brochure card title — 24.5px x 1.75 (source fontsize-1-75em) */
   --heading-font-size-xxxl-s: 36.75px; /* brochure card title <600px — 21px x 1.75 */
   --heading-font-size-xxl: 28px;    /* h1 */
+  --heading-font-size-xxl-l: 42px;  /* h1 enlarged 1.5x (source fontsize-1-5em span) */
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
   --heading-font-size-l-scaled: 26.25px; /* h3 enlarged 1.25x (fontsize-1-25em) */
@@ -119,6 +124,7 @@
   --heading-line-height-xl-nested-s: 28px; /* measured: a 21px span inside a 21px/1.06 source h2 renders 28px lines */
   --heading-line-height-xl-nested: 34px; /* measured: a 24.5px span inside a 24.5px/1.06 source h2 renders a 34px line */
   --heading-line-height-long-page-detail: 1.2; /* long-page-detail h2 (measured) */
+  --heading-line-height-zip-search-results: 1.35; /* zip search results h1 (measured) */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block-xs: 5px;
@@ -142,6 +148,7 @@
   --space-section-xl: 90px;
   --space-band-dark: 54px; /* measured: dark 50-50 band top/bottom (source spacer paragraph 39px + 15px) */
   --space-nav-hero-gap: 61px; /* measured: nav→hero gap on IVS pages (≥600px) */
+  --hero-language-button-width: 164px; /* source: both stroke-landing language buttons share one width */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size: 92px;
@@ -216,11 +223,26 @@
   --find-a-doctor-raised-label-size: 13.5px; /* source raised floating label (18px scaled 0.75) */
   --find-a-doctor-control-height: 56px;
   --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
+  --find-a-doctor-caret-color: #767979; /* source dropdown arrow (strykericons U+E259) */
+  --find-a-doctor-caret-size: 20px; /* source arrow glyph size */
+  --find-a-doctor-caret-box: 44px; /* source arrow box (glyph centered in it) */
+  --find-a-doctor-caret-line-height: 11.66px; /* source arrow line box */
   --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
   --find-a-doctor-dropdown-max-height: 171.5px; /* source: ~3.5 options visible, the rest scroll */
   --find-a-doctor-option-line-height: 24px; /* source option 24px line → 49px row incl. divider */
   --find-a-doctor-option-divider: #f2f2f2; /* source 1px separator under each option */
   --find-a-doctor-option-highlight: #f2f2f7; /* source hover / selected option background */
+  --find-a-doctor-bar-gutter: 24px; /* source search-results bar: 24px band inset on every side */
+  --find-a-doctor-bar-gap: 16px; /* source gap between search-bar controls */
+  --find-a-doctor-bar-gap-xxl: 70px;
+  --find-a-doctor-bar-radius-width: 145px; /* source radius box in the search-bar row */
+  --find-a-doctor-bar-max: 1392px; /* source search-bar form max width (centered) */
+  --find-a-doctor-procedures-bg: #8e8e93; /* source disabled "Procedures" filter dropdown */
+  --find-a-doctor-procedures-width: 224px; /* source filter dropdown width (≥600px) */
+  --find-a-doctor-filters-gap: 32px; /* source gap between the filter dropdown and Filters Selected */
+  --find-a-doctor-selected-title-size: 16px; /* source "Filters Selected:" 16px/21px bold */
+  --find-a-doctor-selected-line-height: 21px; /* source filter title + badge line */
+  --find-a-doctor-badge-remove-size: 24px; /* source badge ✖ hit area */
 
   /* in-page search field — measured from source .search-header .search-bar */
   --search-field-width: 305px;
@@ -239,6 +261,7 @@
   --nav-height: 90px;
   --nav-bar-height: 60px;
   --nav-toggle-icon-size: 16px; /* mobile menu "+" (its 2vw size at 800px) */
+  --nav-brand-offset-mobile: 3.5px; /* measured: source mobile logo sits 21px from the top */
 }
 
 body {
