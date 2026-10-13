@@ -762,6 +762,49 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "zip-doctor-request",
+      "urls": [
+        "https://patients.stryker.com/us/en/zip-skin-closure/index/doctor-request.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/zip-skin-closure/index/doctor-request.html",
+      "coverageGaps": [],
+      "description": "Zip Skin Closure find-a-doctor Doctor Request page — SINGLETON, styled via the `zip-doctor-request` theme in styles/themes.css. Default-content h1 (fixed 24.5px gold Futura) + two intro paragraphs (14px light serif, trailing bold run kept as <strong>), a full-width rule, then the marketo-form block (form 4380). The post-submit thank-you message and the Last Updated stamp are dropped; Zip header/footer resolve by path.",
+      "blocks": [
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".marketoform"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "intro",
+          "name": "Locator intro (heading + text)",
+          "selector": [
+            ".largeheadline"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".largeheadline"
+          ]
+        },
+        {
+          "id": "form",
+          "name": "Physician locator form",
+          "selector": [
+            ".cols:has(.marketoform)"
+          ],
+          "style": "divider",
+          "blocks": [
+            "marketo-form"
+          ],
+          "defaultContent": []
+        }
+      ]
     }
   ]
 }

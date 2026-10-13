@@ -182,6 +182,16 @@
   height: 8px; /* row gap between options */
 }
 
+/* links inside labels (e.g. "Privacy Policy") — source shows no underline at
+   rest or on hover; hover only darkens the teal */
+.marketo-form .mktoForm label a:any-link {
+  text-decoration: none;
+}
+
+.marketo-form .mktoForm label a:any-link:hover {
+  color: var(--color-primary-pressed);
+}
+
 /* submit — Stryker teal, white uppercase Futura. Matches Marketo's Simple-theme
    selector specificity (and resets background-image) so the teal overrides its green. */
 .marketo-form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
