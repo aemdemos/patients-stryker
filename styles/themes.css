@@ -2258,6 +2258,103 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 
 }
 
+/* =====================================================================
+   Theme: ivs-contact — Interventional Spine "Contact us" page
+   ===================================================================== */
+
+/* Page title: the source wraps the bold H1 in a 1.5x size span (28px → 42px). */
+body.ivs-contact main h1 {
+  font-size: var(--heading-font-size-xxl-scaled); /* 42px */
+}
+
+/* Subheading: light serif (Egyptienne), not the shared Futura bold h2. */
+body.ivs-contact main h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l); /* 21px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--paragraph-line-height); /* 1.375 */
+}
+
+/* Intro copy: the source wraps it in a 1.5x size span (14px → 21px), tight leading. */
+body.ivs-contact main > .section:has(h1) p {
+  font-size: var(--body-font-size-xl); /* 21px */
+  line-height: var(--heading-line-height); /* 1.06 */
+}
+
+/* FIND A DOCTOR sits ~50px below the intro (source spacer paragraph + button margin). */
+body.ivs-contact main > .section:has(h1) .button-wrapper {
+  margin-top: var(--space-section-l); /* 50px */
+}
+
+/* Contact form section: the divider line sits ~20px above the form on phones
+   (~50px from 600px); the block's own top padding would add another 30px. */
+body.ivs-contact main > .section.divider {
+  padding-top: var(--space-block-l); /* 20px */
+}
+
+/* The Submit → disclaimer gap is set here alone (30px phones, 40px from 600px):
+   the block pads the bottom, and Marketo's own form padding/margin — which loads
+   differently per environment — is zeroed so it can't add to it. */
+body.ivs-contact main > .section.divider .marketo-form {
+  padding-block: 0 var(--space-section); /* 30px */
+}
+
+/* Form layout matched to the source .c-stryker-form (this page only): no Marketo
+   inset on phones (fields span the content width), source label leading (taller
+   label box → 76px row pitch) and tighter checkbox rows. The .mkto* class names
+   are Marketo's own runtime markup (not renamable), so the kebab-case rule is
+   relaxed for these rules only — same as blocks/marketo-form. */
+/* stylelint-disable selector-class-pattern */
+body.ivs-contact main > .section.divider .marketo-form form.mktoForm {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoLabel {
+  padding-top: var(--space-block-xs); /* source ~4px above each label */
+}
+
+body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoCheckboxList label::after {
+  height: var(--space-block-xs); /* source ~23px checkbox row pitch */
+}
+
+/* stylelint-enable selector-class-pattern */
+
+/* Document reference number (last disclaimer line) sits in its own source
+   container: ~20px below the trademarks on phones, ~30px from 600px. */
+body.ivs-contact main > .section.compact .default-content-wrapper > p:last-of-type {
+  margin-top: var(--space-block-l); /* 20px */
+}
+
+@media (width >= 600px) {
+  body.ivs-contact main > .section.compact .default-content-wrapper > p:last-of-type {
+    margin-top: var(--space-section); /* 30px */
+  }
+
+  body.ivs-contact main h2 {
+    font-size: var(--heading-font-size-xl); /* 24.5px */
+  }
+
+  body.ivs-contact main > .section.divider {
+    padding-top: var(--space-section-l); /* 50px */
+  }
+
+  body.ivs-contact main > .section.divider .marketo-form {
+    padding-bottom: calc(2 * var(--space-block-l)); /* 40px */
+  }
+
+  /* Two-up rows: fixed 420px columns 10px apart (source), not stretched columns. */
+  /* stylelint-disable selector-class-pattern -- Marketo's own class names (see above) */
+  body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoFormRow {
+    column-gap: var(--space-block-s); /* 10px */
+  }
+
+  body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoFormCol {
+    flex: 0 1 var(--form-field-max-width);
+  }
+}
+  
+  /* stylelint-enable selector-class-pattern */
 @media (width >=1200px) {
   body.search-results main h1:has(strong) {
     font-size: var(--find-a-doctor-control-height);
