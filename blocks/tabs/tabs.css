@@ -90,11 +90,10 @@
 }
 
 .tabs .tabs-tab {
-  position: relative;
   margin: 0;
   border: 0;
   border-radius: var(--radius-none);
-  padding: 12px 30px 7px;
+  padding: 12px var(--tabs-tab-padding-inline) 7px;
   background: none;
   color: var(--color-black);
   font-family: var(--display-font-family);
@@ -106,30 +105,28 @@
   cursor: pointer;
 }
 
-/* divider between tabs — spans only the label's box (inside the button's 12px top /
-   7px bottom padding), like the source's border on the label-height <li>, rather
-   than the full padded button height */
-.tabs .tabs-tab::after {
-  content: "";
-  position: absolute;
-  inset-block: 12px 7px;
-  right: 0;
-  border-right: 1px solid var(--color-surface-dim);
-}
-
 /* last tab: no divider and no trailing padding (source: 0 0 0 30px), so the
    tab bar is only as wide as its labels need */
 .tabs .tabs-tab:last-child {
   padding-right: 0;
 }
 
-.tabs .tabs-tab:last-child::after {
-  content: none;
-}
-
 .tabs .tabs-tab p {
+  position: relative;
   margin: 0;
   padding: 12px 0 7px;
+}
+
+/* divider between tabs — anchored to the label (not the button) so it always spans
+   just the label's box, like the source's border on the label-height <li>, whatever
+   vertical padding a theme gives the button (e.g. condition-detail's 0 30px).
+   Pushed out by the button's side padding to sit at the button's right edge. */
+.tabs .tabs-tab:not(:last-child) p::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  right: calc(-1 * var(--tabs-tab-padding-inline));
+  border-right: 1px solid var(--color-surface-dim);
 }
 
 .tabs .tabs-tab[aria-selected="true"] {
@@ -140,7 +137,6 @@
   border-bottom: 1px solid var(--color-accent);
   padding-bottom: 7px;
 }
-
 
 .tabs .tabs-tab:focus-visible {
   outline: 2px solid var(--color-primary);

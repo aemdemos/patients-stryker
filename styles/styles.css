@@ -182,6 +182,7 @@
 
   /* tabs block — side-by-side panel (copy + video), measured from source ("Hear from stroke survivors") */
   --tabs-panel-copy-padding: 36px 36px 18px; /* copy above the video on mobile */
+  --tabs-tab-padding-inline: 30px; /* source tab label side padding; the divider sits at this edge */
 
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
