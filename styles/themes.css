@@ -2070,3 +2070,106 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     margin-bottom: var(--space-section-l);
   }
 }
+
+/* =====================================================================
+   Theme: doctor-request — IVS physician-locator sign-up (singleton).
+   Source: a `.c-largeheadline` (gold Futura title over a light-serif
+   subhead, both vw-scaled) above a full-width rule and the Marketo form.
+   The vw type is approximated with the shared px scale per breakpoint;
+   the source drops to its smaller sizes at 840px, mirrored here at 900px.
+   ===================================================================== */
+
+/* intro: source content sits ~50px below the header on mobile and ~72px
+   (10px header margin + an empty spacer row) from 600px, where the headline
+   box also insets its text by 20px top and bottom */
+body.doctor-request main > .section:first-child {
+  padding-top: calc(var(--space-section) + var(--space-block-l));
+  padding-bottom: var(--space-block-l);
+}
+
+body.doctor-request main > .section:first-child > .default-content-wrapper {
+  padding: 0 calc(var(--space-block) + var(--space-block-l));
+}
+
+body.doctor-request main > .section:first-child h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+  color: var(--color-accent);
+}
+
+/* subhead: the source authors both sentences in one h2 split by <br><br>,
+   so the gap between the two paragraphs is one blank line */
+body.doctor-request main > .section:first-child p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height-hero);
+}
+
+body.doctor-request main > .section:first-child p + p {
+  margin-top: calc(var(--heading-line-height-hero) * 1em);
+}
+
+body.doctor-request main > .section:first-child p:last-child {
+  margin-bottom: var(--space-block);
+}
+
+/* form: full-width grey rule above it (source .section-separator), with the
+   gap below the rule owned by the section rather than the block */
+body.doctor-request main > .section.marketo-form-container {
+  padding-top: var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+body.doctor-request .marketo-form {
+  padding-top: 0;
+}
+
+@media (width >= 600px) {
+  body.doctor-request main > .section:first-child {
+    padding-top: calc(2 * var(--space-section) + var(--space-block-s));
+    padding-bottom: var(--space-section);
+  }
+
+  body.doctor-request main > .section:first-child > .default-content-wrapper {
+    padding-block: var(--space-block-l);
+  }
+
+  body.doctor-request main > .section.marketo-form-container {
+    padding-top: var(--space-section-l);
+  }
+
+  /* tablet: the source's mobile vw sizes peak here (~30-42px / 18-25px) */
+  body.doctor-request main > .section:first-child h1 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+
+  body.doctor-request main > .section:first-child p {
+    font-size: var(--body-font-size-xl);
+  }
+}
+
+/* the source switches to its smaller desktop vw scale at 840px */
+@media (width >= 900px) {
+  body.doctor-request main > .section:first-child h1 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.doctor-request main > .section:first-child p {
+    font-size: var(--body-font-size-l);
+  }
+}
+
+@media (width >= 1200px) {
+  body.doctor-request main > .section:first-child h1 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+
+  body.doctor-request main > .section:first-child p {
+    font-size: var(--body-font-size-xl);
+  }
+}
