@@ -58,6 +58,18 @@
   padding-block-end: var(--space-block-l);
 }
 
+/* flex sections sit side by side from 900px: every column gets the breathing
+   room, not just the first (top) / last (bottom) one */
+@media (width >= 900px) {
+  .library-preview main > .section.flex.library-variant-start > div {
+    padding-block-start: var(--space-block-l);
+  }
+
+  .library-preview main > .section.flex.library-variant-end > div {
+    padding-block-end: var(--space-block-l);
+  }
+}
+
 /* name tab sitting on the frame's top edge */
 .library-preview main > .section.library-variant-start[data-library-label]::after {
   content: attr(data-library-label);
