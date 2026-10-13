@@ -1039,11 +1039,13 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
     height: var(--nav-height);
   }
 
-/* Flex sections lay authored wrappers side by side on desktop and stack below 900px. */
+/* Flex sections lay authored wrappers side by side on desktop and stack below 900px.
+   Same 15px edge as every section and the hero; the columns drop their own inset
+   and sit one source gutter (2 x 15px) apart. */
   main > .section.flex {
     display: flex;
     align-items: flex-start;
-    gap: var(--container-gutter);
+    column-gap: calc(2 * var(--container-gutter));
     box-sizing: border-box;
     max-width: var(--container-max);
     margin-inline: auto;
@@ -1059,6 +1061,7 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
   main > .section.flex > div {
     flex: 1 1 0;
     min-width: 0;
+    padding-inline: 0;
   }
 
   main > .section.flex > div:empty {

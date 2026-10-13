@@ -869,7 +869,7 @@ body.discography main > .section > .default-content-wrapper h2 {
   /* the source keeps the overview box at a uniform 3% padding at every width;
      the shared wide-panel rule switches to 4% 2% with a 2% block margin. */
   body.discography main .panel.cta.wide .panel-body {
-    margin: 0 var(--space-block-s) var(--space-block-s) 0;
+    margin: 0 0 var(--space-block-s);
     padding: 3%;
   }
 
@@ -916,10 +916,9 @@ body.discography main .panel.cta .panel-body h3 {
   }
 }
 
-/* source overview box sits 10px in from its column's right edge, with 10px
-   below it, at every width */
+/* overview box fills its column (lines up with the hero), with 10px below it,
+   at every width */
 body.discography main .panel.cta.wide .panel-body {
-  margin-inline-end: var(--space-block-s);
   margin-block-end: var(--space-block-s);
 }
 
@@ -1364,15 +1363,6 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   margin-top: unset;
   }
 
-  body.discography main > .section.flex > div {
-    padding-inline: 0;
-  }
-
-  /* source column gutter: 15px padding on each side of the two columns */
-  body.discography main > .section.flex {
-    gap: calc(2 * var(--container-gutter));
-  }
-
   body.condition-detail .hero.banner > div:last-child {
     width: 55%;
   }
@@ -1505,10 +1495,9 @@ body.ivs-get-the-facts main .panel.cta .panel-body h2 {
   line-height: var(--heading-line-height-xl-nested-s); /* 28px */
 }
 
-/* Panel box: 10px side margin + 3% side padding, as the source's
-   .dimensional-box (3% of the column width). */
+/* Panel box: 3% side padding, as the source's .dimensional-box (3% of the
+   column width). The box fills its column so it lines up with the hero. */
 body.ivs-get-the-facts main .panel.cta .panel-body {
-  margin-inline: var(--space-block-s);
   padding-inline: 3%;
 }
 
@@ -1615,12 +1604,6 @@ body.ivs-get-the-facts .panel.gold .panel-body strong > a:any-link:has(> u) u {
 }
 
 @media (width >= 900px) {
-  /* intro + panel: two equal 50% columns with no gap/section inset, as the source grid */
-  body.ivs-get-the-facts main > .section.flex {
-    gap: 0;
-    padding-inline: 0;
-  }
-
   body.ivs-get-the-facts main > .section.dark .columns-50-50 > div > div {
     flex-basis: 50%;
   }
@@ -1922,7 +1905,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   body.bvn-ablation main > .section.flex {
     display: flex;
     align-items: flex-start;
-    gap: var(--container-gutter);
+    column-gap: calc(2 * var(--container-gutter));
     box-sizing: border-box;
     max-width: var(--container-max);
     margin-inline: auto;
@@ -2033,8 +2016,6 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
-    padding:0;
-    gap:0;
   }
 
   body.condition-detail main > .section.flex > .panel-wrapper:first-child {
