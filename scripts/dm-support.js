@@ -6,11 +6,13 @@
  * (or a bare DM <img>) into the right native element pointing at the original
  * external DM source:
  *   - images  -> responsive <picture>
- *   - videos  -> native <video> with controls (+ optional poster)
+ *   - videos  -> native <video> with custom controls (+ optional poster)
  *
  * Detection is host-independent — it matches DM URL path patterns rather than a
  * specific hostname, covering Scene7/classic DM and DM OpenAPI delivery.
  */
+
+import addVideoControls from './video-controls.js';
 
 // host-independent DM image URL signatures
 const DM_SCENE7 = /\/is\/image\//i;
@@ -244,7 +246,7 @@ function loadHlsJs() {
 }
 
 /**
- * Attach an HLS source to a <video>.
+ * Wire up an HLS source on a <video> once hls.js is available.
  *
  * Prefer hls.js (software demux + JS-controlled ABR) wherever it's supported —
  * including Safari/iOS, which also has native HLS. Native HLS on macOS Safari
@@ -255,9 +257,10 @@ function loadHlsJs() {
  * run (e.g. older iOS Safari, which lacks Media Source Extensions).
  * @param {HTMLVideoElement} video
  * @param {string} src an .m3u8 URL
+ * @returns {Promise<void>} resolves once a playable source is attached
  */
-function attachHls(video, src) {
-  loadHlsJs().then((Hls) => {
+function initHls(video, src) {
+  return loadHlsJs().then((Hls) => {
     if (Hls && Hls.isSupported()) {
       const hls = new Hls();
       hls.loadSource(src);
@@ -267,6 +270,62 @@ function attachHls(video, src) {
       video.src = src;
     }
   });
+}
+
+/**
+ * Attach an HLS source to a <video>, on demand only.
+ *
+ * hls.js is ~123KB of script that parses a manifest and spins up a demuxer, and
+ * none of it produces anything visible — the poster frame is what the user sees
+ * until they press play. So nothing is loaded until playback is actually
+ * requested: the play overlay, a pointer/keyboard interaction with the native
+ * controls, or a `play` event. A page full of videos therefore costs nothing at
+ * all until one is played.
+ * @param {HTMLVideoElement} video
+ * @param {string} src an .m3u8 URL
+ * @returns {() => Promise<void>} starts the (idempotent) attach and resolves when
+ * the video has a playable source
+ */
+function attachHls(video, src) {
+  let ready;
+  const start = () => {
+    if (!ready) ready = initHls(video, src);
+    return ready;
+  };
+
+  // interacting with the player means playback is imminent
+  ['pointerdown', 'keydown'].forEach((type) => {
+    video.addEventListener(type, start, { once: true });
+  });
+  // a play attempt that lands before the source is attached fails silently, so
+  // re-issue it once the attach completes
+  video.addEventListener('play', () => {
+    const pending = !ready;
+    start().then(() => {
+      if (pending && video.paused) video.play().catch(() => {});
+    });
+  });
+
+  return start;
+}
+
+/**
+ * Read an HLS stream's total length from its playlists (a couple of KB of text,
+ * no hls.js), so the controls can show "0:00 / 2:16" before playback the way the
+ * source viewer does. Follows the first variant of a master playlist.
+ * @param {string} src an .m3u8 URL
+ * @returns {Promise<number>} duration in seconds, or NaN if it can't be read
+ */
+function hlsDuration(src) {
+  const text = (url) => fetch(url).then((res) => (res.ok ? res.text() : ''));
+  const sum = (playlist) => [...playlist.matchAll(/#EXTINF:([\d.]+)/g)]
+    .reduce((total, [, seconds]) => total + Number(seconds), 0) || NaN;
+  return text(src).then((playlist) => {
+    if (playlist.includes('#EXTINF:')) return sum(playlist);
+    const variant = playlist.split('\n').map((line) => line.trim())
+      .find((line) => line && !line.startsWith('#'));
+    return variant ? text(new URL(variant, src).href).then(sum) : NaN;
+  }).catch(() => NaN);
 }
 
 /**
@@ -286,18 +345,22 @@ export function renderVideo(src, label) {
 
   const video = document.createElement('video');
   video.className = 'dm-video';
-  video.controls = true;
   video.playsInline = true;
-  video.preload = 'metadata';
+  // with a poster there is nothing to show before playback, so skip the metadata
+  // fetch entirely; without one, `metadata` gives the browser a first frame
+  video.preload = poster ? 'none' : 'metadata';
   // sizing/appearance lives in CSS (.dm-video in styles/lazy-styles.css) so it
   // can be adjusted without touching this script
   if (poster) video.poster = poster;
   if (label) video.setAttribute('aria-label', label);
 
   const hlsSrc = preferHls(mediaSrc);
+  let startMedia = () => Promise.resolve();
+  let loadDuration = null;
   if (/\.m3u8(\?|$)/i.test(hlsSrc)) {
     // HLS (incl. Scene7 .mpd rewritten to .m3u8): native or hls.js
-    attachHls(video, hlsSrc);
+    startMedia = attachHls(video, hlsSrc);
+    loadDuration = () => hlsDuration(hlsSrc);
   } else {
     // progressive/other container the browser can play directly
     const source = document.createElement('source');
@@ -307,11 +370,14 @@ export function renderVideo(src, label) {
     video.append(source);
   }
 
+  // the HLS source is attached lazily, so make sure it is there before playing
+  const playVideo = () => startMedia().then(() => video.play().catch(() => {}));
+
   // wrap the video with a centered play-icon overlay (with or without a poster):
   // it sits over the frame before playback and fades out/in as the video is
   // played/paused, mirroring the source's Scene7 viewer. The overlay layer itself
-  // is click-through (pointer-events:none) so the native controls stay usable; only
-  // the centered button captures clicks. Styling lives in styles/lazy-styles.css.
+  // is click-through (pointer-events:none) so clicks reach the video; only the
+  // centered button captures them. Styling lives in styles/lazy-styles.css.
   const wrapper = document.createElement('div');
   wrapper.className = 'dm-video-wrapper';
 
@@ -321,16 +387,18 @@ export function renderVideo(src, label) {
   play.type = 'button';
   play.className = 'dm-video-play';
   play.setAttribute('aria-label', label ? `Play video: ${label}` : 'Play video');
-  play.addEventListener('click', () => { video.play(); });
+  play.addEventListener('click', playVideo);
   overlay.append(play);
 
   // toggle the overlay from the video's own state, so it also responds when the
-  // user plays/pauses via the native controls or keyboard
+  // user plays/pauses via the control bar or keyboard
   video.addEventListener('play', () => wrapper.classList.add('is-playing'));
   video.addEventListener('pause', () => wrapper.classList.remove('is-playing'));
   video.addEventListener('ended', () => wrapper.classList.remove('is-playing'));
 
   wrapper.append(video, overlay);
+  // Scene7-style control bar in place of the browser's native controls
+  addVideoControls(wrapper, video, playVideo, loadDuration);
   return wrapper;
 }
 

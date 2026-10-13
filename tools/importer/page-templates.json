@@ -245,6 +245,40 @@
       ]
     },
     {
+      "name": "ivs-home",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/index.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/index.html",
+      "coverageGaps": [],
+      "description": "IVS patient homepage (standalone singleton, styled via the `ivs-home` theme in styles/themes.css). Zones top-to-bottom: (1) hero (banner) 'Pain doesn't hold the power. You do.' + Find a doctor CTA; (2) a sticky-nav in-page anchor bar (Overview/Testimonials/Find a Doctor/Resources/Disclaimer); (3) a 'flex' intro section — default 'Making every moment matter.' text left + a video block right; (4) a gold panel band 'There's hope ahead'; (5) a 4-up cards (linked) pain-type grid (back/neck, knee, hip, shoulder); (6) a statistics dashboard (6 metrics, two 3-up rows); (7) a 'flex' section of two panel (cta) spotlights (VCF; radiofrequency ablation); (8) two testimonial columns (Janet; Lynn) on a dark-teal band — text left + video right; (9) a gold panel band 'Tired of living in pain?'; (10) a marketo-form doctor-finder; (11) a 'Resources' heading + tabs block whose six tabs reference the brochure card fragments under /fragments/resources/ (preceded by a spacer section, same as the conditions pages); (12) a 'compact' disclaimer/references section. Header/footer and the runtime Scene7 video chrome are stripped on import; all mapped blocks reuse existing project blocks — no new block code.",
+      "blocks": [
+        { "name": "hero", "section": "hero", "instances": [".fullWidthImageHero"] },
+        { "name": "sticky-nav", "section": "anchor-nav", "instances": [".c-navigation-bar .nav-wrap"] },
+        { "name": "columns", "instances": [".cols2:has(.standalonevideo)"] },
+        { "name": "panel-gold", "section": "hope", "instances": [".c-rich-text-editor .bg-gold:has(.fontsize-1-25em)"] },
+        { "name": "cards", "section": "pain-cards", "instances": [".cols4:not(.tabs .cols4) > .colctrl"] },
+        { "name": "statistics", "section": "statistics", "instances": [".cols3 > .colctrl"] },
+        { "name": "panel-cta", "section": "spotlights", "instances": [".cols2 > .colctrl:has(.dimensional-box) > .row > [class*='col-sm-6']"] },
+        { "name": "panel-gold-cta", "section": "find-doctor", "instances": [".c-rich-text-editor .bg-gold:has(a[href*='physicianlocator'])"] },
+        { "name": "tabs", "section": "resources", "instances": [".tabs:has(.c-tabs)"] }
+      ],
+      "sections": [
+        { "id": "hero", "name": "Hero banner", "selector": ".fullWidthImageHero", "style": null, "blocks": ["hero"], "defaultContent": [] },
+        { "id": "anchor-nav", "name": "Sticky anchor bar", "selector": ".c-navigation-bar", "style": null, "blocks": ["sticky-nav"], "defaultContent": [] },
+        { "id": "intro-video", "name": "Intro: text + video", "selector": ".cols2:has(.standalonevideo):not(.fullbleedpanel *)", "style": "flex", "anchor": "overview", "blocks": ["columns"], "defaultContent": [] },
+        { "id": "hope", "name": "There's hope ahead (gold)", "selector": ".text.parbase:has(.bg-gold .fontsize-1-25em)", "style": null, "blocks": ["panel-gold"], "defaultContent": [] },
+        { "id": "pain-cards", "name": "Pain-type cards", "selector": ".cols4", "style": null, "blocks": ["cards"], "defaultContent": [] },
+        { "id": "statistics", "name": "Statistics dashboard", "selector": ".cols3", "style": "divider", "spacerBefore": true, "blocks": ["statistics"], "defaultContent": [] },
+        { "id": "spotlights", "name": "Condition/treatment spotlights", "selector": ".cols2:has(.dimensional-box)", "style": "flex", "blocks": ["panel-cta"], "defaultContent": [] },
+        { "id": "testimonials", "name": "Patient testimonials (dark teal)", "selector": ".fullbleedpanel:has(.bg-dark-teal-gradient)", "style": "dark", "anchor": "testimonials", "blocks": ["columns"], "defaultContent": [] },
+        { "id": "find-doctor", "name": "Find a doctor (gold)", "selector": ".text.parbase:has(.bg-gold a[href*='physicianlocator'])", "style": null, "anchor": "find-a-doctor", "blocks": ["panel-gold-cta"], "defaultContent": [] },
+        { "id": "marketo", "name": "Doctor-finder form", "selector": ".marketoform", "style": null, "anchor": "resources", "blocks": ["marketo-form"], "defaultContent": [] },
+        { "id": "resources", "name": "Resources brochure tabs", "selector": ".tabs:has(.c-tabs)", "style": null, "spacerBefore": true, "blocks": ["tabs"], "defaultContent": [".tabs .c-tabs h2.component-subheading"] },
+        { "id": "disclaimer", "name": "Disclaimer + references", "selector": ".c-disclaimer.page-section:not(.container)", "style": "compact", "anchor": "disclaimer", "blocks": [], "defaultContent": [".c-disclaimer.page-section:not(.container)"] }
+      ]
+    },
+    {
       "name": "ivs-treatment",
       "description": "Interventional Spine (IVS) treatment page (mild® procedure). Sections: full-bleed hero (photo + H1 + gold CTA); a flex side-by-side section pairing default text ('Get back on your feet') with a white 'Benefits of the treatment' panel; a dark teal 'What is LSS?' section (columns 70-30, text + DM diagram); a 'proven results' section (default heading/intro above a default 2-up columns block of DM stat charts); a dark teal Before/After comparison (default 2-up columns, DM diagrams); a 'How it works' section (default heading above a 3-up text-only columns block); a gold 'Tired of living in pain?' CTA panel; a Resources cards grid (brochure-cta, 2 PDF thumbnails); a light-gray 'Potential risks' default-content block; and a compact inline disclaimer + footnotes region. Standalone template for future IVS treatment pages. All DM/Scene7 images round-trip via the shared patients-stryker-dm-images transformer. The physician-contact Marketo form between the CTA and Resources is not migrated.",
       "urls": [
@@ -548,7 +582,7 @@
     },
     {
       "name": "bvn-ablation",
-      "description": "Basivertebral nerve ablation (BVNA) IVS treatment page — SINGLETON (not part of procedure-detail), styled via the `bvn-ablation` theme in styles/themes.css. Sections: hero (banner) + Find a doctor; flex intro text + panel (cta, wide) benefits; flex+dark band of default text beside a DM video block; statistics (count-up, cols-2) + panel (gray) symptoms box; How it works H3 + 4-step cards; What you can expect H3 + 3-up text columns; panel (gold) CTA; Marketo find-a-doctor form; Resources H2 + BVN brochure card fragment; light-gray potential risks; compact footnotes/references. Existing blocks only; parsers/transformers under bvn-ablation/ are copies so template changes don't affect it.",
+      "description": "Basivertebral nerve ablation (BVNA) IVS treatment page — SINGLETON (not part of procedure-detail), styled via the `bvn-ablation` theme in styles/themes.css. Sections: hero (banner) + Find a doctor; flex intro text + panel (cta, wide) benefits; flex+dark band of default text beside a DM video block; statistics (count-up, cols-2) + panel (gray) symptoms box; How it works H3 + 4-step columns (library \"Columns – Steps (4 up)\"); What you can expect H3 + 3-up text columns; panel (gold) CTA; Marketo find-a-doctor form; Resources H2 + tabs (library \"Tabs – Resources by treatment\"), one tab per source tab linking its brochure card fragment; light-gray potential risks; compact footnotes/references. Existing blocks only; parsers/transformers under bvn-ablation/ are copies so template changes don't affect it.",
       "urls": [
         "https://patients.stryker.com/us/en/ivs/treatments/basivertebral-nerve-ablation.html"
       ],
@@ -586,7 +620,7 @@
           ]
         },
         {
-          "name": "cards-steps",
+          "name": "columns-steps",
           "instances": [
             ".cols4:not(.tabs .cols4)"
           ]
@@ -604,10 +638,128 @@
           ]
         },
         {
-          "name": "cards-resources",
+          "name": "tabs-resources",
           "instances": [
-            ".tabs .c-tabs .tabs-content .cols4 .colctrl"
+            ".tabs .c-tabs .tab-container"
           ]
+        }
+      ]
+    },
+    {
+      "name": "ivs-contact",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/contact.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/contact.html",
+      "description": "IVS Contact us page (standalone): page title, intro, Marketo contact form, Find a doctor CTA, compact disclaimer.",
+      "blocks": [
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".marketoform"
+          ]
+        }
+      ],
+      "urlPattern": "/us/en/ivs/contact",
+      "sections": [
+        {
+          "id": "1",
+          "name": "intro",
+          "selector": [
+            ".main.content .text.parbase"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1",
+            "h2",
+            "p",
+            ".buttonset a.btn-gold"
+          ]
+        },
+        {
+          "id": "2",
+          "name": "contact-form",
+          "selector": [
+            ".main.content .sectionseparator",
+            ".marketoform"
+          ],
+          "style": "divider",
+          "blocks": [
+            "marketo-form"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "3",
+          "name": "disclaimer",
+          "selector": [
+            ".c-disclaimer.page-section"
+          ],
+          "style": "compact",
+          "blocks": [],
+          "defaultContent": [
+            ".c-disclaimer p"
+            ]
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "description": "ENT site search page — SINGLETON. Default content plus one block: h1 'Search Results', h2 'Showing results for:', a Search block (placeholder text only — the block builds the same form as the header search), the no-results message and suggestions list. Hidden inputs and the Load more button are dropped. Styled via the `search` theme.",
+      "urls": [
+        "https://patients.stryker.com/us/en/ent/search.html"
+      ],
+      "blocks": [
+        {
+          "name": "search",
+          "instances": [
+            ".search-header .search-bar"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "doctor-request",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/find-a-doctor/doctor-request.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/find-a-doctor/doctor-request.html",
+      "urlPattern": "/us/en/ivs/find-a-doctor/*",
+      "coverageGaps": [],
+      "description": "IVS find-a-doctor Doctor Request page — SINGLETON, styled via the `doctor-request` theme in styles/themes.css. Default-content h1 + intro paragraphs followed by the existing marketo-form block (physician locator sign-up). The post-submit thank-you message is dropped. Header/footer stripped on import.",
+      "blocks": [
+        {
+          "name": "marketo-form",
+          "instances": [
+            ".marketoform"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "intro",
+          "name": "Locator intro (heading + text)",
+          "selector": [
+            ".largeheadline"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".largeheadline"
+          ]
+        },
+        {
+          "id": "form",
+          "name": "Physician locator form",
+          "selector": [
+            ".cols:has(.marketoform)"
+          ],
+          "style": null,
+          "blocks": [
+            "marketo-form"
+          ],
+          "defaultContent": []
         }
       ]
     }

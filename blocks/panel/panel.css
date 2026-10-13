@@ -70,6 +70,10 @@
   gap:0;
 } 
 
+.panel.colored-border > ul  {
+  margin-bottom: var(--space-inset-m);
+}
+
 .panel.cta .panel-body ul,
 .panel.left .panel-body ul {
   font-size: var(--panel-cta-body-size);
@@ -95,6 +99,7 @@
 }
 
 
+
 /* ---- cta variant */
 .panel.cta > ul > li,
 .panel.light > ul > li,
@@ -108,8 +113,9 @@
 .panel.colored-border .panel-body {
   max-width: none;
   margin: 0;
-  padding: 3%;
+  padding: 5%;
   text-align: left;
+  margin-bottom: 1%;
 }
 
 .panel .panel-body h3 {
@@ -412,6 +418,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+
+   .panel.colored-border > ul {
+    margin-bottom: var(--space-section-l);
+   }
 
   .panel.gray .panel-body h3 {
     font-size: var(--panel-heading-size-s);
