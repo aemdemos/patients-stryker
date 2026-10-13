@@ -49,6 +49,33 @@ function groupVariants(sections) {
 }
 
 /**
+ * Shows Metadata example tables as a key / value table. The site has no
+ * metadata block (the published page turns its own metadata table into
+ * <meta> tags), so in the preview it would otherwise render as loose text and
+ * try to load a block that doesn't exist. A <table> isn't decorated as a block.
+ * @param {Element} main The main element
+ */
+function tabulateMetadata(main) {
+  main.querySelectorAll(':scope > div > .metadata').forEach((metadata) => {
+    const table = document.createElement('table');
+    table.className = 'library-preview-metadata';
+    const body = document.createElement('tbody');
+    [...metadata.children].forEach((row) => {
+      const tr = document.createElement('tr');
+      [...row.children].forEach((cell, i) => {
+        const td = document.createElement(i === 0 ? 'th' : 'td');
+        if (i === 0) td.scope = 'row';
+        td.append(...cell.childNodes);
+        tr.append(td);
+      });
+      body.append(tr);
+    });
+    table.append(body);
+    metadata.replaceWith(table);
+  });
+}
+
+/**
  * Cleans up and frames the variants of a library document. Runs on the raw
  * content, before decorateMain(), so the removed tables are never decorated.
  * @param {Element} main The main element
@@ -56,6 +83,8 @@ function groupVariants(sections) {
 export default function decorateLibraryPreview(main) {
   document.body.classList.add('library-preview');
   loadCSS(`${window.hlx.codeBasePath}/tools/da-library-preview/da-library-preview.css`);
+
+  tabulateMetadata(main);
 
   const usedIds = new Set();
   groupVariants([...main.querySelectorAll(':scope > div')]).forEach((variant) => {

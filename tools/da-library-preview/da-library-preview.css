@@ -70,6 +70,31 @@
   }
 }
 
+/* Metadata examples: a key / value table, as authors see it in DA */
+.library-preview .library-preview-metadata {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.library-preview .library-preview-metadata :is(th, td) {
+  padding: var(--space-block-s) var(--space-block);
+  border: var(--library-preview-border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.library-preview .library-preview-metadata th {
+  width: 25%;
+  background-color: var(--color-surface);
+  font-weight: var(--font-weight-semibold);
+}
+
+.library-preview .library-preview-metadata :is(th, td) > :last-child {
+  margin-block-end: 0;
+}
+
 /* name tab sitting on the frame's top edge */
 .library-preview main > .section.library-variant-start[data-library-label]::after {
   content: attr(data-library-label);
