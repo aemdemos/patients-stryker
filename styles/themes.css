@@ -342,7 +342,7 @@ body.campaign-landing main > .section.hero-container:has(.hero.fullbleed) ~ .sec
 body.campaign-landing main .section.serif .columns :is(p, li, a) {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l);
-  line-height: var(--heading-line-height);
+  line-height: var(--paragraph-line-height-serif-l);
 }
 
 /* Video copy: source applies a 1.5em light-serif span inside this text region. */
