@@ -2075,9 +2075,18 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
    Theme: doctor-request — IVS physician-locator sign-up (singleton).
    Source: a `.c-largeheadline` (gold Futura title over a light-serif
    subhead, both vw-scaled) above a full-width rule and the Marketo form.
-   The vw type is approximated with the shared px scale per breakpoint;
-   the source drops to its smaller sizes at 840px, mirrored here at 900px.
+   The source drops to its smaller vw sizes at 840px, mirrored here at
+   900px; min() reproduces its px caps at ≥1439px without a breakpoint.
    ===================================================================== */
+
+/* theme-scoped type tokens (source .fontsize-2-5-vw / .fontsize-1-5-vw) */
+body.doctor-request {
+  --large-headline-size-s: 5vw;           /* title <900px (source <840px) */
+  --large-headline-size: 2.5vw;           /* title ≥900px */
+  --large-headline-size-max: 35px;        /* title cap (source ≥1439px) */
+  --large-headline-subhead-size-s: 3vw;   /* subhead <900px (source <840px) */
+  --large-headline-subhead-size: 1.5vw;   /* subhead ≥900px; caps at --body-font-size-xl */
+}
 
 /* intro: source content sits ~50px below the header on mobile and ~72px
    (10px header margin + an empty spacer row) from 600px, where the headline
@@ -2094,7 +2103,7 @@ body.doctor-request main > .section:first-child > .default-content-wrapper {
 body.doctor-request main > .section:first-child h1 {
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-l);
+  font-size: var(--large-headline-size-s);
   font-weight: var(--font-weight-bold);
   line-height: var(--heading-line-height-hero);
   color: var(--color-accent);
@@ -2105,7 +2114,7 @@ body.doctor-request main > .section:first-child h1 {
 body.doctor-request main > .section:first-child p {
   margin: 0;
   font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: var(--large-headline-subhead-size-s);
   font-weight: var(--font-weight-medium);
   line-height: var(--heading-line-height-hero);
 }
@@ -2142,34 +2151,15 @@ body.doctor-request .marketo-form {
   body.doctor-request main > .section.marketo-form-container {
     padding-top: var(--space-section-l);
   }
-
-  /* tablet: the source's mobile vw sizes peak here (~30-42px / 18-25px) */
-  body.doctor-request main > .section:first-child h1 {
-    font-size: var(--heading-font-size-xxxl-s);
-  }
-
-  body.doctor-request main > .section:first-child p {
-    font-size: var(--body-font-size-xl);
-  }
 }
 
 /* the source switches to its smaller desktop vw scale at 840px */
 @media (width >= 900px) {
   body.doctor-request main > .section:first-child h1 {
-    font-size: var(--heading-font-size-l-scaled);
+    font-size: min(var(--large-headline-size), var(--large-headline-size-max));
   }
 
   body.doctor-request main > .section:first-child p {
-    font-size: var(--body-font-size-l);
-  }
-}
-
-@media (width >= 1200px) {
-  body.doctor-request main > .section:first-child h1 {
-    font-size: var(--heading-font-size-xxxl-s);
-  }
-
-  body.doctor-request main > .section:first-child p {
-    font-size: var(--body-font-size-xl);
+    font-size: min(var(--large-headline-subhead-size), var(--body-font-size-xl));
   }
 }
