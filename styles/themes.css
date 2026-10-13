@@ -2151,6 +2151,7 @@ body.ivs-contact main > .section.compact .default-content-wrapper > p:last-of-ty
   body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoFormCol {
     flex: 0 1 var(--form-field-max-width);
   }
+}
   
   /* stylelint-enable selector-class-pattern */
 @media (width >=1200px) {
