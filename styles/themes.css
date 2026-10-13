@@ -1352,6 +1352,222 @@ body.resources .section.compact {
   margin-bottom: 0;
 }
 
+/* Theme: ivs-home */
+body.ivs-home main > .section.flex,
+body.ivs-home main > .section.cards-container,
+body.ivs-home main > .section.statistics-container,
+body.ivs-home main > .section.panel-container,
+body.ivs-home main > .section.marketo-form-container,
+body.ivs-home main > .section.compact {
+  margin-top: var(--space-section-xl);
+}
+
+body.ivs-home main > .section.sticky-nav-container {
+  margin-top: var(--space-block-l);
+}
+
+body.ivs-home main > .section.hero-container {
+  margin-top: var(--space-ivs-home-hero);
+}
+
+body.ivs-home main #resources {
+  font-size: var(--heading-font-size-l);
+}
+
+body.ivs-home .hero.banner h1,
+body.ivs-home .hero.banner h2 {
+  box-sizing: border-box;
+}
+
+body.ivs-home main > .section.flex[data-anchor="overview"] {
+  margin-top: var(--space-ivs-home-intro);
+}
+
+body.ivs-home main > .section.dark {
+  margin-block: var(--space-ivs-home-band) 0;
+  padding-block: var(--space-section-l);
+}
+
+body.ivs-home main > .section.dark > .columns-wrapper + .columns-wrapper {
+  padding-top: var(--space-section-xl);
+}
+
+/* text + video stay stacked until 600px (the source's 841px tablet grid
+   breakpoint, mapped to the EDS 600px breakpoint) */
+body.ivs-home .columns > div {
+  flex-flow: column;
+  align-items: stretch;
+}
+
+body.ivs-home .columns > div > div {
+  flex: none;
+}
+
+body.ivs-home .columns > div > div + div {
+  margin-top: var(--space-block);
+}
+
+/* source's Scene7 player has no frame and fills its 16:9 box */
+body.ivs-home .dm-video {
+  border: 0;
+  object-fit: cover;
+}
+
+body.ivs-home main > .section.cards-container {
+  margin-top: var(--space-section);
+}
+
+/* stats band: source has 40px from the cards to the rule, ~20px rule→numbers */
+body.ivs-home main > .section.divider {
+  margin-top: var(--space-block-s);
+  padding-top: var(--space-block-l);
+}
+
+body.ivs-home main > .section.compact > div > ol {
+  margin-bottom: var(--space-section);
+}
+
+/* the source's panels sit flush in their section (shared panel.css keeps a
+   10px margin for the other pages) */
+body.ivs-home .panel .panel-body {
+  margin: 0;
+}
+
+body.ivs-home .panel.gold .panel-body {
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
+/* source's mobile banner type (<600px): 26.25px heading, 17.5px subheading */
+body.ivs-home .panel.gold .panel-body h2 {
+  margin-bottom: var(--space-inset-m);
+  font-size: calc(var(--heading-font-size-l) * 1.25);
+  line-height: var(--heading-line-height-h4);
+}
+
+body.ivs-home .panel.gold .panel-body h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+}
+
+body.ivs-home .cards.linked .cards-card-body h3 {
+  font-family: var(--body-font-family);
+}
+
+body.ivs-home .cards.linked .cards-card-body h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* source numbers sit in a ~1.6x line box, leaving a gap above the description
+   (statistics.css resets the value's margin from 600px, so re-apply it here) */
+body.ivs-home .statistics {
+  --statistics-number-gap: 0.3em;
+}
+
+body.ivs-home .statistics .statistics-value {
+  margin-bottom: var(--statistics-number-gap);
+}
+
+body.ivs-home .columns.columns-2-cols h3 {
+  font-size: var(--heading-font-size-ml);
+}
+
+body.ivs-home .panel.cta.wide .panel-body p {
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+}
+
+body.ivs-home .panel.cta .panel-body h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+@media (width >= 600px) {
+  body.ivs-home .panel.gold .panel-body h2 {
+    font-size: calc(var(--heading-font-size-xl) * 1.25);
+  }
+
+  body.ivs-home .panel.gold .panel-body h4 {
+    font-size: var(--heading-font-size-ml);
+  }
+
+  body.ivs-home main > .section.flex[data-anchor="overview"] {
+    margin-top: var(--space-ivs-home-intro-m);
+  }
+
+  body.ivs-home main #resources {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.ivs-home .columns.columns-2-cols h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.ivs-home .panel.cta .panel-body h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.ivs-home main > .section.cards-container {
+    margin-top: var(--space-section-l);
+  }
+
+  body.ivs-home main > .section.divider {
+    margin-top: var(--space-section);
+    padding-top: var(--space-section-l);
+  }
+
+  body.ivs-home .columns > div {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+
+  body.ivs-home .columns > div > div {
+    flex: 1;
+  }
+
+  body.ivs-home .columns > div > div + div {
+    margin-top: 0;
+  }
+}
+
+@media (width >= 900px) {
+  /* the desktop overlay itself comes from the shared hero.css; the source
+     keeps the copy to the left ~half of the image */
+  body.ivs-home .hero.banner h1,
+  body.ivs-home .hero.banner h2 {
+    max-width: 47%;
+  }
+
+  body.ivs-home main > .section.dark {
+    margin-top: var(--space-section-xl);
+  }
+
+  body.ivs-home main > .section.cards-container {
+    margin-top: calc(var(--space-section) + var(--space-block-s));
+  }
+
+  body.ivs-home main > .section.panel-container[data-anchor="find-a-doctor"] {
+    margin-top: var(--space-ivs-home-find-doctor);
+  }
+
+  body.ivs-home .cards.linked > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 1200px) {
+  /* the source goes 4-up at 970px, mapped to the EDS 1200px breakpoint */
+  body.ivs-home .cards.linked > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* source keeps the 3vw headline, capped at 42px (from ~1400px) */
+  body.ivs-home .hero.banner h1 {
+    font-size: min(3vw, var(--heading-font-size-hero-max));
+  }
+}
+
 /* =====================================================================
    Theme: ivs-treatment — Interventional Spine treatment page (mild® procedure)
    ===================================================================== */
@@ -1579,7 +1795,7 @@ body.bvn-ablation {
 }
 
 /* ----- Page-wide type: the source wraps its copy in a 1.25x span ----- */
-body.bvn-ablation main > .section:is(.flex, .cards-container, .columns-container) :is(p, li),
+body.bvn-ablation main > .section:is(.flex, .columns-container) :is(p, li),
 body.bvn-ablation main .statistics .statistics-desc,
 body.bvn-ablation main .statistics .statistics-desc p {
   font-size: var(--body-font-size-l); /* 17.5px */
@@ -1591,7 +1807,7 @@ body.bvn-ablation main > .section > .default-content-wrapper h3 {
   line-height: var(--heading-line-height-ml);
 }
 
-body.bvn-ablation main > .section:is(.cards-container, .columns-container) > .default-content-wrapper h3 {
+body.bvn-ablation main > .section.columns-container > .default-content-wrapper h3 {
   margin-bottom: var(--space-block);
 }
 
@@ -1603,18 +1819,32 @@ body.bvn-ablation main a[href="/"] {
   text-decoration: none;
 }
 
-/* ----- Hero: gap under the header ----- */
+/* ----- Hero: gap under the header; on mobile a sage rule closes the hero
+   (the source's empty border-bottom-gold column, shown at its smallest size) ----- */
 body.bvn-ablation main > .section.hero-container {
   margin-top: var(--space-section-xl);
+  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* ----- Intro + Benefits (flex) ----- */
 body.bvn-ablation main > .section.flex:not(.dark) {
-  margin-block: calc(var(--space-section-l) + var(--space-block)) 0; /* ~65px under the hero */
+  margin-block: calc(var(--space-section-l) - var(--space-block) / 2) 0; /* ~42px under the hero rule */
 }
 
 body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
   padding-top: var(--space-block);
+}
+
+/* mobile type (source below its 480px breakpoint): benefits heading 21.875px */
+body.bvn-ablation main .panel.cta h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+/* "Potential risks" link: body size at every width (the panel block enlarges
+   underlined links to 21.5px on mobile; the source keeps 17.5px) */
+body.bvn-ablation main .panel.cta .panel-body p > a:any-link:has(> u) {
+  font-size: inherit;
 }
 
 body.bvn-ablation main .panel.cta.wide .panel-body ul {
@@ -1686,38 +1916,20 @@ body.bvn-ablation main .panel.gray .panel-body li {
   line-height: var(--body-line-height-l-nested);
 }
 
-/* ----- How it works: 4 step cards (1-up → 2-up → 4-up) ----- */
-body.bvn-ablation main > .section.cards-container:not(:has(.cards.resources)) {
+/* ----- How it works: 4 steps, library "Columns – Steps (4 up)" -----
+   (the columns block itself lays them out 1-up → 2 x 2 → four across) */
+body.bvn-ablation main > .section.columns-container:not(.divider) {
   margin-top: var(--space-section);
 }
 
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
-  grid-template-columns: 1fr;
-  gap: 0 var(--space-section);
-}
-
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul > li img {
-  aspect-ratio: auto;
-  height: auto;
-  object-fit: fill;
-}
-
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
-  margin-top: var(--space-block-l);
-}
-
-body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body p {
-  margin-bottom: var(--space-block);
-}
-
 /* ----- What you can expect: 3 text columns (1-up → 2-up → 3-up) ----- */
-body.bvn-ablation main > .section.columns-container {
+body.bvn-ablation main > .section.columns-container.divider {
   margin-top: var(--space-section);
   padding-top: var(--space-section);
 }
 
 /* the source's rich-text inset (~12px) inside each 15px-gutter column */
-body.bvn-ablation main > .section.columns-container .columns > div > div {
+body.bvn-ablation main > .section.columns-container.divider .columns > div > div {
   margin-bottom: var(--space-block);
   padding: var(--space-block) var(--space-inset-m);
 }
@@ -1760,15 +1972,8 @@ body.bvn-ablation main .panel.gold .panel-body a:any-link {
 }
 
 /* the form and Resources sections sit ~30px below the section above */
-body.bvn-ablation main > .section:is(.marketo-form-container, .fragment-container) {
+body.bvn-ablation main > .section:is(.marketo-form-container, .tabs-container) {
   margin-top: var(--space-section);
-}
-
-/* ----- Resources: sage underline under the heading ----- */
-body.bvn-ablation main > .section.fragment-container > .default-content-wrapper h2 {
-  margin-bottom: calc(var(--space-section-l) + var(--space-section)); /* ~80px to the cards */
-  padding-bottom: var(--heading-underline-gap);
-  border-bottom: 1px solid var(--color-surface-muted);
 }
 
 /* ----- Potential risks: contained deeper-gray box (not full-bleed) ----- */
@@ -1787,6 +1992,8 @@ body.bvn-ablation main > .section.light-gray > .default-content-wrapper {
 body.bvn-ablation main > .section > .default-content-wrapper #resources {
   border-bottom: 1px solid var(--color-surface-muted);
   padding-bottom: 7px;
+  font-size: var(--heading-font-size-l); /* 21px on mobile */
+  line-height: var(--heading-line-height);
 }
 
 
@@ -1795,8 +2002,13 @@ body.bvn-ablation main > .section.light-gray :is(p, li) {
   line-height: var(--paragraph-line-height);
 }
 
-/* ----- Footnotes: the lead notes paragraph uses the looser 1.375 leading ----- */
-body.bvn-ablation main > .section.compact > .default-content-wrapper > p:first-child {
+body.bvn-ablation main > .section.light-gray h4 {
+  font-size: var(--body-font-size-m); /* 14px on mobile */
+  line-height: var(--heading-line-height-h4);
+}
+
+/* ----- Footnotes: paragraphs use the looser 1.375 leading (the list keeps 1.2) ----- */
+body.bvn-ablation main > .section.compact > .default-content-wrapper > p {
   line-height: var(--paragraph-line-height);
 }
 
@@ -1811,6 +2023,21 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 @media (width >= 600px) {
   body.bvn-ablation main > .section.hero-container {
     margin-top: var(--space-nav-hero-gap);
+    border-bottom: 0;
+  }
+
+  /* tablet/desktop type (the mobile sizes above apply below 600px) */
+  body.bvn-ablation main .panel.cta h3 {
+    font-size: var(--panel-cta-heading-size); /* panel block's 26px */
+    line-height: var(--heading-line-height);
+  }
+
+  body.bvn-ablation main > .section > .default-content-wrapper #resources {
+    font-size: var(--heading-font-size-xl); /* 24.5px */
+  }
+
+  body.bvn-ablation main > .section.light-gray h4 {
+    font-size: var(--heading-font-size-m); /* 17.5px */
   }
   
   body.bvn-ablation main > .section > .default-content-wrapper h3 {
@@ -1818,7 +2045,7 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   }
 
   /* desktop vertical rhythm (measured at 1280px) */
-  body.bvn-ablation main > .section:is(.cards-container, .columns-container) > .default-content-wrapper h3 {
+  body.bvn-ablation main > .section.columns-container > .default-content-wrapper h3 {
     margin-bottom: calc(var(--space-block) * 2);
   }
 
@@ -1834,21 +2061,22 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     margin-top: calc(var(--space-section-l) + var(--space-section)); /* ~80px */
   }
 
-  body.bvn-ablation main > .section.cards-container:not(:has(.cards.resources)) {
+  body.bvn-ablation main > .section.columns-container:not(.divider) {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) .cards-card-body {
-    margin-top: var(--space-section);
-  }
-
-  body.bvn-ablation main > .section.columns-container {
+  body.bvn-ablation main > .section.columns-container.divider {
     margin-top: calc(var(--space-section-l) + var(--space-block));
     padding-top: calc(var(--space-section-l) + var(--space-block));
   }
 
   body.bvn-ablation main > .section.panel-container:has(.panel.gold) {
     margin-top: var(--space-section-l);
+  }
+
+  /* intro copy starts ~20px below the benefits card top (rich-text inset) */
+  body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
+    padding-top: var(--space-block-l);
   }
 
   /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */
@@ -1915,15 +2143,11 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     line-height: var(--heading-line-height-ml);
   }
 
-  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  body.bvn-ablation main > .section.columns-container .columns > div {
+  body.bvn-ablation main > .section.columns-container.divider .columns > div {
     flex-flow: row wrap;
   }
 
-  body.bvn-ablation main > .section.columns-container .columns > div > div {
+  body.bvn-ablation main > .section.columns-container.divider .columns > div > div {
     flex: 0 0 50%;
   }
 }
@@ -1943,19 +2167,15 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
-  body.bvn-ablation main .cards:not(.resources, .brochure, .linked) > ul {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   body.bvn-ablation .hero.banner > div:last-child {
       max-width: 33%;
   }
 
-  body.bvn-ablation main > .section.columns-container .columns > div {
+  body.bvn-ablation main > .section.columns-container.divider .columns > div {
     flex-wrap: nowrap;
   }
 
-  body.bvn-ablation main > .section.columns-container .columns > div > div {
+  body.bvn-ablation main > .section.columns-container.divider .columns > div > div {
     flex: 1 1 0;
   }
 }
@@ -1988,6 +2208,103 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 
 }
 
+/* =====================================================================
+   Theme: ivs-contact — Interventional Spine "Contact us" page
+   ===================================================================== */
+
+/* Page title: the source wraps the bold H1 in a 1.5x size span (28px → 42px). */
+body.ivs-contact main h1 {
+  font-size: var(--heading-font-size-xxl-scaled); /* 42px */
+}
+
+/* Subheading: light serif (Egyptienne), not the shared Futura bold h2. */
+body.ivs-contact main h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l); /* 21px */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--paragraph-line-height); /* 1.375 */
+}
+
+/* Intro copy: the source wraps it in a 1.5x size span (14px → 21px), tight leading. */
+body.ivs-contact main > .section:has(h1) p {
+  font-size: var(--body-font-size-xl); /* 21px */
+  line-height: var(--heading-line-height); /* 1.06 */
+}
+
+/* FIND A DOCTOR sits ~50px below the intro (source spacer paragraph + button margin). */
+body.ivs-contact main > .section:has(h1) .button-wrapper {
+  margin-top: var(--space-section-l); /* 50px */
+}
+
+/* Contact form section: the divider line sits ~20px above the form on phones
+   (~50px from 600px); the block's own top padding would add another 30px. */
+body.ivs-contact main > .section.divider {
+  padding-top: var(--space-block-l); /* 20px */
+}
+
+/* The Submit → disclaimer gap is set here alone (30px phones, 40px from 600px):
+   the block pads the bottom, and Marketo's own form padding/margin — which loads
+   differently per environment — is zeroed so it can't add to it. */
+body.ivs-contact main > .section.divider .marketo-form {
+  padding-block: 0 var(--space-section); /* 30px */
+}
+
+/* Form layout matched to the source .c-stryker-form (this page only): no Marketo
+   inset on phones (fields span the content width), source label leading (taller
+   label box → 76px row pitch) and tighter checkbox rows. The .mkto* class names
+   are Marketo's own runtime markup (not renamable), so the kebab-case rule is
+   relaxed for these rules only — same as blocks/marketo-form. */
+/* stylelint-disable selector-class-pattern */
+body.ivs-contact main > .section.divider .marketo-form form.mktoForm {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoLabel {
+  padding-top: var(--space-block-xs); /* source ~4px above each label */
+}
+
+body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoCheckboxList label::after {
+  height: var(--space-block-xs); /* source ~23px checkbox row pitch */
+}
+
+/* stylelint-enable selector-class-pattern */
+
+/* Document reference number (last disclaimer line) sits in its own source
+   container: ~20px below the trademarks on phones, ~30px from 600px. */
+body.ivs-contact main > .section.compact .default-content-wrapper > p:last-of-type {
+  margin-top: var(--space-block-l); /* 20px */
+}
+
+@media (width >= 600px) {
+  body.ivs-contact main > .section.compact .default-content-wrapper > p:last-of-type {
+    margin-top: var(--space-section); /* 30px */
+  }
+
+  body.ivs-contact main h2 {
+    font-size: var(--heading-font-size-xl); /* 24.5px */
+  }
+
+  body.ivs-contact main > .section.divider {
+    padding-top: var(--space-section-l); /* 50px */
+  }
+
+  body.ivs-contact main > .section.divider .marketo-form {
+    padding-bottom: calc(2 * var(--space-block-l)); /* 40px */
+  }
+
+  /* Two-up rows: fixed 420px columns 10px apart (source), not stretched columns. */
+  /* stylelint-disable selector-class-pattern -- Marketo's own class names (see above) */
+  body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoFormRow {
+    column-gap: var(--space-block-s); /* 10px */
+  }
+
+  body.ivs-contact main > .section.divider .marketo-form .mktoForm .mktoFormCol {
+    flex: 0 1 var(--form-field-max-width);
+  }
+}
+  
+  /* stylelint-enable selector-class-pattern */
 @media (width >=1200px) {
   body.search-results main h1:has(strong) {
     font-size: var(--find-a-doctor-control-height);
