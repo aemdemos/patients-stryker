@@ -1365,7 +1365,7 @@ body.ivs-home main > .section.sticky-nav-container {
 }
 
 body.ivs-home main > .section.hero-container {
-  margin-top: var(--space-nav-hero-gap);
+  margin-top: var(--space-ivs-home-hero);
 }
 
 body.ivs-home main #resources {
@@ -1390,8 +1390,8 @@ body.ivs-home main > .section.dark > .columns-wrapper + .columns-wrapper {
   padding-top: var(--space-section-xl);
 }
 
-/* text + video stay stacked until 900px (the source's 841px grid breakpoint,
-   mapped to the EDS 900px breakpoint) */
+/* text + video stay stacked until 600px (the source's 841px tablet grid
+   breakpoint, mapped to the EDS 600px breakpoint) */
 body.ivs-home .columns > div {
   flex-flow: column;
   align-items: stretch;
@@ -1491,7 +1491,7 @@ body.ivs-home .panel.cta .panel-body h3 {
   }
 
   body.ivs-home main > .section.flex[data-anchor="overview"] {
-    margin-top: var(--space-ivs-home-section-m);
+    margin-top: var(--space-ivs-home-intro-m);
   }
 
   body.ivs-home main #resources {
@@ -1514,9 +1514,7 @@ body.ivs-home .panel.cta .panel-body h3 {
     margin-top: var(--space-section);
     padding-top: var(--space-section-l);
   }
-}
 
-@media (width >= 900px) {
   body.ivs-home .columns > div {
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -1529,37 +1527,11 @@ body.ivs-home .panel.cta .panel-body h3 {
   body.ivs-home .columns > div > div + div {
     margin-top: 0;
   }
+}
 
-  /* the source overlays the hero copy on the image on desktop (its 841px
-     breakpoint, mapped to 900px) */
-  body.ivs-home .hero.banner > div {
-    grid-area: 1 / 1;
-  }
-
-  body.ivs-home .hero.banner > div:last-child {
-    z-index: 1;
-    align-self: end;
-    max-width: 100%;
-    padding-block: var(--space-block-l);
-    margin-bottom: var(--space-block-l);
-  }
-
-  body.ivs-home .hero.banner .button-wrapper:last-child {
-    margin-bottom: var(--space-block);
-  }
-
-  body.ivs-home .hero picture.hero-image-desktop {
-    display: block;
-  }
-
-  body.ivs-home .hero picture.hero-image-mobile {
-    display: none;
-  }
-
-  body.ivs-home .hero.banner h1 {
-    font-size: 3vw;
-  }
-
+@media (width >= 900px) {
+  /* the desktop overlay itself comes from the shared hero.css; the source
+     keeps the copy to the left ~half of the image */
   body.ivs-home .hero.banner h1,
   body.ivs-home .hero.banner h2 {
     max-width: 47%;
@@ -1574,7 +1546,7 @@ body.ivs-home .panel.cta .panel-body h3 {
   }
 
   body.ivs-home main > .section.panel-container[data-anchor="find-a-doctor"] {
-    margin-top: var(--space-ivs-home-section-m);
+    margin-top: var(--space-ivs-home-find-doctor);
   }
 
   body.ivs-home .cards.linked > ul {

@@ -37,12 +37,6 @@ export default function decorate(block) {
   form.id = `mktoForm_${formId}`;
   block.append(form);
 
-  // The form's scripts load late (see below), so reserve its height until it
-  // renders — otherwise it grows under the reader, e.g. right after an anchor
-  // jump to the form. Dropped once Marketo reports the form ready (or fails).
-  block.classList.add('is-loading');
-  const doneLoading = () => block.classList.remove('is-loading');
-
   const addCaptcha = (mktoForm) => {
     if (!captchaScript || !captchaChallengeUrl) return;
     const formEl = mktoForm.getFormElem ? mktoForm.getFormElem()[0] : form;
@@ -64,22 +58,14 @@ export default function decorate(block) {
   const loadForm = () => {
     loadScript(`${baseUrl}/js/forms2/js/forms2.min.js`)
       .then(() => {
-        if (!window.MktoForms2) {
-          doneLoading();
-          return;
-        }
+        if (!window.MktoForms2) return;
         window.MktoForms2.loadForm(baseUrl, munchkinId, Number(formId));
         window.MktoForms2.whenReady((mktoForm) => {
-          if (mktoForm.getId() !== Number(formId)) return;
-          doneLoading();
-          addCaptcha(mktoForm);
+          if (mktoForm.getId() === Number(formId)) addCaptcha(mktoForm);
         });
       })
-      .catch((e) => {
-        doneLoading();
-        // eslint-disable-next-line no-console
-        console.error('marketo-form: failed to load forms2.min.js', e);
-      });
+      // eslint-disable-next-line no-console
+      .catch((e) => console.error('marketo-form: failed to load forms2.min.js', e));
   };
 
   // forms2.min.js is ~10s of main-thread work on a mid-tier phone, and the form
