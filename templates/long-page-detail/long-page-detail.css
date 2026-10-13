@@ -35,6 +35,8 @@ body.long-page-detail .section.compact .columns.columns-50-50.border-bottom {
   padding-bottom: 0;
 }
 
+
+
 body.long-page-detail .section.compact .columns li {
   line-height: var(--body-line-height);
 }
@@ -44,6 +46,11 @@ body.long-page-detail .accordion .accordion-item-label p {
 }
 
 @media (width >= 600px) {
+  body.long-page-detail > main > .section.compact .columns:has(> div:nth-child(2):last-child) > div {
+   margin-bottom: var(--space-section-l);
+   margin-top: var(--space-section-l);
+  }
+
   body.long-page-detail main > .section.compact:nth-child(1 of .section.compact) {
     margin-bottom: 30px;
   }
