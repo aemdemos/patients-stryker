@@ -49,13 +49,74 @@ function groupVariants(sections) {
 }
 
 /**
+ * Shows Metadata example tables as a key / value table. The site has no
+ * metadata block (the published page turns its own metadata table into
+ * <meta> tags), so in the preview it would otherwise render as loose text and
+ * try to load a block that doesn't exist. A <table> isn't decorated as a block.
+ * @param {Element} main The main element
+ */
+function tabulateMetadata(main) {
+  main.querySelectorAll(':scope > div > .metadata').forEach((metadata) => {
+    const table = document.createElement('table');
+    table.className = 'library-preview-metadata';
+    const body = document.createElement('tbody');
+    [...metadata.children].forEach((row) => {
+      const tr = document.createElement('tr');
+      [...row.children].forEach((cell, i) => {
+        const td = document.createElement(i === 0 ? 'th' : 'td');
+        if (i === 0) td.scope = 'row';
+        td.append(...cell.childNodes);
+        tr.append(td);
+      });
+      body.append(tr);
+    });
+    table.append(body);
+    metadata.replaceWith(table);
+  });
+}
+
+/**
+ * Applies the template-metadata table of a template document (DA Templates
+ * library) to the preview, so the page renders with the template's styling, as
+ * it will once the template is used: the template / theme classes go on the
+ * body and their CSS is loaded. The table itself is removed, like Section
+ * Metadata in the block previews.
+ * @param {Element} table The template-metadata block
+ */
+function applyTemplateMetadata(table) {
+  [...table.children].forEach((row) => {
+    const key = toClassName(row.children[0]?.textContent || '');
+    const value = row.children[1]?.textContent.trim();
+    if (!value) return;
+    if (key === 'template') {
+      const name = toClassName(value);
+      document.body.classList.add(name);
+      loadCSS(`${window.hlx.codeBasePath}/templates/${name}/${name}.css`);
+    } else if (key === 'theme') {
+      value.split(',').forEach((theme) => document.body.classList.add(toClassName(theme)));
+      loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
+    }
+  });
+  table.remove();
+}
+
+/**
  * Cleans up and frames the variants of a library document. Runs on the raw
  * content, before decorateMain(), so the removed tables are never decorated.
+ * Template documents are shown as one page, without frames.
  * @param {Element} main The main element
  */
 export default function decorateLibraryPreview(main) {
   document.body.classList.add('library-preview');
   loadCSS(`${window.hlx.codeBasePath}/tools/da-library-preview/da-library-preview.css`);
+
+  const templateMetadata = main.querySelector(':scope > div > .template-metadata');
+  if (templateMetadata) {
+    applyTemplateMetadata(templateMetadata);
+    return;
+  }
+
+  tabulateMetadata(main);
 
   const usedIds = new Set();
   groupVariants([...main.querySelectorAll(':scope > div')]).forEach((variant) => {
