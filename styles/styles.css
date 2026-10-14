@@ -117,6 +117,7 @@
   --paragraph-line-height: 1.375;
   --paragraph-line-height-l-nested: 1.2143; /* measured: a 1.25x span inside a 14px/19.25px source paragraph renders 21.25px lines */
   --paragraph-line-height-xl-nested: 1.107; /* measured: a 21px span inside a 14px/19.25px source paragraph renders 23.25px lines */
+  --paragraph-line-height-serif-l: 1.25; /* measured: 21px serif span inside a 14px/19.25px source paragraph renders 26.25px lines */
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
@@ -196,6 +197,7 @@
 
   /* tabs block — side-by-side panel (copy + video), measured from source ("Hear from stroke survivors") */
   --tabs-panel-copy-padding: 36px 36px 18px; /* copy above the video on mobile */
+  --tabs-tab-padding-inline: 30px; /* source tab label side padding; the divider sits at this edge */
 
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */

@@ -18,6 +18,7 @@
 
 .marketo-form form.mktoForm {
   width: 100% !important;
+  padding: 0; /* Marketo adds 10px on small screens; source fields sit flush */
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   color: var(--color-black);
@@ -170,6 +171,7 @@
   font-size: var(--body-font-size-m);
   font-weight: var(--font-weight-bold);
   line-height: 18px;
+  color: var(--color-black); /* source is black; Marketo's theme injects #333 */
   vertical-align: middle;
 }
 
@@ -178,6 +180,16 @@
   content: "";
   display: block;
   height: 8px; /* row gap between options */
+}
+
+/* links inside labels (e.g. "Privacy Policy") — source shows no underline at
+   rest or on hover; hover only darkens the teal */
+.marketo-form .mktoForm label a:any-link {
+  text-decoration: none;
+}
+
+.marketo-form .mktoForm label a:any-link:hover {
+  color: var(--color-primary-pressed);
 }
 
 /* submit — Stryker teal, white uppercase Futura. Matches Marketo's Simple-theme

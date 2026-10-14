@@ -160,13 +160,15 @@
 }
 
 
+/* 21px serif body copy at the source's 26.25px line spacing (not the tight
+   heading line height) */
 .section.serif .columns p,
 .section.serif .columns ul,
 .section.serif .columns li,
 .section.serif .columns a {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l);
-  line-height: var(--heading-line-height);
+  line-height: var(--paragraph-line-height-serif-l);
 }
 
 /* stroke title — the reference enlarges it 1.5x (21px → 31.5px), Futura bold.

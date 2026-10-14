@@ -1,5 +1,5 @@
 /* Icon list — icons above captions. Breakpoints: <600px 1-col; 600-1199px 4-up,
-   icons hidden; >=1200px cols-N. Column count from --icon-list-columns (set in JS). */
+   icons scaled down; >=1200px cols-N. Column count from --icon-list-columns (set in JS). */
 
 /* World-map background: decorative <img> on the section; in normal flow <600px. */
 .icon-list-container > .section-background-image {
@@ -21,10 +21,17 @@
     padding-block: var(--icon-list-bg-padding);
   }
 
+  /* the map covers the whole band (cropped, never stretched) so the icons and
+     captions always sit on the graphic — the 4-up captions wrap to several lines
+     and outgrow the 4:1 strip on narrower screens. When the band is shorter than
+     the strip the map isn't scaled, just trimmed at the bottom. */
   .icon-list-container > .section-background-image {
     position: absolute;
-    inset: 0 0 auto;
+    inset: 0;
     z-index: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
   }
 
   /* lift content above the map layer */
@@ -95,10 +102,15 @@
   color: var(--color-black);
 }
 
-/* tablet: 4-up, icons hidden */
+/* tablet: 4-up; icons scale with the viewport (82px @600 → full 165px @1200) so
+   the row fits on the map band */
 @media (width >= 600px) {
   .icon-list ul.icon-list-items {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .icon-list:not(.tile, .label) .icon-list-icon img {
+    width: min(var(--icon-list-icon-width), 13.75vw);
   }
 }
 
