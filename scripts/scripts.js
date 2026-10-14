@@ -111,6 +111,24 @@ function buildAutoBlocks(main) {
 }
 
 /**
+ * Opens author-marked links in a new tab. Authors add `#_blank` to the end of
+ * the link URL (e.g. `https://example.com/page#_blank`); the marker is removed
+ * and the link gets target="_blank". Unmarked links are left as they are.
+ * Runs before decorateButtons(), so button styling is unchanged.
+ * @param {HTMLElement} main The main container element
+ */
+function decorateLinkTargets(main) {
+  main.querySelectorAll('a[href$="#_blank"]').forEach((a) => {
+    a.href = a.getAttribute('href').replace(/#_blank$/, '');
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    // tell screen reader users, without changing the visible text
+    const label = a.getAttribute('aria-label') || a.textContent.trim();
+    if (label) a.setAttribute('aria-label', `${label} (opens in a new tab)`);
+  });
+}
+
+/**
  * Decorates formatted links to style them as buttons.
  * @param {HTMLElement} main The main container element
  */
@@ -558,6 +576,7 @@ export function decorateMain(main) {
   decorateSectionMetadata(main);
   buildTabbedSections(main);
   decorateBlocks(main);
+  decorateLinkTargets(main);
   decorateButtons(main);
   decorateUnderlinedHeadings(main);
   decorateFootnotes(main);
