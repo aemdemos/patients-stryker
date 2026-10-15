@@ -266,7 +266,7 @@ var CustomImportScript = (() => {
       if (introH2) main.append(heading(document, "h2", document.createTextNode(introH2.textContent.trim())));
       main.append(buildCards(document, source));
       main.append(document.createElement("hr"));
-      main.append(sectionMetadata(document, "spacer"));
+      main.append(sectionMetadata(document, "spacer, large"));
       main.append(document.createElement("hr"));
       const goldBand = source.querySelector(".bg-golden-gradient");
       if (goldBand) {

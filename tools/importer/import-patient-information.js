@@ -297,10 +297,10 @@ export default {
     main.append(buildCards(document, source));
     main.append(document.createElement('hr'));
 
-    // Empty `spacer` section (styles.css `main > .section.spacer`, fixed 30px):
-    // the source leaves ~70–80px between the cards and the gold band; the cards
-    // section's own 30px bottom margin + this spacer reproduces it.
-    main.append(sectionMetadata(document, 'spacer'));
+    // Empty `spacer, large` section (styles.css `main > .section.spacer.large`,
+    // 2× the base gap): the larger gap between the cards and the gold band, as
+    // authored on the page.
+    main.append(sectionMetadata(document, 'spacer, large'));
     main.append(document.createElement('hr'));
 
     // --- Section 3: gold "for more information" CTA band ----------------------
