@@ -317,8 +317,9 @@
 }
 
 .cards.brochure-cta .cards-card-body h3 {
-  margin-bottom: var(--space-section);
+  margin-bottom: var(--space-brochure-title);
   font-size: var(--body-font-size-m);
+  line-height: var(--brochure-title-line-height);
 }
 
 .cards.brochure-cta .cards-card-body p {
