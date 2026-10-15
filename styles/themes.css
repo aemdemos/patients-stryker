@@ -1589,6 +1589,12 @@ body.ivs-treatment main :is(p, li) {
   font-size: var(--body-font-size-l); /* 17.5px */
 }
 
+/* "Potential risks" link in the Benefits box: 17.5px as on the reference (the
+   shared panel rule sets 21.5px; source sizes differ per treatment page). */
+body.ivs-treatment main .panel.cta .panel-body p > a:any-link:has(> u) {
+  font-size: var(--body-font-size-l); /* 17.5px */
+}
+
 /* Flex sections: top-align columns (shared rule centres them; reference top-aligns). */
 body.ivs-treatment main > .section.flex {
   align-items: start;
