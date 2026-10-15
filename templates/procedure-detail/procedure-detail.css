@@ -207,7 +207,7 @@ body.procedure-detail main .panel.dark .panel-body p {
 }
 
 body.procedure-detail main  .panel.wide .panel-body p {
-    font-size: var(--panel-body-size-xs);
+    font-size: var(--panel-body-size-ss);
   }
 
 body.procedure-detail main .panel.dark .panel-body p:last-child {
