@@ -462,7 +462,7 @@ main > .section.find-a-doctor-container:has(.find-a-doctor.anatomy) > .find-a-do
 
   .find-a-doctor.anatomy .find-a-doctor-filters {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: var(--find-a-doctor-bar-gap-xxl);
+    gap: var(--find-a-doctor-bar-gap-m);
   }
 }
 
