@@ -1026,17 +1026,20 @@ body.patient-information main > .section:first-child a::after {
    breakpoint → our 600px) + the rich-text's 2% top margin — measured 26.9px @375,
    41.4px @600, 53.4px @1200, 57.6px @1440. Both % resolve against the same
    container width here, so `fixed + 2%` reproduces it at every width. Bottom gap
-   (h2 → first cover) is matched by a 4% bottom margin. Page-scoped — a global h2
-   margin change would move every other h2 (e.g. card titles). */
+   (h2 → first cover) is matched by a 4% bottom margin. Size: the source steps the
+   h2 down to 21px on mobile (24.5px from its 480px breakpoint → our 600px).
+   Page-scoped — a global h2 change would move every other h2 (e.g. card titles). */
 body.patient-information main > .section > .default-content-wrapper h2 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
+  font-size: var(--heading-font-size-l);
   margin-top: calc(var(--space-block-l) + 2%);
   margin-bottom: 4%;
 }
 
 @media (width >= 600px) {
   body.patient-information main > .section > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xl);
     margin-top: calc(var(--space-section) + 2%);
   }
 }
