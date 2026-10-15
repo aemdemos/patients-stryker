@@ -116,11 +116,11 @@ var CustomImportScript = (() => {
       }
     });
   }
-  function dmAutolink(doc, url, title) {
+  function dmAutolink(doc, url, label) {
     const a = doc.createElement("a");
     a.setAttribute("href", url);
-    a.textContent = url;
-    if (title) a.setAttribute("title", title);
+    a.textContent = label || url;
+    if (label) a.setAttribute("title", label);
     return a;
   }
   function p(doc, ...nodes) {
@@ -195,8 +195,8 @@ var CustomImportScript = (() => {
     const desktop = bgImgs.find((i) => !/mobile/i.test(i.getAttribute("src")));
     const mobile = bgImgs.find((i) => /mobile/i.test(i.getAttribute("src")));
     const rows = [["Hero (band)"]];
-    if (desktop) rows.push([dmAutolink(doc, desktop.getAttribute("src"))]);
-    if (mobile) rows.push([dmAutolink(doc, mobile.getAttribute("src"))]);
+    if (desktop) rows.push([dmAutolink(doc, desktop.getAttribute("src"), "background-desktop")]);
+    if (mobile) rows.push([dmAutolink(doc, mobile.getAttribute("src"), "background-mobile")]);
     const strong = doc.createElement("strong");
     const em = doc.createElement("em");
     em.textContent = "Patient information";
@@ -304,11 +304,13 @@ var CustomImportScript = (() => {
         main.append(sectionMetadata(document, "compact"));
       });
       const meta = WebImporter.Blocks.getMetadata(document);
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical && canonical.getAttribute("href")) {
         meta.canonical = canonical.getAttribute("href");
       }
       meta.theme = "patient-information";
+      meta["logo-link"] = "/us/en/stroke-awareness/";
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
       const path = WebImporter.FileUtils.sanitizePath(
