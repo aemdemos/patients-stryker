@@ -1021,19 +1021,24 @@ body.patient-information main > .section:first-child a::after {
    the global h2 rule applies. Re-map the leading default-content h2 to the
    heading serif.
 
-   Spacing: the source's spacing is PERCENTAGE-based and scales with width — the
-   EFFECTIVE gaps (measured, banner + RTE margins combined) are ~30px top / 30px
-   bottom at 780px and ~55px top / 50px bottom at 1280px. A single fixed value
-   only matches one width. On our EDS page the h2's containing block is the
-   full-width section, and there's no separate banner-margin contribution, so a
-   symmetric 4% (of the section width) reproduces both the source's top AND bottom
-   gaps at every width (≈31px @780, ≈51px @1280). Page-scoped — a global h2 margin
-   change would move every other h2 (e.g. card titles). NOT a global concern. */
+   Spacing: the source's spacing scales with width. Top gap (banner → h2) = the
+   banner's fixed bottom margin (20px mobile, 30px from the source's 480px
+   breakpoint → our 600px) + the rich-text's 2% top margin — measured 26.9px @375,
+   41.4px @600, 53.4px @1200, 57.6px @1440. Both % resolve against the same
+   container width here, so `fixed + 2%` reproduces it at every width. Bottom gap
+   (h2 → first cover) is matched by a 4% bottom margin. Page-scoped — a global h2
+   margin change would move every other h2 (e.g. card titles). */
 body.patient-information main > .section > .default-content-wrapper h2 {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
-  margin-top: 4%;
+  margin-top: calc(var(--space-block-l) + 2%);
   margin-bottom: 4%;
+}
+
+@media (width >= 600px) {
+  body.patient-information main > .section > .default-content-wrapper h2 {
+    margin-top: calc(var(--space-section) + 2%);
+  }
 }
 
 /* ── Gold "for more information" CTA band ─────────────────────────────────────
