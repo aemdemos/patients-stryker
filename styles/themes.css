@@ -1605,6 +1605,35 @@ body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
   margin-block: var(--space-section-l); /* 50px */
 }
 
+/* "How it works" (3 text columns): source spacing and line rhythm. The gap to
+   the gold box scales with the viewport on the source, so it's CSS, not a spacer. */
+body.ivs-treatment main > .section.columns-container:has(.columns-text) {
+  margin-bottom: var(--space-section-xl); /* last line → gold box ≈ 105px (source 107px) */
+}
+
+body.ivs-treatment main > .section.columns-container:has(.columns-text) > .columns-wrapper {
+  padding-top: var(--space-block-s); /* heading → step headings ≈ 21px (source 24px); padding, as a margin would collapse into the heading's */
+}
+
+body.ivs-treatment main .columns-text > div > div {
+  padding-inline: var(--space-inset-m); /* 25px text inset (source 25–28px) */
+}
+
+body.ivs-treatment main .columns-text :is(p, li) {
+  line-height: var(--paragraph-line-height-l-nested); /* 21.25px lines (source 21.3px) */
+}
+
+/* ≥600px */
+@media (width >= 600px) {
+  body.ivs-treatment main > .section.columns-container:has(.columns-text) {
+    margin-bottom: calc(var(--space-section-xl) + 2 * var(--space-block-l)); /* ≈ 145px (source 149px) */
+  }
+
+  body.ivs-treatment main > .section.columns-container:has(.columns-text) > .columns-wrapper {
+    padding-top: var(--space-block-l); /* ≈ 31px (source 31–34px) */
+  }
+}
+
 /* "What is LSS?" dark 50-50 band — page-level gap to the flex section above it.
    (The edge-to-edge image-bleed rendering lives in the columns block CSS.) */
 body.ivs-treatment main > .section.dark:has(.columns-50-50) {
