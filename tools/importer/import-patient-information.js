@@ -48,14 +48,16 @@ function executeTransformers(hookName, element, payload) {
   });
 }
 
-/** A bare Dynamic Media autolink (href = text = the DM URL). dm-support.js
- * converts these to native <picture> at native quality on the live site. Using
- * setAttribute (not .href) preserves the Scene7 `$..._png$` preset verbatim. */
-function dmAutolink(doc, url, title) {
+/** A Dynamic Media link to the DM URL. dm-support.js converts these to native
+ * <picture> at native quality on the live site. With a label, the label is both
+ * the link text and its title (it becomes the image alt), as authored on the page;
+ * without one the link is a bare autolink (text = URL). Using setAttribute (not
+ * .href) preserves the Scene7 `$..._png$` preset verbatim. */
+function dmAutolink(doc, url, label) {
   const a = doc.createElement('a');
   a.setAttribute('href', url);
-  a.textContent = url;
-  if (title) a.setAttribute('title', title);
+  a.textContent = label || url;
+  if (label) a.setAttribute('title', label);
   return a;
 }
 
@@ -181,8 +183,8 @@ function buildHeroBand(doc, source) {
   const mobile = bgImgs.find((i) => /mobile/i.test(i.getAttribute('src')));
 
   const rows = [['Hero (band)']];
-  if (desktop) rows.push([dmAutolink(doc, desktop.getAttribute('src'))]);
-  if (mobile) rows.push([dmAutolink(doc, mobile.getAttribute('src'))]);
+  if (desktop) rows.push([dmAutolink(doc, desktop.getAttribute('src'), 'background-desktop')]);
+  if (mobile) rows.push([dmAutolink(doc, mobile.getAttribute('src'), 'background-mobile')]);
 
   // gold title — bold+italic paints it gold (see styles.css)
   const strong = doc.createElement('strong');
@@ -240,7 +242,7 @@ function buildCards(doc, source) {
     const bodyCell = doc.createElement('div');
     bodyNodes.forEach((n) => bodyCell.append(n));
 
-    // cover cell — bare DM autolink (kept as a DM link per project convention)
+    // cover cell — DM link labelled with the cover's alt (the guide title)
     const coverCell = dmSrc ? p(doc, dmAutolink(doc, dmSrc, alt)) : doc.createElement('div');
 
     rows.push([coverCell, bodyCell]);
@@ -295,10 +297,10 @@ export default {
     main.append(buildCards(document, source));
     main.append(document.createElement('hr'));
 
-    // Empty `spacer` section (styles.css `main > .section.spacer`, fixed 30px):
-    // the source leaves ~70–80px between the cards and the gold band; the cards
-    // section's own 30px bottom margin + this spacer reproduces it.
-    main.append(sectionMetadata(document, 'spacer'));
+    // Empty `spacer, large` section (styles.css `main > .section.spacer.large`,
+    // 2× the base gap): the larger gap between the cards and the gold band, as
+    // authored on the page.
+    main.append(sectionMetadata(document, 'spacer, large'));
     main.append(document.createElement('hr'));
 
     // --- Section 3: gold "for more information" CTA band ----------------------
@@ -361,6 +363,9 @@ export default {
     //    URL explicitly. NOTE: the source has no og:image meta tag, so none is set
     //    here (matching sibling migrated pages, which also omit it).
     const meta = WebImporter.Blocks.getMetadata(document);
+    // The site-wide "| Stryker" title suffix comes from the project metadata
+    // (title:suffix), so drop it from the source <title> to avoid doubling it.
+    if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical && canonical.getAttribute('href')) {
       meta.canonical = canonical.getAttribute('href');
@@ -373,6 +378,9 @@ export default {
     // names carry single-owner governance so they can't collide across authors.
     // Key must be lowercase `theme` — getMetadata('theme') matches case-sensitively.
     meta.theme = 'patient-information';
+    // The header logo links to the stroke-awareness home, not the site root
+    // (read by blocks/header via getMetadata('logo-link')).
+    meta['logo-link'] = '/us/en/stroke-awareness/';
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
 
     // 4. Normalise DM asset URLs (leave DM links intact; fix any relative URLs).
