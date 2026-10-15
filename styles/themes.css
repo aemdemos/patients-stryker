@@ -1619,6 +1619,11 @@ body.ivs-treatment main .columns-text > div > div {
   padding-inline: var(--space-inset-m); /* 25px text inset (source 25–28px) */
 }
 
+/* the "How it works" heading lines up with the inset column text, as on the source */
+body.ivs-treatment main > .section.columns-container:has(.columns-text) > .default-content-wrapper {
+  padding-inline: var(--space-inset-m);
+}
+
 body.ivs-treatment main .columns-text :is(p, li) {
   line-height: var(--paragraph-line-height-l-nested); /* 21.25px lines (source 21.3px) */
 }
