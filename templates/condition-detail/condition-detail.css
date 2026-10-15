@@ -1,0 +1,241 @@
+/* IVS condition pages (back, hip, knee, shoulder pain) and genicular RFA —
+   scoped to the condition-detail template. */
+
+body.condition-detail {
+  --condition-headline-font-size: 26.25px;
+}
+
+body.condition-detail .tabs .tabs-tab {
+  padding: 0 30px;
+}
+
+body.condition-detail .hero-container .hero-wrapper {
+  padding: 0 var(--container-gutter);
+}
+
+body.condition-detail .hero.banner h1,
+body.condition-detail .hero.banner .button-wrapper {
+  padding-left: 4%;
+}
+
+body.condition-detail h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-ml);
+  padding-bottom: 7px;
+  line-height: var(--heading-line-height);
+}
+
+body.condition-detail h3 em strong,
+body.condition-detail h3 strong em {
+  font-size: var(--heading-font-size-ml);
+}
+
+/* h4s render at 0.8x on mobile (source: 17.5px mobile, 21.875px from tablet up) */
+body.condition-detail h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+/* default-content headings (intro) keep the source's 1.15 line height on mobile too */
+body.condition-detail main > .section > .default-content-wrapper > h3 {
+  line-height: var(--heading-line-height-ml);
+}
+
+/* dark band column headings and dark panel titles: 21.875px on mobile, 26px from tablet up */
+body.condition-detail .section.dark .columns h3,
+body.condition-detail .panel.dark .panel-body h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+/* "Resources" heading (underlined h2): 21px on mobile, 24.5px from tablet up */
+body.condition-detail main h2.underline {
+  font-size: var(--heading-font-size-l);
+}
+
+/* genicular RFA dark statement: light serif (not bold), 21px on mobile */
+body.condition-detail .panel.dark.wide .panel-body h2 {
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-medium);
+}
+
+body.condition-detail h2 em strong,
+body.condition-detail h2 strong em {
+  font-size: var(--condition-headline-font-size);
+}
+
+body.condition-detail main p,
+body.condition-detail main ul {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.condition-detail .columns ul > li > p {
+  margin: 0;
+}
+
+body.condition-detail .tabs .tabs-tab p {
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+body.condition-detail .panel.left .panel-body {
+  margin: 0 0 var(--space-block);
+}
+
+body.condition-detail .panel.left .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.condition-detail a:any-link {
+  text-decoration: none;
+}
+
+/* gold CTA band: the link keeps the paragraph's line height (not the 1.3 link default) */
+body.condition-detail .panel.gold .panel-body a:any-link {
+  line-height: inherit;
+}
+
+body.condition-detail main > .section.flex {
+  margin-top: var(--space-section);
+  margin-bottom: var(--space-section);
+}
+
+/* Mobile condition-detail 50-50 rows stack; add a clear gap between the two cells. */
+body.condition-detail .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+body.condition-detail .tabs .tabs-panel {
+  margin-bottom: 60px;
+}
+
+body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--body-font-size-l);
+}
+
+/* the plain in-panel link ("Potential risks") is not underlined on the source */
+body.condition-detail .panel.cta .panel-body p > a:any-link:not(:has(strong)) > u {
+  text-decoration: none;
+}
+
+/* light-gray sections: a gray box inset by the page gutter (not full-bleed) */
+body.condition-detail main > .section.light-gray {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background-color: transparent;
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper {
+  border-inline: var(--container-gutter) solid transparent;
+  padding: 2%;
+  background-color: var(--color-surface);
+  background-clip: padding-box;
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* risks heading: 14px on mobile, 17.5px from tablet up */
+body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+  font-size: var(--body-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
+/* ----- Tablet (>=600px) ----- */
+@media (width >= 600px) {
+  body.condition-detail .panel.cta > ul {
+    grid-template-columns: 1fr;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul,
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark.panel-authoring {
+    grid-template-columns: 1fr;
+  }
+
+  body.condition-detail .hero.banner > div:last-child {
+    align-self: end;
+    padding-left: 4%;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  body.condition-detail .hero.banner h1,
+  body.condition-detail .hero.banner .button-wrapper {
+    padding-left: 0;
+  }
+
+  body.condition-detail .hero.banner .button-wrapper:last-child {
+    margin-bottom: 15px;
+  }
+
+  body.condition-detail h3 {
+    font-size: var(--heading-font-size-l-scaled);
+    line-height: var(--heading-line-height-ml);
+  }
+
+  body.condition-detail h3 em strong,
+  body.condition-detail h3 strong em {
+    font-size: var(--heading-font-size-l-scaled);
+    line-height: var(--heading-line-height-ml);
+  }
+
+  body.condition-detail h4 {
+    font-size: var(--heading-font-size-ml);
+  }
+
+  body.condition-detail .section.dark .columns h3,
+  body.condition-detail .panel.dark .panel-body h3 {
+    font-size: var(--panel-cta-heading-size);
+  }
+
+  body.condition-detail main h2.underline {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.condition-detail .panel.dark.wide .panel-body h2 {
+    font-size: var(--heading-font-size-dark-base);
+  }
+
+  body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-m);
+  }
+}
+
+/* ----- Desktop (>=900px) ----- */
+@media (width >= 900px) {
+  body.condition-detail .hero.banner > div:last-child {
+    width: 55%;
+  }
+
+  /* 2-column flex sections: the first panel spans the left column, the rest stack right */
+  body.condition-detail main > .section.flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: stretch;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta),
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta,
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
+    width: 100%;
+    min-width: 0;
+  }
+}

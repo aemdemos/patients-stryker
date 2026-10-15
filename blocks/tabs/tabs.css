@@ -120,7 +120,7 @@
 
 /* divider between tabs — anchored to the label (not the button) so it always spans
    just the label's box, like the source's border on the label-height <li>, whatever
-   vertical padding a theme gives the button (e.g. condition-detail's 0 30px).
+   padding a theme or template gives the button (e.g. condition-detail's 0 30px).
    Pushed out by the button's side padding to sit at the button's right edge. */
 .tabs .tabs-tab:not(:last-child) p::after {
   content: "";

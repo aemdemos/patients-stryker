@@ -805,6 +805,26 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "condition-detail",
+      "description": "IVS condition pages (back, hip, knee, shoulder pain) and genicular RFA, styled by templates/condition-detail/. Imported by import-condition-detail.js: spacer + hero (banner); intro (default text + panel cta, style flex) or a plain intro (back pain); back-pain condition rows (panel dark + image + panel left + related links, style flex); dark band (columns-50-50 in `dark, full-bleed`, or panel dark wide in `dark`); panel gold; marketo-form; resources (h2 + cards resources, or per-tab h3 + cards resources in a `tabbed` section); light-gray risks (genicular); compact disclaimer. Metadata template: condition-detail.",
+      "urls": [
+        "https://patients.stryker.com/us/en/ivs/conditions/back-pain.html",
+        "https://patients.stryker.com/us/en/ivs/conditions/hip-pain.html",
+        "https://patients.stryker.com/us/en/ivs/conditions/knee-pain.html",
+        "https://patients.stryker.com/us/en/ivs/conditions/shoulder-pain.html",
+        "https://patients.stryker.com/us/en/ivs/treatments/genicular-radiofrequency-ablation.html"
+      ],
+      "representativeUrl": "https://patients.stryker.com/us/en/ivs/conditions/knee-pain.html",
+      "coverageGaps": [],
+      "blocks": [
+        "hero",
+        "panel",
+        "columns",
+        "cards",
+        "marketo-form"
+      ]
     }
   ]
 }
