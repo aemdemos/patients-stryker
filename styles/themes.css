@@ -693,7 +693,7 @@ body.discography main .section.light-gray h4 {
 /* "Potential risks" anchor link: the source keeps it at 21px / 1.06 at every
    width (the shared panel rule sets 21.5px). */
 body.discography main .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
-  font-size: var(--heading-font-size-l);
+  font-size: var(--panel-heading-size-ss);
   line-height: var(--heading-line-height);
 }
 
