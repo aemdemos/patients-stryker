@@ -1647,6 +1647,20 @@ body.ivs-treatment main > .section.dark:has(.columns-50-50) {
   margin-top: var(--space-section-l);
 }
 
+/* "Before / After mild" dark band (image + heading + text columns): source
+   vertical rhythm — taller band padding, image sits close to its heading. */
+body.ivs-treatment main > .section.dark:not(:has(.columns-50-50)):has(.columns-img-col) {
+  padding-block: var(--space-band-dark) calc(var(--space-band-dark) + var(--space-block-s)); /* 54 / 64px */
+}
+
+body.ivs-treatment main > .section.dark:not(:has(.columns-50-50)) .columns .columns-img-col {
+  margin-bottom: 0; /* image → heading ≈ 12px (source 6–12px); the 3% padding stays */
+}
+
+body.ivs-treatment main > .section.dark:not(:has(.columns-50-50)) .columns h3 {
+  margin-bottom: var(--space-section); /* heading → text ≈ 26px (source 23–26px) */
+}
+
 /* Resources heading — 1px gold underline on the cards-section h2. */
 body.ivs-treatment main > .section.cards-container h2 {
   padding-bottom: 7px;
