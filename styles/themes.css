@@ -1605,7 +1605,8 @@ body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
   margin-block: var(--space-section-l); /* 50px */
 }
 
-/* "How it works" (3 text columns): source spacing and line rhythm. The gap to
+/* "How it works" (3 text columns): source spacing and text inset (line height stays
+   the site-wide default, consistent with the other treatment pages). The gap to
    the gold box scales with the viewport on the source, so it's CSS, not a spacer. */
 body.ivs-treatment main > .section.columns-container:has(.columns-text) {
   margin-bottom: var(--space-section-xl); /* last line → gold box ≈ 105px (source 107px) */
@@ -1622,10 +1623,6 @@ body.ivs-treatment main .columns-text > div > div {
 /* the "How it works" heading lines up with the inset column text, as on the source */
 body.ivs-treatment main > .section.columns-container:has(.columns-text) > .default-content-wrapper {
   padding-inline: var(--space-inset-m);
-}
-
-body.ivs-treatment main .columns-text :is(p, li) {
-  line-height: var(--paragraph-line-height-l-nested); /* 21.25px lines (source 21.3px) */
 }
 
 /* ≥600px */
