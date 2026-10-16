@@ -1597,6 +1597,12 @@ body.ivs-treatment main :is(p, li) {
   font-size: var(--body-font-size-l); /* 17.5px */
 }
 
+/* "Potential risks" link in the Benefits box: 17.5px as on the reference (the
+   shared panel rule sets 21.5px; source sizes differ per treatment page). */
+body.ivs-treatment main .panel.cta .panel-body p > a:any-link:has(> u) {
+  font-size: var(--body-font-size-l); /* 17.5px */
+}
+
 /* Flex sections: top-align columns (shared rule centres them; reference top-aligns). */
 body.ivs-treatment main > .section.flex {
   align-items: start;
@@ -1607,10 +1613,60 @@ body.ivs-treatment main > .section.columns-container:not(.dark, .full-bleed) {
   margin-block: var(--space-section-l); /* 50px */
 }
 
+/* "How it works" (3 text columns): source spacing and text inset (line height stays
+   the site-wide default, consistent with the other treatment pages). The gap to
+   the gold box scales with the viewport on the source, so it's CSS, not a spacer. */
+body.ivs-treatment main > .section.columns-container:has(.columns-text) {
+  margin-bottom: var(--space-section-xl); /* last line → gold box ≈ 105px (source 107px) */
+}
+
+body.ivs-treatment main > .section.columns-container:has(.columns-text) > .columns-wrapper {
+  padding-top: var(--space-block-s); /* heading → step headings ≈ 21px (source 24px); padding, as a margin would collapse into the heading's */
+}
+
+body.ivs-treatment main .columns-text > div > div {
+  padding-inline: var(--space-inset-m); /* 25px text inset (source 25–28px) */
+}
+
+/* the "How it works" heading lines up with the inset column text, as on the source */
+body.ivs-treatment main > .section.columns-container:has(.columns-text) > .default-content-wrapper {
+  padding-inline: var(--space-inset-m);
+}
+
+/* ≥600px */
+@media (width >= 600px) {
+  body.ivs-treatment main > .section.columns-container:has(.columns-text) {
+    margin-bottom: calc(var(--space-section-xl) + 2 * var(--space-block-l)); /* ≈ 145px (source 149px) */
+  }
+
+  body.ivs-treatment main > .section.columns-container:has(.columns-text) > .columns-wrapper {
+    padding-top: var(--space-block-l); /* ≈ 31px (source 31–34px) */
+  }
+
+  /* form SUBMIT → "Resources" title: 33px as on the source (mobile already matches at 23px) */
+  body.ivs-treatment main > .section.cards-container {
+    margin-top: var(--space-block-s);
+  }
+}
+
 /* "What is LSS?" dark 50-50 band — page-level gap to the flex section above it.
    (The edge-to-edge image-bleed rendering lives in the columns block CSS.) */
 body.ivs-treatment main > .section.dark:has(.columns-50-50) {
   margin-top: var(--space-section-l);
+}
+
+/* "Before / After mild" dark band (image + heading + text columns): source
+   vertical rhythm — taller band padding, image sits close to its heading. */
+body.ivs-treatment main > .section.dark:not(:has(.columns-50-50)):has(.columns-img-col) {
+  padding-block: var(--space-band-dark) calc(var(--space-band-dark) + var(--space-block-s)); /* 54 / 64px */
+}
+
+body.ivs-treatment main > .section.dark:not(:has(.columns-50-50)) .columns .columns-img-col {
+  margin-bottom: 0; /* image → heading ≈ 12px (source 6–12px); the 3% padding stays */
+}
+
+body.ivs-treatment main > .section.dark:not(:has(.columns-50-50)) .columns h3 {
+  margin-bottom: var(--space-section); /* heading → text ≈ 26px (source 23–26px) */
 }
 
 /* Resources heading — 1px gold underline on the cards-section h2. */
