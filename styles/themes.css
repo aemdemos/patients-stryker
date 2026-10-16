@@ -1637,6 +1637,11 @@ body.ivs-treatment main .columns-text :is(p, li) {
   body.ivs-treatment main > .section.columns-container:has(.columns-text) > .columns-wrapper {
     padding-top: var(--space-block-l); /* ≈ 31px (source 31–34px) */
   }
+
+  /* form SUBMIT → "Resources" title: 33px as on the source (mobile already matches at 23px) */
+  body.ivs-treatment main > .section.cards-container {
+    margin-top: var(--space-block-s);
+  }
 }
 
 /* "What is LSS?" dark 50-50 band — page-level gap to the flex section above it.
