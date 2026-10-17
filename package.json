@@ -5,10 +5,11 @@
   "description": "Starter project for Adobe Helix",
   "scripts": {
     "lint:js": "eslint .",
-    "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\"",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\" \"templates/**/*.css\"",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:breakpoints",
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
-    "build:fragment-index": "node tools/importer/build-fragment-index.js"
+    "build:fragment-index": "node tools/importer/build-fragment-index.js",
+    "lint:breakpoints": "node tools/check-breakpoints.mjs"
   },
   "repository": {
     "type": "git",

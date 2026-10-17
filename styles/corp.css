@@ -1,0 +1,1673 @@
+/*
+ * www.stryker.com (corp) global styles. Loaded by scripts/corp.js on `site: corp` pages
+ * only, before the page appears; patients-stryker pages never request this file.
+ *
+ * Global rules are scoped `:where(body.corp) …`: corp-only, with the specificity they
+ * had in the shared styles.css, so blocks and templates still override them as before.
+ * Corp tokens (new names and overrides of shared ones) are set on body.corp, never :root.
+ * The shared-block overrides at the end use `body.corp …` (+0,1,1) on purpose: they
+ * must beat the shared block's own stylesheet, which loads later.
+ */
+
+:where(body.corp) {
+  /* neutrals & surfaces */
+  --corp-color-hairline-tab: var(--color-surface-dim); /* live tab-strip divider (components L2925) */
+
+  /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height.
+     www.stryker.com chrome (site-header block): 89px row + 1px rule below 900px,
+     87px row + 60px gold bar from 900px (live switches at 1024px; measured live, canon.css § site header);
+     body.hcp-banner adds the HCP notice band: 95px @1440 / 114px @360 INCLUDING its
+     20px top margin, which sits inside the .site-header box (measured live
+     .site-header 242px @1440 / 204px @360 — C-final, foundation-requests capability,
+     event-detail, specialty, tier2-b). */
+  --corp-header-gap: 10px; /* live .g-header margin-bottom (components.min.css L1091) */
+  --corp-hcp-band-height: 114px;
+  --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour the live corp forms keep */
+
+  /* stardust contract aliases of the existing brand tokens (new names only — no
+     renames, no deletions; values stay the ones measured on patients-stryker) */
+  --corp-color-brand-primary: var(--color-accent); /* gold */
+  --corp-color-brand-secondary: var(--color-primary); /* teal */
+  --corp-color-surface-dark: var(--color-secondary); /* #545857 footer / dark bands */
+  --corp-color-gold-link-hover: var(--color-accent-link-hover);
+  --corp-icon-font-family: strykericons; /* self-hosted glyph font (patients styles/fonts.css) */
+  --corp-disclaimer-font-size: var(--footnote-font-size);
+  --corp-disclaimer-line-height: var(--footnote-line-height);
+
+  /* tokens the FROZEN blocks reference but never defined (token gate). `initial`
+     keeps a custom property guaranteed-invalid, so var() resolves exactly as it did
+     before — the frozen blocks' rendering stays byte-identical. --col-5050-inset is
+     redefined block-locally in columns.css, which wins there. */
+  --col-5050-inset: 0;
+  --overlay-background-color: initial;
+  --video-poster-overlay-gradient: initial;
+}
+
+/* desktop chrome: 87px white row + 60px gold primary-nav bar */
+@media (width >= 900px) {
+  :where(body.corp) {
+    --nav-height: 147px;
+    --corp-hcp-band-height: 95px;
+  }
+}
+
+/* HCP notice band (page metadata `hcp-banner: true`) extends the header reservation */
+body:where(.corp).hcp-banner {
+  --nav-height: calc(90px + var(--corp-hcp-band-height));
+}
+
+@media (width >= 900px) {
+  body:where(.corp).hcp-banner {
+    --nav-height: calc(147px + var(--corp-hcp-band-height));
+  }
+}
+
+:where(body.corp) header {
+  margin-bottom: var(--corp-header-gap);
+}
+
+/* live c-autocarousel pages zero the .g-header 10px gap (autocarousel.min.css L16):
+   the hero carousel sits flush under the header, every other page keeps --corp-header-gap
+   (C-final — foundation-requests tier2-landing-page / long-page-detail). */
+body:where(.corp):has(main .hero-carousel) header {
+  margin-bottom: 0;
+}
+
+/* Bold convention (R-68, 2026-10-04): the encoders map the source's span.futura-bold to <strong>
+   (Futura); plain source <b>/<strong> — Humanist 712 bold on the live site — is authored as <b>
+   and inherits the running font. */
+:where(body.corp) strong {
+  font-weight: 700;
+  font-family: var(--display-font-family);
+}
+
+:where(body.corp) b {
+  font-weight: 700;
+  font-family: inherit;
+}
+
+/* A spacer authored with only section-metadata is an EMPTY section after decoration — keep it in flow
+   (foundation-requests 133: `main .section:empty { display: none }` removed the 30/60px rhythm). */
+:where(body.corp) main > .section.spacer:empty {
+  display: block;
+}
+
+/* Measured live spacer vocabulary (foundation-requests 8, 118, 133): one empty RTE paragraph = 19px
+   (14px × 1.375), empty colctrl row = 31px (1px + 30px margin), rich-text spacers 38 / 51 / 79px,
+   empty text parbase = 89px at ≥1024. Authored as `spacer, <size>`. */
+:where(body.corp) main > .section.spacer.p { height: 19px; }
+:where(body.corp) main > .section.spacer.cols { height: 31px; }
+:where(body.corp) main > .section.spacer.s { height: 38px; }
+:where(body.corp) main > .section.spacer.m { height: 51px; }
+:where(body.corp) main > .section.spacer.l { height: 79px; }
+:where(body.corp) main > .section.spacer.text { height: 89px; }
+
+/* ---- stardust foundation (replica of www.stryker.com) ---- */
+
+/* base type scale below 480px (components.min.css L2812-2835, canon.css § base): h2 21px,
+   h3 17.5px, and the .page-section rhythm is 20px instead of 30px */
+:where(body.corp) h2 {
+  font-size: var(--heading-font-size-l);
+}
+
+:where(body.corp) h3 {
+  font-size: var(--heading-font-size-m);
+}
+
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
+  font-size: var(--heading-font-size-l);
+}
+
+:where(body.corp) main > .section:first-child > .default-content-wrapper {
+  padding-bottom: var(--space-block-l);
+}
+
+/* from 600: the shared styles.css values again (h2, h3, underlined headings, first-section rule gap) */
+@media (width >= 600px) {
+  :where(body.corp) h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  :where(body.corp) h3 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  :where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
+  :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  :where(body.corp) main > .section:first-child > .default-content-wrapper {
+    padding-bottom: var(--space-section);
+  }
+}
+
+/* a section that lost all its content (metadata-only, moved by a block) paints nothing */
+:where(body.corp) main .section:empty {
+  display: none;
+}
+
+/* section `style` values used by the archetypes — lifted from components.min.css
+   (.bg-* L? has-background family; .section-separator; .c-disclaimer L1293-1297) */
+:where(body.corp) main > .section.bg-white {
+  background-color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-gold {
+  background-color: var(--color-accent);
+}
+
+:where(body.corp) main > .section.bg-light-gray {
+  background-color: var(--color-surface);
+}
+
+:where(body.corp) main > .section.bg-dark-gray {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* card / tile titles that are links keep the heading colour (live: black, no underline) — ahead of
+   the bg-dark-gray link rule, which outranks it */
+:where(body.corp) main .columns-corp :is(h2, h3, h4) > a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(body.corp) main > .section.bg-dark-gray a:any-link {
+  color: var(--color-white);
+}
+
+/* full-bleed horizontal rule between page sections (.section-separator) */
+:where(body.corp) main > .section.separator {
+  margin: 0 0 var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.separator {
+    margin-bottom: var(--space-section-l);
+  }
+}
+
+/* DA canvas only (dm-support.js previewDMLinkEditors): a DM image is authored as a link;
+   the canvas shows a non-editable preview of the image and keeps the link editable as a
+   one-line caption under it (ahead of the disclaimer paragraph rules it does not outrank). */
+:where(body.corp) main .prosemirror-editor.dm-qe-link {
+  contain: inline-size; /* the nowrap URL must not widen grid/flex cells */
+  max-width: 100%;
+  font-family: var(--body-font-family);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+:where(body.corp) main .prosemirror-editor.dm-qe-link p {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* disclaimer / document-code block: 11.2px Humanist small print (.c-disclaimer). The
+   container keeps the live .c-disclaimer 1.2; its paragraphs and #publishedDate inherit
+   the live `p { line-height: 1.375 }` strut (15.4px @ 11.2px, measured 1440 / 360 —
+   C-final, foundation-requests base / news-detail / capability / specialty / portfolio /
+   long-page-detail / tier1-landing-services / tier2-landing-page). */
+:where(body.corp) main > .section.disclaimer > div {
+  font-size: var(--corp-disclaimer-font-size);
+  line-height: var(--corp-disclaimer-line-height);
+}
+
+:where(body.corp) main > .section.disclaimer p {
+  line-height: var(--paragraph-line-height);
+}
+
+/* a document code authored as <code> stays small print, never the patients navy band */
+:where(body.corp) main > .section.disclaimer p:has(code) {
+  background-color: transparent;
+  color: inherit;
+}
+
+:where(body.corp) main > .section.disclaimer p:last-child,
+:where(body.corp) main > .section.disclaimer :is(ol, ul):last-child {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.disclaimer :is(ol, ul) {
+  padding-left: var(--space-block-l);
+}
+
+/* "Last Updated" line (decorateLastModified): #publishedDate small print in a
+   .page-section container (margin-bottom 20px, 30px from 480px) */
+:where(body.corp) main > .section.last-modified-section {
+  margin-bottom: var(--space-block-l);
+}
+
+:where(body.corp) main > .section.last-modified-section .last-modified {
+  margin: 0;
+  font-size: var(--corp-disclaimer-font-size);
+  line-height: var(--paragraph-line-height);
+  letter-spacing: normal;
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.last-modified-section {
+    margin-bottom: var(--space-inset-l);
+  }
+}
+
+/* back-to-top control (scripts.js) — components.min.css L1309-1311: fixed 40px black
+   disc with the strykericons up-chevron, shown at scrollY >= 500 (motion-observe) */
+:where(body.corp) .back-to-top {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+  text-align: right;
+}
+
+:where(body.corp) .back-to-top-cta:any-link {
+  display: inline-block;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 16px;
+  line-height: 3;
+  text-align: center;
+  text-decoration: none;
+}
+
+:where(body.corp) .back-to-top-cta:any-link:hover,
+:where(body.corp) .back-to-top-cta:any-link:active {
+  color: var(--color-white);
+}
+
+:where(body.corp) .back-to-top-cta::before {
+  content: "\e260";
+  display: inline-block;
+  font-family: var(--corp-icon-font-family);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* fade utilities (components.min.css L2461-2462) */
+:where(body.corp) .u-anim-fadeout {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
+:where(body.corp) .u-anim-fadein {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+/* marketo-form (frozen block) choice lists: the block's `overflow: hidden` on
+   .mktoCheckboxList / .mktoRadioList clips Marketo's own forms2 mobile rule
+   `.mktoForm * { padding: 10px }` on the inline privacy-policy link (its 36px box rises 4.5px
+   above the list at 360 — 42 of 72 failing 360 rows carried exactly this one CONTROL CLIPPED;
+   live has no overflow clip there). Additive override (fix:regressions item 6); the
+   un-floated inputs need no BFC. */
+
+/* P2a note (2026-10-03): promoting the `lead` / `label-*` type-scale family from templates/product-detail to the
+   foundation was tried and reverted — it applied to news-detail / tier2 siblings that had authored `lead` without a
+   rule and moved their heights (lifepak35 +151px). The family stays template-scoped until each template measures it
+   (P2b/P2c); the spacer vocabulary above stands. */
+
+/* ---- rich-text type tokens (global, 2026-10-05 W2-fix-2; every rule also targets .tabs-panel > .section — tab
+   panes are fragment documents whose sections land inside the panel, not under <main>; those twins are grouped
+   after the main rules) ----
+   The live rich text sizes copy with .fontsize-*em spans over a 14px body (h2 24.5 · h3 21 · h4 17.5) and sets the
+   face with .urw-egyptienne / .futura-bold spans. The wave-2 encoder (stardust/scripts/local/wave2-encode.py) carries
+   them as section styles: p-<s> / h2-<s> / h3-<s> / h4-<s> (1-25, 1-5, 1-75, 2, 2-5, 8 = 0.8em), `serif` (Egyptienne
+   body copy), `h-serif` (Egyptienne h2/h4 — the live default heading face; the EDS default is Futura bold).
+   Values copied verbatim from the measured product-detail P2b tokens (templates/product-detail keeps its own copy so
+   the gated roster cascade is unchanged). */
+:where(body.corp) main > .section.p-1-25 > div :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: 21.25px; /* measured mixed line box: 14px strut + p-1-25 span */
+}
+
+:where(body.corp) main > .section.p-1-5 > div :is(p, li) {
+  font-size: 21.0px;
+  line-height: 23.25px; /* measured mixed line box: 14px strut + p-1-5 span */
+}
+
+:where(body.corp) main > .section.p-1-75 > div :is(p, li) {
+  font-size: var(--heading-font-size-xl);
+  line-height: 26.25px; /* measured mixed line box: 14px strut + p-1-75 span */
+}
+
+:where(body.corp) main > .section.p-2 > div :is(p, li) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: 29.67px; /* measured mixed line box: 14px strut + p-2 span */
+}
+
+:where(body.corp) main > .section.p-2-5 > div :is(p, li) {
+  font-size: 35.0px;
+  line-height: 37.09px; /* measured mixed line box: 14px strut + p-2-5 span */
+}
+
+:where(body.corp) main > .section.p-8 > div :is(p, li) {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) main > .section.h2-1-25 > div h2 {
+  font-size: 30.625px;
+  line-height: var(--body-line-height-l);
+}
+
+:where(body.corp) main > .section.h2-1-5 > div h2 {
+  font-size: 36.75px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h2-1-75 > div h2 {
+  font-size: 42.875px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h2-2 > div h2 {
+  font-size: 49.0px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h2-2-5 > div h2 {
+  font-size: 61.25px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h2-8 > div h2 {
+  font-size: 19.6px;
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) main > .section.h3-1-25 > div h3 {
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: var(--body-line-height-l);
+}
+
+:where(body.corp) main > .section.h3-1-5 > div h3 {
+  font-size: 31.5px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h3-1-75 > div h3 {
+  font-size: 36.75px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h3-2 > div h3 {
+  font-size: 42px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h3-2-5 > div h3 {
+  font-size: 52.5px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h3-8 > div h3 {
+  font-size: var(--heading-font-size-compact);
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) main > .section.h4-1-25 > div h4 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--body-line-height-l);
+}
+
+:where(body.corp) main > .section.h4-1-5 > div h4 {
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h4-1-75 > div h4 {
+  font-size: 30.625px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h4-2 > div h4 {
+  font-size: 35.0px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h4-2-5 > div h4 {
+  font-size: 43.75px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.h4-8 > div h4 {
+  font-size: 14.0px;
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) main > .section.serif > div :is(p, li) {
+  font-family: var(--heading-font-family);
+  line-height: 22.25px;
+}
+
+:where(body.corp) main > .section.serif.p-1-25 > div :is(p, li) {
+  line-height: 23.13px;
+}
+
+:where(body.corp) main > .section.serif.p-1-5 > div :is(p, li) {
+  line-height: 26.25px;
+}
+
+:where(body.corp) main > .section.serif.p-1-75 > div :is(p, li) {
+  line-height: 30.97px;
+}
+
+:where(body.corp) main > .section.serif.p-2 > div :is(p, li) {
+  line-height: 34.67px;
+}
+
+:where(body.corp) main > .section.serif.p-2-5 > div :is(p, li) {
+  line-height: 44.09px;
+}
+
+:where(body.corp) main > .section.p-1 > div :is(p, li) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* block titles: one p-<s> per section is the body; a minority single-paragraph title keeps its live size —
+   label-<s> = <p><strong> Futura label, sub-<s> = <p><em> Egyptienne title (live .urw-egyptienne) */
+:where(body.corp) main > .section.label-1-25 > div p:has(> strong:only-child),
+:where(body.corp) main > .section.sub-1-25 > div p:has(> em:only-child) {
+  font-size: var(--body-font-size-l);
+  line-height: 20.125px;
+}
+
+:where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
+:where(body.corp) main > .section.sub-1-5 > div p:has(> em:only-child) {
+  font-size: var(--body-font-size-xl);
+  line-height: 22.26px;
+}
+
+:where(body.corp) main > .section.label-1-75 > div p:has(> strong:only-child),
+:where(body.corp) main > .section.sub-1-75 > div p:has(> em:only-child) {
+  font-size: var(--heading-font-size-xl);
+  line-height: 25.97px;
+}
+
+:where(body.corp) main > .section.label-2 > div p:has(> strong:only-child),
+:where(body.corp) main > .section.sub-2 > div p:has(> em:only-child) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: 29.68px;
+}
+
+:where(body.corp) main > .section.label-2-5 > div p:has(> strong:only-child),
+:where(body.corp) main > .section.sub-2-5 > div p:has(> em:only-child) {
+  font-size: 35px;
+  line-height: 37.1px;
+}
+
+:where(body.corp) main > .section.label-8 > div p:has(> strong:only-child),
+:where(body.corp) main > .section.sub-8 > div p:has(> em:only-child) {
+  font-size: var(--footnote-font-size);
+  line-height: 13.44px;
+}
+
+/* strong = Futura (R-68) inside columns too, where the block keeps an older body-font bold rule */
+:where(body.corp) main > .section.strong-futura .columns-corp p strong {
+  font-family: var(--display-font-family);
+}
+
+/* centred copy (live inline text-align: center / .text-center) — global copy of the product-detail token */
+:where(body.corp) main > .section.center > div :is(p, h1, h2, h3, h4, li) {
+  text-align: center;
+}
+
+:where(body.corp) main > .section.center > div ul {
+  list-style-position: inside;
+}
+
+:where(body.corp) main > .section.h-serif > div :is(h2, h3, h4) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+/* gold copy (live color #ffb500): a Futura bold run = <strong><em> / <em><strong> (as in headings), an Egyptienne run =
+   a plain <em> (source italics are encoded as <i>, so <em> is free for this) — opt-in
+   section style `gold-copy` (the roster uses <em><strong> for black serif bold, e.g. /us/en/trauma-and-extremities) */
+:where(body.corp) main > .section.gold-copy :is(p, li, h4) :is(strong em, em strong):not(:has(a)), :where(body.corp) main > .section.gold-copy :is(p, li, h2, h3, h4) em:not(:has(a, strong)) {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+/* ---- inset band: a .has-background rich-text box inside the container, not a full-bleed panel — the colour
+   moves from the section to its wrapper; the box's own inline % padding arrives as pt-/pb-/pl- tokens ---- */
+:where(body.corp) main > .section.inset:is(.bg-gold, .bg-light-gray, .bg-dark-gray, .bg-teal) {
+  background: none;
+}
+
+:where(body.corp) main > .section.inset.bg-gold > div { background-color: var(--color-accent); }
+
+:where(body.corp) main > .section.inset.bg-light-gray > div { background-color: var(--color-surface); }
+
+:where(body.corp) main > .section.inset.bg-dark-gray > div { background-color: var(--color-secondary); }
+
+:where(body.corp) main > .section.inset.bg-teal > div { background-color: var(--color-primary); }
+
+:where(body.corp) main > .section.inset > div > :last-child {
+  margin-bottom: 0;
+}
+
+/* .tabs-panel twins of the rules above (tab panes are fragment documents whose sections land inside the panel,
+   not under <main>). Each rule used to list its main and .tabs-panel selectors together; the twins are collected
+   after the group's main rules so specificity ascends. No main selector ties a twin on specificity for the same
+   element, so no winner changes. */
+
+:where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: 21.25px; /* measured mixed line box: 14px strut + p-1-25 span */
+}
+
+:where(body.corp) .tabs-panel > .section.p-1-5 > div :is(p, li) {
+  font-size: 21.0px;
+  line-height: 23.25px; /* measured mixed line box: 14px strut + p-1-5 span */
+}
+
+:where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li) {
+  font-size: var(--heading-font-size-xl);
+  line-height: 26.25px; /* measured mixed line box: 14px strut + p-1-75 span */
+}
+
+:where(body.corp) .tabs-panel > .section.p-2 > div :is(p, li) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: 29.67px; /* measured mixed line box: 14px strut + p-2 span */
+}
+
+:where(body.corp) .tabs-panel > .section.p-2-5 > div :is(p, li) {
+  font-size: 35.0px;
+  line-height: 37.09px; /* measured mixed line box: 14px strut + p-2-5 span */
+}
+
+:where(body.corp) .tabs-panel > .section.p-8 > div :is(p, li) {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h2-1-25 > div h2 {
+  font-size: 30.625px;
+  line-height: var(--body-line-height-l);
+}
+
+:where(body.corp) .tabs-panel > .section.h2-1-5 > div h2 {
+  font-size: 36.75px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h2-1-75 > div h2 {
+  font-size: 42.875px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h2-2 > div h2 {
+  font-size: 49.0px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h2-2-5 > div h2 {
+  font-size: 61.25px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h2-8 > div h2 {
+  font-size: 19.6px;
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h3-1-25 > div h3 {
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: var(--body-line-height-l);
+}
+
+:where(body.corp) .tabs-panel > .section.h3-1-5 > div h3 {
+  font-size: 31.5px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h3-1-75 > div h3 {
+  font-size: 36.75px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h3-2 > div h3 {
+  font-size: 42px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h3-2-5 > div h3 {
+  font-size: 52.5px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h3-8 > div h3 {
+  font-size: var(--heading-font-size-compact);
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h4-1-25 > div h4 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--body-line-height-l);
+}
+
+:where(body.corp) .tabs-panel > .section.h4-1-5 > div h4 {
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h4-1-75 > div h4 {
+  font-size: 30.625px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h4-2 > div h4 {
+  font-size: 35.0px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h4-2-5 > div h4 {
+  font-size: 43.75px;
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.h4-8 > div h4 {
+  font-size: 14.0px;
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.serif > div :is(p, li) {
+  font-family: var(--heading-font-family);
+  line-height: 22.25px;
+}
+
+:where(body.corp) .tabs-panel > .section.serif.p-1-25 > div :is(p, li) {
+  line-height: 23.13px;
+}
+
+:where(body.corp) .tabs-panel > .section.serif.p-1-5 > div :is(p, li) {
+  line-height: 26.25px;
+}
+
+:where(body.corp) .tabs-panel > .section.serif.p-1-75 > div :is(p, li) {
+  line-height: 30.97px;
+}
+
+:where(body.corp) .tabs-panel > .section.serif.p-2 > div :is(p, li) {
+  line-height: 34.67px;
+}
+
+:where(body.corp) .tabs-panel > .section.serif.p-2-5 > div :is(p, li) {
+  line-height: 44.09px;
+}
+
+:where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+:where(body.corp) .tabs-panel > .section.label-1-25 > div p:has(> strong:only-child),
+:where(body.corp) .tabs-panel > .section.sub-1-25 > div p:has(> em:only-child) {
+  font-size: var(--body-font-size-l);
+  line-height: 20.125px;
+}
+
+:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child),
+:where(body.corp) .tabs-panel > .section.sub-1-5 > div p:has(> em:only-child) {
+  font-size: var(--body-font-size-xl);
+  line-height: 22.26px;
+}
+
+:where(body.corp) .tabs-panel > .section.label-1-75 > div p:has(> strong:only-child),
+:where(body.corp) .tabs-panel > .section.sub-1-75 > div p:has(> em:only-child) {
+  font-size: var(--heading-font-size-xl);
+  line-height: 25.97px;
+}
+
+:where(body.corp) .tabs-panel > .section.label-2 > div p:has(> strong:only-child),
+:where(body.corp) .tabs-panel > .section.sub-2 > div p:has(> em:only-child) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: 29.68px;
+}
+
+:where(body.corp) .tabs-panel > .section.label-2-5 > div p:has(> strong:only-child),
+:where(body.corp) .tabs-panel > .section.sub-2-5 > div p:has(> em:only-child) {
+  font-size: 35px;
+  line-height: 37.1px;
+}
+
+:where(body.corp) .tabs-panel > .section.label-8 > div p:has(> strong:only-child),
+:where(body.corp) .tabs-panel > .section.sub-8 > div p:has(> em:only-child) {
+  font-size: var(--footnote-font-size);
+  line-height: 13.44px;
+}
+
+:where(body.corp) .tabs-panel > .section.strong-futura .columns-corp p strong {
+  font-family: var(--display-font-family);
+}
+
+:where(body.corp) .tabs-panel > .section.center > div :is(p, h1, h2, h3, h4, li) {
+  text-align: center;
+}
+
+:where(body.corp) .tabs-panel > .section.center > div ul {
+  list-style-position: inside;
+}
+
+:where(body.corp) .tabs-panel > .section.h-serif > div :is(h2, h3, h4) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+:where(body.corp) .tabs-panel > .section.gold-copy :is(p, li, h4) :is(strong em, em strong):not(:has(a)), :where(body.corp) .tabs-panel > .section.gold-copy :is(p, li, h2, h3, h4) em:not(:has(a, strong)) {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+:where(body.corp) .tabs-panel > .section.inset:is(.bg-gold, .bg-light-gray, .bg-dark-gray, .bg-teal) {
+  background: none;
+}
+
+:where(body.corp) .tabs-panel > .section.inset.bg-gold > div { background-color: var(--color-accent); }
+
+:where(body.corp) .tabs-panel > .section.inset.bg-light-gray > div { background-color: var(--color-surface); }
+
+:where(body.corp) .tabs-panel > .section.inset.bg-dark-gray > div { background-color: var(--color-secondary); }
+
+:where(body.corp) .tabs-panel > .section.inset.bg-teal > div { background-color: var(--color-primary); }
+
+:where(body.corp) .tabs-panel > .section.inset > div > :last-child {
+  margin-bottom: 0;
+}
+
+/* sub-<s> titles: the Egyptienne <em> run (after the gold-copy em rules, which it outranks) */
+:where(body.corp) main > .section:is(.sub-1-25, .sub-1-5, .sub-1-75, .sub-2, .sub-2-5) > div p > em:only-child {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+}
+
+/* an image-only paragraph in a wave-2 card row (sections carrying ps-N): the live image sits in its own component
+   with no text line box — drop the paragraph's strut (+13px under every card image at 1440); after the label / sub
+   title paragraphs, which it outranks */
+:where(body.corp) main > div.section:is(.ps-0, .ps-1, .ps-2, .ps-3) .columns-corp p:has(> picture:only-child, > a:only-child > picture:only-child),
+:where(body.corp) .tabs-panel > .section:is(.ps-0, .ps-1, .ps-2, .ps-3) .columns-corp p:has(> picture:only-child, > a:only-child > picture:only-child) {
+  line-height: 0;
+}
+
+/* ---- flex rows: the live column spans (cols-8-4 …) set the wrapper proportions ---- */
+@media (width >= 900px) {
+  :where(body.corp) main > .section.flex.cols-8-4 > div:nth-child(1) { flex: 2 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-8-4 > div:nth-child(2) { flex: 1 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-7-5 > div:nth-child(1) { flex: 7 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-7-5 > div:nth-child(2) { flex: 5 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-4-8 > div:nth-child(1) { flex: 1 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-4-8 > div:nth-child(2) { flex: 2 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-5-7 > div:nth-child(1) { flex: 5 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-5-7 > div:nth-child(2) { flex: 7 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-6-5 > div:nth-child(1) { flex: 6 1 0; }
+
+  :where(body.corp) main > .section.flex.cols-6-5 > div:nth-child(2) { flex: 5 1 0; }
+
+  /* .tabs-panel twins of the rules above (see the note on the root twins) */
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-8-4 > div:nth-child(1) { flex: 2 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-8-4 > div:nth-child(2) { flex: 1 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-7-5 > div:nth-child(1) { flex: 7 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-7-5 > div:nth-child(2) { flex: 5 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-4-8 > div:nth-child(1) { flex: 1 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-4-8 > div:nth-child(2) { flex: 2 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-5-7 > div:nth-child(1) { flex: 5 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-5-7 > div:nth-child(2) { flex: 7 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-6-5 > div:nth-child(1) { flex: 6 1 0; }
+
+  :where(body.corp) .tabs-panel > .section.flex.cols-6-5 > div:nth-child(2) { flex: 5 1 0; }
+}
+
+/* ---- live .page-section rhythm (global, W2-fix-2): every live component closes with a 30px margin (20px below
+   480px); the wave-2 encoder counts the page-section margins that close after a section's last module (a colctrl
+   row around a component = 2) as ps-1 / ps-2 / ps-3. The product-detail template keeps its own rhythm rules. ---- */
+:where(body.corp) main > div.section.ps-0,
+:where(body.corp) .tabs-panel > .section.ps-0 { margin-bottom: 0; }
+
+:where(body.corp) main > div.section.ps-1,
+:where(body.corp) .tabs-panel > .section.ps-1 { margin-bottom: var(--space-block-l); }
+
+:where(body.corp) main > div.section.ps-2,
+:where(body.corp) .tabs-panel > .section.ps-2 { margin-bottom: 40px; }
+
+:where(body.corp) main > div.section.ps-3,
+:where(body.corp) .tabs-panel > .section.ps-3 { margin-bottom: 60px; }
+
+/* live full-bleed panels (.c-full-bleed-panel) carry no padding — their spacing is the rich-text box's own
+   inline % padding (pt-/pb- tokens) and the page-section margin (ps-N); the foundation's 30px panel padding
+   stays for roster sections (no ps-N) */
+:where(body.corp) main > div.section.full-bleed:is(.ps-0, .ps-1, .ps-2, .ps-3) { padding-block: 0; }
+
+/* div.section outranks the template default rhythm (main > .section:not(…)); the product-detail rhythm rules,
+   calibrated on these pages, stay more specific */
+@media (width >= 600px) {
+  :where(body.corp) main > div.section.ps-1,
+:where(body.corp) .tabs-panel > .section.ps-1 { margin-bottom: var(--space-inset-l); }
+
+  :where(body.corp) main > div.section.ps-2,
+:where(body.corp) .tabs-panel > .section.ps-2 { margin-bottom: 60px; }
+
+  :where(body.corp) main > div.section.ps-3,
+:where(body.corp) .tabs-panel > .section.ps-3 { margin-bottom: var(--space-section-xl); }
+}
+
+
+/* ---- rich-text box spacing: the live box's inline % paddings / margins (pt-N … mb-N, N = percent; 2-5 = 2.5%),
+   copied verbatim from the product-detail P2b tokens (the template keeps its copy and its column variants). templates/division
+   models mt-2/3/4 and mb-4/5 as wrapper padding — those steps are skipped there so the margin is never applied twice ---- */
+:where(body.corp) main > .section.pt-0-5 > div > :first-child {
+  padding-top: 0.5%;
+}
+
+:where(body.corp) main > .section.pb-0-5 > div > :last-child {
+  padding-bottom: 0.5%;
+}
+
+:where(body.corp) main > .section.pl-0-5 > div > * {
+  padding-left: 0.5%;
+}
+
+:where(body.corp) main > .section.pr-0-5 > div > * {
+  padding-right: 0.5%;
+}
+
+:where(body.corp) main > .section.mt-0-5 > div > :first-child {
+  margin-top: 0.5%;
+}
+
+:where(body.corp) main > .section.mb-0-5 > div > :last-child {
+  margin-bottom: 0.5%;
+}
+
+:where(body.corp) main > .section.ml-0-5 > div > * {
+  margin-left: 0.5%;
+}
+
+:where(body.corp) main > .section.mr-0-5 > div > * {
+  margin-right: 0.5%;
+}
+
+:where(body.corp) main > .section.pt-1 > div > :first-child {
+  padding-top: 1%;
+}
+
+:where(body.corp) main > .section.pb-1 > div > :last-child {
+  padding-bottom: 1%;
+}
+
+:where(body.corp) main > .section.pl-1 > div > * {
+  padding-left: 1%;
+}
+
+:where(body.corp) main > .section.pr-1 > div > * {
+  padding-right: 1%;
+}
+
+:where(body.corp) main > .section.mt-1 > div > :first-child {
+  margin-top: 1%;
+}
+
+:where(body.corp) main > .section.mb-1 > div > :last-child {
+  margin-bottom: 1%;
+}
+
+:where(body.corp) main > .section.ml-1 > div > * {
+  margin-left: 1%;
+}
+
+:where(body.corp) main > .section.mr-1 > div > * {
+  margin-right: 1%;
+}
+
+:where(body.corp) main > .section.pt-2 > div > :first-child {
+  padding-top: 2%;
+}
+
+:where(body.corp) main > .section.pb-2 > div > :last-child {
+  padding-bottom: 2%;
+}
+
+:where(body.corp) main > .section.pl-2 > div > * {
+  padding-left: 2%;
+}
+
+:where(body.corp) main > .section.pr-2 > div > * {
+  padding-right: 2%;
+}
+
+body:where(.corp):not(.division) main > .section.mt-2 > div > :first-child,
+body:where(.corp):not(.division) .tabs-panel > .section.mt-2 > div > :first-child {
+  margin-top: 2%;
+}
+
+:where(body.corp) main > .section.mb-2 > div > :last-child {
+  margin-bottom: 2%;
+}
+
+:where(body.corp) main > .section.ml-2 > div > * {
+  margin-left: 2%;
+}
+
+:where(body.corp) main > .section.mr-2 > div > * {
+  margin-right: 2%;
+}
+
+:where(body.corp) main > .section.pt-2-5 > div > :first-child {
+  padding-top: 2.5%;
+}
+
+:where(body.corp) main > .section.pb-2-5 > div > :last-child {
+  padding-bottom: 2.5%;
+}
+
+:where(body.corp) main > .section.pl-2-5 > div > * {
+  padding-left: 2.5%;
+}
+
+:where(body.corp) main > .section.pr-2-5 > div > * {
+  padding-right: 2.5%;
+}
+
+:where(body.corp) main > .section.mt-2-5 > div > :first-child {
+  margin-top: 2.5%;
+}
+
+:where(body.corp) main > .section.mb-2-5 > div > :last-child {
+  margin-bottom: 2.5%;
+}
+
+:where(body.corp) main > .section.ml-2-5 > div > * {
+  margin-left: 2.5%;
+}
+
+:where(body.corp) main > .section.mr-2-5 > div > * {
+  margin-right: 2.5%;
+}
+
+:where(body.corp) main > .section.pt-3 > div > :first-child {
+  padding-top: 3%;
+}
+
+:where(body.corp) main > .section.pb-3 > div > :last-child {
+  padding-bottom: 3%;
+}
+
+:where(body.corp) main > .section.pl-3 > div > * {
+  padding-left: 3%;
+}
+
+:where(body.corp) main > .section.pr-3 > div > * {
+  padding-right: 3%;
+}
+
+body:where(.corp):not(.division) main > .section.mt-3 > div > :first-child,
+body:where(.corp):not(.division) .tabs-panel > .section.mt-3 > div > :first-child {
+  margin-top: 3%;
+}
+
+:where(body.corp) main > .section.mb-3 > div > :last-child {
+  margin-bottom: 3%;
+}
+
+:where(body.corp) main > .section.ml-3 > div > * {
+  margin-left: 3%;
+}
+
+:where(body.corp) main > .section.mr-3 > div > * {
+  margin-right: 3%;
+}
+
+:where(body.corp) main > .section.pt-4 > div > :first-child {
+  padding-top: 4%;
+}
+
+:where(body.corp) main > .section.pb-4 > div > :last-child {
+  padding-bottom: 4%;
+}
+
+:where(body.corp) main > .section.pl-4 > div > * {
+  padding-left: 4%;
+}
+
+:where(body.corp) main > .section.pr-4 > div > * {
+  padding-right: 4%;
+}
+
+body:where(.corp):not(.division) main > .section.mt-4 > div > :first-child,
+body:where(.corp):not(.division) .tabs-panel > .section.mt-4 > div > :first-child {
+  margin-top: 4%;
+}
+
+body:where(.corp):not(.division) main > .section.mb-4 > div > :last-child,
+body:where(.corp):not(.division) .tabs-panel > .section.mb-4 > div > :last-child {
+  margin-bottom: 4%;
+}
+
+:where(body.corp) main > .section.ml-4 > div > * {
+  margin-left: 4%;
+}
+
+:where(body.corp) main > .section.mr-4 > div > * {
+  margin-right: 4%;
+}
+
+:where(body.corp) main > .section.pt-5 > div > :first-child {
+  padding-top: 5%;
+}
+
+:where(body.corp) main > .section.pb-5 > div > :last-child {
+  padding-bottom: 5%;
+}
+
+:where(body.corp) main > .section.pl-5 > div > * {
+  padding-left: 5%;
+}
+
+:where(body.corp) main > .section.pl-6 > div > * {
+  padding-left: 6%;
+}
+
+:where(body.corp) main > .section.pr-6 > div > * {
+  padding-right: 6%;
+}
+
+:where(body.corp) main > .section.pr-5 > div > * {
+  padding-right: 5%;
+}
+
+:where(body.corp) main > .section.mt-5 > div > :first-child {
+  margin-top: 5%;
+}
+
+body:where(.corp):not(.division) main > .section.mb-5 > div > :last-child,
+body:where(.corp):not(.division) .tabs-panel > .section.mb-5 > div > :last-child {
+  margin-bottom: 5%;
+}
+
+:where(body.corp) main > .section.ml-5 > div > * {
+  margin-left: 5%;
+}
+
+:where(body.corp) main > .section.mr-5 > div > * {
+  margin-right: 5%;
+}
+
+:where(body.corp) main > .section.pt-7 > div > :first-child {
+  padding-top: 7%;
+}
+
+:where(body.corp) main > .section.pb-7 > div > :last-child {
+  padding-bottom: 7%;
+}
+
+:where(body.corp) main > .section.pl-7 > div > * {
+  padding-left: 7%;
+}
+
+:where(body.corp) main > .section.pr-7 > div > * {
+  padding-right: 7%;
+}
+
+:where(body.corp) main > .section.mt-7 > div > :first-child {
+  margin-top: 7%;
+}
+
+:where(body.corp) main > .section.mb-7 > div > :last-child {
+  margin-bottom: 7%;
+}
+
+:where(body.corp) main > .section.ml-7 > div > * {
+  margin-left: 7%;
+}
+
+:where(body.corp) main > .section.mr-7 > div > * {
+  margin-right: 7%;
+}
+
+:where(body.corp) main > .section.pt-8 > div > :first-child {
+  padding-top: 8%;
+}
+
+:where(body.corp) main > .section.pb-8 > div > :last-child {
+  padding-bottom: 8%;
+}
+
+:where(body.corp) main > .section.pl-8 > div > * {
+  padding-left: 8%;
+}
+
+:where(body.corp) main > .section.pr-8 > div > * {
+  padding-right: 8%;
+}
+
+:where(body.corp) main > .section.mt-8 > div > :first-child {
+  margin-top: 8%;
+}
+
+:where(body.corp) main > .section.mb-8 > div > :last-child {
+  margin-bottom: 8%;
+}
+
+:where(body.corp) main > .section.ml-8 > div > * {
+  margin-left: 8%;
+}
+
+:where(body.corp) main > .section.mr-8 > div > * {
+  margin-right: 8%;
+}
+
+:where(body.corp) main > .section.pt-10 > div > :first-child {
+  padding-top: 10%;
+}
+
+:where(body.corp) main > .section.pb-10 > div > :last-child {
+  padding-bottom: 10%;
+}
+
+:where(body.corp) main > .section.pl-10 > div > * {
+  padding-left: 10%;
+}
+
+:where(body.corp) main > .section.pr-10 > div > * {
+  padding-right: 10%;
+}
+
+:where(body.corp) main > .section.mt-10 > div > :first-child {
+  margin-top: 10%;
+}
+
+:where(body.corp) main > .section.mb-10 > div > :last-child {
+  margin-bottom: 10%;
+}
+
+:where(body.corp) main > .section.ml-10 > div > * {
+  margin-left: 10%;
+}
+
+:where(body.corp) main > .section.mr-10 > div > * {
+  margin-right: 10%;
+}
+
+:where(body.corp) main > .section.pt-20 > div > :first-child {
+  padding-top: 20%;
+}
+
+:where(body.corp) main > .section.pb-20 > div > :last-child {
+  padding-bottom: 20%;
+}
+
+:where(body.corp) main > .section.pl-20 > div > * {
+  padding-left: 20%;
+}
+
+:where(body.corp) main > .section.pr-20 > div > * {
+  padding-right: 20%;
+}
+
+:where(body.corp) main > .section.mt-20 > div > :first-child {
+  margin-top: 20%;
+}
+
+:where(body.corp) main > .section.mb-20 > div > :last-child {
+  margin-bottom: 20%;
+}
+
+:where(body.corp) main > .section.ml-20 > div > * {
+  margin-left: 20%;
+}
+
+:where(body.corp) main > .section.mr-20 > div > * {
+  margin-right: 20%;
+}
+
+:where(body.corp) main > .section.pt-25 > div > :first-child {
+  padding-top: 25%;
+}
+
+:where(body.corp) main > .section.pb-25 > div > :last-child {
+  padding-bottom: 25%;
+}
+
+:where(body.corp) main > .section.pl-25 > div > * {
+  padding-left: 25%;
+}
+
+:where(body.corp) main > .section.pr-25 > div > * {
+  padding-right: 25%;
+}
+
+:where(body.corp) main > .section.mt-25 > div > :first-child {
+  margin-top: 25%;
+}
+
+:where(body.corp) main > .section.mb-25 > div > :last-child {
+  margin-bottom: 25%;
+}
+
+:where(body.corp) main > .section.ml-25 > div > * {
+  margin-left: 25%;
+}
+
+:where(body.corp) main > .section.mr-25 > div > * {
+  margin-right: 25%;
+}
+
+/* .tabs-panel twins of the rules above (see the note on the first twin group) */
+
+:where(body.corp) .tabs-panel > .section.pt-0-5 > div > :first-child {
+  padding-top: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-0-5 > div > :last-child {
+  padding-bottom: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-0-5 > div > * {
+  padding-left: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-0-5 > div > * {
+  padding-right: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-0-5 > div > :first-child {
+  margin-top: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-0-5 > div > :last-child {
+  margin-bottom: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-0-5 > div > * {
+  margin-left: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-0-5 > div > * {
+  margin-right: 0.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-1 > div > :first-child {
+  padding-top: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-1 > div > :last-child {
+  padding-bottom: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-1 > div > * {
+  padding-left: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-1 > div > * {
+  padding-right: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-1 > div > :first-child {
+  margin-top: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-1 > div > :last-child {
+  margin-bottom: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-1 > div > * {
+  margin-left: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-1 > div > * {
+  margin-right: 1%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-2 > div > :first-child {
+  padding-top: 2%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-2 > div > :last-child {
+  padding-bottom: 2%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-2 > div > * {
+  padding-left: 2%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-2 > div > * {
+  padding-right: 2%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-2 > div > :last-child {
+  margin-bottom: 2%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-2 > div > * {
+  margin-left: 2%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-2 > div > * {
+  margin-right: 2%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-2-5 > div > :first-child {
+  padding-top: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-2-5 > div > :last-child {
+  padding-bottom: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-2-5 > div > * {
+  padding-left: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-2-5 > div > * {
+  padding-right: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-2-5 > div > :first-child {
+  margin-top: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-2-5 > div > :last-child {
+  margin-bottom: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-2-5 > div > * {
+  margin-left: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-2-5 > div > * {
+  margin-right: 2.5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-3 > div > :first-child {
+  padding-top: 3%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-3 > div > :last-child {
+  padding-bottom: 3%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-3 > div > * {
+  padding-left: 3%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-3 > div > * {
+  padding-right: 3%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-3 > div > :last-child {
+  margin-bottom: 3%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-3 > div > * {
+  margin-left: 3%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-3 > div > * {
+  margin-right: 3%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-4 > div > :first-child {
+  padding-top: 4%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-4 > div > :last-child {
+  padding-bottom: 4%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-4 > div > * {
+  padding-left: 4%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-4 > div > * {
+  padding-right: 4%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-4 > div > * {
+  margin-left: 4%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-4 > div > * {
+  margin-right: 4%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-5 > div > :first-child {
+  padding-top: 5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-5 > div > :last-child {
+  padding-bottom: 5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-5 > div > * {
+  padding-left: 5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-6 > div > * {
+  padding-left: 6%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-6 > div > * {
+  padding-right: 6%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-5 > div > * {
+  padding-right: 5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-5 > div > :first-child {
+  margin-top: 5%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-5 > div > * {
+  margin-left: 5%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-5 > div > * {
+  margin-right: 5%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-7 > div > :first-child {
+  padding-top: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-7 > div > :last-child {
+  padding-bottom: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-7 > div > * {
+  padding-left: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-7 > div > * {
+  padding-right: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-7 > div > :first-child {
+  margin-top: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-7 > div > :last-child {
+  margin-bottom: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-7 > div > * {
+  margin-left: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-7 > div > * {
+  margin-right: 7%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-8 > div > :first-child {
+  padding-top: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-8 > div > :last-child {
+  padding-bottom: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-8 > div > * {
+  padding-left: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-8 > div > * {
+  padding-right: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-8 > div > :first-child {
+  margin-top: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-8 > div > :last-child {
+  margin-bottom: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-8 > div > * {
+  margin-left: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-8 > div > * {
+  margin-right: 8%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-10 > div > :first-child {
+  padding-top: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-10 > div > :last-child {
+  padding-bottom: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-10 > div > * {
+  padding-left: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-10 > div > * {
+  padding-right: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-10 > div > :first-child {
+  margin-top: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-10 > div > :last-child {
+  margin-bottom: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-10 > div > * {
+  margin-left: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-10 > div > * {
+  margin-right: 10%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-20 > div > :first-child {
+  padding-top: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-20 > div > :last-child {
+  padding-bottom: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-20 > div > * {
+  padding-left: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-20 > div > * {
+  padding-right: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-20 > div > :first-child {
+  margin-top: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-20 > div > :last-child {
+  margin-bottom: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-20 > div > * {
+  margin-left: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-20 > div > * {
+  margin-right: 20%;
+}
+
+:where(body.corp) .tabs-panel > .section.pt-25 > div > :first-child {
+  padding-top: 25%;
+}
+
+:where(body.corp) .tabs-panel > .section.pb-25 > div > :last-child {
+  padding-bottom: 25%;
+}
+
+:where(body.corp) .tabs-panel > .section.pl-25 > div > * {
+  padding-left: 25%;
+}
+
+:where(body.corp) .tabs-panel > .section.pr-25 > div > * {
+  padding-right: 25%;
+}
+
+:where(body.corp) .tabs-panel > .section.mt-25 > div > :first-child {
+  margin-top: 25%;
+}
+
+:where(body.corp) .tabs-panel > .section.mb-25 > div > :last-child {
+  margin-bottom: 25%;
+}
+
+:where(body.corp) .tabs-panel > .section.ml-25 > div > * {
+  margin-left: 25%;
+}
+
+:where(body.corp) .tabs-panel > .section.mr-25 > div > * {
+  margin-right: 25%;
+}
+
+
+/* the live jump bar (c-navigation-bar) row: the content below starts 25px under the 80px bar from 841px
+   (none below — the bar is not in the flow there). Wave-2 encoder style `nav-gap` on the sticky-nav-corp section;
+   the roster pages model the same gap per page (e.g. gap-above-s). */
+@media (width >= 900px) {
+  :where(body.corp) main > .section.nav-gap,
+:where(body.corp) .tabs-panel > .section.nav-gap {
+    padding-bottom: var(--space-inset-m); /* padding, as templates/division models the same 25px — never doubled */
+  }
+}

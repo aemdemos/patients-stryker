@@ -10,6 +10,16 @@
  *
  * Detection is host-independent — it matches DM URL path patterns rather than a
  * specific hostname, covering Scene7/classic DM and DM OpenAPI delivery.
+ *
+ * Publish-path images (AEM DAM delivery, `…/content/dam/….png|jpg|jpeg|gif|webp|svg`,
+ * incl. PDF cover renditions `….pdf.thumb.319.319.png`) follow the same model
+ * (2026-10-06, "original links" decision): authored as a LINK to the original URL,
+ * rendered here as a <picture> with the same markup / loading hints. Unlike DM
+ * links they are only converted when the link stands alone in its paragraph or
+ * cell (a `/content/dam/x.jpg` link inside running text or a list is a document
+ * link, not an embedded image). Publish-path images and the media hints below are
+ * www.stryker.com (corp) behaviour: they apply only on `body.corp` pages, so other
+ * pages keep the original rendering.
  */
 
 import addVideoControls from './video-controls.js';
@@ -29,6 +39,21 @@ const VIDEO_EXT = /\.(m3u8|mpd|mp4|webm|mov)(\?|$)/i;
 // preserves GIF animation) instead of <video>. Kept separate so genuine DM
 // video handling below is unchanged.
 const DM_IMAGE_PRESET = /\$[^$]*width[^$]*\$/i;
+
+// publish-path (AEM DAM) image delivery: /content/dam/<path>.<image ext>
+const PUBLISH_IMAGE = /\/content\/dam\/[^?#]+\.(png|jpe?g|gif|webp|svg)([?#]|$)/i;
+
+/** corp (www.stryker.com) page: scripts/corp.js marks <body> before decoration */
+const isCorpPage = () => document.body.classList.contains('corp');
+
+/**
+ * True when a URL is a publish-path DAM image (`/content/dam/….png` etc.).
+ * @param {string} src the link/image URL
+ * @returns {boolean}
+ */
+export function isPublishImageSrc(src) {
+  return !!src && PUBLISH_IMAGE.test(src) && isCorpPage();
+}
 
 /** Decode a percent-encoded href/src ($..$ presets arrive encoded from anchors). */
 function decodeSrc(src) {
@@ -60,14 +85,16 @@ let hlsJsPromise;
 
 /**
  * True when a URL points at a Dynamic Media asset (Scene7/OpenAPI image or DM
- * video). Blocks use this to leave DM elements untouched — dm-support.js has
- * already rendered them at native quality, so re-optimizing would degrade them.
+ * video) or a publish-path DAM image. Blocks use this to leave these elements
+ * untouched — dm-support.js has already rendered them from the original source,
+ * so re-optimizing (media-bus `?width=` URLs) would degrade or break them.
  * @param {string} src the image/link/media URL
  * @returns {boolean}
  */
 export function isDMSrc(src) {
   return !!src && (
     DM_SCENE7.test(src) || DM_OPENAPI.test(src) || DM_VIDEO.test(src) || VIDEO_EXT.test(src)
+    || isPublishImageSrc(src)
   );
 }
 
@@ -94,6 +121,7 @@ const DM_SELECTOR = [
   'a[href*=".mp4"]',
   'a[href*=".webm"]',
   'a[href*=".mov"]',
+  'a[href*="/content/dam/"]',
   'img[src*="/is/image/"]',
   'img[src*="/adobe/assets/"]',
 ].join(',');
@@ -140,6 +168,34 @@ function appendParam(src, key, value) {
  * `fmt=png`) gets `fmt=png-alpha` appended — Scene7's default delivery format
  * otherwise flattens transparency to a white background.
  */
+
+/**
+ * Perf (P4-quality, 2026-10-04): DM presets of the form $preset_W_H$ carry the rendered box —
+ * set width/height so the browser reserves the space before the image loads (CLS from the
+ * link → picture swap). The first DM image decorated in <main> is the LCP candidate on most
+ * templates: load it eagerly with high fetch priority instead of lazily (Lighthouse: LCP
+ * 3.3–4.9 s mobile on hero/tile pages while the image was lazy and discovered after JS).
+ */
+let firstMediaDone = false;
+function applyMediaHints(img, src, eager) {
+  if (!isCorpPage()) {
+    img.loading = eager ? 'eager' : 'lazy';
+    return;
+  }
+  let decoded = src;
+  try { decoded = decodeURIComponent(src); } catch { /* keep */ }
+  const m = decoded.match(/\$preset_(\d+)_(\d+)\$/i);
+  if (m) { img.width = Number(m[1]); img.height = Number(m[2]); }
+  const first = !firstMediaDone && !eager;
+  if (eager || first) {
+    img.loading = 'eager';
+    img.setAttribute('fetchpriority', 'high');
+  } else {
+    img.loading = 'lazy';
+  }
+  firstMediaDone = true;
+}
+
 function renderScene7(src, alt, eager) {
   // decode first so a percent-encoded preset ($..._png$ arrives as %24..._png%24
   // from a href) is matched as well as the literal form and an explicit fmt=png
@@ -149,7 +205,7 @@ function renderScene7(src, alt, eager) {
   const finalSrc = png ? appendParam(src, 'fmt', 'png-alpha') : src;
   const picture = document.createElement('picture');
   const img = document.createElement('img');
-  img.loading = eager ? 'eager' : 'lazy';
+  applyMediaHints(img, src, eager);
   img.alt = alt;
   img.src = finalSrc;
   picture.append(img);
@@ -171,7 +227,7 @@ function renderOpenAPI(src, alt, eager) {
       picture.append(source);
     } else {
       const img = document.createElement('img');
-      img.loading = eager ? 'eager' : 'lazy';
+      applyMediaHints(img, src, eager);
       img.alt = alt;
       img.src = srcset;
       picture.append(img);
@@ -193,11 +249,38 @@ function renderOpenAPI(src, alt, eager) {
 function renderContentImage(src, alt, eager) {
   const picture = document.createElement('picture');
   const img = document.createElement('img');
-  img.loading = eager ? 'eager' : 'lazy';
+  applyMediaHints(img, src, eager);
   img.alt = alt;
   img.src = src;
   picture.append(img);
   return picture;
+}
+
+/**
+ * Build a <picture> for a publish-path DAM image, using the original URL
+ * unchanged (no resizing params — the publish host serves the authored rendition).
+ * @param {string} src the authored image URL
+ * @param {string} alt accessible text
+ * @param {boolean} eager whether to eager-load
+ * @returns {HTMLPictureElement}
+ */
+function renderPublishImage(src, alt, eager) {
+  return renderContentImage(src, alt, eager);
+}
+
+const INLINE_WRAPPERS = new Set(['STRONG', 'EM', 'B', 'I', 'U', 'SPAN']);
+
+/**
+ * True when a link is the only content of its paragraph / cell (through inline
+ * wrappers) — the authored form of an embedded image.
+ * @param {HTMLAnchorElement} a the link
+ * @returns {boolean}
+ */
+function isStandaloneLink(a) {
+  let box = a.parentElement;
+  while (box && INLINE_WRAPPERS.has(box.tagName)) box = box.parentElement;
+  if (!box || (box.tagName !== 'P' && box.tagName !== 'DIV')) return false;
+  return box.textContent.trim() === a.textContent.trim();
 }
 
 /**
@@ -412,6 +495,7 @@ function dmRendererFor(src) {
   if (DM_VIDEO.test(src) || VIDEO_EXT.test(src)) return renderVideo;
   if (DM_OPENAPI.test(src)) return renderOpenAPI;
   if (DM_SCENE7.test(src)) return renderScene7;
+  if (isPublishImageSrc(src)) return renderPublishImage;
   return null;
 }
 
@@ -441,6 +525,7 @@ export default function decorateDMAssets(root) {
     let displayText = '';
     if (el.tagName === 'A') {
       if (el.querySelector('picture, img, video, source')) return;
+      if (render === renderPublishImage && !isStandaloneLink(el)) return;
       const text = el.textContent.trim();
       if (text && text !== src) displayText = text;
     }
@@ -481,4 +566,82 @@ export function liftDefaultContentDMMedia(main) {
     p.append(media);
     wrapper.replaceWith(p);
   });
+}
+
+/*
+ * Experience Workspace (DA canvas) preview. The canvas re-runs decoration, then swaps
+ * every authored text node for a ProseMirror editor built from the SOURCE node — for a
+ * DM image that is the raw link, so the <picture> rendered above disappears. In quick-edit
+ * mode only, keep the link editable (it is the image's source) and render a non-editable
+ * preview of the image right before its editor, re-synced whenever the editor changes.
+ * The published page never runs this.
+ */
+const QE_PREVIEW = 'dm-qe-preview';
+const QE_LINK = 'dm-qe-link';
+let qeObserver;
+
+/**
+ * @returns {boolean} true inside the DA canvas / quick-edit iframe
+ */
+export function isQuickEdit() {
+  return new URLSearchParams(window.location.search).get('quick-edit') === 'on'
+    || document.body.classList.contains('quick-edit');
+}
+
+/**
+ * The DM image URL an editor holds when its only content is one DM image link.
+ * @param {Element} editor a `.prosemirror-editor`
+ * @returns {string|null}
+ */
+function editorDMImageSrc(editor) {
+  const links = editor.querySelectorAll('a[href]');
+  if (links.length !== 1) return null;
+  const src = links[0].getAttribute('href');
+  const render = dmRendererFor(src);
+  if (!render || render === renderVideo) return null;
+  // the link must be the whole content (an inline DM link inside prose stays a link)
+  const text = editor.textContent.trim();
+  return text === links[0].textContent.trim() ? src : null;
+}
+
+function syncDMEditorPreviews() {
+  document.querySelectorAll(`picture.${QE_PREVIEW}`).forEach((pic) => {
+    const editor = pic.nextElementSibling;
+    if (!editor?.classList.contains('prosemirror-editor')
+      || editorDMImageSrc(editor) !== pic.dataset.src) pic.remove();
+  });
+  document.querySelectorAll('main .prosemirror-editor').forEach((editor) => {
+    const src = editorDMImageSrc(editor);
+    editor.classList.toggle(QE_LINK, !!src);
+    if (!src || editor.previousElementSibling?.dataset?.src === src) return;
+    const link = editor.querySelector('a');
+    const text = link.textContent.trim();
+    const picture = dmRendererFor(src)(src, text !== src ? text : '', false);
+    picture.classList.add(QE_PREVIEW);
+    picture.dataset.src = src;
+    picture.setAttribute('contenteditable', 'false');
+    editor.before(picture);
+  });
+}
+
+/**
+ * Starts (once) the canvas preview for DM image links. Observes <body> because the
+ * canvas replaces <main> on every body sync.
+ */
+export function previewDMLinkEditors() {
+  if (qeObserver || !isQuickEdit()) return;
+  let queued = false;
+  qeObserver = new MutationObserver((records) => {
+    // ignore our own preview insertions/removals
+    const ownChange = (r) => r.type === 'childList'
+      && [...r.addedNodes, ...r.removedNodes].every((n) => n.classList?.contains(QE_PREVIEW));
+    if (records.every(ownChange)) return;
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => {
+      queued = false;
+      syncDMEditorPreviews();
+    });
+  });
+  qeObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
 }
