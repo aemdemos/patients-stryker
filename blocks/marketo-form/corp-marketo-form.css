@@ -1,0 +1,116 @@
+/*
+ * corp-marketo-form — www.stryker.com look of the patients `marketo-form` block, over
+ * Marketo's runtime-injected markup and theme. Loaded by scripts/corp.js on `site: corp`
+ * pages only, before the first section shows; every rule repeats the patients selector
+ * behind `body.corp`, so it wins whatever the load order. The patients block itself is
+ * never edited (sdt-stryker#5, #6). The .mkto* class names are Marketo's, so kebab-case
+ * linting is disabled around them.
+ */
+
+body.corp .marketo-form {
+  /* -corp: the live c-marketo-form fills its column; only the rows cap at 900px (centred) */
+  max-width: none;
+
+  /* P2b-4: no block padding — the live c-marketo-form is 736px form + 10px margin inside a plain
+     30px section rhythm (medpor-neurosurgery @1440); the section supplies the spacing */
+  padding-block: 0;
+}
+
+/* stylelint-disable selector-class-pattern */
+
+/* Neutralise Marketo's inline fixed pixel widths and drive the layout ourselves
+   so the form fills the whole block. */
+
+body.corp .marketo-form form.mktoForm {
+  /* -corp: live container is 14px/20px Humanist, black, 10px below (Marketo's forms2 theme sets 13px Helvetica #333) */
+  margin-bottom: var(--space-block-s);
+  line-height: 1.43;
+
+  /* Marketo's theme insets the form 10px on small screens and the live corp forms keep it
+     (the patients block sets padding 0); EDS steps: the inset stops at 600px, not 480px */
+  padding: 10px;
+}
+
+/* Each row is a flex track (overrides Marketo's float-based columns) */
+body.corp .marketo-form .mktoForm .mktoFormRow {
+  max-width: 900px; /* live .mktoFormRow */
+  margin: auto !important;
+}
+
+/* labels — bold, tight bottom gap; width:auto overrides Marketo's inline width */
+body.corp .marketo-form .mktoForm .mktoLabel {
+  line-height: var(--footnote-line-height); /* live label 21px: 16.8px line + 4.2px top padding */
+  font-weight: 700;
+  padding: 4.2px 0 0;
+}
+
+/* Choice-group container: contain the floated inputs so it takes its full height.
+   width:100% overrides Marketo's inline width:580px (mktoHasWidth), which would
+   otherwise force horizontal scroll on viewports narrower than 580px. */
+body.corp .marketo-form .mktoForm .mktoCheckboxList,
+body.corp .marketo-form .mktoForm .mktoRadioList {
+  /* -corp: flow-root contains the floated inputs WITHOUT clipping — forms2's mobile padding on the inline
+     privacy link was cut by overflow:hidden (styles.css fbcd127 override, folded in) */
+  display: flow-root;
+  overflow: visible;
+}
+
+/* choice-option label: inline, bold brand body font; ::after (below) breaks each
+   option onto its own row without float/clear margin-collapsing */
+body.corp .marketo-form .mktoForm .mktoCheckboxList label,
+body.corp .marketo-form .mktoForm .mktoRadioList label {
+  font-weight: 700;
+  color: var(--corp-color-marketo-text); /* the patients block sets black; corp keeps Marketo's theme colour */
+}
+
+/* the patients block drops the underline on links in choice labels (Privacy Policy); corp keeps it */
+body.corp .marketo-form .mktoForm label a:any-link {
+  text-decoration: underline;
+}
+
+/* submit — Stryker teal, white uppercase Futura. Matches Marketo's Simple-theme
+   selector specificity (and resets background-image) so the teal overrides its green. */
+body.corp .marketo-form .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
+  font-weight: 400;
+}
+
+/* the source drops Marketo's left margin on the button row */
+body.corp .marketo-form .mktoForm .mktoButtonRow {
+  display: block;
+  width: 100% !important;
+  max-width: 900px; /* live .mktoButtonRow */
+  margin: var(--space-block) auto 0 !important;
+}
+
+/* ---- Validation / error state — mirrors the source site's `.c-marketo-form`
+   treatment: the message is taken out of Marketo's absolutely-positioned flyout
+   and flows inline under the field as a white box with a thick red border. ---- */
+
+/* the error message box — white fill, black text, 10px red border, no shadow */
+body.corp .marketo-form .mktoForm .mktoError .mktoErrorMsg {
+  font-weight: 400;
+}
+
+/* -corp: the live altcha captcha row (authored `Captcha Script` / `Captcha Challenge URL`) is 40px + 15px */
+@media (width >= 600px) {
+  body.corp .marketo-form form.mktoForm {
+    padding: 0;
+  }
+}
+
+body.corp .marketo-form .mktoForm altcha-widget {
+  display: block;
+  min-height: 40px;
+  margin-bottom: var(--space-block);
+}
+
+/* every corp form carries the captcha rows, but the patients block adds the widget only once
+   its script has loaded: hold the same 40px + gap above the button until it is there */
+body.corp .marketo-form .mktoForm .mktoButtonRow:not(:has(altcha-widget))::before {
+  content: '';
+  display: block;
+  height: 40px;
+  margin-bottom: var(--space-block);
+}
+
+/* stylelint-enable selector-class-pattern */

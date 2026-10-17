@@ -27,7 +27,7 @@ import { previewDMLinkEditors } from './dm-support.js';
  * patients blocks reused on corp pages with a `blocks/<name>/corp-<name>.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = [];
+const CORP_BLOCK_STYLES = ['cards', 'marketo-form', 'tabs'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.

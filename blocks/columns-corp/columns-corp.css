@@ -1,0 +1,686 @@
+.columns-corp > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -15px;
+}
+
+.columns-corp img {
+  max-width: 100%;
+  height: auto;
+}
+
+.columns-corp > div > div {
+  box-sizing: border-box;
+  min-width: 0; 
+  padding: 0 var(--space-block);
+}
+
+.columns-corp .columns-img-col {
+  margin-bottom: var(--space-section);
+  padding-bottom: 3%;
+}
+
+.columns-corp .columns-img-col img {
+  display: block;
+  margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
+}
+
+.columns-corp h4 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+.columns-corp > div > div h2:not(:has(em, strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.columns-corp p,
+.columns-corp ul,
+.columns-corp li {
+  /* kept at the patients default (17.5px): the 14px trial regressed home/our-culture/hallux (P2a gate) —
+     templates scope `body-m` back to 14px where the live colctrl RTE is unscaled (division) */
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+.columns-corp ul ul {
+  margin-bottom: 0;
+  list-style-type: disc;
+}
+
+/* Text-only columns: h4 uses a smaller mobile size and scales up at 600px+. */
+.columns-text h4 {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* inline bold in body copy keeps the body font (bold weight), not the global
+   Futura display face — bold should emphasise, not switch typeface. Compact
+   columns opt back into the display font below. */
+.columns-corp p :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
+/* Keep gold h2 marker text at the intended columns heading size. */
+.columns-corp h2 em strong,
+.columns-corp h2 strong em {
+  font-size: var(--heading-font-size-xl);
+}
+
+.columns-corp p:has(code) code {
+  font-size: 3vw;
+}
+
+.columns-corp p:has(code) code sup {
+  color: var(--color-white);
+}
+
+.columns-corp p:has(:is(em > strong > code, strong > em > code)) {
+  margin: 0;
+}
+
+/* Text after the image gets a 3% horizontal inset. */
+.columns-corp .columns-img-col ~ h3,
+.columns-corp .columns-img-col ~ h4,
+.columns-corp .columns-img-col ~ p {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.columns-corp.columns-50-50.border-bottom {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.columns-corp.columns-icon-grid .columns-img-col img {
+  width: 150px; /* fixed icon size, as on the reference */
+}
+
+/* 50-50 variant: equal columns with tuned heading sizing. */
+.columns-corp.columns-50-50 h4 {
+  font-size: var(--heading-font-size-l); 
+}
+
+.columns-corp.columns-icon-grid .columns-img-col ~ p strong {
+  font-weight: 700;
+}
+
+
+/* Roomier heading-to-body spacing. */
+.columns-corp.related-links p {
+  margin-bottom: var(--space-block);
+}
+
+/* column labels — source renders these in Futura bold, GOLD, 24.5px
+   (the .futura-bold .fontsize-1-75em headings coloured #ffb500). */
+.columns-corp.related-links h3 {
+  margin-bottom: var(--space-block);
+  padding-bottom: 2%;
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+  color: var(--color-accent);
+}
+
+.columns-corp.related-links p:not(:has(a)) + p:has(a) a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 8px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+/* `contact-card` (wave-2 encoder, live c-contactus): the address / phone card keeps the
+   site's base rich-text scale — 14px copy, 17.5px Futura h4 labels, black links, the
+   ruled Futura section title (measured style-drift, craniomaxillofacial/contact) */
+.columns-corp.contact-card :is(p, li, a) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.columns-corp.contact-card h4 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
+.columns-corp.contact-card a:any-link {
+  color: inherit;
+}
+
+.columns-corp.contact-card :is(h2, h3):has(> u) {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+
+/* compact variant — smaller heading + body typography for dense 50/50 rows. */
+.section.compact .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Icon-grid variant: centered icon with left-aligned text content. */
+.columns-corp.columns-icon-grid .columns-img-col {
+  margin-bottom: var(--space-section); /* 30px icon-to-subtitle gap */
+  padding-bottom: 0;
+}
+
+.section.compact .columns-corp .columns-img-col img {
+  padding-bottom: var(--space-block-s);
+}
+
+.section.compact .columns-corp h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top: var(--space-block);
+}
+
+.section.compact .columns-corp h3 strong {
+  font-size: var(--heading-font-size-m);
+}
+
+.section.compact .columns-corp h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+
+.section.compact .columns-corp p {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section.compact .columns-corp p strong {
+  font-family: var(--display-font-family);
+}
+
+.section.compact .columns-corp h2 em strong {
+  font-size: var(--heading-font-size-compact);
+}
+
+
+.section.serif .columns-corp p,
+.section.serif .columns-corp ul,
+.section.serif .columns-corp li,
+.section.serif .columns-corp a {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+/* stroke title — the reference enlarges it 1.5x (21px → 31.5px), Futura bold.
+   Colour/family/weight come from the global bold+italic gold-heading rule. */
+.section.serif .columns-corp h3 {
+  font-size: calc(var(--heading-font-size-l) * 1.5);
+  line-height: var(--heading-line-height);
+}
+
+/* Add top and bottom spacing around serif 50-50 blocks. */
+.section.serif .columns-corp.columns-50-50 {
+  margin-block: var(--space-section);
+}
+
+.section.serif .columns-corp.columns-50-50 > div > div > :last-child {
+  margin-bottom: 0;
+}
+
+/* Light-gray serif sections use section padding and remove block margin. */
+.section.light-gray.serif {
+  padding-block: var(--space-section);
+}
+
+.section.light-gray.serif .columns-corp.columns-50-50 {
+  margin-block: 0;
+}
+
+/* dark variant — gold Futura-bold section title (h3). 26px gold. */
+.section.dark .columns-corp h3 {
+  font-family: var(--display-font-family);
+  font-size: var(--panel-cta-heading-size); /* 26px */
+  font-weight: 700;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-accent);
+}
+
+.section.compact .columns-corp .columns-img-col ~ h3 {
+  padding-left: 0;
+  font-size: var(--heading-font-size-m);
+}
+
+/* dark-variant caption (h4) — Egyptienne serif light, white, 21.875px. */
+.section.dark .columns-corp h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-ml); /* 21.875px */
+  font-weight: 500;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-white);
+}
+
+.section.dark .columns-corp p,
+.section.dark .columns-corp ul,
+.section.dark .columns-corp li {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
+}
+
+.section.compact .columns-corp p,
+.section.compact .columns-corp ul,
+.section.compact .columns-corp li {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
+}
+
+/* icon-grid cell text — subtitle (serif), bold Futura heading, then body */
+.columns-corp.columns-icon-grid .columns-img-col ~ p {
+  margin-block: 0 var(--space-block);
+  margin-inline: 12.4%;
+  padding: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* `flat` variant (P2d, R-42): live cols2 rows whose standaloneimage carries no bottom
+   margin — the image cell ends with the picture (accolade-ii hero + 2/3-1/3 rows). */
+.columns-corp.flat > div > .columns-img-col {
+  padding-bottom: 0;
+}
+
+/* bullets stay black while the item text is white, as on the reference (there the
+   marker inherits the black <li> and the text lives in a white span) */
+.section.dark .columns-corp li::marker {
+  color: var(--color-black);
+}
+
+/* dark 50-50 band: the image bleeds the full band height, so drop the section's
+   own block padding and the image column's margin/padding (the text column re-adds
+   its inset below). Keyed on the 50-50 variant so plain-columns dark bands keep
+   their default spacing. */
+.section.dark:has(.columns-50-50) {
+  padding-block: 0;
+}
+
+.section.dark .columns-50-50 .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.serif .columns-corp.columns-50-50 .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.dark .columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+  padding-block: var(--space-section);
+}
+
+/* Mobile stacked 50-50 rows use row-gap for image/text spacing. */
+.section.serif .columns-corp.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+}
+
+/* light-gray variant — column text uses the serif heading font */
+.section.light-gray .columns-corp p,
+.section.light-gray .columns-corp ul,
+.section.light-gray .columns-corp li,
+.section.light-gray .columns-corp a {
+  font-family: var(--heading-font-family);
+}
+
+.columns-corp.columns-icon-grid .columns-img-col ~ p:has(strong) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+.section.compact .columns-corp li > p {
+  margin-bottom: 0;
+}
+
+.section.compact .columns-corp p:has(code) {
+  padding: var(--space-block-l);
+  padding-bottom:0;
+  margin-bottom: 0;
+  line-height: 24px;
+}
+
+.columns-corp.columns-icon-grid .columns-img-col ~ p:has(strong) + p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* Add extra inner inset for non-50-50 light-gray columns. */
+.section.light-gray .columns-corp:not(.columns-50-50) > div > div {
+  padding-inline: 24px;
+}
+
+.section.compact .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+  padding-left: var(--space-block);
+  padding-right: var(--space-block);
+  padding-top: 0;
+  margin-top: var(--space-inset-l);
+}
+
+/* extra title-to-body gap to match the reference's larger inline-title spacing */
+.section.light-gray .columns-corp h2 {
+  margin-bottom: var(--space-inset-m);
+}
+
+/* when a compact columns block also contains an h1, the h2 acts as a subheading
+   and should use the standard xl size rather than the compact size */
+.section.compact .columns-corp:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+.section.compact .columns-corp > div > div:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+/* underlined link (<u>) = flat CTA: Futura bold, uppercase, teal, with a chevron */
+.section.light-gray .columns-corp a:has(u) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
+  text-transform: uppercase;
+}
+
+/* Style only the related-links "Learn more" CTA links. */
+.columns-corp.related-links p:not(:has(a)) + p:has(a) a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);   /* 17.5px */
+  font-weight: 700;
+  line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
+}
+
+/* <u> is only the CTA trigger — not shown as an underline */
+.section.light-gray .columns-corp a:has(u) u {
+  text-decoration: none;
+}
+
+/* CTA slot: extra space below each CTA before the next stacked column (mobile).
+   The 2-up and 3-up media queries below override this per layout. */
+.section.light-gray .columns-corp p:has(a u) {
+  margin-bottom: 80px;
+}
+
+.section.compact .columns-corp p:has(code) + p:has(code) {
+  padding-top: 0;
+  padding-bottom:var(--space-block-l);
+  margin-bottom: var(--space-inset-l);
+  font-family: var(--heading-font-family);
+}
+
+.section.compact .columns-corp p:has(code):not(:has(:is(em > strong > code, strong > em > code))) {
+  padding-top: 0;
+  padding-bottom: var(--space-block-l);
+  margin-bottom: var(--space-inset-l);
+  font-family: var(--heading-font-family);
+}
+
+/* chevron drawn in CSS (reference uses a proprietary icon font); follows link colour */
+.section.light-gray .columns-corp a:has(u)::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentcolor;
+}
+
+/* no underline on any link; override the global underline default */
+.section.light-gray .columns-corp a:any-link {
+  text-decoration: none;
+}
+
+.section.light-gray .columns-corp a:hover,
+.section.light-gray .columns-corp a:focus {
+  color: var(--color-primary-pressed);
+  text-decoration: none;
+}
+
+@media (width >= 600px) {
+  .columns-text h4 {
+    font-size: var(--heading-font-size-ml);
+    line-height: var(--heading-line-height-ml);
+  }
+
+  .columns-corp > div {
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+
+  .columns-corp > div > div {
+    flex: 0 0 50%;
+  }
+
+  /* icon-grid: 6 cells wrap 2-up into 3 rows; add the reference's inter-row gap */
+  .columns-corp.columns-icon-grid > div {
+    row-gap: var(--space-section);
+  }
+
+  /* 4-up: wrap into an even 2x2 grid on tablet, with an inter-row gap so the two
+     rows don't collide (base flex:0 0 50% already gives the 2-up split) */
+  .columns-corp.columns-4-cols > div {
+    row-gap: var(--space-section);
+  }
+
+  /* restore the hero CTA button once the layout is side-by-side (it's hidden on
+     mobile above, matching the source) */
+  .columns-corp.columns-50-50 .button-wrapper {
+    display: block;
+  }
+
+  /* in an image+text row, the text column sits slightly below the image top, as
+     in the reference. Only applies when the row has a picture (not text+text rows). */
+  .columns-corp.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: var(--space-section);
+  }
+
+  /* Use an inset variable to widen the 50-50 image/text gap. */
+  .columns-corp.columns-50-50 {
+    --col-5050-inset: 49px;
+  }
+
+  .section.compact .columns-corp h2,
+  .section.compact .columns-corp h2 em strong {
+    font-size: var(--heading-font-size-compact-m);
+  }
+
+  .section.compact .columns-corp:has(p code) h3 strong {
+    font-size: var(--heading-font-size-l);
+  }
+
+  /* stroke/serif section uses a wider image-to-text gap (~98px vs 64px) */
+  .section.serif .columns-corp.columns-50-50 {
+    --col-5050-inset: 83px;
+  }
+
+  /* Keep equal top and bottom spacing around serif 50-50 images. */
+  .section.serif .columns-corp.columns-50-50 .columns-img-col {
+    margin-block: var(--space-section);
+    padding-bottom: 0;
+  }
+
+  /* tablet 2-up: float grid matching the reference */
+  .section.light-gray .columns-corp > div {
+    display: block;
+  }
+
+  .section.light-gray .columns-corp > div::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .section.light-gray .columns-corp > div > div {
+    float: left;
+    width: 50%;
+  }
+
+  .columns-corp.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+    padding-left: var(--col-5050-inset);
+  }
+
+  /* 3rd column floats right so it lands in the right column below the 2nd */
+  .section.light-gray .columns-corp > div > div:nth-child(3) {
+    float: right;
+  }
+
+  .section.compact .columns-corp.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top:0;
+  }
+
+  .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-right: var(--col-5050-inset);
+  }
+
+  .section.compact .columns-corp.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+   padding-left: var(--space-block);
+  }
+
+  /* serif image-right row: the reference also insets the text column's outer
+     (left) edge, not just the image-facing side, so the text sits further in */
+  .section.serif .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-left: var(--col-5050-inset);
+  }
+
+  /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
+  .section.light-gray .columns-corp p:has(a u) {
+    margin-bottom: 75px;
+  }
+
+  /* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
+  .section.light-gray .columns-corp p:has(+ p a u) {
+    min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+  }
+}
+
+/* desktop (>= 900px) — all columns line up in a single row */
+@media (width >= 900px) {
+  .columns-corp > div {
+    flex-wrap: nowrap;
+  }
+
+  .columns-corp > div > div {
+    flex: 1;
+  }
+
+  .columns-corp p:has(code) code {
+    font-size:1.5vw;
+  }
+
+  /* icon-grid stays a wrapping 2-up grid on desktop (the base desktop rule above
+     would otherwise force all 6 cells into one nowrap row) */
+  .columns-corp.columns-icon-grid > div {
+    flex-wrap: wrap;
+  }
+
+  /* 4-up: all four cells in a single row at an exact 25% each. Fixed basis (not the
+     base flex:1 1 0%) so columns with differing content/padding stay equal width. */
+  .columns-corp.columns-4-cols > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  /* 50-50 columns  */
+  .columns-corp.columns-50-50 > div > div,
+  .columns-corp.columns-icon-grid > div > div {
+    flex: 0 0 50%;
+  }
+
+  .columns-corp.columns-4-cols > div > div {
+    flex: 0 0 25%;
+  }
+
+
+  /* desktop 3-up: revert to the base flex row */
+  .section.light-gray .columns-corp > div {
+    display: flex;
+  }
+
+  /* 70-30 — an uneven two-column split (wide column left). */
+  .columns-corp.columns-70-30 > div > div:first-child {
+    flex: 0 0 70%;
+  }
+
+  .columns-corp.columns-70-30 > div > div:last-child {
+    flex: 0 0 30%;
+  }
+
+  /* 30-70 — the mirror split (narrow column left: live cols2_1-3_2-3). */
+  .columns-corp.columns-30-70 > div > div:first-child {
+    flex: 0 0 30%;
+  }
+
+  .columns-corp.columns-30-70 > div > div:last-child {
+    flex: 0 0 70%;
+  }
+
+  /* live col-md-4 | col-md-8 (P2c: trauma "Our history" row) */
+  .columns-corp.columns-33-67 > div > div:first-child {
+    flex: 0 0 33.3333%;
+  }
+
+  .columns-corp.columns-33-67 > div > div:last-child {
+    flex: 0 0 66.6667%;
+  }
+
+  .columns-corp.columns-67-33 > div > div:first-child {
+    flex: 0 0 66.6667%;
+  }
+
+  .columns-corp.columns-67-33 > div > div:last-child {
+    flex: 0 0 33.3333%;
+  }
+
+  .section.light-gray .columns-corp > div > div {
+    float: none;
+    width: auto;
+  }
+
+  /* serif image+text rows centre the image against the text block only at desktop
+     (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
+  .section.serif .columns-corp.columns-50-50 > div {
+    align-items: center;
+  }
+
+  .section.light-gray .columns-corp > div > div:nth-child(3) {
+    float: none;
+  }
+
+  .section.compact .columns-corp.columns-50-50:not(:first-child) > div {
+    margin-top:40px;
+    margin-bottom: var(--space-inset-l);
+  }
+
+  .section.compact .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    margin-top: 0;
+  }
+
+  /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
+  .section.light-gray .columns-corp p:has(a u) {
+    margin-bottom: var(--space-block);
+  }
+
+}
+
+@media (width >= 1200px) {
+  .columns-corp p:has(code) code {
+    font-size: var(--body-font-size-xl);
+  }
+}

@@ -1,0 +1,99 @@
+/* news-cards — www.stryker.com c-latestnews (components.min.css L5746-5749,
+   L2915-2920; .border-bottom-gold L2866; a.action-link L2890-2893). Live grid: the
+   .latestnews-container row (-15px) holds four col-sm-3 items padded 15px each,
+   padding-bottom 25px over the 1px grey rule; the component is a .page-section
+   (margin-bottom 20px, 30px from 480px). Below the Bootstrap sm breakpoint the
+   items stack full width; the -15px row margin holds at every width, so the
+   thumbnails sit 15px inside the page gutter (x=30 at 1440, x=15 at 360). */
+
+.news-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0 calc(-1 * var(--container-gutter)) var(--space-block-l);
+  padding-bottom: var(--space-inset-m);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.news-cards .news-card {
+  box-sizing: border-box;
+  padding: 0 var(--container-gutter);
+}
+
+.news-cards .news-card-image p {
+  margin: 0;
+}
+
+.news-cards .news-card-image img,
+.news-cards .news-card-image picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.news-cards .news-card-body h3 {
+  margin: 16px 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+}
+
+.news-cards .news-card-body h3 a:any-link {
+  color: var(--color-black); /* the live title is plain text; the link stays quiet */
+  text-decoration: none;
+}
+
+.news-cards .news-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
+.news-cards .news-card-body p {
+  margin: 0 0 var(--space-block);
+  line-height: var(--paragraph-line-height);
+}
+
+.news-cards .news-card-body p:last-child {
+  margin-bottom: 0;
+  line-height: var(--body-line-height);
+}
+
+/* "Read More" — the live a.news-link.action-link: Futura bold teal, uppercase,
+   strykericons chevron after the label */
+.news-cards .news-card-body p:last-child a:any-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.news-cards .news-card-body p:last-child a:any-link::after {
+  content: "\e250";
+  display: inline-block;
+  padding-left: 0.5em;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  transform: translate(0, 2px);
+}
+
+.news-cards .news-card-body p:last-child a:hover {
+  color: var(--color-primary-active);
+}
+
+@media (width >= 600px) {
+  .news-cards {
+    margin-bottom: var(--space-inset-l); /* .page-section ≥480 */
+  }
+}
+
+@media (width >= 900px) {
+  .news-cards {
+    grid-template-columns: repeat(4, 1fr); /* col-sm-3; the -15px row stays */
+  }
+}
+
+/* D2: an authored card displaced by a newer index-sourced one keeps the visible count */
+.news-cards .news-card[hidden] {
+  display: none;
+}
