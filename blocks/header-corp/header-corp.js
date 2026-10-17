@@ -1,5 +1,5 @@
 /*
- * site-header — the www.stryker.com chrome rendered from the authored /nav document:
+ * header-corp — the www.stryker.com chrome rendered from the authored /nav document:
  * white logo row + gold primary-nav bar with fly-outs from 900px (live: 1024px), single row with an
  * off-canvas gold drawer below. Authored sections, in order:
  *   1 brand logo link · 2 utility links <ul> · 3 locale (globe image + link)
@@ -15,7 +15,7 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
-const DESKTOP = window.matchMedia('(width >= 900px)'); // EDS step; must match site-header.css
+const DESKTOP = window.matchMedia('(width >= 900px)'); // EDS step; must match header-corp.css
 
 function el(tag, className, attrs = {}) {
   const node = document.createElement(tag);
@@ -206,7 +206,7 @@ function wireBehaviour(block) {
 
 /**
  * loads and decorates the site header
- * @param {Element} block The site-header block element
+ * @param {Element} block The header-corp block element
  */
 export default async function decorate(block) {
   const navMeta = getMetadata('nav');

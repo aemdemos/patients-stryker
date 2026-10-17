@@ -1,39 +1,39 @@
-/* site-header — values measured live (www.stryker.com, legal/privacy, 1440 + 360) over the
+/* header-corp — values measured live (www.stryker.com, legal/privacy, 1440 + 360) over the
    lifted rules (components.min.css L1039-1153, canon.css § site header): 89px single row +
    1px rule and an off-canvas gold drawer below 1024px; 87px white row + 60px gold bar with
    fly-outs from 1024px. Breakpoints are the source's (1024, 1440). */
 
 /* the <header> landmark follows the live .g-header positioning (relative below 1024px — the
    mobile search strip hangs off it — static above) */
-header.site-header-wrapper {
+header.header-corp-wrapper {
   position: relative;
   padding: 0;
   max-width: none;
 }
 
-.site-header {
+.header-corp {
   position: relative;
   border-bottom: 1px solid var(--color-secondary);
   font-family: var(--display-font-family);
 }
 
-.site-header * {
+.header-corp * {
   box-sizing: border-box;
 }
 
-.site-header p,
-.site-header ul {
+.header-corp p,
+.header-corp ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.site-header a:any-link {
+.header-corp a:any-link {
   color: var(--color-black);
   text-decoration: none;
 }
 
-.site-header .container {
+.header-corp .container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -43,18 +43,18 @@ header.site-header-wrapper {
    resolves to auto in standards mode, but the DA canvas iframe (preview.da.live, no
    doctype) renders in quirks mode, where it climbs to the 242px <header> reservation and
    the gold bar + HCP band swallow the page hero. */
-.site-header .global-header .container {
+.header-corp .global-header .container {
   height: 100%;
 }
 
-.site-header .container::after {
+.header-corp .container::after {
   content: "";
   display: table;
   clear: both;
 }
 
 /* ---- white row ---- */
-.site-header .global-header {
+.header-corp .global-header {
   display: flow-root;
   position: static;
   height: 89px;
@@ -63,29 +63,29 @@ header.site-header-wrapper {
   z-index: 10002;
 }
 
-.site-header .logo {
+.header-corp .logo {
   padding-top: 21px;
   text-align: left;
 }
 
-.site-header .logo picture,
-.site-header .logo a {
+.header-corp .logo picture,
+.header-corp .logo a {
   display: inline;
 }
 
-.site-header .logo img {
+.header-corp .logo img {
   display: inline;
   width: 100px;
   height: auto;
   vertical-align: middle;
 }
 
-.site-header .menu-btn {
+.header-corp .menu-btn {
   float: left;
 }
 
-.site-header .menu-toggle,
-.site-header .search-toggle {
+.header-corp .menu-toggle,
+.header-corp .search-toggle {
   padding: 0;
   border: 0;
   background: none;
@@ -93,14 +93,14 @@ header.site-header-wrapper {
   cursor: pointer;
 }
 
-.site-header .menu-toggle {
+.header-corp .menu-toggle {
   display: block;
   width: 26px;
   height: 26px;
   margin-top: 17px;
 }
 
-.site-header .icon-bar {
+.header-corp .icon-bar {
   display: block;
   width: 24px;
   height: 3px;
@@ -111,14 +111,14 @@ header.site-header-wrapper {
 
 /* mobile search toggle: the live float measures 0×0 at the logo's bottom edge (y=46) and the
    26×26 toggle sits at y=54, flush with the container's right padding — pinned there */
-.site-header .search-btn {
+.header-corp .search-btn {
   position: absolute;
   top: 46px;
   right: var(--container-gutter);
   height: 0;
 }
 
-.site-header .search-toggle {
+.header-corp .search-toggle {
   display: block;
   width: 26px;
   height: 26px;
@@ -128,7 +128,7 @@ header.site-header-wrapper {
   color: var(--color-primary);
 }
 
-.site-header .icon-search::before {
+.header-corp .icon-search::before {
   content: "\e003";
   font-family: var(--corp-icon-font-family);
   font-style: normal;
@@ -137,12 +137,12 @@ header.site-header-wrapper {
   -webkit-font-smoothing: antialiased;
 }
 
-.site-header .utility-links {
+.header-corp .utility-links {
   display: none;
 }
 
 /* mobile search bar: dark strip under the row (L1103-1106), toggled by the search button */
-.site-header .search-bar {
+.header-corp .search-bar {
   display: none;
   position: absolute;
   top: 100%;
@@ -153,16 +153,16 @@ header.site-header-wrapper {
   background: var(--color-secondary);
 }
 
-.site-header .search-bar.is-shown {
+.header-corp .search-bar.is-shown {
   display: block;
 }
 
-.site-header .search-form {
+.header-corp .search-form {
   position: relative;
   margin: 0;
 }
 
-.site-header .search-control {
+.header-corp .search-control {
   width: 100%;
   height: 40px;
   padding: 8px 11px;
@@ -174,14 +174,14 @@ header.site-header-wrapper {
   font-family: var(--body-font-family);
 }
 
-.site-header .search-control::placeholder {
+.header-corp .search-control::placeholder {
   /* a11y (color-contrast): the live placeholder is #757575 (4.6:1 on the input's #EDEEEC);
      the muted surface token measured 2.0:1 */
   color: #757575;
   opacity: 1;
 }
 
-.site-header .search-submit {
+.header-corp .search-submit {
   display: none;
   position: absolute;
   top: 8px;
@@ -198,11 +198,11 @@ header.site-header-wrapper {
   cursor: pointer;
 }
 
-.site-header .search-source {
+.header-corp .search-source {
   display: none;
 }
 
-.site-header .language-country-select {
+.header-corp .language-country-select {
   display: block;
   float: right;
   clear: right;
@@ -210,13 +210,13 @@ header.site-header-wrapper {
   padding-top: 0;
 }
 
-.site-header .language-country-select a:any-link {
+.header-corp .language-country-select a:any-link {
   display: inline;
   color: var(--color-black);
   font-family: var(--body-font-family); /* live: the anchor keeps the body face */
 }
 
-.site-header .language-country-select .site-language {
+.header-corp .language-country-select .site-language {
   position: relative;
   color: var(--color-black);
   font-family: var(--display-font-family);
@@ -225,11 +225,11 @@ header.site-header-wrapper {
   text-transform: uppercase;
 }
 
-.site-header .language-country-select picture {
+.header-corp .language-country-select picture {
   display: contents;
 }
 
-.site-header .language-country-select img {
+.header-corp .language-country-select img {
   display: block;
   float: left;
   width: 19px;
@@ -238,11 +238,11 @@ header.site-header-wrapper {
 }
 
 /* ---- HCP notice band (components L1257; shown on body.hcp-banner pages) ---- */
-.site-header .hcp-band {
+.header-corp .hcp-band {
   display: none;
 }
 
-body.hcp-banner .site-header .hcp-band {
+body.hcp-banner .header-corp .hcp-band {
   display: block;
   clear: both;
   width: 100%;
@@ -252,7 +252,7 @@ body.hcp-banner .site-header .hcp-band {
   background: var(--color-white);
 }
 
-.site-header .hcp-band p {
+.header-corp .hcp-band p {
   margin: var(--space-block) 0;
   color: var(--color-black);
   font-family: var(--heading-font-family);
@@ -262,35 +262,35 @@ body.hcp-banner .site-header .hcp-band {
   text-align: right;
 }
 
-.site-header .hcp-band em {
+.header-corp .hcp-band em {
   font-style: normal;
 }
 
-.site-header .hcp-band strong {
+.header-corp .hcp-band strong {
   font-family: var(--display-font-family);
   font-weight: 700;
 }
 
 @media (width >= 600px) {
-  .site-header .hcp-band p {
+  .header-corp .hcp-band p {
     font-size: var(--body-font-size-xl);
   }
 }
 
 /* ---- primary nav: off-canvas drawer below 1024px (L1039-1059) ---- */
-.site-header .megamenu {
+.header-corp .megamenu {
   position: relative;
   z-index: 1040;
 }
 
-.site-header .nav-container,
-.site-header .nav-content {
+.header-corp .nav-container,
+.header-corp .nav-content {
   overflow: hidden;
   min-height: 100%;
   background: var(--color-surface);
 }
 
-.site-header .nav-container {
+.header-corp .nav-container {
   position: absolute;
   top: 0;
   left: -95%;
@@ -300,58 +300,58 @@ body.hcp-banner .site-header .hcp-band {
   background: var(--color-accent);
 }
 
-.site-header .nav-content {
+.header-corp .nav-content {
   position: relative;
   left: 0;
   width: 200%;
 }
 
-.site-header.anim .nav-container,
-.site-header.anim .nav-content {
+.header-corp.anim .nav-container,
+.header-corp.anim .nav-content {
   transition: left 0.3s;
 }
 
-.site-header.show-main-nav .nav-container {
+.header-corp.show-main-nav .nav-container {
   left: 0;
 }
 
-.site-header.show-secondary-nav .nav-content {
+.header-corp.show-secondary-nav .nav-content {
   left: -100%;
 }
 
-.site-header .main-nav,
-.site-header .secondary-nav {
+.header-corp .main-nav,
+.header-corp .secondary-nav {
   float: left;
   width: 50%;
   height: 100%;
 }
 
-.site-header .main-nav {
+.header-corp .main-nav {
   background: var(--color-accent);
 }
 
-.site-header .main-nav .container {
+.header-corp .main-nav .container {
   padding-left: 0;
   padding-right: 0;
 }
 
-.site-header .main-nav ul,
-.site-header .secondary-nav ul {
+.header-corp .main-nav ul,
+.header-corp .secondary-nav ul {
   overflow: hidden;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.site-header .main-nav li,
-.site-header .secondary-nav li {
+.header-corp .main-nav li,
+.header-corp .secondary-nav li {
   min-height: 51px;
   border-bottom: 1px solid var(--color-white);
 }
 
-.site-header .main-nav li a:any-link,
-.site-header .secondary-nav li a:any-link,
-.site-header .secondary-nav li.label {
+.header-corp .main-nav li a:any-link,
+.header-corp .secondary-nav li a:any-link,
+.header-corp .secondary-nav li.label {
   display: block;
   padding: var(--space-block-l) var(--space-inset-l) var(--space-block-l) var(--space-block);
   outline: 0;
@@ -360,19 +360,19 @@ body.hcp-banner .site-header .hcp-band {
   font-weight: 400;
 }
 
-.site-header .main-nav li a:any-link {
+.header-corp .main-nav li a:any-link {
   line-height: var(--body-line-height); /* 20px rows: 20 + 20 + 20 (+1 rule) = 61px live */
   text-transform: uppercase;
 }
 
-.site-header .main-nav li p,
-.site-header .secondary-nav li p {
+.header-corp .main-nav li p,
+.header-corp .secondary-nav li p {
   margin: 0;
   line-height: inherit;
 }
 
-.site-header .main-nav li.has-sub > a::after,
-.site-header .main-nav li.has-sub > p > a::after {
+.header-corp .main-nav li.has-sub > a::after,
+.header-corp .main-nav li.has-sub > p > a::after {
   content: "+";
   float: right;
   font-size: 2vw;
@@ -380,34 +380,34 @@ body.hcp-banner .site-header .hcp-band {
   line-height: 0.95;
 }
 
-.site-header .secondary-nav {
+.header-corp .secondary-nav {
   display: none;
   overflow: hidden;
 }
 
-.site-header .secondary-nav.active {
+.header-corp .secondary-nav.active {
   display: block;
 }
 
-.site-header .secondary-nav li.bold a:any-link,
-.site-header .secondary-nav li.label {
+.header-corp .secondary-nav li.bold a:any-link,
+.header-corp .secondary-nav li.label {
   font-weight: 700;
 }
 
-.site-header .secondary-nav li a:any-link:hover {
+.header-corp .secondary-nav li a:any-link:hover {
   background: var(--color-secondary);
   color: var(--color-white);
 }
 
 /* main-nav hover / open item (after the fly-out link rules it outranks) */
-.site-header .main-nav li a:any-link:hover,
-.site-header .main-nav li.open > a:any-link,
-.site-header .main-nav li.open > p > a:any-link {
+.header-corp .main-nav li a:any-link:hover,
+.header-corp .main-nav li.open > a:any-link,
+.header-corp .main-nav li.open > p > a:any-link {
   background: var(--color-secondary);
   color: var(--color-white);
 }
 
-.site-header .secondary-nav .back {
+.header-corp .secondary-nav .back {
   display: block;
   padding: var(--space-block-l) var(--space-block) var(--space-block-l) var(--space-inset-l);
   border-bottom: 1px solid var(--color-white);
@@ -417,7 +417,7 @@ body.hcp-banner .site-header .hcp-band {
   text-transform: uppercase;
 }
 
-.site-header .secondary-nav .back::before {
+.header-corp .secondary-nav .back::before {
   content: "\e250";
   display: inline-block;
   margin-right: 8px;
@@ -428,39 +428,39 @@ body.hcp-banner .site-header .hcp-band {
 
 /* ---- desktop: 87px white row, utility links, search field, 60px gold bar ---- */
 @media (width >= 900px) {
-  header.site-header-wrapper,
-  .site-header {
+  header.header-corp-wrapper,
+  .header-corp {
     position: static;
   }
 
-  .site-header {
+  .header-corp {
     border-bottom: 0;
   }
 
-  .site-header .global-header {
+  .header-corp .global-header {
     height: 87px;
   }
 
-  .site-header .menu-btn,
-  .site-header .search-btn {
+  .header-corp .menu-btn,
+  .header-corp .search-btn {
     display: none;
   }
 
-  .site-header .logo {
+  .header-corp .logo {
     float: left;
     width: 188px;
     margin: var(--space-block-l) 0;
     padding: 0;
   }
 
-  .site-header .logo img {
+  .header-corp .logo img {
     display: block;
     width: 188px;
     height: 47px;
     max-height: 47px;
   }
 
-  .site-header .search-bar {
+  .header-corp .search-bar {
     display: block;
     position: relative;
     top: auto;
@@ -472,25 +472,25 @@ body.hcp-banner .site-header .hcp-band {
     background: none;
   }
 
-  .site-header .search-control {
+  .header-corp .search-control {
     display: inline-block;
     width: 220px;
     height: 41px;
     padding: 8px 40px 8px 11px;
   }
 
-  .site-header .search-submit {
+  .header-corp .search-submit {
     display: block;
   }
 
-  .site-header .language-country-select {
+  .header-corp .language-country-select {
     float: right;
     clear: none;
     margin: 14px 14px var(--space-block) var(--space-block-xs);
     padding-top: 21px;
   }
 
-  .site-header .utility-links {
+  .header-corp .utility-links {
     display: inline-block;
     float: right;
     overflow: hidden;
@@ -499,29 +499,29 @@ body.hcp-banner .site-header .hcp-band {
     font-weight: 400;
   }
 
-  .site-header .utility-links ul {
+  .header-corp .utility-links ul {
     height: 18px;
     margin: 36px 0 var(--space-block);
     overflow: hidden;
     text-align: right;
   }
 
-  .site-header .utility-links li {
+  .header-corp .utility-links li {
     display: inline-block;
     vertical-align: top;
     text-transform: uppercase;
   }
 
-  .site-header .utility-links li::after {
+  .header-corp .utility-links li::after {
     content: "|";
     padding: 0 var(--space-block-xs);
   }
 
-  .site-header .utility-links a:any-link {
+  .header-corp .utility-links a:any-link {
     color: var(--color-black);
   }
 
-  .site-header .utility-links .text {
+  .header-corp .utility-links .text {
     display: inline-block;
     float: left;
     margin-left: 6px;
@@ -529,12 +529,12 @@ body.hcp-banner .site-header .hcp-band {
     line-height: 18px;
   }
 
-  .site-header .utility-links .text:hover {
+  .header-corp .utility-links .text:hover {
     color: var(--color-accent-link-hover);
   }
 
-  .site-header .nav-container,
-  .site-header .nav-content {
+  .header-corp .nav-container,
+  .header-corp .nav-content {
     position: static;
     left: auto;
     width: auto;
@@ -543,26 +543,26 @@ body.hcp-banner .site-header .hcp-band {
     background: transparent;
   }
 
-  .site-header .main-nav,
-  .site-header .secondary-nav {
+  .header-corp .main-nav,
+  .header-corp .secondary-nav {
     float: none;
     width: 100%;
     height: auto;
   }
 
-  .site-header .main-nav .container {
+  .header-corp .main-nav .container {
     padding-left: var(--container-gutter);
     padding-right: var(--container-gutter);
   }
 
-  .site-header .main-nav ul {
+  .header-corp .main-nav ul {
     width: 100%;
     height: 60px;
     padding: 16px 0 0;
   }
 
-  .site-header .main-nav li,
-  .site-header .secondary-nav li {
+  .header-corp .main-nav li,
+  .header-corp .secondary-nav li {
     float: left;
     height: auto;
     min-height: 0;
@@ -570,24 +570,24 @@ body.hcp-banner .site-header .hcp-band {
     line-height: normal;
   }
 
-  .site-header .main-nav li {
+  .header-corp .main-nav li {
     margin-right: var(--space-block-xs);
   }
 
-  .site-header .main-nav li a:any-link {
+  .header-corp .main-nav li a:any-link {
     padding: var(--space-block-xs);
     background: none;
     font-size: var(--body-font-size-xs);
     line-height: normal;
   }
 
-  .site-header .main-nav li.has-sub > a::after,
-  .site-header .main-nav li.has-sub > p > a::after {
+  .header-corp .main-nav li.has-sub > a::after,
+  .header-corp .main-nav li.has-sub > p > a::after {
     content: none;
   }
 
   /* fly-out: grey panel under the gold bar, one column per authored list */
-  .site-header .secondary-nav {
+  .header-corp .secondary-nav {
     position: absolute;
     top: 60px;
     left: 0;
@@ -597,11 +597,11 @@ body.hcp-banner .site-header .hcp-band {
     border-bottom: 1px solid var(--color-black);
   }
 
-  .site-header .secondary-nav .back {
+  .header-corp .secondary-nav .back {
     display: none;
   }
 
-  .site-header .secondary-nav-columns {
+  .header-corp .secondary-nav-columns {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -610,51 +610,51 @@ body.hcp-banner .site-header .hcp-band {
     padding: 6px var(--container-gutter) 16px;
   }
 
-  .site-header .secondary-nav ul {
+  .header-corp .secondary-nav ul {
     flex: 0 0 auto;
     min-width: 200px;
     max-width: 280px;
     overflow: visible;
   }
 
-  .site-header .secondary-nav li {
+  .header-corp .secondary-nav li {
     float: none;
     padding: 6px 0 0;
   }
 
-  .site-header .secondary-nav li a:any-link,
-  .site-header .secondary-nav li.label {
+  .header-corp .secondary-nav li a:any-link,
+  .header-corp .secondary-nav li.label {
     padding: var(--space-block-s) var(--space-block);
     color: var(--color-black);
     font-size: var(--body-font-size-xs);
   }
 
-  .site-header .secondary-nav li a:any-link:hover {
+  .header-corp .secondary-nav li a:any-link:hover {
     background: var(--color-accent);
     color: var(--color-black);
   }
 
   /* main-nav hover / open item (after the fly-out link rules it outranks) */
-  .site-header .main-nav li a:any-link:hover,
-  .site-header .main-nav li.open > a:any-link,
-  .site-header .main-nav li.open > p > a:any-link {
+  .header-corp .main-nav li a:any-link:hover,
+  .header-corp .main-nav li.open > a:any-link,
+  .header-corp .main-nav li.open > p > a:any-link {
     background: var(--color-secondary);
     color: var(--color-white);
   }
 }
 
 @media (width >= 1200px) {
-  .site-header .main-nav li {
+  .header-corp .main-nav li {
     margin-right: var(--space-block-s);
   }
 
-  .site-header .main-nav li a:any-link {
+  .header-corp .main-nav li a:any-link {
     padding: var(--space-block-xs) var(--space-block);
     font-size: var(--body-font-size-m);
   }
 
-  .site-header .secondary-nav li a:any-link,
-  .site-header .secondary-nav li.label {
+  .header-corp .secondary-nav li a:any-link,
+  .header-corp .secondary-nav li.label {
     font-size: var(--body-font-size-m);
   }
 }
