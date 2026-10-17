@@ -5,7 +5,7 @@
  *
  * scripts.js calls in:
  *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/corp-base.css,
- *                           styles/corp.css and the corp-<block>.css overlays of reused
+ *                           styles/corp.css and the <block>-corp.css overlays of reused
  *                           patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
  *   loadTemplate(name)      corp templates are CSS-only
@@ -24,7 +24,7 @@ import {
 import { previewDMLinkEditors } from './dm-support.js';
 
 /**
- * patients blocks reused on corp pages with a `blocks/<name>/corp-<name>.css` overlay.
+ * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
 const CORP_BLOCK_STYLES = ['cards', 'marketo-form', 'tabs'];
@@ -47,7 +47,7 @@ export async function loadEager(doc) {
     loadCSS(`${base}/styles/corp.css`),
     // corp look of the reused patients blocks: all of them up front, so blocks that arrive
     // later (fragments, auto-blocks) are styled too (sdt-stryker#5)
-    ...CORP_BLOCK_STYLES.map((name) => loadCSS(`${base}/blocks/${name}/corp-${name}.css`)),
+    ...CORP_BLOCK_STYLES.map((name) => loadCSS(`${base}/blocks/${name}/${name}-corp.css`)),
   ]);
 }
 
