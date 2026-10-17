@@ -14,11 +14,11 @@
   --corp-color-hairline-tab: var(--color-surface-dim); /* live tab-strip divider (components L2925) */
 
   /* nav height — white utility bar; gold primary-nav bar adds --nav-bar-height.
-     www.stryker.com chrome (site-header block): 89px row + 1px rule below 900px,
+     www.stryker.com chrome (header-corp block): 89px row + 1px rule below 900px,
      87px row + 60px gold bar from 900px (live switches at 1024px; measured live, canon.css § site header);
      body.hcp-banner adds the HCP notice band: 95px @1440 / 114px @360 INCLUDING its
-     20px top margin, which sits inside the .site-header box (measured live
-     .site-header 242px @1440 / 204px @360 — C-final, foundation-requests capability,
+     20px top margin, which sits inside the .header-corp box (measured live
+     .header-corp 242px @1440 / 204px @360 — C-final, foundation-requests capability,
      event-detail, specialty, tier2-b). */
   --corp-header-gap: 10px; /* live .g-header margin-bottom (components.min.css L1091) */
   --corp-hcp-band-height: 114px;

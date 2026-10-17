@@ -1,16 +1,16 @@
-/* site-footer — components.min.css L1258-1291 (canon.css § footer), geometry measured live at
+/* footer-corp — components.min.css L1258-1291 (canon.css § footer), geometry measured live at
    1440 + 360: #545857 band, Futura, 1410px container, legal row with pipe separators, social
    icons stacked below on mobile / 250px right column from 1024px (icons right-aligned from
    1440px), secondary links stacked in a second row. */
 
-footer.site-footer-wrapper {
+footer.footer-corp-wrapper {
   padding: 0;
   max-width: none;
   background: var(--color-secondary);
 }
 
 /* the <footer> landmark itself paints the band (live: footer { background: #545857 }) */
-.site-footer {
+.footer-corp {
   background: var(--color-secondary);
   color: var(--color-white);
   font-family: var(--display-font-family);
@@ -18,61 +18,61 @@ footer.site-footer-wrapper {
   line-height: var(--body-line-height);
 }
 
-.site-footer * {
+.footer-corp * {
   box-sizing: border-box;
 }
 
-.site-footer .container {
+.footer-corp .container {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: var(--space-block-l) var(--container-gutter) 0;
 }
 
 /* Bootstrap .container::after (display: table) — keeps the last row's margin inside the band */
-.site-footer .container::after {
+.footer-corp .container::after {
   content: "";
   display: table;
   clear: both;
 }
 
-.site-footer ul {
+.footer-corp ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.site-footer p {
+.footer-corp p {
   margin: 0;
 }
 
-.site-footer a:any-link {
+.footer-corp a:any-link {
   color: var(--color-white);
   text-decoration: none;
 }
 
-.site-footer a:any-link:hover {
+.footer-corp a:any-link:hover {
   color: var(--color-surface-muted);
 }
 
-.site-footer .footer-row {
+.footer-corp .footer-row {
   margin: 0 calc(-1 * var(--container-gutter)) var(--space-block-l);
 }
 
-.site-footer .footer-row::after {
+.footer-corp .footer-row::after {
   content: "";
   display: table;
   clear: both;
 }
 
-.site-footer .footer-col {
+.footer-corp .footer-col {
   position: relative;
   min-height: 1px;
   padding: 0 var(--container-gutter);
 }
 
 /* copyright + legal links */
-.site-footer .footer-legal > p,
-.site-footer .footer-sep {
+.footer-corp .footer-legal > p,
+.footer-corp .footer-sep {
   display: inline;
   padding: var(--space-block-xs) 7px var(--space-block-xs) 0;
   color: var(--color-white);
@@ -80,45 +80,45 @@ footer.site-footer-wrapper {
 }
 
 /* live: " © Stryker 1998-2026 " keeps its trailing space inline below 1024px (~4px) */
-.site-footer .footer-legal > p::after {
+.footer-corp .footer-legal > p::after {
   content: "\2005";
 }
 
 
-.site-footer .footer-legal ul {
+.footer-corp .footer-legal ul {
   display: flex;
   flex-wrap: wrap;
 }
 
-.site-footer .footer-legal li::after {
+.footer-corp .footer-legal li::after {
   content: "|";
   padding: 0 var(--space-block-xs) 0 4px;
   color: var(--color-white);
 }
 
-.site-footer .footer-legal li:last-child::after {
+.footer-corp .footer-legal li:last-child::after {
   content: "";
   padding-right: 0;
 }
 
 /* social icon links */
-.site-footer .footer-social ul {
+.footer-corp .footer-social ul {
   display: flex;
   flex-wrap: wrap;
 }
 
-.site-footer .footer-social li {
+.footer-corp .footer-social li {
   padding-right: 8px;
   line-height: 0;
 }
 
-.site-footer .footer-social a:any-link,
-.site-footer .footer-social picture {
+.footer-corp .footer-social a:any-link,
+.footer-corp .footer-social picture {
   display: block;
   line-height: 0;
 }
 
-.site-footer .footer-social img {
+.footer-corp .footer-social img {
   display: block;
   width: 50px;
   height: auto;
@@ -127,93 +127,93 @@ footer.site-footer-wrapper {
 }
 
 /* secondary (recall) links */
-.site-footer .footer-secondary li {
+.footer-corp .footer-secondary li {
   margin-bottom: var(--space-block-s);
 }
 
-.site-footer .footer-secondary a:any-link {
+.footer-corp .footer-secondary a:any-link {
   text-transform: uppercase;
 }
 
 /* legal + secondary link boxes (after the social / secondary link rules they outrank) */
-.site-footer .footer-legal li a:any-link,
-.site-footer .footer-secondary li a:any-link {
+.footer-corp .footer-legal li a:any-link,
+.footer-corp .footer-secondary li a:any-link {
   display: inline-block;
   padding: var(--space-block-xs) var(--space-block);
 }
 
-.site-footer .footer-legal li a:any-link:hover,
-.site-footer .footer-secondary li a:any-link:hover {
+.footer-corp .footer-legal li a:any-link:hover,
+.footer-corp .footer-secondary li a:any-link:hover {
   color: var(--color-black);
   background: var(--color-accent);
 }
 
 @media (width >= 600px) {
-  .site-footer .footer-row {
+  .footer-corp .footer-row {
     margin-bottom: var(--space-inset-l);
   }
 
-  .site-footer .footer-row-social {
+  .footer-corp .footer-row-social {
     margin-bottom: var(--space-block-l);
   }
 }
 
 @media (width >= 900px) {
-  .site-footer .footer-row-social {
+  .footer-corp .footer-row-social {
     display: flex;
     margin-bottom: var(--space-block-xs);
   }
 
-  .site-footer .footer-col-main {
+  .footer-corp .footer-col-main {
     flex: 0 0 75%;
     max-width: 75%;
   }
 
-  .site-footer .footer-col-side {
+  .footer-corp .footer-col-side {
     flex: 0 0 25%;
     max-width: 25%;
   }
 
-  .site-footer .footer-legal {
+  .footer-corp .footer-legal {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
   }
 
-  .site-footer .footer-legal > p,
-  .site-footer .footer-sep {
+  .footer-corp .footer-legal > p,
+  .footer-corp .footer-sep {
     flex: 0 0 auto;
   }
 
-  .site-footer .footer-legal > p::after {
+  .footer-corp .footer-legal > p::after {
     content: none;
   }
 
-  .site-footer .footer-legal li {
+  .footer-corp .footer-legal li {
     margin-left: 7px;
   }
 
-  .site-footer .footer-legal li::before {
+  .footer-corp .footer-legal li::before {
     content: "|";
     padding-right: 9px;
     color: var(--color-white);
   }
 
-  .site-footer .footer-legal li:first-child {
+  .footer-corp .footer-legal li:first-child {
     margin-left: 0;
   }
 
-  .site-footer .footer-legal li:first-child::before {
+  .footer-corp .footer-legal li:first-child::before {
     content: none;
     padding-right: 0;
   }
 
-  .site-footer .footer-legal li::after {
+  .footer-corp .footer-legal li::after {
     content: "";
     padding: 0;
   }
 
-  .site-footer .footer-social {
+  .footer-corp .footer-social {
     width: 250px;
   }
 }
@@ -223,30 +223,30 @@ footer.site-footer-wrapper {
    the four icons still fit one row at 1024 (224px in 226px) and wrap instead of
    overflowing the page below that. */
 @media (width >= 900px) {
-  .site-footer .footer-social {
+  .footer-corp .footer-social {
     max-width: 100%;
   }
 
-  .site-footer .footer-social li:last-child {
+  .footer-corp .footer-social li:last-child {
     padding-right: 0;
   }
 }
 
 /* from 1200 the 250px icon row fits its column again: no cap, trailing gap back */
 @media (width >= 1200px) {
-  .site-footer .footer-social {
+  .footer-corp .footer-social {
     max-width: none;
   }
 
-  .site-footer .footer-social li:last-child {
+  .footer-corp .footer-social li:last-child {
     padding-right: 8px;
   }
 
-  .site-footer .footer-row-social {
+  .footer-corp .footer-row-social {
     margin-bottom: var(--space-inset-l);
   }
 
-  .site-footer .footer-social ul {
+  .footer-corp .footer-social ul {
     flex-direction: row-reverse;
     justify-content: flex-start;
   }

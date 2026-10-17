@@ -35,7 +35,7 @@ const CORP_BLOCK_STYLES = ['cards', 'marketo-form', 'tabs'];
  */
 export async function loadEager(doc) {
   doc.body.classList.add('corp');
-  // HCP notice band: `hcp-banner: true` metadata adds the band to the site-header and
+  // HCP notice band: `hcp-banner: true` metadata adds the band to the header-corp and
   // extends the header height reservation (corp.css --nav-height)
   if ((getMetadata('hcp-banner') || '').trim().toLowerCase() === 'true') {
     doc.body.classList.add('hcp-banner');
@@ -134,7 +134,7 @@ export async function loadFirstSections(main) {
 }
 
 /**
- * Builds, decorates and loads a chrome block (site-header / site-footer) into its
+ * Builds, decorates and loads a chrome block (header-corp / footer-corp) into its
  * landmark, in place of aem.js loadHeader / loadFooter. The blocks read the `nav` /
  * `footer` metadata themselves (defaults /nav, /footer).
  * @param {Element} parent The <header> or <footer> landmark
@@ -152,7 +152,7 @@ async function loadChrome(parent, name) {
  * @param {Document} doc The document
  */
 export function loadHeader(doc) {
-  return loadChrome(doc.querySelector('header'), 'site-header');
+  return loadChrome(doc.querySelector('header'), 'header-corp');
 }
 
 /**
@@ -188,7 +188,7 @@ function decorateBackToTop(doc) {
  * @param {Document} doc The document
  */
 export function loadFooter(doc) {
-  loadChrome(doc.querySelector('footer'), 'site-footer');
+  loadChrome(doc.querySelector('footer'), 'footer-corp');
   decorateBackToTop(doc);
 }
 

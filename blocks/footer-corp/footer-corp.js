@@ -1,5 +1,5 @@
 /*
- * site-footer — the www.stryker.com footer rendered from the authored /footer document.
+ * footer-corp — the www.stryker.com footer rendered from the authored /footer document.
  * Authored sections, in order:
  *   1 copyright line + legal links <ul> · 2 social icon image links <ul> · 3 secondary links <ul>
  * EW contract: authored nodes are MOVED (append); this file adds only wrappers and the
@@ -27,7 +27,7 @@ function contentOf(section) {
 
 /**
  * loads and decorates the site footer
- * @param {Element} block The site-footer block element
+ * @param {Element} block The footer-corp block element
  */
 export default async function decorate(block) {
   const footerMeta = getMetadata('footer');
