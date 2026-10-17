@@ -1,0 +1,1336 @@
+/* news-detail template (feature / press article archetype: /us/en/about/news/2025/features/…).
+   The live article body is an Experience Fragment laid out on the AEM responsive grid
+   (components.min.css L13-19, L170-177; phone ≤650 L677-696; tablet 651-1200 L935-1036):
+   building blocks 12/12 (phone) → text 10/12 offset 1 (tablet) → 8/12 offset 2 (≥1201); the
+   standalone image sits in a centred inner column of that block (8/12 → 6/8 → 4/8). Values
+   lifted via stardust/prototypes/css/news-detail.css; the 0.5px is the XF's 12.5px inset minus
+   the 12px grid bleed (base.min.css L1522-1537), 15px is the Bootstrap cell gutter. */
+
+/* template-level standalone-image slot under the headline — empty on most pages, it keeps
+   its .page-section margin (canon L69-70: 20px, 30px from 480px) */
+main > .section.news-headline-container {
+  padding-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  main > .section.news-headline-container {
+    padding-bottom: var(--space-section);
+  }
+}
+
+/* article body sections: cap at the live container so the grid percentages resolve against it */
+main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* building block + cell gutter: phone 12/12 */
+main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) > div {
+  padding: 0 15.5px;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+/* c-curatedcta after the rich text: the live rich-text block carries margin-bottom 2% (collapses
+   with the last paragraph's 15px), the teal .btn margin-bottom 15px (L6519/L6550), wraps its
+   label and keeps a 34px min-height (L6524) */
+main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+  p.button-wrapper {
+  margin: 2% 0 var(--space-block);
+}
+
+main > .section.quote > div p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* lead: live .fontsize-1-25em body copy — p 17.5 px in a 21.5 px line box (measured 21/43/64 px
+   for 1/2/3 lines), h2 30.625 px (42 px box), h3 26.25 px (35 px box) */
+main > .section.lead > .default-content-wrapper p {
+  font-size: var(--body-font-size-l);
+  line-height: 21.5px;
+}
+
+/* phone: the span scales the 21 px / 17.5 px phone headings (measured 85 px / 3 lines, 50 px / 2) */
+main > .section.lead > .default-content-wrapper h2 {
+  padding-bottom: 0;
+  font-size: var(--heading-font-size-l-scaled);
+  line-height: 28.33px;
+}
+
+/* ---- P2e 2026-10-04 — article h3 measured on the live world-environment-day page: 21px / 22.26px from
+   600px up, 17.5px / 18.55px below (the served page used 26.25px / 35px and 21.875px / 25px). ---- */
+main > .section > .default-content-wrapper > h3 {
+  font-size: var(--body-font-size-l);
+  line-height: 18.55px;
+}
+
+main > .section.lead > .default-content-wrapper h3 {
+  font-size: var(--heading-font-size-ml);
+  line-height: 25px;
+}
+
+@media (width >= 900px) {
+  main > .section.lead > .default-content-wrapper h2 {
+    font-size: 30.625px;
+    line-height: 42px;
+  }
+
+  main > .section.lead > .default-content-wrapper h3 {
+    font-size: var(--heading-font-size-l-scaled);
+    line-height: 35px;
+  }
+}
+
+main > .section:is(.cols-7-5, .cols-5-3, .cols-3-9) .columns-corp :is(p, li) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* a lead body keeps its .fontsize-1-25em copy inside the columns row too (AED 7/5) */
+main > .section.lead .columns-corp :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: 21.5px;
+}
+
+main > .section.callout > .default-content-wrapper p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 5vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.promo .columns-corp p {
+  margin: 0 0 var(--space-inset-l);
+  padding: 0;
+  font-size: 3vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.bleed .hero-carousel .hero-carousel-text p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+main > .section:is(.cols-7-5, .cols-5-3, .cols-3-9) .columns-corp .columns-img-col ~ :is(h3, h4, p) {
+  padding: 0;
+}
+
+/* aside-gray: 1.5vw serif paragraph in a grey box, then the 21 px Futura quote block */
+main > .section.aside-gray > .default-content-wrapper > p:first-child {
+  margin: 0 0 var(--space-inset-l);
+  padding: var(--space-block-l);
+  background-color: var(--color-surface);
+  font-family: var(--heading-font-family);
+  font-size: 3vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.promo .columns-corp p.button-wrapper {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+}
+
+main > .section.tiles .columns-corp p.button-wrapper {
+  margin: 0 0 var(--space-block);
+  padding: 0;
+  font-size: var(--body-font-size-m);
+}
+
+@media (width >= 900px) {
+  main > .section.promo .columns-corp p {
+    font-size: 1.5vw;
+  }
+
+  main > .section.callout > .default-content-wrapper p {
+    font-size: 2.5vw;
+  }
+
+  main > .section.aside-gray > .default-content-wrapper > p:first-child {
+    font-size: 1.5vw;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section.promo .columns-corp p {
+    font-size: min(1.5vw, var(--body-font-size-xl));
+  }
+
+  main > .section.callout > .default-content-wrapper p {
+    font-size: min(2.5vw, 35px);
+  }
+
+  main > .section.aside-gray > .default-content-wrapper > p:first-child {
+    font-size: min(1.5vw, var(--body-font-size-xl));
+  }
+}
+
+main > .section.news-cards .cards .cards-card-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* standalone image: centred inner column (phone 8/12 offset 2 of the block), .page-section
+   margin; the live img is an inline-block inside a 20px line box */
+main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+  > .default-content-wrapper p:has(> picture:only-child) {
+  margin-bottom: var(--space-block-l);
+  padding: 0 calc(100% / 6 + var(--space-block-xs));
+  line-height: var(--body-line-height);
+  text-align: center;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+main > .section.news-cards .cards > ul > li img {
+  aspect-ratio: auto;
+}
+
+main > .section:is(.cols-6-6, .cols-7-5, .cols-5-3, .cols-3-9, .cols-3-3-6, .cols-4-4-4, .tiles, .promo)
+  .columns-corp .columns-img-col img {
+  width: 100%;
+}
+
+/* block-level so the paragraph is exactly the image's height (live: 340px at 1440, no line-box gap) */
+main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+  > .default-content-wrapper p:has(> picture:only-child) img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (width >= 600px) {
+  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+    > .default-content-wrapper p:has(> picture:only-child) {
+    margin-bottom: var(--space-section);
+    padding: 0 calc(5% + 1.5px);
+  }
+
+  /* tablet: text block 10/12 offset 1; image block stays 12/12 with a 6/8 offset 1 column */
+  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) > div {
+    padding: 0 calc(15.5px + (100% - 1px) / 12);
+  }
+}
+
+@media (width >= 900px) {
+  /* md tier (P2c-2, 2026-10-04): the live article body is a bare Bootstrap col-sm-8 at tablet —
+     8/12 from the left with the 15.5px cell gutter and no offset (measured on the archetype
+     /about/news/2025/features/…comprehensive-report @1024: x 0, w 683; ours rendered 10/12 offset 1).
+     Opt-in per section (`body-8`): feature articles (boots) keep the 10/12 tablet block.
+     From 1200px the desktop rule below takes the padding back; the width is reset there. */
+  main > .section.body-8 > div {
+    width: 66.6667%;
+    padding: 0 15.5px;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section.body-8 > div {
+    width: auto;
+  }
+
+  /* desktop: both blocks 8/12 offset 2; image column 4/8 offset 2 */
+  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) > div {
+    padding: 0 calc(15.5px + (100% - 1px) / 6);
+  }
+
+  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+    > .default-content-wrapper p:has(> picture:only-child) {
+    padding: 0 calc(25% + 7.5px);
+  }
+}
+
+main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+  p.button-wrapper a.button {
+  min-height: 34px;
+  white-space: normal;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+/* tight: no empty-slot spacing */
+main > .section.news-headline-container.tight {
+  padding-bottom: 0;
+}
+
+/* two / three wrappers side by side (flex only when the section really has ≥ 2 wrappers) */
+main > .section:is(.cols-6-6, .cols-8-4):has(> div + div) {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* gap: dropped &nbsp; paragraphs (pipeline #112) — 19.25 + 15 each. The preceding section gets a
+   hairline padding so its last paragraph's 15 px margin stays inside it instead of collapsing into
+   the gap (live: p margin 15 + blank paragraph 34.25 + hr) */
+main > .section:has(+ .section.gap),
+main > .section:has(+ .section.gap-l),
+main > .section:has(+ .section.gap-s),
+main > .section:has(+ .section.separator) {
+  padding-bottom: 1px;
+}
+
+/* the live row keeps its .page-section margin (colctrl) before whatever follows */
+main > .section:is(.cols-6-6, .cols-8-4):has(> div + div):not(.tight) {
+  padding-bottom: var(--space-block-l);
+}
+
+/* the archetype's XF ends with two authored &nbsp; paragraphs (2 × (19.25px + 15px)) that the
+   pipeline drops (#112) — modelled as padding on the last body section */
+main > .section:not(.disclaimer):has(+ .section.disclaimer) {
+  padding-bottom: 68.5px;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Sibling grid variants (fix:news-detail-b). The archetype's XF puts the body on 8/12 offset 2;
+   the siblings use other AEM / Bootstrap grid variants, measured live at 1440 / 360
+   (stardust/.work/ndb/live-*.json). Closed set of section `Style` values:
+     grid-12    12/12 building block (LIFEPAK body, AED body, protect form / references)
+     grid-8-0   Bootstrap col-xs-12 col-sm-8 (press releases: Inari, Apple, World body, LIFEPAK form)
+     grid-8-2   AEM 8/12 offset 2 whose image fills the column (heart infographic, references)
+     grid-10-1  AEM 10/12 offset 1 with a centred 4/12 image column (protect body, video)
+     bleed      full-bleed hero-carousel section (+ box-gold / box-white headline overlay)
+     tight      drop the empty-slot spacing (headline w/o image slot, band w/o 2 % margin,
+                last section w/o the .page-section margin)
+     slot       empty publish-date + image slot above a default-content head (protect)
+     gap        one dropped <p>&nbsp;</p> (19.25 + 15); gap-l two of them (#112)
+     separator  the live hr.c-section-separator drawn above the section (50 px / 20 px gap)
+     quote      centred 1.5 em quote in a surface box (protect)
+     lead       body copy wrapped in the live .fontsize-1-25em span (17.5 px / 21.5 px line box;
+                h2 30.625 px, h3 26.25 px) — LIFEPAK, AED, World
+   AEM grid: --default--8 = 66.67 %, --offset--default--2 = 16.67 % (components.min.css
+   L170-177); Bootstrap .col-sm-8 = 66.67 % from 768 px, cell gutter 15 px. */
+
+/* disclaimer followed by the document code: the live .c-disclaimer carries the .page-section
+   margin (20 px, 30 px from 480 px) */
+main > .section.disclaimer:has(+ .section.disclaimer) {
+  padding-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  main > .section.disclaimer:has(+ .section.disclaimer) {
+    padding-bottom: var(--space-inset-l);
+  }
+}
+
+/* building blocks: phone 12/12 with the 15 px cell gutter */
+main > .section.grid-12 > div,
+main > .section.grid-8-0 > div,
+main > .section.grid-8-2 > div,
+main > .section.grid-10-1 > div {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 var(--space-block);
+}
+
+/* the standalone image fills its column on these grids */
+main > .section.grid-12 > .default-content-wrapper p:has(> picture:only-child),
+main > .section.grid-8-0 > .default-content-wrapper p:has(> picture:only-child),
+main > .section.grid-8-2 > .default-content-wrapper p:has(> picture:only-child),
+main > .section.grid-10-1 > .default-content-wrapper p:has(> picture:only-child) {
+  padding: 0;
+}
+
+@media (width >= 600px) {
+  main > .section.grid-8-2 > div,
+  main > .section.grid-10-1 > div {
+    width: 83.3333%;
+    margin-left: 8.3333%;
+  }
+
+  /* 4/12 image column (470 px of the 1410 row, 440 px image) centred: measured 352 px each side
+     of the 1145 px column content box = 30.74 % */
+  main > .section.grid-10-1 > .default-content-wrapper p:has(> picture:only-child) {
+    padding: 0 30.74%;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.grid-8-0 > div {
+    width: 66.6667%;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section.grid-8-2 > div {
+    width: 66.6667%;
+    margin-left: 16.6667%;
+  }
+}
+
+/* page-section margin after the last grid block (live .colctrl / .c-customizeable 20 px,
+   30 px from 480 px; phone adds the 1 px stacked empty column) */
+main > .section:is(.grid-12, .grid-8-0, .grid-8-2, .grid-10-1):has(+ .section.disclaimer),
+main > .section:is(.grid-12, .grid-8-0, .grid-8-2, .grid-10-1):has(+ .section.last-modified-section) {
+  padding-bottom: 21px;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+/* slot: empty h5 margin (15) + empty image slot (20 / 30) + 1 px row above a default head */
+main > .section.slot {
+  padding-top: 26px;
+}
+
+@media (width >= 600px) {
+  main > .section.slot {
+    padding-top: 36px;
+  }
+}
+
+/* separator: the live hr spans the building block (8/12 column or full width) and is
+   followed by 20 px (50 px from 600 px) */
+main > .section.separator {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 21px;
+  border-top: 0;
+}
+
+@media (width >= 600px) {
+  main > .section.separator {
+    padding-top: 51px;
+  }
+}
+
+/* flex: marketo form 8/12 beside a 4/12 link column (cols2_2-3_1-3), top-aligned */
+main > .section.flex {
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+}
+
+main > .section.flex:has(+ .section.last-modified-section) {
+  padding-bottom: 21px;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+@media (width >= 600px) {
+  main > .section:is(.cols-6-6, .cols-8-4):has(> div + div):not(.tight) {
+    padding-bottom: var(--space-inset-l);
+  }
+
+  main > .section:is(.grid-12, .grid-8-0, .grid-8-2, .grid-10-1):has(+ .section.disclaimer),
+  main > .section:is(.grid-12, .grid-8-0, .grid-8-2, .grid-10-1):has(+ .section.last-modified-section),
+  main > .section.flex:has(+ .section.last-modified-section) {
+    padding-bottom: var(--space-inset-l);
+  }
+}
+
+/* embedded components keep their live .page-section margin inside a grid block */
+main > .section > .marketo-form-wrapper,
+main > .section.grid-10-1 > .video-wrapper {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  main > .section > .marketo-form-wrapper,
+  main > .section.grid-10-1 > .video-wrapper {
+    margin-bottom: var(--space-inset-l);
+  }
+}
+
+main > .section.tight:has(+ .section.disclaimer),
+main > .section.tight:has(+ .section.last-modified-section) {
+  padding-bottom: 0;
+}
+
+main > .section.separator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+@media (width >= 900px) {
+  main > .section.separator.grid-8-0::before {
+    right: auto;
+    width: 66.6667%;
+  }
+}
+
+main > .section.gap {
+  margin-top: 34.25px;
+}
+
+main > .section.gap-l {
+  margin-top: 68.5px;
+}
+
+main > .section.gap-s {
+  margin-top: 21px;
+}
+
+@media (width >= 600px) {
+  main > .section.gap-s {
+    margin-top: 31px;
+  }
+}
+
+/* gold h2 band (has-background bg-gold: padding 4 % 10px 3 % 2 %, margin-bottom 2 %, the h2
+   wraps a .fontsize-1-5em span: 36.75 px, 31.5 px below 841) */
+main > .section.grid-12.bg-gold {
+  background-color: transparent;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+main > .section.quote > div {
+  box-sizing: border-box;
+  width: 85.8%;
+  max-width: none;
+  margin: 2.74% 0 2.74% 6.9%;
+  padding: 4.57% 4.57% 3.65%;
+  background-color: var(--color-surface);
+  text-align: center;
+}
+
+@media (width >= 600px) {
+  main > .section.quote > div {
+    width: 76.3%;
+    margin: 2.43% 0 2.43% 11.84%;
+    padding: 4.06% 4.06% 3.25%;
+  }
+}
+
+main > .section.bleed > div {
+  max-width: none;
+  padding: 0;
+}
+
+main > .section.band > div {
+  box-sizing: border-box;
+  width: auto;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-block);
+}
+
+/* pad-3: RTE authored with margin-top 3 % */
+main > .section.pad-3 > div {
+  padding-top: 3%;
+}
+
+main > .section:is(.cols-6-6, .cols-8-4):has(> div + div) > div {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 var(--space-block);
+}
+
+main > .section.grid-12.bg-gold > div {
+  width: auto;
+  margin: 0 var(--space-block) 2%;
+  padding: 4% var(--space-block-s) 3% 2%;
+  background-color: var(--color-accent);
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+/* 3/12 3/12 6/12 stays a row even on phone (live 60 / 60 / 149 px images at 360) */
+main > .section.cols-3-3-6 .columns-corp > div {
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+/* ---- phone-tier grid keep (P2c 2026-10-04): the live AEM grid cells on these feature pages carry
+   NO --phone-- width, so below 651px they keep their default fractions (text 7/12 | image 5/12 on
+   the AED article; 3/12 | 3/12 | 6/12 logos on the SurgiCount release; 8/12 centred copy columns on
+   the Military and Comprehensive-Report features) while our columns stack. Section styles:
+   `sm-7-5`, `sm-keep` (cols-3-3-6), `sm-center-8`. Authored only where the capture shows it.
+   From 600px each property is handed back: the row flow to the columns block (row wrap, nowrap
+   from 900px; cols-3-3-6 keeps its own row nowrap), the cell ratios equal the cols-7-5 /
+   cols-3-3-6 ones (sm-7-5 is authored with cols-7-5), no cell max-width, the wrapper's own
+   auto width (its auto side margins are the styles.css ones at every width). ---- */
+main > .section.sm-7-5 .columns-corp > div {
+  flex-flow: row nowrap;
+}
+
+main > .section.cols-3-3-6 .columns-corp > div > div {
+  flex: 0 0 25%;
+}
+
+main > .section.grid-12.bg-gold.tight > div {
+  margin-bottom: 0;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+/* article-body h2: the live RTE h2 has no bottom padding (26 px box at 24.5 px); the
+   foundation's 7 px "Resources" underline gap stays on the underlined heads only */
+main > .section > .default-content-wrapper h2:not(.underline, :has(> u)) {
+  padding-bottom: 0;
+}
+
+/* lh2: c-largeheadline h2 keeps its 30 px .page-section margin (an RTE h2 has 15) */
+main > .section.lh2 > .default-content-wrapper h2 {
+  margin-bottom: var(--space-inset-l);
+}
+
+main > .section.grid-12.bg-gold > div h2 {
+  margin: 0 0 var(--space-block);
+  padding: 0;
+  font-size: 31.5px;
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 900px) {
+  main > .section.grid-12.bg-gold > div h2 {
+    padding-bottom: 11px;
+    font-size: 36.75px;
+  }
+}
+
+/* quote: has-background bg-light-gray inside the 10/12 column — margin 3 %, padding 5 % 5 % 4 %
+   of the column, centred 1.5 em text; percentages re-based on the section width */
+main > .section.quote {
+  background-color: transparent;
+}
+
+main > .section.flex > .marketo-form-wrapper {
+  flex: 0 0 66.6667%;
+  padding: 0 var(--space-block);
+}
+
+main > .section.flex > .default-content-wrapper {
+  flex: 0 0 33.3333%;
+  padding: 0 var(--space-block);
+}
+
+/* bleed: the c-autocarousel article hero — full-bleed image (shown on phone too, unlike the
+   home-page hero), .page-section margin, no 33.33vw cap */
+main > .section.bleed {
+  max-width: none;
+  margin: 0;
+  padding-bottom: var(--space-block-l); /* .page-section margin as padding: a following .gap margin cannot collapse into it */
+  background-color: transparent;
+}
+
+main > .section.bleed.tight {
+  padding-bottom: 0;
+}
+
+main > .section.bleed .hero-carousel .hero-carousel-media {
+  display: block;
+}
+
+main > .section.bleed .hero-carousel .hero-carousel-slide.active {
+  max-height: none;
+  overflow: visible;
+}
+
+/* the c-largeheadline box over the hero: 20 px padding, 28 px Futura h1 (+ optional lead p) */
+main > .section.bleed .hero-carousel .hero-carousel-text {
+  box-sizing: border-box;
+  padding: var(--space-block-l);
+}
+
+main > .section.bleed .hero-carousel .hero-carousel-text h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+/* box-gold (AED): gold box (60 % of the 320 px inset = 53.3 %) under the image on phone,
+   5 % / 5 % / 54 % over it from 841 px */
+main > .section.bleed.box-gold .hero-carousel .hero-carousel-text {
+  position: static;
+  width: 53.3%;
+  margin: 0 0 0 5.5%;
+  background-color: var(--color-accent);
+}
+
+/* box-white (heart): white box over the image, 18 px / 5 % / 90 % on phone (overflows the
+   120 px image like the live page), 27 % / 5 % / 40 % from 841 px */
+main > .section.bleed.box-white .hero-carousel .hero-carousel-text {
+  position: absolute;
+  top: 18px;
+  left: 5%;
+  width: 90%;
+  background-color: var(--color-white);
+}
+
+@media (width >= 600px) {
+  main > .section.bleed {
+    padding-bottom: var(--space-inset-l);
+  }
+
+  main > .section.bleed.tight {
+    padding-bottom: 0;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.bleed.box-gold .hero-carousel .hero-carousel-text {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 54%;
+    margin: 0;
+  }
+
+  /* the AED headline wraps a .fontsize-3vw span: 43.2 px, 4 lines = 173 px → line-height 1 */
+  main > .section.bleed.box-gold .hero-carousel .hero-carousel-text h1 {
+    font-size: 3vw;
+    line-height: 1;
+  }
+
+  main > .section.bleed.box-white .hero-carousel .hero-carousel-text {
+    top: 27%;
+    width: 40%;
+  }
+}
+
+main > .section.lead > .default-content-wrapper p sup {
+  font-size: 60%;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Feature-sibling variants (fix:news-detail-a). Measured live at 1440 / 360
+   (stardust/.work/nda/live-*.json; components.min.css for the span rules). Closed set:
+     cols-6-6     two section wrappers (video + text) or two columns cells at 50 / 50 — Bootstrap
+                  col-sm-6 pair (CNBC, DE&I) / 4/12 + 4/12 inside the 8/12 block (boots, heart tiles)
+     cols-8-4     wrappers 8/12 + 4/12: Scene7 video beside a 4/12 building block (Emily)
+     cols-7-5     columns cells 7/12 + 5/12 of a 12/12 block (AED text + image)
+     cols-5-3     columns cells 5/8 + 3/8 of the 8/12 block, the 3/8 a grey has-background aside (heart)
+     cols-3-9     columns cells 3/12 + 9/12 of the 8/12 block — portrait + quote rows (military)
+     cols-3-3-6   columns cells 3/12 3/12 6/12 of the container, inline at every width (SurgiCount)
+     cols-4-4-4   three equal columns cells, images without the standalone margin (DE&I photo row)
+     band         full-bleed has-background panel with the live 2-line empty RTE (53.5 px) above
+                  and below its row (DE&I grey band)
+     strip-gold   the 34.25 px gold c-full-bleed-panel strip under a bleed carousel (boots)
+     callout      c-largeheadline has-background white callout (2.5vw Egyptienne) beside a video
+                  after one empty paragraph (CNBC)
+     aside-gray   4/12 building block: first paragraph in a grey has-background box at 1.5vw,
+                  then the 21 px Futura quote block (Emily)
+     promo        4/12 image + 4/12 largeheadline promo: text cell margin-top 8 %, 2vw Futura h3,
+                  1.5vw lead, CTA (boots)
+     tiles        columns cells = standalone image + 2.5vw Futura title + accent CTA (heart)
+     link-list    c-curated-link-list: 4/12 column, 14 px row gap under a "Learn more" p (AED)
+     news-cards   c-customizeable 4-up news cards: 13 px title offset, natural image ratio, plain
+                  uppercase "Learn more" link (military Related News)
+     img-natural  standalone image at its intrinsic width, centred in the column (Arrinex 592 px)
+     pad-3        RTE authored with margin-top 3 % (DE&I)
+     compact      carousel headline wrapped in .fontsize-3vw: 3vw, 6vw ≤ 839, 42 px ≥ 1439, 1.35
+     overlay-left boxless carousel overlay 5 % / 10 % / 39 %, Futura 3vw line + 2vw serif tail
+     box-right    white box overlay 58 % / 23 % / 39 % (boots)
+     cta-right    CTA-only overlay 57 % / 30 % / 38 % (talent network slide)
+     mobile-slide the second picture of the media cell is the live mobile fragment (shown ≤ 840)
+     btn-navy / btn-purple   live .btn-blue (#1c5687) / .btn-purple (#85458a) CTA colours
+     lh2          h2 authored as a c-largeheadline: 30 px .page-section margin below it (heart)
+     gap-s        the 1 px empty column row + .page-section margin after a colctrl (21 px / 31 px)
+   Live spans: .fontsize-Nvw = Nvw, doubled ≤ 839 px, capped at N × 14 px from 1439 px,
+   line-height 1.35 (components.min.css). Bootstrap cols split from 768 px; the frozen columns
+   block goes side by side from 600 px — the cell ratios below use the block's breakpoint. */
+
+main > .section:is(.cols-6-6, .cols-8-4) > .video-wrapper .video {
+  margin-bottom: var(--space-block-l); /* c-standalone-video .video-content margin + page-section */
+}
+
+@media (width >= 600px) {
+  main > .section:is(.cols-6-6, .cols-8-4) > .video-wrapper .video {
+    margin-bottom: var(--space-inset-l);
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.cols-6-6:has(> div + div) > div {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+@media (width >= 600px) {
+  main > .section.sm-7-5 .columns-corp > div {
+    flex-flow: row wrap;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.sm-7-5 .columns-corp > div {
+    flex-wrap: nowrap;
+  }
+
+  main > .section.cols-8-4:has(> div + div) > div:first-child {
+    flex: 0 0 66.6667%;
+    width: 66.6667%;
+  }
+
+  main > .section.cols-8-4:has(> div + div) > div:last-child {
+    flex: 0 0 33.3333%;
+    width: 33.3333%;
+  }
+}
+
+/* columns-block ratios; cells keep the 15 px Bootstrap gutter (the block's -15 px row margin
+   spans the 1410 px container like the live aem-Grid), images fill the cell */
+main > .section:is(.cols-6-6, .cols-7-5, .cols-5-3, .cols-3-9, .cols-3-3-6, .cols-4-4-4, .tiles, .promo)
+  .columns-corp .columns-img-col {
+  margin-bottom: var(--space-block-l);
+  padding-bottom: 0;
+}
+
+main > .section.cols-4-4-4 .columns-corp .columns-img-col {
+  margin-bottom: 0;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+main > .section.sm-keep.cols-3-3-6 .columns-corp > div {
+  flex-flow: row nowrap;
+}
+
+main > .section.cols-3-3-6 .columns-corp > div > div:last-child {
+  flex: 0 0 50%;
+}
+
+@media (width >= 600px) {
+  main > .section:is(.cols-6-6, .cols-7-5, .cols-5-3, .cols-3-9, .cols-3-3-6, .tiles, .promo)
+    .columns-corp .columns-img-col {
+    margin-bottom: var(--space-inset-l);
+  }
+
+  main > .section:is(.cols-6-6, .tiles, .promo) .columns-corp > div > div {
+    flex: 0 0 50%;
+  }
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+@media (width >= 600px) {
+  main > .section.cols-4-4-4 .columns-corp > div > div {
+    flex: 0 0 33.3333%;
+  }
+
+  main > .section.cols-7-5 .columns-corp > div > div:first-child {
+    flex: 0 0 58.3333%;
+  }
+
+  main > .section.cols-7-5 .columns-corp > div > div:last-child {
+    flex: 0 0 41.6667%;
+  }
+
+  main > .section.cols-5-3 .columns-corp > div > div:first-child {
+    flex: 0 0 62.5%;
+  }
+
+  main > .section.cols-5-3 .columns-corp > div > div:last-child {
+    flex: 0 0 37.5%;
+  }
+
+  main > .section.cols-3-9 .columns-corp > div > div:first-child {
+    flex: 0 0 25%;
+  }
+
+  main > .section.cols-3-9 .columns-corp > div > div:last-child {
+    flex: 0 0 75%;
+  }
+}
+
+/* grey aside (heart "Did you know?"): has-background inside the 15 px cell gutter, padding
+   5 % 20px 20px, Futura 1.5vw title + 1.5vw serif copy, .page-section margin below */
+main > .section.cols-5-3 .columns-corp > div > div:last-child {
+  margin-bottom: var(--space-inset-l);
+  padding: 16px 35px var(--space-block-l);
+  background: linear-gradient(var(--color-surface), var(--color-surface)) 15px 0 / calc(100% - 30px)
+    100% no-repeat;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+main > .section.promo .columns-corp h3 {
+  margin: 0 0 var(--space-block);
+  padding: 0;
+  font-family: var(--display-font-family);
+  font-size: 4vw;
+  font-weight: 700;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* tiles (heart "Keep reading"): 2.5vw Futura title (authored line breaks), accent CTA at 14 px */
+main > .section.tiles .columns-corp h3 {
+  margin: 0 0 var(--space-inset-l);
+  padding: 0;
+  font-family: var(--display-font-family);
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.news-cards .cards .cards-card-body h3 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+}
+
+main > .section.cols-5-3 .columns-corp > div > div:last-child h3 {
+  margin: 0;
+  padding-bottom: 1.35em; /* the authored <br><br> blank line */
+  font-family: var(--display-font-family);
+  font-size: 3vw;
+  font-weight: 700;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+main > .section.aside-gray > .default-content-wrapper > p:first-child + p {
+  margin: 19.25px 0 0; /* the empty .line1 above the quote */
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.cols-5-3 .columns-corp > div > div:last-child p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 3vw;
+  line-height: var(--heading-line-height-hero);
+}
+
+/* band: full-bleed panel, 53.5 px (2 × 19.25 + 15) above and below the row */
+main > .section.band {
+  max-width: none;
+  margin-inline: 0;
+  padding: 53.5px 0;
+}
+
+/* strip-gold: 34.25 px gold strip under the carousel (20 px below it on phone), then the 1 px
+   empty row + page-section margin before the body */
+main > .section.bleed.strip-gold {
+  padding-bottom: 21px;
+}
+
+main > .section.bleed.strip-gold::after {
+  content: "";
+  display: block;
+  height: 34.25px;
+  margin-top: var(--space-block-l);
+  background-color: var(--color-accent);
+}
+
+@media (width >= 600px) {
+  main > .section.bleed.strip-gold {
+    padding-bottom: 31px;
+  }
+
+  main > .section.bleed.strip-gold::after {
+    margin-top: 0;
+  }
+}
+
+/* callout: empty p (34.25) then the white has-background box (20 px, 0 20px on phone) holding
+   2.5vw Egyptienne copy; the bold-italic name renders gold Futura through the foundation rule */
+main > .section.callout > .default-content-wrapper {
+  margin-top: 34.25px;
+  margin-bottom: var(--space-block-l); /* the c-largeheadline .page-section margin */
+  padding: 0 35px;
+  background-color: var(--color-white);
+}
+
+main > .section.aside-gray > .default-content-wrapper > p:first-child + p + p {
+  margin: 0 0 var(--space-inset-l);
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+main > .section.promo .columns-corp h3 strong {
+  font-size: inherit;
+}
+
+main > .section.aside-gray > .default-content-wrapper > p:first-child + p + p strong {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.aside-gray > .default-content-wrapper p.button-wrapper {
+  margin: 0 0 var(--space-block);
+}
+
+/* promo (boots): 4/12 image + 4/12 largeheadline (margin-top 8 %, 2vw Futura h3, 1.5vw copy) */
+main > .section.promo .columns-corp > div > div:last-child {
+  padding-top: 8%;
+}
+
+@media (width >= 900px) {
+  main > .section.cols-5-3 .columns-corp > div > div:last-child :is(h3, p) {
+    font-size: 1.5vw;
+  }
+
+  main > .section.promo .columns-corp h3 {
+    font-size: 2vw;
+  }
+
+  main > .section.tiles .columns-corp h3 {
+    font-size: 2.5vw;
+  }
+
+  main > .section.callout > .default-content-wrapper {
+    margin-bottom: var(--space-inset-l);
+    padding: var(--space-block-l) 35px;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section.cols-5-3 .columns-corp > div > div:last-child :is(h3, p) {
+    font-size: min(1.5vw, var(--body-font-size-xl));
+  }
+
+  main > .section.promo .columns-corp h3 {
+    font-size: min(2vw, var(--heading-font-size-xxl));
+  }
+
+  main > .section.tiles .columns-corp h3 {
+    font-size: min(2.5vw, 35px);
+  }
+}
+
+/* link-list: "Learn more" paragraph + list-unstyled links, 14 px row gap, 4/12 column */
+main > .section.link-list > .default-content-wrapper ul {
+  margin: var(--space-inset-m) 0 var(--space-inset-l); /* 44 px "Learn more" row: the 15 px p margin collapses into this */
+  padding: 0;
+  list-style: none;
+}
+
+main > .section.link-list > .default-content-wrapper li {
+  margin-top: 14px;
+  line-height: 30px;
+}
+
+@media (width >= 900px) {
+  main > .section.link-list > .default-content-wrapper ul {
+    width: 33.3333%;
+  }
+}
+
+/* news-cards: c-customizeable items — 20 px apart with a gold rule on phone, 4-up from 768 px,
+   h3 13 px under the image, plain uppercase Futura "Learn more" link */
+main > .section.news-cards .cards > ul {
+  gap: var(--space-block-l);
+}
+
+main > .section.news-cards .cards > ul > li {
+  padding-bottom: var(--space-block-l);
+  border-bottom: 1px solid var(--color-accent);
+}
+
+main > .section.news-cards .cards > ul > li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+main > .section.news-cards .cards .cards-card-body {
+  margin-top: 13px;
+}
+
+main > .section.news-cards .cards .cards-card-body p:has(> a:only-child) {
+  margin: var(--space-block) 0 0;
+  font-family: var(--display-font-family);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+}
+
+main > .section.news-cards .cards .cards-card-body p > a:only-child {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-primary);
+  font: inherit;
+}
+
+/* specificity order: precedes a higher-specificity rule for the same elements below */
+
+@media (width >= 900px) {
+  main > .section.news-cards .cards > ul {
+    gap: var(--space-inset-l);
+  }
+
+  /* col-sm-3 items: 4-up when four are authored (3-up stays the block's default) */
+  main > .section.news-cards .cards > ul:has(> li:nth-child(4)) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main > .section.news-cards .cards > ul > li {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  main > .section.news-cards .cards .cards-card-body h3 {
+    font-size: var(--heading-font-size-l);
+  }
+}
+
+/* img-natural: the live img.img-responsive is an inline-block at its intrinsic size */
+main > .section.img-natural > .default-content-wrapper p:has(> picture:only-child) img {
+  width: auto;
+  max-width: 100%;
+}
+
+/* c-accordion in the article body: .panel-title a padding 10px 0 in a 17.5 px / 1.15 h4 with its
+   15 px margin, 1 px rule, 20 px block padding (boots: 76 px closed row) */
+main > .section > .accordion-corp-wrapper .accordion-corp .accordion-item-label {
+  margin-bottom: var(--space-block);
+  padding: var(--space-block-s) 0;
+}
+
+main > .section > .accordion-corp-wrapper .accordion-corp .accordion-item-label::after {
+  margin-right: var(--space-block-xs);
+}
+
+main > .section > .accordion-corp-wrapper .accordion-corp {
+  padding-bottom: var(--space-block-l);
+}
+
+/* marketo-form inside a 12/12 block fills the container (the block centres itself at 900 px) */
+main > .section.grid-12 > .marketo-form-wrapper .marketo-form {
+  max-width: none;
+  margin-inline: 0;
+}
+
+/* the hairline above is 1 px (0.01 px rounds to 0 in Chrome's layout grid and the margin collapses
+   out); a bleed carousel and the headline slot keep their own .page-section padding before a gap
+   (measured: heart carousel → 2-blank gap at 785 px, Emily slot → 69 px gap at 383 px) */
+main > .section.bleed:has(+ .section.gap),
+main > .section.bleed:has(+ .section.gap-l) {
+  padding-bottom: var(--space-block-l);
+}
+
+main > .section.news-headline-container:has(+ .section.gap),
+main > .section.news-headline-container:has(+ .section.gap-l) {
+  padding-bottom: var(--space-block-l);
+}
+
+/* a c-curatedcta that directly follows an RTE block carries no 2 % margin (protect back link) */
+main > .section.tight > .default-content-wrapper > p.button-wrapper:first-child {
+  margin-top: 0;
+}
+
+/* a video block's wrapper margin must not collapse into the next section's margin (protect) */
+main > .section.grid-10-1:has(> .video-wrapper) {
+  padding-bottom: 1px;
+}
+
+/* date-only head (h1 in the carousel overlay): at desktop the live c-publish-date sits 10 px higher
+   than on the h1-title pages (h5 at 147 px vs h1 at 157 px; at 360 both pages agree) */
+
+@media (width >= 900px) {
+  main > .section.news-headline-container:not(:has(h1)) {
+    position: relative;
+    top: -10px;
+    margin-bottom: -10px;
+  }
+}
+
+/* a reference list disclaimer keeps the .c-disclaimer .page-section margin before Last Updated */
+main > .section.disclaimer:has(ol, ul):has(+ .section.last-modified-section) {
+  padding-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  main > .section.bleed:has(+ .section.gap),
+  main > .section.bleed:has(+ .section.gap-l) {
+    padding-bottom: var(--space-inset-l);
+  }
+
+  main > .section.news-headline-container:has(+ .section.gap),
+  main > .section.news-headline-container:has(+ .section.gap-l) {
+    padding-bottom: var(--space-section);
+  }
+
+  main > .section.disclaimer:has(ol, ul):has(+ .section.last-modified-section) {
+    padding-bottom: var(--space-inset-l);
+  }
+}
+
+/* carousel overlays ------------------------------------------------------------------------ */
+
+/* compact: .fontsize-3vw headline; the Futura line is <strong>, the serif tail plain text */
+main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: 6vw;
+  font-weight: 500;
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 :is(strong, em) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 strong {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+/* overlay-left: the 2vw tail (4vw on phone) under the 3vw Futura line */
+main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 {
+  font-size: 4vw;
+}
+
+main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 strong {
+  font-size: 6vw;
+}
+
+/* phone geometry shared by the boxed / boxless overlays: 18 px / 5 % / 90 % over the image */
+main > .section.bleed:is(.overlay-left, .box-right, .cta-right) .hero-carousel .hero-carousel-text {
+  position: absolute;
+  top: 18px;
+  left: 5%;
+  width: 90%;
+  padding: 0;
+  background-color: transparent;
+}
+
+main > .section.bleed.box-right .hero-carousel .hero-carousel-text {
+  padding: 0 var(--space-block-l);
+  background-color: var(--color-white);
+}
+
+/* cta-only overlay: the empty two-paragraph .line1 (58 px) + 20 px above the button */
+main > .section.bleed.cta-right .hero-carousel .hero-carousel-text {
+  padding-top: 78px;
+}
+
+main > .section.bleed.cta-right .hero-carousel .hero-carousel-text p.button-wrapper {
+  margin: 0;
+}
+
+/* mobile-slide: the media cell's second picture is the live mobile fragment */
+main > .section.bleed.mobile-slide .hero-carousel .hero-carousel-media p:first-of-type {
+  display: none;
+}
+
+@media (width >= 900px) {
+  main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 {
+    font-size: 3vw;
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 {
+    font-size: 2vw;
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 strong {
+    font-size: 3vw;
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text {
+    top: 10%;
+    left: 5%;
+    width: 39%;
+  }
+
+  main > .section.bleed.box-right .hero-carousel .hero-carousel-text {
+    top: 23%;
+    left: 58%;
+    width: 39%;
+    padding: var(--space-block-l);
+  }
+
+  main > .section.bleed.cta-right .hero-carousel .hero-carousel-text {
+    top: 30%;
+    left: 57%;
+    width: 38%;
+    padding-top: 68.5px; /* two empty paragraphs (38.5) + the largeheadline's 30 px margin */
+  }
+
+  main > .section.bleed.mobile-slide .hero-carousel .hero-carousel-media p:first-of-type {
+    display: block;
+  }
+
+  main > .section.bleed.mobile-slide .hero-carousel .hero-carousel-media p:nth-of-type(2) {
+    display: none;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section.bleed.compact .hero-carousel .hero-carousel-text h1,
+  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 strong {
+    font-size: min(3vw, 42px);
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 {
+    font-size: min(2vw, var(--heading-font-size-xxl));
+  }
+}
+
+/* CTA colours: live .btn-blue / .btn-purple */
+main > .section.btn-navy a.button.primary {
+  border-color: var(--color-navy-bright);
+  background-color: var(--color-navy-bright);
+}
+
+main > .section.btn-purple a.button.primary {
+  border-color: var(--color-purple);
+  background-color: var(--color-purple);
+}
+
+main > .section.sm-7-5 .columns-corp > div > div:first-child {
+  flex: 0 0 58.3333%;
+  max-width: 58.3333%;
+}
+
+main > .section.sm-7-5 .columns-corp > div > div:last-child {
+  flex: 0 0 41.6667%;
+  max-width: 41.6667%;
+}
+
+main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div:last-child {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+main > .section.sm-center-8 > .default-content-wrapper {
+  width: 66.6667%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (width >= 600px) {
+  main > .section.sm-7-5 .columns-corp > div > div:first-child,
+  main > .section.sm-7-5 .columns-corp > div > div:last-child,
+  main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div,
+  main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div:last-child {
+    max-width: none;
+  }
+
+  main > .section.sm-center-8 > .default-content-wrapper {
+    width: auto;
+  }
+}
+
+/* P2d (R-40): on news-detail the hero carousel is NOT the first element (publish date + event-location
+   rows precede it), so the live .g-header keeps its 10px margin-bottom; the foundation rule
+   `body:has(main .hero-carousel) header { margin-bottom: 0 }` targets autocarousel-first pages only.
+   Measured: live publish date y 147 vs EDS 137 at 1440 (boots-innovation). */
+body.news-detail:has(main .hero-carousel) header {
+  margin-bottom: var(--corp-header-gap);
+}
+
+@media (width >= 600px) {
+  main > .section > .default-content-wrapper > h3 {
+    font-size: var(--body-font-size-xl);
+    line-height: 22.26px;
+  }
+}
