@@ -1,0 +1,253 @@
+/* site-footer — components.min.css L1258-1291 (canon.css § footer), geometry measured live at
+   1440 + 360: #545857 band, Futura, 1410px container, legal row with pipe separators, social
+   icons stacked below on mobile / 250px right column from 1024px (icons right-aligned from
+   1440px), secondary links stacked in a second row. */
+
+footer.site-footer-wrapper {
+  padding: 0;
+  max-width: none;
+  background: var(--color-secondary);
+}
+
+/* the <footer> landmark itself paints the band (live: footer { background: #545857 }) */
+.site-footer {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.site-footer * {
+  box-sizing: border-box;
+}
+
+.site-footer .container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-block-l) var(--container-gutter) 0;
+}
+
+/* Bootstrap .container::after (display: table) — keeps the last row's margin inside the band */
+.site-footer .container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a:any-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.site-footer a:any-link:hover {
+  color: var(--color-surface-muted);
+}
+
+.site-footer .footer-row {
+  margin: 0 calc(-1 * var(--container-gutter)) var(--space-block-l);
+}
+
+.site-footer .footer-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.site-footer .footer-col {
+  position: relative;
+  min-height: 1px;
+  padding: 0 var(--container-gutter);
+}
+
+/* copyright + legal links */
+.site-footer .footer-legal > p,
+.site-footer .footer-sep {
+  display: inline;
+  padding: var(--space-block-xs) 7px var(--space-block-xs) 0;
+  color: var(--color-white);
+  font-family: var(--body-font-family);
+}
+
+/* live: " © Stryker 1998-2026 " keeps its trailing space inline below 1024px (~4px) */
+.site-footer .footer-legal > p::after {
+  content: "\2005";
+}
+
+
+.site-footer .footer-legal ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer .footer-legal li::after {
+  content: "|";
+  padding: 0 var(--space-block-xs) 0 4px;
+  color: var(--color-white);
+}
+
+.site-footer .footer-legal li:last-child::after {
+  content: "";
+  padding-right: 0;
+}
+
+/* social icon links */
+.site-footer .footer-social ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer .footer-social li {
+  padding-right: 8px;
+  line-height: 0;
+}
+
+.site-footer .footer-social a:any-link,
+.site-footer .footer-social picture {
+  display: block;
+  line-height: 0;
+}
+
+.site-footer .footer-social img {
+  display: block;
+  width: 50px;
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* secondary (recall) links */
+.site-footer .footer-secondary li {
+  margin-bottom: var(--space-block-s);
+}
+
+.site-footer .footer-secondary a:any-link {
+  text-transform: uppercase;
+}
+
+/* legal + secondary link boxes (after the social / secondary link rules they outrank) */
+.site-footer .footer-legal li a:any-link,
+.site-footer .footer-secondary li a:any-link {
+  display: inline-block;
+  padding: var(--space-block-xs) var(--space-block);
+}
+
+.site-footer .footer-legal li a:any-link:hover,
+.site-footer .footer-secondary li a:any-link:hover {
+  color: var(--color-black);
+  background: var(--color-accent);
+}
+
+@media (width >= 600px) {
+  .site-footer .footer-row {
+    margin-bottom: var(--space-inset-l);
+  }
+
+  .site-footer .footer-row-social {
+    margin-bottom: var(--space-block-l);
+  }
+}
+
+@media (width >= 900px) {
+  .site-footer .footer-row-social {
+    display: flex;
+    margin-bottom: var(--space-block-xs);
+  }
+
+  .site-footer .footer-col-main {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .site-footer .footer-col-side {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .site-footer .footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .site-footer .footer-legal > p,
+  .site-footer .footer-sep {
+    flex: 0 0 auto;
+  }
+
+  .site-footer .footer-legal > p::after {
+    content: none;
+  }
+
+  .site-footer .footer-legal li {
+    margin-left: 7px;
+  }
+
+  .site-footer .footer-legal li::before {
+    content: "|";
+    padding-right: 9px;
+    color: var(--color-white);
+  }
+
+  .site-footer .footer-legal li:first-child {
+    margin-left: 0;
+  }
+
+  .site-footer .footer-legal li:first-child::before {
+    content: none;
+    padding-right: 0;
+  }
+
+  .site-footer .footer-legal li::after {
+    content: "";
+    padding: 0;
+  }
+
+  .site-footer .footer-social {
+    width: 250px;
+  }
+}
+
+/* 900–1199: the 25 % side column is narrower than the 250px icon row (live keeps the
+   phone footer below 1024px) — cap the row to its column and drop the trailing gap so
+   the four icons still fit one row at 1024 (224px in 226px) and wrap instead of
+   overflowing the page below that. */
+@media (width >= 900px) {
+  .site-footer .footer-social {
+    max-width: 100%;
+  }
+
+  .site-footer .footer-social li:last-child {
+    padding-right: 0;
+  }
+}
+
+/* from 1200 the 250px icon row fits its column again: no cap, trailing gap back */
+@media (width >= 1200px) {
+  .site-footer .footer-social {
+    max-width: none;
+  }
+
+  .site-footer .footer-social li:last-child {
+    padding-right: 8px;
+  }
+
+  .site-footer .footer-row-social {
+    margin-bottom: var(--space-inset-l);
+  }
+
+  .site-footer .footer-social ul {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+}
