@@ -1,10 +1,10 @@
-/* news-headline — the news-detail article head. Lifted from components.min.css:
+/* news-headline-corp — the news-detail article head. Lifted from components.min.css:
    .h1-title h1 L5890 (@840) / L5892 (@1024): Futura bold from 841px, Egyptienne below;
    c-publish-date h5 L5564 (margin 0); c-event-location-properties h5 L6032 (margin-top 0),
    both Futura bold 14px / 1.15 (base h5). Geometry: the live .h1-title.container and the meta
    row are plain 1410px containers, which the section wrapper already provides. */
 
-.news-headline h1 {
+.news-headline-corp h1 {
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-xxl);
@@ -13,7 +13,7 @@
 }
 
 @media (width >= 900px) {
-  .news-headline h1 {
+  .news-headline-corp h1 {
     font-family: var(--display-font-family);
     font-weight: 700;
   }
@@ -21,7 +21,7 @@
 
 /* publish date + event location: live h5 row, Futura bold 14px / 1.15; the (often empty)
    location heading's 15px bottom margin closes the row */
-.news-headline .news-headline-meta {
+.news-headline-corp .news-headline-corp-meta {
   margin-bottom: var(--space-block);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
@@ -29,7 +29,7 @@
   line-height: var(--heading-line-height-h4);
 }
 
-.news-headline .news-headline-meta :is(p, h2, h3, h4, h5, h6) {
+.news-headline-corp .news-headline-corp-meta :is(p, h2, h3, h4, h5, h6) {
   margin: 0;
   font: inherit;
 }

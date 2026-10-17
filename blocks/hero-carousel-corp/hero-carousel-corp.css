@@ -1,61 +1,61 @@
-/* hero-carousel — c-autocarousel page hero, t=0 state. Values lifted from the
+/* hero-carousel-corp — c-autocarousel page hero, t=0 state. Values lifted from the
    tier2-landing-page prototype CSS (autocarousel.min.css A L1-50, components
    C L5753-5765, L6619-6624): a 100vw slide image capped at 33.33vw, the
    headline overlay at top 17% / left 5% / width 47%, 8vw Egyptienne + Futura
    two-tone headline with line-height 1.35. Below 841px the live hides the
    desktop image fragment (no mobile fragment authored) — headline only. */
 
-.hero-carousel-container > .hero-carousel-wrapper {
+.hero-carousel-corp-container > .hero-carousel-corp-wrapper {
   max-width: none;
   padding: 0;
 }
 
-.hero-carousel {
+.hero-carousel-corp {
   position: relative;
   width: 100%;
 }
 
-.hero-carousel .hero-carousel-slide {
+.hero-carousel-corp .hero-carousel-corp-slide {
   position: relative;
   display: none;
 }
 
-.hero-carousel .hero-carousel-slide.active {
+.hero-carousel-corp .hero-carousel-corp-slide.active {
   display: block;
 }
 
-.hero-carousel .hero-carousel-media {
+.hero-carousel-corp .hero-carousel-corp-media {
   display: none; /* A L51: desktop fragment hidden ≤840 */
 }
 
-.hero-carousel .hero-carousel-media picture,
-.hero-carousel .hero-carousel-media img,
-.hero-carousel .hero-carousel-media video {
+.hero-carousel-corp .hero-carousel-corp-media picture,
+.hero-carousel-corp .hero-carousel-corp-media img,
+.hero-carousel-corp .hero-carousel-corp-media video {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.hero-carousel .hero-carousel-media p {
+.hero-carousel-corp .hero-carousel-corp-media p {
   margin: 0;
 }
 
-.hero-carousel .hero-carousel-video .hero-carousel-media picture {
+.hero-carousel-corp .hero-carousel-corp-video .hero-carousel-corp-media picture {
   display: none; /* the poster picture lives on the <video> poster */
 }
 
-.hero-carousel .hero-carousel-media .dm-video-wrapper {
+.hero-carousel-corp .hero-carousel-corp-media .dm-video-wrapper {
   width: 100%;
 }
 
-.hero-carousel .hero-carousel-text {
+.hero-carousel-corp .hero-carousel-corp-text {
   position: static;
   box-sizing: border-box;
   width: 100%;
   padding: 0 var(--space-block-l) 40px; /* A L47 + the two 20px page-section margins below the headline */
 }
 
-.hero-carousel .hero-carousel-text :is(h1, h2) {
+.hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-size: 16vw; /* C: .fontsize-8vw doubles below 840px */
@@ -65,33 +65,33 @@
   overflow-wrap: break-word;
 }
 
-.hero-carousel .hero-carousel-text :is(h1, h2) em {
+.hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) em {
   font-family: var(--heading-font-family);
   font-style: normal;
   color: var(--color-black);
 }
 
-.hero-carousel .hero-carousel-text :is(h1, h2) :is(strong, b) {
+.hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) :is(strong, b) {
   font-family: var(--display-font-family);
   font-weight: 700;
   color: var(--color-black);
 }
 
-.hero-carousel .hero-carousel-text p {
+.hero-carousel-corp .hero-carousel-corp-text p {
   margin: 0 0 var(--space-block);
 }
 
 @media (width >= 900px) {
-  .hero-carousel .hero-carousel-slide.active {
+  .hero-carousel-corp .hero-carousel-corp-slide.active {
     max-height: 33.33vw; /* A L34: the slick list caps the slide at the 3:1 image */
     overflow: hidden;
   }
 
-  .hero-carousel .hero-carousel-media {
+  .hero-carousel-corp .hero-carousel-corp-media {
     display: block;
   }
 
-  .hero-carousel .hero-carousel-text {
+  .hero-carousel-corp .hero-carousel-corp-text {
     position: absolute;
     top: 17%;
     left: 5%;
@@ -99,13 +99,13 @@
     padding: 0;
   }
 
-  .hero-carousel .hero-carousel-text :is(h1, h2) {
+  .hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
     font-size: 8vw;
   }
 }
 
 @media (width >= 1200px) {
-  .hero-carousel .hero-carousel-text :is(h1, h2) {
+  .hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
     font-size: min(8vw, 112px); /* C: .fontsize-8vw cap */
   }
 }
@@ -119,11 +119,11 @@
    (acute-care/products/maternity-solutions).
    `headline`: the live c-largeheadline overlay at top 20% / left 3% / width 57% — h1
    .fontsize-3-5-vw Futura bold, 2vw Futura/Egyptienne date line (fellows-summit-2022). */
-.hero-carousel.split .hero-carousel-media {
+.hero-carousel-corp.split .hero-carousel-corp-media {
   display: block;
 }
 
-.hero-carousel.split .hero-carousel-text :is(h1, h2) {
+.hero-carousel-corp.split .hero-carousel-corp-text :is(h1, h2) {
   font-size: var(--heading-font-size-xxl);
   font-family: var(--display-font-family);
   font-weight: 700;
@@ -131,22 +131,22 @@
   color: var(--color-accent);
 }
 
-.hero-carousel.split .hero-carousel-text :is(h1, h2) :is(em, strong) {
+.hero-carousel-corp.split .hero-carousel-corp-text :is(h1, h2) :is(em, strong) {
   font-family: var(--display-font-family);
   font-style: normal;
   color: var(--color-accent);
 }
 
-.hero-carousel.split .hero-carousel-text p {
+.hero-carousel-corp.split .hero-carousel-corp-text p {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
-.hero-carousel.split .hero-carousel-text .button-wrapper {
+.hero-carousel-corp.split .hero-carousel-corp-text .button-wrapper {
   margin-top: 65px; /* live: 15px h2 margin + an empty paragraph + the CTA container */
 }
 
-.hero-carousel.headline .hero-carousel-text h1 {
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 {
   font-family: var(--heading-font-family); /* the live line1 is Egyptienne light… */
   font-size: 7vw; /* .fontsize-3-5-vw doubles below 840px */
   font-weight: 500;
@@ -154,32 +154,32 @@
   color: var(--color-black);
 }
 
-.hero-carousel.headline .hero-carousel-text h1 :is(em, strong) {
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 :is(em, strong) {
   font-family: var(--display-font-family); /* …with the first word Futura bold gold */
   font-style: normal;
   font-weight: 700;
   color: var(--color-black);
 }
 
-.hero-carousel.headline .hero-carousel-text p strong {
+.hero-carousel-corp.headline .hero-carousel-corp-text p strong {
   font-family: var(--display-font-family);
   color: var(--color-primary);
 }
 
-.hero-carousel.headline .hero-carousel-text h1 em strong,
-.hero-carousel.headline .hero-carousel-text h1 strong em {
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 em strong,
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 strong em {
   color: var(--color-accent);
 }
 
-.hero-carousel.headline .hero-carousel-text p {
+.hero-carousel-corp.headline .hero-carousel-corp-text p {
   margin: 0;
   font-family: var(--heading-font-family);
   font-size: 4vw; /* .fontsize-2vw doubles below 840px */
   line-height: 1.5;
 }
 
-.hero-carousel.headline .hero-carousel-text p em strong,
-.hero-carousel.headline .hero-carousel-text p strong em {
+.hero-carousel-corp.headline .hero-carousel-corp-text p em strong,
+.hero-carousel-corp.headline .hero-carousel-corp-text p strong em {
   font-style: normal;
   color: var(--color-accent);
 }
@@ -194,15 +194,15 @@
    `gold-title` = #ffb500 h1. media-left-N / media-width-N place a half-width image column
    (the live XF aem-GridColumn span / offset). Below 841px the image stays visible with
    the copy under it. */
-.hero-carousel.copy .hero-carousel-media {
+.hero-carousel-corp.copy .hero-carousel-corp-media {
   display: block;
 }
 
-.hero-carousel.copy .hero-carousel-text {
+.hero-carousel-corp.copy .hero-carousel-corp-text {
   padding: var(--space-block-l) var(--space-block-l) 0;
 }
 
-.hero-carousel.copy .hero-carousel-text :is(h1, h2, h3) {
+.hero-carousel-corp.copy .hero-carousel-corp-text :is(h1, h2, h3) {
   margin: 0 0 var(--space-block-s);
   font-family: var(--heading-font-family);
   font-weight: 500;
@@ -210,25 +210,25 @@
   color: var(--color-black);
 }
 
-.hero-carousel.copy .hero-carousel-text h1 {
+.hero-carousel-corp.copy .hero-carousel-corp-text h1 {
   font-size: var(--heading-font-size-xxl);
 }
 
-.hero-carousel.copy .hero-carousel-text h2 {
+.hero-carousel-corp.copy .hero-carousel-corp-text h2 {
   font-size: var(--heading-font-size-xl);
 }
 
-.hero-carousel.copy .hero-carousel-text h3 {
+.hero-carousel-corp.copy .hero-carousel-corp-text h3 {
   font-size: var(--heading-font-size-l);
 }
 
-.hero-carousel.copy .hero-carousel-text :is(h1, h2, h3) :is(strong, b) {
+.hero-carousel-corp.copy .hero-carousel-corp-text :is(h1, h2, h3) :is(strong, b) {
   font-family: var(--display-font-family);
   font-weight: 700;
   color: inherit;
 }
 
-.hero-carousel.copy .hero-carousel-text p {
+.hero-carousel-corp.copy .hero-carousel-corp-text p {
   margin: 0 0 var(--space-block);
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
@@ -236,7 +236,7 @@
 
 /* `split` h2 under the h1 and the `split compact` overlay (after the `copy` base type,
    which they outrank) */
-.hero-carousel.split .hero-carousel-text h1 + h2 {
+.hero-carousel-corp.split .hero-carousel-corp-text h1 + h2 {
   font-family: var(--heading-font-family);
   font-weight: 500;
   font-size: var(--heading-font-size-xl);
@@ -244,118 +244,118 @@
   color: var(--color-black);
 }
 
-.hero-carousel.split.compact .hero-carousel-text h1 {
+.hero-carousel-corp.split.compact .hero-carousel-corp-text h1 {
   font-size: 42px; /* h1 28px x .fontsize-1-5em */
   line-height: 1.25;
   color: var(--color-black);
 }
 
-.hero-carousel.split.compact .hero-carousel-text h1 :is(em, strong) {
+.hero-carousel-corp.split.compact .hero-carousel-corp-text h1 :is(em, strong) {
   color: var(--color-black);
 }
 
-.hero-carousel.split.compact .hero-carousel-text p {
+.hero-carousel-corp.split.compact .hero-carousel-corp-text p {
   font-family: var(--heading-font-family);
 }
 
-.hero-carousel.split.compact .hero-carousel-text .button-wrapper {
+.hero-carousel-corp.split.compact .hero-carousel-corp-text .button-wrapper {
   margin-top: 27px;
   font-family: var(--body-font-family);
 }
 
 /* overlay heading scale (live .fontsize-*em on the overlay h1 28px / h2 24.5px) */
-.hero-carousel.copy.h1-1-25 .hero-carousel-text h1 { font-size: 35px; }
-.hero-carousel.copy.h1-1-5 .hero-carousel-text h1 { font-size: 42px; }
-.hero-carousel.copy.h1-1-75 .hero-carousel-text h1 { font-size: var(--heading-font-size-hero-xl); }
-.hero-carousel.copy.h1-2 .hero-carousel-text h1 { font-size: 56px; }
-.hero-carousel.copy.h1-2-5 .hero-carousel-text h1 { font-size: 70px; }
-.hero-carousel.copy.h2-1-25 .hero-carousel-text h2 { font-size: 30.625px; }
-.hero-carousel.copy.h2-1-5 .hero-carousel-text h2 { font-size: 36.75px; }
-.hero-carousel.copy.h2-1-75 .hero-carousel-text h2 { font-size: 42.875px; }
-.hero-carousel.copy.h2-2 .hero-carousel-text h2 { font-size: var(--heading-font-size-hero-xl); }
+.hero-carousel-corp.copy.h1-1-25 .hero-carousel-corp-text h1 { font-size: 35px; }
+.hero-carousel-corp.copy.h1-1-5 .hero-carousel-corp-text h1 { font-size: 42px; }
+.hero-carousel-corp.copy.h1-1-75 .hero-carousel-corp-text h1 { font-size: var(--heading-font-size-hero-xl); }
+.hero-carousel-corp.copy.h1-2 .hero-carousel-corp-text h1 { font-size: 56px; }
+.hero-carousel-corp.copy.h1-2-5 .hero-carousel-corp-text h1 { font-size: 70px; }
+.hero-carousel-corp.copy.h2-1-25 .hero-carousel-corp-text h2 { font-size: 30.625px; }
+.hero-carousel-corp.copy.h2-1-5 .hero-carousel-corp-text h2 { font-size: 36.75px; }
+.hero-carousel-corp.copy.h2-1-75 .hero-carousel-corp-text h2 { font-size: 42.875px; }
+.hero-carousel-corp.copy.h2-2 .hero-carousel-corp-text h2 { font-size: var(--heading-font-size-hero-xl); }
 
-.hero-carousel.copy.gold-title .hero-carousel-text h1 {
+.hero-carousel-corp.copy.gold-title .hero-carousel-corp-text h1 {
   color: var(--color-accent);
 }
 
 /* `mobile-media`: the live mobile XF image is the media cell's last paragraph — shown below 841px
    instead of the 3:1 desktop crop (the division template's desktop + mobile convention) */
-.hero-carousel.copy.mobile-media .hero-carousel-media > p:not(:last-child) {
+.hero-carousel-corp.copy.mobile-media .hero-carousel-corp-media > p:not(:last-child) {
   display: none;
 }
 
 @media (width >= 900px) {
-  .hero-carousel.split .hero-carousel-slide.active {
+  .hero-carousel-corp.split .hero-carousel-corp-slide.active {
     max-height: none;
     overflow: visible;
   }
 
-  .hero-carousel.split .hero-carousel-media {
+  .hero-carousel-corp.split .hero-carousel-corp-media {
     width: 50%;
     margin-left: 50%;
   }
 
-  .hero-carousel.split .hero-carousel-text {
+  .hero-carousel-corp.split .hero-carousel-corp-text {
     top: 3%;
     left: 5%;
     width: 45%;
   }
 
-  .hero-carousel.split .hero-carousel-text h1 {
+  .hero-carousel-corp.split .hero-carousel-corp-text h1 {
     margin-top: 7%; /* live rich-text margin-top 7% of the overlay */
   }
 
-  .hero-carousel.headline .hero-carousel-text {
+  .hero-carousel-corp.headline .hero-carousel-corp-text {
     top: 20%;
     left: 3%;
     width: 57%;
   }
 
-  .hero-carousel.headline .hero-carousel-text h1 {
+  .hero-carousel-corp.headline .hero-carousel-corp-text h1 {
     font-size: 3.5vw;
   }
 
-  .hero-carousel.headline .hero-carousel-text p {
+  .hero-carousel-corp.headline .hero-carousel-corp-text p {
     font-size: 2vw;
   }
 
   /* `split compact` (after the headline overlay, which it outranks) */
-  .hero-carousel.split.compact .hero-carousel-text {
+  .hero-carousel-corp.split.compact .hero-carousel-corp-text {
     top: 18%;
     left: 8%;
     width: 42%;
   }
 
-  .hero-carousel.split.compact .hero-carousel-text h1 {
+  .hero-carousel-corp.split.compact .hero-carousel-corp-text h1 {
     margin-top: 0;
   }
 }
 
 @media (width >= 1200px) {
-  .hero-carousel.headline .hero-carousel-text h1 {
+  .hero-carousel-corp.headline .hero-carousel-corp-text h1 {
     font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* .fontsize-3-5-vw cap */
   }
 
-  .hero-carousel.headline .hero-carousel-text p {
+  .hero-carousel-corp.headline .hero-carousel-corp-text p {
     font-size: min(2vw, var(--heading-font-size-xxl)); /* .fontsize-2vw cap */
   }
 }
 
 @media (width >= 900px) {
-  .hero-carousel.copy .hero-carousel-media {
+  .hero-carousel-corp.copy .hero-carousel-corp-media {
     width: var(--hero-copy-media-width, 100%);
     margin-left: var(--hero-copy-media-left, 0);
   }
 
-  .hero-carousel.copy.mobile-media .hero-carousel-media > p:not(:last-child) {
+  .hero-carousel-corp.copy.mobile-media .hero-carousel-corp-media > p:not(:last-child) {
     display: block;
   }
 
-  .hero-carousel.copy.mobile-media .hero-carousel-media > p:last-child:not(:first-child) {
+  .hero-carousel-corp.copy.mobile-media .hero-carousel-corp-media > p:last-child:not(:first-child) {
     display: none;
   }
 
-  .hero-carousel.copy .hero-carousel-text {
+  .hero-carousel-corp.copy .hero-carousel-corp-text {
     position: absolute;
     top: var(--hero-copy-top, 17%);
     left: var(--hero-copy-left, 5%);
@@ -363,12 +363,12 @@
     padding: 0;
   }
 
-  .hero-carousel.copy.light .hero-carousel-text,
-  .hero-carousel.copy.light .hero-carousel-text :is(h1, h2, h3, p) {
+  .hero-carousel-corp.copy.light .hero-carousel-corp-text,
+  .hero-carousel-corp.copy.light .hero-carousel-corp-text :is(h1, h2, h3, p) {
     color: var(--color-white);
   }
 
-  .hero-carousel.copy.light.gold-title .hero-carousel-text h1 {
+  .hero-carousel-corp.copy.light.gold-title .hero-carousel-corp-text h1 {
     color: var(--color-accent);
   }
 }

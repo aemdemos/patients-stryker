@@ -8,24 +8,24 @@
 
 /* template-level standalone-image slot under the headline — empty on most pages, it keeps
    its .page-section margin (canon L69-70: 20px, 30px from 480px) */
-main > .section.news-headline-container {
+main > .section.news-headline-corp-container {
   padding-bottom: var(--space-block-l);
 }
 
 @media (width >= 600px) {
-  main > .section.news-headline-container {
+  main > .section.news-headline-corp-container {
     padding-bottom: var(--space-section);
   }
 }
 
 /* article body sections: cap at the live container so the grid percentages resolve against it */
-main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) {
+main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section) {
   max-width: var(--container-max);
   margin: 0 auto;
 }
 
 /* building block + cell gutter: phone 12/12 */
-main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) > div {
+main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section) > div {
   padding: 0 15.5px;
 }
 
@@ -34,7 +34,7 @@ main > .section:not(.news-headline-container, .disclaimer, .last-modified-sectio
 /* c-curatedcta after the rich text: the live rich-text block carries margin-bottom 2% (collapses
    with the last paragraph's 15px), the teal .btn margin-bottom 15px (L6519/L6550), wraps its
    label and keeps a 34px min-height (L6524) */
-main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section)
   p.button-wrapper {
   margin: 2% 0 var(--space-block);
 }
@@ -108,7 +108,7 @@ main > .section.promo .columns-corp p {
   line-height: var(--heading-line-height-hero);
 }
 
-main > .section.bleed .hero-carousel .hero-carousel-text p {
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text p {
   margin: 0 0 var(--space-block);
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
@@ -175,7 +175,7 @@ main > .section.news-cards .cards .cards-card-body p {
 
 /* standalone image: centred inner column (phone 8/12 offset 2 of the block), .page-section
    margin; the live img is an inline-block inside a 20px line box */
-main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section)
   > .default-content-wrapper p:has(> picture:only-child) {
   margin-bottom: var(--space-block-l);
   padding: 0 calc(100% / 6 + var(--space-block-xs));
@@ -195,7 +195,7 @@ main > .section:is(.cols-6-6, .cols-7-5, .cols-5-3, .cols-3-9, .cols-3-3-6, .col
 }
 
 /* block-level so the paragraph is exactly the image's height (live: 340px at 1440, no line-box gap) */
-main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section)
   > .default-content-wrapper p:has(> picture:only-child) img {
   display: block;
   width: 100%;
@@ -203,14 +203,14 @@ main > .section:not(.news-headline-container, .disclaimer, .last-modified-sectio
 }
 
 @media (width >= 600px) {
-  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+  main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section)
     > .default-content-wrapper p:has(> picture:only-child) {
     margin-bottom: var(--space-section);
     padding: 0 calc(5% + 1.5px);
   }
 
   /* tablet: text block 10/12 offset 1; image block stays 12/12 with a 6/8 offset 1 column */
-  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) > div {
+  main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section) > div {
     padding: 0 calc(15.5px + (100% - 1px) / 12);
   }
 }
@@ -233,17 +233,17 @@ main > .section:not(.news-headline-container, .disclaimer, .last-modified-sectio
   }
 
   /* desktop: both blocks 8/12 offset 2; image column 4/8 offset 2 */
-  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section) > div {
+  main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section) > div {
     padding: 0 calc(15.5px + (100% - 1px) / 6);
   }
 
-  main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+  main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section)
     > .default-content-wrapper p:has(> picture:only-child) {
     padding: 0 calc(25% + 7.5px);
   }
 }
 
-main > .section:not(.news-headline-container, .disclaimer, .last-modified-section)
+main > .section:not(.news-headline-corp-container, .disclaimer, .last-modified-section)
   p.button-wrapper a.button {
   min-height: 34px;
   white-space: normal;
@@ -252,7 +252,7 @@ main > .section:not(.news-headline-container, .disclaimer, .last-modified-sectio
 /* specificity order: precedes a higher-specificity rule for the same elements below */
 
 /* tight: no empty-slot spacing */
-main > .section.news-headline-container.tight {
+main > .section.news-headline-corp-container.tight {
   padding-bottom: 0;
 }
 
@@ -293,7 +293,7 @@ main > .section:not(.disclaimer):has(+ .section.disclaimer) {
      grid-8-0   Bootstrap col-xs-12 col-sm-8 (press releases: Inari, Apple, World body, LIFEPAK form)
      grid-8-2   AEM 8/12 offset 2 whose image fills the column (heart infographic, references)
      grid-10-1  AEM 10/12 offset 1 with a centred 4/12 image column (protect body, video)
-     bleed      full-bleed hero-carousel section (+ box-gold / box-white headline overlay)
+     bleed      full-bleed hero-carousel-corp section (+ box-gold / box-white headline overlay)
      tight      drop the empty-slot spacing (headline w/o image slot, band w/o 2 % margin,
                 last section w/o the .page-section margin)
      slot       empty publish-date + image slot above a default-content head (protect)
@@ -620,22 +620,22 @@ main > .section.bleed.tight {
   padding-bottom: 0;
 }
 
-main > .section.bleed .hero-carousel .hero-carousel-media {
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-media {
   display: block;
 }
 
-main > .section.bleed .hero-carousel .hero-carousel-slide.active {
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-slide.active {
   max-height: none;
   overflow: visible;
 }
 
 /* the c-largeheadline box over the hero: 20 px padding, 28 px Futura h1 (+ optional lead p) */
-main > .section.bleed .hero-carousel .hero-carousel-text {
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text {
   box-sizing: border-box;
   padding: var(--space-block-l);
 }
 
-main > .section.bleed .hero-carousel .hero-carousel-text h1 {
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text h1 {
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family);
   font-size: var(--heading-font-size-xxl);
@@ -645,7 +645,7 @@ main > .section.bleed .hero-carousel .hero-carousel-text h1 {
 
 /* box-gold (AED): gold box (60 % of the 320 px inset = 53.3 %) under the image on phone,
    5 % / 5 % / 54 % over it from 841 px */
-main > .section.bleed.box-gold .hero-carousel .hero-carousel-text {
+main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text {
   position: static;
   width: 53.3%;
   margin: 0 0 0 5.5%;
@@ -654,7 +654,7 @@ main > .section.bleed.box-gold .hero-carousel .hero-carousel-text {
 
 /* box-white (heart): white box over the image, 18 px / 5 % / 90 % on phone (overflows the
    120 px image like the live page), 27 % / 5 % / 40 % from 841 px */
-main > .section.bleed.box-white .hero-carousel .hero-carousel-text {
+main > .section.bleed.box-white .hero-carousel-corp .hero-carousel-corp-text {
   position: absolute;
   top: 18px;
   left: 5%;
@@ -673,7 +673,7 @@ main > .section.bleed.box-white .hero-carousel .hero-carousel-text {
 }
 
 @media (width >= 900px) {
-  main > .section.bleed.box-gold .hero-carousel .hero-carousel-text {
+  main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text {
     position: absolute;
     top: 5%;
     left: 5%;
@@ -682,12 +682,12 @@ main > .section.bleed.box-white .hero-carousel .hero-carousel-text {
   }
 
   /* the AED headline wraps a .fontsize-3vw span: 43.2 px, 4 lines = 173 px → line-height 1 */
-  main > .section.bleed.box-gold .hero-carousel .hero-carousel-text h1 {
+  main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text h1 {
     font-size: 3vw;
     line-height: 1;
   }
 
-  main > .section.bleed.box-white .hero-carousel .hero-carousel-text {
+  main > .section.bleed.box-white .hero-carousel-corp .hero-carousel-corp-text {
     top: 27%;
     width: 40%;
   }
@@ -1111,8 +1111,8 @@ main > .section.bleed:has(+ .section.gap-l) {
   padding-bottom: var(--space-block-l);
 }
 
-main > .section.news-headline-container:has(+ .section.gap),
-main > .section.news-headline-container:has(+ .section.gap-l) {
+main > .section.news-headline-corp-container:has(+ .section.gap),
+main > .section.news-headline-corp-container:has(+ .section.gap-l) {
   padding-bottom: var(--space-block-l);
 }
 
@@ -1130,7 +1130,7 @@ main > .section.grid-10-1:has(> .video-wrapper) {
    than on the h1-title pages (h5 at 147 px vs h1 at 157 px; at 360 both pages agree) */
 
 @media (width >= 900px) {
-  main > .section.news-headline-container:not(:has(h1)) {
+  main > .section.news-headline-corp-container:not(:has(h1)) {
     position: relative;
     top: -10px;
     margin-bottom: -10px;
@@ -1148,8 +1148,8 @@ main > .section.disclaimer:has(ol, ul):has(+ .section.last-modified-section) {
     padding-bottom: var(--space-inset-l);
   }
 
-  main > .section.news-headline-container:has(+ .section.gap),
-  main > .section.news-headline-container:has(+ .section.gap-l) {
+  main > .section.news-headline-corp-container:has(+ .section.gap),
+  main > .section.news-headline-corp-container:has(+ .section.gap-l) {
     padding-bottom: var(--space-section);
   }
 
@@ -1161,7 +1161,7 @@ main > .section.disclaimer:has(ol, ul):has(+ .section.last-modified-section) {
 /* carousel overlays ------------------------------------------------------------------------ */
 
 /* compact: .fontsize-3vw headline; the Futura line is <strong>, the serif tail plain text */
-main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 {
+main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 {
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-size: 6vw;
@@ -1169,27 +1169,27 @@ main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 {
   line-height: var(--heading-line-height-hero);
 }
 
-main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 :is(strong, em) {
+main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 :is(strong, em) {
   font-size: inherit;
   line-height: inherit;
 }
 
-main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 strong {
+main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 strong {
   font-family: var(--display-font-family);
   font-weight: 700;
 }
 
 /* overlay-left: the 2vw tail (4vw on phone) under the 3vw Futura line */
-main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 {
+main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
   font-size: 4vw;
 }
 
-main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 strong {
+main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
   font-size: 6vw;
 }
 
 /* phone geometry shared by the boxed / boxless overlays: 18 px / 5 % / 90 % over the image */
-main > .section.bleed:is(.overlay-left, .box-right, .cta-right) .hero-carousel .hero-carousel-text {
+main > .section.bleed:is(.overlay-left, .box-right, .cta-right) .hero-carousel-corp .hero-carousel-corp-text {
   position: absolute;
   top: 18px;
   left: 5%;
@@ -1198,74 +1198,74 @@ main > .section.bleed:is(.overlay-left, .box-right, .cta-right) .hero-carousel .
   background-color: transparent;
 }
 
-main > .section.bleed.box-right .hero-carousel .hero-carousel-text {
+main > .section.bleed.box-right .hero-carousel-corp .hero-carousel-corp-text {
   padding: 0 var(--space-block-l);
   background-color: var(--color-white);
 }
 
 /* cta-only overlay: the empty two-paragraph .line1 (58 px) + 20 px above the button */
-main > .section.bleed.cta-right .hero-carousel .hero-carousel-text {
+main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text {
   padding-top: 78px;
 }
 
-main > .section.bleed.cta-right .hero-carousel .hero-carousel-text p.button-wrapper {
+main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text p.button-wrapper {
   margin: 0;
 }
 
 /* mobile-slide: the media cell's second picture is the live mobile fragment */
-main > .section.bleed.mobile-slide .hero-carousel .hero-carousel-media p:first-of-type {
+main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:first-of-type {
   display: none;
 }
 
 @media (width >= 900px) {
-  main > .section.bleed.compact .hero-carousel .hero-carousel-text h1 {
+  main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 {
     font-size: 3vw;
   }
 
-  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 {
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
     font-size: 2vw;
   }
 
-  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 strong {
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
     font-size: 3vw;
   }
 
-  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text {
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text {
     top: 10%;
     left: 5%;
     width: 39%;
   }
 
-  main > .section.bleed.box-right .hero-carousel .hero-carousel-text {
+  main > .section.bleed.box-right .hero-carousel-corp .hero-carousel-corp-text {
     top: 23%;
     left: 58%;
     width: 39%;
     padding: var(--space-block-l);
   }
 
-  main > .section.bleed.cta-right .hero-carousel .hero-carousel-text {
+  main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text {
     top: 30%;
     left: 57%;
     width: 38%;
     padding-top: 68.5px; /* two empty paragraphs (38.5) + the largeheadline's 30 px margin */
   }
 
-  main > .section.bleed.mobile-slide .hero-carousel .hero-carousel-media p:first-of-type {
+  main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:first-of-type {
     display: block;
   }
 
-  main > .section.bleed.mobile-slide .hero-carousel .hero-carousel-media p:nth-of-type(2) {
+  main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:nth-of-type(2) {
     display: none;
   }
 }
 
 @media (width >= 1200px) {
-  main > .section.bleed.compact .hero-carousel .hero-carousel-text h1,
-  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 strong {
+  main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1,
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
     font-size: min(3vw, 42px);
   }
 
-  main > .section.bleed.overlay-left .hero-carousel .hero-carousel-text h1 {
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
     font-size: min(2vw, var(--heading-font-size-xxl));
   }
 }
@@ -1322,9 +1322,9 @@ main > .section.sm-center-8 > .default-content-wrapper {
 
 /* P2d (R-40): on news-detail the hero carousel is NOT the first element (publish date + event-location
    rows precede it), so the live .g-header keeps its 10px margin-bottom; the foundation rule
-   `body:has(main .hero-carousel) header { margin-bottom: 0 }` targets autocarousel-first pages only.
+   `body:has(main .hero-carousel-corp) header { margin-bottom: 0 }` targets autocarousel-first pages only.
    Measured: live publish date y 147 vs EDS 137 at 1440 (boots-innovation). */
-body.news-detail:has(main .hero-carousel) header {
+body.news-detail:has(main .hero-carousel-corp) header {
   margin-bottom: var(--corp-header-gap);
 }
 

@@ -1,5 +1,5 @@
 /*
- * news-headline — the news-detail article head: the live c-largeheadline (.h1-title)
+ * news-headline-corp — the news-detail article head: the live c-largeheadline (.h1-title)
  * followed by the c-publish-date / c-event-location-properties row. Template-slotted,
  * single-column rows:
  *   1 headline (<h1>)
@@ -29,19 +29,19 @@ export default function decorate(block) {
   if (rows.length === 1 && heading) {
     // single-cell authoring: the heading is the title, whatever follows is the date
     title = document.createElement('div');
-    title.className = 'news-headline-title';
+    title.className = 'news-headline-corp-title';
     title.append(heading);
-    date = slot(cells[0], 'news-headline-date');
+    date = slot(cells[0], 'news-headline-corp-date');
   } else {
-    if (cells[0]) title = slot(cells[0], 'news-headline-title');
-    if (cells[1]) date = slot(cells[1], 'news-headline-date');
-    if (cells[2]) location = slot(cells[2], 'news-headline-location');
+    if (cells[0]) title = slot(cells[0], 'news-headline-corp-title');
+    if (cells[1]) date = slot(cells[1], 'news-headline-corp-date');
+    if (cells[2]) location = slot(cells[2], 'news-headline-corp-location');
   }
   rows.forEach((row) => row.remove());
 
   if (title) block.append(title);
   const meta = document.createElement('div');
-  meta.className = 'news-headline-meta';
+  meta.className = 'news-headline-corp-meta';
   [date, location]
     .filter((part) => part && part.textContent.trim())
     .forEach((part) => meta.append(part));

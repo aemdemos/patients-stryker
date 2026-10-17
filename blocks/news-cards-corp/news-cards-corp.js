@@ -1,5 +1,5 @@
 /*
- * news-cards — the www.stryker.com c-latestnews 4-up on the home page: a row of
+ * news-cards-corp — the www.stryker.com c-latestnews 4-up on the home page: a row of
  * story cards (thumbnail, Egyptienne h3 title, teaser, "Read More" action link)
  * closed by the 1px grey rule (.border-bottom-gold). Reconstructive: one authored
  * row per card.
@@ -152,11 +152,11 @@ async function topUp(block, cards) {
 }
 
 /**
- * @param {Element} block the news-cards block
+ * @param {Element} block the news-cards-corp block
  */
 export default function decorate(block) {
   const cards = [...block.children];
-  block.classList.add(`news-cards-${cards.length}-up`);
+  block.classList.add(`news-cards-corp-${cards.length}-up`);
   cards.forEach((row) => {
     row.classList.add('news-card');
     [...row.children].forEach((cell) => {

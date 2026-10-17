@@ -1,5 +1,5 @@
 /*
- * hero-carousel — the www.stryker.com c-autocarousel page hero: the first slide
+ * hero-carousel-corp — the www.stryker.com c-autocarousel page hero: the first slide
  * visible, no slide rotation (static); a video slide autoplays muted and loops like
  * the live Scene7 hero. It is reconstructive: one authored row per slide.
  *
@@ -36,16 +36,16 @@ function isMediaCell(cell) {
  * @param {Element} slide the slide row
  */
 function decorateSlide(slide) {
-  slide.classList.add('hero-carousel-slide');
+  slide.classList.add('hero-carousel-corp-slide');
   const cells = [...slide.children];
   const media = cells.find(isMediaCell);
   const text = cells.find((cell) => cell !== media);
   if (media) {
-    media.classList.add('hero-carousel-media');
+    media.classList.add('hero-carousel-corp-media');
     const video = media.querySelector('video');
     const poster = media.querySelector('picture img, img');
     if (video) {
-      slide.classList.add('hero-carousel-video');
+      slide.classList.add('hero-carousel-corp-video');
       // live Scene7 hero: `muted autoplay loop preload=auto`, no native controls and
       // no play overlay or control bar (dm-support renders every DM video with them — undo it here)
       video.controls = false;
@@ -64,11 +64,11 @@ function decorateSlide(slide) {
       play();
     }
   }
-  if (text) text.classList.add('hero-carousel-text');
+  if (text) text.classList.add('hero-carousel-corp-text');
 }
 
 /**
- * @param {Element} block the hero-carousel block
+ * @param {Element} block the hero-carousel-corp block
  */
 export default function decorate(block) {
   // Scene7 video links are already native <video> here: scripts.js runs
@@ -79,7 +79,7 @@ export default function decorate(block) {
     if (i > 0) slide.setAttribute('aria-hidden', 'true');
   });
   if (slides[0]) slides[0].classList.add('active');
-  block.classList.add(`hero-carousel-${slides.length}-slides`);
+  block.classList.add(`hero-carousel-corp-${slides.length}-slides`);
   // `copy` variant: the live overlay box geometry is authored as top-N / left-N / width-N
   // classes and the image column as media-left-N / media-width-N (percent of the slide),
   // exposed to the CSS as custom properties

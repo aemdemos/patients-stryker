@@ -69,7 +69,7 @@ body:where(.corp).hcp-banner {
 /* live c-autocarousel pages zero the .g-header 10px gap (autocarousel.min.css L16):
    the hero carousel sits flush under the header, every other page keeps --corp-header-gap
    (C-final — foundation-requests tier2-landing-page / long-page-detail). */
-body:where(.corp):has(main .hero-carousel) header {
+body:where(.corp):has(main .hero-carousel-corp) header {
   margin-bottom: 0;
 }
 
