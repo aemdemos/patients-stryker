@@ -193,49 +193,6 @@ export function loadFooter(doc) {
 }
 
 /**
- * hreflang alternates. The live site emits one <link rel="alternate"> per locale on every
- * page; head.html is shared, so the set is read from the site sheet /hreflang.json (built
- * from the live sets). Pattern rows derive https://www.stryker.com/<cc>/<lang><tail>.html
- * from the locale codes; explicit rows carry "code|href;…".
- */
-async function emitHreflang() {
-  try {
-    if (document.head.querySelector('link[rel="alternate"][hreflang]')) return;
-    const resp = await fetch(`${window.hlx.codeBasePath}/hreflang.json`);
-    if (!resp.ok) return;
-    const { data = [] } = await resp.json();
-    const current = window.location.pathname.replace(/\/index$/, '').replace(/\/$/, '') || '/';
-    const row = data.find((r) => r.path === current);
-    if (!row) return;
-    const frag = document.createDocumentFragment();
-    const add = (hreflang, href) => {
-      const link = document.createElement('link');
-      link.rel = 'alternate';
-      link.hreflang = hreflang;
-      link.href = href;
-      frag.append(link);
-    };
-    if (row.alternates) {
-      row.alternates.split(';').forEach((pair) => {
-        const [code, href] = pair.split('|');
-        if (code && href) add(code, href);
-      });
-    } else if (row.locales) {
-      const tail = row.source || current.replace(/^\/us\/en/, '');
-      row.locales.split(',').forEach((raw) => {
-        const code = raw.trim();
-        const [lang, cc] = code.split('-');
-        if (lang && cc) add(code, `https://www.stryker.com/${cc.toLowerCase()}/${lang.toLowerCase()}${tail}.html`);
-      });
-    }
-    if (row.xdefault) add('x-default', row.xdefault);
-    document.head.append(frag);
-  } catch (e) {
-    // no alternates sheet: nothing to emit
-  }
-}
-
-/**
  * Home JSON-LD: the source home page's only schema is WebSite + SearchAction, emitted here
  * for the home path only. Host-relative via location.origin (repoless-safe).
  */
@@ -259,11 +216,9 @@ function emitHomeJsonLd() {
 }
 
 /**
- * After LCP: head additions (the 16 KB hreflang sheet competed with the hero image when
- * fetched from loadEager).
+ * After LCP: head additions.
  */
 export function loadLazy() {
-  emitHreflang();
   emitHomeJsonLd();
 }
 
