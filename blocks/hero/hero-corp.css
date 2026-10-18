@@ -20,10 +20,15 @@
  * large-header: live c-hero-large-header (procedure pages, Rotator Cuff Repair) — the page
  * title in Futura bold above the hero carousel, flush under the header (the live
  * c-autocarousel pages drop the header gap). Authored as one row holding an h1.
+ *
+ * long-text: live c-longtexthero (Our history) — copy and an image side by side (50/50) in
+ * the page container, the image hidden below 841px (600 here). Authored as two rows in
+ * reading order: | h1 subheading, h2 title?, h3 description?, paragraphs | then | image |;
+ * links are authored plain and render as the live bold body-font text link (<a><b>).
  */
 
 /* the band sits in the page container like any other section content */
-body.corp .hero-container .hero-wrapper:has(> .hero:is(.page-hero, .tagline-band, .large-header)) {
+body.corp .hero-container .hero-wrapper:has(> .hero:is(.page-hero, .tagline-band, .large-header, .long-text)) {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -147,6 +152,63 @@ body.corp .hero.large-header h1 {
   line-height: var(--heading-line-height);
 }
 
+/* ---- long-text ---- */
+body.corp .hero.long-text {
+  display: flow-root; /* the last paragraph's 15px stays inside, as in the live column */
+  min-height: 0;
+  margin-bottom: var(--space-block-l); /* live .page-section margin below 480px (base) */
+  padding: 0;
+}
+
+/* the live image column is hidden-xs */
+body.corp .hero.long-text > div:first-child {
+  display: none;
+}
+
+/* h1 subheading (Futura bold) over the h2 title (Egyptienne light), same size */
+body.corp .hero.long-text :is(h1, h2) {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  color: var(--text-color);
+  font-size: var(--heading-font-size-l); /* live 21px below 480px (base) */
+  line-height: var(--heading-line-height);
+}
+
+body.corp .hero.long-text h1 {
+  font-family: var(--display-font-family-bold);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .hero.long-text h2 {
+  margin-bottom: var(--space-block-l); /* live (empty) h3 description margin */
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+/* h3 description (live h3.description): Egyptienne light, 20px above, 15px below; an empty
+   title or description collapses to the single 20px gap, as live */
+body.corp .hero.long-text h3 {
+  max-width: none;
+  margin: var(--space-block-l) 0 var(--space-block);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m); /* live 17.5px below 480px (base) */
+  font-weight: 500;
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp .hero.long-text p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* live .longtext a > b: links are bold body-font text links (authored as plain links) */
+body.corp .hero.long-text p > a:any-link {
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
 /* from 600 (live 841px): page-hero title half width, tagline-band roomier with a 56px
    message, large-header 21px title, image-slide headline over the image */
 @media (width >= 600px) {
@@ -155,6 +217,41 @@ body.corp .hero.large-header h1 {
   }
 
   body.corp .hero.large-header h1 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  /* long-text: copy left, image right, 50/50 with the live 2 × 15px column gutter */
+  body.corp .hero.long-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: var(--space-inset-l);
+    margin-bottom: var(--space-inset-l);
+  }
+
+  body.corp .hero.long-text > div:first-child {
+    display: block;
+    order: 2;
+  }
+
+  body.corp .hero.long-text picture {
+    position: static;
+    z-index: auto;
+  }
+
+  /* live .img-responsive: fills the column but never scales past its natural width */
+  body.corp .hero.long-text img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  body.corp .hero.long-text :is(h1, h2) {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.corp .hero.long-text h3 {
     font-size: var(--heading-font-size-l);
   }
 
