@@ -1,5 +1,5 @@
 /*
- * corp-tabs — www.stryker.com look of the patients `tabs` block (live c-tabs rail).
+ * tabs-corp — www.stryker.com look of the patients `tabs` block (live c-tabs rail).
  * Loaded by scripts/corp.js on `site: corp` pages only, before the first section shows;
  * every rule repeats the patients selector behind `body.corp`, so it wins whatever the
  * load order. The patients block itself is never edited (sdt-stryker#5).

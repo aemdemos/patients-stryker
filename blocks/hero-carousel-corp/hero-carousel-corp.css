@@ -263,6 +263,13 @@
   font-family: var(--body-font-family);
 }
 
+/* article hero (section style `bleed`, see the overlay rules at the end of the file) */
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
 /* overlay heading scale (live .fontsize-*em on the overlay h1 28px / h2 24.5px) */
 .hero-carousel-corp.copy.h1-1-25 .hero-carousel-corp-text h1 { font-size: 35px; }
 .hero-carousel-corp.copy.h1-1-5 .hero-carousel-corp-text h1 { font-size: 42px; }
@@ -370,5 +377,182 @@
 
   .hero-carousel-corp.copy.light.gold-title .hero-carousel-corp-text h1 {
     color: var(--color-accent);
+  }
+}
+
+/* ---- article hero (section style `bleed`): the c-autocarousel news-article hero — full-bleed
+   image (shown on phone too, unlike the home-page hero) under a c-largeheadline box. Overlay
+   section styles: box-gold, box-white, compact, overlay-left, box-right, cta-right,
+   mobile-slide. The section's own spacing belongs to the page template. ---- */
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-media {
+  display: block;
+}
+
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-slide.active {
+  max-height: none;
+  overflow: visible;
+}
+
+/* the c-largeheadline box over the hero: 20 px padding, 28 px Futura h1 (+ optional lead p) */
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text {
+  box-sizing: border-box;
+  padding: var(--space-block-l);
+}
+
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+/* box-gold (AED): gold box (60 % of the 320 px inset = 53.3 %) under the image on phone,
+   5 % / 5 % / 54 % over it from 841 px */
+main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text {
+  position: static;
+  width: 53.3%;
+  margin: 0 0 0 5.5%;
+  background-color: var(--color-accent);
+}
+
+/* box-white (heart): white box over the image, 18 px / 5 % / 90 % on phone (overflows the
+   120 px image like the live page), 27 % / 5 % / 40 % from 841 px */
+main > .section.bleed.box-white .hero-carousel-corp .hero-carousel-corp-text {
+  position: absolute;
+  top: 18px;
+  left: 5%;
+  width: 90%;
+  background-color: var(--color-white);
+}
+
+@media (width >= 900px) {
+  main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 54%;
+    margin: 0;
+  }
+
+  /* the AED headline wraps a .fontsize-3vw span: 43.2 px, 4 lines = 173 px → line-height 1 */
+  main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text h1 {
+    font-size: 3vw;
+    line-height: 1;
+  }
+
+  main > .section.bleed.box-white .hero-carousel-corp .hero-carousel-corp-text {
+    top: 27%;
+    width: 40%;
+  }
+}
+
+/* compact: .fontsize-3vw headline; the Futura line is <strong>, the serif tail plain text */
+main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: 6vw;
+  font-weight: 500;
+  line-height: var(--heading-line-height-hero);
+}
+
+main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 :is(strong, em) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 strong {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+/* overlay-left: the 2vw tail (4vw on phone) under the 3vw Futura line */
+main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
+  font-size: 4vw;
+}
+
+main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
+  font-size: 6vw;
+}
+
+/* phone geometry shared by the boxed / boxless overlays: 18 px / 5 % / 90 % over the image */
+main > .section.bleed:is(.overlay-left, .box-right, .cta-right) .hero-carousel-corp .hero-carousel-corp-text {
+  position: absolute;
+  top: 18px;
+  left: 5%;
+  width: 90%;
+  padding: 0;
+  background-color: transparent;
+}
+
+main > .section.bleed.box-right .hero-carousel-corp .hero-carousel-corp-text {
+  padding: 0 var(--space-block-l);
+  background-color: var(--color-white);
+}
+
+/* cta-only overlay: the empty two-paragraph .line1 (58 px) + 20 px above the button */
+main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text {
+  padding-top: 78px;
+}
+
+main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text p.button-wrapper {
+  margin: 0;
+}
+
+/* mobile-slide: the media cell's second picture is the live mobile fragment */
+main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:first-of-type {
+  display: none;
+}
+
+@media (width >= 900px) {
+  main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 {
+    font-size: 3vw;
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
+    font-size: 2vw;
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
+    font-size: 3vw;
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text {
+    top: 10%;
+    left: 5%;
+    width: 39%;
+  }
+
+  main > .section.bleed.box-right .hero-carousel-corp .hero-carousel-corp-text {
+    top: 23%;
+    left: 58%;
+    width: 39%;
+    padding: var(--space-block-l);
+  }
+
+  main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text {
+    top: 30%;
+    left: 57%;
+    width: 38%;
+    padding-top: 68.5px; /* two empty paragraphs (38.5) + the largeheadline's 30 px margin */
+  }
+
+  main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:first-of-type {
+    display: block;
+  }
+
+  main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:nth-of-type(2) {
+    display: none;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1,
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
+    font-size: min(3vw, 42px);
+  }
+
+  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
+    font-size: min(2vw, var(--heading-font-size-xxl));
   }
 }
