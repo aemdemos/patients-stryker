@@ -12,7 +12,7 @@
  * image-slide: live single-slide c-autocarousel (ASC resource center) — a full-width image
  * with a c-largeheadline overlay. Authored as | image | h1 + p |: the h1 is line1, the p
  * line2; bold = Futura bold, bold + italic = gold, plain = Egyptienne light. Below 841px
- * (600 here) the live slide hides the image and stacks the headline (mobile_Bottom).
+ * (600 here) the headline stacks under the full-width image (mobile_Bottom).
  *
  * tagline-band: live c-tagline (Contact) — a gold band in the page container holding a
  * Futura bold h1 title and an Egyptienne light h2 message. Authored as one row: h1 + h2.
@@ -56,9 +56,16 @@ body.corp .hero.image-slide {
   padding: 0;
 }
 
-/* below 600 the live slide hides its image */
-body.corp .hero.image-slide > div:first-child {
-  display: none;
+/* the full-width slide image (live 1440x520) sets its own height; below 600 the
+   headline stacks under it (live mobile_Bottom) */
+body.corp .hero.image-slide picture {
+  position: static;
+  z-index: auto;
+}
+
+body.corp .hero.image-slide img {
+  display: block;
+  height: auto;
 }
 
 body.corp .hero.image-slide > div:last-child {
@@ -74,6 +81,7 @@ body.corp .hero.image-slide h1 {
   font-size: var(--corp-image-slide-title-size-s);
   font-weight: 400;
   line-height: var(--corp-image-slide-title-line-height);
+  translate: 0 var(--corp-image-slide-title-shift); /* paint only: the line boxes keep the live spacing */
 }
 
 body.corp .hero.image-slide :is(h1, p) strong {
@@ -81,14 +89,14 @@ body.corp .hero.image-slide :is(h1, p) strong {
   font-weight: var(--font-weight-bold);
 }
 
-/* line2. The live copy is #edeeec even where the stack sits on white below 841px; it keeps
-   the text colour there (contrast) and turns light only over the image */
+/* line2: the live #edeeec at every width — also on the white mobile stack below 841px */
 body.corp .hero.image-slide p {
   margin: 0;
-  color: var(--text-color);
+  color: var(--color-surface);
   font-family: var(--heading-font-family);
+  padding-bottom: max(var(--corp-image-slide-copy-foot-s), var(--corp-image-slide-copy-foot));
   font-size: var(--corp-image-slide-copy-size-s);
-  line-height: max(var(--corp-image-slide-copy-strut), calc(var(--corp-image-slide-copy-line-height) * 1em));
+  line-height: max(var(--corp-image-slide-copy-line-height-s), calc(var(--corp-image-slide-copy-line-height) * 1em));
 }
 
 /* ---- tagline-band ---- */
@@ -143,21 +151,6 @@ body.corp .hero.tagline-band h2 {
     margin-bottom: var(--space-inset-l);
   }
 
-  body.corp .hero.image-slide > div:first-child {
-    display: block;
-  }
-
-  /* the image sets the slide height (live 1440x520 slide, full width) */
-  body.corp .hero.image-slide picture {
-    position: static;
-    z-index: auto;
-  }
-
-  body.corp .hero.image-slide img {
-    display: block;
-    height: auto;
-  }
-
   body.corp .hero.image-slide > div:last-child {
     position: absolute;
     top: var(--corp-image-slide-copy-top);
@@ -171,7 +164,7 @@ body.corp .hero.tagline-band h2 {
   }
 
   body.corp .hero.image-slide p {
-    color: var(--color-surface);
+    padding-bottom: var(--corp-image-slide-copy-foot);
     font-size: min(var(--corp-image-slide-copy-size), var(--heading-font-size-xxl));
     line-height: var(--corp-image-slide-copy-line-height);
   }

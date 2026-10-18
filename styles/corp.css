@@ -34,8 +34,14 @@
   --corp-image-slide-copy-size-s: 4vw; /* .fontsize-2vw, doubled below 841px */
   --corp-image-slide-copy-size: 2vw; /* .fontsize-2vw (capped by --heading-font-size-xxl) */
   --corp-image-slide-title-line-height: 1.65; /* measured: 81px line box at 49px */
-  --corp-image-slide-copy-line-height: 1.5; /* measured: 84px for two lines at 28px */
-  --corp-image-slide-copy-strut: 30px; /* the live 21px/30px line wrapper below 841px */
+  --corp-image-slide-title-shift: -0.15em; /* the live line1 glyphs sit 0.15em high in their line box (21px strut) */
+
+  /* line2: the live 21px/30px wrapper pulls the second line up; a tighter line pitch plus
+     a foot reproduces the live glyph positions and the 2-line box (84px at 28px, 60px at 15px) */
+  --corp-image-slide-copy-line-height: 1.36;
+  --corp-image-slide-copy-foot: 0.28em;
+  --corp-image-slide-copy-line-height-s: 27.5px; /* below 600 (floor of max(27.5px, 1.36em)) */
+  --corp-image-slide-copy-foot-s: 5px;
   --corp-image-slide-copy-top: 35%; /* live .overlayparsys inline top */
   --corp-image-slide-copy-inset: 10%; /* live .overlayparsys margin-left (and right) */
 
