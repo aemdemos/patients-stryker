@@ -39,6 +39,10 @@
   --corp-image-slide-copy-top: 35%; /* live .overlayparsys inline top */
   --corp-image-slide-copy-inset: 10%; /* live .overlayparsys margin-left (and right) */
 
+  /* hero (tagline-band): live c-tagline gold .m-banner-simple (Contact) */
+  --corp-tagline-band-inset: 9%; /* live banner padding-inline (9% of the band) */
+  --corp-tagline-band-message-size: 56px; /* live .banner-message h2 from 841px (28px below) */
+
   /* stardust contract aliases of the existing brand tokens (new names only — no
      renames, no deletions; values stay the ones measured on patients-stryker) */
   --corp-color-brand-primary: var(--color-accent); /* gold */

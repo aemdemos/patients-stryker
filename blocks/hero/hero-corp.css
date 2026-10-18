@@ -13,10 +13,13 @@
  * with a c-largeheadline overlay. Authored as | image | h1 + p |: the h1 is line1, the p
  * line2; bold = Futura bold, bold + italic = gold, plain = Egyptienne light. Below 841px
  * (600 here) the live slide hides the image and stacks the headline (mobile_Bottom).
+ *
+ * tagline-band: live c-tagline (Contact) — a gold band in the page container holding a
+ * Futura bold h1 title and an Egyptienne light h2 message. Authored as one row: h1 + h2.
  */
 
 /* the band sits in the page container like any other section content */
-body.corp .hero-container .hero-wrapper:has(> .hero.page-hero) {
+body.corp .hero-container .hero-wrapper:has(> .hero:is(.page-hero, .tagline-band)) {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -88,8 +91,45 @@ body.corp .hero.image-slide p {
   line-height: max(var(--corp-image-slide-copy-strut), calc(var(--corp-image-slide-copy-line-height) * 1em));
 }
 
-/* from 600 (live: the slide image shows from 841px): the headline overlays the image */
+/* ---- tagline-band ---- */
+body.corp .hero.tagline-band {
+  min-height: 0;
+  margin-bottom: var(--space-block-l); /* live .page-section margin below 841px */
+  padding: var(--space-block-s) var(--corp-tagline-band-inset);
+  background: var(--color-accent);
+}
+
+body.corp .hero.tagline-band h1 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  color: var(--text-color);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .hero.tagline-band h2 {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+}
+
+/* from 600 (live 841px): page-hero title half width, tagline-band roomier with a 56px
+   message, image-slide headline over the image */
 @media (width >= 600px) {
+  body.corp .hero.tagline-band {
+    margin-bottom: var(--space-inset-l); /* live .page-section margin from 841px */
+    padding-block: var(--space-block-l);
+  }
+
+  body.corp .hero.tagline-band h2 {
+    font-size: var(--corp-tagline-band-message-size);
+  }
+
   body.corp .hero.page-hero {
     margin-bottom: var(--space-inset-l); /* live .page-section margin from 841px */
   }
