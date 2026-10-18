@@ -242,13 +242,16 @@ header.header-corp-wrapper {
   display: none;
 }
 
+/* the band's page container clears the floated nav rows above it */
+.header-corp > .container:has(> .hcp-band) {
+  clear: both;
+}
+
 body.hcp-banner .header-corp .hcp-band {
   display: block;
-  clear: both;
-  width: 100%;
   min-height: 50px;
   margin-top: var(--space-block-l);
-  padding: 16px var(--space-block-l) 1px;
+  padding: var(--corp-hcp-band-padding-top) var(--space-block-l) 1px;
   background: var(--color-white);
 }
 
@@ -258,7 +261,7 @@ body.hcp-banner .header-corp .hcp-band {
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
   font-weight: 500;
-  line-height: var(--heading-line-height);
+  line-height: var(--corp-hcp-band-line-height-s);
   text-align: right;
 }
 
@@ -274,6 +277,7 @@ body.hcp-banner .header-corp .hcp-band {
 @media (width >= 600px) {
   .header-corp .hcp-band p {
     font-size: var(--body-font-size-xl);
+    line-height: var(--heading-line-height);
   }
 }
 

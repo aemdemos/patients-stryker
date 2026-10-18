@@ -18,7 +18,6 @@
 .columns-corp .columns-img-col {
   margin-bottom: var(--space-section);
   padding-bottom: 3%;
-  line-height: 0; /* no text line box under the image */
 }
 
 .columns-corp .columns-img-col img {
