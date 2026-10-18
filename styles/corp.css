@@ -166,12 +166,6 @@ body:where(.corp):has(main .hero-carousel) header {
   color: var(--color-white);
 }
 
-/* card / tile titles that are links keep the heading colour */
-:where(body.corp) main .columns-corp :is(h2, h3, h4) > a:any-link {
-  color: inherit;
-  text-decoration: none;
-}
-
 :where(body.corp) main > .section.bg-dark-gray a:any-link {
   color: var(--color-white);
 }
