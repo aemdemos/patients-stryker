@@ -8,6 +8,11 @@
  * title band in the page container. Authored as one row holding an h1; the authoring
  * conventions style it: whole heading underlined = the 1px rule under the band (live
  * .border-bottom-gold), heading bold + italic = gold title (live color #ffb500).
+ *
+ * image-slide: live single-slide c-autocarousel (ASC resource center) — a full-width image
+ * with a c-largeheadline overlay. Authored as | image | h1 + p |: the h1 is line1, the p
+ * line2; bold = Futura bold, bold + italic = gold, plain = Egyptienne light. Below 841px
+ * (600 here) the live slide hides the image and stacks the headline (mobile_Bottom).
  */
 
 /* the band sits in the page container like any other section content */
@@ -41,7 +46,49 @@ body.corp .hero.page-hero h1 {
   line-height: var(--corp-page-hero-title-line-height-s);
 }
 
-/* from 600 (live col-sm-6 from 841px): the title takes the left half of the band */
+/* ---- image-slide ---- */
+body.corp .hero.image-slide {
+  min-height: 0;
+  margin-bottom: var(--space-block-l); /* live .page-section margin below 841px */
+  padding: 0;
+}
+
+/* below 600 the live slide hides its image */
+body.corp .hero.image-slide > div:first-child {
+  display: none;
+}
+
+body.corp .hero.image-slide > div:last-child {
+  padding: 0 var(--space-block-l) var(--space-block-l); /* live mobile_Bottom overlay padding + 20px slide foot */
+}
+
+/* line1: Egyptienne light running face; its bold (+ italic = gold) run is Futura bold */
+body.corp .hero.image-slide h1 {
+  max-width: none;
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--corp-image-slide-title-size-s);
+  font-weight: 400;
+  line-height: var(--corp-image-slide-title-line-height);
+}
+
+body.corp .hero.image-slide :is(h1, p) strong {
+  font-family: var(--display-font-family-bold);
+  font-weight: var(--font-weight-bold);
+}
+
+/* line2. The live copy is #edeeec even where the stack sits on white below 841px; it keeps
+   the text colour there (contrast) and turns light only over the image */
+body.corp .hero.image-slide p {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--corp-image-slide-copy-size-s);
+  line-height: max(var(--corp-image-slide-copy-strut), calc(var(--corp-image-slide-copy-line-height) * 1em));
+}
+
+/* from 600 (live: the slide image shows from 841px): the headline overlays the image */
 @media (width >= 600px) {
   body.corp .hero.page-hero {
     margin-bottom: var(--space-inset-l); /* live .page-section margin from 841px */
@@ -50,5 +97,42 @@ body.corp .hero.page-hero h1 {
   body.corp .hero.page-hero h1 {
     width: calc(50% - var(--container-gutter));
     line-height: var(--heading-line-height);
+  }
+
+  body.corp .hero.image-slide {
+    margin-bottom: var(--space-inset-l);
+  }
+
+  body.corp .hero.image-slide > div:first-child {
+    display: block;
+  }
+
+  /* the image sets the slide height (live 1440x520 slide, full width) */
+  body.corp .hero.image-slide picture {
+    position: static;
+    z-index: auto;
+  }
+
+  body.corp .hero.image-slide img {
+    display: block;
+    height: auto;
+  }
+
+  body.corp .hero.image-slide > div:last-child {
+    position: absolute;
+    top: var(--corp-image-slide-copy-top);
+    left: var(--corp-image-slide-copy-inset);
+    width: calc(100% - 2 * var(--corp-image-slide-copy-inset));
+    padding: 0;
+  }
+
+  body.corp .hero.image-slide h1 {
+    font-size: min(var(--corp-image-slide-title-size), var(--heading-font-size-hero-xl));
+  }
+
+  body.corp .hero.image-slide p {
+    color: var(--color-surface);
+    font-size: min(var(--corp-image-slide-copy-size), var(--heading-font-size-xxl));
+    line-height: var(--corp-image-slide-copy-line-height);
   }
 }

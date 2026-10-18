@@ -22,9 +22,22 @@
      event-detail, specialty, tier2-b). */
   --corp-header-gap: 10px; /* live .g-header margin-bottom (components.min.css L1091) */
   --corp-hcp-band-height: 114px;
+  --corp-hcp-band-padding-top: 16px; /* live .g-hcpbanner padding-top (header-corp HCP band) */
+  --corp-hcp-band-line-height-s: 1.2; /* measured: the live two-line h3 box (47px at 17.5px) below 841px */
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour the live corp forms keep */
   --corp-page-hero-title-offset: 28px; /* live .c-page-hero h1 margin-top (hero top → title) */
   --corp-page-hero-title-line-height-s: 22.26px; /* live c-page-hero h1 line-height below 841px */
+
+  /* hero (image-slide): live single-slide c-autocarousel + c-largeheadline overlay */
+  --corp-image-slide-title-size-s: 7vw; /* .fontsize-3-5-vw, doubled below 841px */
+  --corp-image-slide-title-size: 3.5vw; /* .fontsize-3-5-vw (capped by --heading-font-size-hero-xl) */
+  --corp-image-slide-copy-size-s: 4vw; /* .fontsize-2vw, doubled below 841px */
+  --corp-image-slide-copy-size: 2vw; /* .fontsize-2vw (capped by --heading-font-size-xxl) */
+  --corp-image-slide-title-line-height: 1.65; /* measured: 81px line box at 49px */
+  --corp-image-slide-copy-line-height: 1.5; /* measured: 84px for two lines at 28px */
+  --corp-image-slide-copy-strut: 30px; /* the live 21px/30px line wrapper below 841px */
+  --corp-image-slide-copy-top: 35%; /* live .overlayparsys inline top */
+  --corp-image-slide-copy-inset: 10%; /* live .overlayparsys margin-left (and right) */
 
   /* stardust contract aliases of the existing brand tokens (new names only — no
      renames, no deletions; values stay the ones measured on patients-stryker) */
@@ -70,8 +83,9 @@ body:where(.corp).hcp-banner {
 
 /* live c-autocarousel pages zero the .g-header 10px gap (autocarousel.min.css L16):
    the hero carousel sits flush under the header, every other page keeps --corp-header-gap
-   (C-final — foundation-requests tier2-landing-page / long-page-detail). */
-body:where(.corp):has(main .hero-carousel-corp) header {
+   (C-final — foundation-requests tier2-landing-page / long-page-detail). A hero (image-slide)
+   opening the page is the same single-slide c-autocarousel (ASC resource center). */
+body:where(.corp):has(main .hero-carousel-corp, main > .section:first-child .hero.image-slide) header {
   margin-bottom: 0;
 }
 
