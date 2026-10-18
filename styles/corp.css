@@ -23,6 +23,8 @@
   --corp-header-gap: 10px; /* live .g-header margin-bottom (components.min.css L1091) */
   --corp-hcp-band-height: 114px;
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour the live corp forms keep */
+  --corp-page-hero-title-offset: 28px; /* live .c-page-hero h1 margin-top (hero top → title) */
+  --corp-page-hero-title-line-height-s: 22.26px; /* live c-page-hero h1 line-height below 841px */
 
   /* stardust contract aliases of the existing brand tokens (new names only — no
      renames, no deletions; values stay the ones measured on patients-stryker) */

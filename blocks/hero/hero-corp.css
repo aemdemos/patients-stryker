@@ -1,0 +1,54 @@
+/*
+ * hero-corp — www.stryker.com look of the patients `hero` block.
+ * Loaded by scripts/corp.js on `site: corp` pages only; every rule repeats the patients
+ * selector behind `body.corp`, so it wins whatever the load order. The patients block
+ * itself is never edited.
+ *
+ * page-hero: live c-page-hero (SVIN Annual Meeting, Security advisories) — a text-only
+ * title band in the page container. Authored as one row holding an h1; the authoring
+ * conventions style it: whole heading underlined = the 1px rule under the band (live
+ * .border-bottom-gold), heading bold + italic = gold title (live color #ffb500).
+ */
+
+/* the band sits in the page container like any other section content */
+body.corp .hero-container .hero-wrapper:has(> .hero.page-hero) {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+body.corp .hero.page-hero {
+  min-height: 0;
+  margin-bottom: var(--space-block-l); /* live .page-section margin below 841px */
+  padding: 0;
+}
+
+/* the underline rule spans the band (live .c-page-hero-content), not just the title */
+body.corp .hero.page-hero:has(h1.underline) {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+/* title: Futura bold 28px, 28px from the band top, 15px above the rule */
+body.corp .hero.page-hero h1 {
+  max-width: none;
+  margin: 0;
+  border-bottom: 0;
+  padding: var(--corp-page-hero-title-offset) 0 var(--space-block);
+  color: var(--text-color);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-page-hero-title-line-height-s);
+}
+
+/* from 600 (live col-sm-6 from 841px): the title takes the left half of the band */
+@media (width >= 600px) {
+  body.corp .hero.page-hero {
+    margin-bottom: var(--space-inset-l); /* live .page-section margin from 841px */
+  }
+
+  body.corp .hero.page-hero h1 {
+    width: calc(50% - var(--container-gutter));
+    line-height: var(--heading-line-height);
+  }
+}
