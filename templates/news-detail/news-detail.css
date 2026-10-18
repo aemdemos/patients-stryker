@@ -591,16 +591,6 @@ main > .section.lead > .default-content-wrapper p sup {
    line-height 1.35 (components.min.css). Bootstrap cols split from 768 px; the frozen columns
    block goes side by side from 600 px — the cell ratios below use the block's breakpoint. */
 
-main > .section:is(.cols-6-6, .cols-8-4) > .video-wrapper .video {
-  margin-bottom: var(--space-block-l); /* c-standalone-video .video-content margin + page-section */
-}
-
-@media (width >= 600px) {
-  main > .section:is(.cols-6-6, .cols-8-4) > .video-wrapper .video {
-    margin-bottom: var(--space-inset-l);
-  }
-}
-
 @media (width >= 900px) {
   main > .section.cols-6-6:has(> div + div) > div {
     flex: 0 0 50%;
