@@ -422,8 +422,17 @@ function hlsDuration(src) {
  */
 export function renderVideo(src, label) {
   const url = new URL(src, window.location.href);
-  const poster = url.searchParams.get('poster');
+  let poster = url.searchParams.get('poster');
   if (poster) url.searchParams.delete('poster');
+  // a poster URL with its own query (`…/image?fit=constrain,1&wid=909&hei=511`) is
+  // authored unencoded, so its `&wid…` params split off as video params: when the
+  // poster value has a `?`, everything after `poster=` belongs to the poster
+  if (poster?.includes('?')) {
+    const at = src.search(/[?&]poster=/);
+    poster = src.slice(src.indexOf('=', at) + 1);
+    const rest = new URL(src.slice(0, at), window.location.href);
+    url.search = rest.search;
+  }
   const mediaSrc = url.toString();
 
   const video = document.createElement('video');
