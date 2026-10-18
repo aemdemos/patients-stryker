@@ -16,10 +16,14 @@
  *
  * tagline-band: live c-tagline (Contact) — a gold band in the page container holding a
  * Futura bold h1 title and an Egyptienne light h2 message. Authored as one row: h1 + h2.
+ *
+ * large-header: live c-hero-large-header (procedure pages, Rotator Cuff Repair) — the page
+ * title in Futura bold above the hero carousel, flush under the header (the live
+ * c-autocarousel pages drop the header gap). Authored as one row holding an h1.
  */
 
 /* the band sits in the page container like any other section content */
-body.corp .hero-container .hero-wrapper:has(> .hero:is(.page-hero, .tagline-band)) {
+body.corp .hero-container .hero-wrapper:has(> .hero:is(.page-hero, .tagline-band, .large-header)) {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
@@ -126,9 +130,34 @@ body.corp .hero.tagline-band h2 {
   line-height: var(--heading-line-height);
 }
 
+/* ---- large-header: h1 + its 15px margin, then the carousel's .page-section margin ---- */
+body.corp .hero.large-header {
+  min-height: 0;
+  margin-bottom: var(--space-block-l); /* live .page-section margin below 480px (base) */
+  padding: 0;
+}
+
+body.corp .hero.large-header h1 {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  color: var(--text-color);
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-m); /* live 17.5px below 480px (base) */
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
 /* from 600 (live 841px): page-hero title half width, tagline-band roomier with a 56px
-   message, image-slide headline over the image */
+   message, large-header 21px title, image-slide headline over the image */
 @media (width >= 600px) {
+  body.corp .hero.large-header {
+    margin-bottom: var(--space-inset-l);
+  }
+
+  body.corp .hero.large-header h1 {
+    font-size: var(--heading-font-size-l);
+  }
+
   body.corp .hero.tagline-band {
     margin-bottom: var(--space-inset-l); /* live .page-section margin from 841px */
     padding-block: var(--space-block-l);

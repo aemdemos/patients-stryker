@@ -94,8 +94,9 @@ body:where(.corp).hcp-banner {
 /* live c-autocarousel pages zero the .g-header 10px gap (autocarousel.min.css L16):
    the hero carousel sits flush under the header, every other page keeps --corp-header-gap
    (C-final — foundation-requests tier2-landing-page / long-page-detail). A hero (image-slide)
-   opening the page is the same single-slide c-autocarousel (ASC resource center). */
-body:where(.corp):has(main .hero-carousel-corp, main > .section:first-child .hero.image-slide) header {
+   or (large-header) opening the page sits on the same c-autocarousel / hero-large-carousel
+   pages (ASC resource center, Rotator Cuff Repair). */
+body:where(.corp):has(main .hero-carousel-corp, main > .section:first-child .hero:is(.image-slide, .large-header)) header {
   margin-bottom: 0;
 }
 
