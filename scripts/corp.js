@@ -4,9 +4,8 @@
  * patients-stryker pages never load it and keep the patients code path unchanged.
  *
  * scripts.js calls in:
- *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/corp-base.css,
- *                           styles/corp.css and the <block>-corp.css overlays of reused
- *                           patients blocks
+ *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/corp.css
+ *                           and the <block>-corp.css overlays of reused patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
  *   loadTemplate(name)      corp templates are CSS-only
  *   loadFirstSections(main) instead of loading the first section eagerly
@@ -41,12 +40,9 @@ export async function loadEager(doc) {
     doc.body.classList.add('hcp-banner');
   }
   const base = window.hlx.codeBasePath;
-  // link order is cascade order: the patients rules corp was built on, then corp's own
   await Promise.all([
-    loadCSS(`${base}/styles/corp-base.css`),
     loadCSS(`${base}/styles/corp.css`),
-    // corp look of the reused patients blocks: all of them up front, so blocks that arrive
-    // later (fragments, auto-blocks) are styled too (sdt-stryker#5)
+    // all overlays up front, so blocks that arrive later (fragments, auto-blocks) are styled too
     ...CORP_BLOCK_STYLES.map((name) => loadCSS(`${base}/blocks/${name}/${name}-corp.css`)),
   ]);
 }
@@ -97,11 +93,7 @@ function buildVideoAutoBlocks(main) {
  */
 export function decorateMain(main) {
   previewDMLinkEditors();
-  try {
-    buildVideoAutoBlocks(main);
-  } catch {
-    // a malformed link leaves the paragraph as authored; decoration carries on
-  }
+  buildVideoAutoBlocks(main);
 }
 
 /**
@@ -156,15 +148,14 @@ export function loadHeader(doc) {
 }
 
 /**
- * Back-to-top control (live c-back-to-top, components.min.css L1309-1311): a fixed
- * 40px black disc with the strykericons up-chevron, faded in once scrollY >= 500
- * (motion-observe). Built here, outside <main>, so it is never page content.
+ * Back-to-top control: a fixed round button, shown once the page is scrolled 500px.
+ * Built outside <main>, so it is never page content.
  * @param {Document} doc The document
  */
 function decorateBackToTop(doc) {
   if (doc.querySelector('.back-to-top')) return;
   const wrap = doc.createElement('div');
-  wrap.className = 'back-to-top u-anim-fadeout';
+  wrap.className = 'back-to-top';
   const cta = doc.createElement('a');
   cta.href = '#';
   cta.className = 'back-to-top-cta';
@@ -175,11 +166,7 @@ function decorateBackToTop(doc) {
   });
   wrap.append(cta);
   doc.body.append(wrap);
-  const update = () => {
-    const on = window.scrollY >= 500;
-    wrap.classList.toggle('u-anim-fadein', on);
-    wrap.classList.toggle('u-anim-fadeout', !on);
-  };
+  const update = () => wrap.classList.toggle('visible', window.scrollY >= 500);
   window.addEventListener('scroll', update, { passive: true });
   update();
 }
@@ -222,31 +209,11 @@ export function loadLazy() {
   emitHomeJsonLd();
 }
 
-/* Normalizes a pathname for comparison against query-index paths */
-function normalizePath(path) {
-  const clean = path.replace(/\.html$/, '').replace(/\/+$/, '');
-  return clean || '/';
-}
-
-const MONTH_YEAR = { year: 'numeric', month: 'long' };
-
-/* The query-index publish timestamp as "<Month>/<Year>"; '' when the page is not indexed. */
-async function getAutoLastModified() {
-  const resp = await fetch(`${window.hlx.codeBasePath}/query-index.json`);
-  if (!resp.ok) return '';
-  const { data = [] } = await resp.json();
-  const current = normalizePath(window.location.pathname);
-  const row = data.find((r) => normalizePath(r.path) === current);
-  const ts = row && Number(row.lastModified);
-  if (!ts) return '';
-  return new Date(ts * 1000).toLocaleDateString('en-US', MONTH_YEAR).replace(' ', '/');
-}
-
 /*
- * The authored `published` metadata (live #publishedDate, e.g. "2026-02", "2026-02-14" or
- * any Date-parsable string) as "<Month>/<Year>"; '' when absent/invalid.
+ * The authored `published` metadata (e.g. "2026-02", "2026-02-14" or any Date-parsable
+ * string) as "<Month>/<Year>"; '' when absent/invalid.
  */
-function getPublishedLastModified() {
+function getPublishedDate() {
   const raw = (getMetadata('published') || '').trim();
   if (!raw) return '';
   const ym = raw.match(/^(\d{4})-(\d{1,2})(?:-\d{1,2})?$/);
@@ -254,33 +221,28 @@ function getPublishedLastModified() {
     ? new Date(Date.UTC(Number(ym[1]), Number(ym[2]) - 1, 1))
     : new Date(raw);
   if (Number.isNaN(date.getTime())) return '';
-  return date.toLocaleDateString('en-US', { ...MONTH_YEAR, timeZone: 'UTC' }).replace(' ', '/');
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', timeZone: 'UTC' }).replace(' ', '/');
 }
 
 /*
- * The "Last Updated" line, as scripts.js decorateLastModified (same `last-updated`
- * bulk-metadata switch and markup), dated from the page's `published` metadata (live
- * "Last Updated <Month>/<Year>") with the query-index timestamp as the fallback.
+ * The "Last Updated <Month>/<Year>" line, shown when the `last-updated` metadata is `show`
+ * and the page has a valid `published` date.
  * @param {Element} main The main element
  */
-export async function decorateLastModified(main) {
-  try {
-    const setting = (getMetadata('last-updated') || '').trim().toLowerCase();
-    if (setting !== 'show') return;
+export function decorateLastModified(main) {
+  const setting = (getMetadata('last-updated') || '').trim().toLowerCase();
+  if (setting !== 'show') return;
 
-    const formatted = getPublishedLastModified() || await getAutoLastModified();
-    if (!formatted) return;
+  const formatted = getPublishedDate();
+  if (!formatted) return;
 
-    const section = document.createElement('div');
-    section.className = 'section last-modified-section';
-    const wrapper = document.createElement('div');
-    const p = document.createElement('p');
-    p.className = 'last-modified';
-    p.textContent = `Last Updated ${formatted}`;
-    wrapper.append(p);
-    section.append(wrapper);
-    main.append(section);
-  } catch (e) {
-    // do nothing — the last-modified line is non-critical
-  }
+  const section = document.createElement('div');
+  section.className = 'section last-modified-section';
+  const wrapper = document.createElement('div');
+  const p = document.createElement('p');
+  p.className = 'last-modified';
+  p.textContent = `Last Updated ${formatted}`;
+  wrapper.append(p);
+  section.append(wrapper);
+  main.append(section);
 }

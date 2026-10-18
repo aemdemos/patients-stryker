@@ -25,6 +25,22 @@
   margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
 }
 
+/* an image-only paragraph has no text line box under the image */
+.columns-corp p:has(> picture:only-child, > a:only-child > picture:only-child) {
+  line-height: 0;
+}
+
+/* titles that are links keep the heading colour */
+.columns-corp :is(h2, h3, h4) > a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* section style `strong-futura`: bold copy in Futura */
+.section.strong-futura .columns-corp p strong {
+  font-family: var(--display-font-family);
+}
+
 .columns-corp h4 {
   font-size: var(--heading-font-size-ml);
   line-height: var(--heading-line-height-ml);
