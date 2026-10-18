@@ -710,27 +710,6 @@ main > .section.img-natural > .default-content-wrapper p:has(> picture:only-chil
   max-width: 100%;
 }
 
-/* c-accordion in the article body: .panel-title a padding 10px 0 in a 17.5 px / 1.15 h4 with its
-   15 px margin, 1 px rule, 20 px block padding (boots: 76 px closed row) */
-main > .section > .accordion-corp-wrapper .accordion-corp .accordion-item-label {
-  margin-bottom: var(--space-block);
-  padding: var(--space-block-s) 0;
-}
-
-main > .section > .accordion-corp-wrapper .accordion-corp .accordion-item-label::after {
-  margin-right: var(--space-block-xs);
-}
-
-main > .section > .accordion-corp-wrapper .accordion-corp {
-  padding-bottom: var(--space-block-l);
-}
-
-/* marketo-form inside a 12/12 block fills the container (the block centres itself at 900 px) */
-main > .section.grid-12 > .marketo-form-wrapper .marketo-form {
-  max-width: none;
-  margin-inline: 0;
-}
-
 /* the hairline above is 1 px (0.01 px rounds to 0 in Chrome's layout grid and the margin collapses
    out); a bleed carousel and the headline slot keep their own .page-section padding before a gap
    (measured: heart carousel → 2-blank gap at 785 px, Emily slot → 69 px gap at 383 px) */
