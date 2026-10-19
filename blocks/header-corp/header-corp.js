@@ -270,9 +270,10 @@ export default async function decorate(block) {
 
   // HCP notice band (visible only on body.hcp-banner pages)
   if (hcp && hcp.textContent.trim()) {
-    const band = el('div', 'hcp-band');
-    band.append(moveChildren(hcp, el('div', 'container')));
-    block.append(band);
+    // the band sits inside its own page container
+    const bandContainer = el('div', 'container');
+    bandContainer.append(moveChildren(hcp, el('div', 'hcp-band')));
+    block.append(bandContainer);
   }
 
   wireBehaviour(block);

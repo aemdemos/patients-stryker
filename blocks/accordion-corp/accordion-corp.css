@@ -1,0 +1,105 @@
+.accordion-corp {
+  --accordion-corp-label-gap: 16px;
+  --accordion-corp-body-padding: 18px;
+  --accordion-corp-panels-padding-bottom: 16px;
+
+  padding-bottom: var(--space-block-l);
+}
+
+.accordion-corp .accordion-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.accordion-corp .accordion-item {
+  margin: 0;
+}
+
+.accordion-corp .accordion-item-label {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--accordion-corp-label-gap);
+  width: 100%;
+  margin: 0 0 var(--space-block);
+  padding: var(--space-block-s) 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-surface-muted);
+  background: none;
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.accordion-corp .accordion-item-label p {
+  margin: 0;
+  line-height: inherit;
+}
+
+.accordion-corp .accordion-item-label::after {
+  content: "+";
+  flex: 0 0 auto;
+  margin-right: var(--space-block-xs);
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+}
+
+@media (width >= 600px) {
+  .accordion-corp .accordion-item-label {
+    font-size: var(--heading-font-size-m);
+  }
+}
+
+.accordion-corp .accordion-item-open .accordion-item-label::after {
+  content: "-";
+}
+
+.accordion-corp .accordion-item-label:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.accordion-corp .accordion-item-body {
+  padding: var(--accordion-corp-body-padding) 0;
+  border-bottom: 1px solid var(--color-surface-muted);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.accordion-corp .accordion-item-body ul {
+  padding-left: var(--list-indent);
+  list-style: disc outside;
+}
+
+.accordion-corp .accordion-item-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* a heading in the label cell takes the button's type, without its own margins */
+.accordion-corp .accordion-item-label :is(h1, h2, h3, h4, h5, h6, p) {
+  margin: 0;
+  font: inherit;
+  line-height: inherit;
+}
+
+/* `panels` variant: separate panels with a gap between them */
+.accordion-corp.panels .accordion-item + .accordion-item {
+  margin-top: var(--space-block);
+}
+
+.accordion-corp.panels .accordion-list {
+  margin-bottom: var(--space-block-l);
+}
+
+.accordion-corp.panels {
+  padding-bottom: var(--accordion-corp-panels-padding-bottom);
+}

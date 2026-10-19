@@ -1,0 +1,97 @@
+/*
+ * marketo-form-corp — corp look of the patients `marketo-form` block, over Marketo's
+ * injected markup and theme. Loaded by scripts/corp.js on `site: corp` pages only; every
+ * rule repeats the patients selector behind `body.corp`, so it wins whatever the load
+ * order. Marketo's camelCase class names are matched with [class~="…"] selectors.
+ */
+
+body.corp .marketo-form {
+  --marketo-form-corp-row-max-width: 900px;
+  --marketo-form-corp-label-padding-top: 4.2px;
+  --marketo-form-corp-captcha-height: 40px;
+
+  /* the form fills its column; only the rows are capped (centred) */
+  max-width: none;
+
+  /* no block padding — the section supplies the spacing */
+  padding-block: 0;
+}
+
+body.corp .marketo-form form[class~="mktoForm"] {
+  margin-bottom: var(--space-block-s);
+  line-height: 1.43;
+
+  /* small inset on phones (removed from 600px) */
+  padding: var(--space-block-s);
+}
+
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoFormRow"] {
+  max-width: var(--marketo-form-corp-row-max-width);
+  margin: auto;
+}
+
+/* labels: bold, with a small top padding */
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoLabel"] {
+  line-height: var(--footnote-line-height);
+  font-weight: 700;
+  padding: var(--marketo-form-corp-label-padding-top) 0 0;
+}
+
+/* choice groups contain their floated inputs without clipping them */
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoCheckboxList"],
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoRadioList"] {
+  display: flow-root;
+  overflow: visible;
+}
+
+/* choice labels: bold, in Marketo's theme text colour */
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoCheckboxList"] label,
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoRadioList"] label {
+  font-weight: 700;
+  color: var(--corp-color-marketo-text);
+}
+
+/* links in labels (e.g. Privacy Policy) stay underlined */
+body.corp .marketo-form [class~="mktoForm"] label a:any-link {
+  text-decoration: underline;
+}
+
+/* submit button: regular weight */
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoButtonWrap"][class~="mktoSimple"] [class~="mktoButton"] {
+  font-weight: 400;
+}
+
+/* button row: full width, capped and centred like the field rows */
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoButtonRow"] {
+  display: block;
+  width: 100%;
+  max-width: var(--marketo-form-corp-row-max-width);
+  margin: var(--space-block) auto 0;
+}
+
+/* error message: regular weight */
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoError"] [class~="mktoErrorMsg"] {
+  font-weight: 400;
+}
+
+@media (width >= 600px) {
+  body.corp .marketo-form form[class~="mktoForm"] {
+    padding: 0;
+  }
+}
+
+/* captcha widget row */
+body.corp .marketo-form [class~="mktoForm"] altcha-widget {
+  display: block;
+  min-height: var(--marketo-form-corp-captcha-height);
+  margin-bottom: var(--space-block);
+}
+
+/* the captcha widget is added once its script loads: reserve its space above the
+   button until then */
+body.corp .marketo-form [class~="mktoForm"] [class~="mktoButtonRow"]:not(:has(altcha-widget))::before {
+  content: '';
+  display: block;
+  height: var(--marketo-form-corp-captcha-height);
+  margin-bottom: var(--space-block);
+}

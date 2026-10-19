@@ -1,0 +1,15 @@
+/*
+ * video-corp — corp spacing for the patients `video` block.
+ * Loaded by scripts/corp.js on `site: corp` pages only.
+ */
+
+/* video in a cols-6-6 / cols-8-4 article section: space below the player */
+body.corp main > .section:is(.cols-6-6, .cols-8-4) > .video-wrapper .video {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp main > .section:is(.cols-6-6, .cols-8-4) > .video-wrapper .video {
+    margin-bottom: var(--space-inset-l);
+  }
+}

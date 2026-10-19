@@ -1,0 +1,414 @@
+/* hero-carousel-corp — corp page hero (first slide only). From 900px: a full-width
+   slide image capped at a 3:1 height with the headline over it (top 17% / left 5% /
+   width 47%), an 8vw serif + Futura two-tone headline. Below 900px the image is
+   hidden and only the headline shows. */
+
+.hero-carousel-corp-container > .hero-carousel-corp-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.hero-carousel-corp {
+  --hero-carousel-corp-headline-max: 112px;
+  --hero-carousel-corp-compact-cta-gap: 27px;
+
+  position: relative;
+  width: 100%;
+}
+
+.hero-carousel-corp .hero-carousel-corp-slide {
+  position: relative;
+  display: none;
+}
+
+.hero-carousel-corp .hero-carousel-corp-slide.active {
+  display: block;
+}
+
+.hero-carousel-corp .hero-carousel-corp-media {
+  display: none; /* image hidden below 900px */
+}
+
+.hero-carousel-corp .hero-carousel-corp-media picture,
+.hero-carousel-corp .hero-carousel-corp-media img,
+.hero-carousel-corp .hero-carousel-corp-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-carousel-corp .hero-carousel-corp-media p {
+  margin: 0;
+}
+
+.hero-carousel-corp .hero-carousel-corp-video .hero-carousel-corp-media picture {
+  display: none; /* the poster picture lives on the <video> poster */
+}
+
+.hero-carousel-corp .hero-carousel-corp-media .dm-video-wrapper {
+  width: 100%;
+}
+
+.hero-carousel-corp .hero-carousel-corp-text {
+  position: static;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 var(--space-block-l) calc(2 * var(--space-block-l));
+}
+
+.hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: 16vw; /* twice the desktop 8vw */
+  font-weight: 500;
+  line-height: var(--heading-line-height-hero);
+  color: var(--color-black);
+  overflow-wrap: break-word;
+}
+
+.hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) em {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  color: var(--color-black);
+}
+
+.hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.hero-carousel-corp .hero-carousel-corp-text p {
+  margin: 0 0 var(--space-block);
+}
+
+@media (width >= 900px) {
+  .hero-carousel-corp .hero-carousel-corp-slide.active {
+    max-height: 33.33vw; /* 3:1 slide */
+    overflow: hidden;
+  }
+
+  .hero-carousel-corp .hero-carousel-corp-media {
+    display: block;
+  }
+
+  .hero-carousel-corp .hero-carousel-corp-text {
+    position: absolute;
+    top: 17%;
+    left: 5%;
+    width: 47%;
+    padding: 0;
+  }
+
+  .hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
+    font-size: 8vw;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
+    font-size: min(8vw, var(--hero-carousel-corp-headline-max));
+  }
+}
+
+/* ---- block variants ----
+   `split`: image in the right half, text over the left (top 3% / left 5% / width 45%) —
+   gold Futura h1, serif h2, body copy and a CTA. Below 900px the image stays visible
+   with the text under it.
+   `split compact`: text at top 18% / left 8% / width 42%, 1.5x h1.
+   `headline`: text at top 20% / left 3% / width 57% — a 3.5vw h1 and a 2vw date line. */
+.hero-carousel-corp.split .hero-carousel-corp-media {
+  display: block;
+}
+
+.hero-carousel-corp.split .hero-carousel-corp-text :is(h1, h2) {
+  font-size: var(--heading-font-size-xxl);
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  line-height: var(--heading-line-height-hero);
+  color: var(--color-accent);
+}
+
+.hero-carousel-corp.split .hero-carousel-corp-text :is(h1, h2) :is(em, strong) {
+  font-family: var(--display-font-family);
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.hero-carousel-corp.split .hero-carousel-corp-text p {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.hero-carousel-corp.split .hero-carousel-corp-text .button-wrapper {
+  margin-top: calc(var(--space-section-l) + var(--space-block));
+}
+
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 {
+  font-family: var(--heading-font-family);
+  font-size: 7vw; /* twice the desktop 3.5vw */
+  font-weight: 500;
+  line-height: var(--corp-image-slide-title-line-height);
+  color: var(--color-black);
+}
+
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 :is(em, strong) {
+  font-family: var(--display-font-family);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.hero-carousel-corp.headline .hero-carousel-corp-text p strong {
+  font-family: var(--display-font-family);
+  color: var(--color-primary);
+}
+
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 em strong,
+.hero-carousel-corp.headline .hero-carousel-corp-text h1 strong em {
+  color: var(--color-accent);
+}
+
+.hero-carousel-corp.headline .hero-carousel-corp-text p {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 4vw; /* twice the desktop 2vw */
+  line-height: 1.5;
+}
+
+.hero-carousel-corp.headline .hero-carousel-corp-text p em strong,
+.hero-carousel-corp.headline .hero-carousel-corp-text p strong em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+/* ---- `copy` variant ----
+   A text box over the image, positioned by top-N / left-N / width-N classes (percent of
+   the slide) that the block JS turns into --hero-copy-* properties. Regular heading and
+   body sizes (h1 serif, <strong> in Futura bold). media-left-N / media-width-N place a
+   narrower image column. `light` = white text over the image (from 900px), `gold-title`
+   = gold h1. Below 900px the image stays visible with the text under it. */
+.hero-carousel-corp.copy .hero-carousel-corp-media {
+  display: block;
+}
+
+.hero-carousel-corp.copy .hero-carousel-corp-text {
+  padding: var(--space-block-l) var(--space-block-l) 0;
+}
+
+.hero-carousel-corp.copy .hero-carousel-corp-text :is(h1, h2, h3) {
+  margin: 0 0 var(--space-block-s);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+  color: var(--color-black);
+}
+
+.hero-carousel-corp.copy .hero-carousel-corp-text h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+.hero-carousel-corp.copy .hero-carousel-corp-text h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+.hero-carousel-corp.copy .hero-carousel-corp-text h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+.hero-carousel-corp.copy .hero-carousel-corp-text :is(h1, h2, h3) :is(strong, b) {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  color: inherit;
+}
+
+.hero-carousel-corp.copy .hero-carousel-corp-text p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* `split` h2 under the h1 and the `split compact` overlay (after the `copy` base type,
+   which they outrank) */
+.hero-carousel-corp.split .hero-carousel-corp-text h1 + h2 {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+  color: var(--color-black);
+}
+
+.hero-carousel-corp.split.compact .hero-carousel-corp-text h1 {
+  font-size: var(--heading-font-size-xxl-scaled);
+  line-height: 1.25;
+  color: var(--color-black);
+}
+
+.hero-carousel-corp.split.compact .hero-carousel-corp-text h1 :is(em, strong) {
+  color: var(--color-black);
+}
+
+.hero-carousel-corp.split.compact .hero-carousel-corp-text p {
+  font-family: var(--heading-font-family);
+}
+
+.hero-carousel-corp.split.compact .hero-carousel-corp-text .button-wrapper {
+  margin-top: var(--hero-carousel-corp-compact-cta-gap);
+  font-family: var(--body-font-family);
+}
+
+/* article hero (section style `bleed`, see the overlay rules at the end of the file) */
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.hero-carousel-corp.copy.gold-title .hero-carousel-corp-text h1 {
+  color: var(--color-accent);
+}
+
+/* `mobile-media`: the media cell's last image is the phone image, shown below 900px
+   instead of the desktop crop */
+.hero-carousel-corp.copy.mobile-media .hero-carousel-corp-media > p:not(:last-child) {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .hero-carousel-corp.split .hero-carousel-corp-slide.active {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .hero-carousel-corp.split .hero-carousel-corp-media {
+    width: 50%;
+    margin-left: 50%;
+  }
+
+  .hero-carousel-corp.split .hero-carousel-corp-text {
+    top: 3%;
+    left: 5%;
+    width: 45%;
+  }
+
+  .hero-carousel-corp.split .hero-carousel-corp-text h1 {
+    margin-top: 7%;
+  }
+
+  .hero-carousel-corp.headline .hero-carousel-corp-text {
+    top: 20%;
+    left: 3%;
+    width: 57%;
+  }
+
+  .hero-carousel-corp.headline .hero-carousel-corp-text h1 {
+    font-size: 3.5vw;
+  }
+
+  .hero-carousel-corp.headline .hero-carousel-corp-text p {
+    font-size: 2vw;
+  }
+
+  /* `split compact` (after the headline overlay, which it outranks) */
+  .hero-carousel-corp.split.compact .hero-carousel-corp-text {
+    top: 18%;
+    left: 8%;
+    width: 42%;
+  }
+
+  .hero-carousel-corp.split.compact .hero-carousel-corp-text h1 {
+    margin-top: 0;
+  }
+}
+
+@media (width >= 1200px) {
+  .hero-carousel-corp.headline .hero-carousel-corp-text h1 {
+    font-size: min(3.5vw, var(--heading-font-size-hero-xl));
+  }
+
+  .hero-carousel-corp.headline .hero-carousel-corp-text p {
+    font-size: min(2vw, var(--heading-font-size-xxl));
+  }
+}
+
+@media (width >= 900px) {
+  .hero-carousel-corp.copy .hero-carousel-corp-media {
+    width: var(--hero-copy-media-width, 100%);
+    margin-left: var(--hero-copy-media-left, 0);
+  }
+
+  .hero-carousel-corp.copy.mobile-media .hero-carousel-corp-media > p:not(:last-child) {
+    display: block;
+  }
+
+  .hero-carousel-corp.copy.mobile-media .hero-carousel-corp-media > p:last-child:not(:first-child) {
+    display: none;
+  }
+
+  .hero-carousel-corp.copy .hero-carousel-corp-text {
+    position: absolute;
+    top: var(--hero-copy-top, 17%);
+    left: var(--hero-copy-left, 5%);
+    width: var(--hero-copy-width, 47%);
+    padding: 0;
+  }
+
+  .hero-carousel-corp.copy.light .hero-carousel-corp-text,
+  .hero-carousel-corp.copy.light .hero-carousel-corp-text :is(h1, h2, h3, p) {
+    color: var(--color-white);
+  }
+
+  .hero-carousel-corp.copy.light.gold-title .hero-carousel-corp-text h1 {
+    color: var(--color-accent);
+  }
+}
+
+/* ---- article hero (section style `bleed`): full-width image, shown on phones too, with a
+   headline box. `box-gold` puts the box on a gold background. The section's own spacing
+   belongs to the page template. ---- */
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-media {
+  display: block;
+}
+
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-slide.active {
+  max-height: none;
+  overflow: visible;
+}
+
+/* headline box: Futura h1, optional lead paragraph */
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text {
+  box-sizing: border-box;
+  padding: var(--space-block-l);
+}
+
+main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: var(--heading-line-height);
+}
+
+/* box-gold: gold box under the image on phones, over it (top 5% / left 5% / width 54%)
+   from 900px */
+main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text {
+  position: static;
+  width: 53.3%;
+  margin: 0 0 0 5.5%;
+  background-color: var(--color-accent);
+}
+
+@media (width >= 900px) {
+  main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 54%;
+    margin: 0;
+  }
+
+  main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text h1 {
+    font-size: 3vw;
+    line-height: 1;
+  }
+}

@@ -1,0 +1,749 @@
+.columns-corp {
+  --columns-corp-icon-size: 150px;
+  --columns-corp-arrow-size: 6px; /* related-links "Learn more" arrow */
+  --columns-corp-chevron-size: 4px; /* light-gray CTA chevron */
+  --columns-corp-cta-gap: 6px;
+  --columns-corp-cell-inset: 24px; /* light-gray cell padding */
+  --columns-corp-cta-slot: 80px; /* light-gray: space below each CTA on phone */
+  --columns-corp-cta-slot-m: 75px; /* light-gray: space below each CTA in the 2-up layout */
+  --columns-corp-code-line-height: 24px;
+  --columns-corp-compact-row-gap: 40px;
+}
+
+.columns-corp > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 calc(-1 * var(--space-block));
+}
+
+.columns-corp img {
+  max-width: 100%;
+  height: auto;
+}
+
+.columns-corp > div > div {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 0 var(--space-block);
+}
+
+.columns-corp .columns-img-col {
+  margin-bottom: var(--space-section);
+  padding-bottom: 3%;
+}
+
+.columns-corp .columns-img-col img {
+  display: block;
+  margin: 0 auto; /* centre the image when the stacked column is wider than the capped image */
+}
+
+.columns-corp h4 {
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+.columns-corp > div > div h2:not(:has(em, strong)) {
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+}
+
+.columns-corp p,
+.columns-corp ul,
+.columns-corp li {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+.columns-corp ul ul {
+  margin-bottom: 0;
+  list-style-type: disc;
+}
+
+/* text-only columns: smaller h4 below 600px */
+:where(.columns-corp).columns-text h4 {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* bold body copy keeps the body font; compact and strong-futura sections switch to Futura below */
+.columns-corp p :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
+/* gold (bold italic) h2 text */
+.columns-corp h2 em strong,
+.columns-corp h2 strong em {
+  font-size: var(--heading-font-size-xl);
+}
+
+.columns-corp p:has(code) code {
+  font-size: 3vw;
+}
+
+.columns-corp p:has(code) code sup {
+  color: var(--color-white);
+}
+
+.columns-corp p:has(:is(em > strong > code, strong > em > code)) {
+  margin: 0;
+}
+
+/* text after the image is inset 3% */
+.columns-corp .columns-img-col ~ h3,
+.columns-corp .columns-img-col ~ h4,
+.columns-corp .columns-img-col ~ p {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.columns-corp.columns-50-50.border-bottom {
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.columns-corp.columns-icon-grid .columns-img-col img {
+  width: var(--columns-corp-icon-size);
+}
+
+.columns-corp.columns-50-50 h4 {
+  font-size: var(--heading-font-size-l);
+}
+
+.columns-corp.columns-icon-grid .columns-img-col ~ p strong {
+  font-weight: 700;
+}
+
+/* related-links: column title, copy and a "Learn more" link with an arrow */
+.columns-corp.related-links p {
+  margin-bottom: var(--space-block);
+}
+
+.columns-corp.related-links h3 {
+  margin-bottom: var(--space-block);
+  padding-bottom: 2%;
+  font-family: var(--display-font-family-bold);
+  font-weight: 700;
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+  color: var(--color-accent);
+}
+
+.columns-corp.related-links p:not(:has(a)) + p:has(a) a::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: var(--columns-corp-arrow-size) 0 var(--columns-corp-arrow-size) calc(var(--columns-corp-arrow-size) + 2px);
+  border-color: transparent transparent transparent currentcolor;
+}
+
+/* contact-card: address / phone card — 14px copy, 17.5px h4 labels, links in the text colour */
+.columns-corp.contact-card :is(p, li, a) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.columns-corp.contact-card h4 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
+/* titles that are links keep the heading colour */
+.columns-corp :is(h2, h3, h4) > a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.columns-corp.contact-card a:any-link {
+  color: inherit;
+}
+
+.columns-corp.contact-card :is(h2, h3):has(> u) {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+/* compact section: smaller headings and copy */
+.section:where(.compact) .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* icon-grid: centred icon above left-aligned text */
+.columns-corp:where(.columns-icon-grid) .columns-img-col {
+  margin-bottom: var(--space-section);
+  padding-bottom: 0;
+}
+
+.section.compact .columns-corp .columns-img-col img {
+  padding-bottom: var(--space-block-s);
+}
+
+.section.compact .columns-corp h2 {
+  font-size: var(--heading-font-size-compact);
+  margin-top: var(--space-block);
+}
+
+.section.compact .columns-corp h3 strong {
+  font-size: var(--heading-font-size-m);
+}
+
+.section.compact .columns-corp h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+.section.compact .columns-corp p {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.section.compact .columns-corp p strong {
+  font-family: var(--display-font-family);
+}
+
+/* section style `strong-futura`: bold copy in Futura */
+.section.strong-futura .columns-corp p strong {
+  font-family: var(--display-font-family);
+}
+
+.section.compact .columns-corp h2 em strong {
+  font-size: var(--heading-font-size-compact);
+}
+
+/* serif section: copy in the serif heading font */
+.section.serif .columns-corp p,
+.section.serif .columns-corp ul,
+.section.serif .columns-corp li,
+.section.serif .columns-corp a {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+.section.serif .columns-corp h3 {
+  font-size: calc(var(--heading-font-size-l) * 1.5);
+  line-height: var(--heading-line-height);
+}
+
+.section.serif .columns-corp.columns-50-50 {
+  margin-block: var(--space-section);
+}
+
+.section.serif .columns-corp.columns-50-50 > div > div > :last-child {
+  margin-bottom: 0;
+}
+
+.section.light-gray.serif {
+  padding-block: var(--space-section);
+}
+
+.section.light-gray.serif .columns-corp.columns-50-50 {
+  margin-block: 0;
+}
+
+/* dark section: gold Futura h3, white serif h4 and copy */
+.section.dark .columns-corp h3 {
+  font-family: var(--display-font-family);
+  font-size: var(--panel-cta-heading-size);
+  font-weight: 700;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-accent);
+}
+
+.section.compact .columns-corp :where(.columns-img-col) ~ h3 {
+  padding-left: 0;
+  font-size: var(--heading-font-size-m);
+}
+
+.section.dark .columns-corp h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-ml);
+  font-weight: 500;
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-white);
+}
+
+.section.dark .columns-corp p,
+.section.dark .columns-corp ul,
+.section.dark .columns-corp li {
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+  color: var(--color-white);
+}
+
+.section.compact .columns-corp p,
+.section.compact .columns-corp ul,
+.section.compact .columns-corp li {
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family);
+  line-height: var(--paragraph-line-height);
+}
+
+/* icon-grid cell text: serif subtitle, bold Futura heading, then body copy */
+.columns-corp.columns-icon-grid .columns-img-col ~ p {
+  margin-block: 0 var(--space-block);
+  margin-inline: 12.4%;
+  padding: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* flat: no space below the image cell */
+.columns-corp:where(.flat) > div > .columns-img-col {
+  padding-bottom: 0;
+}
+
+/* bullets stay black on white list text */
+.section.dark .columns-corp li::marker {
+  color: var(--color-black);
+}
+
+/* dark 50-50 band: the image fills the band height; the text column keeps its inset */
+.section.dark:has(.columns-50-50) {
+  padding-block: 0;
+}
+
+.section.dark :where(.columns-50-50) .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.serif :where(.columns-corp.columns-50-50) .columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section.dark .columns-50-50 > :where(div:has(picture)) > div:where(:not(:has(picture))) {
+  padding-block: var(--space-section);
+}
+
+/* stacked 50-50 rows: gap between image and text */
+.section.serif .columns-corp:where(.columns-50-50) > div {
+  row-gap: var(--space-section-l);
+}
+
+/* light-gray section: serif copy, underlined links become chevron CTAs */
+.section.light-gray .columns-corp p,
+.section.light-gray .columns-corp ul,
+.section.light-gray .columns-corp li,
+.section.light-gray .columns-corp a {
+  font-family: var(--heading-font-family);
+}
+
+.columns-corp.columns-icon-grid .columns-img-col ~ p:has(strong) {
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+.section.compact .columns-corp li > p {
+  margin-bottom: 0;
+}
+
+.section.compact .columns-corp p:has(code) {
+  margin-bottom: 0;
+  padding: var(--space-block-l) var(--space-block-l) 0;
+  line-height: var(--columns-corp-code-line-height);
+}
+
+.columns-corp.columns-icon-grid .columns-img-col ~ p:where(:has(strong)) + p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+.section.light-gray .columns-corp:where(:not(.columns-50-50)) > div > div {
+  padding-inline: var(--columns-corp-cell-inset);
+}
+
+.section.compact .columns-corp:where(.columns-50-50) > div:where(:has(> div:last-child picture)) > div:where(:first-child:not(:has(picture))) {
+  padding-left: var(--space-block);
+  padding-right: var(--space-block);
+  padding-top: 0;
+  margin-top: var(--space-inset-l);
+}
+
+.section.light-gray .columns-corp h2 {
+  margin-bottom: var(--space-inset-m);
+}
+
+/* with an h1 in the block, the compact h2 is a subheading at the regular size */
+.section.compact .columns-corp:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+.section.compact .columns-corp > div > div:has(h1) h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+/* light-gray: an underlined link is a CTA — Futura bold, uppercase, with a chevron */
+.section.light-gray .columns-corp a:has(u) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--columns-corp-cta-gap);
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
+  text-transform: uppercase;
+}
+
+.columns-corp.related-links p:not(:has(a)) + p:has(a) a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--columns-corp-cta-gap);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 700;
+  line-height: var(--body-line-height-l);
+}
+
+/* the underline only marks the CTA; it isn't drawn */
+.section.light-gray .columns-corp a:has(u) u {
+  text-decoration: none;
+}
+
+.section.light-gray .columns-corp p:has(a :where(u)) {
+  margin-bottom: var(--columns-corp-cta-slot);
+}
+
+.section.compact .columns-corp :where(p:has(code)) + p:has(code) {
+  padding-top: 0;
+  padding-bottom: var(--space-block-l);
+  margin-bottom: var(--space-inset-l);
+  font-family: var(--heading-font-family);
+}
+
+.section.compact .columns-corp p:has(code):where(:not(:has(:is(em > strong > code, strong > em > code)))) {
+  padding-top: 0;
+  padding-bottom: var(--space-block-l);
+  margin-bottom: var(--space-inset-l);
+  font-family: var(--heading-font-family);
+}
+
+/* CSS chevron in the link colour */
+.section.light-gray .columns-corp a:has(u)::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: var(--columns-corp-chevron-size) 0 var(--columns-corp-chevron-size) calc(var(--columns-corp-chevron-size) + 1px);
+  border-color: transparent transparent transparent currentcolor;
+}
+
+.section.light-gray .columns-corp a:any-link {
+  text-decoration: none;
+}
+
+.section.light-gray .columns-corp a:hover,
+.section.light-gray .columns-corp a:focus {
+  color: var(--color-primary-pressed);
+  text-decoration: none;
+}
+
+@media (width >= 600px) {
+  :where(.columns-corp).columns-text h4 {
+    font-size: var(--heading-font-size-ml);
+    line-height: var(--heading-line-height-ml);
+  }
+
+  .columns-corp > div {
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+
+  .columns-corp > div > div {
+    flex: 0 0 50%;
+  }
+
+  /* icon-grid and 4-cols wrap 2-up with a gap between rows */
+  .columns-corp.columns-icon-grid > div {
+    row-gap: var(--space-section);
+  }
+
+  .columns-corp.columns-4-cols > div {
+    row-gap: var(--space-section);
+  }
+
+  .columns-corp.columns-50-50 .button-wrapper {
+    display: block;
+  }
+
+  /* image + text row: the text starts a little below the image top */
+  .columns-corp.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: var(--space-section);
+  }
+
+  /* gap between the image and the text column */
+  .columns-corp.columns-50-50 {
+    --col-5050-inset: 49px;
+  }
+
+  .section.compact .columns-corp h2,
+  .section.compact .columns-corp h2 em strong {
+    font-size: var(--heading-font-size-compact-m);
+  }
+
+  .section.compact .columns-corp:has(p code) h3 strong {
+    font-size: var(--heading-font-size-l);
+  }
+
+  /* serif sections: wider image-to-text gap, equal space above and below the image */
+  .section.serif .columns-corp.columns-50-50 {
+    --col-5050-inset: 83px;
+  }
+
+  .section.serif .columns-corp.columns-50-50 .columns-img-col {
+    margin-block: var(--space-section);
+    padding-bottom: 0;
+  }
+
+  /* light-gray: 2-up float grid; the third cell floats right under the second */
+  .section.light-gray .columns-corp > div {
+    display: block;
+  }
+
+  .section.light-gray .columns-corp > div::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .section.light-gray .columns-corp > div > div {
+    float: left;
+    width: 50%;
+  }
+
+  .columns-corp.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+    padding-left: var(--col-5050-inset);
+  }
+
+  .section.light-gray .columns-corp > div > div:nth-child(3) {
+    float: right;
+  }
+
+  .section.compact .columns-corp.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: 0;
+  }
+
+  .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-right: var(--col-5050-inset);
+  }
+
+  .section.compact .columns-corp.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
+    padding-left: var(--space-block);
+  }
+
+  /* serif image-right row: the text column is inset on both sides */
+  .section.serif .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    padding-left: var(--col-5050-inset);
+  }
+
+  /* light-gray: space below each CTA so the third cell clears the first row */
+  .section.light-gray .columns-corp p:has(a u) {
+    margin-bottom: var(--columns-corp-cta-slot-m);
+  }
+
+  /* light-gray: the copy above a CTA takes at least two lines so CTAs align */
+  .section.light-gray .columns-corp p:has(+ p a u) {
+    min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+  }
+}
+
+/* from 900px all cells sit in one row */
+@media (width >= 900px) {
+  .columns-corp > div {
+    flex-wrap: nowrap;
+  }
+
+  .columns-corp > div > div {
+    flex: 1;
+  }
+
+  .columns-corp p:has(code) code {
+    font-size: 1.5vw;
+  }
+
+  /* icon-grid stays a wrapping 2-up grid */
+  .columns-corp.columns-icon-grid > div {
+    flex-wrap: wrap;
+  }
+
+  /* 4-cols: one row, 25% each */
+  .columns-corp.columns-4-cols > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  .columns-corp.columns-50-50 > div > div,
+  .columns-corp.columns-icon-grid > div > div {
+    flex: 0 0 50%;
+  }
+
+  .columns-corp.columns-4-cols > div > div {
+    flex: 0 0 25%;
+  }
+
+  /* light-gray: back to a single flex row */
+  .section.light-gray .columns-corp > div {
+    display: flex;
+  }
+
+  .columns-corp.columns-70-30 > div > div:first-child {
+    flex: 0 0 70%;
+  }
+
+  .columns-corp.columns-70-30 > div > div:last-child {
+    flex: 0 0 30%;
+  }
+
+  .columns-corp.columns-30-70 > div > div:first-child {
+    flex: 0 0 30%;
+  }
+
+  .columns-corp.columns-30-70 > div > div:last-child {
+    flex: 0 0 70%;
+  }
+
+  .columns-corp.columns-33-67 > div > div:first-child {
+    flex: 0 0 33.3333%;
+  }
+
+  .columns-corp.columns-33-67 > div > div:last-child {
+    flex: 0 0 66.6667%;
+  }
+
+  .columns-corp.columns-67-33 > div > div:first-child {
+    flex: 0 0 66.6667%;
+  }
+
+  .columns-corp.columns-67-33 > div > div:last-child {
+    flex: 0 0 33.3333%;
+  }
+
+  .section.light-gray .columns-corp > div > div {
+    float: none;
+    width: auto;
+  }
+
+  /* serif image + text rows: image centred against the text */
+  .section.serif .columns-corp.columns-50-50 > div {
+    align-items: center;
+  }
+
+  .section.light-gray .columns-corp > div > div:nth-child(3) {
+    float: none;
+  }
+
+  .section.compact .columns-corp.columns-50-50:not(:first-child) > div {
+    margin-top: var(--columns-corp-compact-row-gap);
+    margin-bottom: var(--space-inset-l);
+  }
+
+  .section.compact .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+    margin-top: 0;
+  }
+
+  .section.light-gray .columns-corp p:has(a u) {
+    margin-bottom: var(--space-block);
+  }
+}
+
+@media (width >= 1200px) {
+  .columns-corp p:has(code) code {
+    font-size: var(--body-font-size-xl);
+  }
+}
+
+/* ---- article section styles (news-detail):
+     cols-6-6 / cols-7-5 / cols-4-4-4   cell ratios 6/12 + 6/12, 7/12 + 5/12, 3 × 4/12 from 600px
+     sm-7-5   keep the 7/12 + 5/12 ratio on phone too
+     lead     larger body copy
+   Images fill their cell. ---- */
+main > .section.cols-7-5 .columns-corp :is(p, li) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+main > .section.lead .columns-corp :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--corp-lead-line-height);
+}
+
+main > .section.cols-7-5 .columns-corp .columns-img-col ~ :is(h3, h4, p) {
+  padding: 0;
+}
+
+main > .section:is(.cols-6-6, .cols-7-5, .cols-4-4-4) .columns-corp .columns-img-col img {
+  width: 100%;
+}
+
+main > .section.sm-7-5 .columns-corp > div {
+  flex-flow: row nowrap;
+}
+
+@media (width >= 600px) {
+  main > .section.sm-7-5 .columns-corp > div {
+    flex-flow: row wrap;
+  }
+}
+
+@media (width >= 900px) {
+  main > .section.sm-7-5 .columns-corp > div {
+    flex-wrap: nowrap;
+  }
+}
+
+main > .section:is(.cols-6-6, .cols-7-5, .cols-4-4-4) .columns-corp .columns-img-col {
+  margin-bottom: var(--space-block-l);
+  padding-bottom: 0;
+}
+
+main > .section.cols-4-4-4 .columns-corp .columns-img-col {
+  margin-bottom: 0;
+}
+
+@media (width >= 600px) {
+  main > .section:is(.cols-6-6, .cols-7-5) .columns-corp .columns-img-col {
+    margin-bottom: var(--space-inset-l);
+  }
+
+  main > .section.cols-6-6 .columns-corp > div > div {
+    flex: 0 0 50%;
+  }
+
+  main > .section.cols-4-4-4 .columns-corp > div > div {
+    flex: 0 0 33.3333%;
+  }
+
+  main > .section.cols-7-5 .columns-corp > div > div:first-child {
+    flex: 0 0 58.3333%;
+  }
+
+  main > .section.cols-7-5 .columns-corp > div > div:last-child {
+    flex: 0 0 41.6667%;
+  }
+}
+
+/* sm-7-5: the 7/12 + 5/12 ratio below 600px; cols-7-5 takes over from 600px */
+main > .section.sm-7-5 .columns-corp > div > div:first-child {
+  flex: 0 0 58.3333%;
+  max-width: 58.3333%;
+}
+
+main > .section.sm-7-5 .columns-corp > div > div:last-child {
+  flex: 0 0 41.6667%;
+  max-width: 41.6667%;
+}
+
+@media (width >= 600px) {
+  main > .section.sm-7-5 .columns-corp > div > div:first-child,
+  main > .section.sm-7-5 .columns-corp > div > div:last-child {
+    max-width: none;
+  }
+}

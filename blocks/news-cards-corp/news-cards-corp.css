@@ -1,0 +1,96 @@
+/* news-cards-corp — latest-news cards: stacked on phones, 4-up from 900px, closed by a
+   thin grey rule. The block pulls out by the container gutter and each card pads it back,
+   so the thumbnails line up with the page content. */
+
+.news-cards-corp {
+  --news-cards-corp-title-gap: 16px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0 calc(-1 * var(--container-gutter)) var(--space-block-l);
+  padding-bottom: var(--space-inset-m);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.news-cards-corp .news-card {
+  box-sizing: border-box;
+  padding: 0 var(--container-gutter);
+}
+
+.news-cards-corp .news-card-image p {
+  margin: 0;
+}
+
+.news-cards-corp .news-card-image img,
+.news-cards-corp .news-card-image picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.news-cards-corp .news-card-body h3 {
+  margin: var(--news-cards-corp-title-gap) 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+}
+
+.news-cards-corp .news-card-body h3 a:any-link {
+  color: var(--color-black); /* linked titles look like plain text */
+  text-decoration: none;
+}
+
+.news-cards-corp .news-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
+.news-cards-corp .news-card-body p {
+  margin: 0 0 var(--space-block);
+  line-height: var(--paragraph-line-height);
+}
+
+.news-cards-corp .news-card-body p:last-child {
+  margin-bottom: 0;
+  line-height: var(--body-line-height);
+}
+
+/* "Read More": Futura bold teal, uppercase, icon-font chevron after the label */
+.news-cards-corp .news-card-body p:last-child a:any-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-family: var(--display-font-family);
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.news-cards-corp .news-card-body p:last-child a:any-link::after {
+  content: "\e250";
+  display: inline-block;
+  padding-left: 0.5em;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  transform: translate(0, 2px);
+}
+
+.news-cards-corp .news-card-body p:last-child a:hover {
+  color: var(--color-primary-active);
+}
+
+@media (width >= 600px) {
+  .news-cards-corp {
+    margin-bottom: var(--space-inset-l);
+  }
+}
+
+@media (width >= 900px) {
+  .news-cards-corp {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* an authored card replaced by a newer index card stays hidden */
+.news-cards-corp .news-card[hidden] {
+  display: none;
+}

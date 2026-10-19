@@ -1,0 +1,301 @@
+/* cards-corp — based on the patients cards block: 1-up on phones, 2-up from 600px,
+   3-up from 900px (4-up linked). */
+
+.cards-corp {
+  --cards-corp-cta-padding: 9px 12px;
+  --cards-corp-thumb-height: 240px;
+  --cards-corp-title-gap: 8px;
+  --cards-corp-teaser-gap: 13px;
+}
+
+.cards-corp > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-section);
+}
+
+/* tablet: 2-up */
+@media (width >= 600px) {
+  .cards-corp > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop: 3-up default, 4-up linked */
+@media (width >= 900px) {
+  .cards-corp > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-corp.linked > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cards-corp > ul > li {
+  background-color: var(--background-color);
+}
+
+.cards-corp .cards-corp-card-image {
+  line-height: 0;
+  cursor: pointer;
+}
+
+.cards-corp > ul > li img {
+  width: 100%;
+  aspect-ratio: 7 / 5;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* curated-teasers keep the image's natural ratio */
+.cards-corp.curated-teasers > ul > li img {
+  aspect-ratio: auto;
+}
+
+.cards-corp .cards-corp-card-body {
+  margin: var(--space-section) 0 0;
+  color: var(--text-color);
+}
+
+/* card heading: Futura bold, not the global serif h3 */
+.cards-corp .cards-corp-card-body h3 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+.cards-corp .cards-corp-card-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.cards-corp .cards-corp-card-body .button-wrapper {
+  margin: var(--space-block) 0 0;
+}
+
+/* "Learn more" CTA in the canvas: decorateButtons' .button.secondary class is
+   wiped when the editor re-renders the field, so style the authored <em><a> to
+   match the gray button. Matches only in the canvas (the published page has no <em> here). */
+.cards-corp:not(.linked, .resources, .curated-teasers) .cards-corp-card-body p em > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-block) 0 0;
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-none);
+  padding: var(--cards-corp-cta-padding);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-regular);
+  font-style: normal;   /* cancel the authoring <em> italic */
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Canvas fallback for the bold+italic (<em><strong><a>) high-impact CTA — same
+   idea as the secondary fallback above, but restyled gold to match .button.accent. */
+.cards-corp:not(.linked, .resources, .curated-teasers) .cards-corp-card-body p em strong > a,
+.cards-corp:not(.linked, .resources, .curated-teasers) .cards-corp-card-body p strong em > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-block) 0 0;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-none);
+  padding: var(--cards-corp-cta-padding);
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-regular);
+  font-style: normal;   /* cancel the authoring <em> italic */
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* linked: bold title above a landscape borderless image. li is a flex column and the
+   body uses display:contents so heading/links order title -> image -> body without
+   moving nodes (keeps the editor instrumentation intact). */
+.cards-corp.linked > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  text-align: center;
+}
+
+.cards-corp.linked .cards-corp-card-image {
+  order: 1;
+}
+
+.cards-corp.linked .cards-corp-card-body {
+  display: contents;
+}
+
+/* linked title = bold link promoted to a button; order/skin it as the title */
+.cards-corp.linked .cards-corp-card-body .button-wrapper {
+  order: 0;
+  margin: 0 0 var(--space-block);
+}
+
+.cards-corp.linked > ul > li img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 680;
+  object-fit: cover;
+}
+
+/* strip button chrome -> plain bold slab-serif link */
+.cards-corp.linked .cards-corp-card-body .button-wrapper a.button {
+  display: inline;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+  text-transform: none;
+  text-decoration: none;
+}
+
+/* ---- resources: document thumbnails, 1-up on phones, 2-up from 600px, 6-up from 900px.
+   Each cover sits vertically centred in a fixed-height cell with a thin grey border;
+   the bold title follows below. */
+.cards-corp.resources {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(-1 * var(--container-gutter)) var(--space-block-l);
+}
+
+.cards-corp.resources .cards-corp-item {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  margin-bottom: var(--space-block-l);
+  padding: 0 var(--container-gutter);
+}
+
+.cards-corp.resources .cards-corp-thumb {
+  display: flex;
+  align-items: center;
+  height: var(--cards-corp-thumb-height);
+}
+
+.cards-corp.resources .cards-corp-cover {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.cards-corp.resources .cards-corp-thumb picture {
+  display: block;
+}
+
+.cards-corp.resources .cards-corp-thumb img {
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(var(--cards-corp-thumb-height) - 2px);
+  border: 1px solid var(--color-surface-muted);
+}
+
+.cards-corp.resources .cards-corp-title :is(h2, h3, h4, h5, h6, p) {
+  margin: var(--cards-corp-title-gap) 0 var(--space-block);
+  padding: 0;
+  border: 0;
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--body-line-height-l);
+}
+
+.cards-corp.resources .cards-corp-title a:any-link {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.cards-corp.resources .cards-corp-title a:hover {
+  color: var(--color-text-muted);
+}
+
+/* ---- curated-teasers: news teasers with a gold rule between them on phones, 4-up from
+   900px when four are authored; natural-ratio image, serif h3 and a plain uppercase
+   Futura "Learn more" link */
+.cards-corp.curated-teasers > ul {
+  gap: var(--space-block-l);
+}
+
+.cards-corp.curated-teasers > ul > li {
+  padding-bottom: var(--space-block-l);
+  border-bottom: 1px solid var(--color-accent);
+}
+
+.cards-corp.curated-teasers > ul > li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.cards-corp.curated-teasers .cards-corp-card-body {
+  margin-top: var(--cards-corp-teaser-gap);
+}
+
+.cards-corp.curated-teasers .cards-corp-card-body h3 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+}
+
+.cards-corp.curated-teasers .cards-corp-card-body p:has(> a:only-child) {
+  margin: var(--space-block) 0 0;
+  font-family: var(--display-font-family);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+}
+
+.cards-corp.curated-teasers .cards-corp-card-body p > a:only-child {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+@media (width >= 600px) {
+  .cards-corp.resources .cards-corp-item {
+    flex-basis: 50%;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-corp.resources .cards-corp-item {
+    flex-basis: calc(100% / 6);
+  }
+
+  .cards-corp.curated-teasers > ul {
+    gap: var(--space-inset-l);
+  }
+
+  .cards-corp.curated-teasers > ul:has(> li:nth-child(4)) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cards-corp.curated-teasers > ul > li {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .cards-corp.curated-teasers .cards-corp-card-body h3 {
+    font-size: var(--heading-font-size-l);
+  }
+}

@@ -1,0 +1,95 @@
+/* Statistics block — a grid of large colored stat numbers with descriptions.
+   Extracted from patients.stryker.com/us/en/ivs: big Futura-Bold numerals over
+   centered body-font descriptions, laid out in an author-selectable grid.
+
+   The column count comes from the block's --statistics-columns custom property
+   (set in JS from the cols-N authoring variant); rows flow automatically.
+   Mobile-first: one column, then 2 up, then the authored column count. */
+
+/* the number size this fork was built on (patients made the size block-local since) */
+.statistics-corp {
+  --statistics-number-size: var(--statistics-number-size-m);
+}
+
+.statistics-corp ul.statistics-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--statistics-item-gap) 0;
+  margin: 0;
+  padding: 0;
+}
+
+.statistics-corp .statistics-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--container-gutter);
+  text-align: center;
+}
+
+/* the big number — the cell's text is wrapped in a <p> by EDS. Set the number
+   typography on both the cell and its <p>, but leave `color` off the <p> so it
+   inherits (letting the per-stat color rules below take effect). */
+.statistics-corp .statistics-value,
+.statistics-corp .statistics-value p {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: var(--statistics-number-size);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.statistics-corp .statistics-value {
+  margin-bottom: var(--statistics-number-gap);
+  color: var(--color-secondary);
+}
+
+/* per-stat colors — author-selectable in Universal Editor */
+.statistics-corp .statistics-item.statistics-teal .statistics-value { color: var(--color-primary); }
+.statistics-corp .statistics-item.statistics-gold .statistics-value { color: var(--color-accent); }
+.statistics-corp .statistics-item.statistics-dark-gold .statistics-value { color: var(--color-accent-link-hover); }
+.statistics-corp .statistics-item.statistics-navy .statistics-value { color: var(--color-navy-bright); }
+.statistics-corp .statistics-item.statistics-sage .statistics-value { color: var(--color-surface-muted); }
+.statistics-corp .statistics-item.statistics-purple .statistics-value { color: var(--color-purple); }
+
+/* the description below the number: h4 size with a tight line height. The <p> EDS wraps
+   the cell text in is included to beat the global paragraph line height. */
+.statistics-corp .statistics-desc,
+.statistics-corp .statistics-desc p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-h4);
+  color: var(--color-black);
+}
+
+/* bold text stays in the body serif (not the global Futura bold) */
+.statistics-corp .statistics-desc strong,
+.statistics-corp .statistics-desc b {
+  font-family: var(--body-font-family);
+  font-weight: 700;
+}
+
+/* footnote references: small superscripts */
+.statistics-corp .statistics-desc sup {
+  font-size: var(--body-font-size-s);
+}
+
+.statistics-corp .statistics-desc sup a {
+  color: var(--color-primary);
+}
+
+/* tablet: two columns */
+@media (width >= 600px) {
+  .statistics-corp ul.statistics-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop: the author-selected column count (falls back to 3) */
+@media (width >= 900px) {
+  .statistics-corp ul.statistics-list {
+    grid-template-columns: repeat(var(--statistics-columns, 3), 1fr);
+  }
+}

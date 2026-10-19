@@ -1,0 +1,32 @@
+/* news-headline-corp — the news-detail article head: serif h1 on phones, Futura bold from
+   900px, then a Futura bold publish date / event location row. */
+
+.news-headline-corp h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 900px) {
+  .news-headline-corp h1 {
+    font-family: var(--display-font-family);
+    font-weight: 700;
+  }
+}
+
+/* publish date + event location row; the (often empty) location heading's bottom margin
+   closes the row */
+.news-headline-corp .news-headline-corp-meta {
+  margin-bottom: var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: var(--heading-line-height-h4);
+}
+
+.news-headline-corp .news-headline-corp-meta :is(p, h2, h3, h4, h5, h6) {
+  margin: 0;
+  font: inherit;
+}
