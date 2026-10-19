@@ -76,14 +76,10 @@
   font-weight: var(--font-weight-bold);
 }
 
-/* footnote reference links sit as small superscripts, teal like other links
-   (source superscript renders at ~13px, matching the base body size) */
+/* footnote reference links sit as small superscripts in the text colour (global
+   footnote rule); source superscript renders at ~13px, the base body size */
 .statistics .statistics-desc sup {
   font-size: var(--body-font-size-s);
-}
-
-.statistics .statistics-desc sup a {
-  color: var(--color-primary);
 }
 
 /* tablet: two columns */
