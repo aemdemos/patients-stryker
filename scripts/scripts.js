@@ -576,7 +576,7 @@ export function decorateMain(main) {
   // convert external Dynamic Media asset links into native <picture>/<video>
   decorateDMAssets(main);
   liftDefaultContentDMMedia(main);
-  corp?.decorateMain(main);
+  corp?.decorateMain();
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);

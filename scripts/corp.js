@@ -4,7 +4,7 @@
  * patients-stryker pages never load it and keep the patients code path unchanged.
  *
  * scripts.js calls in:
- *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/corp.css
+ *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/styles-corp.css
  *                           and the <block>-corp.css overlays of reused patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
  *   loadTemplate(name)      corp templates are CSS-only
@@ -35,65 +35,23 @@ const CORP_BLOCK_STYLES = [];
 export async function loadEager(doc) {
   doc.body.classList.add('corp');
   // HCP notice band: `hcp-banner: true` metadata adds the band to the header-corp and
-  // extends the header height reservation (corp.css --nav-height)
+  // extends the header height reservation (styles-corp.css --nav-height)
   if ((getMetadata('hcp-banner') || '').trim().toLowerCase() === 'true') {
     doc.body.classList.add('hcp-banner');
   }
   const base = window.hlx.codeBasePath;
   await Promise.all([
-    loadCSS(`${base}/styles/corp.css`),
+    loadCSS(`${base}/styles/styles-corp.css`),
     // all overlays up front, so blocks that arrive later (fragments, auto-blocks) are styled too
     ...CORP_BLOCK_STYLES.map((name) => loadCSS(`${base}/blocks/${name}/${name}-corp.css`)),
   ]);
 }
 
 /**
- * Returns the 11-char YouTube video id for watch / youtu.be / embed / shorts URLs, or ''
- * for anything else (channel and user pages, playlists) — same shapes blocks/video decodes.
- * @param {string} href the link href
- * @returns {string}
- */
-function youTubeVideoId(href) {
-  try {
-    const url = new URL(href, window.location.href);
-    if (!/(?:^|\.)(?:youtube(?:-nocookie)?\.com|youtu\.be)$/i.test(url.hostname)) return '';
-    const v = url.searchParams.get('v');
-    if (v && /^[\w-]{11}$/.test(v)) return v;
-    const m = url.pathname.match(/^\/(?:embed|shorts|v)\/([\w-]{11})(?:$|\/)|^\/([\w-]{11})$/);
-    return (m && (m[1] || m[2])) || '';
-  } catch {
-    return '';
-  }
-}
-
-/**
- * Turns a default-content paragraph whose only child is a YouTube video link into the
- * `video` block (live c-standalone-video): the block decorates a single cell holding the
- * link, so the paragraph is replaced by `buildBlock('video', { elems: [link] })`. Links
- * that already sit inside a block (an accordion body, a columns cell — no nested blocks)
- * or inside an existing `.video` are left alone; channel / user links never match.
- * @param {Element} main The container element
- */
-function buildVideoAutoBlocks(main) {
-  main.querySelectorAll('p > a[href]').forEach((link) => {
-    if (link.closest('.video')) return;
-    const p = link.parentElement;
-    // default content only: the <p> is a direct child of a section (main > div > p)
-    if (!p.parentElement || p.parentElement.parentElement !== main) return;
-    // the link is the paragraph's sole content (no bold/italic CTA wrapper, no caption)
-    if (p.children.length !== 1 || p.textContent.trim() !== link.textContent.trim()) return;
-    if (!youTubeVideoId(link.getAttribute('href'))) return;
-    p.replaceWith(buildBlock('video', { elems: [link] }));
-  });
-}
-
-/**
  * Corp decoration of <main> (and of fragments, which run decorateMain too).
- * @param {Element} main The main element
  */
-export function decorateMain(main) {
+export function decorateMain() {
   previewDMLinkEditors();
-  buildVideoAutoBlocks(main);
 }
 
 /**
@@ -104,7 +62,7 @@ export async function loadTemplate(templateName) {
   try {
     await loadCSS(`${window.hlx.codeBasePath}/templates/${templateName}/${templateName}.css`);
   } catch {
-    // an unknown template name has no stylesheet: the page renders with corp.css alone
+    // an unknown template name has no stylesheet: the page renders with styles-corp.css alone
   }
 }
 
