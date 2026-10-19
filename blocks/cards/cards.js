@@ -38,6 +38,21 @@ export default function decorate(block) {
       titleLink.replaceWith(...titleLink.childNodes);
     });
   }
+  // image-link only: the image links to the card's CTA ("Learn more") target, like
+  // the source homepage where both image and button open the same page. Needed
+  // while images are authored as DM links, which can't also carry the page href.
+  const isImageLink = block.classList.contains('image-link');
+  if (isImageLink) {
+    ul.querySelectorAll('li').forEach((li) => {
+      const cta = [...li.querySelectorAll('.cards-card-body a[href]')].pop();
+      const picture = li.querySelector('.cards-card-image picture');
+      if (!cta || !picture || picture.closest('a')) return;
+      const link = document.createElement('a');
+      link.href = cta.getAttribute('href');
+      picture.replaceWith(link);
+      link.append(picture);
+    });
+  }
   ul.querySelectorAll('picture > img').forEach((img) => {
     // dm-support.js already rendered DM images at native quality; re-optimizing
     // them forces width=750 + optimize=medium and would degrade quality.
@@ -69,8 +84,11 @@ export default function decorate(block) {
           if (!e.target.closest('a')) window.open(link.href, target, 'noopener');
         });
       }
-      link.target = target;
-      link.rel = 'noopener';
+      // image-link: image and CTA lead to the same page, so both open the same way
+      (isImageLink ? li.querySelectorAll('a') : [link]).forEach((a) => {
+        a.target = target;
+        a.rel = 'noopener';
+      });
     }
   });
 }

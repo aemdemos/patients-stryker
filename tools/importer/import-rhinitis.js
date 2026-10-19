@@ -96,10 +96,13 @@ export default {
     // 3. afterTransform cleanup + section handling
     executeTransformers('afterTransform', main, payload);
 
-    // 4. built-in rules + metadata
+    // 4. built-in rules + page metadata
     const hr = document.createElement('hr');
     main.appendChild(hr);
-    WebImporter.rules.createMetadata(main, document);
+    const meta = WebImporter.Blocks.getMetadata(document);
+    meta.template = 'long-page-detail';
+    delete meta.theme;
+    main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 

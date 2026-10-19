@@ -334,11 +334,10 @@ export default function transform(hookName, element, payload) {
     // the break anchor.
     element.querySelectorAll('.sectionseparator hr, hr.section-separator').forEach((hr) => hr.remove());
 
-    // Resources tabs chrome: the Resources zone is wrapped in a single-tab
-    // `c-tabs` widget. The visible content is the one tab-content panel; the
-    // tab navigation (`.tabs-nav`, empty `ul.tab`) is JS chrome that otherwise
-    // imports as a stray empty list after the "Resources" heading.
-    WebImporter.DOMUtils.remove(element, ['.tabs-nav']);
+    // Resources tabs: the `.tabs-nav` tab bar is KEPT here — the tabs-resources
+    // parser reads the tab labels from it and replaces the whole tab container
+    // with a `tabs` block. Only its overflow scroll buttons are chrome.
+    WebImporter.DOMUtils.remove(element, ['.tabs-overflow-nav']);
 
     // Empty curatedcta placeholder slots in the Resources grid. Only the
     // slots with a real brochure image + "Learn more" link are authorable;

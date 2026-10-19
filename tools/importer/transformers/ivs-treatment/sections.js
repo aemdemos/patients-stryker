@@ -4,8 +4,10 @@
 /**
  * Transformer: ivs-treatment section breaks + Section Metadata.
  *
- * Template-scoped: acts ONLY on the ivs-treatment template (guarded by
- * payload.template.name). Inert for every other template.
+ * Template-scoped: acts ONLY on the ivs-treatment and ivs-get-the-facts templates
+ * (guarded by payload.template.name). Inert for every other template. Section
+ * definitions come from payload.template.sections, so each template supplies its
+ * own list (ivs-get-the-facts: hero, flex, dark, divider, gold, form, disclaimer).
  *
  * The mild page (migration-work/cleaned.html) is modelled as 11 sections
  * (tools/importer/page-templates.json → ivs-treatment.sections):
@@ -53,8 +55,10 @@ function styleToCell(style) {
 }
 
 export default function transform(hookName, element, payload) {
-  // Template-scoped guard. Inert for every non-ivs-treatment template.
-  if (!payload || !payload.template || payload.template.name !== 'ivs-treatment') return;
+  // Template-scoped guard. Inert for every template except ivs-treatment and
+  // ivs-get-the-facts (same source skin; each supplies its own sections list).
+  if (!payload || !payload.template
+    || !['ivs-treatment', 'ivs-get-the-facts'].includes(payload.template.name)) return;
 
   const sections = payload.template.sections || [];
   if (sections.length < 2) return;

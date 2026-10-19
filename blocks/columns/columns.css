@@ -134,6 +134,7 @@
 
 .columns.columns-50-50.border-bottom {
   border-bottom: 1px solid var(--color-surface-muted);
+  padding-bottom: var(--space-section-l);
 }
 
 .section.compact .columns.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
@@ -159,13 +160,15 @@
 }
 
 
+/* 21px serif body copy at the source's 26.25px line spacing (not the tight
+   heading line height) */
 .section.serif .columns p,
 .section.serif .columns ul,
 .section.serif .columns li,
 .section.serif .columns a {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l);
-  line-height: var(--heading-line-height);
+  line-height: var(--paragraph-line-height-serif-l);
 }
 
 /* stroke title — the reference enlarges it 1.5x (21px → 31.5px), Futura bold.
@@ -650,6 +653,12 @@ main > .section:has(> div > :where(.columns.related-links)) {
   line-height: var(--related-links-line-height);
 }
 
+/* pre-CTA copy (the 2nd item of a CTA column): source 22.25px lines */
+.columns.related-links > div > div:not(:has(> :nth-child(2) a)) > p:nth-child(2),
+.columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :nth-child(2) p {
+  line-height: var(--related-links-copy-line-height);
+}
+
 /* extra title-to-body gap to match the reference's larger inline-title spacing */
 .columns.related-links h2 {
   margin-bottom: 25px;
@@ -743,7 +752,7 @@ main > .section:has(> div > :where(.columns.related-links)) {
      CTAs align (2-up and 3-up); matches the paragraph however the field is wrapped */
   .columns.related-links > div > div:not(:has(> :nth-child(2) a)) > p:nth-child(2),
   .columns.related-links > div > div:not(:has(> :nth-child(2) a)) > :nth-child(2) p {
-    min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
+    min-height: calc(2 * var(--body-font-size-l) * var(--related-links-copy-line-height));
   }
 
   /* tablet 2-up: float grid matching the reference */

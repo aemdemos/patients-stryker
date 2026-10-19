@@ -85,21 +85,27 @@
 
 
   /* heading sizes */
+  --heading-zip-search-results-m: 8vw; /* zip search results h1 (source fontsize-8-vw) */
+  --heading-zip-search-results: 5vw; /* zip search results h1 (source fontsize-5-vw) */
+  --heading-zip-search-results-s: 4vw; /* zip search results h1 (source fontsize-4-vw) */
+  --heading-zip-search-results-xs: 2.5vw; /* zip search results h1 (source fontsize-2-5-vw) */
   --heading-font-size-hero-xl: 49px; /* large hero headline cap — source fontsize-3-5-vw at ≥1439px */
   --heading-font-size-xxxl: 43px;   /* brochure card title — 24.5px x 1.75 (source fontsize-1-75em) */
   --heading-font-size-xxxl-s: 36.75px; /* brochure card title <600px — 21px x 1.75 */
   --heading-font-size-xxl: 28px;    /* h1 */
+  --heading-font-size-xxl-scaled: 42px; /* h1 enlarged 1.5x (source fontsize-1-5em) */
+  --heading-font-size-xxl-l: 42px;  /* h1 enlarged 1.5x (source fontsize-1-5em span) */
   --heading-font-size-xl: 24.5px;   /* h2 */
   --heading-font-size-l: 21px;      /* h3 */
   --heading-font-size-l-scaled: 26.25px; /* h3 enlarged 1.25x (fontsize-1-25em) */
   --heading-font-size-dark-base: 24.5px; /* dark evidence band, non-gold (white serif) heading main text */
   --heading-font-size-ml: 21.875px; /* h4 enlarged 1.25x */
   --heading-font-size-m: 17.5px;    /* h4 */
+  --heading-font-size-hero-max: 42px; /* hero banner headline cap (source 3vw → 42px) */
   --heading-font-size-s: 15px;      /* h5 (estimated) */
   --heading-font-size-xs: 14px;     /* h6 (estimated) */
   --heading-font-size-compact: 16.8px;   /* compact section h2 (measured) */
   --heading-font-size-compact-m: 19.9px; /* compact section h2 ≥480px (measured) */
-  --heading-font-size-long-page-detail: 19.6px; /* long-page-detail h2 (measured) */
 
   /* line heights — measured: body/list 20px (1.4286), paragraphs 19.25px (1.375),
      headings 1.06, h4 20.125px/17.5px (1.15) */
@@ -108,14 +114,20 @@
   --body-line-height-l-nested: 1.22; /* measured: a 1.25x span inside a 14px/20px source paragraph renders ~21.3px lines */
   --list-line-height-l-nested: 1.2; /* measured: a 1.25x span inside a 14px/20px source list item renders 21px lines */
   --related-links-line-height: 1.314; /* measured: 17.5px link inside a 14px/19.25px source paragraph renders 23px lines */
+  --related-links-copy-line-height: 1.2714; /* measured: 17.5px serif copy inside a 14px/19.25px source paragraph renders 22.25px lines */
   --paragraph-line-height: 1.375;
   --paragraph-line-height-l-nested: 1.2143; /* measured: a 1.25x span inside a 14px/19.25px source paragraph renders 21.25px lines */
+  --paragraph-line-height-xl-nested: 1.107; /* measured: a 21px span inside a 14px/19.25px source paragraph renders 23.25px lines */
+  --paragraph-line-height-serif-l: 1.25; /* measured: 21px serif span inside a 14px/19.25px source paragraph renders 26.25px lines */
   --heading-line-height: 1.06;
   --heading-line-height-h4: 1.15;
   --heading-line-height-ml: 1.15;   /* 25.156px / 21.875px */
   --heading-line-height-ml-nested: 1.46; /* measured: 1.25x Futura span inside a 17.5px/1.06 serif source h3 renders 32.15px lines (38.2px @26.25px) */
   --heading-line-height-hero: 1.35; /* hero banner large headline/subhead (measured) */
-  --heading-line-height-long-page-detail: 1.2; /* long-page-detail h2 (measured) */
+  --heading-line-height-xl-nested-s: 28px; /* measured: a 21px span inside a 21px/1.06 source h2 renders 28px lines */
+  --heading-line-height-xl-nested: 34px; /* measured: a 24.5px span inside a 24.5px/1.06 source h2 renders a 34px line */
+  --heading-line-height-zip-search-results: 1.35; /* zip search results h1 (measured) */
+  --brochure-title-line-height: 1.518; /* measured: 14px Futura title inside a 14px/19.25px serif source paragraph renders 21.25px lines */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
   --space-block-xs: 5px;
@@ -130,16 +142,26 @@
   --form-field-min-height: 40px;
   --heading-underline-gap: 7px; /* measured: h2 text → 1px underline (component-subheading) */
   --list-indent: 17px;
+  --list-indent-l: 40px; /* measured: search page suggestions list (browser-default ul indent) */
 
   /* section vertical rhythm — measured: .page-section margin-bottom */
   --space-section: 30px;
+  --space-footer-end: 40px; /* measured: source footer space below the secondary links (≥480px) */
   --space-section-l: 50px; /* larger stacked gap, e.g. 50-50 image↔text on mobile */
   --space-section-xl: 90px;
+  --space-brochure-title: 40px; /* measured: brochure title → label (source empty 1.25em line + 15px margin) */
   --space-band-dark: 54px; /* measured: dark 50-50 band top/bottom (source spacer paragraph 39px + 15px) */
   --space-nav-hero-gap: 61px; /* measured: nav→hero gap on IVS pages (≥600px) */
+  --space-ivs-home-hero: 60px; /* measured: ivs-home header → hero */
+  --space-ivs-home-intro: 61px; /* measured: ivs-home anchor nav → intro (overview) section, mobile */
+  --space-ivs-home-intro-m: 86px; /* measured: ivs-home anchor nav → intro (overview) section, ≥600px */
+  --space-ivs-home-find-doctor: 85px; /* measured: ivs-home → find-a-doctor panel, ≥900px */
+  --space-ivs-home-band: 68px; /* measured: ivs-home spotlights → dark testimonial band, below 900px */
+  --hero-language-button-width: 164px; /* source: both stroke-landing language buttons share one width */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
-  --statistics-number-size: 92px;
+  --statistics-number-size-s: 78.75px; /* source number below its 480px breakpoint → used below 600px */
+  --statistics-number-size-m: 92px; /* source number from 480px (91.875px) → used from 600px */
   --statistics-item-gap: 40px;
   --statistics-number-gap: 18px;
   --statistics-number-size-fluid: 13vw; /* source counter (fontsize-6-5-vw) on mobile */
@@ -178,6 +200,7 @@
 
   /* tabs block — side-by-side panel (copy + video), measured from source ("Hear from stroke survivors") */
   --tabs-panel-copy-padding: 36px 36px 18px; /* copy above the video on mobile */
+  --tabs-tab-padding-inline: 30px; /* source tab label side padding; the divider sits at this edge */
 
   /* panel block */
   --panel-heading-max-width: 600px; /* default panel title width cap (centered) */
@@ -211,11 +234,56 @@
   --find-a-doctor-raised-label-size: 13.5px; /* source raised floating label (18px scaled 0.75) */
   --find-a-doctor-control-height: 56px;
   --find-a-doctor-label-color: #5d5f5f; /* source floating-label gray-green */
+  --find-a-doctor-caret-color: #767979; /* source dropdown arrow (strykericons U+E259) */
+  --find-a-doctor-caret-size: 20px; /* source arrow glyph size */
+  --find-a-doctor-caret-box: 44px; /* source arrow box (glyph centered in it) */
+  --find-a-doctor-caret-line-height: 11.66px; /* source arrow line box */
   --find-a-doctor-dropdown-shadow: 0 8px 16px rgb(0 0 0 / 20%); /* source .dropdown-content shadow */
   --find-a-doctor-dropdown-max-height: 171.5px; /* source: ~3.5 options visible, the rest scroll */
   --find-a-doctor-option-line-height: 24px; /* source option 24px line → 49px row incl. divider */
   --find-a-doctor-option-divider: #f2f2f2; /* source 1px separator under each option */
   --find-a-doctor-option-highlight: #f2f2f7; /* source hover / selected option background */
+  --find-a-doctor-bar-gutter: 24px; /* source search-results bar: 24px band inset on every side */
+  --find-a-doctor-bar-gap: 16px; /* source gap between search-bar controls */
+  --find-a-doctor-bar-gap-m: 20px;
+  --find-a-doctor-bar-radius-width: 145px; /* source radius box in the search-bar row */
+  --find-a-doctor-bar-max: 1392px; /* source search-bar form max width (centered) */
+  --find-a-doctor-procedures-bg: #8e8e93; /* source disabled "Procedures" filter dropdown */
+  --find-a-doctor-procedures-width: 224px; /* source filter dropdown width (≥600px) */
+  --find-a-doctor-filters-gap: 32px; /* source gap between the filter dropdown and Filters Selected */
+  --find-a-doctor-selected-title-size: 16px; /* source "Filters Selected:" 16px/21px bold */
+  --find-a-doctor-selected-line-height: 21px; /* source filter title + badge line */
+  --find-a-doctor-badge-remove-size: 24px; /* source badge ✖ hit area */
+
+  /* in-page search field — measured from source .search-header .search-bar */
+  --search-field-width: 305px;
+  --search-field-padding: 8px 11px; /* source: 14px text, 11px inset */
+  --search-icon-size: 24px;
+  --search-icon-inset: 6px; /* source magnifier sits 6px from the field's right edge */
+  --search-icon-offset: 3px; /* glyph sits high in search.svg; matches source glyph position */
+
+  /* video player controls — measured from the source's Dynamic Media (Scene7) VideoViewer */
+  --video-controls-height: 36px;
+  --video-controls-bg: rgb(0 0 0 / 75%);
+  --video-controls-button-size: 28px;
+  --video-controls-button-hover-bg: #666;
+  --video-controls-icon-color: #ddd;
+  --video-controls-icon-shadow: drop-shadow(1px 1px 1px rgb(0 0 0 / 35%));
+  --video-controls-font: 10px/1 arial, helvetica, sans-serif;
+  --video-controls-time-color: #999;
+  --video-controls-track-height: 8px;
+  --video-controls-track-bg: #555;
+  --video-controls-track-loaded: #666;
+  --video-controls-track-played: #999;
+  --video-controls-knob-color: var(--color-white);
+  --video-controls-knob-height: 14px;
+  --video-controls-volume-height: 83px; /* pop-up volume panel above the mute button */
+  --video-controls-bubble-bg: var(--color-black);
+  --video-controls-volume-bg: #ddd;
+  --video-controls-volume-fill: #ababab;
+  --video-controls-fade: 0.3s ease;
+  --video-icon-effect-size: 80px; /* centered play/replay icon over the paused frame */
+  --video-icon-effect-bg: rgb(0 0 0 / 50%);
 
   /* layout — measured from source: max-width 1410px, auto side margins, 15px gutter */
   --container-max: 1410px;
@@ -227,6 +295,7 @@
   --nav-height: 90px;
   --nav-bar-height: 60px;
   --nav-toggle-icon-size: 16px; /* mobile menu "+" (its 2vw size at 800px) */
+  --nav-brand-offset-mobile: 3.5px; /* measured: source mobile logo sits 21px from the top */
 }
 
 body {
@@ -539,6 +608,12 @@ textarea,
 select,
 button {
   font: inherit;
+}
+
+/* DM video control bar is styled in lazy-styles.css; keep its raw buttons and
+   sliders out of the layout until then */
+.dm-video-controls {
+  display: none;
 }
 
 
@@ -1004,11 +1079,13 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
     height: var(--nav-height);
   }
 
-/* Flex sections lay authored wrappers side by side on desktop and stack below 900px. */
+/* Flex sections lay authored wrappers side by side on desktop and stack below 900px.
+   Same 15px edge as every section and the hero; the columns drop their own inset
+   and sit one source gutter (2 x 15px) apart. */
   main > .section.flex {
     display: flex;
     align-items: flex-start;
-    gap: var(--container-gutter);
+    column-gap: calc(2 * var(--container-gutter));
     box-sizing: border-box;
     max-width: var(--container-max);
     margin-inline: auto;
@@ -1024,6 +1101,7 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
   main > .section.flex > div {
     flex: 1 1 0;
     min-width: 0;
+    padding-inline: 0;
   }
 
   main > .section.flex > div:empty {

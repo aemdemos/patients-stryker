@@ -1,12 +1,18 @@
 // Sticky Nav Block — in-page anchor bar; row = item (label + `#id` link) with scroll-spy.
 
-/** Resolve a nav target: `.section[data-anchor]` wins over a plain id. @param {string} href */
-function resolveTarget(href) {
+/**
+ * Resolve a nav target: `.section[data-anchor]` wins over a plain id.
+ * @param {string} href
+ * @param {Element[]} [anchored] pre-collected `.section[data-anchor]` elements, so
+ * callers resolving several hrefs at once query the DOM only once
+ */
+function resolveTarget(href, anchored) {
   if (!href) return null;
   const hash = href.includes('#') ? href.slice(href.indexOf('#') + 1) : href;
   if (!hash) return null;
 
-  const byAnchor = [...document.querySelectorAll('.section[data-anchor]')].find((s) => s.dataset.anchor
+  const sections = anchored || [...document.querySelectorAll('.section[data-anchor]')];
+  const byAnchor = sections.find((s) => s.dataset.anchor
     .split(',')
     .some((a) => a.trim() === hash));
   if (byAnchor) return byAnchor;
@@ -91,14 +97,25 @@ export default function decorate(block) {
   // Viewport top of the scroller: 0 for window, else the container's client top.
   const scrollerTop = () => (scroller === window ? 0 : scroller.getBoundingClientRect().top);
 
-  // Resolve targets lazily so anchors in async-loaded fragments are picked up.
-  const currentTargets = () => items
-    .map(({ item, href }) => {
-      const anchor = resolveTarget(href);
-      const region = anchor?.closest('.section') || anchor;
-      return { item, region, anchor };
-    })
-    .filter((t) => t.region);
+  // Resolve targets lazily so anchors in async-loaded fragments are picked up,
+  // then cache the result: `update()` runs on every scroll frame and re-resolving
+  // meant a `querySelectorAll` per nav item per frame. The cache is dropped
+  // whenever the page can have gained/moved anchors (resize, late content).
+  let cachedTargets = null;
+  const invalidateTargets = () => { cachedTargets = null; };
+  const currentTargets = () => {
+    if (!cachedTargets) {
+      const anchored = [...document.querySelectorAll('.section[data-anchor]')];
+      cachedTargets = items
+        .map(({ item, href }) => {
+          const anchor = resolveTarget(href, anchored);
+          const region = anchor?.closest('.section') || anchor;
+          return { item, region, anchor };
+        })
+        .filter((t) => t.region);
+    }
+    return cachedTargets;
+  };
 
   const applyScrollOffset = () => {
     const bar = `${block.getBoundingClientRect().height || 70}px`;
@@ -108,7 +125,10 @@ export default function decorate(block) {
     });
   };
   applyScrollOffset();
-  window.addEventListener('resize', applyScrollOffset, { passive: true });
+  window.addEventListener('resize', () => {
+    invalidateTargets();
+    applyScrollOffset();
+  }, { passive: true });
 
   const setCurrent = (activeItem) => {
     items.forEach(({ item }) => item.classList.toggle('sticky-nav-item-current', item === activeItem));
@@ -206,14 +226,47 @@ export default function decorate(block) {
       requestAnimationFrame(update);
     };
 
+    // Scroll/resize listeners cost nothing until they fire, so wire them now —
+    // scrolling before the deferred setup below still updates the active item.
     // Listen on the actual scroller (the UE canvas, or `window` on the live site).
     scrollTarget().addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
-    // Re-run when the page height changes, since an early pass may misread a short page as bottom.
-    if (typeof ResizeObserver === 'function') {
-      new ResizeObserver(onScroll).observe(document.body);
-    }
-    window.addEventListener('load', onScroll);
+
+    // The re-sync wiring and its extra pass cost a forced layout per nav item,
+    // so keep them off the critical path and let the page reach LCP first.
+    const startScrollSpy = () => {
+      // Anchors from lazily loaded fragments may have arrived since the first
+      // pass cached the targets (and `load` has often fired by now), so re-resolve.
+      invalidateTargets();
+      // Re-run when the page height changes, since an early pass may misread a
+      // short page as bottom. `update()` toggles a class on the section, which
+      // resizes `body` and would re-trigger the observer synchronously — an
+      // endless feedback loop. The timeout breaks that cycle and also coalesces
+      // the burst of resizes from lazily loaded fragments/images into one pass.
+      if (typeof ResizeObserver === 'function') {
+        let resizeTimer;
+        let lastHeight = document.body.offsetHeight;
+        const observer = new ResizeObserver(() => {
+          if (document.body.offsetHeight === lastHeight) return;
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(() => {
+            lastHeight = document.body.offsetHeight;
+            invalidateTargets();
+            onScroll();
+          }, 200);
+        });
+        observer.observe(document.body);
+      }
+      window.addEventListener('load', () => {
+        invalidateTargets();
+        onScroll();
+      });
+      update();
+    };
+
+    // One immediate pass so a deep-linked load paints the correct active item.
     update();
+    if ('requestIdleCallback' in window) window.requestIdleCallback(startScrollSpy, { timeout: 3000 });
+    else window.setTimeout(startScrollSpy, 500);
   }
 }
