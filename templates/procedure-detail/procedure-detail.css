@@ -20,7 +20,6 @@ body.procedure-detail main > .section.flex {
 body.procedure-detail main > .section > .default-content-wrapper h3 {
   font-size: var(--heading-font-size-l-scaled);
   line-height: var(--heading-line-height);
-  font-weight: var(--font-weight-bold);
 }
 
 /* Gold second line drops to its own line. */
@@ -206,7 +205,7 @@ body.procedure-detail main .panel.dark .panel-body p {
   line-height: var(--heading-line-height);
 }
 
-body.procedure-detail main  .panel.wide .panel-body p {
+body.procedure-detail main .section.flex .panel.wide .panel-body p {
     font-size: var(--panel-body-size-ss);
   }
 
