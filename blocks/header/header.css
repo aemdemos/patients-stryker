@@ -142,7 +142,10 @@ header nav .nav-drawer {
   left: 0;
   width: 95vw;
   background-color: var(--color-accent);
-  transform: translateX(-100%);
+
+  /* the extra 1px keeps the closed drawer fully off-screen: 95vw is often a
+     fractional width, and its anti-aliased half-pixel edge showed as a gold line */
+  transform: translateX(calc(-100% - 1px));
   transition: transform 0.3s ease;
   z-index: 10;
 
