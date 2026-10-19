@@ -5,7 +5,7 @@
  */
 
 export default function decorate(block) {
-  // -corp: `open` variant renders every panel expanded at t=0 (live trauma 'Product resources')
+  // `open` variant: every panel starts expanded
   const openAtRest = block.classList.contains('open');
   const list = document.createElement('ul');
   list.className = 'accordion-list';
@@ -22,8 +22,7 @@ export default function decorate(block) {
     button.setAttribute('aria-expanded', openAtRest ? 'true' : 'false');
     button.append(...label.childNodes);
     if (!button.textContent.trim()) {
-      // a11y (button-name): an empty authored label — name the toggle after the
-      // nearest heading above the block, as the live page reads it
+      // empty authored label: name the toggle after the nearest heading above the block
       let heading = null;
       for (let el = block.previousElementSibling; el && !heading; el = el.previousElementSibling) {
         heading = el.matches('h2, h3, h4') ? el : el.querySelector('h2, h3, h4');

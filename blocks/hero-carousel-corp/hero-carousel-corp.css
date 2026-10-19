@@ -1,9 +1,7 @@
-/* hero-carousel-corp — c-autocarousel page hero, t=0 state. Values lifted from the
-   tier2-landing-page prototype CSS (autocarousel.min.css A L1-50, components
-   C L5753-5765, L6619-6624): a 100vw slide image capped at 33.33vw, the
-   headline overlay at top 17% / left 5% / width 47%, 8vw Egyptienne + Futura
-   two-tone headline with line-height 1.35. Below 841px the live hides the
-   desktop image fragment (no mobile fragment authored) — headline only. */
+/* hero-carousel-corp — corp page hero (first slide only). From 900px: a full-width
+   slide image capped at a 3:1 height with the headline over it (top 17% / left 5% /
+   width 47%), an 8vw serif + Futura two-tone headline. Below 900px the image is
+   hidden and only the headline shows. */
 
 .hero-carousel-corp-container > .hero-carousel-corp-wrapper {
   max-width: none;
@@ -11,6 +9,9 @@
 }
 
 .hero-carousel-corp {
+  --hero-carousel-corp-headline-max: 112px;
+  --hero-carousel-corp-compact-cta-gap: 27px;
+
   position: relative;
   width: 100%;
 }
@@ -25,7 +26,7 @@
 }
 
 .hero-carousel-corp .hero-carousel-corp-media {
-  display: none; /* A L51: desktop fragment hidden ≤840 */
+  display: none; /* image hidden below 900px */
 }
 
 .hero-carousel-corp .hero-carousel-corp-media picture,
@@ -52,13 +53,13 @@
   position: static;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 var(--space-block-l) 40px; /* A L47 + the two 20px page-section margins below the headline */
+  padding: 0 var(--space-block-l) calc(2 * var(--space-block-l));
 }
 
 .hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
   margin: 0 0 var(--space-block);
   font-family: var(--heading-font-family);
-  font-size: 16vw; /* C: .fontsize-8vw doubles below 840px */
+  font-size: 16vw; /* twice the desktop 8vw */
   font-weight: 500;
   line-height: var(--heading-line-height-hero);
   color: var(--color-black);
@@ -83,7 +84,7 @@
 
 @media (width >= 900px) {
   .hero-carousel-corp .hero-carousel-corp-slide.active {
-    max-height: 33.33vw; /* A L34: the slick list caps the slide at the 3:1 image */
+    max-height: 33.33vw; /* 3:1 slide */
     overflow: hidden;
   }
 
@@ -95,7 +96,7 @@
     position: absolute;
     top: 17%;
     left: 5%;
-    width: 47%; /* live authored overlay: 100% - 5% - 48% */
+    width: 47%;
     padding: 0;
   }
 
@@ -106,19 +107,16 @@
 
 @media (width >= 1200px) {
   .hero-carousel-corp .hero-carousel-corp-text :is(h1, h2) {
-    font-size: min(8vw, 112px); /* C: .fontsize-8vw cap */
+    font-size: min(8vw, var(--hero-carousel-corp-headline-max));
   }
 }
 
-/* ---- variants (tier2 siblings; additive classes on the block) ----
-   `split`: the live XF places the image in the right half (aem-GridColumn offset 6 /
-   span 6) with the overlay at top 3% / left 5% / width 45% — a 28px/1.35 gold Futura
-   h1, Egyptienne h2, 14px copy and a gold CTA (sage/urine-management). Below 841px the
-   image stays visible (phone--12) with the copy stacked under it (mobile_Bottom).
-   `split compact`: overlay at top 18% / left 8% / width 42%, h1 .fontsize-1-5em (42px)
-   (acute-care/products/maternity-solutions).
-   `headline`: the live c-largeheadline overlay at top 20% / left 3% / width 57% — h1
-   .fontsize-3-5-vw Futura bold, 2vw Futura/Egyptienne date line (fellows-summit-2022). */
+/* ---- block variants ----
+   `split`: image in the right half, text over the left (top 3% / left 5% / width 45%) —
+   gold Futura h1, serif h2, body copy and a CTA. Below 900px the image stays visible
+   with the text under it.
+   `split compact`: text at top 18% / left 8% / width 42%, 1.5x h1.
+   `headline`: text at top 20% / left 3% / width 57% — a 3.5vw h1 and a 2vw date line. */
 .hero-carousel-corp.split .hero-carousel-corp-media {
   display: block;
 }
@@ -143,19 +141,19 @@
 }
 
 .hero-carousel-corp.split .hero-carousel-corp-text .button-wrapper {
-  margin-top: 65px; /* live: 15px h2 margin + an empty paragraph + the CTA container */
+  margin-top: calc(var(--space-section-l) + var(--space-block));
 }
 
 .hero-carousel-corp.headline .hero-carousel-corp-text h1 {
-  font-family: var(--heading-font-family); /* the live line1 is Egyptienne light… */
-  font-size: 7vw; /* .fontsize-3-5-vw doubles below 840px */
+  font-family: var(--heading-font-family);
+  font-size: 7vw; /* twice the desktop 3.5vw */
   font-weight: 500;
-  line-height: 1.65; /* measured: 81px line box at 49px */
+  line-height: var(--corp-image-slide-title-line-height);
   color: var(--color-black);
 }
 
 .hero-carousel-corp.headline .hero-carousel-corp-text h1 :is(em, strong) {
-  font-family: var(--display-font-family); /* …with the first word Futura bold gold */
+  font-family: var(--display-font-family);
   font-style: normal;
   font-weight: 700;
   color: var(--color-black);
@@ -174,7 +172,7 @@
 .hero-carousel-corp.headline .hero-carousel-corp-text p {
   margin: 0;
   font-family: var(--heading-font-family);
-  font-size: 4vw; /* .fontsize-2vw doubles below 840px */
+  font-size: 4vw; /* twice the desktop 2vw */
   line-height: 1.5;
 }
 
@@ -184,16 +182,12 @@
   color: var(--color-accent);
 }
 
-/* ---- `copy` variant (wave-2 tier2 / product heroes) ----
-   The live overlayparsys is a rich-text box positioned by inline style (top / margin-left /
-   width as % of the slide), carried as top-N / left-N / width-N classes that the block JS
-   turns into --hero-copy-* properties. Type is the site rich text, not the home 8vw headline:
-   h1 28px Egyptienne (strong = Futura bold), h2 24.5px, copy 14px, gold CTA — measured on
-   emergency-medical-services, bari-10a, lifepak-35, sage-primafit at 1440. `light` = white
-   copy over the image (desktop only; the live mobile_Bottom stack is black on white),
-   `gold-title` = #ffb500 h1. media-left-N / media-width-N place a half-width image column
-   (the live XF aem-GridColumn span / offset). Below 841px the image stays visible with
-   the copy under it. */
+/* ---- `copy` variant ----
+   A text box over the image, positioned by top-N / left-N / width-N classes (percent of
+   the slide) that the block JS turns into --hero-copy-* properties. Regular heading and
+   body sizes (h1 serif, <strong> in Futura bold). media-left-N / media-width-N place a
+   narrower image column. `light` = white text over the image (from 900px), `gold-title`
+   = gold h1. Below 900px the image stays visible with the text under it. */
 .hero-carousel-corp.copy .hero-carousel-corp-media {
   display: block;
 }
@@ -245,7 +239,7 @@
 }
 
 .hero-carousel-corp.split.compact .hero-carousel-corp-text h1 {
-  font-size: 42px; /* h1 28px x .fontsize-1-5em */
+  font-size: var(--heading-font-size-xxl-scaled);
   line-height: 1.25;
   color: var(--color-black);
 }
@@ -259,7 +253,7 @@
 }
 
 .hero-carousel-corp.split.compact .hero-carousel-corp-text .button-wrapper {
-  margin-top: 27px;
+  margin-top: var(--hero-carousel-corp-compact-cta-gap);
   font-family: var(--body-font-family);
 }
 
@@ -270,23 +264,12 @@ main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text p {
   line-height: var(--paragraph-line-height);
 }
 
-/* overlay heading scale (live .fontsize-*em on the overlay h1 28px / h2 24.5px) */
-.hero-carousel-corp.copy.h1-1-25 .hero-carousel-corp-text h1 { font-size: 35px; }
-.hero-carousel-corp.copy.h1-1-5 .hero-carousel-corp-text h1 { font-size: 42px; }
-.hero-carousel-corp.copy.h1-1-75 .hero-carousel-corp-text h1 { font-size: var(--heading-font-size-hero-xl); }
-.hero-carousel-corp.copy.h1-2 .hero-carousel-corp-text h1 { font-size: 56px; }
-.hero-carousel-corp.copy.h1-2-5 .hero-carousel-corp-text h1 { font-size: 70px; }
-.hero-carousel-corp.copy.h2-1-25 .hero-carousel-corp-text h2 { font-size: 30.625px; }
-.hero-carousel-corp.copy.h2-1-5 .hero-carousel-corp-text h2 { font-size: 36.75px; }
-.hero-carousel-corp.copy.h2-1-75 .hero-carousel-corp-text h2 { font-size: 42.875px; }
-.hero-carousel-corp.copy.h2-2 .hero-carousel-corp-text h2 { font-size: var(--heading-font-size-hero-xl); }
-
 .hero-carousel-corp.copy.gold-title .hero-carousel-corp-text h1 {
   color: var(--color-accent);
 }
 
-/* `mobile-media`: the live mobile XF image is the media cell's last paragraph — shown below 841px
-   instead of the 3:1 desktop crop (the division template's desktop + mobile convention) */
+/* `mobile-media`: the media cell's last image is the phone image, shown below 900px
+   instead of the desktop crop */
 .hero-carousel-corp.copy.mobile-media .hero-carousel-corp-media > p:not(:last-child) {
   display: none;
 }
@@ -309,7 +292,7 @@ main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text p {
   }
 
   .hero-carousel-corp.split .hero-carousel-corp-text h1 {
-    margin-top: 7%; /* live rich-text margin-top 7% of the overlay */
+    margin-top: 7%;
   }
 
   .hero-carousel-corp.headline .hero-carousel-corp-text {
@@ -340,11 +323,11 @@ main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text p {
 
 @media (width >= 1200px) {
   .hero-carousel-corp.headline .hero-carousel-corp-text h1 {
-    font-size: min(3.5vw, var(--heading-font-size-hero-xl)); /* .fontsize-3-5-vw cap */
+    font-size: min(3.5vw, var(--heading-font-size-hero-xl));
   }
 
   .hero-carousel-corp.headline .hero-carousel-corp-text p {
-    font-size: min(2vw, var(--heading-font-size-xxl)); /* .fontsize-2vw cap */
+    font-size: min(2vw, var(--heading-font-size-xxl));
   }
 }
 
@@ -380,10 +363,9 @@ main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text p {
   }
 }
 
-/* ---- article hero (section style `bleed`): the c-autocarousel news-article hero — full-bleed
-   image (shown on phone too, unlike the home-page hero) under a c-largeheadline box. Overlay
-   section styles: box-gold, box-white, compact, overlay-left, box-right, cta-right,
-   mobile-slide. The section's own spacing belongs to the page template. ---- */
+/* ---- article hero (section style `bleed`): full-width image, shown on phones too, with a
+   headline box. `box-gold` puts the box on a gold background. The section's own spacing
+   belongs to the page template. ---- */
 main > .section.bleed .hero-carousel-corp .hero-carousel-corp-media {
   display: block;
 }
@@ -393,7 +375,7 @@ main > .section.bleed .hero-carousel-corp .hero-carousel-corp-slide.active {
   overflow: visible;
 }
 
-/* the c-largeheadline box over the hero: 20 px padding, 28 px Futura h1 (+ optional lead p) */
+/* headline box: Futura h1, optional lead paragraph */
 main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text {
   box-sizing: border-box;
   padding: var(--space-block-l);
@@ -407,23 +389,13 @@ main > .section.bleed .hero-carousel-corp .hero-carousel-corp-text h1 {
   line-height: var(--heading-line-height);
 }
 
-/* box-gold (AED): gold box (60 % of the 320 px inset = 53.3 %) under the image on phone,
-   5 % / 5 % / 54 % over it from 841 px */
+/* box-gold: gold box under the image on phones, over it (top 5% / left 5% / width 54%)
+   from 900px */
 main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text {
   position: static;
   width: 53.3%;
   margin: 0 0 0 5.5%;
   background-color: var(--color-accent);
-}
-
-/* box-white (heart): white box over the image, 18 px / 5 % / 90 % on phone (overflows the
-   120 px image like the live page), 27 % / 5 % / 40 % from 841 px */
-main > .section.bleed.box-white .hero-carousel-corp .hero-carousel-corp-text {
-  position: absolute;
-  top: 18px;
-  left: 5%;
-  width: 90%;
-  background-color: var(--color-white);
 }
 
 @media (width >= 900px) {
@@ -435,124 +407,8 @@ main > .section.bleed.box-white .hero-carousel-corp .hero-carousel-corp-text {
     margin: 0;
   }
 
-  /* the AED headline wraps a .fontsize-3vw span: 43.2 px, 4 lines = 173 px → line-height 1 */
   main > .section.bleed.box-gold .hero-carousel-corp .hero-carousel-corp-text h1 {
     font-size: 3vw;
     line-height: 1;
-  }
-
-  main > .section.bleed.box-white .hero-carousel-corp .hero-carousel-corp-text {
-    top: 27%;
-    width: 40%;
-  }
-}
-
-/* compact: .fontsize-3vw headline; the Futura line is <strong>, the serif tail plain text */
-main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 {
-  margin: 0 0 var(--space-block);
-  font-family: var(--heading-font-family);
-  font-size: 6vw;
-  font-weight: 500;
-  line-height: var(--heading-line-height-hero);
-}
-
-main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 :is(strong, em) {
-  font-size: inherit;
-  line-height: inherit;
-}
-
-main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 strong {
-  font-family: var(--display-font-family);
-  font-weight: 700;
-}
-
-/* overlay-left: the 2vw tail (4vw on phone) under the 3vw Futura line */
-main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
-  font-size: 4vw;
-}
-
-main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
-  font-size: 6vw;
-}
-
-/* phone geometry shared by the boxed / boxless overlays: 18 px / 5 % / 90 % over the image */
-main > .section.bleed:is(.overlay-left, .box-right, .cta-right) .hero-carousel-corp .hero-carousel-corp-text {
-  position: absolute;
-  top: 18px;
-  left: 5%;
-  width: 90%;
-  padding: 0;
-  background-color: transparent;
-}
-
-main > .section.bleed.box-right .hero-carousel-corp .hero-carousel-corp-text {
-  padding: 0 var(--space-block-l);
-  background-color: var(--color-white);
-}
-
-/* cta-only overlay: the empty two-paragraph .line1 (58 px) + 20 px above the button */
-main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text {
-  padding-top: 78px;
-}
-
-main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text p.button-wrapper {
-  margin: 0;
-}
-
-/* mobile-slide: the media cell's second picture is the live mobile fragment */
-main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:first-of-type {
-  display: none;
-}
-
-@media (width >= 900px) {
-  main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1 {
-    font-size: 3vw;
-  }
-
-  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
-    font-size: 2vw;
-  }
-
-  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
-    font-size: 3vw;
-  }
-
-  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text {
-    top: 10%;
-    left: 5%;
-    width: 39%;
-  }
-
-  main > .section.bleed.box-right .hero-carousel-corp .hero-carousel-corp-text {
-    top: 23%;
-    left: 58%;
-    width: 39%;
-    padding: var(--space-block-l);
-  }
-
-  main > .section.bleed.cta-right .hero-carousel-corp .hero-carousel-corp-text {
-    top: 30%;
-    left: 57%;
-    width: 38%;
-    padding-top: 68.5px; /* two empty paragraphs (38.5) + the largeheadline's 30 px margin */
-  }
-
-  main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:first-of-type {
-    display: block;
-  }
-
-  main > .section.bleed.mobile-slide .hero-carousel-corp .hero-carousel-corp-media p:nth-of-type(2) {
-    display: none;
-  }
-}
-
-@media (width >= 1200px) {
-  main > .section.bleed.compact .hero-carousel-corp .hero-carousel-corp-text h1,
-  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 strong {
-    font-size: min(3vw, 42px);
-  }
-
-  main > .section.bleed.overlay-left .hero-carousel-corp .hero-carousel-corp-text h1 {
-    font-size: min(2vw, var(--heading-font-size-xxl));
   }
 }

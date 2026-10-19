@@ -1,8 +1,5 @@
-/* news-headline-corp — the news-detail article head. Lifted from components.min.css:
-   .h1-title h1 L5890 (@840) / L5892 (@1024): Futura bold from 841px, Egyptienne below;
-   c-publish-date h5 L5564 (margin 0); c-event-location-properties h5 L6032 (margin-top 0),
-   both Futura bold 14px / 1.15 (base h5). Geometry: the live .h1-title.container and the meta
-   row are plain 1410px containers, which the section wrapper already provides. */
+/* news-headline-corp — the news-detail article head: serif h1 on phones, Futura bold from
+   900px, then a Futura bold publish date / event location row. */
 
 .news-headline-corp h1 {
   margin: 0 0 var(--space-block);
@@ -19,8 +16,8 @@
   }
 }
 
-/* publish date + event location: live h5 row, Futura bold 14px / 1.15; the (often empty)
-   location heading's 15px bottom margin closes the row */
+/* publish date + event location row; the (often empty) location heading's bottom margin
+   closes the row */
 .news-headline-corp .news-headline-corp-meta {
   margin-bottom: var(--space-block);
   font-family: var(--display-font-family);

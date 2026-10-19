@@ -1,12 +1,10 @@
-/* news-cards-corp — www.stryker.com c-latestnews (components.min.css L5746-5749,
-   L2915-2920; .border-bottom-gold L2866; a.action-link L2890-2893). Live grid: the
-   .latestnews-container row (-15px) holds four col-sm-3 items padded 15px each,
-   padding-bottom 25px over the 1px grey rule; the component is a .page-section
-   (margin-bottom 20px, 30px from 480px). Below the Bootstrap sm breakpoint the
-   items stack full width; the -15px row margin holds at every width, so the
-   thumbnails sit 15px inside the page gutter (x=30 at 1440, x=15 at 360). */
+/* news-cards-corp — latest-news cards: stacked on phones, 4-up from 900px, closed by a
+   thin grey rule. The block pulls out by the container gutter and each card pads it back,
+   so the thumbnails line up with the page content. */
 
 .news-cards-corp {
+  --news-cards-corp-title-gap: 16px;
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
@@ -32,14 +30,14 @@
 }
 
 .news-cards-corp .news-card-body h3 {
-  margin: 16px 0 var(--space-block);
+  margin: var(--news-cards-corp-title-gap) 0 var(--space-block);
   font-family: var(--heading-font-family);
   font-weight: 500;
   line-height: var(--heading-line-height);
 }
 
 .news-cards-corp .news-card-body h3 a:any-link {
-  color: var(--color-black); /* the live title is plain text; the link stays quiet */
+  color: var(--color-black); /* linked titles look like plain text */
   text-decoration: none;
 }
 
@@ -57,8 +55,7 @@
   line-height: var(--body-line-height);
 }
 
-/* "Read More" — the live a.news-link.action-link: Futura bold teal, uppercase,
-   strykericons chevron after the label */
+/* "Read More": Futura bold teal, uppercase, icon-font chevron after the label */
 .news-cards-corp .news-card-body p:last-child a:any-link {
   display: inline-block;
   color: var(--color-primary);
@@ -83,17 +80,17 @@
 
 @media (width >= 600px) {
   .news-cards-corp {
-    margin-bottom: var(--space-inset-l); /* .page-section ≥480 */
+    margin-bottom: var(--space-inset-l);
   }
 }
 
 @media (width >= 900px) {
   .news-cards-corp {
-    grid-template-columns: repeat(4, 1fr); /* col-sm-3; the -15px row stays */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* D2: an authored card displaced by a newer index-sourced one keeps the visible count */
+/* an authored card replaced by a newer index card stays hidden */
 .news-cards-corp .news-card[hidden] {
   display: none;
 }

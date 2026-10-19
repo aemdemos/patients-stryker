@@ -68,7 +68,7 @@ function youTubeVideoId(href) {
 
 /**
  * Turns a default-content paragraph whose only child is a YouTube video link into the
- * `video` block (live c-standalone-video): the block decorates a single cell holding the
+ * `video` block: the block decorates a single cell holding the
  * link, so the paragraph is replaced by `buildBlock('video', { elems: [link] })`. Links
  * that already sit inside a block (an accordion body, a columns cell — no nested blocks)
  * or inside an existing `.video` are left alone; channel / user links never match.

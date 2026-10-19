@@ -1,7 +1,19 @@
+.columns-corp {
+  --columns-corp-icon-size: 150px;
+  --columns-corp-arrow-size: 6px; /* related-links "Learn more" arrow */
+  --columns-corp-chevron-size: 4px; /* light-gray CTA chevron */
+  --columns-corp-cta-gap: 6px;
+  --columns-corp-cell-inset: 24px; /* light-gray cell padding */
+  --columns-corp-cta-slot: 80px; /* light-gray: space below each CTA on phone */
+  --columns-corp-cta-slot-m: 75px; /* light-gray: space below each CTA in the 2-up layout */
+  --columns-corp-code-line-height: 24px;
+  --columns-corp-compact-row-gap: 40px;
+}
+
 .columns-corp > div {
   display: flex;
   flex-direction: column;
-  margin: 0 -15px;
+  margin: 0 calc(-1 * var(--space-block));
 }
 
 .columns-corp img {
@@ -11,7 +23,7 @@
 
 .columns-corp > div > div {
   box-sizing: border-box;
-  min-width: 0; 
+  min-width: 0;
   padding: 0 var(--space-block);
 }
 
@@ -38,8 +50,6 @@
 .columns-corp p,
 .columns-corp ul,
 .columns-corp li {
-  /* kept at the patients default (17.5px): the 14px trial regressed home/our-culture/hallux (P2a gate) —
-     templates scope `body-m` back to 14px where the live colctrl RTE is unscaled (division) */
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
@@ -49,20 +59,18 @@
   list-style-type: disc;
 }
 
-/* Text-only columns: h4 uses a smaller mobile size and scales up at 600px+. */
-.columns-text h4 {
+/* text-only columns: smaller h4 below 600px */
+:where(.columns-corp).columns-text h4 {
   font-size: var(--body-font-size-l);
   line-height: var(--body-line-height-l);
 }
 
-/* inline bold in body copy keeps the body font (bold weight), not the global
-   Futura display face — bold should emphasise, not switch typeface. Compact
-   columns opt back into the display font below. */
+/* bold body copy keeps the body font; compact and strong-futura sections switch to Futura below */
 .columns-corp p :is(strong, b) {
   font-family: var(--body-font-family);
 }
 
-/* Keep gold h2 marker text at the intended columns heading size. */
+/* gold (bold italic) h2 text */
 .columns-corp h2 em strong,
 .columns-corp h2 strong em {
   font-size: var(--heading-font-size-xl);
@@ -80,7 +88,7 @@
   margin: 0;
 }
 
-/* Text after the image gets a 3% horizontal inset. */
+/* text after the image is inset 3% */
 .columns-corp .columns-img-col ~ h3,
 .columns-corp .columns-img-col ~ h4,
 .columns-corp .columns-img-col ~ p {
@@ -93,26 +101,22 @@
 }
 
 .columns-corp.columns-icon-grid .columns-img-col img {
-  width: 150px; /* fixed icon size, as on the reference */
+  width: var(--columns-corp-icon-size);
 }
 
-/* 50-50 variant: equal columns with tuned heading sizing. */
 .columns-corp.columns-50-50 h4 {
-  font-size: var(--heading-font-size-l); 
+  font-size: var(--heading-font-size-l);
 }
 
 .columns-corp.columns-icon-grid .columns-img-col ~ p strong {
   font-weight: 700;
 }
 
-
-/* Roomier heading-to-body spacing. */
+/* related-links: column title, copy and a "Learn more" link with an arrow */
 .columns-corp.related-links p {
   margin-bottom: var(--space-block);
 }
 
-/* column labels — source renders these in Futura bold, GOLD, 24.5px
-   (the .futura-bold .fontsize-1-75em headings coloured #ffb500). */
 .columns-corp.related-links h3 {
   margin-bottom: var(--space-block);
   padding-bottom: 2%;
@@ -129,13 +133,11 @@
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 6px 0 6px 8px;
+  border-width: var(--columns-corp-arrow-size) 0 var(--columns-corp-arrow-size) calc(var(--columns-corp-arrow-size) + 2px);
   border-color: transparent transparent transparent currentcolor;
 }
 
-/* `contact-card` (wave-2 encoder, live c-contactus): the address / phone card keeps the
-   site's base rich-text scale — 14px copy, 17.5px Futura h4 labels, black links, the
-   ruled Futura section title (measured style-drift, craniomaxillofacial/contact) */
+/* contact-card: address / phone card — 14px copy, 17.5px h4 labels, links in the text colour */
 .columns-corp.contact-card :is(p, li, a) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
@@ -161,16 +163,15 @@
   font-weight: 700;
 }
 
-
-/* compact variant — smaller heading + body typography for dense 50/50 rows. */
+/* compact section: smaller headings and copy */
 .section:where(.compact) .columns-img-col {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* Icon-grid variant: centered icon with left-aligned text content. */
+/* icon-grid: centred icon above left-aligned text */
 .columns-corp:where(.columns-icon-grid) .columns-img-col {
-  margin-bottom: var(--space-section); /* 30px icon-to-subtitle gap */
+  margin-bottom: var(--space-section);
   padding-bottom: 0;
 }
 
@@ -190,7 +191,6 @@
 .section.compact .columns-corp h4 {
   font-size: var(--heading-font-size-m);
 }
-
 
 .section.compact .columns-corp p {
   font-size: var(--body-font-size-m);
@@ -213,7 +213,7 @@
   font-size: var(--heading-font-size-compact);
 }
 
-
+/* serif section: copy in the serif heading font */
 .section.serif .columns-corp p,
 .section.serif .columns-corp ul,
 .section.serif .columns-corp li,
@@ -223,14 +223,11 @@
   line-height: var(--heading-line-height);
 }
 
-/* stroke title — the reference enlarges it 1.5x (21px → 31.5px), Futura bold.
-   Colour/family/weight come from the global bold+italic gold-heading rule. */
 .section.serif .columns-corp h3 {
   font-size: calc(var(--heading-font-size-l) * 1.5);
   line-height: var(--heading-line-height);
 }
 
-/* Add top and bottom spacing around serif 50-50 blocks. */
 .section.serif .columns-corp.columns-50-50 {
   margin-block: var(--space-section);
 }
@@ -239,7 +236,6 @@
   margin-bottom: 0;
 }
 
-/* Light-gray serif sections use section padding and remove block margin. */
 .section.light-gray.serif {
   padding-block: var(--space-section);
 }
@@ -248,10 +244,10 @@
   margin-block: 0;
 }
 
-/* dark variant — gold Futura-bold section title (h3). 26px gold. */
+/* dark section: gold Futura h3, white serif h4 and copy */
 .section.dark .columns-corp h3 {
   font-family: var(--display-font-family);
-  font-size: var(--panel-cta-heading-size); /* 26px */
+  font-size: var(--panel-cta-heading-size);
   font-weight: 700;
   line-height: var(--heading-line-height-ml);
   color: var(--color-accent);
@@ -262,10 +258,9 @@
   font-size: var(--heading-font-size-m);
 }
 
-/* dark-variant caption (h4) — Egyptienne serif light, white, 21.875px. */
 .section.dark .columns-corp h4 {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-ml); /* 21.875px */
+  font-size: var(--heading-font-size-ml);
   font-weight: 500;
   line-height: var(--heading-line-height-ml);
   color: var(--color-white);
@@ -287,7 +282,7 @@
   line-height: var(--paragraph-line-height);
 }
 
-/* icon-grid cell text — subtitle (serif), bold Futura heading, then body */
+/* icon-grid cell text: serif subtitle, bold Futura heading, then body copy */
 .columns-corp.columns-icon-grid .columns-img-col ~ p {
   margin-block: 0 var(--space-block);
   margin-inline: 12.4%;
@@ -297,22 +292,17 @@
   line-height: var(--heading-line-height);
 }
 
-/* `flat` variant (P2d, R-42): live cols2 rows whose standaloneimage carries no bottom
-   margin — the image cell ends with the picture (accolade-ii hero + 2/3-1/3 rows). */
+/* flat: no space below the image cell */
 .columns-corp:where(.flat) > div > .columns-img-col {
   padding-bottom: 0;
 }
 
-/* bullets stay black while the item text is white, as on the reference (there the
-   marker inherits the black <li> and the text lives in a white span) */
+/* bullets stay black on white list text */
 .section.dark .columns-corp li::marker {
   color: var(--color-black);
 }
 
-/* dark 50-50 band: the image bleeds the full band height, so drop the section's
-   own block padding and the image column's margin/padding (the text column re-adds
-   its inset below). Keyed on the 50-50 variant so plain-columns dark bands keep
-   their default spacing. */
+/* dark 50-50 band: the image fills the band height; the text column keeps its inset */
 .section.dark:has(.columns-50-50) {
   padding-block: 0;
 }
@@ -331,12 +321,12 @@
   padding-block: var(--space-section);
 }
 
-/* Mobile stacked 50-50 rows use row-gap for image/text spacing. */
+/* stacked 50-50 rows: gap between image and text */
 .section.serif .columns-corp:where(.columns-50-50) > div {
   row-gap: var(--space-section-l);
 }
 
-/* light-gray variant — column text uses the serif heading font */
+/* light-gray section: serif copy, underlined links become chevron CTAs */
 .section.light-gray .columns-corp p,
 .section.light-gray .columns-corp ul,
 .section.light-gray .columns-corp li,
@@ -355,10 +345,9 @@
 }
 
 .section.compact .columns-corp p:has(code) {
-  padding: var(--space-block-l);
-  padding-bottom:0;
   margin-bottom: 0;
-  line-height: 24px;
+  padding: var(--space-block-l) var(--space-block-l) 0;
+  line-height: var(--columns-corp-code-line-height);
 }
 
 .columns-corp.columns-icon-grid .columns-img-col ~ p:where(:has(strong)) + p {
@@ -367,9 +356,8 @@
   line-height: var(--body-line-height-l);
 }
 
-/* Add extra inner inset for non-50-50 light-gray columns. */
 .section.light-gray .columns-corp:where(:not(.columns-50-50)) > div > div {
-  padding-inline: 24px;
+  padding-inline: var(--columns-corp-cell-inset);
 }
 
 .section.compact .columns-corp:where(.columns-50-50) > div:where(:has(> div:last-child picture)) > div:where(:first-child:not(:has(picture))) {
@@ -379,13 +367,11 @@
   margin-top: var(--space-inset-l);
 }
 
-/* extra title-to-body gap to match the reference's larger inline-title spacing */
 .section.light-gray .columns-corp h2 {
   margin-bottom: var(--space-inset-m);
 }
 
-/* when a compact columns block also contains an h1, the h2 acts as a subheading
-   and should use the standard xl size rather than the compact size */
+/* with an h1 in the block, the compact h2 is a subheading at the regular size */
 .section.compact .columns-corp:has(h1) h2 {
   font-size: var(--heading-font-size-xl);
 }
@@ -394,11 +380,11 @@
   font-size: var(--heading-font-size-xl);
 }
 
-/* underlined link (<u>) = flat CTA: Futura bold, uppercase, teal, with a chevron */
+/* light-gray: an underlined link is a CTA — Futura bold, uppercase, with a chevron */
 .section.light-gray .columns-corp a:has(u) {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--columns-corp-cta-gap);
   color: var(--link-color);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-l);
@@ -407,31 +393,28 @@
   text-transform: uppercase;
 }
 
-/* Style only the related-links "Learn more" CTA links. */
 .columns-corp.related-links p:not(:has(a)) + p:has(a) a:any-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--columns-corp-cta-gap);
   font-family: var(--display-font-family);
-  font-size: var(--body-font-size-l);   /* 17.5px */
+  font-size: var(--body-font-size-l);
   font-weight: 700;
-  line-height: var(--body-line-height-l); /* 20.125px (17.5 x 1.15) */
+  line-height: var(--body-line-height-l);
 }
 
-/* <u> is only the CTA trigger — not shown as an underline */
+/* the underline only marks the CTA; it isn't drawn */
 .section.light-gray .columns-corp a:has(u) u {
   text-decoration: none;
 }
 
-/* CTA slot: extra space below each CTA before the next stacked column (mobile).
-   The 2-up and 3-up media queries below override this per layout. */
 .section.light-gray .columns-corp p:has(a :where(u)) {
-  margin-bottom: 80px;
+  margin-bottom: var(--columns-corp-cta-slot);
 }
 
 .section.compact .columns-corp :where(p:has(code)) + p:has(code) {
   padding-top: 0;
-  padding-bottom:var(--space-block-l);
+  padding-bottom: var(--space-block-l);
   margin-bottom: var(--space-inset-l);
   font-family: var(--heading-font-family);
 }
@@ -443,17 +426,16 @@
   font-family: var(--heading-font-family);
 }
 
-/* chevron drawn in CSS (reference uses a proprietary icon font); follows link colour */
+/* CSS chevron in the link colour */
 .section.light-gray .columns-corp a:has(u)::after {
   content: "";
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 4px 0 4px 5px;
+  border-width: var(--columns-corp-chevron-size) 0 var(--columns-corp-chevron-size) calc(var(--columns-corp-chevron-size) + 1px);
   border-color: transparent transparent transparent currentcolor;
 }
 
-/* no underline on any link; override the global underline default */
 .section.light-gray .columns-corp a:any-link {
   text-decoration: none;
 }
@@ -465,7 +447,7 @@
 }
 
 @media (width >= 600px) {
-  .columns-text h4 {
+  :where(.columns-corp).columns-text h4 {
     font-size: var(--heading-font-size-ml);
     line-height: var(--heading-line-height-ml);
   }
@@ -479,30 +461,25 @@
     flex: 0 0 50%;
   }
 
-  /* icon-grid: 6 cells wrap 2-up into 3 rows; add the reference's inter-row gap */
+  /* icon-grid and 4-cols wrap 2-up with a gap between rows */
   .columns-corp.columns-icon-grid > div {
     row-gap: var(--space-section);
   }
 
-  /* 4-up: wrap into an even 2x2 grid on tablet, with an inter-row gap so the two
-     rows don't collide (base flex:0 0 50% already gives the 2-up split) */
   .columns-corp.columns-4-cols > div {
     row-gap: var(--space-section);
   }
 
-  /* restore the hero CTA button once the layout is side-by-side (it's hidden on
-     mobile above, matching the source) */
   .columns-corp.columns-50-50 .button-wrapper {
     display: block;
   }
 
-  /* in an image+text row, the text column sits slightly below the image top, as
-     in the reference. Only applies when the row has a picture (not text+text rows). */
+  /* image + text row: the text starts a little below the image top */
   .columns-corp.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
     padding-top: var(--space-section);
   }
 
-  /* Use an inset variable to widen the 50-50 image/text gap. */
+  /* gap between the image and the text column */
   .columns-corp.columns-50-50 {
     --col-5050-inset: 49px;
   }
@@ -516,18 +493,17 @@
     font-size: var(--heading-font-size-l);
   }
 
-  /* stroke/serif section uses a wider image-to-text gap (~98px vs 64px) */
+  /* serif sections: wider image-to-text gap, equal space above and below the image */
   .section.serif .columns-corp.columns-50-50 {
     --col-5050-inset: 83px;
   }
 
-  /* Keep equal top and bottom spacing around serif 50-50 images. */
   .section.serif .columns-corp.columns-50-50 .columns-img-col {
     margin-block: var(--space-section);
     padding-bottom: 0;
   }
 
-  /* tablet 2-up: float grid matching the reference */
+  /* light-gray: 2-up float grid; the third cell floats right under the second */
   .section.light-gray .columns-corp > div {
     display: block;
   }
@@ -547,13 +523,12 @@
     padding-left: var(--col-5050-inset);
   }
 
-  /* 3rd column floats right so it lands in the right column below the 2nd */
   .section.light-gray .columns-corp > div > div:nth-child(3) {
     float: right;
   }
 
   .section.compact .columns-corp.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
-    padding-top:0;
+    padding-top: 0;
   }
 
   .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
@@ -561,27 +536,26 @@
   }
 
   .section.compact .columns-corp.columns-50-50 > div > div:first-child:has(picture) + div:not(:has(picture)) {
-   padding-left: var(--space-block);
+    padding-left: var(--space-block);
   }
 
-  /* serif image-right row: the reference also insets the text column's outer
-     (left) edge, not just the image-facing side, so the text sits further in */
+  /* serif image-right row: the text column is inset on both sides */
   .section.serif .columns-corp.columns-50-50 > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
     padding-left: var(--col-5050-inset);
   }
 
-  /* reserve a CTA slot below each CTA so the 3rd column clears the first row */
+  /* light-gray: space below each CTA so the third cell clears the first row */
   .section.light-gray .columns-corp p:has(a u) {
-    margin-bottom: 75px;
+    margin-bottom: var(--columns-corp-cta-slot-m);
   }
 
-  /* reserve 2 lines for the pre-CTA body so both CTAs align (2-up and 3-up) */
+  /* light-gray: the copy above a CTA takes at least two lines so CTAs align */
   .section.light-gray .columns-corp p:has(+ p a u) {
     min-height: calc(2 * var(--body-font-size-l) * var(--body-line-height-l));
   }
 }
 
-/* desktop (>= 900px) — all columns line up in a single row */
+/* from 900px all cells sit in one row */
 @media (width >= 900px) {
   .columns-corp > div {
     flex-wrap: nowrap;
@@ -592,23 +566,20 @@
   }
 
   .columns-corp p:has(code) code {
-    font-size:1.5vw;
+    font-size: 1.5vw;
   }
 
-  /* icon-grid stays a wrapping 2-up grid on desktop (the base desktop rule above
-     would otherwise force all 6 cells into one nowrap row) */
+  /* icon-grid stays a wrapping 2-up grid */
   .columns-corp.columns-icon-grid > div {
     flex-wrap: wrap;
   }
 
-  /* 4-up: all four cells in a single row at an exact 25% each. Fixed basis (not the
-     base flex:1 1 0%) so columns with differing content/padding stay equal width. */
+  /* 4-cols: one row, 25% each */
   .columns-corp.columns-4-cols > div {
     flex-wrap: nowrap;
     row-gap: 0;
   }
 
-  /* 50-50 columns  */
   .columns-corp.columns-50-50 > div > div,
   .columns-corp.columns-icon-grid > div > div {
     flex: 0 0 50%;
@@ -618,13 +589,11 @@
     flex: 0 0 25%;
   }
 
-
-  /* desktop 3-up: revert to the base flex row */
+  /* light-gray: back to a single flex row */
   .section.light-gray .columns-corp > div {
     display: flex;
   }
 
-  /* 70-30 — an uneven two-column split (wide column left). */
   .columns-corp.columns-70-30 > div > div:first-child {
     flex: 0 0 70%;
   }
@@ -633,7 +602,6 @@
     flex: 0 0 30%;
   }
 
-  /* 30-70 — the mirror split (narrow column left: live cols2_1-3_2-3). */
   .columns-corp.columns-30-70 > div > div:first-child {
     flex: 0 0 30%;
   }
@@ -642,7 +610,6 @@
     flex: 0 0 70%;
   }
 
-  /* live col-md-4 | col-md-8 (P2c: trauma "Our history" row) */
   .columns-corp.columns-33-67 > div > div:first-child {
     flex: 0 0 33.3333%;
   }
@@ -664,8 +631,7 @@
     width: auto;
   }
 
-  /* serif image+text rows centre the image against the text block only at desktop
-     (equal top/bottom spacing, as the reference does); tablet stays top-aligned */
+  /* serif image + text rows: image centred against the text */
   .section.serif .columns-corp.columns-50-50 > div {
     align-items: center;
   }
@@ -675,7 +641,7 @@
   }
 
   .section.compact .columns-corp.columns-50-50:not(:first-child) > div {
-    margin-top:40px;
+    margin-top: var(--columns-corp-compact-row-gap);
     margin-bottom: var(--space-inset-l);
   }
 
@@ -683,11 +649,9 @@
     margin-top: 0;
   }
 
-  /* CTA slot is a 2-up float device only; drop it so 3-up spacing stays tight */
   .section.light-gray .columns-corp p:has(a u) {
     margin-bottom: var(--space-block);
   }
-
 }
 
 @media (width >= 1200px) {
@@ -696,76 +660,31 @@
   }
 }
 
-/* ---- article grid section styles (news / feature articles). The live AEM grid cell ratios
-   and column skins, measured at 1440 / 360. Section styles:
-     cols-6-6 / cols-7-5 / cols-5-3 / cols-3-9 / cols-3-3-6 / cols-4-4-4   cell ratios
-     sm-7-5 / sm-keep   keep the 7/12 | 5/12 and 3/12 | 3/12 | 6/12 ratios on phone
-     promo   4/12 image + largeheadline promo (margin-top 8 %, 2vw Futura h3, 1.5vw copy)
-     tiles   standalone image + 2.5vw Futura title + accent CTA
-     lead    the .fontsize-1-25em body copy carried into the columns row
-   Cells keep the 15 px Bootstrap gutter, images fill the cell. ---- */
-main > .section:is(.cols-7-5, .cols-5-3, .cols-3-9) .columns-corp :is(p, li) {
+/* ---- article section styles (news-detail):
+     cols-6-6 / cols-7-5 / cols-4-4-4   cell ratios 6/12 + 6/12, 7/12 + 5/12, 3 × 4/12 from 600px
+     sm-7-5   keep the 7/12 + 5/12 ratio on phone too
+     lead     larger body copy
+   Images fill their cell. ---- */
+main > .section.cols-7-5 .columns-corp :is(p, li) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
-/* a lead body keeps its .fontsize-1-25em copy inside the columns row too (AED 7/5) */
 main > .section.lead .columns-corp :is(p, li) {
   font-size: var(--body-font-size-l);
-  line-height: 21.5px;
+  line-height: var(--corp-lead-line-height);
 }
 
-main > .section.promo .columns-corp p {
-  margin: 0 0 var(--space-inset-l);
-  padding: 0;
-  font-size: 3vw;
-  line-height: var(--heading-line-height-hero);
-}
-
-main > .section:is(.cols-7-5, .cols-5-3, .cols-3-9) .columns-corp .columns-img-col ~ :is(h3, h4, p) {
+main > .section.cols-7-5 .columns-corp .columns-img-col ~ :is(h3, h4, p) {
   padding: 0;
 }
 
-main > .section.promo .columns-corp p.button-wrapper {
-  margin: 0 0 var(--space-block);
-  font-size: var(--body-font-size-m);
-}
-
-main > .section.tiles .columns-corp p.button-wrapper {
-  margin: 0 0 var(--space-block);
-  padding: 0;
-  font-size: var(--body-font-size-m);
-}
-
-@media (width >= 900px) {
-  main > .section.promo .columns-corp p {
-    font-size: 1.5vw;
-  }
-}
-
-@media (width >= 1200px) {
-  main > .section.promo .columns-corp p {
-    font-size: min(1.5vw, var(--body-font-size-xl));
-  }
-}
-
-main > .section:is(.cols-6-6, .cols-7-5, .cols-5-3, .cols-3-9, .cols-3-3-6, .cols-4-4-4, .tiles, .promo)
-  .columns-corp .columns-img-col img {
+main > .section:is(.cols-6-6, .cols-7-5, .cols-4-4-4) .columns-corp .columns-img-col img {
   width: 100%;
-}
-
-/* 3/12 3/12 6/12 stays a row even on phone (live 60 / 60 / 149 px images at 360) */
-main > .section.cols-3-3-6 .columns-corp > div {
-  flex-flow: row nowrap;
-  align-items: flex-start;
 }
 
 main > .section.sm-7-5 .columns-corp > div {
   flex-flow: row nowrap;
-}
-
-main > .section.cols-3-3-6 .columns-corp > div > div {
-  flex: 0 0 25%;
 }
 
 @media (width >= 600px) {
@@ -780,8 +699,7 @@ main > .section.cols-3-3-6 .columns-corp > div > div {
   }
 }
 
-main > .section:is(.cols-6-6, .cols-7-5, .cols-5-3, .cols-3-9, .cols-3-3-6, .cols-4-4-4, .tiles, .promo)
-  .columns-corp .columns-img-col {
+main > .section:is(.cols-6-6, .cols-7-5, .cols-4-4-4) .columns-corp .columns-img-col {
   margin-bottom: var(--space-block-l);
   padding-bottom: 0;
 }
@@ -790,21 +708,12 @@ main > .section.cols-4-4-4 .columns-corp .columns-img-col {
   margin-bottom: 0;
 }
 
-main > .section.sm-keep.cols-3-3-6 .columns-corp > div {
-  flex-flow: row nowrap;
-}
-
-main > .section.cols-3-3-6 .columns-corp > div > div:last-child {
-  flex: 0 0 50%;
-}
-
 @media (width >= 600px) {
-  main > .section:is(.cols-6-6, .cols-7-5, .cols-5-3, .cols-3-9, .cols-3-3-6, .tiles, .promo)
-    .columns-corp .columns-img-col {
+  main > .section:is(.cols-6-6, .cols-7-5) .columns-corp .columns-img-col {
     margin-bottom: var(--space-inset-l);
   }
 
-  main > .section:is(.cols-6-6, .tiles, .promo) .columns-corp > div > div {
+  main > .section.cols-6-6 .columns-corp > div > div {
     flex: 0 0 50%;
   }
 
@@ -819,106 +728,9 @@ main > .section.cols-3-3-6 .columns-corp > div > div:last-child {
   main > .section.cols-7-5 .columns-corp > div > div:last-child {
     flex: 0 0 41.6667%;
   }
-
-  main > .section.cols-5-3 .columns-corp > div > div:first-child {
-    flex: 0 0 62.5%;
-  }
-
-  main > .section.cols-5-3 .columns-corp > div > div:last-child {
-    flex: 0 0 37.5%;
-  }
-
-  main > .section.cols-3-9 .columns-corp > div > div:first-child {
-    flex: 0 0 25%;
-  }
-
-  main > .section.cols-3-9 .columns-corp > div > div:last-child {
-    flex: 0 0 75%;
-  }
 }
 
-/* grey aside (heart "Did you know?"): has-background inside the 15 px cell gutter, padding
-   5 % 20px 20px, Futura 1.5vw title + 1.5vw serif copy, .page-section margin below */
-main > .section.cols-5-3 .columns-corp > div > div:last-child {
-  margin-bottom: var(--space-inset-l);
-  padding: 16px 35px var(--space-block-l);
-  background: linear-gradient(var(--color-surface), var(--color-surface)) 15px 0 / calc(100% - 30px)
-    100% no-repeat;
-}
-
-main > .section.promo .columns-corp h3 {
-  margin: 0 0 var(--space-block);
-  padding: 0;
-  font-family: var(--display-font-family);
-  font-size: 4vw;
-  font-weight: 700;
-  line-height: var(--heading-line-height-hero);
-}
-
-/* tiles (heart "Keep reading"): 2.5vw Futura title (authored line breaks), accent CTA at 14 px */
-main > .section.tiles .columns-corp h3 {
-  margin: 0 0 var(--space-inset-l);
-  padding: 0;
-  font-family: var(--display-font-family);
-  font-size: 5vw;
-  font-weight: 700;
-  line-height: var(--heading-line-height-hero);
-}
-
-main > .section.cols-5-3 .columns-corp > div > div:last-child h3 {
-  margin: 0;
-  padding-bottom: 1.35em; /* the authored <br><br> blank line */
-  font-family: var(--display-font-family);
-  font-size: 3vw;
-  font-weight: 700;
-  line-height: var(--heading-line-height-hero);
-}
-
-main > .section.cols-5-3 .columns-corp > div > div:last-child p {
-  margin: 0;
-  font-family: var(--heading-font-family);
-  font-size: 3vw;
-  line-height: var(--heading-line-height-hero);
-}
-
-main > .section.promo .columns-corp h3 strong {
-  font-size: inherit;
-}
-
-main > .section.promo .columns-corp > div > div:last-child {
-  padding-top: 8%;
-}
-
-@media (width >= 900px) {
-  main > .section.cols-5-3 .columns-corp > div > div:last-child :is(h3, p) {
-    font-size: 1.5vw;
-  }
-
-  main > .section.promo .columns-corp h3 {
-    font-size: 2vw;
-  }
-
-  main > .section.tiles .columns-corp h3 {
-    font-size: 2.5vw;
-  }
-}
-
-@media (width >= 1200px) {
-  main > .section.cols-5-3 .columns-corp > div > div:last-child :is(h3, p) {
-    font-size: min(1.5vw, var(--body-font-size-xl));
-  }
-
-  main > .section.promo .columns-corp h3 {
-    font-size: min(2vw, var(--heading-font-size-xxl));
-  }
-
-  main > .section.tiles .columns-corp h3 {
-    font-size: min(2.5vw, 35px);
-  }
-}
-
-/* sm-7-5 / sm-keep: the live cells carry no --phone-- width, so below 600px they keep their
-   default fractions; from 600px the cols-7-5 / cols-3-3-6 ratios above take over */
+/* sm-7-5: the 7/12 + 5/12 ratio below 600px; cols-7-5 takes over from 600px */
 main > .section.sm-7-5 .columns-corp > div > div:first-child {
   flex: 0 0 58.3333%;
   max-width: 58.3333%;
@@ -929,21 +741,9 @@ main > .section.sm-7-5 .columns-corp > div > div:last-child {
   max-width: 41.6667%;
 }
 
-main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div {
-  flex: 0 0 25%;
-  max-width: 25%;
-}
-
-main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div:last-child {
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
 @media (width >= 600px) {
   main > .section.sm-7-5 .columns-corp > div > div:first-child,
-  main > .section.sm-7-5 .columns-corp > div > div:last-child,
-  main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div,
-  main > .section.sm-keep.cols-3-3-6 .columns-corp > div > div:last-child {
+  main > .section.sm-7-5 .columns-corp > div > div:last-child {
     max-width: none;
   }
 }

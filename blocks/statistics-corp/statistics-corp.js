@@ -23,7 +23,7 @@ function readColumns(block) {
   return match ? Number(match[1]) : 3;
 }
 
-// -corp: figures are static — the live c-full-bleed-panel / colctrl stats never animate.
+// figures are static unless the `count-up` variant is set
 
 /**
  * loads and decorates the statistics block

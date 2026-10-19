@@ -1,7 +1,6 @@
 /*
- * news-headline-corp — the news-detail article head: the live c-largeheadline (.h1-title)
- * followed by the c-publish-date / c-event-location-properties row. Template-slotted,
- * single-column rows:
+ * news-headline-corp — the news-detail article head: the headline followed by the
+ * publish date / event location row. Single-column rows:
  *   1 headline (<h1>)
  *   2 publish date (e.g. "01-Apr-2025")
  *   3 event location (optional — event news only)
@@ -10,7 +9,7 @@
  * the wrappers carry the layout classes.
  */
 
-/** moves every child of `from` into a new wrapper div (EW1: move, do not rebuild) */
+/** moves every child of `from` into a new wrapper div (moved, not rebuilt) */
 function slot(from, className) {
   const wrapper = document.createElement('div');
   wrapper.className = className;

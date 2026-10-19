@@ -1,7 +1,6 @@
 /*
- * hero-carousel-corp — the www.stryker.com c-autocarousel page hero: the first slide
- * visible, no slide rotation (static); a video slide autoplays muted and loops like
- * the live Scene7 hero. It is reconstructive: one authored row per slide.
+ * hero-carousel-corp — corp page hero: the first slide is shown, slides don't rotate;
+ * a video slide autoplays muted and loops. One authored row per slide.
  *
  * Authoring model (per row):
  *   | media cell | text cell |
@@ -46,8 +45,8 @@ function decorateSlide(slide) {
     const poster = media.querySelector('picture img, img');
     if (video) {
       slide.classList.add('hero-carousel-corp-video');
-      // live Scene7 hero: `muted autoplay loop preload=auto`, no native controls and
-      // no play overlay or control bar (dm-support renders every DM video with them — undo it here)
+      // background video: muted autoplay loop, no controls (dm-support adds controls
+      // and a play overlay to every DM video — removed here)
       video.controls = false;
       video.removeAttribute('controls');
       video.muted = true;
@@ -80,9 +79,8 @@ export default function decorate(block) {
   });
   if (slides[0]) slides[0].classList.add('active');
   block.classList.add(`hero-carousel-corp-${slides.length}-slides`);
-  // `copy` variant: the live overlay box geometry is authored as top-N / left-N / width-N
-  // classes and the image column as media-left-N / media-width-N (percent of the slide),
-  // exposed to the CSS as custom properties
+  // `copy` variant: overlay position classes top-N / left-N / width-N and image column
+  // classes media-left-N / media-width-N (percent of the slide) become CSS custom properties
   if (block.classList.contains('copy')) {
     [...block.classList].forEach((cls) => {
       const m = cls.match(/^(top|left|width|media-left|media-width)-(\d+)$/);

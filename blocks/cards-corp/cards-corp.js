@@ -1,12 +1,11 @@
 /*
- * cards-corp — www.stryker.com card grids, forked from the patients `cards` block (the
- * patients block is never edited). Variants:
- *   (default) / linked / image-link   the patients cards tiles (corp keeps block flow)
- *   resources        c-resourcesanddownload: portrait document thumbnails over a bold
- *                    Futura title, both linking to the file; no button. One row per item:
+ * cards-corp — corp card grids, based on the patients `cards` block. Variants:
+ *   (default) / linked / image-link   card tiles
+ *   resources        portrait document thumbnails over a bold Futura title, both linking
+ *                    to the file; no button. One row per item:
  *                    | picture | <h5><a href="…/file.pdf">Title</a></h5> | (either order)
- *   curated-teasers  c-customizeable news teasers: image, h3, copy and a plain
- *                    uppercase "Learn more" link; 4-up when four are authored
+ *   curated-teasers  news teasers: image, h3, copy and a plain uppercase "Learn more"
+ *                    link; 4-up when four are authored
  */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
@@ -35,7 +34,7 @@ function isImageCell(cell) {
 /**
  * resources: the authored row is the item and its cells become thumb / title (classes
  * only, nodes are moved, never rebuilt). The thumbnail is wrapped in a generated <a> that
- * copies the title link so the cover is clickable like the live `.img-container > a`
+ * copies the title link so the cover is clickable too
  * (no text of its own; hidden from the accessibility tree as a duplicate).
  * @param {Element} row an authored item row
  */
@@ -119,7 +118,7 @@ export default function decorate(block) {
   });
 
   // lift the image out of the editor wrapper so the canvas can't re-render the
-  // raw link over it (mirrors hero); harmless unwrap on the live site
+  // raw link over it (mirrors hero); harmless on the published site
   ul.querySelectorAll('.cards-corp-card-image').forEach((cell) => {
     const picture = cell.querySelector('picture');
     if (!picture) return;

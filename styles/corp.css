@@ -17,9 +17,11 @@
   --corp-back-to-top-size: 40px;
   --corp-back-to-top-icon-size: 16px;
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
+  --corp-color-placeholder: #757575; /* input placeholder, 4.6:1 on the search field */
   --corp-icon-font-family: strykericons;
   --corp-copy-line-height-l: 21.25px; /* p-1-25 copy */
-  --corp-label-line-height-l: 22.26px; /* label-1-5 label */
+  --corp-heading-line-height-l: 22.26px; /* 21px headings and labels */
+  --corp-lead-line-height: 21.5px; /* 17.5px lead copy */
   --nav-height: var(--corp-chrome-height);
 
   /* hero (page-hero) */
@@ -256,7 +258,7 @@ body:where(.corp):has(main .hero-carousel-corp, main > .section:first-child .her
 :where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
 :where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child) {
   font-size: var(--body-font-size-xl);
-  line-height: var(--corp-label-line-height-l);
+  line-height: var(--corp-heading-line-height-l);
 }
 
 :where(body.corp) main > div.section.ps-0,

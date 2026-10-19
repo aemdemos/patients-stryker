@@ -1,30 +1,22 @@
 /*
- * news-cards-corp — the www.stryker.com c-latestnews 4-up on the home page: a row of
- * story cards (thumbnail, Egyptienne h3 title, teaser, "Read More" action link)
- * closed by the 1px grey rule (.border-bottom-gold). Reconstructive: one authored
- * row per card.
+ * news-cards-corp — a row of latest-news story cards (thumbnail, h3 title, teaser,
+ * "Read More" link) closed by a grey rule. One authored row per card.
  *
  * Authoring model:
  *   | picture | <h3>Title</h3> <p>teaser</p> <p><a href>Read More</a></p> |
  *   Either cell order; the image cell is the one carrying only a picture. The link
  *   paragraph is a plain `<p><a>` (no strong/em), so decorateButtons leaves it a
- *   flat action link.
+ *   plain link.
  *
- * Decode: the authored row <div> becomes the card (`.news-card`), its two cells the
- * image / body columns — classes only; every authored node stays where it is
- * (EW1–EW3), CTAs stay in their <p>.
+ * The authored row becomes the card (`.news-card`), its two cells the image / body
+ * columns — classes only; authored nodes are not moved.
  *
- * D2 — query-index top-up (document-first, stardust/dynamic-features.md § Listings
- * contract): the authored cards stay the source of truth and render untouched. After
- * decoration the block reads /query-index.json for `news-detail` pages of this
- * page's `division` (meta[name=division]; none on the home page = every division)
- * and, when one is NEWER than an authored card (by `published`, the authored cards'
- * dates read from their own index rows), inserts it at the front and hides the
- * oldest authored card(s) so the visible count stays the authored one — the live
- * c-latestnews always shows the n newest. Index rows older than every authored card
- * are not rendered (the 4-up has no paging); authored cards whose page is not
- * indexed keep their slot. Index-sourced cards are the only created elements; a
- * failed fetch leaves the authored state as is.
+ * Query-index top-up: the authored cards render first. The block then reads
+ * /query-index.json for `news-detail` pages of this page's `division` (all divisions
+ * when the page has none). Index pages newer than every authored card (by `published`)
+ * are added at the front and the oldest authored cards are hidden, so the visible
+ * count stays the same. Authored cards whose page isn't indexed keep their slot.
+ * A failed fetch leaves the authored cards as they are.
  */
 
 import { createOptimizedPicture, getMetadata } from '../../scripts/aem.js';
@@ -42,7 +34,7 @@ function isImageCell(cell) {
   return !!cell.querySelector('picture, img') && !cell.textContent.trim();
 }
 
-/* ---------- D2: query-index top-up ---------- */
+/* ---------- query-index top-up ---------- */
 
 /**
  * @param {string} href a link href or index path
@@ -131,11 +123,8 @@ async function topUp(block, cards) {
   const known = dated.filter((d) => d.published)
     .sort((a, b) => a.published.localeCompare(b.published));
   if (!known.length) return;
-  // an unauthored row displaces an authored card only when it is newer than EVERY dated
-  // authored card (the live 4-up shows the newest stories; an index row whose `published`
-  // merely beats the oldest card — e.g. a wave-2 story carrying a migration-month date —
-  // must not hide a curated card, 2026-10-05 home regression). Undated authored cards are
-  // never displaced. Candidates are taken newest-first.
+  // an index page replaces an authored card only when it is newer than every dated
+  // authored card; undated authored cards are never replaced. Newest first.
   const newest = known[known.length - 1].published;
   const candidates = rows
     .filter((row) => !authoredKeys.has(pathKey(row.path)) && (row.published || '') > newest)
@@ -163,6 +152,6 @@ export default function decorate(block) {
       cell.classList.add(isImageCell(cell) ? 'news-card-image' : 'news-card-body');
     });
   });
-  // document-first: the authored cards are on screen; the index tops them up asynchronously
+  // authored cards are on screen already; the index top-up runs asynchronously
   topUp(block, cards);
 }

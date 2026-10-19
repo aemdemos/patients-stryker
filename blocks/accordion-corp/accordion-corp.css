@@ -1,5 +1,8 @@
-/* live .c-accordion padding-bottom 20px */
 .accordion-corp {
+  --accordion-corp-label-gap: 16px;
+  --accordion-corp-body-padding: 18px;
+  --accordion-corp-panels-padding-bottom: 16px;
+
   padding-bottom: var(--space-block-l);
 }
 
@@ -17,10 +20,10 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--accordion-corp-label-gap);
   width: 100%;
-  margin: 0 0 var(--space-block); /* live h4.panel-title margin-bottom 15px */
-  padding: var(--space-block-s) 0; /* P2b-4: live .panel-title a padding 10px 0 (heading 61px for a 2-line label) */
+  margin: 0 0 var(--space-block);
+  padding: var(--space-block-s) 0;
   border: 0;
   border-bottom: 1px solid var(--color-surface-muted);
   background: none;
@@ -36,7 +39,7 @@
 
 .accordion-corp .accordion-item-label p {
   margin: 0;
-  line-height: inherit; /* -corp: the label <p> inherits 1.375 and adds 2px per row (live h4.panel-title 56px) */
+  line-height: inherit;
 }
 
 .accordion-corp .accordion-item-label::after {
@@ -65,7 +68,7 @@
 }
 
 .accordion-corp .accordion-item-body {
-  padding: 18px 0;
+  padding: var(--accordion-corp-body-padding) 0;
   border-bottom: 1px solid var(--color-surface-muted);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -81,16 +84,14 @@
   margin-bottom: 0;
 }
 
-/* P2b-4: the authored label cell is a heading (h4); the live label is an inline <a> in h4.panel-title,
-   so the heading box must not add its own margins/line-height inside the button */
+/* a heading in the label cell takes the button's type, without its own margins */
 .accordion-corp .accordion-item-label :is(h1, h2, h3, h4, h5, h6, p) {
   margin: 0;
   font: inherit;
   line-height: inherit;
 }
 
-/* `panels` variant (P2d, R-47): live .panel-group rhythm — .panel + .panel 15px, group
-   margin-bottom 20px + 16px (cranial-id 2 × 61px panels = 173px; fellows-summit h3 + 3 × 41px = 226px). */
+/* `panels` variant: separate panels with a gap between them */
 .accordion-corp.panels .accordion-item + .accordion-item {
   margin-top: var(--space-block);
 }
@@ -100,5 +101,5 @@
 }
 
 .accordion-corp.panels {
-  padding-bottom: 16px;
+  padding-bottom: var(--accordion-corp-panels-padding-bottom);
 }

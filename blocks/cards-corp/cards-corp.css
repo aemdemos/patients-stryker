@@ -1,5 +1,12 @@
-/* cards-corp — forked from the patients cards block: 1-up mobile, 2-up tablet, 3-up desktop
-   (4-up linked). Corp keeps the block flow it was built with (no flex-column CTA alignment). */
+/* cards-corp — based on the patients cards block: 1-up on phones, 2-up from 600px,
+   3-up from 900px (4-up linked). */
+
+.cards-corp {
+  --cards-corp-cta-padding: 9px 12px;
+  --cards-corp-thumb-height: 240px;
+  --cards-corp-title-gap: 8px;
+  --cards-corp-teaser-gap: 13px;
+}
 
 .cards-corp > ul {
   list-style: none;
@@ -73,7 +80,7 @@
 
 /* "Learn more" CTA in the canvas: decorateButtons' .button.secondary class is
    wiped when the editor re-renders the field, so style the authored <em><a> to
-   match the gray button. Matches only in the canvas (live unwraps the <em>). */
+   match the gray button. Matches only in the canvas (the published page has no <em> here). */
 .cards-corp:not(.linked, .resources, .curated-teasers) .cards-corp-card-body p em > a {
   display: inline-flex;
   align-items: center;
@@ -81,7 +88,7 @@
   margin: var(--space-block) 0 0;
   border: 1px solid var(--color-secondary);
   border-radius: var(--radius-none);
-  padding: 9px 12px;
+  padding: var(--cards-corp-cta-padding);
   background-color: var(--color-secondary);
   color: var(--color-white);
   font-family: var(--display-font-family);
@@ -103,7 +110,7 @@
   margin: var(--space-block) 0 0;
   border: 1px solid var(--color-accent-dark);
   border-radius: var(--radius-none);
-  padding: 9px 12px;
+  padding: var(--cards-corp-cta-padding);
   background-color: var(--color-accent);
   color: var(--color-black);
   font-family: var(--display-font-family);
@@ -162,10 +169,9 @@
   text-decoration: none;
 }
 
-/* ---- resources: www.stryker.com c-resourcesanddownload (components.min.css L5541-5546):
-   transparent group, margin-bottom 20px; items col-xs-6 / col-sm-3 / col-md-2
-   (margin-bottom 20px; 100% on phone); .img-container is a 240px cell (vertical middle)
-   holding the cover image (max-height 238px, 1px grey rule); .title h5 black, margin-top 8px. */
+/* ---- resources: document thumbnails, 1-up on phones, 2-up from 600px, 6-up from 900px.
+   Each cover sits vertically centred in a fixed-height cell with a thin grey border;
+   the bold title follows below. */
 .cards-corp.resources {
   display: flex;
   flex-wrap: wrap;
@@ -182,7 +188,7 @@
 .cards-corp.resources .cards-corp-thumb {
   display: flex;
   align-items: center;
-  height: 240px;
+  height: var(--cards-corp-thumb-height);
 }
 
 .cards-corp.resources .cards-corp-cover {
@@ -200,19 +206,19 @@
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 238px;
+  max-height: calc(var(--cards-corp-thumb-height) - 2px);
   border: 1px solid var(--color-surface-muted);
 }
 
 .cards-corp.resources .cards-corp-title :is(h2, h3, h4, h5, h6, p) {
-  margin: 8px 0 var(--space-block); /* 8px lifted verbatim (L5545); h5 bottom 15px */
+  margin: var(--cards-corp-title-gap) 0 var(--space-block);
   padding: 0;
   border: 0;
   color: var(--color-black);
   font-family: var(--display-font-family);
   font-size: var(--body-font-size-m);
   font-weight: var(--font-weight-bold);
-  line-height: var(--body-line-height-l); /* 16.1px measured live */
+  line-height: var(--body-line-height-l);
 }
 
 .cards-corp.resources .cards-corp-title a:any-link {
@@ -224,9 +230,9 @@
   color: var(--color-text-muted);
 }
 
-/* ---- curated-teasers: c-customizeable news teasers — 20px apart with a gold rule on
-   phone, 4-up from 900px when four are authored, h3 13px under the natural-ratio image,
-   plain uppercase Futura "Learn more" link (military Related News) */
+/* ---- curated-teasers: news teasers with a gold rule between them on phones, 4-up from
+   900px when four are authored; natural-ratio image, serif h3 and a plain uppercase
+   Futura "Learn more" link */
 .cards-corp.curated-teasers > ul {
   gap: var(--space-block-l);
 }
@@ -242,7 +248,7 @@
 }
 
 .cards-corp.curated-teasers .cards-corp-card-body {
-  margin-top: 13px;
+  margin-top: var(--cards-corp-teaser-gap);
 }
 
 .cards-corp.curated-teasers .cards-corp-card-body h3 {

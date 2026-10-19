@@ -1,13 +1,12 @@
 /*
- * tabs-corp — www.stryker.com look of the patients `tabs` block (live c-tabs rail).
- * Loaded by scripts/corp.js on `site: corp` pages only, before the first section shows;
- * every rule repeats the patients selector behind `body.corp`, so it wins whatever the
- * load order. The patients block itself is never edited (sdt-stryker#5).
+ * tabs-corp — corp look of the patients `tabs` block. Loaded by scripts/corp.js on
+ * `site: corp` pages only; every rule repeats the patients selector behind `body.corp`,
+ * so it wins whatever the load order.
  */
 
 body.corp .tabs .tabs-tab {
   border-right: 1px solid var(--color-border);
-  padding: 0 var(--space-inset-l); /* -corp: live li padding; the vertical 12/7 lives on the <p> (41px rail) */
+  padding: 0 var(--space-inset-l);
   font-weight: 400;
 }
 
@@ -15,7 +14,7 @@ body.corp .tabs .tabs-tab:last-child {
   border-right: none;
 }
 
-/* -corp: the rail divider is the li's own right border (above), not the patients label rule */
+/* tabs are divided by their own right border, not the patients label rule */
 body.corp .tabs .tabs-tab:not(:last-child) p::after {
   content: none;
 }

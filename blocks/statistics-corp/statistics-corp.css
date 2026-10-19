@@ -53,10 +53,8 @@
 .statistics-corp .statistics-item.statistics-sage .statistics-value { color: var(--color-surface-muted); }
 .statistics-corp .statistics-item.statistics-purple .statistics-value { color: var(--color-purple); }
 
-/* the description below the number — source wraps this text in a
-   `fontsize-1-25em` span (1.25em over the 14px body = 17.5px, line-height 1.15).
-   The cell's text is wrapped in a <p> by EDS, so the <p> is included here to beat
-   the global `p { line-height: 1.375 }` rule that would otherwise loosen it. */
+/* the description below the number: h4 size with a tight line height. The <p> EDS wraps
+   the cell text in is included to beat the global paragraph line height. */
 .statistics-corp .statistics-desc,
 .statistics-corp .statistics-desc p {
   margin: 0;
@@ -66,16 +64,14 @@
   color: var(--color-black);
 }
 
-/* keep emphasized text in the body serif (the source bolds in HumanistSlab, not
-   Futura) — overrides the global strong/b display-font rule for this block */
+/* bold text stays in the body serif (not the global Futura bold) */
 .statistics-corp .statistics-desc strong,
 .statistics-corp .statistics-desc b {
   font-family: var(--body-font-family);
   font-weight: 700;
 }
 
-/* footnote reference links sit as small superscripts, teal like other links
-   (source superscript renders at ~13px, matching the base body size) */
+/* footnote references: small superscripts */
 .statistics-corp .statistics-desc sup {
   font-size: var(--body-font-size-s);
 }

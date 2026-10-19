@@ -175,9 +175,7 @@ header.header-corp-wrapper {
 }
 
 .header-corp .search-control::placeholder {
-  /* a11y (color-contrast): the live placeholder is #757575 (4.6:1 on the input's #EDEEEC);
-     the muted surface token measured 2.0:1 */
-  color: #757575;
+  color: var(--corp-color-placeholder);
   opacity: 1;
 }
 
