@@ -692,10 +692,8 @@ body.discography main .section.light-gray h4 {
   line-height: var(--body-line-height); /* source mixed-font line: 20.1px @14px, 25.1px @17.5px */
 }
 
-/* "Potential risks" anchor link: the source keeps it at 21px / 1.06 at every
-   width (the shared panel rule sets 21.5px). */
 body.discography main .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
-  font-size: var(--heading-font-size-l);
+  font-size: var(--panel-body-size-ss);
   line-height: var(--heading-line-height);
 }
 
@@ -2566,4 +2564,12 @@ body.zip-doctor-request .marketo-form {
     font-size: var(--body-font-size-m);
     line-height: var(--heading-line-height-hero);
   }
+}
+
+/* =====================================================================
+   Theme: pd-spinejack-system on top of the procedure-detail template.
+   ===================================================================== */
+
+body.procedure-detail.pd-spinejack-system main > .section > .default-content-wrapper h3 {
+  font-weight: var(--font-weight-bold);
 }
