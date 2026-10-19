@@ -56,6 +56,7 @@
 .panel.gold .panel-body p {
   font-family: var(--heading-font-family);
   font-size: var(--panel-body-size-s);
+  line-height: 1;
 }
 
 .panel.cta .panel-body p,
@@ -352,7 +353,7 @@
 
 /* ---- gold variant */
 .panel.gold .panel-body {
-  padding-top: 3%;
+  padding-top: 4%;
   padding-bottom: 2%;
   background: var(--color-accent);
   box-shadow: none;
@@ -422,6 +423,10 @@
 
 
 @media (width >= 600px) {
+  .panel.gold .panel-body {
+    padding-top: 3%;
+  }
+
   .panel.cta > ul,
   .panel.dark > ul,
   .panel.light > ul,
