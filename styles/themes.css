@@ -250,12 +250,13 @@ body.condition-detail main > .section.light-gray > .default-content-wrapper {
 }
 
 body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
-font-family: var(--body-font-family);
+   font-family: var(--body-font-family);
     font-size: var(--body-font-size-m);
+    line-height: var( --paragraph-line-height);
 }
 
 body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
-      font-size: var(--heading-font-size-m);
+      font-size: var(--heading-font-size-xs);
       line-height: var(--heading-line-height-h4);
 }
 
@@ -265,6 +266,7 @@ body.condition-detail .tabs .tabs-tab {
 
 body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
   font-size: var(--body-font-size-l);
+  line-height: var(--heading-line-height-ml);
 }
  
 
@@ -272,6 +274,10 @@ body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(st
   body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
     font-size: var(--icon-list-title-size);
   }
+
+  body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+      font-size: var(--heading-font-size-m);
+}
 }
 
 body.campaign-landing > main > div.serif.light-gray.section.columns-container {
@@ -498,9 +504,6 @@ body.search-results main h1:has(strong) + p {
     padding: 0 var(--container-gutter);
   }
 
-  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
-    padding-left:4%;
-  }
   
   body.condition-detail h3 {
     font-family: var(--heading-font-family);
@@ -508,6 +511,12 @@ body.search-results main h1:has(strong) + p {
     padding-bottom: 7px;
     line-height: var(--heading-line-height);
   }
+
+   body.condition-detail .section.dark .columns h3 {
+    font-size: var(--heading-font-size-ml);
+    line-height: var(--body-line-height-l);
+    padding-bottom: 0;
+   }
 
   body.condition-detail h3 em strong, body.condition-detail h3 strong em {
     font-size: var(--heading-font-size-ml);
@@ -574,22 +583,15 @@ body.condition-detail .tabs .tabs-panel {
 
   body.condition-detail .hero.banner > div:last-child {
     align-self: end;
-    padding-left: 4%;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-
-  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
-    padding-left:0;
-  }
-
-  body.condition-detail .hero.banner .button-wrapper:last-child {
-    margin-bottom: 15px;
   }
 
   body.condition-detail  .panel.cta > ul {
     grid-template-columns: 1fr;
   }
+
+   body.condition-detail .section.dark .columns h3 {
+    font-size: var(--heading-font-size-l-scaled);
+   }
 }
 
 /* ----- Desktop (>=900px) ----- */
