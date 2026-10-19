@@ -365,3 +365,45 @@
   border: 0;
   object-fit: contain;
 }
+
+/* Back-to-top button (scripts/back-to-top.js) — black circle with the source's
+   strykericons up arrow, fixed bottom right; fades in while the user scrolls up. */
+.back-to-top {
+  position: fixed;
+  right: var(--back-to-top-offset-right);
+  bottom: var(--back-to-top-offset-bottom);
+  z-index: var(--back-to-top-z);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--back-to-top-size);
+  height: var(--back-to-top-size);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--back-to-top-fade) linear, visibility 0s linear var(--back-to-top-fade);
+}
+
+.back-to-top::before {
+  content: "\e260" / "";
+  font-family: strykericons, sans-serif;
+  font-size: var(--back-to-top-icon-size);
+  line-height: 1;
+  translate: 0 var(--back-to-top-icon-offset);
+}
+
+.back-to-top.back-to-top-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--back-to-top-fade) linear;
+}
+
+.back-to-top:focus-visible {
+  outline: var(--back-to-top-focus-ring) solid var(--color-accent);
+  outline-offset: var(--back-to-top-focus-ring);
+}

@@ -227,6 +227,16 @@
   --radius-sm: 2px;
   --radius-pill: 15px;
 
+  /* back-to-top button (source .c-back-to-top-cta) */
+  --back-to-top-size: 40px; /* black circle */
+  --back-to-top-icon-size: 16px; /* strykericons up arrow (U+E260) */
+  --back-to-top-icon-offset: 2px; /* source arrow sits 2px below the circle's centre */
+  --back-to-top-offset-bottom: 18px;
+  --back-to-top-offset-right: 2%; /* of the viewport width: 29px @1440, 8px @390 */
+  --back-to-top-fade: 0.2s; /* source opacity transition */
+  --back-to-top-z: 100;
+  --back-to-top-focus-ring: 2px; /* keyboard focus outline width + offset */
+
   /* find-a-doctor locator banner */
   --find-a-doctor-title-size: 24px; /* source .form-section h2: 24px/32px Futura bold */
   --find-a-doctor-title-line-height: 1.333; /* 32px / 24px */

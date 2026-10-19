@@ -723,6 +723,9 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  // site-wide back-to-top button (styles in lazy-styles.css)
+  import('./back-to-top.js').then(({ default: initBackToTop }) => initBackToTop(doc));
 }
 
 /**
