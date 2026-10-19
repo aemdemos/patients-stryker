@@ -1,0 +1,660 @@
+/* header-corp — values measured live (www.stryker.com, legal/privacy, 1440 + 360) over the
+   lifted rules (components.min.css L1039-1153, canon.css § site header): 89px single row +
+   1px rule and an off-canvas gold drawer below 1024px; 87px white row + 60px gold bar with
+   fly-outs from 1024px. Breakpoints are the source's (1024, 1440). */
+
+/* the <header> landmark follows the live .g-header positioning (relative below 1024px — the
+   mobile search strip hangs off it — static above) */
+header.header-corp-wrapper {
+  position: relative;
+  padding: 0;
+  max-width: none;
+}
+
+.header-corp {
+  position: relative;
+  border-bottom: 1px solid var(--color-secondary);
+  font-family: var(--display-font-family);
+}
+
+.header-corp * {
+  box-sizing: border-box;
+}
+
+.header-corp p,
+.header-corp ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-corp a:any-link {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.header-corp .container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+/* only the white row has a definite height to fill. A bare `.container { height: 100% }`
+   resolves to auto in standards mode, but the DA canvas iframe (preview.da.live, no
+   doctype) renders in quirks mode, where it climbs to the 242px <header> reservation and
+   the gold bar + HCP band swallow the page hero. */
+.header-corp .global-header .container {
+  height: 100%;
+}
+
+.header-corp .container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ---- white row ---- */
+.header-corp .global-header {
+  display: flow-root;
+  position: static;
+  height: 89px;
+  min-height: 74px;
+  background: var(--color-white);
+  z-index: 10002;
+}
+
+.header-corp .logo {
+  padding-top: 21px;
+  text-align: left;
+}
+
+.header-corp .logo picture,
+.header-corp .logo a {
+  display: inline;
+}
+
+.header-corp .logo img {
+  display: inline;
+  width: 100px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.header-corp .menu-btn {
+  float: left;
+}
+
+.header-corp .menu-toggle,
+.header-corp .search-toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  outline: 0;
+  cursor: pointer;
+}
+
+.header-corp .menu-toggle {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-top: 17px;
+}
+
+.header-corp .icon-bar {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin-bottom: 3px;
+  border-radius: 1px;
+  background: var(--color-secondary);
+}
+
+/* mobile search toggle: the live float measures 0×0 at the logo's bottom edge (y=46) and the
+   26×26 toggle sits at y=54, flush with the container's right padding — pinned there */
+.header-corp .search-btn {
+  position: absolute;
+  top: 46px;
+  right: var(--container-gutter);
+  height: 0;
+}
+
+.header-corp .search-toggle {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin-top: 8px;
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--color-primary);
+}
+
+.header-corp .icon-search::before {
+  content: "\e003";
+  font-family: var(--corp-icon-font-family);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header-corp .utility-links {
+  display: none;
+}
+
+/* mobile search bar: dark strip under the row (L1103-1106), toggled by the search button */
+.header-corp .search-bar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 7px;
+  background: var(--color-secondary);
+}
+
+.header-corp .search-bar.is-shown {
+  display: block;
+}
+
+.header-corp .search-form {
+  position: relative;
+  margin: 0;
+}
+
+.header-corp .search-control {
+  width: 100%;
+  height: 40px;
+  padding: 8px 11px;
+  border: 0;
+  outline: 0;
+  color: var(--color-surface-muted);
+  background: var(--color-surface);
+  font: inherit;
+  font-family: var(--body-font-family);
+}
+
+.header-corp .search-control::placeholder {
+  /* a11y (color-contrast): the live placeholder is #757575 (4.6:1 on the input's #EDEEEC);
+     the muted surface token measured 2.0:1 */
+  color: #757575;
+  opacity: 1;
+}
+
+.header-corp .search-submit {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-primary);
+  font-size: 20px;
+  line-height: 34px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header-corp .search-source {
+  display: none;
+}
+
+.header-corp .language-country-select {
+  display: block;
+  float: right;
+  clear: right;
+  margin: -20px 0 var(--space-block) var(--space-block-xs);
+  padding-top: 0;
+}
+
+.header-corp .language-country-select a:any-link {
+  display: inline;
+  color: var(--color-black);
+  font-family: var(--body-font-family); /* live: the anchor keeps the body face */
+}
+
+.header-corp .language-country-select .site-language {
+  position: relative;
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.header-corp .language-country-select picture {
+  display: contents;
+}
+
+.header-corp .language-country-select img {
+  display: block;
+  float: left;
+  width: 19px;
+  height: 19px;
+  margin: 0 var(--space-block-xs) 0 0;
+}
+
+/* ---- HCP notice band (components L1257; shown on body.hcp-banner pages) ---- */
+.header-corp .hcp-band {
+  display: none;
+}
+
+body.hcp-banner .header-corp .hcp-band {
+  display: block;
+  clear: both;
+  width: 100%;
+  min-height: 50px;
+  margin-top: var(--space-block-l);
+  padding: 16px var(--space-block-l) 1px;
+  background: var(--color-white);
+}
+
+.header-corp .hcp-band p {
+  margin: var(--space-block) 0;
+  color: var(--color-black);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+  text-align: right;
+}
+
+.header-corp .hcp-band em {
+  font-style: normal;
+}
+
+.header-corp .hcp-band strong {
+  font-family: var(--display-font-family);
+  font-weight: 700;
+}
+
+@media (width >= 600px) {
+  .header-corp .hcp-band p {
+    font-size: var(--body-font-size-xl);
+  }
+}
+
+/* ---- primary nav: off-canvas drawer below 1024px (L1039-1059) ---- */
+.header-corp .megamenu {
+  position: relative;
+  z-index: 1040;
+}
+
+.header-corp .nav-container,
+.header-corp .nav-content {
+  overflow: hidden;
+  min-height: 100%;
+  background: var(--color-surface);
+}
+
+.header-corp .nav-container {
+  position: absolute;
+  top: 0;
+  left: -95%;
+  z-index: 99;
+  width: 95%;
+  padding-top: 0;
+  background: var(--color-accent);
+}
+
+.header-corp .nav-content {
+  position: relative;
+  left: 0;
+  width: 200%;
+}
+
+.header-corp.anim .nav-container,
+.header-corp.anim .nav-content {
+  transition: left 0.3s;
+}
+
+.header-corp.show-main-nav .nav-container {
+  left: 0;
+}
+
+.header-corp.show-secondary-nav .nav-content {
+  left: -100%;
+}
+
+.header-corp .main-nav,
+.header-corp .secondary-nav {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.header-corp .main-nav {
+  background: var(--color-accent);
+}
+
+.header-corp .main-nav .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.header-corp .main-nav ul,
+.header-corp .secondary-nav ul {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-corp .main-nav li,
+.header-corp .secondary-nav li {
+  min-height: 51px;
+  border-bottom: 1px solid var(--color-white);
+}
+
+.header-corp .main-nav li a:any-link,
+.header-corp .secondary-nav li a:any-link,
+.header-corp .secondary-nav li.label {
+  display: block;
+  padding: var(--space-block-l) var(--space-inset-l) var(--space-block-l) var(--space-block);
+  outline: 0;
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-weight: 400;
+}
+
+.header-corp .main-nav li a:any-link {
+  line-height: var(--body-line-height); /* 20px rows: 20 + 20 + 20 (+1 rule) = 61px live */
+  text-transform: uppercase;
+}
+
+.header-corp .main-nav li p,
+.header-corp .secondary-nav li p {
+  margin: 0;
+  line-height: inherit;
+}
+
+.header-corp .main-nav li.has-sub > a::after,
+.header-corp .main-nav li.has-sub > p > a::after {
+  content: "+";
+  float: right;
+  font-size: 2vw;
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.header-corp .secondary-nav {
+  display: none;
+  overflow: hidden;
+}
+
+.header-corp .secondary-nav.active {
+  display: block;
+}
+
+.header-corp .secondary-nav li.bold a:any-link,
+.header-corp .secondary-nav li.label {
+  font-weight: 700;
+}
+
+.header-corp .secondary-nav li a:any-link:hover {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* main-nav hover / open item (after the fly-out link rules it outranks) */
+.header-corp .main-nav li a:any-link:hover,
+.header-corp .main-nav li.open > a:any-link,
+.header-corp .main-nav li.open > p > a:any-link {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.header-corp .secondary-nav .back {
+  display: block;
+  padding: var(--space-block-l) var(--space-block) var(--space-block-l) var(--space-inset-l);
+  border-bottom: 1px solid var(--color-white);
+  background: var(--color-secondary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  text-transform: uppercase;
+}
+
+.header-corp .secondary-nav .back::before {
+  content: "\e250";
+  display: inline-block;
+  margin-right: 8px;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  transform: scaleX(-1);
+}
+
+/* ---- desktop: 87px white row, utility links, search field, 60px gold bar ---- */
+@media (width >= 900px) {
+  header.header-corp-wrapper,
+  .header-corp {
+    position: static;
+  }
+
+  .header-corp {
+    border-bottom: 0;
+  }
+
+  .header-corp .global-header {
+    height: 87px;
+  }
+
+  .header-corp .menu-btn,
+  .header-corp .search-btn {
+    display: none;
+  }
+
+  .header-corp .logo {
+    float: left;
+    width: 188px;
+    margin: var(--space-block-l) 0;
+    padding: 0;
+  }
+
+  .header-corp .logo img {
+    display: block;
+    width: 188px;
+    height: 47px;
+    max-height: 47px;
+  }
+
+  .header-corp .search-bar {
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    float: right;
+    width: auto;
+    margin: 23px 0;
+    padding: 0;
+    background: none;
+  }
+
+  .header-corp .search-control {
+    display: inline-block;
+    width: 220px;
+    height: 41px;
+    padding: 8px 40px 8px 11px;
+  }
+
+  .header-corp .search-submit {
+    display: block;
+  }
+
+  .header-corp .language-country-select {
+    float: right;
+    clear: none;
+    margin: 14px 14px var(--space-block) var(--space-block-xs);
+    padding-top: 21px;
+  }
+
+  .header-corp .utility-links {
+    display: inline-block;
+    float: right;
+    overflow: hidden;
+    font-family: var(--display-font-family);
+    font-size: var(--body-font-size-xs);
+    font-weight: 400;
+  }
+
+  .header-corp .utility-links ul {
+    height: 18px;
+    margin: 36px 0 var(--space-block);
+    overflow: hidden;
+    text-align: right;
+  }
+
+  .header-corp .utility-links li {
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+  }
+
+  .header-corp .utility-links li::after {
+    content: "|";
+    padding: 0 var(--space-block-xs);
+  }
+
+  .header-corp .utility-links a:any-link {
+    color: var(--color-black);
+  }
+
+  .header-corp .utility-links .text {
+    display: inline-block;
+    float: left;
+    margin-left: 6px;
+    color: var(--color-black);
+    line-height: 18px;
+  }
+
+  .header-corp .utility-links .text:hover {
+    color: var(--color-accent-link-hover);
+  }
+
+  .header-corp .nav-container,
+  .header-corp .nav-content {
+    position: static;
+    left: auto;
+    width: auto;
+    min-height: 0;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .header-corp .main-nav,
+  .header-corp .secondary-nav {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-corp .main-nav .container {
+    padding-left: var(--container-gutter);
+    padding-right: var(--container-gutter);
+  }
+
+  .header-corp .main-nav ul {
+    width: 100%;
+    height: 60px;
+    padding: 16px 0 0;
+  }
+
+  .header-corp .main-nav li,
+  .header-corp .secondary-nav li {
+    float: left;
+    height: auto;
+    min-height: 0;
+    border-bottom: 0;
+    line-height: normal;
+  }
+
+  .header-corp .main-nav li {
+    margin-right: var(--space-block-xs);
+  }
+
+  .header-corp .main-nav li a:any-link {
+    padding: var(--space-block-xs);
+    background: none;
+    font-size: var(--body-font-size-xs);
+    line-height: normal;
+  }
+
+  .header-corp .main-nav li.has-sub > a::after,
+  .header-corp .main-nav li.has-sub > p > a::after {
+    content: none;
+  }
+
+  /* fly-out: grey panel under the gold bar, one column per authored list */
+  .header-corp .secondary-nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-black);
+  }
+
+  .header-corp .secondary-nav .back {
+    display: none;
+  }
+
+  .header-corp .secondary-nav-columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 6px var(--container-gutter) 16px;
+  }
+
+  .header-corp .secondary-nav ul {
+    flex: 0 0 auto;
+    min-width: 200px;
+    max-width: 280px;
+    overflow: visible;
+  }
+
+  .header-corp .secondary-nav li {
+    float: none;
+    padding: 6px 0 0;
+  }
+
+  .header-corp .secondary-nav li a:any-link,
+  .header-corp .secondary-nav li.label {
+    padding: var(--space-block-s) var(--space-block);
+    color: var(--color-black);
+    font-size: var(--body-font-size-xs);
+  }
+
+  .header-corp .secondary-nav li a:any-link:hover {
+    background: var(--color-accent);
+    color: var(--color-black);
+  }
+
+  /* main-nav hover / open item (after the fly-out link rules it outranks) */
+  .header-corp .main-nav li a:any-link:hover,
+  .header-corp .main-nav li.open > a:any-link,
+  .header-corp .main-nav li.open > p > a:any-link {
+    background: var(--color-secondary);
+    color: var(--color-white);
+  }
+}
+
+@media (width >= 1200px) {
+  .header-corp .main-nav li {
+    margin-right: var(--space-block-s);
+  }
+
+  .header-corp .main-nav li a:any-link {
+    padding: var(--space-block-xs) var(--space-block);
+    font-size: var(--body-font-size-m);
+  }
+
+  .header-corp .secondary-nav li a:any-link,
+  .header-corp .secondary-nav li.label {
+    font-size: var(--body-font-size-m);
+  }
+}

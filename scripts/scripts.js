@@ -19,6 +19,12 @@ import {
 import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
 import { applySectionBackgrounds } from './utils.js';
 
+/*
+ * www.stryker.com pages (`site: corp` page metadata) load scripts/corp.js in loadEager;
+ * every other page leaves this null and runs the patients code path unchanged.
+ */
+let corp = null;
+
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
     createHTML: (s) => s, // avoid stack overflow
@@ -570,6 +576,7 @@ export function decorateMain(main) {
   // convert external Dynamic Media asset links into native <picture>/<video>
   decorateDMAssets(main);
   liftDefaultContentDMMedia(main);
+  corp?.decorateMain();
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
@@ -636,6 +643,10 @@ export async function loadTemplate(doc, templateName) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  if (toClassName(getMetadata('site')) === 'corp') {
+    corp = await import('./corp.js');
+    await corp.loadEager(doc);
+  }
 
   // Reserve the correct header height before the nav fragment loads (CLS): the
   // default (/nav) and /nav-legal navs render a single row, while /nav-ent and
@@ -662,7 +673,7 @@ async function loadEager(doc) {
 
     // Load template if specified in metadata
     if (templateName) {
-      await loadTemplate(doc, templateName);
+      await (corp ? corp.loadTemplate(templateName) : loadTemplate(doc, templateName));
     }
 
     // Load themes.css if the page opts into a theme via metadata. Themed pages
@@ -683,7 +694,8 @@ async function loadEager(doc) {
     }
 
     document.body.classList.add('appear');
-    await loadSection(main.querySelector('.section'), waitForFirstImage);
+    await (corp ? corp.loadFirstSections(main)
+      : loadSection(main.querySelector('.section'), waitForFirstImage));
   }
 
   try {
@@ -701,7 +713,12 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  loadHeader(doc.querySelector('header'));
+  if (corp) {
+    corp.loadHeader(doc);
+    corp.loadLazy(doc);
+  } else {
+    loadHeader(doc.querySelector('header'));
+  }
 
   const main = doc.querySelector('main');
   await loadSections(main);
@@ -712,14 +729,16 @@ async function loadLazy(doc) {
   decorateFootnotes(main);
   decorateSymbolFootnotes(main);
 
-  decorateLastModified(main);
+  if (corp) corp.decorateLastModified(main);
+  else decorateLastModified(main);
   applySectionBackgrounds(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadFooter(doc.querySelector('footer'));
+  if (corp) corp.loadFooter(doc);
+  else loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
