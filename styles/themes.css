@@ -148,6 +148,11 @@ body.sa-resources .cards.brochure .cards-card-body h2 {
   }
 }
 
+/* card images aren't links here, so drop the cards block's pointer cursor */
+body.sa-resources .cards .cards-card-image {
+  cursor: auto;
+}
+
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
 /* single-item panel: one column at all widths (override the panel 2-up grid) */
