@@ -504,9 +504,6 @@ body.search-results main h1:has(strong) + p {
     padding: 0 var(--container-gutter);
   }
 
-  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
-    padding-left:4%;
-  }
   
   body.condition-detail h3 {
     font-family: var(--heading-font-family);
