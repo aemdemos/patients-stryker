@@ -130,7 +130,7 @@ header nav .nav-search-toggle::before {
 }
 
 header nav .nav-search-toggle::before {
-  background-color: var(--color-primary-pressed);
+  background-color: var(--color-black);
 }
 
 /* ---- Slide-in drawer (mobile): the gold nav + Stryker.com, off-canvas left.
