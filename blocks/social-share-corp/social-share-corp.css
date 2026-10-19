@@ -1,0 +1,90 @@
+/* social-share-corp: www.stryker.com .c-socialsharing, measured live at 375, 780 and 1440:
+   30px icons on a 64px pitch, 15px above and below, same at every width. */
+
+.social-share-corp {
+  --social-share-corp-icon-size: 30px;
+  --social-share-corp-gap: 34px; /* 15px margins either side + the inline gap between icons */
+  --social-share-corp-color-facebook: #1677f2;
+  --social-share-corp-color-linkedin: #0077b5;
+  --social-share-corp-color-site: var(--color-accent);
+  --social-share-corp-color-gray: var(--color-surface-muted);
+  --social-share-corp-tooltip-bg: #333;
+  --social-share-corp-tooltip-gap: 8px;
+  --social-share-corp-tooltip-padding: 5px 8px;
+  --social-share-corp-tooltip-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+}
+
+.social-share-corp ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--social-share-corp-gap);
+  margin: 0;
+  padding: var(--space-block) 0;
+  list-style: none;
+}
+
+.social-share-corp.right ul {
+  justify-content: flex-end;
+}
+
+.social-share-corp li {
+  position: relative;
+  margin: 0;
+}
+
+.social-share-corp .social-share-corp-icon {
+  display: block;
+  width: var(--social-share-corp-icon-size);
+  height: var(--social-share-corp-icon-size);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.social-share-corp .social-share-corp-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.social-share-corp .social-share-corp-facebook {
+  color: var(--social-share-corp-color-facebook);
+}
+
+.social-share-corp .social-share-corp-linkedin {
+  color: var(--social-share-corp-color-linkedin);
+}
+
+.social-share-corp .social-share-corp-email,
+.social-share-corp .social-share-corp-copy {
+  color: var(--social-share-corp-color-site);
+}
+
+.social-share-corp.gray li {
+  color: var(--social-share-corp-color-gray);
+}
+
+.social-share-corp .social-share-corp-tooltip {
+  position: absolute;
+  bottom: calc(100% + var(--social-share-corp-tooltip-gap));
+  left: 50%;
+  z-index: 1;
+  padding: var(--social-share-corp-tooltip-padding);
+  background: var(--social-share-corp-tooltip-bg);
+  box-shadow: var(--social-share-corp-tooltip-shadow);
+  color: var(--color-white);
+  font-size: var(--body-font-size-xs);
+  line-height: normal;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+}
+
+.social-share-corp .social-share-corp-tooltip.visible {
+  opacity: 1;
+}
