@@ -583,17 +583,6 @@ body.condition-detail .tabs .tabs-panel {
 
   body.condition-detail .hero.banner > div:last-child {
     align-self: end;
-    padding-left: 4%;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-  }
-
-  body.condition-detail .hero.banner h1,body.condition-detail .hero.banner .button-wrapper  {
-    padding-left:0;
-  }
-
-  body.condition-detail .hero.banner .button-wrapper:last-child {
-    margin-bottom: 15px;
   }
 
   body.condition-detail  .panel.cta > ul {

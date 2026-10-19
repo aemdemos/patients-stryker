@@ -169,8 +169,8 @@
    whether or not the CTA keeps its runtime .button-wrapper class (EW reverts it). */
 .hero.banner > div:last-child {
   box-sizing: border-box;
-  padding: var(--space-section) var(--container-gutter) var(--space-block-l);
-  padding-left: calc(var(--container-gutter) + 30px);
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 
 .hero.banner h1,
@@ -187,7 +187,8 @@
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
   font-size: 6vw;
-  line-height: var(--heading-line-height-hero);
+  line-height: 1.15;
+  padding-left: calc(3% + 20px);
 }
 
 /* subheading — dark serif, 21px on phones then 24.5px from 600px up */
@@ -202,7 +203,8 @@
 
 /* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
 .hero.banner .button-wrapper {
-  margin-block: calc(var(--space-block-l) + var(--space-block)) var(--space-block);
+  margin-block: var(--space-inset-l) var(--space-block);
+  padding-left: 40px;
 }
 
 /* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
@@ -663,6 +665,7 @@
 @media (width >= 1200px) {
   .hero.banner h1 {
     font-size: 42px;
+    line-height: 1.06;
   }
 
   .hero.fullbleed.poster h1 {
