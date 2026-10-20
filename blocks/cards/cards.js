@@ -38,10 +38,12 @@ export default function decorate(block) {
       titleLink.replaceWith(...titleLink.childNodes);
     });
   }
-  // image-link only: the image links to the card's CTA ("Learn more") target, like
-  // the source homepage where both image and button open the same page. Needed
-  // while images are authored as DM links, which can't also carry the page href.
-  const isImageLink = block.classList.contains('image-link');
+  // image-link and resources: the image links to the card's CTA ("Learn more")
+  // target, like the source homepage where both image and button open the same
+  // page (resources: the brochure PDF). Needed while images are authored as DM
+  // links, which can't also carry the page href.
+  const isImageLink = block.classList.contains('image-link')
+    || block.classList.contains('resources');
   if (isImageLink) {
     ul.querySelectorAll('li').forEach((li) => {
       const cta = [...li.querySelectorAll('.cards-card-body a[href]')].pop();
