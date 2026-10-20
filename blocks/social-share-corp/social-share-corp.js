@@ -33,6 +33,8 @@ const ICON_PATHS = {
 function buildIcon(name) {
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('viewBox', '0 0 30 30');
+  // as on the source: paths without their own fill (the copy-link outline) stay unfilled
+  svg.setAttribute('fill', 'none');
   svg.setAttribute('aria-hidden', 'true');
   svg.setAttribute('focusable', 'false');
   const rect = document.createElementNS(SVG_NS, 'rect');
