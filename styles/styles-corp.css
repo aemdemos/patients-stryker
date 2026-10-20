@@ -1,0 +1,345 @@
+/*
+ * www.stryker.com (corp) global styles. Loaded by scripts/corp.js on `site: corp` pages
+ * only, before the page appears; patients-stryker pages never request this file.
+ *
+ * Rules are scoped `:where(body.corp) …` so they add no specificity: blocks and templates
+ * override them as they would the shared styles.css. Corp tokens are set on body.corp,
+ * never on :root.
+ */
+
+:where(body.corp) {
+  /* header-corp: 90px chrome below 900px; 87px white row + 60px gold nav bar from 900px */
+  --corp-chrome-height: 90px;
+  --corp-header-gap: var(--space-block-s);
+  --corp-hcp-band-height: 114px; /* HCP notice band, including its top margin */
+  --corp-back-to-top-size: 40px;
+  --corp-back-to-top-icon-size: 16px;
+  --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
+  --corp-icon-font-family: strykericons;
+  --nav-height: var(--corp-chrome-height);
+}
+
+@media (width >= 900px) {
+  :where(body.corp) {
+    --corp-chrome-height: 147px;
+    --corp-hcp-band-height: 95px;
+  }
+}
+
+/* page metadata `hcp-banner: true` adds the notice band to the header */
+body:where(.corp).hcp-banner {
+  --nav-height: calc(var(--corp-chrome-height) + var(--corp-hcp-band-height));
+}
+
+:where(body.corp) header {
+  margin-bottom: var(--corp-header-gap);
+}
+
+/* a hero carousel sits flush under the header */
+body:where(.corp):has(main .hero-carousel) header {
+  margin-bottom: 0;
+}
+
+/* ---- typography ---- */
+
+:where(body.corp) :is(h1, h3, h6) {
+  font-weight: 500;
+}
+
+:where(body.corp) :is(h2, h4, h5) {
+  font-weight: 700;
+}
+
+:where(body.corp) h2 {
+  font-size: var(--heading-font-size-l);
+}
+
+:where(body.corp) h3 {
+  font-size: var(--heading-font-size-m);
+}
+
+/* bold: <strong> is Futura bold, <b> keeps the running font */
+:where(body.corp) strong {
+  font-weight: 700;
+  font-family: var(--display-font-family);
+}
+
+:where(body.corp) b {
+  font-weight: 700;
+  font-family: inherit;
+}
+
+:where(body.corp) strong > a:any-link,
+:where(body.corp) a:any-link > strong {
+  font-weight: 400;
+}
+
+:where(body.corp) strong > a:any-link:has(u),
+:where(body.corp) strong > a:any-link:has(u) u,
+:where(body.corp) a:any-link > strong:has(u),
+:where(body.corp) a:any-link > strong:has(u) u,
+:where(body.corp) a.link-strong:any-link {
+  font-weight: 700;
+}
+
+:where(body.corp) a.button:any-link,
+:where(body.corp) button.button {
+  font-weight: 400;
+}
+
+/* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
+:where(body.corp) main > .section > .default-content-wrapper h2 {
+  padding-bottom: var(--heading-underline-gap);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+:where(body.corp) main > .section > .default-content-wrapper h2:has(> em > :is(strong, b)) {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* underlined headings render as a heading with a rule below, not underlined text */
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
+  padding-bottom: var(--heading-underline-gap);
+  border-bottom: 1px solid var(--color-surface-muted);
+  font-size: var(--heading-font-size-l);
+}
+
+:where(body.corp) main > .section > .default-content-wrapper h2 > u {
+  text-decoration: none;
+  color: inherit;
+}
+
+:where(body.corp) main li[id^="fn-"] {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-block-s));
+}
+
+/* ---- DA canvas only (dm-support.js previewDMLinkEditors): a DM image link shown as a
+   one-line caption under its preview ---- */
+:where(body.corp) main .prosemirror-editor.dm-qe-link {
+  contain: inline-size; /* the nowrap URL must not widen grid/flex cells */
+  max-width: 100%;
+  font-family: var(--body-font-family);
+  font-size: var(--footnote-font-size);
+  line-height: 1.4;
+  text-align: left;
+}
+
+:where(body.corp) main .prosemirror-editor.dm-qe-link p {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ---- sections ---- */
+
+:where(body.corp) main > .section:first-child > .default-content-wrapper {
+  padding-bottom: var(--space-block-l);
+}
+
+/* a section left without content (metadata only, or moved by a block) paints nothing */
+:where(body.corp) main .section:empty {
+  display: none;
+}
+
+:where(body.corp) main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :not(:empty))) {
+  margin-bottom: 0;
+}
+
+/* section styles: backgrounds */
+:where(body.corp) main > .section.bg-white {
+  background-color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-gold {
+  background-color: var(--color-accent);
+}
+
+:where(body.corp) main > .section.bg-light-gray {
+  background-color: var(--color-surface);
+}
+
+:where(body.corp) main > .section.bg-dark-gray {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-dark-gray a:any-link {
+  color: var(--color-white);
+}
+
+/* section style `separator`: full-width rule between sections */
+:where(body.corp) main > .section.separator {
+  margin: 0 0 var(--space-block-l);
+  border-top: 1px solid var(--color-surface-muted);
+}
+
+/* section style `disclaimer`: small print */
+:where(body.corp) main > .section.disclaimer > div {
+  font-size: var(--footnote-font-size);
+  line-height: var(--footnote-line-height);
+}
+
+:where(body.corp) main > .section.disclaimer p {
+  line-height: var(--paragraph-line-height);
+}
+
+/* a document code authored as <code> stays small print */
+:where(body.corp) main > .section.disclaimer p:has(code) {
+  background-color: transparent;
+  color: inherit;
+}
+
+:where(body.corp) main > .section.disclaimer p:last-child,
+:where(body.corp) main > .section.disclaimer :is(ol, ul):last-child {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.disclaimer :is(ol, ul) {
+  padding-left: var(--space-block-l);
+}
+
+/* "Last Updated" line (corp.js decorateLastModified) */
+:where(body.corp) main > .section.last-modified-section {
+  margin-bottom: var(--space-block-l);
+}
+
+:where(body.corp) main > .section.last-modified-section .last-modified {
+  margin: 0;
+  font-size: var(--footnote-font-size);
+  line-height: var(--paragraph-line-height);
+  letter-spacing: normal;
+}
+
+/* section styles: copy size (p-1, p-1-25), label size (label-1-5) and bottom spacing (ps-0, ps-1).
+   Tab panes are fragments whose sections land in .tabs-panel, not in <main>. */
+:where(body.corp) main > .section.p-1 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+:where(body.corp) main > .section.p-1-25 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--paragraph-line-height-l-nested);
+}
+
+:where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
+:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > div.section.ps-0,
+:where(body.corp) .tabs-panel > .section.ps-0 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > div.section.ps-1,
+:where(body.corp) .tabs-panel > .section.ps-1 {
+  margin-bottom: var(--space-block-l);
+}
+
+/* ---- back-to-top control (corp.js) ---- */
+:where(body.corp) .back-to-top {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+  text-align: right;
+  transition: visibility 0s 0.2s, opacity 0.2s linear;
+}
+
+:where(body.corp) .back-to-top.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+:where(body.corp) .back-to-top-cta:any-link {
+  display: inline-block;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  z-index: 1;
+  width: var(--corp-back-to-top-size);
+  height: var(--corp-back-to-top-size);
+  border-radius: 50%;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: var(--corp-back-to-top-icon-size);
+  line-height: 3;
+  text-align: center;
+  text-decoration: none;
+}
+
+:where(body.corp) .back-to-top-cta:any-link:hover,
+:where(body.corp) .back-to-top-cta:any-link:active {
+  color: var(--color-white);
+}
+
+:where(body.corp) .back-to-top-cta::before {
+  content: "\e260";
+  display: inline-block;
+  font-family: var(--corp-icon-font-family);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* audience note under a full-bleed hero */
+:where(body.corp) main > .section.hero-container:has(.hero.fullbleed) > .default-content-wrapper p:first-child :is(strong, b) {
+  font-weight: 700;
+}
+
+:where(body.corp) main > .section.hero-container:has(.hero.fullbleed) ~ .section > .default-content-wrapper > p {
+  font-size: var(--body-font-size-xs);
+  line-height: var(--paragraph-line-height);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  :where(body.corp) h3 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  :where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
+  :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  :where(body.corp) main > .section:first-child > .default-content-wrapper {
+    padding-bottom: var(--space-section);
+  }
+
+  :where(body.corp) main > .section.separator {
+    margin-bottom: var(--space-section-l);
+  }
+
+  :where(body.corp) main > .section.last-modified-section,
+  :where(body.corp) main > div.section.ps-1,
+  :where(body.corp) .tabs-panel > .section.ps-1 {
+    margin-bottom: var(--space-inset-l);
+  }
+}
+
+@media (width >= 900px) {
+  :where(body.corp) main > .section > div {
+    padding: 0 var(--container-gutter);
+  }
+
+  :where(body.corp) main > .section.flex {
+    align-items: center;
+    gap: var(--container-gutter);
+  }
+
+  :where(body.corp) main > .section.flex > div {
+    padding-inline: var(--container-gutter);
+  }
+}

@@ -110,6 +110,9 @@ export default {
     //    lazily loads styles/themes.css (where the sa-resources theme lives).
     //    Key must be lowercase `theme` — getMetadata('theme') is case-sensitive.
     const meta = WebImporter.Blocks.getMetadata(document);
+    // The site-wide "| Stryker" title suffix comes from the project metadata
+    // (title:suffix), so drop it from the source <title> to avoid doubling it.
+    if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical && canonical.getAttribute('href')) {
       meta.canonical = canonical.getAttribute('href');

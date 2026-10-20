@@ -35,18 +35,59 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-sa-resources.js
+  // tools/importer/import-sa-resources.js
   var import_sa_resources_exports = {};
   __export(import_sa_resources_exports, {
     default: () => import_sa_resources_default
   });
 
-  // transformers/patients-stryker-cleanup.js
+  // tools/importer/transformers/patients-stryker-cleanup.js
   var TransformHook = { beforeTransform: "beforeTransform", afterTransform: "afterTransform" };
+  var SOURCE_HOST_RE = /^https?:\/\/patients\.stryker\.com(?=[/?#]|$)/i;
+  function rewriteSourceLink(href) {
+    if (!href) return null;
+    const value = href.trim();
+    let rest;
+    if (value.startsWith("/") && !value.startsWith("//")) rest = value;
+    else if (SOURCE_HOST_RE.test(value)) rest = value.replace(SOURCE_HOST_RE, "") || "/";
+    else return null;
+    const [, path, suffix = ""] = rest.match(/^([^?#]*)([?#].*)?$/);
+    if (!/\.html?$/i.test(path) || path.startsWith("/content/dam/")) return null;
+    let edsPath = path.replace(/\.html?$/i, "");
+    if (/(^|\/)index$/i.test(edsPath)) edsPath = edsPath.replace(/index$/i, "");
+    return `${edsPath || "/"}${suffix}`;
+  }
   function transform(hookName, element, payload) {
     const isSaResources = !!(payload && payload.template && payload.template.name === "sa-resources");
+    const isIvsTreatment = !!(payload && payload.template && ["ivs-treatment", "ivs-get-the-facts", "ivs-contact"].includes(payload.template.name));
+    const isSkinnedContent = isSaResources || isIvsTreatment;
     if (hookName === TransformHook.beforeTransform) {
       WebImporter.DOMUtils.remove(element, ["#onetrust-consent-sdk"]);
+      if (isIvsTreatment) {
+        WebImporter.DOMUtils.remove(element, [".fullWidthImageHero .hero-space", ".tabs-nav"]);
+        element.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
+          heading.querySelectorAll('[style*="ffb500" i]').forEach((span) => {
+            const text = span.textContent.replace(/ /g, " ").trim();
+            if (!text) return;
+            const em = element.ownerDocument.createElement("em");
+            const strong = element.ownerDocument.createElement("strong");
+            while (span.firstChild) strong.appendChild(span.firstChild);
+            em.appendChild(strong);
+            span.replaceWith(em);
+          });
+        });
+        element.querySelectorAll(".buttonset a.btn-gold").forEach((a) => {
+          if (a.closest("em") && a.closest("strong")) return;
+          a.removeAttribute("class");
+          a.removeAttribute("style");
+          const strong = element.ownerDocument.createElement("strong");
+          const em = element.ownerDocument.createElement("em");
+          a.replaceWith(strong);
+          strong.appendChild(em);
+          em.appendChild(a);
+        });
+        return;
+      }
       if (isSaResources) {
         element.querySelectorAll("a.btn-gold").forEach((a) => {
           if (a.closest("em") && a.closest("strong")) return;
@@ -56,6 +97,11 @@ var CustomImportScript = (() => {
           a.replaceWith(strong);
           strong.appendChild(em);
           em.appendChild(a);
+        });
+        element.querySelectorAll('a[target="_blank" i][href]').forEach((a) => {
+          const href = a.getAttribute("href").trim();
+          if (!href || href.endsWith("#_blank") || /^(mailto|tel):/i.test(href)) return;
+          a.setAttribute("href", `${href.replace(/#$/, "")}#_blank`);
         });
         return;
       }
@@ -110,8 +156,21 @@ var CustomImportScript = (() => {
         "footer#footer",
         ".c-back-to-top"
       ]);
-      if (isSaResources) {
-        WebImporter.DOMUtils.remove(element, ["#publishedDate"]);
+      if (isSkinnedContent) {
+        WebImporter.DOMUtils.remove(element, ["#publishedDate", ".container.c-disclaimer.page-section"]);
+        if (isIvsTreatment) {
+          element.querySelectorAll('a[href="#disclaimer"]').forEach((a) => {
+            const sup = a.querySelector("sup");
+            if (sup) a.replaceWith(sup);
+            else a.replaceWith(...a.childNodes);
+          });
+          const hiw = [...element.querySelectorAll("h3")].find((h) => h.textContent.replace(/ /g, " ").trim() === "How it works" && !h.querySelector("strong, b"));
+          if (hiw) {
+            const strong = element.ownerDocument.createElement("strong");
+            while (hiw.firstChild) strong.appendChild(hiw.firstChild);
+            hiw.appendChild(strong);
+          }
+        }
       } else {
         WebImporter.DOMUtils.remove(element, [
           ".c-disclaimer",
@@ -137,7 +196,11 @@ var CustomImportScript = (() => {
       element.querySelectorAll("p").forEach((p) => {
         if (!p.textContent.trim() && !p.querySelector("img, picture, a")) p.remove();
       });
-      if (isSaResources) return;
+      element.querySelectorAll("a[href]").forEach((a) => {
+        const rewritten = rewriteSourceLink(a.getAttribute("href"));
+        if (rewritten !== null) a.setAttribute("href", rewritten);
+      });
+      if (isSkinnedContent) return;
       element.querySelectorAll("h1").forEach((h1) => {
         const h2 = element.ownerDocument.createElement("h2");
         [...h1.attributes].forEach((attr) => h2.setAttribute(attr.name, attr.value));
@@ -147,7 +210,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // import-sa-resources.js
+  // tools/importer/import-sa-resources.js
   var transformers = [
     transform
   ];
@@ -208,6 +271,7 @@ var CustomImportScript = (() => {
         main.append(sectionMetadata(document, "compact"));
       }
       const meta = WebImporter.Blocks.getMetadata(document);
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical && canonical.getAttribute("href")) {
         meta.canonical = canonical.getAttribute("href");
