@@ -8,6 +8,13 @@
   margin: 0 -15px;
 }
 
+/* multi-row blocks: default space between rows (only rows 2+, so the block's own
+   top/bottom edges don't move). Kept low in specificity so theme / template /
+   variant row spacing still wins; icon-grid spaces its rows with row-gap. */
+.columns:not(.columns-icon-grid) > div + div {
+  margin-top: var(--space-section);
+}
+
 .columns img {
   max-width: 100%;
   height: auto;
