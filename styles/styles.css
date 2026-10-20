@@ -130,6 +130,7 @@
   --brochure-title-line-height: 1.518; /* measured: 14px Futura title inside a 14px/19.25px serif source paragraph renders 21.25px lines */
 
   /* spacing — measured from source: block bottom margin 15px, list indent 17px */
+  --space-block-xxs: 3px; /* condition-detail panel (cta) heading → list gap (offsets its nested line height) */
   --space-block-xs: 5px;
   --space-block-s: 10px;
   --space-block: 15px;
@@ -212,7 +213,8 @@
   --panel-heading-size-xs: 17.5px; /* gray variant h3 on small screens */
   --panel-body-size: 24.5px; /* p */
   --panel-body-size-s: 21px;
-  --pannel-body-size-xs: 17.5px;
+  --panel-body-size-ss: 19.5px;
+  --panel-body-size-xs: 17.5px;
   --panel-body-line-height: 1.06; /* p */
   --panel-body-line-height-m: 1.15; /* p */
   --panel-dark-gradient: linear-gradient(90deg, #545857, #3e5245); /* dark variant bg (measured) */

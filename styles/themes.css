@@ -148,6 +148,11 @@ body.sa-resources .cards.brochure .cards-card-body h2 {
   }
 }
 
+/* card images aren't links here, so drop the cards block's pointer cursor */
+body.sa-resources .cards .cards-card-image {
+  cursor: auto;
+}
+
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
 /* single-item panel: one column at all widths (override the panel 2-up grid) */
@@ -692,10 +697,8 @@ body.discography main .section.light-gray h4 {
   line-height: var(--body-line-height); /* source mixed-font line: 20.1px @14px, 25.1px @17.5px */
 }
 
-/* "Potential risks" anchor link: the source keeps it at 21px / 1.06 at every
-   width (the shared panel rule sets 21.5px). */
 body.discography main .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
-  font-size: var(--heading-font-size-l);
+  font-size: var(--panel-body-size-ss);
   line-height: var(--heading-line-height);
 }
 
@@ -1286,6 +1289,12 @@ body.zip-skin-closure main > .section.full-bleed.columns-container:first-child::
 
 body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
+}
+
+/* the alternating image / text rows already space themselves through their cell
+   padding: keep them flush (opts out of the Columns default row spacing) */
+body.zip-skin-closure .columns.columns-50-50 > div + div {
+  margin-top: 0;
 }
 
 
@@ -2231,6 +2240,16 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   }
 }
 
+/* Panel (cta) heading: the source nests a 1.25x Futura span inside a serif h3, which
+   spreads wrapped lines wider than the h3's own line height (38px @26.25px, 32px
+   @21.875px) — reproduce that line spacing at every width. The taller last line adds
+   ~4px below it, so the bottom padding drops from 7px to 3px to keep the heading → list
+   gap as on the source. */
+body.condition-detail .panel.cta .panel-body h3 {
+  padding-bottom: var(--space-block-xxs);
+  line-height: var(--heading-line-height-ml-nested);
+}
+
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
   body.bvn-ablation .hero.banner > div:last-child {
@@ -2566,4 +2585,12 @@ body.zip-doctor-request .marketo-form {
     font-size: var(--body-font-size-m);
     line-height: var(--heading-line-height-hero);
   }
+}
+
+/* =====================================================================
+   Theme: pd-spinejack-system on top of the procedure-detail template.
+   ===================================================================== */
+
+body.procedure-detail.pd-spinejack-system main > .section > .default-content-wrapper h3 {
+  font-weight: var(--font-weight-bold);
 }
