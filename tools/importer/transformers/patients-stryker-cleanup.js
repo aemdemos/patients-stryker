@@ -161,6 +161,17 @@ export default function transform(hookName, element, payload) {
         strong.appendChild(em);
         em.appendChild(a);
       });
+
+      // New-tab links: the source opens the PDF/PNG downloads, the regional
+      // stroke-organisation links and the ww "LEARN MORE" (labeling.stryker.com)
+      // with target="_blank". Carry that over as the author `#_blank` marker
+      // (scripts.js decorateLinkTargets turns it into target="_blank"). Runs before
+      // the parsers, which copy/move these anchors with their href intact.
+      element.querySelectorAll('a[target="_blank" i][href]').forEach((a) => {
+        const href = a.getAttribute('href').trim();
+        if (!href || href.endsWith('#_blank') || /^(mailto|tel):/i.test(href)) return;
+        a.setAttribute('href', `${href.replace(/#$/, '')}#_blank`);
+      });
       return; // remaining beforeTransform work is legal-copy formatting only
     }
 

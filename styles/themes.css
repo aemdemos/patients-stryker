@@ -148,6 +148,11 @@ body.sa-resources .cards.brochure .cards-card-body h2 {
   }
 }
 
+/* card images aren't links here, so drop the cards block's pointer cursor */
+body.sa-resources .cards .cards-card-image {
+  cursor: auto;
+}
+
 /* ----- Panel block (intro availability box, `panel light`) ----- */
 
 /* single-item panel: one column at all widths (override the panel 2-up grid) */
@@ -236,48 +241,10 @@ body.campaign-landing main > .section.tabs-container > .default-content-wrapper 
   text-align: center;
 }
 
-body.condition-detail main > .section.light-gray {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    background-color: transparent;
-}
-
-body.condition-detail main > .section.light-gray > .default-content-wrapper {
-   border-inline: var(--container-gutter) solid transparent;
-    padding: 2%;
-    background-color: var(--color-surface);
-    background-clip: padding-box;
-}
-
-body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
-   font-family: var(--body-font-family);
-    font-size: var(--body-font-size-m);
-    line-height: var( --paragraph-line-height);
-}
-
-body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
-      font-size: var(--heading-font-size-xs);
-      line-height: var(--heading-line-height-h4);
-}
-
-body.condition-detail .tabs .tabs-tab {
-  padding: 0 30px;
-}
-
-body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
-  font-size: var(--body-font-size-l);
-  line-height: var(--heading-line-height-ml);
-}
- 
-
 @media (width >= 600px) {
   body.campaign-landing main > .section.tabs-container > .default-content-wrapper :is(h2, h3) {
     font-size: var(--icon-list-title-size);
   }
-
-  body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
-      font-size: var(--heading-font-size-m);
-}
 }
 
 body.campaign-landing > main > div.serif.light-gray.section.columns-container {
@@ -500,99 +467,10 @@ body.search-results main h1:has(strong) + p {
   }
 }
 
-  body.condition-detail .hero-container .hero-wrapper {
-    padding: 0 var(--container-gutter);
-  }
-
-  
-  body.condition-detail h3 {
-    font-family: var(--heading-font-family);
-    font-size: var(--heading-font-size-ml);
-    padding-bottom: 7px;
-    line-height: var(--heading-line-height);
-  }
-
-   body.condition-detail .section.dark .columns h3 {
-    font-size: var(--heading-font-size-ml);
-    line-height: var(--body-line-height-l);
-    padding-bottom: 0;
-   }
-
-  body.condition-detail h3 em strong, body.condition-detail h3 strong em {
-    font-size: var(--heading-font-size-ml);
-  }
- 
-
-  body.condition-detail h4 {
-    font-size: var(--heading-font-size-ml);
-  }
-
-  body.condition-detail h2 em strong, body.condition-detail h2 strong em {
-     font-size: var(--condition-headline-font-size);
-  }
-
-body.condition-detail main p, body.condition-detail main ul {
-    font-size: var(--body-font-size-l);
-    line-height: var(--body-line-height-l);
-}
-
-    body.condition-detail .panel.left .panel-body  {
-      margin: 0 0 var(--space-block);
-    }
-
-   body.condition-detail .panel.left .panel-body p{
-    margin: 0 0 var(--space-block);
-    font-size: var(--body-font-size-l);
-}
-
-body.condition-detail a:any-link {
-  text-decoration: none;
-}
- 
-body.condition-detail main > .section.flex {
-  margin-top: var(--space-section);
-   margin-bottom: var(--space-section);
-}
-
-/* Mobile condition-detail 50-50 rows stack; add a clear gap between the two cells. */
-body.condition-detail .columns.columns-50-50 > div {
-  row-gap: var(--space-section-l);
-  padding-right:2%;
-  padding-left:2%;
-}
-
-body.condition-detail .columns ul > li > p,
 body.procedure-detail .cards .cards-card-body ul > li > p {
   margin: 0;
 }
 
-
-body.condition-detail .tabs .tabs-tab p {
-  font-size:14px;
-}
-
-body.condition-detail .tabs .tabs-panel {
-  margin-bottom: 60px;
-}
-
-@media (width >= 600px) {
-  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul,
-  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark.panel-authoring {
-    grid-template-columns: 1fr;
-  }
-
-  body.condition-detail .hero.banner > div:last-child {
-    align-self: end;
-  }
-
-  body.condition-detail  .panel.cta > ul {
-    grid-template-columns: 1fr;
-  }
-
-   body.condition-detail .section.dark .columns h3 {
-    font-size: var(--heading-font-size-l-scaled);
-   }
-}
 
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
@@ -1286,6 +1164,12 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
 }
 
+/* the alternating image / text rows already space themselves through their cell
+   padding: keep them flush (opts out of the Columns default row spacing) */
+body.zip-skin-closure .columns.columns-50-50 > div + div {
+  margin-top: 0;
+}
+
 
  body.procedure-detail main > .section.panel-container:has(.panel.gold) {
   margin-top: var(--space-section-xl);
@@ -1321,10 +1205,6 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   margin-top: unset;
   }
 
-  body.condition-detail .hero.banner > div:last-child {
-    width: 55%;
-  }
-      
 }
 
 /* =====================================================================
@@ -2216,19 +2096,6 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   }
 }
 
-/* ----- Tablet (>=600px) ----- */
-@media (width >= 600px) {
-  body.condition-detail h3 {
-     font-size: var(--heading-font-size-l-scaled);
-     line-height: var(--heading-line-height-ml);
-  }
-
-    body.condition-detail h3 em strong, body.condition-detail h3 strong em {
-     font-size: var(--heading-font-size-l-scaled);
-     line-height: var(--heading-line-height-ml);
-  }
-}
-
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
   body.bvn-ablation .hero.banner > div:last-child {
@@ -2242,34 +2109,6 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   body.bvn-ablation main > .section.columns-container.divider .columns > div > div {
     flex: 1 1 0;
   }
-}
-
-/* Theme: condition-detail (desktop 2-column layout override for IVS condition pages). */
-@media (width >= 900px) {
-  body.condition-detail main > .section.flex {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-  }
-
-  body.condition-detail main > .section.flex > .panel-wrapper:first-child {
-    grid-column: 1;
-    grid-row: 1 / span 3;
-    align-self: stretch;
-  }
-
-  body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
-    grid-column: 2;
-    width: 100%;
-  }
-
-  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta),
-  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta,
-  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
-    width: 100%;
-    min-width: 0;
-  }
-
 }
 
 /* =====================================================================

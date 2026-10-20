@@ -1,0 +1,171 @@
+/* Condition Detail template — shared styling for IVS condition pages. */
+
+body.condition-detail main > .section.light-gray {
+  margin-block: 60px;
+  background-color: transparent;
+}
+
+body.condition-detail .hero-container .hero-wrapper {
+  padding: 0 var(--container-gutter);
+}
+
+body.condition-detail h3 {
+  padding-bottom: 7px;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height);
+}
+
+body.condition-detail .section.dark .columns h3 {
+  padding-bottom: 0;
+  font-size: var(--heading-font-size-ml);
+  line-height: var(--body-line-height-l);
+}
+
+body.condition-detail h3 em strong,
+body.condition-detail h3 strong em {
+  font-size: var(--heading-font-size-ml);
+}
+
+body.condition-detail h4 {
+  font-size: var(--heading-font-size-ml);
+}
+
+body.condition-detail h2 em strong,
+body.condition-detail h2 strong em {
+  font-size: var(--condition-headline-font-size);
+}
+
+body.condition-detail a:any-link {
+  text-decoration: none;
+}
+
+body.condition-detail main p,
+body.condition-detail main ul {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.condition-detail .panel.left .panel-body {
+  margin: 0 0 var(--space-block);
+}
+
+body.condition-detail .columns ul > li > p {
+  margin: 0;
+}
+
+body.condition-detail .tabs .tabs-tab p {
+  font-size: 14px;
+}
+
+body.condition-detail .panel.left .panel-body p {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-l);
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--heading-line-height-ml);
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper {
+  border-inline: var(--container-gutter) solid transparent;
+  padding: 2%;
+  background-color: var(--color-surface);
+  background-clip: padding-box;
+}
+
+body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+  font-size: var(--heading-font-size-xs);
+  line-height: var(--heading-line-height-h4);
+}
+
+body.condition-detail .tabs .tabs-tab {
+  padding: 0 30px;
+}
+
+body.condition-detail main > .section.flex {
+  margin-block: var(--space-section);
+}
+
+/* Mobile condition-detail 50-50 rows stack; add a clear gap between the two cells. */
+body.condition-detail .columns.columns-50-50 > div {
+  row-gap: var(--space-section-l);
+  padding-inline: 2%;
+}
+
+body.condition-detail .tabs .tabs-panel {
+  margin-bottom: 60px;
+}
+
+@media (width >= 600px) {
+  body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-m);
+  }
+
+  body.condition-detail h3,
+  body.condition-detail h3 em strong,
+  body.condition-detail h3 strong em {
+    font-size: var(--heading-font-size-l-scaled);
+    line-height: var(--heading-line-height-ml);
+  }
+
+  body.condition-detail .hero.banner > div:last-child {
+    align-self: end;
+  }
+
+  body.condition-detail .panel.cta > ul {
+    grid-template-columns: 1fr;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark > ul,
+  body.condition-detail main > .section.flex > .panel-wrapper > .panel.dark.panel-authoring {
+    grid-template-columns: 1fr;
+  }
+
+  body.condition-detail .section.dark .columns h3 {
+    font-size: var(--heading-font-size-l-scaled);
+  }
+}
+
+/* Panel (cta) heading line height matches the nested source heading. */
+body.condition-detail .panel.cta .panel-body h3 {
+  padding-bottom: var(--space-block-xxs);
+  line-height: var(--heading-line-height-ml-nested);
+}
+
+@media (width >= 900px) {
+  body.condition-detail .hero.banner > div:last-child {
+    width: 55%;
+  }
+
+  body.condition-detail main > .section.flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: stretch;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:first-child ~ * {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta),
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta,
+  body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
+    width: 100%;
+    min-width: 0;
+  }
+}
