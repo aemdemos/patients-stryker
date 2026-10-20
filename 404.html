@@ -19,6 +19,18 @@
     // the requested path first, so the section's header, footer and `site` are used
     import applyBulkMetadata from '/scripts/bulk-metadata.js';
 
+    // 404-only exceptions, set before the sheet so they win: IVS 404s use the logo-only
+    // header linking to the IVS home (real IVS pages keep the full IVS nav)
+    const OVERRIDES = { '/us/en/ivs/': { nav: '/nav-legal', 'logo-link': '/us/en/ivs/' } };
+    Object.entries(OVERRIDES)
+      .filter(([prefix]) => window.location.pathname.startsWith(prefix))
+      .forEach(([, values]) => Object.entries(values).forEach(([name, content]) => {
+        const meta = document.createElement('meta');
+        meta.name = name;
+        meta.content = content;
+        document.head.append(meta);
+      }));
+
     await applyBulkMetadata();
     await import('/scripts/scripts.js');
   </script>
