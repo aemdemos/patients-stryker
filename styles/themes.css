@@ -2240,6 +2240,16 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
   }
 }
 
+/* Panel (cta) heading: the source nests a 1.25x Futura span inside a serif h3, which
+   spreads wrapped lines wider than the h3's own line height (38px @26.25px, 32px
+   @21.875px) — reproduce that line spacing at every width. The taller last line adds
+   ~4px below it, so the bottom padding drops from 7px to 3px to keep the heading → list
+   gap as on the source. */
+body.condition-detail .panel.cta .panel-body h3 {
+  padding-bottom: var(--space-block-xxs);
+  line-height: var(--heading-line-height-ml-nested);
+}
+
 /* ----- Desktop (>=900px) ----- */
 @media (width >= 900px) {
   body.bvn-ablation .hero.banner > div:last-child {
