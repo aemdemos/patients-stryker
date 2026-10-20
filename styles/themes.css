@@ -1286,6 +1286,12 @@ body.zip-skin-closure .columns.columns-50-50 .button-wrapper {
   display: none;
 }
 
+/* the alternating image / text rows already space themselves through their cell
+   padding: keep them flush (opts out of the Columns default row spacing) */
+body.zip-skin-closure .columns.columns-50-50 > div + div {
+  margin-top: 0;
+}
+
 
  body.procedure-detail main > .section.panel-container:has(.panel.gold) {
   margin-top: var(--space-section-xl);
