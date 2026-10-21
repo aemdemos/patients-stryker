@@ -467,6 +467,7 @@ With this information, you can construct URLs for the preview environment (same 
 - **Production Preview**: `https://main--patients-stryker--aemdemos.aem.page/`
 - **Production Live**: `https://main--patients-stryker--aemdemos.aem.live/`
 - **Feature Preview**: `https://{branch}--patients-stryker--aemdemos.aem.page/`
+- **Corp site (www.stryker.com) Preview**: `https://main--stryker-com--strykerenterprise.aem.page/`; feature branch: `https://{branch}--stryker-com--strykerenterprise.aem.page/`. Use these for corp test/demo URLs in PRs.
 
 ### Publishing Process
 1. Push changes to a feature branch
