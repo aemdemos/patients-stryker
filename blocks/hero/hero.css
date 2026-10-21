@@ -511,6 +511,7 @@
 
 .hero-stroke.section .hero.banner > div:last-child > :not(.button-wrapper, div:has(p em a)) {
   flex: 0 0 100%;
+  padding-left: 0;
 }
 
 /* the 35px gap above the buttons sits on the subhead (below), so a wrapped second
@@ -518,6 +519,7 @@
 .hero-stroke.section .hero.banner .button-wrapper,
 .hero-stroke.section .hero.banner .button-wrapper + .button-wrapper {
   margin: 0 0 var(--space-block-s);
+  padding-left:0;
 }
 
 /* "Select language" — source renders it at 21px with a tight line-height (not
