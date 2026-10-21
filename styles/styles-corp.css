@@ -216,32 +216,38 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* section styles: copy size (p-1, p-1-25), label size (label-1-5) and bottom spacing (ps-0, ps-1).
-   Tab panes are fragments whose sections land in .tabs-panel, not in <main>. */
+   Tab panes are fragments whose sections land in .tabs-panel, not in <main>; accordion
+   panels (with-nested-blocks) hold their section in .accordion-item-body. */
 :where(body.corp) main > .section.p-1 > div :is(p, li),
-:where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li) {
+:where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1 > div :is(p, li) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
 :where(body.corp) main > .section.p-1-25 > div :is(p, li),
-:where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li) {
+:where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1-25 > div :is(p, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
 
 :where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
-:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child) {
+:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child),
+:where(body.corp) .accordion-item-body > .section.label-1-5 > div p:has(> strong:only-child) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
 
 :where(body.corp) main > div.section.ps-0,
-:where(body.corp) .tabs-panel > .section.ps-0 {
+:where(body.corp) .tabs-panel > .section.ps-0,
+:where(body.corp) .accordion-item-body > .section.ps-0 {
   margin-bottom: 0;
 }
 
 :where(body.corp) main > div.section.ps-1,
-:where(body.corp) .tabs-panel > .section.ps-1 {
+:where(body.corp) .tabs-panel > .section.ps-1,
+:where(body.corp) .accordion-item-body > .section.ps-1 {
   margin-bottom: var(--space-block-l);
 }
 
@@ -326,7 +332,8 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.last-modified-section,
   :where(body.corp) main > div.section.ps-1,
-  :where(body.corp) .tabs-panel > .section.ps-1 {
+  :where(body.corp) .tabs-panel > .section.ps-1,
+  :where(body.corp) .accordion-item-body > .section.ps-1 {
     margin-bottom: var(--space-inset-l);
   }
 }

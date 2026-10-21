@@ -582,6 +582,7 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateSectionMetadata(main);
   buildTabbedSections(main);
+  corp?.decorateSections(main);
   decorateBlocks(main);
   decorateLinkTargets(main);
   decorateButtons(main);
