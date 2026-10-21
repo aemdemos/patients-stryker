@@ -356,6 +356,12 @@ This is about **links**. The imported document for an index page is still saved 
 **Verify** after every import: the output must contain no source-page `.html` links and no `/index` links, e.g.
 `grep -oE 'href="(https://patients\.stryker\.com)?/[^"]*(\.html|/index)([?#][^"]*)?"' content/<path>.plain.html` should print nothing.
 
+### Image alt text in imports (Dynamic Media)
+
+Copy alt text from the source exactly. If a Dynamic Media image on the source page has **no alt text** (missing or empty `alt`):
+- **Do not write alt text yourself** — no generated, guessed or filename-derived alt. Import the image link as is, with an empty alt.
+- **Flag it to the user**: after the import, list every such image (page path + image URL) so authors can add the alt text in DA.
+
 ### Style variation within a template (templates, section styles, variants, themes)
 
 Source pages that share a template often differ in styles, layouts and fonts. **Do not reproduce every page's differences.** Most are legacy inconsistency, not design. Follow this process exactly.
