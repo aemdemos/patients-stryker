@@ -95,7 +95,7 @@
   flex: 1;
   position: relative;
   margin: calc(var(--space-section) - 8%) 0 15%;
-  padding: 5% 8% 7%;
+  padding: 5% 8% 3%;
   background-color: var(--color-white);
   box-shadow: var(--shadow-soft);
 }
