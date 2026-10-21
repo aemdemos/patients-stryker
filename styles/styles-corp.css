@@ -140,8 +140,9 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: var(--space-block-l);
 }
 
-/* a section left without content (metadata only, or moved by a block) paints nothing */
-:where(body.corp) main .section:empty {
+/* a section left without content (metadata only, or moved by a block) paints nothing;
+   `spacer` sections are empty on purpose (shared styles.css gives them their height) */
+:where(body.corp) main .section:empty:not(.spacer) {
   display: none;
 }
 
