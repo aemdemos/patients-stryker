@@ -242,6 +242,13 @@ Use `curl` and `console.log` to inspect the HTML delivered by the backend and th
 
 Each block should be self-contained and re-useable, with CSS and JS files following the naming convention: `blockname.css`, `blockname.js`. Blocks should be responsive and accessible by default.
 
+**Blocks must not depend on the template or theme.** A block's CSS and JS must render the same way on every page, whatever its `template` or `theme` metadata:
+- No template/theme selectors in block files (e.g. `body.news-detail .cards …`, `.legal .columns …`) and no `getMetadata('template')` / `getMetadata('theme')` or `body.classList` checks in block JS.
+- A look that a block needs is a **block variant** (a class on the block) or a **section style** — authored, visible in the Block Library and usable on any page.
+- If a template or theme really needs to adjust a block on its pages, that rule lives in the template's own files (`templates/<t>/<t>.css` / `<t>-themes.css`), never in the block — and prefer making it a variant instead.
+
+Why: the Block Library previews each block outside any template/theme. A block whose look depends on the page's template or theme renders differently in the library than on the page, so authors cannot trust or reuse it.
+
 ### Auto-Blocking
 
 Auto-blocking is the process of creating blocks that aren't explicitly authored into the page based on patterns in the content. See the `buildAutoBlocks` function in `scripts.js`.
@@ -348,6 +355,58 @@ This is about **links**. The imported document for an index page is still saved 
 
 **Verify** after every import: the output must contain no source-page `.html` links and no `/index` links, e.g.
 `grep -oE 'href="(https://patients\.stryker\.com)?/[^"]*(\.html|/index)([?#][^"]*)?"' content/<path>.plain.html` should print nothing.
+
+### Style variation within a template (templates, section styles, variants, themes)
+
+Source pages that share a template often differ in styles, layouts and fonts. **Do not reproduce every page's differences.** Most are legacy inconsistency, not design. Follow this process exactly.
+
+#### 1. Evidence before code — never guess
+- Every style decision must come from a **measured source page**: fetch it (`curl`, browser) and read the computed values (font-family, size, weight, colour, spacing). Never style from memory, from a screenshot description, from a scoping document's one-line summary, or from another variant's CSS.
+- Name the source URL(s) you measured in your reply to the user (not in code comments).
+- If you cannot fetch or measure the source, **stop and ask the user**. Do not invent values, fonts, variant names or class names.
+- Only use variant, section-style and theme names that exist in `blocks/`, the Block Library or were approved by the user. Never invent names from scoping/analysis output — propose them and wait for approval.
+
+#### 2. Baseline first, then classify every difference
+1. Sample several pages of the template (cover each visible group of differences).
+2. The pattern used by most pages is the **template default** → `templates/<t>/<t>.css`.
+3. List each remaining difference and classify it as **intentional design** or **inconsistency**. Report the list to the user and get confirmation before styling outliers. Inconsistencies are normalised to the default, not coded.
+
+#### 3. Put each intentional difference in the lowest layer that can carry it
+Use the first row that fits; never skip down the table.
+
+| Kind of difference | Where it belongs |
+|---|---|
+| Text-level (bold link, gold heading, serif paragraph) | **Authoring conventions** — font formatting only, no new CSS |
+| One region of a page (dark band, compact spacing, divider) | **Section style** (Section Metadata), defined once, reused |
+| A component's layout (2-up vs 4-up, teaser vs tile) | **Block variant** — check the Block Library first |
+| A *group* of pages sharing a distinct look across the page | **Theme** — `theme` metadata → `body.<template>.<theme>`; rules in `templates/<t>/<t>-themes.css`; assign via the bulk metadata sheet by path |
+| A single page matching nothing | Push back to the user first. If confirmed, a theme used by that one page. Never path-based or page-specific selectors |
+
+#### 4. Forbidden
+- Page-specific selectors, path-derived classes, or `:has()` tricks that identify a single page.
+- Block CSS/JS that depends on the template or theme name (see **Blocks must not depend on the template or theme** under Key Concepts → Blocks).
+- `!important` or extra selector specificity to defeat template/block defaults — fix the layer instead.
+- A new theme for a difference of one or two rules (that is a section style or variant).
+- Font/size overrides that bypass the type tokens in `styles/styles.css` / `styles/styles-corp.css` — add or reuse a token.
+- Copying ("forking") a block to change only CSS or a few lines of JS (see Corp site rules below).
+
+#### 5. Verify
+- Render the migrated page at the three breakpoints and compare against the source; confirm computed font-family/size/colour of the changed elements.
+- Offer the style validator (`tools/style-validator`, below) for multi-page templates — it clusters identical differences so each fix lands once.
+- When you add a section style, variant or theme, tell the user the Block Library / authoring docs need updating.
+
+### Corp site (www.stryker.com) rules
+
+Corp pages are gated by page metadata `site: corp` → `body.corp` and `scripts/corp.js`. Patients pages must never be affected.
+
+- **Reuse patients blocks.** If a patients block (`cards`, `columns`, `video`, `hero`, `accordion`, `tabs`, …) fits, reuse it: corp styling goes in `blocks/<name>/<name>-corp.css`, scoped under `body.corp`, and the name is added to `CORP_BLOCK_STYLES` in `scripts/corp.js`. Do not create `<name>-corp` block forks for CSS differences or small variant-gated JS.
+- **New corp block** (`<name>-corp` folder) only when no patients block fits the content model — explain why to the user first.
+- **Variants:** port only the variants the user/reviewer has listed. Do not carry over variants from analysis or old branches without approval.
+- **Templates** live in `templates/<t>/`: `<t>.css` (template styles), `<t>.js` (template behaviour — its default export is called with the document by `corp.loadTemplate`; keep it for page-level decoration that no block owns) and `<t>-themes.css` (template themes, loaded only when the page sets `theme`). Corp pages do not load `styles/themes.css`. Put behaviour in a block when a block owns the content; use the template JS only for page-wide concerns.
+- **Global corp styles/tokens** live in `styles/styles-corp.css`. Do not edit `styles/styles.css` for corp needs unless the user approves.
+- **Breakpoints:** Hard Rule 5 applies unchanged. www.stryker.com uses the same source breakpoints as patients (480 / 840–841 / 1024 / 1440) — map them to 600 / 900 / 1200 per the table in Hard Rule 5.
+- **Video:** YouTube/DM videos are authored as the `video` block; there is no auto-blocking of bare links.
+- **Scope of a change:** one block (or template) per branch/PR, with a demo page path for the reviewer. Do not bundle unrelated blocks.
 
 ## Testing & Quality Assurance
 
@@ -518,6 +577,9 @@ When a block needs a full-width background inside a padded container:
 - [ ] `npm run lint` passes with zero errors (no new `eslint-disable` comments added)
 - [ ] Images optimized (< 100KB for committed assets)
 - [ ] Accessibility: proper headings, alt text, keyboard navigation
+- [ ] Every style value traced to a measured source page (URL named to the user); no invented variant/theme names
+- [ ] Each style difference placed in the lowest fitting layer (conventions → section style → variant → theme); no page-specific selectors
+- [ ] Block CSS/JS has no template- or theme-name selectors or checks; the block renders the same in the Block Library as on the page
 
 ## If all else fails
 
