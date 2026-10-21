@@ -188,12 +188,14 @@
   font-weight: var(--font-weight-medium);
   font-size: 6vw;
   line-height: 1.15;
-  padding-left: calc(3% + 20px);
+  padding-left: var(--hero-banner-text-inset);
 }
 
-/* subheading — dark serif, 21px on phones then 24.5px from 600px up */
+/* subheading — dark serif, 21px on phones then 24.5px from 600px up; starts on the
+   same edge as the h1 (as on the source) */
 .hero.banner h2 {
   margin-bottom: var(--space-block);
+  padding-left: var(--hero-banner-text-inset);
   color: var(--text-color);
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
