@@ -29,8 +29,9 @@
   color: var(--text-color);
 }
 
-/* 21px at every width (corp h3 is 17.5px on phones) */
-.cards-corp.teaser .cards-corp-card-body h3 {
+/* 21px at every width (corp h3 is 17.5px on phones). Scoped to the block, not the
+   decorated body class, so it also holds before decoration (editor canvas). */
+.cards-corp.teaser h3 {
   margin: var(--space-block) 0;
   color: var(--text-color);
   font-family: var(--heading-font-family);
@@ -39,9 +40,11 @@
   line-height: var(--heading-line-height);
 }
 
-/* a linked title still reads as a plain heading, hover and focus included */
-.cards-corp.teaser .cards-corp-card-body h3 a:any-link {
-  color: inherit;
+/* a linked title reads as a plain heading in every state: the global
+   a:hover / a:focus link-hover colour must not reach it */
+.cards-corp.teaser h3 a:any-link,
+.cards-corp.teaser h3 a:any-link:is(:hover, :focus, :active) {
+  color: var(--text-color);
   text-decoration: none;
 }
 
