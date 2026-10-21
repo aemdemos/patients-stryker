@@ -135,8 +135,9 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* ---- sections ---- */
 
-:where(body.corp) main > .section:first-child > .default-content-wrapper {
-  padding-bottom: var(--space-block-l);
+/* measured on www.stryker.com: every component (.page-section) ends with a 20px gap, 30px from 480px */
+:where(body.corp) main > .section {
+  margin-bottom: var(--space-block-l);
 }
 
 /* a section left without content (metadata only, or moved by a block) paints nothing */
@@ -314,8 +315,8 @@ body:where(.corp):has(main .hero-carousel) header {
     font-size: var(--heading-font-size-xl);
   }
 
-  :where(body.corp) main > .section:first-child > .default-content-wrapper {
-    padding-bottom: var(--space-section);
+  :where(body.corp) main > .section {
+    margin-bottom: var(--space-section);
   }
 
   :where(body.corp) main > .section.separator {
@@ -330,10 +331,6 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 @media (width >= 900px) {
-  :where(body.corp) main > .section > div {
-    padding: 0 var(--container-gutter);
-  }
-
   :where(body.corp) main > .section.flex {
     align-items: center;
     gap: var(--container-gutter);
