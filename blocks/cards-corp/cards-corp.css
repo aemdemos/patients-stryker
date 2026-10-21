@@ -84,7 +84,15 @@
   border: 1px solid var(--color-surface-muted);
 }
 
+/* equal-height cards per row: the grid stretches each card to the row height and
+   the panel grows to fill it; content stays top-aligned, as on the source */
+.cards-corp.border > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
 .cards-corp.border .cards-corp-card-body {
+  flex: 1;
   position: relative;
   margin: calc(var(--space-section) - 8%) 0 15%;
   padding: 5% 8% 7%;
