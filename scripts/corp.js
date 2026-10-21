@@ -15,6 +15,7 @@ import {
   buildBlock,
   decorateBlock,
   getMetadata,
+  loadBlock,
   loadCSS,
   loadSection,
   waitForFirstImage,
@@ -100,37 +101,25 @@ export async function loadFirstSections(main) {
 }
 
 /**
- * Builds, decorates and loads a corp chrome block into its landmark, in place of aem.js
- * loadHeader / loadFooter. The corp code sits next to the patients block it replaces
- * (`blocks/header/header-corp.js|css`, `blocks/footer/footer-corp.js|css`), so it is
- * loaded from that folder; the block keeps the `<name>-corp` class its CSS is scoped to.
- * The blocks read the `nav` / `footer` metadata themselves (defaults /nav, /footer).
+ * Builds, decorates and loads a chrome block (header-corp / footer-corp) into its
+ * landmark, in place of aem.js loadHeader / loadFooter. The blocks read the `nav` /
+ * `footer` metadata themselves (defaults /nav, /footer).
  * @param {Element} parent The <header> or <footer> landmark
- * @param {string} name The patients block name (header / footer)
+ * @param {string} name The block name
  */
 async function loadChrome(parent, name) {
-  if (!parent) return;
-  const corpName = `${name}-corp`;
-  const block = buildBlock(corpName, '');
+  if (!parent) return null;
+  const block = buildBlock(name, '');
   parent.append(block);
   decorateBlock(block);
-  block.dataset.blockStatus = 'loading';
-  try {
-    await Promise.all([
-      loadCSS(`${window.hlx.codeBasePath}/blocks/${name}/${corpName}.css`),
-      import(`../blocks/${name}/${corpName}.js`).then((mod) => mod.default?.(block)),
-    ]);
-  } catch {
-    // a failed chrome load leaves the landmark empty; the page itself still renders
-  }
-  block.dataset.blockStatus = 'loaded';
+  return loadBlock(block);
 }
 
 /**
  * @param {Document} doc The document
  */
 export function loadHeader(doc) {
-  return loadChrome(doc.querySelector('header'), 'header');
+  return loadChrome(doc.querySelector('header'), 'header-corp');
 }
 
 /**
@@ -161,7 +150,7 @@ function decorateBackToTop(doc) {
  * @param {Document} doc The document
  */
 export function loadFooter(doc) {
-  loadChrome(doc.querySelector('footer'), 'footer');
+  loadChrome(doc.querySelector('footer'), 'footer-corp');
   decorateBackToTop(doc);
 }
 
