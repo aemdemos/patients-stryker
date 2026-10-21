@@ -13,6 +13,11 @@
   .cards-corp > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  /* three-up: 3 per row (source col-sm-4, e.g. home "Our focus") */
+  .cards-corp.three-up > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .cards-corp .cards-corp-card-image {
@@ -69,4 +74,24 @@
 
 .cards-corp.teaser .cards-corp-card-body :is(a.link-strong, strong > a:has(u)):any-link:is(:hover, :focus) {
   color: var(--color-primary-pressed);
+}
+
+/* border: home "Our focus" cards (source img.bor-gray + .dimensional-box) — framed
+   image and a white shadowed text panel at its foot. Padding/margins are % of the
+   card width, as on the source. Combine with teaser for the typography. */
+.cards-corp.border .cards-corp-card-image img {
+  box-sizing: border-box;
+  border: 1px solid var(--color-surface-muted);
+}
+
+.cards-corp.border .cards-corp-card-body {
+  position: relative;
+  margin: calc(var(--space-section) - 8%) 0 15%;
+  padding: 5% 8% 7%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.cards-corp.border .cards-corp-card-body > :first-child {
+  margin-top: 0;
 }
