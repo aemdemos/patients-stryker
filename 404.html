@@ -19,9 +19,17 @@
     // the requested path first, so the section's header, footer and `site` are used
     import applyBulkMetadata from '/scripts/bulk-metadata.js';
 
+    // only the chrome keys: a 404 must not pick up e.g. the `template` of the real pages
+    // under the same path (stryker-com: /us/en/about/news/** → news-detail)
+    const KEYS = ['nav', 'footer', 'logo-link', 'site'];
+
     // 404-only exceptions, set before the sheet so they win: IVS 404s use the logo-only
-    // header linking to the IVS home (real IVS pages keep the full IVS nav)
+    // header linking to the IVS home. This overrides the `nav` of the /us/en/ivs and
+    // /us/en/ivs/** rows in /metadata.json (nav-ivs), which real IVS pages keep.
     const OVERRIDES = { '/us/en/ivs/': { nav: '/nav-legal', 'logo-link': '/us/en/ivs/' } };
+
+    // HOME target per site (`site` metadata): stryker.com's 404 links to /us/en/
+    const HOME = { corp: '/us/en/' };
     Object.entries(OVERRIDES)
       .filter(([prefix]) => window.location.pathname.startsWith(prefix))
       .forEach(([, values]) => Object.entries(values).forEach(([name, content]) => {
@@ -31,7 +39,14 @@
         document.head.append(meta);
       }));
 
-    await applyBulkMetadata();
+    await applyBulkMetadata(KEYS);
+
+    const site = (document.querySelector('meta[name="site"]')?.content || '').trim().toLowerCase();
+    const home = document.querySelector('main.error a[href="/"]');
+    if (home && HOME[site]) home.href = HOME[site];
+
+    // loaded with import() rather than a <script src>, so aem.js can't derive
+    // window.hlx.codeBasePath from the tag and it falls back to '' (code at the site root)
     await import('/scripts/scripts.js');
   </script>
   <script nonce="aem" type="module">
