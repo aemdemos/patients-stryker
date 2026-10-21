@@ -69,7 +69,10 @@ function buildAccordionSections(main) {
   const runs = [];
   main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
     const run = runs[runs.length - 1];
-    if (run && run[run.length - 1].nextElementSibling === section) run.push(section);
+    // a Block Library variant (tools/da-library-preview) is always its own accordion
+    const joins = run && run[run.length - 1].nextElementSibling === section
+      && !section.classList.contains('library-variant-start');
+    if (joins) run.push(section);
     else runs.push([section]);
   });
 
