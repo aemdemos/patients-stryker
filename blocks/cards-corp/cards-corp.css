@@ -3,7 +3,7 @@
 .cards-corp > ul {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: var(--space-block-l) calc(2 * var(--container-gutter));
+  gap: 0 calc(2 * var(--container-gutter));
   margin: 0;
   padding: 0;
   list-style: none;
