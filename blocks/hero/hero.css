@@ -701,3 +701,21 @@
     font-size: 21px;
   }
 }
+
+/* banner subtitle authored as a plain paragraph (not a button), e.g. spinejack —
+   styled like the h2 subheading: same edge as the h1, dark serif, 21px → 24.5px */
+.hero.banner > div:last-child > p:not(.button-wrapper) {
+  margin-bottom: var(--space-block);
+  padding-left: var(--hero-banner-text-inset);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  .hero.banner > div:last-child > p:not(.button-wrapper) {
+    font-size: var(--heading-font-size-xl);
+  }
+}
