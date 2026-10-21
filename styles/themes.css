@@ -1619,6 +1619,7 @@ body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child {
 
 body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > :is(h1, h2) {
   padding-left: 4%;
+  line-height: var(--heading-line-height-hero);
 }
 
 body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > .button-wrapper {
