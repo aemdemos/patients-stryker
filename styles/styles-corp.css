@@ -18,6 +18,7 @@
   --corp-icon-font-family: strykericons;
   --corp-heading-line-height-compact-nested: 1.68; /* 0.8em Futura span in a source h3: 23.55px lines @14px, 28.25px @16.8px */
   --corp-shadow-card: 0 0 10px var(--color-surface-muted); /* source .c-high-level-cta-link (category tiles) */
+  --corp-product-item-image-height: 185px; /* source product card image area (img max-height 185px, above its 1px rule) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;

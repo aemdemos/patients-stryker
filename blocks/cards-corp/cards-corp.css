@@ -24,6 +24,75 @@
   margin-bottom: 0;
 }
 
+/* product-item: product grids (source .product-item "Product type" and "Covered
+   products") — the image sits at the foot of a fixed-height area with a 1px grey rule
+   (the source's .border-bottom-gold renders #b2b4ae), then the H4 title:
+   H4 = Egyptienne Light, bold H4 = Futura bold. The image links to the title link;
+   no hover change. 1 / 2 / 4 per row (source col-sm-6 col-md-3). */
+.cards-corp.product-item > ul {
+  row-gap: var(--space-block-s);
+}
+
+.cards-corp.product-item .cards-corp-card-image {
+  box-sizing: content-box;
+  height: var(--corp-product-item-image-height);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.cards-corp.product-item .cards-corp-card-image :is(a, picture) {
+  display: block;
+  height: 100%;
+}
+
+.cards-corp.product-item .cards-corp-card-image img {
+  height: 100%;
+  margin-bottom: 0;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.cards-corp.product-item h4 {
+  margin: 0 0 var(--space-block-xxs);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-h4);
+}
+
+/* bold title = Futura bold, also when linked: cancels the global strong-link button */
+.cards-corp.product-item h4 strong {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+.cards-corp.product-item h4 a:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  text-transform: none;
+  text-decoration: none;
+}
+
+/* five-up: 2 / 3 / 4 / 5 per row (source trauma "Product type" grid: 50% < 628px,
+   33% < 885px, 25% < 1250px, 20% above) — e.g. Cards Corp (product-item, five-up) */
+.cards-corp.five-up > ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: var(--space-section);
+}
+
 
 /* bold text in the card copy (all variants); bold CTA links (LEARN MORE) and bold
    title text (h3 / gold eyebrow) keep their own sizes */
@@ -225,6 +294,14 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .cards-corp.product-item > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-corp.five-up > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   /* text: stays 1 per row until 900px */
   .cards-corp.text > ul {
     grid-template-columns: minmax(0, 1fr);
@@ -250,10 +327,18 @@
   .cards-corp.category > ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .cards-corp:is(.product-item, .five-up) > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 @media (width >= 1200px) {
   .cards-corp.text > ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cards-corp.five-up > ul {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
