@@ -95,6 +95,17 @@ function renderFor(src, label) {
 }
 
 /**
+ * Player for an authored video link (YouTube or Dynamic Media), labelled from the
+ * link's title/text; null if the link isn't a supported video. Shared with cards.
+ * @param {HTMLAnchorElement} link the authored video link
+ * @returns {HTMLElement|null}
+ */
+export function videoPlayerFor(link) {
+  const label = cleanVideoLabel(link.getAttribute('title'), link.textContent.trim());
+  return renderFor(link.getAttribute('href'), label);
+}
+
+/**
  * loads and decorates the video block
  * @param {Element} block The block element
  */
@@ -119,10 +130,6 @@ export default function decorate(block) {
     return;
   }
 
-  const src = link.getAttribute('href');
-  const text = link.textContent.trim();
-  const label = cleanVideoLabel(link.getAttribute('title'), text);
-
-  const player = renderFor(src, label);
+  const player = videoPlayerFor(link);
   if (player) block.replaceChildren(player);
 }
