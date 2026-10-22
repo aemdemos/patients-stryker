@@ -93,6 +93,46 @@
   row-gap: var(--space-section);
 }
 
+/* one-up: one product per row (source .product.border-bottom-gold rows, e.g. VSP
+   "Related products") — image above the text, side by side 50/50 from 900px (source
+   col-md-6); a 1px grey rule closes each row. The image keeps its natural size,
+   centred; the H2 title link is Futura bold, black, no hover change. */
+.cards-corp.one-up > ul > li {
+  padding-bottom: var(--space-block-l);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.cards-corp.one-up .cards-corp-card-image {
+  text-align: center;
+}
+
+.cards-corp.one-up .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+.cards-corp.one-up h2 {
+  margin: 0 0 var(--space-block);
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+.cards-corp.one-up h2 a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-corp.one-up .cards-corp-card-body p {
+  margin: var(--space-block-s) 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
 
 /* bold text in the card copy (all variants); bold CTA links (LEARN MORE) and bold
    title text (h3 / gold eyebrow) keep their own sizes */
@@ -302,6 +342,15 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /* one-up: always one per row */
+  .cards-corp.one-up > ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cards-corp.one-up h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
   /* text: stays 1 per row until 900px */
   .cards-corp.text > ul {
     grid-template-columns: minmax(0, 1fr);
@@ -330,6 +379,14 @@
 
   .cards-corp:is(.product-item, .five-up) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* one-up: image and text side by side, 50/50, top-aligned */
+  .cards-corp.one-up > ul > li {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    column-gap: calc(2 * var(--container-gutter));
   }
 }
 
