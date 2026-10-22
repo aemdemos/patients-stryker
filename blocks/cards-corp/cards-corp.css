@@ -19,6 +19,13 @@
   height: auto;
 }
 
+/* bold text in the card copy (all variants); bold CTA links (LEARN MORE) and bold
+   title text (h3 / gold eyebrow) keep their own sizes */
+.cards-corp .cards-corp-card-body p strong:not(:has(a)) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
 /* teaser: Related Products — light serif title, Humanist copy, teal "Learn more" */
 .cards-corp.teaser .cards-corp-card-body {
   color: var(--text-color);
