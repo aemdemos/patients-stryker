@@ -170,6 +170,12 @@ body.corp .columns p.button-wrapper + p.button-wrapper {
   margin-inline-end: var(--space-block-s);
 }
 
+/* large-headline: a button after an image follows the text closely (stryker.com puts that
+   CTA straight under its rich text) */
+body.corp .columns.large-headline .columns-img-col ~ p.button-wrapper {
+  margin-top: var(--space-block-s);
+}
+
 /* large-headline: a button right under a video keeps the source's 30px component gap */
 body.corp .columns.large-headline p:has(> .dm-video-wrapper) + p.button-wrapper {
   margin-top: var(--space-section);
@@ -184,6 +190,11 @@ body.corp .columns .columns-img-col {
 
 /* a heading caption under an image (name + role) sits one column gutter lower */
 body.corp .columns .columns-img-col:has(+ h3) {
+  margin-bottom: var(--space-section);
+}
+
+/* large-headline sets no paragraph gaps: an image keeps a column gutter below it */
+body.corp .columns.large-headline .columns-img-col {
   margin-bottom: var(--space-section);
 }
 
