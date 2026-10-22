@@ -109,6 +109,18 @@ body.corp .columns h2 :is(em strong, strong em) {
   font-size: inherit;
 }
 
+/* large headline: a Heading 1 in a cell (stryker.com Large Headline .fontsize-4vw: 30px
+   on phones, 40px at 1000px, 56px at 1440px). Plain words are Egyptienne Light; Bold +
+   Italic words are gold Futura bold (global gold marker). Its mixed-font lines render
+   1.66x the font size apart (93px at 56px, 50px at 30px). */
+body.corp .columns > div > div h1 {
+  margin-bottom: var(--columns-corp-headline-gap);
+  font-family: var(--heading-font-family);
+  font-size: var(--columns-corp-headline-size);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.66;
+}
+
 /* buttons in a row: consecutive button paragraphs sit side by side, 10px apart, and
    wrap when the cell is too narrow (stryker.com horizontal button group) */
 body.corp .columns p.button-wrapper:has(+ p.button-wrapper),
@@ -138,6 +150,8 @@ body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
 body.corp .columns {
   --columns-corp-caption-gap: var(--space-inset-m);
   --columns-corp-display-size: 35px; /* gold display heading, above */
+  --columns-corp-headline-size: var(--heading-font-size-xxl); /* large headline, above */
+  --columns-corp-headline-gap: var(--space-section);
 }
 
 body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
@@ -296,6 +310,17 @@ body.corp .columns.columns-20-80 > div > div:first-child {
     --columns-corp-lh-after-cta-gap: calc(var(--space-section) + var(--space-block-s));
   }
 
+  body.corp .columns {
+    --columns-corp-headline-size: var(--heading-font-size-xxl-l);
+    --columns-corp-headline-gap: var(--space-inset-m);
+  }
+
+  /* the source component insets the headline 20px from its top, which with these line
+     boxes puts its first line 10px lower */
+  body.corp .columns > div > div h1:first-child {
+    margin-top: var(--space-block-s);
+  }
+
   body.corp .columns.large-headline h2 {
     font-size: var(--heading-font-size-xxl);
   }
@@ -307,5 +332,12 @@ body.corp .columns.columns-20-80 > div > div:first-child {
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+}
+
+@media (width >= 1200px) {
+  /* large headline: the source 56px (.fontsize-4vw capped at 1440px) */
+  body.corp .columns {
+    --columns-corp-headline-size: 56px;
   }
 }
