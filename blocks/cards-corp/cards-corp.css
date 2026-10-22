@@ -32,6 +32,52 @@
   line-height: var(--body-line-height-l);
 }
 
+/* category: product category tiles (source .c-high-level-cta, e.g. trauma "Product
+   categories") — the image is contained in a shadowed 442:293 box and a teal label
+   bar (the card link) sits one bar-height above its foot, reaching 10px out to the
+   left of the image. No hover change, as on the source. */
+.cards-corp.category > ul > li {
+  position: relative;
+}
+
+.cards-corp.category .cards-corp-card-image img {
+  aspect-ratio: 442 / 293;
+  margin-bottom: 0;
+  object-fit: contain;
+  box-shadow: var(--corp-shadow-card);
+}
+
+.cards-corp.category .cards-corp-card-body {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: calc(-1 * var(--space-block-s));
+  transform: translateY(-100%);
+}
+
+.cards-corp.category .cards-corp-card-body > * {
+  margin: 0;
+}
+
+.cards-corp.category p a:any-link {
+  display: block;
+  padding: var(--space-block-xs) var(--space-block-s);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-line-height);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* source: 7px padding + the label's trailing space ≈ 10px before the arrow */
+.cards-corp.category p a:any-link::after {
+  content: "►";
+  padding-left: var(--space-block-s);
+}
+
 /* teaser: Related Products — light serif title, Humanist copy, teal "Learn more" */
 .cards-corp.teaser .cards-corp-card-body {
   color: var(--text-color);
@@ -174,6 +220,11 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  /* category: 2 per row from 600px, 3 from 900px (source col-sm-6 col-md-4) */
+  .cards-corp.category > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   /* text: stays 1 per row until 900px */
   .cards-corp.text > ul {
     grid-template-columns: minmax(0, 1fr);
@@ -194,6 +245,10 @@
      (source col-xs-6 col-sm-3 col-md-2, e.g. ASC resource center "Newsletters") */
   .cards-corp.six-up > ul {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .cards-corp.category > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
