@@ -16,6 +16,15 @@
   --corp-back-to-top-icon-size: 16px;
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;
+
+  /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
+  --corp-color-facebook: #1677f2;
+  --corp-color-linkedin: #0077b5;
+  --corp-color-tooltip: #333;
+  --corp-shadow-tooltip: 0 2px 4px rgb(0 0 0 / 20%);
+  --corp-share-icon-size: 30px;
+  --corp-share-icon-radius: 5px;
+  --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 }
 
@@ -135,12 +144,14 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* ---- sections ---- */
 
-:where(body.corp) main > .section:first-child > .default-content-wrapper {
-  padding-bottom: var(--space-block-l);
+/* measured on www.stryker.com: every component (.page-section) ends with a 20px gap, 30px from 480px */
+:where(body.corp) main > .section {
+  margin-bottom: var(--space-block-l);
 }
 
-/* a section left without content (metadata only, or moved by a block) paints nothing */
-:where(body.corp) main .section:empty {
+/* a section left without content (metadata only, or moved by a block) paints nothing;
+   `spacer` sections are empty on purpose (shared styles.css gives them their height) */
+:where(body.corp) main .section:empty:not(.spacer) {
   display: none;
 }
 
@@ -314,8 +325,8 @@ body:where(.corp):has(main .hero-carousel) header {
     font-size: var(--heading-font-size-xl);
   }
 
-  :where(body.corp) main > .section:first-child > .default-content-wrapper {
-    padding-bottom: var(--space-section);
+  :where(body.corp) main > .section {
+    margin-bottom: var(--space-section);
   }
 
   :where(body.corp) main > .section.separator {
@@ -330,10 +341,6 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 @media (width >= 900px) {
-  :where(body.corp) main > .section > div {
-    padding: 0 var(--container-gutter);
-  }
-
   :where(body.corp) main > .section.flex {
     align-items: center;
     gap: var(--container-gutter);
