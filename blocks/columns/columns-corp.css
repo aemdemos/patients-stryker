@@ -41,17 +41,34 @@ body.corp .columns .columns-img-col {
   padding-bottom: 0;
 }
 
+body.corp .columns.media-pair .columns-img-col {
+  margin-bottom: 0;
+}
+
 body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
   padding-inline: 0;
+}
+
+/* image caption: a fully Bold paragraph right under an image renders as a small,
+   bold, centred caption (stryker.com: Futura 700 11.2px, centred, its text 22px below
+   the image on mobile and 32px from 600px, i.e. a 25px / 35px box gap) */
+body.corp .columns {
+  --columns-corp-caption-gap: var(--space-inset-m);
+}
+
+body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
+  margin-bottom: var(--columns-corp-caption-gap);
+}
+
+body.corp .columns .columns-img-col + p:has(> strong:only-child) {
+  font-size: var(--body-font-size-xs);
+  line-height: var(--body-line-height-l);
+  text-align: center;
 }
 
 body.corp .columns .columns-img-col img,
 body.corp .columns .columns-img-col video {
   width: 100%;
-}
-
-body.corp .columns.media-pair .columns-img-col {
-  margin-bottom: 0;
 }
 
 /* link groups (related-links): body copy in the corp body font, and the underlined
@@ -160,6 +177,10 @@ body.corp .columns.columns-20-80 > div > div:first-child {
 
   body.corp .columns.columns-20-80 > div > div:last-child {
     flex: 0 0 80%;
+  }
+
+  body.corp .columns {
+    --columns-corp-caption-gap: 35px;
   }
 
   /* related-links: no patients 75px CTA slot (a 2-up float device) on corp */
