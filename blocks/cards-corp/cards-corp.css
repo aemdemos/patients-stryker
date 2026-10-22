@@ -117,6 +117,17 @@
   line-height: var(--paragraph-line-height);
 }
 
+.cards-corp.resources .cards-corp-card-body h5 {
+  font-size: var(--heading-font-size-xs);
+}
+
+/* resources: a linked title keeps the heading look – black, never underlined
+   (also on hover/focus: this outranks the global a:hover / a:focus colour) */
+.cards-corp.resources .cards-corp-card-body h5 a:any-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
 /* inline links: teal, no underline; dark teal on hover/focus, as on the source */
 .cards-corp.text .cards-corp-card-body :is(p, li) a:any-link {
   color: var(--color-primary);
@@ -126,10 +137,6 @@
 .cards-corp.text .cards-corp-card-body :is(p, li) a:any-link:is(:hover, :focus) {
   color: var(--color-primary-pressed);
 }
-
-.cards-corp.resources .cards-corp-card-body h5 {
-  font-size: var(--heading-font-size-xs);
-} 
 
 @media (width >= 600px) {
   .cards-corp.text h3 {
