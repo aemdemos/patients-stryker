@@ -16,6 +16,7 @@
   --corp-back-to-top-icon-size: 16px;
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;
+  --corp-heading-line-height-compact-nested: 1.68; /* 0.8em Futura span in a source h3: 23.55px lines @14px, 28.25px @16.8px */
   --nav-height: var(--corp-chrome-height);
 }
 

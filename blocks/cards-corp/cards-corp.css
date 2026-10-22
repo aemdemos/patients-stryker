@@ -137,15 +137,22 @@
 }
 
 /* scoped to the block (not the title cell) so it also holds in the editor canvas.
-   Source: 0.8em (16.8px) Futura bold span in a 21px h3 — lines render 28.25px apart */
+   Source: 0.8em Futura bold span in the h3 — 14px on mobile, 16.8px from 600px
+   (EDS mapping of the source's mobile breakpoint); lines 1.68x apart at both */
 .cards-corp.text h3 {
   margin: 0;
   color: var(--text-color);
   font-family: var(--display-font-family);
-  font-size: var(--heading-font-size-compact);
+  font-size: var(--heading-font-size-xs);
   font-weight: var(--font-weight-bold);
-  line-height: var(--heading-line-height-xl-nested-s);
+  line-height: var(--corp-heading-line-height-compact-nested);
   text-align: center;
+}
+
+@media (width >= 600px) {
+  .cards-corp.text h3 {
+    font-size: var(--heading-font-size-compact);
+  }
 }
 
 .cards-corp.text .cards-corp-card-body {
