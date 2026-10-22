@@ -6,8 +6,8 @@
  * and every split goes side by side from 600px.
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
- * columns-20-80 (icon + text), media-pair and events (event schedule); 3 and 4 cells
- * need no variant.
+ * columns-20-80 (icon + text), media-pair and large-headline (the stryker.com Large
+ * Headline type scale); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
@@ -35,69 +35,86 @@ body.corp .columns h4 {
   line-height: var(--heading-line-height-h4);
 }
 
-/* event schedule (events): the stryker.com Large Headline agenda (ASSH meeting pages).
+/* large-headline: the stryker.com Large Headline component type scale (ASSH event
+   schedules, the OTA video row).
    Formatting sets the line: h2 = large Futura bold (gold with Bold + Italic), h3 + Bold =
    date and time, h4 = light serif title, plain paragraph = serif text, Bold paragraph =
    Futura bold, Italic paragraph = small grey Futura bold venue. Source lines are 1.35
    high with no paragraph gap; sizes are the source 1440px ones from 900px, the corp
    heading scale (nothing under 12px) below */
-body.corp .columns.events {
-  --columns-corp-events-title-size: var(--heading-font-size-l);
-  --columns-corp-events-text-size: var(--body-font-size-m);
-  --columns-corp-events-small-size: var(--body-font-size-xs);
-  --columns-corp-events-heading-gap: var(--space-block);
-  --columns-corp-events-gap: var(--space-block-l);
-  --columns-corp-events-cta-gap: calc(var(--space-section) + var(--space-block-s));
-  --columns-corp-events-after-cta-gap: var(--space-section);
+body.corp .columns.large-headline {
+  --columns-corp-lh-title-size: var(--heading-font-size-l);
+  --columns-corp-lh-text-size: var(--body-font-size-m);
+  --columns-corp-lh-small-size: var(--body-font-size-xs);
+  --columns-corp-lh-heading-gap: var(--space-block);
+  --columns-corp-lh-gap: var(--space-block-l);
+  --columns-corp-lh-cta-gap: calc(var(--space-section) + var(--space-block-s));
+  --columns-corp-lh-after-cta-gap: var(--space-section);
 }
 
-body.corp .columns.events :is(h2, h4, p) {
+body.corp .columns.large-headline :is(h2, h4, p) {
   margin-bottom: 0;
   line-height: var(--heading-line-height-hero);
 }
 
-body.corp .columns.events h2 {
-  margin-bottom: var(--columns-corp-events-heading-gap);
-}
-
-/* the gold part of a heading keeps the heading size (columns.css sizes gold h2 markers) */
-body.corp .columns.events h2 :is(em strong, strong em) {
-  font-size: inherit;
+body.corp .columns.large-headline h2 {
+  margin-bottom: var(--columns-corp-lh-heading-gap);
+  font-size: var(--heading-font-size-l);
 }
 
 /* each event starts at its date line */
-body.corp .columns.events h3:not(:first-child) {
-  margin-top: var(--columns-corp-events-gap);
+body.corp .columns.large-headline h3:not(:first-child) {
+  margin-top: var(--columns-corp-lh-gap);
 }
 
-body.corp .columns.events p.button-wrapper {
-  margin-top: var(--columns-corp-events-cta-gap);
+body.corp .columns.large-headline p.button-wrapper {
+  margin-top: var(--columns-corp-lh-cta-gap);
 }
 
-body.corp .columns.events p.button-wrapper + h3 {
-  margin-top: var(--columns-corp-events-after-cta-gap);
+body.corp .columns.large-headline p.button-wrapper + h3 {
+  margin-top: var(--columns-corp-lh-after-cta-gap);
 }
 
-body.corp .columns.events h4 {
+body.corp .columns.large-headline h4 {
   font-family: var(--heading-font-family);
-  font-size: var(--columns-corp-events-title-size);
+  font-size: var(--columns-corp-lh-title-size);
   font-weight: var(--font-weight-regular);
 }
 
-body.corp .columns.events p {
+body.corp .columns.large-headline p {
   font-family: var(--heading-font-family);
-  font-size: var(--columns-corp-events-text-size);
+  font-size: var(--columns-corp-lh-text-size);
 }
 
-body.corp .columns.events p:has(> em:only-child) {
+body.corp .columns.large-headline p:has(> em:only-child) {
   color: var(--color-surface-muted);
-  font-size: var(--columns-corp-events-small-size);
+  font-size: var(--columns-corp-lh-small-size);
 }
 
-body.corp .columns.events p > em:only-child {
+body.corp .columns.large-headline p > em:only-child {
   font-family: var(--display-font-family);
   font-style: normal;
   font-weight: var(--font-weight-bold);
+}
+
+/* gold display heading: a fully Bold + Italic Heading 2 (stryker.com h4 .fontsize-2-5em:
+   Futura 700 gold, 35px below 840px, 43.75px above). The gold marker keeps the heading
+   size (columns.css sizes gold h2 markers). large-headline has its own heading scale. */
+body.corp .columns:not(.large-headline) > div > div h2:has(> em:only-child > strong:only-child, > strong:only-child > em:only-child) {
+  font-size: var(--columns-corp-display-size);
+  line-height: var(--heading-line-height);
+}
+
+body.corp .columns h2 :is(em strong, strong em) {
+  font-size: inherit;
+}
+
+/* buttons in a row: consecutive button paragraphs sit side by side, 10px apart, and
+   wrap when the cell is too narrow (stryker.com horizontal button group) */
+body.corp .columns p.button-wrapper:has(+ p.button-wrapper),
+body.corp .columns p.button-wrapper + p.button-wrapper {
+  display: inline-flex;
+  margin-inline-end: var(--space-block-s);
 }
 
 /* image cells: no patients 3% inset or 30px drop; stacked images sit one paragraph
@@ -120,6 +137,7 @@ body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
    the image on mobile and 32px from 600px, i.e. a 25px / 35px box gap) */
 body.corp .columns {
   --columns-corp-caption-gap: var(--space-inset-m);
+  --columns-corp-display-size: 35px; /* gold display heading, above */
 }
 
 body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
@@ -181,6 +199,11 @@ body.corp .columns.columns-4-cols > div > div {
 /* link groups (related-links): corp cell inset instead of the patients 24px */
 body.corp .columns.related-links > div > div {
   padding-inline: var(--space-block);
+}
+
+/* large-headline: the source component starts its text 20px below its top (and below a video above it) */
+body.corp .columns.large-headline > div > div:not(:has(video, picture)) {
+  padding-top: var(--space-block-l);
 }
 
 /* icon + text (columns-20-80): icon centred above the text on mobile */
@@ -247,6 +270,11 @@ body.corp .columns.columns-20-80 > div > div:first-child {
 
   body.corp .columns {
     --columns-corp-caption-gap: 35px;
+    --columns-corp-display-size: var(--heading-font-size-xxxl);
+  }
+
+  body.corp .columns.large-headline h2 {
+    font-size: var(--heading-font-size-xl);
   }
 
   /* related-links: no patients 75px CTA slot (a 2-up float device) on corp */
@@ -256,28 +284,28 @@ body.corp .columns.columns-20-80 > div > div:first-child {
 }
 
 @media (width >= 900px) {
-  /* events: the source sizes at 1440px (.fontsize-2-5-vw title capped at 35px) and its
+  /* large-headline: the source sizes at 1440px (.fontsize-2-5-vw title capped at 35px) and its
      gaps between the Large Headline and CTA components */
-  body.corp .columns.events {
-    --columns-corp-events-title-size: 35px;
-    --columns-corp-events-text-size: var(--body-font-size-xl);
-    --columns-corp-events-small-size: var(--body-font-size-m);
-    --columns-corp-events-heading-gap: var(--space-inset-m);
-    --columns-corp-events-gap: calc(var(--space-section-l) + var(--space-block-l));
-    --columns-corp-events-cta-gap: var(--space-section-l);
-    --columns-corp-events-after-cta-gap: calc(var(--space-section) + var(--space-block-s));
+  body.corp .columns.large-headline {
+    --columns-corp-lh-title-size: 35px;
+    --columns-corp-lh-text-size: var(--body-font-size-xl);
+    --columns-corp-lh-small-size: var(--body-font-size-m);
+    --columns-corp-lh-heading-gap: var(--space-inset-m);
+    --columns-corp-lh-gap: calc(var(--space-section-l) + var(--space-block-l));
+    --columns-corp-lh-cta-gap: var(--space-section-l);
+    --columns-corp-lh-after-cta-gap: calc(var(--space-section) + var(--space-block-s));
   }
 
-  body.corp .columns.events h2 {
+  body.corp .columns.large-headline h2 {
     font-size: var(--heading-font-size-xxl);
   }
 
-  body.corp .columns.events h3 {
+  body.corp .columns.large-headline h3 {
     margin-bottom: var(--space-block-l);
   }
 
   /* a Bold line ends its own source paragraph: a little more air below it */
-  body.corp .columns.events p:has(> strong:only-child) {
+  body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
   }
 }
