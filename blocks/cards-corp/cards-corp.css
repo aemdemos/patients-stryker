@@ -155,6 +155,12 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  /* two-up: 2 per row (source col-sm-6, e.g. corporate responsibility
+     "Giving and volunteering" / "Our culture") */
+  .cards-corp.two-up > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   /* three-up: 3 per row (source col-sm-4, e.g. home "Our focus") */
   .cards-corp.three-up > ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
