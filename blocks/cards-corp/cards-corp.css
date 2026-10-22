@@ -9,34 +9,6 @@
   list-style: none;
 }
 
-@media (width >= 600px) {
-  .cards-corp > ul {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  /* three-up: 3 per row (source col-sm-4, e.g. home "Our focus") */
-  .cards-corp.three-up > ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  /* text: stays 1 per row until 900px */
-  .cards-corp.text > ul {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-/* text: 2 per row from 900px, 3 from 1200px */
-@media (width >= 900px) {
-  .cards-corp.text > ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (width >= 1200px) {
-  .cards-corp.text > ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 
 .cards-corp .cards-corp-card-image {
   line-height: 0;
@@ -130,11 +102,7 @@
   text-align: center;
 }
 
-@media (width >= 600px) {
-  .cards-corp.text h3 {
-    font-size: var(--heading-font-size-compact);
-  }
-}
+
 
 .cards-corp.text .cards-corp-card-body {
   padding: 4% 8% 8%;
@@ -157,4 +125,37 @@
 
 .cards-corp.text .cards-corp-card-body :is(p, li) a:any-link:is(:hover, :focus) {
   color: var(--color-primary-pressed);
+}
+
+@media (width >= 600px) {
+  .cards-corp.text h3 {
+    font-size: var(--heading-font-size-compact);
+  }
+
+  .cards-corp > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* three-up: 3 per row (source col-sm-4, e.g. home "Our focus") */
+  .cards-corp.three-up > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* text: stays 1 per row until 900px */
+  .cards-corp.text > ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* text: 2 per row from 900px, 3 from 1200px */
+@media (width >= 900px) {
+  .cards-corp.text > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 1200px) {
+  .cards-corp.text > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
