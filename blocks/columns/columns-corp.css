@@ -160,10 +160,11 @@ body.corp .columns > div > div h1 {
   line-height: 1.66;
 }
 
-/* a headline in one font per line (fully gold, or a gold number over the text) keeps the
-   source's 1.35 line spacing; a gold number alone on the first line (columns.js
-   .columns-number) is twice the headline size (stryker.com 9vw number over 4.5vw text) */
-body.corp .columns > div > div h1:is(.columns-gold, .columns-number) {
+/* a headline in one font per line (fully gold or fully Bold, or a gold number over the
+   text) keeps the source's 1.35 line spacing; a gold number alone on the first line
+   (columns.js .columns-number) is twice the headline size (stryker.com 9vw number over
+   4.5vw text) */
+body.corp .columns > div > div h1:is(.columns-gold, .columns-bold, .columns-number) {
   line-height: var(--heading-line-height-hero);
 }
 
