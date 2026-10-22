@@ -178,6 +178,12 @@ body:where(.corp):has(main .hero-carousel) header {
   border-top: 1px solid var(--color-surface-muted);
 }
 
+/* section style `center`: centred text (stryker.com centred rich text, e.g. the About values) */
+:where(body.corp) main > .section.center,
+:where(body.corp) .tabs-panel > .section.center {
+  text-align: center;
+}
+
 /* section style `disclaimer`: small print */
 :where(body.corp) main > .section.disclaimer > div {
   font-size: var(--footnote-font-size);
