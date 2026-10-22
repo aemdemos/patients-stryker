@@ -18,6 +18,15 @@
   --corp-icon-font-family: strykericons;
   --corp-heading-line-height-compact-nested: 1.68; /* 0.8em Futura span in a source h3: 23.55px lines @14px, 28.25px @16.8px */
   --corp-shadow-card: 0 0 10px var(--color-surface-muted); /* source .c-high-level-cta-link (category tiles) */
+
+  /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
+  --corp-color-facebook: #1677f2;
+  --corp-color-linkedin: #0077b5;
+  --corp-color-tooltip: #333;
+  --corp-shadow-tooltip: 0 2px 4px rgb(0 0 0 / 20%);
+  --corp-share-icon-size: 30px;
+  --corp-share-icon-radius: 5px;
+  --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 }
 
