@@ -7,7 +7,7 @@
  *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/styles-corp.css
  *                           and the <block>-corp.css overlays of reused patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
- *   loadTemplate(name)      corp templates are CSS-only
+ *   loadTemplate(name)      template CSS + JS (+ <name>-themes.css when `theme` is set)
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
  */
@@ -55,15 +55,32 @@ export function decorateMain() {
 }
 
 /**
- * Corp templates (`template` metadata) ship CSS only.
+ * Loads a corp template (`template` metadata): `templates/<name>/<name>.css` and
+ * `<name>.js` (its default export, if any, is called with the document). Themes of a
+ * corp template live in the same folder (`<name>-themes.css`, scoped `body.<theme>`) and
+ * load only on pages that set `theme` metadata.
  * @param {string} templateName The template name
  */
 export async function loadTemplate(templateName) {
-  try {
-    await loadCSS(`${window.hlx.codeBasePath}/templates/${templateName}/${templateName}.css`);
-  } catch {
-    // an unknown template name has no stylesheet: the page renders with styles-corp.css alone
-  }
+  const dir = `${window.hlx.codeBasePath}/templates/${templateName}`;
+  const files = [`${dir}/${templateName}.css`];
+  if (getMetadata('theme')) files.push(`${dir}/${templateName}-themes.css`);
+  const styles = files.map(async (href) => {
+    try {
+      await loadCSS(href);
+    } catch {
+      // a missing stylesheet: the page renders with styles-corp.css alone
+    }
+  });
+  const decoration = (async () => {
+    try {
+      const mod = await import(`../templates/${templateName}/${templateName}.js`);
+      if (mod.default) await mod.default(document);
+    } catch {
+      // no template script: the template is CSS-only
+    }
+  })();
+  await Promise.all([...styles, decoration]);
 }
 
 /**

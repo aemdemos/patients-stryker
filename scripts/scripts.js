@@ -681,6 +681,8 @@ async function loadEager(doc) {
     // single styles/themes.css, scoped under their body.<theme> selector, and it
     // ships only to pages that actually declare a theme. Loaded eagerly (awaited
     // before `appear`) so above-the-fold themed typography doesn't reflow.
+    // Corp pages reuse these shared themes too; a corp template's own themes
+    // load from its folder as well (corp.loadTemplate).
     if (themeName) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }
