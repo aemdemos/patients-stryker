@@ -16,6 +16,15 @@
   --corp-back-to-top-icon-size: 16px;
   --corp-color-marketo-text: #333; /* Marketo forms2 theme text colour */
   --corp-icon-font-family: strykericons;
+
+  /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
+  --corp-color-facebook: #1677f2;
+  --corp-color-linkedin: #0077b5;
+  --corp-color-tooltip: #333;
+  --corp-shadow-tooltip: 0 2px 4px rgb(0 0 0 / 20%);
+  --corp-share-icon-size: 30px;
+  --corp-share-icon-radius: 5px;
+  --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 }
 
