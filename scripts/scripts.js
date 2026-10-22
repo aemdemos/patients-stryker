@@ -17,6 +17,7 @@ import {
 } from './aem.js';
 
 import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
+import decorateSpanTags from './span-tags.js';
 import { applySectionBackgrounds } from './utils.js';
 
 /*
@@ -578,6 +579,8 @@ export function decorateMain(main) {
   liftDefaultContentDMMedia(main);
   corp?.decorateMain();
   decorateIcons(main);
+  // [[class]text] → span, before anything reads the text (tab labels, buttons, aria-labels)
+  decorateSpanTags(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateSectionMetadata(main);
