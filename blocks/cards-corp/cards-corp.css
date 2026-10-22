@@ -127,7 +127,7 @@
   color: var(--color-primary-pressed);
 }
 
-.cards-corp.resources .ccards-corp-card-body h5 {
+.cards-corp.resources .cards-corp-card-body h5 {
   font-size: var(--heading-font-size-xs);
 } 
 
