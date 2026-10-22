@@ -60,7 +60,8 @@
   color: var(--color-primary-pressed);
 }
 
-.cards-corp.border .cards-corp-card-image img {
+/* border + resources: thin grey frame around the image / PDF cover */
+.cards-corp:is(.border, .resources) .cards-corp-card-image img {
   box-sizing: border-box;
   border: 1px solid var(--color-surface-muted);
 }
