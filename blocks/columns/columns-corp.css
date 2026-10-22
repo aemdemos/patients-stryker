@@ -338,9 +338,10 @@ body.corp .columns.gray-lead > div > div:last-child {
   padding-top: 0;
 }
 
-/* icon + text (columns-20-80): icon centred above the text on mobile */
+/* icon + text (columns-20-80): icon centred above the text on mobile, 95px wide as on
+   stryker.com (a third of the row, less the cell gutter) */
 body.corp .columns.columns-20-80 > div > div:first-child {
-  width: 40%;
+  width: 33.333%;
   margin-inline: auto;
 }
 
