@@ -129,12 +129,12 @@ export default function decorate(block) {
         }
       }
 
-      // fully Bold paragraphs (labels, questions) are tagged so styles can tell them
-      // from paragraphs that only open in bold (e.g. "John: …"), which CSS cannot
-      col.querySelectorAll('p').forEach((p) => {
-        const strong = p.querySelector(':scope > strong:only-child');
-        if (strong && strong.textContent.trim() === p.textContent.trim()) {
-          p.classList.add('columns-label');
+      // fully Bold paragraphs (labels, questions) and Heading 2s are tagged so styles can
+      // tell them from text that only opens in bold (e.g. "John: …"), which CSS cannot
+      col.querySelectorAll('p, h2').forEach((el) => {
+        const strong = el.querySelector(':scope > strong:only-child');
+        if (strong && strong.textContent.trim() === el.textContent.trim()) {
+          el.classList.add('columns-bold');
         }
       });
     });

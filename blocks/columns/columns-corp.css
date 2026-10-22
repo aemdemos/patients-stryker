@@ -35,10 +35,10 @@ body.corp .columns h4 {
   line-height: var(--heading-line-height-h4);
 }
 
-/* labels and questions: a fully Bold paragraph (columns.js .columns-label) that follows
+/* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
    text gets a blank line above it, on top of the paragraph gap, like the empty line
    stryker.com puts there; large-headline keeps its own rhythm */
-body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-label, .button-wrapper) + p.columns-label {
+body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold {
   margin-top: calc(1lh + var(--space-block));
 }
 
@@ -131,6 +131,14 @@ body.corp .columns h2 :is(em strong, strong em) {
   font-size: inherit;
 }
 
+/* bold display heading: a fully Bold Heading 2 (columns.js .columns-bold) is 35px black
+   Futura bold at every width (stryker.com .fontsize-2-5em .futura-bold paragraph) */
+body.corp .columns:not(.large-headline) > div > div h2.columns-bold {
+  margin-bottom: var(--space-inset-m);
+  font-size: var(--columns-corp-display-size-s);
+  line-height: var(--heading-line-height);
+}
+
 /* large headline: a Heading 1 in a cell (stryker.com Large Headline .fontsize-4vw: 30px
    on phones, 40px at 1000px, 56px at 1440px). Plain words are Egyptienne Light; Bold +
    Italic words are gold Futura bold (global gold marker). Its mixed-font lines render
@@ -181,7 +189,8 @@ body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
    the image on mobile and 32px from 600px, i.e. a 25px / 35px box gap) */
 body.corp .columns {
   --columns-corp-caption-gap: var(--space-inset-m);
-  --columns-corp-display-size: 35px; /* gold display heading, above */
+  --columns-corp-display-size-s: 35px; /* stryker.com 2.5em / capped 2.5vw display text */
+  --columns-corp-display-size: var(--columns-corp-display-size-s); /* gold display heading, above */
   --columns-corp-headline-size: var(--heading-font-size-xxl); /* large headline, above */
   --columns-corp-headline-gap: var(--space-section);
 }
@@ -380,7 +389,7 @@ body.corp .columns.columns-20-80 > div > div:first-child {
   /* large-headline: the source sizes at 1440px (.fontsize-2-5-vw title capped at 35px) and its
      gaps between the Large Headline and CTA components */
   body.corp .columns.large-headline {
-    --columns-corp-lh-title-size: 35px;
+    --columns-corp-lh-title-size: var(--columns-corp-display-size-s);
     --columns-corp-lh-text-size: var(--body-font-size-xl);
     --columns-corp-lh-small-size: var(--body-font-size-m);
     --columns-corp-lh-heading-gap: var(--space-inset-m);
