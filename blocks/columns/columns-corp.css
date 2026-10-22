@@ -97,6 +97,18 @@ body.corp .columns.large-headline p > em:only-child {
   font-weight: var(--font-weight-bold);
 }
 
+/* lists: 17.5px serif items, a blank line apart (stryker.com .fontsize-1-25em
+   urw-egyptienne items ending in two line breaks) */
+body.corp .columns.large-headline li {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+body.corp .columns.large-headline li + li {
+  margin-top: var(--space-section);
+}
+
 /* gold display heading: a fully Bold + Italic Heading 2 (stryker.com h4 .fontsize-2-5em:
    Futura 700 gold, 35px below 840px, 43.75px above). The gold marker keeps the heading
    size (columns.css sizes gold h2 markers). large-headline has its own heading scale. */
@@ -220,6 +232,27 @@ body.corp .columns.large-headline > div > div:not(:has(video, picture)) {
   padding-top: var(--space-block-l);
 }
 
+/* boxed-last: the last cell is a white shadow box (stryker.com dimensional box: 30%
+   soft shadow, 22px padding, 10px outside its 15px column gutter) */
+body.corp .columns.boxed-last > div > div:last-child {
+  margin: var(--space-block-s) calc(var(--space-block) + var(--space-block-s));
+  padding: var(--space-block-l);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+/* gold-first: the first cell is a gold box (stryker.com bg-gold component: 20px
+   padding inside its 15px column gutter); Bold text in it is white */
+body.corp .columns.gold-first > div > div:first-child {
+  margin-inline: var(--space-block);
+  padding: var(--space-block-l);
+  background-color: var(--color-accent);
+}
+
+body.corp .columns.gold-first > div > div:first-child strong {
+  color: var(--color-white);
+}
+
 /* icon + text (columns-20-80): icon centred above the text on mobile */
 body.corp .columns.columns-20-80 > div > div:first-child {
   width: 40%;
@@ -262,6 +295,14 @@ body.corp .columns.columns-20-80 > div > div:first-child {
   body.corp .columns.columns-67-33 > div > div:last-child,
   body.corp .columns.columns-33-67 > div > div:first-child {
     flex: 0 0 33.333%;
+  }
+
+  /* boxed-last / gold-first: the box takes what the other cell leaves (its margins
+     sit inside the column) and hugs its content */
+  body.corp .columns.boxed-last > div > div:last-child,
+  body.corp .columns.gold-first > div > div:first-child {
+    flex: 1 1 0;
+    align-self: flex-start;
   }
 
   body.corp .columns.columns-75-25 > div > div:first-child {
