@@ -18,6 +18,7 @@ const PAGE_TEMPLATE = {
   description: 'ENT site search page — SINGLETON. Default content plus one block: h1 \'Search Results\', h2 \'Showing results for:\', a Search block (placeholder text only — the block builds the form), the no-results message and suggestions list. Hidden inputs and the Load more button are dropped. Styled via the `search` theme.',
   urls: [
     'https://patients.stryker.com/us/en/ent/search.html',
+    'https://www.stryker.com/us/en/search.html',
   ],
   blocks: [
     { name: 'search', instances: ['.search-header .search-bar'] },
@@ -132,6 +133,11 @@ export default {
     const { document, url, params } = payload;
 
     const main = document.body;
+    // www.stryker.com (corp) renders "Last Updated <Month>/<Year>" client-side; keep it as
+    // `published` (whether the line shows is up to the corp bulk metadata sheet)
+    const isCorp = new URL(params.originalURL).hostname === 'www.stryker.com';
+    const updated = isCorp
+      && document.body.textContent.match(/Last Updated\s+([A-Za-z]+)\/(\d{4})/);
 
     // 1. Execute beforeTransform transformers (initial cleanup)
     executeTransformers('beforeTransform', main, payload);
@@ -177,6 +183,10 @@ export default {
     // styling in styles/themes.css is scoped to body.search.
     const meta = WebImporter.Blocks.getMetadata(document);
     meta.theme = 'search';
+    if (updated) {
+      const month = new Date(`${updated[1]} 1, 2000`).getMonth() + 1;
+      meta.published = `${updated[2]}-${String(month).padStart(2, '0')}`;
+    }
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

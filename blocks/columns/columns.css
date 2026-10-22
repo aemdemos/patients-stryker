@@ -343,7 +343,10 @@
   line-height: var(--heading-line-height);
 }
 
+/* the bold cell heading is Futura like the source — overrides the columns-wide
+   rule that keeps inline bold in the body font */
 .columns.columns-icon-grid .columns-img-col ~ p strong {
+  font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
 }
 
