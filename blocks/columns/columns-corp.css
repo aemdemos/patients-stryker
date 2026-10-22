@@ -1,0 +1,144 @@
+/*
+ * Columns: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). Patients columns.css stays as-is; this file
+ * sets the corp text style and the corp layouts measured on the stryker.com article
+ * pages: cells keep the 15px side padding (30px gutter), body copy is 14px Humanist
+ * and every split goes side by side from 600px.
+ *
+ * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
+ * columns-20-80 (icon + text) and media-pair; 3 and 4 cells need no variant.
+ * Rules are ordered rows, then cells, then single cells, so specificity only rises.
+ */
+
+/* ---- corp text: the corp body style instead of the patients 17.5px column copy ---- */
+
+body.corp .columns p,
+body.corp .columns ul,
+body.corp .columns li {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+/* <strong> is Futura bold on corp (labels such as "Explore"); <b> keeps the body font */
+body.corp .columns p strong {
+  font-family: var(--display-font-family);
+}
+
+body.corp .columns > div > div h2 {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .columns h4 {
+  font-size: var(--heading-font-size-m);
+  line-height: var(--heading-line-height-h4);
+}
+
+/* image cells: no patients 3% inset or 30px drop; stacked images sit one paragraph
+   space above the text below them */
+body.corp .columns .columns-img-col {
+  margin-bottom: var(--space-block);
+  padding-bottom: 0;
+}
+
+body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
+  padding-inline: 0;
+}
+
+body.corp .columns .columns-img-col img,
+body.corp .columns .columns-img-col video {
+  width: 100%;
+}
+
+body.corp .columns.media-pair .columns-img-col {
+  margin-bottom: 0;
+}
+
+/* ---- rows ---- */
+
+/* media-pair: two images / videos side by side at every width */
+body.corp .columns.media-pair > div {
+  flex-direction: row;
+  column-gap: var(--space-section);
+  margin-inline: 0;
+}
+
+/* 4 cells: two per row on mobile */
+body.corp .columns.columns-4-cols > div {
+  flex-flow: row wrap;
+  row-gap: var(--space-block);
+}
+
+/* ---- cells ---- */
+
+body.corp .columns.media-pair > div > div {
+  flex: 1 1 0;
+  padding-inline: 0;
+}
+
+body.corp .columns.columns-4-cols > div > div {
+  flex: 0 0 50%;
+}
+
+/* icon + text (columns-20-80): icon centred above the text on mobile */
+body.corp .columns.columns-20-80 > div > div:first-child {
+  width: 40%;
+  margin-inline: auto;
+}
+
+@media (width >= 600px) {
+  /* every split goes side by side from 600px (patients waits until 900px for some) */
+  body.corp .columns > div {
+    flex-wrap: nowrap;
+  }
+
+  body.corp .columns > div > div {
+    flex: 1 1 0;
+  }
+
+  body.corp .columns.columns-4-cols > div {
+    flex-wrap: nowrap;
+    row-gap: 0;
+  }
+
+  body.corp .columns.columns-50-50 > div > div {
+    flex: 0 0 50%;
+  }
+
+  body.corp .columns.columns-4-cols > div > div {
+    flex: 0 0 25%;
+  }
+
+  /* text beside an image starts level with the image, not 30px lower */
+  body.corp .columns.columns-50-50 > div:has(picture) > div:not(:has(picture)) {
+    padding-top: 0;
+  }
+
+  body.corp .columns.columns-67-33 > div > div:first-child,
+  body.corp .columns.columns-33-67 > div > div:last-child {
+    flex: 0 0 66.666%;
+  }
+
+  body.corp .columns.columns-67-33 > div > div:last-child,
+  body.corp .columns.columns-33-67 > div > div:first-child {
+    flex: 0 0 33.333%;
+  }
+
+  body.corp .columns.columns-75-25 > div > div:first-child {
+    flex: 0 0 75%;
+  }
+
+  body.corp .columns.columns-75-25 > div > div:last-child {
+    flex: 0 0 25%;
+  }
+
+  body.corp .columns.columns-20-80 > div > div:first-child {
+    flex: 0 0 20%;
+    width: auto;
+    margin-inline: 0;
+  }
+
+  body.corp .columns.columns-20-80 > div > div:last-child {
+    flex: 0 0 80%;
+  }
+}
