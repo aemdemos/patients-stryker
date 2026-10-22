@@ -127,6 +127,10 @@
   color: var(--color-primary-pressed);
 }
 
+.cards-corp.resources .ccards-corp-card-body h5 {
+  font-size: var(--heading-font-size-xs);
+} 
+
 @media (width >= 600px) {
   .cards-corp.text h3 {
     font-size: var(--heading-font-size-compact);
