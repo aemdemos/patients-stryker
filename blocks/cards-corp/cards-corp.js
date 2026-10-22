@@ -5,20 +5,23 @@ import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
  * Cards Corp: one row per card — an image cell and a body cell (H3, text, CTA).
  * The image links to the card's last link ("Learn more", else the H3 link), like the
  * source Related Products teasers.
+ * text variant: the first cell holds the title (gold band) instead of an image.
  * @param {Element} block The block element
  */
 export default function decorate(block) {
   // convert DM links to <picture>; the canvas re-renders fields from source, so re-run here
   decorateDMAssets(block);
 
+  const isText = block.classList.contains('text');
+
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      div.className = div.children.length === 1 && div.querySelector('picture')
-        ? 'cards-corp-card-image'
-        : 'cards-corp-card-body';
+    [...li.children].forEach((div, i) => {
+      if (isText && i === 0) div.className = 'cards-corp-card-title';
+      else if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-corp-card-image';
+      else div.className = 'cards-corp-card-body';
     });
     ul.append(li);
   });
