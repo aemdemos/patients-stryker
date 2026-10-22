@@ -269,6 +269,13 @@ body.corp .columns.related-links p a:any-link:has(u) {
   line-height: var(--paragraph-line-height);
 }
 
+/* section styles serif + p-1-25 together: 17.5px serif copy (stryker.com .fontsize-1-25em
+   urw-egyptienne, lines 1.15); serif alone sets 21px */
+body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
 /* ---- rows ---- */
 
 /* media-pair: two images / videos side by side at every width */
