@@ -35,6 +35,13 @@ body.corp .columns h4 {
   line-height: var(--heading-line-height-h4);
 }
 
+/* labels and questions: a fully Bold paragraph (columns.js .columns-label) that follows
+   text gets a blank line above it, on top of the paragraph gap, like the empty line
+   stryker.com puts there; large-headline keeps its own rhythm */
+body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-label, .button-wrapper) + p.columns-label {
+  margin-top: calc(1lh + var(--space-block));
+}
+
 /* large-headline: the stryker.com Large Headline component type scale (ASSH event
    schedules, the OTA video row).
    Formatting sets the line: h2 = large Futura bold (gold with Bold + Italic), h3 + Bold =
@@ -141,11 +148,21 @@ body.corp .columns p.button-wrapper + p.button-wrapper {
   margin-inline-end: var(--space-block-s);
 }
 
+/* large-headline: a button right under a video keeps the source's 30px component gap */
+body.corp .columns.large-headline p:has(> .dm-video-wrapper) + p.button-wrapper {
+  margin-top: var(--space-section);
+}
+
 /* image cells: no patients 3% inset or 30px drop; stacked images sit one paragraph
    space above the text below them */
 body.corp .columns .columns-img-col {
   margin-bottom: var(--space-block);
   padding-bottom: 0;
+}
+
+/* a heading caption under an image (name + role) sits one column gutter lower */
+body.corp .columns .columns-img-col:has(+ h3) {
+  margin-bottom: var(--space-section);
 }
 
 body.corp .columns.media-pair .columns-img-col {
@@ -179,6 +196,14 @@ body.corp .columns .columns-img-col + p:has(> strong:only-child) {
 body.corp .columns .columns-img-col img,
 body.corp .columns .columns-img-col video {
   width: 100%;
+}
+
+/* gray-lead: the last cell opens with a light-grey box (stryker.com bg-light-gray
+   Large Headline: 20px padding); the cell itself starts level with the row (below) */
+body.corp .columns.gray-lead > div > div:last-child > p:first-child {
+  margin-bottom: var(--space-section-l);
+  padding: var(--space-block-l);
+  background-color: var(--color-surface);
 }
 
 /* link groups (related-links): body copy in the corp body font, and the underlined
@@ -251,6 +276,11 @@ body.corp .columns.gold-first > div > div:first-child {
 
 body.corp .columns.gold-first > div > div:first-child strong {
   color: var(--color-white);
+}
+
+/* gray-lead: the last cell starts level with the row top, its grey box (above) first */
+body.corp .columns.gray-lead > div > div:last-child {
+  padding-top: 0;
 }
 
 /* icon + text (columns-20-80): icon centred above the text on mobile */

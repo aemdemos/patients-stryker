@@ -80,6 +80,15 @@ export default function decorate(block) {
           picWrapper.classList.add('columns-img-col');
         }
       }
+
+      // fully Bold paragraphs (labels, questions) are tagged so styles can tell them
+      // from paragraphs that only open in bold (e.g. "John: …"), which CSS cannot
+      col.querySelectorAll('p').forEach((p) => {
+        const strong = p.querySelector(':scope > strong:only-child');
+        if (strong && strong.textContent.trim() === p.textContent.trim()) {
+          p.classList.add('columns-label');
+        }
+      });
     });
   });
 }
