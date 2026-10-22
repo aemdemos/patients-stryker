@@ -129,6 +129,28 @@ export default function decorate(block) {
         }
       }
 
+      // media-pair: each image sits in its own paragraph, and a link alone on the line
+      // after it makes the image clickable (DM image links can't also carry the page
+      // href); the link text becomes the image link's name and the text line goes
+      if (block.classList.contains('media-pair')) {
+        col.querySelectorAll(':scope > p').forEach((p) => {
+          const picture = p.querySelector(':scope > picture');
+          if (!picture || p.children.length !== 1 || p.textContent.trim()) return;
+          p.classList.add('columns-img-col');
+          const next = p.nextElementSibling;
+          const link = next && next.matches('p') && next.querySelector(':scope > a[href]:only-child');
+          if (!link || next.textContent.trim() !== link.textContent.trim()) return;
+          const a = document.createElement('a');
+          a.href = link.href;
+          if (link.target) a.target = link.target;
+          if (link.rel) a.rel = link.rel;
+          a.setAttribute('aria-label', link.textContent.trim());
+          a.append(picture);
+          p.append(a);
+          next.remove();
+        });
+      }
+
       // fully Bold paragraphs (labels, questions) and Heading 1/2s are tagged so styles can
       // tell them from text that only opens in bold (e.g. "John: …"), which CSS cannot
       col.querySelectorAll('p, h1, h2').forEach((el) => {

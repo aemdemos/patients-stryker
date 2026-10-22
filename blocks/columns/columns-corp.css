@@ -6,7 +6,7 @@
  * and every split goes side by side from 600px.
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
- * columns-20-80 (icon + text), media-pair, large-headline (the stryker.com Large
+ * columns-20-80 (icon + text), media-pair (image grid), large-headline (the stryker.com Large
  * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
@@ -244,8 +244,10 @@ body.corp .columns.large-headline .columns-img-col {
   margin-bottom: var(--space-section);
 }
 
+/* media-pair: images (each a link when a link line follows it, columns.js) one per row
+   on mobile, two per row from 600px, 20px apart on mobile and 30px from 600px */
 body.corp .columns.media-pair .columns-img-col {
-  margin-bottom: 0;
+  margin-bottom: var(--space-block-l);
 }
 
 body.corp .columns .columns-img-col ~ :is(h3, h4, p) {
@@ -320,13 +322,6 @@ body.corp .section.serif.p-1-25 .columns :is(p, li, a) {
 
 /* ---- rows ---- */
 
-/* media-pair: two images / videos side by side at every width */
-body.corp .columns.media-pair > div {
-  flex-direction: row;
-  column-gap: var(--space-section);
-  margin-inline: 0;
-}
-
 /* 4 cells: two per row on mobile */
 body.corp .columns.columns-4-cols > div {
   flex-flow: row wrap;
@@ -334,11 +329,6 @@ body.corp .columns.columns-4-cols > div {
 }
 
 /* ---- cells ---- */
-
-body.corp .columns.media-pair > div > div {
-  flex: 1 1 0;
-  padding-inline: 0;
-}
 
 body.corp .columns.columns-4-cols > div > div {
   flex: 0 0 50%;
@@ -459,6 +449,14 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
 
   body.corp .columns.columns-20-80 > div > div:last-child {
     flex: 0 0 80%;
+  }
+
+  body.corp .columns.media-pair .columns-img-col {
+    margin-bottom: var(--space-section);
+  }
+
+  body.corp .columns.media-pair .columns-img-col:last-child {
+    margin-bottom: 0;
   }
 
   /* link-groups: four lists side by side again (one per row on mobile) */
