@@ -17,7 +17,13 @@
 .cards-corp .cards-corp-card-image img {
   width: 100%;
   height: auto;
+  margin-bottom: var(--space-block-l);
 }
+
+.cards-corp.teaser .cards-corp-card-image img {
+  margin-bottom: 0;
+}
+
 
 /* bold text in the card copy (all variants); bold CTA links (LEARN MORE) and bold
    title text (h3 / gold eyebrow) keep their own sizes */
@@ -71,6 +77,7 @@
 .cards-corp:is(.border, .resources) .cards-corp-card-image img {
   box-sizing: border-box;
   border: 1px solid var(--color-surface-muted);
+  margin-bottom: 0;
 }
 
 .cards-corp.border > ul > li {
@@ -127,6 +134,7 @@
 
 .cards-corp.resources .cards-corp-card-body h5 {
   font-size: var(--heading-font-size-xs);
+  margin-top: 8px;
 }
 
 /* resources: a linked title keeps the heading look – black, never underlined
@@ -169,6 +177,10 @@
   /* text: stays 1 per row until 900px */
   .cards-corp.text > ul {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cards-corp .cards-corp-card-image img {
+    margin-bottom: var(--space-inset-l);
   }
 }
 
