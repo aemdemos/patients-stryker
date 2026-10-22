@@ -6,8 +6,8 @@
  * and every split goes side by side from 600px.
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
- * columns-20-80 (icon + text), media-pair and large-headline (the stryker.com Large
- * Headline type scale); 3 and 4 cells need no variant.
+ * columns-20-80 (icon + text), media-pair, large-headline (the stryker.com Large
+ * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
@@ -41,6 +41,42 @@ body.corp .columns h4 {
    keeps its own rhythm */
 body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold:not(:has(+ p.button-wrapper)) {
   margin-top: calc(1lh + var(--space-block));
+}
+
+/* link-groups: lists of links (stryker.com group list). A bullet list of links renders
+   without bullets as Futura bold 14px teal links with a chevron, on 21px lines 10px
+   apart; a Heading 3 titles a group (Futura bold) */
+body.corp .columns.link-groups h3 {
+  margin-bottom: var(--space-block-s);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .columns.link-groups ul {
+  margin-block: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+body.corp .columns.link-groups li {
+  margin-bottom: var(--space-block-s);
+  line-height: var(--body-font-size-xl);
+  break-inside: avoid;
+}
+
+body.corp .columns.link-groups li > a:any-link {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+body.corp .columns.link-groups li > a:any-link::after {
+  content: "";
+  display: inline-block;
+  margin-inline-start: var(--space-block-s);
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent currentcolor;
 }
 
 /* large-headline: the stryker.com Large Headline component type scale (ASSH event
@@ -351,6 +387,11 @@ body.corp .columns.columns-20-80 > div > div:first-child {
   margin-inline: auto;
 }
 
+/* link-groups: four lists stack one per row on mobile (stryker.com col-xs-12) */
+body.corp .columns.link-groups.columns-4-cols > div > div {
+  flex-basis: 100%;
+}
+
 /* large-headline: a cell that opens with a Heading 1 headline brings its own top inset */
 body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   padding-top: 0;
@@ -420,6 +461,11 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     flex: 0 0 80%;
   }
 
+  /* link-groups: four lists side by side again (one per row on mobile) */
+  body.corp .columns.link-groups.columns-4-cols > div > div {
+    flex-basis: 25%;
+  }
+
   body.corp .columns {
     --columns-corp-caption-gap: 35px;
     --columns-corp-display-size: var(--heading-font-size-xxxl);
@@ -436,6 +482,13 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
 }
 
 @media (width >= 900px) {
+  /* link-groups: in a two-cell block each group's list runs in two columns (stryker.com
+     col-md-6 lists inside col-md-6 groups) */
+  body.corp .columns.link-groups.columns-2-cols ul {
+    column-gap: var(--space-section);
+    columns: 2;
+  }
+
   /* large-headline: the source sizes at 1440px (.fontsize-2-5-vw title capped at 35px) and its
      gaps between the Large Headline and CTA components */
   body.corp .columns.large-headline {
