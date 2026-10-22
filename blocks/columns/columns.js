@@ -137,6 +137,20 @@ export default function decorate(block) {
           el.classList.add('columns-bold');
         }
       });
+
+      // Heading 1 in one font: fully gold (Bold + Italic), or a gold number alone on the
+      // first line (gold part, then a line break) - styles give these their own sizing
+      col.querySelectorAll('h1').forEach((h1) => {
+        const first = h1.firstElementChild;
+        const gold = first && first.matches('em, strong')
+          && first.querySelector(':scope > :is(em, strong):only-child');
+        if (!gold || !h1.textContent.trim().startsWith(first.textContent.trim())) return;
+        if (h1.children.length === 1 && first.textContent.trim() === h1.textContent.trim()) {
+          h1.classList.add('columns-gold');
+        } else if (first.nextSibling && first.nextSibling.nodeName === 'BR') {
+          h1.classList.add('columns-number');
+        }
+      });
     });
   });
 }
