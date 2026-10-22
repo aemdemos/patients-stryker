@@ -54,6 +54,21 @@ body.corp .columns.media-pair .columns-img-col {
   margin-bottom: 0;
 }
 
+/* link groups (related-links): body copy in the corp body font, and the underlined
+   chevron links (patients related-links CTA) at the corp 14px, one paragraph apart */
+body.corp .columns.related-links :is(p, ul, li) {
+  font-family: var(--body-font-family);
+}
+
+body.corp .columns.related-links :is(h3, p:has(> a:only-child)) + p:has(> a:only-child) {
+  line-height: var(--paragraph-line-height);
+}
+
+body.corp .columns.related-links p a:any-link:has(u) {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
 /* ---- rows ---- */
 
 /* media-pair: two images / videos side by side at every width */
@@ -78,6 +93,11 @@ body.corp .columns.media-pair > div > div {
 
 body.corp .columns.columns-4-cols > div > div {
   flex: 0 0 50%;
+}
+
+/* link groups (related-links): corp cell inset instead of the patients 24px */
+body.corp .columns.related-links > div > div {
+  padding-inline: var(--space-block);
 }
 
 /* icon + text (columns-20-80): icon centred above the text on mobile */
@@ -140,5 +160,10 @@ body.corp .columns.columns-20-80 > div > div:first-child {
 
   body.corp .columns.columns-20-80 > div > div:last-child {
     flex: 0 0 80%;
+  }
+
+  /* related-links: no patients 75px CTA slot (a 2-up float device) on corp */
+  body.corp .columns.related-links p:has(a u) {
+    margin-bottom: var(--space-block);
   }
 }
