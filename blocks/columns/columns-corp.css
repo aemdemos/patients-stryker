@@ -35,6 +35,11 @@ body.corp .columns h4 {
   line-height: var(--heading-line-height-h4);
 }
 
+/* icon + text (columns-20-80) titles: stryker.com 14px on phones, 16.8px from 840px */
+body.corp .columns.columns-20-80 h4 {
+  font-size: var(--body-font-size-m);
+}
+
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
    text gets a blank line above it, on top of the paragraph gap, like the empty line
    stryker.com puts there (not a lead-in line right before a button); large-headline
@@ -87,9 +92,10 @@ body.corp .columns.link-groups li > a:any-link::after {
    high with no paragraph gap; sizes are the source 1440px ones from 900px, the corp
    heading scale (nothing under 12px) below */
 body.corp .columns.large-headline {
-  --columns-corp-lh-title-size: var(--heading-font-size-l);
-  --columns-corp-lh-text-size: var(--body-font-size-m);
-  --columns-corp-lh-small-size: var(--body-font-size-xs);
+  --columns-corp-lh-heading-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--columns-corp-vw))));
+  --columns-corp-lh-title-size: max(var(--body-font-size-xs), min(calc(2.5 * var(--body-font-size-m)), calc(2.5 * var(--columns-corp-vw))));
+  --columns-corp-lh-text-size: max(var(--body-font-size-xs), min(calc(1.5 * var(--body-font-size-m)), calc(1.5 * var(--columns-corp-vw))));
+  --columns-corp-lh-small-size: max(var(--body-font-size-xs), min(calc(1 * var(--body-font-size-m)), calc(1 * var(--columns-corp-vw))));
   --columns-corp-lh-heading-gap: var(--space-block);
   --columns-corp-lh-gap: var(--space-block-l);
   --columns-corp-lh-cta-gap: calc(var(--space-section) + var(--space-block-s));
@@ -105,7 +111,7 @@ body.corp .columns.large-headline :is(h2, h4, p) {
 body.corp .columns.large-headline h2 {
   margin-bottom: var(--columns-corp-lh-heading-gap);
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-l);
+  font-size: var(--columns-corp-lh-heading-size);
   font-weight: var(--font-weight-regular);
 }
 
@@ -167,6 +173,11 @@ body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > stro
   line-height: var(--heading-line-height);
 }
 
+/* large-headline: an Underlined Heading 2 (title with a rule, stryker.com rich text 2em) stays 28px */
+body.corp .columns.large-headline h2:is(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xxl);
+}
+
 /* a two-tone display heading's mixed-font lines render 1.33x apart (58px at 43.75px) */
 body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
   line-height: 1.33;
@@ -204,8 +215,17 @@ body.corp .columns > div > div h1:is(.columns-gold, .columns-bold, .columns-numb
   line-height: var(--heading-line-height-hero);
 }
 
+body.corp .columns > div > div h1.columns-number {
+  font-size: max(var(--body-font-size-xs), min(calc(4.5 * var(--body-font-size-m)), calc(4.5 * var(--columns-corp-vw))));
+}
+
 body.corp .columns > div > div h1.columns-number > :first-child {
   font-size: 2em;
+}
+
+/* a fully Bold Heading 1 is a stat number (stryker.com .fontsize-6vw) */
+body.corp .columns > div > div h1.columns-bold {
+  font-size: max(var(--body-font-size-xs), min(calc(6 * var(--body-font-size-m)), calc(6 * var(--columns-corp-vw))));
 }
 
 /* buttons in a row: consecutive button paragraphs sit side by side, 10px apart, and
@@ -261,7 +281,11 @@ body.corp .columns {
   --columns-corp-caption-gap: var(--space-inset-m);
   --columns-corp-display-size-s: 35px; /* stryker.com 2.5em / capped 2.5vw display text */
   --columns-corp-display-size: var(--columns-corp-display-size-s); /* gold display heading, above */
-  --columns-corp-headline-size: var(--heading-font-size-xxl); /* large headline, above */
+
+  /* stryker.com Large Headline sizes (.fontsize-Nvw): N vw from 840px (600px here), 2N vw
+     below, capped at N x 14px, and never under 12px here */
+  --columns-corp-vw: 2vw;
+  --columns-corp-headline-size: max(var(--body-font-size-xs), min(calc(4 * var(--body-font-size-m)), calc(4 * var(--columns-corp-vw)))); /* large headline, above */
   --columns-corp-headline-gap: var(--space-section);
 }
 
@@ -270,7 +294,7 @@ body.corp .columns .columns-img-col:has(+ p > strong:only-child) {
 }
 
 body.corp .columns .columns-img-col + p:has(> strong:only-child) {
-  font-size: var(--body-font-size-xs);
+  font-size: var(--footnote-font-size);
   line-height: var(--body-line-height-l);
   text-align: center;
 }
@@ -459,18 +483,19 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     margin-bottom: 0;
   }
 
+  body.corp .columns.columns-20-80 h4 {
+    font-size: var(--heading-font-size-compact);
+  }
+
   /* link-groups: four lists side by side again (one per row on mobile) */
   body.corp .columns.link-groups.columns-4-cols > div > div {
     flex-basis: 25%;
   }
 
   body.corp .columns {
+    --columns-corp-vw: 1vw;
     --columns-corp-caption-gap: 35px;
-    --columns-corp-display-size: var(--heading-font-size-xxxl);
-  }
-
-  body.corp .columns.large-headline h2 {
-    font-size: var(--heading-font-size-xl);
+    --columns-corp-display-size: 43.75px; /* stryker.com 2.5em of a 17.5px h4 */
   }
 
   /* related-links: no patients 75px CTA slot (a 2-up float device) on corp */
@@ -487,12 +512,8 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     columns: 2;
   }
 
-  /* large-headline: the source sizes at 1440px (.fontsize-2-5-vw title capped at 35px) and its
-     gaps between the Large Headline and CTA components */
+  /* large-headline: the gaps between the source Large Headline and CTA components */
   body.corp .columns.large-headline {
-    --columns-corp-lh-title-size: var(--columns-corp-display-size-s);
-    --columns-corp-lh-text-size: var(--body-font-size-xl);
-    --columns-corp-lh-small-size: var(--body-font-size-m);
     --columns-corp-lh-heading-gap: var(--space-inset-m);
     --columns-corp-lh-gap: calc(var(--space-section-l) + var(--space-block-l));
     --columns-corp-lh-cta-gap: var(--space-section-l);
@@ -500,7 +521,6 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   }
 
   body.corp .columns {
-    --columns-corp-headline-size: var(--heading-font-size-xxl-l);
     --columns-corp-headline-gap: var(--space-inset-m);
   }
 
@@ -510,10 +530,6 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
     margin-top: var(--space-block-s);
   }
 
-  body.corp .columns.large-headline h2 {
-    font-size: var(--heading-font-size-xxl);
-  }
-
   body.corp .columns.large-headline h3 {
     margin-bottom: var(--space-block-l);
   }
@@ -521,12 +537,5 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
-  }
-}
-
-@media (width >= 1200px) {
-  /* large headline: the source 56px (.fontsize-4vw capped at 1440px) */
-  body.corp .columns {
-    --columns-corp-headline-size: 56px;
   }
 }
