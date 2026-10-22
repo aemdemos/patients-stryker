@@ -64,9 +64,12 @@ body.corp .columns.large-headline :is(h2, h4, p) {
   line-height: var(--heading-line-height-hero);
 }
 
+/* h2: plain words in the light serif (a statement), Bold words in Futura bold */
 body.corp .columns.large-headline h2 {
   margin-bottom: var(--columns-corp-lh-heading-gap);
+  font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-regular);
 }
 
 /* each event starts at its date line */
@@ -196,6 +199,11 @@ body.corp .columns .columns-img-col + p:has(> strong:only-child) {
 body.corp .columns .columns-img-col img,
 body.corp .columns .columns-img-col video {
   width: 100%;
+}
+
+/* large-headline: a Bold + Underline link on its own line (link-strong CTA) stays at the 14px corp size */
+body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
+  font-size: var(--body-font-size-m);
 }
 
 /* gray-lead: the last cell opens with a light-grey box (stryker.com bg-light-gray

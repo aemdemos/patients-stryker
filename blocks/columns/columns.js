@@ -1,9 +1,57 @@
 import decorateDMAssets from '../../scripts/dm-support.js';
 
+// YouTube link signatures (watch, short youtu.be and nocookie embeds)
+const YOUTUBE = /(?:youtube(?:-nocookie)?\.com|youtu\.be)/i;
+
+/**
+ * Extracts the 11-character video id from a YouTube URL (watch?v=, youtu.be/ID,
+ * /embed/ID, /shorts/ID).
+ * @param {string} href the authored YouTube URL
+ * @returns {string} the id, or '' when there is none
+ */
+function youTubeId(href) {
+  try {
+    const url = new URL(href, window.location.href);
+    if (url.searchParams.get('v')) return url.searchParams.get('v');
+    const m = url.pathname.match(/\/(?:embed|shorts|v)\/([\w-]{11})|^\/([\w-]{11})$/);
+    return (m && (m[1] || m[2])) || '';
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Renders a YouTube link that stands alone in its paragraph as a 16:9 nocookie player,
+ * the embed the video block uses (blocks cannot nest, so columns renders its own).
+ * Descriptive link text becomes the player title.
+ * @param {Element} block The columns block
+ */
+function decorateYouTube(block) {
+  block.querySelectorAll('p > a[href]').forEach((a) => {
+    const p = a.parentElement;
+    const text = a.textContent.trim();
+    if (!YOUTUBE.test(a.href) || p.textContent.trim() !== text) return;
+    const id = youTubeId(a.href);
+    if (!id) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'columns-youtube';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0`;
+    iframe.title = /^https?:\/\//i.test(text) ? 'YouTube video player' : text;
+    iframe.loading = 'lazy';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    wrapper.append(iframe);
+    p.replaceWith(wrapper);
+  });
+}
+
 export default function decorate(block) {
   // convert DM links to <picture>/<video> before restructuring — the canvas
   // re-renders fields from source, so run here (idempotent), not just decorateMain
   decorateDMAssets(block);
+  decorateYouTube(block);
 
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
