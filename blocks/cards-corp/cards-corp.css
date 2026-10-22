@@ -52,8 +52,6 @@
   color: var(--text-color);
 }
 
-/* 21px at every width (corp h3 is 17.5px on phones). Scoped to the block, not the
-   decorated body class, so it also holds before decoration (editor canvas). */
 .cards-corp.teaser h3 {
   margin: var(--space-block) 0;
   color: var(--text-color);
@@ -63,8 +61,6 @@
   line-height: var(--heading-line-height);
 }
 
-/* a linked title reads as a plain black heading; on hover/focus it turns the
-   source's dark teal (#2f4d4c), never underlined */
 .cards-corp.teaser h3 a:any-link {
   color: var(--text-color);
   text-decoration: none;
@@ -81,8 +77,6 @@
   line-height: var(--paragraph-line-height);
 }
 
-/* "Learn more": bold + underline → a.link-strong (styles.css). The canvas keeps the
-   authored strong > a > u markup, so style both. */
 .cards-corp.teaser .cards-corp-card-body :is(a.link-strong, strong > a:has(u)):any-link {
   display: block;
   background-color: transparent;
@@ -94,16 +88,11 @@
   color: var(--color-primary-pressed);
 }
 
-/* border: home "Our focus" cards (source img.bor-gray + .dimensional-box) — framed
-   image and a white shadowed text panel at its foot. Padding/margins are % of the
-   card width, as on the source. Combine with teaser for the typography. */
 .cards-corp.border .cards-corp-card-image img {
   box-sizing: border-box;
   border: 1px solid var(--color-surface-muted);
 }
 
-/* equal-height cards per row: the grid stretches each card to the row height and
-   the panel grows to fill it; content stays top-aligned, as on the source */
 .cards-corp.border > ul > li {
   display: flex;
   flex-direction: column;
@@ -122,23 +111,15 @@
   margin-top: 0;
 }
 
-/* text: article Q&A cards (source .bg-gold + .bg-light-gray rich-text boxes) — the
-   title sits in a gold band in place of the image, the copy in a light-gray panel.
-   Padding % is of the card width, as on the source. */
 .cards-corp.text > ul {
   row-gap: calc(2 * var(--container-gutter));
 }
 
-/* source h3 margin-bottom (15px) sits inside the band: it's the band's bottom padding
-   here, so it can't collapse out of the gold */
 .cards-corp.text .cards-corp-card-title {
   padding: 4% var(--space-block-s) var(--space-block);
   background-color: var(--color-accent);
 }
 
-/* scoped to the block (not the title cell) so it also holds in the editor canvas.
-   Source: 0.8em Futura bold span in the h3 — 14px on mobile, 16.8px from 600px
-   (EDS mapping of the source's mobile breakpoint); lines 1.68x apart at both */
 .cards-corp.text h3 {
   margin: 0;
   color: var(--text-color);
