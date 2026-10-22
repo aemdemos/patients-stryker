@@ -138,17 +138,19 @@ export default function decorate(block) {
         }
       });
 
-      // Heading 1 in one font: fully gold (Bold + Italic), or a gold number alone on the
-      // first line (gold part, then a line break) - styles give these their own sizing
-      col.querySelectorAll('h1').forEach((h1) => {
-        const first = h1.firstElementChild;
+      // Headings in one font: fully gold (Bold + Italic) Heading 1/2, or a Heading 1 with a
+      // gold number alone on its first line (gold part, then a line break) - styles give
+      // these their own line spacing and sizing
+      col.querySelectorAll('h1, h2').forEach((heading) => {
+        const first = heading.firstElementChild;
         const gold = first && first.matches('em, strong')
           && first.querySelector(':scope > :is(em, strong):only-child');
-        if (!gold || !h1.textContent.trim().startsWith(first.textContent.trim())) return;
-        if (h1.children.length === 1 && first.textContent.trim() === h1.textContent.trim()) {
-          h1.classList.add('columns-gold');
-        } else if (first.nextSibling && first.nextSibling.nodeName === 'BR') {
-          h1.classList.add('columns-number');
+        const text = heading.textContent.trim();
+        if (!gold || !text.startsWith(first.textContent.trim())) return;
+        if (heading.children.length === 1 && first.textContent.trim() === text) {
+          heading.classList.add('columns-gold');
+        } else if (heading.tagName === 'H1' && first.nextSibling && first.nextSibling.nodeName === 'BR') {
+          heading.classList.add('columns-number');
         }
       });
     });

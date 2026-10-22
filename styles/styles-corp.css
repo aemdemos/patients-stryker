@@ -215,7 +215,7 @@ body:where(.corp):has(main .hero-carousel) header {
   letter-spacing: normal;
 }
 
-/* section styles: copy size (p-1, p-1-25), label size (label-1-5) and bottom spacing (ps-0, ps-1).
+/* section styles: copy size (p-1, p-1-25, p-1-75), label size (label-1-5) and bottom spacing (ps-0, ps-1).
    Tab panes are fragments whose sections land in .tabs-panel, not in <main>. */
 :where(body.corp) main > .section.p-1 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li) {
@@ -227,6 +227,13 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
+}
+
+/* p-1-75: 24.5px copy (stryker.com .fontsize-1-75em, lines 1.06) */
+:where(body.corp) main > .section.p-1-75 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li) {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
 }
 
 :where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),

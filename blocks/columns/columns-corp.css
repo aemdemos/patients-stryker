@@ -37,8 +37,9 @@ body.corp .columns h4 {
 
 /* labels and questions: a fully Bold paragraph (columns.js .columns-bold) that follows
    text gets a blank line above it, on top of the paragraph gap, like the empty line
-   stryker.com puts there; large-headline keeps its own rhythm */
-body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold {
+   stryker.com puts there (not a lead-in line right before a button); large-headline
+   keeps its own rhythm */
+body.corp .columns:not(.large-headline) p:not(.columns-img-col, .columns-bold, .button-wrapper) + p.columns-bold:not(:has(+ p.button-wrapper)) {
   margin-top: calc(1lh + var(--space-block));
 }
 
@@ -119,12 +120,20 @@ body.corp .columns.large-headline li + li {
   margin-top: var(--space-section);
 }
 
-/* gold display heading: a fully Bold + Italic Heading 2 (stryker.com h4 .fontsize-2-5em:
-   Futura 700 gold, 35px below 840px, 43.75px above). The gold marker keeps the heading
-   size (columns.css sizes gold h2 markers). large-headline has its own heading scale. */
-body.corp .columns:not(.large-headline) > div > div h2:has(> em:only-child > strong:only-child, > strong:only-child > em:only-child) {
+/* gold display heading: a Heading 2 with Bold + Italic words (stryker.com .fontsize-2-5em:
+   Futura 700 gold, 35px below 840px, 43.75px above). Its plain words are the light serif
+   (two-tone, as "We build trust."); the gold marker keeps the heading size (columns.css
+   sizes gold h2 markers). large-headline has its own heading scale. */
+body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em) {
+  font-family: var(--heading-font-family);
   font-size: var(--columns-corp-display-size);
+  font-weight: var(--font-weight-regular);
   line-height: var(--heading-line-height);
+}
+
+/* a two-tone display heading's mixed-font lines render 1.33x apart (58px at 43.75px) */
+body.corp .columns:not(.large-headline) > div > div h2:has(> em > strong, > strong > em):not(.columns-gold) {
+  line-height: 1.33;
 }
 
 body.corp .columns h2 :is(em strong, strong em) {
