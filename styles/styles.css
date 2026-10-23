@@ -570,8 +570,10 @@ a[href$="#disclaimer"]:any-link {
 main > .page-back {
   box-sizing: border-box;
   max-width: var(--container-max);
-  margin: 0 auto var(--space-block-l);
-  padding-inline: var(--container-gutter);
+  margin: var(--space-block-s) auto var(--space-block-l);
+
+  /* source nests the link in a padded column inside the padded container */
+  padding-inline: calc(2 * var(--container-gutter));
 }
 
 main > .page-back a {
