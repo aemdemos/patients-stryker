@@ -78,4 +78,16 @@ body.news-detail main > .section.compact > .default-content-wrapper > :last-chil
   body.news-detail main > .section:not(.hero-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
+
+  /* teaser cards in the article column: 1 per row until 900px (the block's default
+     4 per row from 600px is too narrow in the 66.66% column) */
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
