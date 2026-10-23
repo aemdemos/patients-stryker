@@ -126,7 +126,7 @@ body.news-detail main .dm-video {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.news-detail main > .section:not(.hero-container, .cards-corp-container) > div {
+  body.news-detail main > .section:not(.hero-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
 
