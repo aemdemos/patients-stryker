@@ -192,9 +192,11 @@
   line-height: 1.15;
 }
 
-/* subheading — dark serif, 21px on phones then 24.5px from 600px up */
+/* subheading — dark serif, 21px on phones then 24.5px from 600px up; starts on the
+   same edge as the h1 (as on the source) */
 .hero.banner h2 {
   margin-bottom: var(--space-block);
+  padding-left: var(--hero-banner-text-inset);
   color: var(--text-color);
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
@@ -509,6 +511,7 @@
 
 .hero-stroke.section .hero.banner > div:last-child > :not(.button-wrapper, div:has(p em a)) {
   flex: 0 0 100%;
+  padding-left: 0;
 }
 
 /* the 35px gap above the buttons sits on the subhead (below), so a wrapped second
@@ -516,6 +519,7 @@
 .hero-stroke.section .hero.banner .button-wrapper,
 .hero-stroke.section .hero.banner .button-wrapper + .button-wrapper {
   margin: 0 0 var(--space-block-s);
+  padding-left:0;
 }
 
 /* "Select language" — source renders it at 21px with a tight line-height (not
@@ -553,7 +557,7 @@
   .hero.banner > div:last-child {
     z-index: 1;
     align-self: end;
-    max-width: 100%;
+    max-width: 50%;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -697,5 +701,23 @@
 
   .hero.fullbleed p {
     font-size: 21px;
+  }
+}
+
+/* banner subtitle authored as a plain paragraph (not a button), e.g. spinejack —
+   styled like the h2 subheading: same edge as the h1, dark serif, 21px → 24.5px */
+.hero.banner > div:last-child > p:not(.button-wrapper) {
+  margin-bottom: var(--space-block);
+  padding-left: var(--hero-banner-text-inset);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  .hero.banner > div:last-child > p:not(.button-wrapper) {
+    font-size: var(--heading-font-size-xl);
   }
 }

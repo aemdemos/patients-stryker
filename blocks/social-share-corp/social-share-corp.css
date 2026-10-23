@@ -1,0 +1,74 @@
+/* social-share-corp: www.stryker.com .c-socialsharing, measured live at 375, 780 and 1440:
+   30px rounded squares on a 64px pitch, 15px above and below, same at every width.
+   The square is painted here; the /icons/*.svg files hold the white glyph only. */
+
+.social-share-corp ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--corp-share-gap);
+  margin: 0;
+  padding: var(--space-block) 0;
+  list-style: none;
+}
+
+.social-share-corp.right ul {
+  justify-content: flex-end;
+}
+
+.social-share-corp li {
+  position: relative;
+  margin: 0;
+}
+
+.social-share-corp .social-share-corp-icon {
+  display: block;
+  width: var(--corp-share-icon-size);
+  height: var(--corp-share-icon-size);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--corp-share-icon-radius);
+  background-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.social-share-corp .social-share-corp-icon .icon,
+.social-share-corp .social-share-corp-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.social-share-corp .social-share-corp-facebook .social-share-corp-icon {
+  background-color: var(--corp-color-facebook);
+}
+
+.social-share-corp .social-share-corp-linkedin .social-share-corp-icon {
+  background-color: var(--corp-color-linkedin);
+}
+
+.social-share-corp.gray .social-share-corp-icon {
+  background-color: var(--color-surface-muted);
+}
+
+.social-share-corp .social-share-corp-tooltip {
+  position: absolute;
+  bottom: calc(100% + var(--space-block-s));
+  left: 50%;
+  z-index: 1;
+  padding: var(--space-block-xs) var(--space-block-s);
+  background: var(--corp-color-tooltip);
+  box-shadow: var(--corp-shadow-tooltip);
+  color: var(--color-white);
+  font-size: var(--body-font-size-xs);
+  line-height: normal;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+}
+
+.social-share-corp .social-share-corp-tooltip.visible {
+  opacity: 1;
+}
