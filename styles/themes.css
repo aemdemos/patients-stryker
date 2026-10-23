@@ -555,11 +555,6 @@ body.discography main .section.flex > .default-content-wrapper > h3:first-child 
 /* ----- Mobile text sizes (source < 480px, EDS < 600px) -----
    The source drops these headings a step on phones; the larger sizes are
    restored in the (width >= 600px) block below. */
-body.discography main .panel.cta .panel-body h2 {
-  font-size: var(--heading-font-size-ml);
-  line-height: var(--heading-line-height-ml-nested); /* source line pitch at every width */
-}
-
 body.discography main .section.light-gray h3 {
   font-size: var(--heading-font-size-m);
   line-height: var(--body-line-height-l);
@@ -569,13 +564,6 @@ body.discography main .section.light-gray h4 {
   font-size: var(--heading-font-size-xs);
   line-height: var(--body-line-height); /* source mixed-font line: 20.1px @14px, 25.1px @17.5px */
 }
-
-body.discography main .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
-  font-size: var(--panel-body-size-ss);
-  line-height: var(--heading-line-height);
-}
-
-
 
 body.discography main > .section.flex.panel-container > .panel-wrapper, 
 body.discography main > .section.flex.panel-container > .panel.cta {
@@ -690,17 +678,6 @@ body.discography main > .section > .default-content-wrapper h2 {
     line-height: var(--body-line-height-l);
   }
 
-  body.discography main .panel.cta .panel-body h2 {
-    font-size: var(--headline-font-size); /* source: 26.25px / 30.19px */
-  }
-
-  /* the source keeps the overview box at a uniform 3% padding at every width;
-     the shared wide-panel rule switches to 4% 2% with a 2% block margin. */
-  body.discography main .panel.cta.wide .panel-body {
-    margin: 0 0 var(--space-block-s);
-    padding: 3%;
-  }
-
   body.discography main .section.light-gray h3 {
     font-size: var(--heading-font-size-ml); /* source: 21.875px / 25.16px */
     line-height: var(--heading-line-height-ml);
@@ -731,55 +708,9 @@ body.discography main > .section > .default-content-wrapper h2 {
   }
 }
 
-body.discography main .panel.cta .panel-body h3 {
-  font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-m);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-black);
-}
-
-@media (width >= 600px) {
-  body.discography main .panel.cta .panel-body h3 {
-    font-size: var(--heading-font-size-l);
-  }
-}
-
-/* overview box fills its column (lines up with the hero), with 10px below it,
-   at every width */
-body.discography main .panel.cta.wide .panel-body {
-  margin-block-end: var(--space-block-s);
-}
-
-/* the source CTA sits 10px under the box; drop the button wrapper's 12px top
-   margin so the box's 10px bottom margin sets the gap */
-body.discography main .panel.cta .panel-cta .button-wrapper {
-  margin-top: 0;
-}
-
-body.discography main .panel.cta.wide .panel-body li {
-  font-size: var(--body-font-size-l);
-  line-height: var(--list-line-height-l-nested);
-}
-
-/* EW authoring canvas wraps each <li>'s inline content in a <p>, which then picks
-   up the shared .panel.wide .panel-body p rule (21px light serif, 10px margins via
-   the p:last-child delta below) instead of the bullet styling above — the overview
-   list renders oversized and gapped in EW. Match the bullet <p> back to the <li>.
-   No-op on the live site (no such <p> exists). */
-body.discography main .panel.cta.wide .panel-body li > p {
-  margin: 0;
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-l);
-  line-height: var(--list-line-height-l-nested);
-}
-
-body.discography main .panel .panel-body p:last-child {
+/* the overview box (panel cta wide) is styled by blocks/panel/panel.css only */
+body.discography main .panel:not(.cta.wide) .panel-body p:last-child {
   margin: 10px 0;
-}
-
-/* "Potential risks" closes the overview box with the source's 15px gap */
-body.discography main .panel.cta.wide .panel-body > p:last-child {
-  margin: 0 0 var(--space-block);
 }
 
 /* source gold band keeps a fixed 10px side inset at every width (the shared
@@ -1477,12 +1408,6 @@ body.ivs-treatment main :is(p, li) {
   font-size: var(--body-font-size-l); /* 17.5px */
 }
 
-/* "Potential risks" link in the Benefits box: 17.5px as on the reference (the
-   shared panel rule sets 21.5px; source sizes differ per treatment page). */
-body.ivs-treatment main .panel.cta .panel-body p > a:any-link:has(> u) {
-  font-size: var(--body-font-size-l); /* 17.5px */
-}
-
 /* Flex sections: top-align columns (shared rule centres them; reference top-aligns). */
 body.ivs-treatment main > .section.flex {
   align-items: start;
@@ -1596,12 +1521,15 @@ body.ivs-get-the-facts main :is(p, li) {
   line-height: var(--paragraph-line-height-xl-nested); /* 23.25px, matches reference */
 }
 
-/* "More about VCFs" panel: list items and heading follow the page line pitch. */
+/* "More about VCFs" panel: list items and heading follow the page type scale
+   (21px / 24.5px), not the panel cta wide Benefits-box sizes. */
 body.ivs-get-the-facts main .panel.cta .panel-body li {
+  font-size: var(--body-font-size-xl); /* 21px */
   line-height: var(--paragraph-line-height-xl-nested); /* 23.25px */
 }
 
 body.ivs-get-the-facts main .panel.cta .panel-body h2 {
+  font-size: var(--heading-font-size-xl); /* 24.5px */
   line-height: var(--heading-line-height-xl-nested-s); /* 28px */
 }
 
@@ -1780,30 +1708,6 @@ body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
   padding-top: var(--space-block);
 }
 
-/* mobile type (source below its 480px breakpoint): benefits heading 21.875px */
-body.bvn-ablation main .panel.cta h3 {
-  font-size: var(--heading-font-size-ml);
-  line-height: var(--heading-line-height-ml);
-}
-
-/* "Potential risks" link: body size at every width (the panel block enlarges
-   underlined links to 21.5px on mobile; the source keeps 17.5px) */
-body.bvn-ablation main .panel.cta .panel-body p > a:any-link:has(> u) {
-  font-size: inherit;
-}
-
-body.bvn-ablation main .panel.cta.wide .panel-body ul {
-  display: block;
-  list-style: disc;
-  margin: 0 0 var(--space-block);
-  padding-left: var(--list-indent);
-}
-
-body.bvn-ablation main .panel.cta.wide .panel-body ul > li {
-  list-style: disc;
-  margin-bottom: 0;
-}
-
 /* ----- Dark band: default text beside the video block (flex, dark) ----- */
 body.bvn-ablation main > .section.flex.dark {
   margin-top: calc(var(--space-section-l) - var(--space-block)); /* ~35px */
@@ -1971,12 +1875,6 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     border-bottom: 0;
   }
 
-  /* tablet/desktop type (the mobile sizes above apply below 600px) */
-  body.bvn-ablation main .panel.cta h3 {
-    font-size: var(--panel-cta-heading-size); /* panel block's 26px */
-    line-height: var(--heading-line-height);
-  }
-
   body.bvn-ablation main > .section > .default-content-wrapper #resources {
     font-size: var(--heading-font-size-xl); /* 24.5px */
   }
@@ -2019,50 +1917,33 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
     margin-top: var(--space-section-l);
   }
 
-  /* intro copy starts ~20px below the benefits card top (rich-text inset) */
-  body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
-    padding-top: var(--space-block-l);
-  }
-
-  /* side-by-side from the source's 841px grid (shared flex rule starts at 900) */
-  body.bvn-ablation main > .section.flex {
+  /* dark band: side-by-side from the source's 841px grid (shared flex rule
+     starts at 900); its background stays full-bleed and its content is held
+     to the container width on wide screens (the padding resolves to 0 below
+     it). The intro + Benefits section stacks until 900px like the other
+     treatment pages (see the >= 900px block). */
+  body.bvn-ablation main > .section.flex.dark {
     display: flex;
     align-items: flex-start;
-    column-gap: calc(2 * var(--container-gutter));
-    box-sizing: border-box;
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding-inline: var(--container-gutter);
-  }
-
-  body.bvn-ablation main > .section.flex > div {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 1% 0 0;
-  }
-
-  /* the leftover empty section div (shared rule only hides it from 900px) */
-  body.bvn-ablation main > .section.flex > div:empty {
-    display: none;
-  }
-
-  body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
-    padding-top: 0;
-  }
-
-  /* dark band background stays full-bleed; its content is held to the
-     container width on wide screens (the padding resolves to 0 below it) */
-  body.bvn-ablation main > .section.flex.dark {
     gap: 0;
+    box-sizing: border-box;
     max-width: none;
     margin-top: calc(var(--space-section) * 2);
+    margin-inline: auto;
     padding: 0 calc((100vw - var(--container-max)) / 2);
   }
 
   /* exact halves (flex-basis 0 would let the padded text column grow wider) */
   body.bvn-ablation main > .section.flex.dark > div {
     flex: 0 0 50%;
+    min-width: 0;
     max-width: none;
+    padding: 1% 0 0;
+  }
+
+  /* the leftover empty section div (shared rule only hides it from 900px) */
+  body.bvn-ablation main > .section.flex > div:empty {
+    display: none;
   }
 
   body.bvn-ablation main > .section.flex.dark > .default-content-wrapper {
@@ -2101,6 +1982,20 @@ body.bvn-ablation main a[href="#disclaimer"]:any-link {
 @media (width >= 900px) {
   body.bvn-ablation .hero.banner > div:last-child {
       max-width: 33%;
+  }
+
+  /* intro + Benefits side by side (shared flex rule); 1% top inset per column */
+  body.bvn-ablation main > .section.flex:not(.dark) > div {
+    padding: 1% 0 0;
+  }
+
+  /* intro copy starts ~20px below the benefits card top (rich-text inset) */
+  body.bvn-ablation main > .section.flex:not(.dark) > .default-content-wrapper {
+    padding-top: var(--space-block-l);
+  }
+
+  body.bvn-ablation main > .section.flex:not(.dark) > .panel-wrapper {
+    padding-top: 0;
   }
 
   body.bvn-ablation main > .section.columns-container.divider .columns > div {
