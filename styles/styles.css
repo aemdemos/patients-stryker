@@ -577,6 +577,11 @@ main > .page-back {
   padding-inline: calc(2 * var(--container-gutter));
 }
 
+/* a following spacer section already provides the gap */
+main > .page-back:has(+ .section.spacer) {
+  margin-block-end: 0;
+}
+
 main > .page-back a {
   display: block;
   color: var(--color-primary);
@@ -1110,10 +1115,6 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
-  main > .page-back {
-    margin-block-end: var(--space-section);
-  }
-
   main .section.side-by-side {
     display: flex;
   }
