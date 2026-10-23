@@ -2,12 +2,14 @@
    /us/en/about/news/** by the corp bulk metadata).
 
    Layout measured on the stryker.com feature articles:
-   - title section (the first section with content): optional H1 and the H5 publish date
-   - lead media: a full-bleed `hero image-slide`, or a standalone image
-   - every section except the hero is the article column: 66.66% of the container,
-     centred, from 600px (source col-sm-8 from 840px); full width on phones. This
-     includes the title section (date aligned with the H1), the cards (e.g. the
-     "Related" teasers), the small-print `compact` section and the "Last Updated" line. */
+   - title section (the first section with content): optional H1 and the H5 publish date,
+     in the article column, aligned with the H1
+   - lead media: a full-bleed `hero image-slide`, or a standalone image centred in the
+     article column
+   - every other section except Cards Corp spans the 66.66% article column, centred from
+     600px (source col-sm-8 from 840px); full width on phones. This includes the small-print
+     `compact`/`disclaimer` sections and the "Last Updated" line below them
+   - Cards Corp (e.g. the "Related" teasers) spans the full container width */
 
 /* ---- title section ---- */
 
@@ -15,6 +17,7 @@ body.news-detail main > .section:nth-child(1 of :not(:empty)) {
   margin-bottom: var(--space-block);
 }
 
+/* no title rule here (styles.css pads the first section above its sage rule) */
 body.news-detail main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
   padding-bottom: 0;
 }
@@ -51,8 +54,9 @@ body.news-detail main > .section:not(.cards-corp-container) > .default-content-w
   font-weight: var(--font-weight-medium);
 }
 
-/* bold: <strong> is Futura bold, <b> keeps the running font */
-body.news-detail main > .section > .default-content-wrapper :is(p, li) :is(strong, b) {
+/* bold inside running text keeps the body font; a bold line on its own stays Futura
+   (news-detail.js marks it .standalone) */
+body.news-detail main > .section > .default-content-wrapper :is(p, li) :is(strong:not(.standalone), b) {
   font-family: var(--body-font-family);
 }
 
@@ -96,9 +100,9 @@ body.news-detail main > .section > .default-content-wrapper > h4 {
   font-weight: var(--font-weight-bold);
 }
 
-body.news-detail main > .section.disclaimer:has(+ .last-modified-section),
 /* the small-print section (`compact`: references and document code) sits directly
    above the "Last Updated" line, as on the source */
+body.news-detail main > .section.disclaimer:has(+ .last-modified-section),
 body.news-detail main > .section.compact:has(+ .last-modified-section),
 body.news-detail main > .section.compact > .default-content-wrapper > :last-child {
   margin-bottom: 0;
