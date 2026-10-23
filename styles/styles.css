@@ -447,6 +447,24 @@ h3 em strong {
   color: var(--color-accent);
 }
 
+/* coloured text — authored as [[color-blue]text] (scripts/span-tags.js) */
+span.color-gold { --span-color: var(--color-accent); }
+span.color-blue { --span-color: var(--color-navy-bright); }
+span.color-purple { --span-color: var(--color-purple); }
+span.color-teal { --span-color: var(--color-primary); }
+span.color-navy { --span-color: var(--color-navy); }
+span.color-grey { --span-color: var(--color-secondary); }
+span.color-white { --span-color: var(--color-white); }
+
+/* the colour also wins over formatting inside the brackets (e.g. the bold + italic gold) */
+span:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white),
+span:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white)
+  :is(strong, b, em, i, a:any-link) {
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}
+
 /* lists — measured source indent (padding-left 17px) */
 ol,
 ul {
