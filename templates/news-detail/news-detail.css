@@ -1,1 +1,79 @@
-/* news-detail — corp news article template (`template: news-detail`) */
+/* news-detail — corp news article template (`template: news-detail`, set on
+   /us/en/about/news/** by the corp bulk metadata).
+
+   Layout measured on the stryker.com feature articles:
+   - title section (the first section with content): optional H1 and the H5 publish date,
+     full container width (1440px page → 1380px text)
+   - lead media: a full-bleed `hero image-slide`, or a standalone image centred in the
+     article column
+   - every other section is the article column: 66.66% of the container, centred, from
+     600px (source col-sm-8 from 840px); full width on phones. This includes the
+     `disclaimer` section (document code) and the "Last Updated" line below it. */
+
+/* ---- title section ---- */
+
+body.news-detail main > .section:nth-child(1 of :not(:empty)) {
+  margin-bottom: var(--space-block);
+}
+
+/* no title rule here (styles.css pads the first section above its sage rule) */
+body.news-detail main > .section:nth-child(1 of :not(:empty)) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+body.news-detail main > .section:nth-child(1 of :not(:empty)) h5 {
+  margin-bottom: 0;
+  font-size: var(--heading-font-size-xs);
+}
+
+/* the full-bleed slide sits further below the date than a column image (source 36px,
+   46px from 600px; the margin collapses with the title section's) */
+body.news-detail main > .section.hero-container {
+  margin-top: calc(var(--space-block-l) + var(--space-block));
+}
+
+/* ---- article column (66.66% from 600px, see the media query) ---- */
+
+body.news-detail main > .section > .default-content-wrapper picture {
+  display: block;
+  text-align: center;
+}
+
+body.news-detail main > .section > .default-content-wrapper picture img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* article headings: light serif, no rule below (corp default content draws one) */
+body.news-detail main > .section > .default-content-wrapper h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
+/* bold inside running text keeps the body font; a bold line on its own stays Futura
+   (news-detail.js marks it .standalone) */
+body.news-detail main > .section > .default-content-wrapper :is(p, li) strong:not(.standalone) {
+  font-family: inherit;
+}
+
+/* the document code sits directly above the "Last Updated" line */
+body.news-detail main > .section.disclaimer:has(+ .last-modified-section) {
+  margin-bottom: 0;
+}
+
+@media (width >= 600px) {
+  body.news-detail main > .section:nth-child(1 of :not(:empty)) h1 {
+    font-family: var(--display-font-family);
+    font-weight: var(--font-weight-bold);
+  }
+
+  body.news-detail main > .section.hero-container {
+    margin-top: calc(var(--space-section) + var(--space-block));
+  }
+
+  body.news-detail main > .section:not(:nth-child(1 of :not(:empty)), .hero-container) > div {
+    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
+  }
+}
