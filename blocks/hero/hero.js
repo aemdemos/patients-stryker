@@ -11,8 +11,9 @@
  * visibility at the 900px crossover (.hero-image-desktop / .hero-image-mobile).
  * The block is rebuilt into an [image][content] structure the CSS overlays.
  * @param {Element} block the hero block
+ * @param {string} desktopQuery media query of the breakpoint that shows the desktop crop
  */
-function setupHero(block) {
+function setupHero(block, desktopQuery = '(width >= 900px)') {
   let desktopPic = null;
   let mobilePic = null;
   let contentCell = null;
@@ -31,6 +32,12 @@ function setupHero(block) {
         if (!desktopPic) desktopPic = pic;
         else if (!mobilePic) mobilePic = pic;
       } else if (cell.querySelector('h1, h2, h3, p')) {
+        contentCell = cell;
+      } else if (!pic && cell.textContent.trim()) {
+        // a single line of copy is delivered without its <p> (e.g. a bold headline)
+        const p = document.createElement('p');
+        p.append(...cell.childNodes);
+        cell.append(p);
         contentCell = cell;
       }
     }
@@ -68,7 +75,7 @@ function setupHero(block) {
     // eager LCP candidate and mark it high priority; the hidden crop is
     // display:none and set lazy, so it never enters the viewport and its fetch is
     // skipped (no double download competing for the mobile connection).
-    const desktopShown = window.matchMedia('(width >= 900px)').matches;
+    const desktopShown = window.matchMedia(desktopQuery).matches;
     const [lcpPic, otherPic] = desktopShown
       ? [desktopPic, mobilePic] : [mobilePic, desktopPic];
     const lcpImg = lcpPic.querySelector('img');
@@ -89,8 +96,33 @@ function setupHero(block) {
   block.replaceChildren(imageDiv, contentDiv);
 }
 
+/**
+ * Image-slide variant (corp): option classes place the headline on the image the way
+ * the source slide does, e.g. `hero (image-slide, top-15, left-56, right-10, size-2)`:
+ *   top-<n> / left-<n> / right-<n>  headline box inset, % of the image (7-5 = 7.5%)
+ *   size-<n>                        headline size in vw on desktop, doubled on phones
+ *   text-below                      phones: headline under the image (hero-corp.css)
+ * @param {Element} block the hero block
+ */
+function readSlideOptions(block) {
+  [...block.classList].forEach((name) => {
+    const match = name.match(/^(top|left|right|size)-(\d+)(?:-(\d+))?$/);
+    if (!match) return;
+    const [, option, whole, fraction] = match;
+    const value = Number(fraction ? `${whole}.${fraction}` : whole);
+    if (option === 'size') block.style.setProperty('--hero-slide-text-size', value);
+    else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
+  });
+}
+
 export default function decorate(block) {
-  setupHero(block);
+  // image-slide swaps to the desktop crop at 600px (source 840px), the others at 900px
+  if (block.classList.contains('image-slide')) {
+    readSlideOptions(block);
+    setupHero(block, '(width >= 600px)');
+  } else {
+    setupHero(block);
+  }
 
   // Fullbleed variant: split the two-tone headline (lead sentence in light serif,
   // remainder in Futura bold via an accent span). The poster modifier keeps the
