@@ -30,6 +30,7 @@
   --color-secondary: #545857;
   --color-navy: #27455c;
   --color-navy-bright: #1c5687;
+  --color-field-focus: #007aff; /* form field border on focus (source doctor finder) */
   --color-purple: #85458a;
   --color-success: #32ae88;
   --color-youtube: #f00; /* YouTube play-button red (video block facade) */
@@ -159,6 +160,7 @@
   --space-ivs-home-find-doctor: 85px; /* measured: ivs-home → find-a-doctor panel, ≥900px */
   --space-ivs-home-band: 68px; /* measured: ivs-home spotlights → dark testimonial band, below 900px */
   --hero-language-button-width: 164px; /* source: both stroke-landing language buttons share one width */
+  --hero-banner-text-inset: calc(3% + 20px); /* banner hero h1 + h2 left inset (source: title and subtitle share one edge) */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size-s: 78.75px; /* source number below its 480px breakpoint → used below 600px */
@@ -443,6 +445,24 @@ h2 em strong,
 h3 strong em,
 h3 em strong {
   color: var(--color-accent);
+}
+
+/* coloured text — authored as [[color-blue]text] (scripts/span-tags.js) */
+span.color-gold { --span-color: var(--color-accent); }
+span.color-blue { --span-color: var(--color-navy-bright); }
+span.color-purple { --span-color: var(--color-purple); }
+span.color-teal { --span-color: var(--color-primary); }
+span.color-navy { --span-color: var(--color-navy); }
+span.color-grey { --span-color: var(--color-secondary); }
+span.color-white { --span-color: var(--color-white); }
+
+/* the colour also wins over formatting inside the brackets (e.g. the bold + italic gold) */
+span:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white),
+span:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white)
+  :is(strong, b, em, i, a:any-link) {
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
 }
 
 /* lists — measured source indent (padding-left 17px) */

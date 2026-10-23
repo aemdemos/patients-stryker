@@ -17,6 +17,7 @@ import {
 } from './aem.js';
 
 import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
+import decorateSpanTags from './span-tags.js';
 import { applySectionBackgrounds } from './utils.js';
 
 /*
@@ -578,6 +579,8 @@ export function decorateMain(main) {
   liftDefaultContentDMMedia(main);
   corp?.decorateMain();
   decorateIcons(main);
+  // [[class]text] → span, before anything reads the text (tab labels, buttons, aria-labels)
+  decorateSpanTags(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateSectionMetadata(main);
@@ -681,6 +684,8 @@ async function loadEager(doc) {
     // single styles/themes.css, scoped under their body.<theme> selector, and it
     // ships only to pages that actually declare a theme. Loaded eagerly (awaited
     // before `appear`) so above-the-fold themed typography doesn't reflow.
+    // Corp pages reuse these shared themes too; a corp template's own themes
+    // load from its folder as well (corp.loadTemplate).
     if (themeName) {
       await loadCSS(`${window.hlx.codeBasePath}/styles/themes.css`);
     }

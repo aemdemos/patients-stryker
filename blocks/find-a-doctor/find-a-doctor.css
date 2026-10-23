@@ -164,10 +164,12 @@
   background-color: var(--find-a-doctor-option-highlight);
 }
 
+/* focus: the field's 1px border turns blue (source: #007aff), no outline ring.
+   Procedures keeps its own styling — the source shows no focus change there. */
 .find-a-doctor .find-a-doctor-field input:focus,
-.find-a-doctor .find-a-doctor-radius-toggle:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: -2px;
+.find-a-doctor .find-a-doctor-radius-toggle:not(.find-a-doctor-procedures-toggle):focus {
+  outline: none;
+  border-color: var(--color-field-focus);
 }
 
 /* floating label */
