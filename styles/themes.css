@@ -1593,9 +1593,19 @@ body.ivs-get-the-facts main .panel.cta .panel-body {
   padding-inline: 3%;
 }
 
-/* Hero copy column: 15px right gutter (the left inset comes from the hero block). */
+/* Hero copy column: 15px side padding; headline/subhead indented 4% of the column
+   and the CTA 40px from it (gutter + inset), matching the source. */
 body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child {
-  padding-right: var(--container-gutter);
+  padding-inline: var(--container-gutter);
+}
+
+body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > :is(h1, h2) {
+  padding-left: 4%;
+  line-height: var(--heading-line-height-hero);
+}
+
+body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > .button-wrapper {
+  padding-left: var(--space-inset-m);
 }
 
 /* Flex sections: top-align columns (shared rule centres them; reference top-aligns). */
