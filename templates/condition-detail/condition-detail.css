@@ -93,10 +93,6 @@ body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(st
   line-height: var(--heading-line-height-ml);
 }
 
-/* the plain in-panel link ("Potential risks") is not underlined on the source */
-body.condition-detail .panel.cta .panel-body p > a:any-link:not(:has(strong)) > u {
-  text-decoration: none;
-}
 
 body.condition-detail main > .section.light-gray > .default-content-wrapper {
   border-inline: var(--container-gutter) solid transparent;
