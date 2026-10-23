@@ -6,8 +6,8 @@
    - lead media: a full-bleed `hero image-slide`, or a standalone image
    - every section except the hero and the cards is the article column: 66.66% of the
      container, centred, from 600px (source col-sm-8 from 840px); full width on phones.
-     This includes the title section (date aligned with the H1), the `disclaimer`
-     section and the "Last Updated" line below it.
+     This includes the title section (date aligned with the H1), the small-print
+     `compact` section and the "Last Updated" line below it.
    - a section with cards (Cards Corp, e.g. the "Related" teasers) spans the full
      container width */
 
@@ -60,8 +60,10 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li) strong:no
   font-family: inherit;
 }
 
-/* the document code sits directly above the "Last Updated" line */
-body.news-detail main > .section.disclaimer:has(+ .last-modified-section) {
+/* the small-print section (`compact`: references and document code) sits directly
+   above the "Last Updated" line, as on the source */
+body.news-detail main > .section.compact:has(+ .last-modified-section),
+body.news-detail main > .section.compact > .default-content-wrapper > :last-child {
   margin-bottom: 0;
 }
 
