@@ -16,6 +16,11 @@ body.condition-detail h3 {
   line-height: var(--heading-line-height);
 }
 
+/* default-content headings (intro) keep the source's 1.15 line height on mobile too */
+body.condition-detail main > .section > .default-content-wrapper > h3 {
+  line-height: var(--heading-line-height-ml);
+}
+
 body.condition-detail .section.dark .columns h3 {
   padding-bottom: 0;
   font-size: var(--heading-font-size-ml);
@@ -27,8 +32,20 @@ body.condition-detail h3 strong em {
   font-size: var(--heading-font-size-ml);
 }
 
+/* h4s render at 0.8x on mobile (source: 17.5px mobile, 21.875px from tablet up) */
 body.condition-detail h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+/* dark panel titles (back pain conditions): 21.875px on mobile, 26px from tablet up */
+body.condition-detail .panel.dark .panel-body h3 {
   font-size: var(--heading-font-size-ml);
+  line-height: var(--heading-line-height-ml);
+}
+
+/* "Resources" heading (underlined h2): 21px on mobile, 24.5px from tablet up */
+body.condition-detail main h2.underline {
+  font-size: var(--heading-font-size-l);
 }
 
 body.condition-detail h2 em strong,
@@ -55,12 +72,14 @@ body.condition-detail .columns ul > li > p {
 }
 
 body.condition-detail .tabs .tabs-tab p {
-  font-size: 14px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
 }
 
 body.condition-detail .panel.left .panel-body p {
   margin: 0 0 var(--space-block);
   font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
 }
 
 body.condition-detail main > .section.light-gray > .default-content-wrapper > p {
@@ -74,16 +93,12 @@ body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(st
   line-height: var(--heading-line-height-ml);
 }
 
+
 body.condition-detail main > .section.light-gray > .default-content-wrapper {
   border-inline: var(--container-gutter) solid transparent;
   padding: 2%;
   background-color: var(--color-surface);
   background-clip: padding-box;
-}
-
-body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
-  font-size: var(--heading-font-size-xs);
-  line-height: var(--heading-line-height-h4);
 }
 
 body.condition-detail .tabs .tabs-tab {
@@ -105,10 +120,6 @@ body.condition-detail .tabs .tabs-panel {
 }
 
 @media (width >= 600px) {
-  body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
-    font-size: var(--heading-font-size-m);
-  }
-
   body.condition-detail h3,
   body.condition-detail h3 em strong,
   body.condition-detail h3 strong em {
@@ -131,6 +142,18 @@ body.condition-detail .tabs .tabs-panel {
 
   body.condition-detail .section.dark .columns h3 {
     font-size: var(--heading-font-size-l-scaled);
+  }
+
+  body.condition-detail h4 {
+    font-size: var(--heading-font-size-ml);
+  }
+
+  body.condition-detail .panel.dark .panel-body h3 {
+    font-size: var(--panel-cta-heading-size);
+  }
+
+  body.condition-detail main h2.underline {
+    font-size: var(--heading-font-size-xl);
   }
 }
 
@@ -167,5 +190,18 @@ body.condition-detail .panel.cta .panel-body h3 {
   body.condition-detail main > .section.flex > .panel-wrapper:has(.panel.cta) .panel.cta > ul {
     width: 100%;
     min-width: 0;
+  }
+}
+
+/* light-gray "Potential risks" heading: 14px on mobile, 17.5px from tablet up
+   (after the general h4 sizes, which it overrides) */
+body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+  font-size: var(--heading-font-size-xs);
+  line-height: var(--heading-line-height-h4);
+}
+
+@media (width >= 600px) {
+  body.condition-detail main > .section.light-gray > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-m);
   }
 }
