@@ -63,6 +63,7 @@
   --heading-font-family: "Egyptienne for Stryker Light", rockwell, georgia, times, serif;
   --display-font-family: "Futura for Stryker", "Arial Black", arial, sans-serif;
   --display-font-family-bold: "Futura for Stryker", "Arial Black", arial, sans-serif;
+  --icon-font-family: strykericons, sans-serif;
 
   /* font weights */
   --font-weight-regular: 400;
@@ -74,6 +75,7 @@
   --body-font-size-m: 14px;
   --body-font-size-s: 13px;
   --body-font-size-xs: 12px;
+  --page-back-font-size: 14.5px;
 
   /* body sizes (1.25x scale — some blocks enlarge text via an inner span) */
   --body-font-size-l: 17.5px;       /* 1.25 x 14 */
@@ -563,6 +565,30 @@ a[href^="#fn-"]:any-link,
 a[href$="#disclaimer"]:any-link {
   color: inherit;
   text-decoration: none;
+}
+
+main > .page-back {
+  box-sizing: border-box;
+  max-width: var(--container-max);
+  margin: 0 auto var(--space-block-l);
+  padding-inline: var(--container-gutter);
+}
+
+main > .page-back a {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--display-font-family);
+  font-size: var(--page-back-font-size);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+}
+
+main > .page-back a::before {
+  display: inline-block;
+  font-family: var(--icon-font-family);
+  font-size: var(--body-font-size-s);
+  line-height: 1;
+  content: '\e257';
 }
 
 
@@ -1080,6 +1106,10 @@ main > .section:last-child:has(> .default-content-wrapper:nth-last-child(1 of :n
 
 /* larger compact gold headings from tablet up (was the 480px tier, remapped to 600px) */
 @media (width >= 600px) {
+  main > .page-back {
+    margin-block-end: var(--space-section);
+  }
+
   main .section.side-by-side {
     display: flex;
   }
