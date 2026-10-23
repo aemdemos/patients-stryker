@@ -6,9 +6,9 @@
      in the article column, aligned with the H1
    - lead media: a full-bleed `hero image-slide`, or a standalone image centred in the
      article column
-   - every other section except Cards Corp spans the 66.66% article column, centred from
-     600px (source col-sm-8 from 840px); full width on phones. This includes the small-print
-     `compact`/`disclaimer` sections and the "Last Updated" line below them
+   - every section except the hero and Cards Corp spans the 66.66% article column, centred
+     from 600px (source col-sm-8 from 840px); full width on phones. This includes the
+     small-print `compact`/`disclaimer` sections and the "Last Updated" line below them
    - Cards Corp (e.g. the "Related" teasers) spans the full container width */
 
 /* ---- title section ---- */
