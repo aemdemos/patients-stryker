@@ -1,0 +1,27 @@
+/*
+ * Accordion: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). The label font, size and case are shared
+ * with patients; corp labels have no rule under them, sit 15px above the panel and
+ * the panel body has no padding.
+ */
+
+body.corp .accordion .accordion-item-label {
+  margin-bottom: var(--space-block);
+  padding: var(--space-block-s) 0;
+  border: 0;
+}
+
+body.corp .accordion .accordion-item-label::after {
+  margin-right: var(--space-block-xs);
+}
+
+body.corp .accordion .accordion-item-body {
+  padding: 0;
+  border: 0;
+}
+
+@media (width >= 900px) {
+  body.corp .accordion .accordion-item-label::after {
+    margin-right: var(--space-block-l);
+  }
+}
