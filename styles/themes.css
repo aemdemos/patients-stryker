@@ -1223,6 +1223,14 @@ body.resources main {
   padding-top: 40px;
 }
 
+body.resources main:has(> .page-back) {
+  padding-top: 0;
+}
+
+body.resources main > .page-back {
+  margin-block-end: calc(2 * var(--space-block-l));
+}
+
 body.resources main .section.no-cta h1 {
   margin-top: 0;
   margin-bottom: 40px;
