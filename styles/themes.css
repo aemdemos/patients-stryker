@@ -1355,7 +1355,7 @@ body.ivs-home .panel.cta .panel-body h3 {
      keeps the copy to the left ~half of the image */
   body.ivs-home .hero.banner h1,
   body.ivs-home .hero.banner h2 {
-    max-width: 47%;
+    max-width: 95%;
   }
 
   body.ivs-home main > .section.dark {
@@ -1547,6 +1547,7 @@ body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child {
 
 body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > :is(h1, h2) {
   padding-left: 4%;
+  line-height: var(--heading-line-height-hero);
 }
 
 body.ivs-get-the-facts .hero-facts.section .hero.banner > div:last-child > .button-wrapper {
