@@ -7,6 +7,8 @@
  *   loadEager(doc)          before decorateMain: body.corp (+ hcp-banner), styles/styles-corp.css
  *                           and the <block>-corp.css overlays of reused patients blocks
  *   decorateMain(main)      after the DM assets are rendered, before auto blocking
+ *   decorateSections(main)  after the section metadata is applied, before the blocks are
+ *                           decorated: builds blocks from section styles (accordion-panel)
  *   loadTemplate(name)      template CSS + JS (+ <name>-themes.css when `theme` is set)
  *   loadFirstSections(main) instead of loading the first section eagerly
  *   loadHeader(doc) / loadFooter(doc) / loadLazy(doc) / decorateLastModified(main)
@@ -26,7 +28,7 @@ import { previewDMLinkEditors } from './dm-support.js';
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = [];
+const CORP_BLOCK_STYLES = ['accordion', 'columns'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
@@ -52,6 +54,61 @@ export async function loadEager(doc) {
  */
 export function decorateMain() {
   previewDMLinkEditors();
+}
+
+/**
+ * Turns each run of consecutive `accordion-panel` sections into one
+ * `accordion with-nested-blocks` block, so panels can hold blocks (columns, cards,
+ * tabs, fragments). Each section is one panel: a heading at the top of the section is
+ * the panel label, the rest of the section (text, blocks) is the panel body, handed to
+ * the accordion as an inline section. The other section styles of the panels stay on
+ * the accordion's section.
+ * @param {Element} main The container element
+ */
+function buildAccordionSections(main) {
+  const runs = [];
+  main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
+    const run = runs[runs.length - 1];
+    // a Block Library variant (tools/da-library-preview) is always its own accordion
+    const joins = run && run[run.length - 1].nextElementSibling === section
+      && !section.classList.contains('library-variant-start');
+    if (joins) run.push(section);
+    else runs.push([section]);
+  });
+
+  runs.forEach((run) => {
+    const rows = run.map((section) => {
+      // unwrap default content and (still undecorated) blocks, in authored order
+      const nodes = [...section.children].flatMap((wrapper) => [...wrapper.children]);
+      const label = /^H[1-6]$/.test(nodes[0]?.tagName) ? nodes.shift() : null;
+      const panel = document.createElement('div');
+      panel.dataset.accordionSection = '';
+      panel.append(...nodes);
+      return [{ elems: label ? [label] : [] }, { elems: [panel] }];
+    });
+
+    const block = buildBlock('accordion', rows);
+    block.classList.add('with-nested-blocks');
+    const wrapper = document.createElement('div');
+    wrapper.append(block);
+
+    const [host, ...rest] = run;
+    rest.forEach((section) => {
+      host.classList.add(...section.classList);
+      section.remove();
+    });
+    host.classList.remove('accordion-panel');
+    host.replaceChildren(wrapper);
+  });
+}
+
+/**
+ * Corp blocks built from section styles. Runs on <main> and on fragments, after the
+ * section metadata is applied and before the blocks are decorated.
+ * @param {Element} main The container element
+ */
+export function decorateSections(main) {
+  buildAccordionSections(main);
 }
 
 /**
