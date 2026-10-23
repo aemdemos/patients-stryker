@@ -4,12 +4,10 @@
    Layout measured on the stryker.com feature articles:
    - title section (the first section with content): optional H1 and the H5 publish date
    - lead media: a full-bleed `hero image-slide`, or a standalone image
-   - every section except the hero and the cards is the article column: 66.66% of the
-     container, centred, from 600px (source col-sm-8 from 840px); full width on phones.
-     This includes the title section (date aligned with the H1), the small-print
-     `compact` section and the "Last Updated" line below it.
-   - a section with cards (Cards Corp, e.g. the "Related" teasers) spans the full
-     container width */
+   - every section except the hero is the article column: 66.66% of the container,
+     centred, from 600px (source col-sm-8 from 840px); full width on phones. This
+     includes the title section (date aligned with the H1), the cards (e.g. the
+     "Related" teasers), the small-print `compact` section and the "Last Updated" line. */
 
 /* ---- title section ---- */
 
@@ -124,7 +122,7 @@ body.news-detail main .dm-video {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.news-detail main > .section:not(.hero-container, .cards-corp-container) > div {
+  body.news-detail main > .section:not(.hero-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
 
