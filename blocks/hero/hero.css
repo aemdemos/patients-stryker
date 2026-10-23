@@ -164,13 +164,15 @@
   object-fit: cover;
 }
 
-/* copy block — stacked below the image on mobile (15px side gutter). The extra
-   30px left inset applies to the whole copy column so the title and CTA line up
-   whether or not the CTA keeps its runtime .button-wrapper class (EW reverts it). */
+/* copy block — stacked below the image on mobile. One universal left inset on
+   the whole copy column (every banner variant), so headline, subheading, copy and
+   CTA line up whether or not the CTA keeps its runtime .button-wrapper class (EW
+   reverts it). Templates and themes must not add their own left inset on top. */
 .hero.banner > div:last-child {
   box-sizing: border-box;
   padding-top: 4%;
   padding-bottom: 4%;
+  padding-left: var(--hero-copy-inset);
 }
 
 .hero.banner h1,
@@ -188,7 +190,6 @@
   font-weight: var(--font-weight-medium);
   font-size: 6vw;
   line-height: 1.15;
-  padding-left: calc(3% + 20px);
 }
 
 /* subheading — dark serif, 21px on phones then 24.5px from 600px up */
@@ -204,7 +205,6 @@
 /* CTA sits 35px below the subheading (collapses with its 15px bottom margin) */
 .hero.banner .button-wrapper {
   margin-block: var(--space-inset-l) var(--space-block);
-  padding-left: 40px;
 }
 
 /* multiple CTAs (e.g. the poster hero's two language buttons) sit inline with a 10px gap */
@@ -429,11 +429,11 @@
   }
 
   /* stroke-awareness copy is stacked (not overlaid) below 900px, so keep it
-     full-width with the standard gutter padding */
+     full-width (gutter on the right, the universal copy inset on the left) */
   .hero-stroke.section .hero.banner > div:last-child {
     align-self: auto;
     max-width: none;
-    padding: var(--space-section) var(--container-gutter) var(--space-block-l);
+    padding: var(--space-section) var(--container-gutter) var(--space-block-l) var(--hero-copy-inset);
   }
 
   /* hero-campaign: desktop crop from 600px, cover-filling a min-height box */
@@ -504,7 +504,7 @@
   max-width: none;
   padding-block: var(--space-section) var(--space-block-l);
   padding-top: 50px;
-  padding-left: var(--container-gutter); /* stacked stroke hero: flush, no 30px banner inset */
+  padding-left: var(--hero-copy-inset);
 }
 
 .hero-stroke.section .hero.banner > div:last-child > :not(.button-wrapper, div:has(p em a)) {

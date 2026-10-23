@@ -159,6 +159,7 @@
   --space-ivs-home-find-doctor: 85px; /* measured: ivs-home → find-a-doctor panel, ≥900px */
   --space-ivs-home-band: 68px; /* measured: ivs-home spotlights → dark testimonial band, below 900px */
   --hero-language-button-width: 164px; /* source: both stroke-landing language buttons share one width */
+  --hero-copy-inset: 40px; /* hero banner copy column left inset (all banner heroes) */
 
   /* statistics block — measured from source: big number size + surrounding gaps */
   --statistics-number-size-s: 78.75px; /* source number below its 480px breakpoint → used below 600px */
