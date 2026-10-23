@@ -575,17 +575,11 @@ main > .page-back {
 
   /* source nests the link in a padded column inside the padded container */
   padding-inline: calc(2 * var(--container-gutter));
-
-  --page-back-color: var(--color-primary);
-}
-
-main > .page-back:has(a:hover, a:focus) {
-  --page-back-color: var(--color-accent);
 }
 
 main > .page-back a {
   display: block;
-  color: var(--page-back-color);
+  color: var(--color-primary);
   font-family: var(--display-font-family);
   font-size: var(--page-back-font-size);
   line-height: var(--body-line-height);
