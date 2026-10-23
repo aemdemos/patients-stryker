@@ -2,13 +2,14 @@
    /us/en/about/news/** by the corp bulk metadata).
 
    Layout measured on the stryker.com feature articles:
-   - title section (the first section with content): optional H1 and the H5 publish date,
-     full container width (1440px page → 1380px text)
-   - lead media: a full-bleed `hero image-slide`, or a standalone image centred in the
-     article column
-   - every other section is the article column: 66.66% of the container, centred, from
-     600px (source col-sm-8 from 840px); full width on phones. This includes the
-     `disclaimer` section (document code) and the "Last Updated" line below it. */
+   - title section (the first section with content): optional H1 and the H5 publish date
+   - lead media: a full-bleed `hero image-slide`, or a standalone image
+   - every section except the hero and the cards is the article column: 66.66% of the
+     container, centred, from 600px (source col-sm-8 from 840px); full width on phones.
+     This includes the title section (date aligned with the H1), the `disclaimer`
+     section and the "Last Updated" line below it.
+   - a section with cards (Cards Corp, e.g. the "Related" teasers) spans the full
+     container width */
 
 /* ---- title section ---- */
 
@@ -43,8 +44,8 @@ body.news-detail main > .section > .default-content-wrapper picture img {
   height: auto;
 }
 
-/* article headings: light serif, no rule below (corp default content draws one);
-   the heading over cards keeps the corp Futura heading with its rule */
+/* article headings: light serif, no rule below (corp default content draws one); the
+   heading over the cards keeps the corp Futura heading with its rule */
 body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2 {
   padding-bottom: 0;
   border-bottom: 0;
@@ -121,7 +122,7 @@ body.news-detail main .dm-video {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.news-detail main > .section:not(:nth-child(1 of :not(:empty)), .hero-container) > div {
+  body.news-detail main > .section:not(.hero-container, .cards-corp-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
 
