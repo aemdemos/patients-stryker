@@ -31,7 +31,6 @@ import { previewDMLinkEditors } from './dm-support.js';
 
 const CORP_BLOCK_STYLES = ['hero', 'accordion', 'columns'];
 
-
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
  * @param {Document} doc The document
