@@ -5,8 +5,17 @@
 import { toClassName, toCamelCase } from './aem.js';
 
 /**
+ * Locale folder of the current page (`/<country>/<language>`), where its
+ * query-index and placeholders live.
+ * @returns {string} e.g. '/gb/en', or '' when the page is not under a locale folder
+ */
+export function getLocalePrefix() {
+  return window.location.pathname.match(/^\/[a-z]{2}\/[a-z]{2}(?=\/|$)/i)?.[0].toLowerCase() || '';
+}
+
+/**
  * Loads `{prefix}/placeholders.json` once per prefix, keyed by camelCased `Key`.
- * @param {string} prefix locale folder, e.g. '/us/en'
+ * @param {string} prefix locale folder from getLocalePrefix()
  * @returns {Promise<Object<string,string>>} placeholders, or {} on failure
  */
 export function fetchPlaceholders(prefix = '') {
@@ -40,7 +49,7 @@ async function fetchIndexRows(url, offset = 0, rows = []) {
 const indexCache = {};
 /**
  * Loads every page of `{prefix}/query-index.json` once per prefix.
- * @param {string} prefix locale folder, e.g. '/us/en'
+ * @param {string} prefix locale folder from getLocalePrefix()
  * @returns {Promise<Map<string,Object>>} rows keyed by toIndexPath(path), empty on failure
  */
 export function fetchQueryIndex(prefix = '') {

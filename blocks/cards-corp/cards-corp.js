@@ -1,8 +1,8 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
-import { fetchPlaceholders, fetchQueryIndex, toIndexPath } from '../../scripts/utils.js';
-
-const LOCALE_PREFIX = '/us/en';
+import {
+  fetchPlaceholders, fetchQueryIndex, getLocalePrefix, toIndexPath,
+} from '../../scripts/utils.js';
 
 function buildCardCells(entry, href, ctaLabel) {
   const imageCell = document.createElement('div');
@@ -56,9 +56,10 @@ async function hydrateLinkRows(block) {
   });
   if (!linkRows.length) return;
 
+  const prefix = getLocalePrefix();
   const [index, placeholders] = await Promise.all([
-    fetchQueryIndex(LOCALE_PREFIX),
-    fetchPlaceholders(LOCALE_PREFIX),
+    fetchQueryIndex(prefix),
+    fetchPlaceholders(prefix),
   ]);
   const ctaLabel = placeholders.learnMore || 'Learn more';
   linkRows.forEach((row) => {
