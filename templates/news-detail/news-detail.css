@@ -1,1 +1,57 @@
 /* news-detail — corp news article template (`template: news-detail`) */
+
+/* ---- news typography convention (discussion #436; 448 live news pages measured at 375 / 1440).
+   DA only produces <strong>, so the two live bolds are told apart by formatting:
+     Bold           → live <b>/<strong>: Humanist 712 Bold (Q&A questions, list lead-ins, timestamps)
+     Bold + italic  → live span.futura-bold: Futura Bold, upright, body colour (About Stryker,
+                      Media contact, datelines) — not the global gold label, unused on news pages
+   Scoped to article default content so blocks keep their own bold rules, and links keep the
+   button decoration (the button rules target the <a>, not the wrapper). ---- */
+main > .section > .default-content-wrapper :is(p, li) :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
+main > .section > .default-content-wrapper :is(p, li) :is(strong em, em strong, b i, i b) {
+  font-family: var(--display-font-family);
+  font-style: normal;
+  font-weight: var(--font-weight-bold);
+}
+
+/* body colour instead of the global gold label — except inside a bracket colour tag
+   ([[color-gold]***text***], scripts/span-tags.js) or a link, whose colour must win */
+main > .section > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
+  color: var(--text-color);
+}
+
+/* article h3: Futura Bold (the live h3 wraps span.futura-bold on 16 of 19 pages); the h-serif
+   section style (styles/styles-corp.css) keeps the Egyptienne ones */
+main > .section > .default-content-wrapper > h3 {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+/* italic inside an article heading stays italic (live <i> in h2); the global heading rule only
+   means to straighten the bold + italic gold marker */
+main > .section > .default-content-wrapper > :is(h2, h3, h4) em:not(strong em, :has(strong)) {
+  font-style: italic;
+}
+
+/* join: a section the importer split off the same live text component (a component that mixes
+   text styles) sits at the 15px block margin, without the section gap */
+main > .section:has(+ .section.join) > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
+/* h4: live Futura Bold, 14px below 480 (mapped to the 600 breakpoint), 17.5px above */
+main > .section > .default-content-wrapper > h4 {
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (width >= 600px) {
+  main > .section > .default-content-wrapper > h4 {
+    font-size: var(--heading-font-size-m);
+  }
+}
