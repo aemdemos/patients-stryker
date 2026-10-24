@@ -133,8 +133,6 @@ header.header-corp-wrapper {
   font-family: var(--corp-icon-font-family);
   font-style: normal;
   font-weight: 400;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
 }
 
 .header-corp .utility-links {
@@ -194,7 +192,7 @@ header.header-corp-wrapper {
   color: var(--color-primary);
   font-size: 20px;
   line-height: 34px;
-  text-align: center;
+  text-align: start; /* live: the glyph sits at the box's left edge */
   cursor: pointer;
 }
 
@@ -208,6 +206,11 @@ header.header-corp-wrapper {
   clear: right;
   margin: -20px 0 var(--space-block) var(--space-block-xs);
   padding-top: 0;
+  line-height: var(--body-line-height); /* live 14px/20px, 17.14px on the 12px label */
+}
+
+.header-corp .language-country-select p {
+  line-height: inherit;
 }
 
 .header-corp .language-country-select a:any-link {
