@@ -130,6 +130,13 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-xxl);
 }
 
+/* h-serif section style: the section's h2 / h3 in Egyptienne Light (live h2 / h3 without
+   span.futura-bold) instead of Futura bold; h4 stays Futura, as live */
+:where(body.corp) main > .section.h-serif > div :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+}
+
 :where(body.corp) main > .section > .default-content-wrapper h2 > u {
   text-decoration: none;
   color: inherit;
