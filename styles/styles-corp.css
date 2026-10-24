@@ -190,6 +190,13 @@ body:where(.corp):has(main .hero-carousel) header {
   border-top: 1px solid var(--color-surface-muted);
 }
 
+/* section style `center`: centred text (stryker.com centred rich text, e.g. the About values) */
+:where(body.corp) main > .section.center,
+:where(body.corp) .tabs-panel > .section.center,
+:where(body.corp) .accordion-item-body > .section.center {
+  text-align: center;
+}
+
 /* section style `disclaimer`: small print */
 :where(body.corp) main > .section.disclaimer > div {
   font-size: var(--footnote-font-size);
@@ -227,33 +234,47 @@ body:where(.corp):has(main .hero-carousel) header {
   letter-spacing: normal;
 }
 
-/* section styles: copy size (p-1, p-1-25), label size (label-1-5) and bottom spacing (ps-0, ps-1).
-   Tab panes are fragments whose sections land in .tabs-panel, not in <main>. */
+/* section styles: copy size (p-1, p-1-25, p-1-75), label size (label-1-5) and bottom spacing (ps-0, ps-1).
+   Tab panes are fragments whose sections land in .tabs-panel, not in <main>; accordion
+   panels (with-nested-blocks) hold their section in .accordion-item-body. */
 :where(body.corp) main > .section.p-1 > div :is(p, li),
-:where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li) {
+:where(body.corp) .tabs-panel > .section.p-1 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1 > div :is(p, li) {
   font-size: var(--body-font-size-m);
   line-height: var(--paragraph-line-height);
 }
 
 :where(body.corp) main > .section.p-1-25 > div :is(p, li),
-:where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li) {
+:where(body.corp) .tabs-panel > .section.p-1-25 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1-25 > div :is(p, li) {
   font-size: var(--body-font-size-l);
   line-height: var(--paragraph-line-height-l-nested);
 }
 
+/* p-1-75: 24.5px copy (stryker.com .fontsize-1-75em, lines 1.06) */
+:where(body.corp) main > .section.p-1-75 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li) {
+  font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 :where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
-:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child) {
+:where(body.corp) .tabs-panel > .section.label-1-5 > div p:has(> strong:only-child),
+:where(body.corp) .accordion-item-body > .section.label-1-5 > div p:has(> strong:only-child) {
   font-size: var(--body-font-size-xl);
   line-height: var(--heading-line-height);
 }
 
 :where(body.corp) main > div.section.ps-0,
-:where(body.corp) .tabs-panel > .section.ps-0 {
+:where(body.corp) .tabs-panel > .section.ps-0,
+:where(body.corp) .accordion-item-body > .section.ps-0 {
   margin-bottom: 0;
 }
 
 :where(body.corp) main > div.section.ps-1,
-:where(body.corp) .tabs-panel > .section.ps-1 {
+:where(body.corp) .tabs-panel > .section.ps-1,
+:where(body.corp) .accordion-item-body > .section.ps-1 {
   margin-bottom: var(--space-block-l);
 }
 
@@ -338,7 +359,8 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.last-modified-section,
   :where(body.corp) main > div.section.ps-1,
-  :where(body.corp) .tabs-panel > .section.ps-1 {
+  :where(body.corp) .tabs-panel > .section.ps-1,
+  :where(body.corp) .accordion-item-body > .section.ps-1 {
     margin-bottom: var(--space-inset-l);
   }
 }

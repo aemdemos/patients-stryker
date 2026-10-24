@@ -65,11 +65,17 @@
   line-height: var(--body-line-height);
 }
 
-.accordion .accordion-item-body ul {
+/* panel text only: blocks nested in a with-nested-blocks panel keep their own list and paragraph styles */
+.accordion .accordion-item-body ul:not(:where(.accordion-item-body .block *)) {
   padding-left: var(--list-indent);
   list-style: disc outside;
 }
 
-.accordion .accordion-item-body p:last-child {
+.accordion .accordion-item-body p:last-child:not(:where(.accordion-item-body .block *)) {
   margin-bottom: 0;
+}
+
+/* with-nested-blocks: the label is the authored heading holding the toggle */
+.accordion.with-nested-blocks .accordion-item-heading {
+  margin: 0;
 }
