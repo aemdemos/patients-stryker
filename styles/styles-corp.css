@@ -118,6 +118,18 @@ body:where(.corp):has(main .hero-carousel) header {
   font-size: var(--heading-font-size-l);
 }
 
+/* gold rule: [[rule-gold]…] inside an underlined heading draws its rule in gold while the
+   title keeps its own colour (live features titles: black Futura title over a gold rule) */
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u)):has(span.rule-gold) {
+  border-bottom-color: var(--color-accent);
+}
+
+/* an underlined h1 is still the page title: it keeps the h1 size (the underline size above
+   comes from the h2 section headings) */
+:where(body.corp) main h1:is(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xxl);
+}
+
 :where(body.corp) main > .section > .default-content-wrapper h2 > u {
   text-decoration: none;
   color: inherit;
@@ -347,6 +359,10 @@ body:where(.corp):has(main .hero-carousel) header {
   :where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
   :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
     font-size: var(--heading-font-size-xl);
+  }
+
+  :where(body.corp) main h1:is(.underline, :has(> u)) {
+    font-size: var(--heading-font-size-xxl);
   }
 
   :where(body.corp) main > .section {
