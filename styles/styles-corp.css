@@ -346,10 +346,11 @@ body:where(.corp):has(main .hero-carousel) header {
 
 /* talent-banner: full-width image (mobile image below 600px) with a blue button on it */
 :where(body.corp) main .section.talent-banner > .default-content-wrapper {
-  position: relative;
+  display: grid;
 }
 
 :where(body.corp) main .section.talent-banner > .default-content-wrapper > * {
+  grid-area: 1 / 1;
   margin: 0;
 }
 
@@ -369,13 +370,14 @@ body:where(.corp):has(main .hero-carousel) header {
   height: auto;
 }
 
-/* button position measured on the shared pages: 20px in, 23% down (below 600px);
-   57% across, 44% down (from 600px) */
+/* the button sits on the image (same grid cell). The image is full width with a fixed
+   shape, so its position is measured against the viewport width on the shared pages:
+   5vw across, 25.9vw down below 600px; 57vw across, 14.8vw down (44% of the 3:1 image)
+   from 600px. `(100vw - 100%) / 2` is the gap between the viewport and the content column. */
 :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
-  position: absolute;
-  top: 23%;
-  left: var(--space-block-l);
-  margin: 0;
+  z-index: 1;
+  place-self: start;
+  margin: 25.9vw 0 0 calc(5vw - (100vw - 100%) / 2);
 }
 
 :where(body.corp) main .section.talent-banner a.button.primary:any-link {
@@ -487,8 +489,7 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
-    top: 44%;
-    left: 57%;
+    margin: 14.8vw 0 0 calc(57vw - (100vw - 100%) / 2);
   }
 }
 
