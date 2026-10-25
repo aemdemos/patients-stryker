@@ -36,6 +36,8 @@
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
   --corp-color-navy-bright-dark: #184972; /* blue button border (source .btn-blue) */
+  --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
+  --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
 }
 
 @media (width >= 900px) {
@@ -327,9 +329,21 @@ body:where(.corp):has(main .hero-carousel) header {
   text-decoration: none;
 }
 
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link:has(> u)::after {
+  content: var(--corp-chevron-glyph);
+  padding-inline-start: 0.5em;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  font-weight: var(--font-weight-regular);
+}
+
 :where(body.corp) main .section.contact-aside > .default-content-wrapper p.button-wrapper {
   display: inline-block;
   margin: 0 var(--space-block-s) var(--space-block-s) 0;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a.button:any-link {
+  width: var(--corp-contact-button-width);
 }
 
 /* the icon links are authored side by side, without a space between them */

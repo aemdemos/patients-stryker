@@ -325,7 +325,7 @@ var CustomImportScript = (() => {
     p.append(link);
     return p;
   }
-  var isStandalone = (a) => !!a.closest(".standalone-link");
+  var isStandalone = (a) => !!(a.closest(".standalone-link") || a.querySelector(".standalone-link"));
   function sectionMetadata(document, style) {
     return WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style } });
   }

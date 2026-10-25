@@ -100,9 +100,9 @@ function linkPara(document, a, standalone) {
   return p;
 }
 
-// stryker.com "standalone-link": the span wraps the anchor (a span inside the
-// anchor is not styled on the source, so it stays a plain link)
-const isStandalone = (a) => !!a.closest('.standalone-link');
+// stryker.com "standalone-link" (uppercase Futura link with a chevron): the class sits on
+// a span around the anchor or on a span inside it; both render the same on the source
+const isStandalone = (a) => !!(a.closest('.standalone-link') || a.querySelector('.standalone-link'));
 
 function sectionMetadata(document, style) {
   return WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style } });
