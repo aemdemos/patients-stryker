@@ -30,17 +30,12 @@
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 
-  /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
-  --corp-color-purple-dark: #753d79;
-  --corp-color-purple-pressed: #643468;
-  --corp-color-navy-bright-dark: #184972;
-  --corp-color-navy-bright-pressed: #133b5d;
-
   /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
   --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
   --corp-social-icon-size: 32px;
   --corp-social-icon-size-l: 48px;
+  --corp-color-navy-bright-dark: #184972; /* blue button border (source .btn-blue) */
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
 }
@@ -410,26 +405,9 @@ body:where(.corp):has(main .hero-carousel) header {
   margin: 25.9vw 0 0 calc(5vw - (100vw - 100%) / 2);
 }
 
-/* button colours per section: style btn-purple or btn-blue turns the section's bold-link buttons
-   purple or blue (the talent banner's button is blue) */
-:where(body.corp) main .section.btn-purple a.button.primary:any-link {
-  border-color: var(--corp-color-purple-dark);
-  background-color: var(--color-purple);
-}
-
-:where(body.corp) main .section:is(.btn-blue, .talent-banner) a.button.primary:any-link {
+:where(body.corp) main .section.talent-banner a.button.primary:any-link {
   border-color: var(--corp-color-navy-bright-dark);
   background-color: var(--color-navy-bright);
-}
-
-:where(body.corp) main .section.btn-purple a.button.primary:any-link:is(:hover, :focus-visible) {
-  border-color: var(--corp-color-purple-pressed);
-  background-color: var(--corp-color-purple-pressed);
-}
-
-:where(body.corp) main .section:is(.btn-blue, .talent-banner) a.button.primary:any-link:is(:hover, :focus-visible) {
-  border-color: var(--corp-color-navy-bright-pressed);
-  background-color: var(--corp-color-navy-bright-pressed);
 }
 
 /* ---- back-to-top control (corp.js) ---- */
