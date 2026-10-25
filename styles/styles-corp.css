@@ -29,6 +29,12 @@
   --corp-share-icon-radius: 5px;
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
+
+  /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
+  --corp-color-purple-dark: #753d79;
+  --corp-color-purple-pressed: #643468;
+  --corp-color-navy-bright-dark: #184972;
+  --corp-color-navy-bright-pressed: #133b5d;
 }
 
 @media (width >= 900px) {
@@ -295,6 +301,27 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.ps-1,
 :where(body.corp) .accordion-item-body > .section.ps-1 {
   margin-bottom: var(--space-block-l);
+}
+
+/* section styles btn-purple / btn-blue: the section's bold-link buttons in purple or blue */
+:where(body.corp) main .section.btn-purple a.button.primary:any-link {
+  border-color: var(--corp-color-purple-dark);
+  background-color: var(--color-purple);
+}
+
+:where(body.corp) main .section.btn-blue a.button.primary:any-link {
+  border-color: var(--corp-color-navy-bright-dark);
+  background-color: var(--color-navy-bright);
+}
+
+:where(body.corp) main .section.btn-purple a.button.primary:any-link:is(:hover, :focus-visible) {
+  border-color: var(--corp-color-purple-pressed);
+  background-color: var(--corp-color-purple-pressed);
+}
+
+:where(body.corp) main .section.btn-blue a.button.primary:any-link:is(:hover, :focus-visible) {
+  border-color: var(--corp-color-navy-bright-pressed);
+  background-color: var(--corp-color-navy-bright-pressed);
 }
 
 /* ---- back-to-top control (corp.js) ---- */
