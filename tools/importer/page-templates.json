@@ -805,6 +805,29 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "news-shared-fragments",
+      "urls": [
+        "https://www.stryker.com/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sage/en/footer/footer/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master.html",
+        "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop.html"
+      ],
+      "representativeUrl": "https://www.stryker.com/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master.html",
+      "coverageGaps": [],
+      "description": "stryker.com news-detail shared Experience Fragments (#443), imported from their XF master URLs as fragment documents at the short paths in tools/importer/xf-fragment-map.js (XF path from the customer export → /fragments/…): business-unit Resources links (columns), Sustainability \"Connect with us\" band, Sustainability and Sage contact asides, and the Join our talent network banner. Pages include them with the fragment block.",
+      "blocks": [
+        {
+          "name": "columns",
+          "instances": [
+            ".c-rich-text-editor"
+          ]
+        }
+      ]
     }
   ]
 }
