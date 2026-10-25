@@ -369,9 +369,11 @@ body:where(.corp):has(main .hero-carousel) header {
   height: auto;
 }
 
+/* button position measured on the shared pages: 20px in, 23% down (below 600px);
+   57% across, 44% down (from 600px) */
 :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
   position: absolute;
-  top: var(--space-block-l);
+  top: 23%;
   left: var(--space-block-l);
   margin: 0;
 }
@@ -484,10 +486,9 @@ body:where(.corp):has(main .hero-carousel) header {
     display: none;
   }
 
-  /* desktop: the button sits just left of centre, half-way down the banner */
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
-    top: 52%;
-    left: 45%;
+    top: 44%;
+    left: 57%;
   }
 }
 

@@ -40,12 +40,13 @@ const FRAGMENTS = {
   '/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master': {
     type: 'contact', style: 'contact-aside',
   },
-  // The talent banner is a carousel slide: the XF holds the desktop image only; the
-  // mobile image and the CTA button are on the containing slide (identical on the
-  // 4 pages that share it), so they are carried here.
+  // The talent banner is a carousel slide. The XF master holds an older desktop image
+  // with a button drawn into it; the slide on the 4 pages that share it shows the _v2
+  // images (no drawn button) with a real CTA button on top, so those are carried here.
   '/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop': {
     type: 'banner',
     style: 'talent-banner',
+    desktopImage: 'https://media-assets.stryker.com/is/image/stryker/JoinOurTalentNetwork_carousel_desktop_v2?$max_width_auto$',
     mobileImage: 'https://media-assets.stryker.com/is/image/stryker/JoinOurTalentNetwork_carousel_mobile_v2?$max_width_1440$',
     cta: { text: 'Join our talent network', href: 'http://adtrk.tw/tp/rj6.uW9E.z-K' },
   },
@@ -206,7 +207,8 @@ function buildBanner(document, src, def) {
     p.append(a);
     return p;
   };
-  if (img) out.push(dmLink(img.getAttribute('src'), 'Join our talent network'));
+  const desktop = def.desktopImage || (img && img.getAttribute('src'));
+  if (desktop) out.push(dmLink(desktop, 'Join our talent network'));
   if (def.mobileImage) out.push(dmLink(def.mobileImage, 'Join our talent network (mobile)'));
   if (def.cta) {
     const p = document.createElement('p');
