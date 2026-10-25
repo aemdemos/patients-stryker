@@ -213,31 +213,31 @@ var CustomImportScript = (() => {
   // tools/importer/xf-fragment-map.js
   var xf_fragment_map_default = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
-      path: "/fragments/acute-care/resources",
+      path: "/us/en/fragments/acute-care/resources",
       name: 'Acute Care "Resources" links'
     },
     "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master": {
-      path: "/fragments/emergency-care/resources",
+      path: "/us/en/fragments/emergency-care/resources",
       name: 'Emergency Care "Resources" links'
     },
     "/content/experience-fragments/stryker/sage/en/footer/footer/master": {
-      path: "/fragments/sage/resources",
+      path: "/us/en/fragments/sage/resources",
       name: 'Sage "Resources" links'
     },
     "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master": {
-      path: "/fragments/sustainability/connect-with-us",
+      path: "/us/en/fragments/sustainability/connect-with-us",
       name: 'Sustainability "Connect with us" band (above the form)'
     },
     "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master": {
-      path: "/fragments/sustainability/contact",
+      path: "/us/en/fragments/sustainability/contact",
       name: "Sustainability contact aside (next to the form)"
     },
     "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master": {
-      path: "/fragments/sage/contact",
+      path: "/us/en/fragments/sage/contact",
       name: "Sage contact aside (LinkedIn / Facebook icons)"
     },
     "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
-      path: "/fragments/careers/talent-network-banner",
+      path: "/us/en/fragments/careers/talent-network-banner",
       name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
     }
   };

@@ -14,11 +14,11 @@ import xfFragmentPath from './xf-fragment-path.js';
  * into fragment documents. Pages then include them with the `fragment` block.
  * Each fragment gets a section style, so it can be styled and checked on its own
  * preview URL; the fragment block hoists the section into the page, so the same
- * `main .section.<style>` rules apply when embedded.
+ * `main .section.{style}` rules apply when embedded.
  *
  * Keys are the XF paths from the customer's "Experience Fragment References" export.
  * Each fragment is saved at its short path from tools/importer/xf-fragment-map.js
- * (e.g. …/acute-care/en/business_unit/footer-links/master → /fragments/acute-care/resources),
+ * (e.g. …/acute-care/en/business_unit/footer-links/master → /us/en/fragments/acute-care/resources),
  * the same lookup every page importer uses to emit the fragment block.
  */
 const FRAGMENTS = {

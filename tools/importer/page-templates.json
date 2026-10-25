@@ -819,7 +819,7 @@
       ],
       "representativeUrl": "https://www.stryker.com/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master.html",
       "coverageGaps": [],
-      "description": "stryker.com news-detail shared Experience Fragments (#443), imported from their XF master URLs as fragment documents at the short paths in tools/importer/xf-fragment-map.js (XF path from the customer export → /fragments/…): business-unit Resources links (columns), Sustainability \"Connect with us\" band, Sustainability and Sage contact asides, and the Join our talent network banner. Pages include them with the fragment block.",
+      "description": "stryker.com news-detail shared Experience Fragments (#443), imported from their XF master URLs as fragment documents at the short paths in tools/importer/xf-fragment-map.js (XF path from the customer export → /us/en/fragments/…): business-unit Resources links (columns), Sustainability \"Connect with us\" band, Sustainability and Sage contact asides, and the Join our talent network banner. Pages include them with the fragment block.",
       "blocks": [
         {
           "name": "columns",

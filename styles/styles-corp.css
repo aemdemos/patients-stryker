@@ -30,7 +30,7 @@
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 
-  /* shared news-detail fragments (/fragments/…): Connect band, contact asides, talent banner */
+  /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
   --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
   --corp-social-icon-size: 32px;
@@ -285,10 +285,10 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: var(--space-block-l);
 }
 
-/* ---- shared news-detail fragments (/fragments/…, #443) ----
+/* ---- shared news-detail fragments (/us/en/fragments/…, #443) ----
    Each fragment document sets one section style. The fragment block hoists a fragment
    that fills its section into main, or nests it inside the block when it shares the
-   section (contact aside next to a form), so the rules match `main .section.<style>`. */
+   section (contact aside next to a form), so the rules match `main .section.{style}`. */
 
 /* connect-band: heading in a gold band (Sustainability "Connect with us") */
 :where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
