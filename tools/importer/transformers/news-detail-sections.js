@@ -23,7 +23,8 @@
  * Text normalisation (news-detail spec): source font spans are dropped (body text is
  * Humanist 14px); a rich text whose copy is all in one size span (fontsize-1-25em,
  * fontsize-1-75em) or font span (urw-egyptienne) gets the matching section style
- * (p-1-25, p-1-75, serif); `span.futura-bold` and `<b>` become <strong> (news-detail.css decides
+ * (p-1-25, p-1-75, serif); a paragraph that is plain bold (<b>) as a whole gets a section
+ * of its own with the `bold-body` style (bold in the body font); `span.futura-bold` and `<b>` become <strong> (news-detail.css decides
  * Humanist vs Futura bold), gold buttons (a.btn-gold) become bold + italic links (the
  * authoring convention for the gold .button.accent), other buttons bold links, and
  * standalone links (span.standalone-link) bold + underline links (a.link-strong).
@@ -141,6 +142,16 @@ function cleanRichText(root) {
     strong.append(a);
   });
 
+  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>")
+  // belongs after it: inside <strong> it would be lost on import, merging the label
+  // into the next line
+  root.querySelectorAll('span.futura-bold, b, i, em, strong').forEach((el) => {
+    let last = el.lastChild;
+    while (last && (last.nodeName === 'BR' || (last.nodeType === 3 && !last.textContent.trim()))) {
+      el.after(last);
+      last = el.lastChild;
+    }
+  });
   root.querySelectorAll('span.futura-bold, b').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('i').forEach((el) => rename(el, 'em'));
   root.querySelectorAll('span, font').forEach(unwrap);
@@ -168,10 +179,26 @@ function cleanRichText(root) {
 }
 
 /** The rich-text content of a component as top-level block elements. */
+/**
+ * Paragraphs that are plain bold (<b>, not span.futura-bold) as a whole: on the source
+ * they stay in the body font (Humanist bold). Both kinds of bold become <strong> on
+ * import, so these get the `bold-body` section style instead.
+ */
+function plainBoldParagraphs(root) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  return new Set([...root.querySelectorAll('p')].filter((p) => {
+    const all = squash(p.textContent);
+    if (!all || p.querySelector('.futura-bold')) return false;
+    const bold = [...p.querySelectorAll('b')].filter((b) => !b.parentElement.closest('b'));
+    return squash(bold.map((b) => b.textContent).join('')) === all;
+  }));
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
+  const plainBold = plainBoldParagraphs(box);
   const { centred, size } = cleanRichText(box);
   const nodes = [];
   [...box.childNodes].forEach((node) => {
@@ -189,6 +216,7 @@ function richTextNodes(component, doc) {
       nodes.push(p);
     }
   });
+  nodes.forEach((node) => { if (plainBold.has(node)) node.boldBody = true; });
   return { nodes, centred, size };
 }
 
@@ -378,11 +406,15 @@ export default function transform(hookName, element, payload) {
       : { nodes: headlineNodes(component, doc), centred: false };
     if (!nodes.length) return;
     // a run of rich text with the same alignment and copy styles is one section; the
-    // copy styles sit next to `center` (e.g. `center, p-1-25, serif`)
-    const style = [centred ? 'center' : '', size || ''].filter(Boolean).join(', ') || undefined;
-    const kind = `${centred ? 'center' : 'body'}${size ? ` ${size}` : ''}`;
-    if (!current || current.kind !== kind) startSection(kind, style);
-    current.nodes.push(...nodes);
+    // copy styles sit next to `center` (e.g. `center, p-1-25, serif`). A plain-bold
+    // paragraph (boldBody) gets a section of its own with `bold-body`.
+    nodes.forEach((node) => {
+      const extra = [size || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
+      const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
+      const kind = [centred ? 'center' : 'body', ...extra].join(' ');
+      if (!current || current.kind !== kind) startSection(kind, styles.join(', ') || undefined);
+      current.nodes.push(node);
+    });
   });
 
   // 4. disclaimer: references (when the article has them) and the document code, in

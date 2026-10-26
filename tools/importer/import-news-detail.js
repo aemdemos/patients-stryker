@@ -109,6 +109,9 @@ export default {
     // are repeated on the page so it renders the same anywhere (drafts, local preview).
     main.appendChild(document.createElement('hr'));
     const meta = WebImporter.Blocks.getMetadata(document);
+    // the corp bulk metadata adds `title:suffix` "| Stryker", so drop the source's own
+    // " | Stryker" from the title (it would show twice)
+    if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
     meta.site = 'corp';
     meta.template = 'news-detail';
     if (published) meta.published = published;

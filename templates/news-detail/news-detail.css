@@ -126,6 +126,12 @@ body.news-detail main > .section.separator > div:first-child {
   border-top: 1px solid var(--color-surface-muted);
 }
 
+/* a `bold-body` paragraph (e.g. the bold subtitle) flows into the article text below it:
+   one paragraph gap, not a section gap */
+body.news-detail main > .section.bold-body {
+  margin-bottom: 0;
+}
+
 body.news-detail main .dm-video {
   aspect-ratio: auto;
 }

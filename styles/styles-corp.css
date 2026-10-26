@@ -334,6 +334,14 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: var(--heading-font-family);
 }
 
+/* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
+   bold news subtitle) instead of the corp Futura bold */
+:where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
+:where(body.corp) .tabs-panel > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
+:where(body.corp) .accordion-item-body > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b) {
+  font-family: inherit;
+}
+
 :where(body.corp) main > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
 :where(body.corp) .tabs-panel > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
 :where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {

@@ -275,6 +275,13 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
+    root.querySelectorAll("span.futura-bold, b, i, em, strong").forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
+        el.after(last);
+        last = el.lastChild;
+      }
+    });
     root.querySelectorAll("span.futura-bold, b").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("i").forEach((el) => rename(el, "em"));
     root.querySelectorAll("span, font").forEach(unwrap);
@@ -299,10 +306,20 @@ var CustomImportScript = (() => {
     });
     return { centred, size };
   }
+  function plainBoldParagraphs(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return new Set([...root.querySelectorAll("p")].filter((p) => {
+      const all = squash(p.textContent);
+      if (!all || p.querySelector(".futura-bold")) return false;
+      const bold = [...p.querySelectorAll("b")].filter((b) => !b.parentElement.closest("b"));
+      return squash(bold.map((b) => b.textContent).join("")) === all;
+    }));
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
+    const plainBold = plainBoldParagraphs(box);
     const { centred, size } = cleanRichText(box);
     const nodes = [];
     [...box.childNodes].forEach((node) => {
@@ -319,6 +336,9 @@ var CustomImportScript = (() => {
         p.append(node.cloneNode(true));
         nodes.push(p);
       }
+    });
+    nodes.forEach((node) => {
+      if (plainBold.has(node)) node.boldBody = true;
     });
     return { nodes, centred, size };
   }
@@ -475,10 +495,13 @@ var CustomImportScript = (() => {
       }
       const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
       if (!nodes.length) return;
-      const style = [centred ? "center" : "", size || ""].filter(Boolean).join(", ") || void 0;
-      const kind = `${centred ? "center" : "body"}${size ? ` ${size}` : ""}`;
-      if (!current || current.kind !== kind) startSection(kind, style);
-      current.nodes.push(...nodes);
+      nodes.forEach((node) => {
+        const extra = [size || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
+        const styles = [centred ? "center" : "", ...extra].filter(Boolean);
+        const kind = [centred ? "center" : "body", ...extra].join(" ");
+        if (!current || current.kind !== kind) startSection(kind, styles.join(", ") || void 0);
+        current.nodes.push(node);
+      });
     });
     const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
@@ -828,6 +851,7 @@ var CustomImportScript = (() => {
       executeTransformers("afterTransform", main, payload);
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
+      if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
       meta.site = "corp";
       meta.template = "news-detail";
       if (published) meta.published = published;
