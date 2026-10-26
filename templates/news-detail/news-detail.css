@@ -39,6 +39,7 @@ body.news-detail main > .section.hero-container {
 body.news-detail main > .section > .default-content-wrapper picture {
   display: block;
   text-align: center;
+  margin: auto;
 }
 
 body.news-detail main > .section > .default-content-wrapper picture img {
