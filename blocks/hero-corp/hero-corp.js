@@ -1,6 +1,6 @@
 /*
- * hero-corp — the stryker.com hero. Variants: page-hero, image-slide, tagline-band,
- * large-header, long-text (styles and authoring rules in hero-corp.css).
+ * hero-corp — the stryker.com hero. Variants: image-slide, tagline-band, large-header,
+ * long-text (styles and authoring rules in hero-corp.css).
  *
  * Authoring model (single-column rows, in any order):
  *   | <desktop image, or a Scene7 video link> |

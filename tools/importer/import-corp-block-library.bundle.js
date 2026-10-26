@@ -158,12 +158,6 @@ var CustomImportScript = (() => {
     // live www.stryker.com AEM pages (`live: true`): import from https://www.stryker.com so
     // both pages are same-origin; the block is built from the page by LIVE_EXTRACTORS
     "hero-corp": [
-      {
-        page: "/us/en/c/2021/svin-annual-meeting.html",
-        source: "page-hero",
-        live: true,
-        variants: ["page-hero"]
-      },
       // image-slide: one sample per slide design on the news pages (box colours, positions,
       // mobile layouts, video, CTA, stripes); options come from the slide (extractImageSlide)
       { page: "/us/en/c/test/resource-center.html", source: "image-slide", live: true },
@@ -212,40 +206,6 @@ var CustomImportScript = (() => {
     ]
   };
   var GOLD = /rgba?\(\s*255\s*,\s*181\s*,\s*0\b/;
-  function extractPageHero(doc, document) {
-    const content = doc.querySelector(".c-page-hero-content");
-    const title = content && content.querySelector("h1");
-    if (!title) return null;
-    let node = document.createTextNode(title.textContent.replace(/\s+/g, " ").trim());
-    if (content.classList.contains("border-bottom-gold")) {
-      const u = document.createElement("u");
-      u.append(node);
-      node = u;
-    }
-    if (GOLD.test(title.getAttribute("style") || "")) {
-      const i = document.createElement("i");
-      const b = document.createElement("b");
-      i.append(node);
-      b.append(i);
-      node = b;
-    }
-    const h1 = document.createElement("h1");
-    h1.append(node);
-    const cell = document.createElement("div");
-    cell.append(h1);
-    const copy = content.querySelector("p.content");
-    if (copy && copy.textContent.trim()) {
-      const p = document.createElement("p");
-      p.append(...copy.childNodes);
-      cell.append(p);
-    }
-    const row = document.createElement("div");
-    row.append(cell);
-    const block = document.createElement("div");
-    block.className = "page-hero";
-    block.append(row);
-    return block;
-  }
   function extractTaglineBand(doc, document) {
     const banner = doc.querySelector(".c-tagline .m-banner-simple");
     const title = banner && banner.querySelector("h1");
@@ -674,7 +634,6 @@ var CustomImportScript = (() => {
     columns: extractColumns,
     "long-text": extractLongText,
     "large-header": extractLargeHeader,
-    "page-hero": extractPageHero,
     "image-slide": extractImageSlide,
     "tagline-band": extractTaglineBand
   };

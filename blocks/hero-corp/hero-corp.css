@@ -1,12 +1,11 @@
 /*
- * hero-corp — the stryker.com hero: page title bands, image / video slides with a headline
- * box, the gold tagline band, the large header and the long-text hero. A corp block of its
- * own, not a patients hero overlay: the slides need decoration the patients hero does not
- * have (background video, headline box options, a 600px image swap).
+ * hero-corp — the stryker.com hero: image / video slides with a headline box, the gold
+ * tagline band, the large header and the long-text hero. A corp block of its own, not a
+ * patients hero overlay: the slides need decoration the patients hero does not have
+ * (background video, headline box options, a 600px image swap).
  *
- * page-hero: a text-only title band in the page container. Authored as one row holding
- * an h1; the authoring conventions style it: whole heading underlined = a thin rule under
- * the band, heading bold + italic = gold title.
+ * (The stryker.com page title band is not a hero variant: an underlined Heading 1 opening the
+ * page renders it, see styles/styles-corp.css.)
  *
  * image-slide: a full-width slide (image, or a DM video in a 3:1 frame) with a headline
  * box over it (stryker.com single-slide c-autocarousel). Rows: | desktop image or video |,
@@ -34,10 +33,6 @@
  */
 
 .hero-corp {
-  /* page-hero */
-  --corp-page-hero-title-offset: 28px;
-  --corp-page-hero-title-line-height-s: 22.26px;
-
   /* image-slide: headline over the image (source c-autocarousel slide + c-largeheadline) */
   --hero-box-top: 35%;
   --hero-box-left: 10%;
@@ -76,34 +71,10 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 }
 
 /* the band sits in the page container like any other section content */
-.hero-corp-container .hero-corp-wrapper:has(> .hero-corp:is(.page-hero, .tagline-band, .large-header, .long-text)) {
+.hero-corp-container .hero-corp-wrapper:has(> .hero-corp:is(.tagline-band, .large-header, .long-text)) {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-gutter);
-}
-
-.hero-corp.page-hero {
-  min-height: 0;
-  margin-bottom: var(--space-block-l);
-  padding: 0;
-}
-
-/* the underline rule spans the band, not just the title */
-.hero-corp.page-hero:has(h1.underline) {
-  border-bottom: 1px solid var(--color-surface-muted);
-}
-
-/* title: Futura bold 28px, 28px from the band top, 15px above the rule */
-.hero-corp.page-hero h1 {
-  max-width: none;
-  margin: 0;
-  border-bottom: 0;
-  padding: var(--corp-page-hero-title-offset) 0 var(--space-block);
-  color: var(--text-color);
-  font-family: var(--display-font-family-bold);
-  font-size: var(--heading-font-size-xxl);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--corp-page-hero-title-line-height-s);
 }
 
 /* ---- tagline-band ---- */
@@ -358,7 +329,7 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
   background: var(--corp-image-slide-stripe-gradient);
 }
 
-/* from 600px: page-hero title half width, roomier tagline-band with a larger message,
+/* from 600px: roomier tagline-band with a larger message,
    bigger large-header title, image-slide headline over the image */
 @media (width >= 600px) {
   .hero-corp.large-header {
@@ -411,15 +382,6 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 
   .hero-corp.tagline-band h2 {
     font-size: var(--corp-tagline-band-message-size);
-  }
-
-  .hero-corp.page-hero {
-    margin-bottom: var(--space-inset-l);
-  }
-
-  .hero-corp.page-hero h1 {
-    width: calc(50% - var(--container-gutter));
-    line-height: var(--heading-line-height);
   }
 
   .hero-corp.image-slide {

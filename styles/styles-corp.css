@@ -11,6 +11,8 @@
   /* header-corp: 90px chrome below 900px; 87px white row + 60px gold nav bar from 900px */
   --corp-chrome-height: 90px;
   --corp-header-gap: var(--space-block-s);
+  --corp-page-title-offset: 28px; /* page title band: title below the band top */
+  --corp-page-title-line-height-s: 22.26px; /* page title band below 600px */
   --corp-hcp-band-height: 114px; /* HCP notice band, including its top margin */
   --corp-back-to-top-size: 40px;
   --corp-back-to-top-icon-size: 16px;
@@ -137,6 +139,28 @@ body:where(.corp):has(main .hero-carousel) header {
    comes from the h2 section headings) */
 :where(body.corp) main h1:is(.underline, :has(> u)) {
   font-size: var(--heading-font-size-xxl);
+}
+
+/* page title band: an underlined Heading 1 opening the page (stryker.com page hero, e.g. the
+   SVIN and security-advisories pages): Futura bold 28px, 28px below the band top, the rule
+   15px under the title; from 600px the title keeps to the left half, the rule spans the page.
+   Bold + italic keeps the gold title. */
+:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:first-child {
+  margin: 0 0 var(--space-block-l);
+  padding: var(--corp-page-title-offset) 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-page-title-line-height-s);
+}
+
+/* a title band alone in its section: the section gap (20px, 30px from 600px) is the space below
+   it, as between stryker.com components */
+:where(body.corp) main > .section:first-child > .default-content-wrapper:has(> h1.underline:only-child) {
+  padding-bottom: 0;
+}
+
+:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:only-child {
+  margin-bottom: 0;
 }
 
 :where(body.corp) main > .section > .default-content-wrapper h2 > u {
@@ -372,6 +396,12 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main h1:is(.underline, :has(> u)) {
     font-size: var(--heading-font-size-xxl);
+  }
+
+  :where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:first-child {
+    margin-bottom: var(--space-inset-l);
+    padding-inline-end: calc(50% + var(--container-gutter));
+    line-height: var(--heading-line-height);
   }
 
   :where(body.corp) main > .section {
