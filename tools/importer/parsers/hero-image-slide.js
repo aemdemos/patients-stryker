@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 /**
- * Parser: www.stryker.com single-slide `.c-autocarousel` → `Hero (image-slide)`.
+ * Parser: www.stryker.com single-slide `.c-autocarousel` → `Hero Corp (image-slide)`.
  *
  * Source shape (one slide per carousel on every news article):
  *   .carouselslide
@@ -11,8 +11,8 @@
  *     .overlayparsys.mobile_Overlay|mobile_Bottom style="top:15%; margin-left:56%;
  *        width:calc(100% - 56% - 10%)"  → .largeheadline .line > .fontsize-2vw > .futura-bold
  *
- * Block (blocks/hero/hero.js, image-slide), one column:
- *   | Hero (image-slide, top-15, left-56, right-10, size-2[, text-below]) |
+ * Block (blocks/hero-corp/hero-corp.js, image-slide), one column:
+ *   | Hero Corp (image-slide, top-15, left-56, right-10, size-2[, text-below]) |
  *   | <desktop image> |
  *   | <mobile image>  |   (when the slide has one)
  *   | <headline>      |   heading kept as on the source; a plain headline line stays a
@@ -101,7 +101,7 @@ export default function parse(element, { document }) {
   }
 
   element.replaceWith(WebImporter.Blocks.createBlock(document, {
-    name: `Hero (${variants.join(', ')})`,
+    name: `Hero Corp (${variants.join(', ')})`,
     cells,
   }));
 }

@@ -8,7 +8,7 @@
  *   1. title section: the page H1 (`.h1-title`, only when the source has one — no H1 is
  *      created) and the H5 publish date (`.c-publish-date`)
  *   2. lead media: the single-slide `.c-autocarousel` (own section; the hero-image-slide
- *      parser turns it into `Hero (image-slide)`), or a standalone image (own section)
+ *      parser turns it into `Hero Corp (image-slide)`), or a standalone image (own section)
  *   3. article sections: rich text, standalone images and `.c-standalone-video` (left for
  *      the video parser). A run of centred content (centred rich text, `.c-curatedcta`
  *      buttons) becomes its own section with the `center` section style.

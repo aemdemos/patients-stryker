@@ -109,7 +109,7 @@ var CustomImportScript = (() => {
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
-      name: `Hero (${variants.join(", ")})`,
+      name: `Hero Corp (${variants.join(", ")})`,
       cells
     }));
   }
@@ -899,7 +899,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-news-detail.js
   var PAGE_TEMPLATE = {
     name: "news-detail",
-    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
+    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero Corp (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
     urls: [
       "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
       "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",

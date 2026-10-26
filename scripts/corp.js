@@ -28,7 +28,7 @@ import { previewDMLinkEditors } from './dm-support.js';
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = ['accordion', 'columns', 'hero'];
+const CORP_BLOCK_STYLES = ['accordion', 'columns'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
@@ -52,8 +52,12 @@ export async function loadEager(doc) {
 /**
  * Corp decoration of <main> (and of fragments, which run decorateMain too).
  */
-export function decorateMain() {
+export function decorateMain(main) {
   previewDMLinkEditors();
+  main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {
+    block.classList.replace('hero', 'hero-corp');
+    block.closest('.section')?.classList.add('hero-container');
+  });
 }
 
 /**

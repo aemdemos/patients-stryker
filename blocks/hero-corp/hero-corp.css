@@ -1,0 +1,82 @@
+/*
+ * Corp image-slide hero, isolated from the patients hero block.
+ * The image-slide variant uses authored top/left/right/size options and text-below
+ * to position its headline like the source slide.
+ */
+
+.hero-corp-container .hero-corp-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-corp.image-slide {
+  --hero-slide-top: 15%;
+  --hero-slide-left: 5%;
+  --hero-slide-right: 50%;
+  --hero-slide-text-size: 2;
+
+  display: block;
+  position: relative;
+  padding: 0;
+  min-height: 0;
+}
+
+.hero-corp.image-slide picture {
+  display: block;
+  position: static;
+  inset: auto;
+  z-index: auto;
+  width: 100%;
+}
+
+.hero-corp.image-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-corp.image-slide picture.hero-image-desktop {
+  display: none;
+}
+
+.hero-corp.image-slide > div:last-child {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: 5%;
+}
+
+.hero-corp.image-slide.text-below > div:last-child {
+  position: static;
+  padding: var(--space-block) var(--space-block-l) 0;
+}
+
+.hero-corp.image-slide > div:last-child > * {
+  max-width: none;
+  margin: 0;
+  color: var(--text-color);
+  font-size: calc(var(--hero-slide-text-size) * 2vw);
+  line-height: var(--heading-line-height-hero);
+  text-align: left;
+}
+
+@media (width >= 600px) {
+  .hero-corp.image-slide picture.hero-image-desktop {
+    display: block;
+  }
+
+  .hero-corp.image-slide picture.hero-image-mobile {
+    display: none;
+  }
+
+  .hero-corp.image-slide > div:last-child,
+  .hero-corp.image-slide.text-below > div:last-child {
+    position: absolute;
+    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    padding: 0;
+  }
+
+  .hero-corp.image-slide > div:last-child > * {
+    font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
+  }
+}

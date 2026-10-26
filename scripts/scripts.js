@@ -597,7 +597,7 @@ export function decorateMain(main) {
   // convert external Dynamic Media asset links into native <picture>/<video>
   decorateDMAssets(main);
   liftDefaultContentDMMedia(main);
-  corp?.decorateMain();
+  corp?.decorateMain(main);
   decorateIcons(main);
   // [[class]text] → span, before anything reads the text (tab labels, buttons, aria-labels)
   decorateSpanTags(main);
