@@ -22,10 +22,11 @@
  *
  * Text normalisation (news-detail spec): source font spans are dropped (body text is
  * Humanist 14px); a rich text whose copy is all in one size span (fontsize-1-25em,
- * fontsize-1-75em) or font span (urw-egyptienne) gets the matching section style
- * (p-1-25, p-1-75, serif); a paragraph that is plain bold (<b>) as a whole gets a section
- * of its own with the `bold-body` style (bold in the body font); `span.futura-bold` and `<b>` become <strong> (news-detail.css decides
- * Humanist vs Futura bold), gold buttons (a.btn-gold) become bold + italic links (the
+ * fontsize-1-5em, fontsize-1-75em) or font span (urw-egyptienne) gets the matching section
+ * style (p-1-25, p-1-5, p-1-75, serif), and an h3 all in urw-egyptienne adds `h-serif`; a
+ * paragraph that is plain bold (<b>) as a whole gets a section of its own with the
+ * `bold-body` style (bold in the body font); inline `span.futura-bold` becomes
+ * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold) become bold + italic links (the
  * authoring convention for the gold .button.accent), other buttons bold links, and
  * standalone links (span.standalone-link) bold + underline links (a.link-strong).
  * Asset links (/content/dam/...) point at www.stryker.com, where the files live; links
@@ -181,13 +182,17 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     strong.append(a);
   });
 
-  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>")
-  // belongs after it: inside <strong> it would be lost on import, merging the label
-  // into the next line
+  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
+  // possibly followed by empty size spans) belongs after it: inside <strong> it would be
+  // lost on import, merging the label into the next line
+  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
+    && !node.textContent.trim() && !node.querySelector('img, br');
   root.querySelectorAll('span.futura-bold, b, i, em, strong').forEach((el) => {
     let last = el.lastChild;
-    while (last && (last.nodeName === 'BR' || (last.nodeType === 3 && !last.textContent.trim()))) {
-      el.after(last);
+    while (last && (last.nodeName === 'BR' || emptyElement(last)
+      || (last.nodeType === 3 && !last.textContent.trim()))) {
+      if (emptyElement(last)) last.remove();
+      else el.after(last);
       last = el.lastChild;
     }
   });
@@ -246,11 +251,25 @@ function plainBoldParagraphs(root) {
   }));
 }
 
+/**
+ * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, no
+ * bold): the template's h3 is Futura bold, so their section gets the `h-serif` style.
+ */
+function serifHeadings(root) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  return new Set([...root.querySelectorAll('h3')].filter((h) => {
+    if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
+    const spans = [...h.querySelectorAll('.urw-egyptienne')].filter((span) => !span.parentElement.closest('.urw-egyptienne'));
+    return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
+  }));
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
   const plainBold = plainBoldParagraphs(box);
+  const serifHeads = serifHeadings(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -271,7 +290,10 @@ function richTextNodes(component, doc) {
       nodes.push(p);
     }
   });
-  nodes.forEach((node) => { if (plainBold.has(node)) node.boldBody = true; });
+  nodes.forEach((node) => {
+    if (plainBold.has(node)) node.boldBody = true;
+    if (serifHeads.has(node)) node.serifHeading = true;
+  });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;
   nodes.forEach((node) => {
@@ -487,7 +509,18 @@ export default function transform(hookName, element, payload) {
       const extra = [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
       const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
       const kind = [centred ? 'center' : 'body', ...extra].join(' ');
-      if (!current || current.kind !== kind) startSection(kind, styles.join(', ') || undefined);
+      // an Egyptienne h3 adds `h-serif` to its section (it stays with the copy around it);
+      // a Futura h3 in the same run starts a new section
+      const h3Font = node.tagName === 'H3' ? (node.serifHeading ? 'serif' : 'futura') : null;
+      if (!current || current.kind !== kind || (h3Font && current.h3Font && current.h3Font !== h3Font)) {
+        startSection(kind, styles.join(', ') || undefined);
+      }
+      if (h3Font) {
+        if (h3Font === 'serif' && current.h3Font !== 'serif') {
+          current.style = [current.style, 'h-serif'].filter(Boolean).join(', ');
+        }
+        current.h3Font = h3Font;
+      }
       current.nodes.push(node);
     });
   });

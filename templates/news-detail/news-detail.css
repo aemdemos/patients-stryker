@@ -77,7 +77,7 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li)
 
 /* article h3: Futura Bold (the live h3 wraps span.futura-bold on 16 of 19 pages); the h-serif
    section style (styles/styles-corp.css) keeps the Egyptienne ones */
-body.news-detail main > .section > .default-content-wrapper > h3 {
+body.news-detail main > .section:not(.h-serif) > .default-content-wrapper > h3 {
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
 }

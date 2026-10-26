@@ -299,10 +299,12 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
+    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
     root.querySelectorAll("span.futura-bold, b, i, em, strong").forEach((el) => {
       let last = el.lastChild;
-      while (last && (last.nodeName === "BR" || last.nodeType === 3 && !last.textContent.trim())) {
-        el.after(last);
+      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
+        if (emptyElement(last)) last.remove();
+        else el.after(last);
         last = el.lastChild;
       }
     });
@@ -349,11 +351,20 @@ var CustomImportScript = (() => {
       return squash(bold.map((b) => b.textContent).join("")) === all;
     }));
   }
+  function serifHeadings(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return new Set([...root.querySelectorAll("h3")].filter((h) => {
+      if (!text(h) || h.querySelector(".futura-bold, b, strong")) return false;
+      const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
+      return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+    }));
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
     const plainBold = plainBoldParagraphs(box);
+    const serifHeads = serifHeadings(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = [];
@@ -374,6 +385,7 @@ var CustomImportScript = (() => {
     });
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
+      if (serifHeads.has(node)) node.serifHeading = true;
     });
     let last = null;
     nodes.forEach((node) => {
@@ -548,7 +560,16 @@ var CustomImportScript = (() => {
         const extra = [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);
         const kind = [centred ? "center" : "body", ...extra].join(" ");
-        if (!current || current.kind !== kind) startSection(kind, styles.join(", ") || void 0);
+        const h3Font = node.tagName === "H3" ? node.serifHeading ? "serif" : "futura" : null;
+        if (!current || current.kind !== kind || h3Font && current.h3Font && current.h3Font !== h3Font) {
+          startSection(kind, styles.join(", ") || void 0);
+        }
+        if (h3Font) {
+          if (h3Font === "serif" && current.h3Font !== "serif") {
+            current.style = [current.style, "h-serif"].filter(Boolean).join(", ");
+          }
+          current.h3Font = h3Font;
+        }
         current.nodes.push(node);
       });
     });
