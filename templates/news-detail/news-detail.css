@@ -100,7 +100,7 @@ body.news-detail main > .section > .default-content-wrapper > h4 {
   font-weight: var(--font-weight-bold);
 }
 
-/* the small-print section (`compact`: references and document code) sits directly
+/* the small-print section (`disclaimer`: references and document code) sits directly
    above the "Last Updated" line, as on the source */
 body.news-detail main > .section.disclaimer:has(+ .last-modified-section),
 body.news-detail main > .section.compact:has(+ .last-modified-section),
@@ -110,6 +110,10 @@ body.news-detail main > .section.compact > .default-content-wrapper > :last-chil
 
 body.news-detail main .dm-video {
   aspect-ratio: auto;
+}
+
+body.news-detail main a:any-link {
+  text-decoration: none;
 }
 
 @media (width >= 600px) {
@@ -126,7 +130,7 @@ body.news-detail main .dm-video {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.news-detail main > .section:not(.hero-container) > div {
+  body.news-detail main > .section:not(.hero-container, .cards-corp-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
 

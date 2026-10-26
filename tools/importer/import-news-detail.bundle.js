@@ -231,9 +231,10 @@ var CustomImportScript = (() => {
     return href && href.startsWith("/content/dam/") ? `${SOURCE_ORIGIN}${href}` : href;
   }
   function newTabHref(source, href) {
-    if (!href || (source.getAttribute("target") || "").toLowerCase() !== "_blank") return href;
-    if (href.includes("#") || /^(mailto|tel):/i.test(href)) return href;
-    return `${href}#_blank`;
+    if (!href || href.includes("#") || /^(mailto|tel):/i.test(href)) return href;
+    const isPdf = /\.pdf(\?|$)/i.test(href);
+    const newTab = (source.getAttribute("target") || "").toLowerCase() === "_blank";
+    return isPdf || newTab ? `${href}#_blank` : href;
   }
   var SIZE_STYLES = [
     ["fontsize-1-25em", "p-1-25"],
@@ -359,6 +360,32 @@ var CustomImportScript = (() => {
       return p;
     }).filter(Boolean);
   }
+  function footnoteList(nodes, doc) {
+    const NUMBERED = /^\s*(\d+)\s*[:.)]\s*/;
+    const out = [];
+    let ol = null;
+    nodes.forEach((node) => {
+      const match = node.tagName === "P" && node.textContent.match(NUMBERED);
+      const next = ol ? ol.children.length + 1 : 1;
+      if (match && Number(match[1]) === next) {
+        if (!ol) {
+          ol = doc.createElement("ol");
+          out.push(ol);
+        }
+        const walker = doc.createTreeWalker(node, 4);
+        let first = walker.nextNode();
+        while (first && !first.textContent.trim()) first = walker.nextNode();
+        if (first) first.textContent = first.textContent.replace(NUMBERED, "");
+        const li = doc.createElement("li");
+        while (node.firstChild) li.append(node.firstChild);
+        ol.append(li);
+        return;
+      }
+      ol = null;
+      out.push(node);
+    });
+    return out;
+  }
   function transform(hookName, element, payload) {
     if (hookName !== "beforeTransform") return;
     if (!payload || !payload.template || payload.template.name !== "news-detail") return;
@@ -444,13 +471,13 @@ var CustomImportScript = (() => {
       current.nodes.push(...nodes);
     });
     const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
-    const disclaimerNodes = disclaimers.flatMap((disclaimer) => {
+    const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
       box.innerHTML = disclaimer.innerHTML;
       cleanRichText(box);
       return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
-    });
-    if (disclaimerNodes.length) startSection("disclaimer", "compact").nodes.push(...disclaimerNodes);
+    }), doc);
+    if (disclaimerNodes.length) startSection("disclaimer", "disclaimer").nodes.push(...disclaimerNodes);
     const out = [];
     sections.filter((section) => section.nodes.length).forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
@@ -717,7 +744,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-news-detail.js
   var PAGE_TEMPLATE = {
     name: "news-detail",
-    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `compact` section; `published` metadata drives the corp Last Updated line.",
+    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
     urls: [
       "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
       "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",

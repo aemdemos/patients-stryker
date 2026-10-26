@@ -260,12 +260,31 @@ body:where(.corp):has(main .hero-carousel) header {
   color: inherit;
 }
 
+/* references (stryker.com .c-disclaimer "1: Author…" paragraphs): an ordered list so the
+   citation superscripts link to it (scripts.js decorateFootnotes), shown like the source —
+   "N: " in front of each entry, flush left, 15px between entries, then a section gap
+   (20px, 30px from 600px) before the document code */
+:where(body.corp) main > .section.disclaimer ol {
+  margin-bottom: var(--space-block-l);
+  padding-left: 0;
+  list-style: none;
+}
+
+:where(body.corp) main > .section.disclaimer ol > li {
+  margin-bottom: var(--space-block);
+  line-height: var(--paragraph-line-height);
+}
+
+:where(body.corp) main > .section.disclaimer ol > li::before {
+  content: counter(list-item) ": ";
+}
+
 :where(body.corp) main > .section.disclaimer p:last-child,
 :where(body.corp) main > .section.disclaimer :is(ol, ul):last-child {
   margin-bottom: 0;
 }
 
-:where(body.corp) main > .section.disclaimer :is(ol, ul) {
+:where(body.corp) main > .section.disclaimer ul {
   padding-left: var(--space-block-l);
 }
 
@@ -550,6 +569,10 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.separator {
     margin-bottom: var(--space-section-l);
+  }
+
+  :where(body.corp) main > .section.disclaimer ol {
+    margin-bottom: var(--space-section);
   }
 
   :where(body.corp) main > .section.last-modified-section,

@@ -14,7 +14,8 @@
  *      buttons) becomes its own section with the `center` section style.
  *   4. related-content cards (`.c-customizeable`): their heading plus the grid, left for
  *      the cards-corp-teaser parser, in a section of their own (full width)
- *   5. `.c-disclaimer` references and document code → a small-print `compact` section
+ *   5. `.c-disclaimer` references (numbered paragraphs → an ordered list, so the
+ *      citation superscripts link to them) and document code → a small-print `disclaimer` section
  * The "Last Updated" line is not content (scripts/corp.js renders it from `published`).
  *
  * Text normalisation (news-detail spec): source font spans are dropped (body text is
@@ -65,14 +66,16 @@ function absoluteAsset(href) {
 }
 
 /**
- * A source link that opens in a new tab (target="_blank") gets the author `#_blank`
- * marker (scripts.js decorateLinkTargets sets target="_blank" from it). Links that
- * already carry a #hash, mailto: and tel: are left as they are.
+ * A source link that opens in a new tab (target="_blank"), and every link to a PDF,
+ * gets the author `#_blank` marker (scripts.js decorateLinkTargets sets target="_blank"
+ * from it). The address itself is kept (PDFs stay on www.stryker.com, see
+ * absoluteAsset). Links that already carry a #hash, mailto: and tel: are left as they are.
  */
 function newTabHref(source, href) {
-  if (!href || (source.getAttribute('target') || '').toLowerCase() !== '_blank') return href;
-  if (href.includes('#') || /^(mailto|tel):/i.test(href)) return href;
-  return `${href}#_blank`;
+  if (!href || href.includes('#') || /^(mailto|tel):/i.test(href)) return href;
+  const isPdf = /\.pdf(\?|$)/i.test(href);
+  const newTab = (source.getAttribute('target') || '').toLowerCase() === '_blank';
+  return isPdf || newTab ? `${href}#_blank` : href;
 }
 
 // source copy spans → the corp section style that sets the same copy size / font
@@ -229,6 +232,41 @@ function headlineNodes(component, doc) {
   }).filter(Boolean);
 }
 
+/**
+ * References authored as numbered paragraphs ("1: Author…", "2: …") become an ordered
+ * list, so the article's citation superscripts link to them: scripts.js
+ * decorateFootnotes links <sup>N</sup> to the Nth item of the last <ol> on the page.
+ * Only a run numbered 1, 2, 3… in order is converted; the "N:" prefix is dropped (the
+ * list numbers the items). Other paragraphs (e.g. the document code) are left as they are.
+ */
+function footnoteList(nodes, doc) {
+  const NUMBERED = /^\s*(\d+)\s*[:.)]\s*/;
+  const out = [];
+  let ol = null;
+  nodes.forEach((node) => {
+    const match = node.tagName === 'P' && node.textContent.match(NUMBERED);
+    const next = ol ? ol.children.length + 1 : 1;
+    if (match && Number(match[1]) === next) {
+      if (!ol) {
+        ol = doc.createElement('ol');
+        out.push(ol);
+      }
+      // drop the "N:" prefix from the first text node
+      const walker = doc.createTreeWalker(node, 4);
+      let first = walker.nextNode();
+      while (first && !first.textContent.trim()) first = walker.nextNode();
+      if (first) first.textContent = first.textContent.replace(NUMBERED, '');
+      const li = doc.createElement('li');
+      while (node.firstChild) li.append(node.firstChild);
+      ol.append(li);
+      return;
+    }
+    ol = null;
+    out.push(node);
+  });
+  return out;
+}
+
 export default function transform(hookName, element, payload) {
   if (hookName !== 'beforeTransform') return;
   if (!payload || !payload.template || payload.template.name !== 'news-detail') return;
@@ -332,14 +370,15 @@ export default function transform(hookName, element, payload) {
   // source order. The page's own "Last Updated" wrapper (#publishedDate) is not content.
   const disclaimers = [...doc.querySelectorAll('.c-disclaimer')]
     .filter((el) => !el.querySelector('#publishedDate') && !el.parentElement.closest('.c-disclaimer') && text(el));
-  const disclaimerNodes = disclaimers.flatMap((disclaimer) => {
+  const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
     const box = doc.createElement('div');
     box.innerHTML = disclaimer.innerHTML;
     cleanRichText(box);
     return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
-  });
-  // small print: the shared `compact` section style (11.2px copy, plain links)
-  if (disclaimerNodes.length) startSection('disclaimer', 'compact').nodes.push(...disclaimerNodes);
+  }), doc);
+  // small print: the corp `disclaimer` section style (11.2px copy; references as
+  // "N: " entries 15px apart, then the document code)
+  if (disclaimerNodes.length) startSection('disclaimer', 'disclaimer').nodes.push(...disclaimerNodes);
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata
   const out = [];
