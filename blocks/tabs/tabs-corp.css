@@ -1,0 +1,16 @@
+/*
+ * Tabs: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). The tab row (Futura 14px uppercase, grey
+ * dividers, 1px gold line under the active tab) is shared with patients; corp panels
+ * start 20px below the tab row on mobile, 30px from 600px (source 480px).
+ */
+
+body.corp .tabs .tabs-panel {
+  margin-top: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .tabs .tabs-panel {
+    margin-top: var(--space-section);
+  }
+}

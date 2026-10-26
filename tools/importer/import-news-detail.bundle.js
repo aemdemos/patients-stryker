@@ -200,9 +200,57 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
   }
 
+  // tools/importer/xf-fragment-map.js
+  var xf_fragment_map_default = {
+    "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
+      name: 'Acute Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master": {
+      name: 'Emergency Care "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sage/en/footer/footer/master": {
+      name: 'Sage "Resources" links'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master": {
+      name: 'Sustainability "Connect with us" band (above the form)'
+    },
+    "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master": {
+      name: "Sustainability contact aside (next to the form)"
+    },
+    "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master": {
+      name: "Sage contact aside (LinkedIn / Facebook icons)"
+    },
+    "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
+      name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
+    }
+  };
+
+  // tools/importer/xf-fragment-path.js
+  var XF_ROOT = "/content/experience-fragments/";
+  var FRAGMENTS_ROOT = "/us/en/fragments/";
+  function xfKey(xf) {
+    return String(xf || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
+  }
+  function xfToFragmentPath(xf) {
+    const key = xfKey(xf);
+    if (!key.startsWith(XF_ROOT)) return null;
+    const segments = key.slice(XF_ROOT.length).split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
+    return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
+  }
+  function xfFragmentPath(xf) {
+    return xf_fragment_map_default[xfKey(xf)] ? xfToFragmentPath(xf) : null;
+  }
+
   // tools/importer/transformers/news-detail-sections.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
+  var SHARED_RESOURCES_XF = {
+    "emergency-care": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+  };
+  var FULL_ARTICLE = /^read (the )?full (article|story)$/i;
   var COMPONENTS = [
+    ".c-accordion",
+    ".c-tabs",
+    ".xf-shared",
     ".c-autocarousel",
     ".c-standalone-image",
     ".c-rich-text-editor",
@@ -214,10 +262,11 @@ var CustomImportScript = (() => {
     ".c-section-separator",
     ".sectionseparator"
   ].join(", ");
+  var INVISIBLE = /^[\s\u200e\u200f\u2800\u3164]+|[\s\u200e\u200f\u2800\u3164]+$/g;
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
   function text(el) {
-    return (el.textContent || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+    return (el.textContent || "").replace(/ /g, " ").replace(/\s+/g, " ").replace(INVISIBLE, "");
   }
   function rename(el, tagName) {
     const doc = el.ownerDocument;
@@ -476,6 +525,16 @@ var CustomImportScript = (() => {
       cells: [[media, statement]]
     });
   }
+  function threeUpCards(component, doc) {
+    const box = doc.createElement("div");
+    box.append(component);
+    parse2(component, { document: doc });
+    const table = box.querySelector("table");
+    const name = table && table.querySelector("tr > th, tr > td");
+    if (!name) return null;
+    name.textContent = "Cards Corp (teaser, three-up)";
+    return table;
+  }
   function footnoteList(nodes, doc) {
     const NUMBERED = /^\s*(\d+)\s*[:.)]\s*/;
     const out = [];
@@ -504,7 +563,7 @@ var CustomImportScript = (() => {
     if (!payload || !payload.template || payload.template.name !== "news-detail") return;
     const doc = element.ownerDocument;
     const main = doc.querySelector('[role="main"]') || element;
-    const sections = [];
+    let sections = [];
     let current = null;
     let separatorNext = false;
     const startSection = (kind, sectionStyle) => {
@@ -528,14 +587,106 @@ var CustomImportScript = (() => {
       h5.textContent = text(date);
       title.nodes.push(h5);
     }
-    const components = [...main.querySelectorAll(COMPONENTS)].filter((el) => {
-      const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
-      return !parent && !el.closest("header, footer, .modal");
+    main.querySelectorAll(".experienceFragment").forEach((xf) => {
+      const heading = xf.querySelector('.c-section-title[data-title="Resources"]');
+      const path = heading && SHARED_RESOURCES_XF[heading.id] && xfFragmentPath(SHARED_RESOURCES_XF[heading.id]);
+      if (!path) return;
+      const marker = doc.createElement("div");
+      marker.className = "xf-shared";
+      marker.setAttribute("data-path", path);
+      xf.replaceWith(marker);
     });
+    const outermost = (root) => [...root.querySelectorAll(COMPONENTS)].filter((el) => {
+      const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
+      return (!parent || !root.contains(parent)) && !el.closest("header, footer, .modal");
+    });
+    const components = outermost(main);
     const consumed = /* @__PURE__ */ new Set();
-    components.forEach((component) => {
+    let handle;
+    const panelNodes = (body) => {
+      const saved = [sections, current, separatorNext];
+      sections = [];
+      current = null;
+      outermost(body).forEach(handle);
+      const nodes = sections.flatMap((section) => section.nodes);
+      [sections, current, separatorNext] = saved;
+      return nodes;
+    };
+    handle = (component) => {
       if (consumed.has(component)) return;
       const isFirst = current === title;
+      if (component.matches(".c-accordion")) {
+        const panels = [...component.querySelectorAll(".panel-group > .panel")].map((panel) => ({
+          label: text(panel.querySelector(".panel-title") || doc.createElement("p")),
+          body: panel.querySelector(".panel-body")
+        })).filter((panel) => panel.label && panel.body);
+        if (!panels.length) return;
+        const items = panels.map(({ label, body }) => ({ label, nodes: panelNodes(body) }));
+        const source = component.querySelector(".component-subheading");
+        const heading = source && text(source) ? doc.createElement(source.tagName.toLowerCase()) : null;
+        if (heading) heading.textContent = text(source);
+        const textOnly = items.every(({ nodes: nodes2 }) => nodes2.every((node) => BLOCK_TAGS.has(node.tagName) && !node.querySelector("img")));
+        if (textOnly && !items.some(({ label }) => FULL_ARTICLE.test(label))) {
+          const section = startSection("accordion");
+          if (heading) section.nodes.push(heading);
+          section.nodes.push(WebImporter.Blocks.createBlock(doc, {
+            name: "Accordion",
+            cells: items.map(({ label, nodes: nodes2 }) => {
+              const p = doc.createElement("p");
+              p.textContent = label;
+              return [p, nodes2];
+            })
+          }));
+        } else {
+          if (heading) startSection("body").nodes.push(heading);
+          items.forEach(({ label, nodes: nodes2 }) => {
+            const h4 = doc.createElement("h4");
+            h4.textContent = label;
+            startSection("accordion-panel", "accordion-panel").nodes.push(h4, ...nodes2);
+          });
+        }
+        current = null;
+        return;
+      }
+      if (component.matches(".c-tabs")) {
+        const labels = [...component.querySelectorAll(".tabs-nav ul.tab > li a")].map((a) => text(a));
+        const panes = [...component.querySelectorAll(".tabs-content > .tab-content")];
+        const tabs = panes.map((pane, i) => {
+          const nodes2 = outermost(pane).flatMap((child) => {
+            if (child.matches(".c-customizeable")) {
+              const table = threeUpCards(child, doc);
+              return table ? [table] : [];
+            }
+            return child.matches(".c-rich-text-editor") ? richTextNodes(child, doc).nodes : [];
+          });
+          return { label: labels[i], nodes: nodes2 };
+        }).filter(({ label, nodes: nodes2 }) => label && nodes2.length);
+        if (!tabs.length) return;
+        const section = startSection("tabs", "tabbed");
+        tabs.forEach(({ label, nodes: nodes2 }) => {
+          const h2 = doc.createElement("h2");
+          h2.textContent = label;
+          section.nodes.push(h2, ...nodes2);
+        });
+        current = null;
+        return;
+      }
+      if (component.matches(".c-largeheadline") && component.querySelector("h1") && !title.nodes.some((node) => node.tagName === "H1")) {
+        const lines = headlineNodes(component, doc);
+        if (!lines.length) return;
+        const heading = doc.createElement("h1");
+        heading.textContent = lines.map((line) => text(line)).join(" ");
+        title.nodes.unshift(heading);
+        return;
+      }
+      if (component.matches(".xf-shared")) {
+        const a = doc.createElement("a");
+        a.setAttribute("href", component.getAttribute("data-path"));
+        a.textContent = component.getAttribute("data-path");
+        startSection("fragment").nodes.push(WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[a]] }));
+        current = null;
+        return;
+      }
       if (component.matches(".c-autocarousel")) {
         if (!component.querySelector("img")) return;
         startSection("hero").nodes.push(component);
@@ -620,7 +771,8 @@ var CustomImportScript = (() => {
         }
         current.nodes.push(node);
       });
-    });
+    };
+    components.forEach(handle);
     const disclaimers = [...doc.querySelectorAll(".c-disclaimer")].filter((el) => !el.querySelector("#publishedDate") && !el.parentElement.closest(".c-disclaimer") && text(el));
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");

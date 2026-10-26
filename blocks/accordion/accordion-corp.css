@@ -1,14 +1,23 @@
 /*
  * Accordion: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
  * (CORP_BLOCK_STYLES in scripts/corp.js). The label font, size and case are shared
- * with patients; corp labels have no rule under them, sit 15px above the panel and
- * the panel body has no padding.
+ * with patients. Corp labels sit 15px above the panel and the panel body has no
+ * padding. The 1px grey rule sits under a closed item's label; an open item has it
+ * under its panel instead (source: a.collapsed / .panel-collapse border-bottom).
+ * The accordion ends 20px below its last rule (source .c-accordion padding-bottom).
  */
+
+body.corp .accordion {
+  padding-bottom: var(--space-block-l);
+}
 
 body.corp .accordion .accordion-item-label {
   margin-bottom: var(--space-block);
   padding: var(--space-block-s) 0;
-  border: 0;
+}
+
+body.corp .accordion .accordion-item-open .accordion-item-label {
+  border-bottom: 0;
 }
 
 body.corp .accordion .accordion-item-label::after {
@@ -17,7 +26,6 @@ body.corp .accordion .accordion-item-label::after {
 
 body.corp .accordion .accordion-item-body {
   padding: 0;
-  border: 0;
 }
 
 @media (width >= 900px) {
