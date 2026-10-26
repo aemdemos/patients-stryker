@@ -11,6 +11,8 @@
   /* header-corp: 90px chrome below 900px; 87px white row + 60px gold nav bar from 900px */
   --corp-chrome-height: 90px;
   --corp-header-gap: var(--space-block-s);
+  --corp-page-title-offset: 28px; /* page title band: title below the band top */
+  --corp-page-title-line-height-s: 22.26px; /* page title band below 600px */
   --corp-hcp-band-height: 114px; /* HCP notice band, including its top margin */
   --corp-back-to-top-size: 40px;
   --corp-back-to-top-icon-size: 16px;
@@ -99,6 +101,15 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 400;
 }
 
+/* [[color-light-gray]…]: light grey text (#edeeec), next to the [[color-…]] tags in styles.css */
+:where(body.corp) span.color-light-gray,
+:where(body.corp) span.color-light-gray :is(strong, b, em, i, a:any-link) {
+  --span-color: var(--color-surface);
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}
+
 /* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
 :where(body.corp) main > .section > .default-content-wrapper h2 {
   padding-bottom: var(--heading-underline-gap);
@@ -116,6 +127,40 @@ body:where(.corp):has(main .hero-carousel) header {
   padding-bottom: var(--heading-underline-gap);
   border-bottom: 1px solid var(--color-surface-muted);
   font-size: var(--heading-font-size-l);
+}
+
+/* gold rule: [[rule-gold]…] inside an underlined heading draws its rule in gold while the
+   title keeps its own colour (live features titles: black Futura title over a gold rule) */
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u)):has(span.rule-gold) {
+  border-bottom-color: var(--color-accent);
+}
+
+/* an underlined h1 is still the page title: it keeps the h1 size (the underline size above
+   comes from the h2 section headings) */
+:where(body.corp) main h1:is(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xxl);
+}
+
+/* page title band: an underlined Heading 1 opening the page (stryker.com page hero, e.g. the
+   SVIN and security-advisories pages): Futura bold 28px, 28px below the band top, the rule
+   15px under the title; from 600px the title keeps to the left half, the rule spans the page.
+   Bold + italic keeps the gold title. */
+:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:first-child {
+  margin: 0 0 var(--space-block-l);
+  padding: var(--corp-page-title-offset) 0 var(--space-block);
+  font-family: var(--display-font-family-bold);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-page-title-line-height-s);
+}
+
+/* a title band alone in its section: the section gap (20px, 30px from 600px) is the space below
+   it, as between stryker.com components */
+:where(body.corp) main > .section:first-child > .default-content-wrapper:has(> h1.underline:only-child) {
+  padding-bottom: 0;
+}
+
+:where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:only-child {
+  margin-bottom: 0;
 }
 
 :where(body.corp) main > .section > .default-content-wrapper h2 > u {
@@ -347,6 +392,16 @@ body:where(.corp):has(main .hero-carousel) header {
   :where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
   :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
     font-size: var(--heading-font-size-xl);
+  }
+
+  :where(body.corp) main h1:is(.underline, :has(> u)) {
+    font-size: var(--heading-font-size-xxl);
+  }
+
+  :where(body.corp) main > .section:first-child > .default-content-wrapper > h1.underline:first-child {
+    margin-bottom: var(--space-inset-l);
+    padding-inline-end: calc(50% + var(--container-gutter));
+    line-height: var(--heading-line-height);
   }
 
   :where(body.corp) main > .section {
