@@ -29,6 +29,12 @@
   --corp-share-icon-radius: 5px;
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
+
+  /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
+  --corp-color-purple-dark: #753d79;
+  --corp-color-purple-pressed: #643468;
+  --corp-color-navy-bright-dark: #184972;
+  --corp-color-navy-bright-pressed: #133b5d;
 }
 
 @media (width >= 900px) {
@@ -116,6 +122,25 @@ body:where(.corp):has(main .hero-carousel) header {
   padding-bottom: var(--heading-underline-gap);
   border-bottom: 1px solid var(--color-surface-muted);
   font-size: var(--heading-font-size-l);
+}
+
+/* gold rule: [[rule-gold]…] inside an underlined heading draws its rule in gold while the
+   title keeps its own colour (live features titles: black Futura title over a gold rule) */
+:where(body.corp) main :is(h1, h2, h3, h4, h5, h6):is(.underline, :has(> u)):has(span.rule-gold) {
+  border-bottom-color: var(--color-accent);
+}
+
+/* an underlined h1 is still the page title: it keeps the h1 size (the underline size above
+   comes from the h2 section headings) */
+:where(body.corp) main h1:is(.underline, :has(> u)) {
+  font-size: var(--heading-font-size-xxl);
+}
+
+/* h-serif section style: the section's h2 / h3 in Egyptienne Light (live h2 / h3 without
+   span.futura-bold) instead of Futura bold; h4 stays Futura, as live */
+:where(body.corp) main > .section.h-serif > div :is(h2, h3) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
 }
 
 :where(body.corp) main > .section > .default-content-wrapper h2 > u {
@@ -278,6 +303,27 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: var(--space-block-l);
 }
 
+/* section styles btn-purple / btn-blue: the section's bold-link buttons in purple or blue */
+:where(body.corp) main .section.btn-purple a.button.primary:any-link {
+  border-color: var(--corp-color-purple-dark);
+  background-color: var(--color-purple);
+}
+
+:where(body.corp) main .section.btn-blue a.button.primary:any-link {
+  border-color: var(--corp-color-navy-bright-dark);
+  background-color: var(--color-navy-bright);
+}
+
+:where(body.corp) main .section.btn-purple a.button.primary:any-link:is(:hover, :focus-visible) {
+  border-color: var(--corp-color-purple-pressed);
+  background-color: var(--corp-color-purple-pressed);
+}
+
+:where(body.corp) main .section.btn-blue a.button.primary:any-link:is(:hover, :focus-visible) {
+  border-color: var(--corp-color-navy-bright-pressed);
+  background-color: var(--corp-color-navy-bright-pressed);
+}
+
 /* ---- back-to-top control (corp.js) ---- */
 :where(body.corp) .back-to-top {
   visibility: hidden;
@@ -347,6 +393,10 @@ body:where(.corp):has(main .hero-carousel) header {
   :where(body.corp) main :is(h1, h2, h3, h4, h5, h6).underline,
   :where(body.corp) main :is(h1, h2, h3, h4, h5, h6):has(> u) {
     font-size: var(--heading-font-size-xl);
+  }
+
+  :where(body.corp) main h1:is(.underline, :has(> u)) {
+    font-size: var(--heading-font-size-xxl);
   }
 
   :where(body.corp) main > .section {
