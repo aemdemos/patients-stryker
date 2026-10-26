@@ -46,6 +46,7 @@
   --corp-image-slide-size: 1;
   --corp-image-slide-video-bleed: 12px;
   --corp-image-slide-stripe-height: 34px;
+  --corp-image-slide-max-height: 33.33vw; /* the slide window from 600px */
   --corp-image-slide-stripe-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
 
   /* tagline-band */
@@ -183,6 +184,7 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
    slide alone; the phone headline (under the image) and the stripe follow in their own rows */
 .hero-corp.image-slide {
   display: grid;
+  box-sizing: content-box; /* the slide window (from 600px) excludes the stripe border */
   grid-template-columns: 100%;
   min-height: 0;
   margin-bottom: var(--space-block-l);
@@ -317,16 +319,21 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 .hero-corp.image-slide span.size-8 { --corp-image-slide-size: 8; }
 .hero-corp.image-slide span.size-9 { --corp-image-slide-size: 9; }
 
-/* stripe-gold / stripe-gradient: a 34px full-width band under the slide */
-.hero-corp.image-slide:is(.stripe-gold, .stripe-gradient)::after {
-  content: "";
-  display: block;
-  height: var(--corp-image-slide-stripe-height);
-  background: var(--color-accent);
+/* buttons (a bold link alone on its line): 15px below each, as the source .btn */
+.hero-corp.image-slide p.button-wrapper {
+  margin-bottom: var(--space-block);
 }
 
-.hero-corp.image-slide.stripe-gradient::after {
-  background: var(--corp-image-slide-stripe-gradient);
+/* stripe-gold / stripe-gradient: a 34px full-width band under the slide (a bottom border, so it
+   sits under the slide window); on phones 20px below the slide (the source carousel's own
+   bottom margin comes first; from 841px it is clipped) */
+.hero-corp.image-slide:is(.stripe-gold, .stripe-gradient) {
+  padding-bottom: var(--space-block-l);
+  border-bottom: var(--corp-image-slide-stripe-height) solid var(--color-accent);
+}
+
+.hero-corp.image-slide.stripe-gradient {
+  border-image: var(--corp-image-slide-stripe-gradient) 1;
 }
 
 /* from 600px: roomier tagline-band with a larger message,
@@ -384,8 +391,12 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
     font-size: var(--corp-tagline-band-message-size);
   }
 
+  /* the slide window: at most 33.33vw tall, as the source .carouselslidegroup; taller images
+     and videos are cut at the bottom, the headline position still counts from the full image */
   .hero-corp.image-slide {
+    max-height: var(--corp-image-slide-max-height);
     margin-bottom: var(--space-inset-l);
+    overflow: clip;
   }
 
   /* the desktop image (or video) shows, the mobile image hides */
@@ -414,6 +425,10 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 
   .hero-corp.image-slide .hero-corp-headline {
     margin-bottom: var(--space-inset-l);
+  }
+
+  .hero-corp.image-slide:is(.stripe-gold, .stripe-gradient) {
+    padding-bottom: 0;
   }
 
   /* from 600px the colour tags show again */

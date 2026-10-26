@@ -455,16 +455,16 @@ var CustomImportScript = (() => {
       };
       const text1 = document.createTextNode(core);
       const inner = run.bold && !run.boldOuter ? bold(text1) : text1;
-      let parts = run.tags ? [document.createTextNode(`[[${run.tags}]`), inner, document.createTextNode("]")] : [inner];
+      let parts = run.tags ? [document.createTextNode(`[[${run.tags}]${lead}`), inner, document.createTextNode(`${tail}]`)] : [inner];
       if (run.bold && run.boldOuter) parts = [bold(...parts)];
-      if (lead) out.push(document.createTextNode(lead));
+      if (lead && !run.tags) out.push(document.createTextNode(lead));
       if (run.href) {
         const a = document.createElement("a");
         a.href = run.href;
         a.append(...parts);
         out.push(a);
       } else out.push(...parts);
-      if (tail) out.push(document.createTextNode(tail));
+      if (tail && !run.tags) out.push(document.createTextNode(tail));
     });
     return out;
   }

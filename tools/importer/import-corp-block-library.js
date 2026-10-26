@@ -397,7 +397,8 @@ function slideLineNodes(line, document) {
     if (i === 0 || runs[i - 1].br) text = text.replace(/^\s+/, '');
     if (i === runs.length - 1 || runs[i + 1].br) text = text.replace(/\s+$/, '');
     if (!text) return;
-    // keep outer spaces outside the formatting
+    // spaces between runs: inside the size / colour tag (the source keeps them in the run, so
+    // a space after a 42px run is 42px wide), outside bold and links (Markdown trims them)
     const [, lead, core, tail] = text.match(/^(\s*)(.*?)(\s*)$/s);
     const bold = (...nodes) => {
       const b = document.createElement('b');
@@ -406,16 +407,18 @@ function slideLineNodes(line, document) {
     };
     const text1 = document.createTextNode(core);
     const inner = run.bold && !run.boldOuter ? bold(text1) : text1;
-    let parts = run.tags ? [document.createTextNode(`[[${run.tags}]`), inner, document.createTextNode(']')] : [inner];
+    let parts = run.tags
+      ? [document.createTextNode(`[[${run.tags}]${lead}`), inner, document.createTextNode(`${tail}]`)]
+      : [inner];
     if (run.bold && run.boldOuter) parts = [bold(...parts)];
-    if (lead) out.push(document.createTextNode(lead));
+    if (lead && !run.tags) out.push(document.createTextNode(lead));
     if (run.href) {
       const a = document.createElement('a');
       a.href = run.href;
       a.append(...parts);
       out.push(a);
     } else out.push(...parts);
-    if (tail) out.push(document.createTextNode(tail));
+    if (tail && !run.tags) out.push(document.createTextNode(tail));
   });
   return out;
 }
