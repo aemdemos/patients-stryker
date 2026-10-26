@@ -616,9 +616,16 @@ export default function transform(hookName, element, payload) {
   const disclaimerStyle = disclaimerNodes.converted ? 'disclaimer, references-spaced' : 'disclaimer';
   if (disclaimerNodes.length) startSection('disclaimer', disclaimerStyle).nodes.push(...disclaimerNodes);
 
-  // rebuild the body: sections separated by <hr>, each with its Section Metadata
+  // full-width pages (a video + Large Headline row) open with a `spacer` section after the
+  // title: the source row starts 46px below the date (30px spacer + the 15px title gap)
+  if (element.getAttribute('data-news-theme') === 'full-width') {
+    sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
+  }
+
+  // rebuild the body: sections separated by <hr>, each with its Section Metadata (a
+  // `spacer` section is the metadata alone)
   const out = [];
-  sections.filter((section) => section.nodes.length).forEach((section, i) => {
+  sections.filter((section) => section.nodes.length || section.kind === 'spacer').forEach((section, i) => {
     if (i > 0) out.push(doc.createElement('hr'));
     out.push(...section.nodes);
     if (section.style) {

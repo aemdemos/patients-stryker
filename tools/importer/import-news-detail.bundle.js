@@ -630,8 +630,11 @@ var CustomImportScript = (() => {
     }), doc);
     const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
     if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
+    if (element.getAttribute("data-news-theme") === "full-width") {
+      sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
+    }
     const out = [];
-    sections.filter((section) => section.nodes.length).forEach((section, i) => {
+    sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
       out.push(...section.nodes);
       if (section.style) {
