@@ -24,7 +24,7 @@ function encodePath(path) {
   return path.split('/').map((part) => encodeURIComponent(part)).join('/');
 }
 
-function videoLink(element, document) {
+export function videoLink(element, document) {
   const a = document.createElement('a');
   const dm = element.querySelector('[data-asset-path]');
   if (dm) {

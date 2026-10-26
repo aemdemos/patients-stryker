@@ -310,8 +310,9 @@ body.corp .columns.large-headline p:has(> a.link-strong:only-child) {
 }
 
 /* gray-lead: the last cell opens with a light-grey box (stryker.com bg-light-gray
-   Large Headline: 20px padding); the cell itself starts level with the row (below) */
-body.corp .columns.gray-lead > div > div:last-child > p:first-child {
+   Large Headline: 20px padding) — its first paragraph, or a Heading 2 statement; the cell
+   itself starts level with the row (below) */
+body.corp .columns.gray-lead > div > div:last-child > :is(p, h2):first-child {
   margin-bottom: var(--space-section-l);
   padding: var(--space-block-l);
   background-color: var(--color-surface);

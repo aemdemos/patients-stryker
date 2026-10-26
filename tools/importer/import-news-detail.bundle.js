@@ -447,7 +447,8 @@ var CustomImportScript = (() => {
   function headlineNodes(component, doc) {
     const box = doc.createElement("div");
     box.innerHTML = component.innerHTML;
-    const lines = [...box.querySelectorAll(".line")];
+    const lines = [...box.querySelectorAll(".line")].map((line) => rename(line, "div"));
+    lines.forEach((line) => line.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(unwrap));
     cleanRichText(box);
     return (lines.length ? lines : [box]).map((line) => {
       if (!text(line)) return null;
@@ -455,6 +456,25 @@ var CustomImportScript = (() => {
       while (line.firstChild) p.append(line.firstChild);
       return p;
     }).filter(Boolean);
+  }
+  function videoAside(video) {
+    const col = video.closest('[class*="col-sm-8"]');
+    const row = col && col.parentElement;
+    const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+    const headline2 = aside && aside.querySelector(".c-largeheadline");
+    return headline2 && text(headline2) ? headline2 : null;
+  }
+  function videoHeadlineColumns(video, headline2, doc) {
+    const link2 = videoLink(video, doc);
+    const lines = headlineNodes(headline2, doc);
+    if (!link2 || !lines.length) return null;
+    const media = doc.createElement("p");
+    media.append(link2);
+    const statement = [rename(lines[0], "h2"), ...lines.slice(1)];
+    return WebImporter.Blocks.createBlock(doc, {
+      name: "Columns (columns-67-33, large-headline, gray-lead)",
+      cells: [[media, statement]]
+    });
   }
   function footnoteList(nodes, doc) {
     const NUMBERED = /^\s*(\d+)\s*[:.)]\s*/;
@@ -512,7 +532,9 @@ var CustomImportScript = (() => {
       const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
       return !parent && !el.closest("header, footer, .modal");
     });
+    const consumed = /* @__PURE__ */ new Set();
     components.forEach((component) => {
+      if (consumed.has(component)) return;
       const isFirst = current === title;
       if (component.matches(".c-autocarousel")) {
         if (!component.querySelector("img")) return;
@@ -553,6 +575,14 @@ var CustomImportScript = (() => {
       }
       if (component.matches(".c-standalone-video")) {
         if (!component.querySelector("[data-asset-path], iframe[src]")) return;
+        const aside = videoAside(component);
+        const columns = aside && videoHeadlineColumns(component, aside, doc);
+        if (columns) {
+          consumed.add(aside);
+          startSection("columns").nodes.push(columns);
+          current = null;
+          return;
+        }
         if (!current || current.kind !== "body") startSection("body");
         current.nodes.push(component);
         return;

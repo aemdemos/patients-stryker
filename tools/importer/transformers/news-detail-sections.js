@@ -12,6 +12,9 @@
  *   3. article sections: rich text, standalone images and `.c-standalone-video` (left for
  *      the video parser). A run of centred content (centred rich text, `.c-curatedcta`
  *      buttons) becomes its own section with the `center` section style.
+ *   3a. a video with a Large Headline beside it (col-sm-8 + col-sm-4 row, e.g. the
+ *       StrykerTalks podcasts) → `Columns (columns-67-33, large-headline, gray-lead)`, full
+ *       width: the video link, then the headline as a Heading 2 statement in the grey box
  *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
  *       section that follows the rule
  *   4. related-content cards (`.c-customizeable`): their heading plus the grid, left for
@@ -32,6 +35,8 @@
  * Asset links (/content/dam/...) point at www.stryker.com, where the files live; links
  * that open in a new tab on the source get the `#_blank` marker.
  */
+
+import { videoLink } from '../parsers/video.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -363,11 +368,16 @@ function buttonNodes(component, doc) {
   });
 }
 
-/** A large headline outside the slide: each non-empty line as a paragraph. */
+/**
+ * A large headline outside the slide: each non-empty line as a paragraph (a heading in a
+ * line gives its text, not the heading). The line spans become divs first: cleanRichText
+ * unwraps spans, which would empty them.
+ */
 function headlineNodes(component, doc) {
   const box = doc.createElement('div');
   box.innerHTML = component.innerHTML;
-  const lines = [...box.querySelectorAll('.line')];
+  const lines = [...box.querySelectorAll('.line')].map((line) => rename(line, 'div'));
+  lines.forEach((line) => line.querySelectorAll('h1, h2, h3, h4, h5, h6, p').forEach(unwrap));
   cleanRichText(box);
   return (lines.length ? lines : [box]).map((line) => {
     if (!text(line)) return null;
@@ -375,6 +385,32 @@ function headlineNodes(component, doc) {
     while (line.firstChild) p.append(line.firstChild);
     return p;
   }).filter(Boolean);
+}
+
+/**
+ * A Large Headline in the one-third column next to a video (the col-sm-8 / col-sm-4
+ * row of the StrykerTalks podcast pages), or null.
+ */
+function videoAside(video) {
+  const col = video.closest('[class*="col-sm-8"]');
+  const row = col && col.parentElement;
+  const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+  const headline = aside && aside.querySelector('.c-largeheadline');
+  return headline && text(headline) ? headline : null;
+}
+
+/** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
+function videoHeadlineColumns(video, headline, doc) {
+  const link = videoLink(video, doc);
+  const lines = headlineNodes(headline, doc);
+  if (!link || !lines.length) return null;
+  const media = doc.createElement('p');
+  media.append(link);
+  const statement = [rename(lines[0], 'h2'), ...lines.slice(1)];
+  return WebImporter.Blocks.createBlock(doc, {
+    name: 'Columns (columns-67-33, large-headline, gray-lead)',
+    cells: [[media, statement]],
+  });
 }
 
 /**
@@ -452,7 +488,9 @@ export default function transform(hookName, element, payload) {
     return !parent && !el.closest('header, footer, .modal');
   });
 
+  const consumed = new Set();
   components.forEach((component) => {
+    if (consumed.has(component)) return;
     const isFirst = current === title;
     if (component.matches('.c-autocarousel')) {
       if (!component.querySelector('img')) return;
@@ -501,6 +539,14 @@ export default function transform(hookName, element, payload) {
     }
     if (component.matches('.c-standalone-video')) {
       if (!component.querySelector('[data-asset-path], iframe[src]')) return;
+      const aside = videoAside(component);
+      const columns = aside && videoHeadlineColumns(component, aside, doc);
+      if (columns) {
+        consumed.add(aside);
+        startSection('columns').nodes.push(columns);
+        current = null;
+        return;
+      }
       if (!current || current.kind !== 'body') startSection('body');
       current.nodes.push(component);
       return;
