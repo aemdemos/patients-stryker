@@ -7,9 +7,16 @@
  * an h1; the authoring conventions style it: whole heading underlined = a thin rule under
  * the band, heading bold + italic = gold title.
  *
- * image-slide: a full-width image with a two-line headline over it. Authored as
- * | image | h1 + p |: the h1 is line 1, the p line 2; bold = Futura bold, bold + italic =
- * gold, plain = serif light. Below 600px the headline stacks under the image.
+ * image-slide: a full-width slide (image, or a DM video in a 3:1 frame) with a headline
+ * box over it (stryker.com single-slide c-autocarousel). Rows: | desktop image or video |,
+ * | mobile image | (optional), | lines + buttons |. Lines: a paragraph per line (a heading
+ * keeps its level); plain = Egyptienne light, bold = Futura bold, colours by [[color-…]],
+ * sizes by [[size-N]] (N vw from 600px up to N x 14px, 2N vw below, as fontsize-Nvw).
+ * Options: box-white / -gold / -blue / -gray / -dark; box-mt-N … box-pl-N (box margin /
+ * padding %); top-N / left-N / right-N (headline position, % of the slide); mobile-below
+ * (phones: mobile image, then the headline); mobile-text-black; stripe-gold /
+ * stripe-gradient (34px band under the slide). Phones hide the desktop image or video; the
+ * headline sits over the mobile image, or alone when there is none.
  *
  * tagline-band: a gold band in the page container holding a Futura bold h1 title and a
  * serif light h2 message. Authored as one row: h1 + h2.
@@ -30,19 +37,20 @@ body.corp .hero {
   --corp-page-hero-title-offset: 28px;
   --corp-page-hero-title-line-height-s: 22.26px;
 
-  /* image-slide: title and copy overlaid on the image */
-  --corp-image-slide-title-size-s: 7vw;
-  --corp-image-slide-title-size: 3.5vw; /* capped by --heading-font-size-hero-xl */
-  --corp-image-slide-copy-size-s: 4vw;
-  --corp-image-slide-copy-size: 2vw; /* capped by --heading-font-size-xxl */
-  --corp-image-slide-title-line-height: 1.65;
-  --corp-image-slide-title-shift: -0.15em;
-  --corp-image-slide-copy-line-height: 1.36;
-  --corp-image-slide-copy-foot: 0.28em;
-  --corp-image-slide-copy-line-height-s: 27.5px;
-  --corp-image-slide-copy-foot-s: 5px;
-  --corp-image-slide-copy-top: 35%;
-  --corp-image-slide-copy-inset: 10%;
+  /* image-slide: headline over the image (source c-autocarousel slide + c-largeheadline) */
+  --hero-box-top: 35%;
+  --hero-box-left: 10%;
+  --hero-box-right: 10%;
+  --corp-image-slide-line-size-s: 21px; /* an untagged line below 600px */
+  --corp-image-slide-line-size: 14px; /* an untagged line from 1400px; 1vw below */
+  --corp-image-slide-line-height-s: normal; /* the first line below 600px */
+  --corp-image-slide-next-line-height-s: 1.4286; /* later lines below 600px */
+  --corp-image-slide-line-height: 1.35;
+  --corp-image-slide-size-line-height: 1.35;
+  --corp-image-slide-size: 1;
+  --corp-image-slide-video-bleed: 12px;
+  --corp-image-slide-stripe-height: 34px;
+  --corp-image-slide-stripe-gradient: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
 
   /* tagline-band */
   --corp-tagline-band-inset: 9%;
@@ -83,55 +91,6 @@ body.corp .hero.page-hero h1 {
   font-size: var(--heading-font-size-xxl);
   font-weight: var(--font-weight-bold);
   line-height: var(--corp-page-hero-title-line-height-s);
-}
-
-/* ---- image-slide ---- */
-body.corp .hero.image-slide {
-  min-height: 0;
-  margin-bottom: var(--space-block-l);
-  padding: 0;
-}
-
-/* the full-width image sets its own height; below 600px the headline stacks under it */
-body.corp .hero.image-slide picture {
-  position: static;
-  z-index: auto;
-}
-
-body.corp .hero.image-slide img {
-  display: block;
-  height: auto;
-}
-
-body.corp .hero.image-slide > div:last-child {
-  padding: 0 var(--space-block-l) var(--space-block-l);
-}
-
-/* line 1: serif light; its bold (+ italic = gold) run is Futura bold */
-body.corp .hero.image-slide h1 {
-  max-width: none;
-  margin: 0;
-  color: var(--text-color);
-  font-family: var(--heading-font-family);
-  font-size: var(--corp-image-slide-title-size-s);
-  font-weight: 400;
-  line-height: var(--corp-image-slide-title-line-height);
-  translate: 0 var(--corp-image-slide-title-shift); /* visual nudge only; layout unchanged */
-}
-
-body.corp .hero.image-slide :is(h1, p) strong {
-  font-family: var(--display-font-family-bold);
-  font-weight: var(--font-weight-bold);
-}
-
-/* line 2: light grey at every width, also on the white phone stack */
-body.corp .hero.image-slide p {
-  margin: 0;
-  color: var(--color-surface);
-  font-family: var(--heading-font-family);
-  padding-bottom: max(var(--corp-image-slide-copy-foot-s), var(--corp-image-slide-copy-foot));
-  font-size: var(--corp-image-slide-copy-size-s);
-  line-height: max(var(--corp-image-slide-copy-line-height-s), calc(var(--corp-image-slide-copy-line-height) * 1em));
 }
 
 /* ---- tagline-band ---- */
@@ -234,6 +193,158 @@ body.corp .hero.long-text p > a:any-link {
   text-decoration: none;
 }
 
+/* ---- image-slide ---- */
+
+/* a grid: the slide (image or video) is row 1, so the headline's top-N % counts from the
+   slide alone; the phone headline (under the image) and the stripe follow in their own rows */
+body.corp .hero.image-slide {
+  display: grid;
+  grid-template-columns: 100%;
+  min-height: 0;
+  margin-bottom: var(--space-block-l);
+  padding: 0;
+}
+
+/* phones: the desktop image (or video) is hidden; a mobile image, when authored, shows */
+body.corp .hero.image-slide > div:first-child {
+  grid-area: 1 / 1;
+  overflow: clip;
+}
+
+body.corp .hero.image-slide > div:first-child > :not(.hero-image-mobile) {
+  display: none;
+}
+
+body.corp .hero.image-slide picture {
+  position: static;
+  z-index: auto;
+}
+
+body.corp .hero.image-slide img {
+  display: block;
+  height: auto;
+}
+
+/* a video is 24px wider than the slide and centred (the source row gutters) */
+body.corp .hero.image-slide video {
+  display: block;
+  width: calc(100% + 2 * var(--corp-image-slide-video-bleed));
+  height: auto;
+  margin-left: calc(-1 * var(--corp-image-slide-video-bleed));
+  border: 0;
+  aspect-ratio: 3 / 1; /* the source viewer's 3:1 frame, the video covering it */
+  object-fit: cover;
+}
+
+/* phones: the headline sits under the image (source mobile_Bottom) … */
+body.corp .hero.image-slide > div:last-child {
+  padding: 0 var(--space-block-l);
+}
+
+/* … or over the mobile image, 5% in (source mobile_Overlay) */
+body.corp .hero.image-slide:has(.hero-image-mobile):not(.mobile-below) > div:last-child {
+  position: absolute;
+  grid-area: 1 / 1 / 2 / 2; /* row 1 only (an absolute item's auto end is the block edge) */
+  inset: 0;
+  padding: 5%;
+}
+
+/* the headline box keeps its lines' margins (the h1's 15px) inside, as the source lines do */
+body.corp .hero.image-slide .hero-headline {
+  display: flow-root;
+  margin-bottom: var(--space-block-l); /* source c-largeheadline: 20px, 30px from 600px */
+}
+
+/* the headline box: transparent, or coloured by box-* with a 20px inset */
+body.corp .hero.image-slide .hero-headline:is(.box-white, .box-gold, .box-blue, .box-gray, .box-dark) {
+  padding: var(--space-block-l);
+}
+
+body.corp .hero.image-slide .hero-headline.box-white {
+  padding-block: 0;
+  background: var(--color-white);
+}
+
+body.corp .hero.image-slide .hero-headline.box-gold { background: var(--color-accent); }
+body.corp .hero.image-slide .hero-headline.box-blue { background: var(--color-navy-bright); }
+body.corp .hero.image-slide .hero-headline.box-gray { background: var(--color-surface); }
+body.corp .hero.image-slide .hero-headline.box-dark { background: var(--color-secondary); }
+
+/* headline lines: Egyptienne light, bold = Futura bold; size tags [[size-N]…] scale the run
+   with the viewport like the source fontsize-Nvw classes (2N vw on phones) */
+body.corp .hero.image-slide .hero-headline :is(h1, h2, h3, p) {
+  max-width: none;
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+}
+
+body.corp .hero.image-slide .hero-headline p {
+  font-size: var(--corp-image-slide-line-size-s);
+  line-height: var(--corp-image-slide-next-line-height-s);
+}
+
+body.corp .hero.image-slide .hero-headline > p:first-child {
+  line-height: var(--corp-image-slide-line-height-s);
+}
+
+/* a line holding a heading keeps the corp heading look underneath (h1 28px; h2, h3 their
+   corp sizes; 15px below), which sets its line boxes and the gap after it, as on the source */
+body.corp .hero.image-slide .hero-headline :is(h1, h2, h3) {
+  margin-bottom: var(--space-block);
+  font-weight: 500;
+  line-height: var(--heading-line-height);
+}
+
+body.corp .hero.image-slide .hero-headline h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+/* mobile-text-black: on phones every headline run is black (source mobile-text-black) */
+body.corp .hero.image-slide.mobile-text-black .hero-headline * {
+  --link-color: var(--text-color);
+
+  color: var(--text-color);
+}
+
+body.corp .hero.image-slide .hero-headline :is(strong, b) {
+  font-family: var(--display-font-family-bold);
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .hero.image-slide .hero-headline span[class*="size-"] {
+  font-size: calc(var(--corp-image-slide-size) * 2vw);
+  line-height: var(--corp-image-slide-size-line-height);
+}
+
+body.corp .hero.image-slide span.size-1 { --corp-image-slide-size: 1; }
+body.corp .hero.image-slide span.size-1-5 { --corp-image-slide-size: 1.5; }
+body.corp .hero.image-slide span.size-2 { --corp-image-slide-size: 2; }
+body.corp .hero.image-slide span.size-2-5 { --corp-image-slide-size: 2.5; }
+body.corp .hero.image-slide span.size-3 { --corp-image-slide-size: 3; }
+body.corp .hero.image-slide span.size-3-5 { --corp-image-slide-size: 3.5; }
+body.corp .hero.image-slide span.size-4 { --corp-image-slide-size: 4; }
+body.corp .hero.image-slide span.size-4-5 { --corp-image-slide-size: 4.5; }
+body.corp .hero.image-slide span.size-5 { --corp-image-slide-size: 5; }
+body.corp .hero.image-slide span.size-5-5 { --corp-image-slide-size: 5.5; }
+body.corp .hero.image-slide span.size-6 { --corp-image-slide-size: 6; }
+body.corp .hero.image-slide span.size-7 { --corp-image-slide-size: 7; }
+body.corp .hero.image-slide span.size-8 { --corp-image-slide-size: 8; }
+body.corp .hero.image-slide span.size-9 { --corp-image-slide-size: 9; }
+
+/* stripe-gold / stripe-gradient: a 34px full-width band under the slide */
+body.corp .hero.image-slide:is(.stripe-gold, .stripe-gradient)::after {
+  content: "";
+  display: block;
+  height: var(--corp-image-slide-stripe-height);
+  background: var(--color-accent);
+}
+
+body.corp .hero.image-slide.stripe-gradient::after {
+  background: var(--corp-image-slide-stripe-gradient);
+}
+
 /* from 600px: page-hero title half width, roomier tagline-band with a larger message,
    bigger large-header title, image-slide headline over the image */
 @media (width >= 600px) {
@@ -302,21 +413,50 @@ body.corp .hero.long-text p > a:any-link {
     margin-bottom: var(--space-inset-l);
   }
 
-  body.corp .hero.image-slide > div:last-child {
+  /* the desktop image (or video) shows, the mobile image hides */
+  body.corp .hero.image-slide > div:first-child > :not(.hero-image-mobile) {
+    display: block;
+  }
+
+  body.corp .hero.image-slide > div:first-child > .hero-image-mobile {
+    display: none;
+  }
+
+  /* the headline over the image: top-N / left-N / right-N percent of the slide */
+  body.corp .hero.image-slide > div:last-child,
+  body.corp .hero.image-slide:has(.hero-image-mobile):not(.mobile-below) > div:last-child {
     position: absolute;
-    top: var(--corp-image-slide-copy-top);
-    left: var(--corp-image-slide-copy-inset);
-    width: calc(100% - 2 * var(--corp-image-slide-copy-inset));
+    grid-area: 1 / 1 / 2 / 2; /* row 1 only (an absolute item's auto end is the block edge) */
+    inset: var(--hero-box-top) auto auto 0;
+    width: calc(100% - var(--hero-box-left) - var(--hero-box-right));
+    margin-left: var(--hero-box-left);
     padding: 0;
   }
 
-  body.corp .hero.image-slide h1 {
-    font-size: min(var(--corp-image-slide-title-size), var(--heading-font-size-hero-xl));
+  body.corp .hero.image-slide .hero-headline.box-white {
+    padding-block: var(--space-block-l);
   }
 
-  body.corp .hero.image-slide p {
-    padding-bottom: var(--corp-image-slide-copy-foot);
-    font-size: min(var(--corp-image-slide-copy-size), var(--heading-font-size-xxl));
-    line-height: var(--corp-image-slide-copy-line-height);
+  body.corp .hero.image-slide .hero-headline {
+    margin-bottom: var(--space-inset-l);
+  }
+
+  /* from 600px the colour tags show again */
+  body.corp .hero.image-slide.mobile-text-black .hero-headline span[class*="color-"],
+  body.corp .hero.image-slide.mobile-text-black .hero-headline span[class*="color-"] * {
+    --link-color: var(--span-color);
+
+    color: var(--span-color);
+  }
+
+  body.corp .hero.image-slide .hero-headline p,
+  body.corp .hero.image-slide .hero-headline > p:first-child {
+    font-size: min(1vw, var(--corp-image-slide-line-size));
+    line-height: var(--corp-image-slide-line-height);
+  }
+
+  /* N vw, stopping at the 1440px size (N x 14px) like the source */
+  body.corp .hero.image-slide .hero-headline span[class*="size-"] {
+    font-size: min(calc(var(--corp-image-slide-size) * 1vw), calc(var(--corp-image-slide-size) * var(--corp-image-slide-line-size)));
   }
 }

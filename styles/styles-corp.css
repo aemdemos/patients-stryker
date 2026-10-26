@@ -99,6 +99,15 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 400;
 }
 
+/* [[color-light-gray]…]: light grey text (#edeeec), next to the [[color-…]] tags in styles.css */
+:where(body.corp) span.color-light-gray,
+:where(body.corp) span.color-light-gray :is(strong, b, em, i, a:any-link) {
+  --span-color: var(--color-surface);
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}
+
 /* default-content h2: rule below the heading, except gold labels (<h2><em><strong>) */
 :where(body.corp) main > .section > .default-content-wrapper h2 {
   padding-bottom: var(--heading-underline-gap);
