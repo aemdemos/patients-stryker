@@ -23,6 +23,12 @@ body.legal main .section:first-of-type h1:first-child {
   border-bottom: 1px solid var(--color-surface-muted);
 }
 
+/* no extra gap under the first section: the global first-section rule in
+   styles.css adds padding there, which pushes legal content away from the title */
+body.legal main > .section:first-child > .default-content-wrapper {
+  padding-bottom: 0;
+}
+
 @media (width >= 600px) {
   body.legal main .section:first-of-type h1:first-child {
     font-size: var(--heading-font-size-xl);
