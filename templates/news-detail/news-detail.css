@@ -156,9 +156,7 @@ body.news-detail main a:any-link {
     margin-top: calc(var(--space-section) + var(--space-block));
   }
 
-  body.news-detail main > .section:not(.hero-container, .cards-corp-container, .columns-container) > div {
-    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
-  }
+
 
   body.news-detail main > .section.separator {
     margin-bottom: var(--space-section);
@@ -176,6 +174,10 @@ body.news-detail main a:any-link {
 }
 
 @media (width >= 900px) {
+    body.news-detail main > .section:not(.hero-container, .cards-corp-container, .columns-container) > div {
+    max-width: calc(min(100%, var(--container-max)) * 2 / 3);
+  }
+  
   body.news-detail main .cards-corp.teaser:not(.two-up, .three-up, .five-up, .six-up) > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
