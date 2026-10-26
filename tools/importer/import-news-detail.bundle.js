@@ -246,8 +246,9 @@ var CustomImportScript = (() => {
     ["urw-egyptienne", "serif"]
   ];
   function copyStyles(root) {
-    const copy = [...root.querySelectorAll("p, li")].filter((el) => text(el) && !el.querySelector("p, li"));
-    if (!copy.length) return "";
+    const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
+    const copy = candidates.filter((el) => text(el) && !el.querySelector("p, li"));
+    if (!copy.length) return null;
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     const covers = (cls) => copy.every((el) => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
@@ -257,10 +258,32 @@ var CustomImportScript = (() => {
     const font = FONT_STYLES.find(([cls]) => covers(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
   }
-  function cleanRichText(root) {
+  function sameLineText(node, direction) {
+    let value = "";
+    let sibling = node[direction];
+    while (sibling && sibling.nodeName !== "BR") {
+      value += sibling.textContent;
+      sibling = sibling[direction];
+    }
+    return value.replace(/[\s\u00a0]+/g, "");
+  }
+  function tagPlainBoldLabels(root, wholeParagraphs) {
+    const doc = root.ownerDocument;
+    [...root.querySelectorAll("b")].forEach((b) => {
+      if (b.closest(".futura-bold") || b.querySelector(".futura-bold") || b.parentElement.closest("b")) return;
+      if (!text(b) || sameLineText(b, "previousSibling") || sameLineText(b, "nextSibling")) return;
+      const block = b.closest("p, li, h1, h2, h3, h4, h5, h6");
+      if (!block || block.matches("h1, h2, h3, h4, h5, h6")) return;
+      if (!wholeParagraphs && text(block) === text(b)) return;
+      b.before(doc.createTextNode("[[body-font]"));
+      b.after(doc.createTextNode("]"));
+    });
+  }
+  function cleanRichText(root, { wholeParagraphs = false } = {}) {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
+    tagPlainBoldLabels(root, wholeParagraphs);
     const doc = root.ownerDocument;
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
@@ -320,6 +343,7 @@ var CustomImportScript = (() => {
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
     const plainBold = plainBoldParagraphs(box);
+    const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = [];
     [...box.childNodes].forEach((node) => {
@@ -339,6 +363,16 @@ var CustomImportScript = (() => {
     });
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
+    });
+    let last = null;
+    nodes.forEach((node) => {
+      const style = elementStyles.get(node);
+      node.copyStyle = style === void 0 || style === null ? last : style;
+      if (node.copyStyle !== null) last = node.copyStyle;
+    });
+    const first = nodes.find((node) => node.copyStyle !== null);
+    nodes.forEach((node) => {
+      if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
     });
     return { nodes, centred, size };
   }
@@ -406,6 +440,7 @@ var CustomImportScript = (() => {
       ol = null;
       out.push(node);
     });
+    out.converted = out.some((node) => node.tagName === "OL" && !nodes.includes(node));
     return out;
   }
   function transform(hookName, element, payload) {
@@ -496,7 +531,8 @@ var CustomImportScript = (() => {
       const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
       if (!nodes.length) return;
       nodes.forEach((node) => {
-        const extra = [size || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
+        const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
+        const extra = [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);
         const kind = [centred ? "center" : "body", ...extra].join(" ");
         if (!current || current.kind !== kind) startSection(kind, styles.join(", ") || void 0);
@@ -507,10 +543,11 @@ var CustomImportScript = (() => {
     const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
       const box = doc.createElement("div");
       box.innerHTML = disclaimer.innerHTML;
-      cleanRichText(box);
+      cleanRichText(box, { wholeParagraphs: true });
       return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
     }), doc);
-    if (disclaimerNodes.length) startSection("disclaimer", "disclaimer").nodes.push(...disclaimerNodes);
+    const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
+    if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
     const out = [];
     sections.filter((section) => section.nodes.length).forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
@@ -782,7 +819,12 @@ var CustomImportScript = (() => {
       "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
       "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",
       "https://www.stryker.com/us/en/smart-care/news/building-a-connected-smart-hospital.html",
-      "https://www.stryker.com/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html"
+      "https://www.stryker.com/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html",
+      "https://www.stryker.com/us/en/about/news/2026/stryker-introduces-first-of-its-kind-fda-authorized-surgical-application-for-apple-vision-pro-with-hip-arthroscopy-case.html",
+      "https://www.stryker.com/us/en/about/news/2026/stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance.html",
+      "https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html",
+      "https://www.stryker.com/us/en/about/news/2026/stryker-introduces-mako-handheld-robotics-mako-rps.html",
+      "https://www.stryker.com/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas.html"
     ],
     blocks: [
       { name: "hero-image-slide", instances: [".c-autocarousel"] },
@@ -833,6 +875,7 @@ var CustomImportScript = (() => {
   }
   var import_news_detail_default = {
     transform: (payload) => {
+      var _a, _b;
       const { document, url, params } = payload;
       const main = document.body;
       const published = publishedDate(document);
@@ -852,6 +895,8 @@ var CustomImportScript = (() => {
       main.appendChild(document.createElement("hr"));
       const meta = WebImporter.Blocks.getMetadata(document);
       if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, "");
+      const keywords = (_b = (_a = document.querySelector('meta[name="keywords" i]')) == null ? void 0 : _a.getAttribute("content")) == null ? void 0 : _b.trim();
+      if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = "news-detail";
       if (published) meta.published = published;

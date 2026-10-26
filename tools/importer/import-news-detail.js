@@ -20,6 +20,11 @@ const PAGE_TEMPLATE = {
     'https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html',
     'https://www.stryker.com/us/en/smart-care/news/building-a-connected-smart-hospital.html',
     'https://www.stryker.com/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html',
+    'https://www.stryker.com/us/en/about/news/2026/stryker-introduces-first-of-its-kind-fda-authorized-surgical-application-for-apple-vision-pro-with-hip-arthroscopy-case.html',
+    'https://www.stryker.com/us/en/about/news/2026/stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance.html',
+    'https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html',
+    'https://www.stryker.com/us/en/about/news/2026/stryker-introduces-mako-handheld-robotics-mako-rps.html',
+    'https://www.stryker.com/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas.html',
   ],
   blocks: [
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },
@@ -112,6 +117,9 @@ export default {
     // the corp bulk metadata adds `title:suffix` "| Stryker", so drop the source's own
     // " | Stryker" from the title (it would show twice)
     if (meta.Title) meta.Title = meta.Title.replace(/\s*\|\s*Stryker\s*$/i, '');
+    // keywords, as on the source page (<meta name="keywords">, e.g. "News, Our impact")
+    const keywords = document.querySelector('meta[name="keywords" i]')?.getAttribute('content')?.trim();
+    if (keywords) meta.Keywords = keywords;
     meta.site = 'corp';
     meta.template = 'news-detail';
     if (published) meta.published = published;

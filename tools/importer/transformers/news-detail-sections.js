@@ -98,11 +98,13 @@ const FONT_STYLES = [
  * 17.5px) the matching size style (p-1-25), and when it all sits in one source font
  * span (span.urw-egyptienne) the matching font style (serif). Copy that is only partly
  * styled keeps the defaults (14px Humanist).
- * @returns {string} the styles, comma-separated ('' when none)
+ * @returns {string|null} the styles, comma-separated ('' for default copy, null when the
+ *   fragment has no paragraph or list item)
  */
 function copyStyles(root) {
-  const copy = [...root.querySelectorAll('p, li')].filter((el) => text(el) && !el.querySelector('p, li'));
-  if (!copy.length) return '';
+  const candidates = root.matches && root.matches('p, li') ? [root] : [...root.querySelectorAll('p, li')];
+  const copy = candidates.filter((el) => text(el) && !el.querySelector('p, li'));
+  if (!copy.length) return null;
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
   const covers = (cls) => copy.every((el) => {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
@@ -118,11 +120,47 @@ function copyStyles(root) {
  * dropped, attributes stripped, empty paragraphs removed. Returns whether every
  * paragraph of the fragment is centred and its copy section styles (copyStyles).
  */
-function cleanRichText(root) {
+/**
+ * The text next to a node on its own line: its siblings up to the next <br> (or the
+ * start / end of the parent) in one direction.
+ */
+function sameLineText(node, direction) {
+  let value = '';
+  let sibling = node[direction];
+  while (sibling && sibling.nodeName !== 'BR') {
+    value += sibling.textContent;
+    sibling = sibling[direction];
+  }
+  return value.replace(/[\s\u00a0]+/g, '');
+}
+
+/**
+ * Plain-bold (<b>) labels on a line of their own ("For investor inquiries:") are in the
+ * body font on the source, while bold labels are Futura on the site. Both become
+ * <strong> on import, so these are wrapped in the `[[body-font]…]` bracket tag
+ * (scripts/span-tags.js → span.body-font, styles-corp.css). A paragraph that is plain
+ * bold as a whole gets the `bold-body` section style instead, unless wholeParagraphs is
+ * set (small print, which stays one section).
+ */
+function tagPlainBoldLabels(root, wholeParagraphs) {
+  const doc = root.ownerDocument;
+  [...root.querySelectorAll('b')].forEach((b) => {
+    if (b.closest('.futura-bold') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
+    if (!text(b) || sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling')) return;
+    const block = b.closest('p, li, h1, h2, h3, h4, h5, h6');
+    if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
+    if (!wholeParagraphs && text(block) === text(b)) return;
+    b.before(doc.createTextNode('[[body-font]'));
+    b.after(doc.createTextNode(']'));
+  });
+}
+
+function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
+  tagPlainBoldLabels(root, wholeParagraphs);
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
   // triangle — e.g. "Read the full report") → bold + underline link, the authoring
@@ -199,6 +237,9 @@ function richTextNodes(component, doc) {
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
   const plainBold = plainBoldParagraphs(box);
+  // copy styles per top-level element, so one serif lead paragraph in an otherwise
+  // plain rich text keeps its font (its own section)
+  const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
   const { centred, size } = cleanRichText(box);
   const nodes = [];
   [...box.childNodes].forEach((node) => {
@@ -217,6 +258,17 @@ function richTextNodes(component, doc) {
     }
   });
   nodes.forEach((node) => { if (plainBold.has(node)) node.boldBody = true; });
+  // elements without copy of their own (headings, images) follow the copy around them
+  let last = null;
+  nodes.forEach((node) => {
+    const style = elementStyles.get(node);
+    node.copyStyle = style === undefined || style === null ? last : style;
+    if (node.copyStyle !== null) last = node.copyStyle;
+  });
+  const first = nodes.find((node) => node.copyStyle !== null);
+  nodes.forEach((node) => {
+    if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
+  });
   return { nodes, centred, size };
 }
 
@@ -296,6 +348,7 @@ function footnoteList(nodes, doc) {
     ol = null;
     out.push(node);
   });
+  out.converted = out.some((node) => node.tagName === 'OL' && !nodes.includes(node));
   return out;
 }
 
@@ -409,7 +462,8 @@ export default function transform(hookName, element, payload) {
     // copy styles sit next to `center` (e.g. `center, p-1-25, serif`). A plain-bold
     // paragraph (boldBody) gets a section of its own with `bold-body`.
     nodes.forEach((node) => {
-      const extra = [size || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
+      const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
+      const extra = [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
       const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
       const kind = [centred ? 'center' : 'body', ...extra].join(' ');
       if (!current || current.kind !== kind) startSection(kind, styles.join(', ') || undefined);
@@ -424,12 +478,14 @@ export default function transform(hookName, element, payload) {
   const disclaimerNodes = footnoteList(disclaimers.flatMap((disclaimer) => {
     const box = doc.createElement('div');
     box.innerHTML = disclaimer.innerHTML;
-    cleanRichText(box);
+    cleanRichText(box, { wholeParagraphs: true });
     return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
   }), doc);
   // small print: the corp `disclaimer` section style (11.2px copy; references as
   // "N: " entries 15px apart, then the document code)
-  if (disclaimerNodes.length) startSection('disclaimer', 'disclaimer').nodes.push(...disclaimerNodes);
+  // references authored as "1: …" paragraphs keep that look: `references-spaced`
+  const disclaimerStyle = disclaimerNodes.converted ? 'disclaimer, references-spaced' : 'disclaimer';
+  if (disclaimerNodes.length) startSection('disclaimer', disclaimerStyle).nodes.push(...disclaimerNodes);
 
   // rebuild the body: sections separated by <hr>, each with its Section Metadata
   const out = [];

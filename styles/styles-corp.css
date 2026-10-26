@@ -260,22 +260,27 @@ body:where(.corp):has(main .hero-carousel) header {
   color: inherit;
 }
 
-/* references (stryker.com .c-disclaimer "1: Author…" paragraphs): an ordered list so the
-   citation superscripts link to it (scripts.js decorateFootnotes), shown like the source —
-   "N: " in front of each entry, flush left, 15px between entries, then a section gap
-   (20px, 30px from 600px) before the document code */
+/* references: an ordered list (scripts.js decorateFootnotes links the citation
+   superscripts to it), shown like the stryker.com .c-disclaimer list — "1." markers,
+   20px indent, tight small-print lines — then a section gap (20px, 30px from 600px)
+   before the document code */
 :where(body.corp) main > .section.disclaimer ol {
   margin-bottom: var(--space-block-l);
+}
+
+/* section style `references-spaced` (with `disclaimer`): references the source authored
+   as "1: Author…" paragraphs — "N: " in front of each entry, flush left, 15px apart */
+:where(body.corp) main > .section.disclaimer.references-spaced ol {
   padding-left: 0;
   list-style: none;
 }
 
-:where(body.corp) main > .section.disclaimer ol > li {
+:where(body.corp) main > .section.disclaimer.references-spaced ol > li {
   margin-bottom: var(--space-block);
   line-height: var(--paragraph-line-height);
 }
 
-:where(body.corp) main > .section.disclaimer ol > li::before {
+:where(body.corp) main > .section.disclaimer.references-spaced ol > li::before {
   content: counter(list-item) ": ";
 }
 
@@ -284,7 +289,7 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: 0;
 }
 
-:where(body.corp) main > .section.disclaimer ul {
+:where(body.corp) main > .section.disclaimer :is(ol, ul) {
   padding-left: var(--space-block-l);
 }
 
@@ -332,6 +337,13 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.serif > .default-content-wrapper :is(p, li),
 :where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li) {
   font-family: var(--heading-font-family);
+}
+
+/* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
+   font — e.g. a plain-bold label line ("For investor inquiries:") next to Futura labels */
+:where(body.corp) main span.body-font,
+:where(body.corp) main span.body-font :is(strong, b) {
+  font-family: var(--body-font-family);
 }
 
 /* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
