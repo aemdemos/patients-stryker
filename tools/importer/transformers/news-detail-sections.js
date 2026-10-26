@@ -326,11 +326,40 @@ function smallHeadings(root) {
   }));
 }
 
+/**
+ * A paragraph that opens with a styled lead (the whole run in one source size / font
+ * span, e.g. an Egyptienne 21px subtitle) followed by a blank line (<br><br>) and the
+ * article text is split there, so the lead gets its own copy style.
+ */
+function splitStyledLeads(root) {
+  const doc = root.ownerDocument;
+  const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(', ');
+  [...root.children].filter((el) => el.tagName === 'P').forEach((p) => {
+    const nodes = [...p.childNodes];
+    const at = nodes.findIndex((node, i) => node.nodeName === 'BR'
+      && nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())?.nodeName === 'BR');
+    if (at < 1) return;
+    const lead = doc.createElement('p');
+    nodes.slice(0, at).forEach((node) => lead.append(node));
+    const leadText = text(lead).replace(/[\s\u00a0]+/g, '');
+    const covered = [...lead.querySelectorAll(styled)].filter((span) => !span.parentElement.closest(styled))
+      .map((span) => span.textContent).join('').replace(/[\s\u00a0]+/g, '');
+    if (!leadText || covered !== leadText || !text(p)) {
+      p.prepend(...lead.childNodes);
+      return;
+    }
+    // drop the blank-line breaks between the lead and the text
+    while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
+    p.before(lead);
+  });
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
   labelHeadingsToParagraphs(box);
+  splitStyledLeads(box);
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
   const smallHeads = smallHeadings(box);
@@ -388,7 +417,7 @@ function imageColumnStyle(component) {
 }
 
 function imageNodes(component, doc) {
-  return [...component.querySelectorAll('img')].map((source) => {
+  const nodes = [...component.querySelectorAll('img')].map((source) => {
     const img = doc.createElement('img');
     img.setAttribute('src', source.getAttribute('src'));
     img.setAttribute('alt', source.getAttribute('alt') || '');
@@ -396,6 +425,17 @@ function imageNodes(component, doc) {
     p.append(img);
     return p;
   });
+  // the image's caption heading (.title-content h4.title, Futura bold under the image)
+  // follows it as a Heading 4 (news-detail.css sets the source h4)
+  if (nodes.length) {
+    component.querySelectorAll('.title-content :is(h2, h3, h4, h5)').forEach((title) => {
+      if (!text(title)) return;
+      const h4 = doc.createElement('h4');
+      h4.textContent = text(title);
+      nodes.push(h4);
+    });
+  }
+  return nodes;
 }
 
 function buttonNodes(component, doc) {
@@ -448,6 +488,32 @@ function videoAside(video) {
   return headline && text(headline) ? headline : null;
 }
 
+/**
+ * Article text in the other half of a col-sm-6 + col-sm-6 row next to a video (e.g. the
+ * InsideOut podcast page), or null.
+ */
+function videoTextAside(video) {
+  const col = video.closest('[class*="col-sm-6"]');
+  const row = col && col.parentElement;
+  const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
+  const rte = aside && aside.querySelector('.c-rich-text-editor');
+  if (!rte || !text(rte) || aside.querySelector('img, video, iframe, .c-standalone-video')) return null;
+  return rte;
+}
+
+/** The video + text row as `Columns (columns-50-50)` (the library's Video + text). */
+function videoTextColumns(video, rte, doc) {
+  const link = videoLink(video, doc);
+  const { nodes } = richTextNodes(rte, doc);
+  if (!link || !nodes.length) return null;
+  const media = doc.createElement('p');
+  media.append(link);
+  return WebImporter.Blocks.createBlock(doc, {
+    name: 'Columns (columns-50-50)',
+    cells: [[media, nodes]],
+  });
+}
+
 /** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
 function videoHeadlineColumns(video, headline, doc) {
   const link = videoLink(video, doc);
@@ -455,7 +521,10 @@ function videoHeadlineColumns(video, headline, doc) {
   if (!link || !lines.length) return null;
   const media = doc.createElement('p');
   media.append(link);
-  const statement = [rename(lines[0], 'h2'), ...lines.slice(1)];
+  // a 2vw headline (28px at 1440px, e.g. Stiles) is the Heading 2 statement; a 1.5vw one
+  // (21px, e.g. Heath) stays a paragraph, the large-headline text size
+  const small = headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+  const statement = small ? lines : [rename(lines[0], 'h2'), ...lines.slice(1)];
   return WebImporter.Blocks.createBlock(doc, {
     name: 'Columns (columns-67-33, large-headline, gray-lead)',
     cells: [[media, statement]],
@@ -602,6 +671,23 @@ export default function transform(hookName, element, payload) {
         // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
         element.setAttribute('data-news-theme', 'full-width');
         startSection('columns').nodes.push(columns);
+        current = null;
+        return;
+      }
+      // a video with article text in the other half of the row: Columns (columns-50-50)
+      const textAside = videoTextAside(component);
+      const textColumns = textAside && videoTextColumns(component, textAside, doc);
+      if (textColumns) {
+        consumed.add(textAside.closest(COMPONENTS) || textAside);
+        startSection('columns').nodes.push(textColumns);
+        current = null;
+        return;
+      }
+      // a video in a narrow source column (the other column empty) is a section of its
+      // own with the image column style, which caps the video block as well
+      const columnStyle = imageColumnStyle(component);
+      if (columnStyle) {
+        startSection('video', columnStyle).nodes.push(component);
         current = null;
         return;
       }

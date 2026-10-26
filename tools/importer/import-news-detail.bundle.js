@@ -394,11 +394,34 @@ var CustomImportScript = (() => {
       return text(h) && squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
     }));
   }
+  function splitStyledLeads(root) {
+    const doc = root.ownerDocument;
+    const styled = [...SIZE_STYLES, ...FONT_STYLES].map(([cls]) => `.${cls}`).join(", ");
+    [...root.children].filter((el) => el.tagName === "P").forEach((p) => {
+      const nodes = [...p.childNodes];
+      const at = nodes.findIndex((node, i) => {
+        var _a;
+        return node.nodeName === "BR" && ((_a = nodes.slice(i + 1).find((next) => next.nodeType !== 3 || next.textContent.trim())) == null ? void 0 : _a.nodeName) === "BR";
+      });
+      if (at < 1) return;
+      const lead = doc.createElement("p");
+      nodes.slice(0, at).forEach((node) => lead.append(node));
+      const leadText = text(lead).replace(/[\s\u00a0]+/g, "");
+      const covered = [...lead.querySelectorAll(styled)].filter((span) => !span.parentElement.closest(styled)).map((span) => span.textContent).join("").replace(/[\s\u00a0]+/g, "");
+      if (!leadText || covered !== leadText || !text(p)) {
+        p.prepend(...lead.childNodes);
+        return;
+      }
+      while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
+      p.before(lead);
+    });
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
     labelHeadingsToParagraphs(box);
+    splitStyledLeads(box);
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const smallHeads = smallHeadings(box);
@@ -446,7 +469,7 @@ var CustomImportScript = (() => {
     return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
   function imageNodes(component, doc) {
-    return [...component.querySelectorAll("img")].map((source) => {
+    const nodes = [...component.querySelectorAll("img")].map((source) => {
       const img = doc.createElement("img");
       img.setAttribute("src", source.getAttribute("src"));
       img.setAttribute("alt", source.getAttribute("alt") || "");
@@ -454,6 +477,15 @@ var CustomImportScript = (() => {
       p.append(img);
       return p;
     });
+    if (nodes.length) {
+      component.querySelectorAll(".title-content :is(h2, h3, h4, h5)").forEach((title) => {
+        if (!text(title)) return;
+        const h4 = doc.createElement("h4");
+        h4.textContent = text(title);
+        nodes.push(h4);
+      });
+    }
+    return nodes;
   }
   function buttonNodes(component, doc) {
     return [...component.querySelectorAll("a[href]")].filter((a) => text(a)).map((source) => {
@@ -493,13 +525,33 @@ var CustomImportScript = (() => {
     const headline2 = aside && aside.querySelector(".c-largeheadline");
     return headline2 && text(headline2) ? headline2 : null;
   }
+  function videoTextAside(video) {
+    const col = video.closest('[class*="col-sm-6"]');
+    const row = col && col.parentElement;
+    const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
+    const rte = aside && aside.querySelector(".c-rich-text-editor");
+    if (!rte || !text(rte) || aside.querySelector("img, video, iframe, .c-standalone-video")) return null;
+    return rte;
+  }
+  function videoTextColumns(video, rte, doc) {
+    const link2 = videoLink(video, doc);
+    const { nodes } = richTextNodes(rte, doc);
+    if (!link2 || !nodes.length) return null;
+    const media = doc.createElement("p");
+    media.append(link2);
+    return WebImporter.Blocks.createBlock(doc, {
+      name: "Columns (columns-50-50)",
+      cells: [[media, nodes]]
+    });
+  }
   function videoHeadlineColumns(video, headline2, doc) {
     const link2 = videoLink(video, doc);
     const lines = headlineNodes(headline2, doc);
     if (!link2 || !lines.length) return null;
     const media = doc.createElement("p");
     media.append(link2);
-    const statement = [rename(lines[0], "h2"), ...lines.slice(1)];
+    const small = headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const statement = small ? lines : [rename(lines[0], "h2"), ...lines.slice(1)];
     return WebImporter.Blocks.createBlock(doc, {
       name: "Columns (columns-67-33, large-headline, gray-lead)",
       cells: [[media, statement]]
@@ -613,6 +665,20 @@ var CustomImportScript = (() => {
           consumed.add(aside);
           element.setAttribute("data-news-theme", "full-width");
           startSection("columns").nodes.push(columns);
+          current = null;
+          return;
+        }
+        const textAside = videoTextAside(component);
+        const textColumns = textAside && videoTextColumns(component, textAside, doc);
+        if (textColumns) {
+          consumed.add(textAside.closest(COMPONENTS) || textAside);
+          startSection("columns").nodes.push(textColumns);
+          current = null;
+          return;
+        }
+        const columnStyle = imageColumnStyle(component);
+        if (columnStyle) {
+          startSection("video", columnStyle).nodes.push(component);
           current = null;
           return;
         }
