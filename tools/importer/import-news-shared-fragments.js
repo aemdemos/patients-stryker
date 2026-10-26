@@ -17,9 +17,10 @@ import xfFragmentPath from './xf-fragment-path.js';
  * `main .section.{style}` rules apply when embedded.
  *
  * Keys are the XF paths from the customer's "Experience Fragment References" export.
- * Each fragment is saved at its short path from tools/importer/xf-fragment-map.js
- * (e.g. …/acute-care/en/business_unit/footer-links/master → /us/en/fragments/acute-care/resources),
- * the same lookup every page importer uses to emit the fragment block.
+ * Each fragment is saved at the path derived from its XF path (tools/importer/xf-fragment-path.js,
+ * e.g. /content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master
+ * → /us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master), the same lookup
+ * every page importer uses to emit the fragment block.
  */
 const FRAGMENTS = {
   '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master': {

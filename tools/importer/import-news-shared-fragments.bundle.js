@@ -213,42 +213,42 @@ var CustomImportScript = (() => {
   // tools/importer/xf-fragment-map.js
   var xf_fragment_map_default = {
     "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master": {
-      path: "/us/en/fragments/acute-care/resources",
       name: 'Acute Care "Resources" links'
     },
     "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master": {
-      path: "/us/en/fragments/emergency-care/resources",
       name: 'Emergency Care "Resources" links'
     },
     "/content/experience-fragments/stryker/sage/en/footer/footer/master": {
-      path: "/us/en/fragments/sage/resources",
       name: 'Sage "Resources" links'
     },
     "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/header/master": {
-      path: "/us/en/fragments/sustainability/connect-with-us",
       name: 'Sustainability "Connect with us" band (above the form)'
     },
     "/content/experience-fragments/stryker/sustainability-solutions/en/contact_information/contact/master": {
-      path: "/us/en/fragments/sustainability/contact",
       name: "Sustainability contact aside (next to the form)"
     },
     "/content/experience-fragments/stryker/sage/en/business_unit/social-icons/master": {
-      path: "/us/en/fragments/sage/contact",
       name: "Sage contact aside (LinkedIn / Facebook icons)"
     },
     "/content/experience-fragments/stryker/corporate/en/about/news/_2022/features/advancing_healthcare/join-our-talent-network/join-our-talent-network-v2-desktop": {
-      path: "/us/en/fragments/careers/talent-network-banner",
       name: '"Join our talent network" banner (carousel slide; mobile slide: \u2026/join-our-talent-network-v2-mobile1)'
     }
   };
 
   // tools/importer/xf-fragment-path.js
+  var XF_ROOT = "/content/experience-fragments/";
+  var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(xf) {
     return String(xf || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
   }
+  function xfToFragmentPath(xf) {
+    const key = xfKey(xf);
+    if (!key.startsWith(XF_ROOT)) return null;
+    const segments = key.slice(XF_ROOT.length).split("/").map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")).filter(Boolean);
+    return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
+  }
   function xfFragmentPath(xf) {
-    const entry = xf_fragment_map_default[xfKey(xf)];
-    return entry ? entry.path : null;
+    return xf_fragment_map_default[xfKey(xf)] ? xfToFragmentPath(xf) : null;
   }
 
   // tools/importer/import-news-shared-fragments.js
