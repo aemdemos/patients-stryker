@@ -1,42 +1,4 @@
 /**
- * @param {Element} cell an authored cell
- * @returns {boolean} true when the cell holds a rendered DM video and no copy (the video
- *   wrapper's control labels and a leftover link text are not copy)
- */
-function isVideoCell(cell) {
-  if (!cell.querySelector('.dm-video-wrapper, video')) return false;
-  const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
-  let copy = '';
-  while (walker.nextNode()) {
-    if (!walker.currentNode.parentElement.closest('a, .dm-video-wrapper')) copy += walker.currentNode.textContent;
-  }
-  return copy.trim() === '';
-}
-
-/**
- * Background video: muted autoplay loop without controls (dm-support adds controls and a
- * play overlay to every DM video; they are removed here).
- * @param {Element} wrapper the rendered video (or its .dm-video-wrapper)
- */
-function playAsBackground(wrapper) {
-  const video = wrapper.tagName === 'VIDEO' ? wrapper : wrapper.querySelector('video');
-  if (!video) return;
-  video.controls = false;
-  video.removeAttribute('controls');
-  video.muted = true;
-  video.setAttribute('muted', '');
-  video.autoplay = true;
-  video.loop = true;
-  video.playsInline = true;
-  video.setAttribute('playsinline', '');
-  video.preload = 'auto';
-  wrapper.querySelectorAll('.dm-video-overlay, .dm-video-controls').forEach((ui) => ui.remove());
-  const play = () => video.play().catch(() => { /* autoplay blocked: the poster stays */ });
-  video.addEventListener('canplay', play, { once: true });
-  play();
-}
-
-/**
  * Set up the hero from its authored rows.
  *
  * Authoring model (single-column rows):
@@ -48,15 +10,12 @@ function playAsBackground(wrapper) {
  * can describe each crop distinctly, matching the source site. CSS toggles their
  * visibility at the 900px crossover (.hero-image-desktop / .hero-image-mobile).
  * The block is rebuilt into an [image][content] structure the CSS overlays.
- * A Scene7 video link in an image row is already a native <video> here (scripts.js runs
- * dm-support over <main> before blocks decorate); it plays as the hero background.
  * @param {Element} block the hero block
  */
 function setupHero(block) {
   let desktopPic = null;
   let mobilePic = null;
   let contentCell = null;
-  let video = null;
 
   [...block.children].forEach((row) => {
     const cells = [...row.children];
@@ -68,9 +27,7 @@ function setupHero(block) {
     } else if (cells.length === 1) {
       const cell = cells[0];
       const pic = cell.querySelector('picture');
-      if (!video && isVideoCell(cell)) {
-        video = cell.querySelector('.dm-video-wrapper') || cell.querySelector('video');
-      } else if (pic && !cell.querySelector('h1, h2, h3, p')) {
+      if (pic && !cell.querySelector('h1, h2, h3, p')) {
         if (!desktopPic) desktopPic = pic;
         else if (!mobilePic) mobilePic = pic;
       } else if (cell.querySelector('h1, h2, h3, p')) {
@@ -96,20 +53,7 @@ function setupHero(block) {
     [desktopPic, mobilePic] = pics;
   }
 
-  // next to a video, the one picture is the mobile image
-  if (video && desktopPic && !mobilePic) {
-    mobilePic = desktopPic;
-    desktopPic = null;
-    mobilePic.classList.add('hero-image-mobile');
-  }
-
   const imageDiv = document.createElement('div');
-  // image-slide swaps its crops at 600px (hero-corp.css); the other variants at 900px
-  const crossover = block.classList.contains('image-slide') ? 600 : 900;
-  if (video) {
-    playAsBackground(video);
-    imageDiv.append(video);
-  }
   // keep both pictures (each with its own alt); CSS shows one per breakpoint.
   // When only one is authored it carries no toggle class and always shows.
   if (desktopPic && mobilePic) {
@@ -120,11 +64,11 @@ function setupHero(block) {
     // waitForFirstImage eager-loads only the FIRST <img> in DOM order. With the
     // desktop crop first, on mobile the visible mobile crop was left lazy and its
     // fetch deferred — the cause of the poor mobile LCP. Order the crop shown at
-    // the CURRENT breakpoint (crossover per variant, see above) FIRST so it is the
+    // the CURRENT breakpoint (crossover 900px, per hero.css) FIRST so it is the
     // eager LCP candidate and mark it high priority; the hidden crop is
     // display:none and set lazy, so it never enters the viewport and its fetch is
     // skipped (no double download competing for the mobile connection).
-    const desktopShown = window.matchMedia(`(width >= ${crossover}px)`).matches;
+    const desktopShown = window.matchMedia('(width >= 900px)').matches;
     const [lcpPic, otherPic] = desktopShown
       ? [desktopPic, mobilePic] : [mobilePic, desktopPic];
     const lcpImg = lcpPic.querySelector('img');
@@ -136,12 +80,7 @@ function setupHero(block) {
     const only = desktopPic || mobilePic;
     imageDiv.append(only);
     const img = only.querySelector('img');
-    // an image-slide's only image is the desktop crop, hidden on phones (hero-corp.css):
-    // lazy there, so it is never fetched
-    const hidden = block.classList.contains('image-slide')
-      && !window.matchMedia(`(width >= ${crossover}px)`).matches;
-    if (img && hidden) img.setAttribute('loading', 'lazy');
-    else if (img) { img.setAttribute('loading', 'eager'); img.setAttribute('fetchpriority', 'high'); }
+    if (img) { img.setAttribute('loading', 'eager'); img.setAttribute('fetchpriority', 'high'); }
   }
 
   const contentDiv = document.createElement('div');
@@ -150,40 +89,8 @@ function setupHero(block) {
   block.replaceChildren(imageDiv, contentDiv);
 }
 
-const BOX_SPACING = {
-  mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft', pt: 'paddingTop', pr: 'paddingRight', pb: 'paddingBottom', pl: 'paddingLeft',
-};
-
-/**
- * image-slide: the headline lines go in a box (`.hero-headline`), the button paragraphs
- * after it. Block options: box-white / -gold / -blue / -gray / -dark colour the box,
- * box-mt-N … box-pl-N set its margin / padding in percent (`n` = negative: box-mt-n4) as the
- * source's inline box styles, and top-N / left-N / right-N (percent of the slide) place it.
- * @param {Element} block the hero block
- */
-function setupImageSlide(block) {
-  const content = block.lastElementChild;
-  const lines = [...content.children].filter((el) => !el.classList.contains('button-wrapper'));
-  if (lines.length) {
-    const box = document.createElement('div');
-    box.className = 'hero-headline';
-    box.append(...lines);
-    content.prepend(box);
-    [...block.classList].forEach((opt) => {
-      if (/^box-(white|gold|blue|gray|dark)$/.test(opt)) box.classList.add(opt);
-      const m = opt.match(/^box-(mt|mr|mb|ml|pt|pr|pb|pl)-(n?)(\d+)$/);
-      if (m) box.style[BOX_SPACING[m[1]]] = `${m[2] ? '-' : ''}${m[3]}%`;
-    });
-  }
-  [...block.classList].forEach((cls) => {
-    const m = cls.match(/^(top|left|right)-(\d+)$/);
-    if (m) block.style.setProperty(`--hero-box-${m[1]}`, `${m[2]}%`);
-  });
-}
-
 export default function decorate(block) {
   setupHero(block);
-  if (block.classList.contains('image-slide')) setupImageSlide(block);
 
   // Fullbleed variant: split the two-tone headline (lead sentence in light serif,
   // remainder in Futura bold via an accent span). The poster modifier keeps the
