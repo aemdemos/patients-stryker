@@ -1277,15 +1277,6 @@ body.ivs-home .panel.gold .panel-body h4 {
   font-size: var(--heading-font-size-m);
 }
 
-body.ivs-home .cards.linked .cards-card-body h3 {
-  font-family: var(--body-font-family);
-}
-
-body.ivs-home .cards.linked .cards-card-body h3 a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
 /* source numbers sit in a ~1.6x line box, leaving a gap above the description
    (statistics.css resets the value's margin from 600px, so re-apply it here) */
 body.ivs-home .statistics {
@@ -1377,18 +1368,9 @@ body.ivs-home .panel.cta .panel-body h3 {
   body.ivs-home main > .section.panel-container[data-anchor="find-a-doctor"] {
     margin-top: var(--space-ivs-home-find-doctor);
   }
-
-  body.ivs-home .cards.linked > ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (width >= 1200px) {
-  /* the source goes 4-up at 970px, mapped to the EDS 1200px breakpoint */
-  body.ivs-home .cards.linked > ul {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   /* source keeps the 3vw headline, capped at 42px (from ~1400px) */
   body.ivs-home .hero.banner h1 {
     font-size: min(3vw, var(--heading-font-size-hero-max));
