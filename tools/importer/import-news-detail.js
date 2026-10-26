@@ -123,6 +123,13 @@ export default {
     meta.site = 'corp';
     meta.template = 'news-detail';
     if (published) meta.published = published;
+    // pages the sections transformer marks (a video + Large Headline row) run the title
+    // and small print full width: the news-detail `full-width` theme
+    const theme = main.getAttribute('data-news-theme');
+    if (theme) {
+      meta.theme = theme;
+      main.removeAttribute('data-news-theme');
+    }
     main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
     WebImporter.rules.transformBackgroundImages(main, document);
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);

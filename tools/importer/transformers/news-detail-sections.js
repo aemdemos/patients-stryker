@@ -14,7 +14,8 @@
  *      buttons) becomes its own section with the `center` section style.
  *   3a. a video with a Large Headline beside it (col-sm-8 + col-sm-4 row, e.g. the
  *       StrykerTalks podcasts) → `Columns (columns-67-33, large-headline, gray-lead)`, full
- *       width: the video link, then the headline as a Heading 2 statement in the grey box
+ *       width: the video link, then the headline as a Heading 2 statement in the grey box;
+ *       the page gets `theme: full-width` (title and small print full width, as on the source)
  *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
  *       section that follows the rule
  *   4. related-content cards (`.c-customizeable`): their heading plus the grid, left for
@@ -543,6 +544,9 @@ export default function transform(hookName, element, payload) {
       const columns = aside && videoHeadlineColumns(component, aside, doc);
       if (columns) {
         consumed.add(aside);
+        // the source runs the title and small print full width on these pages too: the
+        // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
+        element.setAttribute('data-news-theme', 'full-width');
         startSection('columns').nodes.push(columns);
         current = null;
         return;

@@ -1,2 +1,15 @@
 /* news-detail themes — loaded with the template only when the page sets `theme`
    metadata; scope every rule to body.news-detail.<theme> */
+
+/* full-width: news pages whose source runs the title, the small print and the "Last
+   Updated" line across the whole container (stryker.com StrykerTalks podcast pages, e.g.
+   .../2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-.html: h1, date
+   and disclaimer 1380px wide at 1440px). The article copy keeps the 66.66% column; the
+   template already runs Columns and Cards Corp full width */
+@media (width >= 900px) {
+  body.news-detail.full-width main > .section.disclaimer > div,
+  body.news-detail.full-width main > .section.last-modified-section > div,
+  body.news-detail.full-width main > .section:nth-child(1 of :not(:empty)) > div {
+    max-width: var(--container-max);
+  }
+}

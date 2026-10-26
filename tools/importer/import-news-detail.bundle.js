@@ -579,6 +579,7 @@ var CustomImportScript = (() => {
         const columns = aside && videoHeadlineColumns(component, aside, doc);
         if (columns) {
           consumed.add(aside);
+          element.setAttribute("data-news-theme", "full-width");
           startSection("columns").nodes.push(columns);
           current = null;
           return;
@@ -981,6 +982,11 @@ var CustomImportScript = (() => {
       meta.site = "corp";
       meta.template = "news-detail";
       if (published) meta.published = published;
+      const theme = main.getAttribute("data-news-theme");
+      if (theme) {
+        meta.theme = theme;
+        main.removeAttribute("data-news-theme");
+      }
       main.append(WebImporter.Blocks.getMetadataBlock(document, meta));
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
