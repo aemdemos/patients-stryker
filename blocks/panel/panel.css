@@ -509,3 +509,59 @@
   border-top: var(--panel-colored-border-width-desktop) solid var(--color-accent);
 }
 }
+
+/* ---- cta wide variant (treatment "Benefits of the treatment" box) ----
+   One look wherever the variant is used — templates and themes must not restyle
+   it. Reference: /us/en/ivs/treatments/balloon-kyphoplasty. 3% box padding at
+   every width; the heading may be authored as h2 or h3; the "Potential risks"
+   link renders the same whether or not it is authored underlined. */
+.panel.cta.wide > ul > li > .panel-body {
+  padding: 3%;
+}
+
+.panel.cta.wide .panel-body :is(h2, h3) {
+  max-width: none;
+  margin: 0 0 var(--space-block);
+  padding: 0;
+  font-family: var(--display-font-family-bold);
+  font-size: var(--heading-font-size-ml);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-ml);
+  color: var(--color-black);
+}
+
+/* "Potential risks" paragraph and its link */
+.panel.cta.wide .panel-body > p {
+  font-family: var(--body-font-family);
+  font-size: var(--panel-body-size-ss);
+  line-height: var(--panel-cta-body-line-height);
+}
+
+.panel.cta.wide .panel-body > p > a:any-link {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.panel.cta.wide .panel-body ul {
+  display: block;
+  margin: 0 0 var(--space-block);
+  padding-left: var(--list-indent);
+  list-style: disc;
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
+/* bullets; EW wraps each item's text in a <p> — keep it at the item style */
+.panel.cta.wide .panel-body ul > li,
+.panel.cta.wide .panel-body ul > li > p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--panel-cta-body-size);
+  line-height: var(--panel-cta-body-line-height);
+}
+
+@media (width >= 600px) {
+  .panel.cta.wide .panel-body :is(h2, h3) {
+    font-size: var(--panel-cta-heading-size);
+  }
+}

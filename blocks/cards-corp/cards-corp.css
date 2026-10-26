@@ -1,0 +1,406 @@
+/* cards-corp — stryker.com card grid. Source .item.col-sm-3: 1-up, 4-up from 841px (EDS 600px). */
+
+.cards-corp > ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-block-l) calc(2 * var(--container-gutter));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.cards-corp .cards-corp-card-image {
+  line-height: 0;
+}
+
+.cards-corp .cards-corp-card-image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-block-l);
+}
+
+.cards-corp.teaser .cards-corp-card-image img {
+  margin-bottom: 0;
+}
+
+/* product-item: product grids (source .product-item "Product type" and "Covered
+   products") — the image sits at the foot of a fixed-height area with a 1px grey rule
+   (the source's .border-bottom-gold renders #b2b4ae), then the H4 title:
+   H4 = Egyptienne Light, bold H4 = Futura bold. The image links to the title link;
+   no hover change. 1 / 2 / 4 per row (source col-sm-6 col-md-3). */
+.cards-corp.product-item > ul {
+  row-gap: var(--space-block-s);
+}
+
+.cards-corp.product-item .cards-corp-card-image {
+  box-sizing: content-box;
+  height: var(--corp-product-item-image-height);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.cards-corp.product-item .cards-corp-card-image :is(a, picture) {
+  display: block;
+  height: 100%;
+}
+
+.cards-corp.product-item .cards-corp-card-image img {
+  height: 100%;
+  margin-bottom: 0;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.cards-corp.product-item h4 {
+  margin: 0 0 var(--space-block-xxs);
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--heading-line-height-h4);
+}
+
+/* bold title = Futura bold, also when linked: cancels the global strong-link button */
+.cards-corp.product-item h4 strong {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  font-family: var(--display-font-family);
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  line-height: inherit;
+  text-transform: none;
+}
+
+.cards-corp.product-item h4 a:any-link {
+  display: inline;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  text-transform: none;
+  text-decoration: none;
+}
+
+/* five-up: 2 / 3 / 4 / 5 per row (source trauma "Product type" grid: 50% < 628px,
+   33% < 885px, 25% < 1250px, 20% above) — e.g. Cards Corp (product-item, five-up) */
+.cards-corp.five-up > ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: var(--space-section);
+}
+
+/* one-up: one product per row (source .product.border-bottom-gold rows, e.g. VSP
+   "Related products") — image above the text, side by side 50/50 from 900px (source
+   col-md-6); a 1px grey rule closes each row. The image keeps its natural size,
+   centred; the H2 title link is Futura bold, black, no hover change. */
+.cards-corp.one-up > ul > li {
+  padding-bottom: var(--space-block-l);
+  border-bottom: 1px solid var(--color-surface-muted);
+}
+
+.cards-corp.one-up .cards-corp-card-image {
+  text-align: center;
+}
+
+.cards-corp.one-up .cards-corp-card-image img {
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 0;
+}
+
+.cards-corp.one-up h2 {
+  margin: 0 0 var(--space-block);
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+.cards-corp.one-up h2 a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-corp.one-up .cards-corp-card-body p {
+  margin: var(--space-block-s) 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+
+/* bold text in the card copy (all variants); bold CTA links (LEARN MORE) and bold
+   title text (h3 / gold eyebrow) keep their own sizes */
+.cards-corp .cards-corp-card-body p strong:not(:has(a)) {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* category: product category tiles (source .c-high-level-cta, e.g. trauma "Product
+   categories") — the image is contained in a shadowed 442:293 box and a teal label
+   bar (the card link) sits one bar-height above its foot, reaching 10px out to the
+   left of the image. No hover change, as on the source. */
+.cards-corp.category > ul > li {
+  position: relative;
+}
+
+.cards-corp.category .cards-corp-card-image img {
+  aspect-ratio: 442 / 293;
+  margin-bottom: 0;
+  object-fit: contain;
+  box-shadow: var(--corp-shadow-card);
+}
+
+.cards-corp.category .cards-corp-card-body {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: calc(-1 * var(--space-block-s));
+  transform: translateY(-100%);
+}
+
+.cards-corp.category .cards-corp-card-body > * {
+  margin: 0;
+}
+
+.cards-corp.category p a:any-link {
+  display: block;
+  padding: var(--space-block-xs) var(--space-block-s);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-line-height);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* source: 7px padding + the label's trailing space ≈ 10px before the arrow */
+.cards-corp.category p a:any-link::after {
+  content: "►";
+  padding-left: var(--space-block-s);
+}
+
+/* teaser: Related Products — light serif title, Humanist copy, teal "Learn more" */
+.cards-corp.teaser .cards-corp-card-body {
+  color: var(--text-color);
+}
+
+/* title 17.5px on phones, 21px from 600px (source 1.25em / 1.5em, switching at 480px) */
+.cards-corp.teaser h3 {
+  margin: var(--space-block) 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+}
+
+.cards-corp.teaser h3 a:any-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.cards-corp.teaser h3 a:any-link:is(:hover, :focus) {
+  color: var(--color-primary-pressed);
+}
+
+.cards-corp.teaser .cards-corp-card-body p {
+  margin: 0 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.cards-corp.teaser .cards-corp-card-body :is(a.link-strong, strong > a:has(u)):any-link {
+  display: block;
+  background-color: transparent;
+  color: var(--color-primary);
+  font-size: var(--body-font-size-m);
+}
+
+.cards-corp.teaser .cards-corp-card-body :is(a.link-strong, strong > a:has(u)):any-link:is(:hover, :focus) {
+  color: var(--color-primary-pressed);
+}
+
+/* border + resources: thin grey frame around the image / PDF cover */
+.cards-corp:is(.border, .resources) .cards-corp-card-image img {
+  box-sizing: border-box;
+  border: 1px solid var(--color-surface-muted);
+  margin-bottom: 0;
+}
+
+.cards-corp.border > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-corp.border .cards-corp-card-body {
+  flex: 1;
+  position: relative;
+  margin: calc(var(--space-section) - 8%) 0 15%;
+  padding: 5% 8% 3%;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.cards-corp.border .cards-corp-card-body > :first-child {
+  margin-top: 0;
+}
+
+.cards-corp.text > ul {
+  row-gap: calc(2 * var(--container-gutter));
+}
+
+.cards-corp.text .cards-corp-card-title {
+  padding: 4% var(--space-block-s) var(--space-block);
+  background-color: var(--color-accent);
+}
+
+.cards-corp.text h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-compact-nested);
+  text-align: center;
+}
+
+
+
+.cards-corp.text .cards-corp-card-body {
+  padding: 4% 8% 8%;
+  background-color: var(--color-surface);
+  color: var(--text-color);
+}
+
+.cards-corp.text .cards-corp-card-body p {
+  margin: 0 0 var(--space-block);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.cards-corp.resources .cards-corp-card-body h5 {
+  font-size: var(--heading-font-size-xs);
+  margin-top: 8px;
+}
+
+/* resources: a linked title keeps the heading look – black, never underlined
+   (also on hover/focus: this outranks the global a:hover / a:focus colour) */
+.cards-corp.resources .cards-corp-card-body h5 a:any-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* inline links: teal, no underline; dark teal on hover/focus, as on the source */
+.cards-corp.text .cards-corp-card-body :is(p, li) a:any-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.cards-corp.text .cards-corp-card-body :is(p, li) a:any-link:is(:hover, :focus) {
+  color: var(--color-primary-pressed);
+}
+
+@media (width >= 600px) {
+  .cards-corp.text h3 {
+    font-size: var(--heading-font-size-compact);
+  }
+
+  .cards-corp.teaser h3 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  .cards-corp > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* two-up: 2 per row (source col-sm-6, e.g. corporate responsibility
+     "Giving and volunteering" / "Our culture") */
+  .cards-corp.two-up > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* three-up: 3 per row (source col-sm-4, e.g. home "Our focus") */
+  .cards-corp.three-up > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* category: 2 per row from 600px, 3 from 900px (source col-sm-6 col-md-4) */
+  .cards-corp.category > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-corp.product-item > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-corp.five-up > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* one-up: always one per row */
+  .cards-corp.one-up > ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cards-corp.one-up h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  /* text: stays 1 per row until 900px */
+  .cards-corp.text > ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cards-corp .cards-corp-card-image img {
+    margin-bottom: var(--space-inset-l);
+  }
+}
+
+/* text: 2 per row from 900px, 3 from 1200px */
+@media (width >= 900px) {
+  .cards-corp.text > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* six-up: 4 per row from 600px (default), 6 from 900px
+     (source col-xs-6 col-sm-3 col-md-2, e.g. ASC resource center "Newsletters") */
+  .cards-corp.six-up > ul {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .cards-corp.category > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cards-corp:is(.product-item, .five-up) > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* one-up: image and text side by side, 50/50, top-aligned */
+  .cards-corp.one-up > ul > li {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    column-gap: calc(2 * var(--container-gutter));
+  }
+}
+
+@media (width >= 1200px) {
+  .cards-corp.text > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cards-corp.five-up > ul {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

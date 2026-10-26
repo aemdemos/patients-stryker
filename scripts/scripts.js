@@ -17,6 +17,7 @@ import {
 } from './aem.js';
 
 import decorateDMAssets, { liftDefaultContentDMMedia } from './dm-support.js';
+import decorateSpanTags from './span-tags.js';
 import { applySectionBackgrounds } from './utils.js';
 
 /*
@@ -568,6 +569,26 @@ function decorateUnderlinedHeadings(main) {
 }
 
 /**
+ * Adds a back link to the referring page, only when the visitor came from this site.
+ * @param {Element} main The main element
+ */
+function decoratePageBack(main) {
+  if (!document.referrer) return;
+  const previous = new URL(document.referrer);
+  const { origin, pathname, search } = window.location;
+  if (previous.origin !== origin
+    || `${previous.pathname}${previous.search}` === `${pathname}${search}`) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'page-back';
+  const link = document.createElement('a');
+  link.href = `${previous.pathname}${previous.search}${previous.hash}`;
+  link.textContent = 'Back';
+  wrapper.append(link);
+  main.prepend(wrapper);
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
@@ -576,12 +597,15 @@ export function decorateMain(main) {
   // convert external Dynamic Media asset links into native <picture>/<video>
   decorateDMAssets(main);
   liftDefaultContentDMMedia(main);
-  corp?.decorateMain();
+  corp?.decorateMain(main);
   decorateIcons(main);
+  // [[class]text] → span, before anything reads the text (tab labels, buttons, aria-labels)
+  decorateSpanTags(main);
   buildAutoBlocks(main);
   decorateSections(main);
   decorateSectionMetadata(main);
   buildTabbedSections(main);
+  corp?.decorateSections(main);
   decorateBlocks(main);
   decorateLinkTargets(main);
   decorateButtons(main);
@@ -670,6 +694,7 @@ async function loadEager(doc) {
     }
 
     decorateMain(main);
+    if (!corp) decoratePageBack(main);
 
     // Load template if specified in metadata
     if (templateName) {

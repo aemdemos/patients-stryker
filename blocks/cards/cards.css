@@ -16,21 +16,31 @@
   }
 }
 
-/* desktop: 3-up default, 4-up for resources/brochure/linked */
+/* desktop: 3-up default, 4-up for resources/brochure; linked stays 2-up */
 @media (width >= 900px) {
   .cards > ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .cards.resources > ul,
-  .cards.brochure > ul,
-  .cards.linked > ul {
+  .cards.brochure > ul {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cards.linked > ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* minmax(0, 1fr) lets columns shrink so the nowrap CTA button can't force overflow */
   .cards.brochure-cta > ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* wide desktop: linked goes 4-up (the source switches at 970px, mapped to 1200) */
+@media (width >= 1200px) {
+  .cards.linked > ul {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -78,6 +88,17 @@
   margin: 0 0 var(--space-block);
   font-family: var(--display-font-family);
   font-weight: var(--font-weight-bold);
+}
+
+/* linked title (Heading 3 whose text is the page link): bold slab serif, plain
+   black link — not the Futura card heading or the teal underlined link */
+.cards.linked .cards-card-body h3 {
+  font-family: var(--body-font-family);
+}
+
+.cards.linked .cards-card-body h3 a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .cards .cards-card-body p {

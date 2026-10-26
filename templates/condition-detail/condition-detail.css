@@ -69,7 +69,8 @@ body.condition-detail main > .section.light-gray > .default-content-wrapper > p 
   line-height: var(--paragraph-line-height);
 }
 
-body.condition-detail .panel.cta .panel-body p > a:any-link:has(> u):not(:has(strong)) {
+/* not the cta wide (treatment Benefits) box — styled by blocks/panel/panel.css only */
+body.condition-detail .panel.cta:not(.wide) .panel-body p > a:any-link:has(> u):not(:has(strong)) {
   font-size: var(--body-font-size-l);
   line-height: var(--heading-line-height-ml);
 }
@@ -134,8 +135,9 @@ body.condition-detail .tabs .tabs-panel {
   }
 }
 
-/* Panel (cta) heading line height matches the nested source heading. */
-body.condition-detail .panel.cta .panel-body h3 {
+/* Panel (cta) heading line height matches the nested source heading (not the
+   cta wide Benefits box, which the panel block styles). */
+body.condition-detail .panel.cta:not(.wide) .panel-body h3 {
   padding-bottom: var(--space-block-xxs);
   line-height: var(--heading-line-height-ml-nested);
 }

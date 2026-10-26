@@ -64,6 +64,7 @@
   --heading-font-family: "Egyptienne for Stryker Light", rockwell, georgia, times, serif;
   --display-font-family: "Futura for Stryker", "Arial Black", arial, sans-serif;
   --display-font-family-bold: "Futura for Stryker", "Arial Black", arial, sans-serif;
+  --icon-font-family: strykericons, sans-serif;
 
   /* font weights */
   --font-weight-regular: 400;
@@ -75,6 +76,7 @@
   --body-font-size-m: 14px;
   --body-font-size-s: 13px;
   --body-font-size-xs: 12px;
+  --page-back-font-size: 14.5px;
 
   /* body sizes (1.25x scale — some blocks enlarge text via an inner span) */
   --body-font-size-l: 17.5px;       /* 1.25 x 14 */
@@ -447,6 +449,24 @@ h3 em strong {
   color: var(--color-accent);
 }
 
+/* coloured text — authored as [[color-blue]text] (scripts/span-tags.js) */
+span.color-gold { --span-color: var(--color-accent); }
+span.color-blue { --span-color: var(--color-navy-bright); }
+span.color-purple { --span-color: var(--color-purple); }
+span.color-teal { --span-color: var(--color-primary); }
+span.color-navy { --span-color: var(--color-navy); }
+span.color-grey { --span-color: var(--color-secondary); }
+span.color-white { --span-color: var(--color-white); }
+
+/* the colour also wins over formatting inside the brackets (e.g. the bold + italic gold) */
+span:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white),
+span:is(.color-gold, .color-blue, .color-purple, .color-teal, .color-navy, .color-grey, .color-white)
+  :is(strong, b, em, i, a:any-link) {
+  --link-color: var(--span-color);
+
+  color: var(--span-color);
+}
+
 /* lists — measured source indent (padding-left 17px) */
 ol,
 ul {
@@ -564,6 +584,38 @@ a[href^="#fn-"]:any-link,
 a[href$="#disclaimer"]:any-link {
   color: inherit;
   text-decoration: none;
+}
+
+main > .page-back {
+  box-sizing: border-box;
+  max-width: var(--container-max);
+  margin: var(--space-block-s) auto var(--space-block-l);
+
+  /* source nests the link in a padded column inside the padded container */
+  padding-inline: calc(2 * var(--container-gutter));
+}
+
+/* a following spacer section already provides the gap */
+main > .page-back:has(+ .section.spacer) {
+  margin-block-end: 0;
+}
+
+main > .page-back a {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--display-font-family);
+  font-size: var(--page-back-font-size);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+}
+
+main > .page-back a::before {
+  display: inline-block;
+  font-family: var(--icon-font-family);
+  font-size: var(--body-font-size-s);
+  line-height: 1;
+  content: '\e257';
+  translate: 0 var(--space-block-xxs);
 }
 
 

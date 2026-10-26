@@ -86,10 +86,11 @@ function findLinkedDmCarrier(img) {
   return parent;
 }
 
-const EMPTY_ALT_SENTINEL = 'Image without alt text';
-
-function altToLinkText(alt) {
-  return alt || EMPTY_ALT_SENTINEL;
+// An image without alt text is imported as a bare link whose text is the DM URL:
+// dm-support.js renders that with an empty alt (AGENTS.md: never write alt text
+// ourselves; authors add it in DA).
+function altToLinkText(alt, src) {
+  return alt || src;
 }
 // ---- End canonical helpers ----
 
@@ -110,7 +111,7 @@ export default function transform(hookName, element, payload) {
     const linkedAnchor = findLinkedDmCarrier(img);
     if (linkedAnchor) {
       linkedAnchor.setAttribute('title', src);
-      linkedAnchor.textContent = altToLinkText(alt);
+      linkedAnchor.textContent = altToLinkText(alt, src);
       return;
     }
 
@@ -127,7 +128,7 @@ export default function transform(hookName, element, payload) {
     // href is the DM URL. dm-support.js renders this back to a <picture> at load.
     const a = doc.createElement('a');
     a.href = src;
-    a.textContent = altToLinkText(alt);
+    a.textContent = altToLinkText(alt, src);
     img.replaceWith(a);
   });
 }
