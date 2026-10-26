@@ -359,10 +359,27 @@ var CustomImportScript = (() => {
       return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
     }));
   }
+  var LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contacts?)\s*:?$/i;
+  function labelHeadingsToParagraphs(root) {
+    root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
+      if (!LABEL_HEADING.test(text(h))) return;
+      const p = root.ownerDocument.createElement("p");
+      while (h.firstChild) p.append(h.firstChild);
+      if (!p.querySelector(".futura-bold")) {
+        p.querySelectorAll("b, strong").forEach(unwrap);
+        const bold = root.ownerDocument.createElement("span");
+        bold.className = "futura-bold";
+        while (p.firstChild) bold.append(p.firstChild);
+        p.append(bold);
+      }
+      h.replaceWith(p);
+    });
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
+    labelHeadingsToParagraphs(box);
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));

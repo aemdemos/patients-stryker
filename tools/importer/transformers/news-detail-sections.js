@@ -264,10 +264,35 @@ function serifHeadings(root) {
   }));
 }
 
+// press-release boilerplate labels; a few pages set them as h3 headings, the rest as a
+// Futura bold label paragraph
+const LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contacts?)\s*:?$/i;
+
+/**
+ * "About Stryker" / "Media contact" headings → a paragraph with the same content, so they
+ * import like on the other news pages (span.futura-bold → <p><em><strong>, Futura bold).
+ */
+function labelHeadingsToParagraphs(root) {
+  root.querySelectorAll('h2, h3, h4, h5, h6').forEach((h) => {
+    if (!LABEL_HEADING.test(text(h))) return;
+    const p = root.ownerDocument.createElement('p');
+    while (h.firstChild) p.append(h.firstChild);
+    if (!p.querySelector('.futura-bold')) {
+      p.querySelectorAll('b, strong').forEach(unwrap);
+      const bold = root.ownerDocument.createElement('span');
+      bold.className = 'futura-bold';
+      while (p.firstChild) bold.append(p.firstChild);
+      p.append(bold);
+    }
+    h.replaceWith(p);
+  });
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
+  labelHeadingsToParagraphs(box);
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
