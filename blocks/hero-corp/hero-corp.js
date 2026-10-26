@@ -147,6 +147,31 @@ function setupRows(block) {
 }
 
 /**
+ * Headline text sizes come from the section (styles title-N / subline-N): bold text takes the
+ * title size, plain text the subline size. Each text run is wrapped in a span carrying its
+ * role; a space between runs keeps the role of the run before it (as on the source, where the
+ * space sits inside the preceding run). The bold element itself stays at the line's size.
+ * @param {Element} box the .hero-corp-headline box
+ */
+function markTextRoles(box) {
+  const walker = document.createTreeWalker(box, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  let last = 'subline';
+  nodes.forEach((node) => {
+    const space = !node.textContent.trim();
+    if (space && !node.textContent) return;
+    let role = last;
+    if (!space) role = node.parentElement.closest('strong, b') ? 'title' : 'subline';
+    last = role;
+    const span = document.createElement('span');
+    span.className = `hero-corp-${role}`;
+    node.replaceWith(span);
+    span.append(node);
+  });
+}
+
+/**
  * image-slide: the headline lines go in a box (`.hero-corp-headline`), the button
  * paragraphs after it. Block options: box-white / -gold / -blue / -gray / -dark colour the
  * box, box-mt-N … box-pl-N set its margin / padding in percent (`n` = negative: box-mt-n4)
@@ -162,6 +187,7 @@ function setupImageSlide(block) {
     box.className = 'hero-corp-headline';
     box.append(...lines);
     content.prepend(box);
+    markTextRoles(box);
     [...block.classList].forEach((opt) => {
       if (/^box-(white|gold|blue|gray|dark)$/.test(opt)) box.classList.add(opt);
       const m = opt.match(/^box-(mt|mr|mb|ml|pt|pr|pb|pl)-(n?)(\d+)$/);

@@ -336,7 +336,7 @@ const SLIDE_SPACING = {
   'margin-top': 'mt', 'margin-right': 'mr', 'margin-bottom': 'mb', 'margin-left': 'ml', 'padding-top': 'pt', 'padding-right': 'pr', 'padding-bottom': 'pb', 'padding-left': 'pl',
 };
 
-/** one slide text run's look: Futura bold?, size step (fontsize-Nvw → size-N), colour tag */
+/** one slide text run's look: Futura bold?, colour tag (sizes go to the section: slideTextSizes) */
 function slideRunStyle(textNode, line) {
   const el = textNode.parentElement;
   const within = (sel) => {
@@ -344,7 +344,6 @@ function slideRunStyle(textNode, line) {
     return hit && line.contains(hit) ? hit : null;
   };
   const sizeEl = within('[class*="fontsize-"]');
-  const size = sizeEl && (String(sizeEl.className).match(/fontsize-(\d+(?:-\d+)?)-?vw/) || [])[1];
   let color = null;
   for (let e = el; e && line.contains(e); e = e.parentElement) {
     const m = (e.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
@@ -356,20 +355,21 @@ function slideRunStyle(textNode, line) {
   }
   const link = within('a[href]');
   const boldEl = within('[class|="futura-bold"], b, strong');
-  // a Futura run around the size run (futura-bold > fontsize-Nvw > b): its own size sets
-  // the line box, so the bold stays outside the size tag
+  // a Futura run around the size run (futura-bold > fontsize-Nvw > b): the bold stays
+  // outside the colour tag, as on the source
   const outerBold = sizeEl && sizeEl.parentElement && sizeEl.parentElement.closest('[class|="futura-bold"], b, strong');
   return {
     bold: !!boldEl,
     boldOuter: !!(outerBold && line.contains(outerBold)),
-    tags: [size && `size-${size}`, color].filter(Boolean).join(','),
+    tags: color || '',
     href: link ? link.getAttribute('href') : null,
   };
 }
 
 /**
  * A live slide line → its nodes: runs with the same look are merged and written as
- * `[[size-N,color-x]text]`, bold (Futura) runs in <b>, links kept; <br>s kept.
+ * `[[color-x]text]`, bold (Futura) runs in <b>, links kept; <br>s kept. Text sizes are not
+ * authored in the text: they become section styles (slideTextSizes).
  */
 function slideLineNodes(line, document) {
   const runs = [];
@@ -421,6 +421,38 @@ function slideLineNodes(line, document) {
     if (tail && !run.tags) out.push(document.createTextNode(tail));
   });
   return out;
+}
+
+// title-N / subline-N section styles (N = px at 1440 = the fontsize-Nvw step x 14) and defaults
+const SLIDE_TITLE_SIZES = [28, 35, 42, 49, 56, 70];
+const SLIDE_SUBLINE_SIZES = [21, 28, 35, 42, 49, 56, 70];
+const SLIDE_SIZE_DEFAULTS = { title: 42, subline: 28 };
+
+/**
+ * A live headline box → the section styles for its two text sizes: the size of its bold
+ * (Futura) text and of its plain text, each the fontsize-Nvw step x 14 (px at 1440), taking
+ * the size used by most characters when a box mixes sizes. Defaults (title-42, subline-28)
+ * are left out.
+ */
+function slideTextSizes(box) {
+  const tally = { title: {}, subline: {} };
+  const walker = box.ownerDocument.createTreeWalker(box, 4); // SHOW_TEXT
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    const text = n.textContent.trim();
+    const sizeEl = text && n.parentElement.closest('[class*="fontsize-"]');
+    const step = sizeEl && (String(sizeEl.className).match(/fontsize-(\d+(?:-\d+)?)-?vw/) || [])[1];
+    if (step && box.contains(sizeEl)) {
+      const role = n.parentElement.closest('[class|="futura-bold"], b, strong') ? 'title' : 'subline';
+      const px = Math.round(parseFloat(step.replace('-', '.')) * 14);
+      tally[role][px] = (tally[role][px] || 0) + text.length;
+    }
+  }
+  return [['title', SLIDE_TITLE_SIZES], ['subline', SLIDE_SUBLINE_SIZES]].map(([role, allowed]) => {
+    const top = Object.entries(tally[role]).sort((a, b) => b[1] - a[1])[0];
+    if (!top) return null;
+    const px = allowed.reduce((a, b) => (Math.abs(b - top[0]) < Math.abs(a - top[0]) ? b : a));
+    return px === SLIDE_SIZE_DEFAULTS[role] ? null : `${role}-${px}`;
+  }).filter(Boolean);
 }
 
 /** a live headline box (div.largeheadline) → its options: box colour + inline % spacing */
@@ -485,6 +517,7 @@ function extractImageSlide(doc, document, v = {}) {
   if (lines.length) {
     first.append(...lines);
     variants.push(...slideBoxOptions(box));
+    styles.push(...slideTextSizes(box));
   }
   ctas.forEach((a) => {
     const p = document.createElement('p');

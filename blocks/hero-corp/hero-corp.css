@@ -10,8 +10,10 @@
  * image-slide: a full-width slide (image, or a DM video in a 3:1 frame) with a headline
  * box over it (stryker.com single-slide c-autocarousel). Rows: | desktop image or video |,
  * | mobile image | (optional), | lines + buttons |. Lines: a paragraph per line (a heading
- * keeps its level); plain = Egyptienne light, bold = Futura bold, colours by [[color-…]],
- * sizes by [[size-N]] (N vw from 600px up to N x 14px, 2N vw below, as fontsize-Nvw).
+ * keeps its level); plain = Egyptienne light, bold = Futura bold, colours by [[color-…]].
+ * Text sizes come from the section, not the author's text: bold text takes the title size,
+ * plain text the subline size, set with the section styles title-N / subline-N (N = px at
+ * 1440; default title-42 / subline-28).
  * Options: box-white / -gold / -blue / -gray / -dark; box-mt-N … box-pl-N (box margin /
  * padding %); top-N / left-N / right-N (headline position, % of the slide); mobile-below
  * (phones: mobile image, then the headline); mobile-text-black; stripe-gold /
@@ -43,7 +45,8 @@
   --corp-image-slide-next-line-height-s: 1.4286; /* later lines below 600px */
   --corp-image-slide-line-height: 1.35;
   --corp-image-slide-size-line-height: 1.35;
-  --corp-image-slide-size: 1;
+  --corp-image-slide-title-step: 3; /* title-42 */
+  --corp-image-slide-subline-step: 2; /* subline-28 */
   --corp-image-slide-video-bleed: 12px;
   --corp-image-slide-stripe-height: 34px;
   --corp-image-slide-max-height: 33.33vw; /* the slide window from 600px */
@@ -256,8 +259,7 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 .hero-corp.image-slide .hero-corp-headline.box-gray { background: var(--color-surface); }
 .hero-corp.image-slide .hero-corp-headline.box-dark { background: var(--color-secondary); }
 
-/* headline lines: Egyptienne light, bold = Futura bold; size tags [[size-N]…] scale the run
-   with the viewport like the source fontsize-Nvw classes (2N vw on phones) */
+/* headline lines: Egyptienne light, bold = Futura bold (sizes below) */
 .hero-corp.image-slide .hero-corp-headline :is(h1, h2, h3, p) {
   max-width: none;
   margin: 0;
@@ -299,25 +301,19 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
   font-weight: var(--font-weight-bold);
 }
 
-.hero-corp.image-slide .hero-corp-headline span[class*="size-"] {
-  font-size: calc(var(--corp-image-slide-size) * 2vw);
+/* text sizes: bold = title size, plain = subline size (hero-corp.js markTextRoles), chosen per
+   section with the styles title-N / subline-N (N = px at 1440). Like the source fontsize-Nvw
+   classes: twice the step in vw below 600px, the step in vw from 600px up to N px. */
+.hero-corp.image-slide .hero-corp-headline :is(.hero-corp-title, .hero-corp-subline) {
+  --corp-image-slide-step: var(--corp-image-slide-subline-step);
+
+  font-size: calc(var(--corp-image-slide-step) * 2vw);
   line-height: var(--corp-image-slide-size-line-height);
 }
 
-.hero-corp.image-slide span.size-1 { --corp-image-slide-size: 1; }
-.hero-corp.image-slide span.size-1-5 { --corp-image-slide-size: 1.5; }
-.hero-corp.image-slide span.size-2 { --corp-image-slide-size: 2; }
-.hero-corp.image-slide span.size-2-5 { --corp-image-slide-size: 2.5; }
-.hero-corp.image-slide span.size-3 { --corp-image-slide-size: 3; }
-.hero-corp.image-slide span.size-3-5 { --corp-image-slide-size: 3.5; }
-.hero-corp.image-slide span.size-4 { --corp-image-slide-size: 4; }
-.hero-corp.image-slide span.size-4-5 { --corp-image-slide-size: 4.5; }
-.hero-corp.image-slide span.size-5 { --corp-image-slide-size: 5; }
-.hero-corp.image-slide span.size-5-5 { --corp-image-slide-size: 5.5; }
-.hero-corp.image-slide span.size-6 { --corp-image-slide-size: 6; }
-.hero-corp.image-slide span.size-7 { --corp-image-slide-size: 7; }
-.hero-corp.image-slide span.size-8 { --corp-image-slide-size: 8; }
-.hero-corp.image-slide span.size-9 { --corp-image-slide-size: 9; }
+.hero-corp.image-slide .hero-corp-headline .hero-corp-title {
+  --corp-image-slide-step: var(--corp-image-slide-title-step);
+}
 
 /* buttons (a bold link alone on its line): 15px below each, as the source .btn */
 .hero-corp.image-slide p.button-wrapper {
@@ -335,6 +331,21 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
 .hero-corp.image-slide.stripe-gradient {
   border-image: var(--corp-image-slide-stripe-gradient) 1;
 }
+
+/* the section styles title-N / subline-N set the two text sizes (N = px at 1440) */
+.section.title-28 .hero-corp.image-slide { --corp-image-slide-title-step: 2; }
+.section.title-35 .hero-corp.image-slide { --corp-image-slide-title-step: 2.5; }
+.section.title-42 .hero-corp.image-slide { --corp-image-slide-title-step: 3; }
+.section.title-49 .hero-corp.image-slide { --corp-image-slide-title-step: 3.5; }
+.section.title-56 .hero-corp.image-slide { --corp-image-slide-title-step: 4; }
+.section.title-70 .hero-corp.image-slide { --corp-image-slide-title-step: 5; }
+.section.subline-21 .hero-corp.image-slide { --corp-image-slide-subline-step: 1.5; }
+.section.subline-28 .hero-corp.image-slide { --corp-image-slide-subline-step: 2; }
+.section.subline-35 .hero-corp.image-slide { --corp-image-slide-subline-step: 2.5; }
+.section.subline-42 .hero-corp.image-slide { --corp-image-slide-subline-step: 3; }
+.section.subline-49 .hero-corp.image-slide { --corp-image-slide-subline-step: 3.5; }
+.section.subline-56 .hero-corp.image-slide { --corp-image-slide-subline-step: 4; }
+.section.subline-70 .hero-corp.image-slide { --corp-image-slide-subline-step: 5; }
 
 /* from 600px: roomier tagline-band with a larger message,
    bigger large-header title, image-slide headline over the image */
@@ -446,7 +457,7 @@ body:has(main > .section:first-child .hero-corp:is(.image-slide, .large-header))
   }
 
   /* N vw, stopping at the 1440px size (N x 14px) like the source */
-  .hero-corp.image-slide .hero-corp-headline span[class*="size-"] {
-    font-size: min(calc(var(--corp-image-slide-size) * 1vw), calc(var(--corp-image-slide-size) * var(--corp-image-slide-line-size)));
+  .hero-corp.image-slide .hero-corp-headline :is(.hero-corp-title, .hero-corp-subline) {
+    font-size: min(calc(var(--corp-image-slide-step) * 1vw), calc(var(--corp-image-slide-step) * var(--corp-image-slide-line-size)));
   }
 }

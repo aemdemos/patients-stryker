@@ -403,7 +403,6 @@ var CustomImportScript = (() => {
       return hit && line.contains(hit) ? hit : null;
     };
     const sizeEl = within('[class*="fontsize-"]');
-    const size = sizeEl && (String(sizeEl.className).match(/fontsize-(\d+(?:-\d+)?)-?vw/) || [])[1];
     let color = null;
     for (let e = el; e && line.contains(e); e = e.parentElement) {
       const m = (e.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
@@ -419,7 +418,7 @@ var CustomImportScript = (() => {
     return {
       bold: !!boldEl,
       boldOuter: !!(outerBold && line.contains(outerBold)),
-      tags: [size && `size-${size}`, color].filter(Boolean).join(","),
+      tags: color || "",
       href: link ? link.getAttribute("href") : null
     };
   }
@@ -468,6 +467,29 @@ var CustomImportScript = (() => {
     });
     return out;
   }
+  var SLIDE_TITLE_SIZES = [28, 35, 42, 49, 56, 70];
+  var SLIDE_SUBLINE_SIZES = [21, 28, 35, 42, 49, 56, 70];
+  var SLIDE_SIZE_DEFAULTS = { title: 42, subline: 28 };
+  function slideTextSizes(box) {
+    const tally = { title: {}, subline: {} };
+    const walker = box.ownerDocument.createTreeWalker(box, 4);
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      const text = n.textContent.trim();
+      const sizeEl = text && n.parentElement.closest('[class*="fontsize-"]');
+      const step = sizeEl && (String(sizeEl.className).match(/fontsize-(\d+(?:-\d+)?)-?vw/) || [])[1];
+      if (step && box.contains(sizeEl)) {
+        const role = n.parentElement.closest('[class|="futura-bold"], b, strong') ? "title" : "subline";
+        const px = Math.round(parseFloat(step.replace("-", ".")) * 14);
+        tally[role][px] = (tally[role][px] || 0) + text.length;
+      }
+    }
+    return [["title", SLIDE_TITLE_SIZES], ["subline", SLIDE_SUBLINE_SIZES]].map(([role, allowed]) => {
+      const top = Object.entries(tally[role]).sort((a, b) => b[1] - a[1])[0];
+      if (!top) return null;
+      const px = allowed.reduce((a, b) => Math.abs(b - top[0]) < Math.abs(a - top[0]) ? b : a);
+      return px === SLIDE_SIZE_DEFAULTS[role] ? null : `${role}-${px}`;
+    }).filter(Boolean);
+  }
   function slideBoxOptions(box) {
     const opts = [];
     const bg = [...box.classList].find((c) => SLIDE_BOXES[c]);
@@ -515,6 +537,7 @@ var CustomImportScript = (() => {
     if (lines.length) {
       first.append(...lines);
       variants.push(...slideBoxOptions(box));
+      styles.push(...slideTextSizes(box));
     }
     ctas.forEach((a) => {
       const p = document.createElement("p");
