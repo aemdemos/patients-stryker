@@ -8,6 +8,8 @@
  * when a new shared XF is found (e.g. from the site-wide export).
  *
  * Source: Experience Fragment References export (news-detail pages), received 2026-10-25.
+ * xf-fragment-map.json is a JSON copy for tools that cannot import JS; keep it in sync
+ * (node tools/importer/xf-fragment-path.test.mjs checks it).
  */
 export default {
   '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master': {

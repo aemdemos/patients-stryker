@@ -1,5 +1,7 @@
 // Quick check of the XF → fragment lookup: node tools/importer/xf-fragment-path.test.mjs
+import { readFileSync } from 'fs';
 import xfFragmentPath, { xfToFragmentPath } from './xf-fragment-path.js';
+import MAP from './xf-fragment-map.js';
 
 const XF = 'https://www.stryker.com/content/experience-fragments/stryker';
 const cases = [
@@ -22,5 +24,15 @@ cases.forEach(([fn, input, expected]) => {
   const got = fn(input);
   if (got !== expected) failed += 1;
   console.log(`${got === expected ? 'ok  ' : 'FAIL'} ${input} → ${got}`);
+});
+
+// xf-fragment-map.json (the JSON copy) lists the same XFs, names and paths as the JS map
+const json = JSON.parse(readFileSync(new URL('./xf-fragment-map.json', import.meta.url), 'utf8')).fragments;
+const keys = [...new Set([...Object.keys(MAP), ...Object.keys(json)])];
+keys.forEach((xf) => {
+  const want = MAP[xf] && { path: xfToFragmentPath(xf), name: MAP[xf].name };
+  const ok = !!want && !!json[xf] && json[xf].path === want.path && json[xf].name === want.name;
+  if (!ok) failed += 1;
+  console.log(`${ok ? 'ok  ' : 'FAIL'} json in sync: ${xf}`);
 });
 process.exit(failed ? 1 : 0);
