@@ -8,7 +8,7 @@
  *   1. title section: the page H1 (`.h1-title`, only when the source has one — no H1 is
  *      created) and the H5 publish date (`.c-publish-date`)
  *   2. lead media: the single-slide `.c-autocarousel` (own section; the hero-image-slide
- *      parser turns it into `Hero Corp (image-slide)`), or a standalone image (own section)
+ *      parser turns it into `Hero (image-slide)`), or a standalone image (own section)
  *   3. article sections: rich text, standalone images and `.c-standalone-video` (left for
  *      the video parser). A run of centred content (centred rich text, `.c-curatedcta`
  *      buttons) becomes its own section with the `center` section style.
@@ -92,6 +92,8 @@ function newTabHref(source, href) {
 
 // source copy spans → the corp section style that sets the same copy size / font
 const SIZE_STYLES = [
+  // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph)
+  ['fontsize-8em', 'disclaimer'],
   ['fontsize-1-25em', 'p-1-25'],
   ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
@@ -168,12 +170,35 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
+  const doc = root.ownerDocument;
+
+  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
+  // possibly followed by empty size spans, or nested: <b><span>…<br></span></b>) belongs
+  // after it: inside <strong> it would be lost on import, merging the label into the next
+  // line. Innermost formatting first, so the break moves out of every level; done before
+  // the plain-bold labels are found (a "<b>About Stryker<br></b>" label is on its own line).
+  // A space typed at the end of the formatting ("2023&nbsp;</span>–") stays between the words.
+  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
+    && !node.textContent.trim() && !node.querySelector('img, br');
+  const trailingSpace = /[\s\u00a0]+$/;
+  [...root.querySelectorAll('span.futura-bold, b, i, em, strong')].reverse().forEach((el) => {
+    let last = el.lastChild;
+    while (last && (last.nodeName === 'BR' || emptyElement(last)
+      || (last.nodeType === 3 && !last.textContent.trim()))) {
+      if (emptyElement(last)) last.remove();
+      else el.after(last);
+      last = el.lastChild;
+    }
+    if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
+      last.textContent = last.textContent.replace(trailingSpace, '');
+      el.after(doc.createTextNode(' '));
+    }
+  });
   tagPlainBoldLabels(root, wholeParagraphs);
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
   // triangle — e.g. "Read the full report") → bold + underline link, the authoring
   // convention for that CTA (a.link-strong): <strong><a><u>text</u></a></strong>
-  const doc = root.ownerDocument;
   const standalone = new Set();
   root.querySelectorAll('.standalone-link').forEach((span) => {
     const a = span.closest('a') || span.querySelector('a');
@@ -188,20 +213,6 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     strong.append(a);
   });
 
-  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
-  // possibly followed by empty size spans) belongs after it: inside <strong> it would be
-  // lost on import, merging the label into the next line
-  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
-    && !node.textContent.trim() && !node.querySelector('img, br');
-  root.querySelectorAll('span.futura-bold, b, i, em, strong').forEach((el) => {
-    let last = el.lastChild;
-    while (last && (last.nodeName === 'BR' || emptyElement(last)
-      || (last.nodeType === 3 && !last.textContent.trim()))) {
-      if (emptyElement(last)) last.remove();
-      else el.after(last);
-      last = el.lastChild;
-    }
-  });
   // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body
   // colour in news-detail.css); <b> → <strong> (bold in the body font). Headings keep a
   // plain <strong>.
@@ -283,6 +294,8 @@ function labelHeadingsToParagraphs(root) {
     if (!LABEL_HEADING.test(text(h))) return;
     const p = root.ownerDocument.createElement('p');
     while (h.firstChild) p.append(h.firstChild);
+    // the heading's own size span (e.g. fontsize-8em) is not copy size: the label is 14px
+    p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
     if (!p.querySelector('.futura-bold')) {
       p.querySelectorAll('b, strong').forEach(unwrap);
       const bold = root.ownerDocument.createElement('span');
@@ -337,6 +350,20 @@ function richTextNodes(component, doc) {
     if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : (size || '');
   });
   return { nodes, centred, size };
+}
+
+/**
+ * The section style of an image the source sets in a one-third / one-half grid column
+ * with the other columns of the row empty: col-sm-4 → `image-1-3`, col-sm-6 →
+ * `image-1-2` (styles-corp.css caps the image box at that column's width); '' otherwise.
+ */
+function imageColumnStyle(component) {
+  const col = component.closest('[class*="col-sm-"]');
+  const match = col && col.className.match(/\bcol-sm-(4|6)\b/);
+  if (!match) return '';
+  const others = [...col.parentElement.children].filter((el) => el !== col);
+  if (others.some((el) => text(el) || el.querySelector('img, video, iframe'))) return '';
+  return match[1] === '4' ? 'image-1-3' : 'image-1-2';
 }
 
 function imageNodes(component, doc) {
@@ -502,8 +529,10 @@ export default function transform(hookName, element, payload) {
     if (component.matches('.c-standalone-image')) {
       const nodes = imageNodes(component, doc);
       if (!nodes.length) return;
-      if (isFirst) {
-        startSection('lead').nodes.push(...nodes);
+      // the lead image, or an image in a narrow source column, is a section of its own
+      const columnStyle = imageColumnStyle(component);
+      if (isFirst || columnStyle) {
+        startSection(isFirst ? 'lead' : 'image', columnStyle || undefined).nodes.push(...nodes);
         current = null;
         return;
       }

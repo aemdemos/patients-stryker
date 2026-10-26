@@ -109,7 +109,7 @@ var CustomImportScript = (() => {
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
-      name: `Hero Corp (${variants.join(", ")})`,
+      name: `Hero (${variants.join(", ")})`,
       cells
     }));
   }
@@ -239,6 +239,8 @@ var CustomImportScript = (() => {
     return isPdf || newTab ? `${href}#_blank` : href;
   }
   var SIZE_STYLES = [
+    // 0.8em (11.2px) copy is small print set in the article (e.g. a references paragraph)
+    ["fontsize-8em", "disclaimer"],
     ["fontsize-1-25em", "p-1-25"],
     ["fontsize-1-5em", "p-1-5"],
     ["fontsize-1-75em", "p-1-75"]
@@ -284,8 +286,22 @@ var CustomImportScript = (() => {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
-    tagPlainBoldLabels(root, wholeParagraphs);
     const doc = root.ownerDocument;
+    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
+    const trailingSpace = /[\s\u00a0]+$/;
+    [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
+      let last = el.lastChild;
+      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
+        if (emptyElement(last)) last.remove();
+        else el.after(last);
+        last = el.lastChild;
+      }
+      if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
+        last.textContent = last.textContent.replace(trailingSpace, "");
+        el.after(doc.createTextNode(" "));
+      }
+    });
+    tagPlainBoldLabels(root, wholeParagraphs);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
@@ -298,15 +314,6 @@ var CustomImportScript = (() => {
       const strong = doc.createElement("strong");
       a.replaceWith(strong);
       strong.append(a);
-    });
-    const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
-    root.querySelectorAll("span.futura-bold, b, i, em, strong").forEach((el) => {
-      let last = el.lastChild;
-      while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
-        if (emptyElement(last)) last.remove();
-        else el.after(last);
-        last = el.lastChild;
-      }
     });
     root.querySelectorAll("span.futura-bold").forEach((el) => {
       if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
@@ -365,6 +372,7 @@ var CustomImportScript = (() => {
       if (!LABEL_HEADING.test(text(h))) return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
+      p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
       if (!p.querySelector(".futura-bold")) {
         p.querySelectorAll("b, strong").forEach(unwrap);
         const bold = root.ownerDocument.createElement("span");
@@ -415,6 +423,14 @@ var CustomImportScript = (() => {
       if (node.copyStyle === null) node.copyStyle = first ? first.copyStyle : size || "";
     });
     return { nodes, centred, size };
+  }
+  function imageColumnStyle(component) {
+    const col = component.closest('[class*="col-sm-"]');
+    const match = col && col.className.match(/\bcol-sm-(4|6)\b/);
+    if (!match) return "";
+    const others = [...col.parentElement.children].filter((el) => el !== col);
+    if (others.some((el) => text(el) || el.querySelector("img, video, iframe"))) return "";
+    return match[1] === "4" ? "image-1-3" : "image-1-2";
   }
   function imageNodes(component, doc) {
     return [...component.querySelectorAll("img")].map((source) => {
@@ -545,8 +561,9 @@ var CustomImportScript = (() => {
       if (component.matches(".c-standalone-image")) {
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
-        if (isFirst) {
-          startSection("lead").nodes.push(...nodes2);
+        const columnStyle = imageColumnStyle(component);
+        if (isFirst || columnStyle) {
+          startSection(isFirst ? "lead" : "image", columnStyle || void 0).nodes.push(...nodes2);
           current = null;
           return;
         }
@@ -899,7 +916,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-news-detail.js
   var PAGE_TEMPLATE = {
     name: "news-detail",
-    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero Corp (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
+    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
     urls: [
       "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
       "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",
