@@ -450,7 +450,17 @@ export default function transform(hookName, element, payload) {
     if (component.matches('.c-curatedcta')) {
       const nodes = buttonNodes(component, doc);
       if (!nodes.length) return;
-      if (!current || !current.kind.startsWith('center')) startSection('center', 'center');
+      // a button is centred when the source centres it (an offset grid column, e.g. the
+      // ICU "Nominate a hero" CTA) or it follows centred text; otherwise it stays
+      // left-aligned under the article text (e.g. "Listen to the podcast episode")
+      const offset = component.closest('[class*="aem-GridColumn--offset--default--"]');
+      const centred = (offset && !/aem-GridColumn--offset--default--0\b/.test(offset.className))
+        || (current && current.kind.startsWith('center'));
+      if (centred) {
+        if (!current || !current.kind.startsWith('center')) startSection('center', 'center');
+      } else if (!current || !current.kind.startsWith('body')) {
+        startSection('body');
+      }
       current.nodes.push(...nodes);
       return;
     }

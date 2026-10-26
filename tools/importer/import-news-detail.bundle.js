@@ -524,7 +524,13 @@ var CustomImportScript = (() => {
       if (component.matches(".c-curatedcta")) {
         const nodes2 = buttonNodes(component, doc);
         if (!nodes2.length) return;
-        if (!current || !current.kind.startsWith("center")) startSection("center", "center");
+        const offset = component.closest('[class*="aem-GridColumn--offset--default--"]');
+        const centred2 = offset && !/aem-GridColumn--offset--default--0\b/.test(offset.className) || current && current.kind.startsWith("center");
+        if (centred2) {
+          if (!current || !current.kind.startsWith("center")) startSection("center", "center");
+        } else if (!current || !current.kind.startsWith("body")) {
+          startSection("body");
+        }
         current.nodes.push(...nodes2);
         return;
       }
