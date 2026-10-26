@@ -16,6 +16,8 @@
  *       StrykerTalks podcasts) → `Columns (columns-67-33, large-headline, gray-lead)`, full
  *       width: the video link, then the headline as a Heading 2 statement in the grey box;
  *       the page gets `theme: full-width` (title and small print full width, as on the source)
+ * A `spacer` section follows the title section when it holds the H1, unless the article
+ * opens with a lead image directly below the date (outside a column layout).
  *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
  *       section that follows the rule
  *   4. related-content cards (`.c-customizeable`): their heading plus the grid, left for
@@ -185,8 +187,13 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     let last = el.lastChild;
     while (last && (last.nodeName === 'BR' || emptyElement(last)
       || (last.nodeType === 3 && !last.textContent.trim()))) {
-      if (emptyElement(last)) last.remove();
-      else el.after(last);
+      if (emptyElement(last)) {
+        // an empty element that only held a space (e.g. <sup>&nbsp;</sup>) keeps the space
+        if (/[\s\u00a0]/.test(last.textContent) && !(el.nextSibling && /^[\s\u00a0]/.test(el.nextSibling.textContent))) {
+          el.after(doc.createTextNode(' '));
+        }
+        last.remove();
+      } else el.after(last);
       last = el.lastChild;
     }
     if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
@@ -517,6 +524,9 @@ export default function transform(hookName, element, payload) {
   });
 
   const consumed = new Set();
+  // a lead image placed directly below the date (not in a column layout) starts 15px
+  // below it on the source: no spacer then
+  let leadBelowDate = false;
   components.forEach((component) => {
     if (consumed.has(component)) return;
     const isFirst = current === title;
@@ -531,6 +541,7 @@ export default function transform(hookName, element, payload) {
       if (!nodes.length) return;
       // the lead image, or an image in a narrow source column, is a section of its own
       const columnStyle = imageColumnStyle(component);
+      if (isFirst && !component.closest('.colctrl')) leadBelowDate = true;
       if (isFirst || columnStyle) {
         startSection(isFirst ? 'lead' : 'image', columnStyle || undefined).nodes.push(...nodes);
         current = null;
@@ -645,9 +656,10 @@ export default function transform(hookName, element, payload) {
   const disclaimerStyle = disclaimerNodes.converted ? 'disclaimer, references-spaced' : 'disclaimer';
   if (disclaimerNodes.length) startSection('disclaimer', disclaimerStyle).nodes.push(...disclaimerNodes);
 
-  // full-width pages (a video + Large Headline row) open with a `spacer` section after the
-  // title: the source row starts 46px below the date (30px spacer + the 15px title gap)
-  if (element.getAttribute('data-news-theme') === 'full-width') {
+  // the title section (when it holds the H1) is followed by a `spacer` section: the
+  // article starts 46px below the date on the source (30px spacer + the 15px title gap) —
+  // except a lead image placed directly below the date, 15px below it
+  if (title.nodes.some((node) => node.tagName === 'H1') && !leadBelowDate) {
     sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
   }
 

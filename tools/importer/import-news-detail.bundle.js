@@ -109,7 +109,7 @@ var CustomImportScript = (() => {
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
     }
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
-      name: `Hero (${variants.join(", ")})`,
+      name: `Hero Corp (${variants.join(", ")})`,
       cells
     }));
   }
@@ -292,8 +292,12 @@ var CustomImportScript = (() => {
     [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
       let last = el.lastChild;
       while (last && (last.nodeName === "BR" || emptyElement(last) || last.nodeType === 3 && !last.textContent.trim())) {
-        if (emptyElement(last)) last.remove();
-        else el.after(last);
+        if (emptyElement(last)) {
+          if (/[\s\u00a0]/.test(last.textContent) && !(el.nextSibling && /^[\s\u00a0]/.test(el.nextSibling.textContent))) {
+            el.after(doc.createTextNode(" "));
+          }
+          last.remove();
+        } else el.after(last);
         last = el.lastChild;
       }
       if (last && last.nodeType === 3 && trailingSpace.test(last.textContent)) {
@@ -549,6 +553,7 @@ var CustomImportScript = (() => {
       return !parent && !el.closest("header, footer, .modal");
     });
     const consumed = /* @__PURE__ */ new Set();
+    let leadBelowDate = false;
     components.forEach((component) => {
       if (consumed.has(component)) return;
       const isFirst = current === title;
@@ -562,6 +567,7 @@ var CustomImportScript = (() => {
         const nodes2 = imageNodes(component, doc);
         if (!nodes2.length) return;
         const columnStyle = imageColumnStyle(component);
+        if (isFirst && !component.closest(".colctrl")) leadBelowDate = true;
         if (isFirst || columnStyle) {
           startSection(isFirst ? "lead" : "image", columnStyle || void 0).nodes.push(...nodes2);
           current = null;
@@ -647,7 +653,7 @@ var CustomImportScript = (() => {
     }), doc);
     const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
     if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
-    if (element.getAttribute("data-news-theme") === "full-width") {
+    if (title.nodes.some((node) => node.tagName === "H1") && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
     }
     const out = [];
@@ -916,7 +922,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-news-detail.js
   var PAGE_TEMPLATE = {
     name: "news-detail",
-    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
+    description: "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero Corp (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
     urls: [
       "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
       "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",
