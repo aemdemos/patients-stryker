@@ -30,6 +30,14 @@
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 
+  /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
+  --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
+  --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
+  --corp-social-icon-size: 32px;
+  --corp-social-icon-size-l: 48px;
+  --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
+  --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
+
   /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
   --corp-color-purple-dark: #753d79;
   --corp-color-purple-pressed: #643468;
@@ -87,6 +95,12 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: inherit;
 }
 
+/* links: no underline (stryker.com base: `a { text-decoration: none }`); the shared styles.css
+   underlines every link, which suits patients pages only. */
+:where(body.corp) a:any-link {
+  text-decoration: none;
+}
+
 :where(body.corp) strong > a:any-link,
 :where(body.corp) a:any-link > strong {
   font-weight: 400;
@@ -98,6 +112,12 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) a:any-link > strong:has(u) u,
 :where(body.corp) a.link-strong:any-link {
   font-weight: 700;
+}
+
+/* link hover: a darker teal (stryker.com `a:hover`) */
+:where(body.corp) a:any-link:hover,
+:where(body.corp) a:any-link:focus-visible {
+  color: var(--color-primary-pressed);
 }
 
 :where(body.corp) a.button:any-link,
@@ -303,13 +323,120 @@ body:where(.corp):has(main .hero-carousel) header {
   margin-bottom: var(--space-block-l);
 }
 
-/* section styles btn-purple / btn-blue: the section's bold-link buttons in purple or blue */
+/* ---- shared news-detail fragments (/us/en/fragments/…, #443) ----
+   Each fragment document sets one section style. The fragment block hoists a fragment
+   that fills its section into main, or nests it inside the block when it shares the
+   section (contact aside next to a form), so the rules match `main .section.{style}`. */
+
+/* connect-band: heading in a gold band (Sustainability "Connect with us") */
+:where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
+  margin: 0 0 var(--space-block);
+  padding: var(--corp-band-padding);
+  border-bottom: 0;
+  background-color: var(--color-accent);
+  font-family: var(--display-font-family);
+  font-size: var(--corp-heading-font-size-band);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+/* contact-aside: contact links next to a form (Sustainability, Sage). An underlined
+   link is the stryker.com "standalone link" (uppercase Futura); bold links are buttons,
+   shown in a row; links holding a social icon show it on its brand square. */
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link:has(> u) {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link > u {
+  text-decoration: none;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link:has(> u)::after {
+  content: var(--corp-chevron-glyph);
+  padding-inline-start: 0.5em;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  font-weight: var(--font-weight-regular);
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper p.button-wrapper {
+  display: inline-block;
+  margin: 0 var(--space-block-s) var(--space-block-s) 0;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a.button:any-link {
+  width: var(--corp-contact-button-width);
+}
+
+/* the icon links are authored side by side, without a space between them */
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link:has(> .icon) {
+  display: inline-block;
+  margin-inline-end: var(--space-inset-l);
+  vertical-align: top;
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon {
+  display: block;
+  width: var(--corp-social-icon-size);
+  height: var(--corp-social-icon-size);
+  border-radius: var(--corp-share-icon-radius);
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper .icon-linkedin {
+  background-color: var(--corp-color-linkedin);
+}
+
+:where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon-facebook {
+  border-radius: 50%;
+  background-color: var(--corp-color-facebook);
+}
+
+/* talent-banner: full-width image (mobile image below 600px) with a blue button on it */
+:where(body.corp) main .section.talent-banner > .default-content-wrapper {
+  display: grid;
+}
+
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > * {
+  grid-area: 1 / 1;
+  margin: 0;
+}
+
+/* full width: from the content column out to the viewport edges; desktop image from 600px */
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > * > picture {
+  display: block;
+  margin-inline: calc(50% - 50vw);
+}
+
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > :first-child > picture {
+  display: none;
+}
+
+:where(body.corp) main .section.talent-banner > .default-content-wrapper picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* the button sits on the image (same grid cell). The image is full width with a fixed
+   shape, so its position is measured against the viewport width on the shared pages:
+   5vw across, 25.9vw down below 600px; 57vw across, 14.8vw down (44% of the 3:1 image)
+   from 600px. `(100vw - 100%) / 2` is the gap between the viewport and the content column. */
+:where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
+  z-index: 1;
+  place-self: start;
+  margin: 25.9vw 0 0 calc(5vw - (100vw - 100%) / 2);
+}
+
+/* section styles btn-purple / btn-blue: the section's bold-link buttons in purple or blue;
+   the talent banner's button is the blue one */
 :where(body.corp) main .section.btn-purple a.button.primary:any-link {
   border-color: var(--corp-color-purple-dark);
   background-color: var(--color-purple);
 }
 
-:where(body.corp) main .section.btn-blue a.button.primary:any-link {
+:where(body.corp) main .section:is(.btn-blue, .talent-banner) a.button.primary:any-link {
   border-color: var(--corp-color-navy-bright-dark);
   background-color: var(--color-navy-bright);
 }
@@ -319,7 +446,7 @@ body:where(.corp):has(main .hero-carousel) header {
   background-color: var(--corp-color-purple-pressed);
 }
 
-:where(body.corp) main .section.btn-blue a.button.primary:any-link:is(:hover, :focus-visible) {
+:where(body.corp) main .section:is(.btn-blue, .talent-banner) a.button.primary:any-link:is(:hover, :focus-visible) {
   border-color: var(--corp-color-navy-bright-pressed);
   background-color: var(--corp-color-navy-bright-pressed);
 }
@@ -381,6 +508,7 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--paragraph-line-height);
 }
 
+
 @media (width >= 600px) {
   :where(body.corp) h2 {
     font-size: var(--heading-font-size-xl);
@@ -412,6 +540,27 @@ body:where(.corp):has(main .hero-carousel) header {
   :where(body.corp) .tabs-panel > .section.ps-1,
   :where(body.corp) .accordion-item-body > .section.ps-1 {
     margin-bottom: var(--space-inset-l);
+  }
+
+  :where(body.corp) main .section.connect-band > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xxxl-s);
+  }
+
+  :where(body.corp) main .section.contact-aside > .default-content-wrapper a:any-link .icon {
+    width: var(--corp-social-icon-size-l);
+    height: var(--corp-social-icon-size-l);
+  }
+
+  :where(body.corp) main .section.talent-banner > .default-content-wrapper > :first-child > picture {
+    display: block;
+  }
+
+  :where(body.corp) main .section.talent-banner > .default-content-wrapper > :nth-child(2) > picture {
+    display: none;
+  }
+
+  :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
+    margin: 14.8vw 0 0 calc(57vw - (100vw - 100%) / 2);
   }
 }
 
