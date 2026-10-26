@@ -55,8 +55,9 @@ body.news-detail main > .section:not(.cards-corp-container) > .default-content-w
 }
 
 /* bold inside running text keeps the body font; a bold line on its own stays Futura
-   (news-detail.js marks it .standalone) */
-body.news-detail main > .section > .default-content-wrapper :is(p, li) :is(strong:not(.standalone), b) {
+   (news-detail.js marks it .standalone), and so does bold + italic (the rule below) */
+body.news-detail main > .section > .default-content-wrapper :is(p, li)
+  :is(strong:not(.standalone, em strong, :has(em)), b:not(i b, :has(i))) {
   font-family: var(--body-font-family);
 }
 

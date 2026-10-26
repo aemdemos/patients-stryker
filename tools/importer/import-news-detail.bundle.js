@@ -240,6 +240,7 @@ var CustomImportScript = (() => {
   }
   var SIZE_STYLES = [
     ["fontsize-1-25em", "p-1-25"],
+    ["fontsize-1-5em", "p-1-5"],
     ["fontsize-1-75em", "p-1-75"]
   ];
   var FONT_STYLES = [
@@ -305,7 +306,17 @@ var CustomImportScript = (() => {
         last = el.lastChild;
       }
     });
-    root.querySelectorAll("span.futura-bold, b").forEach((el) => rename(el, "strong"));
+    root.querySelectorAll("span.futura-bold").forEach((el) => {
+      if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
+        rename(el, "strong");
+        return;
+      }
+      const strong = rename(el, "strong");
+      const em = root.ownerDocument.createElement("em");
+      while (strong.firstChild) em.append(strong.firstChild);
+      strong.append(em);
+    });
+    root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
     root.querySelectorAll("i").forEach((el) => rename(el, "em"));
     root.querySelectorAll("span, font").forEach(unwrap);
     root.querySelectorAll("strong strong, em em").forEach(unwrap);
@@ -428,10 +439,6 @@ var CustomImportScript = (() => {
           ol = doc.createElement("ol");
           out.push(ol);
         }
-        const walker = doc.createTreeWalker(node, 4);
-        let first = walker.nextNode();
-        while (first && !first.textContent.trim()) first = walker.nextNode();
-        if (first) first.textContent = first.textContent.replace(NUMBERED, "");
         const li = doc.createElement("li");
         while (node.firstChild) li.append(node.firstChild);
         ol.append(li);

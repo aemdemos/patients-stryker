@@ -86,6 +86,7 @@ function newTabHref(source, href) {
 // source copy spans → the corp section style that sets the same copy size / font
 const SIZE_STYLES = [
   ['fontsize-1-25em', 'p-1-25'],
+  ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
 ];
 const FONT_STYLES = [
@@ -190,7 +191,20 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
       last = el.lastChild;
     }
   });
-  root.querySelectorAll('span.futura-bold, b').forEach((el) => rename(el, 'strong'));
+  // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body
+  // colour in news-detail.css); <b> → <strong> (bold in the body font). Headings keep a
+  // plain <strong>.
+  root.querySelectorAll('span.futura-bold').forEach((el) => {
+    if (!el.closest('p, li') || el.closest('h1, h2, h3, h4, h5, h6')) {
+      rename(el, 'strong');
+      return;
+    }
+    const strong = rename(el, 'strong');
+    const em = root.ownerDocument.createElement('em');
+    while (strong.firstChild) em.append(strong.firstChild);
+    strong.append(em);
+  });
+  root.querySelectorAll('b').forEach((el) => rename(el, 'strong'));
   root.querySelectorAll('i').forEach((el) => rename(el, 'em'));
   root.querySelectorAll('span, font').forEach(unwrap);
   // bold inside bold (e.g. <b><span class="futura-bold">) is one bold run
@@ -320,7 +334,7 @@ function headlineNodes(component, doc) {
  * References authored as numbered paragraphs ("1: Author…", "2: …") become an ordered
  * list, so the article's citation superscripts link to them: scripts.js
  * decorateFootnotes links <sup>N</sup> to the Nth item of the last <ol> on the page.
- * Only a run numbered 1, 2, 3… in order is converted; the "N:" prefix is dropped (the
+ * Only a run numbered 1, 2, 3… in order is converted; the source's "N:" / "N." prefix is kept (the
  * list numbers the items). Other paragraphs (e.g. the document code) are left as they are.
  */
 function footnoteList(nodes, doc) {
@@ -335,11 +349,8 @@ function footnoteList(nodes, doc) {
         ol = doc.createElement('ol');
         out.push(ol);
       }
-      // drop the "N:" prefix from the first text node
-      const walker = doc.createTreeWalker(node, 4);
-      let first = walker.nextNode();
-      while (first && !first.textContent.trim()) first = walker.nextNode();
-      if (first) first.textContent = first.textContent.replace(NUMBERED, '');
+      // the source's own "1:" / "1." prefix stays in the text (references-spaced hides
+      // the list marker), so each entry reads as on the source
       const li = doc.createElement('li');
       while (node.firstChild) li.append(node.firstChild);
       ol.append(li);

@@ -269,7 +269,8 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 /* section style `references-spaced` (with `disclaimer`): references the source authored
-   as "1: Author…" paragraphs — "N: " in front of each entry, flush left, 15px apart */
+   as numbered paragraphs ("1: Author…", "1. https://…") — the entries keep that number as
+   text, so the list marker is hidden; flush left, 15px apart */
 :where(body.corp) main > .section.disclaimer.references-spaced ol {
   padding-left: 0;
   list-style: none;
@@ -278,10 +279,6 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main > .section.disclaimer.references-spaced ol > li {
   margin-bottom: var(--space-block);
   line-height: var(--paragraph-line-height);
-}
-
-:where(body.corp) main > .section.disclaimer.references-spaced ol > li::before {
-  content: counter(list-item) ": ";
 }
 
 :where(body.corp) main > .section.disclaimer p:last-child,
@@ -322,6 +319,14 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--paragraph-line-height-l-nested);
 }
 
+/* p-1-5: 21px copy (stryker.com .fontsize-1-5em, e.g. a serif news intro) */
+:where(body.corp) main > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1-5 > div :is(p, li) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 /* p-1-75: 24.5px copy (stryker.com .fontsize-1-75em, lines 1.06) */
 :where(body.corp) main > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li),
@@ -358,6 +363,13 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
 :where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
   line-height: var(--corp-paragraph-line-height-serif-l-nested);
+}
+
+/* serif with p-1-5: 21px Egyptienne renders 26.25px lines on the source */
+:where(body.corp) main > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
+  line-height: var(--paragraph-line-height-serif-l);
 }
 
 :where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
