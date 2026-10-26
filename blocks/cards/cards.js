@@ -1,21 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
-import { videoPlayerFor } from '../video/video.js';
-
-/**
- * The player for a cell that holds only a video: a Dynamic Media player (rendered by
- * decorateDMAssets) or a single YouTube/DM link. Null for any other cell.
- * @param {Element} cell a card cell
- * @returns {HTMLElement|null}
- */
-function videoIn(cell) {
-  const text = cell.textContent.trim();
-  const dm = cell.querySelectorAll('.dm-video-wrapper');
-  if (dm.length === 1 && text === dm[0].textContent.trim()) return dm[0];
-  const links = cell.querySelectorAll('a[href]');
-  if (links.length !== 1 || cell.querySelector('picture, img') || text !== links[0].textContent.trim()) return null;
-  return videoPlayerFor(links[0]);
-}
 
 export default function decorate(block) {
   // convert DM links to <picture> before restructuring — the canvas re-renders
@@ -31,13 +15,7 @@ export default function decorate(block) {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      const video = videoIn(div);
-      if (video) {
-        // video tile: the player is the card's media; lifted out of the editor
-        // wrapper like images, so the canvas can't re-render the raw link over it
-        div.className = 'cards-card-video';
-        div.replaceChildren(video);
-      } else if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
+      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
     });
     ul.append(li);

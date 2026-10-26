@@ -95,8 +95,17 @@ function renderFor(src, label) {
 }
 
 /**
+ * True if the URL is a video this block can play (YouTube or Dynamic Media).
+ * @param {string} src the authored URL
+ * @returns {boolean}
+ */
+export function isVideoUrl(src) {
+  return YOUTUBE.test(src) || isDMVideoSrc(src);
+}
+
+/**
  * Player for an authored video link (YouTube or Dynamic Media), labelled from the
- * link's title/text; null if the link isn't a supported video. Shared with cards.
+ * link's title/text; null if the link isn't a supported video. Shared with cards-corp.
  * @param {HTMLAnchorElement} link the authored video link
  * @returns {HTMLElement|null}
  */
