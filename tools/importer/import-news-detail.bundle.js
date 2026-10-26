@@ -387,6 +387,13 @@ var CustomImportScript = (() => {
       h.replaceWith(p);
     });
   }
+  function smallHeadings(root) {
+    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
+    return new Set([...root.querySelectorAll("h2")].filter((h) => {
+      const spans = [...h.querySelectorAll(".fontsize-8em")].filter((span) => !span.parentElement.closest(".fontsize-8em"));
+      return text(h) && squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+    }));
+  }
   function richTextNodes(component, doc) {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
@@ -394,6 +401,7 @@ var CustomImportScript = (() => {
     labelHeadingsToParagraphs(box);
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
+    const smallHeads = smallHeadings(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
     const { centred, size } = cleanRichText(box);
     const nodes = [];
@@ -415,6 +423,7 @@ var CustomImportScript = (() => {
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
       if (serifHeads.has(node)) node.serifHeading = true;
+      if (smallHeads.has(node)) node.headingStyle = "h2-0-8";
     });
     let last = null;
     nodes.forEach((node) => {
@@ -628,7 +637,7 @@ var CustomImportScript = (() => {
       if (!nodes.length) return;
       nodes.forEach((node) => {
         const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
-        const extra = [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
+        const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);
         const kind = [centred ? "center" : "body", ...extra].join(" ");
         const h3Font = node.tagName === "H3" ? node.serifHeading ? "serif" : "futura" : null;

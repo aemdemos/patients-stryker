@@ -314,6 +314,18 @@ function labelHeadingsToParagraphs(root) {
   });
 }
 
+/**
+ * h2 headings the source sets at 0.8em (the whole text in span.fontsize-8em, e.g. a news
+ * subtitle): their own section with the `h2-0-8` style (styles-corp.css).
+ */
+function smallHeadings(root) {
+  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
+  return new Set([...root.querySelectorAll('h2')].filter((h) => {
+    const spans = [...h.querySelectorAll('.fontsize-8em')].filter((span) => !span.parentElement.closest('.fontsize-8em'));
+    return text(h) && squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
+  }));
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
@@ -321,6 +333,7 @@ function richTextNodes(component, doc) {
   labelHeadingsToParagraphs(box);
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
+  const smallHeads = smallHeadings(box);
   // copy styles per top-level element, so one serif lead paragraph in an otherwise
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -344,6 +357,7 @@ function richTextNodes(component, doc) {
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
     if (serifHeads.has(node)) node.serifHeading = true;
+    if (smallHeads.has(node)) node.headingStyle = 'h2-0-8';
   });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;
@@ -621,7 +635,8 @@ export default function transform(hookName, element, payload) {
     // paragraph (boldBody) gets a section of its own with `bold-body`.
     nodes.forEach((node) => {
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
-      const extra = [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
+      const extra = node.headingStyle ? [node.headingStyle]
+        : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
       const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
       const kind = [centred ? 'center' : 'body', ...extra].join(' ');
       // an Egyptienne h3 adds `h-serif` to its section (it stays with the copy around it);

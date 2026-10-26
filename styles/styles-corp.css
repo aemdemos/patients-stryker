@@ -20,6 +20,7 @@
   --corp-shadow-card: 0 0 10px var(--color-surface-muted); /* source .c-high-level-cta-link (category tiles) */
   --corp-product-item-image-height: 185px; /* source product card image area (img max-height 185px, above its 1px rule) */
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
+  --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
@@ -333,6 +334,25 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li) {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
+}
+
+/* h2-0-8: a heading the source sets at 0.8em of the h2 (stryker.com h2 > span.fontsize-8em,
+   e.g. a news subtitle): 16.8px, and from 600px (with the h2 step) the 19.9px compact
+   token (source 19.6px). The subtitle flows into the text below it: one paragraph gap
+   (the h2's 15px), not a section gap */
+:where(body.corp) main > .section.h2-0-8 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-compact);
+  line-height: var(--corp-heading-line-height-s);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-0-8 > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-compact-m);
+  }
 }
 
 /* image-1-3 / image-1-2: an image the source sets in a one-third / one-half grid column
