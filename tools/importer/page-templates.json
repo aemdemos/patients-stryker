@@ -828,6 +828,41 @@
           ]
         }
       ]
+    },
+    {
+      "name": "news-detail",
+      "description": "www.stryker.com news feature articles (/us/en/about/news/YEAR/features/). Title section (H1 only when the source has one, H5 publish date); lead media: single-slide autocarousel as Hero Corp (image-slide) with the source headline position/size as variant options, or a standalone image; article sections (rich text, images, Video block) in the 66.66% centred column (template CSS); centred rich text + gold curated CTA as a `center` section; references and document code as a small-print `disclaimer` section; `published` metadata drives the corp Last Updated line.",
+      "urls": [
+        "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
+        "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",
+        "https://www.stryker.com/us/en/smart-care/news/building-a-connected-smart-hospital.html",
+        "https://www.stryker.com/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-introduces-first-of-its-kind-fda-authorized-surgical-application-for-apple-vision-pro-with-hip-arthroscopy-case.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-signs-definitive-agreement-to-acquire-zurimed-to-enhance.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-expands-mako-robotics-portfolio.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-introduces-mako-handheld-robotics-mako-rps.html",
+        "https://www.stryker.com/us/en/about/news/2026/stryker-showcases-prophecy-surgical-planning-for-incompass-at-aofas.html"
+      ],
+      "blocks": [
+        {
+          "name": "hero-image-slide",
+          "instances": [
+            ".c-autocarousel"
+          ]
+        },
+        {
+          "name": "video",
+          "instances": [
+            ".c-standalone-video"
+          ]
+        },
+        {
+          "name": "cards-corp-teaser",
+          "instances": [
+            ".c-customizeable"
+          ]
+        }
+      ]
     }
   ]
 }

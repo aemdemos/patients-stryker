@@ -52,8 +52,12 @@ export async function loadEager(doc) {
 /**
  * Corp decoration of <main> (and of fragments, which run decorateMain too).
  */
-export function decorateMain() {
+export function decorateMain(main) {
   previewDMLinkEditors();
+  main.querySelectorAll('.hero.image-slide, .hero-corp.image-slide').forEach((block) => {
+    block.classList.replace('hero', 'hero-corp');
+    block.closest('.section')?.classList.add('hero-container');
+  });
 }
 
 /**

@@ -19,6 +19,7 @@
   --corp-heading-line-height-compact-nested: 1.68; /* 0.8em Futura span in a source h3: 23.55px lines @14px, 28.25px @16.8px */
   --corp-shadow-card: 0 0 10px var(--color-surface-muted); /* source .c-high-level-cta-link (category tiles) */
   --corp-product-item-image-height: 185px; /* source product card image area (img max-height 185px, above its 1px rule) */
+  --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
@@ -114,9 +115,10 @@ body:where(.corp):has(main .hero-carousel) header {
   font-weight: 700;
 }
 
-/* link hover: a darker teal (stryker.com `a:hover`) */
+/* links and bold + underline CTAs use a darker teal on hover/focus */
 :where(body.corp) a:any-link:hover,
-:where(body.corp) a:any-link:focus-visible {
+:where(body.corp) a:any-link:focus-visible,
+:where(body.corp) a.link-strong:any-link:is(:hover, :focus) {
   color: var(--color-primary-pressed);
 }
 
@@ -258,6 +260,27 @@ body:where(.corp):has(main .hero-carousel) header {
   color: inherit;
 }
 
+/* references: an ordered list (scripts.js decorateFootnotes links the citation
+   superscripts to it), shown like the stryker.com .c-disclaimer list — "1." markers,
+   20px indent, tight small-print lines — then a section gap (20px, 30px from 600px)
+   before the document code */
+:where(body.corp) main > .section.disclaimer ol {
+  margin-bottom: var(--space-block-l);
+}
+
+/* section style `references-spaced` (with `disclaimer`): references the source authored
+   as numbered paragraphs ("1: Author…", "1. https://…") — the entries keep that number as
+   text, so the list marker is hidden; flush left, 15px apart */
+:where(body.corp) main > .section.disclaimer.references-spaced ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+:where(body.corp) main > .section.disclaimer.references-spaced ol > li {
+  margin-bottom: var(--space-block);
+  line-height: var(--paragraph-line-height);
+}
+
 :where(body.corp) main > .section.disclaimer p:last-child,
 :where(body.corp) main > .section.disclaimer :is(ol, ul):last-child {
   margin-bottom: 0;
@@ -296,12 +319,57 @@ body:where(.corp):has(main .hero-carousel) header {
   line-height: var(--paragraph-line-height-l-nested);
 }
 
+/* p-1-5: 21px copy (stryker.com .fontsize-1-5em, e.g. a serif news intro) */
+:where(body.corp) main > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-1-5 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-1-5 > div :is(p, li) {
+  font-size: var(--body-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
 /* p-1-75: 24.5px copy (stryker.com .fontsize-1-75em, lines 1.06) */
 :where(body.corp) main > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li) {
   font-size: var(--heading-font-size-xl);
   line-height: var(--heading-line-height);
+}
+
+/* section style `serif`: Egyptienne copy in default content (stryker.com
+   span.urw-egyptienne); the copy size comes from p-1 / p-1-25 (columns style their own
+   serif sections, blocks/columns) */
+:where(body.corp) main > .section.serif > .default-content-wrapper :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif > .default-content-wrapper :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif > .default-content-wrapper :is(p, li) {
+  font-family: var(--heading-font-family);
+}
+
+/* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
+   font — e.g. a plain-bold label line ("For investor inquiries:") next to Futura labels */
+:where(body.corp) main span.body-font,
+:where(body.corp) main span.body-font :is(strong, b) {
+  font-family: var(--body-font-family);
+}
+
+/* section style `bold-body`: bold text keeps the body font (stryker.com plain <b>, e.g. a
+   bold news subtitle) instead of the corp Futura bold */
+:where(body.corp) main > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
+:where(body.corp) .tabs-panel > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b),
+:where(body.corp) .accordion-item-body > .section.bold-body > .default-content-wrapper :is(p, li) :is(strong, b) {
+  font-family: inherit;
+}
+
+:where(body.corp) main > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif.p-1-25 > .default-content-wrapper :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif.p-1-25 > .default-content-wrapper :is(p, li) {
+  line-height: var(--corp-paragraph-line-height-serif-l-nested);
+}
+
+/* serif with p-1-5: 21px Egyptienne renders 26.25px lines on the source */
+:where(body.corp) main > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .tabs-panel > .section.serif.p-1-5 > .default-content-wrapper :is(p, li),
+:where(body.corp) .accordion-item-body > .section.serif.p-1-5 > .default-content-wrapper :is(p, li) {
+  line-height: var(--paragraph-line-height-serif-l);
 }
 
 :where(body.corp) main > .section.label-1-5 > div p:has(> strong:only-child),
@@ -533,6 +601,10 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.separator {
     margin-bottom: var(--space-section-l);
+  }
+
+  :where(body.corp) main > .section.disclaimer ol {
+    margin-bottom: var(--space-section);
   }
 
   :where(body.corp) main > .section.last-modified-section,

@@ -1,2 +1,16 @@
 /* news-detail themes — loaded with the template only when the page sets `theme`
    metadata; scope every rule to body.news-detail.<theme> */
+
+/* full-width: news pages whose source runs the title, the small print and the "Last
+   Updated" line across the whole container (stryker.com StrykerTalks podcast pages, e.g.
+   .../2024/stryker-s-pierce-shares-how-our-latest-digital-innovations-help-.html: h1, date
+   and disclaimer 1380px wide at 1440px). Every section spans the container, left
+   aligned, instead of the template's centred 66.66% column — the article copy too (the
+   disclaimer-like "Products may not be available…" text, e.g. on the Rosales page). The
+   importer opens these pages with a `spacer` section after the title (46px to the video
+   row, as on the source) */
+@media (width >= 900px) {
+  body.news-detail.full-width main > .section > div {
+    max-width: var(--container-max);
+  }
+}
