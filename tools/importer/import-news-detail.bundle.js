@@ -292,9 +292,11 @@ var CustomImportScript = (() => {
     ["fontsize-1-5em", "p-1-5"],
     ["fontsize-1-75em", "p-1-75"]
   ];
+  var PANEL_SIZE_STYLES = [...SIZE_STYLES, ["fontsize-8em", "disclaimer"]];
   var FONT_STYLES = [
     ["urw-egyptienne", "serif"]
   ];
+  var inPanel = false;
   function copyStyles(root) {
     const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
     const copy = candidates.filter((el) => text(el) && !el.querySelector("p, li"));
@@ -304,7 +306,7 @@ var CustomImportScript = (() => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
     });
-    const size = SIZE_STYLES.find(([cls]) => covers(cls));
+    const size = (inPanel ? PANEL_SIZE_STYLES : SIZE_STYLES).find(([cls]) => covers(cls));
     const font = FONT_STYLES.find(([cls]) => covers(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
   }
@@ -603,15 +605,18 @@ var CustomImportScript = (() => {
     const components = outermost(main);
     const consumed = /* @__PURE__ */ new Set();
     let handle;
-    const panelNodes = (body) => {
+    const panelParts = (body) => {
       const saved = [sections, current, separatorNext];
       sections = [];
       current = null;
+      inPanel = true;
       outermost(body).forEach(handle);
-      const nodes = sections.flatMap((section) => section.nodes);
+      const parts = sections.filter((section) => section.nodes.length);
       [sections, current, separatorNext] = saved;
-      return nodes;
+      inPanel = false;
+      return parts;
     };
+    const nodesOf = (parts) => parts.flatMap((part) => part.nodes);
     handle = (component) => {
       if (consumed.has(component)) return;
       const isFirst = current === title;
@@ -621,28 +626,35 @@ var CustomImportScript = (() => {
           body: panel.querySelector(".panel-body")
         })).filter((panel) => panel.label && panel.body);
         if (!panels.length) return;
-        const items = panels.map(({ label, body }) => ({ label, nodes: panelNodes(body) }));
+        const items = panels.map(({ label, body }) => ({ label, parts: panelParts(body) }));
         const source = component.querySelector(".component-subheading");
         const heading = source && text(source) ? doc.createElement(source.tagName.toLowerCase()) : null;
         if (heading) heading.textContent = text(source);
-        const textOnly = items.every(({ nodes: nodes2 }) => nodes2.every((node) => BLOCK_TAGS.has(node.tagName) && !node.querySelector("img")));
+        const textOnly = items.every(({ parts }) => nodesOf(parts).every((node) => BLOCK_TAGS.has(node.tagName) && !node.querySelector("img")));
         if (textOnly && !items.some(({ label }) => FULL_ARTICLE.test(label))) {
-          const section = startSection("accordion");
+          const styles = [...new Set(items.flatMap(({ parts }) => parts.map((part) => part.style || "")))];
+          const section = startSection("accordion", styles.length === 1 && styles[0] ? styles[0] : void 0);
           if (heading) section.nodes.push(heading);
           section.nodes.push(WebImporter.Blocks.createBlock(doc, {
             name: "Accordion",
-            cells: items.map(({ label, nodes: nodes2 }) => {
+            cells: items.map(({ label, parts }) => {
               const p = doc.createElement("p");
               p.textContent = label;
-              return [p, nodes2];
+              return [p, nodesOf(parts)];
             })
           }));
         } else {
           if (heading) startSection("body").nodes.push(heading);
-          items.forEach(({ label, nodes: nodes2 }) => {
+          items.forEach(({ label, parts }) => {
             const h4 = doc.createElement("h4");
             h4.textContent = label;
-            startSection("accordion-panel", "accordion-panel").nodes.push(h4, ...nodes2);
+            const [first] = parts;
+            const own = first && !first.style ? first.nodes : [];
+            startSection("accordion-panel", "accordion-panel").nodes.push(h4, ...own);
+            (own.length ? parts.slice(1) : parts).forEach((part) => {
+              const style = ["accordion-continue", part.style].filter(Boolean).join(", ");
+              startSection("accordion-continue", style).nodes.push(...part.nodes);
+            });
           });
         }
         current = null;

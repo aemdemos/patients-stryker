@@ -66,10 +66,27 @@ export function decorateMain(main) {
  * tabs, fragments). Each section is one panel: a heading at the top of the section is
  * the panel label, the rest of the section (text, blocks) is the panel body, handed to
  * the accordion as an inline section. The other section styles of the panels stay on
- * the accordion's section.
+ * the accordion's section. `accordion-continue` sections right after a panel are more
+ * of that panel: each becomes another inline section of its body, keeping its own
+ * section styles (e.g. p-1-25, disclaimer), so a panel can mix copy styles.
  * @param {Element} main The container element
  */
 function buildAccordionSections(main) {
+  const continued = new Map();
+  main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
+    const parts = [];
+    while (section.nextElementSibling?.classList.contains('accordion-continue')) {
+      const next = section.nextElementSibling;
+      const part = document.createElement('div');
+      part.dataset.accordionSection = '';
+      part.classList.add(...[...next.classList].filter((cls) => !['section', 'accordion-continue'].includes(cls)));
+      part.append(...[...next.children].flatMap((wrapper) => [...wrapper.children]));
+      parts.push(part);
+      next.remove();
+    }
+    continued.set(section, parts);
+  });
+
   const runs = [];
   main.querySelectorAll(':scope > .section.accordion-panel').forEach((section) => {
     const run = runs[runs.length - 1];
@@ -88,7 +105,10 @@ function buildAccordionSections(main) {
       const panel = document.createElement('div');
       panel.dataset.accordionSection = '';
       panel.append(...nodes);
-      return [{ elems: label ? [label] : [] }, { elems: [panel] }];
+      const parts = continued.get(section);
+      // a label alone (its panel text all in `accordion-continue` sections) adds no section
+      const body = nodes.length || !parts.length ? [panel, ...parts] : parts;
+      return [{ elems: label ? [label] : [] }, { elems: body }];
     });
 
     const block = buildBlock('accordion', rows);

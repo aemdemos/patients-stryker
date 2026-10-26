@@ -115,9 +115,13 @@ const SIZE_STYLES = [
   ['fontsize-1-5em', 'p-1-5'],
   ['fontsize-1-75em', 'p-1-75'],
 ];
+// in an accordion panel, small print (e.g. the article's references) also keeps its size
+const PANEL_SIZE_STYLES = [...SIZE_STYLES, ['fontsize-8em', 'disclaimer']];
 const FONT_STYLES = [
   ['urw-egyptienne', 'serif'],
 ];
+// set while an accordion panel's content is converted
+let inPanel = false;
 
 /**
  * The copy section styles of a rich-text fragment: when the whole text of every
@@ -137,7 +141,7 @@ function copyStyles(root) {
     const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
     return squash(spans.map((span) => span.textContent).join('')) === squash(el.textContent);
   });
-  const size = SIZE_STYLES.find(([cls]) => covers(cls));
+  const size = (inPanel ? PANEL_SIZE_STYLES : SIZE_STYLES).find(([cls]) => covers(cls));
   const font = FONT_STYLES.find(([cls]) => covers(cls));
   return [size && size[1], font && font[1]].filter(Boolean).join(', ');
 }
@@ -538,17 +542,20 @@ export default function transform(hookName, element, payload) {
 
   const consumed = new Set();
   let handle;
-  // the content of an accordion or tab panel: its components, handled like the article's,
-  // as one list of nodes (a panel is one section)
-  const panelNodes = (body) => {
+  // the content of an accordion panel: its components, handled like the article's, as
+  // sections (style + nodes)
+  const panelParts = (body) => {
     const saved = [sections, current, separatorNext];
     sections = [];
     current = null;
+    inPanel = true;
     outermost(body).forEach(handle);
-    const nodes = sections.flatMap((section) => section.nodes);
+    const parts = sections.filter((section) => section.nodes.length);
     [sections, current, separatorNext] = saved;
-    return nodes;
+    inPanel = false;
+    return parts;
   };
+  const nodesOf = (parts) => parts.flatMap((part) => part.nodes);
 
   handle = (component) => {
     if (consumed.has(component)) return;
@@ -561,32 +568,44 @@ export default function transform(hookName, element, payload) {
         }))
         .filter((panel) => panel.label && panel.body);
       if (!panels.length) return;
-      const items = panels.map(({ label, body }) => ({ label, nodes: panelNodes(body) }));
+      const items = panels.map(({ label, body }) => ({ label, parts: panelParts(body) }));
       const source = component.querySelector('.component-subheading');
       const heading = source && text(source) ? doc.createElement(source.tagName.toLowerCase()) : null;
       if (heading) heading.textContent = text(source);
-      const textOnly = items.every(({ nodes }) => nodes.every((node) => BLOCK_TAGS.has(node.tagName) && !node.querySelector('img')));
+      const textOnly = items.every(({ parts }) => nodesOf(parts)
+        .every((node) => BLOCK_TAGS.has(node.tagName) && !node.querySelector('img')));
       if (textOnly && !items.some(({ label }) => FULL_ARTICLE.test(label))) {
-        // e.g. FAQs: `Accordion`, one row per item (label | text), its title above it
-        const section = startSection('accordion');
+        // e.g. FAQs: `Accordion`, one row per item (label | text), its title above it; the
+        // section gets the answers' copy style when they share one (e.g. p-1-25)
+        const styles = [...new Set(items.flatMap(({ parts }) => parts.map((part) => part.style || '')))];
+        const section = startSection('accordion', styles.length === 1 && styles[0] ? styles[0] : undefined);
         if (heading) section.nodes.push(heading);
         section.nodes.push(WebImporter.Blocks.createBlock(doc, {
           name: 'Accordion',
-          cells: items.map(({ label, nodes }) => {
+          cells: items.map(({ label, parts }) => {
             const p = doc.createElement('p');
             p.textContent = label;
-            return [p, nodes];
+            return [p, nodesOf(parts)];
           }),
         }));
       } else {
-        // "Read the full article" (or panels holding images or blocks): one
-        // `accordion-panel` section per item, the label as Heading 4 (scripts/corp.js
-        // builds the accordion with-nested-blocks from them)
+        // "Read the full article" (or panels holding images or blocks): an
+        // `accordion-panel` section per item, the label as Heading 4, then the rest of
+        // the panel as `accordion-continue` sections with their own copy styles
+        // (scripts/corp.js builds the accordion with-nested-blocks from them)
         if (heading) startSection('body').nodes.push(heading);
-        items.forEach(({ label, nodes }) => {
+        items.forEach(({ label, parts }) => {
           const h4 = doc.createElement('h4');
           h4.textContent = label;
-          startSection('accordion-panel', 'accordion-panel').nodes.push(h4, ...nodes);
+          // plain copy stays in the label's section; styled copy can't (its style would
+          // apply to the whole accordion)
+          const [first] = parts;
+          const own = first && !first.style ? first.nodes : [];
+          startSection('accordion-panel', 'accordion-panel').nodes.push(h4, ...own);
+          (own.length ? parts.slice(1) : parts).forEach((part) => {
+            const style = ['accordion-continue', part.style].filter(Boolean).join(', ');
+            startSection('accordion-continue', style).nodes.push(...part.nodes);
+          });
         });
       }
       current = null;

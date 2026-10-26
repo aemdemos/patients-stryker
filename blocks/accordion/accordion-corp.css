@@ -16,6 +16,12 @@ body.corp .accordion .accordion-item-label {
   padding: var(--space-block-s) 0;
 }
 
+/* a label keeps the label size when its section sets a copy size (e.g. p-1-25 FAQs) */
+body.corp .accordion .accordion-item-label p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
 body.corp .accordion .accordion-item-open .accordion-item-label {
   border-bottom: 0;
 }
@@ -26,6 +32,18 @@ body.corp .accordion .accordion-item-label::after {
 
 body.corp .accordion .accordion-item-body {
   padding: 0;
+}
+
+/* a panel made of several sections (`accordion-continue`): the corp section gap
+   between them, 20px (30px from 600px) */
+body.corp .accordion .accordion-item-body > .section:not(:last-child) {
+  margin-bottom: var(--space-block-l);
+}
+
+@media (width >= 600px) {
+  body.corp .accordion .accordion-item-body > .section:not(:last-child) {
+    margin-bottom: var(--space-section);
+  }
 }
 
 @media (width >= 900px) {
