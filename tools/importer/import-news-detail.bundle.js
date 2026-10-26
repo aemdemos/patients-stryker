@@ -210,7 +210,9 @@ var CustomImportScript = (() => {
     ".c-curatedcta",
     ".c-largeheadline",
     ".c-section-title",
-    ".c-customizeable"
+    ".c-customizeable",
+    ".c-section-separator",
+    ".sectionseparator"
   ].join(", ");
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
   var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
@@ -393,7 +395,10 @@ var CustomImportScript = (() => {
     const main = doc.querySelector('[role="main"]') || element;
     const sections = [];
     let current = null;
-    const startSection = (kind, style) => {
+    let separatorNext = false;
+    const startSection = (kind, sectionStyle) => {
+      const style = separatorNext ? ["separator", sectionStyle].filter(Boolean).join(", ") : sectionStyle;
+      separatorNext = false;
       current = { kind, style, nodes: [] };
       sections.push(current);
       return current;
@@ -434,6 +439,11 @@ var CustomImportScript = (() => {
         }
         if (!current || !current.kind.startsWith("body")) startSection("body");
         current.nodes.push(...nodes2);
+        return;
+      }
+      if (component.matches(".c-section-separator, .sectionseparator")) {
+        separatorNext = true;
+        current = null;
         return;
       }
       if (component.matches(".c-customizeable")) {
@@ -748,7 +758,8 @@ var CustomImportScript = (() => {
     urls: [
       "https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html",
       "https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html",
-      "https://www.stryker.com/us/en/smart-care/news/building-a-connected-smart-hospital.html"
+      "https://www.stryker.com/us/en/smart-care/news/building-a-connected-smart-hospital.html",
+      "https://www.stryker.com/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html"
     ],
     blocks: [
       { name: "hero-image-slide", instances: [".c-autocarousel"] },

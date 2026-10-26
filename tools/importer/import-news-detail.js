@@ -19,6 +19,7 @@ const PAGE_TEMPLATE = {
     'https://www.stryker.com/us/en/about/news/2022/features/this-surgical-icu-team-is-bound-by-unspeakable-trauma-and-miracu.html',
     'https://www.stryker.com/us/en/about/news/2026/features/stryker-releases-2025-comprehensive-report.html',
     'https://www.stryker.com/us/en/smart-care/news/building-a-connected-smart-hospital.html',
+    'https://www.stryker.com/us/en/about/news/2026/avs-now-part-of-stryker-enrolls-first-patient-in-first-in-human-coronary-intravascular-lithotripsy-study.html',
   ],
   blocks: [
     { name: 'hero-image-slide', instances: ['.c-autocarousel'] },

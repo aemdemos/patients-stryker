@@ -12,6 +12,8 @@
  *   3. article sections: rich text, standalone images and `.c-standalone-video` (left for
  *      the video parser). A run of centred content (centred rich text, `.c-curatedcta`
  *      buttons) becomes its own section with the `center` section style.
+ *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
+ *       section that follows the rule
  *   4. related-content cards (`.c-customizeable`): their heading plus the grid, left for
  *      the cards-corp-teaser parser, in a section of their own (full width)
  *   5. `.c-disclaimer` references (numbered paragraphs → an ordered list, so the
@@ -40,6 +42,8 @@ const COMPONENTS = [
   '.c-largeheadline',
   '.c-section-title',
   '.c-customizeable',
+  '.c-section-separator',
+  '.sectionseparator',
 ].join(', ');
 
 const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
@@ -275,7 +279,12 @@ export default function transform(hookName, element, payload) {
 
   const sections = [];
   let current = null;
-  const startSection = (kind, style) => {
+  let separatorNext = false;
+  const startSection = (kind, sectionStyle) => {
+    const style = separatorNext
+      ? ['separator', sectionStyle].filter(Boolean).join(', ')
+      : sectionStyle;
+    separatorNext = false;
     current = { kind, style, nodes: [] };
     sections.push(current);
     return current;
@@ -323,6 +332,16 @@ export default function transform(hookName, element, payload) {
       // an image joins the article section it follows, whatever its copy size
       if (!current || !current.kind.startsWith('body')) startSection('body');
       current.nodes.push(...nodes);
+      return;
+    }
+    // the importer drops <hr> elements before the transform, so the rule is also found by
+    // its AEM wrapper (.sectionseparator)
+    if (component.matches('.c-section-separator, .sectionseparator')) {
+      // a horizontal rule between parts of the article (e.g. before "About AVS"): the
+      // next section starts with it — `separator` section style (1px grey rule on top).
+      // (A section holding only the rule would be dropped by the importer.)
+      separatorNext = true;
+      current = null;
       return;
     }
     if (component.matches('.c-customizeable')) {
