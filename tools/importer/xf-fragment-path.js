@@ -1,54 +1,67 @@
 /*
- * stryker.com Experience Fragment → EDS fragment document path.
+ * stryker.com Experience Fragment → EDS fragment document lookup (bundled into the importers).
  *
- * The EDS path keeps the XF's own path, so a fragment can always be traced back to its XF:
- * /content/experience-fragments/<path>.html → /us/en/fragments/<path>, each folder / name
- * written the way aem.live serves it (lowercase, "_" and other characters → "-", no
- * leading / trailing "-"). e.g.
+ * Every published XF becomes its own fragment document at the path derived from its AEM path
+ * (rule in xf-path-rule.js), so a fragment can always be traced back to its XF:
  * /content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master.html
  *   → /us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master
  *
- * Shared XFs are listed in xf-fragment-map.js. Every importer (any template) resolves XF
- * references through xfFragmentPath, so a page that uses a shared XF always points to the
- * same fragment document. An XF that is not in the map is not shared: the importer imports
- * its content inline (and can report it, so the map can be extended when the site-wide
- * export arrives). See #443.
+ * Data: data/xf-index.js, generated from the AEM exports in .migration/ by
+ * `npm run build:migration-index` (see AGENTS.md "Corp source exports").
  */
-import MAP from './xf-fragment-map.js';
+import { FRAGMENTS, PAGES, SKIPPED } from './data/xf-index.js';
+import { xfKey, xfToFragmentPath } from './xf-path-rule.js';
 
-const XF_ROOT = '/content/experience-fragments/';
-const FRAGMENTS_ROOT = '/us/en/fragments/';
+export { xfKey, xfToFragmentPath, cfToFragmentPath } from './xf-path-rule.js';
 
 /**
- * Normalises an XF reference to the export's form: path only, no .html, query or hash.
  * @param {string} xf XF path or URL
- * @returns {string} XF path
+ * @returns {'published'|'unpublished'|'redirect'|'not-an-xf'} what the export knows about it
  */
-export function xfKey(xf) {
-  return String(xf || '')
-    .replace(/^https?:\/\/[^/]+/i, '')
-    .replace(/[?#].*$/, '')
-    .replace(/\.html$/i, '');
-}
-
-/**
- * The fragment document path for any XF (the rule above), shared or not.
- * @param {string} xf XF path or URL (with or without .html)
- * @returns {string|null} EDS fragment path, or null when it is not an XF path
- */
-export function xfToFragmentPath(xf) {
+export function xfStatus(xf) {
   const key = xfKey(xf);
-  if (!key.startsWith(XF_ROOT)) return null;
-  const segments = key.slice(XF_ROOT.length).split('/')
-    .map((s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''))
-    .filter(Boolean);
-  return segments.length ? `${FRAGMENTS_ROOT}${segments.join('/')}` : null;
+  if (FRAGMENTS[key]) return 'published';
+  if (SKIPPED[key]) return SKIPPED[key].status;
+  return xfToFragmentPath(key) ? 'unpublished' : 'not-an-xf';
+}
+
+/**
+ * @param {string} xf XF path or URL
+ * @returns {object|null} the index entry of a published XF variation
+ */
+export function xfInfo(xf) {
+  return FRAGMENTS[xfKey(xf)] || null;
 }
 
 /**
  * @param {string} xf XF path or URL (with or without .html)
- * @returns {string|null} EDS fragment path, or null when the XF is not a shared fragment
+ * @returns {string|null} EDS fragment path, or null when the XF cannot be imported
+ *   (redirect, not an XF, or not published)
  */
 export default function xfFragmentPath(xf) {
-  return MAP[xfKey(xf)] ? xfToFragmentPath(xf) : null;
+  const info = xfInfo(xf);
+  return info ? info.eds : null;
+}
+
+const resolve = (xf) => ({ xf, eds: xfFragmentPath(xf), status: xfStatus(xf) });
+
+/**
+ * A page's XF references in authored order.
+ * @param {string} page source page path or URL (/us/en/smart-care or …/smart-care.html)
+ * @returns {object[]} fragment refs { kind: 'fragment', xf, eds, status, text, area, type }
+ *   and slide refs { kind: 'slide', desktop: { xf, eds, status }, mobile: {…}, area, type };
+ *   eds is null for references that cannot be imported
+ */
+export function pageXfRefs(page) {
+  const refs = PAGES[xfKey(page)] || [];
+  return refs.map((r) => {
+    if (r.kind === 'slide') {
+      return {
+        ...r,
+        desktop: r.desktop ? resolve(r.desktop) : null,
+        mobile: r.mobile ? resolve(r.mobile) : null,
+      };
+    }
+    return { ...r, ...resolve(r.xf) };
+  });
 }

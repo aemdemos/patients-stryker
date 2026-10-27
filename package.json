@@ -9,6 +9,7 @@
     "lint": "npm run lint:js && npm run lint:css && npm run lint:breakpoints",
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
     "build:fragment-index": "node tools/importer/build-fragment-index.js",
+    "build:migration-index": "node tools/importer/migration-index/index.js",
     "lint:breakpoints": "node tools/check-breakpoints.mjs"
   },
   "repository": {

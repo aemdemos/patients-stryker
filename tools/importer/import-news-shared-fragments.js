@@ -3,7 +3,7 @@
 
 // TRANSFORMER IMPORTS
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
-// XF → EDS fragment path lookup (xf-fragment-map.js, shared by every importer)
+// XF → EDS fragment path lookup (site-wide index from the AEM exports, shared by every importer)
 import xfFragmentPath from './xf-fragment-path.js';
 
 /*
@@ -16,9 +16,10 @@ import xfFragmentPath from './xf-fragment-path.js';
  * preview URL; the fragment block hoists the section into the page, so the same
  * `main .section.{style}` rules apply when embedded.
  *
- * Keys are the XF paths from the customer's "Experience Fragment References" export.
- * Each fragment is saved at the path derived from its XF path (tools/importer/xf-fragment-path.js,
- * e.g. /content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master
+ * Keys are XF variation paths. This table only carries how each fragment is built and styled
+ * (type, section style, image overrides); its path comes from the site-wide XF index
+ * (tools/importer/xf-fragment-path.js → data/xf-index.js, e.g.
+ * /content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master
  * → /us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master), the same lookup
  * every page importer uses to emit the fragment block.
  */
@@ -242,7 +243,7 @@ export default {
     WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
 
     const path = xfFragmentPath(key);
-    if (!path) throw new Error(`Shared fragment missing from xf-fragment-map.js: ${key}`);
+    if (!path) throw new Error(`Not a published XF in data/xf-index.js: ${key}`);
     return [{
       element: main,
       path,

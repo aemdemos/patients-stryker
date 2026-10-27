@@ -415,7 +415,7 @@ Corp pages are gated by page metadata `site: corp` → `body.corp` and `scripts/
 - **Video:** YouTube/DM videos are authored as the `video` block; there is no auto-blocking of bare links.
 - **Scope of a change:** one block (or template) per branch/PR, with a demo page path for the reviewer. Do not bundle unrelated blocks.
 
-### Corp source exports (`.migration/xf-mapping`, `.migration/xf-content`)
+### Corp source exports (`.migration/xf-mapping`, `.migration/xf-content`, `.migration/cf-content`)
 
 These folders hold read-only JSON snapshots of the client's AEM content for www.stryker.com (`jcr:content.infinity.json`). Read them in every corp migration task: page analysis, import parsers and transformers, and fragment imports. Use them **together with** the scraped page:
 - The export shows what was authored.
@@ -445,7 +445,12 @@ A component that uses an XF stores the AEM path and, next to it, the EDS path wh
 | `fragmentVariationPath` | `edsFragmentVariationPath` |
 
 - **Create every referenced XF as its own fragment document** at its `eds*` path, and include it in the page with the `fragment` block. The EDS folder structure mirrors the client's AEM structure, so they can trace each fragment back to its XF. A fragment used on several pages is created once, and every page references the same path.
-- **Use the `eds*` value as is.** It equals `xfToFragmentPath()` in `tools/importer/xf-fragment-path.js`: strip `/content/experience-fragments/`, prefix `/us/en/fragments/`, lowercase each segment, and turn `_` and repeated `-` into a single `-`. Example: `/content/experience-fragments/stryker/smart_care/en/business_unit/landing-page-hero/master` → `/us/en/fragments/stryker/smart-care/en/business-unit/landing-page-hero/master`. Never derive fragment paths any other way. Note that `xfFragmentPath()` (the default export) only returns a path for XFs listed in `tools/importer/xf-fragment-map.js`. When a page uses XFs that aren't listed, extend the map rather than inlining the XF.
+- **Use the `eds*` value as is.** It equals `xfToFragmentPath()` in `tools/importer/xf-fragment-path.js`: strip `/content/experience-fragments/`, prefix `/us/en/fragments/`, lowercase each segment, and turn `_` and repeated `-` into a single `-`. Example: `/content/experience-fragments/stryker/smart_care/en/business_unit/landing-page-hero/master` → `/us/en/fragments/stryker/smart-care/en/business-unit/landing-page-hero/master`. Never derive fragment paths any other way. In importers, use `tools/importer/xf-fragment-path.js`:
+  - `xfFragmentPath(xf)` returns the EDS path of any published XF, and `null` for references that can't be imported.
+  - `pageXfRefs(page)` returns a page's XF references in authored order.
+  - `cfToFragmentPath(cf)` gives the content-fragment rule.
+
+  These read `tools/importer/data/xf-index.js`, which is generated from the exports (see 5. below).
 - **XF content** lives in `.migration/xf-content/<AEM path without /content/experience-fragments/>.json`, keeping the AEM names (underscores included). For example: `.migration/xf-content/stryker/smart_care/en/business_unit/landing-page-hero/master.json`.
   - Or look the XF up in `.migration/xf-content/_manifest.json`: `fragments[].variations[]` holds `path`, `edsPath`, `file`, `master` and `references`.
   - These files come from the **publish** instance, so they show what is live.
@@ -455,7 +460,11 @@ A component that uses an XF stores the AEM path and, next to it, the EDS path wh
   - entries in the manifest's `redirects` (they all redirect to the home page, so they aren't real XFs)
   - `unresolvedReferences` with status `not_an_xf` (e.g. a component pointing at `/content/experience-fragments/stryker`)
 - **Missing variations:** a variation referenced by a page but absent from the manifest was never published. Check what the live page renders at mobile and desktop width, and report it to the user. Never invent its content.
-- **Content fragments are not XFs.** A `fragmentPath` under `/content/dam/…/content-fragments/` (contact and location boxes) points to a content fragment. It has no EDS path, and its `text` property is only a plain-text snapshot. Import that content as the page renders it.
+- **Content fragments become their own fragment documents too.** A `fragmentPath` under `/content/dam/stryker/content-fragments/` (contact and location boxes inside XFs) points to a DAM content fragment.
+  - It goes to `cfToFragmentPath()`: `/content/dam/stryker/content-fragments/eemea/en/contact-information/russia` → `/us/en/fragments/content-fragments/eemea/en/contact-information/russia`.
+  - The XF fragment that contains it references it with the `fragment` block.
+  - Its fields come from `.migration/cf-content/<path without /content/dam/>.json` (the export of `{path}/jcr:content.infinity.json`). The component's `text` property is only a plain-text snapshot.
+  - `tools/importer/data/cf-index.js` lists every content fragment, its fields and each use (`elementNames` = the fields that use shows).
 - **Summary text:** the `text` property of an `experienceFragment` component is only a summary. Take the content from the XF file.
 
 #### 3. Other data to take from the exports (instead of guessing)
@@ -483,6 +492,23 @@ A component that uses an XF stores the AEM path and, next to it, the EDS path wh
 
 #### 4. Links in the exports
 Internal links are AEM paths (`/content/stryker/us/en/…`, often without `.html`). Strip `/content/stryker`, then apply *Link rewriting in import scripts* above. For example, `/content/stryker/us/en/smart-care/products/vocera-edge` → `/us/en/smart-care/products/vocera-edge`, and `…/index` → `…/`.
+
+#### 5. The migration index (generated from the exports)
+Import scripts run bundled in the browser importer and **can't read `.migration/`**. `npm run build:migration-index` (`tools/importer/migration-index/`) turns the exports into files in `tools/importer/data/`. **Run it after every re-export and commit the output.** Never edit the generated files by hand. They are excluded from lint.
+
+Bundled by the importers:
+- `xf-index.js` — `FRAGMENTS` (every published XF variation: EDS path, status, nested XFs and content fragments, DM assets, page count), `PAGES` (each page's XF references in authored order, kind `fragment` or `slide` with desktop/mobile) and `SKIPPED` (redirect, unpublished, not-an-xf). Read it through `xf-fragment-path.js`, not directly.
+- `cf-index.js` — content fragments, as above.
+- `page-facts/<template>.js` (one file per AEM template, bundled only by that template's importer) — per page: metadata (title, description, share image and alt, tags, publish dates, contentID), anchors (`deepLinkingId` incl. hidden section titles), disclaimer, Marketo forms, tab titles, card-list targets resolved from their own exports, images without alt.
+
+Decision catalogs (committed, not bundled), in `data/catalog/`:
+- `xf-report.json` — counts, most-shared XFs, skipped references with their pages, nested XFs, XFs per template, images without alt.
+- `typography.json` — every formatting combination in authored rich text (block tag, classes, colour, inline tags) with counts, templates and example pages.
+- `components.json` — every component type with its properties and values, `cq:responsive` patterns, hidden / empty counts and parent components.
+- `site.json` — every page with its template, component set, XF counts, migration state and import template, grouped by template.
+- `cf-to-export.txt` — the content-fragment paths to export.
+
+The site-wide decisions built from these catalogs (typography, component → block mapping, templates and import order) live next to them as decision tables. Apply those tables in importers instead of deciding per page.
 
 ## Testing & Quality Assurance
 
