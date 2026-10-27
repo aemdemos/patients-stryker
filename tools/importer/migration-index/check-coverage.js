@@ -19,7 +19,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { join, relative } from 'path';
 import {
-  PAGES_DIR, XF_DIR, walk, forEachNode, isComponent, pageExportFile, readJson,
+  PAGES_DIR, XF_DIR, CF_DIR, walk, forEachNode, isComponent, pageExportFile, readJson,
 } from './lib.js';
 
 // component properties that hold visible authored text, per component (rich text: HTML)
@@ -94,8 +94,24 @@ const manifest = readJson(join(XF_DIR, '_manifest.json'));
 const XF_BY_EDS = new Map(manifest.fragments.flatMap((f) => f.variations)
   .map((v) => [v.edsPath, { file: join(XF_DIR, v.file), url: `https://www.stryker.com${v.path}.html` }]));
 
+/** Every non-empty field of a content-fragment export (all are kept: card or Metadata). */
+function cfTexts(json) {
+  const master = (json['jcr:content'] || json)?.data?.master || {};
+  return Object.entries(master).filter(([k, v]) => !k.startsWith('jcr:') && !k.includes('@') && typeof v === 'string')
+    .flatMap(([k, v]) => v.split(/<\/(?:p|li|div)>/i).map(norm).filter((t) => t.length > 2)
+      .map((t) => ({ text: t, component: k, type: 'contentfragment' })));
+}
+
 /** The AEM export and live URL of an output document (page or fragment), or null. */
 function sourceOf(page) {
+  const cf = page.match(/^\/us\/en\/fragments\/content-fragments\/(.+)$/);
+  if (cf) {
+    // the export file names are the DAM names; the EDS path is the cleaned-up form
+    const file = walk(join(CF_DIR, 'stryker/content-fragments'))
+      .find((f) => f.endsWith('.json') && f.slice(join(CF_DIR, 'stryker/content-fragments').length + 1, -5)
+        .toLowerCase().replace(/[^a-z0-9/]+/g, '-').replace(/-+(?=\/|$)|(?<=\/)-+/g, '') === cf[1]);
+    return file ? { file, url: null, cf: true } : null;
+  }
   if (page.startsWith('/us/en/fragments/')) return XF_BY_EDS.get(page) || null;
   const file = pageExportFile(page);
   return file && { file, url: `https://www.stryker.com/${relative(PAGES_DIR, file).replace(/\.json$/, '.html')}` };
@@ -124,10 +140,10 @@ const results = files.map(async (file) => {
     return `404      ${page} (the import fetched the source's 404 page — check the source URL)`;
   }
   const output = norm(html).replace(/\[\[[a-z-]+\]|\]/g, ' ').replace(/\s+/g, ' ');
-  const texts = authoredTexts(readJson(source.file));
+  const texts = source.cf ? cfTexts(readJson(source.file)) : authoredTexts(readJson(source.file));
   // a snippet counts as present when its first 60 characters appear in the output
   const absent = texts.filter((t) => !output.includes(core(t.text).slice(0, 60)));
-  const live = absent.length ? await liveText(source.url) : null;
+  const live = absent.length && source.url ? await liveText(source.url) : null;
   const onLive = (t) => live === null || live.includes(core(t.text).slice(0, 60));
   const authorOnly = absent.filter((t) => !onLive(t));
   const missing = absent.filter((t) => !authorOnly.includes(t));

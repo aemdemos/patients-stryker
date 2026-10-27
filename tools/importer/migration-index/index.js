@@ -131,6 +131,12 @@ Object.entries(xfUrls).forEach(([template, set]) => {
     .map((path) => `https://www.stryker.com${path}.html`).join('\n')}\n`);
 });
 
+// content-fragment import list: one URL per content fragment, the publish page of an XF
+// that renders it plus ?cf=<path> (import-cf-fragments.js builds that fragment's document)
+writeFileSync(join(DATA, 'catalog/cf-urls.txt'), `${Object.entries(xf.CONTENT_FRAGMENTS)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([cf, c]) => `https://www.stryker.com${c.uses[0].xf}.html?cf=${cf}`).join('\n')}\n`);
+
 const cfList = Object.keys(xf.CONTENT_FRAGMENTS).sort();
 writeFileSync(join(DATA, 'catalog/cf-to-export.txt'), [
   '# Content fragments used inside XFs. Export each as {path}/jcr:content.infinity.json',

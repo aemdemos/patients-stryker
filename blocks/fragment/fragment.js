@@ -89,6 +89,9 @@ export async function loadFragment(path) {
     if (resp.ok) {
       const main = document.createElement('main');
       main.innerHTML = await resp.text();
+      // a fragment's Metadata block describes the fragment document (e.g. the content
+      // fragment fields a card does not show); it is never rendered into the page
+      main.querySelectorAll('div.metadata').forEach((meta) => meta.remove());
 
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {

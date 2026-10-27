@@ -228,6 +228,41 @@ body:where(.corp):has(main .hero-carousel) header {
   background-color: var(--color-surface);
 }
 
+/* bg-gray: the stryker.com bg-lighter-gray band (#dfe1de, e.g. the contact directory's
+   group headings on /us/en/about/contact) */
+:where(body.corp) main > .section.bg-gray {
+  background-color: var(--color-surface-dim);
+}
+
+/* large-headline: a standalone stryker.com Large Headline band (contact directory group
+   headings: Futura bold, 2.5vw at 1440px = 35px, 18.75px at 375px, 20px padding). The
+   band's background (bg-gold / bg-gray) covers the content column, not the full width */
+:where(body.corp) main > .section.large-headline {
+  background-clip: content-box;
+}
+
+:where(body.corp) main > .section.large-headline > .default-content-wrapper {
+  /* in line with the block wrappers (the card grid below starts 15px further in) */
+  margin-inline: var(--space-block);
+  padding: var(--space-block-l);
+}
+
+:where(body.corp) main > .section.large-headline :is(h1, h2, h3) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--display-font-family);
+  font-size: min(5vw, var(--panel-heading-size));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 900px) {
+  :where(body.corp) main > .section.large-headline :is(h1, h2, h3) {
+    font-size: min(2.5vw, var(--panel-heading-size));
+  }
+}
+
 :where(body.corp) main > .section.bg-dark-gray {
   background-color: var(--color-secondary);
   color: var(--color-white);

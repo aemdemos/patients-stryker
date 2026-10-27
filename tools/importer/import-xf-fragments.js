@@ -14,7 +14,10 @@
  *   tools/importer/data/catalog/xf-urls-news-detail.txt (npm run build:migration-index)
  * XFs of other templates get their template's rules when that template's importer is built.
  * The shared news fragments with a styling of their own (import-news-shared-fragments.js)
- * are built by that importer.
+ * are built by that importer. Contact-directory XFs (rendered content fragments,
+ * dl.cmp-contentfragment) get the directory rules whatever the list: group bands and one
+ * Fragment block per content fragment (corp-components.js contactDirectorySections; the
+ * content-fragment documents come from import-cf-fragments.js).
  */
 
 import heroImageSlideParser from './parsers/hero-image-slide.js';
@@ -27,6 +30,7 @@ import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
 
 import sharedFragmentsImport, { FRAGMENTS as SHARED } from './import-news-shared-fragments.js';
 import { xfKey, xfInfo } from './xf-fragment-path.js';
+import { contactDirectorySections } from './corp-components.js';
 
 const PAGE_TEMPLATE = {
   name: 'news-detail',
@@ -66,6 +70,26 @@ export default {
     if (!info) throw new Error(`Not a published XF in data/xf-index.js: ${key}`);
 
     const main = document.body;
+    if (main.querySelector('dl.cmp-contentfragment[data-path]')) {
+      const { sections, unknown } = contactDirectorySections(main, document);
+      if (unknown.length) console.warn(`[import-xf-fragments] ${key}: ${unknown.join(' | ')}`);
+      const out = [];
+      sections.forEach((section, i) => {
+        if (i) out.push(document.createElement('hr'));
+        out.push(...section.nodes);
+        if (section.style) {
+          out.push(WebImporter.Blocks.createBlock(document, { name: 'Section Metadata', cells: { style: section.style } }));
+        }
+      });
+      main.replaceChildren(...out);
+      return [{
+        element: main,
+        path: info.eds,
+        report: {
+          title: info.eds, template: 'contact-directory', source: key, pages: info.pages,
+        },
+      }];
+    }
     // the XF's nested XFs are matched against its own references (payload.xf)
     executeTransformers('beforeTransform', main, { ...payload, xf: key });
     PAGE_TEMPLATE.blocks.forEach((def) => def.instances.forEach((selector) => {

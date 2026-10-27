@@ -2617,6 +2617,7 @@ var CustomImportScript = (() => {
 
   // tools/importer/xf-path-rule.js
   var XF_ROOT = "/content/experience-fragments/";
+  var CF_ROOT = "/content/dam/stryker/content-fragments/";
   var FRAGMENTS_ROOT = "/us/en/fragments/";
   function xfKey(ref) {
     return String(ref || "").replace(/^https?:\/\/[^/]+/i, "").replace(/[?#].*$/, "").replace(/\.html$/i, "");
@@ -2629,6 +2630,12 @@ var CustomImportScript = (() => {
     if (!key.startsWith(XF_ROOT)) return null;
     const segments = edsSegments(key.slice(XF_ROOT.length));
     return segments.length ? `${FRAGMENTS_ROOT}${segments.join("/")}` : null;
+  }
+  function cfToFragmentPath(cf) {
+    const key = xfKey(cf);
+    if (!key.startsWith(CF_ROOT)) return null;
+    const segments = edsSegments(key.slice(CF_ROOT.length));
+    return segments.length ? `${FRAGMENTS_ROOT}content-fragments/${segments.join("/")}` : null;
   }
 
   // tools/importer/xf-fragment-path.js
@@ -2719,6 +2726,58 @@ var CustomImportScript = (() => {
       unmatched.push(content.slice(0, 60));
     });
     return { matches, unmatched };
+  }
+  function contactDirectorySections(root, doc) {
+    const sections = [];
+    const unknown = [];
+    let current = null;
+    const start = (style) => {
+      current = { style, nodes: [] };
+      sections.push(current);
+      return current;
+    };
+    const items = [...root.querySelectorAll(".largeheadline, .contentfragment, .c-rich-text-editor, .c-standalone-image")].filter((el) => !el.parentElement.closest(".largeheadline, .contentfragment, .c-rich-text-editor, .c-standalone-image"));
+    items.forEach((item) => {
+      var _a, _b;
+      if (item.matches(".largeheadline")) {
+        const band = item.querySelector(".has-background") || item;
+        const words = text(band);
+        if (!words) return;
+        const bg = band.classList.contains("bg-gold") ? "bg-gold" : "bg-gray";
+        const h2 = doc.createElement("h2");
+        h2.textContent = words;
+        start(`large-headline, ${bg}`).nodes.push(h2);
+        current = null;
+        return;
+      }
+      if (item.matches(".contentfragment")) {
+        const cf = (_b = (_a = item.querySelector("dl[data-path]") || {}).getAttribute) == null ? void 0 : _b.call(_a, "data-path");
+        const eds = cf && cfToFragmentPath(cf);
+        if (!eds) {
+          unknown.push(`content fragment without path: ${text(item).slice(0, 40)}`);
+          return;
+        }
+        const link2 = doc.createElement("a");
+        link2.href = eds;
+        link2.textContent = eds;
+        if (!current) start("");
+        current.nodes.push(WebImporter.Blocks.createBlock(doc, { name: "Fragment", cells: [[link2]] }));
+        return;
+      }
+      let nodes;
+      if (item.matches(".c-standalone-image")) {
+        nodes = standaloneImageNodes(item, doc);
+      } else {
+        const box = doc.importNode(item, true);
+        cleanRichText(box);
+        nodes = [...box.querySelectorAll("p, h1, h2, h3, h4, h5, h6, ul, ol")].filter((el) => !el.parentElement.closest("p, ul, ol") && text(el));
+      }
+      if (!nodes.length) return;
+      start("").nodes.push(...nodes);
+      current = null;
+    });
+    root.querySelectorAll('.map, [class*="googlemap"], iframe[src*="google.com/maps"]').forEach((el) => unknown.push(`map (client input pending): ${el.className || el.tagName}`));
+    return { sections, unknown };
   }
 
   // tools/importer/transformers/news-detail-sections.js
@@ -3528,6 +3587,29 @@ var CustomImportScript = (() => {
       const info = xfInfo(key);
       if (!info) throw new Error(`Not a published XF in data/xf-index.js: ${key}`);
       const main = document.body;
+      if (main.querySelector("dl.cmp-contentfragment[data-path]")) {
+        const { sections, unknown } = contactDirectorySections(main, document);
+        if (unknown.length) console.warn(`[import-xf-fragments] ${key}: ${unknown.join(" | ")}`);
+        const out = [];
+        sections.forEach((section, i) => {
+          if (i) out.push(document.createElement("hr"));
+          out.push(...section.nodes);
+          if (section.style) {
+            out.push(WebImporter.Blocks.createBlock(document, { name: "Section Metadata", cells: { style: section.style } }));
+          }
+        });
+        main.replaceChildren(...out);
+        return [{
+          element: main,
+          path: info.eds,
+          report: {
+            title: info.eds,
+            template: "contact-directory",
+            source: key,
+            pages: info.pages
+          }
+        }];
+      }
       executeTransformers2("beforeTransform", main, __spreadProps(__spreadValues({}, payload), { xf: key }));
       PAGE_TEMPLATE2.blocks.forEach((def) => def.instances.forEach((selector) => {
         document.querySelectorAll(selector).forEach((element) => {
