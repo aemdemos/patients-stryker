@@ -1,7 +1,8 @@
 /*
  * Corp image-slide hero, isolated from the patients hero block.
- * The image-slide variant uses authored top/left/right/size options and text-below
- * to position its headline like the source slide.
+ * The image-slide variant uses authored top/bottom/left/right/size/copy-size options and text-below /
+ * text-above to position its headline like the source slide (news carousel slides) or the
+ * source fullWidthImageHero text box.
  */
 
 .hero-corp-container .hero-corp-wrapper {
@@ -11,6 +12,7 @@
 
 .hero-corp.image-slide {
   --hero-slide-top: 15%;
+  --hero-slide-bottom: auto;
   --hero-slide-left: 5%;
   --hero-slide-right: 50%;
   --hero-slide-text-size: 2;
@@ -60,6 +62,47 @@
   text-align: left;
 }
 
+/* text-above: the source fullWidthImageHero 'col-sm-N pull-left' text box. It comes before
+   the image and is static on phones (copy above the image, 20px gap); from 600px it is the
+   overlay, at the image top-left by default, with the source box padding (20px / 15px). */
+.hero-corp.image-slide.text-above {
+  --hero-slide-top: 0%;
+  --hero-slide-left: 0%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-corp.image-slide.text-above > div:last-child {
+  order: -1;
+  position: static;
+  padding: 0 var(--space-block-l) var(--space-block-l);
+}
+
+/* text boxes with several lines (fullWidthImageHero): ~10px between the lines, 35px above
+   the button (source h2 15px margin + 20px largeheadline margin) */
+.hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + * {
+  margin-top: var(--space-block-s);
+}
+
+.hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + .button-wrapper {
+  margin-top: calc(var(--space-block) + var(--space-block-l));
+}
+
+/* size-<n> sizes the headline only: the lines after it are the source Large Headline
+   copy (line2) at its default font and size - Egyptienne Light, 21px below 600px
+   (source <840px), 1vw up to 14px from 600px (measured: instability.html line2) */
+.hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--body-font-size-xl);
+}
+
+/* copy-size-<n>: copy with its own vw size (source fontsize-<n>-vw on line2), scaled like size-<n> */
+.hero-corp.image-slide[data-copy-size]:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+  font-size: calc(var(--hero-slide-copy-size) * 2vw);
+}
+
 @media (width >= 600px) {
   .hero-corp.image-slide picture.hero-image-desktop {
     display: block;
@@ -70,13 +113,31 @@
   }
 
   .hero-corp.image-slide > div:last-child,
-  .hero-corp.image-slide.text-below > div:last-child {
+  .hero-corp.image-slide:is(.text-below, .text-above) > div:last-child {
     position: absolute;
-    inset: var(--hero-slide-top) var(--hero-slide-right) auto var(--hero-slide-left);
+    inset: var(--hero-slide-top) var(--hero-slide-right) var(--hero-slide-bottom) var(--hero-slide-left);
     padding: 0;
+  }
+
+  .hero-corp.image-slide.text-above > div:last-child {
+    padding: var(--space-block-l) var(--space-block);
+  }
+
+  /* bottom-<n>: the source .bottom-text box ends 55px below its button (20px box padding,
+     20px column margin, 15px button margin) */
+  .hero-corp.image-slide[data-slide-anchor="bottom"] > div:last-child {
+    padding-bottom: calc(2 * var(--space-block-l) + var(--space-block));
   }
 
   .hero-corp.image-slide > div:last-child > * {
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
+  }
+
+  .hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+    font-size: min(1vw, var(--body-font-size-m));
+  }
+
+  .hero-corp.image-slide[data-copy-size]:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+    font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
   }
 }
