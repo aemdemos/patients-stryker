@@ -136,20 +136,24 @@ function setupHero(block) {
 
 /**
  * The image-slide options top-/bottom-/left-/right-<n> (inset in % of the image, 7-5 = 7.5)
- * and size-<n> (vw text size) as CSS variables on the block. A bottom-<n> box without a
- * top-<n> is anchored to the image bottom (data-slide-anchor="bottom").
+ * size-<n> (vw headline size) and copy-size-<n> (vw size of the lines after the headline,
+ * data-copy-size) as CSS variables on the block. A bottom-<n> box without a top-<n> is
+ * anchored to the image bottom (data-slide-anchor="bottom").
  * @param {Element} block The hero-corp block
  */
 function readSlideOptions(block) {
   const options = new Set();
   [...block.classList].forEach((name) => {
-    const match = name.match(/^(top|bottom|left|right|size)-(\d+)(?:-(\d+))?$/);
+    const match = name.match(/^(top|bottom|left|right|size|copy-size)-(\d+)(?:-(\d+))?$/);
     if (!match) return;
     const [, option, whole, fraction] = match;
     const value = Number(fraction ? `${whole}.${fraction}` : whole);
     options.add(option);
     if (option === 'size') block.style.setProperty('--hero-slide-text-size', value);
-    else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
+    else if (option === 'copy-size') {
+      block.style.setProperty('--hero-slide-copy-size', value);
+      block.dataset.copySize = value;
+    } else block.style.setProperty(`--hero-slide-${option}`, `${value}%`);
   });
   if (options.has('bottom') && !options.has('top')) {
     block.style.setProperty('--hero-slide-top', 'auto');

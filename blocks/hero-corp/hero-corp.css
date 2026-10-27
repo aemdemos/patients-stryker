@@ -1,6 +1,6 @@
 /*
  * Corp image-slide hero, isolated from the patients hero block.
- * The image-slide variant uses authored top/bottom/left/right/size options and text-below /
+ * The image-slide variant uses authored top/bottom/left/right/size/copy-size options and text-below /
  * text-above to position its headline like the source slide (news carousel slides) or the
  * source fullWidthImageHero text box.
  */
@@ -98,6 +98,11 @@
   font-size: var(--body-font-size-xl);
 }
 
+/* copy-size-<n>: copy with its own vw size (source fontsize-<n>-vw on line2), scaled like size-<n> */
+.hero-corp.image-slide[data-copy-size]:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+  font-size: calc(var(--hero-slide-copy-size) * 2vw);
+}
+
 @media (width >= 600px) {
   .hero-corp.image-slide picture.hero-image-desktop {
     display: block;
@@ -130,5 +135,9 @@
 
   .hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
     font-size: min(1vw, var(--body-font-size-m));
+  }
+
+  .hero-corp.image-slide[data-copy-size]:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
+    font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
   }
 }
