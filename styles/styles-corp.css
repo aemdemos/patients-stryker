@@ -31,6 +31,27 @@
   --corp-share-gap: 34px; /* 64px icon pitch */
   --nav-height: var(--corp-chrome-height);
 
+  /* event-calendar-corp (source /us/en/sports-medicine/calendar c-event, FullCalendar month view) */
+  --corp-calendar-cell-bg: #fafafa; /* source td.fc-day */
+  --corp-calendar-today-bg: #fcf8e3; /* source td.fc-today */
+  --corp-calendar-row-height: 140px; /* source .fc-week, every width */
+  --corp-calendar-head-height: 40px; /* source th.fc-day-header */
+  --corp-calendar-date-width: 100px; /* source list .dateContainer */
+  --corp-calendar-option-line-height: 29px; /* source .checkbox label */
+  --corp-calendar-checkbox-size: 18px;
+  --corp-calendar-option-gap: 4px; /* source checkbox 4px below its label top; Apply / Reset 4px apart */
+  --corp-calendar-view-padding: 4px 3px 3px; /* source .calendar-view i: 28 x 29px box around a 20px glyph */
+  --corp-calendar-event-gap: 2px; /* source .fc-day-grid-event margin, .fc-day-number padding */
+  --corp-calendar-event-padding: 1px;
+  --corp-calendar-date-padding: 17px 0 21px; /* source .dateBlock 5px + h4 12px / 1px + 15px + 5px */
+  --corp-calendar-date-line-height: 1.3; /* source .dateBlock h4 19.5px / 15px */
+  --corp-calendar-year-padding: 10px 0 6px; /* source .yearBlock 5px + h3 5px / 1px + 5px */
+  --corp-calendar-arrow-font: "Courier New", courier, monospace; /* source .fc-icon-left-single-arrow */
+  --corp-color-event-meeting: #008080; /* source event bar backgroundColor "teal" (association meetings) */
+  --corp-color-event: #808080; /* source event bar backgroundColor "gray" (other event types) */
+  --corp-color-alert: #cf6e29; /* source .alert-warning "No scheduled events" */
+  --corp-color-alert-border: #ba4a25;
+
   /* shared news-detail fragments (/us/en/fragments/…): Connect band, contact asides, talent banner */
   --corp-heading-font-size-band: 31.5px; /* "Connect with us" below 600px (21px x 1.5) */
   --corp-band-padding: 4% var(--space-block-s) calc(3% + var(--space-block)) 2%; /* source gold band: 4% / 10px / 3% + 15px heading margin / 2% */
