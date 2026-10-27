@@ -44,11 +44,6 @@
   --corp-color-purple-pressed: #643468;
   --corp-color-navy-bright-dark: #184972;
   --corp-color-navy-bright-pressed: #133b5d;
-
-  /* cvent widget: height reserved until the calendar renders — measured
-     /us/en/training-and-education/calendar skeleton: 700px below 841px, 570px from 841px */
-  --corp-cvent-reserved-height: 700px;
-  --corp-cvent-reserved-height-m: 570px;
 }
 
 @media (width >= 900px) {
