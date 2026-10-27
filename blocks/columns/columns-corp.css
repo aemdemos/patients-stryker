@@ -7,7 +7,8 @@
  *
  * Variants: columns-50-50, columns-67-33, columns-33-67, columns-75-25,
  * columns-20-80 (icon + text), media-pair (image grid), large-headline (the stryker.com Large
- * Headline type scale) and link-groups (lists of links); 3 and 4 cells need no variant.
+ * Headline type scale), link-groups (lists of links) and page-intro (the page hero, its
+ * rules last); 3 and 4 cells need no variant.
  * Rules are ordered rows, then cells, then single cells, so specificity only rises.
  */
 
@@ -407,9 +408,21 @@ body.corp .columns.link-groups.columns-4-cols > div > div {
   flex-basis: 100%;
 }
 
+/* page-intro: cells keep the 15px column gutter at every width, level with the row top */
+body.corp .columns.columns-50-50.page-intro > div > div {
+  margin-top: 0;
+  padding: 0 var(--space-block);
+}
+
 /* large-headline: a cell that opens with a Heading 1 headline brings its own top inset */
 body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   padding-top: 0;
+}
+
+/* page-intro: the text before an image too (no patients 50-50 / compact 30px drop or 49px inset) */
+body.corp .columns.columns-50-50.page-intro > div:has(> div:last-child picture) > div:first-child:not(:has(picture)) {
+  margin-top: 0;
+  padding: 0 var(--space-block);
 }
 
 @media (width >= 600px) {
@@ -538,5 +551,79 @@ body.corp .columns.large-headline > div > div:has(> h1:first-child) {
   /* a Bold line ends its own source paragraph: a little more air below it */
   body.corp .columns.large-headline p:has(> strong:only-child) {
     margin-bottom: var(--space-block-xs);
+  }
+}
+
+/* page-intro: the stryker.com page hero (pagehero, hero, longtexthero components), authored
+   as columns-50-50 page-intro (+ border-bottom for the source's grey rule): a Bold + Italic
+   Heading 1 is the 28px gold Futura title, a plain Heading 1 the black Futura title of the
+   long-text hero, a plain Heading 2 the 24.5px Egyptienne Light subhead and paragraphs the
+   14px body copy | image. With no image the text cell alone takes half the row from 600px
+   (source col-sm-6); the cell gutter is set in the cells section. The rule sits 15px under
+   the text (paragraph gap) or 10px under the image. Placed last so it overrides the corp
+   Large Headline h1 and the patients 50-50 / compact insets whatever the section. */
+body.corp .columns.columns-50-50.page-intro.border-bottom {
+  padding-bottom: 0;
+}
+
+body.corp .columns.columns-50-50.page-intro > div > div.columns-img-col {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+body.corp .columns.columns-50-50.page-intro.border-bottom > div > div.columns-img-col {
+  padding-bottom: var(--space-block-s);
+}
+
+/* the image keeps its rendition width (666px for the source preset_666_392), never wider
+   than the cell, at the cell's start edge */
+body.corp .columns.columns-50-50.page-intro .columns-img-col img {
+  width: auto;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+body.corp .columns.columns-50-50.page-intro > div > div h1 {
+  margin: 0 0 var(--space-block);
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height);
+}
+
+/* gold title: 28px with 1em above it; below 600px its line box stays the 21px heading's
+   (22.26px lines), as on stryker.com below 840px */
+body.corp .columns.columns-50-50.page-intro > div > div h1.columns-gold {
+  margin: 1em 0 var(--space-block-s);
+  font-size: var(--heading-font-size-xxl);
+  line-height: calc(var(--heading-line-height) * var(--heading-font-size-l));
+}
+
+/* the subhead: a plain Heading 2 (not a gold or bold display heading) */
+body.corp .columns.columns-50-50.page-intro > div > div h2:not(.columns-gold, .columns-bold) {
+  margin: 0 0 var(--space-block);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+}
+
+/* a Bold + Underline link (long-text hero "About us") stays a bold body-font text link */
+body.corp .columns.columns-50-50.page-intro a.link-strong:any-link {
+  font-family: var(--body-font-family);
+  text-transform: none;
+}
+
+body.corp .columns.columns-50-50.page-intro a.link-strong:any-link::after {
+  content: none;
+}
+
+@media (width >= 600px) {
+  body.corp .columns.columns-50-50.page-intro > div > div h1 {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  body.corp .columns.columns-50-50.page-intro > div > div h1.columns-gold {
+    line-height: var(--heading-line-height);
   }
 }
