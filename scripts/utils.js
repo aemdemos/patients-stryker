@@ -48,21 +48,22 @@ async function fetchIndexRows(url, offset = 0, rows = []) {
 
 const indexCache = {};
 /**
- * Loads every page of `{prefix}/query-index.json` once per prefix.
+ * Loads every page of `{prefix}/query-index.json` (or of another index sheet) once per URL.
  * @param {string} prefix locale folder from getLocalePrefix()
+ * @param {string} [url] index sheet URL, default `{prefix}/query-index.json`
  * @returns {Promise<Map<string,Object>>} rows keyed by toIndexPath(path), empty on failure
  */
-export function fetchQueryIndex(prefix = '') {
-  indexCache[prefix] ||= fetchIndexRows(`${prefix}/query-index.json`)
+export function fetchQueryIndex(prefix = '', url = `${prefix}/query-index.json`) {
+  indexCache[url] ||= fetchIndexRows(url)
     .then((rows) => new Map(rows
       .filter((r) => r.path)
       .map((r) => [toIndexPath(r.path), r])))
     .catch(() => {
       // allow a later caller to retry
-      delete indexCache[prefix];
+      delete indexCache[url];
       return new Map();
     });
-  return indexCache[prefix];
+  return indexCache[url];
 }
 
 /**
