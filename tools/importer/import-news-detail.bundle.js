@@ -597,7 +597,8 @@ var CustomImportScript = (() => {
     };
     const title = startSection("title");
     const h1 = main.querySelector(".h1-title h1");
-    if (h1 && text(h1)) {
+    const hasTitle = !!(h1 && text(h1));
+    if (hasTitle) {
       const heading = doc.createElement("h1");
       heading.innerHTML = h1.innerHTML;
       cleanRichText(heading);
@@ -686,6 +687,16 @@ var CustomImportScript = (() => {
         current.nodes.push(component);
         return;
       }
+      if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
+        const lines = headlineNodes(component, doc);
+        if (lines.length) {
+          const heading = rename(lines[0], "h1");
+          heading.querySelectorAll("strong, em").forEach(unwrap);
+          startSection("headline", "headline-2vw").nodes.push(heading, ...lines.slice(1));
+          current = null;
+          return;
+        }
+      }
       if (component.matches(".c-curatedcta")) {
         const nodes2 = buttonNodes(component, doc);
         if (!nodes2.length) return;
@@ -728,7 +739,8 @@ var CustomImportScript = (() => {
     }), doc);
     const disclaimerStyle = disclaimerNodes.converted ? "disclaimer, references-spaced" : "disclaimer";
     if (disclaimerNodes.length) startSection("disclaimer", disclaimerStyle).nodes.push(...disclaimerNodes);
-    if (title.nodes.some((node) => node.tagName === "H1") && !leadBelowDate) {
+    const opensWithHeadline = sections.some((section) => section.kind === "headline");
+    if ((title.nodes.some((node) => node.tagName === "H1") || opensWithHeadline) && !leadBelowDate) {
       sections.splice(sections.indexOf(title) + 1, 0, { kind: "spacer", style: "spacer", nodes: [] });
     }
     const out = [];

@@ -355,6 +355,32 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* headline-2vw: a page title the source sets as a Large Headline below the date
+   (stryker.com .c-largeheadline > span.fontsize-2vw.futura-bold, e.g. OptaBlate, ProStep):
+   the page H1 in Futura bold at 4vw, from 600px (source 840px) 2vw capped at 28px; the
+   source keeps 15px more below it than the section gap */
+:where(body.corp) main > .section.headline-2vw {
+  --corp-headline-vw: 2vw;
+}
+
+:where(body.corp) main > .section.headline-2vw > .default-content-wrapper {
+  padding-bottom: var(--space-block);
+}
+
+:where(body.corp) main > .section.headline-2vw > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: max(var(--body-font-size-xs), min(calc(2 * var(--body-font-size-m)), calc(2 * var(--corp-headline-vw))));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-hero);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.headline-2vw {
+    --corp-headline-vw: 1vw;
+  }
+}
+
 /* image-1-3 / image-1-2: an image the source sets in a one-third / one-half grid column
    with the other column empty (stryker.com col-sm-4 / col-sm-6, e.g. a news logo or award
    graphic). From 600px (source 840px) the image box is that column: a third / half of the

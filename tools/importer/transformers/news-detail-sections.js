@@ -16,7 +16,10 @@
  *       StrykerTalks podcasts) → `Columns (columns-67-33, large-headline, gray-lead)`, full
  *       width: the video link, then the headline as a Heading 2 statement in the grey box;
  *       the page gets `theme: full-width` (title and small print full width, as on the source)
- * A `spacer` section follows the title section when it holds the H1, unless the article
+ * A page without a title whose article opens with a 2vw Large Headline gets that headline
+ * as its H1, in a `headline-2vw` section below the date.
+ * A `spacer` section follows the title section when it holds the H1 (or before such a
+ * headline), unless the article
  * opens with a lead image directly below the date (outside a column layout).
  *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
  *       section that follows the rule
@@ -586,7 +589,8 @@ export default function transform(hookName, element, payload) {
   // 1. title section
   const title = startSection('title');
   const h1 = main.querySelector('.h1-title h1');
-  if (h1 && text(h1)) {
+  const hasTitle = !!(h1 && text(h1));
+  if (hasTitle) {
     const heading = doc.createElement('h1');
     heading.innerHTML = h1.innerHTML;
     cleanRichText(heading);
@@ -695,6 +699,20 @@ export default function transform(hookName, element, payload) {
       current.nodes.push(component);
       return;
     }
+    // no page title (.h1-title) and the article opens with a 2vw Large Headline below the
+    // date (e.g. OptaBlate, ProStep): that headline is the page H1, in its own section with
+    // the `headline-2vw` style (the source size)
+    if (isFirst && !hasTitle && component.matches('.c-largeheadline')
+      && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
+      const lines = headlineNodes(component, doc);
+      if (lines.length) {
+        const heading = rename(lines[0], 'h1');
+        heading.querySelectorAll('strong, em').forEach(unwrap);
+        startSection('headline', 'headline-2vw').nodes.push(heading, ...lines.slice(1));
+        current = null;
+        return;
+      }
+    }
     if (component.matches('.c-curatedcta')) {
       const nodes = buttonNodes(component, doc);
       if (!nodes.length) return;
@@ -760,7 +778,8 @@ export default function transform(hookName, element, payload) {
   // the title section (when it holds the H1) is followed by a `spacer` section: the
   // article starts 46px below the date on the source (30px spacer + the 15px title gap) —
   // except a lead image placed directly below the date, 15px below it
-  if (title.nodes.some((node) => node.tagName === 'H1') && !leadBelowDate) {
+  const opensWithHeadline = sections.some((section) => section.kind === 'headline');
+  if ((title.nodes.some((node) => node.tagName === 'H1') || opensWithHeadline) && !leadBelowDate) {
     sections.splice(sections.indexOf(title) + 1, 0, { kind: 'spacer', style: 'spacer', nodes: [] });
   }
 
