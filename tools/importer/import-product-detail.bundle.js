@@ -3572,6 +3572,9 @@ var CustomImportScript = (() => {
     (lines.length ? lines : [root]).forEach((line) => {
       const box2 = contentCopy(line, doc);
       const futuraVw = !!line.querySelector(".futura-bold") && vwSize(line) > 0;
+      const squashed = (e) => text(e).replace(/\s+/g, "");
+      const centredText = [...line.querySelectorAll('[style*="text-align"]')].filter((e) => /text-align:\s*center/i.test(e.getAttribute("style"))).map(squashed).join("");
+      if (squashed(line) && centredText === squashed(line)) centred = true;
       let run = null;
       [...box2.childNodes].forEach((node) => {
         if (node.nodeType === 1 && (BLOCK_TAGS.has(node.tagName) || node.tagName === "DIV")) {

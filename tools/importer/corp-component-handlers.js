@@ -379,6 +379,13 @@ function largeHeadline(el, ctx) {
   (lines.length ? lines : [root]).forEach((line) => {
     const box = contentCopy(line, doc);
     const futuraVw = !!line.querySelector('.futura-bold') && vwSize(line) > 0;
+    // a line set in a centred block (often a <div style="text-align: center">, which the
+    // rich-text cleaner renames without its style)
+    const squashed = (e) => text(e).replace(/\s+/g, '');
+    const centredText = [...line.querySelectorAll('[style*="text-align"]')]
+      .filter((e) => /text-align:\s*center/i.test(e.getAttribute('style')))
+      .map(squashed).join('');
+    if (squashed(line) && centredText === squashed(line)) centred = true;
     // inline runs between block elements become paragraphs
     let run = null;
     [...box.childNodes].forEach((node) => {
