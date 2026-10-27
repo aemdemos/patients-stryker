@@ -63,6 +63,13 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li)
   font-family: var(--body-font-family);
 }
 
+/* …in a `serif` section the running font is Egyptienne, so its bold is too (stryker.com
+   <b> inside span.urw-egyptienne) */
+body.news-detail main > .section.serif > .default-content-wrapper :is(p, li)
+  :is(strong:not(.standalone, em strong, :has(em)), b:not(i b, :has(i))) {
+  font-family: var(--heading-font-family);
+}
+
 body.news-detail main > .section > .default-content-wrapper :is(p, li)
   :is(strong em, em strong, b i, i b) {
   font-family: var(--display-font-family);

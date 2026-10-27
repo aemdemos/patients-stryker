@@ -287,6 +287,7 @@ var CustomImportScript = (() => {
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
     const doc = root.ownerDocument;
+    root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
     const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
     const trailingSpace = /[\s\u00a0]+$/;
     [...root.querySelectorAll("span.futura-bold, b, i, em, strong")].reverse().forEach((el) => {
@@ -387,12 +388,24 @@ var CustomImportScript = (() => {
       h.replaceWith(p);
     });
   }
+  var HEADING_SIZES = [
+    ["H2", "fontsize-8em", "h2-0-8"],
+    ["H2", "fontsize-1-5em", "h2-1-5"],
+    ["H1", "fontsize-1-25em", "h1-1-25"]
+  ];
   function smallHeadings(root) {
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    return new Set([...root.querySelectorAll("h2")].filter((h) => {
-      const spans = [...h.querySelectorAll(".fontsize-8em")].filter((span) => !span.parentElement.closest(".fontsize-8em"));
-      return text(h) && squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
-    }));
+    const styles = /* @__PURE__ */ new Map();
+    root.querySelectorAll("h1, h2").forEach((h) => {
+      if (!text(h)) return;
+      const match = HEADING_SIZES.find(([tag, cls]) => {
+        if (h.tagName !== tag) return false;
+        const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+        return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+      });
+      if (match) styles.set(h, match[2]);
+    });
+    return styles;
   }
   function splitStyledLeads(root) {
     const doc = root.ownerDocument;
@@ -446,7 +459,7 @@ var CustomImportScript = (() => {
     nodes.forEach((node) => {
       if (plainBold.has(node)) node.boldBody = true;
       if (serifHeads.has(node)) node.serifHeading = true;
-      if (smallHeads.has(node)) node.headingStyle = "h2-0-8";
+      if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
     });
     let last = null;
     nodes.forEach((node) => {
@@ -521,11 +534,19 @@ var CustomImportScript = (() => {
     }).filter(Boolean);
   }
   function videoAside(video) {
-    const col = video.closest('[class*="col-sm-8"]');
+    const col = video.closest('[class*="col-sm-8"], [class*="col-sm-6"]');
     const row = col && col.parentElement;
-    const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+    const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
+    const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
     const headline2 = aside && aside.querySelector(".c-largeheadline");
     return headline2 && text(headline2) ? headline2 : null;
+  }
+  function headlineVideo(headline2) {
+    const col = headline2.closest('[class*="col-sm-6"]');
+    const row = col && col.parentElement;
+    const videoCol = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
+    const video = videoCol && videoCol.querySelector(".c-standalone-video");
+    return video && video.querySelector("[data-asset-path], iframe[src]") ? video : null;
   }
   function videoTextAside(video) {
     const col = video.closest('[class*="col-sm-6"]');
@@ -549,6 +570,13 @@ var CustomImportScript = (() => {
   function quoteNodes(headline2, doc) {
     const box = doc.createElement("div");
     box.innerHTML = headline2.innerHTML;
+    box.querySelectorAll('span[style*="255,181,0"], span[style*="255, 181, 0"]').forEach((span) => {
+      const bold = span.closest(".futura-bold");
+      if (!/^[“”"‘’']+$/.test(text(span)) || !bold || text(bold) === text(span)) return;
+      const em = doc.createElement("em");
+      em.textContent = text(span);
+      span.replaceWith(em);
+    });
     box.querySelectorAll(".futura-bold").forEach((span) => {
       const strong = doc.createElement("strong");
       while (span.firstChild) strong.append(span.firstChild);
@@ -560,6 +588,18 @@ var CustomImportScript = (() => {
     });
     box.querySelectorAll("span, font").forEach(unwrap);
     box.querySelectorAll("strong strong").forEach(unwrap);
+    [...box.querySelectorAll("strong")].forEach((strong) => {
+      if (!strong.parentNode) return;
+      let next = strong.nextSibling;
+      const following = (node) => node && node.nodeType === 3 && !node.textContent.trim() ? node.nextSibling : node;
+      while (following(next) && following(next).nodeName === "STRONG") {
+        if (next.nodeType === 3) strong.append(next);
+        const run = strong.nextSibling;
+        while (run.firstChild) strong.append(run.firstChild);
+        run.remove();
+        next = strong.nextSibling;
+      }
+    });
     box.querySelectorAll("em").forEach((em) => {
       const mark = em.firstElementChild;
       if (!mark || mark.tagName !== "STRONG" || em.childNodes.length !== 1) return;
@@ -601,23 +641,30 @@ var CustomImportScript = (() => {
     }));
     return out;
   }
-  function videoHeadlineColumns(video, headline2, doc, quotes = [], ctas = [], asideCtas = []) {
+  function videoHeadlineColumns(video, headline2, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
     const link2 = videoLink(video, doc);
-    const lines = headlineNodes(headline2, doc);
-    if (!link2 || !lines.length) return null;
+    const boxed = !!headline2.querySelector('.has-background, [class*="bg-light-gray"]');
+    const quotes = boxed ? asideQuotes : [headline2, ...asideQuotes];
+    const lines = boxed ? headlineNodes(headline2, doc) : [];
+    if (!link2 || boxed && !lines.length) return null;
     const media = doc.createElement("p");
     media.append(link2);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
-    const small = headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-    const statement = small ? lines : [rename(lines[0], "h2"), ...lines.slice(1)];
+    const firstLine = headline2.querySelector(".line") || headline2;
+    const big = firstLine.querySelector('[class*="fontsize-2vw"]') || !headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+    const statement = big && lines.length ? [rename(lines[0], "h2"), ...lines.slice(1)] : lines;
+    const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
     return WebImporter.Blocks.createBlock(doc, {
-      name: "Columns (columns-67-33, large-headline, gray-lead)",
-      cells: [[[media, ...buttons], [
-        ...statement,
-        ...quotes.flatMap((q) => quoteNodes(q, doc)),
-        // a button in the narrow column (under the quote, e.g. Esley) stays there
-        ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
-      ]]]
+      name: `Columns (${half ? "columns-50-50" : "columns-67-33"}, large-headline${boxed ? ", gray-lead" : ""})`,
+      cells: [/* @__PURE__ */ ((mediaCell, textCell2) => mirrored ? [textCell2, mediaCell] : [mediaCell, textCell2])(
+        [media, ...buttons],
+        [
+          ...statement,
+          ...quotes.flatMap((q) => quoteNodes(q, doc)),
+          // a button in the narrow column (under the quote, e.g. Esley) stays there
+          ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
+        ]
+      )]
     });
   }
   function footnoteList(nodes, doc) {
@@ -678,6 +725,24 @@ var CustomImportScript = (() => {
       return !parent && !el.closest("header, footer, .modal");
     });
     const consumed = /* @__PURE__ */ new Set();
+    const videoRowColumns = (video) => {
+      const aside = videoAside(video);
+      if (!aside) return false;
+      const asideCol = aside.closest('[class*="col-sm-"]');
+      const quotes = [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text(h));
+      const videoCol = video.closest('[class*="col-sm-"]');
+      const ctas = [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
+      const asideCtas = [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c));
+      const cols = [...asideCol.parentElement.children];
+      const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+      const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+      if (!columns) return false;
+      [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+      element.setAttribute("data-news-theme", "full-width");
+      startSection("columns").nodes.push(columns);
+      current = null;
+      return true;
+    };
     let leadBelowDate = false;
     components.forEach((component) => {
       if (consumed.has(component)) return;
@@ -721,24 +786,16 @@ var CustomImportScript = (() => {
         current = null;
         return;
       }
-      if (component.matches(".c-standalone-video")) {
-        if (!component.querySelector("[data-asset-path], iframe[src]")) return;
-        const aside = videoAside(component);
-        const asideCol = aside && aside.closest('[class*="col-sm-4"]');
-        const quotes = asideCol ? [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text(h)) : [];
-        const videoCol = component.closest('[class*="col-sm-8"]');
-        const ctas = aside && videoCol ? [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c)) : [];
-        const asideCtas = asideCol ? [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c)) : [];
-        const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas, asideCtas);
-        if (columns) {
-          consumed.add(aside);
-          quotes.forEach((q) => consumed.add(q));
-          [...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-          element.setAttribute("data-news-theme", "full-width");
-          startSection("columns").nodes.push(columns);
-          current = null;
+      if (component.matches(".c-largeheadline") && headlineVideo(component) && !consumed.has(headlineVideo(component))) {
+        const video = headlineVideo(component);
+        if (videoRowColumns(video)) {
+          consumed.add(video);
           return;
         }
+      }
+      if (component.matches(".c-standalone-video")) {
+        if (!component.querySelector("[data-asset-path], iframe[src]")) return;
+        if (videoRowColumns(component)) return;
         const textAside = videoTextAside(component);
         const textColumns = textAside && videoTextColumns(component, textAside, doc);
         if (textColumns) {

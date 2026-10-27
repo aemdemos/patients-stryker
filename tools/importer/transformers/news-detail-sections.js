@@ -178,6 +178,8 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
   const size = copyStyles(root);
   const doc = root.ownerDocument;
+  // links without an address (<a> wrappers, e.g. a Large Headline title) are plain text
+  root.querySelectorAll('a:not([href]), a[href=""]').forEach(unwrap);
 
   // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
   // possibly followed by empty size spans, or nested: <b><span>…<br></span></b>) belongs
@@ -323,12 +325,26 @@ function labelHeadingsToParagraphs(root) {
  * h2 headings the source sets at 0.8em (the whole text in span.fontsize-8em, e.g. a news
  * subtitle): their own section with the `h2-0-8` style (styles-corp.css).
  */
+// headings the source sizes with a span (the whole text in it): [tag, span class, style]
+const HEADING_SIZES = [
+  ['H2', 'fontsize-8em', 'h2-0-8'],
+  ['H2', 'fontsize-1-5em', 'h2-1-5'],
+  ['H1', 'fontsize-1-25em', 'h1-1-25'],
+];
+
 function smallHeadings(root) {
   const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
-  return new Set([...root.querySelectorAll('h2')].filter((h) => {
-    const spans = [...h.querySelectorAll('.fontsize-8em')].filter((span) => !span.parentElement.closest('.fontsize-8em'));
-    return text(h) && squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
-  }));
+  const styles = new Map();
+  root.querySelectorAll('h1, h2').forEach((h) => {
+    if (!text(h)) return;
+    const match = HEADING_SIZES.find(([tag, cls]) => {
+      if (h.tagName !== tag) return false;
+      const spans = [...h.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+      return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
+    });
+    if (match) styles.set(h, match[2]);
+  });
+  return styles;
 }
 
 /**
@@ -391,7 +407,7 @@ function richTextNodes(component, doc) {
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
     if (serifHeads.has(node)) node.serifHeading = true;
-    if (smallHeads.has(node)) node.headingStyle = 'h2-0-8';
+    if (smallHeads.has(node)) node.headingStyle = smallHeads.get(node);
   });
   // elements without copy of their own (headings, images) follow the copy around them
   let last = null;
@@ -490,11 +506,22 @@ function headlineNodes(component, doc) {
  * row of the StrykerTalks podcast pages), or null.
  */
 function videoAside(video) {
-  const col = video.closest('[class*="col-sm-8"]');
+  const col = video.closest('[class*="col-sm-8"], [class*="col-sm-6"]');
   const row = col && col.parentElement;
-  const aside = row && [...row.children].find((el) => el !== col && /\bcol-sm-4\b/.test(el.className));
+  // 2/3 video + 1/3 headline (podcasts), or a 50/50 row (e.g. Carolyn, headline first)
+  const width = col && /\bcol-sm-6\b/.test(col.className) ? 6 : 4;
+  const aside = row && [...row.children].find((el) => el !== col && new RegExp(`\\bcol-sm-${width}\\b`).test(el.className));
   const headline = aside && aside.querySelector('.c-largeheadline');
   return headline && text(headline) ? headline : null;
+}
+
+/** The video of a 50/50 row whose Large Headline column comes first (e.g. Carolyn), or null. */
+function headlineVideo(headline) {
+  const col = headline.closest('[class*="col-sm-6"]');
+  const row = col && col.parentElement;
+  const videoCol = row && [...row.children].find((el) => el !== col && /\bcol-sm-6\b/.test(el.className));
+  const video = videoCol && videoCol.querySelector('.c-standalone-video');
+  return video && video.querySelector('[data-asset-path], iframe[src]') ? video : null;
 }
 
 /**
@@ -531,6 +558,16 @@ function videoTextColumns(video, rte, doc) {
 function quoteNodes(headline, doc) {
   const box = doc.createElement('div');
   box.innerHTML = headline.innerHTML;
+  // a gold quote mark set by colour only (<span style="color: rgb(255,181,0)">”</span>, inside
+  // a bold run) is the gold marker too: italic inside the bold
+  box.querySelectorAll('span[style*="255,181,0"], span[style*="255, 181, 0"]').forEach((span) => {
+    const bold = span.closest('.futura-bold');
+    // a mark that is its own bold span is handled below (bold + italic)
+    if (!/^[“”"‘’']+$/.test(text(span)) || !bold || text(bold) === text(span)) return;
+    const em = doc.createElement('em');
+    em.textContent = text(span);
+    span.replaceWith(em);
+  });
   box.querySelectorAll('.futura-bold').forEach((span) => {
     const strong = doc.createElement('strong');
     while (span.firstChild) strong.append(span.firstChild);
@@ -542,6 +579,21 @@ function quoteNodes(headline, doc) {
   });
   box.querySelectorAll('span, font').forEach(unwrap);
   box.querySelectorAll('strong strong').forEach(unwrap);
+  // bold runs that touch are one run (two would merge on import and take the paragraph
+  // breaks after them along)
+  [...box.querySelectorAll('strong')].forEach((strong) => {
+    if (!strong.parentNode) return;
+    let next = strong.nextSibling;
+    // the next bold run, maybe after a space
+    const following = (node) => (node && node.nodeType === 3 && !node.textContent.trim() ? node.nextSibling : node);
+    while (following(next) && following(next).nodeName === 'STRONG') {
+      if (next.nodeType === 3) strong.append(next);
+      const run = strong.nextSibling;
+      while (run.firstChild) strong.append(run.firstChild);
+      run.remove();
+      next = strong.nextSibling;
+    }
+  });
   // a gold mark right against a Bold run goes inside it (<strong><em>“</em>I would…</strong>):
   // two touching emphasis runs would merge on import
   box.querySelectorAll('em').forEach((em) => {
@@ -588,26 +640,36 @@ function quoteNodes(headline, doc) {
 }
 
 /** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
-function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = [], asideCtas = []) {
+function videoHeadlineColumns(video, headline, doc, asideQuotes = [], ctas = [], asideCtas = [], mirrored = false) {
   const link = videoLink(video, doc);
-  const lines = headlineNodes(headline, doc);
-  if (!link || !lines.length) return null;
+  // no grey box in the headline column (only a quote, e.g. the last story of "When Stryker
+  // employees…"): every headline there is a quote and the block has no gray-lead
+  const boxed = !!headline.querySelector('.has-background, [class*="bg-light-gray"]');
+  const quotes = boxed ? asideQuotes : [headline, ...asideQuotes];
+  const lines = boxed ? headlineNodes(headline, doc) : [];
+  if (!link || (boxed && !lines.length)) return null;
   const media = doc.createElement('p');
   media.append(link);
   // a button under the video: a Bold link on its own line in the wide cell
   const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
   // a 2vw headline (28px at 1440px, e.g. Stiles) is the Heading 2 statement; a 1.5vw one
   // (21px, e.g. Heath) stays a paragraph, the large-headline text size
-  const small = headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-  const statement = small ? lines : [rename(lines[0], 'h2'), ...lines.slice(1)];
+  const firstLine = headline.querySelector('.line') || headline;
+  const big = firstLine.querySelector('[class*="fontsize-2vw"]')
+    || !headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
+  const statement = big && lines.length ? [rename(lines[0], 'h2'), ...lines.slice(1)] : lines;
+  const half = /\bcol-sm-6\b/.test((video.closest('[class*="col-sm-"]') || video).className);
   return WebImporter.Blocks.createBlock(doc, {
-    name: 'Columns (columns-67-33, large-headline, gray-lead)',
-    cells: [[[media, ...buttons], [
-      ...statement,
-      ...quotes.flatMap((q) => quoteNodes(q, doc)),
-      // a button in the narrow column (under the quote, e.g. Esley) stays there
-      ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
-    ]]],
+    name: `Columns (${half ? 'columns-50-50' : 'columns-67-33'}, large-headline${boxed ? ', gray-lead' : ''})`,
+    cells: [((mediaCell, textCell) => (mirrored ? [textCell, mediaCell] : [mediaCell, textCell]))(
+      [media, ...buttons],
+      [
+        ...statement,
+        ...quotes.flatMap((q) => quoteNodes(q, doc)),
+        // a button in the narrow column (under the quote, e.g. Esley) stays there
+        ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
+      ],
+    )],
   });
 }
 
@@ -688,6 +750,30 @@ export default function transform(hookName, element, payload) {
   });
 
   const consumed = new Set();
+  // a video with a Large Headline column beside it (2/3 + 1/3 or 50/50):
+  // Columns (…, large-headline, gray-lead) in a section of its own; true when built
+  const videoRowColumns = (video) => {
+    const aside = videoAside(video);
+    if (!aside) return false;
+    // further Large Headlines in the headline column (a quote) and buttons in either column
+    const asideCol = aside.closest('[class*="col-sm-"]');
+    const quotes = [...asideCol.querySelectorAll('.c-largeheadline')].filter((h) => h !== aside && text(h));
+    const videoCol = video.closest('[class*="col-sm-"]');
+    const ctas = [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
+    const asideCtas = [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c));
+    // the headline column first in the source row (e.g. Carolyn): the text cell comes first
+    const cols = [...asideCol.parentElement.children];
+    const mirrored = cols.indexOf(asideCol) < cols.indexOf(videoCol);
+    const columns = videoHeadlineColumns(video, aside, doc, quotes, ctas, asideCtas, mirrored);
+    if (!columns) return false;
+    [aside, ...quotes, ...ctas, ...asideCtas].forEach((c) => consumed.add(c));
+    // the source runs the title and small print full width on these pages too: the
+    // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
+    element.setAttribute('data-news-theme', 'full-width');
+    startSection('columns').nodes.push(columns);
+    current = null;
+    return true;
+  };
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
@@ -742,27 +828,17 @@ export default function transform(hookName, element, payload) {
       current = null;
       return;
     }
-    if (component.matches('.c-standalone-video')) {
-      if (!component.querySelector('[data-asset-path], iframe[src]')) return;
-      const aside = videoAside(component);
-      // further Large Headlines in the narrow column (a quote) and buttons under the video
-      const asideCol = aside && aside.closest('[class*="col-sm-4"]');
-      const quotes = asideCol ? [...asideCol.querySelectorAll('.c-largeheadline')].filter((h) => h !== aside && text(h)) : [];
-      const videoCol = component.closest('[class*="col-sm-8"]');
-      const ctas = aside && videoCol ? [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c)) : [];
-      const asideCtas = asideCol ? [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c)) : [];
-      const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas, asideCtas);
-      if (columns) {
-        consumed.add(aside);
-        quotes.forEach((q) => consumed.add(q));
-        [...ctas, ...asideCtas].forEach((c) => consumed.add(c));
-        // the source runs the title and small print full width on these pages too: the
-        // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
-        element.setAttribute('data-news-theme', 'full-width');
-        startSection('columns').nodes.push(columns);
-        current = null;
+    // a 50/50 row whose Large Headline column comes before the video: build the row now
+    if (component.matches('.c-largeheadline') && headlineVideo(component) && !consumed.has(headlineVideo(component))) {
+      const video = headlineVideo(component);
+      if (videoRowColumns(video)) {
+        consumed.add(video);
         return;
       }
+    }
+    if (component.matches('.c-standalone-video')) {
+      if (!component.querySelector('[data-asset-path], iframe[src]')) return;
+      if (videoRowColumns(component)) return;
       // a video with article text in the other half of the row: Columns (columns-50-50)
       const textAside = videoTextAside(component);
       const textColumns = textAside && videoTextColumns(component, textAside, doc);

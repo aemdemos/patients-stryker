@@ -21,6 +21,8 @@
   --corp-product-item-image-height: 185px; /* source product card image area (img max-height 185px, above its 1px rule) */
   --corp-paragraph-line-height-serif-l-nested: 1.326; /* measured: a 17.5px Egyptienne span in a 14px/19.25px source paragraph renders 23.2px lines */
   --corp-heading-line-height-s: 1.2; /* measured: a 0.8em span in a source h2 renders 23.52px lines at 19.6px */
+  --corp-heading-font-size-h1-1-25: 35px; /* measured: a 1.25em span in a 28px source h1 */
+  --corp-heading-font-size-h2-1-5-s: 31.5px; /* measured: a 1.5em span in a 21px source h2 (mobile) */
 
   /* social-share-corp: brand squares, size and spacing, copy tooltip (www.stryker.com) */
   --corp-color-facebook: #1677f2;
@@ -378,6 +380,31 @@ body:where(.corp):has(main .hero-carousel) header {
 @media (width >= 600px) {
   :where(body.corp) main > .section.headline-2vw {
     --corp-headline-vw: 1vw;
+  }
+}
+
+/* h1-1-25 / h2-1-5: headings the source enlarges with a size span (h1 > span.fontsize-1-25em:
+   35px, lines 1.15; h2 > span.fontsize-1-5em: 1.5x the h2, 31.5px and 36.75px from 600px
+   with the h2 step, lines 1.06), e.g. the "When Stryker employees…" feature. Like h2-0-8,
+   the heading flows into the text below it: one heading gap, not a section gap */
+:where(body.corp) main > .section.h1-1-25,
+:where(body.corp) main > .section.h2-1-5 {
+  margin-bottom: 0;
+}
+
+:where(body.corp) main > .section.h1-1-25 > .default-content-wrapper h1 {
+  font-size: var(--corp-heading-font-size-h1-1-25);
+  line-height: var(--heading-line-height-h4);
+}
+
+:where(body.corp) main > .section.h2-1-5 > .default-content-wrapper h2 {
+  font-size: var(--corp-heading-font-size-h2-1-5-s);
+  line-height: var(--heading-line-height);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main > .section.h2-1-5 > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-xxxl-s);
   }
 }
 
