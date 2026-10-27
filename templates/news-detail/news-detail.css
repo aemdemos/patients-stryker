@@ -175,7 +175,7 @@ body.news-detail main a:any-link {
 }
 
 @media (width >= 900px) {
-    body.news-detail main > .section:not(.hero-container, .cards-corp-container, .columns-container) > div {
+    body.news-detail main > .section:not(.hero-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
   
