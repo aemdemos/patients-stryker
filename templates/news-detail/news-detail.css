@@ -9,9 +9,8 @@
    - every section except the hero and Cards Corp spans the 66.66% article column, centred
      from 600px (source col-sm-8 from 840px); full width on phones. This includes the
      small-print `compact`/`disclaimer` sections and the "Last Updated" line below them
-   - Cards Corp (e.g. the "Related" teasers), Columns (e.g. a video with a Large Headline
-     beside it, source col-sm-8 + col-sm-4) and Tabs (e.g. "Related articles" / "Related
-     products" card tabs) span the full container width */
+   - Cards Corp (e.g. the "Related" teasers) and Columns (e.g. a video with a Large Headline
+     beside it, source col-sm-8 + col-sm-4) span the full container width */
 
 /* ---- title section ---- */
 
@@ -40,6 +39,7 @@ body.news-detail main > .section.hero-container {
 body.news-detail main > .section > .default-content-wrapper picture {
   display: block;
   text-align: center;
+  margin: auto;
 }
 
 body.news-detail main > .section > .default-content-wrapper picture img {
@@ -183,7 +183,7 @@ body.news-detail main a:any-link {
 }
 
 @media (width >= 900px) {
-    body.news-detail main > .section:not(.hero-container, .cards-corp-container, .columns-container, .tabs-container) > div {
+    body.news-detail main > .section:not(.hero-container) > div {
     max-width: calc(min(100%, var(--container-max)) * 2 / 3);
   }
   

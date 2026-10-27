@@ -35,13 +35,14 @@ body.corp .accordion .accordion-item-body {
 }
 
 /* a panel made of several sections (`accordion-continue`): the corp section gap
-   between them, 20px (30px from 600px) */
-body.corp .accordion .accordion-item-body > .section:not(:last-child) {
+   between them, 20px (30px from 600px); an `h2-0-8` subtitle flows into the text below
+   it (its h2's own 15px) */
+body.corp .accordion .accordion-item-body > .section:not(:last-child, .h2-0-8) {
   margin-bottom: var(--space-block-l);
 }
 
 @media (width >= 600px) {
-  body.corp .accordion .accordion-item-body > .section:not(:last-child) {
+  body.corp .accordion .accordion-item-body > .section:not(:last-child, .h2-0-8) {
     margin-bottom: var(--space-section);
   }
 }
