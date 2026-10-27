@@ -117,3 +117,24 @@ export async function applySectionBackgrounds(main) {
     }
   });
 }
+
+/**
+ * Runs `callback` once, when `element` comes near the viewport. Third-party widgets use it
+ * so their scripts and frames load only when the visitor is about to see them, never in
+ * the eager (LCP) phase.
+ * @param {Element} element The element to watch
+ * @param {Function} callback Called once
+ * @param {string} rootMargin How far ahead of the viewport to start
+ */
+export function whenNearViewport(element, callback, rootMargin = '200px') {
+  if (typeof IntersectionObserver !== 'function') {
+    callback();
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    callback();
+  }, { rootMargin });
+  observer.observe(element);
+}

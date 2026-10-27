@@ -1,0 +1,9 @@
+/* microapp frame: the container's width; zoid sets the height the microapp reports */
+.widget.remote-component .remote-component-frame {
+  width: 100%;
+}
+
+.widget.remote-component iframe {
+  display: block;
+  border: 0;
+}
