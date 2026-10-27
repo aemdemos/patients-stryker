@@ -62,6 +62,11 @@
   --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-purple-gray));
   --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-blue-gray));
   --corp-gradient-golden: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
+
+  /* news-list-corp (source /us/en/about/news c-newsandannouncements) */
+  --corp-news-tab-padding-top: 12px; /* source .tab-link: 12px above the 20px label, 7px + 1px rule below */
+  --corp-news-image-max-width: 666px; /* source thumbnail preset $preset_666_392$ (its stacked width) */
+  --corp-news-image-ratio: 666 / 392;
 }
 
 @media (width >= 900px) {
