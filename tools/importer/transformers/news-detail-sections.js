@@ -450,6 +450,46 @@ function splitStyledLeads(root) {
   });
 }
 
+/**
+ * The top-level blocks of a cleaned fragment, in source order, without losing copy:
+ * block elements as they are, <div>s unwrapped (at any depth), images and runs of
+ * loose text / inline elements (e.g. a small-print `<div>A surgeon must…</div>`) as
+ * paragraphs of their own.
+ */
+function blockNodes(container, doc) {
+  const nodes = [];
+  let run = [];
+  const flush = () => {
+    if (run.some((n) => (n.nodeType === 3 ? n.textContent.trim() : text(n) || n.querySelector?.('img')))) {
+      const p = doc.createElement('p');
+      p.append(...run);
+      // no line breaks at either end
+      while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
+      while (p.lastChild && (p.lastChild.nodeName === 'BR' || (p.lastChild.nodeType === 3 && !p.lastChild.textContent.trim()))) p.lastChild.remove();
+      nodes.push(p);
+    }
+    run = [];
+  };
+  [...container.childNodes].forEach((node) => {
+    if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
+      flush();
+      if (text(node) || node.querySelector('img')) nodes.push(node);
+    } else if (node.nodeType === 1 && node.tagName === 'IMG') {
+      flush();
+      const p = doc.createElement('p');
+      p.append(node);
+      nodes.push(p);
+    } else if (node.nodeType === 1 && ['DIV', 'SECTION', 'ARTICLE'].includes(node.tagName)) {
+      flush();
+      nodes.push(...blockNodes(node, doc));
+    } else if (node.nodeType === 1 || node.nodeType === 3) {
+      run.push(node);
+    }
+  });
+  flush();
+  return nodes;
+}
+
 function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
@@ -463,22 +503,7 @@ function richTextNodes(component, doc) {
   // plain rich text keeps its font (its own section)
   const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
   const { centred, size } = cleanRichText(box);
-  const nodes = [];
-  [...box.childNodes].forEach((node) => {
-    if (node.nodeType === 1 && BLOCK_TAGS.has(node.tagName)) {
-      nodes.push(node);
-    } else if (node.nodeType === 1 && node.tagName === 'IMG') {
-      const p = doc.createElement('p');
-      p.append(node);
-      nodes.push(p);
-    } else if (node.nodeType === 1 && node.tagName === 'DIV') {
-      nodes.push(...[...node.children].filter((el) => BLOCK_TAGS.has(el.tagName)));
-    } else if (text(node)) {
-      const p = doc.createElement('p');
-      p.append(node.cloneNode(true));
-      nodes.push(p);
-    }
-  });
+  const nodes = blockNodes(box, doc);
   nodes.forEach((node) => {
     if (plainBold.has(node)) node.boldBody = true;
     if (serifHeads.has(node)) node.serifHeading = true;
@@ -1010,7 +1035,7 @@ export default function transform(hookName, element, payload) {
     const box = doc.createElement('div');
     box.innerHTML = disclaimer.innerHTML;
     cleanRichText(box, { wholeParagraphs: true });
-    return [...box.children].filter((el) => BLOCK_TAGS.has(el.tagName));
+    return blockNodes(box, doc);
   }), doc);
   // small print: the corp `disclaimer` section style (11.2px copy; references as
   // "N: " entries 15px apart, then the document code)
