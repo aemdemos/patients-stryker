@@ -23,7 +23,7 @@ import xfFragmentPath from './xf-fragment-path.js';
  * → /us/en/fragments/stryker/acute-care/en/business-unit/footer-links/master), the same lookup
  * every page importer uses to emit the fragment block.
  */
-const FRAGMENTS = {
+export const FRAGMENTS = {
   '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master': {
     type: 'resources', style: 'bu-resources, p-1-25',
   },

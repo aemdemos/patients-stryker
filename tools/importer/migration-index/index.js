@@ -112,6 +112,25 @@ sizes['catalog/typography.json'] = writeJson(join(DATA, 'catalog/typography.json
 sizes['catalog/components.json'] = writeJson(join(DATA, 'catalog/components.json'), catalogs.components);
 sizes['catalog/site.json'] = writeJson(join(DATA, 'catalog/site.json'), catalogs.site);
 
+// XF import lists per template: the published XFs its pages reference inline (kind
+// fragment, not hero / carousel slides), plus the XFs nested in those
+const xfUrls = {};
+Object.entries(xf.PAGES).forEach(([page, refs]) => {
+  const { template } = catalogs.site.pages[page];
+  const set = xfUrls[template] || new Set();
+  const add = (path) => {
+    if (!xf.FRAGMENTS[path] || set.has(path)) return;
+    set.add(path);
+    xf.FRAGMENTS[path].refs.forEach(add);
+  };
+  refs.filter((r) => r.kind === 'fragment').forEach((r) => add(r.xf));
+  xfUrls[template] = set;
+});
+Object.entries(xfUrls).forEach(([template, set]) => {
+  writeFileSync(join(DATA, `catalog/xf-urls-${template}.txt`), `${[...set].sort()
+    .map((path) => `https://www.stryker.com${path}.html`).join('\n')}\n`);
+});
+
 const cfList = Object.keys(xf.CONTENT_FRAGMENTS).sort();
 writeFileSync(join(DATA, 'catalog/cf-to-export.txt'), [
   '# Content fragments used inside XFs. Export each as {path}/jcr:content.infinity.json',

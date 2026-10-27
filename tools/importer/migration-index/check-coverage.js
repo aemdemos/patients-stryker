@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 /*
  * Authored-text coverage check: for each imported page, every text authored in AEM (page
- * export in .migration/xf-mapping) that is visible on the source must appear in the import
- * output. Catches content an importer silently drops (e.g. a standalone image's title).
+ * export in .migration/xf-mapping; for fragment documents under /us/en/fragments/ the XF
+ * export in .migration/xf-content) that is visible on the source must appear in the import
+ * output. XF content is checked in the fragment documents, not on the pages using them.
+ * Catches content an importer silently drops (e.g. a standalone image's title).
  *
  * Page exports come from the AEM author instance, so they may hold unpublished text. Every
  * text missing from the output is looked up on the live source page: text that is not on
@@ -17,7 +19,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { join, relative } from 'path';
 import {
-  PAGES_DIR, walk, forEachNode, isComponent, pageExportFile, readJson,
+  PAGES_DIR, XF_DIR, walk, forEachNode, isComponent, pageExportFile, readJson,
 } from './lib.js';
 
 // component properties that hold visible authored text, per component (rich text: HTML)
@@ -87,8 +89,19 @@ const files = only.length
   : walk(dir).filter((f) => f.endsWith('.plain.html'));
 
 /** The live source page's visible text (normalised), or null when it cannot be fetched. */
-async function liveText(exportFile) {
-  const url = `https://www.stryker.com/${relative(PAGES_DIR, exportFile).replace(/\.json$/, '.html')}`;
+// fragment documents (/us/en/fragments/…) → their XF variation export and publish URL
+const manifest = readJson(join(XF_DIR, '_manifest.json'));
+const XF_BY_EDS = new Map(manifest.fragments.flatMap((f) => f.variations)
+  .map((v) => [v.edsPath, { file: join(XF_DIR, v.file), url: `https://www.stryker.com${v.path}.html` }]));
+
+/** The AEM export and live URL of an output document (page or fragment), or null. */
+function sourceOf(page) {
+  if (page.startsWith('/us/en/fragments/')) return XF_BY_EDS.get(page) || null;
+  const file = pageExportFile(page);
+  return file && { file, url: `https://www.stryker.com/${relative(PAGES_DIR, file).replace(/\.json$/, '.html')}` };
+}
+
+async function liveText(url) {
   try {
     const res = await fetch(url);
     if (!res.ok) return null;
@@ -102,8 +115,8 @@ async function liveText(exportFile) {
 let failed = 0;
 const results = files.map(async (file) => {
   const page = `/${relative(dir, file).replace(/\.plain\.html$/, '')}`;
-  const exportFile = pageExportFile(page);
-  if (!exportFile || !existsSync(file)) return `skip     ${page} (${exportFile ? 'no output' : 'no AEM export'})`;
+  const source = sourceOf(page);
+  if (!source || !existsSync(file)) return `skip     ${page} (${source ? 'no output' : 'no AEM export'})`;
   const html = readFileSync(file, 'utf8');
   // the source answered with its 404 page (wrong source URL): nothing of the page was imported
   if (/<div>og:title<\/div><div>404<\/div>|<div>Title<\/div><div>404<\/div>/i.test(html)) {
@@ -111,10 +124,10 @@ const results = files.map(async (file) => {
     return `404      ${page} (the import fetched the source's 404 page — check the source URL)`;
   }
   const output = norm(html).replace(/\[\[[a-z-]+\]|\]/g, ' ').replace(/\s+/g, ' ');
-  const texts = authoredTexts(readJson(exportFile));
+  const texts = authoredTexts(readJson(source.file));
   // a snippet counts as present when its first 60 characters appear in the output
   const absent = texts.filter((t) => !output.includes(core(t.text).slice(0, 60)));
-  const live = absent.length ? await liveText(exportFile) : null;
+  const live = absent.length ? await liveText(source.url) : null;
   const onLive = (t) => live === null || live.includes(core(t.text).slice(0, 60));
   const authorOnly = absent.filter((t) => !onLive(t));
   const missing = absent.filter((t) => !authorOnly.includes(t));

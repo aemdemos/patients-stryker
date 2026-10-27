@@ -38,6 +38,7 @@ var CustomImportScript = (() => {
   // tools/importer/import-news-shared-fragments.js
   var import_news_shared_fragments_exports = {};
   __export(import_news_shared_fragments_exports, {
+    FRAGMENTS: () => FRAGMENTS2,
     default: () => import_news_shared_fragments_default
   });
 

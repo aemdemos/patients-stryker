@@ -508,6 +508,8 @@ Decision catalogs (committed, not bundled), in `data/catalog/`:
 - `site.json` — every page with its template, component set, XF counts, migration state and import template, grouped by template.
 - `cf-to-export.txt` — the content-fragment paths to export.
 
+**Importing a template's XFs:** a page importer replaces each XF rendered on the page (`.experienceFragment`) with a Fragment block. It matches them against `PAGES` in order and by text summary (`matchXfWrappers` in `tools/importer/corp-components.js`). Unmatched XFs stay inline and are reported. The fragment documents themselves come from `tools/importer/import-xf-fragments.js`, run with `data/catalog/xf-urls-<template>.txt`. That importer currently carries the news-detail rules, so run it with the news-detail list only. Import a template's XFs together with its pages; a page without its fragment documents renders empty where the XF was.
+
 **Coverage check — run it after every import** (pilot or real):
 `node tools/importer/migration-index/check-coverage.js <output content dir> [page path …]`
 - It lists every visible text authored in AEM (rich text, image titles and descriptions, headings, CTA labels, large headlines, video texts, tables, page disclaimer) that is missing from the import output.

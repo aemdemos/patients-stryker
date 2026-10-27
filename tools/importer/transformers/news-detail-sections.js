@@ -43,7 +43,7 @@ import {
   BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
   plainBoldParagraphs, serifHeadings,
 } from '../corp-richtext.js';
-import standaloneImageNodes from '../corp-components.js';
+import { standaloneImageNodes, matchXfWrappers } from '../corp-components.js';
 
 const COMPONENTS = [
   '.c-autocarousel',
@@ -269,9 +269,31 @@ export default function transform(hookName, element, payload) {
     return !parent && !el.closest('header, footer, .modal');
   });
 
+  // experience fragments rendered inline (article body copy, asides, banners) → a Fragment
+  // block linking their EDS fragment document (every XF is its own document; site-wide
+  // index tools/importer/data/xf-index.js). payload.xf: importing an XF itself (its nested XFs).
+  const xfSource = payload.xf || (payload.params && payload.params.originalURL) || '';
+  const { matches: xfMatches, unmatched: xfUnmatched } = matchXfWrappers(main, xfSource);
+  if (xfUnmatched.length) {
+    console.warn(`[news-detail-sections] ${xfSource}: XF not matched to the index, kept inline: ${xfUnmatched.join(' | ')}`);
+  }
+  const xfDone = new Set();
+
   const consumed = new Set();
   components.forEach((component) => {
     if (consumed.has(component)) return;
+    const wrapper = component.closest('.experienceFragment');
+    if (wrapper && xfMatches.has(wrapper)) {
+      if (!xfDone.has(wrapper)) {
+        xfDone.add(wrapper);
+        const link = doc.createElement('a');
+        link.href = xfMatches.get(wrapper).eds;
+        link.textContent = link.getAttribute('href');
+        startSection('fragment').nodes.push(WebImporter.Blocks.createBlock(doc, { name: 'Fragment', cells: [[link]] }));
+        current = null;
+      }
+      return;
+    }
     const isFirst = current === title;
     if (component.matches('.c-autocarousel')) {
       if (!component.querySelector('img')) return;
