@@ -825,9 +825,10 @@ var CustomImportScript = (() => {
     }
     const date = main.querySelector(".c-publish-date h5");
     if (date && text(date)) {
-      const h5 = doc.createElement("h5");
-      h5.textContent = text(date);
-      title.nodes.push(h5);
+      const value = text(date);
+      const m = value.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+      const month = m && "janfebmaraprmayjunjulaugsepoctnovdec".indexOf(m[2].toLowerCase()) / 3 + 1;
+      element.setAttribute("data-first-published", month >= 1 && Number.isInteger(month) ? `${m[3]}-${String(month).padStart(2, "0")}-${m[1].padStart(2, "0")}` : value);
     }
     const location = main.querySelector(".c-event-location-properties h5");
     if (location && text(location)) {
@@ -1349,6 +1350,11 @@ var CustomImportScript = (() => {
       if (keywords) meta.Keywords = keywords;
       meta.site = "corp";
       meta.template = "news-detail";
+      const firstPublished = main.getAttribute("data-first-published");
+      if (firstPublished) {
+        meta["first-published"] = firstPublished;
+        main.removeAttribute("data-first-published");
+      }
       if (published) meta.published = published;
       const shareImage = meta.Image && (meta.Image.querySelector ? meta.Image.querySelector("img") || meta.Image : meta.Image);
       const shareSrc = shareImage && shareImage.getAttribute && shareImage.getAttribute("src");

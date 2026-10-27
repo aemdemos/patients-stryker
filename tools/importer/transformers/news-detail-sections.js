@@ -891,11 +891,16 @@ export default function transform(hookName, element, payload) {
     cleanRichText(heading);
     title.nodes.push(heading);
   }
+  // the publish date below the title ("03-Apr-2020") is the `first-published` page
+  // metadata (YYYY-MM-DD; import-news-detail.js), shown by templates/news-detail/news-detail.js
   const date = main.querySelector('.c-publish-date h5');
   if (date && text(date)) {
-    const h5 = doc.createElement('h5');
-    h5.textContent = text(date);
-    title.nodes.push(h5);
+    const value = text(date);
+    const m = value.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+    const month = m && 'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(m[2].toLowerCase()) / 3 + 1;
+    element.setAttribute('data-first-published', month >= 1 && Number.isInteger(month)
+      ? `${m[3]}-${String(month).padStart(2, '0')}-${m[1].padStart(2, '0')}`
+      : value);
   }
   // the event location below the date ("Kalamazoo, MI, USA"), an H5 line of its own too
   const location = main.querySelector('.c-event-location-properties h5');
