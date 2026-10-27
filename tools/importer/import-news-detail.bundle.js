@@ -8,6 +8,7 @@ var CustomImportScript = (() => {
   var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __pow = Math.pow;
   var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
   var __spreadValues = (a, b) => {
     for (var prop in b || (b = {}))
@@ -200,25 +201,19 @@ var CustomImportScript = (() => {
     element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Video", cells }));
   }
 
-  // tools/importer/transformers/news-detail-sections.js
+  // tools/importer/corp-richtext.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
-  var COMPONENTS = [
-    ".c-autocarousel",
-    ".c-standalone-image",
-    ".c-rich-text-editor",
-    ".c-standalone-video",
-    ".c-curatedcta",
-    ".c-largeheadline",
-    ".c-section-title",
-    ".c-customizeable",
-    ".c-section-separator",
-    ".sectionseparator"
-  ].join(", ");
   var BLOCK_TAGS = /* @__PURE__ */ new Set(["P", "H1", "H2", "H3", "H4", "H5", "H6", "UL", "OL", "TABLE", "BLOCKQUOTE"]);
-  var KEEP_ATTRS = { A: ["href"], IMG: ["src", "alt"], TD: ["colspan", "rowspan"], TH: ["colspan", "rowspan"] };
+  var KEEP_ATTRS = {
+    A: ["href"],
+    IMG: ["src", "alt"],
+    TD: ["colspan", "rowspan"],
+    TH: ["colspan", "rowspan"]
+  };
   function text(el) {
-    return (el.textContent || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+    return (el.textContent || "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim();
   }
+  var squash = (value) => value.replace(/[\s\u00a0]+/g, "");
   function rename(el, tagName) {
     const doc = el.ownerDocument;
     const next = doc.createElement(tagName);
@@ -238,26 +233,134 @@ var CustomImportScript = (() => {
     const newTab = (source.getAttribute("target") || "").toLowerCase() === "_blank";
     return isPdf || newTab ? `${href}#_blank` : href;
   }
-  var SIZE_STYLES = [
-    ["fontsize-1-25em", "p-1-25"],
-    ["fontsize-1-5em", "p-1-5"],
-    ["fontsize-1-75em", "p-1-75"]
-  ];
+  var SIZE_STEPS = [[0.8, "p-0-8"], [1, ""], [1.25, "p-1-25"], [1.5, "p-1-5"], [1.75, "p-1-75"], [2, "p-2"], [2.5, "p-2-5"]];
   var FONT_STYLES = [
     ["urw-egyptienne", "serif"]
   ];
+  function sizeFactor(cls) {
+    const m = cls.match(/^fontsize-(\d+)(?:-(\d+))?em$/);
+    if (!m) return 1;
+    if (!m[2] && Number(m[1]) > 4) return Number(m[1]) / 10;
+    return Number(`${m[1]}.${m[2] || 0}`);
+  }
+  function sizeStyle(factor) {
+    const [[style]] = SIZE_STEPS.map(([f, s]) => [s, Math.abs(Math.log(factor / f))]).sort((a, b) => a[1] - b[1]);
+    return style;
+  }
+  function effectiveSize(el) {
+    const sizes = /* @__PURE__ */ new Set();
+    const walker = el.ownerDocument.createTreeWalker(el, 4);
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (squash(n.textContent)) {
+        let factor = 1;
+        for (let e = n.parentElement; e && e !== el.parentElement; e = e.parentElement) {
+          factor = [...e.classList].reduce((f, c) => f * sizeFactor(c), factor);
+        }
+        sizes.add(Math.round(factor * 100) / 100);
+      }
+    }
+    return sizes.size === 1 ? [...sizes][0] : null;
+  }
+  function coveredBy(el, cls) {
+    const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
+    return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
+  }
   function copyStyles(root) {
     const candidates = root.matches && root.matches("p, li") ? [root] : [...root.querySelectorAll("p, li")];
     const copy = candidates.filter((el) => text(el) && !el.querySelector("p, li"));
     if (!copy.length) return null;
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    const covers = (cls) => copy.every((el) => {
-      const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-      return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
+    const sizes = new Set(copy.map(effectiveSize));
+    const size = sizes.size === 1 && !sizes.has(null) ? sizeStyle([...sizes][0]) : "";
+    const font = FONT_STYLES.find(([cls]) => copy.every((el) => coveredBy(el, cls)));
+    return [size, font && font[1]].filter(Boolean).join(", ");
+  }
+  var COLOURS = {
+    ffb500: "color-gold",
+    "1c5687": "color-blue",
+    "85458a": "color-purple",
+    "4c7d7a": "color-teal",
+    "27455c": "color-navy",
+    545857: "color-grey",
+    ffffff: "color-white"
+  };
+  var NEUTRAL = /* @__PURE__ */ new Set(["color-white", "color-grey", ""]);
+  function toHex(value) {
+    const v = (value || "").trim().toLowerCase();
+    if (v === "white") return "ffffff";
+    if (v === "black") return "000000";
+    let m = v.match(/^#([0-9a-f]{3})$/);
+    if (m) return m[1].split("").map((c) => c + c).join("");
+    m = v.match(/^#([0-9a-f]{6})$/);
+    if (m) return m[1];
+    m = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+    if (m) return m.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, "0")).join("");
+    return "";
+  }
+  function lab(hex) {
+    const [r, g, b] = [0, 2, 4].map((i) => {
+      const v = parseInt(hex.slice(i, i + 2), 16) / 255;
+      return v > 0.04045 ? __pow((v + 0.055) / 1.055, 2.4) : v / 12.92;
     });
-    const size = SIZE_STYLES.find(([cls]) => covers(cls));
-    const font = FONT_STYLES.find(([cls]) => covers(cls));
-    return [size && size[1], font && font[1]].filter(Boolean).join(", ");
+    const t = (v) => v > 8856e-6 ? Math.cbrt(v) : 7.787 * v + 16 / 116;
+    const x = t((r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047);
+    const y = t(r * 0.2126 + g * 0.7152 + b * 0.0722);
+    const z = t((r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883);
+    return [116 * y - 16, 500 * (x - y), 200 * (y - z)];
+  }
+  function colourClass(hex) {
+    if (!hex) return "";
+    if (COLOURS[hex] !== void 0) return COLOURS[hex];
+    const target = lab(hex);
+    const neutral = Math.abs(target[1]) < 3 && Math.abs(target[2]) < 6;
+    const [[best]] = [...Object.entries(COLOURS), ["000000", ""]].filter(([, cls]) => !neutral || NEUTRAL.has(cls)).map(([h, cls]) => [cls, Math.hypot(...lab(h).map((v, i) => v - target[i]))]).sort((a, b) => a[1] - b[1]);
+    return best;
+  }
+  function inlineColour(el) {
+    if (el.tagName === "FONT" && el.getAttribute("color")) return toHex(el.getAttribute("color"));
+    const m = (el.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+    return m ? toHex(m[1]) : "";
+  }
+  function wrapInTag(first, last, cls) {
+    const doc = first.ownerDocument;
+    if (first.nodeType === 3) {
+      const lead = first.textContent.match(/^\s*/)[0];
+      if (lead) {
+        first.before(doc.createTextNode(lead));
+        first.textContent = first.textContent.slice(lead.length);
+      }
+    }
+    if (last.nodeType === 3) {
+      const tail = last.textContent.match(/\s*$/)[0];
+      if (tail) {
+        last.after(doc.createTextNode(tail));
+        last.textContent = last.textContent.slice(0, last.textContent.length - tail.length);
+      }
+    }
+    first.before(doc.createTextNode(`[[${cls}]`));
+    last.after(doc.createTextNode("]"));
+  }
+  function mapColours(root) {
+    const coloured = [...root.querySelectorAll('[style*="color"], font[color]')].filter((el) => inlineColour(el));
+    const own = new Map(coloured.map((el) => [el, inlineColour(el)]));
+    const freeText = (node) => {
+      if (node.nodeType === 3) return node.textContent;
+      if (node.nodeType !== 1 || own.get(node)) return "";
+      return [...node.childNodes].map(freeText).join("");
+    };
+    coloured.forEach((el) => {
+      const cls = colourClass(own.get(el));
+      if (!cls) return;
+      let run = [];
+      const flush = () => {
+        if (run.some((n) => squash(freeText(n)))) wrapInTag(run[0], run[run.length - 1], cls);
+        run = [];
+      };
+      [...el.childNodes].forEach((child) => {
+        if (child.nodeType === 1 && own.get(child)) flush();
+        else run.push(child);
+      });
+      flush();
+    });
   }
   function sameLineText(node, direction) {
     let value = "";
@@ -266,7 +369,7 @@ var CustomImportScript = (() => {
       value += sibling.textContent;
       sibling = sibling[direction];
     }
-    return value.replace(/[\s\u00a0]+/g, "");
+    return squash(value);
   }
   function tagPlainBoldLabels(root, wholeParagraphs) {
     const doc = root.ownerDocument;
@@ -299,6 +402,7 @@ var CustomImportScript = (() => {
       a.replaceWith(strong);
       strong.append(a);
     });
+    mapColours(root);
     const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== "BR" && !node.textContent.trim() && !node.querySelector("img, br");
     root.querySelectorAll("span.futura-bold, b, i, em, strong").forEach((el) => {
       let last = el.lastChild;
@@ -343,7 +447,6 @@ var CustomImportScript = (() => {
     return { centred, size };
   }
   function plainBoldParagraphs(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
     return new Set([...root.querySelectorAll("p")].filter((p) => {
       const all = squash(p.textContent);
       if (!all || p.querySelector(".futura-bold")) return false;
@@ -352,13 +455,25 @@ var CustomImportScript = (() => {
     }));
   }
   function serifHeadings(root) {
-    const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    return new Set([...root.querySelectorAll("h3")].filter((h) => {
+    return new Set([...root.querySelectorAll("h2, h3, h4, h5, h6")].filter((h) => {
       if (!text(h) || h.querySelector(".futura-bold, b, strong")) return false;
-      const spans = [...h.querySelectorAll(".urw-egyptienne")].filter((span) => !span.parentElement.closest(".urw-egyptienne"));
-      return squash(spans.map((span) => span.textContent).join("")) === squash(h.textContent);
+      return coveredBy(h, "urw-egyptienne");
     }));
   }
+
+  // tools/importer/transformers/news-detail-sections.js
+  var COMPONENTS = [
+    ".c-autocarousel",
+    ".c-standalone-image",
+    ".c-rich-text-editor",
+    ".c-standalone-video",
+    ".c-curatedcta",
+    ".c-largeheadline",
+    ".c-section-title",
+    ".c-customizeable",
+    ".c-section-separator",
+    ".sectionseparator"
+  ].join(", ");
   var LABEL_HEADING = /^(about stryker|media contacts?|contacts?|investor contacts?)\s*:?$/i;
   function labelHeadingsToParagraphs(root) {
     root.querySelectorAll("h2, h3, h4, h5, h6").forEach((h) => {
@@ -608,7 +723,7 @@ var CustomImportScript = (() => {
         const extra = [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);
         const kind = [centred ? "center" : "body", ...extra].join(" ");
-        const h3Font = node.tagName === "H3" ? node.serifHeading ? "serif" : "futura" : null;
+        const h3Font = /^H[23]$/.test(node.tagName) ? node.serifHeading ? "serif" : "futura" : null;
         if (!current || current.kind !== kind || h3Font && current.h3Font && current.h3Font !== h3Font) {
           startSection(kind, styles.join(", ") || void 0);
         }

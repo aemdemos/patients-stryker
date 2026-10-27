@@ -302,7 +302,7 @@ body:where(.corp):has(main .hero-carousel) header {
   letter-spacing: normal;
 }
 
-/* section styles: copy size (p-1, p-1-25, p-1-75), label size (label-1-5) and bottom spacing (ps-0, ps-1).
+/* section styles: copy size (p-0-8, p-1, p-1-25, p-1-5, p-1-75, p-2, p-2-5), label size (label-1-5) and bottom spacing (ps-0, ps-1).
    Tab panes are fragments whose sections land in .tabs-panel, not in <main>; accordion
    panels (with-nested-blocks) hold their section in .accordion-item-body. */
 :where(body.corp) main > .section.p-1 > div :is(p, li),
@@ -332,6 +332,31 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) .tabs-panel > .section.p-1-75 > div :is(p, li),
 :where(body.corp) .accordion-item-body > .section.p-1-75 > div :is(p, li) {
   font-size: var(--heading-font-size-xl);
+  line-height: var(--heading-line-height);
+}
+
+/* p-0-8: 11.2px small print (stryker.com .fontsize-8em = 0.8em: footnotes, references,
+   data notes); the source keeps the 14px paragraph's 19.25px lines */
+:where(body.corp) main > .section.p-0-8 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-0-8 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-0-8 > div :is(p, li) {
+  font-size: var(--footnote-font-size);
+  line-height: calc(var(--body-font-size-m) * var(--paragraph-line-height));
+}
+
+/* p-2 / p-2-5: 28px / 35px large copy (stryker.com .fontsize-2em / .fontsize-2-5em static
+   text, lines 1.06) */
+:where(body.corp) main > .section.p-2 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-2 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-2 > div :is(p, li) {
+  font-size: var(--heading-font-size-xxl);
+  line-height: var(--heading-line-height);
+}
+
+:where(body.corp) main > .section.p-2-5 > div :is(p, li),
+:where(body.corp) .tabs-panel > .section.p-2-5 > div :is(p, li),
+:where(body.corp) .accordion-item-body > .section.p-2-5 > div :is(p, li) {
+  font-size: var(--panel-heading-size);
   line-height: var(--heading-line-height);
 }
 

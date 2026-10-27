@@ -1,11 +1,12 @@
 {
   "title": "stryker.com rich-text formatting → EDS authoring (site-wide decision table)",
-  "status": "Approved 2026-10-27. 'established' rules come from the news-detail import (news-typography.js, measured on 448 news pages) and apply to every template.",
+  "status": "Approved 2026-10-27. Implemented in tools/importer/corp-richtext.js (shared by every corp importer). 'established' = behaviour of the news-detail import that produced the migrated news pages (transformers/news-detail-sections.js, #451).",
   "evidence": {
     "catalog": "tools/importer/data/catalog/typography.json — 1,122 combinations, 4.93M characters of authored rich text (pages + XFs); 56 combinations cover 95%, 227 cover 99%",
     "conventions": "https://main--patients-stryker--aemdemos.aem.live/.da/docs/authoring-guide/authoring-conventions (fetched 2026-10-27): bold / italic / bold+italic / bold+underline links; bold+italic headings and text; underlined heading → bottom border",
     "measured": "https://www.stryker.com/us/en/about.html at 1440px, leaf computed style (2026-10-27). Base text = Humanist 712 14px/400 black; fontsize-<x>em = x × 14px and nested classes multiply (1-25 inside 2-5 = 43.75px); fontsize-8em = 0.8em = 11.2px (small print); urw-egyptienne = Egyptienne for Stryker Light 400; futura-bold = Futura for Stryker 700",
-    "sharesAre": "% of all authored rich-text characters; 'text' = p / li / div, 'headings' = h1–h6"
+    "sharesAre": "% of all authored rich-text characters; 'text' = p / li / div, 'headings' = h1–h6",
+    "correction": "2026-10-27: an earlier version of this table credited transformers/news-typography.js (#441). That transformer is not used by any importer; the live news pages come from #451, which had no colour tags, no gold rules and h-serif only for Egyptienne h3. Rules below now describe #451 plus the approved additions."
   },
   "corpStylesAvailable": "section styles in styles/styles-corp.css: p-1, p-1-25, p-1-5, p-1-75, serif (+ serif.p-1-25, serif.p-1-5), h-serif, bold-body, label-1-5, join; bracket colours span.color-gold|blue|purple|teal|navy|grey|white; rule-gold",
   "rules": [
@@ -47,9 +48,9 @@
     },
     {
       "id": "heading-serif",
-      "source": "heading without span.futura-bold",
-      "outcome": "section style h-serif (Egyptienne Light headings)",
-      "status": "established"
+      "source": "h2 / h3 set in span.urw-egyptienne (whole heading, no bold)",
+      "outcome": "section style h-serif (Egyptienne Light); a Futura h2 / h3 in the same run starts a new section",
+      "status": "established (h3) + approved (h2)"
     },
     {
       "id": "size-1-25",
@@ -122,11 +123,11 @@
     },
     {
       "id": "serif-heading",
-      "source": "span.urw-egyptienne in a heading",
+      "source": "h4–h6 set in span.urw-egyptienne",
       "share": {
         "headings": 0.21
       },
-      "outcome": "section style h-serif",
+      "outcome": "h-serif has no effect on h4–h6 (corp Futura); kept as Futura",
       "status": "approved"
     },
     {
@@ -135,7 +136,7 @@
       "share": {
         "text": 1.07
       },
-      "outcome": "markup <strong><u><a> (Futura uppercase CTA)",
+      "outcome": "markup <strong><a><u>text</u></a></strong> (Futura uppercase CTA)",
       "status": "established"
     },
     {
@@ -159,8 +160,8 @@
     },
     {
       "id": "mixed-block",
-      "source": "a component whose blocks use different size / serif styles",
-      "outcome": "split into consecutive sections, later runs get 'join' (no extra gap)",
+      "source": "a rich text whose blocks use different copy styles",
+      "outcome": "consecutive blocks with the same copy style share a section; a new style starts a new section (bold-body paragraphs get their own section)",
       "status": "established"
     },
     {
@@ -179,6 +180,18 @@
         "all": 0.07
       },
       "outcome": "drop",
+      "status": "established"
+    },
+    {
+      "id": "body-font-labels",
+      "source": "plain <b> label alone on its line (\"For investor inquiries:\")",
+      "outcome": "bracket tag [[body-font]…] (bold in the body font)",
+      "status": "established"
+    },
+    {
+      "id": "bold-body",
+      "source": "paragraph that is plain <b> as a whole",
+      "outcome": "section style bold-body",
       "status": "established"
     }
   ],
@@ -209,7 +222,8 @@
       "rgb(0,82,116)": "color-navy (dE 10)",
       "rgb(0,82,147)": "color-blue (dE 11)",
       "any other": "computed the same way by the transformer"
-    }
+    },
+    "note": "new on 2026-10-27: the #451 news import dropped all colours; re-imported news pages gain the colour tags"
   },
   "newSectionStyles": {
     "p-0-8": "approved",

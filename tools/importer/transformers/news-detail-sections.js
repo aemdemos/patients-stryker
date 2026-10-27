@@ -38,8 +38,11 @@
  */
 
 import { videoLink } from '../parsers/video.js';
-
-const SOURCE_ORIGIN = 'https://www.stryker.com';
+// rich-text rules shared by every corp importer (decision table: decisions/typography-map.json)
+import {
+  BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
+  plainBoldParagraphs, serifHeadings,
+} from '../corp-richtext.js';
 
 const COMPONENTS = [
   '.c-autocarousel',
@@ -53,222 +56,6 @@ const COMPONENTS = [
   '.c-section-separator',
   '.sectionseparator',
 ].join(', ');
-
-const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
-const KEEP_ATTRS = { A: ['href'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'] };
-
-function text(el) {
-  return (el.textContent || '').replace(/ /g, ' ').replace(/\s+/g, ' ').trim();
-}
-
-function rename(el, tagName) {
-  const doc = el.ownerDocument;
-  const next = doc.createElement(tagName);
-  while (el.firstChild) next.append(el.firstChild);
-  el.replaceWith(next);
-  return next;
-}
-
-function unwrap(el) {
-  el.replaceWith(...el.childNodes);
-}
-
-function absoluteAsset(href) {
-  return href && href.startsWith('/content/dam/') ? `${SOURCE_ORIGIN}${href}` : href;
-}
-
-/**
- * A source link that opens in a new tab (target="_blank"), and every link to a PDF,
- * gets the author `#_blank` marker (scripts.js decorateLinkTargets sets target="_blank"
- * from it). The address itself is kept (PDFs stay on www.stryker.com, see
- * absoluteAsset). Links that already carry a #hash, mailto: and tel: are left as they are.
- */
-function newTabHref(source, href) {
-  if (!href || href.includes('#') || /^(mailto|tel):/i.test(href)) return href;
-  const isPdf = /\.pdf(\?|$)/i.test(href);
-  const newTab = (source.getAttribute('target') || '').toLowerCase() === '_blank';
-  return isPdf || newTab ? `${href}#_blank` : href;
-}
-
-// source copy spans → the corp section style that sets the same copy size / font
-const SIZE_STYLES = [
-  ['fontsize-1-25em', 'p-1-25'],
-  ['fontsize-1-5em', 'p-1-5'],
-  ['fontsize-1-75em', 'p-1-75'],
-];
-const FONT_STYLES = [
-  ['urw-egyptienne', 'serif'],
-];
-
-/**
- * The copy section styles of a rich-text fragment: when the whole text of every
- * paragraph and list item sits in one source size span (e.g. span.fontsize-1-25em,
- * 17.5px) the matching size style (p-1-25), and when it all sits in one source font
- * span (span.urw-egyptienne) the matching font style (serif). Copy that is only partly
- * styled keeps the defaults (14px Humanist).
- * @returns {string|null} the styles, comma-separated ('' for default copy, null when the
- *   fragment has no paragraph or list item)
- */
-function copyStyles(root) {
-  const candidates = root.matches && root.matches('p, li') ? [root] : [...root.querySelectorAll('p, li')];
-  const copy = candidates.filter((el) => text(el) && !el.querySelector('p, li'));
-  if (!copy.length) return null;
-  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
-  const covers = (cls) => copy.every((el) => {
-    const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
-    return squash(spans.map((span) => span.textContent).join('')) === squash(el.textContent);
-  });
-  const size = SIZE_STYLES.find(([cls]) => covers(cls));
-  const font = FONT_STYLES.find(([cls]) => covers(cls));
-  return [size && size[1], font && font[1]].filter(Boolean).join(', ');
-}
-
-/**
- * Cleans a copied rich-text fragment in place: bold/italic to <strong>/<em>, font spans
- * dropped, attributes stripped, empty paragraphs removed. Returns whether every
- * paragraph of the fragment is centred and its copy section styles (copyStyles).
- */
-/**
- * The text next to a node on its own line: its siblings up to the next <br> (or the
- * start / end of the parent) in one direction.
- */
-function sameLineText(node, direction) {
-  let value = '';
-  let sibling = node[direction];
-  while (sibling && sibling.nodeName !== 'BR') {
-    value += sibling.textContent;
-    sibling = sibling[direction];
-  }
-  return value.replace(/[\s\u00a0]+/g, '');
-}
-
-/**
- * Plain-bold (<b>) labels on a line of their own ("For investor inquiries:") are in the
- * body font on the source, while bold labels are Futura on the site. Both become
- * <strong> on import, so these are wrapped in the `[[body-font]…]` bracket tag
- * (scripts/span-tags.js → span.body-font, styles-corp.css). A paragraph that is plain
- * bold as a whole gets the `bold-body` section style instead, unless wholeParagraphs is
- * set (small print, which stays one section).
- */
-function tagPlainBoldLabels(root, wholeParagraphs) {
-  const doc = root.ownerDocument;
-  [...root.querySelectorAll('b')].forEach((b) => {
-    if (b.closest('.futura-bold') || b.querySelector('.futura-bold') || b.parentElement.closest('b')) return;
-    if (!text(b) || sameLineText(b, 'previousSibling') || sameLineText(b, 'nextSibling')) return;
-    const block = b.closest('p, li, h1, h2, h3, h4, h5, h6');
-    if (!block || block.matches('h1, h2, h3, h4, h5, h6')) return;
-    if (!wholeParagraphs && text(block) === text(b)) return;
-    b.before(doc.createTextNode('[[body-font]'));
-    b.after(doc.createTextNode(']'));
-  });
-}
-
-function cleanRichText(root, { wholeParagraphs = false } = {}) {
-  const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
-  const centred = blocks.length > 0
-    && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));
-  const size = copyStyles(root);
-  tagPlainBoldLabels(root, wholeParagraphs);
-
-  // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
-  // triangle — e.g. "Read the full report") → bold + underline link, the authoring
-  // convention for that CTA (a.link-strong): <strong><a><u>text</u></a></strong>
-  const doc = root.ownerDocument;
-  const standalone = new Set();
-  root.querySelectorAll('.standalone-link').forEach((span) => {
-    const a = span.closest('a') || span.querySelector('a');
-    if (a) standalone.add(a);
-  });
-  standalone.forEach((a) => {
-    const u = doc.createElement('u');
-    while (a.firstChild) u.append(a.firstChild);
-    a.append(u);
-    const strong = doc.createElement('strong');
-    a.replaceWith(strong);
-    strong.append(a);
-  });
-
-  // a line break typed inside the formatting ("<span class=futura-bold>About Stryker<br></span>",
-  // possibly followed by empty size spans) belongs after it: inside <strong> it would be
-  // lost on import, merging the label into the next line
-  const emptyElement = (node) => node.nodeType === 1 && node.nodeName !== 'BR'
-    && !node.textContent.trim() && !node.querySelector('img, br');
-  root.querySelectorAll('span.futura-bold, b, i, em, strong').forEach((el) => {
-    let last = el.lastChild;
-    while (last && (last.nodeName === 'BR' || emptyElement(last)
-      || (last.nodeType === 3 && !last.textContent.trim()))) {
-      if (emptyElement(last)) last.remove();
-      else el.after(last);
-      last = el.lastChild;
-    }
-  });
-  // span.futura-bold in a paragraph or list item → <strong><em> (Futura bold, upright, body
-  // colour in news-detail.css); <b> → <strong> (bold in the body font). Headings keep a
-  // plain <strong>.
-  root.querySelectorAll('span.futura-bold').forEach((el) => {
-    if (!el.closest('p, li') || el.closest('h1, h2, h3, h4, h5, h6')) {
-      rename(el, 'strong');
-      return;
-    }
-    const strong = rename(el, 'strong');
-    const em = root.ownerDocument.createElement('em');
-    while (strong.firstChild) em.append(strong.firstChild);
-    strong.append(em);
-  });
-  root.querySelectorAll('b').forEach((el) => rename(el, 'strong'));
-  root.querySelectorAll('i').forEach((el) => rename(el, 'em'));
-  root.querySelectorAll('span, font').forEach(unwrap);
-  // bold inside bold (e.g. <b><span class="futura-bold">) is one bold run
-  root.querySelectorAll('strong strong, em em').forEach(unwrap);
-  // a heading that is bold throughout keeps the bold (Futura); empty formatting goes
-  root.querySelectorAll('strong, em').forEach((el) => { if (!el.textContent.trim() && !el.querySelector('img, br')) el.remove(); });
-
-  root.querySelectorAll('a[href]').forEach((a) => {
-    a.setAttribute('href', newTabHref(a, absoluteAsset(a.getAttribute('href'))));
-  });
-  root.querySelectorAll('*').forEach((el) => {
-    const keep = KEEP_ATTRS[el.tagName] || [];
-    [...el.attributes].forEach((attr) => { if (!keep.includes(attr.name)) el.removeAttribute(attr.name); });
-  });
-
-  // trailing <br> and empty paragraphs (&nbsp; spacers)
-  root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li').forEach((el) => {
-    while (el.lastChild && (el.lastChild.nodeName === 'BR' || (el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim()))) {
-      el.lastChild.remove();
-    }
-    if (!text(el) && !el.querySelector('img')) el.remove();
-  });
-  return { centred, size };
-}
-
-/** The rich-text content of a component as top-level block elements. */
-/**
- * Paragraphs that are plain bold (<b>, not span.futura-bold) as a whole: on the source
- * they stay in the body font (Humanist bold). Both kinds of bold become <strong> on
- * import, so these get the `bold-body` section style instead.
- */
-function plainBoldParagraphs(root) {
-  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
-  return new Set([...root.querySelectorAll('p')].filter((p) => {
-    const all = squash(p.textContent);
-    if (!all || p.querySelector('.futura-bold')) return false;
-    const bold = [...p.querySelectorAll('b')].filter((b) => !b.parentElement.closest('b'));
-    return squash(bold.map((b) => b.textContent).join('')) === all;
-  }));
-}
-
-/**
- * h3 headings set in Egyptienne on the source (the whole text in span.urw-egyptienne, no
- * bold): the template's h3 is Futura bold, so their section gets the `h-serif` style.
- */
-function serifHeadings(root) {
-  const squash = (value) => value.replace(/[\s\u00a0]+/g, '');
-  return new Set([...root.querySelectorAll('h3')].filter((h) => {
-    if (!text(h) || h.querySelector('.futura-bold, b, strong')) return false;
-    const spans = [...h.querySelectorAll('.urw-egyptienne')].filter((span) => !span.parentElement.closest('.urw-egyptienne'));
-    return squash(spans.map((span) => span.textContent).join('')) === squash(h.textContent);
-  }));
-}
 
 // press-release boilerplate labels; a few pages set them as h3 headings, the rest as a
 // Futura bold label paragraph
@@ -584,9 +371,9 @@ export default function transform(hookName, element, payload) {
       const extra = [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
       const styles = [centred ? 'center' : '', ...extra].filter(Boolean);
       const kind = [centred ? 'center' : 'body', ...extra].join(' ');
-      // an Egyptienne h3 adds `h-serif` to its section (it stays with the copy around it);
-      // a Futura h3 in the same run starts a new section
-      const h3Font = node.tagName === 'H3' ? (node.serifHeading ? 'serif' : 'futura') : null;
+      // an Egyptienne h2 / h3 adds `h-serif` to its section (it stays with the copy around
+      // it); a Futura one in the same run starts a new section
+      const h3Font = /^H[23]$/.test(node.tagName) ? (node.serifHeading ? 'serif' : 'futura') : null;
       if (!current || current.kind !== kind || (h3Font && current.h3Font && current.h3Font !== h3Font)) {
         startSection(kind, styles.join(', ') || undefined);
       }
