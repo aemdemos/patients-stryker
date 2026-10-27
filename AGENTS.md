@@ -415,6 +415,75 @@ Corp pages are gated by page metadata `site: corp` → `body.corp` and `scripts/
 - **Video:** YouTube/DM videos are authored as the `video` block; there is no auto-blocking of bare links.
 - **Scope of a change:** one block (or template) per branch/PR, with a demo page path for the reviewer. Do not bundle unrelated blocks.
 
+### Corp source exports (`.migration/xf-mapping`, `.migration/xf-content`)
+
+These folders hold read-only JSON snapshots of the client's AEM content for www.stryker.com (`jcr:content.infinity.json`). Read them in every corp migration task: page analysis, import parsers and transformers, and fragment imports. Use them **together with** the scraped page:
+- The export shows what was authored.
+- The rendered page decides what is live and how it looks.
+- When the two disagree, follow the live page and tell the user.
+
+Never edit the exports. They are refreshed by re-exporting from AEM (`generated` in the manifest gives the snapshot date). `.hlxignore` keeps them off the site.
+
+#### 1. Find the page export
+`.migration/xf-mapping/<source URL path without .html>.json`, with the letter case kept:
+- `https://www.stryker.com/us/en/smart-care.html` → `.migration/xf-mapping/us/en/smart-care.json`
+- `/us/en/index.html` → `us/en/index.json`; `/us/en/joint-replacement/products/Insignia.html` → `…/products/Insignia.json`
+
+The file is the page's `jcr:content`, taken from the **author** instance:
+- **Page properties** are at the top level.
+- **Content** sits in the template's areas (`hero_parsys`, `customizablearea_parsys`, `featured_parsys`, `par`, …) and in page-level components (`disclaimer`, `publishdate`, `pageshortdescription`, `image`, …).
+- **Order:** inside an area, components are listed in render order. Where each area sits on the page is set by the template (`cq:template`), so confirm it against the rendered page.
+
+#### 2. Experience fragments (XFs)
+A component that uses an XF stores the AEM path and, next to it, the EDS path where the fragment document must be created:
+
+| AEM key | EDS key |
+|---|---|
+| `fragmentPath` | `edsFragmentPath` |
+| `experienceFragmentPath` | `edsExperienceFragmentPath` |
+| `experienceFragmentPathMobile` | `edsExperienceFragmentPathMobile` |
+| `fragmentVariationPath` | `edsFragmentVariationPath` |
+
+- **Create every referenced XF as its own fragment document** at its `eds*` path, and include it in the page with the `fragment` block. The EDS folder structure mirrors the client's AEM structure, so they can trace each fragment back to its XF. A fragment used on several pages is created once, and every page references the same path.
+- **Use the `eds*` value as is.** It equals `xfToFragmentPath()` in `tools/importer/xf-fragment-path.js`: strip `/content/experience-fragments/`, prefix `/us/en/fragments/`, lowercase each segment, and turn `_` and repeated `-` into a single `-`. Example: `/content/experience-fragments/stryker/smart_care/en/business_unit/landing-page-hero/master` → `/us/en/fragments/stryker/smart-care/en/business-unit/landing-page-hero/master`. Never derive fragment paths any other way. Note that `xfFragmentPath()` (the default export) only returns a path for XFs listed in `tools/importer/xf-fragment-map.js`. When a page uses XFs that aren't listed, extend the map rather than inlining the XF.
+- **XF content** lives in `.migration/xf-content/<AEM path without /content/experience-fragments/>.json`, keeping the AEM names (underscores included). For example: `.migration/xf-content/stryker/smart_care/en/business_unit/landing-page-hero/master.json`.
+  - Or look the XF up in `.migration/xf-content/_manifest.json`: `fragments[].variations[]` holds `path`, `edsPath`, `file`, `master` and `references`.
+  - These files come from the **publish** instance, so they show what is live.
+- **Nested XFs:** XF files use the same reference keys (and the manifest lists them in `references`). Create nested XFs as fragments too, and reference them from the parent fragment.
+- **Mobile variants:** `experienceFragmentPathMobile` points to the mobile version of a hero or carousel slide, which a desktop scrape never shows. Carry it over when the block supports a mobile image or variant.
+- **References to skip:**
+  - entries in the manifest's `redirects` (they all redirect to the home page, so they aren't real XFs)
+  - `unresolvedReferences` with status `not_an_xf` (e.g. a component pointing at `/content/experience-fragments/stryker`)
+- **Missing variations:** a variation referenced by a page but absent from the manifest was never published. Check what the live page renders at mobile and desktop width, and report it to the user. Never invent its content.
+- **Content fragments are not XFs.** A `fragmentPath` under `/content/dam/…/content-fragments/` (contact and location boxes) points to a content fragment. It has no EDS path, and its `text` property is only a plain-text snapshot. Import that content as the page renders it.
+- **Summary text:** the `text` property of an `experienceFragment` component is only a summary. Take the content from the XF file.
+
+#### 3. Other data to take from the exports (instead of guessing)
+- **Page metadata:**
+  - `jcr:title` and `jcr:description`
+  - `thumbnailAltText` (alt text of the share image)
+  - `cq:tags` (business unit, content type)
+  - `originallyPublished` and `lastPublished` (real publish dates)
+  - `contentID` (the client's regulatory document ID)
+  - `cq:template` (classify pages into templates without scraping)
+- **Authored rich text:** the `text` property of `stryker/components/content/text` holds the text as authored, with the font classes (`futura-bold`, `fontsize-1-5em`, …) and inline colours. It is the cleanest input for choosing authoring conventions. Still verify the rendered result.
+- **Images:** `standaloneimage` → `srcFileRef` plus `alt`. Dynamic Media (`dam/components/scene7/dynamicmedia`) → `assetID`, `imageserverurl` and presets. List missing alt text for authors, as required by *Image alt text in imports* above.
+- **CTAs:** `curatedcta` → `CTATitle`, link type, `ctaInternalLink`, `ctaOpenInNewTabOverride`, `ctaDeepLinkID` and button colour.
+- **In-page anchors:** a `section-title` with `hideSectionTitleComp: "true"` doesn't render, but its `deepLinkingId` is the anchor used by the jump bar and deep-link CTAs. Keep these IDs exactly as they are, typos included, so the links keep working.
+- **Forms:** `marketoform` → `formId`, `afterSubmitAction` and the thank-you `message`.
+- **Page disclaimer:** the top-level `disclaimer` (rich text) is easy to miss in a scrape.
+- **Tabs and card lists:**
+  - `tabs` → `tabsGrid` holds the tab titles.
+  - `customizable` lists hold only the target page paths (`featuresCta[].cta`). Card titles, descriptions and images come from those pages (their own export or rendered page).
+- **Layout hints:** `cq:responsive` widths and offsets, `backgroundColor`, padding properties and column-control types (`cols2`, `cols3`, `cols2_2-3_1-3`). Use them to choose block variants and section styles, never as CSS values. Measure CSS on the source page.
+- **Skip:**
+  - empty components and containers (no child components)
+  - `wcm/msm/components/ghost` (deleted inherited components)
+  - components with `hideComponent: "true"`, after confirming they don't render
+
+#### 4. Links in the exports
+Internal links are AEM paths (`/content/stryker/us/en/…`, often without `.html`). Strip `/content/stryker`, then apply *Link rewriting in import scripts* above. For example, `/content/stryker/us/en/smart-care/products/vocera-edge` → `/us/en/smart-care/products/vocera-edge`, and `…/index` → `…/`.
+
 ## Testing & Quality Assurance
 
 ### Style & spacing fidelity validator (OPTIONAL post-migration QA)
