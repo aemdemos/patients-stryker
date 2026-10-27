@@ -1,16 +1,17 @@
 {
   "title": "Content fragments (DAM) → EDS fragment documents",
-  "status": "partly REOPENED 2026-10-27 — see component-map.json row contentFragment and open-questions.md",
+  "status": "approved 2026-10-27 (reopened point decided the same day)",
   "decisions": [
     "approved: every content fragment used inside an XF becomes its own fragment document at cfToFragmentPath() (/us/en/fragments/content-fragments/...), referenced by the XF fragment that contains it.",
-    "approved: each document keeps ALL the fragment's fields (from .migration/cf-content; all 55 exported, one model: contact-us-information-fragment-model)."
+    "approved: each document keeps ALL the fragment's fields (from .migration/cf-content; all 55 exported, one model: contact-us-information-fragment-model).",
+    "approved: each document renders the fields the live page shows, as a Cards (contact) card; the other fields and the labels are kept in the same document as metadata rows (stored, not rendered). The 2 fragments shown with different field sets per page (global-headquarters, latin-america primary-contact) show the union of both."
   ],
   "reopened": {
     "why": "The approval assumed only 2 fragments show a subset of their fields. Checked against the export: 60 of 71 uses (45 of 55 fragments) hide fields that hold values (mostly phones, emails, addresses) and no use shows the *Label fields. Showing all fields would add content the live pages do not show.",
-    "proposal": "Cards (contact) card with the fields the live page shows; the other fields and the labels kept in the same document as metadata rows (stored, not rendered). The 2 fragments shown with different field sets (global-headquarters, latin-america primary-contact) show the union of both."
+    "proposal": "Cards (contact) card with the fields the live page shows; the other fields and the labels kept in the same document as metadata rows (stored, not rendered). The 2 fragments shown with different field sets (global-headquarters, latin-america primary-contact) show the union of both.",
+    "resolved": "user chose: show live fields, keep the rest as metadata"
   },
   "pending": [
-    "user decision on the reopened point",
-    "Cards (contact) variant approval (new name)"
+    "Cards (contact) variant name approval (open-questions.md)"
   ]
 }
