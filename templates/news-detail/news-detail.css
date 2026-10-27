@@ -77,6 +77,14 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li)
   font-weight: var(--font-weight-bold);
 }
 
+/* …except in a `bold-body` section: a paragraph that is plain <b><i> as a whole on the
+   source (e.g. a press release subtitle) stays Humanist bold italic */
+body.news-detail main > .section.bold-body > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b) {
+  font-family: var(--body-font-family);
+  font-style: italic;
+}
+
 /* body colour instead of the global gold label — except inside a bracket colour tag
    ([[color-gold]***text***], scripts/span-tags.js) or a link, whose color must win */
 body.news-detail main > .section > .default-content-wrapper :is(p, li)
