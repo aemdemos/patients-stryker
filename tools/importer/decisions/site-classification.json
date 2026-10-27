@@ -1,6 +1,6 @@
 {
  "title": "stryker.com site classification and import order",
- "status": "Import order proposed; pilot approach approved by the user 2026-10-27",
+ "status": "APPROVED 2026-10-27: import order, outlier approach and pilot",
  "evidence": "tools/importer/data/catalog/site.json and xf-report.json (2,553 page exports, cq:template)",
  "totals": {
   "pages": 2553,

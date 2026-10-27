@@ -1,4 +1,6 @@
-# Component decisions: open questions (2026-10-27)
+# Component decisions: open questions (2026-10-27) — ALL RECOMMENDATIONS APPROVED 2026-10-27
+
+The user approved every recommendation and every new name below. Still open: the client inputs in the first group (Marketo form IDs, microapp framing, optional Maps key).
 
 Every one of the 93 AEM component types now has a proposal in `component-map.json`, backed by evidence (AEM exports, rendered source pages, Block Library, existing corp blocks).
 Reply with **"approve all recommendations"**, or list exceptions by component name.

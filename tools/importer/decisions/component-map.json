@@ -1,6 +1,6 @@
 {
  "title": "stryker.com AEM components → EDS blocks, variants and section styles (site-wide decision table)",
- "status": "DRAFT — every component has a proposal (2026-10-27). proposed = existing block / variant / style; proposed-new = needs a new name approved (see newNamesProposed); openQuestions need a choice.",
+ "status": "APPROVED 2026-10-27 (user: approve all recommendations). Client input still needed where rows carry clientInput.",
  "evidence": "tools/importer/data/catalog/components.json (counts over 2,553 page exports + 1,180 XF variations); Block Library https://main--patients-stryker--aemdemos.aem.page/.da/library/blocks.json (2026-10-27)",
  "libraryGaps": "Corp blocks hero-corp, cards-corp, table, sticky-nav, social-share-corp are not in the Block Library yet; entries needed once their variants are approved.",
  "layoutHints": {
@@ -11,8 +11,7 @@
  "componentsByStatus": {
   "skip": 22473,
   "established": 27787,
-  "proposed": 19317,
-  "proposed-new": 6400
+  "approved": 25717
  },
  "rows": [
   {
@@ -82,9 +81,10 @@
    ],
    "example": "/us/en/about",
    "selector": "div.cols (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "section boundary (one column = a new section)",
-   "note": "1,722 of 3,779 are empty → dropped; backgroundColor / padding → section style (see layoutHints)"
+   "note": "1,722 of 3,779 are empty → dropped; backgroundColor / padding → section style (see layoutHints)",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "columncontrol/cols2",
@@ -100,7 +100,7 @@
    ],
    "example": "/us/en/about",
    "selector": "div.cols2 > .colctrl > .row > .col-xs-12.col-sm-6 (one per column; children .standaloneimage, .text.parbase, .curatedcta, .largeheadline, ...)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns columns-50-50",
    "variant": "columns-50-50",
    "decision": "library-variant",
@@ -131,7 +131,9 @@
     "styles/styles.css: main > .section.flex lays wrappers side by side (equal flex 1 1 0) from 900px; 'flex' is in the Block Library options sheet"
    ],
    "confidence": "high",
-   "openQuestion": "Branch B (424): content authored in one half with the other half empty is normalised to full-width default content (the template CSS owns any narrow measure, as news-detail already does). Confirm, or keep the half width with an empty second cell."
+   "openQuestion": "Branch B (424): content authored in one half with the other half empty is normalised to full-width default content (the template CSS owns any narrow measure, as news-detail already does). Confirm, or keep the half width with an empty second cell.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "largeheadline",
@@ -147,7 +149,7 @@
    ],
    "example": "/us/en/about",
    "selector": ".largeheadline > .c-largeheadline > div.largeheadline (.line1 / .line2)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "sectionStyle": "by context: none / serif / p-1-5 / p-1-75 (existing); backgroundColor -> bg-white | bg-gold | bg-light-gray | bg-dark-gray (corp, existing) | blue (#1c5687, existing); 2vw and larger -> large-headline (proposed)",
@@ -170,7 +172,9 @@
      "why": "Standalone Large Headlines (outside columns/heroes; about 40% at 3vw or larger) use the fluid vw scale (fontsize-<n>vw = 2n vw on phones, n vw from 840px, capped at n x 14px from 1439px, so 28-70px). The corp copy styles stop at p-1-75 (24.5px). This section style would apply the type scale that the existing Columns (large-headline) variant already defines (h1 = headline, Bold h1 = stat number, Bold+Italic = gold) to default content. One name instead of one style per size. It covers the static large numbers (e.g. teal '93%' over serif text), as briefed: static large text = plain text plus a size section style."
     }
    ],
-   "openQuestion": "Standalone headlines at 2vw or larger: approve one 'large-headline' section style that reuses the Columns large-headline scale, or normalise them to the existing p-1-75 / heading sizes? This is tied to typography-map rule size-2-and-2-5, which is still open."
+   "openQuestion": "Standalone headlines at 2vw or larger: approve one 'large-headline' section style that reuses the Columns large-headline scale, or normalise them to the existing p-1-75 / heading sizes? This is tied to typography-map rule size-2-and-2-5, which is still open.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "section-title",
@@ -186,8 +190,9 @@
    ],
    "example": "/us/en/about",
    "selector": "div.section-title (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "h2 + section id = deepLinkingId; hidden (1,224) → section id only"
+   "status": "approved",
+   "outcome": "h2 + section id = deepLinkingId; hidden (1,224) → section id only",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "sectionseparator",
@@ -203,9 +208,10 @@
    ],
    "example": "/us/en/about/annual-review/2024",
    "selector": "div.sectionseparator (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "section style divider",
-   "variant": "divider"
+   "variant": "divider",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "curatedcta",
@@ -221,9 +227,10 @@
    ],
    "example": "/us/en/about/annual-review/2024",
    "selector": "div.curatedcta (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "button: link alone in its paragraph, formatting per authoring conventions (CTAButtonColor → bold / italic link)",
-   "note": "colour → convention mapping to confirm with the typography table"
+   "note": "colour → convention mapping to confirm with the typography table",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "experienceFragment",
@@ -274,7 +281,7 @@
    ],
    "example": "/us/en/about",
    "selector": "div.cols2_2-3_1-3 > .colctrl > .row > .col-xs-12.col-sm-8 + .col-xs-12.col-sm-4",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Columns columns-67-33",
    "variant": "columns-67-33",
    "decision": "variant+section-style",
@@ -311,7 +318,9 @@
      "why": "442 instances put a block (Marketo form) next to an aside fragment in a 2/3 + 1/3 split (source col-sm-8 / col-sm-4 from 841px -> EDS 600px). Blocks cannot nest in Columns cells, and 'flex' only gives equal halves from 900px."
     }
    ],
-   "openQuestion": "Approve section style 'flex-67-33' (and its mirror for cols2_1-3_2-3), or prefer to restyle the existing 'flex' on corp when its second wrapper is a contact-aside fragment?"
+   "openQuestion": "Approve section style 'flex-67-33' (and its mirror for cols2_1-3_2-3), or prefer to restyle the existing 'flex' on corp when its second wrapper is a contact-aside fragment?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "wcm/responsivegrid",
@@ -379,7 +388,7 @@
    ],
    "example": "/us/en/about",
    "selector": "div.cols3 > .colctrl > .row > .col-xs-12.col-sm-6.col-md-4",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns (none: 3 cells)",
    "decision": "library-variant",
    "block": "Columns",
@@ -407,7 +416,9 @@
     "blocks/cards-corp/cards-corp.css: three-up = 3 per row from 600px; source cols3 is col-sm-6 col-md-4 (2 per row 600-900, 3 from 900) — CSS follow-up, the 'category' grid already does 2 -> 3"
    ],
    "confidence": "medium",
-   "openQuestion": "Branch F uses Cards Corp because the corp cards-corp two-up/three-up were built from these column-control card rows; Columns would render the same content too. Confirm Cards Corp for card-like rows (87 instances over cols2/3/4)."
+   "openQuestion": "Branch F uses Cards Corp because the corp cards-corp two-up/three-up were built from these column-control card rows; Columns would render the same content too. Confirm Cards Corp for card-like rows (87 instances over cols2/3/4).",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "disclaimer",
@@ -423,9 +434,10 @@
    ],
    "example": "/us/en/about",
    "selector": "div.disclaimer (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "section style disclaimer at page end (page facts)",
-   "variant": "disclaimer"
+   "variant": "disclaimer",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "resourcesanddownload",
@@ -441,7 +453,7 @@
    ],
    "example": "/us/en/about/news/2018/stryker-announces-definitive-agreement-to-acquire-k2m",
    "selector": "div.c-resourcesanddownload > .item-list > .item.col-xs-6.col-sm-3.col-md-2 (img-container a > img, a > h5.title); title: .title-container h2",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Cards Corp resources, six-up",
    "variant": "resources, six-up",
    "decision": "library-variant",
@@ -462,7 +474,8 @@
     "/tmp/res.js over the exports: item counts above",
     "tools/importer/data/catalog/components.json: title values 'Resources and downloads' 89, 'Resources' 40"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "marketoform",
@@ -496,7 +509,7 @@
    ],
    "example": "/us/en/about/corporate-responsibility/cr-hub",
    "selector": "div.cols2_1-3_2-3 > .colctrl > .row > .col-xs-12.col-sm-4 + .col-xs-12.col-sm-8",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Columns columns-33-67",
    "variant": "columns-33-67",
    "decision": "library-variant",
@@ -529,7 +542,8 @@
      "proposed": true,
      "why": "only 6 instances (form in the wide column of /us/en/acute-care/contact, /us/en/emergency-care/contact, ...); drop if the user prefers 'flex' equal halves for these"
     }
-   ]
+   ],
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "publishdate",
@@ -559,7 +573,7 @@
    ],
    "example": "/us/en/about/awards/awards",
    "selector": "div.localpagenavigation nav.greedy (a.parent-node > h4, ul.links > li > a, a.active; ul.mobile-list duplicates the links for mobile)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Sticky Nav local",
    "decision": "new-variant",
    "block": "Sticky Nav",
@@ -588,7 +602,9 @@
      "why": "No block lists sibling/child pages. sticky-nav is the existing horizontal link bar (row = label + link) but is built for #anchors with scroll-spy; a 'local' variant would take page links, show the parent as the bar title and mark the current page active (JS change). Columns (related-links) is a vertical link list per cell and does not match the source bar. Alternative if the user prefers: new block 'local-nav-corp'."
     }
    ],
-   "openQuestion": "Sticky Nav (local) variant vs a new 'local-nav-corp' block; and author the nav on each of the ~55 pages (importer) vs once per parent as a shared fragment document (no path rule exists yet for non-XF shared content)."
+   "openQuestion": "Sticky Nav (local) variant vs a new 'local-nav-corp' block; and author the nav on each of the ~55 pages (importer) vs once per parent as a shared fragment document (no path rule exists yet for non-XF shared content).",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "pagehero",
@@ -604,7 +620,7 @@
    ],
    "example": "/us/en/about/awards/awards",
    "selector": ".pagehero > .c-page-hero > .c-page-hero-content.border-bottom-gold > .row > .col-sm-6 (h1.title, h2.subhead, p.content | picture)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Columns columns-50-50, page-intro (+ border-bottom unless hideBottomLine)",
    "decision": "new-variant",
    "block": "Columns",
@@ -629,7 +645,9 @@
      "why": "The content contract is the existing library entry 'Columns 50-50 – Page intro, compact section' (H1 gold, H2 serif subtitle, intro paragraph | image). The ENT patients import already maps .c-page-hero to columns-50-50 (tools/importer/parsers/ent-hero.js). On corp, columns-corp.css styles every h1 in a cell as the Large Headline (Egyptienne 56px; a fully Bold+Italic h1 gets .columns-gold at headline size) and plain h2 as Futura bold. The source page hero is a 28px Futura gold title over a 24.5px Egyptienne Light subhead. So corp needs a class to tell the two apart. The patients rendering is unchanged."
     }
    ],
-   "openQuestion": "Approve Columns (columns-50-50, page-intro[, border-bottom]) for the corp page hero, or use a Hero Corp variant (e.g. 'page-hero') instead? A third option is to style the existing library variant through the 'compact' section style, with no new name. That would make the block's look depend on the section, so it is not recommended."
+   "openQuestion": "Approve Columns (columns-50-50, page-intro[, border-bottom]) for the corp page hero, or use a Hero Corp variant (e.g. 'page-hero') instead? A third option is to style the existing library variant through the 'compact' section style, with no new name. That would make the block's look depend on the section, so it is not recommended.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "columncontrol/cols4",
@@ -645,7 +663,7 @@
    ],
    "example": "/us/en/about",
    "selector": "div.cols4 > .colctrl > .row > .col-xs-12.col-sm-6.col-md-3",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns (none: 4 cells)",
    "decision": "library-variant",
    "block": "Columns",
@@ -672,7 +690,8 @@
     "/tmp/cols-analysis.json: 'standaloneimage,text x4' 160, 'text x4' 105, 'standaloneimage x4' 50",
     "blocks/columns/columns-corp.css: 4 cells = 2 per row on mobile, 4 from 600px; source col-sm-6 col-md-3 is 2 per row 600-900 — CSS follow-up"
    ],
-   "confidence": "medium"
+   "confidence": "medium",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "cq/experience-fragments/editor/components/buildingblock",
@@ -704,8 +723,9 @@
    ],
    "example": "/us/en/acute-care/products/arise-1000-ex",
    "selector": "div.pageshortdescription (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "metadata description; visible ones (255) → lead paragraph"
+   "status": "approved",
+   "outcome": "metadata description; visible ones (255) → lead paragraph",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "fullbleedpanel",
@@ -721,7 +741,7 @@
    ],
    "example": "/us/en/about",
    "selector": ".fullbleedpanel > div > .c-full-bleed-panel.page-section.bg-*",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "sectionStyle": "backgroundColor -> #edeeec bg-light-gray | #ffb500 bg-gold | #545857 bg-dark-gray | #ffffff bg-white (corp, existing) | #3e5245 dark (patients dark gradient #545857->#3e5245, identical) | #594b61 bg-dark-purple-gradient (proposed) | #425361 bg-dark-blue-gradient (proposed) | #b67219 bg-golden-gradient (proposed)",
@@ -754,7 +774,9 @@
      "why": "15 panels (rgba(182,114,25,1)) render .bg-golden-gradient = linear-gradient(90deg,#af6d04,#ffb500 20%)."
     }
    ],
-   "openQuestion": "Approve the three gradient section styles, or normalise them to bg-dark-gray / bg-gold? For the teal gradient, reuse the patients 'dark' style or add a corp alias 'bg-dark-teal-gradient'?"
+   "openQuestion": "Approve the three gradient section styles, or normalise them to bg-dark-gray / bg-gold? For the teal gradient, reuse the patients 'dark' style or add a corp alias 'bg-dark-teal-gradient'?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "contactbutton",
@@ -769,8 +791,9 @@
    ],
    "example": "/us/en/acute-care/products/arise-1000-ex",
    "selector": "div.contactbutton (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "button; hidden (563) → skip"
+   "status": "approved",
+   "outcome": "button; hidden (563) → skip",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "jumpbarnav",
@@ -786,9 +809,10 @@
    ],
    "example": "/us/en/about/awards/awards",
    "selector": "div.jumpbarnav (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Sticky Nav block (anchors from section ids); hidden (271) → skip",
-   "variant": "sticky-nav"
+   "variant": "sticky-nav",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "carouselslidegroup/carouselslide",
@@ -822,8 +846,9 @@
    ],
    "example": "/us/en/acute-care/products/arise-1000-ex",
    "selector": "div.secondarycta (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "button; hidden (429) → skip"
+   "status": "approved",
+   "outcome": "button; hidden (429) → skip",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "tagcrumb",
@@ -838,8 +863,9 @@
    ],
    "example": "/us/en/acute-care/products/arise-1000-ex",
    "selector": "div.tagcrumb (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "metadata tags; hidden (378) → skip"
+   "status": "approved",
+   "outcome": "metadata tags; hidden (378) → skip",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "carouselslidegroup",
@@ -890,8 +916,9 @@
    ],
    "example": "/us/en/about/corporate-responsibility/cr-hub",
    "selector": "div.h1-title (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "h1"
+   "status": "approved",
+   "outcome": "h1",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "tabs",
@@ -907,9 +934,10 @@
    ],
    "example": "/us/en/about/contact",
    "selector": "div.tabs (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Tabs (tab titles from page facts)",
-   "variant": "tabs"
+   "variant": "tabs",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "table",
@@ -925,9 +953,10 @@
    ],
    "example": "/us/en/about/news/2011/news-archive",
    "selector": "div.table (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Table block",
-   "variant": "table"
+   "variant": "table",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "buttonset",
@@ -943,8 +972,9 @@
    ],
    "example": "/us/en/about/news/2020/stryker-releases-mako--total-hip-4-0-software",
    "selector": "div.buttonset (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "buttons (links alone in a paragraph)"
+   "status": "approved",
+   "outcome": "buttons (links alone in a paragraph)",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "fullWidthImage",
@@ -960,9 +990,10 @@
    ],
    "example": "/us/en/about/news/2023/features/changing-the-way-you-see-your-colorectal-cancer-patients",
    "selector": "div.fullWidthImage (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "image in a full-bleed section",
-   "variant": "full-bleed"
+   "variant": "full-bleed",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "filteredcontenttypegrid",
@@ -977,7 +1008,7 @@
    ],
    "example": "/us/en/portfolios/medical-surgical-equipment",
    "selector": "div.c-filtered-content-type-grid .products-container .product-item (a > .img-container.border-bottom-gold > img, h4.component-subheading); filter: .filters-container select",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Cards Corp product-item (five-up only where the measured grid needs it)",
    "variant": "product-item (five-up only where the measured grid needs it)",
    "decision": "library-variant",
@@ -996,7 +1027,9 @@
     "components.json: listSize 20 (69) / 100 (45); loadMoreText 'Load More' 129"
    ],
    "confidence": "medium",
-   "openQuestion": "Grids with a 'Product type' filter (e.g. trauma 113, foot-and-ankle 88 items) lose the filter. Accept, or plan a filter option for Cards Corp (needs product-type tags per page)?"
+   "openQuestion": "Grids with a 'Product type' filter (e.g. trauma 113, foot-and-ankle 88 items) lose the filter. Accept, or plan a filter option for Cards Corp (needs product-type tags per page)?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "standalonevideo/dynamicmedia",
@@ -1027,7 +1060,7 @@
    ],
    "example": "/us/en/foot-and-ankle/asset-items",
    "selector": "n/a (pages not rendered)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "skip",
    "decision": "skip",
    "rule": "Not a page component: the external-asset-library pages that hold it return 404 on the live site. It is the data record (title, url / GCS doc id, thumbnailRP) behind resourcesanddownload entries that point to '/content/stryker/.../jcr:content/par/externalasset' (216 references): resolve it into that Cards Corp (resources) row.",
@@ -1041,7 +1074,8 @@
     "/us/en/acute-care/products/bedside-stands export: resources[] contains '/content/stryker/us/en/acute-care/products/operations-and-maintenance-manuals/jcr:content/par/externalasset'; rendered as a resources item linking to https://techweb.stryker.com/",
     "tools/importer/data/catalog/site.json: /us/en/foot-and-ankle/asset-items template external-asset-library, components [externalasset]"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "numbercounter",
@@ -1057,9 +1091,10 @@
    ],
    "example": "/us/en/about/news/features/innovation-inspired-by-insights--the-next-generation--first-comp",
    "selector": "div.numbercounter (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Statistics (count-up)",
-   "variant": "statistics count-up"
+   "variant": "statistics count-up",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "contentFragment",
@@ -1072,7 +1107,7 @@
    ],
    "example": "/content/experience-fragments/stryker/corporate/en/contact_information/corporate-contact-information/master",
    "selector": "div.contentfragment.title_h2|.title_h4|.title_h5[.bhm_clickable_title] > dl.cmp-contentfragment[data-path] > div.cmp-contentfragment__element--<field> > dd.cmp-contentfragment__element-value (the dt labels are display:none)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "cards contact",
    "decision": "new-variant",
    "block": "cards",
@@ -1101,7 +1136,9 @@
      "why": "Keeps every CF field in the document (approved 'holds ALL fields') without rendering the fields and labels that the live site never shows."
     }
    ],
-   "openQuestion": "The approved decision assumed only 2 fragments show a subset. In fact a subset is the norm: 43 of 55 fragments have values that the live page never shows. Choose: (A, recommended) card = the shown fields, the rest + labels as Metadata rows; for the 2 multi-set fragments the card shows the union (the HQ box beside the map then also shows the 'Global Headquarters' heading and Learn More; the 2nd Latin America box also shows the phones). (B) all fields visible in the card (the live page then gains 39 phone and 22 email blocks). (C) a key/value corp block (e.g. contact-info-corp, proposed) that lists CF path + field list per box, mirroring AEM elementNames exactly. C is a new block and does not use the fragment block. Note also the request cost: about 62 fragment fetches on /us/en/about/contact (lazy, inside accordions)."
+   "openQuestion": "The approved decision assumed only 2 fragments show a subset. In fact a subset is the norm: 43 of 55 fragments have values that the live page never shows. Choose: (A, recommended) card = the shown fields, the rest + labels as Metadata rows; for the 2 multi-set fragments the card shows the union (the HQ box beside the map then also shows the 'Global Headquarters' heading and Learn More; the 2nd Latin America box also shows the phones). (B) all fields visible in the card (the live page then gains 39 phone and 22 email blocks). (C) a key/value corp block (e.g. contact-info-corp, proposed) that lists CF path + field list per box, mirroring AEM elementNames exactly. C is a new block and does not use the fragment block. Note also the request cost: about 62 fragment fetches on /us/en/about/contact (lazy, inside accordions).",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "title",
@@ -1117,8 +1154,9 @@
    ],
    "example": "/us/en/about",
    "selector": "div.title (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "heading + description paragraph; id → section id"
+   "status": "approved",
+   "outcome": "heading + description paragraph; id → section id",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "divisioncontactus",
@@ -1134,7 +1172,7 @@
    ],
    "example": "/us/en/ems/contact",
    "selector": "div.divisioncontactus > div.c-division-contact-us > form#divisioncontactus (h2.component-subheading.border-bottom-gold, h3.form-description in col-md-4, fields in col-md-8)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Marketo Form",
    "decision": "variant+section-style",
    "block": "Marketo Form",
@@ -1146,7 +1184,10 @@
     "components.json: 47 uses (product-detail 35, contactdivision 7). formTitle mostly 'Contact Us'. 10 distinct formMailTo. Library: 'Marketo Form – Embedded form with captcha'. Options sheet: section style 'flex'."
    ],
    "confidence": "medium",
-   "openQuestion": "Which Marketo form ID(s) replace the AEM email form per business unit (10 formMailTo routes, 47 pages)? The client must create or supply them. Until then the importer can emit the heading + description and leave the form out, listing the pages."
+   "openQuestion": "Which Marketo form ID(s) replace the AEM email form per business unit (10 formMailTo routes, 47 pages)? The client must create or supply them. Until then the importer can emit the heading + description and leave the form out, listing the pages.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "Marketo form IDs per business unit (10 formMailTo routes, 47 pages) — client"
   },
   {
    "component": "eventdetail",
@@ -1159,7 +1200,7 @@
    ],
    "example": "/us/en/global-events/acute-care/training/ed-prevention-is-in-reducing-falls-and-saving-skin-pro",
    "selector": "div.eventdetail > div.c-event-detail-component[data-widget=eventdetail] (.event-datetime-wrap, .event-location-wrap, .event-details-wrap, .event-disclaimer-wrap, .event-registration-wrap, .event-sidebar .eventdetail-map[data-address])",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "columns columns-67-33",
    "decision": "metadata",
    "block": "columns",
@@ -1204,7 +1245,9 @@
      "why": "sidebar Google map of the event address"
     }
    ],
-   "openQuestion": "Should the 'Meeting time / Location / Country' lines be authored text (as proposed) or rendered by an event-detail template from the metadata (one source of truth, new template)? Also: corp CSS sizes every underlined heading at 21 / 24.5px, so underlined H5 'Details' / 'Registration' would render larger than the source's 14px Futura. This needs a template rule or a plain H5 + divider."
+   "openQuestion": "Should the 'Meeting time / Location / Country' lines be authored text (as proposed) or rendered by an event-detail template from the metadata (one source of truth, new template)? Also: corp CSS sizes every underlined heading at 21 / 24.5px, so underlined H5 'Details' / 'Registration' would render larger than the source's 14px Futura. This needs a template rule or a plain H5 + divider.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "productgroups",
@@ -1218,7 +1261,7 @@
    ],
    "example": "/us/en/communications/services/customized-suspension-solutions",
    "selector": "div.c-productgroups (h2.component-subheading; .clearfix > h3.border-bottom-lgray + .row > .filtered.col-xs-12.col-sm-6.col-md-3 > a > .img-block.border-bottom-gold > img + h4)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Cards Corp product-item",
    "decision": "library-variant",
    "block": "Cards Corp",
@@ -1234,7 +1277,8 @@
     "content/drafts/blocks/cards-corp.plain.html: product-item sample lists the surgical-lights---monitor-suspension page as its source",
     "components.json: searchPath /content/stryker/us/en 37, templates procedure-detail 36, packagedetail 7"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "fullWidthImageHero",
@@ -1250,7 +1294,7 @@
    ],
    "example": "/us/en/acute-care/c/unity-recliner-series-launch-2023",
    "selector": ".fullWidthImageHero .pDiv (.textBoxId.textbox-position | .imgBoxId.full-width-img picture); .hero-space h1",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Hero Corp image-slide (+ top-/left-/right-/size- options, text-below; new options text-above, bottom-<n>)",
    "decision": "new-variant",
    "block": "Hero Corp",
@@ -1280,7 +1324,9 @@
      "why": "16 IVS heroes use layoutOptions '50_bottom': the text box is anchored to the image bottom (.bottom-text {bottom:0}) over the left half. image-slide positions text only from the top (top-/left-/right-)."
     }
    ],
-   "openQuestion": "Add the text-above and bottom-<n> options to Hero Corp image-slide, or accept the overlay / text-below on phones for these 41 heroes?"
+   "openQuestion": "Add the text-above and bottom-<n> options to Hero Corp image-slide, or accept the overlay / text-below on phones for these 41 heroes?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "remotecomponent",
@@ -1296,7 +1342,7 @@
    ],
    "example": "/us/en/acute-care/medical-information-request",
    "selector": "div.remotecomponent > div.c-remoteComponent[data-widget=remote-component] > input.hdnSelComp[value='<id>|<url>'] + div.compContainer",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "widget remote-component",
    "decision": "embed",
    "block": "widget",
@@ -1316,7 +1362,10 @@
      "why": "Existing widget block (auto-built from /widgets/ links, query params → data-*). The widget renders the microapp with zoid like the source (the child autoResizes height via zoid). No widget files exist in the repo yet."
     }
    ],
-   "openQuestion": "The microapps only allow framing from *.stryker.com, so they will not render on *.aem.page / *.aem.live previews (only once served from www.stryker.com) unless the client adds the EDS hosts to frame-ancestors. Also confirm whether to keep the gamma4 stage URL."
+   "openQuestion": "The microapps only allow framing from *.stryker.com, so they will not render on *.aem.page / *.aem.live previews (only once served from www.stryker.com) unless the client adds the EDS hosts to frame-ancestors. Also confirm whether to keep the gamma4 stage URL.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "client must allow the EDS hosts in the microapps frame-ancestors (they only allow *.stryker.com)"
   },
   {
    "component": "bannercampaign",
@@ -1332,7 +1381,7 @@
    ],
    "example": "/us/en/communications/services/surgical-lights---monitor-suspension",
    "selector": ".bannercampaign > .c-banner-campaign .c-banner-campaign-content (a >) picture",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "contentModel": "One image (srcLargeFileRef DM URL; desktop and mobile use the same asset, only the preset changes), alt = 'alt' (only 6 of 24 have one -> list the missing ones). Linked image when linkInternal/linkExternal is set (internal: strip /content/stryker + link rewrite; openInNewTab -> #_blank marker). Same outcome as standaloneimage. Not Hero (hero-campaign): that is the patients stroke-awareness overlay hero; here there is no text.",
@@ -1342,7 +1391,8 @@
     "https://www.stryker.com/us/en/endoscopy.html: two banners, same image, no link",
     "power-load.json: srcLargeFileRef, alt, linkInternal, openInNewTab; catalog: 24 uses, linkExternal 10, linkInternal 5"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "contactus",
@@ -1357,7 +1407,7 @@
    ],
    "example": "/us/en/acute-care/contact",
    "selector": "div.contactus > div.c-contactus[data-widget=contactus] (col-sm-6.info: .page-section > h3.component-subheading + .contact-group > .contact-subgroup > h4.contact-label + p.phone-number|p.email-address|p.link-item; col-sm-6: div#contact-us-map.map[data-address])",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "columns columns-50-50",
    "decision": "library-variant",
    "block": "columns",
@@ -1377,7 +1427,10 @@
      "why": "right column is a Google map of group1Address"
     }
    ],
-   "openQuestion": "Map: a block (or widget) inside a Columns cell is not decorated by decorateBlocks, so columns.js would need to render the map itself (as it does for YouTube links). Alternative: a 'View on Google Maps' link instead of the iframe."
+   "openQuestion": "Map: a block (or widget) inside a Columns cell is not decorated by decorateBlocks, so columns.js would need to render the map itself (as it does for YouTube links). Alternative: a 'View on Google Maps' link instead of the iframe.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "map as above"
   },
   {
    "component": "curatedlinklist",
@@ -1392,9 +1445,10 @@
    ],
    "example": "/us/en/about/patents",
    "selector": "div.curatedlinklist (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns (related-links)",
-   "variant": "columns related-links"
+   "variant": "columns related-links",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "wcm/msm/components/ghost",
@@ -1424,7 +1478,7 @@
    ],
    "example": "/us/en/about/corporate-responsibility",
    "selector": "div.c-latestnews .latestnews-container > .item.col-xs-12.col-sm-3 (img, .m-c-subheading-description h3, p.description, a.news-link.action-link 'Read More')",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Cards Corp teaser",
    "variant": "teaser",
    "decision": "query-index",
@@ -1442,7 +1496,9 @@
     "foot-and-ankle export: latestnews newsPaths ['stryker:content-type/news/Features'] (tag-driven, newest first)"
    ],
    "confidence": "medium",
-   "openQuestion": "The source picks the newest articles by tag; the import freezes today's 4. Accept a static list, or add a 'latest by tag' mode later (query index would need published date + tags)? CTA reads 'Learn more' instead of the source 'Read More'."
+   "openQuestion": "The source picks the newest articles by tag; the import freezes today's 4. Accept a static list, or add a 'latest by tag' mode later (query index would need published date + tags)? CTA reads 'Learn more' instead of the source 'Read More'.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "eventlocationproperties",
@@ -1455,7 +1511,7 @@
    ],
    "example": "/us/en/about/news/2017/healthcare-institute-of-new-jersey-hosts-life-sciences-celebrati1",
    "selector": "div.c-event-location-properties > h5 > span (city + ', ') + span (state)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "contentModel": "news-detail title section: an H5 line '<eventCity>, <eventState>[, <eventCountry>]' placed right after the H5 publish date (render order on the live page). Skip the 13 of 18 instances that are empty (no city/state/country).",
@@ -1463,7 +1519,8 @@
     "https://www.stryker.com/us/en/about/news/2017/join-us-at-hard-rock-hotel-on-october-24--2017.html: <h5><span>San Diego, </span><span>CA 92101</span></h5> directly after the publishdate h5 '14-Sep-2017'.",
     "components.json: 18 uses, news-detail only. Values only on 5 (e.g. Kalamazoo MI USA, Mahwah NJ, Cary IL). tools/importer/import-news-detail.js builds the title section with the H5 date."
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "mixedmediagallery",
@@ -1478,7 +1535,7 @@
    ],
    "example": "/us/en/about/corporate-responsibility/i/strykers-allies-for-equality-safe",
    "selector": "div.mixedmediagallery > div.c-mixed-media-gallery div.s7dm-dynamic-media[data-asset-path][data-asset-type=imageset|mediaset|spinset][data-viewer-type]",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "gallery-corp",
    "decision": "new-block",
    "block": "gallery-corp",
@@ -1497,7 +1554,9 @@
      "why": "Dynamic Media image/media/spin set shown in a viewer (main image + thumbnail strip, zoom). No patients or corp block shows a set with thumbnails: Hero Corp is a text-overlay hero carousel and Columns media-pair is a static grid."
     }
    ],
-   "openQuestion": "Build gallery-corp (new block), or accept a no-code fallback: Columns (media-pair) image grid of the set members, or only the first image? How should the single spin set (/us/en/portfolios/…/rise) be handled: frames as a gallery, or the DM SpinViewer embed?"
+   "openQuestion": "Build gallery-corp (new block), or accept a no-code fallback: Columns (media-pair) image grid of the set members, or only the first image? How should the single spin set (/us/en/portfolios/…/rise) be handled: frames as a gallery, or the DM SpinViewer embed?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "highlevelcta",
@@ -1510,7 +1569,7 @@
    ],
    "example": "/us/en/portfolios/medical-surgical-equipment/emergency-patient-transport",
    "selector": ".c-high-level-cta .c-high-level-cta-container (a.c-high-level-cta-link[style*=background-image], a.c-high-level-cta-label)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Cards Corp category",
    "variant": "category",
    "decision": "library-variant",
@@ -1522,7 +1581,8 @@
     "blocks/cards-corp/cards-corp.css: '.cards-corp.category: product category tiles (source .c-high-level-cta ...)', image in a shadowed 442:293 box, teal label bar; --corp-shadow-card is commented 'source .c-high-level-cta-link'",
     "catalog: 16 uses, all on the capability template"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "newsandannouncements",
@@ -1536,7 +1596,7 @@
    ],
    "example": "/us/en/about/governance/cyber-security/product-security",
    "selector": "div.c-newsandannouncements (.stryker-tabs ul.tab li.parent-filter span.tab-link; .content-news .news: img, h5 date, h2 title, p, a.action-link)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "news-list-corp",
    "decision": "new-block",
    "block": "news-list-corp",
@@ -1560,7 +1620,9 @@
      "why": "No existing block lists pages by path/tag with date sorting, filter tabs and paging; cards-corp only hydrates explicitly authored links. Needs the query index to expose the news 'published' date and content-type tags (not indexed today: path, title, description, image, lastModified, tags='')."
     }
    ],
-   "openQuestion": "Approve a new news-list-corp block (and adding published/tags to the corp query index), or link the landing pages to a simpler Cards Corp teaser list of selected articles?"
+   "openQuestion": "Approve a new news-list-corp block (and adding published/tags to the corp query index), or link the landing pages to a simpler Cards Corp teaser list of selected articles?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "tagline",
@@ -1576,7 +1638,7 @@
    ],
    "example": "/us/en/about",
    "selector": ".c-tagline > .m-banner-simple.bg-* (h1.c-tagline-title, h2.c-tagline-message)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "sectionStyle": "bg-gold (existing) / bg-dark-purple-gradient (proposed, see fullbleedpanel)",
@@ -1588,7 +1650,8 @@
     "components.min.css: .m-banner-simple padding 10px 9%; h1 Futura bold 21px black; .banner-message 56px",
     "export scan: 13 uses, 11 hidden"
    ],
-   "confidence": "medium"
+   "confidence": "medium",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "hero",
@@ -1602,7 +1665,7 @@
    ],
    "example": "/us/en/acute-care/tools/falls-reduction-tool-calculator",
    "selector": ".hero > .c-hero > .c-hero-content.border-bottom-gold > .row (h1.title, p.subhead, p.content | picture)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Columns columns-50-50, page-intro (+ border-bottom)",
    "decision": "new-variant",
    "block": "Columns",
@@ -1624,7 +1687,9 @@
      "why": "Same rendering as pagehero (.c-hero-content.border-bottom-gold, title / subhead / content | image), but the text is authored on the component. Shares the pagehero proposal."
     }
    ],
-   "openQuestion": "Follows the pagehero decision (Columns page-intro vs a Hero Corp variant)."
+   "openQuestion": "Follows the pagehero decision (Columns page-intro vs a Hero Corp variant).",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "hero-large-carousel/slide",
@@ -1638,7 +1703,7 @@
    ],
    "example": "/us/en/c/2018/acfas",
    "selector": ".c-hero-large-carousel .slide > .slide-container.bg-* (.slide-image-container img | .slide-text h2.slide-title, p.slide-subtitle, a.slide-link)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns columns-50-50",
    "decision": "variant+section-style",
    "block": "Columns",
@@ -1652,7 +1717,9 @@
     "components.min.css: .slide-title Egyptienne Light 24px (56px desktop), .slide-container margin 60px 0"
    ],
    "confidence": "low",
-   "openQuestion": "Depends on the hero-large-carousel decision: stack the slides as columns bands (rotation lost) or build a carousel block. Corp columns render a plain h2 in Futura bold, but the source title is Egyptienne Light."
+   "openQuestion": "Depends on the hero-large-carousel decision: stack the slides as columns bands (rotation lost) or build a carousel block. Corp columns render a plain h2 in Futura bold, but the source title is Egyptienne Light.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "resourcesanddownload_v1",
@@ -1667,7 +1734,7 @@
    ],
    "example": "/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/a_partnership_promot/body-copy/master",
    "selector": "div.resourcesanddownload_v1 > .c-resourcesanddownload (.title-container h2.component-subheading.border-bottom-gold, .item-list > .item)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Cards Corp resources, six-up",
    "variant": "resources, six-up",
    "decision": "library-variant",
@@ -1682,7 +1749,8 @@
     "https://www.stryker.com/content/experience-fragments/stryker/corporate/en/about/news/_2024/features/a_partnership_promot/body-copy/master.html: identical .c-resourcesanddownload markup with an h2 title 'Mental health services for health workers'",
     "XF export: sling:resourceType resourcesanddownload_v1 with internalResources {documentPath}"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "patenttables",
@@ -1695,9 +1763,10 @@
    ],
    "example": "/us/en/about/patents/Craniomaxillofacial-Patents",
    "selector": "div.patenttables (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Table block",
-   "variant": "table"
+   "variant": "table",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "longtexthero",
@@ -1713,7 +1782,7 @@
    ],
    "example": "/us/en/about/history",
    "selector": ".longtexthero > .c-longtexthero > .row (.col-sm-6: h1.component-subheading, h2, h3.description, .longtext | .hidden-xs.col-sm-6 img)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Columns columns-50-50, page-intro",
    "decision": "new-variant",
    "block": "Columns",
@@ -1735,7 +1804,9 @@
      "why": "Same title + text | image intro as pagehero (shares the proposal). Differences: the H1 is black Futura 24.5px (h1.h2.component-subheading, not gold) and longer copy. The image is hidden below 600px (hidden-xs), treated as an inconsistency."
     }
    ],
-   "openQuestion": "Follows the pagehero decision. A plain black H1 (not gold) is how the convention tells it apart from the pagehero title."
+   "openQuestion": "Follows the pagehero decision. A plain black H1 (not gold) is how the convention tells it apart from the pagehero title.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "engagementcta",
@@ -1751,7 +1822,7 @@
    ],
    "example": "/us/en/c/2019/asbrs-2019",
    "selector": ".c-engagementcta .engagementCTAcluster a.btn (img + label)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "sectionStyle": "buttonColor -> teal #4c7d7a: none (default primary) | #1c5687: btn-blue | #85458a: btn-purple (existing corp styles)",
@@ -1764,7 +1835,9 @@
     "styles/styles-corp.css: btn-purple / btn-blue section styles; contact-aside (98px buttons, icon-only brand squares) does not match these 200px icon + text buttons"
    ],
    "confidence": "low",
-   "openQuestion": "Keep the social icons in the buttons? That needs x/twitter and message icons plus a small corp rule, since 'Follow us' alone is ambiguous. Or use text-only buttons? Should the side-by-side row be kept (no existing style does it for default content)?"
+   "openQuestion": "Keep the social icons in the buttons? That needs x/twitter and message icons plus a small corp rule, since 'Follow us' alone is ambiguous. Or use text-only buttons? Should the side-by-side row be kept (no existing style does it for default content)?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "animatedbarchart",
@@ -1778,7 +1851,7 @@
    ],
    "example": "/us/en/joint-replacement/products/modular-dual-mobility",
    "selector": "div.animatedbarchart > div.c-animated-bar-chart[data-widget=bar-chart] (input.chartType/.chartTitle/.numberType/.maxValue…, select.hdnChartSeries > option[value]=value, text 'rgba(...)|label|true', div.chart_div)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "chart-corp column | bar",
    "decision": "new-block",
    "block": "chart-corp",
@@ -1804,7 +1877,9 @@
      "why": "9 Column, 1 Bar"
     }
    ],
-   "openQuestion": "Approve a new chart block (10 + 1 uses), or use a fallback with no new code: Table (label | value) or Statistics (cols-N) with the same colours?"
+   "openQuestion": "Approve a new chart block (10 + 1 uses), or use a fallback with no new code: Table (label | value) or Statistics (cols-N) with the same colours?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "localpagenavigationchild",
@@ -1817,7 +1892,7 @@
    ],
    "example": "/us/en/about/corporate-responsibility/promoting-global-health",
    "selector": "div.localpagenavigation nav.greedy",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "Sticky Nav local",
    "decision": "new-variant",
    "block": "Sticky Nav",
@@ -1839,7 +1914,8 @@
      "proposed": true,
      "why": "see localpagenavigation"
     }
-   ]
+   ],
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "video",
@@ -1854,9 +1930,10 @@
    ],
    "example": "/us/en/acute-care/c/hands-free-communication-nursing-care-eguide",
    "selector": "div.video (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Video block",
-   "variant": "video"
+   "variant": "video",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "interactivemedia",
@@ -1872,7 +1949,7 @@
    ],
    "example": "/us/en/about/corporate-responsibility/i/strykers-allies-for-equality-safe",
    "selector": "div.interactivemedia > div.cq-dd-image > div[id^=interactivemedia_][data-viewer-type=InteractiveImage][data-asset-path]",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "contentModel": "Recommended fallback: the DM image as a default-content image link (imageserverurl + assetID, alt from the export or listed as missing), followed by a bullet list of the hotspot links (label = 3rd field of each imageMap entry, href from its path with link rewriting; 'quickview:sku=…#anchor' targets become in-page #anchors). With hotspots-corp: image row + one row per hotspot (x% | y% from the poly() centre ÷ image size | label | link). Skip the 3 empty instances (no fileReference).",
@@ -1890,7 +1967,9 @@
      "why": "Positioned hotspot markers on an image. No existing block places links over an image."
     }
    ],
-   "openQuestion": "On the 3 ASC care-setting pages the hotspots are the main navigation of the page. Is image + link list acceptable, or should hotspots-corp be built?"
+   "openQuestion": "On the 3 ASC care-setting pages the hotspots are the main navigation of the page. Is image + link list acceptable, or should hotspots-corp be built?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "fastfacts",
@@ -1904,9 +1983,10 @@
    ],
    "example": "/us/en/c/2018/guaranteeprograms",
    "selector": "div.fastfacts (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Statistics",
-   "variant": "statistics"
+   "variant": "statistics",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "featuredcontentgrid",
@@ -1922,7 +2002,7 @@
    ],
    "example": "/us/en/foot-and-ankle",
    "selector": "div.c-featured-content-grid (h2.component-subheading, .intro h3, .grid .grid-item-wrapper: a > h4.text-black, p.page-description, a.more.action-link 'More')",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns related-links",
    "variant": "related-links",
    "decision": "library-variant",
@@ -1939,7 +2019,9 @@
     "Block Library columns.plain.html 'Columns – Related links': heading + text + link on its own line (chevron)"
    ],
    "confidence": "low",
-   "openQuestion": "Only 8 instances and no exact match: Columns (related-links) reproduces title + text + chevron link; the alternative is Cards Corp link-only rows (adds an image and 'Learn more', which the source does not show). Confirm."
+   "openQuestion": "Only 8 instances and no exact match: Columns (related-links) reproduces title + text + chevron link; the alternative is Cards Corp link-only rows (adds an image and 'Learn more', which the source does not show). Confirm.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "adobesignwebform",
@@ -1953,7 +2035,7 @@
    ],
    "example": "/us/en/about/governance/product-security",
    "selector": "div.adobesignwebform > div.c-adobesignwebform-content > iframe[src*='echosign.com/public/esignWidget']",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "widget adobe-sign",
    "decision": "embed",
    "block": "widget",
@@ -1971,7 +2053,8 @@
      "proposed": true,
      "why": "The source is a plain iframe to the Adobe Sign esignWidget with a min-height. The existing widget block carries wid/height as params."
     }
-   ]
+   ],
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "featuredcontentcontext",
@@ -1986,7 +2069,7 @@
    ],
    "example": "/us/en/portfolios/medical-surgical-equipment",
    "selector": "(no rendered output)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "skip",
    "decision": "skip",
    "rule": "Renders no content on any of its pages -> nothing to migrate.",
@@ -1998,7 +2081,8 @@
     "All 8 pages with featuredcontentcontext/featuredcontentitem (/us/en/portfolios/orthopaedics, /medical-surgical-equipment, /vascular, /neurotechnology-spine, /orthopaedics/foot-and-ankle(/forefoot, /midfoot), /medical-surgical-equipment/bedframes) fetched: no text in the featured containers",
     "/us/en/portfolios/medical-surgical-equipment export: featuredcontentcontext holds only textIsRich flags (no text)"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "image",
@@ -2012,8 +2096,9 @@
    ],
    "example": "/us/en/about/corporate-responsibility/i/stryker-womens-network",
    "selector": "div.image (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "default-content image"
+   "status": "approved",
+   "outcome": "default-content image",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "hero-large-carousel",
@@ -2028,7 +2113,7 @@
    ],
    "example": "/us/en/c/2018/acfas",
    "selector": ".hero-large-carousel > .c-hero-large-carousel[data-widget=hero-large-carousel] .carousel .slide",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns columns-50-50 (one per slide)",
    "decision": "variant+section-style",
    "block": "Columns",
@@ -2042,7 +2127,9 @@
     "no carousel block in blocks/ or in the Block Library; Hero Corp image-slide is a single full-bleed image with overlay text (does not fit product PNGs on colour bands)"
    ],
    "confidence": "low",
-   "openQuestion": "Stack the slides as banded Columns rows, build a new carousel block (it would also serve multi-slide carouselslidegroups), or leave the 2018/2019 event pages out of scope?"
+   "openQuestion": "Stack the slides as banded Columns rows, build a new carousel block (it would also serve multi-slide carouselslidegroups), or leave the 2018/2019 event pages out of scope?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "featuredcontentitem",
@@ -2057,7 +2144,7 @@
    ],
    "example": "/us/en/portfolios/medical-surgical-equipment",
    "selector": "div.featuredcontentitem .c-featured-content-item (empty)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "skip",
    "decision": "skip",
    "rule": "Renders an empty shell (empty h4.subheading, empty p, empty .c-featured-detail-product) on every page -> skip.",
@@ -2069,7 +2156,8 @@
     "https://www.stryker.com/us/en/portfolios/medical-surgical-equipment.html: .c-featured-info-product h4.subheading and p empty",
     "same 8-page check as featuredcontentcontext: no text rendered"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "socialsharing",
@@ -2099,7 +2187,7 @@
    ],
    "example": "/us/en/about",
    "selector": "div.c-grouplist (h2.component-subheading; .list-container h3.component-subheading; ul.col-md-3|col-md-6 > li > a.action-link)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Columns link-groups (with titles: columns-50-50, link-groups)",
    "decision": "library-variant",
    "block": "Columns",
@@ -2118,7 +2206,8 @@
     "https://www.stryker.com/us/en/surgical-technologies/services/instruments/tech-support.html: h2 'Products', group h3 'Orthopaedic Instruments' + ul.col-md-6 = draft 'Columns (columns-50-50, link-groups) – Link groups with titles'",
     "https://www.stryker.com/us/en/sustainability/ifus.html: c-grouplist renders an empty row"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "eventcalendar",
@@ -2132,7 +2221,7 @@
    ],
    "example": "/us/en/sports-medicine/calendar",
    "selector": "div.c-event (.filter fieldset.checkbox-group per facet, .calendar-view, .fc-toolbar)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "event-calendar-corp",
    "decision": "query-index",
    "block": "event-calendar-corp",
@@ -2155,7 +2244,9 @@
      "why": "No block filters or lays out events by date. Would read an events index built from the eventdetail / eventlocationproperties metadata. Cheaper alternative for 3 pages: a Cards Corp teaser list of upcoming events (link rows) without filters or calendar view."
     }
    ],
-   "openQuestion": "Build event-calendar-corp, use a simple Cards Corp list of events, or skip the 3 calendar pages (many events may be past)?"
+   "openQuestion": "Build event-calendar-corp, use a simple Cards Corp list of events, or skip the 3 calendar pages (many events may be past)?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "testimonial",
@@ -2169,7 +2260,7 @@
    ],
    "example": "/us/en/about",
    "selector": ".testimonial > .c-testimonial (h2.testimonial-heading, hr.testimonial-divider, p.banner-message, .btn-container a.btn)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "default-content",
    "decision": "default-content",
    "sectionStyle": "the parent band (bg-dark-gray from the fullbleedpanel on /us/en/about) + serif (existing) for the message",
@@ -2180,7 +2271,8 @@
     "components.min.css: .testimonial-heading Futura bold, .banner-message Egyptienne 28px line-height 1.2, .btn-default teal #4c7d7a",
     "catalog: 2 uses; props heading, subheading, linkUrl, linkText, linkNewWindow"
    ],
-   "confidence": "medium"
+   "confidence": "medium",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "corporatecontactus",
@@ -2193,7 +2285,7 @@
    ],
    "example": "/us/en/about/contact/media-inquiries",
    "selector": "div.corporatecontactus > div.c-corporate-contact-us[data-widget=corporate-contact-us-form-widget] > form#corporatecontactus",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Marketo Form",
    "decision": "library-variant",
    "block": "Marketo Form",
@@ -2204,7 +2296,10 @@
     "Same replacement as divisioncontactus (client precedent: acute-care contact → marketoform 1320)."
    ],
    "confidence": "medium",
-   "openQuestion": "Marketo form ID for recall questions (client)."
+   "openQuestion": "Marketo form ID for recall questions (client).",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "Marketo form ID for recall questions — client"
   },
   {
    "component": "productlisting",
@@ -2217,7 +2312,7 @@
    ],
    "example": "/us/en/craniomaxillofacial/systems/virtual-surgical-planning--vsp-",
    "selector": "div.c-productlisting .product.border-bottom-gold.row (.cell.col-md-6 > a > img; .cell > h2.component-subheading > a, p.description)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "Cards Corp one-up",
    "decision": "library-variant",
    "block": "Cards Corp",
@@ -2232,7 +2327,8 @@
     "https://www.stryker.com/us/en/craniomaxillofacial/systems/virtual-surgical-planning--vsp-.html: rows image | h2 link + description",
     "content/drafts/blocks/cards-corp.plain.html 'one-up' sample = the same VSP Cranial / Orthognathics rows; blocks/cards-corp/cards-corp.css one-up comment"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "cq/experience-fragments/editor/components/experiencefragment",
@@ -2246,8 +2342,9 @@
    ],
    "example": "/us/en/sports-medicine/products/Adaptable-Arm-Positioner",
    "selector": "div.experiencefragment (AEM wrapper class; confirm on the example page)",
-   "status": "proposed",
-   "outcome": "Fragment block"
+   "status": "approved",
+   "outcome": "Fragment block",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "missionstatement",
@@ -2260,7 +2357,7 @@
    ],
    "example": "/us/en/index",
    "selector": "(not rendered)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "skip",
    "decision": "skip",
    "contentModel": "Hidden: hideFlag=true and not rendered on the home page.",
@@ -2268,7 +2365,8 @@
     ".migration/xf-mapping/us/en/index.json missionstatement: hideFlag 'true', title 'Mission'",
     "https://www.stryker.com/us/en/index.html: no mission-statement markup in the rendered page"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "ourpeoplehome",
@@ -2309,7 +2407,7 @@
    ],
    "example": "/us/en/index",
    "selector": "(not rendered; area homecarousel)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "skip",
    "decision": "skip",
    "contentModel": "Hidden: hideFlag=true. The visible home carousels are carouselslidegroup (.c-autocarousel), which already map to Hero Corp (image-slide) with slide XFs as fragments.",
@@ -2317,7 +2415,8 @@
     ".migration/xf-mapping/us/en/index.json homecarousel: carousel, hideFlag 'true'",
     "https://www.stryker.com/us/en/index.html: only .c-autocarousel / .carouselslidegroup render"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "carousel/slide",
@@ -2330,7 +2429,7 @@
    ],
    "example": "/us/en/joint-replacement/systems/mako-rps",
    "selector": ".slide > .c-carousel-item.row (empty)",
-   "status": "proposed",
+   "status": "approved",
    "outcome": "skip",
    "decision": "skip",
    "contentModel": "Empty: no properties, and it renders an empty .c-carousel-item.",
@@ -2338,7 +2437,8 @@
     ".migration/xf-mapping/us/en/joint-replacement/systems/mako-rps.json: carousel/slide has only jcr/sling props (created 2026-07-23)",
     "https://www.stryker.com/us/en/joint-replacement/systems/mako-rps.html: <div class='slide'><div class='c-carousel-item row'></div></div>"
    ],
-   "confidence": "high"
+   "confidence": "high",
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "pieChart",
@@ -2351,7 +2451,7 @@
    ],
    "example": "/us/en/neurovascular/c/driven-by-evidence/ultra-registry",
    "selector": "div.pieChart > div[data-widget=pie-chart] > select.chartData > option ('Label + value +rgba(...)'), div.chart_div",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "chart-corp pie",
    "decision": "new-block",
    "block": "chart-corp",
@@ -2370,7 +2470,9 @@
      "why": "Same new block as animatedbarchart. Only 1 use, so build it only if chart-corp is approved."
     }
    ],
-   "openQuestion": "For a single use: a Table (label | value) or an author-supplied image may be enough if chart-corp is not approved."
+   "openQuestion": "For a single use: a Table (label | value) or an author-supplied image may be enough if chart-corp is not approved.",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "sitemap",
@@ -2383,7 +2485,7 @@
    ],
    "example": "/us/en/site-map",
    "selector": "div.sitemap .c-map > div > div > ul > li (div > h2, nested ul > li > a)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "sitemap-corp",
    "decision": "query-index",
    "block": "sitemap-corp",
@@ -2407,7 +2509,9 @@
      "why": "No block builds a nested page list. Builds H2 per top-level section and nested lists from /us/en/query-index.json paths. Alternative: a static default-content snapshot (nested bullet lists) re-imported at go-live."
     }
    ],
-   "openQuestion": "Generated sitemap-corp block vs a static default-content snapshot taken at go-live?"
+   "openQuestion": "Generated sitemap-corp block vs a static default-content snapshot taken at go-live?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "cventcomponent",
@@ -2420,7 +2524,7 @@
    ],
    "example": "/us/en/training-and-education/calendar",
    "selector": "div.cventcomponent > div.c-cventComponent > div.cventContainer > div#calendar-widget-container[data-widget-id][data-calendar-id]",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "widget cvent",
    "decision": "embed",
    "block": "widget",
@@ -2438,7 +2542,8 @@
      "proposed": true,
      "why": "Third-party Cvent calendar: a container div with data-widget-id / data-calendar-id plus the Cvent loader script. It fits the existing widget block (params → data-*)."
     }
-   ]
+   ],
+   "approved": "2026-10-27 (user: approve all recommendations)"
   },
   {
    "component": "map",
@@ -2451,7 +2556,7 @@
    ],
    "example": "/content/experience-fragments/stryker/corporate/en/contact_information/corporate-contact-information/master",
    "selector": "div.map > div.c-map[data-widget=map] > div.map[data-address][data-google-maps-key] (iframe added by JS: google.com/maps/embed/v1/place?key=…&q=<address>&zoom=15)",
-   "status": "proposed-new",
+   "status": "approved",
    "outcome": "embed",
    "decision": "embed",
    "contentModel": "A paragraph holding only a link https://www.google.com/maps?q=<address as one line> (address from mapAddress / group1Address / event address, tags stripped, newlines → ', '; or lat,long), link text = the address (accessible title). Rendered as a 100%-wide iframe, 300px high on mobile and 400px from 600px (source 300/400 at 840px). In corporate-contact-information XF: Columns (columns-50-50), cell 1 = map link, cell 2 = global-headquarters CF fragment link. The shared-services CF follows.",
@@ -2475,400 +2580,472 @@
      "why": "Works only where the map has its own section (not inside Columns)."
     }
    ],
-   "openQuestion": "Keyless embed (works on aem.page/live), or keep Stryker's Maps Embed API key (the client must add the EDS hosts to the key's referrer list)? Code change in columns.js (and a small default-content decorator): approve the link convention, or prefer a 'View on Google Maps' link with no embed?"
-  }
- ],
- "newNamesProposed": [
-  {
-   "name": "large-headline",
-   "kind": "section-style",
-   "proposed": true,
-   "why": "Standalone Large Headlines (outside columns/heroes; about 40% at 3vw or larger) use the fluid vw scale (fontsize-<n>vw = 2n vw on phones, n vw from 840px, capped at n x 14px from 1439px, so 28-70px). The corp copy styles stop at p-1-75 (24.5px). This section style would apply the type scale that the existing Columns (large-headline) variant already defines (h1 = headline, Bold h1 = stat number, Bold+Italic = gold) to default content. One name instead of one style per size. It covers the static large numbers (e.g. teal '93%' over serif text), as briefed: static large text = plain text plus a size section style.",
-   "component": "largeheadline"
-  },
-  {
-   "name": "flex-67-33",
-   "kind": "section-style (modifier of the existing 'flex' style, rules in styles/styles-corp.css)",
-   "proposed": true,
-   "why": "442 instances put a block (Marketo form) next to an aside fragment in a 2/3 + 1/3 split (source col-sm-8 / col-sm-4 from 841px -> EDS 600px). Blocks cannot nest in Columns cells, and 'flex' only gives equal halves from 900px.",
-   "component": "columncontrol/cols2_2-3_1-3"
-  },
-  {
-   "name": "flex-33-67",
-   "kind": "section-style (mirror of flex-67-33)",
-   "proposed": true,
-   "why": "only 6 instances (form in the wide column of /us/en/acute-care/contact, /us/en/emergency-care/contact, ...); drop if the user prefers 'flex' equal halves for these",
-   "component": "columncontrol/cols2_1-3_2-3"
-  },
-  {
-   "name": "local",
-   "kind": "variant of blocks/sticky-nav",
-   "proposed": true,
-   "why": "No block lists sibling/child pages. sticky-nav is the existing horizontal link bar (row = label + link) but is built for #anchors with scroll-spy; a 'local' variant would take page links, show the parent as the bar title and mark the current page active (JS change). Columns (related-links) is a vertical link list per cell and does not match the source bar. Alternative if the user prefers: new block 'local-nav-corp'.",
-   "component": "localpagenavigation"
-  },
-  {
-   "name": "page-intro",
-   "kind": "variant",
-   "proposed": true,
-   "why": "The content contract is the existing library entry 'Columns 50-50 – Page intro, compact section' (H1 gold, H2 serif subtitle, intro paragraph | image). The ENT patients import already maps .c-page-hero to columns-50-50 (tools/importer/parsers/ent-hero.js). On corp, columns-corp.css styles every h1 in a cell as the Large Headline (Egyptienne 56px; a fully Bold+Italic h1 gets .columns-gold at headline size) and plain h2 as Futura bold. The source page hero is a 28px Futura gold title over a 24.5px Egyptienne Light subhead. So corp needs a class to tell the two apart. The patients rendering is unchanged.",
-   "component": "pagehero"
-  },
-  {
-   "name": "bg-dark-purple-gradient",
-   "kind": "section-style",
-   "proposed": true,
-   "why": "104 panels (backgroundColor rgb(89,75,97)) render .bg-dark-purple-gradient = linear-gradient(90deg,#545857,#594b61), white text. No existing style. The name follows the corp bg-* styles and the source class.",
-   "component": "fullbleedpanel"
-  },
-  {
-   "name": "bg-dark-blue-gradient",
-   "kind": "section-style",
-   "proposed": true,
-   "why": "65 panels (rgb(66,83,97)) render .bg-dark-blue-gradient = linear-gradient(90deg,#545857,#425361), white text.",
-   "component": "fullbleedpanel"
-  },
-  {
-   "name": "bg-golden-gradient",
-   "kind": "section-style",
-   "proposed": true,
-   "why": "15 panels (rgba(182,114,25,1)) render .bg-golden-gradient = linear-gradient(90deg,#af6d04,#ffb500 20%).",
-   "component": "fullbleedpanel"
-  },
-  {
-   "name": "cards (contact)",
-   "kind": "block-variant",
-   "proposed": true,
-   "why": "Text-only location box in a 1 / 2 (600px) / 4 (900px) grid. The existing Cards variants expect an image cell (body gets a top margin, default grid 3-up, CTA pushed to the bottom). Corp CSS goes in blocks/cards/cards-corp.css + 'cards' in CORP_BLOCK_STYLES.",
-   "component": "contentFragment"
-  },
-  {
-   "name": "Metadata rows keyed by AEM field name (PhoneNumbers, Emails, addressBlock1, RelatedLinks, BusinessHomePage, locationName, ShortDesc, AddressLabel, PhoneNumberLabel, EmailLabel, BusinessHomePageLabel, RelatedLinksLabel)",
-   "kind": "fragment-metadata",
-   "proposed": true,
-   "why": "Keeps every CF field in the document (approved 'holds ALL fields') without rendering the fields and labels that the live site never shows.",
-   "component": "contentFragment"
-  },
-  {
-   "name": "event-start / event-end (ISO date-time) + event-timezone",
-   "kind": "page-metadata",
-   "proposed": true,
-   "why": "eventStartDateTime / eventEndDateTime / eventTimeZone. They drive calendar sorting and filters (eventcalendar via query-index).",
-   "component": "eventdetail"
-  },
-  {
-   "name": "event-location / event-city / event-state / event-country",
-   "kind": "page-metadata",
-   "proposed": true,
-   "why": "eventLocation, eventCity, hiddenState|eventState, eventCountry for calendar filters and map.",
-   "component": "eventdetail"
-  },
-  {
-   "name": "event-type / event-business-unit / event-audience / event-specialty",
-   "kind": "page-metadata",
-   "proposed": true,
-   "why": "eventType, eventBU, eventAudience, eventSpecialty tag IDs (calendar facets).",
-   "component": "eventdetail"
-  },
-  {
-   "name": "event-registration (URL) / event-contact-name / event-contact-email",
-   "kind": "page-metadata",
-   "proposed": true,
-   "why": "eventRegistrationLink, eventContactName/Email (28 of 44): kept as data, not rendered on the detail page.",
-   "component": "eventdetail"
-  },
-  {
-   "name": "map embed (see 'map' row)",
-   "kind": "embed",
-   "proposed": true,
-   "why": "sidebar Google map of the event address",
-   "component": "eventdetail"
-  },
-  {
-   "name": "text-above",
-   "kind": "variant",
-   "proposed": true,
-   "why": "On the source, the text box of 'col-sm-N pull-left' heroes (~22 of 40) sits before the image and is static below 840px, so the copy shows ABOVE the image on phones. image-slide only offers an overlay or text-below.",
-   "component": "fullWidthImageHero"
-  },
-  {
-   "name": "bottom-<n>",
-   "kind": "variant",
-   "proposed": true,
-   "why": "16 IVS heroes use layoutOptions '50_bottom': the text box is anchored to the image bottom (.bottom-text {bottom:0}) over the left half. image-slide positions text only from the top (top-/left-/right-).",
-   "component": "fullWidthImageHero"
-  },
-  {
-   "name": "/widgets/remote-component (widget)",
-   "kind": "widget",
-   "proposed": true,
-   "why": "Existing widget block (auto-built from /widgets/ links, query params → data-*). The widget renders the microapp with zoid like the source (the child autoResizes height via zoid). No widget files exist in the repo yet.",
-   "component": "remotecomponent"
-  },
-  {
-   "name": "map embed (see 'map' row)",
-   "kind": "embed",
-   "proposed": true,
-   "why": "right column is a Google map of group1Address",
-   "component": "contactus"
-  },
-  {
-   "name": "gallery-corp",
-   "kind": "block",
-   "proposed": true,
-   "why": "Dynamic Media image/media/spin set shown in a viewer (main image + thumbnail strip, zoom). No patients or corp block shows a set with thumbnails: Hero Corp is a text-overlay hero carousel and Columns media-pair is a static grid.",
-   "component": "mixedmediagallery"
-  },
-  {
-   "name": "news-list-corp",
-   "kind": "new corp block (blocks/news-list-corp)",
-   "proposed": true,
-   "why": "No existing block lists pages by path/tag with date sorting, filter tabs and paging; cards-corp only hydrates explicitly authored links. Needs the query index to expose the news 'published' date and content-type tags (not indexed today: path, title, description, image, lastModified, tags='').",
-   "component": "newsandannouncements"
-  },
-  {
-   "name": "page-intro",
-   "kind": "variant",
-   "proposed": true,
-   "why": "Same rendering as pagehero (.c-hero-content.border-bottom-gold, title / subhead / content | image), but the text is authored on the component. Shares the pagehero proposal.",
-   "component": "hero"
-  },
-  {
-   "name": "page-intro",
-   "kind": "variant",
-   "proposed": true,
-   "why": "Same title + text | image intro as pagehero (shares the proposal). Differences: the H1 is black Futura 24.5px (h1.h2.component-subheading, not gold) and longer copy. The image is hidden below 600px (hidden-xs), treated as an inconsistency.",
-   "component": "longtexthero"
-  },
-  {
-   "name": "chart-corp",
-   "kind": "block",
-   "proposed": true,
-   "why": "Proportional bars with per-bar colours, a y-axis max and value labels. Statistics (cols-N / count-up) shows big numbers only and loses the comparison. Table shows data without the visual. Rendered with CSS, without the Google Charts loader.",
-   "component": "animatedbarchart"
-  },
-  {
-   "name": "chart-corp variants column, bar (chartType)",
-   "kind": "block-variant",
-   "proposed": true,
-   "why": "9 Column, 1 Bar",
-   "component": "animatedbarchart"
-  },
-  {
-   "name": "local",
-   "kind": "variant of blocks/sticky-nav",
-   "proposed": true,
-   "why": "see localpagenavigation",
-   "component": "localpagenavigationchild"
-  },
-  {
-   "name": "hotspots-corp (only if the fallback is rejected)",
-   "kind": "block",
-   "proposed": true,
-   "why": "Positioned hotspot markers on an image. No existing block places links over an image.",
-   "component": "interactivemedia"
-  },
-  {
-   "name": "/widgets/adobe-sign (widget)",
-   "kind": "widget",
-   "proposed": true,
-   "why": "The source is a plain iframe to the Adobe Sign esignWidget with a min-height. The existing widget block carries wid/height as params.",
-   "component": "adobesignwebform"
-  },
-  {
-   "name": "event-calendar-corp",
-   "kind": "new corp block",
-   "proposed": true,
-   "why": "No block filters or lays out events by date. Would read an events index built from the eventdetail / eventlocationproperties metadata. Cheaper alternative for 3 pages: a Cards Corp teaser list of upcoming events (link rows) without filters or calendar view.",
-   "component": "eventcalendar"
-  },
-  {
-   "name": "chart-corp (pie)",
-   "kind": "block-variant",
-   "proposed": true,
-   "why": "Same new block as animatedbarchart. Only 1 use, so build it only if chart-corp is approved.",
-   "component": "pieChart"
-  },
-  {
-   "name": "sitemap-corp",
-   "kind": "new corp block",
-   "proposed": true,
-   "why": "No block builds a nested page list. Builds H2 per top-level section and nested lists from /us/en/query-index.json paths. Alternative: a static default-content snapshot (nested bullet lists) re-imported at go-live.",
-   "component": "sitemap"
-  },
-  {
-   "name": "/widgets/cvent (widget)",
-   "kind": "widget",
-   "proposed": true,
-   "why": "Third-party Cvent calendar: a container div with data-widget-id / data-calendar-id plus the Cvent loader script. It fits the existing widget block (params → data-*).",
-   "component": "cventcomponent"
-  },
-  {
-   "name": "Google Maps link alone in its paragraph → embedded map",
-   "kind": "link-convention (columns.js + default content)",
-   "proposed": true,
-   "why": "Shared by map (1), contactus (23) and eventdetail (44, sidebar). Mirrors how columns.js already turns a lone YouTube link into a player. Blocks can't nest, and a /widgets/ link inside a Columns cell is not decorated.",
-   "component": "map"
-  },
-  {
-   "name": "/widgets/map (alternative)",
-   "kind": "widget",
-   "proposed": true,
-   "why": "Works only where the map has its own section (not inside Columns).",
-   "component": "map"
+   "openQuestion": "Keyless embed (works on aem.page/live), or keep Stryker's Maps Embed API key (the client must add the EDS hosts to the key's referrer list)? Code change in columns.js (and a small default-content decorator): approve the link convention, or prefer a 'View on Google Maps' link with no embed?",
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "keyless embed approved; if the Stryker Maps key is wanted, the client must add the EDS hosts to its referrer list"
   }
  ],
  "openQuestions": [
   {
    "component": "columncontrol/cols2",
    "confidence": "high",
-   "question": "Branch B (424): content authored in one half with the other half empty is normalised to full-width default content (the template CSS owns any narrow measure, as news-detail already does). Confirm, or keep the half width with an empty second cell."
+   "question": "Branch B (424): content authored in one half with the other half empty is normalised to full-width default content (the template CSS owns any narrow measure, as news-detail already does). Confirm, or keep the half width with an empty second cell.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "largeheadline",
    "confidence": "medium",
-   "question": "Standalone headlines at 2vw or larger: approve one 'large-headline' section style that reuses the Columns large-headline scale, or normalise them to the existing p-1-75 / heading sizes? This is tied to typography-map rule size-2-and-2-5, which is still open."
+   "question": "Standalone headlines at 2vw or larger: approve one 'large-headline' section style that reuses the Columns large-headline scale, or normalise them to the existing p-1-75 / heading sizes? This is tied to typography-map rule size-2-and-2-5, which is still open.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "columncontrol/cols2_2-3_1-3",
    "confidence": "high",
-   "question": "Approve section style 'flex-67-33' (and its mirror for cols2_1-3_2-3), or prefer to restyle the existing 'flex' on corp when its second wrapper is a contact-aside fragment?"
+   "question": "Approve section style 'flex-67-33' (and its mirror for cols2_1-3_2-3), or prefer to restyle the existing 'flex' on corp when its second wrapper is a contact-aside fragment?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "columncontrol/cols3",
    "confidence": "medium",
-   "question": "Branch F uses Cards Corp because the corp cards-corp two-up/three-up were built from these column-control card rows; Columns would render the same content too. Confirm Cards Corp for card-like rows (87 instances over cols2/3/4)."
+   "question": "Branch F uses Cards Corp because the corp cards-corp two-up/three-up were built from these column-control card rows; Columns would render the same content too. Confirm Cards Corp for card-like rows (87 instances over cols2/3/4).",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "localpagenavigation",
    "confidence": "medium",
-   "question": "Sticky Nav (local) variant vs a new 'local-nav-corp' block; and author the nav on each of the ~55 pages (importer) vs once per parent as a shared fragment document (no path rule exists yet for non-XF shared content)."
+   "question": "Sticky Nav (local) variant vs a new 'local-nav-corp' block; and author the nav on each of the ~55 pages (importer) vs once per parent as a shared fragment document (no path rule exists yet for non-XF shared content).",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "pagehero",
    "confidence": "medium",
-   "question": "Approve Columns (columns-50-50, page-intro[, border-bottom]) for the corp page hero, or use a Hero Corp variant (e.g. 'page-hero') instead? A third option is to style the existing library variant through the 'compact' section style, with no new name. That would make the block's look depend on the section, so it is not recommended."
+   "question": "Approve Columns (columns-50-50, page-intro[, border-bottom]) for the corp page hero, or use a Hero Corp variant (e.g. 'page-hero') instead? A third option is to style the existing library variant through the 'compact' section style, with no new name. That would make the block's look depend on the section, so it is not recommended.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "fullbleedpanel",
    "confidence": "high",
-   "question": "Approve the three gradient section styles, or normalise them to bg-dark-gray / bg-gold? For the teal gradient, reuse the patients 'dark' style or add a corp alias 'bg-dark-teal-gradient'?"
+   "question": "Approve the three gradient section styles, or normalise them to bg-dark-gray / bg-gold? For the teal gradient, reuse the patients 'dark' style or add a corp alias 'bg-dark-teal-gradient'?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "filteredcontenttypegrid",
    "confidence": "medium",
-   "question": "Grids with a 'Product type' filter (e.g. trauma 113, foot-and-ankle 88 items) lose the filter. Accept, or plan a filter option for Cards Corp (needs product-type tags per page)?"
+   "question": "Grids with a 'Product type' filter (e.g. trauma 113, foot-and-ankle 88 items) lose the filter. Accept, or plan a filter option for Cards Corp (needs product-type tags per page)?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "contentFragment",
    "confidence": "medium",
-   "question": "The approved decision assumed only 2 fragments show a subset. In fact a subset is the norm: 43 of 55 fragments have values that the live page never shows. Choose: (A, recommended) card = the shown fields, the rest + labels as Metadata rows; for the 2 multi-set fragments the card shows the union (the HQ box beside the map then also shows the 'Global Headquarters' heading and Learn More; the 2nd Latin America box also shows the phones). (B) all fields visible in the card (the live page then gains 39 phone and 22 email blocks). (C) a key/value corp block (e.g. contact-info-corp, proposed) that lists CF path + field list per box, mirroring AEM elementNames exactly. C is a new block and does not use the fragment block. Note also the request cost: about 62 fragment fetches on /us/en/about/contact (lazy, inside accordions)."
+   "question": "The approved decision assumed only 2 fragments show a subset. In fact a subset is the norm: 43 of 55 fragments have values that the live page never shows. Choose: (A, recommended) card = the shown fields, the rest + labels as Metadata rows; for the 2 multi-set fragments the card shows the union (the HQ box beside the map then also shows the 'Global Headquarters' heading and Learn More; the 2nd Latin America box also shows the phones). (B) all fields visible in the card (the live page then gains 39 phone and 22 email blocks). (C) a key/value corp block (e.g. contact-info-corp, proposed) that lists CF path + field list per box, mirroring AEM elementNames exactly. C is a new block and does not use the fragment block. Note also the request cost: about 62 fragment fetches on /us/en/about/contact (lazy, inside accordions).",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "divisioncontactus",
    "confidence": "medium",
-   "question": "Which Marketo form ID(s) replace the AEM email form per business unit (10 formMailTo routes, 47 pages)? The client must create or supply them. Until then the importer can emit the heading + description and leave the form out, listing the pages."
+   "question": "Which Marketo form ID(s) replace the AEM email form per business unit (10 formMailTo routes, 47 pages)? The client must create or supply them. Until then the importer can emit the heading + description and leave the form out, listing the pages.",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "Marketo form IDs per business unit (10 formMailTo routes, 47 pages) — client"
   },
   {
    "component": "eventdetail",
    "confidence": "medium",
-   "question": "Should the 'Meeting time / Location / Country' lines be authored text (as proposed) or rendered by an event-detail template from the metadata (one source of truth, new template)? Also: corp CSS sizes every underlined heading at 21 / 24.5px, so underlined H5 'Details' / 'Registration' would render larger than the source's 14px Futura. This needs a template rule or a plain H5 + divider."
+   "question": "Should the 'Meeting time / Location / Country' lines be authored text (as proposed) or rendered by an event-detail template from the metadata (one source of truth, new template)? Also: corp CSS sizes every underlined heading at 21 / 24.5px, so underlined H5 'Details' / 'Registration' would render larger than the source's 14px Futura. This needs a template rule or a plain H5 + divider.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "fullWidthImageHero",
    "confidence": "medium",
-   "question": "Add the text-above and bottom-<n> options to Hero Corp image-slide, or accept the overlay / text-below on phones for these 41 heroes?"
+   "question": "Add the text-above and bottom-<n> options to Hero Corp image-slide, or accept the overlay / text-below on phones for these 41 heroes?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "remotecomponent",
    "confidence": "medium",
-   "question": "The microapps only allow framing from *.stryker.com, so they will not render on *.aem.page / *.aem.live previews (only once served from www.stryker.com) unless the client adds the EDS hosts to frame-ancestors. Also confirm whether to keep the gamma4 stage URL."
+   "question": "The microapps only allow framing from *.stryker.com, so they will not render on *.aem.page / *.aem.live previews (only once served from www.stryker.com) unless the client adds the EDS hosts to frame-ancestors. Also confirm whether to keep the gamma4 stage URL.",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "client must allow the EDS hosts in the microapps frame-ancestors (they only allow *.stryker.com)"
   },
   {
    "component": "contactus",
    "confidence": "medium",
-   "question": "Map: a block (or widget) inside a Columns cell is not decorated by decorateBlocks, so columns.js would need to render the map itself (as it does for YouTube links). Alternative: a 'View on Google Maps' link instead of the iframe."
+   "question": "Map: a block (or widget) inside a Columns cell is not decorated by decorateBlocks, so columns.js would need to render the map itself (as it does for YouTube links). Alternative: a 'View on Google Maps' link instead of the iframe.",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "map as above"
   },
   {
    "component": "latestnews",
    "confidence": "medium",
-   "question": "The source picks the newest articles by tag; the import freezes today's 4. Accept a static list, or add a 'latest by tag' mode later (query index would need published date + tags)? CTA reads 'Learn more' instead of the source 'Read More'."
+   "question": "The source picks the newest articles by tag; the import freezes today's 4. Accept a static list, or add a 'latest by tag' mode later (query index would need published date + tags)? CTA reads 'Learn more' instead of the source 'Read More'.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "mixedmediagallery",
    "confidence": "low",
-   "question": "Build gallery-corp (new block), or accept a no-code fallback: Columns (media-pair) image grid of the set members, or only the first image? How should the single spin set (/us/en/portfolios/…/rise) be handled: frames as a gallery, or the DM SpinViewer embed?"
+   "question": "Build gallery-corp (new block), or accept a no-code fallback: Columns (media-pair) image grid of the set members, or only the first image? How should the single spin set (/us/en/portfolios/…/rise) be handled: frames as a gallery, or the DM SpinViewer embed?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "newsandannouncements",
    "confidence": "medium",
-   "question": "Approve a new news-list-corp block (and adding published/tags to the corp query index), or link the landing pages to a simpler Cards Corp teaser list of selected articles?"
+   "question": "Approve a new news-list-corp block (and adding published/tags to the corp query index), or link the landing pages to a simpler Cards Corp teaser list of selected articles?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "hero",
    "confidence": "medium",
-   "question": "Follows the pagehero decision (Columns page-intro vs a Hero Corp variant)."
+   "question": "Follows the pagehero decision (Columns page-intro vs a Hero Corp variant).",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "hero-large-carousel/slide",
    "confidence": "low",
-   "question": "Depends on the hero-large-carousel decision: stack the slides as columns bands (rotation lost) or build a carousel block. Corp columns render a plain h2 in Futura bold, but the source title is Egyptienne Light."
+   "question": "Depends on the hero-large-carousel decision: stack the slides as columns bands (rotation lost) or build a carousel block. Corp columns render a plain h2 in Futura bold, but the source title is Egyptienne Light.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "longtexthero",
    "confidence": "medium",
-   "question": "Follows the pagehero decision. A plain black H1 (not gold) is how the convention tells it apart from the pagehero title."
+   "question": "Follows the pagehero decision. A plain black H1 (not gold) is how the convention tells it apart from the pagehero title.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "engagementcta",
    "confidence": "low",
-   "question": "Keep the social icons in the buttons? That needs x/twitter and message icons plus a small corp rule, since 'Follow us' alone is ambiguous. Or use text-only buttons? Should the side-by-side row be kept (no existing style does it for default content)?"
+   "question": "Keep the social icons in the buttons? That needs x/twitter and message icons plus a small corp rule, since 'Follow us' alone is ambiguous. Or use text-only buttons? Should the side-by-side row be kept (no existing style does it for default content)?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "animatedbarchart",
    "confidence": "medium",
-   "question": "Approve a new chart block (10 + 1 uses), or use a fallback with no new code: Table (label | value) or Statistics (cols-N) with the same colours?"
+   "question": "Approve a new chart block (10 + 1 uses), or use a fallback with no new code: Table (label | value) or Statistics (cols-N) with the same colours?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "interactivemedia",
    "confidence": "low",
-   "question": "On the 3 ASC care-setting pages the hotspots are the main navigation of the page. Is image + link list acceptable, or should hotspots-corp be built?"
+   "question": "On the 3 ASC care-setting pages the hotspots are the main navigation of the page. Is image + link list acceptable, or should hotspots-corp be built?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "featuredcontentgrid",
    "confidence": "low",
-   "question": "Only 8 instances and no exact match: Columns (related-links) reproduces title + text + chevron link; the alternative is Cards Corp link-only rows (adds an image and 'Learn more', which the source does not show). Confirm."
+   "question": "Only 8 instances and no exact match: Columns (related-links) reproduces title + text + chevron link; the alternative is Cards Corp link-only rows (adds an image and 'Learn more', which the source does not show). Confirm.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "hero-large-carousel",
    "confidence": "low",
-   "question": "Stack the slides as banded Columns rows, build a new carousel block (it would also serve multi-slide carouselslidegroups), or leave the 2018/2019 event pages out of scope?"
+   "question": "Stack the slides as banded Columns rows, build a new carousel block (it would also serve multi-slide carouselslidegroups), or leave the 2018/2019 event pages out of scope?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "eventcalendar",
    "confidence": "low",
-   "question": "Build event-calendar-corp, use a simple Cards Corp list of events, or skip the 3 calendar pages (many events may be past)?"
+   "question": "Build event-calendar-corp, use a simple Cards Corp list of events, or skip the 3 calendar pages (many events may be past)?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "corporatecontactus",
    "confidence": "medium",
-   "question": "Marketo form ID for recall questions (client)."
+   "question": "Marketo form ID for recall questions (client).",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "Marketo form ID for recall questions — client"
   },
   {
    "component": "pieChart",
    "confidence": "low",
-   "question": "For a single use: a Table (label | value) or an author-supplied image may be enough if chart-corp is not approved."
+   "question": "For a single use: a Table (label | value) or an author-supplied image may be enough if chart-corp is not approved.",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "sitemap",
    "confidence": "low",
-   "question": "Generated sitemap-corp block vs a static default-content snapshot taken at go-live?"
+   "question": "Generated sitemap-corp block vs a static default-content snapshot taken at go-live?",
+   "resolution": "recommendation approved 2026-10-27"
   },
   {
    "component": "map",
    "confidence": "medium",
-   "question": "Keyless embed (works on aem.page/live), or keep Stryker's Maps Embed API key (the client must add the EDS hosts to the key's referrer list)? Code change in columns.js (and a small default-content decorator): approve the link convention, or prefer a 'View on Google Maps' link with no embed?"
+   "question": "Keyless embed (works on aem.page/live), or keep Stryker's Maps Embed API key (the client must add the EDS hosts to the key's referrer list)? Code change in columns.js (and a small default-content decorator): approve the link convention, or prefer a 'View on Google Maps' link with no embed?",
+   "resolution": "recommendation approved 2026-10-27",
+   "clientInput": "keyless embed approved; if the Stryker Maps key is wanted, the client must add the EDS hosts to its referrer list"
   }
  ],
- "correction": "cols2_1-3_2-3 → existing corp columns-33-67 and cols2_2-3_1-3 → existing corp columns-67-33 (blocks/columns/columns-corp.css), replacing the earlier columns-30-70 / columns-70-30 guesses."
+ "correction": "cols2_1-3_2-3 → existing corp columns-33-67 and cols2_2-3_1-3 → existing corp columns-67-33 (blocks/columns/columns-corp.css), replacing the earlier columns-30-70 / columns-70-30 guesses.",
+ "newNamesApproved": [
+  {
+   "name": "large-headline",
+   "kind": "section-style",
+   "proposed": true,
+   "why": "Standalone Large Headlines (outside columns/heroes; about 40% at 3vw or larger) use the fluid vw scale (fontsize-<n>vw = 2n vw on phones, n vw from 840px, capped at n x 14px from 1439px, so 28-70px). The corp copy styles stop at p-1-75 (24.5px). This section style would apply the type scale that the existing Columns (large-headline) variant already defines (h1 = headline, Bold h1 = stat number, Bold+Italic = gold) to default content. One name instead of one style per size. It covers the static large numbers (e.g. teal '93%' over serif text), as briefed: static large text = plain text plus a size section style.",
+   "component": "largeheadline",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "flex-67-33",
+   "kind": "section-style (modifier of the existing 'flex' style, rules in styles/styles-corp.css)",
+   "proposed": true,
+   "why": "442 instances put a block (Marketo form) next to an aside fragment in a 2/3 + 1/3 split (source col-sm-8 / col-sm-4 from 841px -> EDS 600px). Blocks cannot nest in Columns cells, and 'flex' only gives equal halves from 900px.",
+   "component": "columncontrol/cols2_2-3_1-3",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "flex-33-67",
+   "kind": "section-style (mirror of flex-67-33)",
+   "proposed": true,
+   "why": "only 6 instances (form in the wide column of /us/en/acute-care/contact, /us/en/emergency-care/contact, ...); drop if the user prefers 'flex' equal halves for these",
+   "component": "columncontrol/cols2_1-3_2-3",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "local",
+   "kind": "variant of blocks/sticky-nav",
+   "proposed": true,
+   "why": "No block lists sibling/child pages. sticky-nav is the existing horizontal link bar (row = label + link) but is built for #anchors with scroll-spy; a 'local' variant would take page links, show the parent as the bar title and mark the current page active (JS change). Columns (related-links) is a vertical link list per cell and does not match the source bar. Alternative if the user prefers: new block 'local-nav-corp'.",
+   "component": "localpagenavigation",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "page-intro",
+   "kind": "variant",
+   "proposed": true,
+   "why": "The content contract is the existing library entry 'Columns 50-50 – Page intro, compact section' (H1 gold, H2 serif subtitle, intro paragraph | image). The ENT patients import already maps .c-page-hero to columns-50-50 (tools/importer/parsers/ent-hero.js). On corp, columns-corp.css styles every h1 in a cell as the Large Headline (Egyptienne 56px; a fully Bold+Italic h1 gets .columns-gold at headline size) and plain h2 as Futura bold. The source page hero is a 28px Futura gold title over a 24.5px Egyptienne Light subhead. So corp needs a class to tell the two apart. The patients rendering is unchanged.",
+   "component": "pagehero",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "bg-dark-purple-gradient",
+   "kind": "section-style",
+   "proposed": true,
+   "why": "104 panels (backgroundColor rgb(89,75,97)) render .bg-dark-purple-gradient = linear-gradient(90deg,#545857,#594b61), white text. No existing style. The name follows the corp bg-* styles and the source class.",
+   "component": "fullbleedpanel",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "bg-dark-blue-gradient",
+   "kind": "section-style",
+   "proposed": true,
+   "why": "65 panels (rgb(66,83,97)) render .bg-dark-blue-gradient = linear-gradient(90deg,#545857,#425361), white text.",
+   "component": "fullbleedpanel",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "bg-golden-gradient",
+   "kind": "section-style",
+   "proposed": true,
+   "why": "15 panels (rgba(182,114,25,1)) render .bg-golden-gradient = linear-gradient(90deg,#af6d04,#ffb500 20%).",
+   "component": "fullbleedpanel",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "cards (contact)",
+   "kind": "block-variant",
+   "proposed": true,
+   "why": "Text-only location box in a 1 / 2 (600px) / 4 (900px) grid. The existing Cards variants expect an image cell (body gets a top margin, default grid 3-up, CTA pushed to the bottom). Corp CSS goes in blocks/cards/cards-corp.css + 'cards' in CORP_BLOCK_STYLES.",
+   "component": "contentFragment",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "Metadata rows keyed by AEM field name (PhoneNumbers, Emails, addressBlock1, RelatedLinks, BusinessHomePage, locationName, ShortDesc, AddressLabel, PhoneNumberLabel, EmailLabel, BusinessHomePageLabel, RelatedLinksLabel)",
+   "kind": "fragment-metadata",
+   "proposed": true,
+   "why": "Keeps every CF field in the document (approved 'holds ALL fields') without rendering the fields and labels that the live site never shows.",
+   "component": "contentFragment",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "event-start / event-end (ISO date-time) + event-timezone",
+   "kind": "page-metadata",
+   "proposed": true,
+   "why": "eventStartDateTime / eventEndDateTime / eventTimeZone. They drive calendar sorting and filters (eventcalendar via query-index).",
+   "component": "eventdetail",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "event-location / event-city / event-state / event-country",
+   "kind": "page-metadata",
+   "proposed": true,
+   "why": "eventLocation, eventCity, hiddenState|eventState, eventCountry for calendar filters and map.",
+   "component": "eventdetail",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "event-type / event-business-unit / event-audience / event-specialty",
+   "kind": "page-metadata",
+   "proposed": true,
+   "why": "eventType, eventBU, eventAudience, eventSpecialty tag IDs (calendar facets).",
+   "component": "eventdetail",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "event-registration (URL) / event-contact-name / event-contact-email",
+   "kind": "page-metadata",
+   "proposed": true,
+   "why": "eventRegistrationLink, eventContactName/Email (28 of 44): kept as data, not rendered on the detail page.",
+   "component": "eventdetail",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "map embed (see 'map' row)",
+   "kind": "embed",
+   "proposed": true,
+   "why": "sidebar Google map of the event address",
+   "component": "eventdetail",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "text-above",
+   "kind": "variant",
+   "proposed": true,
+   "why": "On the source, the text box of 'col-sm-N pull-left' heroes (~22 of 40) sits before the image and is static below 840px, so the copy shows ABOVE the image on phones. image-slide only offers an overlay or text-below.",
+   "component": "fullWidthImageHero",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "bottom-<n>",
+   "kind": "variant",
+   "proposed": true,
+   "why": "16 IVS heroes use layoutOptions '50_bottom': the text box is anchored to the image bottom (.bottom-text {bottom:0}) over the left half. image-slide positions text only from the top (top-/left-/right-).",
+   "component": "fullWidthImageHero",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "/widgets/remote-component (widget)",
+   "kind": "widget",
+   "proposed": true,
+   "why": "Existing widget block (auto-built from /widgets/ links, query params → data-*). The widget renders the microapp with zoid like the source (the child autoResizes height via zoid). No widget files exist in the repo yet.",
+   "component": "remotecomponent",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "map embed (see 'map' row)",
+   "kind": "embed",
+   "proposed": true,
+   "why": "right column is a Google map of group1Address",
+   "component": "contactus",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "gallery-corp",
+   "kind": "block",
+   "proposed": true,
+   "why": "Dynamic Media image/media/spin set shown in a viewer (main image + thumbnail strip, zoom). No patients or corp block shows a set with thumbnails: Hero Corp is a text-overlay hero carousel and Columns media-pair is a static grid.",
+   "component": "mixedmediagallery",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "news-list-corp",
+   "kind": "new corp block (blocks/news-list-corp)",
+   "proposed": true,
+   "why": "No existing block lists pages by path/tag with date sorting, filter tabs and paging; cards-corp only hydrates explicitly authored links. Needs the query index to expose the news 'published' date and content-type tags (not indexed today: path, title, description, image, lastModified, tags='').",
+   "component": "newsandannouncements",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "page-intro",
+   "kind": "variant",
+   "proposed": true,
+   "why": "Same rendering as pagehero (.c-hero-content.border-bottom-gold, title / subhead / content | image), but the text is authored on the component. Shares the pagehero proposal.",
+   "component": "hero",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "page-intro",
+   "kind": "variant",
+   "proposed": true,
+   "why": "Same title + text | image intro as pagehero (shares the proposal). Differences: the H1 is black Futura 24.5px (h1.h2.component-subheading, not gold) and longer copy. The image is hidden below 600px (hidden-xs), treated as an inconsistency.",
+   "component": "longtexthero",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "chart-corp",
+   "kind": "block",
+   "proposed": true,
+   "why": "Proportional bars with per-bar colours, a y-axis max and value labels. Statistics (cols-N / count-up) shows big numbers only and loses the comparison. Table shows data without the visual. Rendered with CSS, without the Google Charts loader.",
+   "component": "animatedbarchart",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "chart-corp variants column, bar (chartType)",
+   "kind": "block-variant",
+   "proposed": true,
+   "why": "9 Column, 1 Bar",
+   "component": "animatedbarchart",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "local",
+   "kind": "variant of blocks/sticky-nav",
+   "proposed": true,
+   "why": "see localpagenavigation",
+   "component": "localpagenavigationchild",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "hotspots-corp (only if the fallback is rejected)",
+   "kind": "block",
+   "proposed": true,
+   "why": "Positioned hotspot markers on an image. No existing block places links over an image.",
+   "component": "interactivemedia",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "/widgets/adobe-sign (widget)",
+   "kind": "widget",
+   "proposed": true,
+   "why": "The source is a plain iframe to the Adobe Sign esignWidget with a min-height. The existing widget block carries wid/height as params.",
+   "component": "adobesignwebform",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "event-calendar-corp",
+   "kind": "new corp block",
+   "proposed": true,
+   "why": "No block filters or lays out events by date. Would read an events index built from the eventdetail / eventlocationproperties metadata. Cheaper alternative for 3 pages: a Cards Corp teaser list of upcoming events (link rows) without filters or calendar view.",
+   "component": "eventcalendar",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "chart-corp (pie)",
+   "kind": "block-variant",
+   "proposed": true,
+   "why": "Same new block as animatedbarchart. Only 1 use, so build it only if chart-corp is approved.",
+   "component": "pieChart",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "sitemap-corp",
+   "kind": "new corp block",
+   "proposed": true,
+   "why": "No block builds a nested page list. Builds H2 per top-level section and nested lists from /us/en/query-index.json paths. Alternative: a static default-content snapshot (nested bullet lists) re-imported at go-live.",
+   "component": "sitemap",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "/widgets/cvent (widget)",
+   "kind": "widget",
+   "proposed": true,
+   "why": "Third-party Cvent calendar: a container div with data-widget-id / data-calendar-id plus the Cvent loader script. It fits the existing widget block (params → data-*).",
+   "component": "cventcomponent",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "Google Maps link alone in its paragraph → embedded map",
+   "kind": "link-convention (columns.js + default content)",
+   "proposed": true,
+   "why": "Shared by map (1), contactus (23) and eventdetail (44, sidebar). Mirrors how columns.js already turns a lone YouTube link into a player. Blocks can't nest, and a /widgets/ link inside a Columns cell is not decorated.",
+   "component": "map",
+   "approved": "2026-10-27"
+  },
+  {
+   "name": "/widgets/map (alternative)",
+   "kind": "widget",
+   "proposed": true,
+   "why": "Works only where the map has its own section (not inside Columns).",
+   "component": "map",
+   "approved": "2026-10-27"
+  }
+ ]
 }
