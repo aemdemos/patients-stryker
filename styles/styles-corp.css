@@ -101,6 +101,12 @@
   --corp-gallery-control-size: 28px; /* zoom / full-screen buttons, 20px in from the stage corner */
   --corp-color-gallery-active: #666; /* selected swatch border; arrow / full-screen icon grey */
   --corp-gallery-max-width: 940px; /* viewer width in its source col-sm-8 at 1440px */
+
+  /* sitemap-corp line boxes (source /us/en/site-map .sitemap: line-height 2 / 2 / 1.5 / 1.375) */
+  --corp-sitemap-line-height-section: 48px; /* h2 a, 24px Egyptienne */
+  --corp-sitemap-line-height-l1: 40px; /* h3 a, 20px Futura */
+  --corp-sitemap-line-height-l2: 24px; /* h4 a, 16px Futura */
+  --corp-sitemap-line-height-l3: 22px; /* h5 a, 16px Humanist */
 }
 
 @media (width >= 900px) {
