@@ -245,10 +245,13 @@ body:where(.corp):has(main .hero-carousel) header {
   text-align: center;
 }
 
-/* section style `disclaimer`: small print */
-:where(body.corp) main > .section.disclaimer > div {
+/* section style `disclaimer`: small print (also an accordion panel's references); a long
+   web address written out in a reference wraps instead of widening the page on phones */
+:where(body.corp) main > .section.disclaimer > div,
+:where(body.corp) .accordion-item-body > .section.disclaimer > div {
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
+  overflow-wrap: break-word;
 }
 
 :where(body.corp) main > .section.disclaimer p {
@@ -259,6 +262,10 @@ body:where(.corp):has(main .hero-carousel) header {
 :where(body.corp) main > .section.disclaimer p:has(code) {
   background-color: transparent;
   color: inherit;
+}
+
+:where(body.corp) .accordion-item-body > .section.disclaimer p {
+  line-height: var(--paragraph-line-height);
 }
 
 /* references: an ordered list (scripts.js decorateFootnotes links the citation
@@ -718,5 +725,17 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main > .section.flex > div {
     padding-inline: var(--container-gutter);
+  }
+}
+
+/* h2-0-8 in an accordion panel (an `accordion-continue` section): the same compact h2 */
+:where(body.corp) .accordion-item-body > .section.h2-0-8 > .default-content-wrapper h2 {
+  font-size: var(--heading-font-size-compact);
+  line-height: var(--corp-heading-line-height-s);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) .accordion-item-body > .section.h2-0-8 > .default-content-wrapper h2 {
+    font-size: var(--heading-font-size-compact-m);
   }
 }
