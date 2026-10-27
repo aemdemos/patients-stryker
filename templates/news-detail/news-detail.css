@@ -48,8 +48,10 @@ body.news-detail main > .section > .default-content-wrapper picture img {
 }
 
 /* article headings: light serif, no rule below (corp default content draws one); the
-   heading over the cards keeps the corp Futura heading with its rule */
-body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2 {
+   heading over the cards keeps the corp Futura heading with its rule. The same in a
+   "Read the full article" accordion panel (an inline section in the panel body) */
+body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2,
+body.news-detail main .accordion-item-body > .section > .default-content-wrapper h2 {
   padding-bottom: 0;
   border-bottom: 0;
   font-family: var(--heading-font-family);
@@ -59,11 +61,15 @@ body.news-detail main > .section:not(.cards-corp-container) > .default-content-w
 /* bold inside running text keeps the body font; a bold line on its own stays Futura
    (news-detail.js marks it .standalone), and so does bold + italic (the rule below) */
 body.news-detail main > .section > .default-content-wrapper :is(p, li)
+  :is(strong:not(.standalone, em strong, :has(em)), b:not(i b, :has(i))),
+body.news-detail main .accordion-item-body > .section > .default-content-wrapper :is(p, li)
   :is(strong:not(.standalone, em strong, :has(em)), b:not(i b, :has(i))) {
   font-family: var(--body-font-family);
 }
 
 body.news-detail main > .section > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b),
+body.news-detail main .accordion-item-body > .section > .default-content-wrapper :is(p, li)
   :is(strong em, em strong, b i, i b) {
   font-family: var(--display-font-family);
   font-style: normal;
@@ -73,6 +79,8 @@ body.news-detail main > .section > .default-content-wrapper :is(p, li)
 /* body colour instead of the global gold label — except inside a bracket colour tag
    ([[color-gold]***text***], scripts/span-tags.js) or a link, whose color must win */
 body.news-detail main > .section > .default-content-wrapper :is(p, li)
+  :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *),
+body.news-detail main .accordion-item-body > .section > .default-content-wrapper :is(p, li)
   :is(strong em, em strong, b i, i b):not(span[class*="color-"] *, a *) {
   color: var(--text-color);
 }

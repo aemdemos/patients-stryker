@@ -45,10 +45,25 @@
  */
 
 import { videoLink } from '../parsers/video.js';
+import cardsCorpTeaserParser from '../parsers/cards-corp-teaser.js';
+import xfFragmentPath from '../xf-fragment-path.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
+// Shared business-unit "Resources" Experience Fragments, by the id of their section title
+// (the public page HTML does not name the XF). Their EDS document path comes from
+// xf-fragment-map.js (#443).
+const SHARED_RESOURCES_XF = {
+  'emergency-care': '/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master',
+};
+
+// "Read the full article / story" accordions: the Block Library's article panel
+const FULL_ARTICLE = /^read (the )?full (article|story)$/i;
+
 const COMPONENTS = [
+  '.c-accordion',
+  '.c-tabs',
+  '.xf-shared',
   '.c-autocarousel',
   '.c-standalone-image',
   '.c-rich-text-editor',
@@ -61,11 +76,15 @@ const COMPONENTS = [
   '.sectionseparator',
 ].join(', ');
 
-const BLOCK_TAGS = new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
+// spacer headings on the source hold only these characters (⠀ ㅤ, the left-to-right mark)
+// besides white space: they count as blank and are dropped (text() trims them)
+const INVISIBLE = /^[\s\u200e\u200f\u2800\u3164]+|[\s\u200e\u200f\u2800\u3164]+$/g;
+
+const BLOCK_TAGS =new Set(['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'UL', 'OL', 'TABLE', 'BLOCKQUOTE']);
 const KEEP_ATTRS = { A: ['href'], IMG: ['src', 'alt'], TD: ['colspan', 'rowspan'], TH: ['colspan', 'rowspan'] };
 
 function text(el) {
-  return (el.textContent || '').replace(/ /g, ' ').replace(/\s+/g, ' ').trim();
+  return (el.textContent || '').replace(/ /g, ' ').replace(/\s+/g, ' ').replace(INVISIBLE, '');
 }
 
 function rename(el, tagName) {
@@ -612,6 +631,21 @@ function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = [], asid
 }
 
 /**
+ * A card grid in a tab (source col-sm-4, 3 per row) as `Cards Corp (teaser, three-up)`:
+ * the cards-corp-teaser parser's table, with the variant added to its name.
+ */
+function threeUpCards(component, doc) {
+  const box = doc.createElement('div');
+  box.append(component);
+  cardsCorpTeaserParser(component, { document: doc });
+  const table = box.querySelector('table');
+  const name = table && table.querySelector('tr > th, tr > td');
+  if (!name) return null;
+  name.textContent = 'Cards Corp (teaser, three-up)';
+  return table;
+}
+
+/**
  * References authored as numbered paragraphs ("1: Author…", "2: …") become an ordered
  * list, so the article's citation superscripts link to them: scripts.js
  * decorateFootnotes links <sup>N</sup> to the Nth item of the last <ol> on the page.
@@ -650,7 +684,7 @@ export default function transform(hookName, element, payload) {
   const doc = element.ownerDocument;
   const main = doc.querySelector('[role="main"]') || element;
 
-  const sections = [];
+  let sections = [];
   let current = null;
   let separatorNext = false;
   const startSection = (kind, sectionStyle) => {
@@ -680,20 +714,132 @@ export default function transform(hookName, element, payload) {
     title.nodes.push(h5);
   }
 
-  // 2.-3. lead media and article components, in source order (outermost only; a
-  // slide's own image and headline belong to the carousel)
-  const components = [...main.querySelectorAll(COMPONENTS)].filter((el) => {
-    const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
-    return !parent && !el.closest('header, footer, .modal');
+  // a shared business-unit "Resources" fragment → a marker for its Fragment block
+  main.querySelectorAll('.experienceFragment').forEach((xf) => {
+    const heading = xf.querySelector('.c-section-title[data-title="Resources"]');
+    const path = heading && SHARED_RESOURCES_XF[heading.id] && xfFragmentPath(SHARED_RESOURCES_XF[heading.id]);
+    if (!path) return;
+    const marker = doc.createElement('div');
+    marker.className = 'xf-shared';
+    marker.setAttribute('data-path', path);
+    xf.replaceWith(marker);
   });
+
+  // 2.-3. lead media and article components, in source order (outermost only; a
+  // slide's own image and headline belong to the carousel, a panel's content to its
+  // accordion or tabs)
+  const outermost = (root) => [...root.querySelectorAll(COMPONENTS)].filter((el) => {
+    const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
+    return (!parent || !root.contains(parent)) && !el.closest('header, footer, .modal');
+  });
+  const components = outermost(main);
 
   const consumed = new Set();
   // a lead image placed directly below the date (not in a column layout) starts 15px
   // below it on the source: no spacer then
   let leadBelowDate = false;
-  components.forEach((component) => {
+  let handle;
+  // the content of an accordion panel: its components, handled like the article's, as
+  // sections (style + nodes)
+  const panelParts = (body) => {
+    const saved = [sections, current, separatorNext];
+    sections = [];
+    current = null;
+    outermost(body).forEach(handle);
+    const parts = sections.filter((section) => section.nodes.length);
+    [sections, current, separatorNext] = saved;
+    return parts;
+  };
+  const nodesOf = (parts) => parts.flatMap((part) => part.nodes);
+
+  handle = (component) => {
     if (consumed.has(component)) return;
     const isFirst = current === title;
+    if (component.matches('.c-accordion')) {
+      const panels = [...component.querySelectorAll('.panel-group > .panel')]
+        .map((panel) => ({
+          label: text(panel.querySelector('.panel-title') || doc.createElement('p')),
+          body: panel.querySelector('.panel-body'),
+        }))
+        .filter((panel) => panel.label && panel.body);
+      if (!panels.length) return;
+      const items = panels.map(({ label, body }) => ({ label, parts: panelParts(body) }));
+      const source = component.querySelector('.component-subheading');
+      const heading = source && text(source) ? doc.createElement(source.tagName.toLowerCase()) : null;
+      if (heading) heading.textContent = text(source);
+      const textOnly = items.every(({ parts }) => nodesOf(parts)
+        .every((node) => BLOCK_TAGS.has(node.tagName) && !node.querySelector('img')));
+      if (textOnly && !items.some(({ label }) => FULL_ARTICLE.test(label))) {
+        // e.g. FAQs: `Accordion`, one row per item (label | text), its title above it; the
+        // section gets the answers' copy style when they share one (e.g. p-1-25)
+        const styles = [...new Set(items.flatMap(({ parts }) => parts.map((part) => part.style || '')))];
+        const section = startSection('accordion', styles.length === 1 && styles[0] ? styles[0] : undefined);
+        if (heading) section.nodes.push(heading);
+        section.nodes.push(WebImporter.Blocks.createBlock(doc, {
+          name: 'Accordion',
+          cells: items.map(({ label, parts }) => {
+            const p = doc.createElement('p');
+            p.textContent = label;
+            return [p, nodesOf(parts)];
+          }),
+        }));
+      } else {
+        // "Read the full article" (or panels holding images or blocks): an
+        // `accordion-panel` section per item, the label as Heading 4, then the rest of
+        // the panel as `accordion-continue` sections with their own copy styles
+        // (scripts/corp.js builds the accordion with-nested-blocks from them)
+        if (heading) startSection('body').nodes.push(heading);
+        items.forEach(({ label, parts }) => {
+          const h4 = doc.createElement('h4');
+          h4.textContent = label;
+          // plain copy stays in the label's section; styled copy can't (its style would
+          // apply to the whole accordion)
+          const [first] = parts;
+          const own = first && !first.style ? first.nodes : [];
+          startSection('accordion-panel', 'accordion-panel').nodes.push(h4, ...own);
+          (own.length ? parts.slice(1) : parts).forEach((part) => {
+            const style = ['accordion-continue', part.style].filter(Boolean).join(', ');
+            startSection('accordion-continue', style).nodes.push(...part.nodes);
+          });
+        });
+      }
+      current = null;
+      return;
+    }
+    if (component.matches('.c-tabs')) {
+      // tabs: a `tabbed` section, each tab a Heading 2 (the tab label) followed by its
+      // panel; card grids become `Cards Corp (teaser, three-up)` (source col-sm-4)
+      const labels = [...component.querySelectorAll('.tabs-nav ul.tab > li a')].map((a) => text(a));
+      const panes = [...component.querySelectorAll('.tabs-content > .tab-content')];
+      const tabs = panes.map((pane, i) => {
+        const nodes = outermost(pane).flatMap((child) => {
+          if (child.matches('.c-customizeable')) {
+            const table = threeUpCards(child, doc);
+            return table ? [table] : [];
+          }
+          return child.matches('.c-rich-text-editor') ? richTextNodes(child, doc).nodes : [];
+        });
+        return { label: labels[i], nodes };
+      }).filter(({ label, nodes }) => label && nodes.length);
+      if (!tabs.length) return;
+      const section = startSection('tabs', 'tabbed');
+      tabs.forEach(({ label, nodes }) => {
+        const h2 = doc.createElement('h2');
+        h2.textContent = label;
+        section.nodes.push(h2, ...nodes);
+      });
+      current = null;
+      return;
+    }
+    if (component.matches('.xf-shared')) {
+      // a shared fragment: the Fragment block, linking its document (#443)
+      const a = doc.createElement('a');
+      a.setAttribute('href', component.getAttribute('data-path'));
+      a.textContent = component.getAttribute('data-path');
+      startSection('fragment').nodes.push(WebImporter.Blocks.createBlock(doc, { name: 'Fragment', cells: [[a]] }));
+      current = null;
+      return;
+    }
     if (component.matches('.c-autocarousel')) {
       if (!component.querySelector('img')) return;
       startSection('hero').nodes.push(component);
@@ -800,6 +946,18 @@ export default function transform(hookName, element, payload) {
         return;
       }
     }
+    if (component.matches('.c-largeheadline') && component.querySelector('h1')
+      && !title.nodes.some((node) => node.tagName === 'H1')
+      && !sections.some((section) => section.kind === 'headline')) {
+      // the article title set as a Large Headline (no page title above it): its lines as
+      // one Heading 1 in the title section, above the date, so the page has its h1
+      const lines = headlineNodes(component, doc);
+      if (!lines.length) return;
+      const heading = doc.createElement('h1');
+      heading.textContent = lines.map((line) => text(line)).join(' ');
+      title.nodes.unshift(heading);
+      return;
+    }
     if (component.matches('.c-curatedcta')) {
       const nodes = buttonNodes(component, doc);
       if (!nodes.length) return;
@@ -844,7 +1002,8 @@ export default function transform(hookName, element, payload) {
       }
       current.nodes.push(node);
     });
-  });
+  };
+  components.forEach(handle);
 
   // 4. disclaimer: references (when the article has them) and the document code, in
   // source order. The page's own "Last Updated" wrapper (#publishedDate) is not content.
