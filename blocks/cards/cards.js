@@ -73,9 +73,12 @@ export default function decorate(block) {
 
   block.replaceChildren(ul);
 
+  // contact cards (corp directory boxes) keep their links as authored: mail, phone and the
+  // country site links open in the same tab, as on the source
+  const keepLinks = block.classList.contains('contact');
   ul.querySelectorAll('li').forEach((li) => {
     const link = li.querySelector('a');
-    if (link) {
+    if (link && !keepLinks) {
       const target = isLinked ? '_self' : '_blank';
       // Only the `linked` variant makes the whole card clickable (it links to a
       // page). Other variants keep their in-card links (image / "Learn more") as

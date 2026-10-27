@@ -1,9 +1,10 @@
+/* global WebImporter */
 /*
  * www.stryker.com components → EDS default content, shared by every corp importer
  * (decision table: tools/importer/decisions/component-map.json).
  */
-import { text } from './corp-richtext.js';
-import { pageXfRefs, xfInfo } from './xf-fragment-path.js';
+import { text, cleanRichText } from './corp-richtext.js';
+import { pageXfRefs, xfInfo, cfToFragmentPath } from './xf-fragment-path.js';
 
 /**
  * Standalone image (stryker/components/content/standaloneimage, .c-standalone-image) →
@@ -133,4 +134,172 @@ export function markXfSlides(root, source) {
     }
   });
   return unmatched;
+}
+
+/**
+ * A www.stryker.com link in authored content → its EDS form: this site's pages
+ * (/us/en/…[.html], also as /content/stryker/us/en/… or https://www.stryker.com/us/en/…)
+ * become EDS paths (…/index → …/); other www.stryker.com paths (other countries'
+ * sites, DAM assets) become absolute www.stryker.com URLs, as they are not on this site.
+ * mailto:, tel:, #anchors and other hosts are kept.
+ */
+export function corpLinkHref(href) {
+  const value = String(href || '').trim();
+  if (!value || /^(mailto|tel):|^#/i.test(value)) return value;
+  const m = value.match(/^(?:https?:\/\/www\.stryker\.com)?(\/[^?#]*)([?#].*)?$/i);
+  if (!m) return value;
+  const path = m[1].replace(/^\/content\/stryker(?=\/)/, '');
+  const rest = m[2] || '';
+  if (/^\/us\/en(\/|$)/.test(path) && !path.startsWith('/content/')) {
+    const eds = path.replace(/\.html?$/, '').replace(/\/index$/, '/');
+    return `${eds || '/'}${rest}`;
+  }
+  return `https://www.stryker.com${path}${rest}`;
+}
+
+// content-fragment fields in display order (contact-us-information-fragment-model)
+const CF_FIELDS = ['locationName', 'ShortDesc', 'addressBlock1', 'PhoneNumbers', 'Emails', 'RelatedLinks', 'BusinessHomePage'];
+
+/** An authored field value (HTML or text) as clean block nodes. */
+function fieldNodes(doc, html) {
+  const parsed = new DOMParser().parseFromString(`<div>${html || ''}</div>`, 'text/html').body.firstElementChild;
+  const box = doc.importNode(parsed, true);
+  // a value authored as bare text is one paragraph
+  if (![...box.children].some((el) => /^(P|UL|OL|DIV|H[1-6])$/.test(el.tagName)) && text(box)) {
+    const p = doc.createElement('p');
+    p.append(...box.childNodes);
+    box.append(p);
+  }
+  // a link without an address (authoring leftover) keeps its text
+  box.querySelectorAll('a').forEach((a) => { if (!(a.getAttribute('href') || '').trim()) a.replaceWith(...a.childNodes); });
+  cleanRichText(box);
+  box.querySelectorAll('a[href]').forEach((a) => a.setAttribute('href', corpLinkHref(a.getAttribute('href'))));
+  return [...box.children].filter((el) => text(el) || el.querySelector('img'));
+}
+
+/**
+ * A content fragment (DAM, contact-us-information model) → the content of its fragment
+ * document (decision: tools/importer/decisions/content-fragments.json):
+ *   - a one-card `Cards (contact)` block with the fields the live pages show (the union of
+ *     elementNames over every use), in model order: the location name as a heading at the
+ *     level the use renders it (title_h2 / h4 / h5), the other fields as authored, the
+ *     business home page link as Bold + Underline (the Futura CTA convention);
+ *   - a `Metadata` block with every other non-empty field and all *Label fields (kept, not
+ *     rendered).
+ * Shown values are taken from the live render (dd of the rendered dl) when the use renders
+ * them, else from the export.
+ * @param {Document} doc the import document
+ * @param {object} info the cf-index entry ({ eds, fields, uses })
+ * @param {Element|null} rendered the rendered dl.cmp-contentfragment of one use, or null
+ * @returns {Element[]} the blocks
+ */
+export function contentFragmentBlocks(doc, info, rendered) {
+  const shown = new Set(info.uses.flatMap((u) => u.elementNames || []));
+  const wrapper = rendered && rendered.closest('.contentfragment');
+  const level = ((wrapper && wrapper.className.match(/\btitle_h([1-6])\b/)) || [])[1] || '4';
+  const renderedValue = (field) => {
+    const dd = rendered && rendered.querySelector(`.cmp-contentfragment__element--${field} .cmp-contentfragment__element-value`);
+    return dd ? dd.innerHTML : null;
+  };
+  const cell = [];
+  CF_FIELDS.filter((field) => shown.has(field)).forEach((field) => {
+    const html = renderedValue(field) ?? info.fields[field];
+    if (field === 'locationName') {
+      const value = text(fieldNodes(doc, html)[0] || doc.createElement('p'));
+      if (!value) return;
+      const h = doc.createElement(`h${level}`);
+      h.textContent = value;
+      cell.push(h);
+      return;
+    }
+    const nodes = fieldNodes(doc, html);
+    if (field === 'BusinessHomePage') {
+      // the source's CTA link (Futura bold uppercase teal + chevron): Bold + Underline link
+      nodes.forEach((node) => node.querySelectorAll('a[href]').forEach((a) => {
+        if (a.closest('strong')) return;
+        const u = doc.createElement('u');
+        u.append(...a.childNodes);
+        a.append(u);
+        const strong = doc.createElement('strong');
+        a.replaceWith(strong);
+        strong.append(a);
+      }));
+    }
+    cell.push(...nodes);
+  });
+  const blocks = [WebImporter.Blocks.createBlock(doc, { name: 'Cards (contact)', cells: [[cell]] })];
+
+  // everything else: kept in the document, not rendered
+  const rows = Object.entries(info.fields)
+    .filter(([field, value]) => (field.endsWith('Label') || !shown.has(field))
+      && String(value || '').replace(/<[^>]+>/g, '').trim())
+    .map(([field, value]) => [field, field.endsWith('Label') ? String(value).trim() : fieldNodes(doc, value)]);
+  if (rows.length) blocks.push(WebImporter.Blocks.createBlock(doc, { name: 'Metadata', cells: rows }));
+  return blocks;
+}
+
+/**
+ * A contact-directory XF (large-headline group bands + rendered content fragments, e.g.
+ * /content/experience-fragments/stryker/corporate/en/contact_information/directory---asia)
+ * → sections: each group band (.largeheadline.has-background) as a heading in its own
+ * section (styles `large-headline` + bg-gold / bg-gray), then a section with one Fragment
+ * block per content fragment, in authored order (fragment.js merges the one-card blocks
+ * into one grid). Rich text other than empty spacers is kept as default content.
+ * @returns {{sections: {style: string, nodes: Element[]}[], unknown: string[]}}
+ */
+export function contactDirectorySections(root, doc) {
+  const sections = [];
+  const unknown = [];
+  let current = null;
+  const start = (style) => {
+    current = { style, nodes: [] };
+    sections.push(current);
+    return current;
+  };
+  const items = [...root.querySelectorAll('.largeheadline, .contentfragment, .c-rich-text-editor, .c-standalone-image')]
+    .filter((el) => !el.parentElement.closest('.largeheadline, .contentfragment, .c-rich-text-editor, .c-standalone-image'));
+  items.forEach((item) => {
+    if (item.matches('.largeheadline')) {
+      const band = item.querySelector('.has-background') || item;
+      const words = text(band);
+      if (!words) return;
+      const bg = band.classList.contains('bg-gold') ? 'bg-gold' : 'bg-gray';
+      const h2 = doc.createElement('h2');
+      h2.textContent = words;
+      start(`large-headline, ${bg}`).nodes.push(h2);
+      current = null;
+      return;
+    }
+    if (item.matches('.contentfragment')) {
+      const cf = (item.querySelector('dl[data-path]') || {}).getAttribute?.('data-path');
+      const eds = cf && cfToFragmentPath(cf);
+      if (!eds) {
+        unknown.push(`content fragment without path: ${text(item).slice(0, 40)}`);
+        return;
+      }
+      const link = doc.createElement('a');
+      link.href = eds;
+      link.textContent = eds;
+      if (!current) start('');
+      current.nodes.push(WebImporter.Blocks.createBlock(doc, { name: 'Fragment', cells: [[link]] }));
+      return;
+    }
+    // images and rich text between the boxes (e.g. a "United States" label and its intro)
+    // get a section of their own: fragment.js merges all cards of a section into its first
+    // grid, which would move the boxes after the text in front of it (skip &nbsp; spacers)
+    let nodes;
+    if (item.matches('.c-standalone-image')) {
+      nodes = standaloneImageNodes(item, doc);
+    } else {
+      const box = doc.importNode(item, true);
+      cleanRichText(box);
+      nodes = [...box.querySelectorAll('p, h1, h2, h3, h4, h5, h6, ul, ol')]
+        .filter((el) => !el.parentElement.closest('p, ul, ol') && text(el));
+    }
+    if (!nodes.length) return;
+    start('').nodes.push(...nodes);
+    current = null;
+  });
+  root.querySelectorAll('.map, [class*="googlemap"], iframe[src*="google.com/maps"]').forEach((el) => unknown.push(`map (client input pending): ${el.className || el.tagName}`));
+  return { sections, unknown };
 }

@@ -12,6 +12,22 @@
     "resolved": "user chose: show live fields, keep the rest as metadata"
   },
   "pending": [
-    "Cards (contact) variant name approval (open-questions.md)"
-  ]
+    "the contact page itself (template tier1-landing-contact importer, step 7)",
+    "map beside the headquarters box (client input: Maps key / keyless embed)"
+  ],
+  "implemented": {
+    "date": "2026-10-27",
+    "branch": "cards-contact-content-fragments",
+    "importers": [
+      "tools/importer/import-cf-fragments.js (55 documents)",
+      "tools/importer/import-xf-fragments.js contact-directory branch (7 directory XFs)"
+    ],
+    "block": "Cards (contact): blocks/cards/cards-corp.css + cards.js (links kept as authored)",
+    "styles": {
+      "bg-gray": "approved 2026-10-27 (#dfe1de, the source bg-lighter-gray band)",
+      "large-headline": "band section style (approved name)"
+    },
+    "links": "/us/en/… → EDS paths; other www.stryker.com paths (other country sites) → absolute www.stryker.com URLs",
+    "measured": "https://www.stryker.com/us/en/about/contact.html (Hong Kong box, Asia directory) at 375/600/900/1440"
+  }
 }
