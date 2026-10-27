@@ -321,7 +321,8 @@
    ],
    "openQuestion": "Approve section style 'flex-67-33' (and its mirror for cols2_1-3_2-3), or prefer to restyle the existing 'flex' on corp when its second wrapper is a contact-aside fragment?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch corp-section-styles (82ce811): flex-67-33"
   },
   {
    "component": "wcm/responsivegrid",
@@ -544,7 +545,8 @@
      "why": "only 6 instances (form in the wide column of /us/en/acute-care/contact, /us/en/emergency-care/contact, ...); drop if the user prefers 'flex' equal halves for these"
     }
    ],
-   "approved": "2026-10-27 (user: approve all recommendations)"
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "implemented": "2026-10-27 branch corp-section-styles (82ce811): flex-33-67"
   },
   {
    "component": "publishdate",
@@ -605,7 +607,8 @@
    ],
    "openQuestion": "Sticky Nav (local) variant vs a new 'local-nav-corp' block; and author the nav on each of the ~55 pages (importer) vs once per parent as a shared fragment document (no path rule exists yet for non-XF shared content).",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch sticky-nav-local (3219d27): not sticky, no overflow menu; tap-to-open box below 600px"
   },
   {
    "component": "pagehero",
@@ -778,7 +781,8 @@
    ],
    "openQuestion": "Approve the three gradient section styles, or normalise them to bg-dark-gray / bg-gold? For the teal gradient, reuse the patients 'dark' style or add a corp alias 'bg-dark-teal-gradient'?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch corp-section-styles (82ce811): bg-dark-purple-gradient, bg-dark-blue-gradient, bg-golden-gradient; teal = existing dark"
   },
   {
    "component": "contactbutton",
@@ -1328,7 +1332,8 @@
    ],
    "openQuestion": "Add the text-above and bottom-<n> options to Hero Corp image-slide, or accept the overlay / text-below on phones for these 41 heroes?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch hero-corp-text-options (c91b801): text-above, bottom-<n>, copy-size-<n> (approved 2026-10-27; copy follows the source size, no half-size rule)"
   },
   {
    "component": "remotecomponent",
@@ -1367,7 +1372,8 @@
    "openQuestion": "The microapps only allow framing from *.stryker.com, so they will not render on *.aem.page / *.aem.live previews (only once served from www.stryker.com) unless the client adds the EDS hosts to frame-ancestors. Also confirm whether to keep the gamma4 stage URL.",
    "approved": "2026-10-27 (user: approve all recommendations)",
    "resolution": "recommendation approved 2026-10-27",
-   "clientInput": "client must allow the EDS hosts in the microapps frame-ancestors (they only allow *.stryker.com)"
+   "clientInput": "client must allow the EDS hosts in the microapps frame-ancestors (they only allow *.stryker.com)",
+   "implemented": "2026-10-27 branch widget-embeds (5b95ca8): /widgets/remote-component (renders only once the client allows the EDS hosts to frame the microapps)"
   },
   {
    "component": "bannercampaign",
@@ -1432,7 +1438,8 @@
    "openQuestion": "Map: a block (or widget) inside a Columns cell is not decorated by decorateBlocks, so columns.js would need to render the map itself (as it does for YouTube links). Alternative: a 'View on Google Maps' link instead of the iframe.",
    "approved": "2026-10-27 (user: approve all recommendations)",
    "resolution": "recommendation approved 2026-10-27",
-   "clientInput": "map as above"
+   "clientInput": "map as above",
+   "implemented": "2026-10-27 branch widget-embeds (5b95ca8): map link in a Columns cell"
   },
   {
    "component": "curatedlinklist",
@@ -1558,7 +1565,8 @@
    ],
    "openQuestion": "Build gallery-corp (new block), or accept a no-code fallback: Columns (media-pair) image grid of the set members, or only the first image? How should the single spin set (/us/en/portfolios/…/rise) be handled: frames as a gallery, or the DM SpinViewer embed?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch gallery-corp (9d87e41); user 2026-10-27: the Rise spin set as a gallery of all 17 frames; no zoom (full-screen view instead)"
   },
   {
    "component": "highlevelcta",
@@ -1624,7 +1632,8 @@
    ],
    "openQuestion": "Approve a new news-list-corp block (and adding published/tags to the corp query index), or link the landing pages to a simpler Cards Corp teaser list of selected articles?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch news-list-corp (8eb96fc); needs published + tags columns in the corp query index (AEM config service)"
   },
   {
    "component": "tagline",
@@ -1883,7 +1892,8 @@
    ],
    "openQuestion": "Approve a new chart block (10 + 1 uses), or use a fallback with no new code: Table (label | value) or Statistics (cols-N) with the same colours?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch chart-corp (4ecd368): user 2026-10-27: exact source colours (palette keyword or #rrggbb), rounding stays for text only"
   },
   {
    "component": "localpagenavigationchild",
@@ -1919,7 +1929,8 @@
      "why": "see localpagenavigation"
     }
    ],
-   "approved": "2026-10-27 (user: approve all recommendations)"
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "implemented": "2026-10-27 branch sticky-nav-local (3219d27)"
   },
   {
    "component": "video",
@@ -2058,7 +2069,8 @@
      "why": "The source is a plain iframe to the Adobe Sign esignWidget with a min-height. The existing widget block carries wid/height as params."
     }
    ],
-   "approved": "2026-10-27 (user: approve all recommendations)"
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "implemented": "2026-10-27 branch widget-embeds (5b95ca8): /widgets/adobe-sign"
   },
   {
    "component": "featuredcontentcontext",
@@ -2250,7 +2262,8 @@
    ],
    "openQuestion": "Build event-calendar-corp, use a simple Cards Corp list of events, or skip the 3 calendar pages (many events may be past)?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch event-calendar-corp (24c395c); needs the event-* columns in the corp query index"
   },
   {
    "component": "testimonial",
@@ -2476,7 +2489,8 @@
    ],
    "openQuestion": "For a single use: a Table (label | value) or an author-supplied image may be enough if chart-corp is not approved.",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch chart-corp (4ecd368): exact source colours"
   },
   {
    "component": "sitemap",
@@ -2515,7 +2529,8 @@
    ],
    "openQuestion": "Generated sitemap-corp block vs a static default-content snapshot taken at go-live?",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch sitemap-corp (3a1d0ee); needs a robots column in the corp query index and robots metadata on imported pages"
   },
   {
    "component": "cventcomponent",
@@ -2547,7 +2562,8 @@
      "why": "Third-party Cvent calendar: a container div with data-widget-id / data-calendar-id plus the Cvent loader script. It fits the existing widget block (params → data-*)."
     }
    ],
-   "approved": "2026-10-27 (user: approve all recommendations)"
+   "approved": "2026-10-27 (user: approve all recommendations)",
+   "implemented": "2026-10-27 branch widget-embeds (5b95ca8): user 2026-10-27: no nonce/script approach; iframe refused by Cvent (frame-ancestors none / X-Frame-Options DENY), so the widget renders a primary button link to https://www.cvent.com/c/calendar/<calendar-id>"
   },
   {
    "component": "map",
@@ -2587,7 +2603,8 @@
    "openQuestion": "Keyless embed (works on aem.page/live), or keep Stryker's Maps Embed API key (the client must add the EDS hosts to the key's referrer list)? Code change in columns.js (and a small default-content decorator): approve the link convention, or prefer a 'View on Google Maps' link with no embed?",
    "approved": "2026-10-27 (user: approve all recommendations)",
    "resolution": "recommendation approved 2026-10-27",
-   "clientInput": "keyless embed approved; if the Stryker Maps key is wanted, the client must add the EDS hosts to its referrer list"
+   "clientInput": "keyless embed approved; if the Stryker Maps key is wanted, the client must add the EDS hosts to its referrer list",
+   "implemented": "2026-10-27 branch widget-embeds (5b95ca8): a lone google.com/maps?q= link renders a keyless embed (default content on corp, and in Columns cells)"
   }
  ],
  "openQuestions": [
