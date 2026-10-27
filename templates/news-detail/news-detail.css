@@ -49,9 +49,11 @@ body.news-detail main > .section > .default-content-wrapper picture img {
 
 /* article headings: light serif, no rule below (corp default content draws one); the
    heading over the cards keeps the corp Futura heading with its rule. The same in a
-   "Read the full article" accordion panel (an inline section in the panel body) */
-body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2,
-body.news-detail main .accordion-item-body > .section > .default-content-wrapper h2 {
+   "Read the full article" accordion panel (an inline section in the panel body). An
+   underlined heading (a features subhead over a "____" divider, #441) keeps the corp Futura
+   heading and its rule */
+body.news-detail main > .section:not(.cards-corp-container) > .default-content-wrapper h2:not(.underline),
+body.news-detail main .accordion-item-body > .section > .default-content-wrapper h2:not(.underline) {
   padding-bottom: 0;
   border-bottom: 0;
   font-family: var(--heading-font-family);

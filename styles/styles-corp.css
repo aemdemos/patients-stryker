@@ -245,11 +245,13 @@ body:where(.corp):has(main .hero-carousel) header {
   text-align: center;
 }
 
-/* section style `disclaimer`: small print (also an accordion panel's references) */
+/* section style `disclaimer`: small print (also an accordion panel's references); a long
+   web address written out in a reference wraps instead of widening the page on phones */
 :where(body.corp) main > .section.disclaimer > div,
 :where(body.corp) .accordion-item-body > .section.disclaimer > div {
   font-size: var(--footnote-font-size);
   line-height: var(--footnote-line-height);
+  overflow-wrap: break-word;
 }
 
 :where(body.corp) main > .section.disclaimer p {

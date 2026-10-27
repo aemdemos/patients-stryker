@@ -241,10 +241,134 @@ var CustomImportScript = (() => {
     return xf_fragment_map_default[xfKey(xf)] ? xfToFragmentPath(xf) : null;
   }
 
+  // tools/importer/transformers/news-typography.js
+  var SIZES = ["1-25", "1-5", "1-75", "2", "2-5", "8"];
+  var COLOURS = {
+    ffb500: "color-gold",
+    "1c5687": "color-blue",
+    "85458a": "color-purple",
+    "4c7d7a": "color-teal",
+    "27455c": "color-navy",
+    545857: "color-grey",
+    ffffff: "color-white"
+  };
+  var PARAS = [
+    ".c-rich-text-editor p",
+    ".c-rich-text-editor div:not(:has(p, div, ul, ol, h1, h2, h3, h4, h5, h6, table))",
+    ".c-largeheadline p"
+  ].join(", ");
+  var norm = (s) => (s || "").replace(/\s+/g, " ").trim();
+  var DIVIDER = /_{3,}/;
+  var textOf = (el) => norm((el.textContent || "").replace(/_{3,}/g, ""));
+  function unwrap(el) {
+    el.replaceWith(...el.childNodes);
+  }
+  function rename(el, tag) {
+    const next = el.ownerDocument.createElement(tag);
+    next.append(...el.childNodes);
+    el.replaceWith(next);
+    return next;
+  }
+  function toHex(value) {
+    const v = (value || "").trim().toLowerCase();
+    let m = v.match(/^#([0-9a-f]{3})$/);
+    if (m) return m[1].split("").map((c) => c + c).join("");
+    m = v.match(/^#([0-9a-f]{6})$/);
+    if (m) return m[1];
+    m = v.match(/^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+    if (m) return m.slice(1, 4).map((n) => Number(n).toString(16).padStart(2, "0")).join("");
+    return "";
+  }
+  function inlineColour(el) {
+    if (el.tagName === "FONT" && el.getAttribute("color")) return toHex(el.getAttribute("color"));
+    const m = (el.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+    return m ? toHex(m[1]) : "";
+  }
+  function covers(block, selector) {
+    const text2 = textOf(block);
+    if (!text2) return false;
+    const styled = [...block.querySelectorAll(selector)].filter((el) => !block.contains(el.parentElement.closest(selector))).map(textOf).join(" ");
+    return norm(styled).length >= text2.length - 1;
+  }
+  function sizeOf(block) {
+    const found = SIZES.filter((s) => covers(block, `.fontsize-${s}em`));
+    if (found.length < 2) return found[0] || "";
+    return found.find((s) => {
+      const span = block.querySelector(`.fontsize-${s}em`);
+      return !found.some((o) => o !== s && span.parentElement.closest(`.fontsize-${o}em`));
+    }) || found[0];
+  }
+  var isDividerBlock = (el) => !!el && DIVIDER.test(el.textContent) && !textOf(el);
+  function dividerNodes(block) {
+    const walker = block.ownerDocument.createTreeWalker(block, 4);
+    const lines = [];
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+      if (DIVIDER.test(n.textContent) && /^[\s_]*$/.test(n.textContent)) lines.push(n);
+    }
+    return lines;
+  }
+  function dividerOf(block) {
+    const holder = dividerNodes(block).length ? block : block.nextElementSibling;
+    const [line] = holder && (holder === block || isDividerBlock(holder)) ? dividerNodes(holder) : [];
+    if (!line) return "";
+    for (let e = line.parentElement; e && e !== holder.parentElement; e = e.parentElement) {
+      const c = inlineColour(e);
+      if (c) return c;
+    }
+    return "none";
+  }
+  function stripDivider(block) {
+    const lines = dividerNodes(block);
+    if (lines.length) lines.forEach((n) => n.remove());
+    else if (isDividerBlock(block.nextElementSibling)) block.nextElementSibling.remove();
+  }
+  function trimInside(el) {
+    const first = el.firstChild;
+    const last = el.lastChild;
+    if (first && first.nodeType === 3) first.textContent = first.textContent.replace(/^\s+/, "");
+    if (last && last.nodeType === 3) last.textContent = last.textContent.replace(/\s+$/, "");
+  }
+  function toRuledHeading(p, tag, divider) {
+    stripDivider(p);
+    const h = rename(p, tag);
+    h.querySelectorAll("br").forEach((br) => br.replaceWith(h.ownerDocument.createTextNode(" ")));
+    h.querySelectorAll("span, strong, b, em, i, font").forEach(unwrap);
+    h.normalize();
+    trimInside(h);
+    const doc = h.ownerDocument;
+    const u = doc.createElement("u");
+    const gold = COLOURS[divider] === "color-gold";
+    if (gold) u.append(doc.createTextNode("[[rule-gold]"));
+    u.append(...h.childNodes);
+    if (gold) u.append(doc.createTextNode("]"));
+    h.append(u);
+    return h;
+  }
+  function promoteTitles(root) {
+    const paras = [...root.querySelectorAll(PARAS)];
+    if (!root.querySelector("h1")) {
+      const title = paras.find((p) => p.querySelector(".futura-bold") && textOf(p) && (["2", "2-5"].includes(sizeOf(p)) || p.querySelector('[class*="vw"]')));
+      if (title) {
+        const divider = dividerOf(title);
+        if (divider) toRuledHeading(title, "h1", divider);
+        else {
+          const h1 = rename(title, "h1");
+          h1.querySelectorAll("br").forEach((br) => br.replaceWith(root.ownerDocument.createTextNode(" ")));
+        }
+      }
+    }
+    paras.filter((p) => p.isConnected && /^(P|DIV)$/.test(p.tagName)).forEach((p) => {
+      const divider = dividerOf(p);
+      if (divider && textOf(p) && covers(p, ".futura-bold")) toRuledHeading(p, "h2", divider);
+    });
+  }
+
   // tools/importer/transformers/news-detail-sections.js
   var SOURCE_ORIGIN = "https://www.stryker.com";
   var SHARED_RESOURCES_XF = {
-    "emergency-care": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master"
+    "acute-care": "/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master",
+    "emergency-care": "/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master",
+    sage: "/content/experience-fragments/stryker/sage/en/footer/footer/master"
   };
   var FULL_ARTICLE = /^read (the )?full (article|story)$/i;
   var COMPONENTS = [
@@ -268,14 +392,14 @@ var CustomImportScript = (() => {
   function text(el) {
     return (el.textContent || "").replace(/ /g, " ").replace(/\s+/g, " ").replace(INVISIBLE, "");
   }
-  function rename(el, tagName) {
+  function rename2(el, tagName) {
     const doc = el.ownerDocument;
     const next = doc.createElement(tagName);
     while (el.firstChild) next.append(el.firstChild);
     el.replaceWith(next);
     return next;
   }
-  function unwrap(el) {
+  function unwrap2(el) {
     el.replaceWith(...el.childNodes);
   }
   function absoluteAsset(href) {
@@ -302,12 +426,12 @@ var CustomImportScript = (() => {
     const copy = candidates.filter((el) => text(el) && !el.querySelector("p, li"));
     if (!copy.length) return null;
     const squash = (value) => value.replace(/[\s\u00a0]+/g, "");
-    const covers = (cls) => copy.every((el) => {
+    const covers2 = (cls) => copy.every((el) => {
       const spans = [...el.querySelectorAll(`.${cls}`)].filter((span) => !span.parentElement.closest(`.${cls}`));
       return squash(spans.map((span) => span.textContent).join("")) === squash(el.textContent);
     });
-    const size = SIZE_STYLES.find(([cls]) => covers(cls));
-    const font = FONT_STYLES.find(([cls]) => covers(cls));
+    const size = SIZE_STYLES.find(([cls]) => covers2(cls));
+    const font = FONT_STYLES.find(([cls]) => covers2(cls));
     return [size && size[1], font && font[1]].filter(Boolean).join(", ");
   }
   function sameLineText(node, direction) {
@@ -370,18 +494,18 @@ var CustomImportScript = (() => {
     });
     root.querySelectorAll("span.futura-bold").forEach((el) => {
       if (!el.closest("p, li") || el.closest("h1, h2, h3, h4, h5, h6")) {
-        rename(el, "strong");
+        rename2(el, "strong");
         return;
       }
-      const strong = rename(el, "strong");
+      const strong = rename2(el, "strong");
       const em = root.ownerDocument.createElement("em");
       while (strong.firstChild) em.append(strong.firstChild);
       strong.append(em);
     });
-    root.querySelectorAll("b").forEach((el) => rename(el, "strong"));
-    root.querySelectorAll("i").forEach((el) => rename(el, "em"));
-    root.querySelectorAll("span, font").forEach(unwrap);
-    root.querySelectorAll("strong strong, em em").forEach(unwrap);
+    root.querySelectorAll("b").forEach((el) => rename2(el, "strong"));
+    root.querySelectorAll("i").forEach((el) => rename2(el, "em"));
+    root.querySelectorAll("span, font").forEach(unwrap2);
+    root.querySelectorAll("strong strong, em em").forEach(unwrap2);
     root.querySelectorAll("strong, em").forEach((el) => {
       if (!el.textContent.trim() && !el.querySelector("img, br")) el.remove();
     });
@@ -425,9 +549,9 @@ var CustomImportScript = (() => {
       if (!LABEL_HEADING.test(text(h))) return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
-      p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap);
+      p.querySelectorAll('span[class*="fontsize-"]').forEach(unwrap2);
       if (!p.querySelector(".futura-bold")) {
-        p.querySelectorAll("b, strong").forEach(unwrap);
+        p.querySelectorAll("b, strong").forEach(unwrap2);
         const bold = root.ownerDocument.createElement("span");
         bold.className = "futura-bold";
         while (p.firstChild) bold.append(p.firstChild);
@@ -469,6 +593,9 @@ var CustomImportScript = (() => {
     const box = doc.createElement("div");
     const source = component.querySelector(":scope > div") || component;
     box.innerHTML = source.innerHTML;
+    [...box.querySelectorAll("div")].reverse().forEach((div) => {
+      if (!div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table") && text(div)) rename2(div, "p");
+    });
     labelHeadingsToParagraphs(box);
     splitStyledLeads(box);
     const plainBold = plainBoldParagraphs(box);
@@ -559,8 +686,8 @@ var CustomImportScript = (() => {
   function headlineNodes(component, doc) {
     const box = doc.createElement("div");
     box.innerHTML = component.innerHTML;
-    const lines = [...box.querySelectorAll(".line")].map((line) => rename(line, "div"));
-    lines.forEach((line) => line.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(unwrap));
+    const lines = [...box.querySelectorAll(".line")].map((line) => rename2(line, "div"));
+    lines.forEach((line) => line.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(unwrap2));
     cleanRichText(box);
     return (lines.length ? lines : [box]).map((line) => {
       if (!text(line)) return null;
@@ -607,8 +734,8 @@ var CustomImportScript = (() => {
         span.replaceWith(em);
       } else span.replaceWith(strong);
     });
-    box.querySelectorAll("span, font").forEach(unwrap);
-    box.querySelectorAll("strong strong").forEach(unwrap);
+    box.querySelectorAll("span, font").forEach(unwrap2);
+    box.querySelectorAll("strong strong").forEach(unwrap2);
     box.querySelectorAll("em").forEach((em) => {
       const mark = em.firstElementChild;
       if (!mark || mark.tagName !== "STRONG" || em.childNodes.length !== 1) return;
@@ -658,7 +785,7 @@ var CustomImportScript = (() => {
     media.append(link2);
     const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
     const small = headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
-    const statement = small ? lines : [rename(lines[0], "h2"), ...lines.slice(1)];
+    const statement = small ? lines : [rename2(lines[0], "h2"), ...lines.slice(1)];
     return WebImporter.Blocks.createBlock(doc, {
       name: "Columns (columns-67-33, large-headline, gray-lead)",
       cells: [[[media, ...buttons], [
@@ -732,6 +859,7 @@ var CustomImportScript = (() => {
       h5.textContent = text(date);
       title.nodes.push(h5);
     }
+    if (!main.querySelector("h1")) promoteTitles(main);
     main.querySelectorAll(".experienceFragment").forEach((xf) => {
       const heading = xf.querySelector('.c-section-title[data-title="Resources"]');
       const path = heading && SHARED_RESOURCES_XF[heading.id] && xfFragmentPath(SHARED_RESOURCES_XF[heading.id]);
@@ -912,8 +1040,8 @@ var CustomImportScript = (() => {
       if (isFirst && !hasTitle && component.matches(".c-largeheadline") && component.querySelector('[class*="fontsize-2vw"]') && text(component)) {
         const lines = headlineNodes(component, doc);
         if (lines.length) {
-          const heading = rename(lines[0], "h1");
-          heading.querySelectorAll("strong, em").forEach(unwrap);
+          const heading = rename2(lines[0], "h1");
+          heading.querySelectorAll("strong, em").forEach(unwrap2);
           startSection("headline", "headline-2vw").nodes.push(heading, ...lines.slice(1));
           current = null;
           return;
@@ -943,6 +1071,13 @@ var CustomImportScript = (() => {
       const { nodes, centred, size } = component.matches(".c-rich-text-editor") ? richTextNodes(component, doc) : { nodes: headlineNodes(component, doc), centred: false };
       if (!nodes.length) return;
       nodes.forEach((node) => {
+        if (node.tagName === "H1" && !title.nodes.some((n) => n.tagName === "H1") && !sections.some((section) => section.kind === "headline")) {
+          node.normalize();
+          const walker = doc.createTreeWalker(node, 4);
+          for (let t = walker.nextNode(); t; t = walker.nextNode()) t.textContent = t.textContent.replace(/[\s\u00a0]+/g, " ");
+          title.nodes.unshift(node);
+          return;
+        }
         const copyStyle = node.copyStyle !== void 0 ? node.copyStyle : size;
         const extra = node.headingStyle ? [node.headingStyle] : [copyStyle || "", node.boldBody ? "bold-body" : ""].filter(Boolean);
         const styles = [centred ? "center" : "", ...extra].filter(Boolean);

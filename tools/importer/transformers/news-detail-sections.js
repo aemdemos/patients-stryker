@@ -47,6 +47,7 @@
 import { videoLink } from '../parsers/video.js';
 import cardsCorpTeaserParser from '../parsers/cards-corp-teaser.js';
 import xfFragmentPath from '../xf-fragment-path.js';
+import { promoteTitles } from './news-typography.js';
 
 const SOURCE_ORIGIN = 'https://www.stryker.com';
 
@@ -54,7 +55,9 @@ const SOURCE_ORIGIN = 'https://www.stryker.com';
 // (the public page HTML does not name the XF). Their EDS document path comes from
 // xf-fragment-map.js (#443).
 const SHARED_RESOURCES_XF = {
+  'acute-care': '/content/experience-fragments/stryker/acute-care/en/business_unit/footer-links/master',
   'emergency-care': '/content/experience-fragments/stryker/emergency-care/en/business_unit/footer/master',
+  sage: '/content/experience-fragments/stryker/sage/en/footer/footer/master',
 };
 
 // "Read the full article / story" accordions: the Block Library's article panel
@@ -382,6 +385,11 @@ function richTextNodes(component, doc) {
   const box = doc.createElement('div');
   const source = component.querySelector(':scope > div') || component;
   box.innerHTML = source.innerHTML;
+  // some articles type their paragraphs as plain <div>s (e.g. the surgical smoke feature):
+  // a <div> holding only text and inline formatting is a paragraph
+  [...box.querySelectorAll('div')].reverse().forEach((div) => {
+    if (!div.querySelector('p, div, ul, ol, h1, h2, h3, h4, h5, h6, table') && text(div)) rename(div, 'p');
+  });
   labelHeadingsToParagraphs(box);
   splitStyledLeads(box);
   const plainBold = plainBoldParagraphs(box);
@@ -714,6 +722,13 @@ export default function transform(hookName, element, payload) {
     title.nodes.push(h5);
   }
 
+  // titles drawn as styled text (#441), on articles without an h1 (features whose whole
+  // article sits in a fragment): the ≥ 2em Futura title becomes the h1, a Futura line over a
+  // "____" divider an underlined heading (gold rule from a gold divider), and the divider
+  // goes. Pages with an h1 are left alone: there a "____" line is decoration (e.g. above a
+  // quote's attribution)
+  if (!main.querySelector('h1')) promoteTitles(main);
+
   // a shared business-unit "Resources" fragment → a marker for its Fragment block
   main.querySelectorAll('.experienceFragment').forEach((xf) => {
     const heading = xf.querySelector('.c-section-title[data-title="Resources"]');
@@ -983,6 +998,17 @@ export default function transform(hookName, element, payload) {
     // copy styles sit next to `center` (e.g. `center, p-1-25, serif`). A plain-bold
     // paragraph (boldBody) gets a section of its own with `bold-body`.
     nodes.forEach((node) => {
+      // the article title promoted from styled text (no page title above it) goes to the
+      // title section, above the date, like every other news title
+      if (node.tagName === 'H1' && !title.nodes.some((n) => n.tagName === 'H1')
+        && !sections.some((section) => section.kind === 'headline')) {
+        // one space between its lines (the source's &nbsp; + line break)
+        node.normalize();
+        const walker = doc.createTreeWalker(node, 4);
+        for (let t = walker.nextNode(); t; t = walker.nextNode()) t.textContent = t.textContent.replace(/[\s\u00a0]+/g, ' ');
+        title.nodes.unshift(node);
+        return;
+      }
       const copyStyle = node.copyStyle !== undefined ? node.copyStyle : size;
       const extra = node.headingStyle ? [node.headingStyle]
         : [copyStyle || '', node.boldBody ? 'bold-body' : ''].filter(Boolean);
