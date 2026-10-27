@@ -40,6 +40,8 @@
  * <strong><em> (Futura bold) and `<b>` <strong> (body-font bold), gold buttons (a.btn-gold) become bold + italic links (the
  * authoring convention for the gold .button.accent), other buttons bold links, and
  * standalone links (span.standalone-link) bold + underline links (a.link-strong).
+ * Gold text (colour #ffb500) is the `[[color-gold]…]` bracket tag around its formatting
+ * (bold + italic alone renders black in news articles).
  * Asset links (/content/dam/...) point at www.stryker.com, where the files live; links
  * that open in a new tab on the source get the `#_blank` marker.
  */
@@ -172,6 +174,78 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
   });
 }
 
+/**
+ * Gold text (inline colour #ffb500 / rgb(255,181,0)) is the `[[color-gold]…]` bracket tag
+ * (corp authoring conventions: in news articles bold + italic alone is black, gold Futura
+ * text is bold + italic inside the tag). A text is gold when its nearest colour is gold
+ * (a gold span around a black one, e.g. a quote name, is not). The tag goes around the
+ * formatting it fills (`[[color-gold]<span class=futura-bold>…</span>]` →
+ * `[[color-gold]***…***]`), not past a paragraph, heading, list item or link.
+ */
+const GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
+
+function ownColour(el) {
+  const m = (el.getAttribute('style') || '').match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+  return m ? m[1].trim() : '';
+}
+
+/** Whether a node holds text in a colour other than gold. */
+function hasOtherColour(node) {
+  if (node.nodeType !== 1) return false;
+  const coloured = [node, ...node.querySelectorAll('[style*="color"]')]
+    .filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
+  return coloured.some((el) => [...el.childNodes].some((child) => (child.nodeType === 3
+    ? child.textContent.trim() : !ownColour(child) && text(child))));
+}
+
+function tagGoldText(root) {
+  const doc = root.ownerDocument;
+  const tagged = new Set();
+  const wrap = (nodes) => {
+    const run = [...nodes];
+    // line breaks and spaces at either end stay outside the tag
+    const loose = (n) => n.nodeName === 'BR' || (n.nodeType === 3 && !n.textContent.trim());
+    while (run.length && loose(run[0])) run.shift();
+    while (run.length && loose(run[run.length - 1])) run.pop();
+    if (!run.length || !run.some((n) => n.textContent.trim())) return;
+    const open = doc.createTextNode('[[color-gold]');
+    const close = doc.createTextNode(']');
+    run[0].before(open);
+    run[run.length - 1].after(close);
+    // out of the formatting the gold text fills
+    const edge = (n, dir) => {
+      let s = n[dir];
+      while (s && s.nodeType === 3 && !s.textContent.trim()) s = s[dir];
+      return s;
+    };
+    let parent = open.parentElement;
+    while (parent && parent !== root && parent === close.parentElement
+      && !parent.matches('p, li, h1, h2, h3, h4, h5, h6, a, div')
+      && !edge(open, 'previousSibling') && !edge(close, 'nextSibling')) {
+      parent.before(open);
+      parent.after(close);
+      parent = open.parentElement;
+    }
+  };
+  root.querySelectorAll('[style*="color"]').forEach((el) => {
+    if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+    tagged.add(el);
+    if (!hasOtherColour(el)) {
+      wrap([el]);
+      return;
+    }
+    // mixed: each run of children without another colour
+    let run = [];
+    [...el.childNodes].forEach((child) => {
+      if (hasOtherColour(child)) {
+        wrap(run);
+        run = [];
+      } else run.push(child);
+    });
+    wrap(run);
+  });
+}
+
 function cleanRichText(root, { wholeParagraphs = false } = {}) {
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
@@ -209,6 +283,7 @@ function cleanRichText(root, { wholeParagraphs = false } = {}) {
     }
   });
   tagPlainBoldLabels(root, wholeParagraphs);
+  tagGoldText(root);
 
   // standalone links (span.standalone-link: Futura bold, uppercase, teal, with a
   // triangle — e.g. "Read the full report") → bold + underline link, the authoring
@@ -552,22 +627,27 @@ function videoTextColumns(video, rte, doc) {
 
 /**
  * A quote Large Headline under the grey box (survivor stories: the quote, a rule, the
- * name, the role) as the library's Video + quote cell: gold quote marks → Bold + Italic,
- * Futura words → Bold, one paragraph per line (the name a fully Bold paragraph).
+ * name, the role) as the library's Video + quote cell: gold quote marks →
+ * `[[color-gold]` Bold + Italic `]`, Futura words → Bold, one paragraph per line (the
+ * name a fully Bold paragraph).
  */
 function quoteNodes(headline, doc) {
   const box = doc.createElement('div');
   box.innerHTML = headline.innerHTML;
-  // a gold quote mark set by colour only (<span style="color: rgb(255,181,0)">”</span>, inside
-  // a bold run) is the gold marker too: italic inside the bold
-  box.querySelectorAll('span[style*="255,181,0"], span[style*="255, 181, 0"]').forEach((span) => {
+  // a gold quote mark at the start or end of a longer bold run
+  // (<span class=futura-bold><span style="color: rgb(255,181,0)">”</span>The first…</span>)
+  // is a bold run of its own, so it can take the gold tag
+  box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
     const bold = span.closest('.futura-bold');
-    // a mark that is its own bold span is handled below (bold + italic)
-    if (!/^[“”"‘’']+$/.test(text(span)) || !bold || text(bold) === text(span)) return;
-    const em = doc.createElement('em');
-    em.textContent = text(span);
-    span.replaceWith(em);
+    if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
+    const atStart = text(bold).startsWith(text(span));
+    const mark = doc.createElement('span');
+    mark.className = 'futura-bold';
+    mark.append(span);
+    if (atStart) bold.before(mark);
+    else bold.after(mark);
   });
+  tagGoldText(box);
   box.querySelectorAll('.futura-bold').forEach((span) => {
     const strong = doc.createElement('strong');
     while (span.firstChild) strong.append(span.firstChild);

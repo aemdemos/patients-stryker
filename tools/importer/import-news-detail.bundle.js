@@ -282,6 +282,58 @@ var CustomImportScript = (() => {
       b.after(doc.createTextNode("]"));
     });
   }
+  var GOLD = /^(?:#ffb500|rgb\(\s*255\s*,\s*181\s*,\s*0\s*\))$/i;
+  function ownColour(el) {
+    const m = (el.getAttribute("style") || "").match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+    return m ? m[1].trim() : "";
+  }
+  function hasOtherColour(node) {
+    if (node.nodeType !== 1) return false;
+    const coloured = [node, ...node.querySelectorAll('[style*="color"]')].filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
+    return coloured.some((el) => [...el.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text(child)));
+  }
+  function tagGoldText(root) {
+    const doc = root.ownerDocument;
+    const tagged = /* @__PURE__ */ new Set();
+    const wrap = (nodes) => {
+      const run = [...nodes];
+      const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
+      while (run.length && loose(run[0])) run.shift();
+      while (run.length && loose(run[run.length - 1])) run.pop();
+      if (!run.length || !run.some((n) => n.textContent.trim())) return;
+      const open = doc.createTextNode("[[color-gold]");
+      const close = doc.createTextNode("]");
+      run[0].before(open);
+      run[run.length - 1].after(close);
+      const edge = (n, dir) => {
+        let s = n[dir];
+        while (s && s.nodeType === 3 && !s.textContent.trim()) s = s[dir];
+        return s;
+      };
+      let parent = open.parentElement;
+      while (parent && parent !== root && parent === close.parentElement && !parent.matches("p, li, h1, h2, h3, h4, h5, h6, a, div") && !edge(open, "previousSibling") && !edge(close, "nextSibling")) {
+        parent.before(open);
+        parent.after(close);
+        parent = open.parentElement;
+      }
+    };
+    root.querySelectorAll('[style*="color"]').forEach((el) => {
+      if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
+      tagged.add(el);
+      if (!hasOtherColour(el)) {
+        wrap([el]);
+        return;
+      }
+      let run = [];
+      [...el.childNodes].forEach((child) => {
+        if (hasOtherColour(child)) {
+          wrap(run);
+          run = [];
+        } else run.push(child);
+      });
+      wrap(run);
+    });
+  }
   function cleanRichText(root, { wholeParagraphs = false } = {}) {
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
@@ -307,6 +359,7 @@ var CustomImportScript = (() => {
       }
     });
     tagPlainBoldLabels(root, wholeParagraphs);
+    tagGoldText(root);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
@@ -570,13 +623,17 @@ var CustomImportScript = (() => {
   function quoteNodes(headline2, doc) {
     const box = doc.createElement("div");
     box.innerHTML = headline2.innerHTML;
-    box.querySelectorAll('span[style*="255,181,0"], span[style*="255, 181, 0"]').forEach((span) => {
+    box.querySelectorAll('.futura-bold [style*="color"]').forEach((span) => {
       const bold = span.closest(".futura-bold");
-      if (!/^[“”"‘’']+$/.test(text(span)) || !bold || text(bold) === text(span)) return;
-      const em = doc.createElement("em");
-      em.textContent = text(span);
-      span.replaceWith(em);
+      if (!GOLD.test(ownColour(span)) || !/^[“”"‘’']+$/.test(text(span)) || text(bold) === text(span)) return;
+      const atStart = text(bold).startsWith(text(span));
+      const mark = doc.createElement("span");
+      mark.className = "futura-bold";
+      mark.append(span);
+      if (atStart) bold.before(mark);
+      else bold.after(mark);
     });
+    tagGoldText(box);
     box.querySelectorAll(".futura-bold").forEach((span) => {
       const strong = doc.createElement("strong");
       while (span.firstChild) strong.append(span.firstChild);
