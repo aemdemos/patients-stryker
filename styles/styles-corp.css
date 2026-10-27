@@ -39,6 +39,16 @@
   --corp-contact-button-width: 98px; /* source contact-aside .btn-teal (LinkedIn / X / YouTube) */
   --corp-chevron-glyph: "\e250"; /* strykericons right chevron (source .standalone-link a::after) */
 
+  /* sticky-nav local: stryker.com local page nav (nav.greedy, measured on
+     /us/en/care-settings/asc.html and /asc/pre-operative.html) */
+  --corp-color-local-nav-link: #9f9d9d; /* ul.links a */
+  --corp-color-local-nav-divider: #c2c2c2; /* ul.links li::after "|" */
+  --corp-color-local-nav-menu-link: #404040; /* below 841px: ul.mobile-list a */
+  --corp-local-nav-height: 40px; /* nav.greedy height */
+  --corp-local-nav-arrow-half-width: 4px; /* dropdown-arrow.png: 8px gold triangles */
+  --corp-local-nav-arrow-height: 5px;
+  --corp-local-nav-arrow-gap: 2px;
+
   /* button colours set per section (source .btn-purple / .btn-blue): border, hover */
   --corp-color-purple-dark: #753d79;
   --corp-color-purple-pressed: #643468;

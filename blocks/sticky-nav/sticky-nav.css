@@ -1,7 +1,8 @@
 /* sticky-nav — in-page anchor bar: 80px full-bleed gray bar, 193px UPPERCASE items with white dividers, gold active box; sticky to top. Scoped to `.sticky-nav.block` to avoid colliding with `body.sticky-nav`. */
 
-/* full-bleed gray bar, ignoring the section's max-width container */
-.sticky-nav.block {
+/* full-bleed gray bar, ignoring the section's max-width container (not the `local` page nav,
+   styled in sticky-nav-corp.css; its section is renamed sticky-nav-local-container in JS) */
+.sticky-nav.block:not(.local) {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
   background: var(--color-secondary);

@@ -1,0 +1,182 @@
+/*
+ * Sticky Nav: corp (www.stryker.com) overlay. Loaded on `site: corp` pages only
+ * (CORP_BLOCK_STYLES in scripts/corp.js). The patients anchor bar in sticky-nav.css stays
+ * as-is; this file styles the `local` variant, the stryker.com local page nav (nav.greedy)
+ * measured on /us/en/care-settings/asc.html, /asc/pre-operative.html and
+ * /us/en/about/corporate-responsibility/promoting-global-health.html. It sits under the
+ * header and scrolls with the page (not sticky on the source).
+ *
+ * Below 600px (source ≤840px): a shadowed box with the current page title and gold up/down
+ * arrows; the button opens the parent + child list. From 600px: the parent title (30%) and
+ * the child links right-aligned (66%) with "|" dividers, wrapping onto more lines.
+ */
+
+/* the source nav is inset one more gutter than the section content, 15px below the header */
+body.corp .sticky-nav.local {
+  padding-top: calc(var(--space-block) - var(--corp-header-gap));
+  padding-inline: var(--container-gutter);
+}
+
+body.corp .sticky-nav.local .sticky-nav-local {
+  padding: var(--space-block-s);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-black);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-block-s);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-none);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: var(--font-weight-bold);
+  text-align: start;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* gold up/down arrows (source dropdown-arrow.png) */
+body.corp .sticky-nav.local .sticky-nav-local-icon {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: var(--corp-local-nav-arrow-gap);
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-icon::before,
+body.corp .sticky-nav.local .sticky-nav-local-icon::after {
+  content: "";
+  border-inline: var(--corp-local-nav-arrow-half-width) solid transparent;
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-icon::before {
+  border-bottom: var(--corp-local-nav-arrow-height) solid var(--color-accent);
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-icon::after {
+  border-top: var(--corp-local-nav-arrow-height) solid var(--color-accent);
+}
+
+/* the parent title shows from 600px; below it heads the list */
+body.corp .sticky-nav.local .sticky-nav-local-parent {
+  display: none;
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-links {
+  display: none;
+  margin: var(--space-block-s) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-expanded .sticky-nav-local-links {
+  display: block;
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-links li {
+  padding: var(--space-block-s);
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-links a:any-link {
+  color: var(--corp-color-local-nav-menu-link);
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-parent-item,
+body.corp .sticky-nav.local .sticky-nav-local-links a:any-link[aria-current="page"] {
+  font-weight: var(--font-weight-bold);
+}
+
+body.corp .sticky-nav.local .sticky-nav-local-links a:any-link[aria-current="page"] {
+  color: var(--color-black);
+}
+
+@media (width >= 600px) {
+  /* the section gap below the nav: 20px on phones (source nav margin), none from 600px */
+  body.corp main > .section.sticky-nav-local-container {
+    margin-bottom: 0;
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local {
+    display: flex;
+    align-items: center;
+    min-height: var(--corp-local-nav-height);
+    padding: 0;
+    box-shadow: none;
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-toggle {
+    display: none;
+  }
+
+  /* source h4: 17.5px Futura bold, black, 15px margin below, 30px right padding */
+  body.corp .sticky-nav.local .sticky-nav-local-parent {
+    display: block;
+    box-sizing: border-box;
+    flex: 0 0 30%;
+    margin-bottom: var(--space-block);
+    padding-right: calc(2 * var(--space-block));
+    font-size: var(--heading-font-size-m);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--heading-line-height-h4);
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-parent:any-link,
+  body.corp .sticky-nav.local .sticky-nav-local-parent:any-link:is(:hover, :focus-visible) {
+    color: var(--color-black);
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-links {
+    display: block;
+    flex: 0 0 66%;
+    margin: 0;
+    text-align: right;
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-links li {
+    display: inline-block;
+    margin-bottom: var(--space-block-s);
+    padding: 0;
+    color: var(--corp-color-local-nav-divider);
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-links li.sticky-nav-local-parent-item {
+    display: none;
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-links li::after {
+    content: "|";
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-links li:last-child::after {
+    content: "";
+  }
+
+  /* gray links, no hover change (source); the current page black, regular weight */
+  body.corp .sticky-nav.local .sticky-nav-local-links a:any-link,
+  body.corp .sticky-nav.local .sticky-nav-local-links a:any-link:is(:hover, :focus-visible) {
+    padding: 0 var(--space-block-s);
+    color: var(--corp-color-local-nav-link);
+  }
+
+  body.corp .sticky-nav.local .sticky-nav-local-links a:any-link[aria-current="page"] {
+    color: var(--color-black);
+    font-weight: var(--font-weight-regular);
+  }
+}

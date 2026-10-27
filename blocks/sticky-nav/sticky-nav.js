@@ -1,4 +1,106 @@
 // Sticky Nav Block — in-page anchor bar; row = item (label + `#id` link) with scroll-spy.
+// `local` variant — page navigation of a page family (www.stryker.com local page nav):
+// row 1 = parent page link, then one row per child page (label | page link); no scroll-spy.
+
+/**
+ * A page path in comparable form: no `.html`, no `/index`, no trailing slash.
+ * @param {string} path
+ */
+const normalizePath = (path) => path
+  .replace(/\.html$/, '')
+  .replace(/\/index$/, '/')
+  .replace(/\/+$/, '') || '/';
+
+/**
+ * Builds the `local` variant: parent link + child page links, the current page marked
+ * active; below 600px a disclosure button (current page title) opens the full list.
+ * @param {Element} block The block element
+ */
+function decorateLocal(block) {
+  const current = normalizePath(window.location.pathname);
+
+  // row 1: parent (one cell holding a link); other rows: label | page link
+  const entries = [...block.children].map((row) => {
+    const [labelCell, linkCell] = row.children;
+    const link = linkCell?.querySelector('a') || labelCell?.querySelector('a');
+    const href = link?.getAttribute('href') || linkCell?.textContent.trim() || '';
+    const label = labelCell?.textContent.trim() || link?.textContent.trim() || '';
+    return { label, href };
+  }).filter(({ label, href }) => label && href);
+  if (!entries.length) {
+    block.textContent = '';
+    return;
+  }
+
+  const makeLink = ({ label, href }) => {
+    const a = document.createElement('a');
+    a.href = href;
+    a.textContent = label;
+    if (normalizePath(new URL(a.href, window.location.href).pathname) === current) {
+      a.setAttribute('aria-current', 'page');
+    }
+    return a;
+  };
+
+  const [parent, ...children] = entries;
+  const nav = document.createElement('nav');
+  nav.className = 'sticky-nav-local';
+  nav.setAttribute('aria-label', parent.label);
+
+  // ≥600px: the parent title on the left
+  const parentLink = makeLink(parent);
+  parentLink.className = 'sticky-nav-local-parent';
+
+  // the page list: children inline from 600px; below 600px the disclosure list,
+  // headed by the parent (that item is hidden from 600px, where the title shows it)
+  const list = document.createElement('ul');
+  list.className = 'sticky-nav-local-links';
+  list.id = `sticky-nav-local-${document.querySelectorAll('.sticky-nav-local').length}`;
+  const parentItem = document.createElement('li');
+  parentItem.className = 'sticky-nav-local-parent-item';
+  parentItem.append(makeLink(parent));
+  list.append(parentItem);
+  // the spaces match the source inline list: a space before each "|" divider and between items
+  children.forEach((entry) => {
+    const li = document.createElement('li');
+    li.append(makeLink(entry), ' ');
+    list.append(' ', li);
+  });
+
+  // below 600px: the current page title as the toggle (source .page-title + .mobile-btn);
+  // a page outside the list shows its own title, as the source does
+  const activeLabel = list.querySelector('[aria-current="page"]')?.textContent
+    || document.title.split(' | ')[0].trim() || parent.label;
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'sticky-nav-local-toggle';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', list.id);
+  const title = document.createElement('span');
+  title.className = 'sticky-nav-local-title';
+  title.textContent = activeLabel;
+  const icon = document.createElement('span');
+  icon.className = 'sticky-nav-local-icon';
+  icon.setAttribute('aria-hidden', 'true');
+  toggle.append(title, icon);
+
+  const setExpanded = (expanded) => {
+    toggle.setAttribute('aria-expanded', String(expanded));
+    nav.classList.toggle('sticky-nav-local-expanded', expanded);
+  };
+  toggle.addEventListener('click', () => setExpanded(toggle.getAttribute('aria-expanded') !== 'true'));
+  nav.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || toggle.getAttribute('aria-expanded') !== 'true') return;
+    setExpanded(false);
+    toggle.focus();
+  });
+
+  nav.append(toggle, parentLink, list);
+  block.replaceChildren(nav);
+
+  // not an anchor bar: opt the section out of the bar's sticky/hidden section rules
+  block.closest('.section')?.classList.replace('sticky-nav-container', 'sticky-nav-local-container');
+}
 
 /**
  * Resolve a nav target: `.section[data-anchor]` wins over a plain id.
@@ -47,6 +149,10 @@ function getScroller(el) {
 }
 
 export default function decorate(block) {
+  if (block.classList.contains('local')) {
+    decorateLocal(block);
+    return;
+  }
   const section = block.closest('.section');
   // Resolved after the nav is placed below. Live site → `window`; UE canvas →
   // the nested scrolling container. All scroll math is routed through this.
