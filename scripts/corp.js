@@ -28,7 +28,7 @@ import { previewDMLinkEditors } from './dm-support.js';
  * patients blocks reused on corp pages with a `blocks/<name>/<name>-corp.css` overlay.
  * Add a name here in the same PR that adds its overlay file.
  */
-const CORP_BLOCK_STYLES = ['accordion', 'columns'];
+const CORP_BLOCK_STYLES = ['accordion', 'columns', 'sticky-nav'];
 
 /**
  * Marks the page as corp and loads the corp global styles before the page appears.
