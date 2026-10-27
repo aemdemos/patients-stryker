@@ -10,6 +10,8 @@ import videoParser from './parsers/video.js';
 import newsDetailSectionsTransformer from './transformers/news-detail-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+// authored page data from the AEM export (npm run build:migration-index)
+import PAGE_FACTS from './data/page-facts/news-detail.js';
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
 const PAGE_TEMPLATE = {
@@ -123,6 +125,16 @@ export default {
     meta.site = 'corp';
     meta.template = 'news-detail';
     if (published) meta.published = published;
+    // page facts from the AEM export (approved 2026-10-27): regulatory document ID, AEM tags,
+    // first publication date, share image alt text
+    const facts = PAGE_FACTS[new URL(params.originalURL).pathname.replace(/\.html?$/, '')];
+    if (facts) {
+      const m = facts.metadata;
+      if (m.contentID) meta['content-id'] = m.contentID;
+      if (m.tags && m.tags.length) meta.tags = m.tags.join(', ');
+      if (m.originallyPublished) meta['originally-published'] = m.originallyPublished.slice(0, 10);
+      if (m.imageAlt) meta['image-alt'] = m.imageAlt;
+    }
     // pages the sections transformer marks (a video + Large Headline row) run the title
     // and small print full width: the news-detail `full-width` theme
     const theme = main.getAttribute('data-news-theme');
