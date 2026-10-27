@@ -601,9 +601,20 @@ function numberCounter(el, ctx) {
 function standaloneVideo(el, ctx) {
   const link = videoLink(el, ctx.doc);
   if (!link) return [];
-  return [{
+  const items = [{
     type: 'block', block: block(ctx.doc, 'Video', [[link]]), cellNodes: [para(ctx.doc, link.cloneNode(true))],
   }];
+  // the video's title / description under the player (.desc-content, e.g. an h3 on
+  // /us/en/sports-medicine/products/inspace): kept as text after the video
+  const desc = el.querySelector('.desc-content');
+  if (desc && text(desc)) {
+    const copy = contentCopy(desc, ctx.doc);
+    cleanRichText(copy);
+    const nodes = [...copy.querySelectorAll('h1, h2, h3, h4, h5, h6, p, ul, ol')]
+      .filter((node) => !node.parentElement.closest('p, ul, ol') && text(node));
+    if (nodes.length) items.push({ type: 'flow', role: 'text', nodes });
+  }
+  return items;
 }
 
 /**
