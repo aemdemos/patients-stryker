@@ -25,12 +25,26 @@ function lineText(node, direction) {
  * whole ("References:"), or a label on its own line before a line break ("About AVS",
  * "Media contact"). Marks those standalone <strong> elements so news-detail.css can tell
  * them apart; CSS alone can't, as it ignores the text around an element.
- * @param {Document} doc The document
+ * @param {Element} root The content to mark
  */
-export default function decorate(doc) {
-  doc.querySelectorAll('main .default-content-wrapper :is(p, li) > strong').forEach((strong) => {
+function markStandalone(root) {
+  root.querySelectorAll('.default-content-wrapper :is(p, li) > strong').forEach((strong) => {
     if (!lineText(strong, 'previousSibling') && !lineText(strong, 'nextSibling')) {
       strong.classList.add('standalone');
     }
   });
+}
+
+/**
+ * Marks the article's standalone bold, including the content of fragments (an article body
+ * kept as its own experience fragment document), which loads after this runs.
+ * @param {Document} doc The document
+ */
+export default function decorate(doc) {
+  const main = doc.querySelector('main');
+  if (!main) return;
+  markStandalone(main);
+  new MutationObserver((records) => records.forEach((record) => {
+    record.addedNodes.forEach((node) => { if (node.nodeType === 1) markStandalone(node); });
+  })).observe(main, { childList: true, subtree: true });
 }
