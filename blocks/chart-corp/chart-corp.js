@@ -9,9 +9,10 @@
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
-// colour keywords = the Statistics block palette (blocks/statistics/statistics.js)
+// colour cell: a Statistics palette keyword (blocks/statistics/statistics.js) or an exact
+// source colour (#rgb, #rrggbb, rgb(), rgba() — alpha is flattened onto white)
 const COLORS = ['teal', 'gold', 'dark-gold', 'navy', 'sage', 'purple'];
-const DEFAULT_COLOR = 'teal';
+const DEFAULT_COLOR = { keyword: 'teal' };
 
 const CONFIG_KEYS = {
   title: 'title',
@@ -86,6 +87,55 @@ function axisTicks(dataMax, length, minSpacing) {
   return { top: count * step, ticks, minor };
 }
 
+const hex2 = (n) => Math.round(n).toString(16).padStart(2, '0');
+
+/**
+ * Validates the authored colour: a palette keyword, or #rgb / #rrggbb / rgb() / rgba()
+ * normalised to opaque #rrggbb (rgba composited on white, as the source rendered it).
+ * Anything else falls back to the default keyword.
+ */
+function parseColor(raw = '') {
+  const text = raw.trim().toLowerCase();
+  if (COLORS.includes(text)) return { keyword: text };
+  let hex = text.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/)?.[1];
+  if (hex) {
+    if (hex.length === 3) hex = [...hex].map((c) => c + c).join('');
+    return { hex: `#${hex}` };
+  }
+  const rgb = text.match(
+    /^rgba?\(\s*(\d{1,3})\s*[,\s]\s*(\d{1,3})\s*[,\s]\s*(\d{1,3})\s*(?:[,/]\s*(\d*\.?\d+)(%?)\s*)?\)$/,
+  );
+  if (rgb) {
+    const channels = rgb.slice(1, 4).map(Number);
+    let alpha = rgb[4] === undefined ? 1 : Number(rgb[4]) / (rgb[5] ? 100 : 1);
+    alpha = Math.min(Math.max(alpha, 0), 1);
+    if (channels.every((c) => c <= 255)) {
+      return { hex: `#${channels.map((c) => hex2(c * alpha + 255 * (1 - alpha))).join('')}` };
+    }
+  }
+  return DEFAULT_COLOR;
+}
+
+/** Relative luminance (WCAG) of #rrggbb. */
+function luminance(hex) {
+  const [r, g, b] = [1, 3, 5].map((i) => {
+    const c = parseInt(hex.slice(i, i + 2), 16) / 255;
+    return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+/** Colours an element: keyword → palette class; exact colour → validated custom properties. */
+function applyColor(el, color, cls) {
+  el.setAttribute('class', `${cls} chart-corp-${color.keyword || 'custom'}`);
+  if (!color.hex) return;
+  el.style.setProperty('--chart-corp-color', color.hex);
+  // text on the fill: whichever of black / white contrasts more
+  const onBlack = (luminance(color.hex) + 0.05) / 0.05;
+  const onWhite = 1.05 / (luminance(color.hex) + 0.05);
+  el.style.setProperty('--chart-corp-on', onBlack >= onWhite ? 'var(--text-color)' : 'var(--color-white)');
+}
+
 function readConfig(block) {
   const config = { labels: true };
   const items = [];
@@ -110,8 +160,7 @@ function readConfig(block) {
     const label = cells[0]?.textContent.trim() || '';
     const value = parseFloat((cells[1]?.textContent || '').replace(/[^\d.-]/g, ''));
     if (!label || !Number.isFinite(value)) return;
-    const keyword = cells[2]?.textContent.trim().toLowerCase();
-    items.push({ label, value, color: COLORS.includes(keyword) ? keyword : DEFAULT_COLOR });
+    items.push({ label, value, color: parseColor(cells[2]?.textContent) });
   });
   return { config, items };
 }
@@ -198,12 +247,12 @@ function renderColumn(svgEl, width, data, measure) {
     const cx = side + slot * i + slot / 2;
     const barTop = Math.round(y(item.value));
     const bar = svg('rect', {
-      class: `chart-corp-bar chart-corp-${item.color}`,
       x: Math.round(cx - barWidth / 2),
       y: barTop,
       width: barWidth,
       height: Math.max(base - barTop, 0),
     });
+    applyColor(bar, item.color, 'chart-corp-bar');
     tooltip(bar, `${item.label}: ${format(item.value)}`);
     svgEl.append(bar);
     labelLines[i].forEach((line, j) => svgEl.append(svgText(line, {
@@ -286,12 +335,12 @@ function renderBar(svgEl, width, data, measure) {
     const cy = slotTop + slots[i] / 2;
     const barEnd = Math.round(x(item.value));
     const bar = svg('rect', {
-      class: `chart-corp-bar chart-corp-${item.color}`,
       x: base + 1,
       y: Math.round(cy - BAR.thickness / 2),
       width: Math.max(barEnd - base - 1, 0),
       height: BAR.thickness,
     });
+    applyColor(bar, item.color, 'chart-corp-bar');
     tooltip(bar, `${item.label}: ${format(item.value)}`);
     svgEl.append(bar);
     const lines = labelLines[i];
@@ -346,7 +395,7 @@ function renderPie(svgEl, size, data, measure) {
         d: `M${r},${r}L${x1},${y1}A${r},${r},0,${share > 0.5 ? 1 : 0},1,${x2},${y2}Z`,
       });
     }
-    slice.setAttribute('class', `chart-corp-slice chart-corp-${item.color}`);
+    applyColor(slice, item.color, 'chart-corp-slice');
     tooltip(slice, `${item.label}: ${format(item.value)}`);
     svgEl.append(slice);
 
@@ -355,9 +404,9 @@ function renderPie(svgEl, size, data, measure) {
     const labelRadius = r * PIE_LABEL_RADIUS;
     if (config.labels && share * 2 * Math.PI * labelRadius >= measure(text) + 8) {
       const [lx, ly] = point((start + end) / 2, labelRadius);
-      svgEl.append(svgText(text, {
-        class: `chart-corp-slice-value chart-corp-${item.color}`, x: lx, y: ly + 5, 'text-anchor': 'middle',
-      }));
+      const value = svgText(text, { x: lx, y: ly + 5, 'text-anchor': 'middle' });
+      applyColor(value, item.color, 'chart-corp-slice-value');
+      svgEl.append(value);
     }
     start = end;
   });
@@ -401,7 +450,7 @@ function buildLegend(items) {
   items.forEach((item) => {
     const li = document.createElement('li');
     const swatch = document.createElement('span');
-    swatch.className = `chart-corp-swatch chart-corp-${item.color}`;
+    applyColor(swatch, item.color, 'chart-corp-swatch');
     const label = document.createElement('span');
     label.textContent = item.label;
     li.append(swatch, label);

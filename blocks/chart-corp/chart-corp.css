@@ -56,7 +56,8 @@
   fill: var(--corp-color-chart-stem);
 }
 
-/* colour keywords (Statistics palette); --chart-corp-on is the text colour on the fill */
+/* colour keywords (Statistics palette); exact colours set the same two properties inline
+   (chart-corp.js). --chart-corp-on is the text colour on the fill */
 .chart-corp .chart-corp-teal {
   --chart-corp-color: var(--color-primary);
   --chart-corp-on: var(--color-white);
@@ -89,12 +90,6 @@
 
 .chart-corp :is(.chart-corp-bar, .chart-corp-slice) {
   fill: var(--chart-corp-color);
-}
-
-/* slices keep a hairline edge so neighbouring slices of one colour stay apart */
-.chart-corp .chart-corp-slice {
-  stroke: var(--color-white);
-  stroke-width: 1;
 }
 
 .chart-corp .chart-corp-svg .chart-corp-slice-value {
