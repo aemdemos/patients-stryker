@@ -1,0 +1,185 @@
+/* chart-corp — stryker.com charts (source animatedbarchart / pieChart, Google Charts).
+   Variants: column (default), bar, pie. The SVG is drawn at the block's pixel width by
+   chart-corp.js, so its 14px text keeps its size at every breakpoint. */
+
+.chart-corp .chart-corp-figure {
+  margin: 0;
+}
+
+/* title: source .defaultTitle (Futura; bold = futura-bold), subtitle: .defaultSubtitle
+   (Egyptienne Light), both 1.25em spans over 14px */
+.chart-corp .chart-corp-caption p {
+  margin: 0;
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l-nested);
+  color: var(--text-color);
+}
+
+.chart-corp .chart-corp-title {
+  font-family: var(--display-font-family);
+}
+
+.chart-corp .chart-corp-subtitle {
+  font-family: var(--heading-font-family);
+}
+
+.chart-corp .chart-corp-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.chart-corp .chart-corp-svg text,
+.chart-corp .chart-corp-legend {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+}
+
+.chart-corp .chart-corp-svg text {
+  fill: var(--text-color);
+}
+
+.chart-corp .chart-corp-grid {
+  fill: var(--color-surface);
+}
+
+.chart-corp .chart-corp-grid-minor {
+  fill: var(--color-surface-alt);
+}
+
+.chart-corp .chart-corp-baseline {
+  fill: var(--text-color);
+}
+
+.chart-corp .chart-corp-stem {
+  fill: var(--corp-color-chart-stem);
+}
+
+/* colour keywords (Statistics palette); exact colours set the same two properties inline
+   (chart-corp.js). --chart-corp-on is the text colour on the fill */
+.chart-corp .chart-corp-teal {
+  --chart-corp-color: var(--color-primary);
+  --chart-corp-on: var(--color-white);
+}
+
+.chart-corp .chart-corp-gold {
+  --chart-corp-color: var(--color-accent);
+  --chart-corp-on: var(--text-color);
+}
+
+.chart-corp .chart-corp-dark-gold {
+  --chart-corp-color: var(--color-accent-link-hover);
+  --chart-corp-on: var(--color-white);
+}
+
+.chart-corp .chart-corp-navy {
+  --chart-corp-color: var(--color-navy-bright);
+  --chart-corp-on: var(--color-white);
+}
+
+.chart-corp .chart-corp-sage {
+  --chart-corp-color: var(--color-surface-muted);
+  --chart-corp-on: var(--text-color);
+}
+
+.chart-corp .chart-corp-purple {
+  --chart-corp-color: var(--color-purple);
+  --chart-corp-on: var(--color-white);
+}
+
+.chart-corp :is(.chart-corp-bar, .chart-corp-slice) {
+  fill: var(--chart-corp-color);
+}
+
+.chart-corp .chart-corp-svg .chart-corp-slice-value {
+  fill: var(--chart-corp-on);
+}
+
+/* source animation: bars grow from the baseline (1s, ease in-out), labels follow */
+@media (prefers-reduced-motion: no-preference) {
+  .chart-corp .chart-corp-bar {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    transition: scale 1s ease-in-out;
+  }
+
+  .chart-corp.bar .chart-corp-bar {
+    transform-origin: left;
+  }
+
+  .chart-corp .chart-corp-annotation {
+    transition: opacity 0.3s ease-in-out 0.8s;
+  }
+
+  .chart-corp.chart-corp-pending .chart-corp-bar {
+    scale: 1 0;
+  }
+
+  .chart-corp.bar.chart-corp-pending .chart-corp-bar {
+    scale: 0 1;
+  }
+
+  .chart-corp.chart-corp-pending .chart-corp-annotation {
+    opacity: 0;
+  }
+}
+
+/* pie: source chart area = 90% of the 400px chart; the pie takes 61.8% of it,
+   the legend (centred, right) the rest and wraps below when it runs out of room */
+.chart-corp.pie .chart-corp-canvas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 var(--corp-chart-legend-gap);
+  box-sizing: border-box;
+  min-height: var(--corp-chart-pie-height);
+  padding: var(--space-block-l) 5%;
+}
+
+.chart-corp.pie .chart-corp-pie-plot {
+  display: flex;
+  flex: 0 0 61.8%;
+  justify-content: center;
+  min-width: 0;
+}
+
+.chart-corp .chart-corp-legend {
+  flex: 1 1 0;
+  min-width: min-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: var(--corp-chart-legend-line-height);
+  color: var(--corp-color-chart-legend);
+}
+
+.chart-corp .chart-corp-legend li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-block-xs);
+}
+
+.chart-corp .chart-corp-swatch {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: var(--chart-corp-color);
+  translate: 0 0.15em;
+}
+
+/* the numbers for screen readers (the SVG is aria-hidden) */
+.chart-corp .chart-corp-table {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* text probe used by chart-corp.js to measure label widths */
+.chart-corp .chart-corp-measure {
+  visibility: hidden;
+}

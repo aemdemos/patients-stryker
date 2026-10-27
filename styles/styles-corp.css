@@ -67,6 +67,13 @@
   --corp-news-tab-padding-top: 12px; /* source .tab-link: 12px above the 20px label, 7px + 1px rule below */
   --corp-news-image-max-width: 666px; /* source thumbnail preset $preset_666_392$ (its stacked width) */
   --corp-news-image-ratio: 666 / 392;
+
+  /* chart-corp: source Google Charts (animatedbarchart / pieChart) */
+  --corp-color-chart-stem: #999; /* value-label leader line */
+  --corp-color-chart-legend: #222; /* pie legend text */
+  --corp-chart-pie-height: 400px; /* source pie chart height */
+  --corp-chart-legend-gap: 23px; /* pie → legend swatch */
+  --corp-chart-legend-line-height: 23px; /* pie legend row pitch */
 }
 
 @media (width >= 900px) {
