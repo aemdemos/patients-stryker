@@ -165,7 +165,9 @@ var CustomImportScript = (() => {
     const items = [...element.querySelectorAll(".item")].filter((item) => item.querySelector("img"));
     if (!items.length) return;
     const cells = items.map((item) => [imageCell(item, document), textCell(item, document)]);
-    element.replaceWith(WebImporter.Blocks.createBlock(document, { name: "Cards Corp (teaser)", cells }));
+    const threeUp = items.every((item) => /\bcol-sm-4\b/.test(item.className));
+    const name = threeUp ? "Cards Corp (teaser, three-up)" : "Cards Corp (teaser)";
+    element.replaceWith(WebImporter.Blocks.createBlock(document, { name, cells }));
   }
 
   // tools/importer/parsers/video.js
@@ -800,11 +802,7 @@ var CustomImportScript = (() => {
     const box = doc.createElement("div");
     box.append(component);
     parse2(component, { document: doc });
-    const table = box.querySelector("table");
-    const name = table && table.querySelector("tr > th, tr > td");
-    if (!name) return null;
-    name.textContent = "Cards Corp (teaser, three-up)";
-    return table;
+    return box.querySelector("table");
   }
   function footnoteList(nodes, doc) {
     const NUMBERED = /^\s*(\d+)\s*[:.)]\s*/;

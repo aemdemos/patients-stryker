@@ -639,18 +639,14 @@ function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = [], asid
 }
 
 /**
- * A card grid in a tab (source col-sm-4, 3 per row) as `Cards Corp (teaser, three-up)`:
- * the cards-corp-teaser parser's table, with the variant added to its name.
+ * A card grid in a tab as the cards-corp-teaser parser's table (source col-sm-4, 3 per
+ * row → `Cards Corp (teaser, three-up)`).
  */
 function threeUpCards(component, doc) {
   const box = doc.createElement('div');
   box.append(component);
   cardsCorpTeaserParser(component, { document: doc });
-  const table = box.querySelector('table');
-  const name = table && table.querySelector('tr > th, tr > td');
-  if (!name) return null;
-  name.textContent = 'Cards Corp (teaser, three-up)';
-  return table;
+  return box.querySelector('table');
 }
 
 /**
