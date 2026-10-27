@@ -74,6 +74,12 @@
   --corp-chart-pie-height: 400px; /* source pie chart height */
   --corp-chart-legend-gap: 23px; /* pie → legend swatch */
   --corp-chart-legend-line-height: 23px; /* pie legend row pitch */
+
+  /* gallery-corp: Scene7 MixedMediaViewer (xpedition-powered-stair-chair, stryker/gallery) */
+  --corp-gallery-thumb-size: 56px; /* swatch and scroll-arrow box (66px pitch with the 10px gap) */
+  --corp-gallery-control-size: 28px; /* zoom / full-screen buttons, 20px in from the stage corner */
+  --corp-color-gallery-active: #666; /* selected swatch border; arrow / full-screen icon grey */
+  --corp-gallery-max-width: 940px; /* viewer width in its source col-sm-8 at 1440px */
 }
 
 @media (width >= 900px) {
