@@ -34,7 +34,31 @@ const CORP_BLOCK_STYLES = ['accordion', 'columns'];
  * Marks the page as corp and loads the corp global styles before the page appears.
  * @param {Document} doc The document
  */
+/**
+ * Starts fetching the slide image fragments of the heroes in the first sections (Hero Corp
+ * rows that link to fragment documents) before the block code loads, so the LCP image is
+ * known one round trip earlier. The pending responses are kept in window.hlx.heroFragments
+ * (path → Promise<string|null>) for blocks/hero-corp to reuse.
+ * @param {Document} doc The document
+ */
+function prefetchHeroFragments(doc) {
+  const sections = [...doc.querySelectorAll('main > div')].slice(0, 2);
+  const links = sections.flatMap((section) => [...section.querySelectorAll('.hero-corp a[href*="/fragments/"]')]);
+  if (!links.length) return;
+  window.hlx.heroFragments = window.hlx.heroFragments || new Map();
+  links.forEach((link) => {
+    const url = new URL(link.getAttribute('href'), window.location.href);
+    if (url.origin !== window.location.origin) return;
+    const path = url.pathname.replace(/\/$/, '');
+    if (window.hlx.heroFragments.has(path)) return;
+    window.hlx.heroFragments.set(path, fetch(`${path}.plain.html`)
+      .then((resp) => (resp.ok ? resp.text() : null))
+      .catch(() => null));
+  });
+}
+
 export async function loadEager(doc) {
+  prefetchHeroFragments(doc);
   doc.body.classList.add('corp');
   // HCP notice band: `hcp-banner: true` metadata adds the band to the header-corp and
   // extends the header height reservation (styles-corp.css --nav-height)

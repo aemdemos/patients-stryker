@@ -13,8 +13,8 @@
  *
  * Block (blocks/hero-corp/hero-corp.js, image-slide), one column:
  *   | Hero Corp (image-slide, top-15, left-56, right-10, size-2[, text-below]) |
- *   | <desktop image> |
- *   | <mobile image>  |   (when the slide has one)
+ *   | <desktop image> |   or a link to the desktop slide's XF fragment document
+ *   | <mobile image>  |   (when the slide has one) or a link to the mobile XF fragment
  *   | <headline>      |   heading kept as on the source; a plain headline line stays a
  *                           paragraph (no H1 is created)
  * The variant options carry the source headline box: top/left/right inset in % of the
@@ -78,8 +78,23 @@ export default function parse(element, { document }) {
   if (!first) return;
 
   const variants = ['image-slide'];
-  const cells = [[copyImage(first, document)]];
-  if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+  // slide images that are experience fragments (marked by markXfSlides in corp-components.js):
+  // a link to each fragment document instead of the image, desktop first
+  const fragmentLink = (path) => {
+    const a = document.createElement('a');
+    a.href = path;
+    a.textContent = path;
+    return a;
+  };
+  const cells = [];
+  if (slide.dataset.xfDesktop) {
+    cells.push([fragmentLink(slide.dataset.xfDesktop)]);
+    if (slide.dataset.xfMobile) cells.push([fragmentLink(slide.dataset.xfMobile)]);
+    else if (mobile) cells.push([copyImage(mobile, document)]);
+  } else {
+    cells.push([copyImage(first, document)]);
+    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+  }
 
   if (overlay) {
     const lines = headline(overlay, document);

@@ -43,7 +43,7 @@ import {
   BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
   plainBoldParagraphs, serifHeadings,
 } from '../corp-richtext.js';
-import { standaloneImageNodes, matchXfWrappers } from '../corp-components.js';
+import { standaloneImageNodes, matchXfWrappers, markXfSlides } from '../corp-components.js';
 
 const COMPONENTS = [
   '.c-autocarousel',
@@ -278,6 +278,11 @@ export default function transform(hookName, element, payload) {
     console.warn(`[news-detail-sections] ${xfSource}: XF not matched to the index, kept inline: ${xfUnmatched.join(' | ')}`);
   }
   const xfDone = new Set();
+  // hero / carousel slide XFs: marked for the hero parser (fragment links instead of images)
+  const slidesUnmatched = markXfSlides(main, xfSource);
+  if (slidesUnmatched.length) {
+    console.warn(`[news-detail-sections] ${xfSource}: slide XF not matched to the index, images kept: ${slidesUnmatched.join(' | ')}`);
+  }
 
   const consumed = new Set();
   components.forEach((component) => {

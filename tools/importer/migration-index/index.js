@@ -126,6 +126,19 @@ Object.entries(xf.PAGES).forEach(([page, refs]) => {
   refs.filter((r) => r.kind === 'fragment').forEach((r) => add(r.xf));
   xfUrls[template] = set;
 });
+// slide XFs (hero / carousel desktop + mobile images), imported as fragment documents too
+const slideUrls = {};
+Object.entries(xf.PAGES).forEach(([page, refs]) => {
+  const { template } = catalogs.site.pages[page];
+  const set = slideUrls[template] || new Set();
+  refs.filter((r) => r.kind === 'slide').forEach((r) => [r.desktop, r.mobile]
+    .filter((path) => path && xf.FRAGMENTS[path]).forEach((path) => set.add(path)));
+  slideUrls[template] = set;
+});
+Object.entries(slideUrls).filter(([, set]) => set.size).forEach(([template, set]) => {
+  writeFileSync(join(DATA, `catalog/xf-urls-slides-${template}.txt`), `${[...set].sort()
+    .map((path) => `https://www.stryker.com${path}.html`).join('\n')}\n`);
+});
 Object.entries(xfUrls).forEach(([template, set]) => {
   writeFileSync(join(DATA, `catalog/xf-urls-${template}.txt`), `${[...set].sort()
     .map((path) => `https://www.stryker.com${path}.html`).join('\n')}\n`);

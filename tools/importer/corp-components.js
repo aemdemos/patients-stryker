@@ -93,3 +93,44 @@ export function matchXfWrappers(root, source) {
   });
   return { matches, unmatched };
 }
+
+/** The Dynamic Media asset name of an image URL (…/is/image/stryker/<name>?…), lowercase. */
+const dmAsset = (src) => decodeURIComponent(String(src || '').split('/is/image/')[1] || '')
+  .split('?')[0].split('/').pop().toLowerCase();
+
+/**
+ * Hero / carousel slides whose images are experience fragments (.experienceFragment-ef and
+ * -ef-mobile in a .carouselslide) → data-xf-desktop / data-xf-mobile with the EDS fragment
+ * paths, for the hero parsers to emit fragment links instead of images. Slides are matched to
+ * the page's slide references (xf-index PAGES, kind slide) in order; a slide is only marked
+ * when its image is the XF's own Dynamic Media asset (FRAGMENTS[xf].assets), otherwise it
+ * keeps its images and is reported.
+ * @param {Element} root the source page content
+ * @param {string} source the source page path or URL
+ * @returns {string[]} the slides that could not be matched (their image names)
+ */
+export function markXfSlides(root, source) {
+  const refs = pageXfRefs(source).filter((r) => r.kind === 'slide');
+  const slides = [...root.querySelectorAll('.carouselslide:not(.slick-cloned)')]
+    .filter((slide) => slide.querySelector('.experienceFragment-ef, .experienceFragment-ef-mobile'));
+  const unmatched = [];
+  slides.forEach((slide, i) => {
+    const ref = refs[i];
+    const check = (side, selector) => {
+      const target = ref && ref[side];
+      const img = slide.querySelector(`${selector} img`);
+      if (!target || !target.eds || !img) return null;
+      const assets = ((xfInfo(target.xf) || {}).assets || []).map((a) => a.toLowerCase());
+      const name = dmAsset(img.getAttribute('src'));
+      return !assets.length || assets.includes(name) ? target.eds : null;
+    };
+    const desktop = check('desktop', '.experienceFragment-ef');
+    const mobile = check('mobile', '.experienceFragment-ef-mobile');
+    if (desktop) slide.dataset.xfDesktop = desktop;
+    if (mobile) slide.dataset.xfMobile = mobile;
+    if (!desktop || (slide.querySelector('.experienceFragment-ef-mobile img') && !mobile)) {
+      unmatched.push(dmAsset((slide.querySelector('img') || {}).src));
+    }
+  });
+  return unmatched;
+}

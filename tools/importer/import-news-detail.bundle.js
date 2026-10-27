@@ -92,8 +92,21 @@ var CustomImportScript = (() => {
     const first = desktop || mobile || slide.querySelector("img");
     if (!first) return;
     const variants = ["image-slide"];
-    const cells = [[copyImage(first, document)]];
-    if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    const fragmentLink = (path) => {
+      const a = document.createElement("a");
+      a.href = path;
+      a.textContent = path;
+      return a;
+    };
+    const cells = [];
+    if (slide.dataset.xfDesktop) {
+      cells.push([fragmentLink(slide.dataset.xfDesktop)]);
+      if (slide.dataset.xfMobile) cells.push([fragmentLink(slide.dataset.xfMobile)]);
+      else if (mobile) cells.push([copyImage(mobile, document)]);
+    } else {
+      cells.push([copyImage(first, document)]);
+      if (desktop && mobile) cells.push([copyImage(mobile, document)]);
+    }
     if (overlay) {
       const lines = headline(overlay, document);
       if (lines.length) cells.push([lines]);
@@ -2720,6 +2733,31 @@ var CustomImportScript = (() => {
     });
     return { matches, unmatched };
   }
+  var dmAsset = (src) => decodeURIComponent(String(src || "").split("/is/image/")[1] || "").split("?")[0].split("/").pop().toLowerCase();
+  function markXfSlides(root, source) {
+    const refs = pageXfRefs(source).filter((r) => r.kind === "slide");
+    const slides = [...root.querySelectorAll(".carouselslide:not(.slick-cloned)")].filter((slide) => slide.querySelector(".experienceFragment-ef, .experienceFragment-ef-mobile"));
+    const unmatched = [];
+    slides.forEach((slide, i) => {
+      const ref = refs[i];
+      const check = (side, selector) => {
+        const target = ref && ref[side];
+        const img = slide.querySelector(`${selector} img`);
+        if (!target || !target.eds || !img) return null;
+        const assets = ((xfInfo(target.xf) || {}).assets || []).map((a) => a.toLowerCase());
+        const name = dmAsset(img.getAttribute("src"));
+        return !assets.length || assets.includes(name) ? target.eds : null;
+      };
+      const desktop = check("desktop", ".experienceFragment-ef");
+      const mobile = check("mobile", ".experienceFragment-ef-mobile");
+      if (desktop) slide.dataset.xfDesktop = desktop;
+      if (mobile) slide.dataset.xfMobile = mobile;
+      if (!desktop || slide.querySelector(".experienceFragment-ef-mobile img") && !mobile) {
+        unmatched.push(dmAsset((slide.querySelector("img") || {}).src));
+      }
+    });
+    return unmatched;
+  }
 
   // tools/importer/transformers/news-detail-sections.js
   var COMPONENTS = [
@@ -2904,6 +2942,10 @@ var CustomImportScript = (() => {
       console.warn(`[news-detail-sections] ${xfSource}: XF not matched to the index, kept inline: ${xfUnmatched.join(" | ")}`);
     }
     const xfDone = /* @__PURE__ */ new Set();
+    const slidesUnmatched = markXfSlides(main, xfSource);
+    if (slidesUnmatched.length) {
+      console.warn(`[news-detail-sections] ${xfSource}: slide XF not matched to the index, images kept: ${slidesUnmatched.join(" | ")}`);
+    }
     const consumed = /* @__PURE__ */ new Set();
     components.forEach((component) => {
       if (consumed.has(component)) return;
