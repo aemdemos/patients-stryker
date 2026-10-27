@@ -383,6 +383,17 @@ body:where(.corp):has(main .hero-carousel) header {
   }
 }
 
+/* h1-21: a page title the source sets as a 1.5em Futura bold line opening the first rich
+   text, with no page title (e.g. the Emergency Relief Bed release): the page H1 at 21px,
+   lines 1.2 (25.2px; source 25.3px) */
+:where(body.corp) main > .section.h1-21 > .default-content-wrapper h1 {
+  margin: 0;
+  font-family: var(--display-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--corp-heading-line-height-s);
+}
+
 /* h1-1-25 / h2-1-5: headings the source enlarges with a size span (h1 > span.fontsize-1-25em:
    35px, lines 1.15; h2 > span.fontsize-1-5em: 1.5x the h2, 31.5px and 36.75px from 600px
    with the h2 step, lines 1.06), e.g. the "When Stryker employees…" feature. Like h2-0-8,

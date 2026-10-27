@@ -482,6 +482,26 @@ var CustomImportScript = (() => {
       p.before(lead);
     });
   }
+  function richTextTitle(component, doc) {
+    const p = component.querySelector("p");
+    if (!p) return null;
+    const nodes = [...p.childNodes];
+    const at = nodes.findIndex((node) => node.nodeName === "BR");
+    const lead = at < 0 ? nodes : nodes.slice(0, at);
+    const squash = (value) => value.replace(/[\s ]+/g, " ").trim();
+    const leadText = squash(lead.map((node) => node.textContent).join(""));
+    if (!leadText) return null;
+    const box = doc.createElement("div");
+    lead.forEach((node) => box.append(node.cloneNode(true)));
+    const large = squash([...box.querySelectorAll(".fontsize-1-5em")].filter((span) => !span.parentElement.closest(".fontsize-1-5em")).map((span) => span.textContent).join(""));
+    if (large !== leadText || !box.querySelector(".futura-bold, b")) return null;
+    lead.forEach((node) => node.remove());
+    while (p.firstChild && (p.firstChild.nodeName === "BR" || p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim())) p.firstChild.remove();
+    if (!text(p)) p.remove();
+    const h1 = doc.createElement("h1");
+    h1.textContent = leadText;
+    return h1;
+  }
   function blockNodes(container, doc) {
     const nodes = [];
     let run = [];
@@ -797,6 +817,12 @@ var CustomImportScript = (() => {
       h5.textContent = text(date);
       title.nodes.push(h5);
     }
+    const location = main.querySelector(".c-event-location-properties h5");
+    if (location && text(location)) {
+      const h5 = doc.createElement("h5");
+      h5.textContent = location.textContent.replace(/[\s ]+/g, " ").replace(/\s+,/g, ",").trim();
+      title.nodes.push(h5);
+    }
     const components = [...main.querySelectorAll(COMPONENTS)].filter((el) => {
       const parent = el.parentElement && el.parentElement.closest(COMPONENTS);
       return !parent && !el.closest("header, footer, .modal");
@@ -900,6 +926,13 @@ var CustomImportScript = (() => {
           startSection("headline", "headline-2vw").nodes.push(heading, ...lines.slice(1));
           current = null;
           return;
+        }
+      }
+      if (isFirst && !hasTitle && component.matches(".c-rich-text-editor")) {
+        const heading = richTextTitle(component, doc);
+        if (heading) {
+          startSection("headline", "h1-21").nodes.push(heading);
+          current = null;
         }
       }
       if (component.matches(".c-curatedcta")) {

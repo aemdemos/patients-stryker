@@ -451,6 +451,35 @@ function splitStyledLeads(root) {
 }
 
 /**
+ * The title line a rich text opens with when the page has no title: the run before the
+ * first line break of its first paragraph, all in a 1.5em size span and bold (Futura
+ * bold 21px on the source). Taken out of the component (with the breaks after it) and
+ * returned as an <h1>; null when the text does not open that way.
+ */
+function richTextTitle(component, doc) {
+  const p = component.querySelector('p');
+  if (!p) return null;
+  const nodes = [...p.childNodes];
+  const at = nodes.findIndex((node) => node.nodeName === 'BR');
+  const lead = at < 0 ? nodes : nodes.slice(0, at);
+  const squash = (value) => value.replace(/[\s ]+/g, ' ').trim();
+  const leadText = squash(lead.map((node) => node.textContent).join(''));
+  if (!leadText) return null;
+  const box = doc.createElement('div');
+  lead.forEach((node) => box.append(node.cloneNode(true)));
+  const large = squash([...box.querySelectorAll('.fontsize-1-5em')]
+    .filter((span) => !span.parentElement.closest('.fontsize-1-5em'))
+    .map((span) => span.textContent).join(''));
+  if (large !== leadText || !box.querySelector('.futura-bold, b')) return null;
+  lead.forEach((node) => node.remove());
+  while (p.firstChild && (p.firstChild.nodeName === 'BR' || (p.firstChild.nodeType === 3 && !p.firstChild.textContent.trim()))) p.firstChild.remove();
+  if (!text(p)) p.remove();
+  const h1 = doc.createElement('h1');
+  h1.textContent = leadText;
+  return h1;
+}
+
+/**
  * The top-level blocks of a cleaned fragment, in source order, without losing copy:
  * block elements as they are, <div>s unwrapped (at any depth), images and runs of
  * loose text / inline elements (e.g. a small-print `<div>A surgeon must…</div>`) as
@@ -846,6 +875,13 @@ export default function transform(hookName, element, payload) {
     h5.textContent = text(date);
     title.nodes.push(h5);
   }
+  // the event location below the date ("Kalamazoo, MI, USA"), an H5 line of its own too
+  const location = main.querySelector('.c-event-location-properties h5');
+  if (location && text(location)) {
+    const h5 = doc.createElement('h5');
+    h5.textContent = location.textContent.replace(/[\s ]+/g, ' ').replace(/\s+,/g, ',').trim();
+    title.nodes.push(h5);
+  }
 
   // 2.-3. lead media and article components, in source order (outermost only; a
   // slide's own image and headline belong to the carousel)
@@ -979,6 +1015,16 @@ export default function transform(hookName, element, payload) {
         startSection('headline', 'headline-2vw').nodes.push(heading, ...lines.slice(1));
         current = null;
         return;
+      }
+    }
+    // no page title and the first rich text opens with a 1.5em Futura bold line (21px,
+    // e.g. the Emergency Relief Bed release): that line is the page H1, in its own
+    // section with the `h1-21` style (the source size); the rest of the text follows
+    if (isFirst && !hasTitle && component.matches('.c-rich-text-editor')) {
+      const heading = richTextTitle(component, doc);
+      if (heading) {
+        startSection('headline', 'h1-21').nodes.push(heading);
+        current = null;
       }
     }
     if (component.matches('.c-curatedcta')) {
