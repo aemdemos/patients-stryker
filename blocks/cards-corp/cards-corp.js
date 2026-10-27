@@ -3,6 +3,23 @@ import decorateDMAssets, { isDMSrc } from '../../scripts/dm-support.js';
 import {
   fetchPlaceholders, fetchQueryIndex, getLocalePrefix, toIndexPath,
 } from '../../scripts/utils.js';
+import { isVideoUrl, videoPlayerFor } from '../video/video.js';
+
+/**
+ * video variant: the player for a cell that holds only a video — a Dynamic Media player
+ * (rendered by decorateDMAssets) or a single YouTube/DM link. Null for any other cell.
+ * @param {Element} cell a card cell
+ * @returns {HTMLElement|null}
+ */
+function videoIn(cell) {
+  const text = cell.textContent.trim();
+  const dm = cell.querySelectorAll('.dm-video-wrapper');
+  if (dm.length === 1 && text === dm[0].textContent.trim()) return dm[0];
+  const links = cell.querySelectorAll('a[href]');
+  if (links.length !== 1 || cell.querySelector('picture, img')) return null;
+  if (text !== links[0].textContent.trim()) return null;
+  return videoPlayerFor(links[0]);
+}
 
 function buildCardCells(entry, href, ctaLabel) {
   const imageCell = document.createElement('div');
@@ -47,12 +64,15 @@ function buildCardCells(entry, href, ctaLabel) {
 }
 
 /* Rows authored as a single page link are filled from the query index;
-   links to pages not (yet) published are dropped. */
+   links to pages not (yet) published are dropped. In the video variant a lone
+   video link is a video tile, not a page. */
 async function hydrateLinkRows(block) {
+  const isVideo = block.classList.contains('video');
   const linkRows = [...block.children].filter((row) => {
     const links = row.querySelectorAll('a[href]');
     return links.length === 1 && !row.querySelector('picture, img, h1, h2, h3, h4, h5, h6')
-      && row.textContent.trim() === links[0].textContent.trim();
+      && row.textContent.trim() === links[0].textContent.trim()
+      && !(isVideo && isVideoUrl(links[0].getAttribute('href')));
   });
   if (!linkRows.length) return;
 
@@ -78,6 +98,7 @@ async function hydrateLinkRows(block) {
  * The image links to the card's last link ("Learn more", else the H3 link), like the
  * source Related Products teasers.
  * text variant: the first cell holds the title (gold band) instead of an image.
+ * video variant: a cell holding only a YouTube/Dynamic Media link is an inline player.
  * A row holding only a page link is built from that page's query-index entry.
  * @param {Element} block The block element
  */
@@ -88,13 +109,19 @@ export default async function decorate(block) {
   decorateDMAssets(block);
 
   const isText = block.classList.contains('text');
+  const isVideo = block.classList.contains('video');
 
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div, i) => {
-      if (isText && i === 0) div.className = 'cards-corp-card-title';
+      const video = isVideo && videoIn(div);
+      if (video) {
+        // lift the player out of the editor wrapper so the canvas can't re-render over it
+        div.className = 'cards-corp-card-video';
+        div.replaceChildren(video);
+      } else if (isText && i === 0) div.className = 'cards-corp-card-title';
       else if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-corp-card-image';
       else div.className = 'cards-corp-card-body';
     });
