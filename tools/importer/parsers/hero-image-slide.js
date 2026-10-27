@@ -69,7 +69,13 @@ function percent(style, re) {
   return m ? String(parseFloat(m[1])).replace('.', '-') : null;
 }
 
-export default function parse(element, { document }) {
+/**
+ * @param {Element} element the carousel (or slide)
+ * @param {object} options document; overlayNodes: the overlay text already converted by the
+ *   caller (corp section builder: rich text + buttons of a product hero), used instead of
+ *   the Large Headline lines
+ */
+export default function parse(element, { document, overlayNodes }) {
   const slide = element.querySelector('.carouselslide:not(.slick-cloned)') || element;
   const desktop = slide.querySelector('.experienceFragment-ef img');
   const mobile = slide.querySelector('.experienceFragment-ef-mobile img');
@@ -97,7 +103,7 @@ export default function parse(element, { document }) {
   }
 
   if (overlay) {
-    const lines = headline(overlay, document);
+    const lines = overlayNodes || headline(overlay, document);
     if (lines.length) cells.push([lines]);
 
     const style = overlay.getAttribute('style') || '';

@@ -10,7 +10,7 @@
 import { join } from 'path';
 import { writeFileSync } from 'fs';
 import {
-  DATA, XF_DIR, loadPages, readJson, writeModule, writeJson, count, sortCounts,
+  DATA, XF_DIR, loadPages, readJson, writeModule, writeJson, count, sortCounts, forEachNode,
 } from './lib.js';
 import buildXfIndex from './xf.js';
 import buildPageFacts from './page-facts.js';
@@ -29,17 +29,56 @@ const facts = buildPageFacts(pages);
 const catalogs = buildCatalogs(pages, xf);
 const { generated } = xf.manifest;
 
+// the templates whose pages use each XF (directly, as a slide, or nested in a used XF): the XF
+// importer builds a fragment with the section rules of those templates
+const xfTemplates = {};
+Object.entries(xf.PAGES).forEach(([page, refs]) => {
+  const { template } = catalogs.site.pages[page];
+  const add = (path) => {
+    if (!xf.FRAGMENTS[path]) return;
+    const set = xfTemplates[path] || new Set();
+    if (set.has(template)) return;
+    set.add(template);
+    xfTemplates[path] = set;
+    xf.FRAGMENTS[path].refs.forEach(add);
+  };
+  refs.forEach((r) => [r.xf, r.desktop, r.mobile].filter(Boolean).forEach(add));
+});
+
+// aside XFs: an XF in a column next to a Marketo form (business-unit contact / social links);
+// their fragment documents carry the contact-aside section style (component-map cols2_2-3_1-3)
+const CONTENT = 'stryker/components/content/';
+const asideXfs = new Set();
+const children = (node) => Object.values(node).filter((v) => v && typeof v === 'object' && !Array.isArray(v));
+pages.forEach(({ json }) => forEachNode(json, (node) => {
+  if (!String(node['sling:resourceType'] || '').startsWith(`${CONTENT}columncontrol/`)) return;
+  const has = (col, type) => children(col).some((c) => c['sling:resourceType'] === `${CONTENT}${type}`);
+  const cols = children(node);
+  if (!cols.some((col) => has(col, 'marketoform'))) return;
+  cols.filter((col) => !has(col, 'marketoform')).forEach((col) => children(col).forEach((c) => {
+    if (c['sling:resourceType'] !== `${CONTENT}experienceFragment`) return;
+    const path = c.fragmentPath || c.fragmentVariationPath;
+    if (xf.FRAGMENTS[path]) asideXfs.add(path);
+  }));
+}));
+
 /* ---------- importer data ---------- */
 const sizes = {};
 sizes['xf-index.js'] = writeModule(join(DATA, 'xf-index.js'), [
   'Experience Fragment index from .migration/ (pages: author export; XFs: publish export).',
   `XF export generated ${generated}.`,
-  'FRAGMENTS: XF variation path → EDS path, status, nested refs, DM assets, pages using it.',
+  'FRAGMENTS: XF variation path → EDS path, status, nested refs, DM assets, pages using it,',
+  '  templates of those pages, aside (shown next to a Marketo form).',
   'PAGES: source page path → its XF references in authored order (kind fragment | slide).',
   'SKIPPED: referenced paths that are not importable XFs (redirect, not-an-xf, unpublished).',
 ], {
   FRAGMENTS: Object.fromEntries(Object.entries(xf.FRAGMENTS)
-    .map(([path, f]) => [path, { ...f, pages: f.pages.length }])),
+    .map(([path, f]) => [path, {
+      ...f,
+      pages: f.pages.length,
+      templates: [...(xfTemplates[path] || [])].sort(),
+      ...(asideXfs.has(path) ? { aside: true } : {}),
+    }])),
   PAGES: xf.PAGES,
   SKIPPED: xf.SKIPPED,
 });

@@ -96,12 +96,15 @@ export default function transform(hookName, element, payload) {
   // content (news-detail-sections.js): it keeps its <h1> and its authorable
   // ".c-disclaimer" document code, and none of the legal-copy formatting applies.
   const isNewsDetail = !!(payload && payload.template && payload.template.name === 'news-detail');
-  const isSkinnedContent = isSaResources || isIvsTreatment || isNewsDetail;
+  // The other corp templates (template.site 'corp', e.g. product-detail) rebuild their body
+  // with the corp section builder (transformers/corp-sections.js): same as news-detail.
+  const isCorp = isNewsDetail || !!(payload && payload.template && payload.template.site === 'corp');
+  const isSkinnedContent = isSaResources || isIvsTreatment || isCorp;
 
   if (hookName === TransformHook.beforeTransform) {
     // Cookie consent SDK / preference center - third-party chrome (cleaned.html line 307).
     WebImporter.DOMUtils.remove(element, ['#onetrust-consent-sdk']);
-    if (isNewsDetail) return;
+    if (isCorp) return;
 
     if (isIvsTreatment) {
       // ivs-treatment: its block parsers handle their own gold/CTA/heading encoding,

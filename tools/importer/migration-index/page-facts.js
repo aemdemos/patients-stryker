@@ -1,7 +1,7 @@
 /*
  * Page facts: authored data the scrape cannot (reliably) provide, per page —
  * metadata, in-page anchors, disclaimer, forms, tab titles, card-list targets,
- * images without alt text.
+ * interactive-image hotspots, images without alt text.
  */
 import {
   forEachNode, isComponent, shortType, templateName, toIso, edsPagePath, pageExportFile,
@@ -31,6 +31,24 @@ function cardTarget(ref, cache) {
   return cache.get(eds);
 }
 
+/**
+ * The hotspots of an interactivemedia imageMap, in authored order:
+ * `[poly(x1,y1,…)"<href>"|"<target>"|"<label>"]…` → { label, href, target, x, y }, with x / y the
+ * centre of the shape in image pixels.
+ */
+function interactiveHotspots(imageMap) {
+  return [...String(imageMap).matchAll(/\[(\w+)\(([\d.,\s]+)\)"([^"]*)"\|"([^"]*)"\|"([^"]*)"\]/g)]
+    .map(([, , coords, href, target, label]) => {
+      const n = coords.split(',').map(Number);
+      const xs = n.filter((v, i) => i % 2 === 0);
+      const ys = n.filter((v, i) => i % 2 === 1);
+      const mid = (v) => Math.round((Math.min(...v) + Math.max(...v)) / 2);
+      return {
+        label: label.trim(), href, target: target || null, x: mid(xs), y: mid(ys),
+      };
+    });
+}
+
 export default function buildPageFacts(pages) {
   const cache = new Map();
   const byTemplate = {};
@@ -54,6 +72,7 @@ export default function buildPageFacts(pages) {
       forms: [],
       tabs: [],
       cardLists: [],
+      interactiveMedia: [],
       missingAlt: [],
     };
     if (json.disclaimer?.disclaimer) facts.disclaimer = json.disclaimer.disclaimer.trim();
@@ -89,10 +108,21 @@ export default function buildPageFacts(pages) {
             .map((ref) => cardTarget(ref, cache)),
         });
       }
+      // hotspot links of a Scene7 interactive image: authored in the component (imageMap),
+      // not on the DM asset, and drawn client-side by the viewer, so a scrape never shows them
+      if (type === T('interactivemedia') && node.imageMap && node.fileReference) {
+        facts.interactiveMedia.push({
+          asset: node.assetID || null,
+          imageServer: node.imageserverurl || null,
+          hotspots: interactiveHotspots(node.imageMap),
+        });
+      }
       if (type === T('standaloneimage') && node.srcFileRef && !String(node.alt || '').trim()) {
         facts.missingAlt.push(node.srcFileRef);
       }
     });
+    // only the few pages with interactive images carry the field
+    if (!facts.interactiveMedia.length) delete facts.interactiveMedia;
     if (facts.missingAlt.length) missingAlt.push({ page: path, images: facts.missingAlt });
     byTemplate[facts.template] = byTemplate[facts.template] || {};
     byTemplate[facts.template][path] = facts;

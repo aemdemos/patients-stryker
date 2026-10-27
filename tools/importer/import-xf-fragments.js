@@ -8,11 +8,13 @@
  * (tools/importer/xf-fragment-path.js → data/xf-index.js). XFs nested in an XF become
  * Fragment blocks in it (matched against FRAGMENTS[xf].refs).
  *
- * The content is built with the section rules of the template whose pages use the XF; this
- * script carries the news-detail rules (transformers/news-detail-sections.js: article body
- * copy, asides), so run it with the news-detail list only:
- *   tools/importer/data/catalog/xf-urls-news-detail.txt (npm run build:migration-index)
- * XFs of other templates get their template's rules when that template's importer is built.
+ * The content is built with the section rules of the templates whose pages use the XF
+ * (FRAGMENTS[xf].templates): an XF used by news-detail pages gets the news-detail rules
+ * (transformers/news-detail-sections.js: article body copy, asides); every other XF the corp
+ * section builder (corp-page.js through transformers/corp-sections.js), the rules of the
+ * other corp page importers (import-product-detail.js). Run it with the template's lists:
+ *   tools/importer/data/catalog/xf-urls-<template>.txt and xf-urls-slides-<template>.txt
+ *   (npm run build:migration-index)
  * The shared news fragments with a styling of their own (import-news-shared-fragments.js)
  * are built by that importer. Contact-directory XFs (rendered content fragments,
  * dl.cmp-contentfragment) get the directory rules whatever the list: group bands and one
@@ -25,8 +27,11 @@ import cardsCorpTeaserParser from './parsers/cards-corp-teaser.js';
 import videoParser from './parsers/video.js';
 
 import newsDetailSectionsTransformer from './transformers/news-detail-sections.js';
+import corpSectionsTransformer from './transformers/corp-sections.js';
 import cleanupTransformer from './transformers/patients-stryker-cleanup.js';
 import dmImagesTransformer from './transformers/patients-stryker-dm-images.js';
+import { CORP_PAGE } from './corp-page.js';
+import { markLivePage } from './corp-section-builder.js';
 
 import sharedFragmentsImport, { FRAGMENTS as SHARED } from './import-news-shared-fragments.js';
 import { xfKey, xfInfo } from './xf-fragment-path.js';
@@ -50,6 +55,11 @@ const parsers = {
 
 const transformers = [newsDetailSectionsTransformer, cleanupTransformer, dmImagesTransformer];
 
+// XFs of the other corp templates (data/xf-index.js FRAGMENTS[xf].templates): the corp
+// section builder, as the page importers (e.g. import-product-detail.js)
+const CORP_XF_TEMPLATE = { name: 'corp-xf', site: 'corp' };
+const corpTransformers = [corpSectionsTransformer, cleanupTransformer, dmImagesTransformer];
+
 function executeTransformers(hookName, element, payload) {
   const enhancedPayload = { ...payload, template: PAGE_TEMPLATE };
   transformers.forEach((fn) => {
@@ -62,6 +72,9 @@ function executeTransformers(hookName, element, payload) {
 }
 
 export default {
+  // on the live XF page: what it hides and what its forms load (used by the corp builder)
+  onLoad: ({ document }) => markLivePage(document),
+
   transform: (payload) => {
     const { document, url, params } = payload;
     const key = xfKey(params.originalURL || url);
@@ -90,6 +103,49 @@ export default {
         },
       }];
     }
+    // XFs used by news-detail pages keep the news rules; every other XF is built by the corp
+    // section builder (corp-page.js), the rules of the other corp page importers
+    const templates = info.templates || [];
+    if (templates.length && !templates.includes('news-detail')) {
+      const corpPayload = {
+        ...payload,
+        template: CORP_XF_TEMPLATE,
+        corp: CORP_PAGE,
+        xf: key,
+        // an XF shown next to a Marketo form: the contact-aside style (component-map)
+        sectionStyles: info.aside ? ['contact-aside'] : [],
+      };
+      corpTransformers.forEach((fn) => {
+        try {
+          fn.call(null, 'beforeTransform', main, corpPayload);
+        } catch (e) {
+          console.error('Transformer failed at beforeTransform:', e);
+        }
+      });
+      const corpReport = JSON.parse(main.getAttribute('data-corp-report') || '{}');
+      main.removeAttribute('data-corp-report');
+      corpTransformers.forEach((fn) => {
+        try {
+          fn.call(null, 'afterTransform', main, corpPayload);
+        } catch (e) {
+          console.error('Transformer failed at afterTransform:', e);
+        }
+      });
+      WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
+      return [{
+        element: main,
+        path: info.eds,
+        report: {
+          title: info.eds,
+          template: `corp (${templates.join(', ')})`,
+          source: key,
+          pages: info.pages,
+          unhandled: (corpReport.unhandled || []).join(' | '),
+          notes: (corpReport.notes || []).join(' | '),
+        },
+      }];
+    }
+
     // the XF's nested XFs are matched against its own references (payload.xf)
     executeTransformers('beforeTransform', main, { ...payload, xf: key });
     PAGE_TEMPLATE.blocks.forEach((def) => def.instances.forEach((selector) => {

@@ -41,7 +41,7 @@ import { videoLink } from '../parsers/video.js';
 // rich-text rules shared by every corp importer (decision table: decisions/typography-map.json)
 import {
   BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
-  plainBoldParagraphs, serifHeadings,
+  plainBoldParagraphs, serifHeadings, footnoteList,
 } from '../corp-richtext.js';
 import { standaloneImageNodes, matchXfWrappers, markXfSlides } from '../corp-components.js';
 
@@ -192,39 +192,6 @@ function videoHeadlineColumns(video, headline, doc) {
     name: 'Columns (columns-67-33, large-headline, gray-lead)',
     cells: [[media, statement]],
   });
-}
-
-/**
- * References authored as numbered paragraphs ("1: Author…", "2: …") become an ordered
- * list, so the article's citation superscripts link to them: scripts.js
- * decorateFootnotes links <sup>N</sup> to the Nth item of the last <ol> on the page.
- * Only a run numbered 1, 2, 3… in order is converted; the source's "N:" / "N." prefix is kept (the
- * list numbers the items). Other paragraphs (e.g. the document code) are left as they are.
- */
-function footnoteList(nodes, doc) {
-  const NUMBERED = /^\s*(\d+)\s*[:.)]\s*/;
-  const out = [];
-  let ol = null;
-  nodes.forEach((node) => {
-    const match = node.tagName === 'P' && node.textContent.match(NUMBERED);
-    const next = ol ? ol.children.length + 1 : 1;
-    if (match && Number(match[1]) === next) {
-      if (!ol) {
-        ol = doc.createElement('ol');
-        out.push(ol);
-      }
-      // the source's own "1:" / "1." prefix stays in the text (references-spaced hides
-      // the list marker), so each entry reads as on the source
-      const li = doc.createElement('li');
-      while (node.firstChild) li.append(node.firstChild);
-      ol.append(li);
-      return;
-    }
-    ol = null;
-    out.push(node);
-  });
-  out.converted = out.some((node) => node.tagName === 'OL' && !nodes.includes(node));
-  return out;
 }
 
 export default function transform(hookName, element, payload) {
