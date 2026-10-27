@@ -544,17 +544,73 @@ var CustomImportScript = (() => {
       cells: [[media, nodes]]
     });
   }
-  function videoHeadlineColumns(video, headline2, doc) {
+  function quoteNodes(headline2, doc) {
+    const box = doc.createElement("div");
+    box.innerHTML = headline2.innerHTML;
+    box.querySelectorAll(".futura-bold").forEach((span) => {
+      const strong = doc.createElement("strong");
+      while (span.firstChild) strong.append(span.firstChild);
+      if (/^[“”"‘’']+$/.test(text(strong))) {
+        const em = doc.createElement("em");
+        em.append(strong);
+        span.replaceWith(em);
+      } else span.replaceWith(strong);
+    });
+    box.querySelectorAll("span, font").forEach(unwrap);
+    box.querySelectorAll("strong strong").forEach(unwrap);
+    box.querySelectorAll("em").forEach((em) => {
+      const mark = em.firstElementChild;
+      if (!mark || mark.tagName !== "STRONG" || em.childNodes.length !== 1) return;
+      const next = em.nextSibling;
+      const prev = em.previousSibling;
+      const inner = doc.createElement("em");
+      while (mark.firstChild) inner.append(mark.firstChild);
+      if (next && next.nodeName === "STRONG") {
+        next.prepend(inner);
+        em.remove();
+      } else if (prev && prev.nodeName === "STRONG") {
+        prev.append(inner);
+        em.remove();
+      } else {
+        mark.append(...inner.childNodes);
+      }
+    });
+    [...box.querySelectorAll("em, strong")].reverse().forEach((el) => {
+      while (el.lastChild && (el.lastChild.nodeName === "BR" || el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim())) {
+        el.after(el.lastChild);
+      }
+    });
+    const out = [];
+    const blocks = box.querySelectorAll("p").length ? [...box.querySelectorAll("p")] : [box];
+    blocks.forEach((block) => {
+      let line = doc.createElement("p");
+      const flush = () => {
+        if (text(line)) out.push(line);
+        line = doc.createElement("p");
+      };
+      [...block.childNodes].forEach((node) => {
+        if (node.nodeName === "BR") flush();
+        else line.append(node);
+      });
+      flush();
+    });
+    out.forEach((p) => p.querySelectorAll("*").forEach((el) => {
+      [...el.attributes].forEach((attr) => el.removeAttribute(attr.name));
+    }));
+    return out;
+  }
+  function videoHeadlineColumns(video, headline2, doc, quotes = [], ctas = []) {
     const link2 = videoLink(video, doc);
     const lines = headlineNodes(headline2, doc);
     if (!link2 || !lines.length) return null;
     const media = doc.createElement("p");
     media.append(link2);
+    const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
     const small = headline2.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
     const statement = small ? lines : [rename(lines[0], "h2"), ...lines.slice(1)];
     return WebImporter.Blocks.createBlock(doc, {
       name: "Columns (columns-67-33, large-headline, gray-lead)",
-      cells: [[media, statement]]
+      cells: [[[media, ...buttons], [...statement, ...quotes.flatMap((q) => quoteNodes(q, doc))]]]
     });
   }
   function footnoteList(nodes, doc) {
@@ -661,9 +717,15 @@ var CustomImportScript = (() => {
       if (component.matches(".c-standalone-video")) {
         if (!component.querySelector("[data-asset-path], iframe[src]")) return;
         const aside = videoAside(component);
-        const columns = aside && videoHeadlineColumns(component, aside, doc);
+        const asideCol = aside && aside.closest('[class*="col-sm-4"]');
+        const quotes = asideCol ? [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text(h)) : [];
+        const videoCol = component.closest('[class*="col-sm-8"]');
+        const ctas = aside && videoCol ? [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c)) : [];
+        const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas);
         if (columns) {
           consumed.add(aside);
+          quotes.forEach((q) => consumed.add(q));
+          ctas.forEach((c) => consumed.add(c));
           element.setAttribute("data-news-theme", "full-width");
           startSection("columns").nodes.push(columns);
           current = null;
@@ -1095,6 +1157,14 @@ var CustomImportScript = (() => {
       meta.site = "corp";
       meta.template = "news-detail";
       if (published) meta.published = published;
+      const shareImage = meta.Image && (meta.Image.querySelector ? meta.Image.querySelector("img") || meta.Image : meta.Image);
+      const shareSrc = shareImage && shareImage.getAttribute && shareImage.getAttribute("src");
+      if (shareSrc && /\/content\/dam\//.test(shareSrc)) {
+        const fileName = (u) => decodeURIComponent(u.split("?")[0].split("/").pop()).replace(/\.[a-z0-9]+$/i, "").toLowerCase();
+        const name = fileName(shareSrc);
+        const dm = [...main.querySelectorAll('a[href*="media-assets.stryker.com/is/image/"], img[src*="media-assets.stryker.com/is/image/"]')].map((el) => el.getAttribute("href") || el.getAttribute("src")).find((u) => fileName(u) === name);
+        if (dm) shareImage.setAttribute("src", dm);
+      }
       const theme = main.getAttribute("data-news-theme");
       if (theme) {
         meta.theme = theme;

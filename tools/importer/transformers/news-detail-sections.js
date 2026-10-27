@@ -517,20 +517,86 @@ function videoTextColumns(video, rte, doc) {
   });
 }
 
+/**
+ * A quote Large Headline under the grey box (survivor stories: the quote, a rule, the
+ * name, the role) as the library's Video + quote cell: gold quote marks → Bold + Italic,
+ * Futura words → Bold, one paragraph per line (the name a fully Bold paragraph).
+ */
+function quoteNodes(headline, doc) {
+  const box = doc.createElement('div');
+  box.innerHTML = headline.innerHTML;
+  box.querySelectorAll('.futura-bold').forEach((span) => {
+    const strong = doc.createElement('strong');
+    while (span.firstChild) strong.append(span.firstChild);
+    if (/^[“”"‘’']+$/.test(text(strong))) {
+      const em = doc.createElement('em');
+      em.append(strong);
+      span.replaceWith(em);
+    } else span.replaceWith(strong);
+  });
+  box.querySelectorAll('span, font').forEach(unwrap);
+  box.querySelectorAll('strong strong').forEach(unwrap);
+  // a gold mark right against a Bold run goes inside it (<strong><em>“</em>I would…</strong>):
+  // two touching emphasis runs would merge on import
+  box.querySelectorAll('em').forEach((em) => {
+    const mark = em.firstElementChild;
+    if (!mark || mark.tagName !== 'STRONG' || em.childNodes.length !== 1) return;
+    const next = em.nextSibling;
+    const prev = em.previousSibling;
+    const inner = doc.createElement('em');
+    while (mark.firstChild) inner.append(mark.firstChild);
+    if (next && next.nodeName === 'STRONG') {
+      next.prepend(inner);
+      em.remove();
+    } else if (prev && prev.nodeName === 'STRONG') {
+      prev.append(inner);
+      em.remove();
+    } else {
+      mark.append(...inner.childNodes);
+    }
+  });
+  // line breaks typed inside the bold belong after it
+  [...box.querySelectorAll('em, strong')].reverse().forEach((el) => {
+    while (el.lastChild && (el.lastChild.nodeName === 'BR' || (el.lastChild.nodeType === 3 && !el.lastChild.textContent.trim()))) {
+      el.after(el.lastChild);
+    }
+  });
+  const out = [];
+  const blocks = box.querySelectorAll('p').length ? [...box.querySelectorAll('p')] : [box];
+  blocks.forEach((block) => {
+    let line = doc.createElement('p');
+    const flush = () => {
+      if (text(line)) out.push(line);
+      line = doc.createElement('p');
+    };
+    [...block.childNodes].forEach((node) => {
+      if (node.nodeName === 'BR') flush();
+      else line.append(node);
+    });
+    flush();
+  });
+  out.forEach((p) => p.querySelectorAll('*').forEach((el) => {
+    [...el.attributes].forEach((attr) => el.removeAttribute(attr.name));
+  }));
+  return out;
+}
+
 /** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
-function videoHeadlineColumns(video, headline, doc) {
+function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = []) {
   const link = videoLink(video, doc);
   const lines = headlineNodes(headline, doc);
   if (!link || !lines.length) return null;
   const media = doc.createElement('p');
   media.append(link);
+  // a button under the video: a Bold link on its own line in the wide cell
+  const buttons = ctas.flatMap((cta) => buttonNodes(cta, doc));
   // a 2vw headline (28px at 1440px, e.g. Stiles) is the Heading 2 statement; a 1.5vw one
   // (21px, e.g. Heath) stays a paragraph, the large-headline text size
   const small = headline.querySelector('[class*="fontsize-1-5-vw"], [class*="fontsize-1-5vw"]');
   const statement = small ? lines : [rename(lines[0], 'h2'), ...lines.slice(1)];
   return WebImporter.Blocks.createBlock(doc, {
     name: 'Columns (columns-67-33, large-headline, gray-lead)',
-    cells: [[media, statement]],
+    cells: [[[media, ...buttons], [...statement, ...quotes.flatMap((q) => quoteNodes(q, doc))]]],
   });
 }
 
@@ -668,9 +734,16 @@ export default function transform(hookName, element, payload) {
     if (component.matches('.c-standalone-video')) {
       if (!component.querySelector('[data-asset-path], iframe[src]')) return;
       const aside = videoAside(component);
-      const columns = aside && videoHeadlineColumns(component, aside, doc);
+      // further Large Headlines in the narrow column (a quote) and buttons under the video
+      const asideCol = aside && aside.closest('[class*="col-sm-4"]');
+      const quotes = asideCol ? [...asideCol.querySelectorAll('.c-largeheadline')].filter((h) => h !== aside && text(h)) : [];
+      const videoCol = component.closest('[class*="col-sm-8"]');
+      const ctas = aside && videoCol ? [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c)) : [];
+      const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas);
       if (columns) {
         consumed.add(aside);
+        quotes.forEach((q) => consumed.add(q));
+        ctas.forEach((c) => consumed.add(c));
         // the source runs the title and small print full width on these pages too: the
         // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
         element.setAttribute('data-news-theme', 'full-width');
