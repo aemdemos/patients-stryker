@@ -83,10 +83,36 @@ export function edsPagePath(ref) {
   return path.replace(/\/index$/, '/');
 }
 
-/** /us/en/x → the page export file, if any. */
+/** A path segment the way aem.live serves it (lowercase, other characters → one "-"). */
+const edsName = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+const listings = new Map();
+function listing(dir) {
+  if (!listings.has(dir)) {
+    listings.set(dir, existsSync(dir) ? readdirSync(dir, { withFileTypes: true }) : []);
+  }
+  return listings.get(dir);
+}
+
+/**
+ * /us/en/x → the page export file, if any. EDS paths are the AEM names cleaned up
+ * (foot---ankle → foot-ankle, a trailing "-" dropped, lowercase), so a path that has no
+ * exact match is looked up segment by segment by its cleaned name.
+ */
 export function pageExportFile(path) {
-  const file = join(PAGES_DIR, `${path.replace(/\/$/, '/index')}.json`);
-  return existsSync(file) ? file : null;
+  const exact = join(PAGES_DIR, `${path.replace(/\/$/, '/index')}.json`);
+  if (existsSync(exact)) return exact;
+  const segments = path.replace(/\/$/, '/index').split('/').filter(Boolean);
+  let dir = PAGES_DIR;
+  for (let i = 0; i < segments.length; i += 1) {
+    const last = i === segments.length - 1;
+    const want = edsName(segments[i]);
+    const hit = listing(dir).find((e) => (last ? e.isFile() && e.name.endsWith('.json') : e.isDirectory())
+      && edsName(last ? e.name.replace(/\.json$/, '') : e.name) === want);
+    if (!hit) return null;
+    dir = join(dir, hit.name);
+  }
+  return dir;
 }
 
 export const asset = (ref) => String(ref || '').split('/').pop().replace(/\.[a-z0-9]+$/i, '');

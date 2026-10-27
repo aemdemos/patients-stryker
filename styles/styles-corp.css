@@ -369,6 +369,12 @@ body:where(.corp):has(main .hero-carousel) header {
   font-family: var(--heading-font-family);
 }
 
+/* standalone image title: the h4 sits right under its image (stryker.com .c-standalone-image
+   h4.title, no gap; measured on /us/en/about/news/2022/stryker-launches-easyfuse-…) */
+:where(body.corp) main .default-content-wrapper > p:has(> picture, > a > picture):has(+ h4) {
+  margin-bottom: 0;
+}
+
 /* bracket tag `[[body-font]…]` (scripts/span-tags.js): text, bold included, in the body
    font — e.g. a plain-bold label line ("For investor inquiries:") next to Futura labels */
 :where(body.corp) main span.body-font,

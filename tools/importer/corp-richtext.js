@@ -274,12 +274,21 @@ function tagPlainBoldLabels(root, wholeParagraphs) {
 }
 
 /**
- * Cleans a copied rich-text fragment in place: colours to bracket tags, bold/italic to
+ * Cleans a copied rich-text fragment in place: text-only <div>s to paragraphs, colours to
+ * bracket tags, bold/italic to
  * <strong>/<em>, font spans dropped, attributes stripped, empty paragraphs removed.
  * @returns {{centred: boolean, size: string|null}} whether every paragraph of the fragment
  *   is centred, and its copy section styles (copyStyles)
  */
-export function cleanRichText(root, { wholeParagraphs = false } = {}) {
+export function cleanRichText(root, { wholeParagraphs = false, divParagraphs = true } = {}) {
+  // text authored in a bare <div> (no paragraph inside, e.g. a "* …" footnote line) is a
+  // paragraph: the section builders only keep block elements, so it would be lost.
+  // (divParagraphs: false for callers that hold on to their own <div> lines)
+  if (divParagraphs) {
+    [...root.querySelectorAll('div')].reverse().forEach((div) => {
+      if (text(div) && !div.querySelector('p, div, ul, ol, h1, h2, h3, h4, h5, h6, table')) rename(div, 'p');
+    });
+  }
   const blocks = [...root.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li')].filter((el) => text(el));
   const centred = blocks.length > 0
     && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute('style') || ''));

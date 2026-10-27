@@ -383,7 +383,12 @@ var CustomImportScript = (() => {
       b.after(doc.createTextNode("]"));
     });
   }
-  function cleanRichText(root, { wholeParagraphs = false } = {}) {
+  function cleanRichText(root, { wholeParagraphs = false, divParagraphs = true } = {}) {
+    if (divParagraphs) {
+      [...root.querySelectorAll("div")].reverse().forEach((div) => {
+        if (text(div) && !div.querySelector("p, div, ul, ol, h1, h2, h3, h4, h5, h6, table")) rename(div, "p");
+      });
+    }
     const blocks = [...root.querySelectorAll("p, h1, h2, h3, h4, h5, h6, li")].filter((el) => text(el));
     const centred = blocks.length > 0 && blocks.every((el) => /text-align:\s*center/i.test(el.getAttribute("style") || ""));
     const size = copyStyles(root);
@@ -461,6 +466,43 @@ var CustomImportScript = (() => {
     }));
   }
 
+  // tools/importer/corp-components.js
+  function standaloneImageNodes(component, doc) {
+    const nodes = [];
+    [...component.querySelectorAll("img")].forEach((source) => {
+      const img = doc.createElement("img");
+      img.setAttribute("src", source.getAttribute("src"));
+      img.setAttribute("alt", source.getAttribute("alt") || "");
+      const p = doc.createElement("p");
+      const link2 = source.closest("a[href]");
+      if (link2) {
+        const a = doc.createElement("a");
+        a.setAttribute("href", link2.getAttribute("href"));
+        a.append(img);
+        p.append(a);
+      } else {
+        p.append(img);
+      }
+      nodes.push(p);
+    });
+    const title = component.querySelector(".title-content .title");
+    if (title && text(title)) {
+      const h4 = doc.createElement("h4");
+      h4.textContent = text(title);
+      nodes.push(h4);
+    }
+    const description = component.querySelector(".c-standalone-image-content > p");
+    if (description && text(description)) {
+      const p = doc.createElement("p");
+      description.textContent.trim().split(/\n/).forEach((line, i) => {
+        if (i) p.append(doc.createElement("br"));
+        p.append(doc.createTextNode(line.trim()));
+      });
+      nodes.push(p);
+    }
+    return nodes;
+  }
+
   // tools/importer/transformers/news-detail-sections.js
   var COMPONENTS = [
     ".c-autocarousel",
@@ -480,6 +522,7 @@ var CustomImportScript = (() => {
       if (!LABEL_HEADING.test(text(h))) return;
       const p = root.ownerDocument.createElement("p");
       while (h.firstChild) p.append(h.firstChild);
+      p.querySelectorAll('[class*="fontsize-"]').forEach(unwrap);
       if (!p.querySelector(".futura-bold")) {
         p.querySelectorAll("b, strong").forEach(unwrap);
         const bold = root.ownerDocument.createElement("span");
@@ -531,16 +574,6 @@ var CustomImportScript = (() => {
     });
     return { nodes, centred, size };
   }
-  function imageNodes(component, doc) {
-    return [...component.querySelectorAll("img")].map((source) => {
-      const img = doc.createElement("img");
-      img.setAttribute("src", source.getAttribute("src"));
-      img.setAttribute("alt", source.getAttribute("alt") || "");
-      const p = doc.createElement("p");
-      p.append(img);
-      return p;
-    });
-  }
   function buttonNodes(component, doc) {
     return [...component.querySelectorAll("a[href]")].filter((a) => text(a)).map((source) => {
       const a = doc.createElement("a");
@@ -564,7 +597,7 @@ var CustomImportScript = (() => {
     box.innerHTML = component.innerHTML;
     const lines = [...box.querySelectorAll(".line")].map((line) => rename(line, "div"));
     lines.forEach((line) => line.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(unwrap));
-    cleanRichText(box);
+    cleanRichText(box, { divParagraphs: false });
     return (lines.length ? lines : [box]).map((line) => {
       if (!text(line)) return null;
       const p = doc.createElement("p");
@@ -658,7 +691,7 @@ var CustomImportScript = (() => {
         return;
       }
       if (component.matches(".c-standalone-image")) {
-        const nodes2 = imageNodes(component, doc);
+        const nodes2 = standaloneImageNodes(component, doc);
         if (!nodes2.length) return;
         if (isFirst) {
           startSection("lead").nodes.push(...nodes2);

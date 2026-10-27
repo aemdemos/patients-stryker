@@ -65,7 +65,8 @@
    "selector": "div.standaloneimage (AEM wrapper class; confirm on the example page)",
    "status": "established",
    "outcome": "default-content image; linkInternal → linked image",
-   "note": "alt copied as is; missing alt listed for authors"
+   "note": "2026-10-27: the title and description were dropped by the news importer (reported on /us/en/about/news/2022/stryker-launches-easyfuse-...); fixed. Title measured on the source: Futura Bold 17.5px/20.125px, no gap under the image, 15px below.",
+   "contentModel": "image paragraph (linked when linkInternal / linkExternal), then the title as <h4> (.title-content h4.title), then the description paragraph (p.u-white-space-pre, line breaks kept). tools/importer/corp-components.js standaloneImageNodes. 189 titled / 72 described images."
   },
   {
    "component": "columncontrol/cols",

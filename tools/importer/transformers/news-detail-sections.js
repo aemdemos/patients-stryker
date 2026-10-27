@@ -43,6 +43,7 @@ import {
   BLOCK_TAGS, text, rename, unwrap, absoluteAsset, newTabHref, cleanRichText, copyStyles,
   plainBoldParagraphs, serifHeadings,
 } from '../corp-richtext.js';
+import standaloneImageNodes from '../corp-components.js';
 
 const COMPONENTS = [
   '.c-autocarousel',
@@ -70,6 +71,9 @@ function labelHeadingsToParagraphs(root) {
     if (!LABEL_HEADING.test(text(h))) return;
     const p = root.ownerDocument.createElement('p');
     while (h.firstChild) p.append(h.firstChild);
+    // a size span is relative to the heading (0.8em of a 21px h3), not to body copy: the
+    // label keeps the default label size instead of turning into small print
+    p.querySelectorAll('[class*="fontsize-"]').forEach(unwrap);
     if (!p.querySelector('.futura-bold')) {
       p.querySelectorAll('b, strong').forEach(unwrap);
       const bold = root.ownerDocument.createElement('span');
@@ -126,17 +130,6 @@ function richTextNodes(component, doc) {
   return { nodes, centred, size };
 }
 
-function imageNodes(component, doc) {
-  return [...component.querySelectorAll('img')].map((source) => {
-    const img = doc.createElement('img');
-    img.setAttribute('src', source.getAttribute('src'));
-    img.setAttribute('alt', source.getAttribute('alt') || '');
-    const p = doc.createElement('p');
-    p.append(img);
-    return p;
-  });
-}
-
 function buttonNodes(component, doc) {
   return [...component.querySelectorAll('a[href]')].filter((a) => text(a)).map((source) => {
     const a = doc.createElement('a');
@@ -166,7 +159,7 @@ function headlineNodes(component, doc) {
   box.innerHTML = component.innerHTML;
   const lines = [...box.querySelectorAll('.line')].map((line) => rename(line, 'div'));
   lines.forEach((line) => line.querySelectorAll('h1, h2, h3, h4, h5, h6, p').forEach(unwrap));
-  cleanRichText(box);
+  cleanRichText(box, { divParagraphs: false });
   return (lines.length ? lines : [box]).map((line) => {
     if (!text(line)) return null;
     const p = doc.createElement('p');
@@ -287,7 +280,8 @@ export default function transform(hookName, element, payload) {
       return;
     }
     if (component.matches('.c-standalone-image')) {
-      const nodes = imageNodes(component, doc);
+      // image, then its title (h4) and description, as on the source
+      const nodes = standaloneImageNodes(component, doc);
       if (!nodes.length) return;
       if (isFirst) {
         startSection('lead').nodes.push(...nodes);

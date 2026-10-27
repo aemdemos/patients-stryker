@@ -508,6 +508,13 @@ Decision catalogs (committed, not bundled), in `data/catalog/`:
 - `site.json` — every page with its template, component set, XF counts, migration state and import template, grouped by template.
 - `cf-to-export.txt` — the content-fragment paths to export.
 
+**Coverage check — run it after every import** (pilot or real):
+`node tools/importer/migration-index/check-coverage.js <output content dir> [page path …]`
+- It lists every visible text authored in AEM (rich text, image titles and descriptions, headings, CTA labels, large headlines, video texts, tables, page disclaimer) that is missing from the import output.
+- Text that is not on the live page either is reported as author-only (the page exports come from author) and doesn't fail the check.
+- It also fails pages where the import fetched the source's 404 page.
+- **Source URLs:** the EDS path is the cleaned-up AEM name (`foot---ankle` → `foot-ankle`, trailing `-` dropped), so take the URLs to import from the export file names, never from EDS paths.
+
 The site-wide decisions built from these catalogs (typography, component → block mapping, templates and import order) live next to them as decision tables. Apply those tables in importers instead of deciding per page.
 
 ## Testing & Quality Assurance
