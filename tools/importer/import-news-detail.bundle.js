@@ -292,31 +292,42 @@ var CustomImportScript = (() => {
     const coloured = [node, ...node.querySelectorAll('[style*="color"]')].filter((el) => ownColour(el) && !GOLD.test(ownColour(el)));
     return coloured.some((el) => [...el.childNodes].some((child) => child.nodeType === 3 ? child.textContent.trim() : !ownColour(child) && text(child)));
   }
-  function tagGoldText(root) {
+  function bracketTag(nodes, classes, root) {
     const doc = root.ownerDocument;
-    const tagged = /* @__PURE__ */ new Set();
-    const wrap = (nodes) => {
-      const run = [...nodes];
-      const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
-      while (run.length && loose(run[0])) run.shift();
-      while (run.length && loose(run[run.length - 1])) run.pop();
-      if (!run.length || !run.some((n) => n.textContent.trim())) return;
-      const open = doc.createTextNode("[[color-gold]");
-      const close = doc.createTextNode("]");
-      run[0].before(open);
-      run[run.length - 1].after(close);
-      const edge = (n, dir) => {
-        let s = n[dir];
-        while (s && s.nodeType === 3 && !s.textContent.trim()) s = s[dir];
-        return s;
-      };
-      let parent = open.parentElement;
-      while (parent && parent !== root && parent === close.parentElement && !parent.matches("p, li, h1, h2, h3, h4, h5, h6, a, div") && !edge(open, "previousSibling") && !edge(close, "nextSibling")) {
-        parent.before(open);
-        parent.after(close);
-        parent = open.parentElement;
-      }
+    const run = [...nodes];
+    const loose = (n) => n.nodeName === "BR" || n.nodeType === 3 && !n.textContent.trim();
+    while (run.length && loose(run[0])) run.shift();
+    while (run.length && loose(run[run.length - 1])) run.pop();
+    if (!run.length || !run.some((n) => n.textContent.trim())) return;
+    const open = doc.createTextNode(`[[${classes}]`);
+    const close = doc.createTextNode("]");
+    run[0].before(open);
+    run[run.length - 1].after(close);
+    const edge = (n, dir) => {
+      let s = n[dir];
+      while (s && s.nodeType === 3 && !s.textContent.trim()) s = s[dir];
+      return s;
     };
+    let parent = open.parentElement;
+    while (parent && parent !== root && parent === close.parentElement && !parent.matches("p, li, h1, h2, h3, h4, h5, h6, a, div") && !edge(open, "previousSibling") && !edge(close, "nextSibling")) {
+      parent.before(open);
+      parent.after(close);
+      parent = open.parentElement;
+    }
+  }
+  function tagTextSize(root) {
+    const squash = (value) => value.replace(/[\s ]+/g, "");
+    [...root.querySelectorAll(".fontsize-1-25em")].forEach((span) => {
+      if (span.parentElement.closest(".fontsize-1-25em") || !text(span)) return;
+      const block = span.closest("p, li");
+      if (!block || span.closest("h1, h2, h3, h4, h5, h6")) return;
+      if (squash(block.textContent) === squash(span.textContent)) return;
+      bracketTag([span], "text-1-25", root);
+    });
+  }
+  function tagGoldText(root) {
+    const tagged = /* @__PURE__ */ new Set();
+    const wrap = (nodes) => bracketTag(nodes, "color-gold", root);
     root.querySelectorAll('[style*="color"]').forEach((el) => {
       if (!GOLD.test(ownColour(el)) || [...tagged].some((t) => t.contains(el))) return;
       tagged.add(el);
@@ -360,6 +371,7 @@ var CustomImportScript = (() => {
     });
     tagPlainBoldLabels(root, wholeParagraphs);
     tagGoldText(root);
+    tagTextSize(root);
     const standalone = /* @__PURE__ */ new Set();
     root.querySelectorAll(".standalone-link").forEach((span) => {
       const a = span.closest("a") || span.querySelector("a");
