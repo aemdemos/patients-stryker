@@ -89,12 +89,13 @@
   margin-top: calc(var(--space-block) + var(--space-block-l));
 }
 
-/* the lines after the headline are the source Large Headline copy (line2): Egyptienne Light
-   at half the headline size (source fontsize-1-5-vw copy under a fontsize-3vw headline) */
+/* size-<n> sizes the headline only: the lines after it are the source Large Headline
+   copy (line2) at its default font and size - Egyptienne Light, 21px below 600px
+   (source <840px), 1vw up to 14px from 600px (measured: instability.html line2) */
 .hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
   font-family: var(--heading-font-family);
   font-weight: var(--font-weight-medium);
-  font-size: calc(var(--hero-slide-text-size) * 1vw);
+  font-size: var(--body-font-size-xl);
 }
 
 @media (width >= 600px) {
@@ -128,6 +129,6 @@
   }
 
   .hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
-    font-size: min(calc(var(--hero-slide-text-size) * 0.5vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m) / 2));
+    font-size: min(1vw, var(--body-font-size-m));
   }
 }
