@@ -110,6 +110,22 @@ export function isDMVideoSrc(src) {
   return !!src && (DM_VIDEO.test(src) || VIDEO_EXT.test(src));
 }
 
+/**
+ * A small square rendition of a Scene7 image (`/is/image/`), for thumbnails: the asset
+ * path with its preset/query replaced by `fit=constrain,1&wid=<size>&hei=<size>` (the
+ * request the source Scene7 viewers make for their swatches), keeping transparency for
+ * PNG presets. Other URLs (OpenAPI, publish-path, video) return null.
+ * @param {string} src the authored DM image URL
+ * @param {number} size the box edge in px
+ * @returns {string|null}
+ */
+export function dmThumbnailSrc(src, size) {
+  if (!src || !DM_SCENE7.test(src) || DM_VIDEO.test(src)) return null;
+  const [path, query = ''] = src.split('?');
+  const png = /\$[^$]*png[^$]*\$|fmt=png/i.test(decodeSrc(query));
+  return `${path}?fit=constrain,1&wid=${size}&hei=${size}&fmt=${png ? 'png-alpha' : 'jpg'}`;
+}
+
 // narrow selector so non-DM pages skip the work and DM pages only visit DM
 // nodes (avoids iterating every anchor/image on the page)
 const DM_SELECTOR = [

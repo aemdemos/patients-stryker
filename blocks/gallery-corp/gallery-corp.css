@@ -1,0 +1,207 @@
+/*
+ * Gallery Corp: Dynamic Media set (source Scene7 MixedMediaViewer, measured on
+ * www.stryker.com xpedition-powered-stair-chair, stryker/gallery): a 3:2 white stage
+ * with the member contained in it, then a 96px swatch row of 56px thumbnails (10px gap,
+ * 20px above and below), centred when they fit, between 56px scroll arrows otherwise.
+ */
+
+.gallery-corp {
+  --gallery-corp-chevron: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'><path d='M24 19l9 9-9 9' fill='none' stroke='black' stroke-width='3'/></svg>");
+  --gallery-corp-fullscreen: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M23 5v8l-2.8-2.8-4 4-2.4-2.4 4-4L15 5zM5 23v-8l2.8 2.8 4-4 2.4 2.4-4 4L13 23z'/></svg>");
+  --gallery-corp-fullscreen-exit: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M13 15v8l-2.8-2.8-3.4 3.4-2.4-2.4 3.4-3.4L5 15zm2-2V5l2.8 2.8 3.4-3.4 2.4 2.4-3.4 3.4L23 13z'/></svg>");
+  --gallery-corp-play: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M10 8v12l10-6z'/></svg>");
+
+  /* never wider than the source viewer column, so a full-width gallery keeps the stage in view */
+  max-width: var(--corp-gallery-max-width);
+}
+
+/* stage: fixed 3:2 box (940x626 @1440, 600x400 @900, 375x250 @375), member contained */
+.gallery-corp .gallery-corp-stage {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background: var(--color-white);
+  touch-action: pan-y;
+}
+
+.gallery-corp .gallery-corp-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+}
+
+.gallery-corp .gallery-corp-slide[hidden] {
+  display: none;
+}
+
+.gallery-corp .gallery-corp-slide picture {
+  display: contents;
+}
+
+.gallery-corp .gallery-corp-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery-corp .gallery-corp-slide .dm-video-wrapper {
+  width: 100%;
+  max-height: 100%;
+}
+
+.gallery-corp .gallery-corp-slide .dm-video {
+  box-sizing: border-box;
+}
+
+.gallery-corp .gallery-corp-stage:fullscreen {
+  aspect-ratio: auto;
+}
+
+/* full-screen button: source 28px control, 20px in from the stage's bottom-right corner */
+.gallery-corp .gallery-corp-fullscreen {
+  position: absolute;
+  inset: auto var(--space-block-l) var(--space-block-l) auto;
+  width: var(--corp-gallery-control-size);
+  height: var(--corp-gallery-control-size);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  --gallery-corp-icon: var(--gallery-corp-fullscreen);
+}
+
+/* icons are masks on a pseudo-element, so the focus ring on the button is not clipped */
+.gallery-corp :is(.gallery-corp-fullscreen, .gallery-corp-scroll)::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--corp-color-gallery-active);
+  mask: var(--gallery-corp-icon) center / 100% no-repeat;
+}
+
+.gallery-corp .gallery-corp-fullscreen.is-active {
+  --gallery-corp-icon: var(--gallery-corp-fullscreen-exit);
+}
+
+/* a video member has its own control bar (with full screen): keep the corner clear */
+.gallery-corp .gallery-corp-stage:has(.gallery-corp-slide:not([hidden]) .dm-video-wrapper) .gallery-corp-fullscreen {
+  display: none;
+}
+
+/* swatch row */
+.gallery-corp .gallery-corp-nav {
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-block-l);
+}
+
+.gallery-corp .gallery-corp-thumbs {
+  display: flex;
+  flex: 1 1 auto;
+  gap: var(--space-block-s);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: auto hidden;
+  scrollbar-width: none;
+}
+
+.gallery-corp .gallery-corp-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+/* auto margins centre the row when it fits and keep both ends reachable when it scrolls */
+.gallery-corp .gallery-corp-thumbs li {
+  flex: none;
+}
+
+.gallery-corp .gallery-corp-thumbs li:first-child {
+  margin-inline-start: auto;
+}
+
+.gallery-corp .gallery-corp-thumbs li:last-child {
+  margin-inline-end: auto;
+}
+
+.gallery-corp .gallery-corp-thumb {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  width: var(--corp-gallery-thumb-size);
+  height: var(--corp-gallery-thumb-size);
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+.gallery-corp .gallery-corp-thumb[aria-current="true"] {
+  border-color: var(--corp-color-gallery-active);
+}
+
+.gallery-corp .gallery-corp-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* video member: play mark over its poster (or on its own without one) */
+.gallery-corp .gallery-corp-thumb.is-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--corp-color-gallery-active);
+  mask: var(--gallery-corp-play) center / 50% no-repeat;
+}
+
+.gallery-corp :is(.gallery-corp-thumb, .gallery-corp-scroll, .gallery-corp-fullscreen):focus-visible {
+  outline: 2px solid var(--color-field-focus);
+  outline-offset: 2px;
+}
+
+.gallery-corp .gallery-corp-thumb:focus-visible {
+  outline-offset: -2px;
+}
+
+/* scroll arrows: only when the thumbnails overflow the row */
+.gallery-corp .gallery-corp-scroll {
+  display: none;
+  flex: none;
+  width: var(--corp-gallery-thumb-size);
+  height: var(--corp-gallery-thumb-size);
+  margin-inline: 0 var(--space-block);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  --gallery-corp-icon: var(--gallery-corp-chevron);
+}
+
+.gallery-corp .gallery-corp-scroll.prev::before {
+  transform: scaleX(-1);
+}
+
+.gallery-corp .gallery-corp-scroll.next {
+  margin-inline: var(--space-block) 0;
+}
+
+.gallery-corp .gallery-corp-scroll:disabled {
+  cursor: default;
+}
+
+.gallery-corp .gallery-corp-scroll:disabled::before {
+  background: var(--color-border);
+}
+
+.gallery-corp .gallery-corp-nav.is-scrollable .gallery-corp-scroll {
+  display: block;
+}
