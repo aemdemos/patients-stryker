@@ -1,0 +1,178 @@
+/* news-list-corp — stryker.com news landing list (source c-newsandannouncements,
+   /us/en/about/news): filter tabs, "Showing x of y", items (thumbnail, date, title, copy,
+   Read More), Load More. Items stack below 900px (source col-md, 1024px). */
+
+/* ---- filter tabs: uppercase Futura labels, grey dividers, gold rule under the active one */
+.news-list-corp .news-list-corp-tabs {
+  display: flex;
+  margin-bottom: var(--space-block-l);
+  overflow: auto hidden;
+  scrollbar-width: thin;
+}
+
+.news-list-corp .news-list-corp-tab {
+  flex: none;
+  margin: 0;
+  border: 0;
+  border-right: 1px solid var(--color-surface-dim);
+  padding: 0 var(--tabs-tab-padding-inline);
+  background: none;
+  color: var(--text-color);
+  font-family: var(--display-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--body-line-height);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.news-list-corp .news-list-corp-tab:first-child {
+  padding-left: var(--space-block-xs);
+}
+
+.news-list-corp .news-list-corp-tab:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+/* the label carries the rule, so it spans the text only (not the side padding) */
+.news-list-corp .news-list-corp-tab-label {
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  padding: var(--corp-news-tab-padding-top) 0 var(--heading-underline-gap);
+}
+
+.news-list-corp .news-list-corp-tab[aria-selected="true"] .news-list-corp-tab-label {
+  border-bottom-color: var(--color-accent);
+}
+
+.news-list-corp .news-list-corp-tab:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* ---- list */
+.news-list-corp .news-list-corp-panel {
+  padding-top: var(--space-block);
+}
+
+.news-list-corp .news-list-corp-count {
+  margin: 0 0 var(--space-block);
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.news-list-corp .news-list-corp-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list-corp .news-list-corp-item {
+  margin-top: var(--space-block-l);
+  border-bottom: 1px solid var(--color-surface);
+  padding-bottom: var(--space-block-l);
+}
+
+.news-list-corp .news-list-corp-image {
+  line-height: 0;
+}
+
+.news-list-corp .news-list-corp-image img {
+  width: 100%;
+  max-width: var(--corp-news-image-max-width);
+  height: auto;
+  aspect-ratio: var(--corp-news-image-ratio);
+  object-fit: cover;
+}
+
+.news-list-corp .news-list-corp-body > * {
+  margin: 0 0 var(--space-block);
+}
+
+.news-list-corp .news-list-corp-body > :last-child {
+  margin-bottom: 0;
+}
+
+.news-list-corp .news-list-corp-body h3 {
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--heading-line-height);
+}
+
+.news-list-corp .news-list-corp-body p {
+  font-size: var(--body-font-size-m);
+  line-height: var(--paragraph-line-height);
+}
+
+.news-list-corp .news-list-corp-body p:has(> .news-list-corp-link) {
+  line-height: var(--body-line-height);
+}
+
+/* date: Futura bold (source h5) */
+.news-list-corp .news-list-corp-body > .news-list-corp-date {
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--heading-line-height-h4);
+}
+
+/* "Read More": teal uppercase Futura bold with the strykericons chevron (source .action-link) */
+.news-list-corp a.news-list-corp-link:any-link {
+  color: var(--link-color);
+  font-family: var(--display-font-family);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.news-list-corp a.news-list-corp-link:any-link:is(:hover, :focus-visible) {
+  color: var(--color-primary-pressed);
+}
+
+.news-list-corp a.news-list-corp-link::after {
+  content: var(--corp-chevron-glyph);
+  padding-inline-start: 0.5em;
+  font-family: var(--corp-icon-font-family);
+  font-size: 0.85em;
+  font-weight: var(--font-weight-regular);
+}
+
+.news-list-corp .news-list-corp-more {
+  margin-top: var(--space-block-l);
+  line-height: var(--body-line-height);
+}
+
+.news-list-corp .news-list-corp-more[hidden] {
+  display: none;
+}
+
+@media (width >= 600px) {
+  .news-list-corp .news-list-corp-item {
+    margin-top: var(--space-section);
+    padding-bottom: var(--space-section);
+  }
+
+  .news-list-corp .news-list-corp-body h3 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+/* thumbnail beside the text: source col-md-4 / col-md-8 with 15px gutters */
+@media (width >= 900px) {
+  .news-list-corp .news-list-corp-item {
+    display: flex;
+    gap: calc(2 * var(--container-gutter));
+    align-items: flex-start;
+  }
+
+  .news-list-corp .news-list-corp-image {
+    flex: 0 0 calc((100% + 2 * var(--container-gutter)) / 3 - 2 * var(--container-gutter));
+  }
+
+  .news-list-corp .news-list-corp-body {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}

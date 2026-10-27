@@ -44,6 +44,11 @@
   --corp-color-purple-pressed: #643468;
   --corp-color-navy-bright-dark: #184972;
   --corp-color-navy-bright-pressed: #133b5d;
+
+  /* news-list-corp (source /us/en/about/news c-newsandannouncements) */
+  --corp-news-tab-padding-top: 12px; /* source .tab-link: 12px above the 20px label, 7px + 1px rule below */
+  --corp-news-image-max-width: 666px; /* source thumbnail preset $preset_666_392$ (its stacked width) */
+  --corp-news-image-ratio: 666 / 392;
 }
 
 @media (width >= 900px) {
