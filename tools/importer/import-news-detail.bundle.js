@@ -743,6 +743,7 @@ var CustomImportScript = (() => {
         const textColumns = textAside && videoTextColumns(component, textAside, doc);
         if (textColumns) {
           consumed.add(textAside.closest(COMPONENTS) || textAside);
+          element.setAttribute("data-news-theme", "full-width");
           startSection("columns").nodes.push(textColumns);
           current = null;
           return;

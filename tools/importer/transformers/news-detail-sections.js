@@ -768,6 +768,8 @@ export default function transform(hookName, element, payload) {
       const textColumns = textAside && videoTextColumns(component, textAside, doc);
       if (textColumns) {
         consumed.add(textAside.closest(COMPONENTS) || textAside);
+        // the source row spans the whole container (e.g. InsideOut): full-width theme
+        element.setAttribute('data-news-theme', 'full-width');
         startSection('columns').nodes.push(textColumns);
         current = null;
         return;
