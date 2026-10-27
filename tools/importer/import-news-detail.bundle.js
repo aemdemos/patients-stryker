@@ -492,6 +492,8 @@ var CustomImportScript = (() => {
       const a = doc.createElement("a");
       a.setAttribute("href", newTabHref(source, absoluteAsset(source.getAttribute("href"))));
       a.textContent = text(source);
+      const colour = ["btn-purple", "btn-blue"].find((cls) => source.classList.contains(cls));
+      if (colour) a.setAttribute("data-btn-style", colour);
       const strong = doc.createElement("strong");
       if (source.classList.contains("btn-gold")) {
         const em = doc.createElement("em");
@@ -599,7 +601,7 @@ var CustomImportScript = (() => {
     }));
     return out;
   }
-  function videoHeadlineColumns(video, headline2, doc, quotes = [], ctas = []) {
+  function videoHeadlineColumns(video, headline2, doc, quotes = [], ctas = [], asideCtas = []) {
     const link2 = videoLink(video, doc);
     const lines = headlineNodes(headline2, doc);
     if (!link2 || !lines.length) return null;
@@ -610,7 +612,12 @@ var CustomImportScript = (() => {
     const statement = small ? lines : [rename(lines[0], "h2"), ...lines.slice(1)];
     return WebImporter.Blocks.createBlock(doc, {
       name: "Columns (columns-67-33, large-headline, gray-lead)",
-      cells: [[[media, ...buttons], [...statement, ...quotes.flatMap((q) => quoteNodes(q, doc))]]]
+      cells: [[[media, ...buttons], [
+        ...statement,
+        ...quotes.flatMap((q) => quoteNodes(q, doc)),
+        // a button in the narrow column (under the quote, e.g. Esley) stays there
+        ...asideCtas.flatMap((cta) => buttonNodes(cta, doc))
+      ]]]
     });
   }
   function footnoteList(nodes, doc) {
@@ -721,11 +728,12 @@ var CustomImportScript = (() => {
         const quotes = asideCol ? [...asideCol.querySelectorAll(".c-largeheadline")].filter((h) => h !== aside && text(h)) : [];
         const videoCol = component.closest('[class*="col-sm-8"]');
         const ctas = aside && videoCol ? [...videoCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c)) : [];
-        const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas);
+        const asideCtas = asideCol ? [...asideCol.querySelectorAll(".c-curatedcta")].filter((c) => text(c)) : [];
+        const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas, asideCtas);
         if (columns) {
           consumed.add(aside);
           quotes.forEach((q) => consumed.add(q));
-          ctas.forEach((c) => consumed.add(c));
+          [...ctas, ...asideCtas].forEach((c) => consumed.add(c));
           element.setAttribute("data-news-theme", "full-width");
           startSection("columns").nodes.push(columns);
           current = null;
@@ -809,6 +817,11 @@ var CustomImportScript = (() => {
     sections.filter((section) => section.nodes.length || section.kind === "spacer").forEach((section, i) => {
       if (i > 0) out.push(doc.createElement("hr"));
       out.push(...section.nodes);
+      const marked = section.nodes.flatMap((node) => node.nodeType === 1 ? [...node.matches("[data-btn-style]") ? [node] : [], ...node.querySelectorAll("[data-btn-style]")] : []);
+      [...new Set(marked.map((a) => a.getAttribute("data-btn-style")))].forEach((style) => {
+        section.style = [section.style, style].filter(Boolean).join(", ");
+      });
+      marked.forEach((a) => a.removeAttribute("data-btn-style"));
       if (section.style) {
         out.push(WebImporter.Blocks.createBlock(doc, {
           name: "Section Metadata",

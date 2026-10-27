@@ -23,6 +23,8 @@
  * opens with a lead image directly below the date (outside a column layout).
  *   3b. section separators (`.c-section-separator` rule) → the `separator` style on the
  *       section that follows the rule
+ *   3c. purple / blue buttons (a.btn-purple, a.btn-blue) → their section gets the
+ *       btn-purple / btn-blue style (the authoring conventions' button colours)
  *   4. related-content cards (`.c-customizeable`): their heading plus the grid, left for
  *      the cards-corp-teaser parser, in a section of their own (full width)
  *   5. `.c-disclaimer` references (numbered paragraphs → an ordered list, so the
@@ -446,6 +448,10 @@ function buttonNodes(component, doc) {
     const a = doc.createElement('a');
     a.setAttribute('href', newTabHref(source, absoluteAsset(source.getAttribute('href'))));
     a.textContent = text(source);
+    // purple / blue source buttons (a.btn-purple, a.btn-blue): a bold link in a section with
+    // the btn-purple / btn-blue style (authoring conventions); marked here, set on the section
+    const colour = ['btn-purple', 'btn-blue'].find((cls) => source.classList.contains(cls));
+    if (colour) a.setAttribute('data-btn-style', colour);
     const strong = doc.createElement('strong');
     if (source.classList.contains('btn-gold')) {
       const em = doc.createElement('em');
@@ -582,7 +588,7 @@ function quoteNodes(headline, doc) {
 }
 
 /** The video + headline row as `Columns (columns-67-33, large-headline, gray-lead)`. */
-function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = []) {
+function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = [], asideCtas = []) {
   const link = videoLink(video, doc);
   const lines = headlineNodes(headline, doc);
   if (!link || !lines.length) return null;
@@ -596,7 +602,12 @@ function videoHeadlineColumns(video, headline, doc, quotes = [], ctas = []) {
   const statement = small ? lines : [rename(lines[0], 'h2'), ...lines.slice(1)];
   return WebImporter.Blocks.createBlock(doc, {
     name: 'Columns (columns-67-33, large-headline, gray-lead)',
-    cells: [[[media, ...buttons], [...statement, ...quotes.flatMap((q) => quoteNodes(q, doc))]]],
+    cells: [[[media, ...buttons], [
+      ...statement,
+      ...quotes.flatMap((q) => quoteNodes(q, doc)),
+      // a button in the narrow column (under the quote, e.g. Esley) stays there
+      ...asideCtas.flatMap((cta) => buttonNodes(cta, doc)),
+    ]]],
   });
 }
 
@@ -739,11 +750,12 @@ export default function transform(hookName, element, payload) {
       const quotes = asideCol ? [...asideCol.querySelectorAll('.c-largeheadline')].filter((h) => h !== aside && text(h)) : [];
       const videoCol = component.closest('[class*="col-sm-8"]');
       const ctas = aside && videoCol ? [...videoCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c)) : [];
-      const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas);
+      const asideCtas = asideCol ? [...asideCol.querySelectorAll('.c-curatedcta')].filter((c) => text(c)) : [];
+      const columns = aside && videoHeadlineColumns(component, aside, doc, quotes, ctas, asideCtas);
       if (columns) {
         consumed.add(aside);
         quotes.forEach((q) => consumed.add(q));
-        ctas.forEach((c) => consumed.add(c));
+        [...ctas, ...asideCtas].forEach((c) => consumed.add(c));
         // the source runs the title and small print full width on these pages too: the
         // import script sets `theme: full-width` (templates/news-detail/news-detail-themes.css)
         element.setAttribute('data-news-theme', 'full-width');
@@ -862,6 +874,13 @@ export default function transform(hookName, element, payload) {
   sections.filter((section) => section.nodes.length || section.kind === 'spacer').forEach((section, i) => {
     if (i > 0) out.push(doc.createElement('hr'));
     out.push(...section.nodes);
+    // a section holding purple / blue buttons gets the btn-purple / btn-blue style
+    const marked = section.nodes.flatMap((node) => (node.nodeType === 1
+      ? [...(node.matches('[data-btn-style]') ? [node] : []), ...node.querySelectorAll('[data-btn-style]')] : []));
+    [...new Set(marked.map((a) => a.getAttribute('data-btn-style')))].forEach((style) => {
+      section.style = [section.style, style].filter(Boolean).join(', ');
+    });
+    marked.forEach((a) => a.removeAttribute('data-btn-style'));
     if (section.style) {
       out.push(WebImporter.Blocks.createBlock(doc, {
         name: 'Section Metadata',
