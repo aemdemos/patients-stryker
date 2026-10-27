@@ -1,0 +1,254 @@
+{
+ "title": "stryker.com site classification and import order",
+ "status": "Import order proposed; pilot approach approved by the user 2026-10-27",
+ "evidence": "tools/importer/data/catalog/site.json and xf-report.json (2,553 page exports, cq:template)",
+ "totals": {
+  "pages": 2553,
+  "alreadyMigrated": 81,
+  "alreadyMigratedByTemplate": {
+   "news-detail": 79,
+   "home": 1,
+   "search": 1
+  }
+ },
+ "templates": [
+  {
+   "template": "news-detail",
+   "pages": 710,
+   "migrated": 79,
+   "xfs": 217,
+   "componentSets": 223,
+   "top3Share": 34,
+   "singletonSets": 158,
+   "importTemplate": [
+    "news-detail"
+   ]
+  },
+  {
+   "template": "product-detail",
+   "pages": 677,
+   "migrated": 0,
+   "xfs": 328,
+   "componentSets": 449,
+   "top3Share": 13,
+   "singletonSets": 386,
+   "importTemplate": []
+  },
+  {
+   "template": "long-page-detail",
+   "pages": 291,
+   "migrated": 0,
+   "xfs": 113,
+   "componentSets": 80,
+   "top3Share": 62,
+   "singletonSets": 63,
+   "importTemplate": []
+  },
+  {
+   "template": "tier2-landing-page",
+   "pages": 289,
+   "migrated": 0,
+   "xfs": 208,
+   "componentSets": 185,
+   "top3Share": 25,
+   "singletonSets": 161,
+   "importTemplate": []
+  },
+  {
+   "template": "base",
+   "pages": 226,
+   "migrated": 0,
+   "xfs": 145,
+   "componentSets": 112,
+   "top3Share": 35,
+   "singletonSets": 93,
+   "importTemplate": [
+    "legal-page"
+   ]
+  },
+  {
+   "template": "specialty",
+   "pages": 135,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 26,
+   "top3Share": 61,
+   "singletonSets": 16,
+   "importTemplate": []
+  },
+  {
+   "template": "capability",
+   "pages": 48,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 24,
+   "top3Share": 50,
+   "singletonSets": 19,
+   "importTemplate": []
+  },
+  {
+   "template": "event-detail",
+   "pages": 44,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 5,
+   "top3Share": 95,
+   "singletonSets": 2,
+   "importTemplate": []
+  },
+  {
+   "template": "procedure-detail",
+   "pages": 42,
+   "migrated": 0,
+   "xfs": 19,
+   "componentSets": 19,
+   "top3Share": 62,
+   "singletonSets": 17,
+   "importTemplate": []
+  },
+  {
+   "template": "contactdivision",
+   "pages": 21,
+   "migrated": 0,
+   "xfs": 1,
+   "componentSets": 11,
+   "top3Share": 52,
+   "singletonSets": 6,
+   "importTemplate": []
+  },
+  {
+   "template": "packagedetail",
+   "pages": 21,
+   "migrated": 0,
+   "xfs": 21,
+   "componentSets": 19,
+   "top3Share": 24,
+   "singletonSets": 18,
+   "importTemplate": []
+  },
+  {
+   "template": "division",
+   "pages": 20,
+   "migrated": 0,
+   "xfs": 61,
+   "componentSets": 20,
+   "top3Share": 15,
+   "singletonSets": 20,
+   "importTemplate": []
+  },
+  {
+   "template": "news-landing",
+   "pages": 11,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 6,
+   "top3Share": 73,
+   "singletonSets": 3,
+   "importTemplate": []
+  },
+  {
+   "template": "tier1-landing",
+   "pages": 4,
+   "migrated": 0,
+   "xfs": 12,
+   "componentSets": 4,
+   "top3Share": 75,
+   "singletonSets": 4,
+   "importTemplate": []
+  },
+  {
+   "template": "tier1-landing-contact",
+   "pages": 4,
+   "migrated": 0,
+   "xfs": 10,
+   "componentSets": 4,
+   "top3Share": 75,
+   "singletonSets": 4,
+   "importTemplate": []
+  },
+  {
+   "template": "portfolio",
+   "pages": 4,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 4,
+   "top3Share": 75,
+   "singletonSets": 4,
+   "importTemplate": []
+  },
+  {
+   "template": "event-calendar",
+   "pages": 2,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 1,
+   "top3Share": 100,
+   "singletonSets": 0,
+   "importTemplate": []
+  },
+  {
+   "template": "external-asset-library",
+   "pages": 1,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 1,
+   "top3Share": 100,
+   "singletonSets": 1,
+   "importTemplate": []
+  },
+  {
+   "template": "home",
+   "pages": 1,
+   "migrated": 1,
+   "xfs": 10,
+   "componentSets": 1,
+   "top3Share": 100,
+   "singletonSets": 1,
+   "importTemplate": []
+  },
+  {
+   "template": "search",
+   "pages": 1,
+   "migrated": 1,
+   "xfs": 0,
+   "componentSets": 1,
+   "top3Share": 100,
+   "singletonSets": 1,
+   "importTemplate": []
+  },
+  {
+   "template": "tier1-landing-services",
+   "pages": 1,
+   "migrated": 0,
+   "xfs": 0,
+   "componentSets": 1,
+   "top3Share": 100,
+   "singletonSets": 1,
+   "importTemplate": []
+  }
+ ],
+ "outlierNote": "Pages grouped by their exact component set split too finely to call outliers (e.g. product-detail: 449 sets, 386 used once). Proposal: classify outliers per template during that template’s analysis by the components it needs that its importer does not map yet (component-map.json status decide/unmapped), not by exact set.",
+ "proposedImportOrder": [
+  "1. XF fragments (xf-index, published variations used by pages) — once, before any page",
+  "2. Content-fragment documents (after the cf-content export)",
+  "3. news-detail (710; 79 already migrated → re-import under the new rules, diffed)",
+  "4. product-detail (677)",
+  "5. long-page-detail (291)",
+  "6. tier2-landing-page (289)",
+  "7. base (226; legal-page importer covers part)",
+  "8. specialty (135)",
+  "9. capability (48)",
+  "10. event-detail (44)",
+  "11. procedure-detail (42)",
+  "12. small templates: contactdivision, packagedetail, division, news-landing, tier1-*, portfolio, event-calendar, external-asset-library, tier1-landing-services",
+  "13. singletons: home, search (already migrated → re-import diffed)"
+ ],
+ "reimport": "Already-migrated pages are re-imported under the approved tables; each page is diffed against the current content; differences are fixed in the importers, never per page (memory rule: re-import must not regress author edits; DA patched only on request).",
+ "pilot": {
+  "why": "prove the new importers and decision tables before overwriting the 81 already-migrated pages",
+  "where": "pilot pages are imported under /drafts/reimport/<source path> (local preview /content/drafts/reimport/...); fragments go to their real /us/en/fragments/... paths (they are new documents; the 7 existing shared ones re-import unchanged, verified 2026-10-27)",
+  "pages": "a representative set: ~5 news-detail incl. already-migrated ones, Smart Care (division), 2-3 product-detail, 1 tier2-landing-page, 1 long-page-detail, 1 contact directory (content fragments)",
+  "check": "preview at 600/900/1200 vs source, diff vs the current migrated content for the already-migrated ones, link check, style validator offered",
+  "then": "if everything checks out: re-import the already-migrated pages to their real paths (diffed), remove the pilot copies, continue with the import order"
+ }
+}

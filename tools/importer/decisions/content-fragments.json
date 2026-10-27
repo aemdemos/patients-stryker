@@ -1,0 +1,13 @@
+{
+  "title": "Content fragments (DAM) \u2192 EDS fragment documents",
+  "status": "approved 2026-10-27",
+  "decisions": [
+    "Every content fragment used inside an XF becomes its own fragment document at cfToFragmentPath() (/us/en/fragments/content-fragments/...).",
+    "Each document holds ALL the fragment's fields (from .migration/cf-content).",
+    "Where a use shows only some fields (elementNames; 2 of 55 fragments: global-headquarters, primary-contact), the containing fragment shows that subset \u2014 handled in the import, so content stays one-to-one with AEM."
+  ],
+  "pending": [
+    "user export of the 55 paths in tools/importer/data/catalog/cf-to-export.txt",
+    "block for the location box (Block Library first) \u2014 proposed once fields are visible"
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "title": "stryker.com rich-text formatting → EDS authoring (site-wide decision table)",
+  "status": "Approved 2026-10-27. 'established' rules come from the news-detail import (news-typography.js, measured on 448 news pages) and apply to every template.",
+  "evidence": {
+    "catalog": "tools/importer/data/catalog/typography.json — 1,122 combinations, 4.93M characters of authored rich text (pages + XFs); 56 combinations cover 95%, 227 cover 99%",
+    "conventions": "https://main--patients-stryker--aemdemos.aem.live/.da/docs/authoring-guide/authoring-conventions (fetched 2026-10-27): bold / italic / bold+italic / bold+underline links; bold+italic headings and text; underlined heading → bottom border",
+    "measured": "https://www.stryker.com/us/en/about.html at 1440px, leaf computed style (2026-10-27). Base text = Humanist 712 14px/400 black; fontsize-<x>em = x × 14px and nested classes multiply (1-25 inside 2-5 = 43.75px); fontsize-8em = 0.8em = 11.2px (small print); urw-egyptienne = Egyptienne for Stryker Light 400; futura-bold = Futura for Stryker 700",
+    "sharesAre": "% of all authored rich-text characters; 'text' = p / li / div, 'headings' = h1–h6"
+  },
+  "corpStylesAvailable": "section styles in styles/styles-corp.css: p-1, p-1-25, p-1-5, p-1-75, serif (+ serif.p-1-25, serif.p-1-5), h-serif, bold-body, label-1-5, join; bracket colours span.color-gold|blue|purple|teal|navy|grey|white; rule-gold",
+  "rules": [
+    {
+      "id": "plain",
+      "source": "text with no class or colour",
+      "share": {
+        "text": 60.3
+      },
+      "outcome": "as is",
+      "status": "established"
+    },
+    {
+      "id": "strong",
+      "source": "<b> / <strong>",
+      "share": {
+        "all": 2.11
+      },
+      "outcome": "markup <strong> (Humanist Bold)",
+      "status": "established"
+    },
+    {
+      "id": "futura-text",
+      "source": "span.futura-bold in p / li",
+      "share": {
+        "text": 3.18
+      },
+      "outcome": "markup <strong><em> (Futura Bold, upright)",
+      "status": "established"
+    },
+    {
+      "id": "futura-heading",
+      "source": "span.futura-bold in a heading",
+      "share": {
+        "headings": 1.49
+      },
+      "outcome": "unwrap — corp headings are Futura Bold by default",
+      "status": "established"
+    },
+    {
+      "id": "heading-serif",
+      "source": "heading without span.futura-bold",
+      "outcome": "section style h-serif (Egyptienne Light headings)",
+      "status": "established"
+    },
+    {
+      "id": "size-1-25",
+      "source": "block fully in .fontsize-1-25em",
+      "share": {
+        "text": 25.63,
+        "headings": 0.66
+      },
+      "outcome": "section style p-1-25 (17.5px) in every template; 'lead' kept as an alias in CSS until the news pages are re-imported",
+      "status": "approved"
+    },
+    {
+      "id": "size-1-5",
+      "source": "block fully in .fontsize-1-5em",
+      "share": {
+        "text": 4.65,
+        "headings": 0.57
+      },
+      "outcome": "section style p-1-5 (21px)",
+      "status": "proposed",
+      "note": "news-detail drops this size today; the style exists in styles-corp.css"
+    },
+    {
+      "id": "size-1-75",
+      "source": "block fully in .fontsize-1-75em",
+      "share": {
+        "text": 1.46
+      },
+      "outcome": "section style p-1-75 (24.5px)",
+      "status": "established"
+    },
+    {
+      "id": "size-1",
+      "source": ".fontsize-1em",
+      "share": {
+        "text": 1.01
+      },
+      "outcome": "drop (= base 14px)",
+      "status": "proposed"
+    },
+    {
+      "id": "size-2-and-2-5",
+      "source": ".fontsize-2em / .fontsize-2-5em (28px / 35px, mostly Futura + colour: statistics and callouts)",
+      "share": {
+        "text": 1.61
+      },
+      "outcome": "dynamic numbers (numbercounter / count-up components) -> Statistics block (component table). Static large text in rich text -> plain text with a size section style: NEW p-2 (28px) and p-2-5 (35px), following the p-* scheme; colour and Futura per the other rules.",
+      "status": "approved",
+      "note": "user 2026-10-27: dynamic -> statistics, static -> normal large text"
+    },
+    {
+      "id": "small-print",
+      "source": ".fontsize-8em (0.8em = 11.2px: footnotes, references, legal lines)",
+      "share": {
+        "text": 1.41,
+        "headings": 0.34
+      },
+      "outcome": "NEW section style p-0-8 (0.8em = 11.2px), added to styles-corp.css next to p-1 … p-1-75",
+      "status": "approved"
+    },
+    {
+      "id": "serif-text",
+      "source": "span.urw-egyptienne in p / li",
+      "share": {
+        "text": 8.08
+      },
+      "outcome": "section style serif (combined with the size style: serif.p-1-25, serif.p-1-5)",
+      "status": "approved",
+      "note": "approved 2026-10-27; news pages get it on re-import. serif.p-1-75 and serif.p-0-8 combinations to be added to styles-corp.css"
+    },
+    {
+      "id": "serif-heading",
+      "source": "span.urw-egyptienne in a heading",
+      "share": {
+        "headings": 0.21
+      },
+      "outcome": "section style h-serif",
+      "status": "approved"
+    },
+    {
+      "id": "standalone-link",
+      "source": "span.standalone-link around / inside a link",
+      "share": {
+        "text": 1.07
+      },
+      "outcome": "markup <strong><u><a> (Futura uppercase CTA)",
+      "status": "established"
+    },
+    {
+      "id": "italic",
+      "source": "<i> / <em>",
+      "share": {
+        "all": 0.33
+      },
+      "outcome": "keep as in the source: <i> / <em> -> <em> (italic). Source bold+italic (0.004%) collides with the Futura convention <strong><em>; reported per page, not converted.",
+      "status": "approved",
+      "note": "user 2026-10-27: follow the source"
+    },
+    {
+      "id": "sup-sub-underline",
+      "source": "<sup> / <sub> / <u> in text",
+      "share": {
+        "all": 0.51
+      },
+      "outcome": "keep <sup>/<sub>; drop <u> on non-links (underline = divider / button convention)",
+      "status": "proposed"
+    },
+    {
+      "id": "mixed-block",
+      "source": "a component whose blocks use different size / serif styles",
+      "outcome": "split into consecutive sections, later runs get 'join' (no extra gap)",
+      "status": "established"
+    },
+    {
+      "id": "stacked-sizes",
+      "source": "nested fontsize classes (sizes multiply)",
+      "share": {
+        "all": 0.93
+      },
+      "outcome": "use the effective size (product) and map it to the nearest size style (p-0-8 ... p-2-5); sizes beyond p-2-5 -> p-2-5",
+      "status": "proposed"
+    },
+    {
+      "id": "junk-classes",
+      "source": "34 editor / translation-tool classes (tw-*, gr_*, vk_*, mso*, …)",
+      "share": {
+        "all": 0.07
+      },
+      "outcome": "drop",
+      "status": "established"
+    }
+  ],
+  "colours": {
+    "rule": "exact hex (rgb() normalised to hex) -> bracket colour [[color-<name>]text]. Other colours -> the perceptually closest existing colour (CIELAB dE) among gold, blue, purple, teal, navy, grey, white and default black (= dropped); neutral greys only map to white / grey / default. User 2026-10-27: round to the closest existing colour.",
+    "established": {
+      "#ffb500": "color-gold (0.96%)",
+      "#ffffff": "color-white (0.75%)",
+      "#1c5687": "color-blue (0.15%)",
+      "#85458a": "color-purple (0.09%)",
+      "#4c7d7a": "color-teal (0.09%)",
+      "#27455c": "color-navy",
+      "#545857": "color-grey (0.03% incl. rgb(84,88,87))"
+    },
+    "drop": {
+      "#000000 / rgb(0,0,0) / inherit": "default text colour (0.58%)"
+    },
+    "rounded": {
+      "#edeeec": "color-white (dE 6)",
+      "#dfe1de": "color-white (dE 11)",
+      "#b2b4ae": "color-white (dE 27, neutral)",
+      "rgb(139,139,139)": "color-grey (dE 21, neutral; teal dE 20 excluded)",
+      "rgb(84,84,84)": "color-grey (dE 2)",
+      "#323232": "color-grey (dE 16)",
+      "rgb(33,33,33)": "default (dE 13)",
+      "#af6d04": "color-gold (dE 36)",
+      "rgb(149,79,114)": "color-purple (dE 21)",
+      "rgb(0,82,116)": "color-navy (dE 10)",
+      "rgb(0,82,147)": "color-blue (dE 11)",
+      "any other": "computed the same way by the transformer"
+    }
+  },
+  "newSectionStyles": {
+    "p-0-8": "approved",
+    "p-2": "approved (name follows p-*)",
+    "p-2-5": "approved (name follows p-*)",
+    "serif.p-1-75, serif.p-0-8, serif.p-2, serif.p-2-5": "combinations to add with them"
+  }
+}

@@ -143,11 +143,14 @@ export default function buildXfIndex(pages) {
   Object.entries(CONTENT_FRAGMENTS).forEach(([cf, entry]) => {
     const file = join(CF_DIR, `${cf.slice('/content/dam/'.length)}.json`);
     if (!existsSync(file)) return;
+    // the asset export ({cf}.infinity.json) wraps the content in jcr:content; accept both
     const json = readJson(file);
-    const master = json?.data?.master || {};
-    entry.title = json['jcr:title'] || null;
+    const content = json['jcr:content'] || json;
+    const master = content?.data?.master || {};
+    entry.title = content['jcr:title'] || null;
+    entry.model = content?.data?.['cq:model'] || null;
     entry.fields = Object.fromEntries(Object.entries(master)
-      .filter(([k]) => !k.startsWith('jcr:') && !k.endsWith('@ContentType') && !k.startsWith('cq:')));
+      .filter(([k]) => !k.startsWith('jcr:') && !k.startsWith('cq:') && !k.includes('@')));
   });
 
   return {
