@@ -1,0 +1,17 @@
+/* height reserved until the calendar renders (source skeleton: 700px, 570px from 841px) */
+.widget.cvent .cvent-placeholder {
+  height: var(--corp-cvent-reserved-height);
+}
+
+@media (width >= 600px) {
+  .widget.cvent .cvent-placeholder {
+    height: var(--corp-cvent-reserved-height-m);
+  }
+}
+
+/* Cvent leaves its filter heading's font to the page: the source page's h2 face
+   (Egyptienne), not this site's display h2. No added specificity, so Cvent's own
+   classed headings keep their fonts. */
+:where(.widget.cvent) h2 {
+  font-family: var(--heading-font-family);
+}

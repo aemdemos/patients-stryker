@@ -44,6 +44,11 @@
   --corp-color-purple-pressed: #643468;
   --corp-color-navy-bright-dark: #184972;
   --corp-color-navy-bright-pressed: #133b5d;
+
+  /* cvent widget: height reserved until the calendar renders — measured
+     /us/en/training-and-education/calendar skeleton: 700px below 841px, 570px from 841px */
+  --corp-cvent-reserved-height: 700px;
+  --corp-cvent-reserved-height-m: 570px;
 }
 
 @media (width >= 900px) {
@@ -178,6 +183,39 @@ body:where(.corp):has(main .hero-carousel) header {
    h4.title, no gap; measured on /us/en/about/news/2022/stryker-launches-easyfuse-…) */
 :where(body.corp) main .default-content-wrapper > p:has(> picture, > a > picture):has(+ h4) {
   margin-bottom: 0;
+}
+
+/* Google map from a lone maps link (scripts/map-embed.js): full width, 300px high, 400px
+   from 600px; the address link sits under the frame (measured
+   /us/en/acute-care/contact and /us/en/about/contact: .map 300/400px, 10px below) */
+:where(body.corp) main .default-content-wrapper > .map-embed {
+  position: relative;
+  height: var(--map-embed-height);
+  margin-bottom: var(--space-block-s);
+}
+
+:where(body.corp) main .default-content-wrapper > .map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* the address link, under the map; on top while keyboard-focused */
+:where(body.corp) main .default-content-wrapper > .map-embed a {
+  position: relative;
+}
+
+:where(body.corp) main .default-content-wrapper > .map-embed a:focus-visible {
+  z-index: 1;
+  background-color: var(--background-color);
+}
+
+@media (width >= 600px) {
+  :where(body.corp) main .default-content-wrapper > .map-embed {
+    height: var(--map-embed-height-m);
+  }
 }
 
 /* ---- DA canvas only (dm-support.js previewDMLinkEditors): a DM image link shown as a
