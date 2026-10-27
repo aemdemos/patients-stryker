@@ -44,6 +44,14 @@
   --corp-color-purple-pressed: #643468;
   --corp-color-navy-bright-dark: #184972;
   --corp-color-navy-bright-pressed: #133b5d;
+
+  /* full-bleed panel gradients (source base.min.css .bg-dark-purple-gradient / .bg-dark-blue-gradient /
+     .bg-golden-gradient); the teal one is the shared `dark` style (--panel-dark-gradient) */
+  --corp-color-purple-gray: #594b61;
+  --corp-color-blue-gray: #425361;
+  --corp-gradient-dark-purple: linear-gradient(90deg, var(--color-secondary), var(--corp-color-purple-gray));
+  --corp-gradient-dark-blue: linear-gradient(90deg, var(--color-secondary), var(--corp-color-blue-gray));
+  --corp-gradient-golden: linear-gradient(90deg, var(--color-accent-link-hover), var(--color-accent) 20%);
 }
 
 @media (width >= 900px) {
@@ -269,6 +277,37 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 :where(body.corp) main > .section.bg-dark-gray a:any-link {
+  color: var(--color-white);
+}
+
+/* section styles: full-bleed panel gradients (`dark` = the teal one). Measured on
+   www.stryker.com (nse, hoffmann-lrf-hexapod, sage oral-care-for-all, AlphaVent): the
+   panel has no padding or margin of its own; the authored content keeps its margins
+   inside the band (source clearfix rows) and the next component starts flush below it. */
+:where(body.corp) main > .section.bg-dark-purple-gradient,
+:where(body.corp) main > .section.bg-dark-blue-gradient,
+:where(body.corp) main > .section.bg-golden-gradient,
+:where(body.corp) main > .section.dark {
+  display: flow-root;
+  margin-bottom: 0;
+}
+
+/* the dark gradients carry light text and links; buttons and CTAs keep their own colours */
+:where(body.corp) main > .section.bg-dark-purple-gradient {
+  background: var(--corp-gradient-dark-purple);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-dark-blue-gradient {
+  background: var(--corp-gradient-dark-blue);
+  color: var(--color-white);
+}
+
+:where(body.corp) main > .section.bg-golden-gradient {
+  background: var(--corp-gradient-golden);
+}
+
+:where(body.corp) main > .section:is(.bg-dark-purple-gradient, .bg-dark-blue-gradient, .dark) a:any-link:not(.button, .link-strong) {
   color: var(--color-white);
 }
 
@@ -643,6 +682,13 @@ body:where(.corp):has(main .hero-carousel) header {
 }
 
 
+/* section styles `flex-67-33` / `flex-33-67` (with `flex`): a block beside an aside fragment
+   (e.g. Marketo form | business-unit contact links), two wrappers. Stacked below 600px, 20px apart
+   (source col-xs-12 stack: the form component's 20px page-section gap). */
+:where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div:where(:not(:first-child, :empty)) {
+  margin-top: var(--space-block-l);
+}
+
 @media (width >= 600px) {
   :where(body.corp) h2 {
     font-size: var(--heading-font-size-xl);
@@ -699,6 +745,34 @@ body:where(.corp):has(main .hero-carousel) header {
 
   :where(body.corp) main .section.talent-banner > .default-content-wrapper > p.button-wrapper {
     margin: 14.8vw 0 0 calc(57vw - (100vw - 100%) / 2);
+  }
+
+  /* flex-67-33 / flex-33-67: source col-sm-8 + col-sm-4 from 841px (EDS 600px), top-aligned,
+     one 30px gutter, 15px outer edge; widths are thirds of the row (content + one gutter) */
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(2 * var(--container-gutter));
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-gutter);
+  }
+
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  :where(body.corp) main > .section.flex-67-33 > div:first-child,
+  :where(body.corp) main > .section.flex-33-67 > div:nth-child(2) {
+    flex: 0 0 calc((100% + 2 * var(--container-gutter)) * 2 / 3 - 2 * var(--container-gutter));
+  }
+
+  :where(body.corp) main > .section.flex:is(.flex-67-33, .flex-33-67) > div:empty {
+    display: none;
   }
 }
 

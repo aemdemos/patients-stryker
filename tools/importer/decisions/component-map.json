@@ -626,7 +626,7 @@
    "decision": "new-variant",
    "block": "Columns",
    "variant": "columns-50-50, page-intro (+ border-bottom unless hideBottomLine)",
-   "sectionStyle": "compact (as in the library 'Page intro' entry)",
+   "sectionStyle": null,
    "contentModel": "One row, two cells. Cell 1: H1 in Bold+Italic (gold title; text = the rendered .title, i.e. page pageTitle/jcr:title), plain H2 = subhead (page 'subtitle', optional), paragraph = .content (page jcr:description, optional). Cell 2: image = compImageRef, or the page thumbnail when usethumbnail=true (take the rendered <img> DM URL); alt = imageAlt (only 59 of 651 have one -> list the missing ones for authors). hideBottomLine=true (39) -> no border-bottom. No image (~170 pages): text cell only.",
    "evidence": [
     "https://www.stryker.com/us/en/about/awards/awards.html: h1.title gold 'Awards', h2.subhead, p.content | picture, rule below",
@@ -648,7 +648,8 @@
    ],
    "openQuestion": "Approve Columns (columns-50-50, page-intro[, border-bottom]) for the corp page hero, or use a Hero Corp variant (e.g. 'page-hero') instead? A third option is to style the existing library variant through the 'compact' section style, with no new name. That would make the block's look depend on the section, so it is not recommended.",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch columns-page-intro (dcdbe92): blocks/columns/columns-corp.css. No `compact` section on corp: it gives 40px below the hero, the source has 20px (mobile) / 30px (from 600px), which the plain corp section gives (measured on /us/en/about/awards/awards, /us/en/sage/videos/sage-primofit-training, /us/en/about/history)."
   },
   {
    "component": "columncontrol/cols4",
@@ -1671,7 +1672,7 @@
    "decision": "new-variant",
    "block": "Columns",
    "variant": "columns-50-50, page-intro (+ border-bottom)",
-   "sectionStyle": "compact",
+   "sectionStyle": null,
    "contentModel": "As pagehero. Cell 1: H1 Bold+Italic = 'head' (unwrap its <p>), H2 = 'subhead' (10 of 13; may hold <sup>), paragraph(s) = 'content' rich text. Cell 2: image compImageRef + imageAlt (12 of 13).",
    "evidence": [
     "https://www.stryker.com/us/en/acute-care/tools/falls-reduction-tool-calculator.html: h1.title gold 'Fall Reduction Tool Calculator', p.subhead, p.content | picture",
@@ -1690,7 +1691,8 @@
    ],
    "openQuestion": "Follows the pagehero decision (Columns page-intro vs a Hero Corp variant).",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch columns-page-intro (dcdbe92): blocks/columns/columns-corp.css. No `compact` section on corp: it gives 40px below the hero, the source has 20px (mobile) / 30px (from 600px), which the plain corp section gives (measured on /us/en/about/awards/awards, /us/en/sage/videos/sage-primofit-training, /us/en/about/history)."
   },
   {
    "component": "hero-large-carousel/slide",
@@ -1788,7 +1790,7 @@
    "decision": "new-variant",
    "block": "Columns",
    "variant": "columns-50-50, page-intro",
-   "sectionStyle": "compact",
+   "sectionStyle": null,
    "contentModel": "Cell 1: H1 plain (page title, rendered h1), H2 = subtitle (when not empty), description / longCopy paragraphs, a trailing bold link (<b> link -> Bold + Underline flat link). Cell 2: image (thumbnailRP, rendered alt). news-landing (6 uses, area 'longtexthero') renders no .c-longtexthero -> skip after confirming each page.",
    "evidence": [
     "https://www.stryker.com/us/en/about/history.html: h1 'Our history' (class h2 component-subheading), h2 'Built on ingenuity', .longtext paragraphs + bold 'About us' link | image hidden-xs",
@@ -1807,7 +1809,8 @@
    ],
    "openQuestion": "Follows the pagehero decision. A plain black H1 (not gold) is how the convention tells it apart from the pagehero title.",
    "approved": "2026-10-27 (user: approve all recommendations)",
-   "resolution": "recommendation approved 2026-10-27"
+   "resolution": "recommendation approved 2026-10-27",
+   "implemented": "2026-10-27 branch columns-page-intro (dcdbe92): blocks/columns/columns-corp.css. No `compact` section on corp: it gives 40px below the hero, the source has 20px (mobile) / 30px (from 600px), which the plain corp section gives (measured on /us/en/about/awards/awards, /us/en/sage/videos/sage-primofit-training, /us/en/about/history)."
   },
   {
    "component": "engagementcta",
