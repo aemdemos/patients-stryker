@@ -84,13 +84,13 @@ var CustomImportScript = (() => {
     const m = style.match(re);
     return m ? String(parseFloat(m[1])).replace(".", "-") : null;
   }
-  function parse(element, { document, overlayNodes }) {
+  function parse(element, { document, overlayNodes, variants: extra = [] }) {
     const slide = element.querySelector(".carouselslide:not(.slick-cloned)") || element;
     const desktop = slide.querySelector(".experienceFragment-ef img");
     const mobile = slide.querySelector(".experienceFragment-ef-mobile img");
     const overlay = slide.querySelector(".overlayparsys");
     const first = desktop || mobile || slide.querySelector("img");
-    if (!first) return;
+    if (!first && !slide.dataset.xfDesktop) return;
     const variants = ["image-slide"];
     const fragmentLink = (path) => {
       const a = document.createElement("a");
@@ -122,6 +122,7 @@ var CustomImportScript = (() => {
       if (size) variants.push(size[2] ? `size-${size[1]}-5` : `size-${size[1]}`);
       if (overlay.classList.contains("mobile_Bottom")) variants.push("text-below");
     }
+    variants.push(...extra);
     element.replaceWith(WebImporter.Blocks.createBlock(document, {
       name: `Hero Corp (${variants.join(", ")})`,
       cells
@@ -2778,9 +2779,10 @@ var CustomImportScript = (() => {
       const check = (side, selector) => {
         const target = ref && ref[side];
         const img = slide.querySelector(`${selector} img`);
-        if (!target || !target.eds || !img) return null;
+        const video = !img && slide.querySelector(`${selector} [data-asset-path]`);
+        if (!target || !target.eds || !(img || video)) return null;
         const assets = ((xfInfo(target.xf) || {}).assets || []).map((a) => a.toLowerCase());
-        const name = dmAsset(img.getAttribute("src"));
+        const name = img ? dmAsset(img.getAttribute("src")) : video.getAttribute("data-asset-path").split("/").pop().toLowerCase().replace(/-avs$/, "");
         return !assets.length || assets.includes(name) ? target.eds : null;
       };
       const desktop = check("desktop", ".experienceFragment-ef");
@@ -2788,7 +2790,7 @@ var CustomImportScript = (() => {
       if (desktop) slide.dataset.xfDesktop = desktop;
       if (mobile) slide.dataset.xfMobile = mobile;
       if (!desktop || slide.querySelector(".experienceFragment-ef-mobile img") && !mobile) {
-        unmatched.push(dmAsset((slide.querySelector("img") || {}).src));
+        unmatched.push(dmAsset((slide.querySelector("img") || {}).src) || "slide without image");
       }
     });
     return unmatched;
@@ -3421,7 +3423,7 @@ var CustomImportScript = (() => {
   function markLivePage(document) {
     const root = document.querySelector("#aem-specific-data") || document.body;
     root.querySelectorAll("*").forEach((el) => {
-      if (NOT_CONTENT.has(el.tagName) || el.matches(".tab-content")) return;
+      if (NOT_CONTENT.has(el.tagName) || el.matches(".tab-content, .panel-collapse")) return;
       const view = el.ownerDocument.defaultView;
       if (view && view.getComputedStyle(el).display === "none") el.setAttribute("data-corp-hidden", "true");
     });
@@ -3530,6 +3532,10 @@ var CustomImportScript = (() => {
       ...item.styles || []
     ].filter(Boolean);
     function placeFlow(item) {
+      if ((item.role === "image" || item.role === "cta") && current && current.key) {
+        current.nodes.push(...item.nodes);
+        return;
+      }
       item.nodes.forEach((node) => {
         const styles = nodeStyles(node, item);
         const key = `flow:${styles.join(",")}`;
@@ -3658,8 +3664,35 @@ var CustomImportScript = (() => {
     }
     return para(doc, strong);
   }
+  function wrapInlineRuns(box, doc) {
+    let run = null;
+    [...box.childNodes].forEach((node) => {
+      if (node.parentNode !== box) return;
+      if (node.nodeType === 1 && (BLOCK_TAGS.has(node.tagName) || node.tagName === "DIV")) {
+        run = null;
+        return;
+      }
+      if (node.nodeType === 1 && node.tagName === "BR" && run) {
+        let next = node.nextSibling;
+        while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling;
+        if (next && next.nodeName === "BR") {
+          next.remove();
+          node.remove();
+          run = null;
+          return;
+        }
+      }
+      if (!run) {
+        if (node.nodeType === 3 && !node.textContent.trim()) return;
+        run = doc.createElement("p");
+        node.before(run);
+      }
+      run.append(node);
+    });
+  }
   function richTextNodes2(source, doc) {
     const box = contentCopy(source, doc);
+    wrapInlineRuns(box, doc);
     const plainBold = plainBoldParagraphs(box);
     const serifHeads = serifHeadings(box);
     const elementStyles = new Map([...box.children].map((el) => [el, copyStyles(el)]));
@@ -3871,7 +3904,19 @@ var CustomImportScript = (() => {
     return nodes.length ? [{ type: "flow", role: "image", nodes }] : [];
   }
   function buttons(el, ctx) {
-    const nodes = [...el.querySelectorAll("a[href]")].filter((a) => text(a)).map((a) => buttonNode(ctx.doc, a, text(a)));
+    const { doc } = ctx;
+    const nodes = [...el.querySelectorAll("a[href]")].map((a) => {
+      if (text(a)) return buttonNode(doc, a, text(a));
+      const source = a.querySelector("img");
+      if (!source) return null;
+      const img = doc.createElement("img");
+      img.setAttribute("src", source.getAttribute("src"));
+      img.setAttribute("alt", source.getAttribute("alt") || "");
+      const link2 = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute("href"))), "");
+      link2.append(img);
+      if (!source.getAttribute("alt")) ctx.report.notes.push(`image button without alt text: ${source.getAttribute("src")}`);
+      return para(doc, link2);
+    }).filter(Boolean);
     return nodes.length ? [{ type: "flow", role: "cta", nodes }] : [];
   }
   function largeHeadline(el, ctx) {
@@ -3879,6 +3924,7 @@ var CustomImportScript = (() => {
     const root = el.querySelector(".c-largeheadline > .largeheadline") || el;
     const lines = [...root.querySelectorAll(".line")];
     const nodes = [];
+    let centred = false;
     (lines.length ? lines : [root]).forEach((line) => {
       const box2 = contentCopy(line, doc);
       const futuraVw = !!line.querySelector(".futura-bold") && vwSize(line) > 0;
@@ -3894,9 +3940,10 @@ var CustomImportScript = (() => {
         }
         run.append(node);
       });
-      cleanRichText(box2);
+      if (cleanRichText(box2).centred) centred = true;
       [...box2.children].filter((n) => text(n) || n.querySelector("img")).forEach((n) => {
         let node = n;
+        if (n.tagName === "H1") ctx.h1 = true;
         if (!ctx.h1 && futuraVw && !nodes.length && n.tagName !== "H1") {
           node = rename(n, "h1");
           ctx.h1 = true;
@@ -3914,7 +3961,8 @@ var CustomImportScript = (() => {
       nodes,
       box,
       size,
-      styles
+      styles,
+      centred
     }];
   }
   function sectionTitle(el, ctx) {
@@ -3948,23 +3996,41 @@ var CustomImportScript = (() => {
   function carousel(el, ctx) {
     const { doc } = ctx;
     const slides = [...el.querySelectorAll(".carouselslide:not(.slick-cloned)")];
-    if (!slides.length || !el.querySelector("img")) return [];
-    if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: only the first is imported (Hero Corp has one slide)`);
-    const overlay = slides[0].querySelector(".overlayparsys");
-    let overlayNodes;
-    if (overlay && overlay.querySelector(".c-rich-text-editor, .curatedcta")) {
-      overlayNodes = inlineNodes(ctx.collect(overlay), ctx);
-      if (overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
-    }
-    const holder = doc.createElement("div");
-    holder.append(el.cloneNode(true));
-    parse(holder.firstElementChild, { document: doc, overlayNodes });
-    return [{
-      type: "own",
-      kind: "hero",
-      styles: [],
-      nodes: [...holder.children]
-    }];
+    if (!slides.length) return [];
+    const index = ctx.slideIndex || 0;
+    ctx.slideIndex = index + slides.length;
+    if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: one Hero Corp per slide (no rotation)`);
+    return slides.flatMap((slide, i) => {
+      const ref = (ctx.slideRefs || [])[index + i];
+      if (ref) {
+        ["desktop", "mobile"].forEach((side) => {
+          const target = ref[side];
+          if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
+        });
+      }
+      if (!slide.querySelector("img") && !slide.dataset.xfDesktop) return [];
+      if (slide.dataset.xfDesktop && !slide.querySelector(".experienceFragment-ef img")) {
+        ctx.report.notes.push(`hero slide ${slide.dataset.xfDesktop} is a video: Hero Corp renders image slides only`);
+      }
+      const overlay = slide.querySelector(".overlayparsys");
+      const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx) : void 0;
+      if (overlayNodes && overlayNodes.some((n) => n.tagName === "H1")) ctx.h1 = true;
+      const copy = overlay && overlay.querySelector(".line2");
+      const copySize = copy ? vwSize(copy) : 0;
+      const holder = doc.createElement("div");
+      holder.append(slide.cloneNode(true));
+      parse(holder.firstElementChild, {
+        document: doc,
+        overlayNodes: overlayNodes && overlayNodes.length ? overlayNodes : void 0,
+        variants: copySize ? [`copy-size-${String(copySize).replace(".", "-")}`] : []
+      });
+      return [{
+        type: "own",
+        kind: "hero",
+        styles: [],
+        nodes: [...holder.children]
+      }];
+    });
   }
   function jumpBar(el, ctx) {
     const rows = [...el.querySelectorAll("a[data-linking]")].filter((a) => text(a)).map((a) => [text(a), `#${a.getAttribute("data-linking")}`]);
@@ -3983,7 +4049,8 @@ var CustomImportScript = (() => {
     "bg-dark-teal-gradient": "dark",
     "bg-dark-purple-gradient": "bg-dark-purple-gradient",
     "bg-dark-blue-gradient": "bg-dark-blue-gradient",
-    "bg-golden-gradient": "bg-golden-gradient"
+    "bg-golden-gradient": "bg-golden-gradient",
+    "bg-blue": "blue"
   };
   function fullBleedPanel(el, ctx) {
     const panel = el.querySelector(".c-full-bleed-panel") || el;
@@ -4139,13 +4206,42 @@ var CustomImportScript = (() => {
   function cardList(el, ctx) {
     const { doc } = ctx;
     const grid = el.querySelector(".c-customizeable") || el;
-    if (!grid.querySelector(".item img")) return [];
+    const items = [...grid.querySelectorAll(".item")].filter((item) => text(item));
+    if (!items.length) return [];
     const out = [];
     const heading = grid.querySelector("h2");
     if (heading && text(heading)) {
       const h2 = doc.createElement("h2");
       h2.textContent = text(heading);
       out.push({ type: "flow", role: "text", nodes: [h2] });
+    }
+    if (!grid.querySelector(".item img")) {
+      const rows = items.map((item) => {
+        const body = [];
+        const title = item.querySelector("h3");
+        const link2 = title && title.querySelector("a[href]");
+        if (title) {
+          const h3 = doc.createElement("h3");
+          h3.append(link2 ? linkTo(doc, link2.getAttribute("href"), text(link2)) : doc.createTextNode(text(title)));
+          body.push(h3);
+        }
+        item.querySelectorAll(".desc-container > p").forEach((p) => {
+          if (text(p)) body.push(para(doc, doc.createTextNode(text(p))));
+        });
+        const cta = item.querySelector("a.action-link[href]");
+        if (cta && text(cta)) {
+          const u = doc.createElement("u");
+          u.textContent = text(cta);
+          const a = linkTo(doc, cta.getAttribute("href"), "");
+          a.append(u);
+          const strong = doc.createElement("strong");
+          strong.append(a);
+          body.push(para(doc, strong));
+        }
+        return ["", body];
+      });
+      out.push({ type: "block", block: block(doc, "Cards Corp (teaser)", rows) });
+      return out;
     }
     const holder = doc.createElement("div");
     const copy = grid.cloneNode(true);
@@ -4195,6 +4291,133 @@ var CustomImportScript = (() => {
     const nodes = [...box.querySelectorAll("p, h1, h2, h3, h4, h5, h6, ul, ol, table, img")].filter((n) => !n.parentElement.closest("p, h1, h2, h3, h4, h5, h6, ul, ol, table")).map((n) => n.tagName === "IMG" ? para(doc, n) : n).filter((n) => text(n) || n.querySelector("img"));
     return nodes.length ? [{ type: "flow", role: "text", nodes }] : [];
   }
+  function accordion(el, ctx) {
+    const { doc } = ctx;
+    const panels = [...el.querySelectorAll(".panel-group > .panel")].map((panel) => ({
+      title: text(panel.querySelector(".panel-title") || doc.createElement("p")),
+      items: ctx.collect(panel.querySelector(".panel-body") || panel)
+    })).filter((p) => p.title || hasContent(p.items));
+    if (!panels.length) return [];
+    const flowOnly = panels.every((p) => p.items.every((it) => it.type === "flow" || it.type === "anchor"));
+    if (flowOnly) {
+      const rows = panels.map((p) => [para(doc, p.title), p.items.flatMap((it) => it.nodes || [])]);
+      return [{
+        type: "own",
+        kind: "accordion",
+        styles: [],
+        nodes: [block(doc, "Accordion", rows)]
+      }];
+    }
+    return panels.map((p) => {
+      const h = doc.createElement("h3");
+      h.textContent = p.title;
+      return {
+        type: "own",
+        kind: "accordion-panel",
+        styles: ["accordion-panel"],
+        nodes: [h, ...inlineNodes(p.items, ctx)]
+      };
+    });
+  }
+  function pageHero(el, ctx) {
+    const { doc } = ctx;
+    const root = el.querySelector(".c-page-hero, .c-hero") || el;
+    const title = root.querySelector(".title");
+    const cell = [];
+    if (title && text(title)) {
+      const h1 = doc.createElement("h1");
+      const strong = doc.createElement("strong");
+      const em = doc.createElement("em");
+      em.textContent = text(title);
+      strong.append(em);
+      h1.append(strong);
+      cell.push(h1);
+      ctx.h1 = true;
+    }
+    const subhead = root.querySelector(".subhead");
+    if (subhead && text(subhead)) {
+      const h2 = doc.createElement("h2");
+      h2.append(...contentCopy(subhead, doc).childNodes);
+      cleanRichText(h2);
+      cell.push(h2);
+    }
+    root.querySelectorAll(".content").forEach((content) => {
+      const { nodes } = richTextNodes2(content, doc);
+      cell.push(...nodes);
+    });
+    if (!cell.length) return [];
+    const img = root.querySelector("picture img, img");
+    const cells = [cell];
+    if (img) {
+      const source = root.querySelector("picture source[srcset]");
+      const image = doc.createElement("img");
+      image.setAttribute("src", source && source.getAttribute("srcset").split(/[\s,]/)[0] || img.getAttribute("src"));
+      image.setAttribute("alt", img.getAttribute("alt") || "");
+      if (!img.getAttribute("alt")) ctx.report.notes.push(`page hero image without alt text: ${image.getAttribute("src")}`);
+      cells.push([para(doc, image)]);
+    }
+    const variants = ["columns-50-50", "page-intro"];
+    if (root.querySelector(".border-bottom-gold")) variants.push("border-bottom");
+    return [{
+      type: "own",
+      kind: "page-intro",
+      styles: [],
+      nodes: [block(doc, `Columns (${variants.join(", ")})`, [cells])]
+    }];
+  }
+  function table(el, ctx) {
+    const { doc } = ctx;
+    const source = el.querySelector("table");
+    if (!source) return [];
+    const rows = [...source.querySelectorAll("tr")].map((tr) => [...tr.children].map((td) => {
+      const box = contentCopy(td, doc);
+      cleanRichText(box);
+      return [...box.childNodes];
+    }));
+    if (!rows.length) return [];
+    const first = source.querySelector("tr");
+    const header = [...first.children].every((td) => !text(td) || [...td.querySelectorAll("b, strong, th")].some((b) => text(b) === text(td)) || td.tagName === "TH");
+    if (header) {
+      rows[0] = rows[0].map((nodes) => nodes.map((n) => {
+        if (n.nodeType === 1) n.querySelectorAll("strong").forEach(unwrap);
+        return n.nodeType === 1 && n.tagName === "STRONG" ? doc.createTextNode(n.textContent) : n;
+      }));
+    }
+    const out = [];
+    const caption = el.querySelector(".title-container h2, .title-container h3, .table-title");
+    if (caption && text(caption)) {
+      const h = doc.createElement("h3");
+      h.textContent = text(caption);
+      out.push({ type: "flow", role: "text", nodes: [h] });
+    }
+    out.push({ type: "block", block: block(doc, header ? "Table" : "Table (no-header)", rows) });
+    return out;
+  }
+  function localNav(el, ctx) {
+    const { doc } = ctx;
+    const nav = el.querySelector("nav.greedy");
+    const links = nav ? [...nav.querySelectorAll("ul.links a[href]")].filter((a) => text(a)) : [];
+    if (!links.length) return [];
+    const rows = [];
+    const parent = nav.querySelector("a.parent-node[href]");
+    if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute("href"), text(parent))]);
+    links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute("href"))]));
+    return [{
+      type: "own",
+      kind: "nav",
+      styles: [],
+      nodes: [block(doc, "Sticky Nav (local)", rows)]
+    }];
+  }
+  function promoTile(el, ctx) {
+    const img = el.querySelector(".c-cross-promotional-tile img");
+    if (!img) return [];
+    ctx.report.notes.push(`cross-promotional tile kept as its image, its modal content is not imported: ${img.getAttribute("alt") || img.getAttribute("src")}`);
+    const image = ctx.doc.createElement("img");
+    image.setAttribute("src", img.getAttribute("src"));
+    image.setAttribute("alt", img.getAttribute("alt") || "");
+    return [{ type: "flow", role: "image", nodes: [para(ctx.doc, image)] }];
+  }
   var skip = () => [];
   var COMPONENTS2 = {
     carouselslidegroup: carousel,
@@ -4220,7 +4443,15 @@ var CustomImportScript = (() => {
     customizable: cardList,
     resourcesanddownload: resources,
     "#product-detail-container": shortDescription,
-    tagcrumb: skip
+    tagcrumb: skip,
+    accordion,
+    pagehero: pageHero,
+    hero: pageHero,
+    table,
+    localpagenavigation: localNav,
+    localpagenavigationchild: localNav,
+    "c-navigation-bar": jumpBar,
+    "c-tiles": promoTile
   };
   var CORP_HANDLERS = { components: COMPONENTS2, row: gridRow, fallback };
 
@@ -4249,6 +4480,8 @@ var CustomImportScript = (() => {
     ctx.xfMatches = matches;
     if (unmatched.length) ctx.report.notes.push(`XF not matched to the index, kept inline: ${unmatched.join(" | ")}`);
     const slides = markXfSlides(main, source);
+    ctx.h1 = [...root.querySelectorAll("h1")].some((h) => !h.closest('[data-corp-hidden="true"]'));
+    ctx.slideRefs = payload.xf ? [] : pageXfRefs(source).filter((r) => r.kind === "slide");
     if (slides.length) ctx.report.notes.push(`slide XF not matched to the index, images kept: ${slides.join(" | ")}`);
     const items = ctx.collect(root);
     const styles = payload.sectionStyles || [];

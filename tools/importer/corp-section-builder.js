@@ -42,14 +42,15 @@ export const isHidden = (el) => el.getAttribute('data-corp-hidden') === 'true';
  * Marks the elements the live page does not show (display: none at the import viewport) with
  * data-corp-hidden, for the builder to skip them (hideComponent, empty panels, modals).
  * Run in the import script's onLoad, on the live document. Inactive tab panes are not
- * marked: their content is the tab's.
+ * marked, nor collapsed accordion panels: their content is the tab's / panel's.
  * Also keeps what the live page knows of each Marketo form (the forms2 script it loads and
  * the captcha), as data attributes on the form component.
  */
 export function markLivePage(document) {
   const root = document.querySelector('#aem-specific-data') || document.body;
   root.querySelectorAll('*').forEach((el) => {
-    if (NOT_CONTENT.has(el.tagName) || el.matches('.tab-content')) return;
+    // inactive tab panes and collapsed accordion panels hold content the user opens
+    if (NOT_CONTENT.has(el.tagName) || el.matches('.tab-content, .panel-collapse')) return;
     const view = el.ownerDocument.defaultView;
     if (view && view.getComputedStyle(el).display === 'none') el.setAttribute('data-corp-hidden', 'true');
   });
@@ -176,6 +177,11 @@ export function createBuilder({
   ].filter(Boolean);
 
   function placeFlow(item) {
+    // an image (or image button) joins the default content it follows, whatever its copy style
+    if ((item.role === 'image' || item.role === 'cta') && current && current.key) {
+      current.nodes.push(...item.nodes);
+      return;
+    }
     item.nodes.forEach((node) => {
       const styles = nodeStyles(node, item);
       const key = `flow:${styles.join(',')}`;

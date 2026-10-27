@@ -76,9 +76,43 @@ function buttonNode(doc, source, label) {
   return para(doc, strong);
 }
 
+/**
+ * Inline content directly in a rich-text box (text, <sup>, links … not in a paragraph, e.g.
+ * the page hero p.content copied without its <p>) → paragraphs; a double <br> starts a
+ * new paragraph, as it reads on the source.
+ */
+function wrapInlineRuns(box, doc) {
+  let run = null;
+  [...box.childNodes].forEach((node) => {
+    // a <br> already dropped as the second half of a paragraph break
+    if (node.parentNode !== box) return;
+    if (node.nodeType === 1 && (BLOCK_TAGS.has(node.tagName) || node.tagName === 'DIV')) {
+      run = null;
+      return;
+    }
+    if (node.nodeType === 1 && node.tagName === 'BR' && run) {
+      let next = node.nextSibling;
+      while (next && next.nodeType === 3 && !next.textContent.trim()) next = next.nextSibling;
+      if (next && next.nodeName === 'BR') {
+        next.remove();
+        node.remove();
+        run = null;
+        return;
+      }
+    }
+    if (!run) {
+      if (node.nodeType === 3 && !node.textContent.trim()) return;
+      run = doc.createElement('p');
+      node.before(run);
+    }
+    run.append(node);
+  });
+}
+
 /** Rich text (cleaned) → block nodes, each with its copy style (as the news rules). */
 export function richTextNodes(source, doc) {
   const box = contentCopy(source, doc);
+  wrapInlineRuns(box, doc);
   const plainBold = plainBoldParagraphs(box);
   const serifHeads = serifHeadings(box);
   // copy styles per top-level element: one serif lead paragraph keeps its own font
@@ -314,8 +348,20 @@ function standaloneImage(el, ctx) {
 }
 
 function buttons(el, ctx) {
-  const nodes = [...el.querySelectorAll('a[href]')].filter((a) => text(a))
-    .map((a) => buttonNode(ctx.doc, a, text(a)));
+  const { doc } = ctx;
+  const nodes = [...el.querySelectorAll('a[href]')].map((a) => {
+    if (text(a)) return buttonNode(doc, a, text(a));
+    // an image button (.cta-img): the image, linked
+    const source = a.querySelector('img');
+    if (!source) return null;
+    const img = doc.createElement('img');
+    img.setAttribute('src', source.getAttribute('src'));
+    img.setAttribute('alt', source.getAttribute('alt') || '');
+    const link = linkTo(doc, newTabHref(a, absoluteAsset(a.getAttribute('href'))), '');
+    link.append(img);
+    if (!source.getAttribute('alt')) ctx.report.notes.push(`image button without alt text: ${source.getAttribute('src')}`);
+    return para(doc, link);
+  }).filter(Boolean);
   return nodes.length ? [{ type: 'flow', role: 'cta', nodes }] : [];
 }
 
@@ -329,6 +375,7 @@ function largeHeadline(el, ctx) {
   const root = el.querySelector('.c-largeheadline > .largeheadline') || el;
   const lines = [...root.querySelectorAll('.line')];
   const nodes = [];
+  let centred = false;
   (lines.length ? lines : [root]).forEach((line) => {
     const box = contentCopy(line, doc);
     const futuraVw = !!line.querySelector('.futura-bold') && vwSize(line) > 0;
@@ -345,9 +392,10 @@ function largeHeadline(el, ctx) {
       }
       run.append(node);
     });
-    cleanRichText(box);
+    if (cleanRichText(box).centred) centred = true;
     [...box.children].filter((n) => text(n) || n.querySelector('img')).forEach((n) => {
       let node = n;
+      if (n.tagName === 'H1') ctx.h1 = true;
       if (!ctx.h1 && futuraVw && !nodes.length && n.tagName !== 'H1') {
         node = rename(n, 'h1');
         ctx.h1 = true;
@@ -360,7 +408,7 @@ function largeHeadline(el, ctx) {
   const box = boxOf(root);
   const styles = [box && box !== 'dimensional' ? box : '', size >= 2 ? 'large-headline' : ''].filter(Boolean);
   return [{
-    type: 'flow', role: 'headline', nodes, box, size, styles,
+    type: 'flow', role: 'headline', nodes, box, size, styles, centred,
   }];
 }
 
@@ -395,24 +443,47 @@ function experienceFragment(el, ctx) {
 function carousel(el, ctx) {
   const { doc } = ctx;
   const slides = [...el.querySelectorAll('.carouselslide:not(.slick-cloned)')];
-  if (!slides.length || !el.querySelector('img')) return [];
-  if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: only the first is imported (Hero Corp has one slide)`);
-  const overlay = slides[0].querySelector('.overlayparsys');
-  // a product hero overlay holds rich text + buttons (a news slide: a Large Headline only)
-  let overlayNodes;
-  if (overlay && overlay.querySelector('.c-rich-text-editor, .curatedcta')) {
-    overlayNodes = inlineNodes(ctx.collect(overlay), ctx);
-    if (overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
-  }
-  const holder = doc.createElement('div');
-  holder.append(el.cloneNode(true));
-  heroImageSlideParser(holder.firstElementChild, { document: doc, overlayNodes });
-  return [{
-    type: 'own', kind: 'hero', styles: [], nodes: [...holder.children],
-  }];
+  if (!slides.length) return [];
+  const index = ctx.slideIndex || 0;
+  ctx.slideIndex = index + slides.length;
+  // a carousel of several slides: one Hero Corp per slide, in order (Hero Corp shows one
+  // slide; the rotation is lost, the content is not)
+  if (slides.length > 1) ctx.report.notes.push(`carousel with ${slides.length} slides: one Hero Corp per slide (no rotation)`);
+  return slides.flatMap((slide, i) => {
+    // slide XFs that cannot be imported (e.g. a mobile variation never published) are
+    // reported; the live page shows what it can, nothing is invented
+    const ref = (ctx.slideRefs || [])[index + i];
+    if (ref) {
+      ['desktop', 'mobile'].forEach((side) => {
+        const target = ref[side];
+        if (target && !target.eds) ctx.report.notes.push(`${side} slide XF ${target.xf} is ${target.status}: not imported`);
+      });
+    }
+    if (!slide.querySelector('img') && !slide.dataset.xfDesktop) return [];
+    if (slide.dataset.xfDesktop && !slide.querySelector('.experienceFragment-ef img')) {
+      ctx.report.notes.push(`hero slide ${slide.dataset.xfDesktop} is a video: Hero Corp renders image slides only`);
+    }
+    // the overlay through the component handlers (rich text, buttons, Large Headline lines
+    // with their colours); its copy (line 2) size as the copy-size option
+    const overlay = slide.querySelector('.overlayparsys');
+    const overlayNodes = overlay ? inlineNodes(ctx.collect(overlay), ctx) : undefined;
+    if (overlayNodes && overlayNodes.some((n) => n.tagName === 'H1')) ctx.h1 = true;
+    const copy = overlay && overlay.querySelector('.line2');
+    const copySize = copy ? vwSize(copy) : 0;
+    const holder = doc.createElement('div');
+    holder.append(slide.cloneNode(true));
+    heroImageSlideParser(holder.firstElementChild, {
+      document: doc,
+      overlayNodes: overlayNodes && overlayNodes.length ? overlayNodes : undefined,
+      variants: copySize ? [`copy-size-${String(copySize).replace('.', '-')}`] : [],
+    });
+    return [{
+      type: 'own', kind: 'hero', styles: [], nodes: [...holder.children],
+    }];
+  });
 }
 
-/** Jump bar (jumpbarnav) → Sticky Nav: one row per anchor, label | #id. */
+/** Jump bar (jumpbarnav, or the template's own .c-navigation-bar) → Sticky Nav: label | #id. */
 function jumpBar(el, ctx) {
   const rows = [...el.querySelectorAll('a[data-linking]')].filter((a) => text(a))
     .map((a) => [text(a), `#${a.getAttribute('data-linking')}`]);
@@ -431,6 +502,7 @@ const PANELS = {
   'bg-dark-purple-gradient': 'bg-dark-purple-gradient',
   'bg-dark-blue-gradient': 'bg-dark-blue-gradient',
   'bg-golden-gradient': 'bg-golden-gradient',
+  'bg-blue': 'blue',
 };
 
 function fullBleedPanel(el, ctx) {
@@ -594,13 +666,42 @@ function resources(el, ctx) {
 function cardList(el, ctx) {
   const { doc } = ctx;
   const grid = el.querySelector('.c-customizeable') || el;
-  if (!grid.querySelector('.item img')) return [];
+  const items = [...grid.querySelectorAll('.item')].filter((item) => text(item));
+  if (!items.length) return [];
   const out = [];
   const heading = grid.querySelector('h2');
   if (heading && text(heading)) {
     const h2 = doc.createElement('h2');
     h2.textContent = text(heading);
     out.push({ type: 'flow', role: 'text', nodes: [h2] });
+  }
+  if (!grid.querySelector('.item img')) {
+    // cards without images (e.g. video links): an empty image cell, as cards-corp builds
+    // for index rows without an image
+    const rows = items.map((item) => {
+      const body = [];
+      const title = item.querySelector('h3');
+      const link = title && title.querySelector('a[href]');
+      if (title) {
+        const h3 = doc.createElement('h3');
+        h3.append(link ? linkTo(doc, link.getAttribute('href'), text(link)) : doc.createTextNode(text(title)));
+        body.push(h3);
+      }
+      item.querySelectorAll('.desc-container > p').forEach((p) => { if (text(p)) body.push(para(doc, doc.createTextNode(text(p)))); });
+      const cta = item.querySelector('a.action-link[href]');
+      if (cta && text(cta)) {
+        const u = doc.createElement('u');
+        u.textContent = text(cta);
+        const a = linkTo(doc, cta.getAttribute('href'), '');
+        a.append(u);
+        const strong = doc.createElement('strong');
+        strong.append(a);
+        body.push(para(doc, strong));
+      }
+      return ['', body];
+    });
+    out.push({ type: 'block', block: block(doc, 'Cards Corp (teaser)', rows) });
+    return out;
   }
   const holder = doc.createElement('div');
   const copy = grid.cloneNode(true);
@@ -663,6 +764,143 @@ function fallback(el, ctx) {
   return nodes.length ? [{ type: 'flow', role: 'text', nodes }] : [];
 }
 
+/**
+ * Accordion → Accordion block (label | panel content) when every panel holds default
+ * content only; panels with blocks (columns, cards, video …) → one `accordion-panel`
+ * section per panel, label as its first heading (scripts/corp.js builds the
+ * `accordion with-nested-blocks` block from them).
+ */
+function accordion(el, ctx) {
+  const { doc } = ctx;
+  const panels = [...el.querySelectorAll('.panel-group > .panel')].map((panel) => ({
+    title: text(panel.querySelector('.panel-title') || doc.createElement('p')),
+    items: ctx.collect(panel.querySelector('.panel-body') || panel),
+  })).filter((p) => p.title || hasContent(p.items));
+  if (!panels.length) return [];
+  const flowOnly = panels.every((p) => p.items.every((it) => it.type === 'flow' || it.type === 'anchor'));
+  if (flowOnly) {
+    const rows = panels.map((p) => [para(doc, p.title), p.items.flatMap((it) => it.nodes || [])]);
+    return [{
+      type: 'own', kind: 'accordion', styles: [], nodes: [block(doc, 'Accordion', rows)],
+    }];
+  }
+  return panels.map((p) => {
+    const h = doc.createElement('h3');
+    h.textContent = p.title;
+    return {
+      type: 'own', kind: 'accordion-panel', styles: ['accordion-panel'], nodes: [h, ...inlineNodes(p.items, ctx)],
+    };
+  });
+}
+
+/**
+ * Page hero (pagehero, hero) → Columns (columns-50-50, page-intro[, border-bottom]):
+ * title as a Bold + Italic H1, subhead as H2, content paragraphs | image.
+ */
+function pageHero(el, ctx) {
+  const { doc } = ctx;
+  const root = el.querySelector('.c-page-hero, .c-hero') || el;
+  const title = root.querySelector('.title');
+  const cell = [];
+  if (title && text(title)) {
+    const h1 = doc.createElement('h1');
+    const strong = doc.createElement('strong');
+    const em = doc.createElement('em');
+    em.textContent = text(title);
+    strong.append(em);
+    h1.append(strong);
+    cell.push(h1);
+    ctx.h1 = true;
+  }
+  const subhead = root.querySelector('.subhead');
+  if (subhead && text(subhead)) {
+    const h2 = doc.createElement('h2');
+    h2.append(...contentCopy(subhead, doc).childNodes);
+    cleanRichText(h2);
+    cell.push(h2);
+  }
+  root.querySelectorAll('.content').forEach((content) => {
+    const { nodes } = richTextNodes(content, doc);
+    cell.push(...nodes);
+  });
+  if (!cell.length) return [];
+  const img = root.querySelector('picture img, img');
+  const cells = [cell];
+  if (img) {
+    // the largest rendition (the picture's first source), as on the desktop page
+    const source = root.querySelector('picture source[srcset]');
+    const image = doc.createElement('img');
+    image.setAttribute('src', (source && source.getAttribute('srcset').split(/[\s,]/)[0]) || img.getAttribute('src'));
+    image.setAttribute('alt', img.getAttribute('alt') || '');
+    if (!img.getAttribute('alt')) ctx.report.notes.push(`page hero image without alt text: ${image.getAttribute('src')}`);
+    cells.push([para(doc, image)]);
+  }
+  const variants = ['columns-50-50', 'page-intro'];
+  if (root.querySelector('.border-bottom-gold')) variants.push('border-bottom');
+  return [{
+    type: 'own', kind: 'page-intro', styles: [], nodes: [block(doc, `Columns (${variants.join(', ')})`, [cells])],
+  }];
+}
+
+/** Table → Table block; a first row that is bold throughout is the header, else no-header. */
+function table(el, ctx) {
+  const { doc } = ctx;
+  const source = el.querySelector('table');
+  if (!source) return [];
+  const rows = [...source.querySelectorAll('tr')].map((tr) => [...tr.children].map((td) => {
+    const box = contentCopy(td, doc);
+    cleanRichText(box);
+    return [...box.childNodes];
+  }));
+  if (!rows.length) return [];
+  const first = source.querySelector('tr');
+  const header = [...first.children].every((td) => !text(td) || [...td.querySelectorAll('b, strong, th')].some((b) => text(b) === text(td)) || td.tagName === 'TH');
+  if (header) {
+    rows[0] = rows[0].map((nodes) => nodes.map((n) => {
+      if (n.nodeType === 1) n.querySelectorAll('strong').forEach(unwrap);
+      return n.nodeType === 1 && n.tagName === 'STRONG' ? doc.createTextNode(n.textContent) : n;
+    }));
+  }
+  const out = [];
+  const caption = el.querySelector('.title-container h2, .title-container h3, .table-title');
+  if (caption && text(caption)) {
+    const h = doc.createElement('h3');
+    h.textContent = text(caption);
+    out.push({ type: 'flow', role: 'text', nodes: [h] });
+  }
+  out.push({ type: 'block', block: block(doc, header ? 'Table' : 'Table (no-header)', rows) });
+  return out;
+}
+
+/** Local page navigation → Sticky Nav (local): parent link, then label | page link. */
+function localNav(el, ctx) {
+  const { doc } = ctx;
+  const nav = el.querySelector('nav.greedy');
+  const links = nav ? [...nav.querySelectorAll('ul.links a[href]')].filter((a) => text(a)) : [];
+  if (!links.length) return [];
+  const rows = [];
+  const parent = nav.querySelector('a.parent-node[href]');
+  if (parent && text(parent)) rows.push([linkTo(doc, parent.getAttribute('href'), text(parent))]);
+  links.forEach((a) => rows.push([text(a), linkTo(doc, a.getAttribute('href'))]));
+  return [{
+    type: 'own', kind: 'nav', styles: [], nodes: [block(doc, 'Sticky Nav (local)', rows)],
+  }];
+}
+
+/**
+ * Cross-promotional tile (template c-tiles, e.g. the ProCare tile): the tile image, the
+ * modal behind it is not content of the page (reported). Empty on most pages.
+ */
+function promoTile(el, ctx) {
+  const img = el.querySelector('.c-cross-promotional-tile img');
+  if (!img) return [];
+  ctx.report.notes.push(`cross-promotional tile kept as its image, its modal content is not imported: ${img.getAttribute('alt') || img.getAttribute('src')}`);
+  const image = ctx.doc.createElement('img');
+  image.setAttribute('src', img.getAttribute('src'));
+  image.setAttribute('alt', img.getAttribute('alt') || '');
+  return [{ type: 'flow', role: 'image', nodes: [para(ctx.doc, image)] }];
+}
+
 const skip = () => [];
 
 // AEM components by wrapper class (or #id)
@@ -691,6 +929,14 @@ export const COMPONENTS = {
   resourcesanddownload: resources,
   '#product-detail-container': shortDescription,
   tagcrumb: skip,
+  accordion,
+  pagehero: pageHero,
+  hero: pageHero,
+  table,
+  localpagenavigation: localNav,
+  localpagenavigationchild: localNav,
+  'c-navigation-bar': jumpBar,
+  'c-tiles': promoTile,
 };
 
 /** The corp handlers for createBuilder: components, responsive-grid rows, the fallback. */

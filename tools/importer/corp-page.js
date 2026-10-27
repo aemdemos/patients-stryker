@@ -16,6 +16,7 @@
 import { createBuilder } from './corp-section-builder.js';
 import { CORP_HANDLERS } from './corp-component-handlers.js';
 import { matchXfWrappers, markXfSlides, corpLinkHref } from './corp-components.js';
+import { pageXfRefs } from './xf-fragment-path.js';
 import {
   BLOCK_TAGS, text, cleanRichText, contentCopy, footnoteList,
 } from './corp-richtext.js';
@@ -50,6 +51,9 @@ export function buildCorpBody(element, payload) {
   ctx.xfMatches = matches;
   if (unmatched.length) ctx.report.notes.push(`XF not matched to the index, kept inline: ${unmatched.join(' | ')}`);
   const slides = markXfSlides(main, source);
+  // a visible h1 on the source page: no Large Headline line is promoted to h1
+  ctx.h1 = [...root.querySelectorAll('h1')].some((h) => !h.closest('[data-corp-hidden="true"]'));
+  ctx.slideRefs = payload.xf ? [] : pageXfRefs(source).filter((r) => r.kind === 'slide');
   if (slides.length) ctx.report.notes.push(`slide XF not matched to the index, images kept: ${slides.join(' | ')}`);
 
   // payload.sectionStyles: styles of every section (an aside XF: contact-aside)

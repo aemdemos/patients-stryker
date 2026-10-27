@@ -73,15 +73,16 @@ function percent(style, re) {
  * @param {Element} element the carousel (or slide)
  * @param {object} options document; overlayNodes: the overlay text already converted by the
  *   caller (corp section builder: rich text + buttons of a product hero), used instead of
- *   the Large Headline lines
+ *   the Large Headline lines; variants: more block options (e.g. copy-size-<n>)
  */
-export default function parse(element, { document, overlayNodes }) {
+export default function parse(element, { document, overlayNodes, variants: extra = [] }) {
   const slide = element.querySelector('.carouselslide:not(.slick-cloned)') || element;
   const desktop = slide.querySelector('.experienceFragment-ef img');
   const mobile = slide.querySelector('.experienceFragment-ef-mobile img');
   const overlay = slide.querySelector('.overlayparsys');
   const first = desktop || mobile || slide.querySelector('img');
-  if (!first) return;
+  // a slide whose XF holds a video has no image, only its fragment link
+  if (!first && !slide.dataset.xfDesktop) return;
 
   const variants = ['image-slide'];
   // slide images that are experience fragments (marked by markXfSlides in corp-components.js):
@@ -121,6 +122,7 @@ export default function parse(element, { document, overlayNodes }) {
     if (overlay.classList.contains('mobile_Bottom')) variants.push('text-below');
   }
 
+  variants.push(...extra);
   element.replaceWith(WebImporter.Blocks.createBlock(document, {
     name: `Hero Corp (${variants.join(', ')})`,
     cells,

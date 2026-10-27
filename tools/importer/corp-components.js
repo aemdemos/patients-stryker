@@ -120,9 +120,13 @@ export function markXfSlides(root, source) {
     const check = (side, selector) => {
       const target = ref && ref[side];
       const img = slide.querySelector(`${selector} img`);
-      if (!target || !target.eds || !img) return null;
+      // a video slide (Dynamic Media viewer, no image): its asset path (…/<name>-AVS)
+      const video = !img && slide.querySelector(`${selector} [data-asset-path]`);
+      if (!target || !target.eds || !(img || video)) return null;
       const assets = ((xfInfo(target.xf) || {}).assets || []).map((a) => a.toLowerCase());
-      const name = dmAsset(img.getAttribute('src'));
+      const name = img ? dmAsset(img.getAttribute('src'))
+        : video.getAttribute('data-asset-path').split('/').pop().toLowerCase()
+          .replace(/-avs$/, '');
       return !assets.length || assets.includes(name) ? target.eds : null;
     };
     const desktop = check('desktop', '.experienceFragment-ef');
@@ -130,7 +134,7 @@ export function markXfSlides(root, source) {
     if (desktop) slide.dataset.xfDesktop = desktop;
     if (mobile) slide.dataset.xfMobile = mobile;
     if (!desktop || (slide.querySelector('.experienceFragment-ef-mobile img') && !mobile)) {
-      unmatched.push(dmAsset((slide.querySelector('img') || {}).src));
+      unmatched.push(dmAsset((slide.querySelector('img') || {}).src) || 'slide without image');
     }
   });
   return unmatched;
