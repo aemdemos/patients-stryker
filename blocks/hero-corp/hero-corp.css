@@ -106,6 +106,14 @@
   margin-top: calc(var(--space-block) + var(--space-block-l));
 }
 
+/* copy-size-<n> in any text box: the lines after the headline are its copy, in Egyptienne at
+   their own vw size (stryker.com Large Headline line2: lifepak-15 1.5vw, 1788-platform 2.5vw) */
+.hero-corp.image-slide[data-copy-size] > div:last-child > * + :not(.button-wrapper) {
+  font-family: var(--heading-font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: calc(var(--hero-slide-copy-size) * 2vw);
+}
+
 /* size-<n> sizes the headline only: the lines after it are the source Large Headline
    copy (line2) at its default font and size - Egyptienne Light, 21px below 600px
    (source <840px), 1vw up to 14px from 600px (measured: instability.html line2) */
@@ -170,6 +178,10 @@
 
   .hero-corp.image-slide:where(:not(.image-right:not([data-text-size]))) > div:last-child > * {
     font-size: min(calc(var(--hero-slide-text-size) * 1vw), calc(var(--hero-slide-text-size) * var(--body-font-size-m)));
+  }
+
+  .hero-corp.image-slide[data-copy-size] > div:last-child > * + :not(.button-wrapper) {
+    font-size: min(calc(var(--hero-slide-copy-size) * 1vw), calc(var(--hero-slide-copy-size) * var(--body-font-size-m)));
   }
 
   .hero-corp.image-slide:is(.text-above, [data-slide-anchor="bottom"]) > div:last-child > * + :not(.button-wrapper) {
